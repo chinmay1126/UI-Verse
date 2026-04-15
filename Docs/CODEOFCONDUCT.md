@@ -140,7 +140,7 @@ This Code of Conduct is adapted from the [Contributor Covenant (v3.0)](https://w
 
 Enforcement guidelines inspired by [Mozilla’s code of conduct enforcement ladder](https://github.com/mozilla/diversity).  
 
-We thank every contributor, maintainer, and member for **making PortfolioToResume a safe, inclusive, and inspiring space**. ✨💡  
+We thank every contributor, maintainer, and member for **making UI-Verse a safe, inclusive, and inspiring space.** ✨💡  
 
 <p align="center">
   <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" width="350" alt="Celebration GIF">
