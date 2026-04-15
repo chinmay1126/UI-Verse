@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buttons - UIverse</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -22,28 +22,84 @@
   <!-- Main -->
   <main class="main">
 
-    <h1>Buttons</h1>
+    <!-- Header -->
+    <div class="page-header">
+      <h1>Buttons</h1>
+      <p>Explore beautiful and reusable button components</p>
+    </div>
 
+    <!-- Gradient -->
     <div class="component-card">
       <h3>Gradient Button</h3>
-
       <button class="gradient-btn">Click Me</button>
 
       <div class="actions">
-        <button onclick="toggleCode('btnCode')">View Code</button>
-        <button onclick="copyCode('btnCode')">Copy</button>
+        <button onclick="toggleCode('c1')">View Code</button>
+        <button onclick="copyCode('c1')">Copy</button>
       </div>
 
-      <pre id="btnCode" class="code-block">
+      <pre id="c1" class="code-block">
 &lt;button class="gradient-btn"&gt;Click Me&lt;/button&gt;
+      </pre>
+    </div>
 
-.gradient-btn {
-  padding: 10px 20px;
-  border: none;
-  color: white;
-  background: linear-gradient(45deg, #ff6b6b, #6c5ce7);
-  border-radius: 6px;
-}
+    <!-- Outline -->
+    <div class="component-card">
+      <h3>Outline Button</h3>
+      <button class="outline-btn">Click Me</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c2')">View Code</button>
+        <button onclick="copyCode('c2')">Copy</button>
+      </div>
+
+      <pre id="c2" class="code-block">
+&lt;button class="outline-btn"&gt;Click Me&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Neon -->
+    <div class="component-card">
+      <h3>Neon Button</h3>
+      <button class="neon-btn">Glow</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c3')">View Code</button>
+        <button onclick="copyCode('c3')">Copy</button>
+      </div>
+
+      <pre id="c3" class="code-block">
+&lt;button class="neon-btn"&gt;Glow&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Glass -->
+    <div class="component-card">
+      <h3>Glass Button</h3>
+      <button class="glass-btn">Glass</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c4')">View Code</button>
+        <button onclick="copyCode('c4')">Copy</button>
+      </div>
+
+      <pre id="c4" class="code-block">
+&lt;button class="glass-btn"&gt;Glass&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Shadow -->
+    <div class="component-card">
+      <h3>Shadow Button</h3>
+      <button class="shadow-btn">Lift</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c5')">View Code</button>
+        <button onclick="copyCode('c5')">Copy</button>
+      </div>
+
+      <pre id="c5" class="code-block">
+&lt;button class="shadow-btn"&gt;Lift&lt;/button&gt;
       </pre>
     </div>
 
