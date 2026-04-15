@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  display: flex;
   font-family: Arial, sans-serif;
   background: #f4f6fb;
 }
@@ -34,8 +35,11 @@ body {
 
 /* Main */
 .main {
+  flex: 1;
   margin-left: 240px;
-  padding: 40px;
+  margin-top: 80px;  
+  margin-left: 240px; 
+  padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
@@ -216,14 +220,16 @@ body {
 
 /* Push footer down */
 .container {
+  display: flex;
+  width: 100%;
   flex: 1;
 }
 
 /* Footer */
 .footer {
-  margin-left: 220px;
+  margin-left: 240px;
   background: #ffffff;
-  padding: 40px 60px;
+  padding: 40px 20px;
   border-top: 1px solid #e5e7eb;
 }
 
@@ -268,4 +274,108 @@ body {
 
 .socials span:hover {
   transform: scale(1.2);
+}
+
+.main-content {
+  margin-top: 80px;
+}
+
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 240px; /* adjust based on sidebar */
+  right: 0;
+  height: 70px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  border-radius: 40px;
+  padding: 6px 10px;
+  gap: 10px;
+  width: 400px;
+}
+
+/* Explore Text */
+.nav-link {
+  color: #bbb;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.nav-link.active {
+  background: #2a2a2a;
+  color: white;
+}
+
+/* Input */
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  flex: 1;
+  font-size: 14px;
+}
+
+/* Search Button */
+.search-btn {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* Right Section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Buttons */
+.nav-btn {
+  background: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #2a2a2a;
+}
+
+/* Links */
+.nav-right a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-right a:hover {
+  color: white;
 }

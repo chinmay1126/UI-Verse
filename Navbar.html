@@ -7,7 +7,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ 
+ <nav class="navbar">
+  <!-- Logo -->
+  <div class="logo">Ulverse</div>
 
+  <!-- Center Search Bar -->
+  <div class="search-bar">
+    <span class="nav-link active">Explore</span>
+    <input type="text" id="searchInput" placeholder="Search Components" />
+    <button class="search-btn">🔍</button>
+  </div>
+
+  <!-- Right Section -->
+  <div class="nav-right">
+    <button class="nav-btn">Add Component</button>
+    <button class="nav-btn">My Collection</button>
+    <a href="#"></a>
+    <a href="#"></a>
+  </div>
+</nav>
 <div class="container">
 
   <!-- Sidebar -->
@@ -34,7 +53,7 @@
     </div>
 
     <!-- Simple Navbar -->
-    <div class="component-card">
+    <div class="component-card" data-name="simple navbar basic links">
       <h3>Simple Navbar</h3>
 
       <div class="nav-preview">
@@ -50,7 +69,7 @@
     </div>
 
     <!-- Center Navbar -->
-    <div class="component-card">
+    <div class="component-card" data-name="centered navbar menu clean">
       <h3>Centered Navbar</h3>
 
       <div class="nav-preview">
@@ -63,7 +82,7 @@
     </div>
 
     <!-- Button Navbar -->
-    <div class="component-card">
+    <div class="component-card" data-name="button navbar login dark">
       <h3>Button Navbar</h3>
 
       <div class="nav-preview">
@@ -108,4 +127,5 @@
   </div>
 </footer>
 </body>
+<script src="script.js"></script>
 </html>

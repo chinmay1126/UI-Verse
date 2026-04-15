@@ -27,3 +27,21 @@ function copyCode(id, btn) {
       btn.innerText = "Error";
     });
 }
+const searchInput = document.getElementById("searchInput");
+const components = document.querySelectorAll(".component-card");
+
+if (searchInput) {
+  searchInput.addEventListener("keyup", function () {
+    const value = this.value.toLowerCase();
+
+    components.forEach((item) => {
+      const text = item.dataset.name.toLowerCase();
+
+      if (text.includes(value)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+}
