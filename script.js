@@ -77,6 +77,7 @@ function copyCode(id, btn) {
       btn.innerText = "Error";
     });
 }
+<<<<<<< HEAD
 const searchInput = document.getElementById("searchInput");
 const components = document.querySelectorAll(".component-card");
 
@@ -93,5 +94,70 @@ if (searchInput) {
         item.style.display = "none";
       }
     });
+=======
+function handleSearch(event) {
+  if (event.key === "Enter") {
+    const query = event.target.value.toLowerCase().trim();
+
+    // 🔥 Mapping keywords → pages
+    const routes = {
+      "button": "button.html",
+      "buttons": "button.html",
+
+      "navbar": "navbar.html",
+      "navbars": "navbar.html",
+
+      "card": "cards.html",
+      "cards": "cards.html",
+
+      "form": "form.html",
+      "forms": "form.html",
+
+      "footer": "footer.html",
+      "color": "color.html",
+      "colors": "color.html"
+    };
+
+    // 🔍 Find match
+    for (let key in routes) {
+      if (query.includes(key)) {
+        window.location.href = routes[key];
+        return;
+      }
+    }
+
+    // ❌ No match
+    alert("No component found 😢");
+  }
+}
+// 🌙 DARK MODE TOGGLE (ADDED)
+
+const toggleBtn = document.getElementById("theme-toggle");
+
+// Check if button exists (important for multi-pages)
+if (toggleBtn) {
+
+  // Toggle on click
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.innerText = "☀️ Light Mode";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggleBtn.innerText = "🌙 Dark Mode";
+    }
+  });
+
+  // Load saved theme
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      toggleBtn.innerText = "☀️ Light Mode";
+    }
+>>>>>>> fee0a1f (Added darkmode)
   });
 }

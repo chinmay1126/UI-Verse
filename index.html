@@ -35,6 +35,12 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <h2>UIverse</h2>
+
+    <!-- 🌙 DARK MODE TOGGLE (ADDED) -->
+    <button id="theme-toggle" style="margin:10px 0; padding:8px; cursor:pointer;">
+      🌙 Dark Mode
+    </button>
+
     <ul>
       <li class="active"><a href="index.html">Home</a></li>
       <li><a href="button.html">Buttons</a></li>
@@ -61,6 +67,15 @@
       </a>
     </section>
 
+    <!-- 🔍 SEARCH BAR -->
+    <input 
+      type="text" 
+      id="searchInput" 
+      class="search-bar" 
+      placeholder="Search components..." 
+      onkeyup="searchComponents()"
+    />
+
     <!-- Features -->
     <section class="features">
 
@@ -82,10 +97,11 @@
 </section>
 
 </div>
+
+<!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
 
-    <!-- Brand -->
     <div class="footer-col">
       <h2>UIverse</h2>
       <p>© 2026 UIverse. All rights reserved.</p>
@@ -95,7 +111,6 @@
       </div>
     </div>
 
-    <!-- Pages -->
     <div class="footer-col">
       <h3>Pages</h3>
       <p>Navbars</p>
@@ -103,7 +118,6 @@
       <p>Buttons</p>
     </div>
 
-    <!-- Legal -->
     <div class="footer-col">
       <h3>Legal</h3>
       <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
@@ -112,6 +126,12 @@
 
   </div>
 </footer>
+<<<<<<< HEAD
 <script src="script.js"></script>
+=======
+
+<script src="script.js"></script>
+
+>>>>>>> fee0a1f (Added darkmode)
 </body>
 </html>
