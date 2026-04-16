@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cards - UIverse</title>
-  <link rel="stylesheet" href="style.css">
-  
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== HOVER EFFECTS FOR CARDS ===== */
+    .profile-card {
+      background: white; border-radius: 16px; padding: 28px 24px; text-align: center;
+      max-width: 260px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(108,92,231,0.18); }
+    
+    .profile-avatar {
+      width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      color: white; font-size: 22px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px; transition: transform 0.3s ease;
+    }
+    .profile-card:hover .profile-avatar { transform: scale(1.08); }
+
+    .pricing-card {
+      background: white; border: 2px solid #6c5ce7; border-radius: 16px; padding: 28px 22px;
+      max-width: 260px; text-align: center; position: relative;
+      box-shadow: 0 8px 28px rgba(108,92,231,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .pricing-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 48px rgba(108,92,231,0.25); border-color: #a29bfe; }
+    
+    /* Notification logic */
+    .notif-card {
+      display: flex; align-items: flex-start; gap: 12px; background: white;
+      border-left: 4px solid #6c5ce7; border-radius: 10px; padding: 16px;
+      max-width: 340px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .notif-card:hover { transform: translateX(4px); box-shadow: 0 8px 28px rgba(108,92,231,0.18); }
+  </style>
 </head>
 <body>
-   <nav class="navbar">
-  <!-- Logo -->
-  <div class="logo">Ulverse</div>
 
-  <!-- Center Search Bar -->
+<nav class="navbar">
+  <div class="logo">Ulverse</div>
   <div class="search-bar">
     <span class="nav-link active">Explore</span>
     <input type="text" id="searchInput" placeholder="Search Components" />
     <button class="search-btn">🔍</button>
   </div>
-
-  <!-- Right Section -->
   <div class="nav-right">
     <button class="nav-btn">Add Component</button>
     <button class="nav-btn">My Collection</button>
-    <a href="#"></a>
-    <a href="#"></a>
   </div>
 </nav>
 
 <div class="container">
   <button class="hamburger" type="button" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
 
-  <!-- Sidebar -->
   <aside class="sidebar">
     <h2>UIverse</h2>
     <ul>
@@ -39,131 +64,42 @@
       <li><a href="button.html">Buttons</a></li>
       <li><a href="navbar.html">Navbars</a></li>
       <li class="active"><a href="cards.html">Cards</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="toggles.html">Toggles</a></li>
       <li><a href="footer.html">Footer</a></li>
       <li><a href="form.html">Forms</a></li>
-      <li><a href="color.html">Colors</a></li>
     </ul>
   </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
-  <!-- Main -->
   <main class="main">
-
-    <!-- Header -->
     <div class="page-header">
       <h1>Cards</h1>
-      <p>Reusable and beautiful card components</p>
+      <p>Premium UI components with custom hover interactions.</p>
     </div>
 
-    <!-- Simple Card -->
     <div class="component-card">
-      <h3>Simple Card</h3>
-      <div style="background: #f5f5f5; padding: 20px; border-radius: 8px;">
-        <div style="background: white; padding: 20px; border-radius: 8px;">
-          <h4 style="margin: 0 0 10px 0;">Card Title</h4>
-          <p style="margin: 0 0 15px 0; color: #666;">This is a simple card component with a clean design.</p>
-          <button class="gradient-btn">Learn More</button>
-        </div>
+      <h3>Profile Card (Hover Effect)</h3>
+      <div class="profile-card">
+        <div class="profile-avatar">LN</div>
+        <h3 class="profile-name">Likhitha Nagraj</h3>
+        <p class="profile-role">Embedded Systems Engineer</p>
+        <button class="profile-btn">Follow</button>
       </div>
-
       <div class="actions">
-        <button onclick="toggleCode('c1')">View Code</button>
-        <button onclick="copyCode('c1')">Copy</button>
+        <button onclick="toggleCode('cardCode1')">View Code</button>
+        <button onclick="copyCode('cardCode1')">Copy</button>
       </div>
-
-      <pre id="c1" class="code-block">
-&lt;div class="card"&gt;
-  &lt;h4&gt;Card Title&lt;/h4&gt;
-  &lt;p&gt;This is a simple card component with a clean design.&lt;/p&gt;
-  &lt;button class="gradient-btn"&gt;Learn More&lt;/button&gt;
-&lt;/div&gt;
-      </pre>
     </div>
 
-    <!-- Product Card -->
-    <div class="component-card">
-      <h3>Product Card</h3>
-      <div style="background: #f5f5f5; padding: 20px; border-radius: 8px;">
-        <div style="background: white; padding: 20px; border-radius: 8px;">
-          <h4 style="margin: 0 0 5px 0;">Premium Product</h4>
-          <p style="margin: 0 0 15px 0; color: #999; font-size: 14px;">$49.99</p>
-          <p style="margin: 0 0 15px 0; color: #666;">High-quality product with amazing features.</p>
-          <button class="outline-btn">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="actions">
-        <button onclick="toggleCode('c2')">View Code</button>
-        <button onclick="copyCode('c2')">Copy</button>
-      </div>
-
-      <pre id="c2" class="code-block">
-&lt;div class="product-card"&gt;
-  &lt;h4&gt;Premium Product&lt;/h4&gt;
-  &lt;p&gt;$49.99&lt;/p&gt;
-  &lt;p&gt;High-quality product with amazing features.&lt;/p&gt;
-  &lt;button class="outline-btn"&gt;Add to Cart&lt;/button&gt;
-&lt;/div&gt;
-      </pre>
-    </div>
-
-    <!-- Info Card -->
-    <div class="component-card">
-      <h3>Info Card</h3>
-      <div style="background: #f5f5f5; padding: 20px; border-radius: 8px;">
-        <div style="background: white; padding: 20px; border-radius: 8px;">
-          <h4 style="margin: 0 0 10px 0;">✨ Feature Highlight</h4>
-          <p style="margin: 0 0 15px 0; color: #666;">Lightweight, responsive and easy to customize card design.</p>
-          <button class="neon-btn">Get Started</button>
-        </div>
-      </div>
-
-      <div class="actions">
-        <button onclick="toggleCode('c3')">View Code</button>
-        <button onclick="copyCode('c3')">Copy</button>
-      </div>
-
-      <pre id="c3" class="code-block">
-&lt;div class="info-card"&gt;
-  &lt;h4&gt;✨ Feature Highlight&lt;/h4&gt;
-  &lt;p&gt;Lightweight, responsive and easy to customize card design.&lt;/p&gt;
-  &lt;button class="neon-btn"&gt;Get Started&lt;/button&gt;
-&lt;/div&gt;
-      </pre>
-    </div>
-
-  </main>
-
+    </main>
 </div>
 
 <footer class="footer">
   <div class="footer-container">
-
-    <!-- Brand -->
     <div class="footer-col">
       <h2>UIverse</h2>
       <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="socials">
-        <span>🌐</span>
-        <span>💼</span>
-      </div>
     </div>
-
-    <!-- Pages -->
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <p>Cards</p>
-      <p>Buttons</p>
-      <p>Forms</p>
-    </div>
-
-    <!-- Legal -->
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <p>Privacy Policy</p>
-      <p>Terms of Service</p>
-    </div>
-
   </div>
 </footer>
 
