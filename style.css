@@ -288,7 +288,7 @@ body {
 
 .footer-col a {
   text-decoration: none;
-  color: #333;
+  color: #000000;
 }
 
 .footer-col a:hover {
@@ -375,7 +375,7 @@ body {
 
 /* Text */
 .dark-mode p {
-  color: #cbd5f5;
+  color: #ffffff;
 }
 
 /* Buttons */
@@ -395,16 +395,18 @@ body {
 
 /* Footer */
 .dark-mode .footer {
-  background: #020617;
+  background: #d2d5fa;
   border-top: 1px solid #1e293b;
 }
 
+
 .dark-mode .footer-col p {
-  color: #94a3b8;
+  color: rgb(0, 0, 0);
 }
 
+
 .dark-mode .footer-col p:hover {
-  color: #ffffff;
+  color: #706ce9;
 }
 
 /* Search Bar */
@@ -464,7 +466,8 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   text-decoration: none;
-  color: #333;
+  color: #000000;
+  background: pink;
 }
 .features {
   display: grid;
