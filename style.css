@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background:#f4f6fb;
 }
 
 .container {
@@ -20,7 +21,7 @@ body {
 
 /* ================= SIDEBAR ================= */
 .sidebar {
-  width: 280px;
+  width: 240px;
   height: 100vh;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: white;
@@ -29,7 +30,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1050;
-  border-radius: 0 16px 16px 0;
+  border-radius: 0 10px 10px 0;
 }
 
 .sidebar h2 {
@@ -302,7 +303,7 @@ body {
   }
 
   .navbar {
-    left: 0;
+    left: 240px;
   }
 
   .main,
