@@ -695,3 +695,41 @@ nav a:hover {
   border-radius: 12px;
   width: 200px;
 }
+/* ===== STUDENT CARD (MINT STYLE) ===== */
+.student-card {
+  background: #55efc4;
+  color: #2d3436;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.student-card .profile-avatar {
+  background: #2d3436;
+  color: #55efc4;
+  font-weight: 800;
+}
+
+.student-card .profile-name {
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.student-card .profile-role {
+  opacity: 0.9;
+  color: #2d3436;
+}
+
+.student-card .profile-btn {
+  background: #2d3436;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.student-card .profile-btn:hover {
+  background: #000;
+}
