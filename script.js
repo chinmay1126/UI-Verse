@@ -1,186 +1,131 @@
-/* Toggle Code Block */
-function toggleCode(id) {
-  const el = document.getElementById(id);
 
-  if (el.style.display === "block") {
-    el.style.display = "none";
-  } else {
-    el.style.display = "block";
-  }
-}
-function toggleCode(id) {
-  const codeBlock = document.getElementById(id);
-  
-  if (codeBlock.style.display === "block") {
-    codeBlock.style.display = "none";
-  } else {
-    codeBlock.style.display = "block";
-  }
-}
-/* Toggle Sidebar on mobile and desktop */
-function toggleSidebar() {
-  if (window.innerWidth <= 900) {
-    document.body.classList.toggle('sidebar-open');
-  } else {
-    const isHidden = document.body.classList.toggle('sidebar-hidden');
-    /* Persist desktop sidebar state across page navigations */
-    sessionStorage.setItem('sidebarHidden', isHidden ? '1' : '0');
-  }
-}
 
-/* Active link helper for sidebar navigation */
-function updateSidebarActiveLink() {
-  /* Normalize to lowercase so 'Navbar.html' matches href='navbar.html' */
-  const currentPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  document.querySelectorAll('.sidebar ul li').forEach((li) => {
-    const anchor = li.querySelector('a');
-    if (!anchor) return;
-    if (anchor.getAttribute('href').toLowerCase() === currentPage) {
-      li.classList.add('active');
-    } else {
-      li.classList.remove('active');
-    }
-  });
-}
-
-/* Restore sidebar hidden state on desktop across page navigations */
-function restoreSidebarState() {
-  if (window.innerWidth > 900 && sessionStorage.getItem('sidebarHidden') === '1') {
-    document.body.classList.add('sidebar-hidden');
-  }
-}
-
-/* Close mobile sidebar when a nav link is clicked */
-function initSidebarLinkClose() {
-  document.querySelectorAll('.sidebar ul li a').forEach((anchor) => {
-    anchor.addEventListener('click', function () {
-      if (window.innerWidth <= 900) {
-        document.body.classList.remove('sidebar-open');
-      }
-    });
-  });
-}
-
-window.addEventListener('DOMContentLoaded', function () {
-  restoreSidebarState();
-  updateSidebarActiveLink();
-  initSidebarLinkClose();
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initSidebar();
+    initSearch();
 });
 
-/* Copy Code with Better UX */
-function copyCode(id, btn) {
-  const code = document.getElementById(id).innerText;
 
-  navigator.clipboard.writeText(code)
-    .then(() => {
-      btn.innerText = "Copied!";
-      btn.style.background = "#00b894";
+function initTheme() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (!toggleBtn) return;
 
-      setTimeout(() => {
-        btn.innerText = "Copy";
-        btn.style.background = "#111";
-      }, 1500);
-    })
-    .catch(() => {
-      btn.innerText = "Error";
-    });
-}
-const searchInput = document.getElementById("searchInput");
-const components = document.querySelectorAll(".component-card");
-
-if (searchInput) {
-  searchInput.addEventListener("keyup", function () {
-    const value = this.value.toLowerCase();
-
-    components.forEach((item) => {
-      const text = item.dataset.name.toLowerCase();
-
-      if (text.includes(value)) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    });
-  });
-}
-function handleSearch(event) {
-  if (event.key === "Enter") {
-    const query = event.target.value.toLowerCase().trim();
-
-    // 🔥 Mapping keywords → pages
-    const routes = {
-      "button": "button.html",
-      "buttons": "button.html",
-
-      "navbar": "navbar.html",
-      "navbars": "navbar.html",
-
-      "card": "cards.html",
-      "cards": "cards.html",
-
-      "form": "form.html",
-      "forms": "form.html",
-
-      "footer": "footer.html",
-      "color": "color.html",
-      "colors": "color.html"
-    };
-
-    // 🔍 Find match
-    for (let key in routes) {
-      if (query.includes(key)) {
-        window.location.href = routes[key];
-        return;
-      }
-    }
-
-    // ❌ No match
-    alert("No component found 😢");
-  }
-}
-// 🌙 DARK MODE TOGGLE (ADDED)
-
-const toggleBtn = document.getElementById("theme-toggle");
-
-// Check if button exists (important for multi-pages)
-if (toggleBtn) {
-
-  // Toggle on click
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-      localStorage.setItem("theme", "dark");
-      toggleBtn.innerText = "☀️ Light Mode";
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        updateThemeButton(true);
     } else {
-      localStorage.setItem("theme", "light");
-      toggleBtn.innerText = "🌙 Dark Mode";
-    }
-  });
-
-  // Load saved theme
-  window.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      toggleBtn.innerText = "☀️ Light Mode";
+        updateThemeButton(false);
     }
 
-  });
+    toggleBtn.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateThemeButton(isDark);
+    });
 }
+
+function updateThemeButton(isDark) {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.innerHTML = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+
+
+function initSidebar() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const backdrop = document.querySelector('.sidebar-backdrop');
+    
+
+    function toggleSidebar() {
+        if (window.innerWidth <= 1024) {
+            document.body.classList.toggle('sidebar-open');
+        } else {
+            const isHidden = document.body.classList.toggle('sidebar-hidden');
+            localStorage.setItem('sidebarHidden', isHidden);
+        }
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+    if (backdrop) backdrop.addEventListener('click', toggleSidebar);
+
+
+    if (window.innerWidth > 1024 && localStorage.getItem('sidebarHidden') === 'true') {
+        document.body.classList.add('sidebar-hidden');
+    }
+
+
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.sidebar li a').forEach(link => {
+        if (link.getAttribute('href') === path) {
+            link.parentElement.classList.add('active');
+        }
+    });
+}
+
+
+function initSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.feature-card, .component-card');
+
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        cards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+            card.style.display = text.includes(query) ? 'flex' : 'none';
+        });
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const query = e.target.value.toLowerCase().trim();
+            const routes = {
+                'button': 'button.html',
+                'card': 'cards.html',
+                'input': 'inputs.html',
+                'form': 'form.html',
+                'navbar': 'navbar.html',
+                'footer': 'footer.html',
+                'alert': 'alerts.html',
+                'badge': 'badges.html',
+                'loader': 'loaders.html',
+                'color': 'color.html'
+            };
+
+            for (const [key, path] of Object.entries(routes)) {
+                if (query.includes(key)) {
+                    window.location.href = path;
+                    return;
+                }
+            }
+        }
+    });
+}
+
+
 function toggleCode(id) {
-  const el = document.getElementById(id);
-  el.style.display = (el.style.display === "block") ? "none" : "block";
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('show');
 }
 
-function copyCode(id) {
-  const code = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(code);
-  alert("Code copied!");
-}
-
-function copyColor(color) {
-  navigator.clipboard.writeText(color);
-  alert(color + " copied!");
+function copyCode(id, btn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    
+    navigator.clipboard.writeText(el.innerText).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = 'Copied!';
+        btn.style.background = '#10b981';
+        btn.style.color = '#fff';
+        
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    });
 }

@@ -4,177 +4,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buttons - UIverse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
-  <nav class="navbar">
-  <div class="logo">Ulverse</div>
 
-  <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" />
-    <button class="search-btn">🔍</button>
-  </div>
-
-  <div class="nav-right">
-    <button class="nav-btn">Add Component</button>
-    <button class="nav-btn">My Collection</button>
-    <a href="#"></a>
-    <a href="#"></a>
-  </div>
-</nav>
-
-<div class="container">
-  <button class="hamburger" type="button" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
-
-  <!-- Sidebar -->
+  
   <aside class="sidebar">
     <h2>UIverse</h2>
     <ul>
       <li><a href="index.html">Home</a></li>
+      <li><a href="button.html">Buttons</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="inputs.html">Inputs</a></li>
+      <li><a href="form.html">Forms</a></li>
+      <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="footer.html">Footers</a></li>
       <li><a href="alerts.html">Alerts</a></li>
       <li><a href="badges.html">Badges</a></li>
-      <li class="active"><a href="button.html">Buttons</a></li>
-      <li><a href="cards.html">Cards</a></li>
-      <li><a href="color.html">Colors</a></li>
-      <li><a href="footer.html">Footer</a></li>
-      <li><a href="form.html">Forms</a></li>
-      <li><a href="inputs.html">Inputs</a></li>
       <li><a href="loaders.html">Loaders</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="color.html">Colors</a></li>
     </ul>
+    <button id="theme-toggle">🌙 Dark Mode</button>
   </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
-  <!-- Main -->
-  <main class="main">
+  <div class="sidebar-backdrop"></div>
 
- <div class="layout">
+  <div class="content-wrapper">
+    
+    <nav class="navbar">
+      <div class="nav-left">
+        <button class="menu-toggle">☰</button>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search components..." />
+        </div>
+      </div>
+      <div class="nav-right">
+        <button class="nav-btn ghost">My Collection</button>
+        <button class="nav-btn primary">Add Component</button>
+      </div>
+    </nav>
 
-    <!-- Header -->
-    <div class="page-header">
-      <h1>Buttons</h1>
-      <p>Explore beautiful and reusable button components</p>
-    </div>
-
-  <div class="button-group">
-
-
-    <!-- Gradient -->
-    <div class="component-card" data-name="gradient button colorful">
-      <h3>Gradient Button</h3>
-      <button class="gradient-btn">Click Me</button>
-
-      <div class="actions">
-        <button onclick="toggleCode('c1')">View Code</button>
-        <button onclick="copyCode('c1',this)">Copy</button>
+    
+    <main class="main">
+      <div class="page-header" style="margin-bottom: 40px;">
+        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">Buttons</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">Explore beautiful and reusable button components for any project.</p>
       </div>
 
-      <pre id="c1" class="code-block">
-&lt;button class="gradient-btn"&gt;Click Me&lt;/button&gt;
-      </pre>
-    </div>
+      <div class="button-group">
+        
+        <div class="component-card" data-name="gradient button colorful">
+          <h3>Gradient Button</h3>
+          <div style="padding: 20px 0;">
+            <button style="padding: 12px 24px; border: none; border-radius: 8px; background: linear-gradient(45deg, #6366f1, #ec4899); color: white; cursor: pointer; font-weight: 600;">Gradient</button>
+          </div>
+          <div class="actions" style="display: flex; gap: 10px; margin-top: auto;">
+            <button onclick="toggleCode('c1')" style="flex:1; padding: 8px; border-radius: 6px; border: 1px solid #ddd; background: white; cursor: pointer;">Code</button>
+            <button onclick="copyCode('c1', this)" style="flex:1; padding: 8px; border-radius: 6px; border: none; background: var(--text); color: white; cursor: pointer;">Copy</button>
+          </div>
+          <pre id="c1" class="code-block">
+&lt;button style="padding: 12px 24px; border: none; border-radius: 8px; background: linear-gradient(45deg, #6366f1, #ec4899); color: white; font-weight: 600;"&gt;
+  Gradient
+&lt;/button&gt;</pre>
+        </div>
 
-    <!-- Outline -->
-    <div class="component-card" data-name="outline button border">
-      <h3>Outline Button</h3>
-      <button class="outline-btn">Click Me</button>
-
-      <div class="actions">
-        <button onclick="toggleCode('c2')">View Code</button>
-        <button onclick="copyCode('c2',this)">Copy</button>
+        
+        <div class="component-card" data-name="outline button border">
+          <h3>Outline Button</h3>
+          <div style="padding: 20px 0;">
+            <button style="padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; background: transparent; color: #6366f1; cursor: pointer; font-weight: 600;">Outline</button>
+          </div>
+          <div class="actions" style="display: flex; gap: 10px; margin-top: auto;">
+            <button onclick="toggleCode('c2')" style="flex:1; padding: 8px; border-radius: 6px; border: 1px solid #ddd; background: white; cursor: pointer;">Code</button>
+            <button onclick="copyCode('c2', this)" style="flex:1; padding: 8px; border-radius: 6px; border: none; background: var(--text); color: white; cursor: pointer;">Copy</button>
+          </div>
+          <pre id="c2" class="code-block">
+&lt;button style="padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; background: transparent; color: #6366f1; font-weight: 600;"&gt;
+  Outline
+&lt;/button&gt;</pre>
+        </div>
       </div>
+    </main>
 
-      <pre id="c2" class="code-block">
-&lt;button class="outline-btn"&gt;Click Me&lt;/button&gt;
-      </pre>
-    </div>
-
-    <!-- Neon -->
-    <div class="component-card" data-name="neon button glow">
-      <h3>Neon Button</h3>
-      <button class="neon-btn">Glow</button>
-
-      <div class="actions">
-        <button onclick="toggleCode('c3')">View Code</button>
-        <button onclick="copyCode('c3',this)">Copy</button>
+    
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>UIverse</h2>
+          <p>The ultimate library for vanilla web components.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul style="list-style: none;">
+            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+            <li><a href="cards.html" style="color: var(--text-muted); text-decoration: none;">Cards</a></li>
+          </ul>
+        </div>
       </div>
-
-      <pre id="c3" class="code-block">
-&lt;button class="neon-btn"&gt;Glow&lt;/button&gt;
-      </pre>
-    </div>
-
-    <!-- Glass -->
-    <div class="component-card" data-name="glass button transparent blur">
-      <h3>Glass Button</h3>
-      <button class="glass-btn">Glass</button>
-
-      <div class="actions">
-        <button onclick="toggleCode('c4')">View Code</button>
-        <button onclick="copyCode('c4',this)">Copy</button>
+      <div class="footer-bottom">
+        <p>© 2026 UIverse. All rights reserved.</p>
       </div>
-
-      <pre id="c4" class="code-block">
-&lt;button class="glass-btn"&gt;Glass&lt;/button&gt;
-      </pre>
-    </div>
-
-    <!-- Shadow -->
-    <div class="component-card" data-name="shadow button lift depth">
-      <h3>Shadow Button</h3>
-      <button class="shadow-btn">Lift</button>
-
-      <div class="actions">
-        <button onclick="toggleCode('c5')">View Code</button>
-        <button onclick="copyCode('c5',this)">Copy</button>
-      </div>
-
-      <pre id="c5" class="code-block">
-&lt;button class="shadow-btn"&gt;Lift&lt;/button&gt;
-      </pre>
-    </div>
-
+    </footer>
   </div>
 
-  </div>
-
-  </main>
-
-</div>
-<footer class="footer">
-  <div class="footer-container">
-
-    <!-- Brand -->
-    <div class="footer-col">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="socials">
-        <span>🌐</span>
-        <span>💼</span>
-      </div>
-    </div>
-
-    <!-- Pages -->
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <p>Navbars</p>
-      <p>Forms</p>
-      <p>Buttons</p>
-    </div>
-
-    <!-- Legal -->
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <p>Privacy Policy</p>
-      <p>Terms of Service</p>
-    </div>
-
-  </div>
-</footer>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+

@@ -6,12 +6,12 @@
   <title>Toggles - UIverse</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ===== TOGGLE SWITCHES ===== */
+    
 
-    /* Base reset */
+    
     .toggle-wrap input[type="checkbox"] { display: none; }
 
-    /* 1. Classic */
+    
     .toggle-classic label {
       display: block; width: 52px; height: 28px;
       background: #dfe6e9; border-radius: 14px; cursor: pointer;
@@ -27,7 +27,7 @@
     .toggle-classic input:checked + label { background: #6c5ce7; }
     .toggle-classic input:checked + label::after { transform: translateX(24px); }
 
-    /* 2. iOS */
+    
     .toggle-ios label {
       display: block; width: 56px; height: 30px;
       background: #e5e5ea; border-radius: 15px; cursor: pointer;
@@ -43,7 +43,7 @@
     .toggle-ios input:checked + label { background: #34c759; }
     .toggle-ios input:checked + label::after { transform: translateX(26px); }
 
-    /* 3. Neon */
+    
     .toggle-neon label {
       display: block; width: 58px; height: 30px;
       background: #2d3436; border: 2px solid #636e72;
@@ -65,7 +65,7 @@
       box-shadow: 0 0 8px #a29bfe;
     }
 
-    /* 4. Text label */
+    
     .toggle-text label {
       display: flex; align-items: center; justify-content: flex-end;
       padding-right: 7px;
@@ -94,7 +94,7 @@
     .toggle-text input:checked + label::before { content: "ON"; }
     .toggle-text input:checked + label::after { transform: translateX(34px); }
 
-    /* 5. Flat minimal */
+    
     .toggle-flat label {
       display: block; width: 48px; height: 24px;
       background: #dfe6e9; border-radius: 12px; cursor: pointer;
@@ -110,7 +110,7 @@
     .toggle-flat input:checked + label { background: #ff6b6b; }
     .toggle-flat input:checked + label::after { transform: translateX(24px); }
 
-    /* Toggle row layout */
+    
     .toggle-demo-row {
       display: flex; align-items: center;
       gap: 14px; margin-bottom: 4px;
@@ -129,7 +129,7 @@
 </head>
 <body>
 <div class="container">
-  <!-- Sidebar -->
+  
   <aside class="sidebar">
     <h2>UIverse</h2>
     <ul>
@@ -142,11 +142,11 @@
     </ul>
   </aside>
 
-  <!-- Main -->
+  
   <main class="main">
     <h1>Toggle Switches</h1>
 
-    <!-- Classic -->
+    
     <div class="component-card">
       <h3>Classic Toggle</h3>
       <div class="toggle-demo-box">
@@ -172,7 +172,7 @@
       <pre id="togCode1" class="code-block">&lt;input type="checkbox" id="myToggle"&gt;
 &lt;label for="myToggle"&gt;&lt;/label&gt;
 
-/* Hide default checkbox */
+
 input[type="checkbox"] { display: none; }
 
 .toggle-classic label {
@@ -191,7 +191,7 @@ input[type="checkbox"] { display: none; }
 .toggle-classic input:checked + label::after { transform: translateX(24px); }</pre>
     </div>
 
-    <!-- iOS -->
+    
     <div class="component-card">
       <h3>iOS Style Toggle</h3>
       <div class="toggle-demo-box">
@@ -228,7 +228,7 @@ input[type="checkbox"] { display: none; }
 .toggle-ios input:checked + label::after { transform: translateX(26px); }</pre>
     </div>
 
-    <!-- Neon -->
+    
     <div class="component-card">
       <h3>Neon Glow Toggle</h3>
       <div class="toggle-demo-box" style="background:#1e1e2e;">
@@ -272,7 +272,7 @@ input[type="checkbox"] { display: none; }
 }</pre>
     </div>
 
-    <!-- Text Label -->
+    
     <div class="component-card">
       <h3>ON / OFF Text Toggle</h3>
       <div class="toggle-demo-box">
@@ -317,7 +317,7 @@ input[type="checkbox"] { display: none; }
 .toggle-text input:checked + label::after { transform: translateX(34px); }</pre>
     </div>
 
-    <!-- Flat Minimal -->
+    
     <div class="component-card">
       <h3>Flat Minimal Toggle</h3>
       <div class="toggle-demo-box">

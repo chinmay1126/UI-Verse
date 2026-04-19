@@ -4,173 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Colors - UIverse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <nav class="navbar">
-  <!-- Logo -->
-  <div class="logo">Ulverse</div>
 
-  <!-- Center Search Bar -->
-  <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" />
-    <button class="search-btn">🔍</button>
-  </div>
-
-  <!-- Right Section -->
-  <div class="nav-right">
-    <button class="nav-btn">Add Component</button>
-    <button class="nav-btn">My Collection</button>
-    <a href="#"></a>
-    <a href="#"></a>
-  </div>
-</nav>
-
-<div class="container">
-  <button class="hamburger" type="button" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
-
-  <!-- Sidebar -->
   <aside class="sidebar">
     <h2>UIverse</h2>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="alerts.html">Alerts</a></li>
-      <li><a href="badges.html">Badges</a></li>
       <li><a href="button.html">Buttons</a></li>
       <li><a href="cards.html">Cards</a></li>
-      <li class="active"><a href="color.html">Colors</a></li>
-      <li><a href="footer.html">Footer</a></li>
-      <li><a href="form.html">Forms</a></li>
       <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="form.html">Forms</a></li>
       <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="footer.html">Footers</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="badges.html">Badges</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="color.html">Colors</a></li>
     </ul>
+    <button id="theme-toggle">🌙 Dark Mode</button>
   </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
-  <!-- Main -->
- <main class="main">
+  <div class="sidebar-backdrop"></div>
 
-  <!-- Header -->
-  <div class="page-header">
-    <h1>🎨 Colors</h1>
-    <p>Explore palettes, schemes, and UI color components</p>
-  </div>
-
-  <!-- ================= PALETTE ================= -->
-  <h2 class="section-title">Color Palette</h2>
-  <div class="color-grid">
-
-    <div class="color-card">
-      <div class="color-box" style="background:#6c5ce7;"></div>
-      <p>#6c5ce7</p>
-      <button onclick="copyColor('#6c5ce7')">Copy</button>
-    </div>
-
-    <div class="color-card">
-      <div class="color-box" style="background:#ff6b6b;"></div>
-      <p>#ff6b6b</p>
-      <button onclick="copyColor('#ff6b6b')">Copy</button>
-    </div>
-
-    <div class="color-card">
-      <div class="color-box" style="background:#00cec9;"></div>
-      <p>#00cec9</p>
-      <button onclick="copyColor('#00cec9')">Copy</button>
-    </div>
-
-    <div class="color-card">
-      <div class="color-box" style="background:#fdcb6e;"></div>
-      <p>#fdcb6e</p>
-      <button onclick="copyColor('#fdcb6e')">Copy</button>
-    </div>
-
-  </div>
-
-  <!-- ================= SCHEMES ================= -->
-  <h2 class="section-title">Color Schemes</h2>
-  <div class="scheme-grid">
-
-    <div class="scheme-card">
-      <h3>🔥 Neon</h3>
-      <div class="scheme-colors">
-        <span style="background:#ff00ff;"></span>
-        <span style="background:#00ffff;"></span>
-        <span style="background:#39ff14;"></span>
+  <div class="content-wrapper">
+    <nav class="navbar">
+      <div class="nav-left">
+        <button class="menu-toggle">☰</button>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search colors..." />
+        </div>
       </div>
-    </div>
-
-    <div class="scheme-card">
-      <h3>🌙 Dark UI</h3>
-      <div class="scheme-colors">
-        <span style="background:#0f172a;"></span>
-        <span style="background:#1e293b;"></span>
-        <span style="background:#334155;"></span>
+      <div class="nav-right">
+        <button class="nav-btn ghost">My Collection</button>
+        <button class="nav-btn primary">Add Component</button>
       </div>
-    </div>
+    </nav>
 
-    <div class="scheme-card">
-      <h3>🍭 Pastel</h3>
-      <div class="scheme-colors">
-        <span style="background:#ffadad;"></span>
-        <span style="background:#ffd6a5;"></span>
-        <span style="background:#caffbf;"></span>
+    <main class="main">
+      <div class="page-header" style="margin-bottom: 40px;">
+        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">Colors</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">Curated color palettes for modern web interfaces.</p>
       </div>
-    </div>
 
+      <div class="features">
+        <div class="component-card" data-name="color primary hex">
+          <h3>Primary Palette</h3>
+          <div style="padding: 20px 0; display: flex; flex-wrap: wrap; gap: 15px;">
+            <div style="width: 80px; text-align: center;">
+              <div style="height: 60px; background: #6366f1; border-radius: 12px; margin-bottom: 8px;"></div>
+              <code style="font-size: 0.8rem;">#6366f1</code>
+            </div>
+            <div style="width: 80px; text-align: center;">
+              <div style="height: 60px; background: #ec4899; border-radius: 12px; margin-bottom: 8px;"></div>
+              <code style="font-size: 0.8rem;">#ec4899</code>
+            </div>
+          </div>
+          <div class="actions" style="display: flex; gap: 10px; margin-top: auto;">
+            <button onclick="copyColor('#6366f1')" style="flex:1; padding: 10px; border-radius: 8px; border: 1px solid #ddd; background: white; cursor: pointer;">Copy Indigo</button>
+            <button onclick="copyColor('#ec4899')" style="flex:1; padding: 10px; border-radius: 8px; border: none; background: var(--text); color: white; cursor: pointer;">Copy Pink</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>UIverse</h2>
+          <p>The premium choice for vanilla components.</p>
+        </div>
+      </div>
+    </footer>
   </div>
 
-  <!-- ================= UI EXAMPLES ================= -->
-  <h2 class="section-title">UI Examples</h2>
-  <div class="ui-preview">
-
-    <button class="ui-btn primary">Primary Button</button>
-    <button class="ui-btn danger">Danger Button</button>
-    <button class="ui-btn success">Success Button</button>
-
-    <div class="ui-card">
-      <h3>Sample Card</h3>
-      <p>This is how colors look in UI components.</p>
-    </div>
-
-  </div>
-
-</main>
-
-</div>
-<footer class="footer">
-  <div class="footer-container">
-
-    <!-- Brand -->
-    <div class="footer-col">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="socials">
-        <span>🌐</span>
-        <span>💼</span>
-      </div>
-    </div>
-
-    <!-- Pages -->
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <p>Navbars</p>
-      <p>Forms</p>
-      <p>Buttons</p>
-    </div>
-
-    <!-- Legal -->
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <p>Privacy Policy</p>
-      <p>Terms of Service</p>
-    </div>
-
-  </div>
-</footer>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+

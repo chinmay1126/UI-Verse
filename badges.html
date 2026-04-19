@@ -4,117 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Badges - UIverse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <button class="hamburger" type="button" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
-
-  <!-- Sidebar -->
   <aside class="sidebar">
     <h2>UIverse</h2>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="alerts.html">Alerts</a></li>
-      <li class="active"><a href="badges.html">Badges</a></li>
       <li><a href="button.html">Buttons</a></li>
       <li><a href="cards.html">Cards</a></li>
-      <li><a href="color.html">Colors</a></li>
-      <li><a href="footer.html">Footer</a></li>
-      <li><a href="form.html">Forms</a></li>
       <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="form.html">Forms</a></li>
       <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="footer.html">Footers</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="badges.html">Badges</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="color.html">Colors</a></li>
     </ul>
+    <button id="theme-toggle">🌙 Dark Mode</button>
   </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
-  <!-- Main -->
-  <main class="main">
+  <div class="sidebar-backdrop"></div>
 
-    <div class="page-header">
-      <h1>Badges</h1>
-      <p>Small reusable label components for status, count, and tags.</p>
-    </div>
+  <div class="content-wrapper">
+    <nav class="navbar">
+      <div class="nav-left">
+        <button class="menu-toggle">☰</button>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search badges..." />
+        </div>
+      </div>
+      <div class="nav-right">
+        <button class="nav-btn ghost">My Collection</button>
+        <button class="nav-btn primary">Add Component</button>
+      </div>
+    </nav>
 
-    <div class="component-card">
-      <h3>Pill Badge</h3>
-      <div>
-        <span class="badge badge-pill">New</span>
+    <main class="main">
+      <div class="page-header" style="margin-bottom: 40px;">
+        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">Badges</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">Small status indicators for numbers, categories, or states.</p>
       </div>
 
-      <div class="actions">
-        <button onclick="toggleCode('b1')">View Code</button>
-        <button onclick="copyCode('b1', this)">Copy</button>
+      <div class="features">
+        <div class="component-card" data-name="badge status new">
+          <h3>Status Badge</h3>
+          <div style="padding: 20px 0; display: flex; gap: 10px;">
+            <span style="padding: 4px 12px; border-radius: 20px; background: var(--primary); color: white; font-size: 0.75rem; font-weight: 700;">NEW</span>
+            <span style="padding: 4px 12px; border-radius: 20px; background: #ec4899; color: white; font-size: 0.75rem; font-weight: 700;">HOT</span>
+          </div>
+          <div class="actions" style="display: flex; gap: 10px; margin-top: auto;">
+            <button onclick="toggleCode('b1')" style="flex:1; padding: 10px; border-radius: 8px; border: 1px solid #ddd; background: white; cursor: pointer;">Code</button>
+            <button onclick="copyCode('b1', this)" style="flex:1; padding: 10px; border-radius: 8px; border: none; background: var(--text); color: white; cursor: pointer;">Copy</button>
+          </div>
+          <pre id="b1" class="code-block">&lt;span class="ui-badge"&gt;NEW&lt;/span&gt;</pre>
+        </div>
       </div>
+    </main>
 
-      <pre id="b1" class="code-block">
-&lt;span class="badge badge-pill"&gt;New&lt;/span&gt;
-      </pre>
-    </div>
-
-    <div class="component-card">
-      <h3>Status Dot Badge</h3>
-      <div>
-        <span class="badge badge-dot">Online</span>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>UIverse</h2>
+          <p>The premium choice for vanilla components.</p>
+        </div>
       </div>
-
-      <div class="actions">
-        <button onclick="toggleCode('b2')">View Code</button>
-        <button onclick="copyCode('b2', this)">Copy</button>
-      </div>
-
-      <pre id="b2" class="code-block">
-&lt;span class="badge badge-dot"&gt;Online&lt;/span&gt;
-      </pre>
-    </div>
-
-    <div class="component-card">
-      <h3>Count Badge</h3>
-      <div>
-        <span class="badge badge-count">24</span>
-      </div>
-
-      <div class="actions">
-        <button onclick="toggleCode('b3')">View Code</button>
-        <button onclick="copyCode('b3', this)">Copy</button>
-      </div>
-
-      <pre id="b3" class="code-block">
-&lt;span class="badge badge-count"&gt;24&lt;/span&gt;
-      </pre>
-    </div>
-
-  </main>
-
-</div>
-
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="socials">
-        <span>🌐</span>
-        <span>💼</span>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <p>Badges</p>
-      <p>Alerts</p>
-      <p>Pricing</p>
-    </div>
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <p>Privacy Policy</p>
-      <p>Terms of Service</p>
-    </div>
+    </footer>
   </div>
-</footer>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
+

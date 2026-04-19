@@ -3,93 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footer - UIverse</title>
+  <title>Footers - UIverse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <nav class="navbar">
-  <!-- Logo -->
-  <div class="logo">Ulverse</div>
 
-  <!-- Center Search Bar -->
-  <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" />
-    <button class="search-btn">🔍</button>
-  </div>
-
-  <!-- Right Section -->
-  <div class="nav-right">
-    <button class="nav-btn">Add Component</button>
-    <button class="nav-btn">My Collection</button>
-    <a href="#"></a>
-    <a href="#"></a>
-  </div>
-</nav>
-
-<div class="container">
-  <button class="hamburger" type="button" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
-
-  <!-- Sidebar -->
   <aside class="sidebar">
     <h2>UIverse</h2>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="alerts.html">Alerts</a></li>
-      <li><a href="badges.html">Badges</a></li>
       <li><a href="button.html">Buttons</a></li>
       <li><a href="cards.html">Cards</a></li>
-      <li><a href="color.html">Colors</a></li>
-      <li class="active"><a href="footer.html">Footer</a></li>
-      <li><a href="form.html">Forms</a></li>
       <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="form.html">Forms</a></li>
       <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="footer.html">Footers</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="badges.html">Badges</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="color.html">Colors</a></li>
     </ul>
+    <button id="theme-toggle">🌙 Dark Mode</button>
   </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
-  <!-- Main -->
-  <main class="main">
-    <div class="page-header">
-      <h1>Footer</h1>
-      <p>Reusable footer components — coming soon</p>
-    </div>
-  </main>
+  <div class="sidebar-backdrop"></div>
 
-</div>
-<footer class="footer">
-  <div class="footer-container">
-
-    <!-- Brand -->
-    <div class="footer-col">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="socials">
-        <span>🌐</span>
-        <span>💼</span>
+  <div class="content-wrapper">
+    <nav class="navbar">
+      <div class="nav-left">
+        <button class="menu-toggle">☰</button>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search footers..." />
+        </div>
       </div>
-    </div>
+      <div class="nav-right">
+        <button class="nav-btn ghost">My Collection</button>
+        <button class="nav-btn primary">Add Component</button>
+      </div>
+    </nav>
 
-    <!-- Pages -->
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <p>Navbars</p>
-      <p>Forms</p>
-      <p>Buttons</p>
-    </div>
+    <main class="main">
+      <div class="page-header" style="margin-bottom: 40px;">
+        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">Footers</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">Clean and informative footer layouts for the base of your pages.</p>
+      </div>
 
-    <!-- Legal -->
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <p>Privacy Policy</p>
-      <p>Terms of Service</p>
-    </div>
+      <div class="features">
+        <div class="component-card" data-name="minimal footer clean">
+          <h3>Minimal Footer</h3>
+          <div style="padding: 40px; background: #fff; border: 1px solid #eee; border-radius: 12px; margin: 20px 0; text-align: center;">
+            <div style="font-weight: 800; font-size: 1.2rem; margin-bottom: 15px; color: var(--primary);">UIverse</div>
+            <div style="display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+              <span>Product</span>
+              <span>Services</span>
+              <span>About</span>
+              <span>Contact</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">© 2026 UIverse. All rights reserved.</p>
+          </div>
+          <div class="actions" style="display: flex; gap: 10px; margin-top: auto;">
+            <button onclick="toggleCode('f1')" style="flex:1; padding: 10px; border-radius: 8px; border: 1px solid #ddd; background: white; cursor: pointer;">Code</button>
+            <button onclick="copyCode('f1', this)" style="flex:1; padding: 10px; border-radius: 8px; border: none; background: var(--primary); color: white; cursor: pointer;">Copy</button>
+          </div>
+          <pre id="f1" class="code-block">&lt;footer class="minimal-footer"&gt;...&lt;/footer&gt;</pre>
+        </div>
+      </div>
+    </main>
 
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>UIverse</h2>
+          <p>Premium components for modern web apps.</p>
+        </div>
+      </div>
+    </footer>
   </div>
-</footer>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
+

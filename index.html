@@ -4,125 +4,135 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/Public/favicon.ico" />
-  <title>UIverse</title>
+  <title>UIverse - Build UI Faster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav class="navbar">
-  <!-- Logo -->
-  <div class="logo">Ulverse</div>
-
-  <!-- Center Search Bar -->
-  <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" onkeydown="handleSearch(event)" />
-    <button class="search-btn">🔍</button>
-  </div>
-
-  <!-- Right Section -->
-  <div class="nav-right">
-    <button class="nav-btn">Add Component</button>
-    <button class="nav-btn">My Collection</button>
-    <a href="#"></a>
-    <a href="#"></a>
-  </div>
-</nav>
-
-
- 
-
-  <!-- Sidebar -->
+  
   <aside class="sidebar">
     <h2>UIverse</h2>
-
-    <!-- 🌙 DARK MODE TOGGLE (ADDED) -->
-    <button id="theme-toggle" style="margin:10px 0; padding:8px; cursor:pointer;">
-      🌙 Dark Mode
-    </button>
-
     <ul>
-      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="button.html">Buttons</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
       <li><a href="cards.html">Cards</a></li>
       <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="footer.html">Footer</a></li>
       <li><a href="form.html">Forms</a></li>
+      <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="footer.html">Footers</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="badges.html">Badges</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
       <li><a href="color.html">Colors</a></li>
     </ul>
+    
+    <button id="theme-toggle">
+       Dark Mode
+    </button>
   </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
-  <!-- Main -->
-   <div class="content">
-  <main class="main home">
+  <div class="sidebar-backdrop"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-  <h1>Build UI Faster 🚀</h1>
-  <p>Clean, reusable components for developers.</p>
-
-  <div class="hero-actions">
-    <a href="button.html" class="explore-btn">Explore Components</a>
-    <a href="form.html" class="secondary-btn">Start Learning</a>
-  </div>
-</section>
-
- 
-    <!-- Features -->
-    <section class="features">
-
-  <div class="feature-card component-card" data-name="components reusable ui">
-    <h3>🎨 Reusable Components</h3>
-    <p>Use ready-made UI components in your projects instantly.</p>
-  </div>
-
-  <div class="feature-card component-card" data-name="beginner learning">
-    <h3>🧩 Beginner Friendly</h3>
-    <p>Perfect for learning and contributing to open source.</p>
-  </div>
-
-  <div class="feature-card component-card" data-name="fast simple html css js">
-    <h3>⚡ Fast & Simple</h3>
-    <p>No frameworks, just clean HTML, CSS, and JS.</p>
-  </div>
-
-</section>
-
-</div>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <div class="footer-col">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="socials">
-        <span>🌐</span>
-        <span>💼</span>
+  <div class="content-wrapper">
+    
+    <nav class="navbar">
+      <div class="nav-left">
+        <button class="menu-toggle">☰</button>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search components..." />
+        </div>
       </div>
-    </div>
 
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <p>Navbars</p>
-      <p>Forms</p>
-      <p>Buttons</p>
-    </div>
+      <div class="nav-right">
+        <button class="nav-btn ghost">My Collection</button>
+        <button class="nav-btn primary">Add Component</button>
+      </div>
+    </nav>
 
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
-      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
-    </div>
+    
+    <main class="main">
+      
+      <section class="hero">
+        <h1>Build UI Faster 🚀</h1>
+        <p>A hand-crafted collection of premium, reusable UI components built with vanilla HTML, CSS, and JS. Zero dependencies, maximum performance.</p>
+        <div class="hero-actions">
+          <a href="button.html" class="btn btn-primary">Explore Components</a>
+          <a href="form.html" class="btn btn-secondary">Start Learning</a>
+        </div>
+      </section>
 
+      
+      <section class="features">
+        <div class="feature-card" data-name="components reusable ui">
+          <span class="icon">🎨</span>
+          <h3>Reusable Components</h3>
+          <p>Copy-paste ready-made UI blocks directly into your projects. Optimized for performance and flexibility.</p>
+        </div>
+
+        <div class="feature-card" data-name="beginner learning">
+          <span class="icon">🧩</span>
+          <h3>Beginner Friendly</h3>
+          <p>Clean code with no complex frameworks. Perfect for developers looking to understand core web technologies.</p>
+        </div>
+
+        <div class="feature-card" data-name="fast simple html css js">
+          <span class="icon">⚡</span>
+          <h3>Fast & Simple</h3>
+          <p>Zero dependencies. Light-weight components that load instantly and are easy to customize for any brand.</p>
+        </div>
+      </section>
+    </main>
+
+    
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>UIverse</h2>
+          <p>Making web development effortlessly beautiful with high-quality vanilla UI components.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Components</h4>
+          <ul>
+            <li><a href="button.html">Buttons</a></li>
+            <li><a href="navbar.html">Navbars</a></li>
+            <li><a href="cards.html">Cards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <ul>
+            <li><a href="form.html">Forms</a></li>
+            <li><a href="alerts.html">Alerts</a></li>
+            <li><a href="color.html">Colors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 UIverse. All rights reserved.</p>
+        <div class="social-links">
+          <span style="cursor:pointer; margin-left: 15px;">🌐</span>
+          <span style="cursor:pointer; margin-left: 15px;">💼</span>
+          <span style="cursor:pointer; margin-left: 15px;">🐙</span>
+        </div>
+      </div>
+    </footer>
   </div>
-</footer>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
-  <h3>Card Title</h3>
-  <p>This is a simple card with hover animation.</p>
-</div>
