@@ -3,7 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4f6fb;
+  background: #ffffff;
 }
 
 /* LAYOUT */
@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background:#f4f6fb;
+  background:#ffffff;
 }
 
 h1 {
@@ -100,7 +100,7 @@ nav a:hover {
 
 /* Sidebar */
 .container {
-  display: flex; 
+  display: flex;
   flex: 1;
 }
 
@@ -228,7 +228,8 @@ nav a:hover {
   margin-left: 280px;
   margin-top: 80px;
   padding: 20px;
-  ;
+  flex: 1;
+  min-width: 0;
 }
 
 /* ================= CARDS ================= */
@@ -300,23 +301,42 @@ nav a:hover {
 }
 
 /* ================= POLICY PAGES ================= */
-.full-page {
-  margin-left: 280px;
-  margin-top: 80px;
+
+.privacy-setup{
+  max-width: 1400px;
   padding: 20px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.full-page {
+  margin-left: 280px; 
+  margin-top: 100px;
+  padding-left: 60px;
+  padding-right:40px;
+  background-color:white;
+  min-height:calc(100vh-70px);
+  display:flex;
+  flex-direction:column;
 }
 
 .privacy-wrapper {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px;
-  background: white;
-  border-radius: 12px;
+  margin-top:auto;
+  width: 100%;
+  max-width: 1100px; 
+  margin: 0 auto; 
+  background: transparent;
+  padding: 20px 0;
 }
 
 .privacy-wrapper h1 {
   text-align: center;
-  font-size: 36px;
+  font-size: 70px;
 }
 
 .privacy-wrapper h2 {
@@ -358,23 +378,40 @@ nav a:hover {
   margin-top: auto;
   margin-left: 280px;
   background: #fff;
-  padding: 40px 20px;
-  border-top: 1px solid #ddd;
+  padding: 45px 30px 20px;
+  border-top: 2px solid #eee;
 }
 
 .footer-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto; 
 }
 
-.footer-col h2,
-.footer-col h3 {
-  margin-bottom: 10px;
+.footer-col{
+  padding: 22px;
+}
+
+.footer-col h2{
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.footer-col h3{
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 14px;
 }
 
 .footer-col p {
-  margin: 6px 0;
+  margin: 0;
+  font-size: 14px;
+  color: #160606;
+  line-height: 2;
 }
 
 .footer-col a {
@@ -617,22 +654,30 @@ nav a:hover {
 /* GRID */
 .color-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.4rem;
+  width: 100%
 }
 
 .color-card {
-  background: white;
-  border-radius: 12px;
-  padding: 15px;
+  background: rgba(232, 229, 226, 0.932);
+  border-radius: 16px;
+  padding: 14px;
   text-align: center;
-  border: 1px solid #eee;
+  border: 2px solid black;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.color-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .color-box {
   height: 80px;
   border-radius: 8px;
   margin-bottom: 10px;
+  border: 1.9px solid black;
 }
 
 .color-card button {
@@ -770,3 +815,29 @@ body.dark-mode .toast {
   color: #111;
   box-shadow: 0 4px 18px rgba(255, 255, 255, 0.1);
 }
+
+/*Terms of Service Page*/
+
+.terms-content{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* General icon styling */
+.features h3 i {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+/* Color matching UI theme */
+.fa-layer-group { color: #5900ff; } 
+.fa-seedling   { color: #008ef3; } 
+.fa-bolt       { color: #ff0400; } 
+.fa-rocket {color:rgb(190, 37, 63)}
