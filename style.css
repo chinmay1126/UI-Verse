@@ -132,10 +132,12 @@ body {
   padding: 8px 14px;
   border-radius: 20px;
   cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .nav-btn:hover {
   background: #2a2a2a;
+  transform: translateY(-2px);
 }
 
 /* ================= MAIN ================= */
@@ -143,7 +145,6 @@ body {
   margin-left: 280px;
   margin-top: 80px;
   padding: 20px;
-  ;
 }
 
 /* ================= CARDS ================= */
@@ -151,17 +152,17 @@ body {
   background: white;
   padding: 20px;
   border-radius: 14px;
-  border: 1px solid #eee;
+  border: 1px solid #e8ebf2;
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .component-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
 }
 
 /* ================= BUTTONS ================= */
@@ -172,16 +173,18 @@ body {
 
 .actions button {
   flex: 1;
-  padding: 8px;
+  padding: 9px;
   border: none;
   background: #111;
   color: white;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .actions button:hover {
-  background: #333;
+  background: #222;
+  transform: translateY(-1px);
 }
 
 /* ================= HERO ================= */
@@ -190,12 +193,15 @@ body {
   padding: 40px;
   border-radius: 16px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
-/* Buttons */
- .button-group {
+.button-group {
   display: flex;
- }
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .hero h1 {
   font-size: 32px;
 }
@@ -236,7 +242,7 @@ body {
 
 @media (max-width: 770px) {
   .layout {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 
   .page-header {
@@ -249,12 +255,10 @@ body {
   }
 }
 
-
 /* Home Layout */
 .home {
   display: flex;
   flex-direction: column;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -321,9 +325,11 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 .socials span:hover {
   transform: scale(1.2);
 }
+
 .search-wrapper {
   width: 100%;
   margin: 20px 0;
@@ -342,22 +348,30 @@ body {
   border-color: #6c5ce7;
   box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
 }
-/* 🌙 DARK MODE (ADDED) */
 
+/* FORM INPUT */
 .form-input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 11px 14px;
+  border: 1px solid #d9dce3;
+  border-radius: 10px;
   box-sizing: border-box;
+  transition: 0.25s ease;
+  font-size: 14px;
 }
 
+.form-input:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108,92,231,0.12);
+}
+
+/* DARK MODE */
 .dark-mode {
   background: #0f172a;
   color: #e5e7eb;
 }
 
-/* Sidebar */
 .dark-mode .sidebar {
   background: #020617;
   color: #e5e7eb;
@@ -373,7 +387,6 @@ body {
   color: #ffffff;
 }
 
-/* Main Cards */
 .dark-mode .component-card,
 .dark-mode .feature-card,
 .dark-mode .hero {
@@ -382,12 +395,10 @@ body {
   color: #e5e7eb;
 }
 
-/* Text */
 .dark-mode p {
   color: #ffffff;
 }
 
-/* Buttons */
 .dark-mode .actions button {
   background: #334155;
 }
@@ -396,107 +407,27 @@ body {
   background: #475569;
 }
 
-/* Code Block */
 .dark-mode .code-block {
   background: #020617;
   color: #38bdf8;
 }
 
-/* Footer */
 .dark-mode .footer {
   background: #dcdcdc;
   border-top: 1px solid #1e293b;
 }
 
-
-.dark-mode .footer-col p {
-  color: rgb(0, 0, 0);
-}
-.dark-mode .footer-col h3{
-  color: rgb(0, 0, 0);
-}
-.dark-mode .footer-col h2 {
-  color: rgb(0, 0, 0);
+.dark-mode .footer-col p,
+.dark-mode .footer-col h2,
+.dark-mode .footer-col h3 {
+  color: #000000;
 }
 
 .dark-mode .footer-col p:hover {
   color: #706ce9;
 }
 
-/* Search Bar */
-.dark-mode .search-wrapper input {
-  background: #1e293b;
-  color: #ffffff;
-  border: 1px solid #334155;
-}
-
-/* Toggle Button Styling */
-#theme-toggle {
-  border: none;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #111;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.dark-mode #theme-toggle {
-  background: #1e293b;
-  color: #ffffff;
-}
-/* Card Base Style */
-.card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-/* Hover Effect */
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Optional: Smooth inner content animation */
-.card * {
-  transition: all 0.3s ease;
-}
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.hero-actions {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
-.secondary-btn {
-  padding: 12px 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #000000;
-  background: pink;
-}
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  width: 100%;
-}
-.search-bar input:focus {
-  background: #2a2a2a;
-}
-.nav-btn:hover {
-  transform: translateY(-2px);
-}
-
-/* Hide code blocks by default */
+/* CODE BLOCK */
 .code-block {
   display: none;
   background: #ffffff;
@@ -515,93 +446,4 @@ body {
 
 .code-block.show {
   display: block;
-}
-
-/* ================= COLORS PAGE ================= */
-
-.section-title {
-  margin: 30px 0 15px;
-  font-size: 22px;
-}
-
-/* GRID */
-.color-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-}
-
-.color-card {
-  background: white;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  border: 1px solid #eee;
-}
-
-.color-box {
-  height: 80px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.color-card button {
-  padding: 6px 10px;
-  border: none;
-  background: #111;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* SCHEMES */
-.scheme-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.scheme-card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-}
-
-.scheme-colors {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.scheme-colors span {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-}
-
-/* UI PREVIEW */
-.ui-preview {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  align-items: center;
-}
-
-.ui-btn {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-}
-
-.ui-btn.primary { background:#6c5ce7; }
-.ui-btn.danger { background:#ff6b6b; }
-.ui-btn.success { background:#00b894; }
-
-.ui-card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  width: 200px;
 }
