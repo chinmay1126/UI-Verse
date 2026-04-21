@@ -6,22 +6,58 @@
   <link rel="icon" type="image/x-icon" href="/Public/favicon.ico" />
   <title>UIverse</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-<div class="container">
+  <nav class="navbar">
+  <!-- Logo -->
+  <div class="logo">Ulverse</div>
+
+  <!-- Center Search Bar -->
+  <div class="search-bar">
+    <span class="nav-link active">Explore</span>
+    <input type="text" id="searchInput" placeholder="Search Components" onkeydown="handleSearch(event)" />
+    <button class="search-btn">🔍</button>
+  </div>
+
+  <!-- Right Section -->
+  <div class="nav-right">
+    <button class="nav-btn">Add Component</button>
+    <button class="nav-btn">My Collection</button>
+    <a href="#"></a>
+    <a href="#"></a>
+  </div>
+</nav>
+
+
+ 
 
   <!-- Sidebar -->
+   <div>
   <aside class="sidebar">
     <h2>UIverse</h2>
+
+    <!-- 🌙 DARK MODE TOGGLE (ADDED) -->
+    <button id="theme-toggle" style="margin:10px 0; padding:8px; cursor:pointer;">
+      🌙 Dark Mode
+    </button>
+
     <ul>
       <li class="active"><a href="index.html">Home</a></li>
       <li><a href="button.html">Buttons</a></li>
       <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="inputs.html">Inputs</a></li>
+      <li><a href="footer.html">Footer</a></li>
+      <li><a href="form.html">Forms</a></li>
+      <li><a href="color.html">Colors</a></li>
     </ul>
   </aside>
+  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
   <!-- Main -->
+   <div class="content">
   <main class="main home">
 
     <!-- Search Bar -->
@@ -70,29 +106,69 @@
 
 
 
+  <h1>Build UI Faster <i class="fas fa-rocket"></i></h1>
+  <p>Clean, reusable components for developers.</p>
+
+  <div class="hero-actions">
+    <a href="button.html" class="explore-btn">Explore Components</a>
+    <a href="form.html" class="secondary-btn">Start Learning</a>
+  </div>
+</section>
+
+ 
     <!-- Features -->
     <section class="features">
 
-      <div class="feature-card">
-        <h3>🎨 Reusable Components</h3>
-        <p>Use ready-made UI components in your projects instantly.</p>
-      </div>
+  <div class="feature-card component-card" data-name="components reusable ui">
+    <h3><i class="fas fa-layer-group"></i> Reusable Components</h3>
+    <p>Use ready-made UI components in your projects instantly.</p>
+  </div>
 
-      <div class="feature-card">
-        <h3>🧩 Beginner Friendly</h3>
-        <p>Perfect for learning and contributing to open source.</p>
-      </div>
+  <div class="feature-card component-card" data-name="beginner learning">
+    <h3><i class="fas fa-seedling"></i> Beginner Friendly</h3>
+    <p>Perfect for learning and contributing to open source.</p>
+  </div>
 
-      <div class="feature-card">
-        <h3>⚡ Fast & Simple</h3>
-        <p>No frameworks, just clean HTML, CSS, and JS.</p>
-      </div>
+  <div class="feature-card component-card" data-name="fast simple html css js">
+    <h3><i class="fas fa-bolt"></i> Fast & Simple</h3>
+    <p>No frameworks, just clean HTML, CSS, and JS.</p>
+  </div>
 
-    </section>
-
-  </main>
+</section>
 
 </div>
 
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h2>UIverse</h2>
+      <p>© 2026 UIverse. All rights reserved.</p>
+      <div class="socials">
+        <span>🌐</span>
+        <span>💼</span>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Pages</h3>
+      <p>Navbars</p>
+      <p>Forms</p>
+      <p>Buttons</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
+      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
+    </div>
+
+  </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
+  <h3>Card Title</h3>
+  <p>This is a simple card with hover animation.</p>
+</div>

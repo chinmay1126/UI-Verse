@@ -8,21 +8,51 @@
   
 </head>
 <body>
+  <nav class="navbar">
+  <div class="logo">Ulverse</div>
+
+  <div class="search-bar">
+    <span class="nav-link active">Explore</span>
+    <input type="text" id="searchInput" placeholder="Search Components" />
+    <button class="search-btn">🔍</button>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn">Add Component</button>
+    <button class="nav-btn">My Collection</button>
+    <a href="#"></a>
+    <a href="#"></a>
+  </div>
+</nav>
 
 <div class="container">
+  <button class="hamburger" type="button" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
 
   <!-- Sidebar -->
   <aside class="sidebar">
     <h2>UIverse</h2>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="badges.html">Badges</a></li>
       <li class="active"><a href="button.html">Buttons</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="color.html">Colors</a></li>
+      <li><a href="footer.html">Footer</a></li>
+      <li><a href="form.html">Forms</a></li>
+      <li><a href="inputs.html">Inputs</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
   </aside>
+  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
   <!-- Main -->
   <main class="main">
+
+ <div class="layout">
 
     <!-- Header -->
     <div class="page-header">
@@ -30,14 +60,17 @@
       <p>Explore beautiful and reusable button components</p>
     </div>
 
+  <div class="button-group">
+
+
     <!-- Gradient -->
-    <div class="component-card">
+    <div class="component-card" data-name="gradient button colorful">
       <h3>Gradient Button</h3>
       <button class="gradient-btn">Click Me</button>
 
       <div class="actions">
         <button onclick="toggleCode('c1')">View Code</button>
-        <button onclick="copyCode('c1')">Copy</button>
+        <button onclick="copyCode('c1',this)">Copy</button>
       </div>
 
       <pre id="c1" class="code-block">
@@ -46,13 +79,13 @@
     </div>
 
     <!-- Outline -->
-    <div class="component-card">
+    <div class="component-card" data-name="outline button border">
       <h3>Outline Button</h3>
       <button class="outline-btn">Click Me</button>
 
       <div class="actions">
         <button onclick="toggleCode('c2')">View Code</button>
-        <button onclick="copyCode('c2')">Copy</button>
+        <button onclick="copyCode('c2',this)">Copy</button>
       </div>
 
       <pre id="c2" class="code-block">
@@ -61,13 +94,13 @@
     </div>
 
     <!-- Neon -->
-    <div class="component-card">
+    <div class="component-card" data-name="neon button glow">
       <h3>Neon Button</h3>
       <button class="neon-btn">Glow</button>
 
       <div class="actions">
         <button onclick="toggleCode('c3')">View Code</button>
-        <button onclick="copyCode('c3')">Copy</button>
+        <button onclick="copyCode('c3',this)">Copy</button>
       </div>
 
       <pre id="c3" class="code-block">
@@ -76,13 +109,13 @@
     </div>
 
     <!-- Glass -->
-    <div class="component-card">
+    <div class="component-card" data-name="glass button transparent blur">
       <h3>Glass Button</h3>
       <button class="glass-btn">Glass</button>
 
       <div class="actions">
         <button onclick="toggleCode('c4')">View Code</button>
-        <button onclick="copyCode('c4')">Copy</button>
+        <button onclick="copyCode('c4',this)">Copy</button>
       </div>
 
       <pre id="c4" class="code-block">
@@ -91,13 +124,13 @@
     </div>
 
     <!-- Shadow -->
-    <div class="component-card">
+    <div class="component-card" data-name="shadow button lift depth">
       <h3>Shadow Button</h3>
       <button class="shadow-btn">Lift</button>
 
       <div class="actions">
         <button onclick="toggleCode('c5')">View Code</button>
-        <button onclick="copyCode('c5')">Copy</button>
+        <button onclick="copyCode('c5',this)">Copy</button>
       </div>
 
       <pre id="c5" class="code-block">
@@ -105,10 +138,43 @@
       </pre>
     </div>
 
+  </div>
+
+  </div>
+
   </main>
 
 </div>
+<footer class="footer">
+  <div class="footer-container">
 
+    <!-- Brand -->
+    <div class="footer-col">
+      <h2>UIverse</h2>
+      <p>© 2026 UIverse. All rights reserved.</p>
+      <div class="socials">
+        <span>🌐</span>
+        <span>💼</span>
+      </div>
+    </div>
+
+    <!-- Pages -->
+    <div class="footer-col">
+      <h3>Pages</h3>
+      <p>Navbars</p>
+      <p>Forms</p>
+      <p>Buttons</p>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
+      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
+    </div>
+
+  </div>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
