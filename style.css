@@ -235,7 +235,7 @@ nav a:hover {
 /* ================= CARDS ================= */
 .component-card {
   background: rgba(232, 229, 226, 0.932);
-  padding: 20px;
+  padding: 6px;
   border-radius: 14px;
   border: 1px solid #eee;
   /* display: flex;
@@ -834,6 +834,14 @@ body.dark-mode .toast {
   margin-right: 12px;
   font-size: 1.2rem;
   vertical-align: middle;
+}
+
+.features h3 {
+  text-align: center;
+}
+
+.features p {
+  text-align: center;
 }
 
 /* Color matching UI theme */
