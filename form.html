@@ -35,12 +35,18 @@
     <h2>UIverse</h2>
     <ul>
       <li><a href="index.html">Home</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="badges.html">Badges</a></li>
       <li><a href="button.html">Buttons</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
       <li><a href="cards.html">Cards</a></li>
+      <li><a href="color.html">Colors</a></li>
       <li><a href="footer.html">Footer</a></li>
       <li class="active"><a href="form.html">Forms</a></li>
-      <li><a href="color.html">Colors</a></li>
+      <li><a href="inputs.html">Inputs</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
   </aside>
   <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
@@ -49,11 +55,152 @@
   <main class="main">
     <div class="page-header">
       <h1>Forms</h1>
-      <p>Reusable form components — coming soon</p>
+      <p>Explore reusable and ready-to-use form components</p>
     </div>
+    <div class = "button group">
+      <!--Login Form  -->
+      <div class = "component-card">
+        <h3>Login Form</h3>
+        <form>
+          <input type="email" placeholder="Email" class="form-input" required /><br><br>
+          <input type="password" placeholder="Password" class="form-input" required /><br><br>
+          <button type="submit" class="nav-btn">Login</button>
+        </form>
+        
+        <div class="actions">
+          <button onclick="toggleCode('f1')">View Code</button>
+          <button onclick="copyCode('f1',this)">Copy</button>
+        </div>
+<pre id="f1" class="code-block">
+&lt;form&gt;
+  &lt;input type="email" placeholder="Email"&gt;
+  &lt;input type="password" placeholder="Password"&gt;
+  &lt;button&gt;Login&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+  </div>
+
+  <!-- Signup Form -->
+  <div class="component-card">
+    <h3>Signup Form</h3>
+
+    <form>
+      <input type="text" placeholder="Full Name" class="form-input"required ><br><br>
+      <input type="email" placeholder="Email" class="form-input" required /><br><br>
+      <input type="password" placeholder="Password" class="form-input" required /><br><br>
+      <button type="submit" class="nav-btn">Signup</button>
+    </form>
+
+    <div class="actions">
+      <button onclick="toggleCode('f2')">View Code</button>
+      <button onclick="copyCode('f2',this)">Copy</button>
+    </div>
+
+<pre id="f2" class="code-block">
+&lt;form&gt;
+  &lt;input type="text" placeholder="Full Name"&gt;
+  &lt;input type="email" placeholder="Email"&gt;
+  &lt;input type="password" placeholder="Password"&gt;
+  &lt;button&gt;Signup&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="component-card">
+    <h3>Contact Form</h3>
+
+    <form>
+      <input type="text" placeholder="Name" class="form-input" required><br><br>
+      <input type="email" placeholder="Email" class="form-input" required><br><br>
+      <textarea placeholder="Message" class="form-input" required></textarea><br><br>
+      <button type="submit" class="nav-btn">Send</button>
+    </form>
+
+    <div class="actions">
+      <button onclick="toggleCode('f3')">View Code</button>
+      <button onclick="copyCode('f3',this)">Copy</button>
+    </div>
+
+<pre id="f3" class="code-block">
+&lt;form&gt;
+  &lt;input type="text" placeholder="Name"&gt;
+  &lt;input type="email" placeholder="Email"&gt;
+  &lt;textarea placeholder="Message"&gt;&lt;/textarea&gt;
+  &lt;button&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+  </div>
+
+</div>        
   </main>
 
+<div class="main">
+<div class="page-header">
+      <h1>Forms</h1>
+      <p>Check out modern and reusable form layouts</p>
+    </div>
+
+  <!-- Login Form Card -->
+  <div class="component-card login-form-card">
+    <div class="login-form-inner-card"> 
+      <form class="login-form">
+        <h3>LOGIN</h3>
+        <label for="Name">Name</label>
+        <input type="text" class="input" placeholder="Enter your name" required>
+        <label for="Email">Email</label>
+        <input type="email" class="input" placeholder="Enter your email" required>
+        <button class="gradient-btn">SUBMIT</button>
+      </form>
+    </div> 
+      <div class="actions">
+        <button>View Code</button>
+        <button>Copy</button>
+      </div>
+  </div>
+
+  <!-- Sign Up Form Card -->
+  <div class="component-card signup-form-card">
+    <div class="signup-form-inner-card"> 
+      <form class="signup-form">
+        <h3>SIGN UP</h3>
+        <label for="Name">Name</label>
+        <input type="text" class="input" placeholder="Enter your name" required>
+        <label for="Email">Email</label>
+        <input type="email" class="input" placeholder="Enter your email" required>
+        <label for="Password">Password</label>
+        <input type="password" class="input" placeholder="Enter your password" required>
+        <button class="neon-btn">SIGN UP</button>
+      </form>
+    </div>
+      <div class="actions">
+        <button>View Code</button>
+        <button>Copy</button>
+    </div>
+  </div>
+
+  <!-- Contact Us Form Card -->
+  <div class="component-card contact-form-card">
+    <div class="contact-form-inner-card"> 
+        <form class="contact-form">
+          <h3>CONTACT US</h3>
+          <label for="Name">Name</label>
+          <input type="text" class="input" placeholder="Name" required>
+          <label for="Email">Email</label>
+          <input type="email" class="input" placeholder="Email" required>
+          <label for="Message">Message</label>
+          <textarea class="input" placeholder="Message" required></textarea>
+          <button class="glass-btn">SEND</button>
+        </form>
+    </div>
+        <div class="actions">
+           <button>View Code</button>
+           <button>Copy</button>
+        </div>
+   </div>
 </div>
+</div>
+
 <footer class="footer">
   <div class="footer-container">
 
@@ -78,8 +225,8 @@
     <!-- Legal -->
     <div class="footer-col">
       <h3>Legal</h3>
-      <p>Privacy Policy</p>
-      <p>Terms of Service</p>
+      <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
+      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
     </div>
 
   </div>
