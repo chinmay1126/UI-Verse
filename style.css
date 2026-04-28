@@ -917,16 +917,40 @@ body.sidebar-hidden .footer {
   border-radius: 8px;
 }
 
-/* FEATURES GRID */
-  box-sizing: border-box;
-  transition: 0.25s ease;
-  font-size: 14px;
-}
-
 .form-input:focus {
   outline: none;
   border-color: #6c5ce7;
   box-shadow: 0 0 0 3px rgba(108,92,231,0.12);
+}
+
+/* Form elements styling for new forms */
+.input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: 0.25s ease;
+}
+
+.input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108,92,231,0.12);
+}
+
+.input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  margin-bottom: 0;
+}
+
+.input[type="checkbox"] + label,
+label + input[type="checkbox"] {
+  margin-right: 8px;
 }
 
 /* DARK MODE */
@@ -1270,6 +1294,89 @@ body.dark-mode .toast {
 .signup-form-inner-card,.contact-form-inner-card{
  flex:1;
 }
+
+/* NEW FORM CARDS */
+.newsletter-form-card, .search-form-card, .feedback-form-card, 
+.password-reset-form-card, .profile-update-form-card, 
+.job-application-form-card, .event-registration-form-card {
+  border: 3px ridge #020109;
+  padding: 20px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.newsletter-form-inner-card {
+  border: 4px solid #ff6b9d;
+  border-radius: 20px;
+  padding: 30px;
+  background: white;
+}
+
+.search-form-inner-card {
+  border: 4px solid #4ecdc4;
+  border-radius: 20px;
+  padding: 30px;
+  background: white;
+}
+
+.feedback-form-inner-card {
+  border: 4px solid #ffa502;
+  border-radius: 20px;
+  padding: 30px;
+  background: white;
+}
+
+.password-reset-form-inner-card {
+  border: 4px solid #8b5fbf;
+  border-radius: 20px;
+  padding: 30px;
+  background: white;
+}
+
+.profile-update-form-inner-card {
+  border: 4px solid #00d4ff;
+  border-radius: 20px;
+  padding: 30px;
+  background: white;
+}
+
+.job-application-form-inner-card {
+  border: 4px solid #2ecc71;
+  border-radius: 20px;
+  padding: 30px;
+  background: white;
+}
+
+.event-registration-form-inner-card {
+  border: 4px solid #e74c3c;
+  border-radius: 20px;
+  padding: 30px;
+  background: white;
+}
+
+.newsletter-form, .search-form, .feedback-form, 
+.password-reset-form, .profile-update-form, 
+.job-application-form, .event-registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.newsletter-form h3, .search-form h3, .feedback-form h3,
+.password-reset-form h3, .profile-update-form h3,
+.job-application-form h3, .event-registration-form h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.newsletter-form-inner-card, .search-form-inner-card, .feedback-form-inner-card,
+.password-reset-form-inner-card, .profile-update-form-inner-card,
+.job-application-form-inner-card, .event-registration-form-inner-card {
+  flex: 1;
+}
+
 textarea {
   resize:none; 
 }
