@@ -296,5 +296,13 @@ toggleBtn.onclick = function () {
     toggleBtn.textContent = "🌙";
   }
 };
+
+/* CLOSE ALERT */
+function closeAlert(alertId) {
+  const alert = document.getElementById(alertId);
+  if (alert) {
+    alert.style.display = "none";
+  }
+}
   }
 });
