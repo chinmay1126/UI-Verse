@@ -322,9 +322,6 @@ if (searchInput) {
       const text = item.dataset.name?.toLowerCase() || '';
       item.style.display = text.includes(value) ? "block" : "none";
     });
-      const text = item.dataset.name.toLowerCase();
-      item.style.display = text.includes(value) ? "block" : "none";
-    });
   });
 }
  
@@ -379,7 +376,8 @@ window.addEventListener("DOMContentLoaded", () => {
         toggleBtn.innerText = "🌙 Dark Mode";
       }
     });
-}
+  }
+});
 
 const btn = document.getElementById("scrollTopBtn");
 
@@ -428,5 +426,16 @@ function closeAlert(alertId) {
     alert.style.display = "none";
   }
 }
-  }
+
+
+// SIDEBAR
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("active");
+}
+
+// DARK MODE
+const toggle = document.getElementById("darkModeToggle");
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
 });

@@ -3,249 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/Public/favicon.ico" />
   <title>UIverse</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-   <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
-  <button id="darkModeToggle" class="toggle-btn">🌙</button>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="logo">UIverse</div>
 
-<div class="container">
-  <nav class="navbar">
-  <!-- Logo -->
-  <div class="logo">Ulverse</div>
-
-  <!-- Center Search Bar -->
   <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" onkeydown="handleSearch(event)" />
+    <input type="text" placeholder="Search components..." />
     <button class="search-btn">🔍</button>
   </div>
 
-  <!-- Right Section -->
   <div class="nav-right">
     <button class="nav-btn">Add Component</button>
     <button class="nav-btn">My Collection</button>
-    <a href="#"></a>
-    <a href="#"></a>
+    <button id="darkModeToggle">🌙</button>
   </div>
-</nav>
+</header>
 
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <h2>UIverse</h2>
 
- 
+  <ul>
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="button.html">Buttons</a></li>
+    <li><a href="navbar.html">Navbars</a></li>
+    <li><a href="cards.html">Cards</a></li>
+    <li><a href="inputs.html">Inputs</a></li>
+    <li><a href="footer.html">Footer</a></li>
+    <li><a href="form.html">Forms</a></li>
+    <li><a href="color.html">Colors</a></li>
+  </ul>
+</aside>
 
-  <!-- Sidebar -->
-   <div>
-  <aside class="sidebar">
-    <h2>UIverse</h2>
+<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
-    <!-- 🌙 DARK MODE TOGGLE (ADDED) -->
-    <button id="theme-toggle" style="margin:10px 0; padding:8px; cursor:pointer;">
-      🌙 Dark Mode
-    </button>
+<!-- ================= MAIN ================= -->
+<main class="main">
 
-    <ul>
-      <li class="active"><a href="index.html">Home</a></li>
-      <li><a href="button.html">Buttons</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
-      <li><a href="cards.html">Cards</a></li>
-      <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="footer.html">Footer</a></li>
-      <li><a href="form.html">Forms</a></li>
-      <li><a href="color.html">Colors</a></li>
-    </ul>
-  </aside>
-  
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Build UI Faster 🚀</h1>
+    <p>Reusable UI components made with clean HTML, CSS & JavaScript.</p>
 
-  <!-- Main -->
-   <div class="content">
-  <main class="main home">
-
-    <!-- Search Bar -->
-    <div class="search-bar">
-       <input type="text" placeholder="Search components..." />
+    <div class="hero-actions">
+      <a href="button.html" class="primary-btn">Explore Components</a>
+      <a href="form.html" class="secondary-btn">Start Learning</a>
     </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-left">
-        <h1>Welcome to UIverse 🚀</h1>
-        <p>A collection of reusable UI components for developers.</p>
-      </div>
-      <!-- <h1>Welcome to UIverse 🚀</h1> -->
-      <!-- <p>A collection of reusable UI components for developers.</p> -->
-      <div class="check">
-        <button type="submit" class="btn" onclick="openPopup()">SUBMIT</button>
-        <div class="popup" id="popup">
-          <img src="checkmark.png">
-          <h2>Thank you!</h2>
-          <p>Yours details has been successfully submitted.Thanks!</p>
-          <button type="button" class="btn1" onclick="closePopup()">OK</button>
-        </div>
+  <!-- ================= POPULAR ================= -->
+  <section class="section">
+    <h2>⭐ Popular Components</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Gradient Button</h3>
+        <p>Modern colorful buttons</p>
       </div>
 
-      <div class="hero-right">
-        <a href="button.html" class="explore-btn">
-        Explore Components →
-      </a>
+      <div class="card">
+        <h3>Glass Navbar</h3>
+        <p>Blur transparent navbar</p>
       </div>
-    </section>
 
+      <div class="card">
+        <h3>Card UI</h3>
+        <p>Reusable layout system</p>
+      </div>
 
-    <!-- featured -->
-
-    <section class="featured">
-  <h2>⭐Popular Components</h2>
-
-  <div class="featured-cards">
-    <div class="feature-card">
-      <h3>Gradient Button</h3>
-      <p>Modern colorful button design.</p>
     </div>
+  </section>
 
-    <div class="feature-card">
-      <h3>Glass Navbar</h3>
-      <p>Transparent blurred navigation bar.</p>
+  <!-- ================= FEATURES ================= -->
+  <section class="section">
+    <h2>Why UIverse?</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>⚡ Fast</h3>
+        <p>No frameworks required</p>
+      </div>
+
+      <div class="card">
+        <h3>📱 Responsive</h3>
+        <p>Works on all devices</p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 Beginner Friendly</h3>
+        <p>Easy to learn and use</p>
+      </div>
+
+      <div class="card">
+        <h3>🛠 Customizable</h3>
+        <p>Modify styles easily</p>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Performance</h3>
+        <p>Optimized for speed</p>
+      </div>
+
+      <div class="card">
+        <h3>🤝 Open Source</h3>
+        <p>Contribute anytime</p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="feature-card">
-      <h3>Card UI</h3>
-      <p>Clean and reusable card layout.</p>
+  <!-- ================= COMPONENT CATEGORIES ================= -->
+  <section class="section">
+    <h2>📦 Explore Categories</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <i class="fas fa-square"></i>
+        <h3>Buttons</h3>
+        <p>Interactive button styles</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-bars"></i>
+        <h3>Navbars</h3>
+        <p>Navigation UI components</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-id-card"></i>
+        <h3>Cards</h3>
+        <p>Flexible card layouts</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-keyboard"></i>
+        <h3>Inputs</h3>
+        <p>Forms & input fields</p>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- ================= TESTIMONIAL ================= -->
+  <section class="section">
+    <h2>💬 What Developers Say</h2>
 
+    <div class="grid">
 
-  <h1>Build UI Faster <i class="fas fa-rocket"></i></h1>
-  <p>Clean, reusable components for developers.</p>
+      <div class="card">
+        <p>"Great for beginners!"</p>
+        <h4>- Developer</h4>
+      </div>
 
-  <div class="hero-actions">
-    <a href="button.html" class="explore-btn">Explore Components</a>
-    <a href="form.html" class="secondary-btn">Start Learning</a>
-  </div>
-</section>
+      <div class="card">
+        <p>"Saved me hours of UI work."</p>
+        <h4>- Frontend Dev</h4>
+      </div>
 
- 
-    <!-- Features -->
-    <section class="features">
+      <div class="card">
+        <p>"Clean and simple components."</p>
+        <h4>- Student</h4>
+      </div>
 
-  <div class="feature-card component-card" data-name="components reusable ui">
-    <h3><i class="fas fa-layer-group"></i> Reusable Components</h3>
-    <p>Use ready-made UI components in your projects instantly.</p>
-  </div>
+    </div>
+  </section>
 
-  <div class="feature-card component-card" data-name="beginner learning">
-    <h3><i class="fas fa-seedling"></i> Beginner Friendly</h3>
-    <p>Perfect for learning and contributing to open source.</p>
-  </div>
+  <!-- ================= CTA ================= -->
+  <section class="hero">
+    <h2>Start Building Today 🚀</h2>
+    <p>Explore components and improve your UI skills.</p>
 
-       <div class="feature-card">
-    <h3>📱 Responsive Design</h3>
-    <p>Works smoothly on mobile, tablet, and desktop devices.</p>
-  </div>
+    <div class="hero-actions">
+      <a href="#" class="primary-btn">Get Started</a>
+    </div>
+  </section>
 
-  <div class="feature-card">
-    <h3>🔒 Secure Code</h3>
-    <p>Follow best practices to keep your projects safe.</p>
-  </div>
+</main>
 
-  <div class="feature-card">
-    <h3>🚀 Easy Deployment</h3>
-    <p>Deploy your website quickly using GitHub Pages.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🌐 Cross Browser</h3>
-    <p>Compatible with all modern browsers.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>💡 Clean UI</h3>
-    <p>Simple and attractive user interface design.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>📚 Learning Support</h3>
-    <p>Helpful for beginners to improve coding skills.</p>
-  </div>
-
-
-  <div class="feature-card">
-    <h3>🛠️ Customization</h3>
-    <p>You can easily customize colors, fonts, layouts, and components according to your project needs.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🎯 Project Based Learning</h3>
-    <p>Practice by building real-world projects which helps in understanding concepts better and faster.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>📈 Performance Optimized</h3>
-    <p>Optimized code ensures faster loading times and smooth performance across devices.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🤝 Open Source Contribution</h3>
-    <p>Encourages collaboration and contributions from developers around the world to improve the project.</p>
-  </div>
-  <div class="feature-card component-card" data-name="fast simple html css js">
-    <h3><i class="fas fa-bolt"></i> Fast & Simple</h3>
-    <p>No frameworks, just clean HTML, CSS, and JS.</p>
-  </div>
-
-</section>
-
-  <div class="feature-card">
-    <h3>🔄 Regular Updates</h3>
-    <p>New features and improvements are added regularly to keep the project up to date.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🎓 Skill Development</h3>
-    <p>Helps you improve HTML, CSS, and JavaScript skills with practical implementation.</p>
-  </div>
-
-
-    </section>
-    <button id="scrollTopBtn">↑</button>
-  </main>
-    
-</div>
-
-<!-- Footer -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
+
   <div class="footer-container">
 
     <div class="footer-col">
       <h2>UIverse</h2>
       <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="socials">
-        <span>🌐</span>
-        <span>💼</span>
-      </div>
     </div>
 
     <div class="footer-col">
       <h3>Pages</h3>
+      <p>Buttons</p>
       <p>Navbars</p>
       <p>Forms</p>
-      <p>Buttons</p>
     </div>
 
     <div class="footer-col">
       <h3>Legal</h3>
-      <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
-      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
+      <p><a href="privacypolicy.html">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms of Service</a></p>
     </div>
 
   </div>
+
 </footer>
-<script src="script.js"></script>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("active");
+}
+
+document.getElementById("darkModeToggle").onclick = function () {
+  document.body.classList.toggle("light-mode");
+};
+</script>
+
 </body>
 </html>
