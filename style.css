@@ -2220,3 +2220,41 @@ a {
 * {
   transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.container {
+  display: flex;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 30px;
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.featured,
+.features {
+  margin-bottom: 60px;
+}
+
+.featured-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.footer {
+  margin-top: 60px;
+}
