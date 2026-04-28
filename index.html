@@ -9,43 +9,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-   <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
-  <button id="darkModeToggle" class="toggle-btn">🌙</button>
+<!-- ===== TOP CONTROLS ===== -->
+<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+<button id="themeToggle" class="toggle-btn" title="Toggle Theme">
+  🌙
+</button>
 
 <div class="container">
+
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
-  <!-- Logo -->
-  <div class="logo">Ulverse</div>
+    <div class="logo">UIverse</div>
 
-  <!-- Center Search Bar -->
-  <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" onkeydown="handleSearch(event)" />
-    <button class="search-btn">🔍</button>
-  </div>
+    <div class="search-bar">
+      <span class="nav-link active">Explore</span>
+      <input type="text" id="searchInput" placeholder="Search Components" onkeydown="handleSearch(event)" />
+      <button class="search-btn">🔍</button>
+    </div>
 
-  <!-- Right Section -->
-  <div class="nav-right">
-    <button class="nav-btn">Add Component</button>
-    <button class="nav-btn">My Collection</button>
-    <a href="#"></a>
-    <a href="#"></a>
-  </div>
-</nav>
+    <div class="nav-right">
+      <button class="nav-btn">Add Component</button>
+      <button class="nav-btn">My Collection</button>
+    </div>
+  </nav>
 
-
- 
-
-  <!-- Sidebar -->
-   <div>
+  <!-- ===== SIDEBAR ===== -->
   <aside class="sidebar">
     <h2>UIverse</h2>
-
-    <!-- 🌙 DARK MODE TOGGLE (ADDED) -->
-    <button id="theme-toggle" style="margin:10px 0; padding:8px; cursor:pointer;">
-      🌙 Dark Mode
-    </button>
 
     <ul>
       <li class="active"><a href="index.html">Home</a></li>
@@ -58,27 +50,35 @@
       <li><a href="color.html">Colors</a></li>
     </ul>
   </aside>
-  
+
   <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
-  <!-- Main -->
-   <div class="content">
-  <main class="main home">
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="content">
+    <main class="main home">
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-left">
-        <h1>Welcome to UIverse 🚀</h1>
-        <p>A collection of reusable UI components for developers.</p>
-      </div>
-      <!-- <h1>Welcome to UIverse 🚀</h1> -->
-      <!-- <p>A collection of reusable UI components for developers.</p> -->
-      <div class="check">
-        <button type="submit" class="btn" onclick="openPopup()">SUBMIT</button>
+      <!-- ===== HERO ===== -->
+      <section class="hero">
+
+        <div class="hero-left">
+          <h1>Welcome to UIverse 🚀</h1>
+          <p>A collection of reusable UI components for developers.</p>
+
+          <div class="hero-actions">
+            <a href="button.html" class="explore-btn">Explore Components</a>
+            <a href="form.html" class="secondary-btn">Start Learning</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <button type="button" class="btn" onclick="openPopup()">SUBMIT</button>
+        </div>
+
+        <!-- POPUP -->
         <div class="popup" id="popup">
           <img src="checkmark.png">
           <h2>Thank you!</h2>
-          <p>Yours details has been successfully submitted.Thanks!</p>
+          <p>Your details have been successfully submitted.</p>
           <button type="button" class="btn1" onclick="closePopup()">OK</button>
         </div>
       </div>
@@ -165,104 +165,127 @@
 
 
 
-  <h1>Build UI Faster <i class="fas fa-rocket"></i></h1>
-  <p>Clean, reusable components for developers.</p>
+      </section>
 
-  <div class="hero-actions">
-    <a href="button.html" class="explore-btn">Explore Components</a>
-    <a href="form.html" class="secondary-btn">Start Learning</a>
+
+      <!-- ===== FEATURED ===== -->
+      <section class="featured">
+        <h2>⭐ Popular Components</h2>
+
+        <div class="featured-cards">
+          <div class="feature-card">
+            <h3>Gradient Button</h3>
+            <p>Modern colorful button design.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Glass Navbar</h3>
+            <p>Transparent blurred navigation bar.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Card UI</h3>
+            <p>Clean and reusable card layout.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===== FEATURES ===== -->
+      <section class="features">
+
+        <h2>✨ Features</h2>
+
+        <div class="features-grid">
+
+          <div class="feature-card component-card" data-name="components reusable ui">
+            <h3><i class="fas fa-layer-group"></i> Reusable Components</h3>
+            <p>Use ready-made UI components in your projects instantly.</p>
+          </div>
+
+          <div class="feature-card component-card" data-name="beginner learning">
+            <h3><i class="fas fa-seedling"></i> Beginner Friendly</h3>
+            <p>Perfect for learning and contributing to open source.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>📱 Responsive Design</h3>
+            <p>Works smoothly on all devices.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🔒 Secure Code</h3>
+            <p>Follow best practices to keep your projects safe.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🚀 Easy Deployment</h3>
+            <p>Deploy quickly using GitHub Pages.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🌐 Cross Browser</h3>
+            <p>Compatible with modern browsers.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>💡 Clean UI</h3>
+            <p>Simple and attractive design.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>📚 Learning Support</h3>
+            <p>Improve coding skills easily.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🛠️ Customization</h3>
+            <p>Customize colors, fonts, layouts easily.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🎯 Project Based Learning</h3>
+            <p>Build real-world projects.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>📈 Performance Optimized</h3>
+            <p>Fast loading and smooth performance.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🤝 Open Source Contribution</h3>
+            <p>Collaborate with developers worldwide.</p>
+          </div>
+
+          <div class="feature-card component-card" data-name="fast simple html css js">
+            <h3><i class="fas fa-bolt"></i> Fast & Simple</h3>
+            <p>No frameworks, just HTML, CSS, JS.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🔄 Regular Updates</h3>
+            <p>New features added regularly.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🎓 Skill Development</h3>
+            <p>Improve practical coding skills.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== SCROLL BUTTON ===== -->
+      <button id="scrollTopBtn">↑</button>
+
+    </main>
   </div>
-</section>
 
- 
-    <!-- Features -->
-    <section class="features">
-
-  <div class="feature-card component-card" data-name="components reusable ui">
-    <h3><i class="fas fa-layer-group"></i> Reusable Components</h3>
-    <p>Use ready-made UI components in your projects instantly.</p>
-  </div>
-
-  <div class="feature-card component-card" data-name="beginner learning">
-    <h3><i class="fas fa-seedling"></i> Beginner Friendly</h3>
-    <p>Perfect for learning and contributing to open source.</p>
-  </div>
-
-       <div class="feature-card">
-    <h3>📱 Responsive Design</h3>
-    <p>Works smoothly on mobile, tablet, and desktop devices.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🔒 Secure Code</h3>
-    <p>Follow best practices to keep your projects safe.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🚀 Easy Deployment</h3>
-    <p>Deploy your website quickly using GitHub Pages.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🌐 Cross Browser</h3>
-    <p>Compatible with all modern browsers.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>💡 Clean UI</h3>
-    <p>Simple and attractive user interface design.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>📚 Learning Support</h3>
-    <p>Helpful for beginners to improve coding skills.</p>
-  </div>
-
-
-  <div class="feature-card">
-    <h3>🛠️ Customization</h3>
-    <p>You can easily customize colors, fonts, layouts, and components according to your project needs.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🎯 Project Based Learning</h3>
-    <p>Practice by building real-world projects which helps in understanding concepts better and faster.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>📈 Performance Optimized</h3>
-    <p>Optimized code ensures faster loading times and smooth performance across devices.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🤝 Open Source Contribution</h3>
-    <p>Encourages collaboration and contributions from developers around the world to improve the project.</p>
-  </div>
-  <div class="feature-card component-card" data-name="fast simple html css js">
-    <h3><i class="fas fa-bolt"></i> Fast & Simple</h3>
-    <p>No frameworks, just clean HTML, CSS, and JS.</p>
-  </div>
-
-</section>
-
-  <div class="feature-card">
-    <h3>🔄 Regular Updates</h3>
-    <p>New features and improvements are added regularly to keep the project up to date.</p>
-  </div>
-
-  <div class="feature-card">
-    <h3>🎓 Skill Development</h3>
-    <p>Helps you improve HTML, CSS, and JavaScript skills with practical implementation.</p>
-  </div>
-
-
-    </section>
-    <button id="scrollTopBtn">↑</button>
-  </main>
-    
 </div>
 
-<!-- Footer -->
+
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-container">
 
@@ -284,12 +307,13 @@
 
     <div class="footer-col">
       <h3>Legal</h3>
-      <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
-      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
+      <p><a href="privacypolicy.html">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms of Service</a></p>
     </div>
 
   </div>
 </footer>
+
 <script src="script.js"></script>
+
 </body>
-</html>

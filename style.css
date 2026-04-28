@@ -6,6 +6,7 @@ body {
   color: #000000;
   transition: 0.3s;
   height: 1000px;
+}
 /* RESET */
 html, body {
   height: 100%;
@@ -1081,6 +1082,7 @@ body.sidebar-hidden .footer {
   padding: 12px 20px;
   background: linear-gradient(45deg, #ff6b6b, #6c5ce7);
   color: white;
+}
 
 /* Home Layout */
 .home {
@@ -2014,6 +2016,7 @@ label + input[type="checkbox"] {
   color: #706ce9;
 }
 
+}
 /* CODE BLOCK */
 .code-block {
   display: none;
@@ -3514,3 +3517,114 @@ body {
 .fa-seedling   { color: #008ef3; } 
 .fa-bolt       { color: #ff0400; } 
 .fa-rocket {color:rgb(190, 37, 63)}
+
+
+/* 🌈 THEME VARIABLES */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f4f4f4;
+  --accent: #6c63ff;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --card: #1e293b;
+  --accent: #8b5cf6;
+}
+
+/* 🌍 GLOBAL */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 🧱 COMPONENTS */
+.navbar,
+.sidebar,
+.footer,
+.feature-card,
+.featured,
+.hero {
+  background: var(--card);
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+/* ✨ CARD EFFECT */
+.feature-card {
+  padding: 16px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+body.dark .feature-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+}
+
+/* 🎯 BUTTON */
+.toggle-btn {
+  font-size: 20px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--card);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* 🌟 LINKS */
+a {
+  color: var(--accent);
+}
+
+/* ⚡ SMOOTH TRANSITIONS */
+* {
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container {
+  display: flex;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 30px;
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.featured,
+.features {
+  margin-bottom: 60px;
+}
+
+.featured-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.footer {
+  margin-top: 60px;
+}
