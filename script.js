@@ -430,3 +430,7 @@ function closeAlert(alertId) {
 }
   }
 });
+function subscribe(e) {
+  e.preventDefault();
+  alert("Subscribed successfully! 🎉");
+}

@@ -14,6 +14,7 @@ html, body {
   background: #09112a;
   background: #ffffff;
 }
+}
 
 /* LAYOUT */
 body {
@@ -771,6 +772,7 @@ body.sidebar-hidden .footer {
   padding: 12px 20px;
   background: linear-gradient(45deg, #ff6b6b, #6c5ce7);
   color: white;
+}
 
 /* Home Layout */
 .home {
@@ -906,6 +908,7 @@ body.sidebar-hidden .footer {
   box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
 }
 
+}
 /* FORM INPUT */
 .form-input {
   width: 100%;
@@ -2138,6 +2141,261 @@ body.dark-mode .hero-left p {
   color: #fff;
 }
 
+
+.footer {
+  background: #0f172a;
+  color: #cbd5f5;
+  padding: 50px 20px 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.footer-col h2,
+.footer-col h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+}
+
+.footer-col ul li a {
+  color: #cbd5f5;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #38bdf8;
+  padding-left: 5px;
+}
+
+.footer-logo {
+  font-size: 22px;
+}
+
+.socials a {
+  color: #cbd5f5;
+  margin-right: 12px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #1e293b;
+  padding-top: 15px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer {
+    text-align: center;
+  }
+
+  .socials {
+    margin-top: 10px;
+  }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #0f172a;
+  color: #cbd5f5;
+  padding: 60px 20px 20px;
+  margin-top: 60px;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+}
+
+/* Columns */
+.footer-col h2,
+.footer-col h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+}
+
+.footer-col ul li a {
+  color: #cbd5f5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #38bdf8;
+  padding-left: 6px;
+}
+
+/* Logo */
+.footer-logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Social Icons */
+.socials {
+  margin-top: 12px;
+}
+
+.socials a {
+  display: inline-block;
+  color: #cbd5f5;
+  margin-right: 12px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #38bdf8;
+  transform: translateY(-3px);
+}
+
+/* Newsletter */
+.newsletter form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 6px 0 0 6px;
+}
+
+.newsletter button {
+  padding: 8px 12px;
+  border: none;
+  background: #38bdf8;
+  color: #000;
+  cursor: pointer;
+  border-radius: 0 6px 6px 0;
+  transition: 0.3s;
+}
+
+.newsletter button:hover {
+  background: #0ea5e9;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #1e293b;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer {
+    text-align: center;
+  }
+
+  .newsletter form {
+    flex-direction: column;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    border-radius: 6px;
+    margin: 5px 0;
+  }
+}
+
+.footer-container {
+  max-width: 1200px;   /* keeps content centered */
+  margin: 0 auto;      /* centers the footer */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer {
+  padding: 70px 20px 30px;
+}
+
+.footer-col {
+  min-width: 180px;
+}
+
+.footer-container {
+  max-width: 1000px;   /* reduced from 1200px */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px; /* reduced gap */
+}
+.footer {
+  padding: 40px 15px 15px; /* smaller padding */
+}
+.footer-col h2,
+.footer-col h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-col ul li {
+  margin: 5px 0;
+}
+
+.footer-col p {
+  font-size: 13px;
+}
+.footer-bottom {
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 12px;
+}
+.footer-col {
+  line-height: 1.5;
+}
 
 
 /* Color matching UI theme */
