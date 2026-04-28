@@ -481,6 +481,163 @@ body.sidebar-hidden .footer {
   box-shadow: 0 15px 35px rgba(1,1,1,0.08);
 } 
 
+.price-card {
+  background: white;
+  border: 1px solid #e8e9f3;
+  border-radius: 24px;
+  padding: 28px;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.price-card.popular {
+  border-color: #6c5ce7;
+  box-shadow: 0 18px 40px rgba(108, 92, 231, 0.12);
+}
+
+.price-card.banner {
+  border-color: #f1f2ff;
+  background: linear-gradient(180deg, #f9f9ff 0%, #ffffff 100%);
+}
+
+.price-card.banner.featured {
+  border-color: #6c5ce7;
+  box-shadow: 0 22px 60px rgba(108, 92, 231, 0.12);
+}
+
+.price-card h4 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #111;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111;
+}
+
+.price-duration {
+  font-size: 0.95rem;
+  color: #666;
+  margin-left: 6px;
+}
+
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  color: #555;
+}
+
+.price-list li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.price-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #6c5ce7;
+  font-weight: 700;
+}
+
+.price-card button {
+  border: none;
+  background: #6c5ce7;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.price-card button:hover {
+  background: #5a4cd0;
+  transform: translateY(-1px);
+}
+
+.pricing-table {
+  overflow-x: auto;
+}
+
+.pricing-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 16px 14px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f7;
+}
+
+.pricing-table th {
+  background: #faf9ff;
+  color: #222;
+  font-weight: 600;
+}
+
+.pricing-table tbody tr:hover {
+  background: #f7f6ff;
+}
+
+.check {
+  color: #00b894;
+  font-weight: 700;
+}
+
+.price-banners {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pricing-stack {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.minimal-card {
+  background: #111;
+  color: white;
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 260px;
+}
+
+.minimal-card.featured {
+  background: #6c5ce7;
+}
+
+.minimal-card p {
+  color: rgba(255,255,255,0.8);
+}
+
+.minimal-card button {
+  background: #ff6b6b;
+}
+
+@media (max-width: 900px) {
+  .price-banners,
+  .pricing-stack {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ================= BUTTONS ================= */
 .actions {
   display: flex;
