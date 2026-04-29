@@ -20,10 +20,15 @@
 
   <!-- Center Search Bar -->
   <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" onkeydown="handleSearch(event)" />
-    <button class="search-btn">🔍</button>
-  </div>
+  <span class="nav-link active">Explore</span>
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Search Components" 
+    onkeydown="handleSearch(event)" 
+  />
+  <button class="search-btn" onclick="performSearch()">🔍</button>
+</div>
 
   <!-- Right Section -->
   <div class="nav-right">
@@ -281,7 +286,42 @@
     <p>© 2026 UIverse. Made with ❤️ for developers.</p>
   </div>
 </footer>
+<script>
+function handleSearch(event) {
+  if (event.key === "Enter") performSearch();
+}
 
-<script src="script.js"></script>
+function performSearch() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.querySelectorAll(".component-card");
+  let found = false;
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const data = card.getAttribute("data-name");
+
+    if (text.includes(input) || (data && data.includes(input))) {
+      card.style.display = "block";
+      found = true;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  let msg = document.getElementById("noResult");
+
+  if (!found) {
+    if (!msg) {
+      msg = document.createElement("p");
+      msg.id = "noResult";
+      msg.innerText = "No components found 😢";
+      document.querySelector(".features").appendChild(msg);
+    }
+  } else {
+    if (msg) msg.remove();
+  }
+}
+</script>
+<script  src="script.js"></script>
 </body>
 </html>

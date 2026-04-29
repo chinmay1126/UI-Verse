@@ -434,3 +434,27 @@ function subscribe(e) {
   e.preventDefault();
   alert("Subscribed successfully! 🎉");
 }
+
+// Trigger search on Enter key
+function handleSearch(event) {
+  if (event.key === "Enter") {
+    performSearch();
+  }
+}
+
+// Main search function
+function performSearch() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.querySelectorAll(".component-card");
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const data = card.getAttribute("data-name");
+
+    if (text.includes(input) || (data && data.includes(input))) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
