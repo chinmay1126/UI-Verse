@@ -1050,6 +1050,45 @@ textarea {
 }
 
 
+/* contact */
+.contact-center {
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+}
+
+.contact-box {
+  width: 350px;
+  padding: 25px;
+  background: rgb(183, 183, 186);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #4888c7;
+  border-radius: 6px;
+}
+
+.contact-box button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background:rgb(63, 81, 119);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.contact-box button:hover {
+  background: rgb(135, 160, 215);
+}
 
 /* Color matching UI theme */
 .fa-layer-group { color: #5900ff; } 
