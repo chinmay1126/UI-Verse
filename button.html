@@ -8,8 +8,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <nav class="navbar">
+  <div class="logo">Ulverse</div>
 
-<div class="container">
+  <div class="search-bar">
+    <span class="nav-link active">Explore</span>
+    <input type="text" id="searchInput" placeholder="Search Components" />
+    <button class="search-btn">🔍</button>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn">Add Component</button>
+    <button class="nav-btn">My Collection</button>
+    <a href="#"></a>
+    <a href="#"></a>
+  </div>
+</nav>
 
   <aside class="sidebar">
     <h2>UIverse</h2>
@@ -20,9 +34,34 @@
     </ul>
   </aside> 
 
+<div class="container">
+  
+   <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>UIverse</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="badges.html">Badges</a></li>
+      <li class="active"><a href="button.html">Buttons</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="color.html">Colors</a></li>
+      <li><a href="footer.html">Footer</a></li>
+      <li><a href="form.html">Forms</a></li>
+      <li><a href="inputs.html">Inputs</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+  </aside>
+  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
   <!-- Main -->
   <main class="main">
+
+ <div class="layout">
 
     <!-- Header -->
     <div class="page-header">
@@ -30,14 +69,17 @@
       <p>Explore beautiful and reusable button components</p>
     </div>
 
+  <div class="button-group">
+
+
     <!-- Gradient -->
-    <div class="component-card">
+    <div class="component-card" data-name="gradient button colorful">
       <h3>Gradient Button</h3>
       <button class="gradient-btn">Click Me</button>
 
       <div class="actions">
         <button onclick="toggleCode('c1')">View Code</button>
-        <button onclick="copyCode('c1')">Copy</button>
+        <button onclick="copyCode('c1',this)">Copy</button>
       </div>
 
       <pre id="c1" class="code-block">
@@ -46,13 +88,13 @@
     </div>
 
     <!-- Outline -->
-    <div class="component-card">
+    <div class="component-card" data-name="outline button border">
       <h3>Outline Button</h3>
       <button class="outline-btn">Click Me</button>
 
       <div class="actions">
         <button onclick="toggleCode('c2')">View Code</button>
-        <button onclick="copyCode('c2')">Copy</button>
+        <button onclick="copyCode('c2',this)">Copy</button>
       </div>
 
       <pre id="c2" class="code-block">
@@ -61,13 +103,13 @@
     </div>
 
     <!-- Neon -->
-    <div class="component-card">
+    <div class="component-card" data-name="neon button glow">
       <h3>Neon Button</h3>
       <button class="neon-btn">Glow</button>
 
       <div class="actions">
         <button onclick="toggleCode('c3')">View Code</button>
-        <button onclick="copyCode('c3')">Copy</button>
+        <button onclick="copyCode('c3',this)">Copy</button>
       </div>
 
       <pre id="c3" class="code-block">
@@ -76,13 +118,13 @@
     </div>
 
     <!-- Glass -->
-    <div class="component-card">
+    <div class="component-card" data-name="glass button transparent blur">
       <h3>Glass Button</h3>
       <button class="glass-btn">Glass</button>
 
       <div class="actions">
         <button onclick="toggleCode('c4')">View Code</button>
-        <button onclick="copyCode('c4')">Copy</button>
+        <button onclick="copyCode('c4',this)">Copy</button>
       </div>
 
       <pre id="c4" class="code-block">
@@ -91,13 +133,13 @@
     </div>
 
     <!-- Shadow -->
-    <div class="component-card">
+    <div class="component-card" data-name="shadow button lift depth">
       <h3>Shadow Button</h3>
       <button class="shadow-btn">Lift</button>
 
       <div class="actions">
         <button onclick="toggleCode('c5')">View Code</button>
-        <button onclick="copyCode('c5')">Copy</button>
+        <button onclick="copyCode('c5',this)">Copy</button>
       </div>
 
       <pre id="c5" class="code-block">
@@ -105,10 +147,184 @@
       </pre>
     </div>
 
+    <!-- Rounded -->
+    <div class="component-card" data-name="rounded button pill">
+      <h3>Rounded Button</h3>
+      <button class="rounded-btn">Rounded</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c6')">View Code</button>
+        <button onclick="copyCode('c6',this)">Copy</button>
+      </div>
+
+      <pre id="c6" class="code-block">
+&lt;button class="rounded-btn"&gt;Rounded&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Icon Button -->
+    <div class="component-card" data-name="icon button circular">
+      <h3>Icon Button</h3>
+      <button class="icon-btn">★</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c7')">View Code</button>
+        <button onclick="copyCode('c7',this)">Copy</button>
+      </div>
+
+      <pre id="c7" class="code-block">
+&lt;button class="icon-btn"&gt;★&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Success Button -->
+    <div class="component-card" data-name="success button green">
+      <h3>Success Button</h3>
+      <button class="success-btn">Success</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c8')">View Code</button>
+        <button onclick="copyCode('c8',this)">Copy</button>
+      </div>
+
+      <pre id="c8" class="code-block">
+&lt;button class="success-btn"&gt;Success&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Danger Button -->
+    <div class="component-card" data-name="danger button red">
+      <h3>Danger Button</h3>
+      <button class="danger-btn">Danger</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c9')">View Code</button>
+        <button onclick="copyCode('c9',this)">Copy</button>
+      </div>
+
+      <pre id="c9" class="code-block">
+&lt;button class="danger-btn"&gt;Danger&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Warning Button -->
+    <div class="component-card" data-name="warning button orange">
+      <h3>Warning Button</h3>
+      <button class="warning-btn">Warning</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c10')">View Code</button>
+        <button onclick="copyCode('c10',this)">Copy</button>
+      </div>
+
+      <pre id="c10" class="code-block">
+&lt;button class="warning-btn"&gt;Warning&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Loading Button -->
+    <div class="component-card" data-name="loading button spinner">
+      <h3>Loading Button</h3>
+      <button class="loading-btn" disabled>
+        <span class="spinner"></span>
+        Loading...
+      </button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c11')">View Code</button>
+        <button onclick="copyCode('c11',this)">Copy</button>
+      </div>
+
+      <pre id="c11" class="code-block">
+&lt;button class="loading-btn" disabled&gt;
+  &lt;span class="spinner"&gt;&lt;/span&gt;
+  Loading...
+&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Ghost Button -->
+    <div class="component-card" data-name="ghost button transparent">
+      <h3>Ghost Button</h3>
+      <button class="ghost-btn">Ghost</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c12')">View Code</button>
+        <button onclick="copyCode('c12',this)">Copy</button>
+      </div>
+
+      <pre id="c12" class="code-block">
+&lt;button class="ghost-btn"&gt;Ghost&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- Animated Button -->
+    <div class="component-card" data-name="animated button pulse">
+      <h3>Animated Button</h3>
+      <button class="animated-btn">Pulse</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c13')">View Code</button>
+        <button onclick="copyCode('c13',this)">Copy</button>
+      </div>
+
+      <pre id="c13" class="code-block">
+&lt;button class="animated-btn"&gt;Pulse&lt;/button&gt;
+      </pre>
+    </div>
+
+    <!-- 3D Button -->
+    <div class="component-card" data-name="3d button depth">
+      <h3>3D Button</h3>
+      <button class="btn-3d">3D Effect</button>
+
+      <div class="actions">
+        <button onclick="toggleCode('c14')">View Code</button>
+        <button onclick="copyCode('c14',this)">Copy</button>
+      </div>
+
+      <pre id="c14" class="code-block">
+&lt;button class="btn-3d"&gt;3D Effect&lt;/button&gt;
+      </pre>
+    </div>
+
+  </div>
+
+  </div>
+
   </main>
 
 </div>
+<footer class="footer">
+  <div class="footer-container">
 
+    <!-- Brand -->
+    <div class="footer-col">
+      <h2>UIverse</h2>
+      <p>© 2026 UIverse. All rights reserved.</p>
+      <div class="socials">
+        <span>🌐</span>
+        <span>💼</span>
+      </div>
+    </div>
+
+    <!-- Pages -->
+    <div class="footer-col">
+      <h3>Pages</h3>
+      <p>Navbars</p>
+      <p>Forms</p>
+      <p>Buttons</p>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
+      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
+    </div>
+
+  </div>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
