@@ -15,9 +15,6 @@ html, body {
   background: #09112a;
   background: #ffffff;
 }
-}
-
-}
 /* LAYOUT */
 body {
   display: flex;
@@ -2020,7 +2017,6 @@ label + input[type="checkbox"] {
   color: #706ce9;
 }
 
-}
 /* CODE BLOCK */
 .code-block {
   display: none;
@@ -2660,7 +2656,6 @@ body.dark-mode .search-bar input {
 body.dark-mode .page-header p,
 body.dark-mode .hero-left p {
   color: #bdaeae;
-}
   margin: 50px auto;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);

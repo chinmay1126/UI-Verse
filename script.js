@@ -326,7 +326,7 @@ if (searchInput) {
   });
       const text = item.dataset.name.toLowerCase();
       item.style.display = text.includes(value) ? "block" : "none";
-    });
+    };
 
     const toggleBtn = document.getElementById("themeToggle");
 
@@ -485,8 +485,7 @@ const toggle = document.getElementById("darkModeToggle");
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
 });
-  }
-})
+
 /* Toggle Sidebar on mobile and desktop */
 
 /* ================= POPUP ================= */
