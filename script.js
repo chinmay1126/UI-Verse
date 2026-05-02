@@ -47,6 +47,7 @@ function showToast(message) {
   }, 2000);
 }
  
+
 /* TOGGLE CODE BLOCK */
 function toggleCode(id) {
   const codeBlock = document.getElementById(id);
@@ -326,6 +327,7 @@ if (searchInput) {
       item.style.display = text.includes(value) ? "block" : "none";
     });
   };
+
  
 /* SEARCH (PAGE ROUTING) */
 function handleSearch(event) {
@@ -427,4 +429,5 @@ function closeAlert(alertId) {
     alert.style.display = "none";
   }
 }
-  });
+  }
+});
