@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -99,6 +100,10 @@
     <h2>UIverse</h2>
 
     <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i><p>Home</p></a></li>
+      <li><a href="button.html"><i class="fa-solid fa-mobile-button"></i><p>Butttons</p></a></li>
+      <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><p>Navbar</p></a></li>
+      <li><a href="contact.html"><i class="fa-regular fa-user"></i><p>Contact Us</p></a></li>
       <li class="active"><a href="index.html">Home</a></li>
       <li><a href="button.html">Buttons</a></li>
       <li><a href="navbar.html">Navbars</a></li>
@@ -108,7 +113,7 @@
       <li><a href="form.html">Forms</a></li>
       <li><a href="color.html">Colors</a></li>
     </ul>
-  </aside>
+  </aside> 
 
   <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
@@ -466,26 +471,78 @@
 
   <div class="footer-container">
 
+    <!-- Brand Section -->
+    <div class="footer-col brand">
+      <h2 class="footer-logo">🚀 UIverse</h2>
+      <p>
+        Build modern, reusable UI components with clean HTML, CSS, and JavaScript.
+      </p>
+
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
     <div class="footer-col">
       <h2>UIverse</h2>
       <p>© 2026 UIverse. All rights reserved.</p>
     </div>
 
+    <!-- Explore -->
     <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="form.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
       <h3>Pages</h3>
       <p>Buttons</p>
       <p>Navbars</p>
       <p>Forms</p>
     </div>
 
+    <!-- Legal -->
     <div class="footer-col">
       <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="#">License</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-col newsletter">
+      <h3>Subscribe</h3>
+      <p>Get updates on new UI components.</p>
+      <form onsubmit="subscribe(event)">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
       <p><a href="privacypolicy.html">Privacy Policy</a></p>
       <p><a href="terms.html">Terms of Service</a></p>
     </div>
 
   </div>
 
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers.</p>
+  </div>
 </footer>
 
 <!-- ================= SCRIPT ================= -->

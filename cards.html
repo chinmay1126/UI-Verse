@@ -55,7 +55,7 @@
 </nav>
 
 <div class="container">
-  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <button class="hamburger" type="button" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
 
   <aside class="sidebar">
     <h2>UIverse</h2>
@@ -84,37 +84,35 @@
 
     <div class="component-card">
       <h3>Profile Card (Hover Effect)</h3>
+
       <div class="profile-card">
         <div class="profile-avatar">LN</div>
         <h3 class="profile-name">Likhitha Nagraj</h3>
         <p class="profile-role">Embedded Systems Engineer</p>
         <button class="profile-btn">Follow</button>
       </div>
+
       <div class="actions">
         <button onclick="toggleCode('cardCode1')">View Code</button>
-        <button onclick="copyCode('cardCode1')">Copy</button>
+        <button class="copy-btn" onclick="copyCode('cardCode1', this)">Copy</button>
       </div>
+
+      <pre id="cardCode1" class="code-block">
+        &lt;div class="profile-card"&gt;
+        &lt;div class="profile-avatar"&gt;LN&lt;/div&gt;
+        &lt;h3&gt;Likhitha Nagraj&lt;/h3&gt;
+        &lt;p&gt;Embedded Systems Engineer&lt;/p&gt;
+        &lt;button&gt;Follow&lt;/button&gt;
+        &lt;/div&gt;
+      </pre>
+
     </div>
+
+
     <div class="component-card">
   <h3>Student Card</h3>
 
-      
-      <div class="actions">
-        <button onclick="toggleCode('c3')">View Code</button>
-        <button onclick="copyCode('c3')">Copy</button>
-      </div>
-
-      <pre id="c3" class="code-block">
-&lt;div class="info-card"&gt;
-  &lt;h4&gt;✨ Feature Highlight&lt;/h4&gt;
-  &lt;p&gt;Lightweight, responsive and easy to customize card design.&lt;/p&gt;
-  &lt;button class="neon-btn"&gt;Get Started&lt;/button&gt;
-&lt;/div&gt;
-      </pre>
-    </div>
-
-  </main>
-  <div class="profile-card student-card">
+   <div class="profile-card student-card">
     <div class="profile-avatar">AP</div>
     <h3 class="profile-name">Ankit Pardeshi</h3>
     <p class="profile-role">AI & Data Science Student</p>
@@ -123,282 +121,24 @@
 
   <div class="actions">
     <button onclick="toggleCode('cardCode2')">View Code</button>
-    <button onclick="copyCode('cardCode2')">Copy</button>
+    <button class="copy-btn" onclick="copyCode('cardCode2', this)">Copy</button>
   </div>
+
+   <pre id="cardCode2" class="code-block">
+        &lt;div class="profile-card student-card"&gt;
+        &lt;div class="profile-avatar"&gt;AP&lt;/div&gt;
+        &lt;h3&gt;Ankit Pardeshi&lt;/h3&gt;
+        &lt;p&gt;AI & Data Science Student&lt;/p&gt;
+        &lt;button&gt;Connect&lt;/button&gt;
+        &lt;/div&gt;
+  </pre>
+
 </div>
     </main>
-</div>
-<!DOCTYPE html>
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cards - UIverse</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<div class="container">
 
-  <!-- Sidebar -->
 
-  <aside class="sidebar">
-    <h2>UIverse</h2>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
-      <li class="active"><a href="cards.html">Cards</a></li>
-      <li><a href="footer.html">Footer</a></li>
-      <li><a href="form.html">Forms</a></li>
-      <li><a href="color.html">Colors</a></li>
-      <li><a href="button.html">Buttons</a></li>
-    </ul>
-  </aside>
-
-  <!-- Main -->
-
-  <main class="main">
-<div class="page-header">
-  <h1>Cards</h1>
-  <p>Reusable and beautiful card components</p>
-</div>
-
-<!-- Simple Card -->
-<div class="component-card">
-  <h3>Simple Card</h3>
-  <div class="card">
-    <h4>Card Title</h4>
-    <p>This is a simple card component with a clean design.</p>
-    <button class="gradient-btn">Learn More</button>
-  </div>
-</div>
-
-<!-- Product Card -->
-<div class="component-card">
-  <h3>Product Card</h3>
-  <div class="card">
-    <h4>Premium Product</h4>
-    <p class="price">$49.99</p>
-    <p>High-quality product with amazing features.</p>
-    <button class="outline-btn">Add to Cart</button>
-  </div>
-</div>
-
-<!-- Info Card -->
-<div class="component-card">
-  <h3>Info Card</h3>
-  <div class="card">
-    <h4>✨ Feature Highlight</h4>
-    <p>Lightweight, responsive and easy to customize.</p>
-    <button class="neon-btn">Get Started</button>
-  </div>
-</div>
-
-<!-- Profile Card -->
-<div class="component-card">
-  <h3>Profile Card</h3>
-  <div class="card profile">
-    <img src="https://via.placeholder.com/80">
-    <h4>John Doe</h4>
-    <p>Frontend Developer</p>
-    <button class="gradient-btn">Follow</button>
-  </div>
-</div>
-
-<!-- Pricing Card -->
-<div class="component-card">
-  <h3>Pricing Card</h3>
-  <div class="card pricing">
-    <h4>Pro Plan</h4>
-    <h2>$19/mo</h2>
-    <p>Unlimited features</p>
-    <button class="gradient-btn">Choose Plan</button>
-  </div>
-</div>
-
-<!-- Image Card -->
-<div class="component-card">
-  <h3>Image Card</h3>
-  <div class="card image">
-    <img src="https://via.placeholder.com/300x150">
-    <div class="card-body">
-      <h4>Nature View</h4>
-      <p>Beautiful scenic card design.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Stats Card -->
-<div class="component-card">
-  <h3>Stats Card</h3>
-  <div class="card stats">
-    <h2>1.2K</h2>
-    <p>Active Users</p>
-  </div>
-</div>
-
-<!-- Testimonial Card -->
-<div class="component-card">
-  <h3>Testimonial Card</h3>
-  <div class="card">
-    <p>"This UI library is amazing and easy to use!"</p>
-    <h4>- Jane Smith</h4>
-  </div>
-</div>
-
-<!-- Blog Card -->
-<div class="component-card">
-  <h3>Blog Card</h3>
-  <div class="card blog">
-    <img src="https://via.placeholder.com/300x150/4ecdc4/ffffff?text=Blog+Image" alt="Blog post image">
-    <div class="card-body">
-      <h4>Getting Started with UI Design</h4>
-      <p>Learn the fundamentals of creating beautiful user interfaces that users will love.</p>
-      <div class="blog-meta">
-        <span>📅 March 15, 2024</span>
-        <span>👤 John Doe</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Event Card -->
-<div class="component-card">
-  <h3>Event Card</h3>
-  <div class="card event">
-    <div class="event-date">
-      <span class="month">APR</span>
-      <span class="day">25</span>
-    </div>
-    <div class="card-body">
-      <h4>UI/UX Design Conference</h4>
-      <p>Join us for an amazing conference featuring the latest trends in UI/UX design.</p>
-      <div class="event-details">
-        <span>📍 Convention Center</span>
-        <span>🕐 9:00 AM - 5:00 PM</span>
-      </div>
-      <button class="gradient-btn">Register Now</button>
-    </div>
-  </div>
-</div>
-
-<!-- Social Media Card -->
-<div class="component-card">
-  <h3>Social Media Card</h3>
-  <div class="card social">
-    <div class="social-header">
-      <img src="https://via.placeholder.com/40x40/6c5ce7/ffffff?text=JD" alt="Profile picture">
-      <div>
-        <h4>John Doe</h4>
-        <span>@johndoe • 2h</span>
-      </div>
-    </div>
-    <p>Just launched my new UI component library! Check it out and let me know what you think. 🚀</p>
-    <div class="social-actions">
-      <button>❤️ 42</button>
-      <button>💬 12</button>
-      <button>🔄 5</button>
-    </div>
-  </div>
-</div>
-
-<!-- Weather Card -->
-<div class="component-card">
-  <h3>Weather Card</h3>
-  <div class="card weather">
-    <div class="weather-main">
-      <span class="temperature">72°F</span>
-      <span class="condition">Sunny</span>
-    </div>
-    <div class="weather-details">
-      <div>
-        <span>💧 Humidity</span>
-        <span>65%</span>
-      </div>
-      <div>
-        <span>💨 Wind</span>
-        <span>8 mph</span>
-      </div>
-      <div>
-        <span>👁️ Visibility</span>
-        <span>10 mi</span>
-      </div>
-    </div>
-    <div class="weather-forecast">
-      <div class="forecast-day">
-        <span>Mon</span>
-        <span>☀️</span>
-        <span>75°</span>
-      </div>
-      <div class="forecast-day">
-        <span>Tue</span>
-        <span>⛅</span>
-        <span>68°</span>
-      </div>
-      <div class="forecast-day">
-        <span>Wed</span>
-        <span>🌧️</span>
-        <span>62°</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Music Card -->
-<div class="component-card">
-  <h3>Music Card</h3>
-  <div class="card music">
-    <img src="https://via.placeholder.com/200x200/0984e3/ffffff?text=Album+Art" alt="Album artwork">
-    <div class="card-body">
-      <h4>Summer Vibes</h4>
-      <p>By Chillwave Collective</p>
-      <div class="music-controls">
-        <button class="play-btn">▶️</button>
-        <div class="progress-bar">
-          <div class="progress" style="width: 60%;"></div>
-        </div>
-        <span>2:34 / 4:12</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Recipe Card -->
-<div class="component-card">
-  <h3>Recipe Card</h3>
-  <div class="card recipe">
-    <img src="https://via.placeholder.com/300x150/e17055/ffffff?text=Pasta+Carbonara" alt="Recipe image">
-    <div class="card-body">
-      <h4>Pasta Carbonara</h4>
-      <p>A classic Italian pasta dish with eggs, cheese, pancetta, and black pepper.</p>
-      <div class="recipe-meta">
-        <span>⏱️ 25 mins</span>
-        <span>👥 4 servings</span>
-        <span>⭐ 4.8</span>
-      </div>
-      <button class="gradient-btn">View Recipe</button>
-    </div>
-  </div>
-</div>
-
-<!-- Notification Card -->
-<div class="component-card">
-  <h3>Notification Card</h3>
-  <div class="card notification">
-    <div class="notification-icon">🔔</div>
-    <div class="card-body">
-      <h4>New Message</h4>
-      <p>You have received a new message from Sarah Johnson.</p>
-      <span class="notification-time">2 minutes ago</span>
-    </div>
-    <button class="close-btn">✕</button>
-  </div>
-</div>
-
-  </main>
-
-</div>
 
 <footer class="footer">
   <div class="footer-container">
