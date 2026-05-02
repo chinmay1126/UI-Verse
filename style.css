@@ -494,15 +494,25 @@ nav a:hover {
   color: #444;
 }
 
-/* ================= FOOTER ================= */
+/* --- Global site footer --- */
+/*Good for desktop layouts where content is indented.*/
+
+
 .footer {
   margin-top: auto;
   margin-left: 280px;
   background: #fff;
-  padding: 45px 30px 20px;
-  border-top: 2px solid #eee;
-}
+  border-top: 1px solid #eee;
+  padding: 40px 60px;
+  text-align: center;   
+  width: calc(100% - 280px);  
+  display: block;              
+  flex-basis: 100%;            
+  clear: both; 
+  
+ }
 
+ 
 .footer-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -564,7 +574,7 @@ nav a:hover {
   .search-bar {
     width: 200px;
   }
-
+/* Global site footer: remove sidebar offset on mobile */
   .footer-container {
     grid-template-columns: 1fr;
   }
@@ -964,18 +974,19 @@ textarea {
 
 
 
-/* Footer */
-.footer {
+/* Global Footer*/
+/*clean structural footer with sidebar offset*/
+  .footer {
   width: calc(100% - 280px); 
-  margin-left: 280px; /* ✅ match sidebar */
+  margin-left: 280px; 
   background: #ffffff;
   padding: 40px 60px;
   border-top: 1px solid #e5e7eb;
-
   display: block;
   flex-basis: 100%;
   clear: both;
 }
+
 /* FEATURED SECTION */
 .featured {
   margin-bottom: 30px;
@@ -991,7 +1002,7 @@ textarea {
   gap: 20px;
 }
 
-/* FOOTER */
+/* Global footer it makes the footer content to be in centre*/
 .footer {
   text-align: center;
   padding: 20px;
