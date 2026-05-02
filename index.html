@@ -83,11 +83,12 @@
   <nav class="navbar">
     <div class="logo">UIverse</div>
 
-    <div class="search-bar">
-      <span class="nav-link active">Explore</span>
-      <input type="text" id="searchInput" placeholder="Search Components" onkeydown="handleSearch(event)" />
-      <button class="search-btn">🔍</button>
-    </div>
+  <!-- Center Search Bar -->
+  <div class="search-bar">
+    <span class="nav-link active">Explore</span>
+    <input type="text" id="searchInput" placeholder="Search Components" onkeydown="handleSearch(event)" />
+    <button class="search-btn">🔍</button>
+  </div>
 
     <div class="nav-right">
       <button class="nav-btn">Add Component</button>
@@ -548,19 +549,5 @@
   </div>
 </footer>
 
-<!-- ================= SCRIPT ================= -->
-<script>
-function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("active");
-}
-
-document.getElementById("darkModeToggle").onclick = function () {
-  document.body.classList.toggle("light-mode");
-};
-</script>
-
-</body>
-</html>
 <script src="script.js"></script>
-
 </body>
