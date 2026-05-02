@@ -52,314 +52,191 @@
   <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 <div class="main">
 
-  <!-- FOR TEXT -->
+  <<div class="main">
+
+  <!-- 🔹 BASIC INPUTS -->
+  <h2 class="section-title">Basic Inputs</h2>
+
   <div class="component-card" data-name="text input">
     <h3>Text Input</h3>
-    <input type="text" placeholder="Enter text" />
-
+    <div class="input-group">
+      <label>Text</label>
+      <input type="text" placeholder="Enter text">
+    </div>
     <div class="actions">
       <button onclick="toggleCode('c1')">View Code</button>
       <button onclick="copyCode('c1', this)">Copy Code</button>
     </div>
-
     <pre id="c1" style="display:none;">
 &lt;input type="text" placeholder="Enter text"&gt;
     </pre>
   </div>
 
-  <!-- FOR PASSWORD -->
-  <div class="component-card" data-name="password input">
-    <h3>Password Input</h3>
-    <input type="password" placeholder="Enter password" />
-
+  <div class="component-card" data-name="email input">
+    <h3>Email Input</h3>
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="Enter email">
+    </div>
     <div class="actions">
       <button onclick="toggleCode('c2')">View Code</button>
       <button onclick="copyCode('c2', this)">Copy Code</button>
     </div>
-
     <pre id="c2" style="display:none;">
-&lt;input type="password" placeholder="Enter password"&gt;
-    </pre>
-  </div>
-
-  <!-- FOR EMAIL -->
-  <div class="component-card" data-name="email input">
-    <h3>Email Input</h3>
-    <input type="email" placeholder="Enter email" />
-
-    <div class="actions">
-      <button onclick="toggleCode('c3')">View Code</button>
-      <button onclick="copyCode('c3', this)">Copy Code</button>
-    </div>
-
-    <pre id="c3" style="display:none;">
 &lt;input type="email" placeholder="Enter email"&gt;
     </pre>
   </div>
 
-  <!-- FOR NUMBER -->
-  <div class="component-card" data-name="number input">
-    <h3>Number Input</h3>
-    <input type="number" placeholder="Enter number" />
+  <div class="component-card" data-name="password input">
+    <h3>Password Input</h3>
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" placeholder="Enter password">
+    </div>
+    <div class="actions">
+      <button onclick="toggleCode('c3')">View Code</button>
+      <button onclick="copyCode('c3', this)">Copy Code</button>
+    </div>
+    <pre id="c3" style="display:none;">
+&lt;input type="password" placeholder="Enter password"&gt;
+    </pre>
+  </div>
 
+  <!-- 🔹 DATE & TIME -->
+  <h2 class="section-title">Date & Time</h2>
+
+  <div class="component-card" data-name="date input">
+    <h3>Date Input</h3>
+    <div class="input-group">
+      <label>Date</label>
+      <input type="date">
+    </div>
     <div class="actions">
       <button onclick="toggleCode('c4')">View Code</button>
       <button onclick="copyCode('c4', this)">Copy Code</button>
     </div>
-
     <pre id="c4" style="display:none;">
-&lt;input type="number" placeholder="Enter number"&gt;
-    </pre>
-  </div>
-
-  <!-- FOR SEARCH -->
-  <div class="component-card" data-name="search input">
-    <h3>Search Input</h3>
-    <input type="search" placeholder="Search..." />
-
-    <div class="actions">
-      <button onclick="toggleCode('c5')">View Code</button>
-      <button onclick="copyCode('c5', this)">Copy Code</button>
-    </div>
-
-    <pre id="c5" style="display:none;">
-&lt;input type="search" placeholder="Search..."&gt;
-    </pre>
-  </div>
-
-  <!-- FOR DATE -->
-  <div class="component-card" data-name="date input">
-    <h3>Date Input</h3>
-    <input type="date" />
-
-    <div class="actions">
-      <button onclick="toggleCode('c6')">View Code</button>
-      <button onclick="copyCode('c6', this)">Copy Code</button>
-    </div>
-
-    <pre id="c6" style="display:none;">
 &lt;input type="date"&gt;
     </pre>
   </div>
 
-  <!-- FOR TIME -->
   <div class="component-card" data-name="time input">
     <h3>Time Input</h3>
-    <input type="time" />
-
-    <div class="actions">
-      <button onclick="toggleCode('c7')">View Code</button>
-      <button onclick="copyCode('c7', this)">Copy Code</button>
+    <div class="input-group">
+      <label>Time</label>
+      <input type="time">
     </div>
-
-    <pre id="c7" style="display:none;">
+    <div class="actions">
+      <button onclick="toggleCode('c5')">View Code</button>
+      <button onclick="copyCode('c5', this)">Copy Code</button>
+    </div>
+    <pre id="c5" style="display:none;">
 &lt;input type="time"&gt;
     </pre>
   </div>
 
-  <!-- FOR FILE -->
+  <!-- 🔹 ADVANCED INPUTS -->
+  <h2 class="section-title">Advanced Inputs</h2>
+
   <div class="component-card" data-name="file input">
     <h3>File Input</h3>
-    <input type="file" />
-
-    <div class="actions">
-      <button onclick="toggleCode('c8')">View Code</button>
-      <button onclick="copyCode('c8', this)">Copy Code</button>
+    <div class="input-group">
+      <label>Upload File</label>
+      <input type="file">
     </div>
-
-    <pre id="c8" style="display:none;">
+    <div class="actions">
+      <button onclick="toggleCode('c6')">View Code</button>
+      <button onclick="copyCode('c6', this)">Copy Code</button>
+    </div>
+    <pre id="c6" style="display:none;">
 &lt;input type="file"&gt;
     </pre>
   </div>
 
-  <!-- RANGE -->
   <div class="component-card" data-name="range input">
     <h3>Range Input</h3>
-    <input type="range" min="0" max="100" />
-
-    <div class="actions">
-      <button onclick="toggleCode('c9')">View Code</button>
-      <button onclick="copyCode('c9', this)">Copy Code</button>
+    <div class="input-group">
+      <label>Range</label>
+      <input type="range" min="0" max="100">
     </div>
-
-    <pre id="c9" style="display:none;">
+    <div class="actions">
+      <button onclick="toggleCode('c7')">View Code</button>
+      <button onclick="copyCode('c7', this)">Copy Code</button>
+    </div>
+    <pre id="c7" style="display:none;">
 &lt;input type="range" min="0" max="100"&gt;
     </pre>
   </div>
 
-  <!-- COLOR -->
-  <div class="component-card" data-name="color input">
-    <h3>Color Input</h3>
-    <input type="color" />
+  <!-- 🔹 SELECTION INPUTS -->
+  <h2 class="section-title">Selection Inputs</h2>
 
+  <div class="component-card" data-name="checkbox input">
+    <h3>Checkbox</h3>
+    <div class="input-group">
+      <label>
+        <input type="checkbox"> Accept terms
+      </label>
+    </div>
+    <div class="actions">
+      <button onclick="toggleCode('c8')">View Code</button>
+      <button onclick="copyCode('c8', this)">Copy Code</button>
+    </div>
+    <pre id="c8" style="display:none;">
+&lt;input type="checkbox"&gt;
+    </pre>
+  </div>
+
+  <div class="component-card" data-name="radio input">
+    <h3>Radio Input</h3>
+    <div class="input-group">
+      <label><input type="radio" name="opt"> Option 1</label>
+      <label><input type="radio" name="opt"> Option 2</label>
+    </div>
+    <div class="actions">
+      <button onclick="toggleCode('c9')">View Code</button>
+      <button onclick="copyCode('c9', this)">Copy Code</button>
+    </div>
+    <pre id="c9" style="display:none;">
+&lt;input type="radio"&gt;
+    </pre>
+  </div>
+
+  <!-- 🔹 FORM INPUTS -->
+  <h2 class="section-title">Form Inputs</h2>
+
+  <div class="component-card" data-name="textarea input">
+    <h3>Textarea</h3>
+    <div class="input-group">
+      <label>Message</label>
+      <textarea rows="4" placeholder="Enter message"></textarea>
+    </div>
     <div class="actions">
       <button onclick="toggleCode('c10')">View Code</button>
       <button onclick="copyCode('c10', this)">Copy Code</button>
     </div>
-
     <pre id="c10" style="display:none;">
-&lt;input type="color"&gt;
+&lt;textarea&gt;&lt;/textarea&gt;
     </pre>
   </div>
 
-  <!-- TELEPHONE INPUT -->
-  <div class="component-card" data-name="telephone phone input">
-    <h3>Telephone Input</h3>
-    <input type="tel" placeholder="Enter phone number" />
-
+  <div class="component-card" data-name="select input">
+    <h3>Select Dropdown</h3>
+    <div class="input-group">
+      <label>Select Option</label>
+      <select>
+        <option>Select</option>
+        <option>Option 1</option>
+      </select>
+    </div>
     <div class="actions">
       <button onclick="toggleCode('c11')">View Code</button>
       <button onclick="copyCode('c11', this)">Copy Code</button>
     </div>
-
     <pre id="c11" style="display:none;">
-&lt;input type="tel" placeholder="Enter phone number"&gt;
+&lt;select&gt;&lt;/select&gt;
     </pre>
   </div>
-
-  <!-- URL INPUT -->
-  <div class="component-card" data-name="url input">
-    <h3>URL Input</h3>
-    <input type="url" placeholder="https://example.com" />
-
-    <div class="actions">
-      <button onclick="toggleCode('c12')">View Code</button>
-      <button onclick="copyCode('c12', this)">Copy Code</button>
-    </div>
-
-    <pre id="c12" style="display:none;">
-&lt;input type="url" placeholder="https://example.com"&gt;
-    </pre>
-  </div>
-
-  <!-- MONTH INPUT -->
-  <div class="component-card" data-name="month input">
-    <h3>Month Input</h3>
-    <input type="month" />
-
-    <div class="actions">
-      <button onclick="toggleCode('c13')">View Code</button>
-      <button onclick="copyCode('c13', this)">Copy Code</button>
-    </div>
-
-    <pre id="c13" style="display:none;">
-&lt;input type="month"&gt;
-    </pre>
-  </div>
-
-  <!-- WEEK INPUT -->
-  <div class="component-card" data-name="week input">
-    <h3>Week Input</h3>
-    <input type="week" />
-
-    <div class="actions">
-      <button onclick="toggleCode('c14')">View Code</button>
-      <button onclick="copyCode('c14', this)">Copy Code</button>
-    </div>
-
-    <pre id="c14" style="display:none;">
-&lt;input type="week"&gt;
-    </pre>
-  </div>
-
-  <!-- DATETIME-LOCAL INPUT -->
-  <div class="component-card" data-name="datetime datetime-local input">
-    <h3>DateTime-Local Input</h3>
-    <input type="datetime-local" />
-
-    <div class="actions">
-      <button onclick="toggleCode('c15')">View Code</button>
-      <button onclick="copyCode('c15', this)">Copy Code</button>
-    </div>
-
-    <pre id="c15" style="display:none;">
-&lt;input type="datetime-local"&gt;
-    </pre>
-  </div>
-
-  <!-- CHECKBOX INPUT -->
-  <div class="component-card" data-name="checkbox input">
-    <h3>Checkbox Input</h3>
-    <label>
-      <input type="checkbox" /> Accept terms and conditions
-    </label>
-
-    <div class="actions">
-      <button onclick="toggleCode('c16')">View Code</button>
-      <button onclick="copyCode('c16', this)">Copy Code</button>
-    </div>
-
-    <pre id="c16" style="display:none;">
-&lt;label&gt;
-  &lt;input type="checkbox"&gt; Accept terms and conditions
-&lt;/label&gt;
-    </pre>
-  </div>
-
-  <!-- RADIO INPUT -->
-  <div class="component-card" data-name="radio input">
-    <h3>Radio Input</h3>
-    <label>
-      <input type="radio" name="option" value="1" /> Option 1
-    </label>
-    <label>
-      <input type="radio" name="option" value="2" /> Option 2
-    </label>
-
-    <div class="actions">
-      <button onclick="toggleCode('c17')">View Code</button>
-      <button onclick="copyCode('c17', this)">Copy Code</button>
-    </div>
-
-    <pre id="c17" style="display:none;">
-&lt;label&gt;
-  &lt;input type="radio" name="option" value="1"&gt; Option 1
-&lt;/label&gt;
-&lt;label&gt;
-  &lt;input type="radio" name="option" value="2"&gt; Option 2
-&lt;/label&gt;
-    </pre>
-  </div>
-
-  <!-- TEXTAREA INPUT -->
-  <div class="component-card" data-name="textarea input">
-    <h3>Textarea Input</h3>
-    <textarea placeholder="Enter your message..." rows="4"></textarea>
-
-    <div class="actions">
-      <button onclick="toggleCode('c18')">View Code</button>
-      <button onclick="copyCode('c18', this)">Copy Code</button>
-    </div>
-
-    <pre id="c18" style="display:none;">
-&lt;textarea placeholder="Enter your message..." rows="4"&gt;&lt;/textarea&gt;
-    </pre>
-  </div>
-
-  <!-- SELECT DROPDOWN -->
-  <div class="component-card" data-name="select dropdown input">
-    <h3>Select Dropdown</h3>
-    <select>
-      <option value="">Select an option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-
-    <div class="actions">
-      <button onclick="toggleCode('c19')">View Code</button>
-      <button onclick="copyCode('c19', this)">Copy Code</button>
-    </div>
-
-    <pre id="c19" style="display:none;">
-&lt;select&gt;
-  &lt;option value=""&gt;Select an option&lt;/option&gt;
-  &lt;option value="1"&gt;Option 1&lt;/option&gt;
-  &lt;option value="2"&gt;Option 2&lt;/option&gt;
-&lt;/select&gt;
-    </pre>
-  </div>
-
   <!-- DISABLED INPUT -->
   <div class="component-card" data-name="disabled input">
     <h3>Disabled Input</h3>

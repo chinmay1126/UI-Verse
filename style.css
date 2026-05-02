@@ -16,7 +16,6 @@ html, body {
   background: #ffffff;
 }
 
-}
 /* LAYOUT */
 body {
   display: flex;
@@ -1705,7 +1704,7 @@ body.sidebar-hidden .footer {
   border-color: #6c5ce7;
   box-shadow: 0 0 0 3px rgba(108,92,231,0.12);
 }
-}
+
 
 
 /* Form elements styling for new forms */
@@ -3655,7 +3654,6 @@ body {
 .fa-seedling   { color: #008ef3; } 
 .fa-bolt       { color: #ff0400; } 
 .fa-rocket {color:rgb(190, 37, 63)}
-}
 
 .footer {
   background: #0f172a;
@@ -3704,7 +3702,7 @@ body {
     width: 100%;
   }
 
-
+}
 /* 🌈 THEME VARIABLES */
 :root {
   --bg: #ffffff;
@@ -3813,4 +3811,23 @@ a {
 
 .footer {
   margin-top: 60px;
+}
+.section-title {
+  margin: 20px 0 10px;
+  font-size: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
