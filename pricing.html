@@ -3,271 +3,600 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing - UIverse</title>
+  <title>Pricing Cards — UIverse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="pricing.css">
 </head>
 <body>
-
-<div class="container">
-  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h2>UIverse</h2>
+ 
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
+  <nav class="sidebar-nav">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="alerts.html">Alerts</a></li>
-      <li><a href="badges.html">Badges</a></li>
-      <li><a href="button.html">Buttons</a></li>
-      <li><a href="cards.html">Cards</a></li>
-      <li><a href="color.html">Colors</a></li>
-      <li><a href="footer.html">Footer</a></li>
-      <li><a href="form.html">Forms</a></li>
-      <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="loaders.html">Loaders</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
-      <li class="active"><a href="pricing.html">Pricing</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+      <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navbar</span></a></li>
+      <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+      <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Inputs</span></a></li>
+      <li><a href="contact.html"><i class="fa-regular fa-user"></i><span>Contact Us</span></a></li>
+      <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><span>Forms</span></a></li>
+      <li><a href="badges.html"><i class="fa-solid fa-award"></i><span>Badges</span></a></li>
+      <li class="active"><a href="pricing.html"><i class="fa-solid fa-tag"></i><span>Pricing</span></a></li>
     </ul>
-  </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
-
-  <!-- Main -->
-  <main class="main">
-
-    <div class="page-header">
-      <h1>Pricing Cards</h1>
-      <p>Simple, responsive pricing cards for landing pages and product sites.</p>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
+ 
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+ 
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+ 
+<!-- MAIN -->
+<main class="main-home">
+ 
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-left">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Pricing</span>
+      </div>
+      <h1 class="page-title">Pricing Card Components</h1>
+      <p class="page-desc">Beautiful, conversion-focused pricing cards for SaaS, landing pages, and product sites — ready to drop in and customize.</p>
+      <div class="page-meta">
+        <span class="meta-badge"><i class="fa-solid fa-layer-group"></i> 6 Components</span>
+        <span class="meta-badge"><i class="fa-solid fa-code"></i> Pure CSS</span>
+        <span class="meta-badge"><i class="fa-solid fa-bolt"></i> No JS Required</span>
+      </div>
     </div>
-
-    <div class="component-card">
-      <h3>Starter Plan</h3>
-      <div class="price-card">
-        <h4>Starter</h4>
-        <p class="price">$12<span class="price-duration">/month</span></p>
-        <ul class="price-list">
-          <li>Basic analytics</li>
-          <li>Custom domains</li>
-          <li>Email support</li>
-        </ul>
-        <button>Choose Starter</button>
+    <div class="page-hero-right">
+      <div class="hero-pricing-preview">
+        <div class="hero-price-card preview-float">
+          <span class="hero-plan">Starter</span>
+          <span class="hero-amount">$12<small>/mo</small></span>
+        </div>
+        <div class="hero-price-card featured-hero preview-float" style="animation-delay:0.2s">
+          <span class="hero-plan">Pro</span>
+          <span class="hero-amount">$29<small>/mo</small></span>
+        </div>
+        <div class="hero-price-card preview-float" style="animation-delay:0.4s">
+          <span class="hero-plan">Enterprise</span>
+          <span class="hero-amount">$59<small>/mo</small></span>
+        </div>
       </div>
-
+    </div>
+  </div>
+ 
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
+    <button class="filter-btn" onclick="filterCards('single', this)">Single Plan</button>
+    <button class="filter-btn" onclick="filterCards('compare', this)">Comparison</button>
+    <button class="filter-btn" onclick="filterCards('toggle', this)">Toggle</button>
+    <div class="filter-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Filter pricing..." oninput="liveFilter(this.value)" />
+    </div>
+  </div>
+ 
+  <!-- Pricing Grid -->
+  <div class="button-grid" id="pricingGrid">
+ 
+    <!-- Starter Plan -->
+    <div class="component-card" data-name="starter pricing card basic" data-cat="single">
+      <div class="card-top">
+        <span class="card-label">Starter Plan</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="card-preview">
+        <div class="price-card">
+          <h4>Starter</h4>
+          <p class="price">$12<span class="price-duration">/month</span></p>
+          <ul class="price-list">
+            <li><i class="fa-solid fa-check"></i> Basic analytics</li>
+            <li><i class="fa-solid fa-check"></i> Custom domains</li>
+            <li><i class="fa-solid fa-check"></i> Email support</li>
+          </ul>
+          <button class="price-btn">Choose Starter</button>
+        </div>
+      </div>
+      <p class="card-desc">A clean, minimal pricing card for entry-level plans. Great for freemium or starter tiers.</p>
       <div class="actions">
-        <button onclick="toggleCode('p1')">View Code</button>
-        <button onclick="copyCode('p1', this)">Copy</button>
+        <button class="action-btn view-btn" onclick="toggleCode('p1', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('p1', this)"><i class="fa-solid fa-copy"></i> Copy</button>
       </div>
-
-      <pre id="p1" class="code-block">
-&lt;div class="price-card"&gt;
+      <pre id="p1" class="code-block"><code>&lt;div class="price-card"&gt;
   &lt;h4&gt;Starter&lt;/h4&gt;
   &lt;p class="price"&gt;$12&lt;span class="price-duration"&gt;/month&lt;/span&gt;&lt;/p&gt;
-  &lt;ul class="price-list"&gt;...&lt;/ul&gt;
-  &lt;button&gt;Choose Starter&lt;/button&gt;
+  &lt;ul class="price-list"&gt;
+    &lt;li&gt;✓ Basic analytics&lt;/li&gt;
+    &lt;li&gt;✓ Custom domains&lt;/li&gt;
+    &lt;li&gt;✓ Email support&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button class="price-btn"&gt;Choose Starter&lt;/button&gt;
 &lt;/div&gt;
-      </pre>
+ 
+.price-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+}
+.price-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+.price { font-size: 42px; font-weight: 800; color: #eb6835; }
+.price-duration { font-size: 14px; color: #999; font-weight: 400; }
+.price-list { list-style: none; padding: 0; margin: 20px 0; text-align: left; }
+.price-list li { padding: 6px 0; font-size: 14px; color: #555; }
+.price-btn {
+  width: 100%; padding: 12px;
+  background: #eb6835; color: #fff;
+  border: none; border-radius: 8px;
+  font-weight: 600; cursor: pointer; transition: 0.3s;
+}
+.price-btn:hover { background: #d45c28; transform: translateY(-2px); }</code></pre>
     </div>
-
-    <div class="component-card">
-      <h3>Pro Plan</h3>
-      <div class="price-card popular">
-        <span class="badge badge-pill">Popular</span>
-        <h4>Pro</h4>
-        <p class="price">$29<span class="price-duration">/month</span></p>
-        <ul class="price-list">
-          <li>Advanced analytics</li>
-          <li>Unlimited projects</li>
-          <li>Priority support</li>
-        </ul>
-        <button>Choose Pro</button>
+ 
+    <!-- Pro Plan -->
+    <div class="component-card" data-name="pro pricing card popular featured highlight" data-cat="single">
+      <div class="card-top">
+        <span class="card-label">Pro Plan</span>
+        <span class="card-tag tag-popular">Popular</span>
       </div>
-
-      <div class="actions">
-        <button onclick="toggleCode('p2')">View Code</button>
-        <button onclick="copyCode('p2', this)">Copy</button>
-      </div>
-
-      <pre id="p2" class="code-block">
-&lt;div class="price-card popular"&gt;...&lt;/div&gt;
-      </pre>
-    </div>
-
-    <div class="component-card">
-      <h3>Enterprise Plan</h3>
-      <div class="price-card">
-        <h4>Enterprise</h4>
-        <p class="price">$59<span class="price-duration">/month</span></p>
-        <ul class="price-list">
-          <li>Team collaboration</li>
-          <li>Custom onboarding</li>
-          <li>Dedicated support</li>
-        </ul>
-        <button>Choose Enterprise</button>
-      </div>
-
-      <div class="actions">
-        <button onclick="toggleCode('p3')">View Code</button>
-        <button onclick="copyCode('p3', this)">Copy</button>
-      </div>
-
-      <pre id="p3" class="code-block">
-&lt;div class="price-card"&gt;...&lt;/div&gt;
-      </pre>
-    </div>
-
-    <div class="component-card">
-      <h3>Pricing Comparison Table</h3>
-      <div class="pricing-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Features</th>
-              <th>Starter</th>
-              <th>Pro</th>
-              <th>Enterprise</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Analytics</td>
-              <td>Basic</td>
-              <td>Advanced</td>
-              <td>Full suite</td>
-            </tr>
-            <tr>
-              <td>Projects</td>
-              <td>3</td>
-              <td>Unlimited</td>
-              <td>Unlimited</td>
-            </tr>
-            <tr>
-              <td>Support</td>
-              <td>Email</td>
-              <td>Priority</td>
-              <td>Dedicated</td>
-            </tr>
-            <tr>
-              <td>Custom domain</td>
-              <td></td>
-              <td><span class="check">✓</span></td>
-              <td><span class="check">✓</span></td>
-            </tr>
-            <tr>
-              <td>Advanced security</td>
-              <td></td>
-              <td></td>
-              <td><span class="check">✓</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="actions">
-        <button onclick="toggleCode('p4')">View Code</button>
-        <button onclick="copyCode('p4', this)">Copy</button>
-      </div>
-
-      <pre id="p4" class="code-block">
-&lt;div class="pricing-table"&gt;...&lt;/div&gt;
-      </pre>
-    </div>
-
-    <div class="component-card">
-      <h3>Annual vs Monthly Pricing</h3>
-      <div class="price-banners">
-        <div class="price-card banner">
-          <h4>Monthly</h4>
-          <p class="price">$19<span class="price-duration">/month</span></p>
+      <div class="card-preview">
+        <div class="price-card popular">
+          <span class="popular-badge">⭐ Most Popular</span>
+          <h4>Pro</h4>
+          <p class="price">$29<span class="price-duration">/month</span></p>
           <ul class="price-list">
-            <li>All starter features</li>
-            <li>Email support</li>
-            <li>Standard integrations</li>
+            <li><i class="fa-solid fa-check"></i> Advanced analytics</li>
+            <li><i class="fa-solid fa-check"></i> Unlimited projects</li>
+            <li><i class="fa-solid fa-check"></i> Priority support</li>
           </ul>
-          <button>Choose Monthly</button>
-        </div>
-        <div class="price-card banner featured">
-          <span class="badge badge-pill">Best Value</span>
-          <h4>Annual</h4>
-          <p class="price">$14<span class="price-duration">/month</span></p>
-          <ul class="price-list">
-            <li>Save 25%</li>
-            <li>Priority support</li>
-            <li>Advanced analytics</li>
-          </ul>
-          <button>Choose Annual</button>
+          <button class="price-btn popular-btn">Choose Pro</button>
         </div>
       </div>
-
+      <p class="card-desc">Highlighted "Most Popular" card with accent border and gradient button — pushes users to the middle tier.</p>
       <div class="actions">
-        <button onclick="toggleCode('p5')">View Code</button>
-        <button onclick="copyCode('p5', this)">Copy</button>
+        <button class="action-btn view-btn" onclick="toggleCode('p2', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('p2', this)"><i class="fa-solid fa-copy"></i> Copy</button>
       </div>
-
-      <pre id="p5" class="code-block">
-&lt;div class="price-banners"&gt;...&lt;/div&gt;
-      </pre>
+      <pre id="p2" class="code-block"><code>&lt;div class="price-card popular"&gt;
+  &lt;span class="popular-badge"&gt;⭐ Most Popular&lt;/span&gt;
+  &lt;h4&gt;Pro&lt;/h4&gt;
+  &lt;p class="price"&gt;$29&lt;span class="price-duration"&gt;/month&lt;/span&gt;&lt;/p&gt;
+  &lt;ul class="price-list"&gt;...&lt;/ul&gt;
+  &lt;button class="price-btn popular-btn"&gt;Choose Pro&lt;/button&gt;
+&lt;/div&gt;
+ 
+.price-card.popular {
+  border: 2px solid #eb6835;
+  box-shadow: 0 8px 32px rgba(235,104,53,0.2);
+  transform: scale(1.04);
+}
+.popular-badge {
+  display: inline-block;
+  background: rgba(235,104,53,0.12);
+  color: #eb6835;
+  border: 1px solid rgba(235,104,53,0.3);
+  padding: 4px 14px; border-radius: 20px;
+  font-size: 12px; font-weight: 600;
+  margin-bottom: 16px;
+}
+.popular-btn { background: linear-gradient(45deg, #eb6835, #6c5ce7); }</code></pre>
     </div>
-
-    <div class="component-card">
-      <h3>Minimal Pricing Cards</h3>
-      <div class="pricing-stack">
+ 
+    <!-- Enterprise Plan -->
+    <div class="component-card" data-name="enterprise pricing card dark premium" data-cat="single">
+      <div class="card-top">
+        <span class="card-label">Enterprise Plan</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview dark-preview">
+        <div class="price-card enterprise">
+          <h4>Enterprise</h4>
+          <p class="price enterprise-price">$59<span class="price-duration">/month</span></p>
+          <ul class="price-list enterprise-list">
+            <li><i class="fa-solid fa-check"></i> Team collaboration</li>
+            <li><i class="fa-solid fa-check"></i> Custom onboarding</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated support</li>
+          </ul>
+          <button class="price-btn enterprise-btn">Choose Enterprise</button>
+        </div>
+      </div>
+      <p class="card-desc">Dark-themed enterprise card for premium, high-value plans. Perfect for B2B SaaS pricing pages.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('p3', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('p3', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="p3" class="code-block"><code>&lt;div class="price-card enterprise"&gt;
+  &lt;h4&gt;Enterprise&lt;/h4&gt;
+  &lt;p class="price"&gt;$59&lt;span class="price-duration"&gt;/month&lt;/span&gt;&lt;/p&gt;
+  &lt;ul class="price-list"&gt;...&lt;/ul&gt;
+  &lt;button class="price-btn enterprise-btn"&gt;Choose Enterprise&lt;/button&gt;
+&lt;/div&gt;
+ 
+.price-card.enterprise {
+  background: #0f0f12;
+  border: 1px solid #2a2a35;
+  color: #fff;
+}
+.enterprise-price { color: #a29bfe; }
+.enterprise-list li { color: #aaa; }
+.enterprise-btn { background: #6c5ce7; }
+.enterprise-btn:hover { background: #5a4bd1; }</code></pre>
+    </div>
+ 
+    <!-- Comparison Table -->
+    <div class="component-card" data-name="pricing comparison table features grid" data-cat="compare">
+      <div class="card-top">
+        <span class="card-label">Comparison Table</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview" style="padding:12px; overflow-x:auto; align-items:flex-start; width:100%;">
+        <div class="pricing-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Features</th>
+                <th>Starter</th>
+                <th>Pro</th>
+                <th>Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Analytics</td><td>Basic</td><td>Advanced</td><td>Full suite</td></tr>
+              <tr><td>Projects</td><td>3</td><td>Unlimited</td><td>Unlimited</td></tr>
+              <tr><td>Support</td><td>Email</td><td>Priority</td><td>Dedicated</td></tr>
+              <tr><td>Custom domain</td><td><span class="cross">✕</span></td><td><span class="check-mark">✓</span></td><td><span class="check-mark">✓</span></td></tr>
+              <tr><td>Advanced security</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="check-mark">✓</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="card-desc">Full feature comparison table — shows differences between plans clearly at a glance.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('p4', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('p4', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="p4" class="code-block"><code>&lt;div class="pricing-table"&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Features&lt;/th&gt;&lt;th&gt;Starter&lt;/th&gt;
+        &lt;th&gt;Pro&lt;/th&gt;&lt;th&gt;Enterprise&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Custom domain&lt;/td&gt;
+        &lt;td&gt;&lt;span class="cross"&gt;✕&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;span class="check-mark"&gt;✓&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;span class="check-mark"&gt;✓&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+ 
+.pricing-table { overflow-x: auto; width: 100%; }
+.pricing-table table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.pricing-table th {
+  background: rgba(235,104,53,0.08); color: #eb6835;
+  padding: 10px 14px; font-weight: 700;
+  text-align: center; border-bottom: 2px solid rgba(235,104,53,0.2);
+}
+.pricing-table th:first-child { text-align: left; color: var(--text-primary); }
+.pricing-table td {
+  padding: 9px 14px; border-bottom: 1px solid var(--card-border);
+  text-align: center; font-size: 13px; color: var(--text-secondary);
+}
+.pricing-table td:first-child { text-align: left; font-weight: 500; color: var(--text-primary); }
+.check-mark { color: #00b894; font-weight: 700; }
+.cross { color: #ccc; }</code></pre>
+    </div>
+ 
+    <!-- Monthly / Annual Toggle -->
+    <div class="component-card" data-name="annual monthly toggle pricing switch billing" data-cat="toggle">
+      <div class="card-top">
+        <span class="card-label">Billing Toggle</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview" style="flex-direction:column; gap:16px;">
+        <div class="billing-toggle">
+          <span class="toggle-label">Monthly</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="billingToggle" onchange="switchBilling()">
+            <span class="toggle-track"></span>
+          </label>
+          <span class="toggle-label">Annual <em class="save-badge">Save 25%</em></span>
+        </div>
+        <div class="toggle-cards">
+          <div class="mini-price-card">
+            <h5>Starter</h5>
+            <p class="mini-price" data-monthly="$12" data-annual="$9">$12</p>
+            <span class="mini-dur">/month</span>
+          </div>
+          <div class="mini-price-card featured-mini">
+            <h5>Pro</h5>
+            <p class="mini-price" data-monthly="$29" data-annual="$22">$29</p>
+            <span class="mini-dur">/month</span>
+          </div>
+          <div class="mini-price-card">
+            <h5>Enterprise</h5>
+            <p class="mini-price" data-monthly="$59" data-annual="$44">$59</p>
+            <span class="mini-dur">/month</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">Interactive monthly/annual billing toggle that updates prices live — a conversion-boosting must-have for SaaS.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('p5', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('p5', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="p5" class="code-block"><code>&lt;div class="billing-toggle"&gt;
+  &lt;span&gt;Monthly&lt;/span&gt;
+  &lt;label class="toggle-switch"&gt;
+    &lt;input type="checkbox" id="billingToggle" onchange="switchBilling()"&gt;
+    &lt;span class="toggle-track"&gt;&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;span&gt;Annual &lt;em class="save-badge"&gt;Save 25%&lt;/em&gt;&lt;/span&gt;
+&lt;/div&gt;
+ 
+.toggle-switch { position:relative; width:44px; height:24px; display:inline-block; }
+.toggle-switch input { opacity:0; width:0; height:0; }
+.toggle-track {
+  position:absolute; inset:0;
+  background:#ddd; border-radius:999px;
+  cursor:pointer; transition:0.3s;
+}
+.toggle-switch input:checked + .toggle-track { background:#eb6835; }
+.toggle-track::before {
+  content:''; position:absolute;
+  width:18px; height:18px; background:#fff;
+  border-radius:50%; top:3px; left:3px; transition:0.3s;
+}
+.toggle-switch input:checked + .toggle-track::before { transform:translateX(20px); }
+ 
+function switchBilling() {
+  const isAnnual = document.getElementById('billingToggle').checked;
+  document.querySelectorAll('.mini-price').forEach(el => {
+    el.textContent = isAnnual ? el.dataset.annual : el.dataset.monthly;
+  });
+}</code></pre>
+    </div>
+ 
+    <!-- Minimal Stack -->
+    <div class="component-card" data-name="minimal pricing cards side by side stack clean" data-cat="compare">
+      <div class="card-top">
+        <span class="card-label">Minimal Stack</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="card-preview" style="gap:10px; flex-wrap:wrap; align-items:stretch;">
         <div class="minimal-card">
           <h4>Basic</h4>
-          <p class="price">$9<span class="price-duration">/month</span></p>
-          <p>Perfect for individuals starting out.</p>
-          <button>Choose Basic</button>
+          <p class="min-price">$9<span>/mo</span></p>
+          <p class="min-desc">Perfect for individuals starting out.</p>
+          <button class="min-btn">Get Started</button>
         </div>
-        <div class="minimal-card featured">
+        <div class="minimal-card minimal-featured">
           <h4>Growth</h4>
-          <p class="price">$24<span class="price-duration">/month</span></p>
-          <p>Ideal for growing teams and product launches.</p>
-          <button>Choose Growth</button>
+          <p class="min-price">$24<span>/mo</span></p>
+          <p class="min-desc">Ideal for growing teams.</p>
+          <button class="min-btn min-btn-featured">Get Started</button>
         </div>
         <div class="minimal-card">
           <h4>Scale</h4>
-          <p class="price">$48<span class="price-duration">/month</span></p>
-          <p>Best for larger operations and dedicated support.</p>
-          <button>Choose Scale</button>
+          <p class="min-price">$48<span>/mo</span></p>
+          <p class="min-desc">Best for larger operations.</p>
+          <button class="min-btn">Get Started</button>
         </div>
       </div>
-
+      <p class="card-desc">Clean minimal pricing cards with subtle featured highlight — no fuss, no clutter, works anywhere.</p>
       <div class="actions">
-        <button onclick="toggleCode('p6')">View Code</button>
-        <button onclick="copyCode('p6', this)">Copy</button>
+        <button class="action-btn view-btn" onclick="toggleCode('p6', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('p6', this)"><i class="fa-solid fa-copy"></i> Copy</button>
       </div>
-
-      <pre id="p6" class="code-block">
-&lt;div class="pricing-stack"&gt;...&lt;/div&gt;
-      </pre>
+      <pre id="p6" class="code-block"><code>&lt;div class="minimal-card"&gt;
+  &lt;h4&gt;Basic&lt;/h4&gt;
+  &lt;p class="min-price"&gt;$9&lt;span&gt;/mo&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;Perfect for individuals.&lt;/p&gt;
+  &lt;button class="min-btn"&gt;Get Started&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="minimal-card minimal-featured"&gt;...&lt;/div&gt;
+ 
+.minimal-card {
+  flex: 1; min-width: 120px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px; padding: 20px 16px;
+  text-align: center; display: flex;
+  flex-direction: column; gap: 10px;
+}
+.minimal-card.minimal-featured {
+  border-color: #eb6835;
+  background: rgba(235,104,53,0.05);
+}
+.min-price { font-size: 28px; font-weight: 800; color: #eb6835; margin: 0; }
+.min-price span { font-size: 13px; font-weight: 400; color: #999; }
+.min-btn {
+  width: 100%; padding: 9px;
+  border: 1.5px solid var(--card-border);
+  background: transparent; border-radius: 8px;
+  cursor: pointer; font-weight: 600; transition: 0.3s;
+}
+.min-btn:hover { border-color: #eb6835; color: #eb6835; }
+.min-btn-featured { background: #eb6835; color: #fff; border-color: #eb6835; }</code></pre>
     </div>
-
-  </main>
-
-</div>
-
+ 
+  </div><!-- /pricingGrid -->
+ 
+</main>
+ 
+<!-- Scroll to Top -->
+<button id="scrollTopBtn" onclick="scrollToTop()" title="Back to top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+ 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
-    <div class="footer-col">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
       <div class="socials">
-        <span>🌐</span>
-        <span>💼</span>
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
     <div class="footer-col">
-      <h3>Pages</h3>
-      <p>Pricing</p>
-      <p>Testimonials</p>
-      <p>Alerts</p>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
     </div>
     <div class="footer-col">
       <h3>Legal</h3>
-       <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
-      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="#">License</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button">Subscribe</button>
+      </div>
     </div>
   </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
 </footer>
+ 
 <script src="script.js"></script>
+<script>
+  const toggle = document.getElementById('darkModeToggle');
+  const icon = toggle.querySelector('i');
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    icon.className = 'fa-solid fa-sun';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+ 
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('sidebarBackdrop').classList.toggle('visible');
+  }
+ 
+  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+ 
+  function toggleCode(id, btn) {
+    const block = document.getElementById(id);
+    const isOpen = block.classList.toggle('open');
+    btn.innerHTML = isOpen
+      ? '<i class="fa-solid fa-eye-slash"></i> Hide Code'
+      : '<i class="fa-solid fa-code"></i> View Code';
+  }
+ 
+  function copyCode(id, btn) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+ 
+  function filterCards(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.component-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+  }
+ 
+  function liveFilter(val) {
+    const q = val.toLowerCase();
+    document.querySelectorAll('.component-card').forEach(card => {
+      const name = card.dataset.name.toLowerCase();
+      const label = card.querySelector('.card-label')?.textContent.toLowerCase() || '';
+      card.style.display = (name.includes(q) || label.includes(q)) ? '' : 'none';
+    });
+  }
+ 
+  function handleSearch(e) {
+    if (e.key === 'Enter') liveFilter(e.target.value);
+  }
+ 
+  function switchBilling() {
+    const isAnnual = document.getElementById('billingToggle').checked;
+    document.querySelectorAll('.mini-price').forEach(el => {
+      el.textContent = isAnnual ? el.dataset.annual : el.dataset.monthly;
+    });
+  }
+ 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
+</script>
 </body>
-</html>
