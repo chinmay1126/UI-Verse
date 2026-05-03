@@ -1,6 +1,11 @@
+# 🌸 Nexus Spring of Code Project
+
 # 🚀 UIverse – Frontend Component Hub
 
-UIverse is a beginner-friendly open-source project that provides a growing collection of reusable UI components built using HTML, CSS, and JavaScript.
+🔗 **GitHub Repository:**
+https://github.com/Tushar-sonawane06/UI-Verse
+
+UIverse is a beginner-friendly open-source project that provides a growing collection of reusable UI components built using **HTML, CSS, and JavaScript**.
 
 The goal of UIverse is to help developers—especially beginners—make their first open-source contribution while learning how to build clean, responsive, and reusable UI components.
 
@@ -14,6 +19,8 @@ The goal of UIverse is to help developers—especially beginners—make their fi
 * 👀 Live preview of components
 * 📋 View & Copy code functionality
 * 🚀 Multi-page UI (Sidebar-based navigation)
+* 🌙 Upcoming Dark Mode support
+* 📱 Fully responsive UI improvements
 
 ---
 
@@ -23,15 +30,30 @@ The goal of UIverse is to help developers—especially beginners—make their fi
 
 ---
 
-## 📁 Project Structure
+## 📁 Updated Project Structure
 
 ```
-uiverse/
+UI-Verse/
 │
-├── index.html          # Home Page
-├── buttons.html        # Buttons Components
-├── style.css           # Global Styling
-├── script.js           # JS for interactions
+├── index.html
+├── Navbar.html
+├── alerts.html
+├── badges.html
+├── button.html
+├── cards.html
+├── color.html
+├── footer.html
+├── form.html
+├── loaders.html
+├── pricing.html
+├── testimonials.html
+├── toggles.html
+├── privacypolicy.html
+│
+├── style.css
+├── script.js
+├── .gitignore
+├── favicon.ico
 │
 ├── components/
 │   ├── buttons/
@@ -40,6 +62,7 @@ uiverse/
 │   ├── forms/
 │   └── loaders/
 │
+├── Contributing.md
 └── README.md
 ```
 
@@ -49,67 +72,69 @@ uiverse/
 
 ### 1️⃣ Fork the Repository
 
-Click on the **Fork** button on the top right.
+Click on the **Fork** button (top-right of GitHub)
 
 ---
 
 ### 2️⃣ Clone Your Fork
 
 ```
-git clone https://github.com/your-username/uiverse.git
+git clone https://github.com/your-username/UI-Verse.git
 ```
 
 ---
 
 ### 3️⃣ Open the Project
 
-Simply open `index.html` in your browser.
+Open `index.html` in your browser.
 
 ---
 
-## 🤝 How to Contribute
+## 🤝 Contributing Guide
 
 We welcome contributions from beginners 💙
 
-### 🔰 Contribution Steps
+### 🔰 Steps to Contribute
 
-1. Check the **Issues** section
-2. Comment on the issue you want to work on
-3. Fork the repository
-4. Create a new branch
+1. Go to the **Issues** section
+2. Choose an issue to work on
+3. Comment to get assigned
+4. Fork the repository
+5. Create a new branch
 
 ```
 git checkout -b feature/your-feature-name
 ```
 
-5. Make your changes
-6. Commit your changes
+6. Make your changes
+7. Commit changes
 
 ```
-git commit -m "Added: new button component"
+git commit -m "Added: your feature name"
 ```
 
-7. Push to your fork
+8. Push to GitHub
 
 ```
 git push origin feature/your-feature-name
 ```
 
-8. Create a Pull Request 🎉
+9. Create a Pull Request 🎉
 
 ---
 
 ## 📌 Contribution Guidelines
 
 * ✅ Keep code clean and readable
-* ✅ Use proper indentation
+* ✅ Follow proper folder structure
 * ✅ Make components responsive
-* ✅ Follow folder structure
-* ✅ Add comments if needed
+* ✅ Use meaningful commit messages
+* ✅ Avoid breaking existing UI
+* ✅ Add comments where necessary
 
 ---
 
-## 🧩 What Can You Contribute?
+## 🧩 Contribution Areas
 
 ### 🎯 Components
 
@@ -118,14 +143,20 @@ git push origin feature/your-feature-name
 * Navbars
 * Forms
 * Loaders
+* Alerts
+* Badges
+* Toggles
+* Pricing Sections
+* Testimonials
 
 ---
 
 ### 🎨 UI Improvements
 
-* Improve layout
+* Improve responsiveness
 * Add animations
-* Enhance responsiveness
+* Enhance UX/UI
+* Improve mobile experience
 
 ---
 
@@ -135,31 +166,33 @@ git push origin feature/your-feature-name
 * Improve code preview system
 * Add dark mode 🌙
 * Improve sidebar navigation
+* Add search functionality
 
 ---
 
 ## 🏷️ Issue Labels
 
 * `good first issue` → Beginner-friendly
-* `enhancement` → Feature improvements
-* `bug` → Fix issues
-* `documentation` → Improve README/docs
+* `enhancement` → Feature request
+* `bug` → Bug fixes
+* `documentation` → Docs improvements
 
 ---
 
 ## 💡 Example Contributions
 
-* Add a new gradient button
+* Add a gradient button
 * Create a responsive navbar
-* Improve mobile UI
-* Add animation to components
+* Add hover effects to cards
+* Improve mobile layout
+* Add new UI components
 
 ---
 
 ## 🎯 Project Goals
 
 * Help beginners start open-source contributions
-* Build a large collection of reusable UI components
+* Build a large UI component library
 * Create a developer-friendly UI showcase platform
 
 ---
@@ -176,7 +209,7 @@ If you like this project:
 
 ## 👨‍💻 Maintainer
 
-Project Admin: Tushar Sonawane
+**Project Admin:** Tushar Sonawane
 
 ---
 
