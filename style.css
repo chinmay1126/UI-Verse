@@ -3783,6 +3783,18 @@ textarea {
   margin-top: 10px;
 } 
 
+/* badge responsive */
+
+@media (max-width: 1440px) {
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+}
+
 /* Color matching UI theme */
 .fa-layer-group { color: #5900ff; } 
 .fa-seedling   { color: #008ef3; } 
