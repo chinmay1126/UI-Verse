@@ -202,6 +202,7 @@ nav a:hover {
   background: #b4c2e5;
   padding: 20px;
   border-radius: 16px;
+}
 .search-bar {
   display: flex;
   align-items: center;
@@ -399,6 +400,7 @@ nav a:hover {
   color: #000505;
   border: 2px solid #2a393a;
   border-radius: 6px;
+}
 .hero h1 {
   font-size: 32px;
 }
@@ -3553,8 +3555,235 @@ textarea {
 .checkbox-group {
   margin: 10px 0;
 }
+
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #151515;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.search-btn {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.nav-btn {
+  background: #6c5ce7;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+  display: flex;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 220px;
+  background: #111;
+  padding: 20px;
+  border-right: 1px solid #222;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.sidebar .active a {
+  color: #6c5ce7;
+}
+
+/* ================= HEADER ================= */
+.page-header {
+  margin-bottom: 20px;
+}
+
+.page-header p {
+  color: #aaa;
+}
+
+/* ================= GRID ================= */
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+.component-card {
+  background: #181818;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.component-card:hover {
+  transform: translateY(-5px);
+  border-color: #6c5ce7;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 6px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= CODE BLOCK ================= */
+.code-block {
+  display: none;
+  background: #000;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+/* ================= BUTTON STYLES ================= */
+.gradient-btn {
+  background: linear-gradient(45deg, #ff6b6b, #6c5ce7);
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.glass-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  color: white;
+}
+
+/* ================= DIV COMPONENTS ================= */
+
+/* Profile */
+.profile-card {
+  text-align: center;
+}
+.avatar {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+.stats h2 {
+  margin: 5px 0;
+}
+
+/* Notification */
+.notification-card {
+  padding: 10px;
+  background: #222;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Pricing */
+.pricing-card ul {
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+/* Activity */
+.activity-card ul {
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+/* Info */
+.info-card {
+  text-align: center;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #111;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  margin-bottom: 10px;
+}
+
 /* Color matching UI theme */
 .fa-layer-group { color: #5900ff; } 
 .fa-seedling   { color: #008ef3; } 
 .fa-bolt       { color: #ff0400; } 
-.fa-rocket {color:rgb(190, 37, 63)}
+.fa-rocket {color:rgb(190, 37, 63);}
