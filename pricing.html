@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - UIverse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>UIverse</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="badges.html">Badges</a></li>
+      <li><a href="button.html">Buttons</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="color.html">Colors</a></li>
+      <li><a href="footer.html">Footer</a></li>
+      <li><a href="form.html">Forms</a></li>
+      <li><a href="inputs.html">Inputs</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="navbar.html">Navbars</a></li>
+      <li class="active"><a href="pricing.html">Pricing</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+  </aside>
+  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+
+  <!-- Main -->
+  <main class="main">
+
+    <div class="page-header">
+      <h1>Pricing Cards</h1>
+      <p>Simple, responsive pricing cards for landing pages and product sites.</p>
+    </div>
+
+    <div class="component-card">
+      <h3>Starter Plan</h3>
+      <div class="price-card">
+        <h4>Starter</h4>
+        <p class="price">$12<span class="price-duration">/month</span></p>
+        <ul class="price-list">
+          <li>Basic analytics</li>
+          <li>Custom domains</li>
+          <li>Email support</li>
+        </ul>
+        <button>Choose Starter</button>
+      </div>
+
+      <div class="actions">
+        <button onclick="toggleCode('p1')">View Code</button>
+        <button onclick="copyCode('p1', this)">Copy</button>
+      </div>
+
+      <pre id="p1" class="code-block">
+&lt;div class="price-card"&gt;
+  &lt;h4&gt;Starter&lt;/h4&gt;
+  &lt;p class="price"&gt;$12&lt;span class="price-duration"&gt;/month&lt;/span&gt;&lt;/p&gt;
+  &lt;ul class="price-list"&gt;...&lt;/ul&gt;
+  &lt;button&gt;Choose Starter&lt;/button&gt;
+&lt;/div&gt;
+      </pre>
+    </div>
+
+    <div class="component-card">
+      <h3>Pro Plan</h3>
+      <div class="price-card popular">
+        <span class="badge badge-pill">Popular</span>
+        <h4>Pro</h4>
+        <p class="price">$29<span class="price-duration">/month</span></p>
+        <ul class="price-list">
+          <li>Advanced analytics</li>
+          <li>Unlimited projects</li>
+          <li>Priority support</li>
+        </ul>
+        <button>Choose Pro</button>
+      </div>
+
+      <div class="actions">
+        <button onclick="toggleCode('p2')">View Code</button>
+        <button onclick="copyCode('p2', this)">Copy</button>
+      </div>
+
+      <pre id="p2" class="code-block">
+&lt;div class="price-card popular"&gt;...&lt;/div&gt;
+      </pre>
+    </div>
+
+    <div class="component-card">
+      <h3>Enterprise Plan</h3>
+      <div class="price-card">
+        <h4>Enterprise</h4>
+        <p class="price">$59<span class="price-duration">/month</span></p>
+        <ul class="price-list">
+          <li>Team collaboration</li>
+          <li>Custom onboarding</li>
+          <li>Dedicated support</li>
+        </ul>
+        <button>Choose Enterprise</button>
+      </div>
+
+      <div class="actions">
+        <button onclick="toggleCode('p3')">View Code</button>
+        <button onclick="copyCode('p3', this)">Copy</button>
+      </div>
+
+      <pre id="p3" class="code-block">
+&lt;div class="price-card"&gt;...&lt;/div&gt;
+      </pre>
+    </div>
+
+    <div class="component-card">
+      <h3>Pricing Comparison Table</h3>
+      <div class="pricing-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Features</th>
+              <th>Starter</th>
+              <th>Pro</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Analytics</td>
+              <td>Basic</td>
+              <td>Advanced</td>
+              <td>Full suite</td>
+            </tr>
+            <tr>
+              <td>Projects</td>
+              <td>3</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Support</td>
+              <td>Email</td>
+              <td>Priority</td>
+              <td>Dedicated</td>
+            </tr>
+            <tr>
+              <td>Custom domain</td>
+              <td></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Advanced security</td>
+              <td></td>
+              <td></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="actions">
+        <button onclick="toggleCode('p4')">View Code</button>
+        <button onclick="copyCode('p4', this)">Copy</button>
+      </div>
+
+      <pre id="p4" class="code-block">
+&lt;div class="pricing-table"&gt;...&lt;/div&gt;
+      </pre>
+    </div>
+
+    <div class="component-card">
+      <h3>Annual vs Monthly Pricing</h3>
+      <div class="price-banners">
+        <div class="price-card banner">
+          <h4>Monthly</h4>
+          <p class="price">$19<span class="price-duration">/month</span></p>
+          <ul class="price-list">
+            <li>All starter features</li>
+            <li>Email support</li>
+            <li>Standard integrations</li>
+          </ul>
+          <button>Choose Monthly</button>
+        </div>
+        <div class="price-card banner featured">
+          <span class="badge badge-pill">Best Value</span>
+          <h4>Annual</h4>
+          <p class="price">$14<span class="price-duration">/month</span></p>
+          <ul class="price-list">
+            <li>Save 25%</li>
+            <li>Priority support</li>
+            <li>Advanced analytics</li>
+          </ul>
+          <button>Choose Annual</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button onclick="toggleCode('p5')">View Code</button>
+        <button onclick="copyCode('p5', this)">Copy</button>
+      </div>
+
+      <pre id="p5" class="code-block">
+&lt;div class="price-banners"&gt;...&lt;/div&gt;
+      </pre>
+    </div>
+
+    <div class="component-card">
+      <h3>Minimal Pricing Cards</h3>
+      <div class="pricing-stack">
+        <div class="minimal-card">
+          <h4>Basic</h4>
+          <p class="price">$9<span class="price-duration">/month</span></p>
+          <p>Perfect for individuals starting out.</p>
+          <button>Choose Basic</button>
+        </div>
+        <div class="minimal-card featured">
+          <h4>Growth</h4>
+          <p class="price">$24<span class="price-duration">/month</span></p>
+          <p>Ideal for growing teams and product launches.</p>
+          <button>Choose Growth</button>
+        </div>
+        <div class="minimal-card">
+          <h4>Scale</h4>
+          <p class="price">$48<span class="price-duration">/month</span></p>
+          <p>Best for larger operations and dedicated support.</p>
+          <button>Choose Scale</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button onclick="toggleCode('p6')">View Code</button>
+        <button onclick="copyCode('p6', this)">Copy</button>
+      </div>
+
+      <pre id="p6" class="code-block">
+&lt;div class="pricing-stack"&gt;...&lt;/div&gt;
+      </pre>
+    </div>
+
+  </main>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h2>UIverse</h2>
+      <p>© 2026 UIverse. All rights reserved.</p>
+      <div class="socials">
+        <span>🌐</span>
+        <span>💼</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Pages</h3>
+      <p>Pricing</p>
+      <p>Testimonials</p>
+      <p>Alerts</p>
+    </div>
+    <div class="footer-col">
+      <h3>Legal</h3>
+       <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
+      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
