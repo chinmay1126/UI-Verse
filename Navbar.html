@@ -3,202 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbars - UIverse</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Navbar Components — UIverse</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ONLY ONE CSS -->
+  <link rel="stylesheet" href="navbar.css">
 </head>
+
 <body>
- 
- <nav class="navbar">
-  <!-- Logo -->
-  <div class="logo">Ulverse</div>
 
-  <!-- Center Search Bar -->
-  <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" />
-    <button class="search-btn">🔍</button>
-  </div>
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+  <div class="brand">⬡ UIverse</div>
 
-  <!-- Right Section -->
-  <div class="nav-right">
-    <button class="nav-btn">Add Component</button>
-    <button class="nav-btn">My Collection</button>
-    <button id="theme-toggle" class="nav-btn">Dark Mode</button>
-    <a href="#"></a>
-    <a href="#"></a>
-  </div>
-</nav>
-<div class="container">
-  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <ul class="menu">
+    <li><i class="fa-solid fa-house"></i> Home</li>
+    <li><i class="fa-solid fa-hand-pointer"></i> Buttons</li>
+    <li class="active"><i class="fa-solid fa-bars"></i> Navbar</li>
+    <li><i class="fa-solid fa-table-cells"></i> Cards</li>
+    <li><i class="fa-solid fa-keyboard"></i> Inputs</li>
+  </ul>
+</aside>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h2>UIverse</h2>  
-    <ul>
-      <li><a href="index.html"><i class="fa-solid fa-house"></i><p>Home</p></a></li>
-      <li><a href="button.html"><i class="fa-solid fa-mobile-button"></i><p>Butttons</p></a></li>
-      <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><p>Navbar</p></a></li>
-      <li><a href="contact.html"><i class="fa-regular fa-user"></i><p>Contact Us</p></a></li>
-      <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><p>Forms</p></a></li>
-      <li><a href="badges.html"><i class="fa-solid fa-award"></i><p>Badges</p></a></li>
-    </ul>
-  </aside> 
+<!-- ===== MAIN ===== -->
+<div class="main">
 
-      <li><a href="index.html">Home</a></li>
-      <li><a href="alerts.html">Alerts</a></li>
-      <li><a href="badges.html">Badges</a></li>
-      <li><a href="button.html">Buttons</a></li>
-      <li><a href="cards.html">Cards</a></li>
-      <li><a href="color.html">Colors</a></li>
-      <li><a href="footer.html">Footer</a></li>
-      <li><a href="form.html">Forms</a></li>
-      <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="loaders.html">Loaders</a></li>
-      <li class="active"><a href="navbar.html">Navbars</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-    </ul>
-  </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+  <!-- TOP NAVBAR -->
+  <header class="topbar">
+    <div class="logo">UIverse</div>
 
-  <!-- Main -->
-  <main class="main1">
-
-    <!-- Page Header -->
-    <div class="page-header">
-      <h1>Navbars</h1>
-      <p>Reusable and modern navigation bars</p>
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search components..." />
     </div>
 
-   <div class="nav-page">
+    <div class="actions">
+      <button class="btn outline">+ Add</button>
+      <button class="btn primary">Save</button>
+      <button class="icon"><i class="fa-solid fa-moon"></i></button>
+    </div>
+  </header>
 
-    <!-- Simple Navbar -->
-    <div id="Simple-navbar" class="component-card" data-name="simple navbar basic links">
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Navbar Components</h1>
+    <p>Modern navigation bars built with clean UI design.</p>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="grid">
+
+    <!-- SIMPLE -->
+    <div class="card">
       <h3>Simple Navbar</h3>
-      <div class="nav-preview">
-        <nav class="nav-simple nav-links">
-          <h4>UIverse</h4>
+      <div class="preview">
+        <nav class="demo-nav">
+          <span>UIverse</span>
           <div>
             <a href="#">Home</a>
             <a href="#">About</a>
-            <a href="#">Contact</a>
           </div>
         </nav>
       </div>
     </div>
 
-    <!-- Centered Navbar -->
-    <div id="centered-navbar" class="component-card" data-name="centered navbar menu clean">
+    <!-- CENTER -->
+    <div class="card">
       <h3>Centered Navbar</h3>
-      <div class="nav-preview">
-        <nav class="nav-center nav-links">
+      <div class="preview">
+        <nav class="demo-nav center">
           <a href="#">Home</a>
-          <a href="#">Features</a>
           <a href="#">Docs</a>
         </nav>
       </div>
     </div>
 
-    <!-- Button Navbar -->
-    <div id="button-navbar" class="component-card" data-name="button navbar login dark">
+    <!-- BUTTON -->
+    <div class="card">
       <h3>Button Navbar</h3>
-      <div class="nav-preview">
-        <nav class="nav-btnbar">
-          <h4>UIverse</h4>
-          <button>Login</button>
+      <div class="preview">
+        <nav class="demo-nav">
+          <span>UIverse</span>
+          <button class="btn primary">Login</button>
         </nav>
       </div>
     </div>
 
-    <!-- Utility Navbar -->
-    <div id="utility-navbar" class="component-card" data-name="utility navbar logo links actions">
-      <h3>Utility Navbar</h3>
-      <div class="nav-preview">
-        <nav class="nav-utility">
-          <div class="nav-brand">UIverse</div>
-          <div class="nav-links">
-            <a href="#">Overview</a>
-            <a href="#">Products</a>
-            <a href="#">Pricing</a>
-          </div>
-          <div class="nav-actions">
-            <button class="secondary">Sign In</button>
-            <button>Sign Up</button>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-    <!-- Search Navbar -->
-    <div id="search-navbar" class="component-card" data-name="search navbar input cta">
-      <h3>Search Navbar</h3>
-      <div class="nav-preview">
-        <nav class="nav-search">
-          <div class="nav-brand">UIverse</div>
-          <div class="search-group">
-            <input type="text" placeholder="Search docs..." />
-            <button>Search</button>
-          </div>
-          <a class="cta" href="#">Get Started</a>
-        </nav>
-      </div>
-    </div>
-
-    <!-- Split Navbar -->
-    <div id="split-navbar" class="component-card" data-name="split navbar tabs dashboard">
-      <h3>Split Navbar</h3>
-      <div class="nav-preview">
-        <nav class="nav-split">
-          <div class="nav-brand">UIverse</div>
-          <div class="nav-links">
-            <a href="#">Dashboard</a>
-            <a href="#">Projects</a>
-            <a href="#">Settings</a>
-          </div>
-          <div class="nav-meta">
-            <a href="#">Help</a>
-            <span class="badge">New</span>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-  </div>
-
-  </main>
+  </section>
 
 </div>
-<footer class="footer">
-  <div class="footer-container">
 
-    <!-- Brand -->
-    <div class="footer-col">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="socials">
-        <span>🌐</span>
-        <span>💼</span>
-      </div>
-    </div>
-
-    <!-- Pages -->
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <p>Navbars</p>
-      <p>Forms</p>
-      <p>Buttons</p>
-    </div>
-
-    <!-- Legal -->
-    <div class="footer-col">
-      <h3>Legal</h3>
-       <p id="privacy-policy"><a href="privacypolicy.html">Privacy Policy</a></p>
-      <p id="Terms of Service"><a href="terms.html">Terms of Service</a></p>
-    </div>
-
-  </div>
-</footer>
-<script src="script.js"></script>
 </body>
 </html>
