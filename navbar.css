@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  background: #0b0f17;
+  color: #e5e7eb;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  padding: 20px;
+}
+
+.brand {
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.menu li.active,
+.menu li:hover {
+  background: rgba(235, 104, 53, 0.15);
+  color: #eb6835;
+}
+
+/* ===== MAIN ===== */
+.main {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background: #111827;
+  padding: 8px 14px;
+  border-radius: 20px;
+  gap: 8px;
+}
+
+.search input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+}
+
+/* ===== BUTTONS ===== */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #eb6835;
+  color: white;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+}
+
+.icon {
+  background: #111827;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero h1 {
+  font-size: 36px;
+  color: #eb6835;
+}
+
+.hero p {
+  margin: 10px 0 30px;
+  color: #9ca3af;
+}
+
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+/* ===== NAV PREVIEW ===== */
+.preview {
+  background: #020617;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+/* DEMO NAVBAR */
+.demo-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.demo-nav.center {
+  justify-content: center;
+  gap: 30px;
+}
+
+/* LINKS */
+.demo-nav a {
+  color: #94a3b8;
+  margin-left: 15px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.demo-nav a:hover {
+  color: #eb6835;
+}

@@ -6,6 +6,10 @@ html, body {
   background-color: #f3f4f7;
   color: #000000;
   transition: 0.3s;
+  height: 1000px;
+  padding: 20px;
+  overflow-x: hidden;
+  background: #ffffff;
 }
 
 body {
@@ -191,7 +195,7 @@ nav a:hover {
 }
 
 .component-card {
-  background: #b4c2e5;
+  /* background: #b4c2e5; */
   padding: 20px;
   border-radius: 16px;
 }
@@ -282,6 +286,7 @@ nav a:hover {
 }
 
 .component-card:hover {
+  background: #b4c2e5;
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(239, 12, 12, 0.08);
 }
@@ -293,6 +298,52 @@ nav a:hover {
 
 .component-card button:first-of-type:hover {
   transform: scale(1.05);
+}
+
+.nav-btn button {
+  padding: 6px 14px;
+  border: none;
+  background: #5d76ab;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-btn button:hover {
+  background: #0b1a3e;
+}
+/* responsive-navbarpage */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links a {
+    padding: 8px 0;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 425px) {
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .nav-btn button {
+    width: 100%;
+  }
 }
 
 /* Actions */
@@ -392,6 +443,7 @@ nav a:hover {
   color: #000505;
   border: 2px solid #2a393a;
   border-radius: 6px;
+}
 .hero h1 {
   font-size: 32px;
 }
@@ -457,6 +509,8 @@ nav a:hover {
   border: none;
   border-radius: 6px;
   box-shadow: 0 5px 0 #7e70ca;
+}
+
 @media (max-width: 770px) {
   .layout {
     grid-template-columns: 1fr;
@@ -475,13 +529,14 @@ nav a:hover {
 
 /* HERO */
 .hero {
-  background: white;
+  background: rgb(93, 118, 171);
   padding: 40px;
   border-radius: 16px;
   margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .hero-left {
@@ -493,6 +548,9 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
+.hero-right {
+  margin-top: 20px;
+}
 .hero-left p {
   color: #080808;
 }
@@ -559,7 +617,7 @@ nav a:hover {
 /* BUTTON */
 .explore-btn {
   padding: 12px 20px;
-  background: linear-gradient(45deg, #ff6b6b, #6c5ce7);
+  background: linear-gradient(45deg, #7273df, #8580b0);
   color: white;
 }
 
@@ -570,6 +628,13 @@ nav a:hover {
   gap: 30px;
 }
 
+/* CARDS */
+.feature-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1.5px solid #8e90a9;
+}
 .privacy-wrapper p {
   text-align: center;
   color: #444;
@@ -582,16 +647,19 @@ nav a:hover {
   padding: 60px 20px;
   background: transparent;
 }
-
-.footer-card {
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 15px 45px rgba(0,0,0,0.05);
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-  border: 1px solid #f0f0f0;
+.search-bar input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 15px;
+  border: 3px solid #ddd;
+  outline: none;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto; 
 }
 
 .footer-brand h2 {
@@ -638,6 +706,15 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.feature-card:hover {
+  background: rgb(126, 150, 199);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+} 
+
+.search-bar input:hover {
+  border-color: #605a8b;
+}
 .footer-col a:hover {
   transform: translateY(-2px);
   opacity: 0.8;
@@ -3115,6 +3192,15 @@ body.dark-mode .hero-left p {
 .ui-btn.danger { background:#ff6b6b; }
 .ui-btn.success { background:#00b894; }
 
+body.dark-mode .component-card,
+body.dark-mode .hero,
+body.dark-mode .feature-card
+  {
+  background: rgb(106, 131, 180);
+  color: white;
+  border-color: #454185;
+  }
+  
 .ui-card {
   background: white;
   padding: 15px;
@@ -3389,6 +3475,59 @@ textarea {
   color: #fff;
 }
 
+@media (max-width: 425px) {
+
+  .hero {
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .hero-left p {
+    font-size: 13px;
+  }
+
+  .hero-right {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .explore-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .search-bar input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .feature-card {
+    padding: 12px;
+  }
+
+  .featured h2 {
+    font-size: 18px;
+  }
+
+  #scrollTopBtn {
+    bottom: 15px;
+    right: 15px;
+    font-size: 14px;
+  }
+}
 
 /* contact */
 .contact-center {
@@ -3520,6 +3659,25 @@ textarea {
 .checkbox-group {
   margin: 10px 0;
 }
+/* responsive-form */
+@media (max-width: 1024px) {
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .container2 {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .options {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
 
 /* badges */
 .badges-page {
@@ -3586,8 +3744,207 @@ textarea {
   margin-top: 10px;
 } 
 
+/* badge responsive */
+
+@media (max-width: 1440px) {
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+}
+
 /* Color matching UI theme */
 .fa-layer-group { color: #5900ff; } 
 .fa-seedling   { color: #008ef3; } 
 .fa-bolt       { color: #ff0400; } 
 .fa-rocket {color:rgb(190, 37, 63)}
+
+.forms-section {
+  padding: 40px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.form-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.form-card:hover {
+  transform: translateY(-5px);
+}
+
+.form-card.wide {
+  grid-column: span 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 5px;
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn.primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn.gradient {
+  background: linear-gradient(45deg, #ff6b6b, #6c5ce7);
+  color: white;
+}
+
+.btn.glass {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+/* Fix spacing globally */
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Input styling */
+.form-input,
+.input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+  background: #111;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.form-input:focus,
+.input:focus,
+textarea:focus,
+select:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 2px rgba(108,92,231,0.2);
+}
+
+/* Card improvement */
+.component-card {
+  background: #181818;
+  padding: 20px;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  border: 1px solid #222;
+}
+
+.component-card:hover {
+  transform: translateY(-5px);
+  border-color: #6c5ce7;
+}
+
+/* Fix button group layout */
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Buttons consistency */
+.nav-btn,
+.gradient-btn,
+.neon-btn,
+.glass-btn {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Button hover effects */
+.nav-btn:hover {
+  background: #6c5ce7;
+  color: white;
+}
+
+.gradient-btn {
+  background: linear-gradient(45deg, #ff6b6b, #6c5ce7);
+  color: white;
+}
+
+.neon-btn {
+  background: #0f0f0f;
+  color: #00ffe0;
+  border: 1px solid #00ffe0;
+}
+
+.neon-btn:hover {
+  box-shadow: 0 0 10px #00ffe0;
+}
+
+.glass-btn {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+/* Actions buttons */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.actions button {
+  flex: 1;
+  margin: 5px;
+  padding: 6px;
+  font-size: 12px;
+}
+
+/* Fix duplicate main spacing */
+.main {
+  padding: 20px;
+}
