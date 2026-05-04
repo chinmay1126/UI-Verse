@@ -1,0 +1,188 @@
+/* ===== PRICING PAGE FIX (MATCH GLOBAL THEME) ===== */
+
+/* PRICE CARD */
+.price-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  color: var(--text-primary);
+}
+
+/* TITLE */
+.price-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* PRICE */
+.price {
+  font-size: 42px;
+  font-weight: 800;
+  color: #eb6835;
+}
+
+.price-duration {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* LIST */
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.price-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* BUTTON */
+.price-btn {
+  width: 100%;
+  padding: 12px;
+  background: #eb6835;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.price-btn:hover {
+  background: #d45c28;
+  transform: translateY(-2px);
+}
+
+/* POPULAR CARD */
+.price-card.popular {
+  border: 2px solid #eb6835;
+  box-shadow: 0 8px 32px rgba(235,104,53,0.2);
+  transform: scale(1.04);
+}
+
+.popular-badge {
+  display: inline-block;
+  background: rgba(235,104,53,0.12);
+  color: #eb6835;
+  border: 1px solid rgba(235,104,53,0.3);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.popular-btn {
+  background: linear-gradient(45deg, #eb6835, #6c5ce7);
+}
+
+/* ENTERPRISE CARD */
+.price-card.enterprise {
+  background: #0f0f12;
+  border: 1px solid #2a2a35;
+  color: #fff;
+}
+
+.enterprise-price {
+  color: #a29bfe;
+}
+
+.enterprise-list li {
+  color: var(--text-secondary);
+}
+
+.enterprise-btn {
+  background: #6c5ce7;
+}
+
+.enterprise-btn:hover {
+  background: #5a4bd1;
+}
+
+/* ===== FILTER BAR FIX ===== */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: rgba(235,104,53,0.15);
+  color: #eb6835;
+}
+
+/* SEARCH FIX (IMPORTANT — removes white box) */
+.filter-search input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  padding: 8px 10px;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* ===== TABLE FIX ===== */
+
+.pricing-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-table th {
+  background: rgba(235,104,53,0.08);
+  color: #eb6835;
+  padding: 10px;
+}
+
+.pricing-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-secondary);
+}
+
+.check-mark {
+  color: #00b894;
+}
+
+.cross {
+  color: #888;
+}
+
+/* ===== MINI CARDS ===== */
+
+.mini-price {
+  color: #eb6835;
+  font-weight: 700;
+}
+
+.mini-dur {
+  color: var(--text-secondary);
+}

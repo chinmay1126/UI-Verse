@@ -3376,3 +3376,16 @@ window.addEventListener("DOMContentLoaded", () => {
   initLiveSandboxes();
   loadTheme();
 });
+
+
+function toggleCode(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
+}
+
+function copyCode(id, btn) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
+  btn.innerText = "Copied!";
+  setTimeout(() => btn.innerText = "Copy", 1500);
+}

@@ -9,7 +9,7 @@
 .page-hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+a  justify-content: space-between;
   gap: 40px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
