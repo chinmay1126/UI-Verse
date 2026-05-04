@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Div Components - UIverse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Ulverse</div>
+
+  <div class="search-bar">
+    <span class="nav-link active">Explore</span>
+    <input type="text" placeholder="Search Components">
+    <button class="search-btn">🔍</button>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn">Add Component</button>
+    <button class="nav-btn">My Collection</button>
+  </div>
+</nav>
+
+<div class="container">
+<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2>UIverse</h2>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="active"><a href="#">Div Components</a></li>
+    <li><a href="form.html">Forms</a></li>
+    <li><a href="cards.html">Cards</a></li>
+  </ul>
+</aside>
+
+<div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+
+<!-- MAIN -->
+<main class="main">
+
+<div class="page-header">
+  <h1>Div Components</h1>
+  <p>Reusable UI blocks using div elements</p>
+</div>
+
+<div class="button-group">
+
+<!-- Profile Card -->
+<div class="component-card">
+  <div class="profile-card">
+    <div class="avatar">👩</div>
+    <h3>Jane Doe</h3>
+    <p>Frontend Developer</p>
+  </div>
+
+  <div class="actions">
+    <button onclick="toggleCode('d1')">View Code</button>
+    <button onclick="copyCode('d1',this)">Copy</button>
+  </div>
+
+<pre id="d1" class="code-block">
+&lt;div class="profile-card"&gt;
+  &lt;div class="avatar"&gt;👩&lt;/div&gt;
+  &lt;h3&gt;Jane Doe&lt;/h3&gt;
+  &lt;p&gt;Frontend Developer&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+<!-- Stats Card -->
+<div class="component-card">
+  <div class="stats-card">
+    <h3>Stats</h3>
+    <div class="stats">
+      <div><h2>120</h2><p>Users</p></div>
+      <div><h2>45</h2><p>Projects</p></div>
+      <div><h2>300</h2><p>Tasks</p></div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button onclick="toggleCode('d2')">View Code</button>
+    <button onclick="copyCode('d2',this)">Copy</button>
+  </div>
+
+<pre id="d2" class="code-block">
+&lt;div class="stats-card"&gt;
+  &lt;h3&gt;Stats&lt;/h3&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+<!-- Notification Card -->
+<div class="component-card">
+  <div class="notification-card">
+    🔔 You have 3 new notifications
+  </div>
+
+  <div class="actions">
+    <button onclick="toggleCode('d3')">View Code</button>
+    <button onclick="copyCode('d3',this)">Copy</button>
+  </div>
+
+<pre id="d3" class="code-block">
+&lt;div class="notification-card"&gt;
+  Notification here
+&lt;/div&gt;
+</pre>
+</div>
+
+<!-- Pricing Card -->
+<div class="component-card">
+  <div class="pricing-card">
+    <h3>Pro Plan</h3>
+    <h2>$19/mo</h2>
+    <ul>
+      <li>✔ Unlimited Projects</li>
+      <li>✔ Priority Support</li>
+      <li>✔ Analytics</li>
+    </ul>
+  </div>
+
+  <div class="actions">
+    <button onclick="toggleCode('d4')">View Code</button>
+    <button onclick="copyCode('d4',this)">Copy</button>
+  </div>
+
+<pre id="d4" class="code-block">
+&lt;div class="pricing-card"&gt;
+  &lt;h3&gt;Pro Plan&lt;/h3&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+<!-- Activity Card -->
+<div class="component-card">
+  <div class="activity-card">
+    <h3>Activity</h3>
+    <ul>
+      <li>User logged in</li>
+      <li>New order placed</li>
+      <li>Server updated</li>
+    </ul>
+  </div>
+
+  <div class="actions">
+    <button onclick="toggleCode('d5')">View Code</button>
+    <button onclick="copyCode('d5',this)">Copy</button>
+  </div>
+
+<pre id="d5" class="code-block">
+&lt;div class="activity-card"&gt;
+  Activity list
+&lt;/div&gt;
+</pre>
+</div>
+
+<!-- Info Card -->
+<div class="component-card">
+  <div class="info-card">
+    <h3>Welcome</h3>
+    <p>This is a reusable info card component.</p>
+  </div>
+
+  <div class="actions">
+    <button onclick="toggleCode('d6')">View Code</button>
+    <button onclick="copyCode('d6',this)">Copy</button>
+  </div>
+
+<pre id="d6" class="code-block">
+&lt;div class="info-card"&gt;
+  Info content
+&lt;/div&gt;
+</pre>
+</div>
+
+</div>
+</main>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h2>UIverse</h2>
+      <p>© 2026 UIverse</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
