@@ -2081,17 +2081,36 @@ select[readonly] {
 }
 
 /* Input with Required Attribute */
-input[required]:invalid,
-textarea[required]:invalid,
+input[required]:invalid:not(:placeholder-shown),
+textarea[required]:invalid:not(:placeholder-shown),
 select[required]:invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[required]:valid:not(:placeholder-shown),
+textarea[required]:valid:not(:placeholder-shown),
+select[required]:valid {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.15);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Form Validation Visual Feedback */
+.form-field {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.form-field input:invalid:not(:placeholder-shown):not(:focus) {
   border-color: #dc3545;
 }
 
-input[required]:valid,
-textarea[required]:valid,
-select[required]:valid {
+.form-field input:valid:not(:placeholder-shown) {
   border-color: #28a745;
 }
+
 .input[type="checkbox"] {
   width: auto;
   margin-right: 8px;
@@ -2181,12 +2200,12 @@ label + input[type="checkbox"] {
   font-size: 15px;
 }
 
-/* CARDS */
-.feature-card {
 .code-block.show {
   display: block;
 }
-}
+
+/* CARDS */
+.feature-card {
 
 /* ================= COLORS PAGE ================= */
 
@@ -3713,12 +3732,12 @@ body.dark-mode .hero-left p {
   font-size: 15px;
 }
 
-/* CARDS */
-.feature-card {
 .code-block.show {
   display: block;
 }
-}
+
+/* CARDS */
+.feature-card {
 
 :root {
   /* ===== BACKGROUND ===== */

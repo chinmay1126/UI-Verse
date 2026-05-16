@@ -2,12 +2,454 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Forms - UIverse</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"  href="form.css">
+
+  <!-- Fonts + Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="forms.css">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:70px;
+      background:#111827;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 20px;
+      z-index:2000;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:bold;
+      color:#a29bfe;
+    }
+
+    .search-bar{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      width:40%;
+    }
+
+    .search-bar input{
+      width:100%;
+      padding:10px 14px;
+      border:none;
+      outline:none;
+      border-radius:10px;
+      background:#1f2937;
+      color:white;
+    }
+
+    .search-btn{
+      padding:10px 14px;
+      border:none;
+      border-radius:10px;
+      background:#a29bfe;
+      color:white;
+      cursor:pointer;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .nav-btn,
+    .nav-right button{
+      background:#a29bfe;
+      border:none;
+      color:white;
+      padding:10px 16px;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .nav-btn:hover,
+    .nav-right button:hover{
+      opacity:0.9;
+    }
+
+    /* ================= SIDEBAR ================= */
+
+    .sidebar{
+      position:fixed;
+      top:70px;
+      left:0;
+      width:260px;
+      height:calc(100vh - 70px);
+      background:#111827;
+      overflow-y:auto;
+      border-right:1px solid rgba(255,255,255,0.08);
+      z-index:1500;
+      transition:0.3s;
+    }
+
+    .sidebar-brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:20px;
+      font-size:22px;
+      font-weight:bold;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .brand-icon{
+      color:#a29bfe;
+    }
+
+    .sidebar-nav ul{
+      list-style:none;
+      padding:10px;
+    }
+
+    .sidebar-nav li{
+      margin-bottom:8px;
+    }
+
+    .sidebar-nav a{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:white;
+      padding:12px 16px;
+      border-radius:12px;
+      transition:0.3s;
+    }
+
+    .sidebar-nav a:hover,
+    .sidebar-nav li.active a{
+      background:#a29bfe;
+      color:white;
+    }
+
+    .sidebar-footer{
+      display:flex;
+      gap:16px;
+      padding:20px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .sidebar-footer a{
+      color:white;
+      font-size:20px;
+    }
+
+    /* ================= MAIN ================= */
+
+    .main{
+      margin-left:260px;
+      margin-top:70px;
+      padding:30px;
+    }
+
+    .page-header{
+      margin-bottom:30px;
+    }
+
+    .page-header h1{
+      font-size:36px;
+      margin-bottom:10px;
+    }
+
+    .page-header p{
+      color:#94a3b8;
+    }
+
+    /* ================= COMPONENTS ================= */
+
+    .button-group{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:24px;
+    }
+
+    .component-card{
+      background:#111827;
+      padding:24px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .component-card h3{
+      margin-bottom:20px;
+      color:#a29bfe;
+    }
+
+    .form-input,
+    .input,
+    textarea,
+    select{
+      width:100%;
+      padding:12px 14px;
+      border:none;
+      outline:none;
+      border-radius:12px;
+      background:#1f2937;
+      color:white;
+      margin-top:8px;
+      margin-bottom:14px;
+    }
+
+    textarea{
+      resize:none;
+      min-height:120px;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .actions button{
+      background:#a29bfe;
+      color:white;
+      border:none;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .actions button:hover{
+      opacity:0.9;
+    }
+
+    .code-block{
+      display:none;
+      margin-top:16px;
+      background:#020617;
+      color:#38bdf8;
+      padding:16px;
+      border-radius:12px;
+      overflow-x:auto;
+      white-space:pre-wrap;
+      font-size:14px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer{
+      margin-left:260px;
+      padding:30px;
+    }
+
+    .footer-card{
+      background:#111827;
+      border-radius:20px;
+      padding:30px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:30px;
+    }
+
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .footer-col a{
+      color:#cbd5e1;
+      text-decoration:none;
+    }
+
+    .footer-col a:hover{
+      color:#a29bfe;
+    }
+
+    /* ================= MENU TOGGLE ================= */
+
+    .menu-toggle{
+      display:none;
+      position:fixed;
+      top:80px;
+      left:20px;
+      z-index:3000;
+      background:#a29bfe;
+      border:none;
+      color:white;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+    }
+
+    .sidebar-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.5);
+      z-index:1400;
+      display:none;
+    }
+
+    .sidebar.active{
+      transform:translateX(0);
+    }
+
+    .sidebar-backdrop.active{
+      display:block;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:900px){
+
+      .menu-toggle{
+        display:block;
+      }
+
+      .sidebar{
+        transform:translateX(-100%);
+      }
+
+      .main{
+        margin-left:0;
+      }
+
+      .footer{
+        margin-left:0;
+      }
+
+      .search-bar{
+        display:none;
+      }
+    }
+
+  </style>
+
+  <!-- UIverse Modular CSS Architecture -->
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Forms - UI-Verse</title>
+  <meta name="title" content="Forms - UI-Verse">
+  <meta name="description" content="Build beautiful forms with our CSS form components. Input fields, checkboxes, radio buttons, toggles, and form layouts.">
+  <meta name="author" content="UI-Verse Community">
+  <meta name="keywords" content="ui components, css, html, javascript, open source, web components, frontend, ui library">
+  <link rel="canonical" href="https://uiverse.vercel.app/form.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uiverse.vercel.app/form.html">
+  <meta property="og:title" content="Forms - UI-Verse">
+  <meta property="og:description" content="Build beautiful forms with our CSS form components. Input fields, checkboxes, radio buttons, toggles, and form layouts.">
+  <meta property="og:image" content="https://uiverse.vercel.app/preview.png">
+  <meta property="og:site_name" content="UI-Verse">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://uiverse.vercel.app/form.html">
+  <meta property="twitter:title" content="Forms - UI-Verse">
+  <meta property="twitter:description" content="Build beautiful forms with our CSS form components. Input fields, checkboxes, radio buttons, toggles, and form layouts.">
+  <meta property="twitter:image" content="https://uiverse.vercel.app/preview.png">
+  <meta property="twitter:creator" content="@uiverse">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "UI-Verse",
+    "url": "https://uiverse.vercel.app",
+    "description": "A curated collection of open-source HTML, CSS, and JavaScript UI components for modern web development. Free to use, regularly updated.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://uiverse.vercel.app/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
+
 <body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav class="navbar">
+
+    <div class="logo">UIverse</div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search Components">
+      <button class="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+
+    <div class="nav-right">
+      <button class="nav-btn">Add Component</button>
+      <button onclick="location.href='MyCollection.html'">
+        My Collection
+      </button>
+    </div>
+
+  </nav>
+
+  <!-- ================= MENU BUTTON ================= -->
+
+  <button class="menu-toggle" onclick="toggleSidebar()">
+    ☰
+  </button>
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+      <span class="brand-icon">⬡</span>
+      <span>UIverse</span>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <ul>
+
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+<!-- Gallery page note: See GALLERY_PAGES_GUIDE.md for filtering setup. -->
+
    <nav class="navbar">
   <!-- Logo -->
   <div class="logo">UIverse</div>
@@ -22,7 +464,7 @@
   <!-- Right Section -->
   <div class="nav-right">
     <button class="nav-btn">Add Component</button>
-    <button class="nav-btn">My Collection</button>
+    <button onclick="location.href='MyCollection.html'">My Collection</button>
     <a href="#"></a>
     <a href="#"></a>
   </div>
@@ -31,52 +473,307 @@
 <div class="container">
   <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h2>UIverse</h2>
-    <ul>
-      <li><a href="index.html">Home</a></li>>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="alerts.html">Alerts</a></li>
-      <li><a href="badges.html">Badges</a></li>
-      <li><a href="button.html">Buttons</a></li>
-      <li><a href="cards.html">Cards</a></li>
-      <li><a href="color.html">Colors</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contribute.html">Contribute</a></li>
-      <li class="active"><a href="navbar.html">Navbars</a></li>
-      <li><a href="footer.html">Footer</a></li>
-      <li class="active"><a href="form.html">Forms</a></li>
-      <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="loaders.html">Loaders</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-    </ul>
-  </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
 
-  <!-- Main -->
+  <nav class="sidebar-nav">
+    <ul>
+      <li class="active">
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="button.html">
+          <i class="fa-solid fa-hand-pointer"></i>
+          <span>Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="navbar.html">
+          <i class="fa-solid fa-bars"></i>
+          <span>Navbar</span>
+        </a>
+      </li>
+      <li>
+        <a href="cards.html">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span>Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="inputs.html">
+          <i class="fa-solid fa-keyboard"></i>
+          <span>Inputs</span>
+        </a>
+      </li>
+     
+      <li>
+        <a href="forms.html">
+          <i class="fa-brands fa-wpforms"></i>
+          <span>Forms</span>
+        </a>
+      </li>
+      <li>
+        <a href="badges.html">
+          <i class="fa-solid fa-award"></i>
+          <span>Badges</span>
+        </a>
+      </li>
+      <li>
+        <a href="blog.html">
+          <i class="fa-solid fa-blog"></i>
+          <span>Blog</span>
+        </a>
+      </li>
+      <li>
+  <a href="flipcards.html">
+    <i class="fa-solid fa-clone"></i>
+    <span>3D Cards</span>
+  </a>
+</li>
+      <li>
+        <a href="article.html">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>Articles</span>
+        </a>
+      </li>
+      <li>
+  <a href="files.html">
+    <i class="fa-solid fa-upload"></i>
+    <span>Upload</span>
+  </a>
+</li>
+      <li>
+        <a href="alerts.html">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Alerts</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="color.html">
+          <i class="fa-solid fa-palette"></i>
+          <span>Colors</span>
+        </a>
+      </li>
+      <li>
+        <a href="dashboard.html">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashbord</span>
+        </a>
+      </li>
+      <li>
+        <a href="div.html">
+          <i class="fa-solid fa-square"></i>
+          <span>DIV</span>
+        </a>
+        </li>
+      <li>
+        <a href="widgets.html">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Widgets</span>
+        </a>
+      </li>
+      <li>
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search Bars</span>
+        </a>
+      </li>
+      <li>
+        <a href="hover.html">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Hover Effects</span>
+        </a>
+      </li>
+      <li>
+        <a href="error.html">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Error Pages</span>
+        </a>
+      </li>
+        <li>
+          <a href="button.html">
+            <i class="fa-solid fa-hand-pointer"></i>
+            <span>Buttons</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="navbar.html">
+            <i class="fa-solid fa-bars"></i>
+            <span>Navbar</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="cards.html">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span>Cards</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="inputs.html">
+            <i class="fa-solid fa-keyboard"></i>
+            <span>Inputs</span>
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="forms.html">
+            <i class="fa-brands fa-wpforms"></i>
+            <span>Forms</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="badges.html">
+            <i class="fa-solid fa-award"></i>
+            <span>Badges</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="blog.html">
+            <i class="fa-solid fa-blog"></i>
+            <span>Blog</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="alerts.html">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Alerts</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="pricing.html">
+            <i class="fa-solid fa-tags"></i>
+            <span>Pricing</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="documentation.html">
+            <i class="fa-solid fa-book"></i>
+            <span>Documentation</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="faq.html">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>FAQ</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            <i class="fa-solid fa-user"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <div class="sidebar-footer">
+
+      <a href="#">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+
+    </div>
+
+  </aside>
+
+  <!-- ================= BACKDROP ================= -->
+
+  <div
+    class="sidebar-backdrop"
+    id="sidebarBackdrop"
+    onclick="toggleSidebar()"
+  ></div>
+
+  <!-- ================= MAIN ================= -->
+
   <main class="main">
+
     <div class="page-header">
       <h1>Forms</h1>
-      <p>Explore reusable and ready-to-use form components</p>
+      <p>Modern reusable and responsive form components</p>
     </div>
-    <div class = "button group">
-      <!--Login Form  -->
-      <div class = "component-card">
+
+    <div class="button-group">
+
+      <!-- LOGIN -->
+
+      <div class="component-card">
+
         <h3>Login Form</h3>
+
         <form>
-          <input type="email" placeholder="Email" class="form-input" required /><br><br>
-          <input type="password" placeholder="Password" class="form-input" required /><br><br>
-          <button type="submit" class="nav-btn">Login</button>
+
+          <input
+            type="email"
+            placeholder="Email"
+            class="form-input"
+            required
+          >
+
+          <input
+            type="password"
+            placeholder="Password"
+            class="form-input"
+            required
+          >
+
+          <button type="submit" class="nav-btn">
+            Login
+          </button>
+
         </form>
-        
+
         <div class="actions">
-          <button onclick="toggleCode('f1')">View Code</button>
-          <button onclick="copyCode('f1',this)">Copy</button>
+
+          <button onclick="toggleCode('f1')">
+            View Code
+          </button>
+
+          <button onclick="copyCode('f1',this)">
+            Copy
+          </button>
+
+          <button onclick="addToCollection('Login Form')">
+            Add to Collection
+          </button>
+
         </div>
+
 <pre id="f1" class="code-block">
 &lt;form&gt;
   &lt;input type="email" placeholder="Email"&gt;
@@ -84,23 +781,59 @@
   &lt;button&gt;Login&lt;/button&gt;
 &lt;/form&gt;
 </pre>
-  </div>
 
-  <!-- Signup Form -->
-  <div class="component-card">
-    <h3>Signup Form</h3>
+      </div>
 
-    <form>
-      <input type="text" placeholder="Full Name" class="form-input"required ><br><br>
-      <input type="email" placeholder="Email" class="form-input" required /><br><br>
-      <input type="password" placeholder="Password" class="form-input" required /><br><br>
-      <button type="submit" class="nav-btn">Signup</button>
-    </form>
+      <!-- SIGNUP -->
 
-    <div class="actions">
-      <button onclick="toggleCode('f2')">View Code</button>
-      <button onclick="copyCode('f2',this)">Copy</button>
-    </div>
+      <div class="component-card">
+
+        <h3>Signup Form</h3>
+
+        <form>
+
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="form-input"
+            required
+          >
+
+          <input
+            type="email"
+            placeholder="Email"
+            class="form-input"
+            required
+          >
+
+          <input
+            type="password"
+            placeholder="Password"
+            class="form-input"
+            required
+          >
+
+          <button type="submit" class="nav-btn">
+            Signup
+          </button>
+
+        </form>
+
+        <div class="actions">
+
+          <button onclick="toggleCode('f2')">
+            View Code
+          </button>
+
+          <button onclick="copyCode('f2',this)">
+            Copy
+          </button>
+
+          <button onclick="addToCollection('Signup Form')">
+            Add to Collection
+          </button>
+
+        </div>
 
 <pre id="f2" class="code-block">
 &lt;form&gt;
@@ -110,23 +843,58 @@
   &lt;button&gt;Signup&lt;/button&gt;
 &lt;/form&gt;
 </pre>
-  </div>
 
-  <!-- Contact Form -->
-  <div class="component-card">
-    <h3>Contact Form</h3>
+      </div>
 
-    <form>
-      <input type="text" placeholder="Name" class="form-input" required><br><br>
-      <input type="email" placeholder="Email" class="form-input" required><br><br>
-      <textarea placeholder="Message" class="form-input" required></textarea><br><br>
-      <button type="submit" class="nav-btn">Send</button>
-    </form>
+      <!-- CONTACT -->
 
-    <div class="actions">
-      <button onclick="toggleCode('f3')">View Code</button>
-      <button onclick="copyCode('f3',this)">Copy</button>
-    </div>
+      <div class="component-card">
+
+        <h3>Contact Form</h3>
+
+        <form>
+
+          <input
+            type="text"
+            placeholder="Name"
+            class="form-input"
+            required
+          >
+
+          <input
+            type="email"
+            placeholder="Email"
+            class="form-input"
+            required
+          >
+
+          <textarea
+            placeholder="Message"
+            class="form-input"
+            required
+          ></textarea>
+
+          <button type="submit" class="nav-btn">
+            Send
+          </button>
+
+        </form>
+
+        <div class="actions">
+
+          <button onclick="toggleCode('f3')">
+            View Code
+          </button>
+
+          <button onclick="copyCode('f3',this)">
+            Copy
+          </button>
+
+          <button onclick="addToCollection('Contact Form')">
+            Add to Collection
+          </button>
+
+        </div>
 
 <pre id="f3" class="code-block">
 &lt;form&gt;
@@ -136,460 +904,112 @@
   &lt;button&gt;Send&lt;/button&gt;
 &lt;/form&gt;
 </pre>
-  </div>
 
-</div>        
+      </div>
+
+    </div>
+
   </main>
 
-  <section class="forms-section">
+  <!-- ================= FOOTER ================= -->
 
-  <!-- Section Header -->
-  <div class="section-header">
-    <h1>Forms</h1>
-    <p>Modern, reusable and responsive form components</p>
-  </div>
+  <footer class="footer">
 
-  <!-- Grid Layout -->
-  <div class="forms-grid">
+    <div class="footer-card">
 
-    <!-- Login Form -->
-    <div class="form-card">
-      <h3>Login</h3>
-      <form>
-        <div class="form-group">
-          <label for="login-email">Email</label>
-          <input id="login-email" type="email" placeholder="Enter your email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="login-password">Password</label>
-          <input id="login-password" type="password" placeholder="Enter password" required>
-        </div>
-
-        <button type="submit" class="btn primary">Login</button>
-      </form>
-    </div>
-
-    <!-- Signup Form -->
-    <div class="form-card">
-      <h3>Sign Up</h3>
-      <form>
-        <div class="form-group">
-          <label for="signup-name">Full Name</label>
-          <input id="signup-name" type="text" placeholder="Your name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="signup-email">Email</label>
-          <input id="signup-email" type="email" placeholder="Your email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="signup-password">Password</label>
-          <input id="signup-password" type="password" required>
-        </div>
-
-        <button class="btn gradient">Create Account</button>
-      </form>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="form-card wide">
-      <h3>Contact Us</h3>
-      <form>
-        <div class="form-row">
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-        </div>
-
-        <textarea placeholder="Your message..." required></textarea>
-
-        <button class="btn glass">Send Message</button>
-      </form>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="form-card">
-      <h3>Newsletter</h3>
-      <form>
-        <input type="email" placeholder="Enter your email">
-        <button class="btn primary">Subscribe</button>
-      </form>
-    </div>
-
-  </div>
-</section>
-
-<div class="main">
-<div class="page-header">
-      <h1>Forms</h1>
-      <p>Check out modern and reusable form layouts</p>
-    </div>
-
-  <!-- Login Form Card -->
-  <div class="component-card login-form-card">
-    <div class="login-form-inner-card"> 
-      <form class="login-form">
-        <h3>LOGIN</h3>
-        <label for="Name">Name</label>
-        <input type="text" class="input" placeholder="Enter your name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <button class="gradient-btn">SUBMIT</button>
-      </form>
-    </div> 
-      <div class="actions">
-        <button>View Code</button>
-        <button>Copy</button>
+      <div>
+        <h2>UIverse</h2>
+        <p>© 2026 UIverse. All rights reserved.</p>
       </div>
-  </div>
 
-  <!-- Sign Up Form Card -->
-  <div class="component-card signup-form-card">
-    <div class="signup-form-inner-card"> 
-      <form class="signup-form">
-        <h3>SIGN UP</h3>
-        <label for="Name">Name</label>
-        <input type="text" class="input" placeholder="Enter your name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <label for="Password">Password</label>
-        <input type="password" class="input" placeholder="Enter your password" required>
-        <button class="neon-btn">SIGN UP</button>
-      </form>
-    </div>
-      <div class="actions">
-        <button>View Code</button>
-        <button>Copy</button>
-    </div>
-  </div>
-
-  <!-- Contact Us Form Card -->
-  <div class="component-card contact-form-card">
-    <div class="contact-form-inner-card"> 
-        <form class="contact-form">
-          <h3>CONTACT US</h3>
-          <label for="Name">Name</label>
-          <input type="text" class="input" placeholder="Name" required>
-          <label for="Email">Email</label>
-          <input type="email" class="input" placeholder="Email" required>
-          <label for="Message">Message</label>
-          <textarea class="input" placeholder="Message" required></textarea>
-          <button class="glass-btn">SEND</button>
-        </form>
-    </div>
-        <div class="actions">
-           <button>View Code</button>
-           <button>Copy</button>
-        </div>
-   </div>
-
-  <!-- Newsletter Subscription Form Card -->
-  <div class="component-card newsletter-form-card">
-    <div class="newsletter-form-inner-card">
-      <form class="newsletter-form">
-        <h3>SUBSCRIBE</h3>
-        <label for="Email">Email Address</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <label for="Frequency">Frequency</label>
-        <select class="input" required>
-          <option value="">Select frequency</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="daily">Daily</option>
-        </select>
-        <button class="gradient-btn">SUBSCRIBE</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f4')">View Code</button>
-      <button onclick="copyCode('f4',this)">Copy</button>
-    </div>
-    <pre id="f4" class="code-block">
-&lt;form class="newsletter-form"&gt;
-  &lt;h3&gt;SUBSCRIBE&lt;/h3&gt;
-  &lt;label&gt;Email Address&lt;/label&gt;
-  &lt;input type="email" placeholder="Enter your email" required&gt;
-  &lt;label&gt;Frequency&lt;/label&gt;
-  &lt;select required&gt;
-    &lt;option value="weekly"&gt;Weekly&lt;/option&gt;
-    &lt;option value="monthly"&gt;Monthly&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;button&gt;SUBSCRIBE&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Search Form Card -->
-  <div class="component-card search-form-card">
-    <div class="search-form-inner-card">
-      <form class="search-form">
-        <h3>SEARCH</h3>
-        <label for="Search">Search Products</label>
-        <input type="text" class="input" placeholder="Search..." required>
-        <label for="Category">Category</label>
-        <select class="input" required>
-          <option value="">All Categories</option>
-          <option value="electronics">Electronics</option>
-          <option value="clothing">Clothing</option>
-          <option value="books">Books</option>
-        </select>
-        <label>
-          <input type="checkbox"> In Stock Only
-        </label>
-        <button class="neon-btn">SEARCH</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f5')">View Code</button>
-      <button onclick="copyCode('f5',this)">Copy</button>
-    </div>
-    <pre id="f5" class="code-block">
-&lt;form class="search-form"&gt;
-  &lt;label&gt;Search Products&lt;/label&gt;
-  &lt;input type="text" placeholder="Search..."&gt;
-  &lt;label&gt;Category&lt;/label&gt;
-  &lt;select&gt;
-    &lt;option&gt;All Categories&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;&lt;input type="checkbox"&gt; In Stock Only&lt;/label&gt;
-  &lt;button&gt;SEARCH&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Feedback/Review Form Card -->
-  <div class="component-card feedback-form-card">
-    <div class="feedback-form-inner-card">
-      <form class="feedback-form">
-        <h3>FEEDBACK</h3>
-        <label for="Name">Your Name</label>
-        <input type="text" class="input" placeholder="Your name" required>
-        <label for="Rating">Rating</label>
-        <select class="input" required>
-          <option value="">Select rating</option>
-          <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-          <option value="4">⭐⭐⭐⭐ Good</option>
-          <option value="3">⭐⭐⭐ Average</option>
-          <option value="2">⭐⭐ Poor</option>
-          <option value="1">⭐ Very Poor</option>
-        </select>
-        <label for="Comments">Comments</label>
-        <textarea class="input" placeholder="Share your feedback..." required></textarea>
-        <button class="glass-btn">SUBMIT</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f6')">View Code</button>
-      <button onclick="copyCode('f6',this)">Copy</button>
-    </div>
-    <pre id="f6" class="code-block">
-&lt;form class="feedback-form"&gt;
-  &lt;label&gt;Your Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Your name"&gt;
-  &lt;label&gt;Rating&lt;/label&gt;
-  &lt;select required&gt;
-    &lt;option&gt;⭐⭐⭐⭐⭐ Excellent&lt;/option&gt;
-    &lt;option&gt;⭐⭐⭐⭐ Good&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;Comments&lt;/label&gt;
-  &lt;textarea placeholder="Share your feedback..."&gt;&lt;/textarea&gt;
-  &lt;button&gt;SUBMIT&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Password Reset Form Card -->
-  <div class="component-card password-reset-form-card">
-    <div class="password-reset-form-inner-card">
-      <form class="password-reset-form">
-        <h3>RESET PASSWORD</h3>
-        <label for="Email">Email Address</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <label for="NewPassword">New Password</label>
-        <input type="password" class="input" placeholder="Enter new password" required>
-        <label for="ConfirmPassword">Confirm Password</label>
-        <input type="password" class="input" placeholder="Confirm password" required>
-        <button class="gradient-btn">RESET</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f7')">View Code</button>
-      <button onclick="copyCode('f7',this)">Copy</button>
-    </div>
-    <pre id="f7" class="code-block">
-&lt;form class="password-reset-form"&gt;
-  &lt;h3&gt;RESET PASSWORD&lt;/h3&gt;
-  &lt;label&gt;Email Address&lt;/label&gt;
-  &lt;input type="email" placeholder="Enter your email"&gt;
-  &lt;label&gt;New Password&lt;/label&gt;
-  &lt;input type="password" placeholder="Enter new password"&gt;
-  &lt;label&gt;Confirm Password&lt;/label&gt;
-  &lt;input type="password" placeholder="Confirm password"&gt;
-  &lt;button&gt;RESET&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Profile Update Form Card -->
-  <div class="component-card profile-update-form-card">
-    <div class="profile-update-form-inner-card">
-      <form class="profile-update-form">
-        <h3>EDIT PROFILE</h3>
-        <label for="FirstName">First Name</label>
-        <input type="text" class="input" placeholder="First name" required>
-        <label for="LastName">Last Name</label>
-        <input type="text" class="input" placeholder="Last name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Email" required>
-        <label for="Phone">Phone</label>
-        <input type="tel" class="input" placeholder="+1 (555) 000-0000" required>
-        <label for="Bio">Bio</label>
-        <textarea class="input" placeholder="Tell us about yourself..."></textarea>
-        <button class="neon-btn">UPDATE</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f8')">View Code</button>
-      <button onclick="copyCode('f8',this)">Copy</button>
-    </div>
-    <pre id="f8" class="code-block">
-&lt;form class="profile-update-form"&gt;
-  &lt;h3&gt;EDIT PROFILE&lt;/h3&gt;
-  &lt;label&gt;First Name&lt;/label&gt;
-  &lt;input type="text" placeholder="First name"&gt;
-  &lt;label&gt;Last Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Last name"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;label&gt;Phone&lt;/label&gt;
-  &lt;input type="tel" placeholder="+1 (555) 000-0000"&gt;
-  &lt;label&gt;Bio&lt;/label&gt;
-  &lt;textarea placeholder="Tell us about yourself..."&gt;&lt;/textarea&gt;
-  &lt;button&gt;UPDATE&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Job Application Form Card -->
-  <div class="component-card job-application-form-card">
-    <div class="job-application-form-inner-card">
-      <form class="job-application-form">
-        <h3>JOB APPLICATION</h3>
-        <label for="FullName">Full Name</label>
-        <input type="text" class="input" placeholder="Full name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Email" required>
-        <label for="Phone">Phone</label>
-        <input type="tel" class="input" placeholder="Phone number" required>
-        <label for="Position">Position Applied For</label>
-        <input type="text" class="input" placeholder="Job title" required>
-        <label for="Experience">Years of Experience</label>
-        <input type="number" class="input" placeholder="0" min="0" required>
-        <label for="Resume">Upload Resume</label>
-        <input type="file" class="input" accept=".pdf,.doc,.docx" required>
-        <button class="glass-btn">APPLY</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f9')">View Code</button>
-      <button onclick="copyCode('f9',this)">Copy</button>
-    </div>
-    <pre id="f9" class="code-block">
-&lt;form class="job-application-form"&gt;
-  &lt;h3&gt;JOB APPLICATION&lt;/h3&gt;
-  &lt;label&gt;Full Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Full name"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;label&gt;Phone&lt;/label&gt;
-  &lt;input type="tel" placeholder="Phone number"&gt;
-  &lt;label&gt;Position Applied For&lt;/label&gt;
-  &lt;input type="text" placeholder="Job title"&gt;
-  &lt;label&gt;Years of Experience&lt;/label&gt;
-  &lt;input type="number" placeholder="0" min="0"&gt;
-  &lt;label&gt;Upload Resume&lt;/label&gt;
-  &lt;input type="file" accept=".pdf,.doc,.docx"&gt;
-  &lt;button&gt;APPLY&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Event Registration Form Card -->
-  <div class="component-card event-registration-form-card">
-    <div class="event-registration-form-inner-card">
-      <form class="event-registration-form">
-        <h3>EVENT REGISTRATION</h3>
-        <label for="Name">Full Name</label>
-        <input type="text" class="input" placeholder="Your name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Your email" required>
-        <label for="Attendees">Number of Attendees</label>
-        <input type="number" class="input" placeholder="1" min="1" required>
-        <label for="EventType">Event Type</label>
-        <select class="input" required>
-          <option value="">Select event</option>
-          <option value="conference">Conference</option>
-          <option value="workshop">Workshop</option>
-          <option value="webinar">Webinar</option>
-          <option value="meetup">Meetup</option>
-        </select>
-        <label>
-          <input type="checkbox" required> I agree to the terms
-        </label>
-        <button class="gradient-btn">REGISTER</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f10')">View Code</button>
-      <button onclick="copyCode('f10',this)">Copy</button>
-    </div>
-    <pre id="f10" class="code-block">
-&lt;form class="event-registration-form"&gt;
-  &lt;h3&gt;EVENT REGISTRATION&lt;/h3&gt;
-  &lt;label&gt;Full Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Your name"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input type="email" placeholder="Your email"&gt;
-  &lt;label&gt;Number of Attendees&lt;/label&gt;
-  &lt;input type="number" placeholder="1" min="1"&gt;
-  &lt;label&gt;Event Type&lt;/label&gt;
-  &lt;select required&gt;
-    &lt;option&gt;Conference&lt;/option&gt;
-    &lt;option&gt;Workshop&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;&lt;input type="checkbox"&gt; I agree to the terms&lt;/label&gt;
-  &lt;button&gt;REGISTER&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-</div>
-</div>
-
-<footer class="footer">
-  <div class="footer-card">
-    <div class="footer-brand">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="footer-socials">
-        <span>🌐</span>
-        <span>💼</span>
+      <div class="footer-col">
+        <h3>Pages</h3>
+        <a href="pricing.html">Pricing</a>
+        <a href="alerts.html">Alerts</a>
+        <a href="testimonials.html">Testimonials</a>
       </div>
+
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+
     </div>
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <a href="pricing.html">Pricing</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="alerts.html">Alerts</a>
-    </div>
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <a href="privacypolicy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </div>
-  </div>
-</footer>
-<script src="script.js"></script>
+
+  </footer>
+
+  <!-- ================= SCRIPT ================= -->
+
+  <script>
+
+    function toggleSidebar(){
+
+      const sidebar =
+        document.getElementById("sidebar");
+
+      const backdrop =
+        document.getElementById("sidebarBackdrop");
+
+      sidebar.classList.toggle("active");
+
+      backdrop.classList.toggle("active");
+    }
+
+    function toggleCode(id){
+
+      const el =
+        document.getElementById(id);
+
+      el.style.display =
+        el.style.display === "block"
+        ? "none"
+        : "block";
+    }
+
+    function copyCode(id,btn){
+
+      const text =
+        document.getElementById(id).innerText;
+
+      navigator.clipboard.writeText(text);
+
+      btn.innerText = "Copied!";
+
+      setTimeout(()=>{
+        btn.innerText = "Copy";
+      },1000);
+    }
+
+    function addToCollection(name){
+
+      let items =
+        JSON.parse(
+          localStorage.getItem("collection")
+        ) || [];
+
+      if(
+        !items.some(item => item.title === name)
+      ){
+
+        items.push({
+          title:name,
+          id:Date.now()
+        });
+
+        localStorage.setItem(
+          "collection",
+          JSON.stringify(items)
+        );
+
+        alert(name + " added!");
+      }
+      else{
+        alert("Already added");
+      }
+    }
+
+  </script>
+
 </body>
 </html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menus ? UIverse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="menu.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon"><i class="fa-solid fa-bars"></i></span>
+      <span class="brand-text">UIverse</span>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+        <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+        <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+        <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Inputs</span></a></li>
+        <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><span>Forms</span></a></li>
+        <li class="active"><a href="menu.html"><i class="fa-solid fa-bars-staggered"></i><span>Menus</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <header class="navbar">
+    <div class="logo">UIverse</div>
+    <div class="search-bar"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search components..." /></div>
+    <div class="nav-actions">
+      <button class="outline-btn">Docs</button>
+      <button class="primary-btn">Add Component</button>
+    </div>
+  </header>
+
+  <main class="main-home">
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-badge">Navigation Components</span>
+        <h1>Modern <span>Menus</span></h1>
+        <p>Explore premium menu components including dropdowns, sidebars, glass navbars, dock menus, and command palettes crafted for modern interfaces.</p>
+        <div class="hero-actions">
+          <button class="primary-btn">Browse Menus</button>
+          <button class="outline-btn">View Docs</button>
+        </div>
+      </div>
+      <div class="hero-preview">
+        <div class="floating-menu">
+          <a href="#"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="#"><i class="fa-solid fa-layer-group"></i> Components</a>
+          <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-grid">
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Dropdown Menu</span><span class="card-tag purple">Dropdown</span></div>
+        <div class="card-preview">
+          <div class="dropdown-demo">
+            <button class="dropdown-btn">Options <i class="fa-solid fa-angle-down"></i></button>
+            <div class="dropdown-content"><a href="#">Profile</a><a href="#">Settings</a><a href="#">Logout</a></div>
+          </div>
+        </div>
+        <p>Compact action menu for profile, settings, and account flows.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Mini Sidebar</span><span class="card-tag blue">Sidebar</span></div>
+        <div class="card-preview dark">
+          <div class="mini-sidebar">
+            <a href="#"><i class="fa-solid fa-house"></i></a>
+            <a href="#"><i class="fa-solid fa-box"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#"><i class="fa-solid fa-gear"></i></a>
+          </div>
+        </div>
+        <p>Minimal vertical navigation for compact dashboards.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Glass Navbar</span><span class="card-tag pink">Navigation</span></div>
+        <div class="card-preview">
+          <div class="glass-navbar"><strong>UIverse</strong><div><a href="#">Home</a><a href="#">Docs</a><a href="#">Pricing</a></div></div>
+        </div>
+        <p>Frosted horizontal navigation with clean spacing and depth.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Hamburger Menu</span><span class="card-tag yellow">Mobile</span></div>
+        <div class="card-preview dark"><div class="hamburger"><span></span><span></span><span></span></div></div>
+        <p>Simple mobile trigger with strong silhouette and rhythm.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Dock Menu</span><span class="card-tag purple">Dock</span></div>
+        <div class="card-preview"><div class="dock-menu"><i class="fa-solid fa-house"></i><i class="fa-solid fa-bell"></i><i class="fa-solid fa-user"></i></div></div>
+        <p>Floating icon dock for fast-access product actions.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Command Menu</span><span class="card-tag blue">Search</span></div>
+        <div class="card-preview dark"><div class="command-menu"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search commands..." /></div></div>
+        <p>Keyboard-first command surface for power users.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Floating Bubble Menu</span><span class="card-tag purple">Interactive</span></div>
+        <div class="card-preview">
+          <div class="bubble-menu-container">
+            <button class="bubble-trigger"><i class="fa-solid fa-plus"></i></button>
+            <div class="bubble-items">
+              <a href="#" class="bubble-item"><i class="fa-solid fa-pen"></i></a>
+              <a href="#" class="bubble-item"><i class="fa-solid fa-image"></i></a>
+              <a href="#" class="bubble-item"><i class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <p>A floating action button that expands into a bubble menu on hover.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Searchable Command</span><span class="card-tag blue">Keyboard</span></div>
+        <div class="card-preview dark">
+          <button class="open-command-btn">Open Command Menu <kbd>⌘K</kbd></button>
+          
+          <div class="command-palette-overlay" id="cmdPalette">
+            <div class="command-palette-modal">
+              <div class="cmd-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="cmdInput" placeholder="Type a command or search..." autofocus />
+              </div>
+              <div class="cmd-results">
+                <div class="cmd-group">Suggestions</div>
+                <a href="#" class="cmd-item"><i class="fa-regular fa-file"></i> Create New File</a>
+                <a href="#" class="cmd-item"><i class="fa-solid fa-user-plus"></i> Invite Team Member</a>
+                <a href="#" class="cmd-item"><i class="fa-solid fa-gear"></i> Open Settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>Interactive command palette. Press CMD+K to trigger, searchable with keyboard navigation.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Notification Dropdown</span><span class="card-tag yellow">Alerts</span></div>
+        <div class="card-preview">
+          <div class="notification-dropdown">
+            <button class="notify-btn">
+              <i class="fa-regular fa-bell"></i>
+              <span class="notify-badge">3</span>
+            </button>
+            <div class="notify-content">
+              <div class="notify-header">Notifications <span>Mark all read</span></div>
+              <div class="notify-list">
+                <a href="#" class="notify-item unread">
+                  <div class="notify-icon success"><i class="fa-solid fa-check"></i></div>
+                  <div class="notify-text"><strong>Deploy Successful</strong><p>Your app is now live.</p></div>
+                </a>
+                <a href="#" class="notify-item">
+                  <div class="notify-icon warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                  <div class="notify-text"><strong>Storage Warning</strong><p>You are at 90% capacity.</p></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>Feature-rich notification center with unread states and custom icons.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+
+      <article class="menu-card">
+        <div class="card-top"><span class="card-label">Profile Avatar Menu</span><span class="card-tag pink">Account</span></div>
+        <div class="card-preview">
+          <div class="profile-dropdown">
+            <button class="profile-btn">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar" />
+            </button>
+            <div class="profile-content">
+              <div class="profile-header">
+                <strong>Felix Dev</strong>
+                <p>felix@uiverse.com</p>
+              </div>
+              <hr />
+              <a href="#"><i class="fa-regular fa-user"></i> My Profile</a>
+              <a href="#"><i class="fa-solid fa-sliders"></i> Preferences</a>
+              <hr />
+              <a href="#" class="logout-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
+            </div>
+          </div>
+        </div>
+        <p>Detailed profile menu with user info, actions, and custom styling.</p>
+        <div class="card-actions"><button class="view-btn">Preview</button><button class="copy-btn">Copy Code</button></div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    // JS for dropdowns and command menu
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle generic dropdowns
+      const dropdownBtns = document.querySelectorAll('.notify-btn, .profile-btn');
+      dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const content = btn.nextElementSibling;
+          const isOpen = content.classList.contains('show');
+          
+          // Close all open menus first
+          document.querySelectorAll('.notify-content.show, .profile-content.show').forEach(m => m.classList.remove('show'));
+          
+          if (!isOpen) {
+            content.classList.add('show');
+          }
+        });
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', () => {
+        document.querySelectorAll('.notify-content.show, .profile-content.show').forEach(m => m.classList.remove('show'));
+      });
+
+      // Prevent closing when clicking inside menu content
+      document.querySelectorAll('.notify-content, .profile-content').forEach(content => {
+        content.addEventListener('click', (e) => e.stopPropagation());
+      });
+
+      // Command Menu Logic
+      const openCmdBtn = document.querySelector('.open-command-btn');
+      const cmdPalette = document.getElementById('cmdPalette');
+      const cmdInput = document.getElementById('cmdInput');
+      const cmdItems = document.querySelectorAll('.cmd-item');
+
+      if(openCmdBtn && cmdPalette) {
+        openCmdBtn.addEventListener('click', () => {
+          cmdPalette.classList.add('active');
+          setTimeout(() => cmdInput.focus(), 100);
+        });
+
+        cmdPalette.addEventListener('click', (e) => {
+          if (e.target === cmdPalette) {
+            cmdPalette.classList.remove('active');
+          }
+        });
+
+        // Keyboard shortcut (Cmd+K or Ctrl+K)
+        document.addEventListener('keydown', (e) => {
+          if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            cmdPalette.classList.add('active');
+            setTimeout(() => cmdInput.focus(), 100);
+          }
+          if (e.key === 'Escape' && cmdPalette.classList.contains('active')) {
+            cmdPalette.classList.remove('active');
+          }
+        });
+
+        // Search filtering
+        cmdInput.addEventListener('input', (e) => {
+          const filter = e.target.value.toLowerCase();
+          cmdItems.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (text.includes(filter)) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

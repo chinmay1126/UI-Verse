@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Widgets — UIverse</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="widgets.css">
+</head>
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+      <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+      <li><a href="div.html"><i class="fa-solid fa-square"></i><span>DIV</span></a></li>
+      <li class="active"><a href="widgets.html"><i class="fa-solid fa-layer-group"></i><span>Widgets</span></a></li>
+      <li>
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search Bars</span>
+        </a>
+      </li>
+      <li>
+        <a href="hover.html">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Hover Effects</span>
+        </a>
+      </li>
+      <li>
+        <a href="error.html">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Error Pages</span>
+        </a>
+      </li>
+      <li><a href="menu.html"><i class="fa-solid fa-bars"></i><span>Menu</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="main-home">
+
+  <header class="page-header">
+    <h1>Developer Widgets</h1>
+    <p>Modern reusable developer-focused UI widgets with interactive styling and clean structures.</p>
+  </header>
+
+  <section class="widgets-grid">
+
+    <!-- 1. GITHUB STATS WIDGET -->
+    <div class="widget-wrapper">
+      <div class="widget-info">
+        <h2>GitHub Stats</h2>
+        <p>A compact view of developer contributions.</p>
+      </div>
+      <div class="github-stats-widget">
+        <div class="gh-header">
+          <i class="fab fa-github"></i>
+          <h3>saitejx / UI-Verse</h3>
+        </div>
+        <div class="gh-stats-grid">
+          <div class="gh-stat-box">
+            <span class="value">15.2k</span>
+            <span class="label">Stars</span>
+          </div>
+          <div class="gh-stat-box">
+            <span class="value">482</span>
+            <span class="label">Commits</span>
+          </div>
+          <div class="gh-stat-box">
+            <span class="value">89</span>
+            <span class="label">PRs</span>
+          </div>
+          <div class="gh-stat-box">
+            <span class="value">1.2k</span>
+            <span class="label">Forks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. TERMINAL WIDGET -->
+    <div class="widget-wrapper">
+      <div class="widget-info">
+        <h2>Terminal Widget</h2>
+        <p>Dashboard terminal mockup for logs and commands.</p>
+      </div>
+      <div class="terminal-widget">
+        <div class="term-header">
+          <div class="term-dot red"></div>
+          <div class="term-dot yellow"></div>
+          <div class="term-dot green"></div>
+        </div>
+        <div class="term-body">
+          <div class="term-line"><span class="term-prompt">user@dev:~$</span> <span class="term-cmd">npm run build</span></div>
+          <div class="term-line">> UI-Verse@1.0.0 build</div>
+          <div class="term-line">> vite build</div>
+          <div class="term-line" style="color:#27c93f;">✓ 24 modules transformed.</div>
+          <div class="term-line">dist/index.html   1.2 kB</div>
+          <div class="term-line">dist/assets/index.js   240.5 kB</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. CODE SNIPPET WIDGET -->
+    <div class="widget-wrapper">
+      <div class="widget-info">
+        <h2>Code Snippet</h2>
+        <p>Syntax-highlighted snippet with copy functionality.</p>
+      </div>
+      <div class="code-snippet-widget">
+        <div class="snippet-header">
+          <span class="snippet-lang">JavaScript</span>
+          <button class="copy-btn" id="copyBtn">
+            <i class="fa-regular fa-copy"></i> <span>Copy</span>
+          </button>
+        </div>
+        <div class="snippet-body">
+<pre><code><span class="token keyword">const</span> <span class="token function">initWidget</span> <span class="token keyword">=</span> <span class="token punctuation">()</span> <span class="token keyword">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Widget loaded successfully!"</span><span class="token punctuation">);</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">initWidget</span><span class="token punctuation">();</span></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ACTIVITY TRACKER WIDGET -->
+    <div class="widget-wrapper">
+      <div class="widget-info">
+        <h2>Activity Tracker</h2>
+        <p>Contribution heatmap inspired by dev platforms.</p>
+      </div>
+      <div class="activity-widget">
+        <div class="activity-header">Contributions in the last 30 days</div>
+        <div class="activity-grid">
+          <!-- Generate random activity boxes via JS for demonstration -->
+          <script>
+            document.write(Array.from({length: 48}).map(() => {
+              const level = Math.floor(Math.random() * 5); // 0 to 4
+              return `<div class="activity-box ${level > 0 ? 'level-' + level : ''}"></div>`;
+            }).join(''));
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. DEVELOPER PROFILE WIDGET -->
+    <div class="widget-wrapper">
+      <div class="widget-info">
+        <h2>Developer Profile</h2>
+        <p>Compact card for portfolios and author sections.</p>
+      </div>
+      <div class="dev-profile-widget">
+        <div class="dev-avatar">👨‍💻</div>
+        <div class="dev-info">
+          <h3>Saitej X</h3>
+          <p>Frontend Engineer & UI Designer</p>
+          <div class="dev-socials">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<script>
+  // Copy Code Interaction
+  document.getElementById('copyBtn').addEventListener('click', function() {
+    const codeText = `const initWidget = () => {
+  console.log("Widget loaded successfully!");
+};
+
+initWidget();`;
+    
+    navigator.clipboard.writeText(codeText).then(() => {
+      const btn = this;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  });
+</script>
+
+</body>
+</html>

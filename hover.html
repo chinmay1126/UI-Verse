@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hover Effects — UIverse</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="hover.css">
+</head>
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+      <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+      <li><a href="div.html"><i class="fa-solid fa-square"></i><span>DIV</span></a></li>
+      <li><a href="widgets.html"><i class="fa-solid fa-layer-group"></i><span>Widgets</span></a></li>
+      <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search Bars</span></a></li>
+      <li><a href="menu.html"><i class="fa-solid fa-bars"></i><span>Menu</span></a></li>
+      <li class="active"><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Hover Effects</span></a></li>
+      <li>
+        <a href="error.html">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Error Pages</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="main-home">
+
+  <header class="page-header">
+    <h1>Hover Effects</h1>
+    <p>Showcasing modern hover animations, 3D tilts, and interactive UI effects for reusable components.</p>
+  </header>
+
+  <section class="hover-grid">
+
+    <!-- 1. HOVER REVEAL CARDS -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>Hover Reveal Cards</h2>
+        <p>A card that slides to reveal hidden content underneath.</p>
+      </div>
+      <div class="component-preview" id="preview-1">
+        <div class="reveal-card">
+          <div class="reveal-front">
+            <i class="fa-solid fa-lock"></i>
+            <span>Hover me</span>
+          </div>
+          <div class="reveal-back">
+            <i class="fa-solid fa-unlock" style="font-size: 24px; margin-bottom: 8px;"></i>
+            <p>Secret content revealed!</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-1">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 2. GLOW HOVER BUTTONS -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>Glow Hover Button</h2>
+        <p>A button that generates a soft neon gradient border upon hover.</p>
+      </div>
+      <div class="component-preview" id="preview-2">
+        <button class="glow-btn">Hover for Glow</button>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-2">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 3. 3D HOVER CARDS -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>3D Hover Card</h2>
+        <p>A card that tilts dynamically based on mouse position.</p>
+      </div>
+      <div class="component-preview" id="preview-3">
+        <div class="perspective-container">
+          <div class="tilt-card" id="tiltCard">
+            <div class="tilt-content">
+              <i class="fa-brands fa-space-awesome"></i>
+              <br>
+              <span>3D Space</span>
+            </div>
+          </div>
+        </div>
+        <script>
+          // Dynamic tilt logic included for easy copying
+          const card = document.getElementById('tiltCard');
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -15;
+            const rotateY = ((x - centerX) / centerX) * 15;
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = `rotateX(0) rotateY(0)`;
+          });
+        </script>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-3">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4. SPOTLIGHT HOVER EFFECT -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>Spotlight Hover Effect</h2>
+        <p>A radial gradient background that follows the cursor.</p>
+      </div>
+      <div class="component-preview" id="preview-4">
+        <div class="spotlight-card" id="spotlightCard">
+          <div class="spotlight-content">Spotlight Target</div>
+        </div>
+        <script>
+          // Spotlight logic included for easy copying
+          const sCard = document.getElementById('spotlightCard');
+          sCard.addEventListener('mousemove', (e) => {
+            const rect = sCard.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            sCard.style.setProperty('--x', `${x}px`);
+            sCard.style.setProperty('--y', `${y}px`);
+          });
+        </script>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-4">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 5. FLOATING HOVER ELEMENTS -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>Floating Hover Elements</h2>
+        <p>Elements that lift smoothly with dynamic drop-shadows.</p>
+      </div>
+      <div class="component-preview" id="preview-5">
+        <div class="float-container">
+          <div class="float-item"><i class="fa-brands fa-html5"></i></div>
+          <div class="float-item"><i class="fa-brands fa-css3-alt"></i></div>
+          <div class="float-item"><i class="fa-brands fa-js"></i></div>
+          <div class="float-item"><i class="fa-brands fa-react"></i></div>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-5">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<script>
+  // Copy Code Interaction for all buttons
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    
+    copyButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          // Get the inner HTML and trim leading/trailing whitespace
+          let codeToCopy = targetElement.innerHTML.trim();
+          
+          navigator.clipboard.writeText(codeToCopy).then(() => {
+            const originalHTML = this.innerHTML;
+            this.classList.add('copied');
+            this.innerHTML = '<i class="fa-solid fa-check"></i> <span>Copied!</span>';
+            
+            setTimeout(() => {
+              this.classList.remove('copied');
+              this.innerHTML = originalHTML;
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+            alert('Failed to copy code to clipboard.');
+          });
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

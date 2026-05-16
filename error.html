@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error Pages — UIverse</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="error.css">
+</head>
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+      <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+      <li><a href="div.html"><i class="fa-solid fa-square"></i><span>DIV</span></a></li>
+      <li><a href="widgets.html"><i class="fa-solid fa-layer-group"></i><span>Widgets</span></a></li>
+      <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search Bars</span></a></li>
+      <li><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Hover Effects</span></a></li>
+      <li><a href="menu.html"><i class="fa-solid fa-bars"></i><span>Menu</span></a></li>
+      <li class="active"><a href="error.html"><i class="fa-solid fa-triangle-exclamation"></i><span>Error Pages</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="main-home">
+
+  <header class="page-header">
+    <h1>Error Components</h1>
+    <p>Responsive modern error layouts, status screens, and application fallback pages.</p>
+  </header>
+
+  <section class="error-grid">
+
+    <!-- 1. 404 ERROR PAGE -->
+    <div class="error-card">
+      <div class="error-info">
+        <h2>404 Error Page</h2>
+        <p>A classic "Page Not Found" layout with a floating animation.</p>
+      </div>
+      <div class="component-preview" id="preview-1">
+        <div class="error-screen err-404">
+          <div class="error-code">404</div>
+          <div class="error-title">Page Not Found</div>
+          <div class="error-desc">The page you are looking for doesn't exist or has been moved.</div>
+          <button class="error-btn">Go Back Home</button>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-1">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 2. 500 SERVER ERROR PAGE -->
+    <div class="error-card">
+      <div class="error-info">
+        <h2>500 Server Error</h2>
+        <p>Internal server error screen with a stylized offset shadow.</p>
+      </div>
+      <div class="component-preview" id="preview-2">
+        <div class="error-screen err-500">
+          <div class="error-code">500</div>
+          <div class="error-title">Internal Server Error</div>
+          <div class="error-desc">Oops, something went wrong on our end. We are working to fix it.</div>
+          <button class="error-btn">Try Again</button>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-2">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 3. MAINTENANCE PAGE -->
+    <div class="error-card">
+      <div class="error-info">
+        <h2>Maintenance Page</h2>
+        <p>Scheduled maintenance screen with an animated progress bar.</p>
+      </div>
+      <div class="component-preview" id="preview-3">
+        <div class="error-screen err-maint">
+          <div class="icon-wrap"><i class="fa-solid fa-gear"></i></div>
+          <div class="error-title">Under Maintenance</div>
+          <div class="error-desc">We're upgrading our systems. Be right back!</div>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-3">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4. ACCESS DENIED PAGE -->
+    <div class="error-card">
+      <div class="error-info">
+        <h2>Access Denied</h2>
+        <p>A 403 Forbidden page for restricted areas.</p>
+      </div>
+      <div class="component-preview" id="preview-4">
+        <div class="error-screen err-403">
+          <div class="icon-wrap"><i class="fa-solid fa-lock"></i></div>
+          <div class="error-code" style="font-size:32px;">403</div>
+          <div class="error-title">Access Denied</div>
+          <div class="error-desc">You do not have permission to view this directory or page.</div>
+          <button class="error-btn">Request Access</button>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-4">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 5. NETWORK ERROR SCREEN -->
+    <div class="error-card">
+      <div class="error-info">
+        <h2>Network Error</h2>
+        <p>A connection failure state for offline applications.</p>
+      </div>
+      <div class="component-preview" id="preview-5">
+        <div class="error-screen err-net">
+          <div class="icon-wrap"><i class="fa-solid fa-wifi"></i></div>
+          <div class="error-title">No Connection</div>
+          <div class="error-desc">Please check your internet connection and try again.</div>
+          <button class="error-btn">Retry Connection</button>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-5">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <i class="fa-solid fa-hexagon-nodes"></i>
+          <span>UIverse</span>
+        </div>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">License</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Stay Updated</h4>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" />
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart heart"></i> for developers worldwide.</p>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // Copy Code Interaction for all buttons
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    
+    copyButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          // Get the inner HTML and trim leading/trailing whitespace
+          let codeToCopy = targetElement.innerHTML.trim();
+          
+          navigator.clipboard.writeText(codeToCopy).then(() => {
+            const originalHTML = this.innerHTML;
+            this.classList.add('copied');
+            this.innerHTML = '<i class="fa-solid fa-check"></i> <span>Copied!</span>';
+            
+            setTimeout(() => {
+              this.classList.remove('copied');
+              this.innerHTML = originalHTML;
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+            alert('Failed to copy code to clipboard.');
+          });
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
