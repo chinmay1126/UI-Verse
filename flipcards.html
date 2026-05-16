@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Drag & Drop Upload</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>3D Flip Cards</title>
+
+  <!-- GOOGLE FONTS -->
 
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="files.css">
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <link rel="stylesheet" href="flipcards.css">
+
 </head>
+
 <body>
 
+<!-- YOUR SIDEBAR HERE -->
+
 <div class="main-content">
+
+  <!-- TOPBAR -->
+
+  <header class="topbar">
+
+    <div class="search-box">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input type="text" placeholder="Search components...">
+
+    </div>
+
+    <div class="topbar-actions">
+
+      <button class="add-btn">
+        <i class="fa-solid fa-plus"></i>
+        Add Component
+      </button>
+
+      <button class="collection-btn">
+        My Collection
+      </button>
+
+      <button class="theme-btn">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+    </div>
+
+  </header>
 
   <!-- HERO -->
 
@@ -20,21 +64,32 @@
     <div class="hero-left">
 
       <div class="breadcrumb">
-        Home > Upload
+        Home > 3D Cards
       </div>
 
-      <h1>File Upload Components</h1>
+      <h1>3D Flip Card Components</h1>
 
       <p>
-        Modern drag-and-drop upload components with clean layouts,
-        smooth interactions, and responsive design.
+        Interactive modern 3D flip card components with smooth hover
+        animations and responsive layouts.
       </p>
 
       <div class="hero-tags">
 
-        <span>6 Components</span>
-        <span>Pure HTML/CSS/JS</span>
-        <span>Responsive</span>
+        <span>
+          <i class="fa-solid fa-layer-group"></i>
+          6 Components
+        </span>
+
+        <span>
+          <i class="fa-solid fa-code"></i>
+          Pure HTML/CSS
+        </span>
+
+        <span>
+          <i class="fa-solid fa-mobile-screen"></i>
+          Responsive
+        </span>
 
       </div>
 
@@ -42,26 +97,15 @@
 
     <div class="hero-preview">
 
-      <div class="mini-upload">
-        <div class="mini-icon">⬆</div>
-        <p>Drop files here</p>
+      <div class="mini-preview-card">
+        Flip
       </div>
 
     </div>
 
   </section>
 
-  <!-- FILTERS -->
-
-  <div class="filters">
-
-    <button class="active">All</button>
-    <button>Simple</button>
-    <button>Glass</button>
-    <button>Gradient</button>
-
-  </div>
- <!-- ================= SIDEBAR ================= -->
+   <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
     <span class="brand-icon">⬡</span>
@@ -88,12 +132,6 @@
           <span>Navbar</span>
         </a>
       </li>
-      <li>
-  <a href="flipcards.html">
-    <i class="fa-solid fa-clone"></i>
-    <span>3D Cards</span>
-  </a>
-</li>
       <li>
         <a href="cards.html">
           <i class="fa-solid fa-table-cells-large"></i>
@@ -258,27 +296,40 @@
   </div>
 </aside>
 
+  <!-- FILTERS -->
+
+  <div class="filters">
+
+    <button class="active">All</button>
+    <button>Glass</button>
+    <button>Gradient</button>
+    <button>3D</button>
+
+  </div>
+
   <!-- COMPONENT GRID -->
 
-  <section class="upload-grid">
+  <section class="flip-grid">
 
     <!-- CARD 1 -->
 
-    <div class="upload-card">
+    <div class="component-card">
 
       <div class="card-preview">
 
-        <div class="upload-box" id="uploadBox">
+        <div class="demo-flip-card">
 
-          <input type="file" id="fileInput" hidden multiple>
+          <div class="demo-inner">
 
-          <div class="upload-icon">⬆</div>
+            <div class="demo-front">
+              Front
+            </div>
 
-          <h3>Drag & Drop Files</h3>
+            <div class="demo-back">
+              Back
+            </div>
 
-          <p>or click to browse</p>
-
-          <button>Select Files</button>
+          </div>
 
         </div>
 
@@ -287,18 +338,22 @@
       <div class="card-content">
 
         <div class="card-top">
-          <h3>Simple Upload</h3>
+
+          <h3>Glass Flip Card</h3>
+
           <span>Popular</span>
+
         </div>
 
         <p>
-          Clean upload component with drag-and-drop support and smooth hover effects.
+          Modern glassmorphism flip card with smooth hover interaction.
         </p>
 
         <div class="card-actions">
 
           <button>View Code</button>
           <button>Copy</button>
+          <button>Save</button>
 
         </div>
 
@@ -308,17 +363,23 @@
 
     <!-- CARD 2 -->
 
-    <div class="upload-card glass-card">
+    <div class="component-card">
 
       <div class="card-preview">
 
-        <div class="upload-box glass-upload">
+        <div class="demo-flip-card">
 
-          <div class="upload-icon">☁</div>
+          <div class="demo-inner">
 
-          <h3>Glass Upload</h3>
+            <div class="demo-front">
+              Gradient
+            </div>
 
-          <p>Modern glassmorphism style</p>
+            <div class="demo-back">
+              Hover
+            </div>
+
+          </div>
 
         </div>
 
@@ -327,18 +388,22 @@
       <div class="card-content">
 
         <div class="card-top">
-          <h3>Glass Upload</h3>
+
+          <h3>Gradient Flip Card</h3>
+
           <span>Trending</span>
+
         </div>
 
         <p>
-          Frosted glass upload area with smooth blur background effects.
+          Vibrant animated 3D flip card with gradient transitions.
         </p>
 
         <div class="card-actions">
 
           <button>View Code</button>
           <button>Copy</button>
+          <button>Save</button>
 
         </div>
 
@@ -348,17 +413,23 @@
 
     <!-- CARD 3 -->
 
-    <div class="upload-card gradient-card">
+    <div class="component-card">
 
       <div class="card-preview">
 
-        <div class="upload-box gradient-upload">
+        <div class="demo-flip-card">
 
-          <div class="upload-icon">✦</div>
+          <div class="demo-inner">
 
-          <h3>Gradient Upload</h3>
+            <div class="demo-front">
+              Neon
+            </div>
 
-          <p>Animated gradient border</p>
+            <div class="demo-back">
+              Glow
+            </div>
+
+          </div>
 
         </div>
 
@@ -367,18 +438,72 @@
       <div class="card-content">
 
         <div class="card-top">
-          <h3>Gradient Upload</h3>
-          <span>New</span>
+
+          <h3>Neon 3D Card</h3>
+
+          <span>Premium</span>
+
         </div>
 
         <p>
-          Vibrant upload component with animated modern gradients.
+          Futuristic neon-style 3D flip card with glowing hover effects.
         </p>
 
         <div class="card-actions">
 
           <button>View Code</button>
           <button>Copy</button>
+          <button>Save</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="component-card">
+
+      <div class="card-preview">
+
+        <div class="demo-flip-card">
+
+          <div class="demo-inner">
+
+            <div class="demo-front">
+              3D
+            </div>
+
+            <div class="demo-back">
+              Card
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card-content">
+
+        <div class="card-top">
+
+          <h3>Modern 3D Card</h3>
+
+          <span>New</span>
+
+        </div>
+
+        <p>
+          Clean modern 3D card component with perspective hover animation.
+        </p>
+
+        <div class="card-actions">
+
+          <button>View Code</button>
+          <button>Copy</button>
+          <button>Save</button>
 
         </div>
 
@@ -389,50 +514,6 @@
   </section>
 
 </div>
-
-<script>
-
-const uploadBox = document.getElementById("uploadBox");
-const fileInput = document.getElementById("fileInput");
-
-uploadBox.addEventListener("click", () => {
-  fileInput.click();
-});
-
-uploadBox.addEventListener("dragover", (e) => {
-  e.preventDefault();
-  uploadBox.classList.add("dragging");
-});
-
-uploadBox.addEventListener("dragleave", () => {
-  uploadBox.classList.remove("dragging");
-});
-
-uploadBox.addEventListener("drop", (e) => {
-
-  e.preventDefault();
-
-  uploadBox.classList.remove("dragging");
-
-  const files = e.dataTransfer.files;
-
-  if(files.length > 0){
-    uploadBox.querySelector("p").innerText =
-      `${files.length} file(s) selected`;
-  }
-
-});
-
-fileInput.addEventListener("change", () => {
-
-  if(fileInput.files.length > 0){
-    uploadBox.querySelector("p").innerText =
-      `${fileInput.files.length} file(s) selected`;
-  }
-
-});
-
-</script>
 
 </body>
 </html>
