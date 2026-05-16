@@ -677,6 +677,23 @@ body{
   font-weight:700;
 }
 
+/* CODE BLOCKS */
+
+.code-block{
+  display:none;
+  margin-top:18px;
+  padding:18px;
+  border-radius:18px;
+  background:rgba(0,0,0,.28);
+  border:1px solid var(--border);
+  color:#d6def7;
+  white-space:pre-wrap;
+}
+
+.code-block.open{
+  display:block;
+}
+
 /* LOCATION */
 
 .location-info{
