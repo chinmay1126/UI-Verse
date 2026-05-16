@@ -9,6 +9,27 @@ const Sandbox = {
   },
 
   /**
+   * Sanitize HTML to prevent XSS and unsafe content
+   */
+  sanitizeHTML(html) {
+    const temp = document.createElement('div');
+    temp.textContent = html;
+    return temp.innerHTML;
+  },
+
+  /**
+   * Remove potentially dangerous elements and attributes
+   */
+  removeUnsafePatterns(html) {
+    let sanitized = html;
+    sanitized = sanitized.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+    sanitized = sanitized.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '');
+    sanitized = sanitized.replace(/javascript:/gi, '');
+    sanitized = sanitized.replace(/data:(?!text\/css)(?!image\/)/gi, '');
+    return sanitized;
+  },
+
+  /**
    * Initialize live sandboxes (iframes with editable code)
    */
   init() {
@@ -78,6 +99,7 @@ const Sandbox = {
       textarea.style.resize = "vertical";
 
       const renderIframe = (htmlContent) => {
+        const safeHTML = Sandbox.removeUnsafePatterns(Sandbox.sanitizeHTML(htmlContent));
         iframe.srcdoc = `
           <!DOCTYPE html>
           <html>
@@ -234,7 +256,7 @@ const Sandbox = {
             </script>
           </head>
           <body>
-            <div id="sandbox-root">${htmlContent}</div>
+            <div id="sandbox-root">${safeHTML}</div>
           </body>
           </html>`;
       };

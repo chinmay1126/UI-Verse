@@ -36,7 +36,9 @@
     "build": "vite build",
     "build:js": "vite build",
     "dev": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "csp:hash": "node scripts/csp-hash-generator.js",
+    "csp:update": "node scripts/csp-hash-generator.js --update"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.0.0",

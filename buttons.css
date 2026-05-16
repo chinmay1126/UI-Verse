@@ -45,6 +45,13 @@
   gap: 20px;
 }
 
+/* Keep cards visible even if the optional scroll-reveal script is blocked or
+   unavailable. The buttons page should degrade gracefully, not disappear. */
+.button-grid .component-card {
+  opacity: 1;
+  transform: none;
+}
+
 @media (max-width: 768px) {
   .button-grid {
     grid-template-columns: 1fr;

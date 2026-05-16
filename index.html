@@ -34,7 +34,48 @@
     <script src="js/features/url-state.js"></script>
     <script src="js/features/url-state-integration.js"></script>
 <script src="js/bootstrap.js"></script>
-  </head>
+  <script src="js/core/utility-functions.js"></script>
+
+  <!-- Primary Meta Tags -->
+  <title>UI-Verse - Open-Source UI Component Library</title>
+  <meta name="title" content="UI-Verse - Open-Source UI Component Library">
+  <meta name="description" content="Discover free, open-source HTML, CSS, and JavaScript UI components. Browse buttons, cards, forms, navigation and more.">
+  <meta name="author" content="UI-Verse Community">
+  <meta name="keywords" content="ui components, css, html, javascript, open source, web components, frontend, ui library">
+  <link rel="canonical" href="https://uiverse.vercel.app/index.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uiverse.vercel.app/index.html">
+  <meta property="og:title" content="UI-Verse - Open-Source UI Component Library">
+  <meta property="og:description" content="Discover free, open-source HTML, CSS, and JavaScript UI components. Browse buttons, cards, forms, navigation and more.">
+  <meta property="og:image" content="https://uiverse.vercel.app/preview.png">
+  <meta property="og:site_name" content="UI-Verse">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://uiverse.vercel.app/index.html">
+  <meta property="twitter:title" content="UI-Verse - Open-Source UI Component Library">
+  <meta property="twitter:description" content="Discover free, open-source HTML, CSS, and JavaScript UI components. Browse buttons, cards, forms, navigation and more.">
+  <meta property="twitter:image" content="https://uiverse.vercel.app/preview.png">
+  <meta property="twitter:creator" content="@uiverse">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "UI-Verse",
+    "url": "https://uiverse.vercel.app",
+    "description": "A curated collection of open-source HTML, CSS, and JavaScript UI components for modern web development. Free to use, regularly updated.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://uiverse.vercel.app/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
 
 <body>
 
@@ -134,6 +175,13 @@
         </a>
       </li>
       <li>
+      <a href="Model/Model.html">
+       <i class="fa-solid fa-window-maximize"></i>
+       <span>Modals</span>
+      </a>
+      </li>
+      
+      <li>
         <a href="map.html">
           <i class="fa-solid fa-map-location-dot"></i>
           <span>Maps</span>
@@ -182,6 +230,12 @@
         </a>
       </li>
       <li>
+  <a href="otp.html">
+    <i class="fa-solid fa-key"></i>
+    <span>OTP Inputs</span>
+  </a>
+</li>
+      <li>
         <a href="terms.html">
           <i class="fa-solid fa-file-contract"></i>
           <span>Terms</span>
@@ -194,12 +248,24 @@
         </a>
       </li>
       <li>
+  <a href="flipcards.html">
+    <i class="fa-solid fa-clone"></i>
+    <span>3D Cards</span>
+  </a>
+</li>
+      <li>
         <a href="toggles.html">
           <i class="fa-solid fa-toggle-on"></i>
           <span>Toggle</span>
         </a>
       </li>
-
+     
+<li>
+  <a href="files.html">
+    <i class="fa-solid fa-upload"></i>
+    <span>Upload</span>
+  </a>
+</li>
       <li>
         <a href="about.html">
           <i class="fa-solid fa-circle-info"></i>
@@ -338,7 +404,27 @@
         </div>
         <a href="button.html" class="feature-link">View <i class="fa-solid fa-arrow-right"></i></a>
       </div>
+       
+      <div class="feature-card-body">
 
+    <h3>Animated Modals</h3>
+
+    <p>
+      Modern popup modal components with smooth animations.
+    </p>
+
+    <div class="feature-tags">
+      <span class="tag tag-new">New</span>
+      <span class="tag tag-trending">Trending</span>
+    </div>
+
+  </div>
+
+  <a href="Model/Model.html" class="feature-link">
+    View <i class="fa-solid fa-arrow-right"></i>
+  </a>
+
+</div>  
       <div class="feature-card">
         <div class="feature-icon-wrap" style="--icon-color: #74b9ff;">🎨</div>
         <div class="feature-card-body">
@@ -458,6 +544,18 @@
         <p>Footer section layouts</p>
         <span class="cat-count">9 items</span>
       </a>
+      </a>
+      <a href="Model/Model.html" class="cat-card">
+
+  <div class="cat-icon">🪟</div>
+
+  <h3>Modals</h3>
+
+  <p>Popup and dialog components</p>
+
+  <span class="cat-count">12 items</span>
+
+</a>
     </div>
   </section>
 
@@ -646,18 +744,61 @@
     observer.observe(el);
   });
 
+  function showToast(message, isError = false) {
+    const existing = document.querySelector('.toast-notification');
+    if (existing) existing.remove();
+    
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      background: ${isError ? '#d63031' : '#00b894'};
+      color: white;
+      border-radius: 8px;
+      font-weight: 500;
+      z-index: 10000;
+      animation: slideIn 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    `;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+
   function handleSearch(e) {
     if (e.key === 'Enter') {
       const q = document.getElementById('searchInput').value.trim();
-      if (q) alert('Searching for: ' + q);
+      if (q && window.liveFilter) {
+        window.liveFilter(q);
+        const results = document.querySelectorAll('.component-card:not([style*="display: none"])');
+        const msg = results.length > 0 
+          ? `Found ${results.length} component${results.length > 1 ? 's' : ''}` 
+          : 'No components found';
+        showToast(msg);
+      }
     }
   }
 
   function subscribe() {
     const input = document.querySelector('.newsletter-form input');
-    if (input.value) {
-      alert('Thanks for subscribing with ' + input.value);
-      input.value = '';
+    const email = input?.value?.trim();
+    if (email) {
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showToast('Thanks for subscribing! 🎉');
+        if (window.localStorage) {
+          const subscribers = JSON.parse(localStorage.getItem('uiv-subscribers') || '[]');
+          subscribers.push({ email, date: new Date().toISOString() });
+          localStorage.setItem('uiv-subscribers', JSON.stringify(subscribers));
+        }
+        input.value = '';
+      } else {
+        showToast('Please enter a valid email', true);
+      }
+    } else {
+      showToast('Please enter your email', true);
     }
   }
 </script>

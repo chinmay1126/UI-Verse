@@ -3,17 +3,19 @@
  * 
  * Entry point for all JavaScript functionality
  * Registers and initializes all features using the UIverse registry system
- * with automatic dependency management and lazy loading support
+ * with automatic dependency management, lazy loading, and duplicate prevention
  * 
  * All feature modules must be loaded before this script:
  * - js/registry.js (UIverse registry)
  * - js/core/*.js (core modules)
  * - js/features/*.js (feature modules)
  * 
- * Lazy loading is handled by js/core/lazy-loader.js for dynamic imports
+ * Lazy loading is handled by js/core/lazy-loader.js
+ * Duplicate prevention via js/core/script-loader.js
  */
 
 const Bootstrap = {
+  initialized: false,
   /**
    * Register all available modules with the UIverse registry
    */
@@ -89,10 +91,15 @@ const Bootstrap = {
     }
   },
 
-  /**
-   * Initialize all features with conditional DOM checks
-   */
+/**
+    * Initialize all features with conditional DOM checks
+    */
   init() {
+    if (this.initialized) {
+      console.warn('[Bootstrap] Already initialized, skipping duplicate init');
+      return;
+    }
+    
     if (!window.UIverse) {
       console.error('[Bootstrap] UIverse registry not found. Make sure js/registry.js is loaded first.');
       return;
@@ -106,7 +113,8 @@ const Bootstrap = {
 
     // Initialize all registered modules (with dependencies handled by registry)
     const report = UIverse.initAll();
-
+    
+    this.initialized = true;
     this.logStatus(report);
   },
 
