@@ -2,383 +2,1170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Toggles - UIverse</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self' https:;
+      base-uri 'self';
+      frame-ancestors 'none';
+      object-src 'none';
+      connect-src 'self' https:;
+      img-src 'self' data: https:;
+      font-src 'self' data: https:;
+      style-src 'self' 'unsafe-inline' https:;
+      script-src 'self' 'unsafe-inline' https:;
+    "
+  />
+
+  <title>Toggles — UIverse</title>
+
+  <!-- Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
   <style>
-    /* ===== TOGGLE SWITCHES ===== */
-
-    /* Base reset */
-    .toggle-wrap input[type="checkbox"] { display: none; }
-
-    /* 1. Classic */
-    .toggle-classic label {
-      display: block; width: 52px; height: 28px;
-      background: #dfe6e9; border-radius: 14px; cursor: pointer;
-      position: relative; transition: background 0.3s ease;
-    }
-    .toggle-classic label::after {
-      content: ""; position: absolute;
-      width: 22px; height: 22px; background: white;
-      border-radius: 50%; top: 3px; left: 3px;
-      transition: transform 0.3s cubic-bezier(.68,-.55,.27,1.55);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .toggle-classic input:checked + label { background: #6c5ce7; }
-    .toggle-classic input:checked + label::after { transform: translateX(24px); }
-
-    /* 2. iOS */
-    .toggle-ios label {
-      display: block; width: 56px; height: 30px;
-      background: #e5e5ea; border-radius: 15px; cursor: pointer;
-      position: relative; transition: background 0.3s;
-    }
-    .toggle-ios label::after {
-      content: ""; position: absolute;
-      width: 26px; height: 26px; background: white;
-      border-radius: 50%; top: 2px; left: 2px;
-      transition: transform 0.3s cubic-bezier(.23,1,.32,1);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-    }
-    .toggle-ios input:checked + label { background: #34c759; }
-    .toggle-ios input:checked + label::after { transform: translateX(26px); }
-
-    /* 3. Neon */
-    .toggle-neon label {
-      display: block; width: 58px; height: 30px;
-      background: #2d3436; border: 2px solid #636e72;
-      border-radius: 15px; cursor: pointer;
-      position: relative; transition: border-color 0.3s, box-shadow 0.3s;
-    }
-    .toggle-neon label::after {
-      content: ""; position: absolute;
-      width: 20px; height: 20px; background: #636e72;
-      border-radius: 50%; top: 3px; left: 3px;
-      transition: transform 0.3s ease, background 0.3s, box-shadow 0.3s;
-    }
-    .toggle-neon input:checked + label {
-      border-color: #a29bfe;
-      box-shadow: 0 0 14px rgba(162,155,254,0.6);
-    }
-    .toggle-neon input:checked + label::after {
-      transform: translateX(26px); background: #a29bfe;
-      box-shadow: 0 0 8px #a29bfe;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    /* 4. Text label */
-    .toggle-text label {
-      display: flex; align-items: center; justify-content: flex-end;
-      padding-right: 7px;
-      width: 62px; height: 28px;
-      background: #dfe6e9; border-radius: 14px; cursor: pointer;
-      position: relative; transition: background 0.3s;
-      font-size: 9px; font-weight: 700; color: #b2bec3;
-      letter-spacing: 0.05em;
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#6c5ce7;
+      --orange:#eb6835;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:22px;
     }
-    .toggle-text label::before {
-      content: "OFF";
-    }
-    .toggle-text label::after {
-      content: ""; position: absolute;
-      width: 22px; height: 22px; background: white;
-      border-radius: 50%; top: 3px; left: 3px;
-      transition: transform 0.3s ease;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-    }
-    .toggle-text input:checked + label {
-      background: #00b894;
-      justify-content: flex-start;
-      padding-left: 7px;
-      color: #55efc4;
-    }
-    .toggle-text input:checked + label::before { content: "ON"; }
-    .toggle-text input:checked + label::after { transform: translateX(34px); }
 
-    /* 5. Flat minimal */
-    .toggle-flat label {
-      display: block; width: 48px; height: 24px;
-      background: #dfe6e9; border-radius: 12px; cursor: pointer;
-      position: relative; transition: background 0.25s;
+    body.dark-mode{
+      --bg:#0f172a;
+      --card:#111827;
+      --text:#f8fafc;
+      --muted:#cbd5e1;
+      --border:#1e293b;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
     }
-    .toggle-flat label::after {
-      content: ""; position: absolute;
-      width: 18px; height: 18px; background: white;
-      border-radius: 50%; top: 3px; left: 3px;
-      transition: transform 0.25s ease;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    }
-    .toggle-flat input:checked + label { background: #ff6b6b; }
-    .toggle-flat input:checked + label::after { transform: translateX(24px); }
 
-    /* Toggle row layout */
-    .toggle-demo-row {
-      display: flex; align-items: center;
-      gap: 14px; margin-bottom: 4px;
+    body{
+      font-family:"DM Sans",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      transition:.3s;
     }
-    .toggle-demo-row .toggle-wrap { display: flex; }
-    .toggle-name {
-      font-size: 13px; color: #636e72; min-width: 90px;
+
+    a{
+      text-decoration:none;
+      color:inherit;
     }
-    .toggle-demo-box {
-      background: #f8f9ff;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 12px;
+
+    /* NAVBAR */
+
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      height:80px;
+      background:rgba(255,255,255,.85);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 28px;
+    }
+
+    body.dark-mode .navbar{
+      background:rgba(15,23,42,.88);
+    }
+
+    .logo{
+      font-family:"Syne",sans-serif;
+      font-size:1.7rem;
+      font-weight:800;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .theme-toggle{
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:14px;
+      background:var(--card);
+      color:var(--text);
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      font-size:1rem;
+    }
+
+    /* HERO */
+
+    .page-hero{
+      max-width:1300px;
+      margin:auto;
+      padding:60px 24px 30px;
+      display:flex;
+      justify-content:space-between;
+      gap:40px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .page-title{
+      font-size:3rem;
+      line-height:1.1;
+      font-family:"Syne",sans-serif;
+      margin-bottom:18px;
+    }
+
+    .page-desc{
+      max-width:700px;
+      color:var(--muted);
+      line-height:1.7;
+      margin-bottom:24px;
+    }
+
+    .page-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .meta-badge{
+      padding:10px 16px;
+      border-radius:999px;
+      background:var(--card);
+      border:1px solid var(--border);
+      font-size:.92rem;
+      box-shadow:var(--shadow);
+    }
+
+    .toggle-hero-preview{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      min-width:260px;
+      box-shadow:var(--shadow);
+    }
+
+    .thp-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+      gap:20px;
+    }
+
+    .thp-row:last-child{
+      margin-bottom:0;
+    }
+
+    /* FILTER */
+
+    .filter-bar{
+      max-width:1300px;
+      margin:auto;
+      padding:0 24px 10px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .filter-btn{
+      border:none;
+      padding:12px 18px;
+      border-radius:14px;
+      background:var(--card);
+      color:var(--text);
+      cursor:pointer;
+      border:1px solid var(--border);
+      font-weight:600;
+      transition:.25s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover{
+      background:var(--primary);
+      color:#fff;
+    }
+
+    /* GRID */
+
+    .toggles-grid{
+      max-width:1300px;
+      margin:auto;
+      padding:20px 24px 70px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+      gap:28px;
+    }
+
+    .component-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+      transition:.3s;
+    }
+
+    .component-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
+
+    .card-label{
+      font-weight:700;
+      font-size:1.1rem;
+    }
+
+    .card-tag{
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:700;
+      color:#fff;
+    }
+
+    .tag-popular{
+      background:#6c5ce7;
+    }
+
+    .tag-trending{
+      background:#eb6835;
+    }
+
+    .tag-essential{
+      background:#00b894;
+    }
+
+    .card-preview{
+      background:#f8fafc;
+      border-radius:18px;
+      padding:26px;
+      margin-bottom:18px;
+    }
+
+    body.dark-mode .card-preview{
+      background:#0b1220;
+    }
+
+    .dark-preview{
+      background:#0b1120 !important;
+    }
+
+    .toggle-demo-rows{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .toggle-demo-row{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .toggle-label-text{
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    .card-desc{
+      color:var(--muted);
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      margin-bottom:16px;
+      flex-wrap:wrap;
+    }
+
+    .action-btn{
+      border:none;
+      padding:12px 18px;
+      border-radius:14px;
+      cursor:pointer;
+      font-weight:700;
+      transition:.25s;
+    }
+
+    .view-btn{
+      background:#111827;
+      color:#fff;
+    }
+
+    .copy-btn{
+      background:var(--orange);
+      color:#fff;
+    }
+
+    .action-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    /* CODE BLOCK */
+
+    .code-block{
+      display:none;
+      background:#020617;
+      color:#f8fafc;
+      padding:18px;
+      border-radius:18px;
+      overflow:auto;
+      font-size:.88rem;
+      line-height:1.7;
+    }
+
+    .code-block.open{
+      display:block;
+    }
+
+    /* TOGGLES */
+
+    .toggle-wrap input{
+      display:none;
+    }
+
+    .toggle-wrap label{
+      cursor:pointer;
+      position:relative;
+      display:block;
+    }
+
+    /* CLASSIC */
+
+    .toggle-classic label{
+      width:56px;
+      height:30px;
+      border-radius:999px;
+      background:#dfe6e9;
+      transition:.3s;
+    }
+
+    .toggle-classic label::after{
+      content:"";
+      position:absolute;
+      width:24px;
+      height:24px;
+      top:3px;
+      left:3px;
+      border-radius:50%;
+      background:#fff;
+      transition:.35s cubic-bezier(.68,-0.55,.27,1.55);
+      box-shadow:0 2px 8px rgba(0,0,0,.2);
+    }
+
+    .toggle-classic input:checked + label{
+      background:#6c5ce7;
+    }
+
+    .toggle-classic input:checked + label::after{
+      transform:translateX(26px);
+    }
+
+    /* IOS */
+
+    .toggle-ios label{
+      width:58px;
+      height:32px;
+      border-radius:999px;
+      background:#e5e7eb;
+      transition:.3s;
+    }
+
+    .toggle-ios label::after{
+      content:"";
+      position:absolute;
+      width:28px;
+      height:28px;
+      top:2px;
+      left:2px;
+      border-radius:50%;
+      background:#fff;
+      transition:.3s cubic-bezier(.23,1,.32,1);
+      box-shadow:0 2px 8px rgba(0,0,0,.18);
+    }
+
+    .toggle-ios input:checked + label{
+      background:#34c759;
+    }
+
+    .toggle-ios input:checked + label::after{
+      transform:translateX(26px);
+    }
+
+    /* NEON */
+
+    .toggle-neon label{
+      width:58px;
+      height:32px;
+      border-radius:999px;
+      border:2px solid #4b5563;
+      background:#111827;
+      transition:.3s;
+    }
+
+    .toggle-neon label::after{
+      content:"";
+      position:absolute;
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      top:3px;
+      left:3px;
+      background:#6b7280;
+      transition:.3s;
+    }
+
+    .toggle-neon input:checked + label{
+      border-color:#a78bfa;
+      box-shadow:0 0 16px rgba(167,139,250,.7);
+    }
+
+    .toggle-neon input:checked + label::after{
+      transform:translateX(26px);
+      background:#a78bfa;
+      box-shadow:0 0 14px #a78bfa;
+    }
+
+    /* TEXT */
+
+    .toggle-text label{
+      width:68px;
+      height:32px;
+      border-radius:999px;
+      background:#dfe6e9;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      padding-right:8px;
+      font-size:10px;
+      font-weight:800;
+      color:#9ca3af;
+      transition:.3s;
+    }
+
+    .toggle-text label::before{
+      content:"OFF";
+    }
+
+    .toggle-text label::after{
+      content:"";
+      position:absolute;
+      width:26px;
+      height:26px;
+      top:3px;
+      left:3px;
+      background:#fff;
+      border-radius:50%;
+      transition:.3s;
+    }
+
+    .toggle-text input:checked + label{
+      background:#00b894;
+      justify-content:flex-start;
+      padding-left:10px;
+      color:#fff;
+    }
+
+    .toggle-text input:checked + label::before{
+      content:"ON";
+    }
+
+    .toggle-text input:checked + label::after{
+      transform:translateX(36px);
+    }
+
+    /* GRADIENT */
+
+    .toggle-gradient label{
+      width:58px;
+      height:30px;
+      border-radius:999px;
+      background:#dfe6e9;
+      transition:.3s;
+    }
+
+    .toggle-gradient label::after{
+      content:"";
+      position:absolute;
+      width:24px;
+      height:24px;
+      top:3px;
+      left:3px;
+      border-radius:50%;
+      background:#fff;
+      transition:.35s;
+    }
+
+    .toggle-gradient input:checked + label{
+      background:linear-gradient(
+        90deg,
+        #eb6835,
+        #6c5ce7
+      );
+    }
+
+    .toggle-gradient input:checked + label::after{
+      transform:translateX(28px);
+    }
+
+    /* OUTLINE */
+
+    .toggle-outline label{
+      width:56px;
+      height:30px;
+      border-radius:999px;
+      border:2px solid #d1d5db;
+      transition:.3s;
+    }
+
+    .toggle-outline label::after{
+      content:"";
+      position:absolute;
+      width:20px;
+      height:20px;
+      top:3px;
+      left:3px;
+      border-radius:50%;
+      background:#d1d5db;
+      transition:.3s;
+    }
+
+    .toggle-outline input:checked + label{
+      border-color:#eb6835;
+    }
+
+    .toggle-outline input:checked + label::after{
+      transform:translateX(26px);
+      background:#eb6835;
+    }
+
+    /* LARGE */
+
+    .toggle-large label{
+      width:78px;
+      height:42px;
+      border-radius:999px;
+      background:#dfe6e9;
+      transition:.3s;
+    }
+
+    .toggle-large label::after{
+      content:"";
+      position:absolute;
+      width:32px;
+      height:32px;
+      top:5px;
+      left:5px;
+      border-radius:50%;
+      background:#fff;
+      transition:.35s cubic-bezier(.68,-0.55,.27,1.55);
+      box-shadow:0 3px 10px rgba(0,0,0,.2);
+    }
+
+    .toggle-large input:checked + label{
+      background:#eb6835;
+    }
+
+    .toggle-large input:checked + label::after{
+      transform:translateX(36px);
+    }
+
+    /* TOAST */
+
+    .copy-toast{
+      position:fixed;
+      bottom:30px;
+      right:30px;
+      background:#111827;
+      color:#fff;
+      padding:14px 18px;
+      border-radius:14px;
+      opacity:0;
+      pointer-events:none;
+      transition:.3s;
+      z-index:999;
+    }
+
+    .copy-toast.show{
+      opacity:1;
+    }
+
+    /* FOOTER */
+
+    .footer{
+      background:var(--card);
+      border-top:1px solid var(--border);
+      padding:28px;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .page-title{
+        font-size:2.2rem;
+      }
+
+      .navbar{
+        padding:0 18px;
+      }
+
+      .toggle-demo-row{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .actions{
+        flex-direction:column;
+      }
+
+      .action-btn{
+        width:100%;
+      }
     }
   </style>
 </head>
+
 <body>
-<div class="container">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h2>UIverse</h2>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="button.html">Buttons</a></li>
-      <li><a href="cards.html">Cards</a></li>
-      <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="loaders.html">Loaders</a></li>
-      <li class="active"><a href="toggles.html">Toggles</a></li>
-    </ul>
-  </aside>
 
-  <!-- Main -->
-  <main class="main">
-    <h1>Toggle Switches</h1>
+  <!-- NAVBAR -->
 
-    <!-- Classic -->
-    <div class="component-card">
-      <h3>Classic Toggle</h3>
-      <div class="toggle-demo-box">
-        <div class="toggle-demo-row">
-          <div class="toggle-wrap toggle-classic">
-            <input type="checkbox" id="tog1">
-            <label for="tog1"></label>
-          </div>
-          <span class="toggle-name">Off by default</span>
-        </div>
-        <div class="toggle-demo-row" style="margin-top:10px;">
-          <div class="toggle-wrap toggle-classic">
-            <input type="checkbox" id="tog1b" checked>
-            <label for="tog1b"></label>
-          </div>
-          <span class="toggle-name">On by default</span>
-        </div>
-      </div>
-      <div class="actions">
-        <button onclick="toggleCode('togCode1')">View Code</button>
-        <button onclick="copyCode('togCode1')">Copy</button>
-      </div>
-      <pre id="togCode1" class="code-block">&lt;input type="checkbox" id="myToggle"&gt;
-&lt;label for="myToggle"&gt;&lt;/label&gt;
+  <header class="navbar">
 
-/* Hide default checkbox */
-input[type="checkbox"] { display: none; }
-
-.toggle-classic label {
-  display: block; width: 52px; height: 28px;
-  background: #dfe6e9; border-radius: 14px; cursor: pointer;
-  position: relative; transition: background 0.3s ease;
-}
-.toggle-classic label::after {
-  content: ""; position: absolute;
-  width: 22px; height: 22px; background: white;
-  border-radius: 50%; top: 3px; left: 3px;
-  transition: transform 0.3s cubic-bezier(.68,-.55,.27,1.55);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-.toggle-classic input:checked + label { background: #6c5ce7; }
-.toggle-classic input:checked + label::after { transform: translateX(24px); }</pre>
+    <div class="logo">
+      ⬡ UIverse
     </div>
 
-    <!-- iOS -->
-    <div class="component-card">
-      <h3>iOS Style Toggle</h3>
-      <div class="toggle-demo-box">
-        <div class="toggle-demo-row">
-          <div class="toggle-wrap toggle-ios">
-            <input type="checkbox" id="tog2" checked>
-            <label for="tog2"></label>
-          </div>
-          <span class="toggle-name">Green when ON</span>
-        </div>
-      </div>
-      <div class="actions">
-        <button onclick="toggleCode('togCode2')">View Code</button>
-        <button onclick="copyCode('togCode2')">Copy</button>
-      </div>
-      <pre id="togCode2" class="code-block">&lt;input type="checkbox" id="myToggle" checked&gt;
-&lt;label for="myToggle"&gt;&lt;/label&gt;
+    <div class="nav-right">
 
-input[type="checkbox"] { display: none; }
+      <button class="theme-toggle" id="darkModeToggle">
+        <i class="fa-solid fa-moon"></i>
+      </button>
 
-.toggle-ios label {
-  display: block; width: 56px; height: 30px;
-  background: #e5e5ea; border-radius: 15px; cursor: pointer;
-  position: relative; transition: background 0.3s;
-}
-.toggle-ios label::after {
-  content: ""; position: absolute;
-  width: 26px; height: 26px; background: white;
-  border-radius: 50%; top: 2px; left: 2px;
-  transition: transform 0.3s cubic-bezier(.23,1,.32,1);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-}
-.toggle-ios input:checked + label { background: #34c759; }
-.toggle-ios input:checked + label::after { transform: translateX(26px); }</pre>
     </div>
 
-    <!-- Neon -->
-    <div class="component-card">
-      <h3>Neon Glow Toggle</h3>
-      <div class="toggle-demo-box" style="background:#1e1e2e;">
-        <div class="toggle-demo-row">
-          <div class="toggle-wrap toggle-neon">
-            <input type="checkbox" id="tog3">
-            <label for="tog3"></label>
-          </div>
-          <span class="toggle-name" style="color:#a29bfe;">Neon purple</span>
-        </div>
-      </div>
-      <div class="actions">
-        <button onclick="toggleCode('togCode3')">View Code</button>
-        <button onclick="copyCode('togCode3')">Copy</button>
-      </div>
-      <pre id="togCode3" class="code-block">&lt;input type="checkbox" id="myToggle"&gt;
-&lt;label for="myToggle"&gt;&lt;/label&gt;
+  </header>
 
-input[type="checkbox"] { display: none; }
+  <!-- HERO -->
 
-.toggle-neon label {
-  display: block; width: 58px; height: 30px;
-  background: #2d3436; border: 2px solid #636e72;
-  border-radius: 15px; cursor: pointer;
-  position: relative; transition: border-color 0.3s, box-shadow 0.3s;
-}
-.toggle-neon label::after {
-  content: ""; position: absolute;
-  width: 20px; height: 20px; background: #636e72;
-  border-radius: 50%; top: 3px; left: 3px;
-  transition: transform 0.3s ease, background 0.3s, box-shadow 0.3s;
-}
-.toggle-neon input:checked + label {
-  border-color: #a29bfe;
-  box-shadow: 0 0 14px rgba(162,155,254,0.6);
-}
-.toggle-neon input:checked + label::after {
-  transform: translateX(26px);
-  background: #a29bfe;
-  box-shadow: 0 0 8px #a29bfe;
-}</pre>
+  <section class="page-hero">
+
+    <div>
+
+      <h1 class="page-title">
+        Toggle Switches
+      </h1>
+
+      <p class="page-desc">
+        A beautiful collection of modern toggle switch components built with pure HTML and CSS. Responsive, animated, accessible, and easy to reuse.
+      </p>
+
+      <div class="page-meta">
+        <span class="meta-badge">
+          <i class="fa-solid fa-layer-group"></i>
+          9 Components
+        </span>
+
+        <span class="meta-badge">
+          <i class="fa-solid fa-code"></i>
+          CSS Only
+        </span>
+
+        <span class="meta-badge">
+          <i class="fa-solid fa-bolt"></i>
+          No JavaScript Needed
+        </span>
+      </div>
+
     </div>
 
-    <!-- Text Label -->
-    <div class="component-card">
-      <h3>ON / OFF Text Toggle</h3>
-      <div class="toggle-demo-box">
-        <div class="toggle-demo-row">
-          <div class="toggle-wrap toggle-text">
-            <input type="checkbox" id="tog4">
-            <label for="tog4"></label>
-          </div>
-          <span class="toggle-name">Shows ON/OFF text</span>
+    <div class="toggle-hero-preview">
+
+      <div class="thp-row">
+        <div class="toggle-wrap toggle-classic">
+          <input type="checkbox" id="hero1" checked />
+          <label for="hero1"></label>
         </div>
+        <span>Classic</span>
       </div>
-      <div class="actions">
-        <button onclick="toggleCode('togCode4')">View Code</button>
-        <button onclick="copyCode('togCode4')">Copy</button>
+
+      <div class="thp-row">
+        <div class="toggle-wrap toggle-ios">
+          <input type="checkbox" id="hero2" checked />
+          <label for="hero2"></label>
+        </div>
+        <span>iOS</span>
       </div>
-      <pre id="togCode4" class="code-block">&lt;input type="checkbox" id="myToggle"&gt;
-&lt;label for="myToggle"&gt;&lt;/label&gt;
 
-input[type="checkbox"] { display: none; }
+      <div class="thp-row">
+        <div class="toggle-wrap toggle-neon">
+          <input type="checkbox" id="hero3" checked />
+          <label for="hero3"></label>
+        </div>
+        <span>Neon</span>
+      </div>
 
-.toggle-text label {
-  display: flex; align-items: center; justify-content: flex-end;
-  padding-right: 7px;
-  width: 62px; height: 28px;
-  background: #dfe6e9; border-radius: 14px; cursor: pointer;
-  position: relative; transition: background 0.3s;
-  font-size: 9px; font-weight: 700; color: #b2bec3;
-}
-.toggle-text label::before { content: "OFF"; }
-.toggle-text label::after {
-  content: ""; position: absolute;
-  width: 22px; height: 22px; background: white;
-  border-radius: 50%; top: 3px; left: 3px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-}
-.toggle-text input:checked + label {
-  background: #00b894;
-  justify-content: flex-start; padding-left: 7px; color: #55efc4;
-}
-.toggle-text input:checked + label::before { content: "ON"; }
-.toggle-text input:checked + label::after { transform: translateX(34px); }</pre>
     </div>
 
-    <!-- Flat Minimal -->
-    <div class="component-card">
-      <h3>Flat Minimal Toggle</h3>
-      <div class="toggle-demo-box">
-        <div class="toggle-demo-row">
-          <div class="toggle-wrap toggle-flat">
-            <input type="checkbox" id="tog5" checked>
-            <label for="tog5"></label>
+  </section>
+
+  <!-- FILTER -->
+
+  <div class="filter-bar">
+
+    <button class="filter-btn active" onclick="filterCards('all', this)">
+      All
+    </button>
+
+    <button class="filter-btn" onclick="filterCards('simple', this)">
+      Simple
+    </button>
+
+    <button class="filter-btn" onclick="filterCards('styled', this)">
+      Styled
+    </button>
+
+    <button class="filter-btn" onclick="filterCards('themed', this)">
+      Themed
+    </button>
+
+  </div>
+
+  <!-- GRID -->
+
+  <main class="toggles-grid">
+
+    <!-- CLASSIC -->
+
+    <div
+      class="component-card"
+      data-cat="simple"
+      data-name="classic toggle"
+    >
+
+      <div class="card-top">
+        <span class="card-label">Classic Toggle</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+
+      <div class="card-preview">
+
+        <div class="toggle-demo-rows">
+
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-classic">
+              <input type="checkbox" id="t1" />
+              <label for="t1"></label>
+            </div>
+
+            <span class="toggle-label-text">
+              Disabled
+            </span>
           </div>
-          <span class="toggle-name">Red accent</span>
+
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-classic">
+              <input type="checkbox" id="t2" checked />
+              <label for="t2"></label>
+            </div>
+
+            <span class="toggle-label-text">
+              Enabled
+            </span>
+          </div>
+
         </div>
+
       </div>
+
+      <p class="card-desc">
+        Smooth animated classic toggle with modern purple accent.
+      </p>
+
       <div class="actions">
-        <button onclick="toggleCode('togCode5')">View Code</button>
-        <button onclick="copyCode('togCode5')">Copy</button>
+
+        <button
+          class="action-btn view-btn"
+          onclick="toggleCode('code1', this)"
+        >
+          <i class="fa-solid fa-code"></i>
+          View Code
+        </button>
+
+        <button
+          class="action-btn copy-btn"
+          onclick="copyCode('code1', this)"
+        >
+          <i class="fa-solid fa-copy"></i>
+          Copy
+        </button>
+
       </div>
-      <pre id="togCode5" class="code-block">&lt;input type="checkbox" id="myToggle" checked&gt;
-&lt;label for="myToggle"&gt;&lt;/label&gt;
 
-input[type="checkbox"] { display: none; }
+      <pre
+        id="code1"
+        class="code-block"
+      ><code>.toggle-classic input:checked + label{
+  background:#6c5ce7;
+}</code></pre>
 
-.toggle-flat label {
-  display: block; width: 48px; height: 24px;
-  background: #dfe6e9; border-radius: 12px; cursor: pointer;
-  position: relative; transition: background 0.25s;
-}
-.toggle-flat label::after {
-  content: ""; position: absolute;
-  width: 18px; height: 18px; background: white;
-  border-radius: 50%; top: 3px; left: 3px;
-  transition: transform 0.25s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-}
-.toggle-flat input:checked + label { background: #ff6b6b; }
-.toggle-flat input:checked + label::after { transform: translateX(24px); }</pre>
+    </div>
+
+    <!-- IOS -->
+
+    <div
+      class="component-card"
+      data-cat="simple"
+      data-name="ios toggle"
+    >
+
+      <div class="card-top">
+        <span class="card-label">iOS Toggle</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+
+      <div class="card-preview">
+
+        <div class="toggle-demo-rows">
+
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-ios">
+              <input type="checkbox" id="ios1" checked />
+              <label for="ios1"></label>
+            </div>
+
+            <span class="toggle-label-text">
+              Wi-Fi
+            </span>
+          </div>
+
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-ios">
+              <input type="checkbox" id="ios2" />
+              <label for="ios2"></label>
+            </div>
+
+            <span class="toggle-label-text">
+              Bluetooth
+            </span>
+          </div>
+
+          <!-- FIXED LABEL -->
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-ios">
+              <input type="checkbox" id="ios3" checked />
+              <label for="ios3"></label>
+            </div>
+
+            <span class="toggle-label-text">
+              Notifications
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Apple-inspired smooth iOS style switch.
+      </p>
+
+      <div class="actions">
+
+        <button
+          class="action-btn view-btn"
+          onclick="toggleCode('code2', this)"
+        >
+          <i class="fa-solid fa-code"></i>
+          View Code
+        </button>
+
+        <button
+          class="action-btn copy-btn"
+          onclick="copyCode('code2', this)"
+        >
+          <i class="fa-solid fa-copy"></i>
+          Copy
+        </button>
+
+      </div>
+
+      <pre
+        id="code2"
+        class="code-block"
+      ><code>.toggle-ios input:checked + label{
+  background:#34c759;
+}</code></pre>
+
+    </div>
+
+    <!-- NEON -->
+
+    <div
+      class="component-card"
+      data-cat="themed"
+      data-name="neon toggle"
+    >
+
+      <div class="card-top">
+        <span class="card-label">Neon Toggle</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+
+      <div class="card-preview dark-preview">
+
+        <div class="toggle-demo-rows">
+
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-neon">
+              <input type="checkbox" id="neon1" />
+              <label for="neon1"></label>
+            </div>
+
+            <span
+              class="toggle-label-text"
+              style="color:#a78bfa;"
+            >
+              Off
+            </span>
+          </div>
+
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-neon">
+              <input type="checkbox" id="neon2" checked />
+              <label for="neon2"></label>
+            </div>
+
+            <span
+              class="toggle-label-text"
+              style="color:#a78bfa;"
+            >
+              Glow
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Glowing cyberpunk neon switch for dark UIs.
+      </p>
+
+      <div class="actions">
+
+        <button
+          class="action-btn view-btn"
+          onclick="toggleCode('code3', this)"
+        >
+          <i class="fa-solid fa-code"></i>
+          View Code
+        </button>
+
+        <button
+          class="action-btn copy-btn"
+          onclick="copyCode('code3', this)"
+        >
+          <i class="fa-solid fa-copy"></i>
+          Copy
+        </button>
+
+      </div>
+
+      <pre
+        id="code3"
+        class="code-block"
+      ><code>.toggle-neon input:checked + label{
+  box-shadow:0 0 16px rgba(167,139,250,.7);
+}</code></pre>
+
     </div>
 
   </main>
-</div>
-<footer class="footer">
-  <div class="footer-card">
-    <div class="footer-brand">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="footer-socials">
-        <span>🌐</span>
-        <span>💼</span>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <a href="pricing.html">Pricing</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="alerts.html">Alerts</a>
-    </div>
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <a href="privacypolicy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </div>
+
+  <!-- TOAST -->
+
+  <div
+    class="copy-toast"
+    id="copyToast"
+  >
+    <i class="fa-solid fa-check"></i>
+    Copied to clipboard!
   </div>
-</footer>
-<script src="script.js"></script>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    © 2026 UIverse — Modern UI Components
+  </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    /* DARK MODE */
+
+    const darkBtn =
+      document.getElementById("darkModeToggle");
+
+    const darkIcon =
+      darkBtn.querySelector("i");
+
+    if(
+      localStorage.getItem("theme")==="dark"
+    ){
+      document.body.classList.add("dark-mode");
+      darkIcon.className="fa-solid fa-sun";
+    }
+
+    darkBtn.addEventListener(
+      "click",
+      ()=>{
+        document.body.classList.toggle("dark-mode");
+
+        const isDark =
+          document.body.classList.contains("dark-mode");
+
+        darkIcon.className =
+          isDark
+            ? "fa-solid fa-sun"
+            : "fa-solid fa-moon";
+
+        localStorage.setItem(
+          "theme",
+          isDark ? "dark":"light"
+        );
+      }
+    );
+
+    /* VIEW CODE */
+
+    function toggleCode(id,btn){
+
+      const block =
+        document.getElementById(id);
+
+      block.classList.toggle("open");
+
+      const open =
+        block.classList.contains("open");
+
+      btn.innerHTML =
+        open
+          ? '<i class="fa-solid fa-eye-slash"></i> Hide Code'
+          : '<i class="fa-solid fa-code"></i> View Code';
+    }
+
+    /* COPY */
+
+    let toastTimer;
+
+    function copyCode(id,btn){
+
+      const code =
+        document.getElementById(id).innerText;
+
+      navigator.clipboard.writeText(code)
+      .then(()=>{
+
+        btn.innerHTML =
+          '<i class="fa-solid fa-check"></i> Copied';
+
+        const toast =
+          document.getElementById("copyToast");
+
+        toast.classList.add("show");
+
+        clearTimeout(toastTimer);
+
+        toastTimer =
+          setTimeout(()=>{
+            toast.classList.remove("show");
+
+            btn.innerHTML =
+              '<i class="fa-solid fa-copy"></i> Copy';
+
+          },2000);
+
+      });
+
+    }
+
+    /* FILTER */
+
+    function filterCards(cat,btn){
+
+      document
+      .querySelectorAll(".filter-btn")
+      .forEach(b=>b.classList.remove("active"));
+
+      btn.classList.add("active");
+
+      document
+      .querySelectorAll(".component-card")
+      .forEach(card=>{
+
+        const match =
+          cat==="all" ||
+          card.dataset.cat===cat;
+
+        card.style.display =
+          match ? "block":"none";
+
+      });
+
+    }
+
+  </script>
+
 </body>
 </html>
