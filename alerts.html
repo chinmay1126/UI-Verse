@@ -44,7 +44,7 @@
 
       <div class="component-card">
         <h3>Success Alert</h3>
-        <div class="alert-box alert-success">
+        <div class="alert-box alert-success" role="alert" aria-live="polite">
           <div>
             <strong>Success</strong>
             <p>Your order has been placed successfully.</p>
@@ -66,11 +66,12 @@
 
       <div class="component-card">
         <h3>Warning Alert</h3>
-        <div class="alert-box alert-warning">
+        <div class="alert-box alert-warning" role="alert" aria-live="polite">
           <div>
             <strong>Warning</strong>
-            <p>Don’t forget to save your work before closing the browser.</p>
+            <p>Don't forget to save your work before closing the browser.</p>
           </div>
+        </div>
         </div>
 
         <div class="actions">
@@ -88,7 +89,7 @@
 
       <div class="component-card">
         <h3>Error Alert</h3>
-        <div class="alert-box alert-error">
+        <div class="alert-box alert-error" role="alert" aria-live="assertive">
           <div>
             <strong>Error</strong>
             <p>There was an issue submitting the form. Please try again.</p>
@@ -181,7 +182,7 @@
             <strong>Success</strong>
             <p>Your changes have been saved successfully!</p>
           </div>
-          <button class="alert-close" onclick="closeAlert('dismissibleAlert')">✕</button>
+          <button class="alert-close" onclick="closeAlert('dismissibleAlert')" aria-label="Dismiss alert">✕</button>
         </div>
 
         <div class="actions">
