@@ -1,6 +1,6 @@
 # 🌸 Nexus Spring of Code Project
 
-# 🚀 UIverse – Frontend Component Hub
+## 🚀 UIverse – Frontend Component Hub
 
 🔗 **GitHub Repository:**
 https://github.com/Tushar-sonawane06/UI-Verse
@@ -214,3 +214,16 @@ If you like this project:
 ---
 
 💙 Happy Coding & Contributing!
+
+---
+
+## Gallery Pages Documentation
+
+When creating or updating gallery pages with component collections, refer to **[GALLERY_PAGES_GUIDE.md](./GALLERY_PAGES_GUIDE.md)** for:
+
+* Required HTML structure (.component-card + .filter-bar)
+* Filter metadata guidelines (data-name, data-cat, data-tags)
+* Testing checklist before submitting
+* Troubleshooting common filter issues
+
+This ensures all gallery pages have consistent filtering and search functionality.

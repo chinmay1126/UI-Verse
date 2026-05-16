@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome-UI-Verse</title>
+    <link rel="stylesheet" href="welcome.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+  <!-- UIverse Modular CSS Architecture -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- Dark Mode Toggle -->
+<div class="theme-toggle">
+    <button id="themeBtn">🌙</button>
+</div>
+
+    <section class="welcome">
+
+    <nav class="navbar">
+      <h2 class="logo">UI-Verse</h2>
+
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Components</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <button class="nav-btn">Login</button>
+    </nav>
+
+    <div class="hero">
+
+      <div class="hero-text">
+        <h1>Build Beautiful UI Faster</h1>
+
+        <p>
+          Explore modern UI components, templates, 
+          and creative designs for your next project.
+        </p>
+
+        <div class="buttons">
+          <button class="primary-btn">Get Started</button>
+          <button class="secondary-btn">Explore UI</button>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="card">
+          <h3>Modern Dashboard</h3>
+          <p>Clean and responsive UI design.</p>
+        </div>
+
+        <div class="small-card">
+          <h4>20+ Components</h4>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Adding footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <h2>UI-Verse</h2>
+      <p>
+        Explore clean and modern UI components built with HTML, CSS, and JavaScript.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Components</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Updates</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UI-Verse. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+    const themeBtn = document.getElementById("themeBtn");
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+
+      if(document.body.classList.contains("dark")){
+        themeBtn.innerHTML = "☀️";
+      }
+      else{
+        themeBtn.innerHTML = "🌙";
+        }
+    });
+</script>
+
+
+</body>
+</html>
+
