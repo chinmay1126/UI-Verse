@@ -99,6 +99,7 @@ const Sandbox = {
       textarea.style.resize = "vertical";
 
       const renderIframe = (htmlContent) => {
+        const safeHTML = Sandbox.removeUnsafePatterns(Sandbox.sanitizeHTML(htmlContent));
         iframe.srcdoc = `
           <!DOCTYPE html>
           <html>
@@ -255,7 +256,7 @@ const Sandbox = {
             </script>
           </head>
           <body>
-            <div id="sandbox-root">${htmlContent}</div>
+            <div id="sandbox-root">${safeHTML}</div>
           </body>
           </html>`;
       };
