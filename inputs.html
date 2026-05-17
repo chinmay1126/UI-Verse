@@ -237,42 +237,27 @@
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+  <button class="menu-toggle" onclick="toggleSidebar()">
     <i class="fa-solid fa-bars"></i>
   </button>
-
   <div class="logo">UIverse</div>
-
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
     <kbd class="search-kbd">⌘K</kbd>
   </div>
-
   <div class="nav-right">
     <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
-    <a href="MyCollection.html">
-      <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
-    </a>
-    
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
     <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
-    <button class="nav-btn outline-nav-btn">
-      <i class="fa-solid fa-plus"></i> Add Component
-    </button>
-    <button class="nav-btn primary-nav-btn">
-      <i class="fa-solid fa-bookmark"></i> My Collection
-    </button>
-    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
-      <i class="fa-solid fa-moon"></i>
-    </button>
   </div>
 </header>
-
+ 
 <!-- MAIN -->
 <main class="main-home">
-
+ 
   <!-- Page Hero -->
   <div class="page-hero">
     <div class="page-hero-left">
@@ -303,7 +288,7 @@
       </div>
     </div>
   </div>
-
+ 
   <!-- Filter Bar -->
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filterSection('all', this)">All</button>
@@ -317,7 +302,7 @@
       <input type="text" placeholder="Filter inputs..." oninput="liveFilter(this.value)" />
     </div>
   </div>
-
+ 
   <!-- ===== BASIC INPUTS ===== -->
   <div class="inputs-section" data-section="basic">
     <div class="section-header-row">
@@ -325,7 +310,7 @@
       <span class="section-count">3 components</span>
     </div>
     <div class="inputs-grid">
-
+ 
       <div class="component-card" data-name="text input basic" data-sec="basic">
         <div class="card-top">
           <span class="card-label">Text Input</span>
@@ -341,7 +326,7 @@
         </div>
         <pre id="c1" class="code-block"><code>&lt;input type="text" placeholder="Enter text"&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="email input" data-sec="basic">
         <div class="card-top">
           <span class="card-label">Email Input</span>
@@ -357,7 +342,7 @@
         </div>
         <pre id="c2" class="code-block"><code>&lt;input type="email" placeholder="you@example.com"&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="password input" data-sec="basic">
         <div class="card-top">
           <span class="card-label">Password Input</span>
@@ -373,10 +358,10 @@
         </div>
         <pre id="c3" class="code-block"><code>&lt;input type="password" placeholder="••••••••"&gt;</code></pre>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   <!-- ===== DATE & TIME ===== -->
   <div class="inputs-section" data-section="datetime">
     <div class="section-header-row">
@@ -384,7 +369,7 @@
       <span class="section-count">2 components</span>
     </div>
     <div class="inputs-grid">
-
+ 
       <div class="component-card" data-name="date input datetime" data-sec="datetime">
         <div class="card-top">
           <span class="card-label">Date Input</span>
@@ -400,7 +385,7 @@
         </div>
         <pre id="c4" class="code-block"><code>&lt;input type="date"&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="time input datetime" data-sec="datetime">
         <div class="card-top">
           <span class="card-label">Time Input</span>
@@ -416,10 +401,10 @@
         </div>
         <pre id="c5" class="code-block"><code>&lt;input type="time"&gt;</code></pre>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   <!-- ===== ADVANCED INPUTS ===== -->
   <div class="inputs-section" data-section="advanced">
     <div class="section-header-row">
@@ -427,7 +412,7 @@
       <span class="section-count">4 components</span>
     </div>
     <div class="inputs-grid">
-
+ 
       <div class="component-card" data-name="file input upload advanced" data-sec="advanced">
         <div class="card-top">
           <span class="card-label">File Input</span>
@@ -443,7 +428,7 @@
         </div>
         <pre id="c6" class="code-block"><code>&lt;input type="file"&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="range input slider advanced" data-sec="advanced">
         <div class="card-top">
           <span class="card-label">Range / Slider</span>
@@ -459,7 +444,7 @@
         </div>
         <pre id="c7" class="code-block"><code>&lt;input type="range" min="0" max="100" value="60"&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="number input step advanced" data-sec="advanced">
         <div class="card-top">
           <span class="card-label">Number with Step</span>
@@ -475,7 +460,7 @@
         </div>
         <pre id="c8" class="code-block"><code>&lt;input type="number" placeholder="0.0" step="0.5"&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="color input picker advanced" data-sec="advanced">
         <div class="card-top">
           <span class="card-label">Color Picker</span>
@@ -494,10 +479,10 @@
         </div>
         <pre id="c9" class="code-block"><code>&lt;input type="color" value="#eb6835"&gt;</code></pre>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   <!-- ===== SELECTION INPUTS ===== -->
   <div class="inputs-section" data-section="selection">
     <div class="section-header-row">
@@ -505,7 +490,7 @@
       <span class="section-count">4 components</span>
     </div>
     <div class="inputs-grid">
-
+ 
       <div class="component-card" data-name="checkbox selection" data-sec="selection">
         <div class="card-top">
           <span class="card-label">Checkbox</span>
@@ -525,7 +510,7 @@
         <pre id="c10" class="code-block"><code>&lt;label&gt;&lt;input type="checkbox"&gt; Accept terms&lt;/label&gt;
 &lt;label&gt;&lt;input type="checkbox"&gt; Subscribe&lt;/label&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="radio selection" data-sec="selection">
         <div class="card-top">
           <span class="card-label">Radio Input</span>
@@ -546,7 +531,7 @@
         <pre id="c11" class="code-block"><code>&lt;label&gt;&lt;input type="radio" name="opt"&gt; Option 1&lt;/label&gt;
 &lt;label&gt;&lt;input type="radio" name="opt"&gt; Option 2&lt;/label&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="textarea selection form" data-sec="selection">
         <div class="card-top">
           <span class="card-label">Textarea</span>
@@ -562,7 +547,7 @@
         </div>
         <pre id="c12" class="code-block"><code>&lt;textarea rows="4" placeholder="Enter message"&gt;&lt;/textarea&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="select dropdown selection" data-sec="selection">
         <div class="card-top">
           <span class="card-label">Select Dropdown</span>
@@ -588,10 +573,10 @@
   &lt;option&gt;Option 2&lt;/option&gt;
 &lt;/select&gt;</code></pre>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   <!-- ===== ATTRIBUTE INPUTS ===== -->
   <div class="inputs-section" data-section="attributes">
     <div class="section-header-row">
@@ -599,7 +584,7 @@
       <span class="section-count">5 components</span>
     </div>
     <div class="inputs-grid">
-
+ 
       <div class="component-card" data-name="disabled input attribute" data-sec="attributes">
         <div class="card-top">
           <span class="card-label">Disabled</span>
@@ -615,7 +600,7 @@
         </div>
         <pre id="c14" class="code-block"><code>&lt;input type="text" placeholder="Disabled" disabled&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="readonly input attribute" data-sec="attributes">
         <div class="card-top">
           <span class="card-label">Readonly</span>
@@ -631,7 +616,7 @@
         </div>
         <pre id="c15" class="code-block"><code>&lt;input type="text" value="Readonly value" readonly&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="required input attribute" data-sec="attributes">
         <div class="card-top">
           <span class="card-label">Required</span>
@@ -647,7 +632,7 @@
         </div>
         <pre id="c16" class="code-block"><code>&lt;input type="email" placeholder="Email" required&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="minlength maxlength input attribute" data-sec="attributes">
         <div class="card-top">
           <span class="card-label">Min / Max Length</span>
@@ -663,7 +648,7 @@
         </div>
         <pre id="c17" class="code-block"><code>&lt;input type="text" minlength="3" maxlength="10"&gt;</code></pre>
       </div>
-
+ 
       <div class="component-card" data-name="pattern input attribute" data-sec="attributes">
         <div class="card-top">
           <span class="card-label">Pattern</span>
@@ -679,77 +664,68 @@
         </div>
         <pre id="c18" class="code-block"><code>&lt;input type="text" pattern="[A-Z]+" placeholder="Uppercase only"&gt;</code></pre>
       </div>
-
+ 
     </div>
   </div>
-
+ 
 </main>
-
+ 
 <!-- Scroll to Top -->
 <button id="scrollTopBtn" onclick="scrollToTop()">
   <i class="fa-solid fa-chevron-up"></i>
 </button>
-
-<!-- ================= FOOTER ================= -->
+ 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
-
     <div class="footer-col brand">
       <h2 class="footer-logo">⬡ UIverse</h2>
       <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
       <div class="socials">
-        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
-
     <div class="footer-col">
       <h3>Explore</h3>
       <ul>
-        <li><a href="button.html" style="color: black;">Buttons</a></li>
-        <li><a href="navbar.html" style="color: black;">Navbars</a></li>
-        <li><a href="cards.html" style="color: black;">Cards</a></li>
-        <li><a href="inputs.html" style="color: black;">Inputs</a></li>
-        <li><a href="forms.html" style="color: black;">Forms</a></li>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="#" style="color: black;">Documentation</a></li>
-        <li><a href="#" style="color: black;">Contribute</a></li>
-        <li><a href="#" style="color: black;">GitHub Repo</a></li>
-        <li><a href="#" style="color: black;">Community</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Legal</h3>
       <ul>
-        <li><a href="privacypolicy.html" style="color: black;">Privacy Policy</a></li>
-        <li><a href="terms.html" style="color: black;">Terms of Service</a></li>
-        <li><a href="license.html" style="color: black;">License</a></li>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
       </ul>
     </div>
-
     <div class="footer-col newsletter">
-      <h3 style="color: black;">Stay Updated</h3>
-      <p style="color: black;">Get notified when new components drop.</p>
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
         <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+        <button type="button">Subscribe</button>
       </div>
     </div>
-
   </div>
-
   <div class="footer-bottom">
-    <p style="color: black;">© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
-
+ 
 <script>
   /* Dark Mode */
   const toggle = document.getElementById('darkModeToggle');
@@ -764,20 +740,20 @@
     icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
-
+ 
   /* Sidebar */
   function toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('open');
     document.getElementById('sidebarBackdrop').classList.toggle('visible');
   }
-
+ 
   /* Scroll Top */
   function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
   window.addEventListener('scroll', () => {
     document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
   });
-
+ 
   /* Code Toggle */
   function toggleCode(id, btn) {
     const block = document.getElementById(id);
@@ -786,7 +762,7 @@
       ? '<i class="fa-solid fa-eye-slash"></i> Hide Code'
       : '<i class="fa-solid fa-code"></i> View Code';
   }
-
+ 
   /* Copy */
   function copyCode(id, btn) {
     navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
@@ -798,7 +774,7 @@
       }, 2000);
     });
   }
-
+ 
   /* Filter by section */
   function filterSection(sec, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -807,7 +783,7 @@
       s.style.display = (sec === 'all' || s.dataset.section === sec) ? '' : 'none';
     });
   }
-
+ 
   /* Live search */
   function liveFilter(val) {
     const q = val.toLowerCase();
@@ -819,7 +795,7 @@
     // show all sections when searching
     document.querySelectorAll('.inputs-section').forEach(s => s.style.display = '');
   }
-
+ 
   /* Scroll animations */
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
@@ -828,3 +804,4 @@
 </script>
 </body>
 </html>
+ 
