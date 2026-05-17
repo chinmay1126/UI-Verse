@@ -492,6 +492,25 @@
   box-shadow: 0 0 0 3px rgba(214,48,49,0.1);
 }
 
+/* Valid state */
+.field-group.is-valid .field-wrap input,
+.field-group.is-valid .field-wrap textarea {
+  border-color: #00b894;
+  box-shadow: 0 0 0 3px rgba(0,184,148,0.1);
+}
+
+/* Success indicator */
+.field-group.is-valid .field-wrap::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 13px;
+  font-size: 13px;
+  color: #00b894;
+  pointer-events: none;
+}
+
 /* ============================================================
    CHECKBOX
    ============================================================ */

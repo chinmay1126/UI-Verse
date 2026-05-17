@@ -320,6 +320,13 @@ body.dark-mode .form-field select {
 .form-field select:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-glow);
+  background: rgba(255,255,255,0.95);
+}
+
+body.dark-mode .form-field input:focus,
+body.dark-mode .form-field textarea:focus,
+body.dark-mode .form-field select:focus {
+  background: rgba(255,255,255,0.06);
 }
 
 .form-field textarea {
