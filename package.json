@@ -23,6 +23,8 @@
     "test:visual:ui": "playwright test --ui",
     "test:visual:update": "playwright test --update-snapshots",
     "test:visual:debug": "playwright test --debug",
+    "test:visual:compare": "node scripts/visual-baseline-manager.js compare",
+    "test:visual:status": "node scripts/visual-baseline-manager.js status",
     "test:storybook": "playwright test --config playwright.storybook.config.ts",
     "quality": "npm run lint:html && npm run lint:css && npm run lint:js && npm run link-check && npm run audit:a11y && npm run test:visual",
     "test:e2e:accessibility": "playwright test tests/visual/accessibility --project=chromium-desktop --reporter=list",
