@@ -778,6 +778,8 @@
     });
   }
 
+
+
   /* Live search */
   function liveFilter(val) {
     const q = val.toLowerCase();
@@ -790,6 +792,26 @@
     document.querySelectorAll('.inputs-section').forEach(s => s.style.display = '');
   }
 
+  function liveFilter(val) {
+  const q = val.toLowerCase();
+
+  document.querySelectorAll('.inputs-section').forEach(section => {
+    let visibleCards = 0;
+
+    section.querySelectorAll('.component-card').forEach(card => {
+      const match =
+        card.dataset.name.toLowerCase().includes(q) ||
+        card.querySelector('.card-label').textContent.toLowerCase().includes(q);
+
+      card.style.display = match ? '' : 'none';
+
+      if (match) visibleCards++;
+    });
+
+    section.style.display = visibleCards > 0 ? '' : 'none';
+  });
+}
+
   /* Scroll animations */
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
@@ -798,4 +820,3 @@
 </script>
 </body>
 </html>
-
