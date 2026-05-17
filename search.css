@@ -451,3 +451,353 @@ body{
 @media(max-width:768px){
   .search-grid { grid-template-columns: 1fr; }
 }
+
+/* =========================================================
+   NEW PREMIUM SEARCH COMPONENTS
+========================================================= */
+
+/* 6. Floating Search Bar */
+.floating-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 8px 12px;
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.3s;
+}
+.floating-search:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+}
+.floating-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 10px 10px 0;
+  font-size: 15px;
+}
+.floating-search label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 15px;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: #1e293b;
+  padding: 0 6px;
+}
+.floating-search input:focus ~ label,
+.floating-search input:not(:placeholder-shown) ~ label {
+  top: 0;
+  font-size: 11px;
+  color: #3b82f6;
+  font-weight: 600;
+}
+.floating-search button {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 16px;
+  cursor: pointer;
+  padding-left: 8px;
+}
+.floating-search input:focus ~ button {
+  color: #3b82f6;
+}
+
+/* 7. Voice Search Input */
+.voice-search {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 1px solid #334155;
+  border-radius: 999px;
+  padding: 8px 10px 8px 16px;
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.3s;
+}
+.voice-search:focus-within {
+  border-color: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+.voice-search .search-icon {
+  color: #64748b;
+  margin-right: 12px;
+}
+.voice-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+}
+.voice-search .mic-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+.voice-search .mic-btn:hover {
+  background: #059669;
+  transform: scale(1.05);
+}
+.voice-search .mic-btn i {
+  animation: voice-pulse 2s infinite alternate;
+}
+@keyframes voice-pulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 4px rgba(255,255,255,0.5)); }
+}
+
+/* 8. Search Bar with Suggestions Dropdown */
+.suggestions-search {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+.suggestions-search .input-wrap {
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: all 0.3s;
+}
+.suggestions-search:focus-within .input-wrap {
+  border-color: #f59e0b;
+}
+.suggestions-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  padding-right: 8px;
+}
+.suggestions-search i {
+  color: #64748b;
+}
+.suggestions-search:focus-within i {
+  color: #f59e0b;
+}
+.suggestions-search .dropdown-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 8px;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+.suggestions-search:focus-within .dropdown-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.suggestions-search .dropdown-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #cbd5e1;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.suggestions-search .dropdown-list li:hover {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  transform: translateX(4px);
+}
+.suggestions-search .dropdown-list li i {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* 9. Fullscreen Overlay Search */
+.fullscreen-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+.fullscreen-search-wrapper .trigger-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+.fullscreen-search-wrapper .trigger-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.45);
+}
+.fullscreen-search-wrapper .overlay-search {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fullscreen-search-wrapper .overlay-checkbox:checked ~ .overlay-search {
+  opacity: 1;
+  visibility: visible;
+}
+.fullscreen-search-wrapper .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.fullscreen-search-wrapper .close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: rotate(90deg);
+}
+.fullscreen-search-wrapper .search-box {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transform: translateY(30px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fullscreen-search-wrapper .overlay-checkbox:checked ~ .overlay-search .search-box {
+  transform: translateY(0);
+}
+.fullscreen-search-wrapper .search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 32px;
+  font-family: "Syne", sans-serif;
+  outline: none;
+  padding: 10px 0;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+.fullscreen-search-wrapper .search-box input:focus {
+  border-bottom-color: #a855f7;
+}
+.fullscreen-search-wrapper .search-box .hint {
+  color: #64748b;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* 10. Minimal Animated Search Input */
+.minimal-animated-search {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
+}
+.minimal-animated-search input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  padding: 4px 30px 4px 0;
+}
+.minimal-animated-search i {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  color: #64748b;
+  transition: all 0.3s;
+}
+.minimal-animated-search input:focus ~ i {
+  color: #06b6d4;
+  transform: scale(1.1);
+}
+.minimal-animated-search .border-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #334155;
+  transition: all 0.3s;
+}
+.minimal-animated-search .border-line::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #06b6d4, #6366f1);
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+.minimal-animated-search input:focus ~ .border-line::after {
+  width: 100%;
+}
+
