@@ -672,43 +672,391 @@
         width:100%;
       }
     }
+
+    /* ============================================================
+       SIDEBAR & LAYOUT
+       ============================================================ */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background: linear-gradient(160deg, #141428 0%, #1c1c35 100%);
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1050;
+      border-right: 1px solid rgba(255,255,255,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 22px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .brand-icon {
+      font-size: 24px;
+      color: #eb6835;
+    }
+
+    .brand-text {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .sidebar-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 12px;
+    }
+
+    .sidebar-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sidebar-nav li a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      color: #8a9bc0;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-nav li a i {
+      width: 18px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .sidebar-nav li a:hover {
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .sidebar-nav li.active a {
+      background: linear-gradient(90deg, rgba(235,104,53,0.2) 0%, rgba(235,104,53,0.05) 100%);
+      color: #eb6835;
+      border-left: 3px solid #eb6835;
+    }
+
+    .sidebar-footer {
+      padding: 20px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      gap: 16px;
+    }
+
+    .sidebar-footer a {
+      color: #6a7a94;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .sidebar-footer a:hover {
+      color: #eb6835;
+    }
+
+    .main-home {
+      margin-left: 250px;
+      padding: 42px;
+    }
+
+    @media(max-width:992px){
+      .main-home{ margin-left: 0; }
+      .sidebar{ display: none; }
+    }
   </style>
+  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
 
-  <header class="navbar">
+        <nav class="sidebar-nav">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="button.html">
+          <i class="fa-solid fa-hand-pointer"></i>
+          <span>Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="navbar.html">
+          <i class="fa-solid fa-bars"></i>
+          <span>Navbar</span>
+        </a>
+      </li>
+      <li>
+        <a href="cards.html">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span>Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="flipcards.html">
+          <i class="fa-solid fa-clone"></i>
+          <span>3D Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="inputs.html">
+          <i class="fa-solid fa-keyboard"></i>
+          <span>Inputs</span>
+        </a>
+      </li>
+      <li>
+        <a href="forms.html">
+          <i class="fa-brands fa-wpforms"></i>
+          <span>Forms</span>
+        </a>
+      </li>
+      <li>
+        <a href="badges.html">
+          <i class="fa-solid fa-award"></i>
+          <span>Badges</span>
+        </a>
+      </li>
+      <li>
+        <a href="blog.html">
+          <i class="fa-solid fa-blog"></i>
+          <span>Blog</span>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>Articles</span>
+        </a>
+      </li>
+      <li>
+        <a href="alerts.html">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Alerts</span>
+        </a>
+      </li>
+      <li>
+        <a href="color.html">
+          <i class="fa-solid fa-palette"></i>
+          <span>Colors</span>
+        </a>
+      </li>
+      <li>
+        <a href="charts.html">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Charts</span>
+        </a>
+      </li>
+      <li>
+        <a href="dashboard.html">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="div.html">
+          <i class="fa-solid fa-square"></i>
+          <span>DIV</span>
+        </a>
+      </li>
+      <li>
+        <a href="widgets.html">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Widgets</span>
+        </a>
+      </li>
+      <li>
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search Bars</span>
+        </a>
+      </li>
+      <li>
+        <a href="hover.html">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Hover Effects</span>
+        </a>
+      </li>
+      <li>
+        <a href="error.html">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Error Pages</span>
+        </a>
+      </li>
+      <li>
+        <a href="ecommerce.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>E-commerce</span>
+        </a>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="fa-solid fa-file-arrow-up"></i>
+          <span>Drag & Drop</span>
+        </a>
+      </li>
+      <li>
+        <a href="hero.html">
+          <i class="fa-solid fa-star"></i>
+          <span>Hero Sections</span>
+        </a>
+      </li>
+      <li>
+        <a href="loaders.html">
+          <i class="fa-solid fa-spinner"></i>
+          <span>Loaders</span>
+        </a>
+      </li>
+      <li>
+        <a href="timeline.html">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Timeline</span>
+        </a>
+      </li>
+      <li>
+        <a href="map.html">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Maps</span>
+        </a>
+      </li>
+      <li>
+        <a href="menu.html">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <span>Menu</span>
+        </a>
+      </li>
+      <li>
+        <a href="pricing.html">
+          <i class="fa-solid fa-tags"></i>
+          <span>Pricing</span>
+        </a>
+      </li>
+      <li>
+        <a href="section.html">
+          <i class="fa-solid fa-rectangle-list"></i>
+          <span>Section</span>
+        </a>
+      </li>
+      <li>
+        <a href="span.html">
+          <i class="fa-solid fa-code"></i>
+          <span>Span</span>
+        </a>
+      </li>
+      <li>
+        <a href="table.html">
+          <i class="fa-solid fa-table"></i>
+          <span>Table</span>
+        </a>
+      </li>
+      <li>
+        <a href="tabs.html">
+          <i class="fa-solid fa-table-columns"></i>
+          <span>Tabs</span>
+        </a>
+      </li>
+      <li>
+        <a href="terms.html">
+          <i class="fa-solid fa-file-contract"></i>
+          <span>Terms</span>
+        </a>
+      </li>
+      <li>
+        <a href="testimonials.html">
+          <i class="fa-solid fa-comments"></i>
+          <span>Testimonials</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="toggles.html">
+          <i class="fa-solid fa-toggle-on"></i>
+          <span>Toggle</span>
+        </a>
+      </li>
+      <li>
+        <a href="radiobutton.html">
+          <i class="fa-solid fa-circle-dot"></i>
+          <span>Radio Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="checkbox.html">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Checkboxes</span>
+        </a>
+      </li>
+<li>
+        <a href="about.html">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>About</span>
+        </a>
+      </li>
+      <li>
+        <a href="documentation.html">
+          <i class="fa-solid fa-book"></i>
+          <span>Documentation</span>
+        </a>
+      </li>
+      <li>
+        <a href="faq.html">
+          <i class="fa-solid fa-circle-question"></i>
+          <span>Faq</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fa-regular fa-envelope"></i>
+          <span>Contact Us</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-    <div class="logo">
-      ⬡ UIverse
-    </div>
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
 
-    <div class="nav-right">
-
-      <button class="theme-toggle" id="darkModeToggle">
-        <i class="fa-solid fa-moon"></i>
-      </button>
-
-    </div>
-
-  </header>
-
-  <!-- HERO -->
+<!-- ================= MAIN CONTENT ================= -->
+<main class="main-home">
 
   <section class="page-hero">
-
-    <div>
-
-      <h1 class="page-title">
-        Toggle Switches
-      </h1>
-
-      <p class="page-desc">
-        A beautiful collection of modern toggle switch components built with pure HTML and CSS. Responsive, animated, accessible, and easy to reuse.
-      </p>
-
+    <div class="hero-left">
+      <h1 class="page-title">Toggle Components</h1>
+      <p class="page-desc">Modern toggles, switches and checkboxes designed with pure CSS. Lightweight and easy to integrate.</p>
+      
       <div class="page-meta">
         <span class="meta-badge">
           <i class="fa-solid fa-layer-group"></i>
@@ -725,7 +1073,6 @@
           No JavaScript Needed
         </span>
       </div>
-
     </div>
 
     <div class="toggle-hero-preview">
@@ -1166,6 +1513,8 @@
     }
 
   </script>
+
+</main>
 
 </body>
 </html>

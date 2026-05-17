@@ -1,371 +1,912 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4= sha256-lu4c47NVm31gljYPDxVGrWs3uCKqNYvJ3gHLph2fUaA=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4= sha256-lu4c47NVm31gljYPDxVGrWs3uCKqNYvJ3gHLph2fUaA=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Table UI</title>
-  <link rel="stylesheet" href="table.css">
-</head>
-<body>
 
-  <div class="table-container">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <h1>Responsive Table UI</h1>
-
-    <div class="table-wrapper">
-
-      <table>
-
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Email</th>
-
-  <title>UIverse — Tables</title>
+  <title>Tables — UIverse</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
 
-  <!-- Your Global Styles -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="table.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="table.css"
+  >
+
+  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
 
 <body>
-
-<!-- ================= SIDEBAR (same as index) ================= -->
+<!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
 
-  <h2>UIverse</h2>
+          <nav class="sidebar-nav">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="button.html">
+          <i class="fa-solid fa-hand-pointer"></i>
+          <span>Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="navbar.html">
+          <i class="fa-solid fa-bars"></i>
+          <span>Navbar</span>
+        </a>
+      </li>
+      <li>
+        <a href="cards.html">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span>Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="flipcards.html">
+          <i class="fa-solid fa-clone"></i>
+          <span>3D Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="inputs.html">
+          <i class="fa-solid fa-keyboard"></i>
+          <span>Inputs</span>
+        </a>
+      </li>
+      <li>
+        <a href="forms.html">
+          <i class="fa-brands fa-wpforms"></i>
+          <span>Forms</span>
+        </a>
+      </li>
+      <li>
+        <a href="badges.html">
+          <i class="fa-solid fa-award"></i>
+          <span>Badges</span>
+        </a>
+      </li>
+      <li>
+        <a href="blog.html">
+          <i class="fa-solid fa-blog"></i>
+          <span>Blog</span>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>Articles</span>
+        </a>
+      </li>
+      <li>
+        <a href="alerts.html">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Alerts</span>
+        </a>
+      </li>
+      <li>
+        <a href="color.html">
+          <i class="fa-solid fa-palette"></i>
+          <span>Colors</span>
+        </a>
+      </li>
+      <li>
+        <a href="charts.html">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Charts</span>
+        </a>
+      </li>
+      <li>
+        <a href="dashboard.html">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="div.html">
+          <i class="fa-solid fa-square"></i>
+          <span>DIV</span>
+        </a>
+      </li>
+      <li>
+        <a href="widgets.html">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Widgets</span>
+        </a>
+      </li>
+      <li>
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search Bars</span>
+        </a>
+      </li>
+      <li>
+        <a href="hover.html">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Hover Effects</span>
+        </a>
+      </li>
+      <li>
+        <a href="error.html">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Error Pages</span>
+        </a>
+      </li>
+      <li>
+        <a href="ecommerce.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>E-commerce</span>
+        </a>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="fa-solid fa-file-arrow-up"></i>
+          <span>Drag & Drop</span>
+        </a>
+      </li>
+      <li>
+        <a href="hero.html">
+          <i class="fa-solid fa-star"></i>
+          <span>Hero Sections</span>
+        </a>
+      </li>
+      <li>
+        <a href="loaders.html">
+          <i class="fa-solid fa-spinner"></i>
+          <span>Loaders</span>
+        </a>
+      </li>
+      <li>
+        <a href="timeline.html">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Timeline</span>
+        </a>
+      </li>
+      <li>
+        <a href="map.html">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Maps</span>
+        </a>
+      </li>
+      <li>
+        <a href="menu.html">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <span>Menu</span>
+        </a>
+      </li>
+      <li>
+        <a href="pricing.html">
+          <i class="fa-solid fa-tags"></i>
+          <span>Pricing</span>
+        </a>
+      </li>
+      <li>
+        <a href="section.html">
+          <i class="fa-solid fa-rectangle-list"></i>
+          <span>Section</span>
+        </a>
+      </li>
+      <li>
+        <a href="span.html">
+          <i class="fa-solid fa-code"></i>
+          <span>Span</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="table.html">
+          <i class="fa-solid fa-table"></i>
+          <span>Table</span>
+        </a>
+      </li>
+      <li>
+        <a href="tabs.html">
+          <i class="fa-solid fa-table-columns"></i>
+          <span>Tabs</span>
+        </a>
+      </li>
+      <li>
+        <a href="terms.html">
+          <i class="fa-solid fa-file-contract"></i>
+          <span>Terms</span>
+        </a>
+      </li>
+      <li>
+        <a href="testimonials.html">
+          <i class="fa-solid fa-comments"></i>
+          <span>Testimonials</span>
+        </a>
+      </li>
+      <li>
+        <a href="toggles.html">
+          <i class="fa-solid fa-toggle-on"></i>
+          <span>Toggle</span>
+        </a>
+      </li>
+      <li>
+        <a href="radiobutton.html">
+          <i class="fa-solid fa-circle-dot"></i>
+          <span>Radio Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="checkbox.html">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Checkboxes</span>
+        </a>
+      </li>
+<li>
+        <a href="about.html">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>About</span>
+        </a>
+      </li>
+      <li>
+        <a href="documentation.html">
+          <i class="fa-solid fa-book"></i>
+          <span>Documentation</span>
+        </a>
+      </li>
+      <li>
+        <a href="faq.html">
+          <i class="fa-solid fa-circle-question"></i>
+          <span>Faq</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fa-regular fa-envelope"></i>
+          <span>Contact Us</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-  <ul>
-    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-    <li><a href="button.html"><i class="fa-solid fa-mobile-button"></i> Buttons</a></li>
-    <li><a href="cards.html"><i class="fa-solid fa-id-card"></i> Cards</a></li>
-    <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i> Inputs</a></li>
-    <li class="active"><a href="table.html"><i class="fa-solid fa-table"></i> Tables</a></li>
-    <li><a href="color.html"><i class="fa-solid fa-palette"></i> Colors</a></li>
-  </ul>
-
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
 </aside>
 
-<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-
+<!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+<!-- =====================================================
+NAVBAR
+===================================================== -->
 
-<!-- ================= MAIN ================= -->
+<header class="navbar">
+
+  <div class="search-bar">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+      type="text"
+      placeholder="Search tables..."
+      id="searchInput"
+    >
+
+  </div>
+
+  <div class="nav-actions">
+
+    <button class="outline-btn">
+      Documentation
+    </button>
+
+    <button class="primary-btn">
+      Explore UI
+    </button>
+
+  </div>
+
+</header>
+
+<!-- =====================================================
+MAIN
+===================================================== -->
+
 <main class="main-home">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
+  <!-- HERO -->
 
-    <div class="hero-badge">📊 Data UI Components</div>
+  <section class="hero-section">
 
-    <h1 class="hero-title">
-      Beautiful <span class="hero-accent">Table Components</span>
+    <div class="hero-badge">
+      ✦ Data Table Components
+    </div>
+
+    <h1>
+      Premium <span>Table UI</span>
     </h1>
 
-    <p class="hero-desc">
-      Responsive, modern and reusable table UI designs for dashboards and admin panels.
+    <p>
+
+      Discover modern table layouts crafted
+      for dashboards, admin panels, analytics
+      and SaaS platforms with premium UIverse styling.
+
     </p>
 
   </section>
 
-  <!-- ================= BASIC TABLE ================= -->
-  <section class="section">
+  <!-- FILTER -->
 
-    <div class="section-header">
-      <span class="section-tag">Simple</span>
-      <h2 class="section-title">📋 Basic Table</h2>
+  <section class="filter-bar">
+
+    <button class="filter-btn active">
+      All
+    </button>
+
+    <button class="filter-btn">
+      Analytics
+    </button>
+
+    <button class="filter-btn">
+      Users
+    </button>
+
+    <button class="filter-btn">
+      Pricing
+    </button>
+
+    <button class="filter-btn">
+      Dashboard
+    </button>
+
+  </section>
+
+  <!-- TABLE GRID -->
+
+  <section class="table-grid">
+
+    <!-- TABLE CARD -->
+
+    <div class="table-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            USERS
+          </span>
+
+          <h2>
+            Team Members
+          </h2>
+
+        </div>
+
+        <button>
+          Export
+        </button>
+
+      </div>
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>User</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Projects</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td class="user-cell">
+
+                <img
+                  src="https://i.pravatar.cc/100?img=12"
+                  alt=""
+                >
+
+                <div>
+
+                  <strong>
+                    Alex Carter
+                  </strong>
+
+                  <span>
+                    alex@uiverse.io
+                  </span>
+
+                </div>
+
+              </td>
+
+              <td>Frontend Dev</td>
+
+              <td>
+                <span class="status active-status">
+                  Active
+                </span>
+              </td>
+
+              <td>18</td>
+
+            </tr>
+
+            <tr>
+
+              <td class="user-cell">
+
+                <img
+                  src="https://i.pravatar.cc/100?img=22"
+                  alt=""
+                >
+
+                <div>
+
+                  <strong>
+                    Emma Wilson
+                  </strong>
+
+                  <span>
+                    emma@uiverse.io
+                  </span>
+
+                </div>
+
+              </td>
+
+              <td>UI Designer</td>
+
+              <td>
+                <span class="status pending-status">
+                  Pending
+                </span>
+              </td>
+
+              <td>11</td>
+
+            </tr>
+
+            <tr>
+
+              <td class="user-cell">
+
+                <img
+                  src="https://i.pravatar.cc/100?img=32"
+                  alt=""
+                >
+
+                <div>
+
+                  <strong>
+                    Noah Smith
+                  </strong>
+
+                  <span>
+                    noah@uiverse.io
+                  </span>
+
+                </div>
+
+              </td>
+
+              <td>Backend Dev</td>
+
+              <td>
+                <span class="status inactive-status">
+                  Offline
+                </span>
+              </td>
+
+              <td>7</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
     </div>
 
-    <div class="table-wrapper">
+    <!-- TABLE CARD -->
 
-      <table class="ui-table">
+    <div class="table-card">
 
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Status</th>
-          </tr>
-        </thead>
+      <div class="card-header">
 
-        <tbody>
+        <div>
 
-          <tr>
-            <td>01</td>
-            <td>Saiteja</td>
-            <td>Frontend Developer</td>
-            <td>Active</td>
-            <td>saiteja@email.com</td>
-          </tr>
+          <span class="card-label">
+            ANALYTICS
+          </span>
 
-          <tr>
-            <td>02</td>
-            <td>Rahul</td>
-            <td>UI Designer</td>
-            <td>Pending</td>
-            <td>rahul@email.com</td>
-          </tr>
+          <h2>
+            Monthly Analytics
+          </h2>
 
-          <tr>
-            <td>03</td>
-            <td>Anjali</td>
-            <td>Backend Developer</td>
-            <td>Active</td>
-            <td>anjali@email.com</td>
-          </tr>
+        </div>
 
-          <tr>
-            <td>04</td>
-            <td>Priya</td>
-            <td>Project Manager</td>
-            <td>Active</td>
-            <td>priya@email.com</td>
-          </tr>
+        <button>
+          Reports
+        </button>
 
-          <tr>
-            <td>05</td>
-            <td>Arjun</td>
-            <td>Full Stack Developer</td>
-            <td>Inactive</td>
-            <td>arjun@email.com</td>
-          </tr>
+      </div>
 
-          <tr>
-            <td>06</td>
-            <td>Neha</td>
-            <td>QA Tester</td>
-            <td>Pending</td>
-            <td>neha@email.com</td>
-          </tr>
+      <div class="analytics-grid">
 
-          <tr>
-            <td>07</td>
-            <td>Vikram</td>
-            <td>DevOps Engineer</td>
-            <td>Active</td>
-            <td>vikram@email.com</td>
-          </tr>
+        <div class="analytics-box">
 
-          <tr>
-            <td>08</td>
-            <td>Sneha</td>
-            <td>Graphic Designer</td>
-            <td>Active</td>
-            <td>sneha@email.com</td>
-          </tr>
+          <h3 id="viewsCount">
+            0
+          </h3>
 
-          <tr>
-            <td>09</td>
-            <td>Karan</td>
-            <td>Mobile App Developer</td>
-            <td>Inactive</td>
-            <td>karan@email.com</td>
-          </tr>
+          <p>
+            Views
+          </p>
 
-          <tr>
-            <td>10</td>
-            <td>Ishita</td>
-            <td>Data Analyst</td>
-            <td>Pending</td>
-            <td>ishita@email.com</td>
-            <td>Rohan</td>
-            <td>Developer</td>
-            <td><span class="status active">Active</span></td>
-          </tr>
+        </div>
 
-          <tr>
-            <td>Meera</td>
-            <td>Designer</td>
-            <td><span class="status pending">Pending</span></td>
-          </tr>
+        <div class="analytics-box">
 
-          <tr>
-            <td>John</td>
-            <td>Tester</td>
-            <td><span class="status inactive">Inactive</span></td>
-          </tr>
+          <h3 id="usersCount">
+            0
+          </h3>
 
-        </tbody>
+          <p>
+            Users
+          </p>
 
-      </table>
+        </div>
 
+        <div class="analytics-box">
+
+          <h3 id="salesCount">
+            0
+          </h3>
+
+          <p>
+            Sales
+          </p>
+
+        </div>
+
+        <div class="analytics-box">
+
+          <h3 id="growthCount">
+            0%
+          </h3>
+
+          <p>
+            Growth
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TABLE CARD -->
+
+    <div class="table-card large-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            PRICING
+          </span>
+
+          <h2>
+            Subscription Plans
+          </h2>
+
+        </div>
+
+        <button>
+          Upgrade
+        </button>
+
+      </div>
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Plan</th>
+              <th>Price</th>
+              <th>Users</th>
+              <th>Storage</th>
+              <th>Status</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>Starter</td>
+              <td>$9/mo</td>
+              <td>5 Users</td>
+              <td>10GB</td>
+
+              <td>
+
+                <span class="status active-status">
+                  Popular
+                </span>
+
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>Pro</td>
+              <td>$29/mo</td>
+              <td>25 Users</td>
+              <td>100GB</td>
+
+              <td>
+
+                <span class="status pending-status">
+                  Trending
+                </span>
+
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>Enterprise</td>
+              <td>$99/mo</td>
+              <td>Unlimited</td>
+              <td>1TB</td>
+
+              <td>
+
+                <span class="status inactive-status">
+                  Custom
+                </span>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+    <!-- TABLE CARD: Expandable -->
+    <div class="table-card large-card">
+      <div class="card-header">
+        <div>
+          <span class="card-label">DATA</span>
+          <h2>Expandable Table Rows</h2>
+        </div>
+        <button>Export</button>
+      </div>
+      <div class="table-wrapper">
+        <table class="expandable-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="main-row" onclick="this.nextElementSibling.classList.toggle('show')">
+              <td><i class="fa-solid fa-chevron-down"></i></td>
+              <td>#ORD-001</td>
+              <td>Sarah Connor</td>
+              <td>Oct 24, 2026</td>
+              <td>$1,250.00</td>
+              <td><span class="status active-status">Shipped</span></td>
+            </tr>
+            <tr class="details-row">
+              <td colspan="6">
+                <div class="details-content">
+                  <p><strong>Shipping Address:</strong> 123 Terminator Lane, LA</p>
+                  <p><strong>Items:</strong> 1x CPU, 2x Memory modules</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="main-row" onclick="this.nextElementSibling.classList.toggle('show')">
+              <td><i class="fa-solid fa-chevron-down"></i></td>
+              <td>#ORD-002</td>
+              <td>Kyle Reese</td>
+              <td>Oct 25, 2026</td>
+              <td>$450.00</td>
+              <td><span class="status pending-status">Processing</span></td>
+            </tr>
+            <tr class="details-row">
+              <td colspan="6">
+                <div class="details-content">
+                  <p><strong>Shipping Address:</strong> 456 Resistance Base, TX</p>
+                  <p><strong>Items:</strong> 1x Power Supply</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TABLE CARD: Sortable & Searchable -->
+    <div class="table-card large-card">
+      <div class="card-header">
+        <div>
+          <span class="card-label">DATABASE</span>
+          <h2>Searchable & Sortable Data Table</h2>
+        </div>
+        <div class="search-bar" style="width:250px; margin:0; padding:10px 14px">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search records...">
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table class="sortable-table">
+          <thead>
+            <tr>
+              <th>ID <i class="fa-solid fa-sort"></i></th>
+              <th>Name <i class="fa-solid fa-sort"></i></th>
+              <th>Department <i class="fa-solid fa-sort"></i></th>
+              <th>Score <i class="fa-solid fa-sort"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EMP-01</td>
+              <td>John Doe</td>
+              <td>Engineering</td>
+              <td>98%</td>
+            </tr>
+            <tr>
+              <td>EMP-02</td>
+              <td>Jane Smith</td>
+              <td>Marketing</td>
+              <td>92%</td>
+            </tr>
+            <tr>
+              <td>EMP-03</td>
+              <td>Robert Johnson</td>
+              <td>Design</td>
+              <td>88%</td>
+            </tr>
+            <tr>
+              <td>EMP-04</td>
+              <td>Emily Davis</td>
+              <td>Engineering</td>
+              <td>95%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
   </section>
 
-  <!-- ================= ADVANCED TABLE ================= -->
-  <section class="section">
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <i class="fa-solid fa-hexagon-nodes"></i>
+          <span>UIverse</span>
+        </div>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
 
-    <div class="section-header">
-      <span class="section-tag">Dashboard</span>
-      <h2 class="section-title">🧑‍💻 User Management Table</h2>
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">License</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Stay Updated</h4>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" />
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
     </div>
-
-    <div class="table-wrapper">
-
-      <table class="ui-table advanced-table">
-
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-
-        <tbody>
-
-          <tr>
-            <td class="user-cell">
-              <div class="avatar">A</div>
-              Aryan Sharma
-            </td>
-            <td>aryan@mail.com</td>
-            <td><span class="role admin">Admin</span></td>
-            <td><span class="status active">Active</span></td>
-            <td>
-              <button class="table-btn edit">Edit</button>
-              <button class="table-btn delete">Delete</button>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="user-cell">
-              <div class="avatar">M</div>
-              Meera Das
-            </td>
-            <td>meera@mail.com</td>
-            <td><span class="role user">User</span></td>
-            <td><span class="status pending">Pending</span></td>
-            <td>
-              <button class="table-btn edit">Edit</button>
-              <button class="table-btn delete">Delete</button>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="user-cell">
-              <div class="avatar">J</div>
-              John Carter
-            </td>
-            <td>john@mail.com</td>
-            <td><span class="role editor">Editor</span></td>
-            <td><span class="status inactive">Inactive</span></td>
-            <td>
-              <button class="table-btn edit">Edit</button>
-              <button class="table-btn delete">Delete</button>
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
+    
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart heart"></i> for developers worldwide.</p>
     </div>
-  </div>
-
-</body>
-</html>
-  </section>
+  </footer>
 
 </main>
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-col brand">
-      <h2 class="footer-logo">⬡ UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      <div class="socials">
-        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-      </div>
-    </div>
-
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">Documentation</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">GitHub Repo</a></li>
-        <li><a href="#">Community</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="#">License</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input 
-  type="email"
-  placeholder="your@email.com"
-
-  style="
-    transition:0.3s ease;
-    padding:12px;
-    border-radius:8px;
-    border:none;
-    background:#1a1a1a;
-    color:white;
-  "
-
-  onmouseover="this.style.boxShadow='0 0 15px rgba(255,102,0,0.8)'"
-  onmouseout="this.style.boxShadow='none'"
-/>
-        <button type="button" onclick="subscribe()">Subscribe</button>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
-</footer>
-
-<!-- ================= SCRIPT ================= -->
-<script>
-
-// Dark mode (same logic as index)
-if(localStorage.getItem("theme")==="dark"){
-  document.body.classList.add("dark-mode");
-}
-
-</script>
+<script src="table.js"></script>
 
 </body>
 </html>

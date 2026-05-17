@@ -23,6 +23,8 @@
     "test:visual:ui": "playwright test --ui",
     "test:visual:update": "playwright test --update-snapshots",
     "test:visual:debug": "playwright test --debug",
+    "test:visual:compare": "node scripts/visual-baseline-manager.js compare",
+    "test:visual:status": "node scripts/visual-baseline-manager.js status",
     "test:storybook": "playwright test --config playwright.storybook.config.ts",
     "quality": "npm run lint:html && npm run lint:css && npm run lint:js && npm run link-check && npm run audit:a11y && npm run test:visual",
     "test:e2e:accessibility": "playwright test tests/visual/accessibility --project=chromium-desktop --reporter=list",
@@ -35,8 +37,17 @@
     "tokens:extract": "node scripts/token-extractor.js",
     "build": "vite build",
     "build:js": "vite build",
+    "build:csp": "node scripts/csp-hash-generator.js --update && vite build",
     "dev": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "csp:hash": "node scripts/csp-hash-generator.js",
+    "csp:update": "node scripts/csp-hash-generator.js --update",
+    "release": "semantic-release",
+    "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s",
+    "version": "node scripts/version-manager.js",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.0.0",

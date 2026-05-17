@@ -1,9 +1,19 @@
 /* ===================================================
    FOOTER PAGE
 =================================================== */
+.container{
+  flex-direction: column;
+}
 
 .footer-page-header {
+  width:100%;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #fff 60%, #fff7f4 100%);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
   display: flex;
+  align-items: center;
+  text-align: center;
   flex-direction: column;
   gap: 18px;
 }
@@ -315,4 +325,10 @@ body.dark-mode .footer-preview {
     flex-direction: column;
   }
 
+}
+
+.footer-socials a{
+  position: relative;
+  z-index: 9999;
+  pointer-events: auto;
 }

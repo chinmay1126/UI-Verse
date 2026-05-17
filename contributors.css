@@ -67,6 +67,10 @@ body {
   font-family: var(--heading);
 }
 
+.logo-link {
+  text-decoration: none;
+}
+
 .nav-right {
 
   display: flex;

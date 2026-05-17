@@ -1,509 +1,655 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-+2CzKwle/NJ0UvucUOLdugo4JHh0ey6H2Nd6GiSF5V4= sha256-/JwbIRJjq+2PNcjBX8a0qJr3dkT6ZwbPsTjSSaZJcvs= sha256-1pmwUKnoHUJSi0UKDcwrqZ6aJ7nAD92vw50zMCh5Yz0= sha256-5yP4k0BTMnsr2231uvL6gmFkpMju/UlA8ugAmseB6Mk= sha256-CZaDuwMSsspb3e3YDd5z3dU3/oM7DpI4HyRFD7B/dq0= sha256-SkXmi9K9w88T7cz2Un0jdN1+0q8eZsdBDTT+N5w9miA= sha256-UNK/cTBxT4m8IhwIB58yKwcoJ21qJx1QlDIrssKqITU= sha256-fdbN/EEtEJ03laHD3WsMwnbFBwOcdNmIhOI3yYuyIeo= sha256-o2tk+3CNWXGusxguI0wikvY6DyndRuC/7KJ7du4/L+4=; style-src-attr 'unsafe-hashes' sha256-+2CzKwle/NJ0UvucUOLdugo4JHh0ey6H2Nd6GiSF5V4= sha256-/JwbIRJjq+2PNcjBX8a0qJr3dkT6ZwbPsTjSSaZJcvs= sha256-1pmwUKnoHUJSi0UKDcwrqZ6aJ7nAD92vw50zMCh5Yz0= sha256-5yP4k0BTMnsr2231uvL6gmFkpMju/UlA8ugAmseB6Mk= sha256-CZaDuwMSsspb3e3YDd5z3dU3/oM7DpI4HyRFD7B/dq0= sha256-SkXmi9K9w88T7cz2Un0jdN1+0q8eZsdBDTT+N5w9miA= sha256-UNK/cTBxT4m8IhwIB58yKwcoJ21qJx1QlDIrssKqITU= sha256-fdbN/EEtEJ03laHD3WsMwnbFBwOcdNmIhOI3yYuyIeo= sha256-o2tk+3CNWXGusxguI0wikvY6DyndRuC/7KJ7du4/L+4=">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <title>UIverse — Charts Components</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charts & Analytics Components — UIverse</title>
 
   <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="charts.css" />
-
-  <!-- UIverse Modular CSS Architecture -->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="span.css"> <!-- Base component styles -->
+  <link rel="stylesheet" href="charts.css"> <!-- Chart specific styles -->
+  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
+<body class="dark-mode">
 
-<body>
-
-  <main class="charts-page">
-
-    <!-- HERO -->
-    <section class="charts-hero">
-
-      <div class="hero-badge">
-        📊 Data Visualization Components
-      </div>
-
-      <h1>
-        Modern Dashboard
-        <span>Charts UI</span>
-      </h1>
-
-      <p>
-        Beautiful analytics components built using
-        pure HTML & CSS with modern glassmorphism effects.
-        pure HTML & CSS.
-      </p>
-
-    </section>
-
-    <!-- HORIZONTAL BAR CHART -->
-<div class="chart-card">
-
-  <div class="chart-header">
-    <div>
-      <h3>Horizontal Bars</h3>
-      <span>Department Metrics</span>
-    </div>
-    <i class="fa-solid fa-chart-bar"></i>
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
   </div>
 
-  <div class="horizontal-chart">
-
-    <div class="h-bar">
-      <label>Marketing</label>
-      <span style="width:85%"></span>
-    </div>
-
-    <div class="h-bar">
-      <label>Sales</label>
-      <span style="width:72%"></span>
-    </div>
-
-    <div class="h-bar">
-      <label>Support</label>
-      <span style="width:58%"></span>
-    </div>
-
-    <div class="h-bar">
-      <label>Design</label>
-      <span style="width:91%"></span>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- MINI ANALYTICS -->
-<div class="chart-card mini-analytics">
-
-  <div class="chart-header">
-    <div>
-      <h3>Mini Analytics</h3>
-      <span>Weekly Activity</span>
-    </div>
-    <i class="fa-solid fa-chart-area"></i>
-  </div>
-
-  <div class="mini-chart">
-
-    <span style="height:35%"></span>
-    <span style="height:60%"></span>
-    <span style="height:40%"></span>
-    <span style="height:75%"></span>
-    <span style="height:55%"></span>
-    <span style="height:90%"></span>
-    <span style="height:65%"></span>
-
-  </div>
-
-</div>
-
-<!-- STACKED BARS -->
-<div class="chart-card">
-
-  <div class="chart-header">
-    <div>
-      <h3>Stacked Chart</h3>
-      <span>Traffic Sources</span>
-    </div>
-    <i class="fa-solid fa-layer-group"></i>
-  </div>
-
-  <div class="stacked-chart">
-
-    <div class="stack-bar">
-      <span class="s1"></span>
-      <span class="s2"></span>
-      <span class="s3"></span>
-    </div>
-
-    <div class="stack-bar">
-      <span class="s1"></span>
-      <span class="s2"></span>
-      <span class="s3"></span>
-    </div>
-
-    <div class="stack-bar">
-      <span class="s1"></span>
-      <span class="s2"></span>
-      <span class="s3"></span>
-    </div>
-
-    <div class="stack-bar">
-      <span class="s1"></span>
-      <span class="s2"></span>
-      <span class="s3"></span>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- WAVE CHART -->
-<div class="chart-card">
-
-  <div class="chart-header">
-    <div>
-      <h3>Wave Analytics</h3>
-      <span>Real-time Signal</span>
-    </div>
-    <i class="fa-solid fa-water"></i>
-  </div>
-
-  <div class="wave-chart">
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-  </div>
-
-</div>
-
-<!-- KPI CARD -->
-<div class="chart-card kpi-card">
-
-  <div class="chart-header">
-    <div>
-      <h3>KPI Tracker</h3>
-      <span>Business Goals</span>
-    </div>
-    <i class="fa-solid fa-gauge-high"></i>
-  </div>
-
-  <div class="kpi-wrapper">
-
-    <div class="kpi-item">
-      <h2>94%</h2>
-      <p>Customer Satisfaction</p>
-    </div>
-
-    <div class="kpi-item">
-      <h2>+28%</h2>
-      <p>Revenue Increase</p>
-    </div>
-
-    <div class="kpi-item">
-      <h2>1.8s</h2>
-      <p>Page Load Speed</p>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- TIMELINE CHART -->
-<div class="chart-card">
-
-  <div class="chart-header">
-    <div>
-      <h3>Timeline</h3>
-      <span>Project Progress</span>
-    </div>
-    <i class="fa-solid fa-timeline"></i>
-  </div>
-
-  <div class="timeline-chart">
-
-    <div class="timeline-item completed">
-      <span></span>
-      <p>Research</p>
-    </div>
-
-    <div class="timeline-item completed">
-      <span></span>
-      <p>Wireframes</p>
-    </div>
-
-    <div class="timeline-item active">
-      <span></span>
-      <p>Development</p>
-    </div>
-
-    <div class="timeline-item">
-      <span></span>
-      <p>Launch</p>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- HEATMAP -->
-<div class="chart-card">
-
-  <div class="chart-header">
-    <div>
-      <h3>Heatmap</h3>
-      <span>User Activity</span>
-    </div>
-    <i class="fa-solid fa-fire"></i>
-  </div>
-
-  <div class="heatmap-grid">
-
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-
-  </div>
-
-</div>
-
-<!-- GLASS METRIC CARD -->
-<div class="chart-card glass-metric">
-
-  <div class="metric-circle">
-    <h2>68%</h2>
-  </div>
-
-  <h3>Engagement Rate</h3>
-
-  <p>
-    Increased user interaction across all dashboard modules this month.
-  </p>
-
-</div>
-
-    <!-- CHART GRID -->
-    <section class="charts-grid">
-
-      <!-- LINE CHART -->
-      <div class="chart-card">
-
-        <div class="chart-header">
-          <div>
-            <h3>Line Chart</h3>
-            <span>Monthly Growth</span>
-          </div>
-          <i class="fa-solid fa-chart-line"></i>
-          <h3>Line Chart</h3>
-          <span>Monthly Growth</span>
-        </div>
-
-        <div class="line-chart">
-
-          <div class="line-path"></div>
-          <div class="line line-1"></div>
-
-          <div class="line-points">
-
-            <span style="height:60%"></span>
-            <span style="height:90%"></span>
-            <span style="height:40%"></span>
-            <span style="height:80%"></span>
-            <span style="height:70%"></span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- BAR CHART -->
-      <div class="chart-card">
-
-        <div class="chart-header">
-          <div>
-            <h3>Bar Chart</h3>
-            <span>Revenue Stats</span>
-          </div>
-          <i class="fa-solid fa-chart-column"></i>
-          <h3>Bar Chart</h3>
-          <span>Revenue Stats</span>
-        </div>
-
-        <div class="bar-chart">
-
-          <div class="bar" style="height:60%"></div>
-          <div class="bar" style="height:90%"></div>
-          <div class="bar" style="height:40%"></div>
-          <div class="bar" style="height:80%"></div>
-          <div class="bar" style="height:70%"></div>
-
-        </div>
-
-      </div>
-
-      <!-- PIE CHART -->
-      <div class="chart-card">
-
-        <div class="chart-header">
-          <div>
-            <h3>Pie Chart</h3>
-            <span>Traffic Sources</span>
-          </div>
+      <nav class="sidebar-nav">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="button.html">
+          <i class="fa-solid fa-hand-pointer"></i>
+          <span>Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="navbar.html">
+          <i class="fa-solid fa-bars"></i>
+          <span>Navbar</span>
+        </a>
+      </li>
+      <li>
+        <a href="cards.html">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span>Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="flipcards.html">
+          <i class="fa-solid fa-clone"></i>
+          <span>3D Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="inputs.html">
+          <i class="fa-solid fa-keyboard"></i>
+          <span>Inputs</span>
+        </a>
+      </li>
+      <li>
+        <a href="forms.html">
+          <i class="fa-brands fa-wpforms"></i>
+          <span>Forms</span>
+        </a>
+      </li>
+      <li>
+        <a href="badges.html">
+          <i class="fa-solid fa-award"></i>
+          <span>Badges</span>
+        </a>
+      </li>
+      <li>
+        <a href="blog.html">
+          <i class="fa-solid fa-blog"></i>
+          <span>Blog</span>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>Articles</span>
+        </a>
+      </li>
+      <li>
+        <a href="alerts.html">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Alerts</span>
+        </a>
+      </li>
+      <li>
+        <a href="color.html">
+          <i class="fa-solid fa-palette"></i>
+          <span>Colors</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="charts.html">
           <i class="fa-solid fa-chart-pie"></i>
-          <h3>Pie Chart</h3>
-          <span>Traffic Sources</span>
-        </div>
+          <span>Charts</span>
+        </a>
+      </li>
+      <li>
+        <a href="dashboard.html">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="div.html">
+          <i class="fa-solid fa-square"></i>
+          <span>DIV</span>
+        </a>
+      </li>
+      <li>
+        <a href="widgets.html">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Widgets</span>
+        </a>
+      </li>
+      <li>
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search Bars</span>
+        </a>
+      </li>
+      <li>
+        <a href="hover.html">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Hover Effects</span>
+        </a>
+      </li>
+      <li>
+        <a href="error.html">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Error Pages</span>
+        </a>
+      </li>
+      <li>
+        <a href="ecommerce.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>E-commerce</span>
+        </a>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="fa-solid fa-file-arrow-up"></i>
+          <span>Drag & Drop</span>
+        </a>
+      </li>
+      <li>
+        <a href="hero.html">
+          <i class="fa-solid fa-star"></i>
+          <span>Hero Sections</span>
+        </a>
+      </li>
+      <li>
+        <a href="loaders.html">
+          <i class="fa-solid fa-spinner"></i>
+          <span>Loaders</span>
+        </a>
+      </li>
+      <li>
+        <a href="timeline.html">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Timeline</span>
+        </a>
+      </li>
+      <li>
+        <a href="map.html">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Maps</span>
+        </a>
+      </li>
+      <li>
+        <a href="menu.html">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <span>Menu</span>
+        </a>
+      </li>
+      <li>
+        <a href="pricing.html">
+          <i class="fa-solid fa-tags"></i>
+          <span>Pricing</span>
+        </a>
+      </li>
+      <li>
+        <a href="section.html">
+          <i class="fa-solid fa-rectangle-list"></i>
+          <span>Section</span>
+        </a>
+      </li>
+      <li>
+        <a href="span.html">
+          <i class="fa-solid fa-code"></i>
+          <span>Span</span>
+        </a>
+      </li>
+      <li>
+        <a href="table.html">
+          <i class="fa-solid fa-table"></i>
+          <span>Table</span>
+        </a>
+      </li>
+      <li>
+        <a href="tabs.html">
+          <i class="fa-solid fa-table-columns"></i>
+          <span>Tabs</span>
+        </a>
+      </li>
+      <li>
+        <a href="terms.html">
+          <i class="fa-solid fa-file-contract"></i>
+          <span>Terms</span>
+        </a>
+      </li>
+      <li>
+        <a href="testimonials.html">
+          <i class="fa-solid fa-comments"></i>
+          <span>Testimonials</span>
+        </a>
+      </li>
+      <li>
+        <a href="toggles.html">
+          <i class="fa-solid fa-toggle-on"></i>
+          <span>Toggle</span>
+        </a>
+      </li>
+      <li>
+        <a href="radiobutton.html">
+          <i class="fa-solid fa-circle-dot"></i>
+          <span>Radio Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="checkbox.html">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Checkboxes</span>
+        </a>
+      </li>
+<li>
+        <a href="about.html">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>About</span>
+        </a>
+      </li>
+      <li>
+        <a href="documentation.html">
+          <i class="fa-solid fa-book"></i>
+          <span>Documentation</span>
+        </a>
+      </li>
+      <li>
+        <a href="faq.html">
+          <i class="fa-solid fa-circle-question"></i>
+          <span>Faq</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fa-regular fa-envelope"></i>
+          <span>Contact Us</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-        <div class="pie-chart"></div>
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
 
+<!-- ================= SIDEBAR BACKDROP ================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="main-home">
+
+  <header class="page-header">
+    <h1>Charts & Data Visualization</h1>
+    <p>Modern, responsive analytics components using pure HTML, CSS, and Vanilla JavaScript. No heavy frameworks.</p>
+  </header>
+
+  <section class="component-grid">
+
+    <!-- 1. Analytics Dashboard Cards -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>Dashboard Stat Cards</h3>
+        <p>Premium stat cards with mini sparklines.</p>
       </div>
-
-      <!-- DONUT CHART -->
-      <div class="chart-card">
-
-        <div class="chart-header">
-          <div>
-            <h3>Donut Chart</h3>
-            <span>User Engagement</span>
-          </div>
-          <i class="fa-solid fa-circle-notch"></i>
-        </div>
-
-        <div class="donut-chart">
-          <div class="donut-center">
-            75%
-          </div>
-        </div>
-
-      </div>
-
-      <!-- AREA CHART -->
-      <div class="chart-card">
-
-        <div class="chart-header">
-          <div>
-            <h3>Area Chart</h3>
-            <span>Performance</span>
-          </div>
-          <i class="fa-solid fa-wave-square"></i>
-        </div>
-
-        <div class="area-chart">
-
-          <div class="area-bars">
-            <span style="height:40%"></span>
-            <span style="height:80%"></span>
-            <span style="height:60%"></span>
-            <span style="height:90%"></span>
-            <span style="height:70%"></span>
-            <span style="height:50%"></span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- RADIAL PROGRESS -->
-      <div class="chart-card">
-
-        <div class="chart-header">
-          <div>
-            <h3>Radial Progress</h3>
-            <span>Sales Target</span>
-          </div>
-          <i class="fa-solid fa-bullseye"></i>
-        </div>
-
-        <div class="radial-chart">
-          <div class="radial-inner">
-            82%
-          </div>
-        </div>
-
-      </div>
-
-      <!-- PROGRESS -->
-      <div class="chart-card">
-
-        <div class="chart-header">
-          <div>
-            <h3>Progress Stats</h3>
-            <span>Project Completion</span>
-          </div>
-          <i class="fa-solid fa-bars-progress"></i>
-          <h3>Progress Stats</h3>
-          <span>Project Completion</span>
-        </div>
-
-        <div class="progress-wrapper">
-
-          <div class="progress-item">
-            <label>UI Design</label>
-            <div class="progress-bar">
-              <span style="width:90%"></span>
+      <div class="preview-box charts-wrapper" id="preview-1">
+        
+        <div class="stat-card-container">
+            <div class="stat-item">
+                <div class="chart-subtitle">Total Revenue</div>
+                <div class="stat-value">$45,231</div>
+                <div class="stat-change positive">
+                    <i class="fa-solid fa-arrow-trend-up"></i> +12.5% this month
+                </div>
+                <div class="mini-sparkline" style="background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.2)); border-bottom: 2px solid var(--ch-green);"></div>
             </div>
-          </div>
-
-          <div class="progress-item">
-            <label>Development</label>
-            <div class="progress-bar">
-              <span style="width:75%"></span>
+            
+            <div class="stat-item">
+                <div class="chart-subtitle">Active Users</div>
+                <div class="stat-value">2,845</div>
+                <div class="stat-change negative">
+                    <i class="fa-solid fa-arrow-trend-down"></i> -2.4% this week
+                </div>
+                <div class="mini-sparkline" style="background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.2)); border-bottom: 2px solid var(--ch-pink);"></div>
             </div>
-          </div>
-
-          <div class="progress-item">
-            <label>Testing</label>
-            <div class="progress-bar">
-              <span style="width:55%"></span>
-            </div>
-          </div>
-
         </div>
 
       </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-1')">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('preview-1', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-1">
+        <pre>&lt;!-- Add charts.css for styles --&gt;
+&lt;div class="stat-card-container"&gt;
+  &lt;div class="stat-item"&gt;
+    &lt;div class="chart-subtitle"&gt;Total Revenue&lt;/div&gt;
+    &lt;div class="stat-value"&gt;$45,231&lt;/div&gt;
+    &lt;div class="stat-change positive"&gt;
+      &lt;i class="fa-solid fa-arrow-trend-up"&gt;&lt;/i&gt; +12.5%
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
 
-      <!-- STATS CARD -->
-      <div class="chart-card stats-card">
-
-        <div class="chart-header">
-          <div>
-            <h3>Statistics</h3>
-            <span>Overview</span>
-          </div>
-          <i class="fa-solid fa-chart-simple"></i>
-        </div>
-
-        <div class="stats-grid">
-
-          <div class="stat-box">
-            <h4>12.5K</h4>
-            <p>Users</p>
-          </div>
-
-          <div class="stat-box">
-            <h4>84%</h4>
-            <p>Growth</p>
-          </div>
-
-          <div class="stat-box">
-            <h4>$32K</h4>
-            <p>Revenue</p>
-          </div>
-
-          <div class="stat-box">
-            <h4>1.2K</h4>
-            <p>Orders</p>
-          </div>
-
+    <!-- 2. Animated Bar Chart -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>Responsive Bar Chart</h3>
+        <p>Dynamic CSS bar chart with JS animation.</p>
+      </div>
+      <div class="preview-box charts-wrapper" id="preview-2">
+        
+        <div class="chart-card">
+            <div class="chart-header">
+                <div>
+                    <h3 class="chart-title">Weekly Traffic</h3>
+                    <p class="chart-subtitle">Unique visitors over 7 days</p>
+                </div>
+                <div class="chart-actions">
+                    <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+            </div>
+            <div class="bar-chart" id="bar-chart-bars">
+                <!-- Bars injected by charts.js -->
+            </div>
         </div>
 
       </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-2')">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('preview-2', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-2">
+        <pre>&lt;!-- CSS Bar Chart Container --&gt;
+&lt;div class="chart-card"&gt;
+  &lt;h3 class="chart-title"&gt;Weekly Traffic&lt;/h3&gt;
+  &lt;div class="bar-chart" id="bar-chart-bars"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- See charts.js for injection logic --&gt;</pre>
+      </div>
+    </div>
 
-    </section>
+    <!-- 3. Pie / Donut Chart -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>Gradient Donut Chart</h3>
+        <p>CSS Conic-gradient based donut chart.</p>
+      </div>
+      <div class="preview-box charts-wrapper" id="preview-3">
+        
+        <div class="chart-card">
+            <div class="chart-header">
+                <h3 class="chart-title">Device Usage</h3>
+            </div>
+            <div class="donut-container">
+                <div class="donut-chart">
+                    <div class="donut-hole">
+                        <div class="donut-total">100%</div>
+                        <div class="donut-label">Total Visits</div>
+                    </div>
+                </div>
+            </div>
+            <div class="donut-legend">
+                <div class="legend-item"><div class="legend-color" style="background: var(--ch-purple)"></div> Mobile</div>
+                <div class="legend-item"><div class="legend-color" style="background: var(--ch-cyan)"></div> Desktop</div>
+                <div class="legend-item"><div class="legend-color" style="background: var(--ch-pink)"></div> Tablet</div>
+            </div>
+        </div>
 
-  </main>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-3')">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('preview-3', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-3">
+        <pre>&lt;div class="donut-container"&gt;
+  &lt;div class="donut-chart" style="background: conic-gradient(#8b5cf6 0% 45%, #06b6d4 45% 75%, #ec4899 75% 100%);"&gt;
+    &lt;div class="donut-hole"&gt;
+      &lt;div class="donut-total"&gt;100%&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
 
+    <!-- 4. Progress Analytics Graph -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>Target Progress Metrics</h3>
+        <p>Animated shimmer progress bars.</p>
+      </div>
+      <div class="preview-box charts-wrapper" id="preview-4">
+        
+        <div class="chart-card">
+            <div class="chart-header">
+                <h3 class="chart-title">Monthly Goals</h3>
+            </div>
+            <div class="progress-list">
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>New Signups</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 80%; background: var(--ch-cyan);"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>Revenue Target</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 65%; background: var(--ch-purple);"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>Customer Retention</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 92%; background: var(--ch-green);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-4')">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('preview-4', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-4">
+        <pre>&lt;div class="progress-item"&gt;
+  &lt;div class="progress-info"&gt;
+    &lt;span&gt;New Signups&lt;/span&gt;&lt;span&gt;80%&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="progress-track"&gt;
+    &lt;div class="progress-fill" style="width: 80%; background: #06b6d4;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+
+    <!-- 5. SVG Line Activity Graph -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>SVG Line Activity Tracker</h3>
+        <p>Interactive smooth SVG line graph.</p>
+      </div>
+      <div class="preview-box charts-wrapper" id="preview-5">
+        
+        <div class="chart-card">
+            <div class="chart-header">
+                <h3 class="chart-title">Server Activity</h3>
+            </div>
+            
+            <svg class="svg-line-chart" viewBox="0 0 400 120" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="pinkGradient" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="var(--ch-pink)" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="var(--ch-pink)" stop-opacity="0"/>
+                    </linearGradient>
+                </defs>
+                
+                <!-- Area -->
+                <path class="svg-area" d="M0,120 L0,80 Q50,40 100,60 T200,30 T300,70 T400,20 L400,120 Z"></path>
+                
+                <!-- Line -->
+                <path class="svg-line" d="M0,80 Q50,40 100,60 T200,30 T300,70 T400,20"></path>
+                
+                <!-- Points -->
+                <circle class="svg-point" cx="0" cy="80" r="4" data-value="80"></circle>
+                <circle class="svg-point" cx="100" cy="60" r="4" data-value="60"></circle>
+                <circle class="svg-point" cx="200" cy="30" r="4" data-value="30"></circle>
+                <circle class="svg-point" cx="300" cy="70" r="4" data-value="70"></circle>
+                <circle class="svg-point" cx="400" cy="20" r="4" data-value="20"></circle>
+            </svg>
+
+            <div class="heatmap-grid" id="heatmap-grid">
+                <!-- Heatmap cells injected by JS -->
+            </div>
+        </div>
+
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-5')">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('preview-5', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-5">
+        <pre>&lt;svg class="svg-line-chart" viewBox="0 0 400 120"&gt;
+  &lt;path class="svg-line" d="M0,80 Q50,40 100,60 T200,30 T300,70 T400,20"&gt;&lt;/path&gt;
+  &lt;circle class="svg-point" cx="100" cy="60" r="4"&gt;&lt;/circle&gt;
+&lt;/svg&gt;</pre>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" onclick="scrollToTop()">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Copy Toast -->
+  <div id="copyToast" class="copy-toast"><i class="fa-solid fa-check"></i> Copied to clipboard!</div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="span.html">Span</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input 
+            type="email"
+            placeholder="your@email.com"
+            style="
+              transition:0.3s ease;
+              padding:12px;
+              border-radius:8px;
+              border:none;
+              background:#1a1a1a;
+              color:white;
+            "
+            onmouseover="this.style.boxShadow='0 0 15px rgba(255,102,0,0.8)'"
+            onmouseout="this.style.boxShadow='none'"
+          />
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
+
+</main>
+
+<script src="charts.js"></script>
 </body>
 </html>
-</html>
-

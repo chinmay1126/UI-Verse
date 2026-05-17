@@ -86,3 +86,10 @@ const ComponentsRegistry = (function () {
 
 // Expose to global for other modules
 window.ComponentsRegistry = ComponentsRegistry;
+
+// Auto-load on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => ComponentsRegistry.load());
+} else {
+  ComponentsRegistry.load();
+}

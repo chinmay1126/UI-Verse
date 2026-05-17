@@ -2,131 +2,366 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-2MA6VMYYVvj29u8vyj1hHR7Ql0e0r+r0upAcuAMpTyk= sha256-HCn3om7IStDFsOyxW3md66g95e8GCNiIscB/VoM6M1M= sha256-ljMU4Myw8XWiVkgbEqZAyQQO77lJVEeoLAamoJCK/tA=; script-src-attr 'unsafe-hashes' sha256-2MA6VMYYVvj29u8vyj1hHR7Ql0e0r+r0upAcuAMpTyk= sha256-HCn3om7IStDFsOyxW3md66g95e8GCNiIscB/VoM6M1M= sha256-ljMU4Myw8XWiVkgbEqZAyQQO77lJVEeoLAamoJCK/tA=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maps - UIverse</title>
-
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maps ? UIverse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="map.css" />
-
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-
-  <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
-
 <body>
-<!-- Gallery page note: See GALLERY_PAGES_GUIDE.md for filtering setup. -->
+ 
 
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
 
-<div class="container">
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h2>UIverse</h2>
+          <nav class="sidebar-nav">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="button.html">Buttons</a></li>
-      <li><a href="cards.html">Cards</a></li>
-      <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="forms.html">Forms</a></li>
-      <li><a href="loaders.html">Loaders</a></li>
-      <li class="active"><a href="map.html">Maps</a></li>
+      <li>
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="button.html">
+          <i class="fa-solid fa-hand-pointer"></i>
+          <span>Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="navbar.html">
+          <i class="fa-solid fa-bars"></i>
+          <span>Navbar</span>
+        </a>
+      </li>
+      <li>
+        <a href="cards.html">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span>Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="flipcards.html">
+          <i class="fa-solid fa-clone"></i>
+          <span>3D Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="inputs.html">
+          <i class="fa-solid fa-keyboard"></i>
+          <span>Inputs</span>
+        </a>
+      </li>
+      <li>
+        <a href="forms.html">
+          <i class="fa-brands fa-wpforms"></i>
+          <span>Forms</span>
+        </a>
+      </li>
+      <li>
+        <a href="badges.html">
+          <i class="fa-solid fa-award"></i>
+          <span>Badges</span>
+        </a>
+      </li>
+      <li>
+        <a href="blog.html">
+          <i class="fa-solid fa-blog"></i>
+          <span>Blog</span>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>Articles</span>
+        </a>
+      </li>
+      <li>
+        <a href="alerts.html">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Alerts</span>
+        </a>
+      </li>
+      <li>
+        <a href="color.html">
+          <i class="fa-solid fa-palette"></i>
+          <span>Colors</span>
+        </a>
+      </li>
+      <li>
+        <a href="charts.html">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Charts</span>
+        </a>
+      </li>
+      <li>
+        <a href="dashboard.html">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="div.html">
+          <i class="fa-solid fa-square"></i>
+          <span>DIV</span>
+        </a>
+      </li>
+      <li>
+        <a href="widgets.html">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Widgets</span>
+        </a>
+      </li>
+      <li>
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search Bars</span>
+        </a>
+      </li>
+      <li>
+        <a href="hover.html">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Hover Effects</span>
+        </a>
+      </li>
+      <li>
+        <a href="error.html">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Error Pages</span>
+        </a>
+      </li>
+      <li>
+        <a href="ecommerce.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>E-commerce</span>
+        </a>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="fa-solid fa-file-arrow-up"></i>
+          <span>Drag & Drop</span>
+        </a>
+      </li>
+      <li>
+        <a href="hero.html">
+          <i class="fa-solid fa-star"></i>
+          <span>Hero Sections</span>
+        </a>
+      </li>
+      <li>
+        <a href="loaders.html">
+          <i class="fa-solid fa-spinner"></i>
+          <span>Loaders</span>
+        </a>
+      </li>
+      <li>
+        <a href="timeline.html">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Timeline</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="map.html">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Maps</span>
+        </a>
+      </li>
+      <li>
+        <a href="menu.html">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <span>Menu</span>
+        </a>
+      </li>
+      <li>
+        <a href="pricing.html">
+          <i class="fa-solid fa-tags"></i>
+          <span>Pricing</span>
+        </a>
+      </li>
+      <li>
+        <a href="section.html">
+          <i class="fa-solid fa-rectangle-list"></i>
+          <span>Section</span>
+        </a>
+      </li>
+      <li>
+        <a href="span.html">
+          <i class="fa-solid fa-code"></i>
+          <span>Span</span>
+        </a>
+      </li>
+      <li>
+        <a href="table.html">
+          <i class="fa-solid fa-table"></i>
+          <span>Table</span>
+        </a>
+      </li>
+      <li>
+        <a href="tabs.html">
+          <i class="fa-solid fa-table-columns"></i>
+          <span>Tabs</span>
+        </a>
+      </li>
+      <li>
+        <a href="terms.html">
+          <i class="fa-solid fa-file-contract"></i>
+          <span>Terms</span>
+        </a>
+      </li>
+      <li>
+        <a href="testimonials.html">
+          <i class="fa-solid fa-comments"></i>
+          <span>Testimonials</span>
+        </a>
+      </li>
+      <li>
+        <a href="toggles.html">
+          <i class="fa-solid fa-toggle-on"></i>
+          <span>Toggle</span>
+        </a>
+      </li>
+      <li>
+        <a href="radiobutton.html">
+          <i class="fa-solid fa-circle-dot"></i>
+          <span>Radio Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="checkbox.html">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Checkboxes</span>
+        </a>
+      </li>
+<li>
+        <a href="about.html">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>About</span>
+        </a>
+      </li>
+      <li>
+        <a href="documentation.html">
+          <i class="fa-solid fa-book"></i>
+          <span>Documentation</span>
+        </a>
+      </li>
+      <li>
+        <a href="faq.html">
+          <i class="fa-solid fa-circle-question"></i>
+          <span>Faq</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fa-regular fa-envelope"></i>
+          <span>Contact Us</span>
+        </a>
+      </li>
     </ul>
-  </aside>
+  </nav>
 
-  <!-- Main -->
-  <main class="main">
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
 
-    <h1>Maps</h1>
+<!-- ================= SIDEBAR BACKDROP ================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
-    <!-- Map 1 -->
-    <div class="component-card">
-      <h3>Basic Map</h3>
-
-      <div class="map-box">
-        <div id="map"></div>
-      </div>
-
-      <div class="actions">
-        <button onclick="toggleCode('m1')">View Code</button>
-        <button onclick="copyCode('m1')">Copy</button>
-      </div>
-
-<pre id="m1" class="code-block">
-&lt;div id="map"&gt;&lt;/div&gt;
-</pre>
+  <header class="navbar">
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search map components..." />
     </div>
-
-    <!-- Map 2 -->
-    <div class="component-card">
-      <h3>Search Map</h3>
-
-      <div class="map-search">
-        <input placeholder="Search location..." />
-        <button>Go</button>
-      </div>
-
-      <div class="map-box">
-        <div id="map2"></div>
-      </div>
-
-<pre id="m2" class="code-block">
-Search map component
-</pre>
+    <div class="nav-actions">
+      <button class="outline-btn">Docs</button>
+      <button class="primary-btn">Add Component</button>
     </div>
+  </header>
 
-    <!-- Map 3 -->
-    <div class="component-card">
-      <h3>Map Card</h3>
+  <main class="main-home">
+    <section class="hero-section">
+      <div>
+        <span class="hero-badge"><i class="fa-solid fa-location-dot"></i> Interactive components</span>
+        <h1>Maps that feel <span>alive.</span></h1>
+        <p>Explore reusable map layouts with live pins, search controls, location cards, and polished actions built on Leaflet.</p>
+      </div>
+      <div class="preview-map-card">
+        <span class="live-dot"></span>
+        <h3>Live Location</h3>
+        <p>Kolkata, India</p>
+        <div class="mini-map"><span class="pulse-pin"></span></div>
+      </div>
+    </section>
 
-      <div class="map-card">
-        <div class="map-card-header">Live Location</div>
-        <div class="map-card-body">
-          <div id="map3"></div>
+    <section class="maps-grid">
+      <article class="map-card large-card">
+        <div class="card-header">
+          <div>
+            <span class="card-label">Leaflet</span>
+            <h2>Basic Map</h2>
+          </div>
+          <button class="live-btn">Live</button>
         </div>
-        <div class="map-card-footer">📍 Kolkata</div>
-      </div>
+        <div class="map-box"><div id="map"></div></div>
+        <div class="actions">
+          <button onclick="toggleCode('m1')">View Code</button>
+          <button onclick="copyCode('m1')">Copy</button>
+        </div>
+        <pre id="m1" class="code-block">&lt;div id="map"&gt;&lt;/div&gt;</pre>
+      </article>
 
-<pre id="m3" class="code-block">
-Map card layout
-</pre>
-    </div>
+      <article class="map-card">
+        <div class="card-header">
+          <div>
+            <span class="card-label">Search</span>
+            <h2>Search Map</h2>
+          </div>
+        </div>
+        <div class="search-location">
+          <input placeholder="Search location..." />
+          <button>Go</button>
+        </div>
+        <div class="map-box small-map"><div id="map2"></div></div>
+        <pre id="m2" class="code-block">Search map component</pre>
+      </article>
 
-    <!-- Pin -->
-    <div class="component-card">
-      <h3>Animated Pin</h3>
-
-      <div class="loader-demo-box">
-        <div class="pin"></div>
-      </div>
-
-<pre id="m4" class="code-block">
-&lt;div class="pin"&gt;&lt;/div&gt;
-</pre>
-    </div>
-
+      <article class="map-card">
+        <div class="card-header">
+          <div>
+            <span class="card-label">Card</span>
+            <h2>Map Card</h2>
+          </div>
+        </div>
+        <div class="map-box small-map"><div id="map3"></div></div>
+        <div class="actions">
+          <button>Live Location</button>
+          <button>?? Kolkata</button>
+        </div>
+        <pre id="m3" class="code-block">Map card layout</pre>
+      </article>
+    </section>
   </main>
-</div>
 
-<!-- Leaflet -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<script>
-  const map = L.map('map').setView([22.5726, 88.3639], 12);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap'
-  }).addTo(map);
-
-  const map2 = L.map('map2').setView([19.0760, 72.8777], 11);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map2);
-
-  const map3 = L.map('map3').setView([28.7041, 77.1025], 10);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map3);
-</script>
-
-<script src="script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="maps.js"></script>
+  <script>
+    function toggleCode(id) {
+      const block = document.getElementById(id);
+      if (block) block.classList.toggle('open');
+    }
+    function copyCode(id) {
+      const block = document.getElementById(id);
+      if (block) navigator.clipboard.writeText(block.innerText);
+    }
+  </script>
 </body>
 </html>
-
