@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Span Components — UIverse</title>
 
   <!-- Fonts -->
@@ -22,35 +22,27 @@
     <span class="brand-icon"><i class="fa-solid fa-code"></i></span>
     <span class="brand-text">UIverse</span>
   </div>
-
   <nav class="sidebar-nav">
     <ul>
       <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
       <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+      <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navbar</span></a></li>
       <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
-      <li><a href="div.html"><i class="fa-solid fa-square"></i><span>DIV</span></a></li>
-      <li><a href="widgets.html"><i class="fa-solid fa-layer-group"></i><span>Widgets</span></a></li>
-      <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search Bars</span></a></li>
-      <li><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Hover Effects</span></a></li>
-      <li><a href="menu.html"><i class="fa-solid fa-bars"></i><span>Menu</span></a></li>
-      <li><a href="error.html"><i class="fa-solid fa-triangle-exclamation"></i><span>Error Pages</span></a></li>
-      <li><a href="ecommerce.html"><i class="fa-solid fa-cart-shopping"></i><span>E-commerce</span></a></li>
-      <li><a href="hero.html"><i class="fa-solid fa-star"></i><span>Hero Sections</span></a></li>
-      <li><a href="loaders.html"><i class="fa-solid fa-spinner"></i><span>Loaders</span></a></li>
-      <li><a href="table.html"><i class="fa-solid fa-table"></i><span>Table</span></a></li>
+      <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Inputs</span></a></li>
+      <li><a href="contact.html"><i class="fa-regular fa-envelope"></i><span>Contact Us</span></a></li>
+      <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><span>Forms</span></a></li>
+      <li><a href="badges.html"><i class="fa-solid fa-award"></i><span>Badges</span></a></li>
       <li class="active"><a href="span.html"><i class="fa-solid fa-code"></i><span>Span</span></a></li>
     </ul>
   </nav>
-
   <div class="sidebar-footer">
-    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
   </div>
 </aside>
 
-<!-- ================= MAIN CONTENT ================= -->
-<main class="main-content">
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
   <header class="page-header">
     <h1>Span Components</h1>
@@ -109,11 +101,129 @@
       </div>
     </div>
 
-    <!-- 3. Notification Count Spans -->
-    <div class="component-card">
-      <div class="card-header">
-        <h3>Notification Counts</h3>
-        <p>Pill-shaped number badges.</p>
+    <!-- Status Indicators -->
+    <div class="component-card" data-name="status online offline busy away indicator" data-cat="status">
+      <div class="card-top">
+        <span class="card-label">Status Indicator</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <div class="preview-status-col">
+          <p>User: <span class="sp-status sp-online">● Online</span></p>
+          <p>User: <span class="sp-status sp-offline">● Offline</span></p>
+          <p>User: <span class="sp-status sp-busy">● Busy</span></p>
+          <p>User: <span class="sp-status sp-away">● Away</span></p>
+        </div>
+      </div>
+      <p class="card-desc">Inline status indicators with dot and label — Online, Offline, Busy, and Away variants.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('s4', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('s4', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="s4" class="code-block"><code>&lt;span class="status online"&gt;● Online&lt;/span&gt;
+&lt;span class="status offline"&gt;● Offline&lt;/span&gt;
+&lt;span class="status busy"&gt;● Busy&lt;/span&gt;
+&lt;span class="status away"&gt;● Away&lt;/span&gt;
+
+.status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.status.online  { background: rgba(0,184,148,0.12); color: #00b894; }
+.status.offline { background: rgba(99,110,114,0.12); color: #636e72; }
+.status.busy    { background: rgba(214,48,49,0.12);  color: #d63031; }
+.status.away    { background: rgba(253,203,110,0.15); color: #d98e00; }</code></pre>
+    </div>
+
+    <!-- Pills -->
+    <div class="component-card" data-name="pill label plan tier badge" data-cat="label">
+      <div class="card-top">
+        <span class="card-label">Pill Labels</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview">
+        <div class="preview-wrap">
+          <span class="sp-pill sp-accent">New</span>
+          <span class="sp-pill sp-success">Active</span>
+          <span class="sp-pill sp-danger">Expired</span>
+          <span class="sp-pill sp-warning">Pending</span>
+          <span class="sp-pill sp-purple">Pro</span>
+          <span class="sp-pill sp-dark">Beta</span>
+        </div>
+      </div>
+      <p class="card-desc">Gradient and solid pill labels — perfect for plan tiers, statuses, and feature flags.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('s5', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('s5', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="s5" class="code-block"><code>&lt;span class="pill"&gt;New&lt;/span&gt;
+&lt;span class="pill success"&gt;Active&lt;/span&gt;
+&lt;span class="pill danger"&gt;Expired&lt;/span&gt;
+&lt;span class="pill warning"&gt;Pending&lt;/span&gt;
+
+.pill {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.pill         { background: var(--accent); color: #fff; }
+.pill.success { background: #00b894; color: #fff; }
+.pill.danger  { background: #d63031; color: #fff; }
+.pill.warning { background: #fdcb6e; color: #333; }
+.pill.purple  { background: #6c5ce7; color: #fff; }
+.pill.dark    { background: #111;    color: #fff; }</code></pre>
+    </div>
+
+    <!-- Tooltip -->
+    <div class="component-card" data-name="tooltip hover popup hint" data-cat="interactive">
+      <div class="card-top">
+        <span class="card-label">Tooltip</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <div class="preview-wrap" style="padding:20px 0;">
+          <span class="sp-tooltip">Hover over me
+            <span class="sp-tooltip-text">This is a tooltip!</span>
+          </span>
+          &nbsp;&nbsp;
+          <span class="sp-tooltip sp-tooltip-bottom">Bottom tooltip
+            <span class="sp-tooltip-text sp-tooltip-text-bottom">Appears below</span>
+          </span>
+        </div>
+      </div>
+      <p class="card-desc">CSS-only tooltips that appear on hover — top and bottom positions available.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('s6', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('s6', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="s6" class="code-block"><code>&lt;span class="tooltip"&gt;Hover me
+  &lt;span class="tooltip-text"&gt;Tooltip!&lt;/span&gt;
+&lt;/span&gt;
+
+.tooltip { position: relative; cursor: pointer; color: var(--accent); font-weight: 600; }
+.tooltip-text {
+  position: absolute;
+  bottom: 140%; left: 50%;
+  transform: translateX(-50%);
+  background: #111; color: #fff;
+  padding: 8px 14px; border-radius: 8px;
+  white-space: nowrap; font-size: 12px;
+  opacity: 0; visibility: hidden;
+  transition: 0.2s;
+}
+.tooltip:hover .tooltip-text { opacity: 1; visibility: visible; }</code></pre>
+    </div>
+
+    <!-- Keyboard Shortcut -->
+    <div class="component-card" data-name="keyboard shortcut kbd key hotkey" data-cat="text">
+      <div class="card-top">
+        <span class="card-label">Keyboard Shortcut</span>
+        <span class="card-tag tag-trending">Trending</span>
       </div>
       <div class="preview-box" id="preview-3">
         Messages <span class="sp-count">4</span>
@@ -295,70 +405,47 @@ Alerts &lt;span class="sp-count sp-count-blue"&gt;12&lt;/span&gt;</pre>
       </div>
     </div>
 
-  </section>
+  </div><!-- /span-grid -->
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <i class="fa-solid fa-hexagon-nodes"></i>
-          <span>UIverse</span>
-        </div>
-        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-        <div class="footer-socials">
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
-      </div>
-      
-      <div class="footer-links">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="button.html">Buttons</a></li>
-          <li><a href="navbar.html">Navbars</a></li>
-          <li><a href="cards.html">Cards</a></li>
-          <li><a href="inputs.html">Inputs</a></li>
-          <li><a href="forms.html">Forms</a></li>
-        </ul>
-      </div>
+</main>
 
-      <div class="footer-links">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="#">Documentation</a></li>
-          <li><a href="#">Contribute</a></li>
-          <li><a href="#">GitHub Repo</a></li>
-          <li><a href="#">Community</a></li>
-        </ul>
-      </div>
+<!-- Scroll to Top -->
+<button id="scrollTopBtn" onclick="scrollToTop()">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
 
-      <div class="footer-links">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">License</a></li>
-        </ul>
-      </div>
+<!-- Copy Toast -->
+<div id="copyToast" class="copy-toast"><i class="fa-solid fa-check"></i> Copied to clipboard!</div>
 
-      <div class="footer-newsletter">
-        <h4>Stay Updated</h4>
-        <p>Get notified when new components drop.</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="your@email.com" />
-          <button type="button">Subscribe</button>
-        </div>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
     
     <div class="footer-bottom">
       <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart heart"></i> for developers worldwide.</p>
     </div>
-  </footer>
-
-</main>
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
 
 <script>
   // Toggle Code Snippet
