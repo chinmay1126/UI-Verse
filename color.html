@@ -337,6 +337,69 @@
     </div>
   </div>
 
+  <!-- ===== CUSTOM COLOR CREATOR ===== -->
+  <section class="custom-creator-section">
+    <div class="section-header-row">
+      <h2 class="color-section-title">🎨 Custom Color Creator</h2>
+      <span class="section-count">Pick & Copy</span>
+    </div>
+
+    <div class="creator-wrapper">
+
+      <!-- LEFT CARD: picker + values -->
+      <div class="creator-card">
+        <div class="creator-left">
+          <div class="creator-preview" id="creatorPreview" style="background:#eb6835;"></div>
+          <input type="color" id="colorPicker" value="#eb6835">
+          <label for="colorPicker" class="picker-label">
+            <i class="fa-solid fa-pen-nib"></i> Open Picker
+          </label>
+          <button class="save-color-btn" onclick="saveToSessionPalette()">
+            <i class="fa-solid fa-plus"></i> Add to Palette
+          </button>
+        </div>
+
+        <div class="creator-right">
+          <div class="creator-val-row">
+            <span class="creator-val-label">Hex:</span>
+            <span class="creator-val-output" id="outHex">#eb6835</span>
+            <button class="creator-copy-btn" onclick="copyText(document.getElementById('outHex').textContent, this)">
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+          </div>
+          <div class="creator-val-row">
+            <span class="creator-val-label">RGB:</span>
+            <span class="creator-val-output" id="outRgb">rgb(235, 104, 53)</span>
+            <button class="creator-copy-btn" onclick="copyText(document.getElementById('outRgb').textContent, this)">
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+          </div>
+          <div class="creator-val-row">
+            <span class="creator-val-label">HSL:</span>
+            <span class="creator-val-output" id="outHsl">hsl(20, 82%, 56%)</span>
+            <button class="creator-copy-btn" onclick="copyText(document.getElementById('outHsl').textContent, this)">
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+          </div>
+
+          <div class="contrast-row">
+            <span class="contrast-chip fail" id="contrastWhite">AA × on White</span>
+            <span class="contrast-chip pass" id="contrastBlack">AA ✓ on Black</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT CARD: palette -->
+      <div class="palette-panel" id="palettePanel">
+        <h3 class="palette-panel-title">Color Palette</h3>
+        <div class="session-palette" id="sessionPalette">
+          <div class="empty-palette-msg">No colors yet.<br>Pick one and click Add.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ===== TRENDING COLORS ===== -->
   <section class="color-section" data-section="trending">
     <div class="section-header-row">
@@ -819,6 +882,92 @@
       s.style.display = (sec === 'all' || s.dataset.section === sec) ? '' : 'none';
     });
   }
+
+  /* ===== Custom Color Creator ===== */
+  const picker = document.getElementById('colorPicker');
+
+  picker.addEventListener('input', updateCreator);
+  picker.addEventListener('change', updateCreator);
+
+  function updateCreator() {
+    const hex = picker.value;
+    document.getElementById('creatorPreview').style.background = hex;
+    document.getElementById('outHex').textContent = hex;
+    document.getElementById('outRgb').textContent = hexToRgb(hex);
+    document.getElementById('outHsl').textContent = hexToHsl(hex);
+    updateContrast(hex);
+  }
+
+  function hexToRgb(hex) {
+    const r = parseInt(hex.slice(1,3),16);
+    const g = parseInt(hex.slice(3,5),16);
+    const b = parseInt(hex.slice(5,7),16);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  function hexToHsl(hex) {
+    let r = parseInt(hex.slice(1,3),16)/255;
+    let g = parseInt(hex.slice(3,5),16)/255;
+    let b = parseInt(hex.slice(5,7),16)/255;
+    const max = Math.max(r,g,b), min = Math.min(r,g,b);
+    let h, s, l = (max+min)/2;
+    if (max === min) { h = s = 0; }
+    else {
+      const d = max - min;
+      s = l > 0.5 ? d/(2-max-min) : d/(max+min);
+      switch(max){
+        case r: h=((g-b)/d+(g<b?6:0))/6; break;
+        case g: h=((b-r)/d+2)/6; break;
+        case b: h=((r-g)/d+4)/6; break;
+      }
+    }
+    return `hsl(${Math.round(h*360)}, ${Math.round(s*100)}%, ${Math.round(l*100)}%)`;
+  }
+
+  function getLuminance(hex) {
+    return [1,3,5].map(i => {
+      const c = parseInt(hex.slice(i,i+2),16)/255;
+      return c <= 0.03928 ? c/12.92 : Math.pow((c+0.055)/1.055,2.4);
+    }).reduce((acc,c,i) => acc + c * [0.2126,0.7152,0.0722][i], 0);
+  }
+
+  function contrastRatio(hex, bg) {
+    const L1 = getLuminance(hex), L2 = getLuminance(bg);
+    return (Math.max(L1,L2)+0.05)/(Math.min(L1,L2)+0.05);
+  }
+
+  function updateContrast(hex) {
+    const vsWhite = contrastRatio(hex, '#ffffff');
+    const vsBlack = contrastRatio(hex, '#000000');
+    const wEl = document.getElementById('contrastWhite');
+    const bEl = document.getElementById('contrastBlack');
+    wEl.textContent = vsWhite >= 4.5 ? `AA ✓ on White (${vsWhite.toFixed(1)}:1)` : `AA ✗ on White (${vsWhite.toFixed(1)}:1)`;
+    wEl.className = 'contrast-chip ' + (vsWhite >= 4.5 ? 'pass' : 'fail');
+    bEl.textContent = vsBlack >= 4.5 ? `AA ✓ on Black (${vsBlack.toFixed(1)}:1)` : `AA ✗ on Black (${vsBlack.toFixed(1)}:1)`;
+    bEl.className = 'contrast-chip ' + (vsBlack >= 4.5 ? 'pass' : 'fail');
+  }
+
+  function saveToSessionPalette() {
+    const hex = picker.value;
+    const palette = document.getElementById('sessionPalette');
+
+    const msg = palette.querySelector('.empty-palette-msg');
+    if (msg) msg.remove();
+
+    const swatch = document.createElement('div');
+    swatch.className = 'session-swatch';
+    swatch.style.background = hex;
+    swatch.title = hex;
+    swatch.innerHTML = `<span class="swatch-check">✓</span>`;
+    swatch.onclick = () => {
+      copyText(hex, null);
+      swatch.classList.add('just-copied');
+      setTimeout(() => swatch.classList.remove('just-copied'), 1500);
+    };
+    palette.appendChild(swatch);
+  }
+
+  updateCreator(); // init on load
 
   /* Live search */
   function liveFilter(val) {
