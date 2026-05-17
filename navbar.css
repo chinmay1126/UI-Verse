@@ -2376,3 +2376,233 @@ body.dark-mode .dashboard-search input {
   }
 
 }
+
+/* =========================================================
+   SAAS NAVBAR
+========================================================= */
+
+.demo-saas-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  border-radius:18px;
+  background:#ffffff;
+  border:1px solid #ececec;
+}
+
+.saas-left,
+.saas-links,
+.saas-right{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.saas-brand{
+  font-weight:800;
+  font-size:18px;
+}
+
+.saas-links a{
+  text-decoration:none;
+  color:#666;
+  font-size:14px;
+}
+
+.saas-primary{
+  background:#eb6835;
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+}
+
+.saas-outline{
+  background:transparent;
+  border:1px solid #ddd;
+  padding:10px 16px;
+  border-radius:10px;
+}
+
+/* =========================================================
+   ECOMMERCE NAVBAR
+========================================================= */
+
+.demo-ecommerce-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 20px;
+  background:#fff;
+  border-radius:18px;
+  border:1px solid #ececec;
+  gap:18px;
+}
+
+.ecommerce-brand{
+  font-size:18px;
+  font-weight:800;
+}
+
+.ecommerce-search{
+  flex:1;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#f6f6f6;
+  padding:12px 16px;
+  border-radius:12px;
+}
+
+.ecommerce-search input{
+  border:none;
+  outline:none;
+  background:transparent;
+  width:100%;
+}
+
+.ecommerce-actions{
+  display:flex;
+  gap:12px;
+}
+
+.ecommerce-actions button{
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:12px;
+  background:#f4f4f4;
+}
+
+/* =========================================================
+   AI NAVBAR
+========================================================= */
+
+.demo-ai-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  border-radius:18px;
+  background:#111827;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.ai-brand{
+  color:#fff;
+  font-weight:800;
+}
+
+.ai-links{
+  display:flex;
+  gap:20px;
+}
+
+.ai-links a{
+  color:#a5b4fc;
+  text-decoration:none;
+}
+
+.ai-status{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border:none;
+  border-radius:999px;
+  background:rgba(99,102,241,0.15);
+  color:#fff;
+}
+
+.status-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#4ade80;
+  box-shadow:0 0 10px #4ade80;
+}
+
+/* =========================================================
+   SOCIAL NAVBAR
+========================================================= */
+
+.demo-social-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 20px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.18);
+}
+
+.social-brand{
+  color:#fff;
+  font-weight:700;
+}
+
+.social-links{
+  display:flex;
+  gap:16px;
+}
+
+.social-links a{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-decoration:none;
+  background:rgba(255,255,255,0.1);
+}
+
+.demo-social-nav img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* =========================================================
+   DEV TOOL NAVBAR
+========================================================= */
+
+.demo-dev-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+  border-radius:18px;
+  background:#0f172a;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.dev-brand{
+  color:#fff;
+  font-weight:800;
+}
+
+.dev-links{
+  display:flex;
+  gap:20px;
+}
+
+.dev-links a{
+  color:#94a3b8;
+  text-decoration:none;
+}
+
+.dev-terminal{
+  background:#111827;
+  color:#4ade80;
+  border:1px solid rgba(74,222,128,0.25);
+  padding:10px 16px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
