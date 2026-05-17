@@ -184,6 +184,8 @@
 
     </section>
 
+    
+
     <!-- BUTTON GRID -->
     <section class="features">
 
@@ -952,6 +954,398 @@
   <pre id="c19" class="code-block"><code>&lt;button class="premium-btn"&gt;Premium&lt;/button&gt;</code></pre>
 </div>
 
+<!-- ================= MORE MODERN BUTTON COMPONENTS ================= -->
+
+<!-- Cyberpunk -->
+<div class="component-card" data-name="cyberpunk button futuristic" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Cyberpunk</span>
+    <span class="card-tag tag-trending">Futuristic</span>
+  </div>
+
+  <div class="card-preview dark-preview">
+    <button class="cyber-btn">Launch</button>
+  </div>
+
+  <p class="card-desc">Futuristic neon cyberpunk-inspired glowing button.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c21', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c21', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c21" class="code-block"><code>&lt;button class="cyber-btn"&gt;Launch&lt;/button&gt;
+
+.cyber-btn{
+  padding:12px 28px;
+  background:#0f0f0f;
+  color:#00f7ff;
+  border:2px solid #00f7ff;
+  border-radius:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 0 10px #00f7ff44;
+}
+.cyber-btn:hover{
+  background:#00f7ff;
+  color:#111;
+  box-shadow:0 0 18px #00f7ff,
+             0 0 45px #00f7ff88;
+}</code></pre>
+</div>
+
+
+<!-- Liquid -->
+<div class="component-card" data-name="liquid button wave" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Liquid</span>
+    <span class="card-tag tag-premium">Premium</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="liquid-btn">Liquid</button>
+  </div>
+
+  <p class="card-desc">Smooth liquid hover animation with modern UI feel.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c22', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c22', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c22" class="code-block"><code>&lt;button class="liquid-btn"&gt;Liquid&lt;/button&gt;
+
+.liquid-btn{
+  position:relative;
+  overflow:hidden;
+  padding:12px 30px;
+  border:none;
+  border-radius:8px;
+  background:#6c5ce7;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  z-index:1;
+}
+.liquid-btn::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.25);
+  transition:.5s;
+}
+.liquid-btn:hover::before{
+  left:100%;
+}</code></pre>
+</div>
+
+
+<!-- Metallic -->
+<div class="component-card" data-name="metallic button silver chrome" data-cat="style">
+  <div class="card-top">
+    <span class="card-label">Metallic</span>
+    <span class="card-tag tag-new">Luxury</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="metal-btn">Metal</button>
+  </div>
+
+  <p class="card-desc">Elegant chrome metallic button with glossy highlights.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c23', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c23', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c23" class="code-block"><code>&lt;button class="metal-btn"&gt;Metal&lt;/button&gt;
+
+.metal-btn{
+  padding:12px 28px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(
+    145deg,
+    #f0f0f0,
+    #bcbcbc
+  );
+  color:#222;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 6px 14px rgba(0,0,0,.2);
+  transition:.3s;
+}
+.metal-btn:hover{
+  transform:translateY(-2px);
+}</code></pre>
+</div>
+
+
+<!-- Expand -->
+<div class="component-card" data-name="expand button hover stretch" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Expand</span>
+    <span class="card-tag tag-popular">Interactive</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="expand-btn">
+      Hover Me
+    </button>
+  </div>
+
+  <p class="card-desc">Button smoothly expands width on hover interaction.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c24', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c24', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c24" class="code-block"><code>&lt;button class="expand-btn"&gt;Hover Me&lt;/button&gt;
+
+.expand-btn{
+  width:140px;
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  background:#eb6835;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:.35s ease;
+}
+.expand-btn:hover{
+  width:180px;
+  letter-spacing:1px;
+}</code></pre>
+</div>
+
+
+<!-- Glass Neon -->
+<div class="component-card" data-name="glass neon button" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Glass Neon</span>
+    <span class="card-tag tag-trending">Modern</span>
+  </div>
+
+  <div class="card-preview dark-preview">
+    <button class="glass-neon-btn">Future</button>
+  </div>
+
+  <p class="card-desc">Combines glassmorphism and neon glow beautifully.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c25', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c25', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c25" class="code-block"><code>&lt;button class="glass-neon-btn"&gt;Future&lt;/button&gt;
+
+.glass-neon-btn{
+  padding:12px 28px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  color:#00ffe0;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+.glass-neon-btn:hover{
+  box-shadow:
+    0 0 18px #00ffe0,
+    0 0 36px rgba(0,255,224,.35);
+}</code></pre>
+</div>
+
+
+<!-- Gradient Glow -->
+<div class="component-card" data-name="gradient glow button" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Gradient Glow</span>
+    <span class="card-tag tag-popular">Hot</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="gradient-glow-btn">
+      Start Now
+    </button>
+  </div>
+
+  <p class="card-desc">Animated glowing gradient CTA button.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c26', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c26', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c26" class="code-block"><code>&lt;button class="gradient-glow-btn"&gt;Start Now&lt;/button&gt;
+
+.gradient-glow-btn{
+  padding:12px 30px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(
+    45deg,
+    #ff6b6b,
+    #6c5ce7,
+    #00cec9
+  );
+  background-size:300%;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition:.4s;
+  animation:gradientMove 5s infinite linear;
+}
+.gradient-glow-btn:hover{
+  box-shadow:0 0 20px rgba(108,92,231,.5);
+}
+
+@keyframes gradientMove{
+  0%{background-position:0%}
+  100%{background-position:300%}
+}</code></pre>
+</div>
+
+
+<!-- Minimal Underline -->
+<div class="component-card" data-name="minimal underline button" data-cat="style">
+  <div class="card-top">
+    <span class="card-label">Underline</span>
+    <span class="card-tag tag-essential">Minimal</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="underline-btn">
+      Learn More
+    </button>
+  </div>
+
+  <p class="card-desc">Elegant text button with animated underline effect.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c27', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c27', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c27" class="code-block"><code>&lt;button class="underline-btn"&gt;Learn More&lt;/button&gt;
+
+.underline-btn{
+  background:none;
+  border:none;
+  color:#111;
+  font-size:16px;
+  font-weight:600;
+  position:relative;
+  cursor:pointer;
+}
+.underline-btn::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0%;
+  height:2px;
+  background:#eb6835;
+  transition:.3s;
+}
+.underline-btn:hover::after{
+  width:100%;
+}</code></pre>
+</div>
+
+
+<!-- Floating -->
+<div class="component-card" data-name="floating button shadow animation" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Floating</span>
+    <span class="card-tag tag-trending">Animated</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="floating-btn">
+      Floating
+    </button>
+  </div>
+
+  <p class="card-desc">Soft floating animation with subtle movement.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c28', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c28', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c28" class="code-block"><code>&lt;button class="floating-btn"&gt;Floating&lt;/button&gt;
+
+.floating-btn{
+  padding:12px 28px;
+  border:none;
+  border-radius:10px;
+  background:#6c5ce7;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  animation:floatBtn 2.2s ease-in-out infinite;
+}
+
+@keyframes floatBtn{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-6px);
+  }
+}</code></pre>
+</div>
 
 <!-- Ripple Button -->
 <div class="component-card" data-name="ripple material button" data-cat="effect">
@@ -1212,7 +1606,12 @@ function copyCode(id,btn){
   }
 
 
-<!-- ================= COMMAND PALETTE ================= -->
+  .preview-box{
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
 <div id="commandPaletteOverlay" class="command-palette-overlay">
   <div class="command-palette-container">
     <div class="command-palette-input-wrapper">
