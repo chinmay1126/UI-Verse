@@ -70,6 +70,12 @@ UI-Verse/
 
 ## 🚀 Getting Started
 
+### Prerequisites
+
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- A code editor (VS Code recommended)
+- Git installed on your system
+
 ### 1️⃣ Fork the Repository
 
 Click on the **Fork** button (top-right of GitHub)
@@ -78,15 +84,34 @@ Click on the **Fork** button (top-right of GitHub)
 
 ### 2️⃣ Clone Your Fork
 
-```
+```bash
 git clone https://github.com/your-username/UI-Verse.git
+cd UI-Verse
 ```
 
 ---
 
 ### 3️⃣ Open the Project
 
-Open `index.html` in your browser.
+**Option A — Quick Preview:**
+Simply open `index.html` in your browser by double-clicking it.
+
+**Option B — Live Server (Recommended):**
+If you have VS Code, install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension, right-click `index.html`, and select "Open with Live Server". This provides auto-reload on file changes.
+
+**Option C — Python HTTP Server:**
+```bash
+# Python 3
+python -m http.server 8000
+
+# Then open http://localhost:8000 in your browser
+```
+
+---
+
+### 4️⃣ Start Customizing
+
+Browse the component pages via the sidebar navigation. Each page contains reusable UI components with viewable and copyable code snippets.
 
 ---
 
@@ -214,16 +239,3 @@ If you like this project:
 ---
 
 💙 Happy Coding & Contributing!
-
----
-
-## Gallery Pages Documentation
-
-When creating or updating gallery pages with component collections, refer to **[GALLERY_PAGES_GUIDE.md](./GALLERY_PAGES_GUIDE.md)** for:
-
-* Required HTML structure (.component-card + .filter-bar)
-* Filter metadata guidelines (data-name, data-cat, data-tags)
-* Testing checklist before submitting
-* Troubleshooting common filter issues
-
-This ensures all gallery pages have consistent filtering and search functionality.

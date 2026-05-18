@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Components</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="shared-sidebar.css" />
+  <link rel="stylesheet" href="profile-components.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-text">UIverse <span style="font-size: 9px; background: linear-gradient(135deg, #eb6835, #7b61ff); color: white; padding: 1px 6px; border-radius: 10px; font-weight: 800; margin-left: 4px; letter-spacing: 0.5px; vertical-align: middle; box-shadow: 0 0 8px rgba(235,104,53,0.3);">V2</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+        <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+        <li><a href="dropdown-components.html"><i class="fa-solid fa-caret-down"></i><span>Dropdowns</span></a></li>
+        <li class="active"><a href="profile-components.html"><i class="fa-solid fa-user"></i><span>Profiles</span></a></li>
+        <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navbar</span></a></li>
+        <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-home page-shell">
+    <header class="hero">
+      <p class="eyebrow">Profile Components</p>
+      <h1>Modern user profile layouts</h1>
+      <p>
+        Five responsive profile patterns with reusable card structures, social sections,
+        glow effects, and dark/light friendly surfaces.
+      </p>
+    </header>
+
+    <section class="profile-grid">
+      <article class="profile-card developer-card">
+        <h3 class="component-name">Developer Profile Card</h3>
+        <span class="status">Available</span>
+        <div class="avatar">AR</div>
+        <h2>Ariana Reed</h2>
+        <p>Frontend Developer</p>
+        <div class="skills"><span>React</span><span>CSS</span><span>TypeScript</span></div>
+        <button type="button">View Portfolio</button>
+      </article>
+
+      <article class="profile-card social-card">
+        <h3 class="component-name">Social Media Profile UI</h3>
+        <div class="avatar image-avatar">LM</div>
+        <h2>Lena Moore</h2>
+        <p>Content Creator</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <button type="button">Follow</button>
+      </article>
+
+      <article class="profile-card team-card">
+        <h3 class="component-name">Team Member Card</h3>
+        <div class="team-head">
+          <div class="avatar">NK</div>
+          <div>
+            <h2>Noah Kim</h2>
+            <p>Product Lead</p>
+          </div>
+        </div>
+        <div class="team-meta">
+          <span><strong>12</strong> Projects</span>
+          <span><strong>8</strong> Members</span>
+        </div>
+        <button type="button">Message</button>
+      </article>
+
+      <article class="profile-card stats-card">
+        <h3 class="component-name">User Stats Profile</h3>
+        <div class="avatar">SP</div>
+        <h2>Sofia Patel</h2>
+        <p>Growth Analyst</p>
+        <div class="stats">
+          <span><strong>248</strong> Posts</span>
+          <span><strong>14.2k</strong> Followers</span>
+          <span><strong>682</strong> Following</span>
+        </div>
+      </article>
+
+      <article class="profile-card glass-card">
+        <h3 class="component-name">Glassmorphism Profile Layout</h3>
+        <div class="avatar">EI</div>
+        <h2>Elijah Stone</h2>
+        <p>UI Designer</p>
+        <div class="glass-row">
+          <span>4.9 Rating</span>
+          <span>96 Reviews</span>
+        </div>
+        <button type="button">Hire Me</button>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

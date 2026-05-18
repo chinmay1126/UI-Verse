@@ -13,10 +13,12 @@ const defaultBudgets = {
   maxLoadTimeMs: 3000
 };
 
-let budgets = defaultBudgets;
+let budgets = { default: defaultBudgets, components: {} };
 if (fs.existsSync(budgetsPath)) {
   try {
-    budgets = Object.assign({}, defaultBudgets, JSON.parse(fs.readFileSync(budgetsPath, 'utf8')));
+    const parsed = JSON.parse(fs.readFileSync(budgetsPath, 'utf8'));
+    budgets.default = Object.assign({}, defaultBudgets, parsed.default || parsed);
+    budgets.components = parsed.components || {};
   } catch (e) {
     console.error('Failed to parse performance-budgets.json, using defaults', e.message);
   }
@@ -96,6 +98,7 @@ async function main() {
 
   const generateBaseline = process.argv.includes('--generate-baseline') || process.argv.includes('-g');
   const observed = [];
+  const perPageObserved = {};
 
   const browser = await chromium.launch();
   const failures = [];
@@ -109,13 +112,17 @@ async function main() {
     try {
       const metrics = await inspectPage(browser, route);
       observed.push(metrics);
+      perPageObserved[rel] = metrics;
+
+      // determine budgets for this page: per-component override or default
+      const pageBudgets = budgets.components[rel] || budgets.default;
       const msgs = [];
-      if (metrics.totalRequests > budgets.maxTotalRequests) msgs.push(`requests ${metrics.totalRequests} > ${budgets.maxTotalRequests}`);
-      if (metrics.totalBytes > budgets.maxTotalBytes) msgs.push(`totalBytes ${(metrics.totalBytes/1024|0)}KB > ${(budgets.maxTotalBytes/1024|0)}KB`);
-      if (metrics.jsBytes > budgets.maxJsBytes) msgs.push(`js ${(metrics.jsBytes/1024|0)}KB > ${(budgets.maxJsBytes/1024|0)}KB`);
-      if (metrics.cssBytes > budgets.maxCssBytes) msgs.push(`css ${(metrics.cssBytes/1024|0)}KB > ${(budgets.maxCssBytes/1024|0)}KB`);
-      if (metrics.imageBytes > budgets.maxImageBytes) msgs.push(`images ${(metrics.imageBytes/1024|0)}KB > ${(budgets.maxImageBytes/1024|0)}KB`);
-      if (metrics.loadTime > budgets.maxLoadTimeMs) msgs.push(`loadTime ${metrics.loadTime}ms > ${budgets.maxLoadTimeMs}ms`);
+      if (metrics.totalRequests > pageBudgets.maxTotalRequests) msgs.push(`requests ${metrics.totalRequests} > ${pageBudgets.maxTotalRequests}`);
+      if (metrics.totalBytes > pageBudgets.maxTotalBytes) msgs.push(`totalBytes ${(metrics.totalBytes/1024|0)}KB > ${(pageBudgets.maxTotalBytes/1024|0)}KB`);
+      if (metrics.jsBytes > pageBudgets.maxJsBytes) msgs.push(`js ${(metrics.jsBytes/1024|0)}KB > ${(pageBudgets.maxJsBytes/1024|0)}KB`);
+      if (metrics.cssBytes > pageBudgets.maxCssBytes) msgs.push(`css ${(metrics.cssBytes/1024|0)}KB > ${(pageBudgets.maxCssBytes/1024|0)}KB`);
+      if (metrics.imageBytes > pageBudgets.maxImageBytes) msgs.push(`images ${(metrics.imageBytes/1024|0)}KB > ${(pageBudgets.maxImageBytes/1024|0)}KB`);
+      if (metrics.loadTime > pageBudgets.maxLoadTimeMs) msgs.push(`loadTime ${metrics.loadTime}ms > ${pageBudgets.maxLoadTimeMs}ms`);
 
       if (msgs.length) {
         failures.push({ page: rel, metrics, reasons: msgs });
@@ -130,6 +137,30 @@ async function main() {
   }
 
   await browser.close();
+
+  const generateComponents = process.argv.includes('--generate-components') || process.argv.includes('-C');
+  if (generateComponents) {
+    // compute per-page budgets and write them under 'components' key
+    const componentsBudgets = {};
+    for (const [rel, m] of Object.entries(perPageObserved)) {
+      componentsBudgets[rel] = {
+        maxTotalRequests: Math.ceil((m.totalRequests || 0) * 1.2) || budgets.default.maxTotalRequests,
+        maxTotalBytes: Math.ceil((m.totalBytes || 0) * 1.2) || budgets.default.maxTotalBytes,
+        maxJsBytes: Math.ceil((m.jsBytes || 0) * 1.2) || budgets.default.maxJsBytes,
+        maxCssBytes: Math.ceil((m.cssBytes || 0) * 1.2) || budgets.default.maxCssBytes,
+        maxImageBytes: Math.ceil((m.imageBytes || 0) * 1.2) || budgets.default.maxImageBytes,
+        maxLoadTimeMs: Math.ceil((m.loadTime || 0) * 1.2) || budgets.default.maxLoadTimeMs
+      };
+    }
+
+    const out = {
+      default: budgets.default,
+      components: componentsBudgets
+    };
+    fs.writeFileSync(budgetsPath, JSON.stringify(out, null, 2), 'utf8');
+    console.log('\nWrote per-component budgets to performance-budgets.json');
+    process.exit(0);
+  }
 
   if (generateBaseline) {
     // compute maxima and write to performance-budgets.json
@@ -150,9 +181,11 @@ async function main() {
       maxImageBytes: Math.ceil((max.imageBytes || 0) * 1.2) || budgets.maxImageBytes,
       maxLoadTimeMs: Math.ceil((max.loadTime || 0) * 1.2) || budgets.maxLoadTimeMs
     };
-    fs.writeFileSync(budgetsPath, JSON.stringify(newBudgets, null, 2), 'utf8');
+    // write merged default + empty components mapping
+    const out = { default: newBudgets, components: budgets.components || {} };
+    fs.writeFileSync(budgetsPath, JSON.stringify(out, null, 2), 'utf8');
     console.log('\nWrote performance-budgets.json with generated baseline:');
-    console.log(JSON.stringify(newBudgets, null, 2));
+    console.log(JSON.stringify(out, null, 2));
     process.exit(0);
   }
 

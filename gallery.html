@@ -4,6 +4,7 @@
 <head>
 
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
@@ -30,6 +31,7 @@
 
   <!-- UIverse Modular CSS Architecture -->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
 
 <body>
@@ -89,7 +91,7 @@
         <img
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200"
           alt="Mountain"
-        />
+         srcset="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=480&amp;auto=format&amp;fit=crop&amp;q=80 480w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1920&amp;auto=format&amp;fit=crop&amp;q=80 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
 
         <div class="gallery-overlay">
 
@@ -113,7 +115,7 @@
         <img
           src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200"
           alt="Workspace"
-        />
+         srcset="https://images.unsplash.com/photo-1494526585095-c41746248156?w=480&amp;auto=format&amp;fit=crop&amp;q=80 480w, https://images.unsplash.com/photo-1494526585095-c41746248156?w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w, https://images.unsplash.com/photo-1494526585095-c41746248156?w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w, https://images.unsplash.com/photo-1494526585095-c41746248156?w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w, https://images.unsplash.com/photo-1494526585095-c41746248156?w=1920&amp;auto=format&amp;fit=crop&amp;q=80 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
 
         <div class="gallery-overlay">
 
@@ -211,6 +213,408 @@
 
 </div>
 
+<!-- ========================= -->
+<!-- CATEGORY PILLS -->
+<!-- ========================= -->
+<section class="gallery-categories">
+
+  <div class="category-pill active">
+    <i class="fa-solid fa-layer-group"></i>
+    All Collections
+  </div>
+
+  <div class="category-pill">
+    <i class="fa-solid fa-camera-retro"></i>
+    Photography
+  </div>
+
+  <div class="category-pill">
+    <i class="fa-solid fa-palette"></i>
+    Creative Art
+  </div>
+
+  <div class="category-pill">
+    <i class="fa-solid fa-code"></i>
+    Developer
+  </div>
+
+  <div class="category-pill">
+    <i class="fa-solid fa-earth-americas"></i>
+    Travel
+  </div>
+
+  <div class="category-pill">
+    <i class="fa-solid fa-film"></i>
+    Cinematic
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- TRENDING SECTION -->
+<!-- ========================= -->
+<section class="gallery-trending">
+
+  <div class="section-heading">
+
+    <div>
+      <span class="section-subtitle">
+        Trending Now
+      </span>
+
+      <h2>
+        Popular Visual Collections
+      </h2>
+    </div>
+
+    <button class="section-btn">
+      View All
+    </button>
+
+  </div>
+
+  <div class="trending-grid">
+
+    <!-- TREND CARD -->
+    <div class="trend-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200"
+        alt="Travel"
+      />
+
+      <div class="trend-overlay">
+
+        <span>Adventure</span>
+
+        <h3>
+          Iceland Journey
+        </h3>
+
+        <div class="trend-meta">
+
+          <p>
+            2.4K Views
+          </p>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TREND CARD -->
+    <div class="trend-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200"
+        alt="Technology"
+      />
+
+      <div class="trend-overlay">
+
+        <span>Technology</span>
+
+        <h3>
+          Future Interface
+        </h3>
+
+        <div class="trend-meta">
+
+          <p>
+            4.8K Views
+          </p>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TREND CARD -->
+    <div class="trend-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200"
+        alt="Workspace"
+      />
+
+      <div class="trend-overlay">
+
+        <span>Workspace</span>
+
+        <h3>
+          Creative Office
+        </h3>
+
+        <div class="trend-meta">
+
+          <p>
+            3.2K Views
+          </p>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FEATURED BANNER -->
+<!-- ========================= -->
+<section class="gallery-banner">
+
+  <div class="banner-content">
+
+    <span class="banner-badge">
+      UIverse Premium
+    </span>
+
+    <h2>
+      Minimal Gallery Experience
+    </h2>
+
+    <p>
+      Modern animated layouts crafted for creative developers,
+      agencies, portfolios, and premium web experiences.
+    </p>
+
+    <div class="banner-actions">
+
+      <button class="banner-btn primary">
+        Explore Designs
+      </button>
+
+      <button class="banner-btn secondary">
+        Watch Demo
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- EDITOR PICKS -->
+<!-- ========================= -->
+<section class="editor-section">
+
+  <div class="section-heading">
+
+    <div>
+
+      <span class="section-subtitle">
+        Curated Collection
+      </span>
+
+      <h2>
+        Editor Picks
+      </h2>
+
+    </div>
+
+  </div>
+
+  <div class="editor-grid">
+
+    <!-- CARD -->
+    <div class="editor-card">
+
+      <div class="editor-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200"
+          alt="Team"
+        />
+
+      </div>
+
+      <div class="editor-content">
+
+        <span>
+          Collaboration
+        </span>
+
+        <h3>
+          Creative Agency
+        </h3>
+
+        <p>
+          Premium workspace environment with modern aesthetics.
+        </p>
+
+        <div class="editor-footer">
+
+          <button>
+            Explore
+          </button>
+
+          <i class="fa-regular fa-bookmark"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD -->
+    <div class="editor-card">
+
+      <div class="editor-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1200"
+          alt="Ocean"
+        />
+
+      </div>
+
+      <div class="editor-content">
+
+        <span>
+          Travel
+        </span>
+
+        <h3>
+          Tropical Escape
+        </h3>
+
+        <p>
+          Discover cinematic landscapes and immersive photography.
+        </p>
+
+        <div class="editor-footer">
+
+          <button>
+            Explore
+          </button>
+
+          <i class="fa-regular fa-bookmark"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- TESTIMONIAL STRIP -->
+<!-- ========================= -->
+<section class="gallery-testimonials">
+
+  <div class="testimonial-card">
+
+    <div class="testimonial-top">
+
+      <img
+        src="https://randomuser.me/api/portraits/women/44.jpg"
+        alt="User"
+      />
+
+      <div>
+
+        <h4>
+          Olivia Carter
+        </h4>
+
+        <span>
+          UI Designer
+        </span>
+
+      </div>
+
+    </div>
+
+    <p>
+      “The gallery layouts feel premium and incredibly modern.
+      Perfect inspiration for creative websites.”
+    </p>
+
+  </div>
+
+  <div class="testimonial-card">
+
+    <div class="testimonial-top">
+
+      <img
+        src="https://randomuser.me/api/portraits/men/32.jpg"
+        alt="User"
+      />
+
+      <div>
+
+        <h4>
+          Ethan Walker
+        </h4>
+
+        <span>
+          Frontend Developer
+        </span>
+
+      </div>
+
+    </div>
+
+    <p>
+      “Amazing responsive layouts with elegant animations and
+      professional UI styling.”
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
+<section class="gallery-newsletter">
+
+  <div class="newsletter-content">
+
+    <span>
+      Stay Updated
+    </span>
+
+    <h2>
+      Join Our Creative Community
+    </h2>
+
+    <p>
+      Get modern gallery inspirations, UI ideas, and premium assets.
+    </p>
+
+  </div>
+
+  <form class="newsletter-form">
+
+    <input
+      type="email"
+      placeholder="Enter your email"
+    />
+
+    <button type="submit">
+      Subscribe
+    </button>
+
+  </form>
+
+</section>
+
 <!-- NEW CARD -->
 <div class="gallery-card large">
 
@@ -297,7 +701,7 @@
         <img
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200"
           alt="Technology"
-        />
+         srcset="https://images.unsplash.com/photo-1518770660439-4636190af475?w=480&amp;auto=format&amp;fit=crop&amp;q=80 480w, https://images.unsplash.com/photo-1518770660439-4636190af475?w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w, https://images.unsplash.com/photo-1518770660439-4636190af475?w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w, https://images.unsplash.com/photo-1518770660439-4636190af475?w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w, https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&amp;auto=format&amp;fit=crop&amp;q=80 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
 
         <div class="gallery-overlay">
 
@@ -321,7 +725,7 @@
         <img
           src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200"
           alt="Travel"
-        />
+         srcset="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=480&amp;auto=format&amp;fit=crop&amp;q=80 480w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1920&amp;auto=format&amp;fit=crop&amp;q=80 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
 
         <div class="gallery-overlay">
 
@@ -345,7 +749,7 @@
         <img
           src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200"
           alt="Coding"
-        />
+         srcset="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=480&amp;auto=format&amp;fit=crop&amp;q=80 480w, https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w, https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w, https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w, https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&amp;auto=format&amp;fit=crop&amp;q=80 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
 
         <div class="gallery-overlay">
 
@@ -371,7 +775,7 @@
         <img
           src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1200"
           alt="City"
-        />
+         srcset="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=480&amp;auto=format&amp;fit=crop&amp;q=80 480w, https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w, https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w, https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w, https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1920&amp;auto=format&amp;fit=crop&amp;q=80 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
 
         <div class="gallery-overlay">
 
@@ -395,7 +799,7 @@
         <img
           src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
           alt="Laptop"
-        />
+         srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=480&amp;auto=format&amp;fit=crop&amp;q=80 480w, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&amp;auto=format&amp;fit=crop&amp;q=80 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
 
         <div class="gallery-overlay">
 
@@ -419,7 +823,7 @@
         <img
           src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1200"
           alt="Beach"
-        />
+         srcset="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=480&amp;auto=format&amp;fit=crop&amp;q=80 480w, https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=768&amp;auto=format&amp;fit=crop&amp;q=80 768w, https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1024&amp;auto=format&amp;fit=crop&amp;q=80 1024w, https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1440&amp;auto=format&amp;fit=crop&amp;q=80 1440w, https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1920&amp;auto=format&amp;fit=crop&amp;q=80 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
 
         <div class="gallery-overlay">
 

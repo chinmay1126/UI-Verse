@@ -52,12 +52,12 @@ const CodeTools = {
     const codeBlock = getElement(id);
     if (!codeBlock) return;
 
-    if (codeBlock.classList.contains("show")) {
+    if (codeBlock.classList.contains("open")) {
       codeBlock.style.display = "none";
-      codeBlock.classList.remove("show");
+      codeBlock.classList.remove("open");
     } else {
       codeBlock.style.display = "block";
-      codeBlock.classList.add("show");
+      codeBlock.classList.add("open");
     }
   },
 

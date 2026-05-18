@@ -4,15 +4,14 @@
 <head>
 
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-PZ71PLNCXz4RUDRR2I+n8eQOFvyDpoo/c8L7sDCgd0s=; script-src-attr 'unsafe-hashes' sha256-PZ71PLNCXz4RUDRR2I+n8eQOFvyDpoo/c8L7sDCgd0s=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   />
 
-  <title>
-    Source Components — UIverse
-  </title>
+  <title>Source Components — UIverse</title>
 
   <!-- Fonts -->
   <link
@@ -27,290 +26,428 @@
   />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="layout.css" />
   <link rel="stylesheet" href="source.css" />
 
-
-  <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
 
 <body>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="source-navbar">
+<!-- =========================================================
+   NAVBAR
+========================================================= -->
 
-    <div class="source-logo">
-      ⬡ UIverse
-    </div>
+<header class="navbar">
 
-    <nav class="source-nav">
+  <div class="logo">
 
-      <a href="index.html">
-        Home
-      </a>
+    <span class="logo-icon">
+      ⬡
+    </span>
 
-      <a href="calendar.html">
-        Calendar
-      </a>
+    <span class="logo-text">
+      UIverse
+    </span>
 
-      <a href="cards.html">
-        Cards
-      </a>
+  </div>
 
-      <a
-        href="source.html"
-        class="active"
-      >
-        Source
-      </a>
+  <nav class="nav-links">
 
-    </nav>
+    <a href="#">
+      Home
+    </a>
 
-  </header>
+    <a href="#">
+      Calendar
+    </a>
 
-  <!-- ================= HERO ================= -->
-  <section class="source-hero">
+    <a href="#">
+      Cards
+    </a>
 
-    <div class="hero-badge">
-      ⚡ Developer Resources
-    </div>
+    <a
+      href="#"
+      class="active"
+    >
+      Source
+    </a>
 
-    <h1 class="hero-title">
+  </nav>
 
-      Reusable
-      <span>
-        Source Components
+</header>
+
+<!-- =========================================================
+   HERO
+========================================================= -->
+
+<section class="hero-section">
+
+  <div class="hero-badge">
+    ⚡ Developer Resources
+  </div>
+
+  <h1>
+    Source
+    <span>Components</span>
+  </h1>
+
+  <p>
+    Copy modern HTML CSS JavaScript snippets
+    and build beautiful interfaces faster.
+  </p>
+
+  <div class="hero-actions">
+
+    <button class="primary-btn">
+      Explore Components
+    </button>
+
+    <button class="outline-btn">
+      Documentation
+    </button>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+   SEARCH + FILTER
+========================================================= -->
+
+<section class="top-controls">
+
+  <div class="search-box">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search components..."
+    />
+
+  </div>
+
+  <div class="filter-buttons">
+
+    <button class="filter-btn active">
+      All
+    </button>
+
+    <button class="filter-btn">
+      HTML
+    </button>
+
+    <button class="filter-btn">
+      CSS
+    </button>
+
+    <button class="filter-btn">
+      JavaScript
+    </button>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+   COMPONENT GRID
+========================================================= -->
+
+<section class="components-grid">
+
+  <!-- CARD -->
+  <div class="component-card">
+
+    <div class="card-top">
+
+      <div class="component-icon html">
+        <i class="fa-brands fa-html5"></i>
+      </div>
+
+      <span class="component-tag">
+        HTML
       </span>
 
-    </h1>
+    </div>
 
-    <p class="hero-desc">
+    <h3>
+      Hero Section
+    </h3>
 
-      Copy modern HTML CSS JavaScript snippets
-      and build beautiful interfaces faster.
-
+    <p>
+      Modern landing page hero block
+      with premium UI aesthetics.
     </p>
 
-  </section>
+    <div class="preview-box">
 
-  <!-- ================= MAIN ================= -->
-  <main class="source-container">
+      <div class="hero-preview">
 
-    <!-- ================= SECTION ================= -->
-    <section class="source-section">
+        <div class="preview-line big"></div>
 
-      <div class="section-header">
+        <div class="preview-line"></div>
 
-        <span class="section-tag">
-          UI Snippets
-        </span>
-
-        <h2>
-          Popular Source Components
-        </h2>
+        <div class="preview-line small"></div>
 
       </div>
 
-      <!-- ================= GRID ================= -->
-      <div class="source-grid">
+    </div>
 
-        <!-- ================= CARD ================= -->
-        <div class="source-card">
+    <div class="card-actions">
 
-          <div class="source-top">
+      <button class="view-btn">
+        View Code
+      </button>
 
-            <div class="source-icon html-icon">
-              <i class="fa-brands fa-html5"></i>
-            </div>
+      <button class="copy-btn">
+        Copy
+      </button>
 
-            <div>
+    </div>
 
-              <h3>
-                Hero Section
-              </h3>
+  </div>
 
-              <p>
-                Modern landing page hero block
-              </p>
+  <!-- CARD -->
+  <div class="component-card">
 
-            </div>
+    <div class="card-top">
 
-          </div>
+      <div class="component-icon css">
+        <i class="fa-brands fa-css3-alt"></i>
+      </div>
 
-          <pre><code>
-&lt;section class="hero"&gt;
-  &lt;h1&gt;
-    Build Faster
-  &lt;/h1&gt;
-&lt;/section&gt;
-          </code></pre>
+      <span class="component-tag">
+        CSS
+      </span>
 
-          <button class="copy-btn">
-            <i class="fa-regular fa-copy"></i>
-            Copy Code
-          </button>
+    </div>
 
-        </div>
+    <h3>
+      Glass Card
+    </h3>
 
-        <!-- ================= CARD ================= -->
-        <div class="source-card">
+    <p>
+      Modern glassmorphism component
+      with blur and glowing border.
+    </p>
 
-          <div class="source-top">
+    <div class="preview-box">
 
-            <div class="source-icon css-icon">
-              <i class="fa-brands fa-css3-alt"></i>
-            </div>
+      <div class="glass-preview"></div>
 
-            <div>
+    </div>
 
-              <h3>
-                Glass Card
-              </h3>
+    <div class="card-actions">
 
-              <p>
-                Modern glassmorphism component
-              </p>
+      <button class="view-btn">
+        View Code
+      </button>
 
-            </div>
+      <button class="copy-btn">
+        Copy
+      </button>
 
-          </div>
+    </div>
 
-          <pre><code>
-.glass-card{
-  backdrop-filter: blur(16px);
-  border-radius: 24px;
-}
-          </code></pre>
+  </div>
 
-          <button class="copy-btn">
-            <i class="fa-regular fa-copy"></i>
-            Copy Code
-          </button>
+  <!-- CARD -->
+  <div class="component-card">
 
-        </div>
+    <div class="card-top">
 
-        <!-- ================= CARD ================= -->
-        <div class="source-card">
+      <div class="component-icon js">
+        <i class="fa-brands fa-js"></i>
+      </div>
 
-          <div class="source-top">
+      <span class="component-tag">
+        JavaScript
+      </span>
 
-            <div class="source-icon js-icon">
-              <i class="fa-brands fa-js"></i>
-            </div>
+    </div>
 
-            <div>
+    <h3>
+      Dark Mode Toggle
+    </h3>
 
-              <h3>
-                Dark Mode Toggle
-              </h3>
+    <p>
+      Interactive theme switch logic
+      for modern web applications.
+    </p>
 
-              <p>
-                Interactive theme switch logic
-              </p>
+    <div class="preview-box">
 
-            </div>
+      <div class="toggle-preview">
 
-          </div>
-
-          <pre><code>
-toggle.addEventListener(
- "click",
- () => {
-  document.body.classList.toggle(
-   "dark-mode"
-  );
- });
-          </code></pre>
-
-          <button class="copy-btn">
-            <i class="fa-regular fa-copy"></i>
-            Copy Code
-          </button>
-
-        </div>
-
-        <!-- ================= CARD ================= -->
-        <div class="source-card">
-
-          <div class="source-top">
-
-            <div class="source-icon react-icon">
-              <i class="fa-brands fa-react"></i>
-            </div>
-
-            <div>
-
-              <h3>
-                React Component
-              </h3>
-
-              <p>
-                Reusable React UI block
-              </p>
-
-            </div>
-
-          </div>
-
-          <pre><code>
-function Button(){
- return(
-  &lt;button&gt;
-   Click
-  &lt;/button&gt;
- )
-}
-          </code></pre>
-
-          <button class="copy-btn">
-            <i class="fa-regular fa-copy"></i>
-            Copy Code
-          </button>
-
-        </div>
+        <div class="toggle-circle"></div>
 
       </div>
 
-    </section>
+    </div>
 
-  </main>
+    <div class="card-actions">
 
-  <!-- ================= SCRIPT ================= -->
-  <script>
+      <button class="view-btn">
+        View Code
+      </button>
 
-    // COPY BUTTONS
-    const copyButtons =
-      document.querySelectorAll(".copy-btn");
+      <button class="copy-btn">
+        Copy
+      </button>
 
-    copyButtons.forEach((btn) => {
+    </div>
 
-      btn.addEventListener("click", () => {
+  </div>
 
-        const code =
-          btn.parentElement.querySelector("code")
-          .innerText;
+  <!-- CARD -->
+  <div class="component-card">
 
-        navigator.clipboard.writeText(code);
+    <div class="card-top">
 
-        btn.innerHTML =
-          `<i class="fa-solid fa-check"></i> Copied`;
+      <div class="component-icon html">
+        <i class="fa-solid fa-bars"></i>
+      </div>
 
-        setTimeout(() => {
+      <span class="component-tag">
+        Navigation
+      </span>
 
-          btn.innerHTML =
-            `<i class="fa-regular fa-copy"></i> Copy Code`;
+    </div>
 
-        }, 2000);
+    <h3>
+      Navbar Menu
+    </h3>
 
-      });
+    <p>
+      Responsive navigation bar with
+      modern hover interactions.
+    </p>
 
-    });
+    <div class="preview-box">
 
-  </script>
+      <div class="nav-preview">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+    </div>
+
+    <div class="card-actions">
+
+      <button class="view-btn">
+        View Code
+      </button>
+
+      <button class="copy-btn">
+        Copy
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- CARD -->
+  <div class="component-card">
+
+    <div class="card-top">
+
+      <div class="component-icon css">
+        <i class="fa-solid fa-layer-group"></i>
+      </div>
+
+      <span class="component-tag">
+        Layout
+      </span>
+
+    </div>
+
+    <h3>
+      Bento Grid
+    </h3>
+
+    <p>
+      Responsive modern bento style
+      grid layout system.
+    </p>
+
+    <div class="preview-box">
+
+      <div class="bento-preview">
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+      </div>
+
+    </div>
+
+    <div class="card-actions">
+
+      <button class="view-btn">
+        View Code
+      </button>
+
+      <button class="copy-btn">
+        Copy
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- CARD -->
+  <div class="component-card">
+
+    <div class="card-top">
+
+      <div class="component-icon js">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+
+      <span class="component-tag">
+        Animation
+      </span>
+
+    </div>
+
+    <h3>
+      Loading Animation
+    </h3>
+
+    <p>
+      Smooth animated loading spinner
+      component using pure CSS.
+    </p>
+
+    <div class="preview-box">
+
+      <div class="loader-preview"></div>
+
+    </div>
+
+    <div class="card-actions">
+
+      <button class="view-btn">
+        View Code
+      </button>
+
+      <button class="copy-btn">
+        Copy
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script src="source.js"></script>
 
 </body>
-
 </html>
-

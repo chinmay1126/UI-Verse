@@ -86,103 +86,65 @@
     }
   };
 
-  const VARIANT_PRESETS = {
+  const COMPONENT_REGISTRY = {
     button: {
-      solid: (accent) => ({
-        backgroundColor: accent,
-        border: '1px solid transparent',
-        color: '#ffffff',
-        boxShadow: '0 12px 28px ' + accent + '33'
-      }),
-      outline: (accent) => ({
-        backgroundColor: 'transparent',
-        border: '1px solid ' + accent,
-        color: accent,
-        boxShadow: 'none'
-      }),
-      ghost: (accent) => ({
-        backgroundColor: 'transparent',
-        border: '1px solid transparent',
-        color: accent,
-        boxShadow: 'none'
-      }),
-      gradient: (accent) => ({
-        backgroundImage: 'linear-gradient(135deg, ' + accent + ', #ffb36b)',
-        border: '1px solid transparent',
-        color: '#ffffff',
-        boxShadow: '0 14px 28px ' + accent + '40'
-      })
+      name: 'Button',
+      controls: ['size', 'radius', 'padding', 'fontSize', 'background', 'textColor', 'shadow'],
+      defaults: { size: 160, radius: 10, padding: 12, fontSize: 14, background: '#eb6835', textColor: '#ffffff', shadow: 12 },
+      selector: 'button, .btn, [class*="btn"]'
     },
     card: {
-      elevated: (accent) => ({
-        backgroundColor: '#ffffff',
-        border: '1px solid rgba(17, 24, 39, 0.06)',
-        color: '#111827',
-        boxShadow: '0 18px 36px rgba(17, 24, 39, 0.12), 0 0 0 1px ' + accent + '18'
-      }),
-      flat: () => ({
-        backgroundColor: '#ffffff',
-        border: '1px solid rgba(17, 24, 39, 0.06)',
-        color: '#111827',
-        boxShadow: 'none'
-      }),
-      outline: (accent) => ({
-        backgroundColor: '#ffffff',
-        border: '1px solid ' + accent + '55',
-        color: '#111827',
-        boxShadow: 'none'
-      }),
-      glass: (accent) => ({
-        backgroundColor: 'rgba(255, 255, 255, 0.72)',
-        border: '1px solid rgba(255, 255, 255, 0.45)',
-        color: '#111827',
-        boxShadow: '0 20px 38px rgba(17, 24, 39, 0.12), 0 0 0 1px ' + accent + '22',
-        backdropFilter: 'blur(16px)'
-      })
+      name: 'Card',
+      controls: ['size', 'radius', 'padding', 'fontSize', 'background', 'textColor', 'shadow'],
+      defaults: { size: 260, radius: 16, padding: 20, fontSize: 14, background: '#ffffff', textColor: '#111111', shadow: 16 },
+      selector: '.card, .component-card, [class*="card"]'
     },
     input: {
-      outline: (accent) => ({
-        backgroundColor: '#ffffff',
-        border: '1px solid ' + accent,
-        color: '#111827',
-        boxShadow: '0 0 0 4px ' + accent + '1f'
-      }),
-      filled: (accent) => ({
-        backgroundColor: '#f8fafc',
-        border: '1px solid rgba(17, 24, 39, 0.08)',
-        color: '#111827',
-        boxShadow: '0 0 0 1px ' + accent + '14'
-      }),
-      soft: (accent) => ({
-        backgroundColor: accent + '10',
-        border: '1px solid ' + accent + '26',
-        color: '#111827',
-        boxShadow: '0 0 0 4px ' + accent + '14'
-      }),
-      glass: (accent) => ({
-        backgroundColor: 'rgba(255, 255, 255, 0.72)',
-        border: '1px solid rgba(255, 255, 255, 0.5)',
-        color: '#111827',
-        boxShadow: '0 0 0 4px ' + accent + '12',
-        backdropFilter: 'blur(12px)'
-      })
+      name: 'Input',
+      controls: ['size', 'radius', 'padding', 'fontSize', 'background', 'textColor', 'shadow'],
+      defaults: { size: 260, radius: 10, padding: 10, fontSize: 14, background: '#ffffff', textColor: '#111111', shadow: 8 },
+      selector: 'input, textarea, select, [class*="input"]'
+    },
+    navbar: {
+      name: 'Navbar',
+      controls: ['size', 'radius', 'padding', 'fontSize'],
+      defaults: { size: 100, radius: 0, padding: 16, fontSize: 14 },
+      selector: 'nav, .navbar, [class*="nav"]'
+    },
+    badge: {
+      name: 'Badge',
+      controls: ['size', 'radius', 'padding', 'fontSize', 'background'],
+      defaults: { size: 80, radius: 12, padding: 4, fontSize: 12, background: '#eb6835' },
+      selector: '.badge, [class*="badge"]'
     }
   };
 
-  const DOM = createDrawerIfNeeded();
-  if (!DOM) return;
+  const defaultsByType = {};
+  Object.entries(COMPONENT_REGISTRY).forEach(([key, val]) => {
+    defaultsByType[key] = val.defaults;
+  });
 
-  const drawer = DOM.drawer;
-  const preview = DOM.preview;
-  const code = DOM.code;
-  const title = DOM.title;
-  const resetBtn = DOM.resetBtn;
-  const closeBtn = DOM.closeBtn;
-  const backdrop = DOM.backdrop;
-  const controlsHost = DOM.controlsHost;
-  const headerActions = DOM.headerActions;
+  function registerComponentType(name, config) {
+    COMPONENT_REGISTRY[name] = config;
+    defaultsByType[name] = config.defaults;
+    console.log(`[Playground] Registered component type: ${name}`);
+  }
 
-  let activeType = document.body.dataset.playgroundType || 'button';
+  function isSupported(type) {
+    return COMPONENT_REGISTRY.hasOwnProperty(type);
+  }
+
+  function getComponentInfo(type) {
+    return COMPONENT_REGISTRY[type] || null;
+  }
+
+  function showUnsupportedFeedback(type) {
+    const msg = `Playground not supported for "${type}" components. Use button, card, input, navbar, or badge.`;
+    if (typeof showToastSafe === 'function') showToastSafe(msg);
+    console.warn('[Playground]', msg);
+  }
+
+  let activeType = document.body.dataset.playgroundType || "button";
   let activeTarget = null;
   let activeCard = null;
   let activeSchema = null;
@@ -295,15 +257,25 @@
   }
 
   function openDrawer() {
-    drawer.classList.add('open');
-    backdrop.classList.add('active');
-    drawer.setAttribute('aria-hidden', 'false');
+    drawer.classList.add("open");
+    backdrop.classList.add("active");
+    drawer.setAttribute("aria-hidden", "false");
+    drawer.setAttribute("role", "dialog");
+    drawer.setAttribute("aria-modal", "true");
+    if (window.FocusTrap) {
+      window.FocusTrap.activate(drawer);
+    }
   }
 
   function closeDrawer() {
-    drawer.classList.remove('open');
-    backdrop.classList.remove('active');
-    drawer.setAttribute('aria-hidden', 'true');
+    drawer.classList.remove("open");
+    backdrop.classList.remove("active");
+    drawer.setAttribute("aria-hidden", "true");
+    drawer.removeAttribute("role");
+    drawer.removeAttribute("aria-modal");
+    if (window.FocusTrap) {
+      window.FocusTrap.deactivate();
+    }
   }
 
   function getControlValue(control) {
@@ -524,85 +496,33 @@
 
     clearTimeout(debounceTimer);
 
-    const commit = () => {
-      const values = getCurrentValues(schema);
-      resetInlineStyle(activeTarget);
-      activeTarget.dataset.playgroundVariant = values.variant || '';
-
-      const styles = buildBaseStyles(schema, values);
-      setInlineStyle(activeTarget, styles);
-      code.textContent = buildConfiguredCode(schema);
-    };
-
-    if (immediate) {
-      commit();
-      return;
-    }
-
-    debounceTimer = window.setTimeout(commit, 250);
-  }
-
-  function renderControls(schema, initialValues) {
-    controlsHost.innerHTML = '';
-
-    schema.controls.forEach((control) => {
-      const group = document.createElement('div');
-      group.className = 'playground-control-group';
-
-      const head = document.createElement('div');
-      head.className = 'playground-control-head';
-
-      const label = document.createElement('label');
-      label.setAttribute('for', 'playground-control-' + control.key);
-      label.textContent = control.label || control.key;
-
-      const value = document.createElement('span');
-      value.className = 'playground-value';
-      value.dataset.value = control.key;
-
-      head.appendChild(label);
-      head.appendChild(value);
-      group.appendChild(head);
-
-      let input;
-      if (control.type === 'select') {
-        input = document.createElement('select');
-        (control.options || []).forEach((option) => {
-          const optionEl = document.createElement('option');
-          optionEl.value = option.value;
-          optionEl.textContent = option.label;
-          input.appendChild(optionEl);
-        });
-      } else {
-        input = document.createElement('input');
-        input.type = control.type || 'text';
-        if (control.min !== undefined) input.min = String(control.min);
-        if (control.max !== undefined) input.max = String(control.max);
-        if (control.step !== undefined) input.step = String(control.step);
-      }
-
-      input.id = 'playground-control-' + control.key;
-      input.dataset.control = control.key;
-      input.value = String(initialValues[control.key] ?? getDefaultValue(control));
-
-      if (control.type === 'color') {
-        input.className = 'playground-color-input';
-      }
-
-      input.addEventListener(control.type === 'select' ? 'change' : 'input', () => {
-        setValueLabel(control.key, formatControlValue(control, getControlValue(input)));
-        applyTarget(schema, false);
-      });
-
-      group.appendChild(input);
-      controlsHost.appendChild(group);
-      setValueLabel(control.key, formatControlValue(control, getControlValue(input)));
+    // Generate CSS class-based output
+    const className = 'uiv-component';
+    activeTarget.classList.add(className);
+    
+    // Remove inline styles and use CSS classes
+    Object.keys(styles).forEach((prop) => {
+      activeTarget.style[prop] = '';
     });
+
+    const cssOutput = generateCSS(className, styles, activeType);
+    activeTarget.setAttribute('class', activeTarget.className.replace('uiv-component', '').trim());
+    
+    const htmlOutput = `<div class="${className}">\n  ${activeTarget.outerHTML}\n</div>\n\n<style>\n${cssOutput}</style>`;
+    code.textContent = htmlOutput;
   }
 
-  function setTitle(schema, card) {
-    const cardTitle = card?.querySelector('.card-label, h3, h2, h4')?.textContent || card?.querySelector('h3, h2, h4')?.textContent || schema.title || 'Component';
-    if (title) title.textContent = cardTitle;
+  function generateCSS(className, styles, type) {
+    const rules = [];
+    
+    rules.push(`.${className} {`);
+    Object.keys(styles).forEach((prop) => {
+      const cssKey = prop.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase());
+      rules.push(`  ${cssKey}: ${styles[prop]};`);
+    });
+    rules.push('}');
+    
+    return rules.join('\n');
   }
 
   function clonePreviewElement(card) {
@@ -625,26 +545,23 @@
   function openFromCard(card) {
     if (!card) return;
 
-    const type = card.dataset.playgroundType || document.body.dataset.playgroundType || 'button';
-    const schema = getSchema(type, card);
-    const previewEl = clonePreviewElement(card);
-    if (!previewEl) return;
+    const type = card.dataset.playgroundType || document.body.dataset.playgroundType;
+    
+    // Check if component type is supported
+    if (type && !isSupported(type)) {
+      showUnsupportedFeedback(type);
+      return;
+    }
 
-    activeType = type;
-    activeCard = card;
-    activeSchema = schema;
+    const fallbackType = type || 'button';
+    const previewEl = findPreviewElement(card);
+    if (!previewEl) {
+      console.warn('[Playground] No preview element found in card');
+      return;
+    }
 
-    preview.innerHTML = '';
-    previewEl.classList.add('playground-target');
-    previewEl.dataset.playgroundVariant = getDefaultValue(schema.controls.find((control) => control.key === 'variant') || { value: 'default' });
-    activeTargetBaseStyle = previewEl.getAttribute('style') || '';
-    activeTarget = previewEl;
-    preview.appendChild(previewEl);
-
-    const initialValues = {};
-    schema.controls.forEach((control) => {
-      initialValues[control.key] = getDefaultValue(control);
-    });
+    activeType = fallbackType;
+    preview.innerHTML = "";
 
     renderControls(schema, initialValues);
     setTitle(schema, card);
@@ -663,26 +580,41 @@
       return Promise.resolve();
     }
 
-    return navigator.clipboard.writeText(text);
+    const componentInfo = getComponentInfo(fallbackType);
+    const defaults = defaultsByType[fallbackType] || defaultsByType.button;
+    setControls(defaults);
+    updateControlsVisibility(fallbackType);
+    applyStyles();
+    openDrawer();
+
+    const cardTitle = card.querySelector("h3")?.textContent || (componentInfo?.name || "Component");
+    if (title) title.textContent = cardTitle;
   }
 
-  function getToastFn() {
-    if (typeof showToastSafe === 'function') return showToastSafe;
-    if (typeof showToast === 'function') return showToast;
-    return null;
-  }
-
-  async function copyConfiguredCode() {
+  // Export / copy button
+  async function copyPlaygroundCode() {
     try {
-      if (!activeSchema || !activeTarget) return;
-      const text = buildConfiguredCode(activeSchema);
-      await copyText(text);
-      const toast = getToastFn();
-      if (toast) toast('Configured HTML/CSS copied ✓');
-    } catch (error) {
-      console.error('copyConfiguredCode', error);
-      const toast = getToastFn();
-      if (toast) toast('Failed to copy');
+      const text = code.textContent || '';
+      
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        const success = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (!success) throw new Error('Fallback copy failed');
+      }
+      
+      if (typeof showToastSafe === 'function') showToastSafe('Playground code copied ✓');
+    } catch (e) {
+      console.error('copyPlaygroundCode', e);
+      if (typeof showToastSafe === 'function') showToastSafe('Failed to copy');
     }
   }
 
@@ -706,23 +638,8 @@
     }
   }
 
-  function injectPlaygroundButtons() {
-    document.querySelectorAll('.component-card .actions').forEach((actions) => {
-      if (actions.querySelector('.playground-open-btn')) return;
-
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'playground-open-btn';
-      button.textContent = 'Playground';
-      button.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        openFromCard(actions.closest('.component-card'));
-      });
-
-      actions.appendChild(button);
-    });
-  }
+  // Initial button injection (now also handled by MutationObserver)
+  document.querySelectorAll('.component-card').forEach(injectButtonToCard);
 
   function bindDrawerControls() {
     resetBtn?.addEventListener('click', () => {
@@ -749,13 +666,51 @@
 
   function init() {
     injectPlaygroundButtons();
-    injectCopyButton();
-    bindDrawerControls();
+    observeDynamicComponents();
     closeDrawer();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+  function observeDynamicComponents() {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            if (node.classList?.contains('component-card')) {
+              injectButtonToCard(node);
+            } else if (node.querySelector) {
+              node.querySelectorAll('.component-card').forEach(injectButtonToCard);
+            }
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+    console.log('[Playground] MutationObserver active for dynamic components');
+  }
+
+  function injectButtonToCard(card) {
+    const actions = card.querySelector('.actions');
+    if (!actions || actions.querySelector('.playground-open-btn')) return;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'playground-open-btn';
+    btn.textContent = 'Playground';
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openFromCard(card);
+    });
+    actions.appendChild(btn);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }

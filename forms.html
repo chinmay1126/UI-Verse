@@ -11,48 +11,18 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="forms.css">
-  <link rel="stylesheet" href="command-palette.css">
-  <link rel="stylesheet" href="css/url-state.css">
-  <!-- UIverse Modular Scripts - Load in dependency order -->
-  <!-- UIverse Registry (must load first) -->
-  <script src="js/registry.js"></script>
-  <!-- Core Modules -->
-  <script src="js/core/utils.js"></script>
-  <script src="js/core/security.js"></script>
-  <script src="js/core/components-registry.js"></script>
-  <script src="js/core/sanitize.js"></script>
-  <!-- Feature Modules -->
-  <script src="js/features/toast.js"></script>
-  <script src="js/features/popup.js"></script>
-  <script src="js/features/code-tools.js"></script>
-  <script src="js/features/sidebar.js"></script>
-  <script src="js/features/search.js"></script>
-  <script src="js/features/theme.js"></script>
-  <script src="js/features/scroll.js"></script>
-  <script src="js/features/alerts.js"></script>
-  <script src="js/features/sandbox.js"></script>
-  <script src="js/features/accessibility.js"></script>
-  <script src="js/features/command-palette.js"></script>
-  <script src="js/features/url-state.js"></script>
-  <script src="js/features/url-state-integration.js"></script>
-  <script src="js/features/profile-editor.js"></script>
-  <script src="js/features/component-gallery.js"></script>
-  <!-- Bootstrap (initializes all modules) -->
-  <script src="js/bootstrap.js"></script>
-  <!-- Backward Compatibility Layer -->
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
 
 <body>
 
-<!-- ================= SIDEBAR ================= -->
+<!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
     <span class="brand-icon">⬡</span>
-    <span class="brand-text">UIverse</span>
+    <span class="brand-text">UIverse <span style="font-size: 9px; background: linear-gradient(135deg, #eb6835, #7b61ff); color: white; padding: 1px 6px; border-radius: 10px; font-weight: 800; margin-left: 4px; letter-spacing: 0.5px; vertical-align: middle; box-shadow: 0 0 8px rgba(235,104,53,0.3);">V2</span></span>
   </div>
-
-  <nav class="sidebar-nav">
+          <nav class="sidebar-nav">
     <ul>
       <li>
         <a href="index.html">
@@ -66,7 +36,19 @@
           <span>Buttons</span>
         </a>
       </li>
+            <li>
+        <a href="dropdown-components.html">
+          <i class="fa-solid fa-caret-down"></i>
+          <span>Dropdowns</span>
+        </a>
+      </li>
       <li>
+        <a href="profile-components.html">
+          <i class="fa-solid fa-user"></i>
+          <span>Profiles</span>
+        </a>
+      </li>
+<li>
         <a href="navbar.html">
           <i class="fa-solid fa-bars"></i>
           <span>Navbar</span>
@@ -79,15 +61,15 @@
         </a>
       </li>
       <li>
-        <a href="inputs.html">
-          <i class="fa-solid fa-keyboard"></i>
-          <span>Inputs</span>
+        <a href="flipcards.html">
+          <i class="fa-solid fa-clone"></i>
+          <span>3D Cards</span>
         </a>
       </li>
       <li>
-        <a href="contact.html">
-          <i class="fa-regular fa-user"></i>
-          <span>Contact Us</span>
+        <a href="inputs.html">
+          <i class="fa-solid fa-keyboard"></i>
+          <span>Inputs</span>
         </a>
       </li>
       <li class="active">
@@ -103,54 +85,253 @@
         </a>
       </li>
       <li>
+        <a href="blog.html">
+          <i class="fa-solid fa-blog"></i>
+          <span>Blog</span>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>Articles</span>
+        </a>
+      </li>
+      <li>
+        <a href="alerts.html">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Alerts</span>
+        </a>
+      </li>
+      <li>
+        <a href="color.html">
+          <i class="fa-solid fa-palette"></i>
+          <span>Colors</span>
+        </a>
+      </li>
+      <li>
+        <a href="charts.html">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Charts</span>
+        </a>
+      </li>
+      <li>
+        <a href="dashboard.html">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="div.html">
+          <i class="fa-solid fa-square"></i>
+          <span>DIV</span>
+        </a>
+      </li>
+      <li>
+        <a href="widgets.html">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Widgets</span>
+        </a>
+      </li>
+      <li>
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search Bars</span>
+        </a>
+      </li>
+      <li>
+        <a href="hover.html">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Hover Effects</span>
+        </a>
+      </li>
+      <li>
+        <a href="error.html">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Error Pages</span>
+        </a>
+      </li>
+      <li>
+        <a href="ecommerce.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>E-commerce</span>
+        </a>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="fa-solid fa-file-arrow-up"></i>
+          <span>Drag & Drop</span>
+        </a>
+      </li>
+      <li>
+        <a href="hero.html">
+          <i class="fa-solid fa-star"></i>
+          <span>Hero Sections</span>
+        </a>
+      </li>
+      <li>
         <a href="loaders.html">
-          <i class="fa-solid fa-award"></i>
+          <i class="fa-solid fa-spinner"></i>
           <span>Loaders</span>
         </a>
       </li>
       <li>
+        <a href="timeline.html">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Timeline</span>
+        </a>
+      </li>
+      <li>
+        <a href="map.html">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Maps</span>
+        </a>
+      </li>
+      <li>
+        <a href="menu.html">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <span>Menu</span>
+        </a>
+      </li>
+      <li>
+        <a href="pricing.html">
+          <i class="fa-solid fa-tags"></i>
+          <span>Pricing</span>
+        </a>
+      </li>
+      <li>
+        <a href="section.html">
+          <i class="fa-solid fa-rectangle-list"></i>
+          <span>Section</span>
+        </a>
+      </li>
+      <li>
+        <a href="span.html">
+          <i class="fa-solid fa-code"></i>
+          <span>Span</span>
+        </a>
+      </li>
+      <li>
+        <a href="table.html">
+          <i class="fa-solid fa-table"></i>
+          <span>Table</span>
+        </a>
+      </li>
+      <li>
+        <a href="tabs.html">
+          <i class="fa-solid fa-table-columns"></i>
+          <span>Tabs</span>
+        </a>
+      </li>
+      <li>
+        <a href="terms.html">
+          <i class="fa-solid fa-file-contract"></i>
+          <span>Terms</span>
+        </a>
+      </li>
+      <li>
+        <a href="testimonials.html">
+          <i class="fa-solid fa-comments"></i>
+          <span>Testimonials</span>
+        </a>
+      </li>
+      <li>
+        <a href="toggles.html">
+          <i class="fa-solid fa-toggle-on"></i>
+          <span>Toggle</span>
+        </a>
+      </li>
+      <li>
+        <a href="radiobutton.html">
+          <i class="fa-solid fa-circle-dot"></i>
+          <span>Radio Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="checkbox.html">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Checkboxes</span>
+        </a>
+      </li>
+      <li>
+        <a href="notifications-premium.html">
+          <i class="fa-solid fa-bell"></i>
+          <span>Notifications V2</span>
+        </a>
+      </li>
+      <li>
+        <a href="step-indicators.html">
+          <i class="fa-solid fa-list-check"></i>
+          <span>Steppers</span>
+        </a>
+      </li>
+      <li>
+        <a href="progress-premium.html">
+          <i class="fa-solid fa-bars-progress"></i>
+          <span>Progress V2</span>
+        </a>
+      </li>
+      <li>
+        <a href="ratings-premium.html">
+          <i class="fa-solid fa-star"></i>
+          <span>Ratings V2</span>
+        </a>
+      </li>
+      <li>
+        <a href="filters-premium.html">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Filters V2</span>
+        </a>
+      </li>
+<li>
         <a href="about.html">
-          <i class="fa-solid fa-award"></i>
-          <span>About us</span>
+          <i class="fa-solid fa-circle-info"></i>
+          <span>About</span>
+        </a>
+      </li>
+      <li>
+        <a href="documentation.html">
+          <i class="fa-solid fa-book"></i>
+          <span>Documentation</span>
+        </a>
+      </li>
+      <li>
+        <a href="faq.html">
+          <i class="fa-solid fa-circle-question"></i>
+          <span>Faq</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fa-regular fa-envelope"></i>
+          <span>Contact Us</span>
         </a>
       </li>
     </ul>
   </nav>
-
   <div class="sidebar-footer">
-    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
   </div>
 </aside>
 
-<!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+  <button class="menu-toggle" onclick="toggleSidebar()">
     <i class="fa-solid fa-bars"></i>
   </button>
-
   <div class="logo">UIverse</div>
-
   <div class="search-bar">
-    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+    <input type="text" placeholder="Search components..." aria-label="Search components" />
     <kbd class="search-kbd">⌘K</kbd>
   </div>
-
   <div class="nav-right">
-    <button class="nav-btn outline-nav-btn">
-      <i class="fa-solid fa-plus"></i> Add Component
-    </button>
-    <button class="nav-btn primary-nav-btn">
-      <i class="fa-solid fa-bookmark"></i> My Collection
-    </button>
-    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
-      <i class="fa-solid fa-moon"></i>
-    </button>
+    <button class="nav-btn outline-nav-btn" aria-label="Add new component"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn" aria-label="View my collection"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
   </div>
 </header>
 
@@ -167,7 +348,7 @@
     <h1>Forms UI</h1>
     <p>Reusable form components with clean inputs, selects, radios, checkboxes and more.</p>
     <div class="page-meta">
-      <span class="meta-badge"><i class="fa-solid fa-layer-group"></i> 4 Forms</span>
+      <span class="meta-badge"><i class="fa-solid fa-layer-group"></i> 9 Forms</span>
       <span class="meta-badge"><i class="fa-solid fa-code"></i> Pure HTML & CSS</span>
     </div>
   </div>
@@ -201,8 +382,8 @@
         </div>
       </div>
       <div class="actions">
-        <button class="action-btn view-btn" onclick="toggleCode('fc1', this)"><i class="fa-solid fa-code"></i> View Code</button>
-        <button class="action-btn copy-btn" onclick="copyCode('fc1', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+        <button class="action-btn view-btn" onclick="toggleCode('fc1', this)" aria-label="View code for Login Form"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc1', this)" aria-label="Copy code for Login Form"><i class="fa-solid fa-copy"></i> Copy</button>
       </div>
       <pre id="fc1" class="code-block"><code>&lt;div class="form-card"&gt;
   &lt;h3&gt;Welcome back&lt;/h3&gt;
@@ -360,59 +541,247 @@
 &lt;button&gt;Submit&lt;/button&gt;</code></pre>
     </div>
 
+    <!-- Multi-Step Registration Form -->
+    <div class="form-component-card" data-name="multi-step registration stepper form">
+      <div class="card-top">
+        <span class="card-label">Multi-Step Form</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card multi-step-card">
+          <div class="step-progress">
+            <div class="step-num active">1</div>
+            <div class="step-line"></div>
+            <div class="step-num">2</div>
+            <div class="step-line"></div>
+            <div class="step-num">3</div>
+          </div>
+          <h3>Account Setup</h3>
+          <p class="form-sub">Step 1 of 3: Personal Details</p>
+          <div class="form-field">
+            <label>Username</label>
+            <input type="text" placeholder="saiteja" />
+          </div>
+          <div class="form-field">
+            <label>Professional Title</label>
+            <input type="text" placeholder="UI/UX Engineer" />
+          </div>
+          <div class="multi-step-actions">
+            <button class="form-btn outline-btn" disabled>Back</button>
+            <button class="form-btn">Next Step</button>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc5', this)" aria-label="View code for Multi-Step Form"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc5', this)" aria-label="Copy code for Multi-Step Form"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc5" class="code-block"><code>&lt;div class="multi-step-card"&gt;
+  &lt;div class="step-progress"&gt;
+    &lt;div class="step-num active"&gt;1&lt;/div&gt;
+    &lt;div class="step-line"&gt;&lt;/div&gt;
+    &lt;div class="step-num"&gt;2&lt;/div&gt;
+    &lt;div class="step-line"&gt;&lt;/div&gt;
+    &lt;div class="step-num"&gt;3&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Account Setup&lt;/h3&gt;
+  &lt;input type="text" placeholder="Username"&gt;
+  &lt;input type="text" placeholder="Professional Title"&gt;
+  &lt;button&gt;Next Step&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- Floating Label Form -->
+    <div class="form-component-card" data-name="floating label input form animation">
+      <div class="card-top">
+        <span class="card-label">Floating Label</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card floating-label-card">
+          <h3>Welcome Back</h3>
+          <p class="form-sub">Sign in with floating inputs</p>
+          
+          <div class="floating-group">
+            <input type="email" class="floating-input" placeholder=" " required />
+            <label class="floating-label">Email Address</label>
+          </div>
+          
+          <div class="floating-group">
+            <input type="password" class="floating-input" placeholder=" " required />
+            <label class="floating-label">Password</label>
+          </div>
+          
+          <button class="form-btn">Continue</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc6', this)" aria-label="View code for Floating Label Form"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc6', this)" aria-label="Copy code for Floating Label Form"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc6" class="code-block"><code>&lt;div class="floating-group"&gt;
+  &lt;input type="email" class="floating-input" placeholder=" " required&gt;
+  &lt;label class="floating-label"&gt;Email Address&lt;/label&gt;
+&lt;/div&gt;
+
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  top: -8px;
+  font-size: 12px;
+  color: #6c5ce7;
+}</code></pre>
+    </div>
+
+    <!-- Glassmorphism Contact Form -->
+    <div class="form-component-card" data-name="glassmorphism contact form overlay translucent">
+      <div class="card-top">
+        <span class="card-label">Glassmorphism</span>
+        <span class="card-tag tag-premium">Premium</span>
+      </div>
+      <div class="form-preview dark-preview">
+        <div class="form-card glass-form-card">
+          <h3>Get in Touch</h3>
+          <p class="form-sub">Frosted glass contact form</p>
+          <div class="form-field">
+            <input type="text" class="glass-input" placeholder="Name" />
+          </div>
+          <div class="form-field">
+            <input type="email" class="glass-input" placeholder="Email" />
+          </div>
+          <div class="form-field">
+            <textarea class="glass-input" placeholder="Your Message" rows="3"></textarea>
+          </div>
+          <button class="form-btn glass-btn">Send Message</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc7', this)" aria-label="View code for Glassmorphism Contact Form"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc7', this)" aria-label="Copy code for Glassmorphism Contact Form"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc7" class="code-block"><code>&lt;div class="glass-form-card"&gt;
+  &lt;input type="text" class="glass-input" placeholder="Name"&gt;
+  &lt;input type="email" class="glass-input" placeholder="Email"&gt;
+  &lt;textarea class="glass-input" placeholder="Message"&gt;&lt;/textarea&gt;
+  &lt;button class="glass-btn"&gt;Send Message&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- Login & Signup Split Form -->
+    <div class="form-component-card split-form-card-wrapper" data-name="split form welcome signup side layout">
+      <div class="card-top">
+        <span class="card-label">Split Form Layout</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="form-preview">
+        <div class="split-form-card">
+          <div class="split-left">
+            <h4>Join Us!</h4>
+            <p>Access modern UI tools & community components.</p>
+          </div>
+          <div class="split-right">
+            <h3>Signup</h3>
+            <div class="form-field">
+              <input type="email" placeholder="Email Address" />
+            </div>
+            <div class="form-field">
+              <input type="password" placeholder="Password" />
+            </div>
+            <button class="form-btn split-btn">Get Started</button>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc8', this)" aria-label="View code for Split Form Layout"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc8', this)" aria-label="Copy code for Split Form Layout"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc8" class="code-block"><code>&lt;div class="split-form-card"&gt;
+  &lt;div class="split-left"&gt;
+    &lt;h4&gt;Welcome!&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="split-right"&gt;
+    &lt;input type="email" placeholder="Email"&gt;
+    &lt;button&gt;Signup&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- Validation Feedback Form -->
+    <div class="form-component-card" data-name="validation feedback form validation success error">
+      <div class="card-top">
+        <span class="card-label">Validation Form</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card validation-card">
+          <h3>Validation Check</h3>
+          <p class="form-sub">Live visual feedback on input</p>
+          <div class="form-field success-field">
+            <label>Valid Username</label>
+            <div class="input-icon-wrapper">
+              <input type="text" value="saiteja" class="valid-input" readonly />
+              <i class="fa-solid fa-circle-check valid-icon"></i>
+            </div>
+            <span class="feedback-msg success-msg">Username is available!</span>
+          </div>
+          <div class="form-field error-field">
+            <label>Invalid Email</label>
+            <div class="input-icon-wrapper">
+              <input type="email" value="saiteja-uiverse.com" class="invalid-input" readonly />
+              <i class="fa-solid fa-circle-exclamation invalid-icon"></i>
+            </div>
+            <span class="feedback-msg error-msg">Please enter a valid email address.</span>
+          </div>
+          <button class="form-btn">Validate Now</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc9', this)" aria-label="View code for Validation Feedback Form"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc9', this)" aria-label="Copy code for Validation Feedback Form"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc9" class="code-block"><code>&lt;div class="form-field success-field"&gt;
+  &lt;input type="text" class="valid-input"&gt;
+  &lt;i class="fa-solid fa-circle-check valid-icon"&gt;&lt;/i&gt;
+  &lt;span class="success-msg"&gt;Valid!&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
   </div><!-- /forms-grid -->
 
 </main>
 
 <!-- Scroll to Top -->
-<button id="scrollTopBtn" onclick="scrollToTop()">
-  <i class="fa-solid fa-chevron-up"></i>
+<button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">
+  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
 </button>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
-
     <div class="footer-col brand">
       <h2 class="footer-logo">⬡ UIverse</h2>
       <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
       <div class="socials">
-        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" title="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
-
     <div class="footer-col">
       <h3>Explore</h3>
       <ul>
         <li><a href="button.html">Buttons</a></li>
         <li><a href="navbar.html">Navbars</a></li>
         <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
         <li><a href="forms.html">Forms</a></li>
       </ul>
     </div>
-
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">Documentation</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">GitHub Repo</a></li>
-        <li><a href="#">Community</a></li>
-      </ul>
-    </div>
-
     <div class="footer-col">
       <h3>Legal</h3>
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
       </ul>
     </div>
-
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
@@ -421,9 +790,7 @@
         <button type="button">Subscribe</button>
       </div>
     </div>
-
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
@@ -484,37 +851,5 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.form-component-card').forEach(el => observer.observe(el));
 </script>
-
-<!-- ================= COMMAND PALETTE ================= -->
-<div id="commandPaletteOverlay" class="command-palette-overlay">
-  <div class="command-palette-container">
-    <div class="command-palette-input-wrapper">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input 
-        type="text" 
-        id="commandPaletteInput" 
-        class="command-palette-input" 
-        placeholder="Search components... (Cmd+K)"
-        autocomplete="off"
-      />
-    </div>
-    <ul id="commandPaletteResults" class="command-palette-results"></ul>
-    <div class="command-palette-footer">
-      <div class="command-palette-footer-item">
-        <span class="command-palette-footer-kbd">↑↓</span>
-        <span>Navigate</span>
-      </div>
-      <div class="command-palette-footer-item">
-        <span class="command-palette-footer-kbd">⏎</span>
-        <span>Select</span>
-      </div>
-      <div class="command-palette-footer-item">
-        <span class="command-palette-footer-kbd">Esc</span>
-        <span>Close</span>
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>

@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-CZaDuwMSsspb3e3YDd5z3dU3/oM7DpI4HyRFD7B/dq0= sha256-FPas+NcgiiCQpxq0+EbI+38ZUneR9D2pjxZTBP1fGFU= sha256-bzN2eji/VGXAUUSKM8t2GCZ+KIPlwZpiCCePraiB4L0= sha256-d5+vm2HM0YPHkmt65fXjkhiKHUrXJqkysHLoUY3nCtY= sha256-pic2ZiUmMdHq8qrnYKmOTzRwkUDIpBSXyjXpZ1+hkxE=; style-src-attr 'unsafe-hashes' sha256-CZaDuwMSsspb3e3YDd5z3dU3/oM7DpI4HyRFD7B/dq0= sha256-FPas+NcgiiCQpxq0+EbI+38ZUneR9D2pjxZTBP1fGFU= sha256-bzN2eji/VGXAUUSKM8t2GCZ+KIPlwZpiCCePraiB4L0= sha256-d5+vm2HM0YPHkmt65fXjkhiKHUrXJqkysHLoUY3nCtY= sha256-pic2ZiUmMdHq8qrnYKmOTzRwkUDIpBSXyjXpZ1+hkxE=">
 
   <meta
     name="viewport"
@@ -32,6 +33,7 @@
 
   <!-- UIverse Modular CSS Architecture -->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
 
 <body>
@@ -87,13 +89,8 @@
   <!-- ================= MAIN ================= -->
   <main class="calendar-container">
 
-    <!-- ================= CALENDAR GRID ================= -->
-    <section class="calendar-section">
-    <!-- ================= WEEKLY PLANNER VIEW ================= -->
-  <!-- ================= PRODUCTIVITY ANALYTICS ================= -->
-<!-- ================= AGENDA VIEW ================= -->
-
-<section class="agenda-section">
+    <!-- ================= AGENDA VIEW ================= -->
+    <section class="agenda-section">
 
   <div class="section-header">
 
@@ -316,7 +313,8 @@
   </div>
 
 </div>
-<section class="productivity-section">
+
+    <section class="productivity-section">
 
   <div class="section-header">
 
@@ -440,7 +438,7 @@
 
 <!-- ================= AI PRODUCTIVITY INSIGHTS ================= -->
 
-<section class="ai-insights-section">
+    <section class="ai-insights-section">
 
   <div class="section-header">
 
@@ -516,7 +514,9 @@
   </div>
 
 </section>
-<section class="weekly-planner-section">
+
+    <!-- ================= WEEKLY PLANNER VIEW ================= -->
+    <section class="weekly-planner-section">
 
   <div class="section-header">
 
@@ -644,6 +644,9 @@
   </span>
 
 </button>
+
+    <!-- ================= CALENDAR GRID ================= -->
+    <section class="calendar-section">
       <div class="section-header">
 
         <span class="section-tag">

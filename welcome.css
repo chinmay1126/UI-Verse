@@ -283,3 +283,75 @@ body{
     flex-direction: column;
   }
 }
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+#themeBtn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #222;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+#themeBtn:hover {
+  transform: scale(1.1);
+  background-color: #222;
+  color: white;
+}
+
+.welcome-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  width: 400px;
+  transition: 0.4s;
+}
+
+.welcome-content h1 {
+  font-size: 40px;
+   margin-bottom: 10px;
+}
+
+.welcome-content p {
+  font-size: 18px;
+  color: #555;
+}
+
+
+body.dark {
+  background: linear-gradient(to right, #4a9797, #8b9cb8);
+  color: white;
+}
+
+body.dark .welcome-content {
+  background-color: #35918e;
+  color: white;
+}
+
+body.dark .welcome-content p {
+  color: #d1d5db;
+}
+
+body.dark #themeBtn {
+  background-color: #222;
+  color: white;
+}

@@ -1,0 +1,249 @@
+:root {
+  --page-bg: #f5f7fb;
+  --surface: #fff;
+  --text: #111827;
+  --muted: #64748b;
+  --accent: #6c5ce7;
+  --accent-2: #00b894;
+  --line: rgba(15, 23, 42, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(108, 92, 231, 0.16), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(0, 184, 148, 0.14), transparent 24%),
+    var(--page-bg);
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.hero {
+  max-width: 720px;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.hero p {
+  margin: 0;
+  max-width: 680px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.profile-card {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  min-height: 260px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.14);
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  color: #fff;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+.profile-card h2,
+.profile-card p {
+  margin: 0;
+}
+
+.component-name {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-card p {
+  color: var(--muted);
+}
+
+.profile-card button {
+  justify-self: start;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 16px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.status {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.12);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.skills,
+.team-meta,
+.glass-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills span,
+.team-meta span,
+.glass-row span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(108, 92, 231, 0.1);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #111827;
+  text-decoration: none;
+  transition: transform 0.22s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
+.team-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.team-meta span strong {
+  margin-right: 4px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stats span {
+  display: grid;
+  gap: 4px;
+  padding: 12px 8px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.04);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.stats strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.glass-card {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.82), rgba(0, 184, 148, 0.72));
+  backdrop-filter: blur(16px);
+}
+
+.glass-card p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.glass-card .component-name {
+  color: #fff;
+}
+
+.glass-card .glass-row span {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.glass-card button {
+  color: var(--accent);
+  background: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #f8fafc;
+    background:
+      radial-gradient(circle at top left, rgba(108, 92, 231, 0.22), transparent 26%),
+      radial-gradient(circle at bottom right, rgba(0, 184, 148, 0.18), transparent 24%),
+      #0f172a;
+  }
+
+  .profile-card {
+    background: rgba(15, 23, 42, 0.78);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .stats span {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .stats strong {
+    color: #fff;
+  }
+}

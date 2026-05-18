@@ -151,7 +151,11 @@ h1, h2, h3 {
 .sidebar-nav li a:hover {
   background: var(--sidebar-hover);
   color: #fff;
-  transform: translateX(3px);
+  transform: translateX(4px);
+}
+
+.sidebar-nav li a:active {
+  transform: translateX(2px) scale(0.98);
 }
 
 .sidebar-nav li.active a {
@@ -1088,6 +1092,14 @@ body.dark-mode .feature-card:hover {
     display: block;
   }
 
+  .search-bar {
+    max-width: 200px;
+  }
+
+  .search-kbd {
+    display: none;
+  }
+
   .main-home {
     padding: 24px 20px 0;
     gap: 40px;
@@ -1125,6 +1137,19 @@ body.dark-mode .feature-card:hover {
 }
 
 @media (max-width: 480px) {
+  .search-bar {
+    max-width: 140px;
+    padding: 6px 10px;
+  }
+
+  .search-icon {
+    font-size: 12px;
+  }
+
+  .search-bar input {
+    font-size: 12px;
+  }
+
   .hero-stats {
     flex-direction: column;
     border-radius: 16px;
@@ -1145,187 +1170,4 @@ body.dark-mode .feature-card:hover {
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-/* ================= TABLE WRAPPER ================= */
-
-.table-wrapper{
-  margin-top:20px;
-  overflow-x:auto;
-}
-
-/* ================= TABLE ================= */
-
-.ui-table{
-  width:100%;
-  border-collapse:collapse;
-  background:rgba(255,255,255,0.03);
-  border-radius:16px;
-  overflow:hidden;
-}
-
-.ui-table th,
-.ui-table td{
-  padding:16px;
-  text-align:left;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.ui-table th{
-  color:#cbd5e1;
-  font-weight:600;
-}
-
-/* ================= STATUS ================= */
-
-.status{
-  padding:4px 10px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:600;
-}
-
-.status.active{ background:#14532d; color:#86efac; }
-.status.pending{ background:#3b2f0b; color:#fde68a; }
-.status.inactive{ background:#3f1d1d; color:#fca5a5; }
-
-/* ================= ADVANCED TABLE ================= */
-
-.user-cell{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.avatar{
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#6366f1,#8b5cf6);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  font-weight:700;
-}
-
-/* ROLES */
-
-.role{
-  padding:4px 10px;
-  border-radius:999px;
-  font-size:12px;
-}
-
-.role.admin{ background:#312e81; color:#c7d2fe; }
-.role.user{ background:#1e3a8a; color:#bfdbfe; }
-.role.editor{ background:#064e3b; color:#a7f3d0; }
-
-/* BUTTONS */
-
-.table-btn{
-  padding:6px 10px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:12px;
-  margin-right:6px;
-}
-
-.table-btn.edit{ background:#6366f1; color:white; }
-.table-btn.delete{ background:#ef4444; color:white; }
-
-/* ================= DARK MODE ALIGNMENT ================= */
-
-.dark-mode .ui-table{
-  background:rgba(17,24,39,0.6);
-}
-
-.dark-mode .ui-table th,
-.dark-mode .ui-table td{
-  border-bottom:1px solid rgba(255,255,255,0.06);
-}
-
-/* ===== LAYOUT FIX ===== */
-body {
-  margin: 0;
-  display: flex;
-  background: #0f172a;
-  overflow-x: hidden;
-}
-
-/* ===== SIDEBAR ===== */
-.sidebar {
-  width: 260px;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: #111827;
-  overflow-y: auto;
-  z-index: 1000;
-}
-
-/* ===== MAIN CONTENT ===== */
-.main-home,
-.main {
-  margin-left: 260px;
-  width: calc(100% - 260px);
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 900;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 1200px){
-  .hero{
-    display:flex;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 900px) {
-
-  .sidebar {
-    transform: translateX(-100%);
-    transition: 0.3s ease;
-  }
-
-  .sidebar.open {
-    transform: translateX(0);
-  }
-
-  .main-home,
-  .main {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-.section,
-.hero,
-.footer {
-  width: 100%;
-  max-width: 1400px;
-  margin-inline: auto;
-}
-
-.featured-cards,
-.categories-grid,
-.grid,
-.why-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
