@@ -5,6 +5,46 @@
 
 const CodeTools = {
   /**
+   * Copy text using the Clipboard API when available, otherwise fall back to a hidden textarea.
+   * @param {string} text
+   * @returns {Promise<void>}
+   */
+  copyText(text) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+      return navigator.clipboard.writeText(text);
+    }
+
+    return new Promise((resolve, reject) => {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "true");
+      textarea.style.position = "fixed";
+      textarea.style.top = "-9999px";
+      textarea.style.left = "-9999px";
+      textarea.style.opacity = "0";
+
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+
+      let succeeded = false;
+      try {
+        succeeded = document.execCommand("copy");
+      } catch (error) {
+        succeeded = false;
+      }
+
+      textarea.remove();
+
+      if (succeeded) {
+        resolve();
+      } else {
+        reject(new Error("Clipboard copy failed"));
+      }
+    });
+  },
+
+  /**
    * Toggle visibility of a code block
    * @param {string} id - Code block element ID
    */
@@ -35,7 +75,7 @@ const CodeTools = {
       ? element.value
       : element.innerText;
 
-    navigator.clipboard.writeText(code)
+    this.copyText(code)
       .then(() => {
         showToast("Code copied!");
 
@@ -61,8 +101,13 @@ const CodeTools = {
    * @param {string} color - Color string
    */
   copyColor(color) {
-    navigator.clipboard.writeText(color);
-    showToast(color + " copied!");
+    this.copyText(color)
+      .then(() => {
+        showToast(color + " copied!");
+      })
+      .catch(() => {
+        showToast("Failed to copy ❌");
+      });
   },
 
   /**
@@ -70,8 +115,13 @@ const CodeTools = {
    * @param {string} value - RGB value
    */
   copyRGB(value) {
-    navigator.clipboard.writeText(`rgb(${value})`);
-    showToast(`rgb(${value}) copied!`);
+    this.copyText(`rgb(${value})`)
+      .then(() => {
+        showToast(`rgb(${value}) copied!`);
+      })
+      .catch(() => {
+        showToast("Failed to copy ❌");
+      });
   },
 
   /**
