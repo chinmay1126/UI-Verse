@@ -322,9 +322,9 @@
   </nav>
 
     <div class="sidebar-footer">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" aria-label="Open GitHub profile" title="Open GitHub profile"><i class="fab fa-github"></i></a>
+      <a href="#" aria-label="Open LinkedIn profile" title="Open LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+      <a href="#" aria-label="Open X profile" title="Open X profile"><i class="fab fa-x-twitter"></i></a>
     </div>
 
   </aside>
@@ -340,6 +340,8 @@
   <header class="navbar" id="navbar">
 
     <button class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
       onclick="toggleSidebar()">
       <i class="fa-solid fa-bars"></i>
     </button>
@@ -352,6 +354,7 @@
 
       <input
         type="text"
+        aria-label="Search calendar components"
         placeholder="Search calendar components..." />
 
       <kbd class="search-kbd">⌘K</kbd>
@@ -373,6 +376,8 @@
       
 
       <button id="darkModeToggle"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
         class="theme-toggle">
         <i class="fa-solid fa-moon"></i>
       </button>
@@ -414,6 +419,8 @@
         </a>
 
         <a href="#"
+          aria-label="Live Preview"
+          title="Live Preview"
           class="btn-ghost">
           Live Preview
         </a>
@@ -687,9 +694,9 @@
         </p>
 
         <div class="socials">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Open GitHub profile"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Open LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Open X profile"><i class="fab fa-x-twitter"></i></a>
         </div>
 
       </div>
@@ -730,6 +737,7 @@
         <div class="newsletter-form">
 
           <input type="email"
+            aria-label="Email address for newsletter signup"
             placeholder="your@email.com">
 
           <button>
