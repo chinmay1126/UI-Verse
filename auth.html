@@ -385,7 +385,7 @@
       Premium onboarding registration structures, validation login portals, password-strength analytics, social grids, and horizontal form switcher slider containers with full light/dark responsiveness.
     </p>
     <div class="page-meta">
-      <span class="meta-badge"><i class="fa-solid fa-user-shield"></i> 5 Premium UI Components</span>
+      <span class="meta-badge"><i class="fa-solid fa-user-shield"></i> 10 Premium UI Components</span>
       <span class="meta-badge"><i class="fa-solid fa-sliders"></i> Fully Responsive</span>
       <span class="meta-badge"><i class="fa-solid fa-moon"></i> Dark &amp; Light support</span>
     </div>
@@ -911,6 +911,374 @@
 </div></textarea>
     </div>
 
+
+    <!-- ================= 6. OTP VERIFICATION UI ================= -->
+    <div class="component-card">
+      <div class="card-top">
+        <div>
+          <h2 class="card-label" style="font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--auth-text-main); margin: 0 0 4px 0;">
+            6. OTP Verification UI
+          </h2>
+          <p class="card-desc" style="font-size: 0.9rem; color: var(--auth-text-muted); margin: 0;">
+            Premium glassmorphic OTP verification grid with autofocus advance, character validation, and live visual cooldown timer.
+          </p>
+        </div>
+        <span class="card-tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;">Secure OTP</span>
+      </div>
+
+      <div class="component-preview" style="padding: 3rem 1.5rem; display: flex; align-items: center; justify-content: center; min-height: 520px; background: var(--auth-bg-subtle); border-radius: 12px; border: 1px dashed var(--auth-card-border);">
+        
+        <!-- Live Component Target -->
+        <div class="auth-otp-card">
+          <div class="auth-card-header">
+            <h3>Enter OTP Code</h3>
+            <p>We've sent a 6-digit verification code to your email</p>
+          </div>
+          
+          <form onsubmit="handleOtpSubmit(event)" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <div class="auth-otp-inputs" id="otp-inputs-grid">
+              <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+              <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+              <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+              <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+              <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+              <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+            </div>
+            
+            <div class="auth-otp-timer-container">
+              <div class="auth-otp-timer-bar">
+                <div class="auth-otp-timer-fill" id="otp-timer-fill"></div>
+              </div>
+              <span class="auth-otp-timer-text" id="otp-timer-text">Resend code in 00:59</span>
+            </div>
+            
+            <button type="submit" class="auth-submit-btn" style="margin-bottom: 1.2rem;">
+              Verify Passcode
+            </button>
+            
+            <a class="auth-otp-resend" id="otp-resend-btn" onclick="triggerOtpResend()">
+              Resend OTP Code
+            </a>
+          </form>
+        </div>
+        
+      </div>
+
+      <div class="actions">
+        <button class="action-btn" onclick="toggleCode('code-otp')"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn" onclick="copyCode('code-otp', this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+      </div>
+
+      <textarea id="code-otp" class="code-block" style="display: none;" readonly><div class="auth-otp-card">
+  <div class="auth-card-header">
+    <h3>Enter OTP Code</h3>
+    <p>We've sent a 6-digit verification code to your email</p>
+  </div>
+  
+  <form onsubmit="handleOtp(event)">
+    <div class="auth-otp-inputs">
+      <input type="text" maxlength="1" pattern="[0-9]" required>
+      <input type="text" maxlength="1" pattern="[0-9]" required>
+      <input type="text" maxlength="1" pattern="[0-9]" required>
+      <input type="text" maxlength="1" pattern="[0-9]" required>
+      <input type="text" maxlength="1" pattern="[0-9]" required>
+      <input type="text" maxlength="1" pattern="[0-9]" required>
+    </div>
+    
+    <button type="submit" class="auth-submit-btn">Verify Passcode</button>
+  </form>
+</div></textarea>
+    </div>
+
+
+    <!-- ================= 7. EMAIL VERIFICATION SCREEN ================= -->
+    <div class="component-card">
+      <div class="card-top">
+        <div>
+          <h2 class="card-label" style="font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--auth-text-main); margin: 0 0 4px 0;">
+            7. Email Verification Screen
+          </h2>
+          <p class="card-desc" style="font-size: 0.9rem; color: var(--auth-text-muted); margin: 0;">
+            Clean onboarding verification screen with CSS animated envelope badges, status indicators, and client launcher actions.
+          </p>
+        </div>
+        <span class="card-tag" style="background: rgba(139, 92, 246, 0.1); color: var(--auth-primary); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;">Email Verify</span>
+      </div>
+
+      <div class="component-preview" style="padding: 3rem 1.5rem; display: flex; align-items: center; justify-content: center; min-height: 520px; background: var(--auth-bg-subtle); border-radius: 12px; border: 1px dashed var(--auth-card-border);">
+        
+        <!-- Live Component Target -->
+        <div class="auth-email-verify-card">
+          <div class="auth-email-icon-wrapper">
+            <i class="fa-regular fa-envelope-open"></i>
+            <span class="auth-email-badge"><i class="fa-solid fa-bell"></i></span>
+          </div>
+          
+          <div class="auth-card-header" style="margin-bottom: 1.5rem;">
+            <h3>Verify Your Email</h3>
+            <p>We've sent a verification link to <strong>dev@uiverse.io</strong>. Click the link to secure your account credentials.</p>
+          </div>
+          
+          <div class="auth-email-status" id="email-status-badge">
+            <i class="fa-solid fa-spinner"></i>
+            <span>Awaiting verification link click...</span>
+          </div>
+          
+          <button class="auth-submit-btn" style="margin-bottom: 1.2rem; background: linear-gradient(135deg, var(--auth-primary) 0%, var(--auth-secondary) 100%);" onclick="simulateLaunchMail()">
+            <i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 6px;"></i> Launch Mail Client
+          </button>
+          
+          <p style="font-size: 0.85rem; color: var(--auth-text-muted); margin: 0;">
+            Didn't receive the email? <a href="#" class="auth-link" onclick="simulateEmailResend(event)">Resend Email</a> or <a href="#" class="auth-link">Contact Support</a>
+          </p>
+        </div>
+        
+      </div>
+
+      <div class="actions">
+        <button class="action-btn" onclick="toggleCode('code-email-verify')"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn" onclick="copyCode('code-email-verify', this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+      </div>
+
+      <textarea id="code-email-verify" class="code-block" style="display: none;" readonly><div class="auth-email-verify-card">
+  <div class="auth-email-icon-wrapper">
+    <i class="fa-regular fa-envelope-open"></i>
+    <span class="auth-email-badge"><i class="fa-solid fa-bell"></i></span>
+  </div>
+  
+  <h3>Verify Your Email</h3>
+  <p>Please check your inbox for the verification email.</p>
+  
+  <button class="auth-submit-btn" onclick="launchMail()">Launch Mail Client</button>
+  <a href="#" onclick="resendEmail(event)">Resend Email</a>
+</div></textarea>
+    </div>
+
+
+    <!-- ================= 8. PHONE VERIFICATION COMPONENT ================= -->
+    <div class="component-card">
+      <div class="card-top">
+        <div>
+          <h2 class="card-label" style="font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--auth-text-main); margin: 0 0 4px 0;">
+            8. Phone Verification Component
+          </h2>
+          <p class="card-desc" style="font-size: 0.9rem; color: var(--auth-text-muted); margin: 0;">
+            Secure multi-country SMS verification block with elegant phone formatter, code request animations, and transit SMS prompt boxes.
+          </p>
+        </div>
+        <span class="card-tag" style="background: rgba(235, 104, 53, 0.1); color: var(--auth-accent); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;">SMS Auth</span>
+      </div>
+
+      <div class="component-preview" style="padding: 3rem 1.5rem; display: flex; align-items: center; justify-content: center; min-height: 520px; background: var(--auth-bg-subtle); border-radius: 12px; border: 1px dashed var(--auth-card-border);">
+        
+        <!-- Live Component Target -->
+        <div class="auth-phone-verify-card">
+          <div class="auth-card-header" style="margin-bottom: 2rem;">
+            <h3>Phone Verification</h3>
+            <p>Enter your phone number to receive a secure SMS validation passcode</p>
+          </div>
+          
+          <form onsubmit="handlePhoneVerifySubmit(event)" style="width: 100%;">
+            <div class="auth-phone-input-group">
+              <div class="auth-phone-country">
+                <span id="phone-country-flag">🇺🇸</span>
+                <select id="phone-country-code" onchange="updateCountryFlag(this.value)">
+                  <option value="+1">US (+1)</option>
+                  <option value="+44">UK (+44)</option>
+                  <option value="+91">IN (+91)</option>
+                  <option value="+49">DE (+49)</option>
+                  <option value="+81">JP (+81)</option>
+                </select>
+              </div>
+              <div class="auth-phone-field">
+                <i class="fa-solid fa-mobile-screen-button auth-phone-icon"></i>
+                <input type="tel" id="verify-phone-num" class="auth-input" placeholder=" " required oninput="formatPhoneNumber(this)">
+                <label for="verify-phone-num">Mobile Number</label>
+              </div>
+            </div>
+            
+            <button type="submit" class="auth-submit-btn" id="phone-send-sms-btn">
+              Send SMS Verification Code
+            </button>
+            
+            <!-- Hidden transition verification field -->
+            <div class="auth-phone-sms-transition" id="phone-otp-box">
+              <span style="font-size: 0.8rem; font-weight: 600; color: var(--auth-text-muted); margin-bottom: 6px;">Enter SMS Code:</span>
+              <input type="text" id="phone-sms-otp-val" class="auth-input" placeholder="Enter 6-digit SMS Code" maxlength="6" style="text-align: center; letter-spacing: 6px; font-weight: 700;">
+              <button type="button" class="auth-submit-btn" style="background: var(--auth-secondary); margin-top: 10px;" onclick="submitPhoneOtp()">
+                Verify SMS Code
+              </button>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+
+      <div class="actions">
+        <button class="action-btn" onclick="toggleCode('code-phone-verify')"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn" onclick="copyCode('code-phone-verify', this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+      </div>
+
+      <textarea id="code-phone-verify" class="code-block" style="display: none;" readonly><div class="auth-phone-verify-card">
+  <div class="auth-phone-input-group">
+    <div class="auth-phone-country">
+      <span>🇺🇸</span>
+      <select>
+        <option value="+1">US (+1)</option>
+        <option value="+44">UK (+44)</option>
+        <option value="+91">IN (+91)</option>
+      </select>
+    </div>
+    <div class="auth-phone-field">
+      <input type="tel" class="auth-input" placeholder=" " required>
+      <label>Mobile Number</label>
+    </div>
+  </div>
+  
+  <button class="auth-submit-btn">Send SMS Code</button>
+</div></textarea>
+    </div>
+
+
+    <!-- ================= 9. SUCCESS VERIFICATION STATE ================= -->
+    <div class="component-card">
+      <div class="card-top">
+        <div>
+          <h2 class="card-label" style="font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--auth-text-main); margin: 0 0 4px 0;">
+            9. Success Verification State
+          </h2>
+          <p class="card-desc" style="font-size: 0.9rem; color: var(--auth-text-muted); margin: 0;">
+            High-fidelity celebratory success component containing concentric wave ripples, check animations, and security compliance badges.
+          </p>
+        </div>
+        <span class="card-tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;">Success State</span>
+      </div>
+
+      <div class="component-preview" style="padding: 3rem 1.5rem; display: flex; align-items: center; justify-content: center; min-height: 520px; background: var(--auth-bg-subtle); border-radius: 12px; border: 1px dashed var(--auth-card-border);">
+        
+        <!-- Live Component Target -->
+        <div class="auth-success-card">
+          <div class="auth-success-graphic">
+            <div class="auth-success-circle-outer"></div>
+            <div class="auth-success-circle-inner">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+          
+          <div class="auth-card-header" style="margin-bottom: 1rem;">
+            <h3>Identity Verified!</h3>
+            <p>Congratulations, your security credentials have been audited and approved successfully.</p>
+          </div>
+          
+          <div class="auth-success-badge-grid">
+            <div class="auth-success-badge-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>256-bit AES</span>
+            </div>
+            <div class="auth-success-badge-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>SSL Audited</span>
+            </div>
+          </div>
+          
+          <button class="auth-submit-btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); box-shadow: 0 4px 15px rgba(16,185,129,0.2);" onclick="showToast('Proceeding to principal client dashboard session...')">
+            Access Dashboard <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+          </button>
+        </div>
+        
+      </div>
+
+      <div class="actions">
+        <button class="action-btn" onclick="toggleCode('code-success-state')"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn" onclick="copyCode('code-success-state', this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+      </div>
+
+      <textarea id="code-success-state" class="code-block" style="display: none;" readonly><div class="auth-success-card">
+  <div class="auth-success-graphic">
+    <div class="auth-success-circle-outer"></div>
+    <div class="auth-success-circle-inner"><i class="fa-solid fa-check"></i></div>
+  </div>
+  
+  <h3>Identity Verified!</h3>
+  <p>Your security credentials have been verified successfully.</p>
+  
+  <button class="auth-submit-btn">Access Dashboard</button>
+</div></textarea>
+    </div>
+
+
+    <!-- ================= 10. CODE INPUT COMPONENT ================= -->
+    <div class="component-card">
+      <div class="card-top">
+        <div>
+          <h2 class="card-label" style="font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--auth-text-main); margin: 0 0 4px 0;">
+            10. Code Input Component
+          </h2>
+          <p class="card-desc" style="font-size: 0.9rem; color: var(--auth-text-muted); margin: 0;">
+            Obsidian alphanumeric activation entry system featuring auto-uppercase conversion, keydown cursor blinks, and pasteboard sync.
+          </p>
+        </div>
+        <span class="card-tag" style="background: rgba(139, 92, 246, 0.1); color: var(--auth-primary); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;">Code Slots</span>
+      </div>
+
+      <div class="component-preview" style="padding: 3rem 1.5rem; display: flex; align-items: center; justify-content: center; min-height: 520px; background: var(--auth-bg-subtle); border-radius: 12px; border: 1px dashed var(--auth-card-border);">
+        
+        <!-- Live Component Target -->
+        <div class="auth-code-input-card">
+          <div class="auth-card-header" style="margin-bottom: 1rem;">
+            <h3>Secure Alphanumeric Entry</h3>
+            <p>Provide your 8-digit activation keycode or security bypass token</p>
+          </div>
+          
+          <div class="auth-code-slots-wrapper">
+            <!-- Hidden input that maps text to slots -->
+            <input type="text" class="auth-code-hidden-input" id="auth-secure-hidden-input" maxlength="8" autocomplete="off" oninput="updateCodeSlots(this.value)" onfocus="handleSecureInputFocus(true)" onblur="handleSecureInputFocus(false)">
+            
+            <div class="auth-code-slots" id="auth-code-slots-container">
+              <div class="auth-code-slot active" onclick="focusSecureInput()"></div>
+              <div class="auth-code-slot" onclick="focusSecureInput()"></div>
+              <div class="auth-code-slot" onclick="focusSecureInput()"></div>
+              <div class="auth-code-slot" onclick="focusSecureInput()"></div>
+              <div class="auth-code-slot" onclick="focusSecureInput()"></div>
+              <div class="auth-code-slot" onclick="focusSecureInput()"></div>
+              <div class="auth-code-slot" onclick="focusSecureInput()"></div>
+              <div class="auth-code-slot" onclick="focusSecureInput()"></div>
+            </div>
+            
+            <button type="button" class="auth-code-paste-btn" onclick="simulateClipboardPaste()">
+              <i class="fa-regular fa-clipboard"></i> Paste Bypass Key
+            </button>
+          </div>
+          
+          <button class="auth-submit-btn" style="background: var(--auth-primary);" onclick="verifyAlphanumericCode()">
+            Unlock Component License
+          </button>
+        </div>
+        
+      </div>
+
+      <div class="actions">
+        <button class="action-btn" onclick="toggleCode('code-slots')"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn" onclick="copyCode('code-slots', this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+      </div>
+
+      <textarea id="code-slots" class="code-block" style="display: none;" readonly><div class="auth-code-input-card">
+  <input type="text" class="auth-code-hidden-input" id="hidden-key-input" maxlength="8" oninput="updateSlots(this.value)">
+  <div class="auth-code-slots">
+    <div class="auth-code-slot active"></div>
+    <div class="auth-code-slot"></div>
+    <div class="auth-code-slot"></div>
+    <div class="auth-code-slot"></div>
+    <div class="auth-code-slot"></div>
+    <div class="auth-code-slot"></div>
+    <div class="auth-code-slot"></div>
+    <div class="auth-code-slot"></div>
+  </div>
+  
+  <button class="auth-submit-btn" onclick="verifyKey()">Unlock License</button>
+</div></textarea>
+    </div>
+
   </div>
 
 </main>
@@ -1156,6 +1524,266 @@
       switcherContainer.style.minHeight = '530px';
       showToast("Access onboarding register portal");
     }
+  }
+
+  /* ================= NEW INTERACTION HANDLERS (6-10) ================= */
+
+  /* 7. OTP Field Autofocus & Cooldown Timer Control */
+  let otpInterval;
+  let otpTimeRemaining = 59;
+  
+  function startOtpTimer() {
+    clearInterval(otpInterval);
+    otpTimeRemaining = 59;
+    const timerText = document.getElementById('otp-timer-text');
+    const timerFill = document.getElementById('otp-timer-fill');
+    const resendBtn = document.getElementById('otp-resend-btn');
+    
+    if (!timerText || !timerFill || !resendBtn) return;
+    
+    resendBtn.classList.remove('active');
+    timerFill.style.transition = 'none';
+    timerFill.style.width = '100%';
+    
+    // Trigger paint
+    timerFill.offsetHeight;
+    
+    timerFill.style.transition = 'width 59s linear';
+    timerFill.style.width = '0%';
+    
+    otpInterval = setInterval(() => {
+      otpTimeRemaining--;
+      if (otpTimeRemaining <= 0) {
+        clearInterval(otpInterval);
+        timerText.textContent = "Code expired. Please request a new OTP.";
+        resendBtn.classList.add('active');
+      } else {
+        const secs = otpTimeRemaining < 10 ? '0' + otpTimeRemaining : otpTimeRemaining;
+        timerText.textContent = `Resend code in 00:${secs}`;
+      }
+    }, 1000);
+  }
+
+  // OTP inputs keyboard focus routing
+  const otpInputsGrid = document.getElementById('otp-inputs-grid');
+  if (otpInputsGrid) {
+    const inputs = otpInputsGrid.querySelectorAll('input');
+    inputs.forEach((input, index) => {
+      input.addEventListener('input', (e) => {
+        const val = e.target.value;
+        // Move forward if value added
+        if (val && index < inputs.length - 1) {
+          inputs[index + 1].focus();
+        }
+      });
+      
+      input.addEventListener('keydown', (e) => {
+        // Move backward if backspace pressed on empty
+        if (e.key === 'Backspace' && !e.target.value && index > 0) {
+          inputs[index - 1].focus();
+        }
+      });
+      
+      // Auto paste support
+      input.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const data = (e.clipboardData || window.clipboardData).getData('text').trim();
+        if (/^\d{6}$/.test(data)) {
+          for (let i = 0; i < inputs.length; i++) {
+            inputs[i].value = data[i];
+          }
+          inputs[inputs.length - 1].focus();
+          showToast("OTP code pasted from clipboard!");
+        }
+      });
+    });
+  }
+
+  // Start timer on load automatically
+  startOtpTimer();
+
+  function triggerOtpResend() {
+    showToast("Resending one-time password...");
+    setTimeout(() => {
+      showToast("A new 6-digit OTP code has been dispatched!");
+      startOtpTimer();
+      if (otpInputsGrid) {
+        otpInputsGrid.querySelectorAll('input').forEach(inp => inp.value = '');
+        otpInputsGrid.querySelector('input').focus();
+      }
+    }, 1000);
+  }
+
+  function handleOtpSubmit(event) {
+    event.preventDefault();
+    const inputs = event.target.querySelectorAll('.auth-otp-inputs input');
+    let code = "";
+    inputs.forEach(inp => code += inp.value);
+    
+    const btn = event.target.querySelector('.auth-submit-btn');
+    const origText = btn.innerText;
+    
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Verifying...';
+    
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerText = origText;
+      if (code === "123456" || code.length === 6) {
+        showToast("OTP Verified successfully! Welcome dev! 🔑");
+        event.target.reset();
+        startOtpTimer();
+      } else {
+        showToast("Invalid code entered. Try again.");
+      }
+    }, 1200);
+  }
+
+  /* 8. Email Verification Simulated Actions */
+  function simulateLaunchMail() {
+    showToast("Attempting to open system default mail client... ✉️");
+    window.open("mailto:?subject=Verify%20UIverse%20Account", "_blank");
+  }
+
+  function simulateEmailResend(event) {
+    event.preventDefault();
+    const badge = document.getElementById('email-status-badge');
+    badge.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending new email...';
+    badge.style.color = 'var(--auth-secondary)';
+    
+    showToast("Simulating SMTP transmission...");
+    setTimeout(() => {
+      badge.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Awaiting verification link click...';
+      badge.style.color = 'var(--auth-primary)';
+      showToast("A fresh verification link has been sent to dev@uiverse.io!");
+    }, 1500);
+  }
+
+  /* 9. Phone Verification Simulated Actions */
+  function updateCountryFlag(val) {
+    const flagSpan = document.getElementById('phone-country-flag');
+    if (!flagSpan) return;
+    if (val === '+1') flagSpan.textContent = '🇺🇸';
+    else if (val === '+44') flagSpan.textContent = '🇬🇧';
+    else if (val === '+91') flagSpan.textContent = '🇮🇳';
+    else if (val === '+49') flagSpan.textContent = '🇩🇪';
+    else if (val === '+81') flagSpan.textContent = '🇯🇵';
+  }
+
+  function formatPhoneNumber(input) {
+    // Basic numbers filter
+    let num = input.value.replace(/\D/g, '');
+    if (num.length > 10) num = num.substring(0, 10);
+    
+    // Format US simple
+    if (num.length > 6) {
+      input.value = `(${num.slice(0,3)}) ${num.slice(3,6)}-${num.slice(6)}`;
+    } else if (num.length > 3) {
+      input.value = `(${num.slice(0,3)}) ${num.slice(3)}`;
+    } else {
+      input.value = num;
+    }
+  }
+
+  function handlePhoneVerifySubmit(event) {
+    event.preventDefault();
+    const phone = document.getElementById('verify-phone-num').value;
+    const btn = document.getElementById('phone-send-sms-btn');
+    const otpBox = document.getElementById('phone-otp-box');
+    
+    if (!phone) return;
+    
+    const origText = btn.innerText;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Dispatching SMS...';
+    
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerText = origText;
+      otpBox.style.display = 'flex';
+      showToast(`Verification code sent via SMS to: ${phone}! Mock code: 777777`);
+    }, 1500);
+  }
+
+  function submitPhoneOtp() {
+    const inputVal = document.getElementById('phone-sms-otp-val').value;
+    if (inputVal === '777777' || inputVal.length === 6) {
+      showToast("Mobile number verified successfully! 📱✅");
+      document.getElementById('verify-phone-num').value = '';
+      document.getElementById('phone-sms-otp-val').value = '';
+      document.getElementById('phone-otp-box').style.display = 'none';
+    } else {
+      showToast("Incorrect SMS OTP code. Please enter 777777");
+    }
+  }
+
+  /* 10. Code Input Slots Logic */
+  const secureHiddenInput = document.getElementById('auth-secure-hidden-input');
+  const slotsContainer = document.getElementById('auth-code-slots-container');
+  
+  function focusSecureInput() {
+    if (secureHiddenInput) secureHiddenInput.focus();
+  }
+
+  function handleSecureInputFocus(isFocused) {
+    if (!slotsContainer) return;
+    const slots = slotsContainer.querySelectorAll('.auth-code-slot');
+    const val = secureHiddenInput.value;
+    const activeIndex = Math.min(val.length, slots.length - 1);
+    
+    slots.forEach(slot => slot.classList.remove('active'));
+    if (isFocused && activeIndex < slots.length) {
+      slots[activeIndex].classList.add('active');
+    }
+  }
+
+  function updateCodeSlots(val) {
+    if (!slotsContainer) return;
+    val = val.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    secureHiddenInput.value = val;
+    
+    const slots = slotsContainer.querySelectorAll('.auth-code-slot');
+    
+    slots.forEach((slot, index) => {
+      slot.classList.remove('active', 'filled');
+      slot.textContent = '';
+      
+      if (index < val.length) {
+        slot.textContent = val[index];
+        slot.classList.add('filled');
+      }
+    });
+    
+    const nextActive = Math.min(val.length, slots.length - 1);
+    if (document.activeElement === secureHiddenInput && nextActive < slots.length) {
+      slots[nextActive].classList.add('active');
+    }
+  }
+
+  function simulateClipboardPaste() {
+    const mockKeys = ["UIVERSE8", "DEVCODE9", "ACTIVE26", "BYPASS99"];
+    const chosen = mockKeys[Math.floor(Math.random() * mockKeys.length)];
+    
+    showToast(`Pasting license code: ${chosen} from clipboard`);
+    if (secureHiddenInput) {
+      secureHiddenInput.value = chosen;
+      updateCodeSlots(chosen);
+    }
+  }
+
+  function verifyAlphanumericCode() {
+    const val = secureHiddenInput.value;
+    if (val.length < 8) {
+      showToast("License key must be exactly 8 characters.");
+      return;
+    }
+    
+    showToast("Authorizing license bypass key...");
+    setTimeout(() => {
+      showToast(`Success! License for code '${val}' validated permanently! 🔐🎉`);
+      secureHiddenInput.value = '';
+      updateCodeSlots('');
+    }, 1200);
   }
 </script>
 

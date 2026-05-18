@@ -50,13 +50,20 @@
   --auth-mesh-gradient: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.12));
 }
 
-/* Helper wrapper for auth showcase components */
+/* Helper wrapper for auth showcase components - Premium Grid Layout */
 .auth-showcase-container {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
   padding: 1rem 0;
   width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .auth-showcase-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 /* =================================================================
@@ -703,8 +710,8 @@
   overflow: hidden;
   padding: 3.5rem 3rem;
   border-radius: 24px;
-  background: var(--auth-bg-subtle);
-  border: 1px solid var(--auth-card-border);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(236, 72, 153, 0.08) 50%, rgba(235, 104, 53, 0.08) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.18);
   box-shadow: var(--auth-shadow-md);
   margin-bottom: 3.5rem;
   display: flex;
@@ -907,3 +914,484 @@
 .actions .action-btn i {
   font-size: 0.9rem;
 }
+
+/* =================================================================
+   6. COMPONENT: OTP VERIFICATION UI
+   ================================================================= */
+.auth-otp-card {
+  background: var(--auth-card-bg);
+  backdrop-filter: var(--auth-glass-blur);
+  -webkit-backdrop-filter: var(--auth-glass-blur);
+  border: 1px solid var(--auth-card-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: var(--auth-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-otp-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.auth-otp-inputs input {
+  width: 50px;
+  height: 54px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 12px;
+  background: var(--auth-input-bg);
+  border: 1px solid var(--auth-input-border);
+  color: var(--auth-text-main);
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.auth-otp-inputs input:focus {
+  border-color: var(--auth-primary);
+  box-shadow: 0 0 0 4px var(--auth-primary-glow);
+  transform: translateY(-2px);
+  background: var(--auth-panel-bg);
+}
+
+.auth-otp-timer-container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-otp-timer-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--auth-text-muted);
+}
+
+.auth-otp-timer-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--auth-card-border);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.auth-otp-timer-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--auth-primary), var(--auth-secondary));
+  transition: width 1s linear;
+}
+
+.auth-otp-resend {
+  font-size: 0.85rem;
+  color: var(--auth-primary);
+  text-decoration: none;
+  font-weight: 700;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.auth-otp-resend.active {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.auth-otp-resend.active:hover {
+  text-decoration: underline;
+  color: var(--auth-primary-hover);
+}
+
+/* =================================================================
+   7. COMPONENT: EMAIL VERIFICATION SCREEN
+   ================================================================= */
+.auth-email-verify-card {
+  background: var(--auth-card-bg);
+  backdrop-filter: var(--auth-glass-blur);
+  -webkit-backdrop-filter: var(--auth-glass-blur);
+  border: 1px solid var(--auth-card-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: var(--auth-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-email-icon-wrapper {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.auth-email-icon-wrapper i {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--auth-primary), var(--auth-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.auth-email-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #10b981;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  border: 3px solid var(--auth-panel-bg);
+  box-shadow: var(--auth-shadow-sm);
+  animation: pulse-emerald 2s infinite ease-in-out;
+}
+
+@keyframes pulse-emerald {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.auth-email-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(139, 92, 246, 0.08);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--auth-primary);
+  margin-bottom: 1.5rem;
+}
+
+.auth-email-status i {
+  animation: fa-spin 2s linear infinite;
+}
+
+/* =================================================================
+   8. COMPONENT: PHONE VERIFICATION COMPONENT
+   ================================================================= */
+.auth-phone-verify-card {
+  background: var(--auth-card-bg);
+  backdrop-filter: var(--auth-glass-blur);
+  -webkit-backdrop-filter: var(--auth-glass-blur);
+  border: 1px solid var(--auth-card-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: var(--auth-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-phone-input-group {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.auth-phone-country {
+  padding: 14px;
+  background: var(--auth-input-bg);
+  border: 1px solid var(--auth-input-border);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--auth-text-main);
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.auth-phone-country:focus {
+  border-color: var(--auth-primary);
+  box-shadow: 0 0 0 4px var(--auth-primary-glow);
+}
+
+.auth-phone-country select {
+  border: none;
+  background: transparent;
+  color: var(--auth-text-main);
+  outline: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-phone-field {
+  flex: 1;
+  position: relative;
+}
+
+.auth-phone-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--auth-text-muted);
+  font-size: 1.1rem;
+}
+
+.auth-phone-field .auth-input {
+  padding-left: 44px;
+}
+
+.auth-phone-sms-transition {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  background: rgba(139, 92, 246, 0.03);
+  border: 1px dashed var(--auth-card-border);
+  border-radius: 16px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  animation: slideDownIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDownIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =================================================================
+   9. COMPONENT: SUCCESS VERIFICATION STATE
+   ================================================================= */
+.auth-success-card {
+  background: var(--auth-card-bg);
+  backdrop-filter: var(--auth-glass-blur);
+  -webkit-backdrop-filter: var(--auth-glass-blur);
+  border: 1px solid var(--auth-card-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: var(--auth-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-success-graphic {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin-bottom: 2rem;
+}
+
+.auth-success-circle-outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  animation: ring-ripple 2.5s infinite linear;
+}
+
+.auth-success-circle-inner {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25);
+  z-index: 2;
+}
+
+.auth-success-circle-inner i {
+  color: white;
+  font-size: 2.5rem;
+  animation: scale-up-check 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes ring-ripple {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes scale-up-check {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.auth-success-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  margin: 1.8rem 0;
+}
+
+.auth-success-badge-item {
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--auth-bg-subtle);
+  border: 1px solid var(--auth-card-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--auth-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.auth-success-badge-item i {
+  color: #10b981;
+}
+
+/* =================================================================
+   10. COMPONENT: CODE INPUT COMPONENT
+   ================================================================= */
+.auth-code-input-card {
+  background: var(--auth-card-bg);
+  backdrop-filter: var(--auth-glass-blur);
+  -webkit-backdrop-filter: var(--auth-glass-blur);
+  border: 1px solid var(--auth-card-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: var(--auth-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.auth-code-slots-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-code-hidden-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.auth-code-slots {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}
+
+.auth-code-slot {
+  flex: 1;
+  height: 52px;
+  border-radius: 10px;
+  background: var(--auth-input-bg);
+  border: 1px solid var(--auth-input-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--auth-text-main);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.auth-code-slot.active {
+  border-color: var(--auth-primary);
+  box-shadow: 0 0 0 3px var(--auth-primary-glow);
+  background: var(--auth-panel-bg);
+  transform: scale(1.05);
+}
+
+.auth-code-slot.filled {
+  border-color: var(--auth-secondary);
+  color: var(--auth-secondary);
+}
+
+.auth-code-slot::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background: var(--auth-primary);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.auth-code-slot.active::after {
+  animation: cursor-blink 1s steps(2, start) infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.auth-code-paste-btn {
+  background: transparent;
+  border: 1px dashed var(--auth-card-border);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--auth-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.auth-code-paste-btn:hover {
+  border-color: var(--auth-primary);
+  color: var(--auth-primary);
+  background: var(--auth-bg-subtle);
+}
+
