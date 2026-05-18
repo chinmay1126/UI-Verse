@@ -72,15 +72,15 @@
 
   <div class="sidebar-footer">
 
-    <a href="#">
+    <a href="#" aria-label="GitHub" title="GitHub">
       <i class="fab fa-github"></i>
     </a>
 
-    <a href="#">
+    <a href="#" aria-label="LinkedIn" title="LinkedIn">
       <i class="fab fa-linkedin"></i>
     </a>
 
-    <a href="#">
+    <a href="#" aria-label="X" title="X">
       <i class="fab fa-x-twitter"></i>
     </a>
 
@@ -91,7 +91,7 @@
 <!-- ================= NAVBAR ================= -->
 <header class="navbar" id="navbar">
 
-  <button class="menu-toggle">
+  <button class="menu-toggle" aria-label="Open navigation menu" title="Open navigation menu">
     <i class="fa-solid fa-bars"></i>
   </button>
 
@@ -111,7 +111,7 @@
       GitHub
     </button>
 
-    <button id="darkModeToggle" class="theme-toggle">
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
       <i class="fa-solid fa-moon"></i>
     </button>
 
@@ -378,6 +378,128 @@ git push origin feature/new-component
 
   </section>
 
+  <!-- STARTER KIT -->
+  <section class="starter-kit-section">
+
+    <div class="section-header">
+
+      <span class="section-tag">
+        STARTER KIT
+      </span>
+
+      <h2 class="section-title">
+        User Contribution Autogenerator
+      </h2>
+
+      <p class="section-subtitle">
+        Pick an issue title and component area to generate a branch template,
+        commit message, file suggestions, and PR checklist in one place.
+      </p>
+
+    </div>
+
+    <div class="starter-kit-shell" data-starter-kit>
+
+      <div class="starter-kit-form glass-card">
+
+        <div class="starter-kit-field">
+          <label for="starterIssueTitle">Issue title</label>
+          <input
+            id="starterIssueTitle"
+            data-starter-title
+            type="text"
+            placeholder="Add accessible focus states to buttons"
+          />
+        </div>
+
+        <div class="starter-kit-field">
+          <label for="starterComponentArea">Component area</label>
+          <input
+            id="starterComponentArea"
+            data-starter-area
+            type="text"
+            list="starterKitAreas"
+            placeholder="button, cards, forms, navbar..."
+          />
+          <datalist id="starterKitAreas"></datalist>
+        </div>
+
+        <div class="starter-kit-field">
+          <label for="starterIssueLink">GitHub issue link <span>(optional)</span></label>
+          <input
+            id="starterIssueLink"
+            data-starter-link
+            type="url"
+            placeholder="https://github.com/owner/repo/issues/123"
+          />
+        </div>
+
+        <button type="button" class="btn-primary starter-kit-generate" data-starter-generate>
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          Generate starter kit
+        </button>
+
+        <p class="starter-kit-hint">
+          Paste a GitHub issue link to capture the issue number automatically.
+        </p>
+
+      </div>
+
+      <div class="starter-kit-output glass-card">
+
+        <div class="starter-kit-output-head">
+
+          <div>
+            <span class="starter-kit-kicker">Ready to copy</span>
+            <h3>Generated starter kit</h3>
+          </div>
+
+          <button type="button" class="btn-ghost starter-kit-copy" data-starter-copy>
+            <i class="fa-regular fa-copy"></i>
+            Copy template
+          </button>
+
+        </div>
+
+        <div class="starter-kit-meta" data-starter-meta></div>
+
+        <div class="starter-kit-grid">
+
+          <article class="starter-kit-card">
+            <span class="starter-kit-card-label">Branch template</span>
+            <pre data-starter-branch></pre>
+          </article>
+
+          <article class="starter-kit-card">
+            <span class="starter-kit-card-label">Commit message template</span>
+            <pre data-starter-commit></pre>
+          </article>
+
+          <article class="starter-kit-card">
+            <span class="starter-kit-card-label">Folder path suggestions</span>
+            <ul class="starter-kit-list" data-starter-folders></ul>
+          </article>
+
+          <article class="starter-kit-card">
+            <span class="starter-kit-card-label">Files to edit</span>
+            <ul class="starter-kit-list" data-starter-files></ul>
+          </article>
+
+          <article class="starter-kit-card starter-kit-card-wide">
+            <span class="starter-kit-card-label">PR checklist</span>
+            <ul class="starter-kit-checklist" data-starter-checklist></ul>
+          </article>
+
+        </div>
+
+        <div class="starter-kit-status" data-starter-status aria-live="polite"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
   <!-- CTA -->
   <section class="contribute-cta">
 
@@ -457,6 +579,8 @@ git push origin feature/new-component
   </div>
 
 </footer>
+
+<script src="js/features/contribution-starter-kit.js"></script>
 
 <script>
 
