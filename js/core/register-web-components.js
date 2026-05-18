@@ -17,7 +17,8 @@ async function safeImport(specifier) {
 	const candidates = [
 		'/components/web-components/uv-button.js',
 		'/components/web-components/uv-modal.js',
-		'/components/web-components/uv-tooltip.js'
+		'/components/web-components/uv-tooltip.js',
+		'/components/web-components/uv-language-switcher.js'
 	];
 
 	for (const spec of candidates) {

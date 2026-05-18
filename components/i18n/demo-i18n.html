@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>I18n Demo</title>
+</head>
+<body>
+  <script type="module">
+    import '/js/core/register-web-components.js';
+    import '/js/features/i18n.js';
+    // Initialize after DOM
+    window.addEventListener('DOMContentLoaded', async () => {
+      const I18n = (await import('/js/features/i18n.js')).default;
+      await I18n.init('en');
+    });
+  </script>
+
+  <uv-language-switcher></uv-language-switcher>
+
+  <h1 data-i18n="greeting">Welcome</h1>
+  <p data-i18n="description">A collection of reusable UI components.</p>
+
+  <uv-button id="demoBtn" data-i18n="button_click_me">Click me</uv-button>
+  <uv-modal id="demoModal"><div slot="">Modal content</div></uv-modal>
+
+  <script>
+    // Wire demo button to open modal
+    document.addEventListener('uv-click', (e) => {
+      const modal = document.getElementById('demoModal');
+      if (modal && typeof modal.open === 'function') modal.open();
+    });
+  </script>
+</body>
+</html>

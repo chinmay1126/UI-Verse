@@ -35,6 +35,8 @@
     "perf:dashboard": "npm run perf:monitor && echo '📊 Open performance-dashboard.html in your browser'",
     "wc:register": "node -e \"console.log('Web components are ES modules; import them in the browser via <script type=\\\"module\\\">')\"",
     "wc:test": "playwright test tests/webcomponents --project=chromium --reporter=list"
+    ,
+    "i18n:test": "playwright test tests/i18n --config=playwright.i18n.config.ts --reporter=list"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.0.0",
