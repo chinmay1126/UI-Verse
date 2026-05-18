@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Switches UI — UIverse</title>
+
+  <!-- Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Icons -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="switches.css"
+  >
+
+</head>
+
+<body>
+
+<!-- =====================================================
+SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+  <div>
+
+    <div class="sidebar-brand">
+
+      <div class="brand-icon">
+        ⬡
+      </div>
+
+      <div class="brand-text">
+        UIverse
+      </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a href="#">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Components</span>
+      </a>
+
+      <a
+        href="#"
+        class="active"
+      >
+        <i class="fa-solid fa-toggle-on"></i>
+        <span>Switches</span>
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-code"></i>
+        <span>Source</span>
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-book"></i>
+        <span>Docs</span>
+      </a>
+
+    </nav>
+
+  </div>
+
+  <div class="sidebar-footer">
+
+    <a href="#">
+      <i class="fab fa-github"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-discord"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+
+  </div>
+
+</aside>
+
+<!-- =====================================================
+NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+  <div class="search-bar">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+      type="text"
+      placeholder="Search switch components..."
+    >
+
+  </div>
+
+  <div class="nav-actions">
+
+    <button class="outline-btn">
+      Documentation
+    </button>
+
+    <button class="primary-btn">
+      Explore UI
+    </button>
+
+  </div>
+
+</header>
+
+<!-- =====================================================
+MAIN
+===================================================== -->
+
+<main class="main-home">
+
+  <!-- HERO -->
+
+  <section class="hero-section">
+
+    <div class="hero-badge">
+      ✦ Interactive Toggle Components
+    </div>
+
+    <h1>
+      Modern <span>Switches</span>
+    </h1>
+
+    <p>
+
+      Beautiful toggle and switch
+      components inspired by modern
+      SaaS dashboards and futuristic UIs.
+
+    </p>
+
+  </section>
+
+  <!-- GRID -->
+
+  <section class="switch-grid">
+
+    <!-- BASIC -->
+
+    <div class="switch-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          BASIC
+        </span>
+
+        <div class="card-icon purple">
+          <i class="fa-solid fa-toggle-on"></i>
+        </div>
+
+      </div>
+
+      <h2>
+        Simple Switch
+      </h2>
+
+      <p>
+
+        Clean and minimal toggle
+        component for forms and
+        dashboard settings.
+
+      </p>
+
+      <div class="switch-demo">
+
+        <label class="switch">
+
+          <input
+            type="checkbox"
+            checked
+          >
+
+          <span class="slider"></span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+    <!-- ICON -->
+
+    <div class="switch-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          ICON
+        </span>
+
+        <div class="card-icon orange">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+
+      </div>
+
+      <h2>
+        Theme Switch
+      </h2>
+
+      <p>
+
+        Modern icon-based switch
+        perfect for dark and
+        light mode toggles.
+
+      </p>
+
+      <div class="switch-demo">
+
+        <label class="icon-switch">
+
+          <input
+            type="checkbox"
+            checked
+          >
+
+          <span class="icon-slider">
+
+            <i class="fa-solid fa-sun"></i>
+
+            <i class="fa-solid fa-moon"></i>
+
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+    <!-- IOS -->
+
+    <div class="switch-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          IOS STYLE
+        </span>
+
+        <div class="card-icon blue">
+          <i class="fa-solid fa-mobile-screen"></i>
+        </div>
+
+      </div>
+
+      <h2>
+        Mobile Switch
+      </h2>
+
+      <p>
+
+        Smooth mobile inspired
+        switch with soft shadows
+        and modern animations.
+
+      </p>
+
+      <div class="switch-demo">
+
+        <label class="ios-switch">
+
+          <input
+            type="checkbox"
+          >
+
+          <span class="ios-slider"></span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+    <!-- SETTINGS -->
+
+    <div class="switch-card large-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          SETTINGS PANEL
+        </span>
+
+        <div class="card-icon green">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+
+      </div>
+
+      <h2>
+        Dashboard Preferences
+      </h2>
+
+      <p>
+
+        Real-world settings layout
+        with premium switch components.
+
+      </p>
+
+      <div class="settings-list">
+
+        <div class="setting-item">
+
+          <div>
+
+            <strong>
+              Push Notifications
+            </strong>
+
+            <span>
+              Receive instant updates
+            </span>
+
+          </div>
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              checked
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+        <div class="setting-item">
+
+          <div>
+
+            <strong>
+              Auto Backup
+            </strong>
+
+            <span>
+              Backup files automatically
+            </span>
+
+          </div>
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+        <div class="setting-item">
+
+          <div>
+
+            <strong>
+              Experimental Features
+            </strong>
+
+            <span>
+              Enable beta components
+            </span>
+
+          </div>
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              checked
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script src="switches.js"></script>
+
+</body>
+</html>

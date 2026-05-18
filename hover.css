@@ -720,6 +720,336 @@ body{
 }
 
 /* =========================================================
+   10. Liquid Distortion Hover Card
+   ========================================================= */
+.liquid-card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.liquid-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.liquid-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+  text-align: left;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.liquid-content h3 {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Syne", sans-serif;
+}
+
+.liquid-content p {
+  font-size: 11px;
+  color: #a855f7;
+  margin-top: 2px;
+}
+
+.liquid-card:hover .liquid-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* =========================================================
+   11. Aurora Gradient Hover Button
+   ========================================================= */
+.aurora-btn {
+  position: relative;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 36px;
+  border-radius: 99px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  overflow: visible;
+  transition: border-color 0.4s, transform 0.2s;
+  font-family: "DM Sans", sans-serif;
+}
+
+.aurora-btn-text {
+  position: relative;
+  z-index: 5;
+  letter-spacing: 0.5px;
+}
+
+.aurora-glow {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(24px);
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  mix-blend-mode: screen;
+}
+
+.aurora-glow:nth-child(1) {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, transparent 70%);
+  top: -20px;
+  left: -20px;
+}
+
+.aurora-glow:nth-child(2) {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.6) 0%, transparent 70%);
+  bottom: -20px;
+  right: -20px;
+}
+
+.aurora-glow:nth-child(3) {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.6) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.aurora-btn:hover {
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+
+.aurora-btn:hover .aurora-glow {
+  opacity: 1;
+  animation: auroraSpin 8s linear infinite;
+}
+
+.aurora-btn:hover .aurora-glow:nth-child(2) {
+  animation: auroraSpin 6s linear infinite reverse;
+}
+
+@keyframes auroraSpin {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(15px, -10px) rotate(180deg) scale(1.15); }
+  100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+}
+
+/* =========================================================
+   12. Tilt Glassmorphism Panel
+   ========================================================= */
+.glass-tilt-container {
+  perspective: 1200px;
+}
+
+.glass-tilt-card {
+  position: relative;
+  width: 250px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s;
+}
+
+.glass-tilt-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.glass-shine {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 60%);
+  pointer-events: none;
+  z-index: 2;
+  transition: background 0.15s ease-out;
+}
+
+.glass-content {
+  position: relative;
+  z-index: 3;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  transform: translateZ(30px);
+  text-align: left;
+}
+
+.glass-badge {
+  font-size: 9px;
+  font-weight: 800;
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 3px 8px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.glass-content h3 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Syne", sans-serif;
+  margin-bottom: 4px;
+}
+
+.glass-content p {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* =========================================================
+   13. Cursor Trail Hover Effect
+   ========================================================= */
+.trail-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  background: #111827;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+#trailCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.trail-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* =========================================================
+   14. Morphing Icon Hover Card
+   ========================================================= */
+.morph-card {
+  position: relative;
+  width: 250px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 20px;
+  transition: border-color 0.4s, background 0.4s;
+}
+
+.morph-svg-wrapper {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.morph-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.morph-path {
+  fill: rgba(168, 85, 247, 0.1);
+  stroke: #a855f7;
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+  transition: d 0.5s cubic-bezier(0.25, 0.8, 0.25, 1.1), fill 0.5s, stroke 0.5s;
+}
+
+.morph-icon {
+  position: relative;
+  font-size: 20px;
+  color: #fff;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1.2), color 0.5s;
+}
+
+.morph-content {
+  text-align: center;
+}
+
+.morph-content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  font-family: "Syne", sans-serif;
+  margin-bottom: 2px;
+}
+
+.morph-content p {
+  font-size: 11px;
+  color: #64748b;
+  margin: 0;
+}
+
+.morph-card:hover {
+  border-color: rgba(168, 85, 247, 0.25);
+  background: rgba(168, 85, 247, 0.03);
+}
+
+.morph-card:hover .morph-path {
+  d: path("M50,4 Q90,4 90,45 Q90,80 50,96 Q10,80 10,45 Q10,4 50,4 Z");
+  fill: rgba(6, 182, 212, 0.15);
+  stroke: #06b6d4;
+}
+
+.morph-card:hover .morph-icon {
+  transform: rotate(360deg) scale(1.15);
+  color: #06b6d4;
+}
+
+/* =========================================================
    RESPONSIVE
 ========================================================= */
 @media(max-width:1200px) {

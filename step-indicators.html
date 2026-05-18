@@ -405,6 +405,355 @@
 &lt;/div&gt;</code></pre>
     </div>
 
+    <!-- 6. TIMELINE JOURNEY STEPPER -->
+    <div class="component-card" data-category="animated">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          
+          <!-- Interactive Render -->
+          <div class="timeline-journey-stepper" id="journeyStepper">
+            <!-- Curved path linking nodes -->
+            <svg class="journey-track" viewBox="0 0 320 80">
+              <path class="journey-track-bg" d="M 20 40 Q 95 10, 160 40 T 300 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="4"></path>
+              <path class="journey-track-fill" id="jFill" d="M 20 40 Q 95 10, 160 40 T 300 40" fill="none" stroke="url(#journeyGradient)" stroke-width="4" stroke-dasharray="320" stroke-dashoffset="320"></path>
+              <defs>
+                <linearGradient id="journeyGradient" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#7b61ff"></stop>
+                  <stop offset="100%" stop-color="#ff7a3d"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
+            
+            <div class="journey-nodes">
+              <div class="journey-node active" data-jstep="1" style="left: 20px; top: 40px;">
+                <span class="j-dot"></span>
+                <span class="j-label">Discovery</span>
+              </div>
+              <div class="journey-node" data-jstep="2" style="left: 160px; top: 40px;">
+                <span class="j-dot"></span>
+                <span class="j-label">Prototype</span>
+              </div>
+              <div class="journey-node" data-jstep="3" style="left: 300px; top: 40px;">
+                <span class="j-dot"></span>
+                <span class="j-label">Delivery</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div style="display:flex; gap:10px; margin-top:20px;">
+            <button class="trigger-live-btn purple" onclick="prevStep('journey')"><i class="fa-solid fa-chevron-left"></i> Prev</button>
+            <button class="trigger-live-btn orange" onclick="nextStep('journey')">Next <i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Timeline Journey</h3>
+          <span>Animated</span>
+        </div>
+        <p>A stylized wavy timeline path designed using animated SVG bezier curves, responsive floating milestone labels, and smooth state transitions.</p>
+        
+        <div class="card-actions">
+          <button onclick="toggleCode('codeJ', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeJ', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+
+      <pre class="code-block" id="codeJ" style="display:none;"><code>&lt;div class="timeline-journey-stepper"&gt;
+  &lt;svg class="journey-track" viewBox="0 0 320 80"&gt;
+    &lt;path class="journey-track-bg" d="M 20 40 Q 95 10, 160 40 T 300 40" fill="none" stroke-width="4"&gt;&lt;/path&gt;
+    &lt;path class="journey-track-fill" d="M 20 40 Q 95 10, 160 40 T 300 40" fill="none" stroke-width="4" stroke-dasharray="320" stroke-dashoffset="320"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+  &lt;div class="journey-nodes"&gt;
+    &lt;div class="journey-node completed" style="left: 20px; top: 40px;"&gt;
+      &lt;span class="j-dot"&gt;&lt;/span&gt;
+      &lt;span class="j-label"&gt;Discovery&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="journey-node active" style="left: 160px; top: 40px;"&gt;
+      &lt;span class="j-dot"&gt;&lt;/span&gt;
+      &lt;span class="j-label"&gt;Prototype&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="journey-node" style="left: 300px; top: 40px;"&gt;
+      &lt;span class="j-dot"&gt;&lt;/span&gt;
+      &lt;span class="j-label"&gt;Delivery&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 7. GLASSMORPHISM WIZARD FLOW -->
+    <div class="component-card" data-category="checkout">
+      <div class="card-preview dark-preview">
+        <div class="card-interactive-area full-width">
+          
+          <!-- Interactive Render -->
+          <div class="glassmorphism-wizard">
+            <div class="wizard-header">
+              <span class="wizard-step-tag" id="wizardTag">STEP 1 OF 3</span>
+              <h4 id="wizardStepTitle">Identity Profile</h4>
+            </div>
+            
+            <div class="wizard-carousel">
+              <div class="wizard-slider" id="wizardSlider" style="transform: translateX(0%);">
+                <!-- Page 1 -->
+                <div class="wizard-slide">
+                  <div class="wizard-input-group">
+                    <label>Workspace Alias</label>
+                    <input type="text" value="@neotech" placeholder="e.g. @workspace" readonly>
+                  </div>
+                </div>
+                <!-- Page 2 -->
+                <div class="wizard-slide">
+                  <div class="wizard-input-group">
+                    <label>Credentials Level</label>
+                    <input type="password" value="••••••••" readonly>
+                  </div>
+                </div>
+                <!-- Page 3 -->
+                <div class="wizard-slide">
+                  <div class="wizard-success-card">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Ready for Deployment</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-nav">
+              <button class="wizard-btn-prev" onclick="prevStep('wizard')"><i class="fa-solid fa-angle-left"></i> Back</button>
+              <button class="wizard-btn-next" onclick="nextStep('wizard')">Continue <i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Glassmorphic Wizard</h3>
+          <span>Checkout</span>
+        </div>
+        <p>A multi-step setup card implementing glassmorphism, responsive forms inputs, slide-transition tab sheets, and glowing validation tags.</p>
+        
+        <div class="card-actions">
+          <button onclick="toggleCode('codeW', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeW', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+
+      <pre class="code-block" id="codeW" style="display:none;"><code>&lt;div class="glassmorphism-wizard"&gt;
+  &lt;div class="wizard-header"&gt;
+    &lt;span class="wizard-step-tag"&gt;STEP 2 OF 3&lt;/span&gt;
+    &lt;h4&gt;Security Credentials&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="wizard-carousel"&gt;
+    &lt;div class="wizard-slider" style="transform: translateX(-100%);"&gt;
+      &lt;div class="wizard-slide"&gt;...&lt;/div&gt;
+      &lt;div class="wizard-slide"&gt;...&lt;/div&gt;
+      &lt;div class="wizard-slide"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 8. CIRCULAR ORBIT STEP INDICATOR -->
+    <div class="component-card" data-category="animated">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          
+          <!-- Interactive Render -->
+          <div class="circular-orbit-stepper">
+            <div class="orbit-wheel" id="orbitWheel" style="transform: rotate(0deg);">
+              <div class="orbit-ring"></div>
+              
+              <!-- Orbital Nodes -->
+              <div class="orbit-node active" data-ostep="1" onclick="setStep('orbit', 1)" style="top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                <i class="fa-solid fa-shield"></i>
+              </div>
+              <div class="orbit-node" data-ostep="2" onclick="setStep('orbit', 2)" style="top: 75%; left: 93.3%; transform: translate(-50%, -50%);">
+                <i class="fa-solid fa-server"></i>
+              </div>
+              <div class="orbit-node" data-ostep="3" onclick="setStep('orbit', 3)" style="top: 75%; left: 6.7%; transform: translate(-50%, -50%);">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+            </div>
+
+            <!-- Central Hub Status -->
+            <div class="orbit-hub">
+              <span class="hub-label" id="hubLabel">SHIELD</span>
+              <span class="hub-status" id="hubStatus">Stage 1</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Circular Orbit</h3>
+          <span>Animated</span>
+        </div>
+        <p>A futuristic circular layout with nodes positioned orbitally around a status hub. Shifts the planetary angles on node click.</p>
+        
+        <div class="card-actions">
+          <button onclick="toggleCode('codeO', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeO', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+
+      <pre class="code-block" id="codeO" style="display:none;"><code>&lt;div class="circular-orbit-stepper"&gt;
+  &lt;div class="orbit-wheel" style="transform: rotate(-120deg);"&gt;
+    &lt;div class="orbit-node active" style="top: 0%; left: 50%;"&gt;&lt;i class="fa-solid fa-shield"&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class="orbit-node" style="top: 75%; left: 93.3%;"&gt;&lt;i class="fa-solid fa-server"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="orbit-hub"&gt;
+    &lt;span class="hub-label"&gt;SERVER&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 9. EXPANDABLE ACCORDION STEPPER -->
+    <div class="component-card" data-category="vertical">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          
+          <!-- Interactive Render -->
+          <div class="expandable-accordion-stepper">
+            <!-- Row 1 -->
+            <div class="acc-row active" id="accRow-1" onclick="setStep('accordion', 1)">
+              <div class="acc-header">
+                <div class="acc-indicator">1</div>
+                <h4 class="acc-title">Build Infrastructure</h4>
+                <i class="fa-solid fa-chevron-down acc-arrow"></i>
+              </div>
+              <div class="acc-body">
+                <p>Provision VM cloud server networks, initialize Docker volumes, and set database replicas.</p>
+              </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="acc-row" id="accRow-2" onclick="setStep('accordion', 2)">
+              <div class="acc-header">
+                <div class="acc-indicator">2</div>
+                <h4 class="acc-title">Verify Firewalls</h4>
+                <i class="fa-solid fa-chevron-down acc-arrow"></i>
+              </div>
+              <div class="acc-body">
+                <p>Filter port access, inject secure TLS certs, and establish proxy router policies.</p>
+              </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="acc-row" id="accRow-3" onclick="setStep('accordion', 3)">
+              <div class="acc-header">
+                <div class="acc-indicator">3</div>
+                <h4 class="acc-title">Launch Pipeline</h4>
+                <i class="fa-solid fa-chevron-down acc-arrow"></i>
+              </div>
+              <div class="acc-body">
+                <p>Build bundles, execute integration diagnostics, and deploy straight to live servers.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Accordion Stepper</h3>
+          <span>Vertical</span>
+        </div>
+        <p>A vertical accordion stepper. Automatically expands selected node parameters while collapsing sibling checklists.</p>
+        
+        <div class="card-actions">
+          <button onclick="toggleCode('codeAcc', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeAcc', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+
+      <pre class="code-block" id="codeAcc" style="display:none;"><code>&lt;div class="expandable-accordion-stepper"&gt;
+  &lt;div class="acc-row active"&gt;
+    &lt;div class="acc-header"&gt;
+      &lt;div class="acc-indicator"&gt;1&lt;/div&gt;
+      &lt;h4 class="acc-title"&gt;Title&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class="acc-body"&gt;Detailed checklist text.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 10. MOBILE SWIPE STEP FLOW -->
+    <div class="component-card" data-category="horizontal">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          
+          <!-- Interactive Render -->
+          <div class="mobile-swipe-stepper">
+            <div class="phone-screen">
+              <div class="swipe-carousel">
+                <div class="swipe-slider" id="swipeSlider" style="transform: translateX(0%);">
+                  <div class="swipe-page">
+                    <div class="swipe-icon"><i class="fa-solid fa-user-ninja"></i></div>
+                    <h5>User Setup</h5>
+                    <p>Enter your profile alias to initialize settings.</p>
+                  </div>
+                  <div class="swipe-page">
+                    <div class="swipe-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h5>Bio-Lock</h5>
+                    <p>Add fingerprint security protection layers.</p>
+                  </div>
+                  <div class="swipe-page">
+                    <div class="swipe-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+                    <h5>Fully Ready</h5>
+                    <p>You are now fully configured and launch-ready!</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Bottom dot indicator -->
+              <div class="swipe-footer">
+                <button class="swipe-nav-btn" onclick="prevStep('swipe')">&larr;</button>
+                <div class="swipe-dots">
+                  <span class="swipe-dot active" data-swipe-dot="1"></span>
+                  <span class="swipe-dot" data-swipe-dot="2"></span>
+                  <span class="swipe-dot" data-swipe-dot="3"></span>
+                </div>
+                <button class="swipe-nav-btn" onclick="nextStep('swipe')">&rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Mobile Swipe Flow</h3>
+          <span>Horizontal</span>
+        </div>
+        <p>A sleek iOS-style mobile wizard simulation showcasing sliding onboarding panels and dot indicator paginations.</p>
+        
+        <div class="card-actions">
+          <button onclick="toggleCode('codeSwipe', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeSwipe', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+
+      <pre class="code-block" id="codeSwipe" style="display:none;"><code>&lt;div class="mobile-swipe-stepper"&gt;
+  &lt;div class="swipe-carousel"&gt;
+    &lt;div class="swipe-slider" style="transform: translateX(-100%);"&gt;
+      &lt;div class="swipe-page"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="swipe-dots"&gt;
+    &lt;span class="swipe-dot active"&gt;&lt;/span&gt;
+    &lt;span class="swipe-dot"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
   </div>
 
 </div>
@@ -474,28 +823,38 @@
     vertical: 1,
     checkout: 1,
     flow: 1,
-    animated: 1
+    animated: 1,
+    journey: 1,
+    wizard: 1,
+    orbit: 1,
+    accordion: 1,
+    swipe: 1
   };
-
+ 
   const totalSteps = {
     horizontal: 3,
     vertical: 3,
     checkout: 3,
     flow: 3,
-    animated: 4
+    animated: 4,
+    journey: 3,
+    wizard: 3,
+    orbit: 3,
+    accordion: 3,
+    swipe: 3
   };
-
+ 
   const animatedLabels = ["Start", "Verify", "Launch", "Finished!"];
-
+ 
   // 1. Horizontal Stepper Logic
   function updateHorizontalUI() {
     const fill = document.getElementById('hFill');
     const nodes = document.querySelectorAll('#horizontalStepper .step-node');
     const step = currentSteps.horizontal;
-
+ 
     // Update progress track
     fill.style.width = ((step - 1) / (totalSteps.horizontal - 1)) * 100 + '%';
-
+ 
     // Update nodes
     nodes.forEach(node => {
       const nodeStep = parseInt(node.getAttribute('data-step'));
@@ -511,15 +870,15 @@
       }
     });
   }
-
+ 
   // 2. Vertical Stepper Logic
   function updateVerticalUI() {
     const fill = document.getElementById('vFill');
     const steps = document.querySelectorAll('.v-step');
     const step = currentSteps.vertical;
-
+ 
     fill.style.height = ((step - 1) / (totalSteps.vertical - 1)) * 100 + '%';
-
+ 
     steps.forEach(s => {
       const vstep = parseInt(s.getAttribute('data-vstep'));
       if (vstep < step) {
@@ -534,15 +893,15 @@
       }
     });
   }
-
+ 
   // 3. Checkout Stepper Logic
   function updateCheckoutUI() {
     const fill = document.getElementById('cFill');
     const steps = document.querySelectorAll('#checkoutStepper .c-step');
     const step = currentSteps.checkout;
-
+ 
     fill.style.width = ((step - 1) / (totalSteps.checkout - 1)) * 100 + '%';
-
+ 
     steps.forEach(s => {
       const cstep = parseInt(s.getAttribute('data-cstep'));
       if (cstep < step) {
@@ -554,7 +913,7 @@
       }
     });
   }
-
+ 
   // 4. Numbered Flow Logic
   const flowData = {
     1: {
@@ -570,42 +929,42 @@
       text: "Publish modules, execute regression checks, and trigger live client page notifications."
     }
   };
-
+ 
   function updateFlowUI() {
     const underline = document.getElementById('fUnderline');
     const nodes = document.querySelectorAll('.flow-node');
     const step = currentSteps.flow;
-
+ 
     underline.style.left = ((step - 1) * 33.3) + '%';
-
+ 
     nodes.forEach(node => {
       const fstep = parseInt(node.getAttribute('data-fstep'));
       node.classList.toggle('active', fstep === step);
     });
-
+ 
     document.getElementById('panelTitle').innerText = flowData[step].title;
     document.getElementById('panelText').innerText = flowData[step].text;
   }
-
+ 
   // 5. Animated Progress Stepper Logic
   let autoPlayInterval = null;
-
+ 
   function updateAnimatedUI() {
     const circle = document.getElementById('svgCircle');
     const stepLabel = document.getElementById('ringStepLabel');
     const stepNum = document.getElementById('ringStepNum');
     const step = currentSteps.animated;
-
+ 
     // Circumference = 2 * PI * 50 = 314.16
     const circumference = 314.16;
     const progress = (step - 1) / (totalSteps.animated - 1);
     const offset = circumference - (progress * circumference);
-
+ 
     circle.style.strokeDashoffset = offset;
     stepNum.innerText = `${step} / ${totalSteps.animated}`;
     stepLabel.innerText = animatedLabels[step - 1];
   }
-
+ 
   function toggleAutoPlay(btn) {
     if (autoPlayInterval) {
       clearInterval(autoPlayInterval);
@@ -620,6 +979,87 @@
     }
   }
 
+  // 6. Timeline Journey Stepper Logic
+  function updateJourneyUI() {
+    const fill = document.getElementById('jFill');
+    const nodes = document.querySelectorAll('#journeyStepper .journey-node');
+    const step = currentSteps.journey;
+
+    // SVG dash offset animation
+    const offset = 320 - ((step - 1) / (totalSteps.journey - 1)) * 320;
+    fill.style.strokeDashoffset = offset;
+
+    nodes.forEach(node => {
+      const jstep = parseInt(node.getAttribute('data-jstep'));
+      if (jstep < step) {
+        node.className = 'journey-node completed';
+      } else if (jstep === step) {
+        node.className = 'journey-node active';
+      } else {
+        node.className = 'journey-node';
+      }
+    });
+  }
+
+  // 7. Glassmorphism Wizard Logic
+  const wizardTitles = ["Identity Profile", "Security Credentials", "System Status"];
+  function updateWizardUI() {
+    const slider = document.getElementById('wizardSlider');
+    const tag = document.getElementById('wizardTag');
+    const title = document.getElementById('wizardStepTitle');
+    const step = currentSteps.wizard;
+
+    slider.style.transform = `translateX(-${(step - 1) * 100}%)`;
+    tag.innerText = `STEP ${step} OF ${totalSteps.wizard}`;
+    title.innerText = wizardTitles[step - 1];
+  }
+
+  // 8. Circular Orbit Logic
+  const orbitInfo = [
+    { label: "SHIELD", status: "Stage 1" },
+    { label: "SERVER", status: "Stage 2" },
+    { label: "ROCKET", status: "Stage 3" }
+  ];
+  function updateOrbitUI() {
+    const wheel = document.getElementById('orbitWheel');
+    const nodes = document.querySelectorAll('.orbit-node');
+    const step = currentSteps.orbit;
+
+    const angle = -(step - 1) * 120;
+    wheel.style.transform = `rotate(${angle}deg)`;
+
+    nodes.forEach(node => {
+      const ostep = parseInt(node.getAttribute('data-ostep'));
+      node.classList.toggle('active', ostep === step);
+    });
+
+    document.getElementById('hubLabel').innerText = orbitInfo[step - 1].label;
+    document.getElementById('hubStatus').innerText = orbitInfo[step - 1].status;
+  }
+
+  // 9. Expandable Accordion Logic
+  function updateAccordionUI() {
+    const rows = document.querySelectorAll('.acc-row');
+    const step = currentSteps.accordion;
+
+    rows.forEach((row, idx) => {
+      const isCurrent = (idx + 1) === step;
+      row.classList.toggle('active', isCurrent);
+    });
+  }
+
+  // 10. Mobile Swipe Logic
+  function updateSwipeUI() {
+    const slider = document.getElementById('swipeSlider');
+    const dots = document.querySelectorAll('.swipe-dot');
+    const step = currentSteps.swipe;
+
+    slider.style.transform = `translateX(-${(step - 1) * 100}%)`;
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', (idx + 1) === step);
+    });
+  }
+ 
   // Next / Prev button triggers
   function nextStep(type) {
     if (currentSteps[type] < totalSteps[type]) {
@@ -627,27 +1067,33 @@
       triggerUpdate(type);
     }
   }
-
+ 
+  // Custom back handler to support looping circular orbit stepper
   function prevStep(type) {
     if (currentSteps[type] > 1) {
       currentSteps[type]--;
       triggerUpdate(type);
     }
   }
-
+ 
   function setStep(type, val) {
     currentSteps[type] = val;
     triggerUpdate(type);
   }
-
+ 
   function triggerUpdate(type) {
     if (type === 'horizontal') updateHorizontalUI();
     if (type === 'vertical') updateVerticalUI();
     if (type === 'checkout') updateCheckoutUI();
     if (type === 'flow') updateFlowUI();
     if (type === 'animated') updateAnimatedUI();
+    if (type === 'journey') updateJourneyUI();
+    if (type === 'wizard') updateWizardUI();
+    if (type === 'orbit') updateOrbitUI();
+    if (type === 'accordion') updateAccordionUI();
+    if (type === 'swipe') updateSwipeUI();
   }
-
+ 
   // Global Actions
   function advanceAllSteps() {
     Object.keys(currentSteps).forEach(key => {
@@ -657,7 +1103,8 @@
       }
     });
   }
-
+ 
+  // Custom reset method to clear auto play intervals
   function resetAllSteps() {
     Object.keys(currentSteps).forEach(key => {
       currentSteps[key] = 1;
@@ -669,13 +1116,13 @@
       document.querySelector('[onclick="toggleAutoPlay(this)"]').innerHTML = '<i class="fa-solid fa-play"></i> Auto Play';
     }
   }
-
+ 
   // Filter functionality
   function filterCategory(cat, btn) {
     const buttons = document.querySelectorAll('.filters button');
     buttons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
+ 
     const cards = document.querySelectorAll('.component-card');
     cards.forEach(card => {
       const cardCat = card.getAttribute('data-category');
@@ -686,7 +1133,7 @@
       }
     });
   }
-
+ 
   // Search input system
   document.getElementById('searchInput').addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase().trim();
@@ -702,7 +1149,7 @@
       }
     });
   });
-
+ 
   // Code toggle and copy clipboard methods
   function toggleCode(id, btn) {
     const block = document.getElementById(id);
@@ -714,7 +1161,7 @@
       btn.innerHTML = '<i class="fa-solid fa-code"></i> View Code';
     }
   }
-
+ 
   function copyCode(id, btn) {
     const code = document.getElementById(id).innerText;
     navigator.clipboard.writeText(code).then(() => {

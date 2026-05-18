@@ -354,8 +354,6 @@
 
       <input
         type="text"
-        id="searchInput"
-        onkeydown="handleSearch(event)"
         aria-label="Search calendar components"
         placeholder="Search calendar components..." />
 
@@ -805,6 +803,133 @@
         window.scrollY > 40
       );
 
+    });
+
+    // CALENDAR RENDERING
+
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ];
+
+    const calendarState = {
+      viewDate: new Date(),
+      today: new Date()
+    };
+
+    calendarState.today.setHours(0, 0, 0, 0);
+
+    const mainCalendarTitle =
+      document.getElementById('mainCalendarTitle');
+    const mainCalendarDates =
+      document.getElementById('mainCalendarDates');
+    const miniCalendarTitle =
+      document.getElementById('miniCalendarTitle');
+    const miniCalendarGrid =
+      document.getElementById('miniCalendarGrid');
+    const prevMonthBtn =
+      document.getElementById('prevMonthBtn');
+    const nextMonthBtn =
+      document.getElementById('nextMonthBtn');
+
+    function renderCalendarGrid(target, date, isMini = false) {
+
+      target.innerHTML = '';
+
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const firstDayIndex = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const daysInPreviousMonth =
+        new Date(year, month, 0).getDate();
+
+      const totalCells = 42;
+
+      for (let index = 0; index < totalCells; index += 1) {
+
+        const cell = document.createElement('span');
+        const dayNumber = index - firstDayIndex + 1;
+
+        if (index < firstDayIndex) {
+
+          const previousDay =
+            daysInPreviousMonth - firstDayIndex + index + 1;
+
+          cell.textContent = previousDay;
+          cell.classList.add('mute');
+
+        } else if (dayNumber <= daysInMonth) {
+
+          const cellDate = new Date(year, month, dayNumber);
+          cell.textContent = dayNumber;
+
+          if (
+            cellDate.getTime() === calendarState.today.getTime()
+          ) {
+            cell.classList.add(isMini ? 'today' : 'active');
+          }
+
+          if (dayNumber === 17) {
+            cell.classList.add('event');
+          }
+
+        } else {
+
+          const nextMonthDay = dayNumber - daysInMonth;
+          cell.textContent = nextMonthDay;
+          cell.classList.add('mute');
+
+        }
+
+        target.appendChild(cell);
+
+      }
+
+    }
+
+    function renderCalendar() {
+
+      const year = calendarState.viewDate.getFullYear();
+      const month = calendarState.viewDate.getMonth();
+
+      const currentLabel = `${monthNames[month]} ${year}`;
+
+      mainCalendarTitle.textContent = currentLabel;
+      miniCalendarTitle.textContent = currentLabel;
+
+      renderCalendarGrid(mainCalendarDates, calendarState.viewDate);
+      renderCalendarGrid(miniCalendarGrid, calendarState.viewDate, true);
+
+    }
+
+    function shiftMonth(offset) {
+
+      calendarState.viewDate = new Date(
+        calendarState.viewDate.getFullYear(),
+        calendarState.viewDate.getMonth() + offset,
+        1
+      );
+
+      renderCalendar();
+
+    }
+
+    prevMonthBtn.addEventListener('click', () => {
+      shiftMonth(-1);
+    });
+
+    nextMonthBtn.addEventListener('click', () => {
+      shiftMonth(1);
     });
 
     // CALENDAR RENDERING

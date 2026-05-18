@@ -487,3 +487,380 @@ body.dark-mode .component-card .card-desc,
         width: 100% !important;
     }
 }
+
+/* =========================================================
+   6. Interactive Area Chart
+   ========================================================= */
+.interactive-area-chart {
+    position: relative;
+    overflow: visible;
+}
+
+.area-svg {
+    width: 100%;
+    height: 160px;
+    overflow: visible;
+}
+
+.area-fill-path {
+    transition: all 0.3s ease;
+}
+
+.area-line-path {
+    filter: drop-shadow(0px 6px 12px rgba(6, 182, 212, 0.4));
+}
+
+.marker-line {
+    position: absolute;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    width: 1px;
+    border-left: 1.5px dashed rgba(6, 182, 212, 0.45);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s, left 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 5;
+}
+
+.area-tooltip {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s, left 0.15s cubic-bezier(0.25, 0.8, 0.25, 1), top 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.tooltip-time {
+    color: var(--ch-text-dim);
+    font-weight: 500;
+}
+
+.tooltip-val {
+    color: var(--ch-cyan);
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.tracker-node {
+    fill: #0f172a;
+    stroke: var(--ch-cyan);
+    stroke-width: 2.5px;
+    cursor: pointer;
+    transition: r 0.2s, fill 0.2s;
+}
+
+.tracker-node:hover, .tracker-node.active {
+    r: 7;
+    fill: var(--ch-cyan);
+}
+
+/* =========================================================
+   7. Glassmorphism Pie Chart
+   ========================================================= */
+.glass-pie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pie-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass-pie {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--ch-purple) 0% 45%,
+        var(--ch-cyan) 45% 75%,
+        var(--ch-pink) 75% 90%,
+        var(--ch-orange) 90% 100%
+    );
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.glass-pie-center {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(30, 41, 59, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#pie-center-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    color: #fff;
+}
+
+#pie-center-label {
+    font-size: 0.65rem;
+    color: var(--ch-text-dim);
+    font-weight: 500;
+}
+
+.glass-pie-legend {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.pie-legend-tag {
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    color: var(--ch-text-dim);
+    transition: all 0.3s ease;
+}
+
+.pie-legend-tag:hover, .pie-legend-tag.active {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-width: 1.5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* =========================================================
+   8. Animated Radar Chart
+   ========================================================= */
+.radar-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-selectors {
+    display: flex;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 3px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--ch-border);
+}
+
+.profile-tab {
+    background: transparent;
+    border: none;
+    color: var(--ch-text-dim);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.profile-tab.active {
+    background: var(--ch-purple);
+    color: #fff;
+    box-shadow: 0 2px 8px var(--ch-purple-glow);
+}
+
+.radar-svg {
+    width: 100%;
+    max-width: 170px;
+    height: auto;
+    overflow: visible;
+}
+
+.radar-grid-bg {
+    fill: rgba(255, 255, 255, 0.015);
+    stroke: rgba(148, 163, 184, 0.15);
+    stroke-width: 1px;
+}
+
+.radar-axis {
+    stroke: rgba(148, 163, 184, 0.12);
+    stroke-width: 1px;
+    stroke-dasharray: 2 2;
+}
+
+.radar-poly {
+    fill: rgba(139, 92, 246, 0.35);
+    stroke: var(--ch-purple);
+    stroke-width: 2.5px;
+    filter: drop-shadow(0 0 8px var(--ch-purple-glow));
+    transition: points 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.radar-label {
+    fill: var(--ch-text-dim);
+    font-size: 8px;
+    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   9. Real-Time Analytics Graph
+   ========================================================= */
+.real-time-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.real-time-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.live-dot-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--ch-purple);
+    letter-spacing: 1px;
+    background: rgba(139, 92, 246, 0.12);
+    padding: 3px 8px;
+    border-radius: 99px;
+}
+
+.live-pulse {
+    width: 6px;
+    height: 6px;
+    background: var(--ch-purple);
+    border-radius: 50%;
+    animation: livePulse 1.2s infinite;
+}
+
+@keyframes livePulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(139, 92, 246, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}
+
+.real-time-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+}
+
+.real-time-svg {
+    width: 100%;
+    height: 100px;
+    overflow: visible;
+}
+
+.rt-line {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0px 3px 6px var(--ch-purple-glow));
+    transition: d 0.15s linear;
+}
+
+.rt-area {
+    transition: d 0.15s linear;
+}
+
+/* =========================================================
+   10. Heatmap Activity Grid
+   ========================================================= */
+.annual-heatmap-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.heatmap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--ch-text-dim);
+    margin-bottom: 12px;
+}
+
+.heatmap-key {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+}
+
+.key-cell {
+    width: 8px;
+    height: 8px;
+    border-radius: 1.5px;
+}
+
+.key-cell.level-0 { background: rgba(255,255,255,0.04); }
+.key-cell.level-1 { background: rgba(6, 182, 212, 0.2); }
+.key-cell.level-2 { background: rgba(6, 182, 212, 0.45); }
+.key-cell.level-3 { background: rgba(6, 182, 212, 0.7); }
+.key-cell.level-4 { background: var(--ch-cyan); }
+
+.annual-grid {
+    display: grid;
+    grid-template-columns: repeat(52, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 3px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.annual-cell {
+    aspect-ratio: 1;
+    border-radius: 1.5px;
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.annual-cell:hover {
+    transform: scale(1.3);
+    z-index: 5;
+    box-shadow: 0 0 6px var(--ch-cyan-glow);
+}
+
+.annual-cell[data-level="1"] { background: rgba(6, 182, 212, 0.2); }
+.annual-cell[data-level="2"] { background: rgba(6, 182, 212, 0.45); }
+.annual-cell[data-level="3"] { background: rgba(6, 182, 212, 0.7); }
+.annual-cell[data-level="4"] { background: var(--ch-cyan); }
+
+.heatmap-detail-card {
+    font-size: 0.75rem;
+    color: var(--ch-text-dim);
+    background: rgba(15, 23, 42, 0.3);
+    border: 1px solid var(--ch-border);
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}

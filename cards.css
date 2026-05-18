@@ -1340,73 +1340,91 @@ body.dark-mode .social-card { background: #1e1e24; border-color: #2a2a30; }
 }
 
 /* =========================================================
-   CARDS PAGE STABILITY OVERRIDES
-   Keeps color contrast and alignment consistent across all cards.
+   CARDS PAGE STABILITY OVERRIDES & PREMIUM STYLING
    ========================================================= */
 
 .cards-grid {
   align-items: stretch;
-  gap: 24px !important;
+  gap: 28px !important;
 }
 
 .cards-grid .component-card {
-  background: rgba(30, 41, 59, 0.45) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 24px !important;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  background: #ffffff !important;
+  border: 1px solid rgba(229, 231, 235, 0.8) !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
-  color: #f8fafc !important;
-  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+  color: #0f172a !important;
+  height: 100% !important;
 }
 
 body.dark-mode .cards-grid .component-card {
-  background: rgba(15, 23, 42, 0.6) !important;
-  border-color: rgba(255, 255, 255, 0.04) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  background: rgba(30, 41, 59, 0.45) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  color: #f8fafc !important;
 }
 
 .cards-grid .component-card:hover {
   transform: translateY(-8px) !important;
-  background: rgba(30, 41, 59, 0.65) !important;
-  border-color: rgba(99, 102, 241, 0.3) !important;
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15) !important;
+  border-color: rgba(235, 104, 53, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(235, 104, 53, 0.08) !important;
+}
+
+body.dark-mode .cards-grid .component-card:hover {
+  border-color: rgba(235, 104, 53, 0.5) !important;
+  box-shadow: 0 20px 40px rgba(235, 104, 53, 0.15) !important;
 }
 
 .cards-grid .card-preview {
+  background: #f8fafc !important;
+  border: 1px solid rgba(229, 231, 235, 0.5) !important;
+  border-radius: 14px !important;
+  padding: 30px 20px !important;
+  min-height: 220px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.01) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.dark-mode .cards-grid .card-preview {
   background: rgba(15, 23, 42, 0.6) !important;
-  border: 1px solid rgba(255, 255, 255, 0.04) !important;
-  border-radius: 14px;
-  padding: 30px 20px;
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.04) !important;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.cards-grid .component-card:hover .card-preview {
+  background: #ffffff !important;
+}
+
+body.dark-mode .cards-grid .component-card:hover .card-preview {
+  background: rgba(30, 41, 59, 0.45) !important;
 }
 
 .cards-grid .card-preview > * {
-  max-width: 100%;
+  max-width: 100% !important;
 }
 
 .cards-grid .actions {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 8px !important;
-  margin-top: auto;
+  margin-top: auto !important;
 }
 
 .cards-grid .actions button,
 .cards-grid .actions .action-btn {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  color: #cbd5e1 !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  color: #475569 !important;
   padding: 8px 12px !important;
   border-radius: 12px !important;
   font-size: 11px !important;
@@ -1418,26 +1436,46 @@ body.dark-mode .cards-grid .component-card {
   cursor: pointer !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
   min-height: 38px !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .cards-grid .actions button,
+body.dark-mode .cards-grid .actions .action-btn {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
 }
 
 .cards-grid .actions button:hover,
 .cards-grid .actions .action-btn:hover {
-  background: #6366f1 !important;
-  border-color: #6366f1 !important;
-  color: white !important;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3) !important;
-  transform: translateY(-2px) !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+  color: #0f172a !important;
+}
+
+body.dark-mode .cards-grid .actions button:hover,
+body.dark-mode .cards-grid .actions .action-btn:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
 }
 
 /* Copy button special highlight */
 .cards-grid .actions .copy-btn {
-  background: rgba(99, 102, 241, 0.1) !important;
-  border-color: rgba(99, 102, 241, 0.25) !important;
-  color: #a5b4fc !important;
+  background: linear-gradient(135deg, #eb6835, #ff8e53) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(235, 104, 53, 0.2) !important;
 }
+
 .cards-grid .actions .copy-btn:hover {
-  background: #6366f1 !important;
-  color: white !important;
+  background: linear-gradient(135deg, #d45c28, #eb6835) !important;
+  box-shadow: 0 6px 18px rgba(235, 104, 53, 0.3) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+.cards-grid .actions .copy-btn.copied {
+  background: linear-gradient(135deg, #10b981, #34d399) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25) !important;
 }
 
 /* Keep demo cards readable and visually consistent in all themes. */
@@ -2044,5 +2082,188 @@ body.dark-mode .card-preview :is(.profile-role, .product-desc, .image-card-body 
   color: #94a3b8 !important;
   font-size: 12px;
   line-height: 1.5;
+}
+
+/* ============================================================
+   PREMIUM HERO, FILTER BAR, AND SEARCH FOR CARDS PAGE
+   ============================================================ */
+
+.page-hero {
+  background: linear-gradient(135deg, #eb6835 0%, #ff8e53 50%, #7c3aed 100%) !important;
+  color: #fff !important;
+  border-radius: 24px !important;
+  padding: 56px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 40px !important;
+  margin-bottom: 40px !important;
+  flex-wrap: wrap !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 50px rgba(235, 104, 53, 0.15) !important;
+  border: none !important;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-title {
+  color: #ffffff !important;
+  font-family: 'Syne', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: clamp(32px, 5vw, 48px) !important;
+  letter-spacing: -1.5px !important;
+  line-height: 1.1 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.page-desc {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  max-width: 520px !important;
+  margin: 12px 0 24px !important;
+  font-weight: 400 !important;
+}
+
+.page-meta {
+  display: flex !important;
+  gap: 12px !important;
+}
+
+.meta-badge {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-radius: 99px !important;
+  padding: 6px 16px !important;
+  font-weight: 600 !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Translucent Premium Filter Bar */
+.filter-bar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 35px !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(20px) !important;
+  padding: 16px 20px !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(229, 231, 235, 0.5) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+body.dark-mode .filter-bar {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Premium Navigation Filter Buttons */
+.filter-btn {
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 12px !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  color: #64748b !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.dark-mode .filter-btn {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: #94a3b8 !important;
+}
+
+.filter-btn:hover {
+  background: rgba(235, 104, 53, 0.08) !important;
+  color: #eb6835 !important;
+  transform: translateY(-1px) !important;
+}
+
+body.dark-mode .filter-btn:hover {
+  background: rgba(235, 104, 53, 0.15) !important;
+  color: #ff8e53 !important;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #eb6835, #ff8e53) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(235, 104, 53, 0.25) !important;
+}
+
+body.dark-mode .filter-btn.active {
+  background: linear-gradient(135deg, #eb6835, #ff8e53) !important;
+  color: #ffffff !important;
+}
+
+/* Premium Filter Search Bar */
+.filter-search {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+.filter-search i {
+  position: absolute !important;
+  left: 16px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #64748b !important;
+  font-size: 14px !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+body.dark-mode .filter-search i {
+  color: #94a3b8 !important;
+}
+
+.filter-search input {
+  padding: 12px 16px 12px 42px !important;
+  border-radius: 12px !important;
+  border: 1.5px solid rgba(226, 232, 240, 0.8) !important;
+  background: rgba(0, 0, 0, 0.02) !important;
+  color: #0f172a !important;
+  outline: none !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  width: 240px !important;
+}
+
+body.dark-mode .filter-search input {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  color: #f8fafc !important;
+}
+
+.filter-search input:focus {
+  border-color: #eb6835 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(235, 104, 53, 0.15) !important;
+  width: 280px !important;
+}
+
+body.dark-mode .filter-search input:focus {
+  background: #0f172a !important;
+  border-color: #eb6835 !important;
 }
 

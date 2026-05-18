@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Modern File Manager UI</title>
+
+  <link
+    rel="stylesheet"
+    href="file.css"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div>
+
+      <div class="logo">
+
+        <div class="logo-icon">
+          F
+        </div>
+
+        <div>
+          <h1>FileFlow</h1>
+          <p>Premium Cloud Storage</p>
+        </div>
+
+      </div>
+
+      <div class="nav-links">
+
+        <div class="nav-item active">
+          🏠 Dashboard
+        </div>
+
+        <div class="nav-item">
+          📁 My Files
+        </div>
+
+        <div class="nav-item">
+          ⭐ Favorites
+        </div>
+
+        <div class="nav-item">
+          🕒 Recent
+        </div>
+
+        <div class="nav-item">
+          🗑 Trash
+        </div>
+
+        <div class="nav-item">
+          ⚙ Settings
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="storage-card">
+
+      <h3>Storage Usage</h3>
+
+      <div class="progress">
+        <span></span>
+      </div>
+
+      <div class="storage-meta">
+        <span>72 GB used</span>
+        <span>100 GB total</span>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <div class="search-box">
+
+        <span>🔍</span>
+
+        <input
+          type="text"
+          placeholder="Search files, folders, images..."
+        />
+
+      </div>
+
+      <div class="actions">
+
+        <button class="btn-upload">
+          + Upload File
+        </button>
+
+        <div class="profile">
+          DM
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-card">
+
+        <div class="hero-icon purple">
+          📁
+        </div>
+
+        <h2>245</h2>
+
+        <p>
+          Total folders stored securely in your workspace.
+        </p>
+
+      </div>
+
+      <div class="hero-card">
+
+        <div class="hero-icon green">
+          📄
+        </div>
+
+        <h2>1.4K</h2>
+
+        <p>
+          Files uploaded and synced instantly across devices.
+        </p>
+
+      </div>
+
+      <div class="hero-card">
+
+        <div class="hero-icon orange">
+          ⚡
+        </div>
+
+        <h2>92%</h2>
+
+        <p>
+          Fast cloud sync performance and optimized delivery.
+        </p>
+
+      </div>
+
+      <div class="hero-card">
+
+        <div class="hero-icon pink">
+          ☁
+        </div>
+
+        <h2>72GB</h2>
+
+        <p>
+          Secure encrypted cloud storage backups enabled.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- TITLE -->
+
+    <div class="section-title">
+
+      <h2>Recent Files</h2>
+
+      <button class="btn-upload">
+        View All
+      </button>
+
+    </div>
+
+    <!-- FILES -->
+
+    <div class="files-grid">
+
+      <div class="file-card">
+
+        <div class="file-top">
+
+          <div class="file-icon purple">
+            🎨
+          </div>
+
+          <div class="file-menu">
+            ⋮
+          </div>
+
+        </div>
+
+        <h3>UI Design.fig</h3>
+
+        <p>
+          Premium dashboard design assets and components.
+        </p>
+
+        <div class="file-footer">
+          <span>12.4 MB</span>
+          <span>2 mins ago</span>
+        </div>
+
+      </div>
+
+      <div class="file-card">
+
+        <div class="file-top">
+
+          <div class="file-icon green">
+            📄
+          </div>
+
+          <div class="file-menu">
+            ⋮
+          </div>
+
+        </div>
+
+        <h3>Project Docs.pdf</h3>
+
+        <p>
+          Documentation and technical architecture reports.
+        </p>
+
+        <div class="file-footer">
+          <span>4.1 MB</span>
+          <span>10 mins ago</span>
+        </div>
+
+      </div>
+
+      <div class="file-card">
+
+        <div class="file-top">
+
+          <div class="file-icon orange">
+            📸
+          </div>
+
+          <div class="file-menu">
+            ⋮
+          </div>
+
+        </div>
+
+        <h3>Gallery.zip</h3>
+
+        <p>
+          High-resolution image collection for client delivery.
+        </p>
+
+        <div class="file-footer">
+          <span>28 MB</span>
+          <span>25 mins ago</span>
+        </div>
+
+      </div>
+
+      <div class="file-card">
+
+        <div class="file-top">
+
+          <div class="file-icon pink">
+            🎬
+          </div>
+
+          <div class="file-menu">
+            ⋮
+          </div>
+
+        </div>
+
+        <h3>Motion Reel.mp4</h3>
+
+        <p>
+          Creative motion graphics reel exported in 4K format.
+        </p>
+
+        <div class="file-footer">
+          <span>180 MB</span>
+          <span>1 hour ago</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TABLE -->
+
+    <div class="recent-table">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>File Name</th>
+            <th>Type</th>
+            <th>Size</th>
+            <th>Status</th>
+            <th>Modified</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>LandingPage.fig</td>
+            <td>Design</td>
+            <td>18 MB</td>
+            <td>
+              <span class="status completed">
+                ● Completed
+              </span>
+            </td>
+            <td>Today</td>
+          </tr>
+
+          <tr>
+            <td>Analytics.xlsx</td>
+            <td>Spreadsheet</td>
+            <td>3.5 MB</td>
+            <td>
+              <span class="status pending">
+                ● Syncing
+              </span>
+            </td>
+            <td>Yesterday</td>
+          </tr>
+
+          <tr>
+            <td>PromoVideo.mp4</td>
+            <td>Video</td>
+            <td>320 MB</td>
+            <td>
+              <span class="status completed">
+                ● Uploaded
+              </span>
+            </td>
+            <td>2 days ago</td>
+          </tr>
+
+          <tr>
+            <td>ServerBackup.zip</td>
+            <td>Archive</td>
+            <td>1.2 GB</td>
+            <td>
+              <span class="status failed">
+                ● Failed
+              </span>
+            </td>
+            <td>3 days ago</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

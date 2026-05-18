@@ -871,41 +871,41 @@
   /* Live search */
   function liveFilter(val) {
     const q = val.toLowerCase();
-    document.querySelectorAll('.component-card').forEach(card => {
-      const match = card.dataset.name.toLowerCase().includes(q) ||
-                    (card.querySelector('.card-label')?.textContent.toLowerCase().includes(q));
-      card.closest('.inputs-section') && (card.style.display = match ? '' : 'none');
+    document.querySelectorAll('.inputs-section').forEach(section => {
+      let visibleCards = 0;
+      section.querySelectorAll('.component-card').forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const label = card.querySelector('.card-label')?.textContent.toLowerCase() || '';
+        const match = name.includes(q) || label.includes(q);
+        
+        card.style.display = match ? '' : 'none';
+        if (match) visibleCards++;
+      });
+      section.style.display = visibleCards > 0 ? '' : 'none';
     });
-    // show all sections when searching
-    document.querySelectorAll('.inputs-section').forEach(s => s.style.display = '');
   }
 
-  function liveFilter(val) {
-  const q = val.toLowerCase();
-
-  document.querySelectorAll('.inputs-section').forEach(section => {
-    let visibleCards = 0;
-
-    section.querySelectorAll('.component-card').forEach(card => {
-      const match =
-        card.dataset.name.toLowerCase().includes(q) ||
-        card.querySelector('.card-label').textContent.toLowerCase().includes(q);
-
-      card.style.display = match ? '' : 'none';
-
-      if (match) visibleCards++;
-    });
-
-    section.style.display = visibleCards > 0 ? '' : 'none';
-  });
-}
-
  
-  /* Scroll animations */
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
+  /* Scroll animations with local file / environment failsafe */
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
+    
+    // Failsafe: if cards aren't marked in-view after a short delay (e.g. local file protocol restrictions), force show them
+    setTimeout(() => {
+      document.querySelectorAll('.component-card').forEach(el => {
+        if (!el.classList.contains('in-view')) {
+          el.classList.add('in-view');
+        }
+      });
+    }, 300);
+  } else {
+    document.querySelectorAll('.component-card').forEach(el => {
+      el.classList.add('in-view');
+    });
+  }
 </script>
 </body>
 </html>

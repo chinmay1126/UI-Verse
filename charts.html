@@ -616,6 +616,240 @@
       </div>
     </div>
 
+    <!-- 6. Interactive Area Chart -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>Interactive Area Chart</h3>
+        <p>Smooth SVG area chart with real-time mouse hover tracking.</p>
+      </div>
+      <div class="preview-box charts-wrapper" id="preview-6" style="padding: 1.5rem 1rem;">
+        <div class="chart-card interactive-area-chart" id="area-chart-6">
+          <div class="area-tooltip" id="area-tooltip-el">
+            <span class="tooltip-time">12:00 PM</span>
+            <span class="tooltip-val">580 Users</span>
+          </div>
+          <div class="marker-line" id="marker-line-el"></div>
+          <svg class="area-svg" viewBox="0 0 500 160" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="areaGrad6" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="var(--ch-cyan)" stop-opacity="0.45"/>
+                <stop offset="100%" stop-color="var(--ch-cyan)" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path class="area-fill-path" d="M0,160 L0,110 Q100,50 200,90 T400,30 L500,60 L500,160 Z" fill="url(#areaGrad6)"></path>
+            <path class="area-line-path" d="M0,110 Q100,50 200,90 T400,30 L500,60" fill="none" stroke="var(--ch-cyan)" stroke-width="3"></path>
+            
+            <circle cx="0" cy="110" r="5" class="tracker-node" data-index="0" data-x="0" data-y="110" data-val="120" data-time="09:00 AM"></circle>
+            <circle cx="100" cy="50" r="5" class="tracker-node" data-index="1" data-x="100" data-y="50" data-val="350" data-time="11:00 AM"></circle>
+            <circle cx="200" cy="90" r="5" class="tracker-node" data-index="2" data-x="200" data-y="90" data-val="210" data-time="01:00 PM"></circle>
+            <circle cx="300" cy="60" r="5" class="tracker-node" data-index="3" data-x="300" data-y="60" data-val="430" data-time="03:00 PM"></circle>
+            <circle cx="400" cy="30" r="5" class="tracker-node" data-index="4" data-x="400" data-y="30" data-val="580" data-time="05:00 PM"></circle>
+            <circle cx="500" cy="60" r="5" class="tracker-node" data-index="5" data-x="500" data-y="60" data-val="490" data-time="07:00 PM"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-6', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('code-6-text', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-6">
+        <pre id="code-6-text"><code>&lt;div class="chart-card interactive-area-chart"&gt;
+  &lt;div class="area-tooltip"&gt;
+    &lt;span class="tooltip-time"&gt;12:00 PM&lt;/span&gt;
+    &lt;span class="tooltip-val"&gt;580 Users&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="marker-line"&gt;&lt;/div&gt;
+  &lt;svg class="area-svg" viewBox="0 0 500 160"&gt;
+    &lt;path d="M0,160 L0,110 Q100,50 200,90 T400,30 L500,60 L500,160 Z" fill="url(#areaGrad)"&gt;&lt;/path&gt;
+    &lt;path d="M0,110 Q100,50 200,90 T400,30 L500,60" fill="none" stroke="#06b6d4" stroke-width="3"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- 7. Glassmorphism Pie Chart -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>Glassmorphism Pie Chart</h3>
+        <p>Premium frosted glass conic-gradient pie layout with core overlay.</p>
+      </div>
+      <div class="preview-box charts-wrapper" id="preview-7" style="padding: 1.5rem 1rem;">
+        <div class="chart-card glass-pie-card">
+          <div class="pie-container">
+            <div class="glass-pie" id="glass-pie-el"></div>
+            <div class="glass-pie-center">
+              <span id="pie-center-value">45%</span>
+              <span id="pie-center-label">Chrome</span>
+            </div>
+          </div>
+          <div class="glass-pie-legend">
+            <span class="pie-legend-tag active" data-pct="45" data-browser="Chrome" style="border-color: var(--ch-purple)">Chrome</span>
+            <span class="pie-legend-tag" data-pct="30" data-browser="Safari" style="border-color: var(--ch-cyan)">Safari</span>
+            <span class="pie-legend-tag" data-pct="15" data-browser="Firefox" style="border-color: var(--ch-pink)">Firefox</span>
+            <span class="pie-legend-tag" data-pct="10" data-browser="Edge" style="border-color: var(--ch-orange)">Edge</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-7', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('code-7-text', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-7">
+        <pre id="code-7-text"><code>&lt;div class="chart-card glass-pie-card"&gt;
+  &lt;div class="pie-container"&gt;
+    &lt;div class="glass-pie" style="background: conic-gradient(#8b5cf6 0% 45%, #06b6d4 45% 75%, #ec4899 75% 90%, #f59e0b 90% 100%);"&gt;&lt;/div&gt;
+    &lt;div class="glass-pie-center"&gt;
+      &lt;span&gt;45%&lt;/span&gt;
+      &lt;span&gt;Chrome&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- 8. Animated Radar Chart -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>Animated Radar Chart</h3>
+        <p>Concentric SVG pentagon axes with dynamic profile selector triggers.</p>
+      </div>
+      <div class="preview-box charts-wrapper" id="preview-8" style="padding: 1rem;">
+        <div class="chart-card radar-card">
+          <div class="profile-selectors">
+            <button class="profile-tab active" onclick="switchRadarProfile('striker', this)">Striker</button>
+            <button class="profile-tab" onclick="switchRadarProfile('balanced', this)">Balanced</button>
+            <button class="profile-tab" onclick="switchRadarProfile('defender', this)">Defender</button>
+          </div>
+          <svg class="radar-svg" viewBox="0 0 200 200">
+            <polygon points="100,10 185,72 153,171 47,171 15,72" class="radar-grid-bg"></polygon>
+            <polygon points="100,32.5 163.75,79 139.75,153.25 60.25,153.25 36.25,79" class="radar-grid-bg"></polygon>
+            <polygon points="100,55 142.5,86 126.5,135.5 73.5,135.5 57.5,86" class="radar-grid-bg"></polygon>
+            <polygon points="100,77.5 121.25,93 113.25,117.75 86.75,117.75 78.75,93" class="radar-grid-bg"></polygon>
+            
+            <line x1="100" y1="100" x2="100" y2="10" class="radar-axis"></line>
+            <line x1="100" y1="100" x2="185" y2="72" class="radar-axis"></line>
+            <line x1="100" y1="100" x2="153" y2="171" class="radar-axis"></line>
+            <line x1="100" y1="100" x2="47" y2="171" class="radar-axis"></line>
+            <line x1="100" y1="100" x2="15" y2="72" class="radar-axis"></line>
+            
+            <polygon points="100,30 176,82 121,128 73,128 40,78" class="radar-poly" id="radar-poly-el"></polygon>
+            
+            <text x="100" y="8" class="radar-label" text-anchor="middle">ATK</text>
+            <text x="190" y="75" class="radar-label" text-anchor="start">SPD</text>
+            <text x="158" y="183" class="radar-label" text-anchor="start">DEF</text>
+            <text x="42" y="183" class="radar-label" text-anchor="end">STM</text>
+            <text x="10" y="75" class="radar-label" text-anchor="end">TEC</text>
+          </svg>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-8', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('code-8-text', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-8">
+        <pre id="code-8-text"><code>&lt;svg class="radar-svg" viewBox="0 0 200 200"&gt;
+  &lt;polygon points="100,10 185,72 153,171 47,171 15,72" class="radar-grid"&gt;&lt;/polygon&gt;
+  &lt;polygon points="100,30 176,82 121,128 73,128 40,78" class="radar-active-poly"&gt;&lt;/polygon&gt;
+&lt;/svg&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- 9. Real-Time Analytics Graph -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>Real-Time Analytics Graph</h3>
+        <p>Smooth crawling streaming graph using progressive coordinate injection.</p>
+      </div>
+      <div class="preview-box charts-wrapper" id="preview-9" style="padding: 1.5rem 1rem;">
+        <div class="chart-card real-time-card">
+          <div class="real-time-header">
+            <span class="live-dot-tag"><span class="live-pulse"></span>LIVE STREAMS</span>
+            <span class="real-time-value" id="rt-value-el">45.2 MB/s</span>
+          </div>
+          <svg class="real-time-svg" viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="rtGradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="var(--ch-purple)" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="var(--ch-purple)" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path id="rt-area-el" class="rt-area" fill="url(#rtGradient)" d="M0,120 L400,120 Z"></path>
+            <path id="rt-path-el" class="rt-line" d="M0,120 L400,120" fill="none" stroke="var(--ch-purple)" stroke-width="3"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-9', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('code-9-text', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-9">
+        <pre id="code-9-text"><code>&lt;div class="chart-card real-time-card"&gt;
+  &lt;span class="live-dot-tag"&gt;&lt;span class="live-pulse"&gt;&lt;/span&gt;LIVE&lt;/span&gt;
+  &lt;svg viewBox="0 0 400 120"&gt;
+    &lt;path id="realtime-line-path" fill="none" stroke="#8b5cf6" stroke-width="3"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- 10. Heatmap Activity Grid -->
+    <div class="component-card">
+      <div class="card-header">
+        <h3>Heatmap Activity Grid</h3>
+        <p>Interactive calendar grid tracking 364 annual commit contribution details.</p>
+      </div>
+      <div class="preview-box charts-wrapper" id="preview-10" style="padding: 1.5rem 1rem;">
+        <div class="chart-card annual-heatmap-card">
+          <div class="heatmap-header">
+            <span>Activity Log (2026)</span>
+            <div class="heatmap-key">
+              <span>Less</span>
+              <span class="key-cell level-0"></span>
+              <span class="key-cell level-1"></span>
+              <span class="key-cell level-2"></span>
+              <span class="key-cell level-3"></span>
+              <span class="key-cell level-4"></span>
+              <span>More</span>
+            </div>
+          </div>
+          <div class="annual-grid" id="annual-grid-el"></div>
+          <div class="heatmap-detail-card" id="heatmap-detail-el">
+            Hover over cells to see activity
+          </div>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-code" onclick="toggleCode('code-10', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="btn btn-copy" onclick="copyCode('code-10-text', this)">
+          <i class="fa-regular fa-copy"></i> Copy
+        </button>
+      </div>
+      <div class="code-snippet" id="code-10">
+        <pre id="code-10-text"><code>&lt;div class="chart-card annual-heatmap-card"&gt;
+  &lt;div class="annual-grid" id="annual-grid"&gt;&lt;/div&gt;
+  &lt;div class="heatmap-detail-card"&gt;Hover over cells to see activity&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
   </section>
 
   <!-- Scroll to Top -->

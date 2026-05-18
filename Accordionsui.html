@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Accordions UI — UIverse</title>
+
+  <!-- Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Icons -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="Accordionsui.css"
+  >
+
+</head>
+
+<body>
+
+<!-- =====================================================
+SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+  <div>
+
+    <div class="sidebar-brand">
+
+      <div class="brand-icon">
+        ⬡
+      </div>
+
+      <div class="brand-text">
+        UIverse
+      </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a href="#">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Components</span>
+      </a>
+
+      <a
+        href="#"
+        class="active"
+      >
+        <i class="fa-solid fa-bars-staggered"></i>
+        <span>Accordions</span>
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-code"></i>
+        <span>Source</span>
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-book"></i>
+        <span>Docs</span>
+      </a>
+
+    </nav>
+
+  </div>
+
+  <div class="sidebar-footer">
+
+    <a href="#">
+      <i class="fab fa-github"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-discord"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+
+  </div>
+
+</aside>
+
+<!-- =====================================================
+NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+  <div class="search-bar">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+      type="text"
+      placeholder="Search accordion components..."
+    >
+
+  </div>
+
+  <div class="nav-actions">
+
+    <button class="outline-btn">
+      Documentation
+    </button>
+
+    <button class="primary-btn">
+      Explore UI
+    </button>
+
+  </div>
+
+</header>
+
+<!-- =====================================================
+MAIN
+===================================================== -->
+
+<main class="main-home">
+
+  <!-- HERO -->
+
+  <section class="hero-section">
+
+    <div class="hero-badge">
+      ✦ Expandable UI Components
+    </div>
+
+    <h1>
+      Modern <span>Accordions</span>
+    </h1>
+
+    <p>
+
+      Beautiful accordion layouts
+      inspired by modern SaaS,
+      dashboard and premium UI systems.
+
+    </p>
+
+  </section>
+
+  <!-- GRID -->
+
+  <section class="accordion-grid">
+
+    <!-- FAQ ACCORDION -->
+
+    <div class="accordion-card">
+
+      <div class="card-header">
+
+        <span class="card-label">
+          FAQ
+        </span>
+
+        <h2>
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="accordion-item active">
+
+        <button class="accordion-btn">
+
+          <span>
+            What is UIverse?
+          </span>
+
+          <i class="fa-solid fa-plus"></i>
+
+        </button>
+
+        <div class="accordion-content">
+
+          <p>
+
+            UIverse is a modern
+            component library with
+            premium frontend elements,
+            animations and layouts.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="accordion-item">
+
+        <button class="accordion-btn">
+
+          <span>
+            Are components responsive?
+          </span>
+
+          <i class="fa-solid fa-plus"></i>
+
+        </button>
+
+        <div class="accordion-content">
+
+          <p>
+
+            Yes — every component
+            is optimized for desktop,
+            tablet and mobile layouts.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="accordion-item">
+
+        <button class="accordion-btn">
+
+          <span>
+            Can I use these commercially?
+          </span>
+
+          <i class="fa-solid fa-plus"></i>
+
+        </button>
+
+        <div class="accordion-content">
+
+          <p>
+
+            Absolutely. You can use
+            the UI components in
+            personal and commercial projects.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FEATURE ACCORDION -->
+
+    <div class="accordion-card">
+
+      <div class="card-header">
+
+        <span class="card-label">
+          FEATURES
+        </span>
+
+        <h2>
+          Product Features
+        </h2>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="accordion-item">
+
+        <button class="accordion-btn">
+
+          <span>
+            Advanced Animations
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+        <div class="accordion-content">
+
+          <p>
+
+            Smooth hover effects,
+            floating cards and premium
+            motion transitions.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="accordion-item active">
+
+        <button class="accordion-btn">
+
+          <span>
+            Dark Theme Support
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+        <div class="accordion-content">
+
+          <p>
+
+            Beautiful glassmorphism
+            and futuristic dark mode
+            designs included.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="accordion-item">
+
+        <button class="accordion-btn">
+
+          <span>
+            Ready-to-Use Components
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+        <div class="accordion-content">
+
+          <p>
+
+            Copy and paste modern
+            UI sections instantly
+            into your projects.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script src="Accordionsui.js"></script>
+
+</body>
+</html>

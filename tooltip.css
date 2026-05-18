@@ -470,6 +470,372 @@ body{
 
 }
 
+/* =========================
+   TOOLTIP PAGE — UIVERSE
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --primary:#7c3aed;
+  --secondary:#2563eb;
+  --dark:#0f172a;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --border:rgba(255,255,255,0.08);
+}
+
+body{
+  min-height:100vh;
+  font-family:'DM Sans',sans-serif;
+  background:
+  radial-gradient(circle at top left,#7c3aed22,transparent 30%),
+  radial-gradient(circle at bottom right,#2563eb22,transparent 30%),
+  var(--dark);
+  color:var(--text);
+  padding:80px 20px;
+  overflow-x:hidden;
+}
+
+/* =========================
+   PAGE HEADER
+
+.page-header{
+  text-align:center;
+  max-width:750px;
+  margin:auto;
+  margin-bottom:70px;
+}
+
+.page-header h1{
+  font-size:3.8rem;
+  margin-bottom:20px;
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  line-height:1.1;
+  background:linear-gradient(135deg,#ffffff,#8b5cf6,#3b82f6);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.page-header p{
+  color:var(--muted);
+  line-height:1.9;
+  font-size:1.08rem;
+}
+
+/* =========================
+   GRID
+
+.tooltip-grid{
+  width:min(1300px,95%);
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+/* =========================
+   CARD
+
+.tooltip-card{
+  position:relative;
+  overflow:hidden;
+
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+
+  border-radius:28px;
+  padding:38px 30px;
+
+  backdrop-filter:blur(18px);
+
+  transition:.4s ease;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.18);
+}
+
+.tooltip-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(255,255,255,0.15);
+
+  box-shadow:
+  0 25px 60px rgba(0,0,0,0.35);
+}
+
+/* Glow Effect */
+.tooltip-card::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:linear-gradient(135deg,#7c3aed,#2563eb);
+  border-radius:50%;
+  filter:blur(90px);
+  opacity:.15;
+  top:-70px;
+  right:-70px;
+}
+
+/* =========================
+   ICON
+
+.tooltip-card i{
+  width:78px;
+  height:78px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:22px;
+
+  background:
+  linear-gradient(135deg,var(--primary),var(--secondary));
+
+  color:#fff;
+
+  margin-bottom:24px;
+
+  box-shadow:
+  0 18px 35px rgba(124,58,237,0.35);
+}
+
+/* =========================
+   TEXT
+
+.tooltip-card h3{
+  font-size:1.55rem;
+  margin-bottom:14px;
+  font-family:'Syne',sans-serif;
+}
+
+.tooltip-card p{
+  color:var(--muted);
+  line-height:1.8;
+  margin-bottom:35px;
+}
+
+/* =========================
+   DEMO AREA
+
+.demo-area{
+  min-height:160px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* =========================
+   BUTTON
+
+.tooltip-btn{
+  border:none;
+  outline:none;
+
+  padding:14px 28px;
+
+  border-radius:14px;
+
+  background:
+  linear-gradient(135deg,var(--primary),var(--secondary));
+
+  color:#fff;
+  font-weight:700;
+  font-size:1rem;
+
+  cursor:pointer;
+
+  transition:.35s ease;
+
+  box-shadow:
+  0 12px 25px rgba(124,58,237,.3);
+}
+
+.tooltip-btn:hover{
+  transform:translateY(-4px);
+}
+
+/* =========================
+   TOOLTIP WRAPPER
+
+.tooltip-wrapper{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* =========================
+   TOOLTIP BASE
+
+.tooltip{
+  position:absolute;
+
+  padding:12px 18px;
+
+  border-radius:14px;
+
+  background:#111827;
+  color:#fff;
+
+  font-size:.92rem;
+  font-weight:500;
+
+  white-space:nowrap;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:.35s ease;
+
+  pointer-events:none;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  z-index:20;
+}
+
+/* Show Tooltip */
+.tooltip-wrapper:hover .tooltip{
+  opacity:1;
+  visibility:visible;
+}
+
+/* =========================
+   TOOLTIP ARROW
+
+.tooltip::after{
+  content:"";
+  position:absolute;
+  width:12px;
+  height:12px;
+  background:inherit;
+  transform:rotate(45deg);
+}
+
+/* =========================
+   TOP
+
+.tooltip-top{
+  bottom:calc(100% + 18px);
+  left:50%;
+  transform:translateX(-50%) translateY(10px);
+}
+
+.tooltip-top::after{
+  left:50%;
+  bottom:-6px;
+  transform:translateX(-50%) rotate(45deg);
+}
+
+.tooltip-wrapper:hover .tooltip-top{
+  transform:translateX(-50%) translateY(0);
+}
+
+/* =========================
+   BOTTOM
+
+.tooltip-bottom{
+  top:calc(100% + 18px);
+  left:50%;
+  transform:translateX(-50%) translateY(-10px);
+}
+
+.tooltip-bottom::after{
+  left:50%;
+  top:-6px;
+  transform:translateX(-50%) rotate(45deg);
+}
+
+.tooltip-wrapper:hover .tooltip-bottom{
+  transform:translateX(-50%) translateY(0);
+}
+
+/* =========================
+   LEFT
+
+.tooltip-left{
+  right:calc(100% + 18px);
+  top:50%;
+  transform:translateY(-50%) translateX(10px);
+}
+
+.tooltip-left::after{
+  right:-6px;
+  top:50%;
+  transform:translateY(-50%) rotate(45deg);
+}
+
+.tooltip-wrapper:hover .tooltip-left{
+  transform:translateY(-50%) translateX(0);
+}
+
+/* =========================
+   RIGHT
+
+.tooltip-right{
+  left:calc(100% + 18px);
+  top:50%;
+  transform:translateY(-50%) translateX(-10px);
+}
+
+.tooltip-right::after{
+  left:-6px;
+  top:50%;
+  transform:translateY(-50%) rotate(45deg);
+}
+
+.tooltip-wrapper:hover .tooltip-right{
+  transform:translateY(-50%) translateX(0);
+}
+
+/* =========================
+   GLASS TOOLTIP
+
+.glass{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.12);
+}
+
+/* =========================
+   GRADIENT TOOLTIP
+
+.gradient-tooltip{
+  background:
+  linear-gradient(135deg,#7c3aed,#2563eb);
+  border:none;
+}
+
+/* =========================
+   RESPONSIVE
+
+@media(max-width:768px){
+
+  body{
+    padding:60px 16px;
+  }
+
+  .page-header h1{
+    font-size:2.7rem;
+  }
+
+  .tooltip-grid{
+    grid-template-columns:1fr;
+  }
+
+  .tooltip-card{
+    padding:32px 24px;
+  }
+
+}
 /* ================= FOOTER ================= */
 .footer {
   margin-top: auto;

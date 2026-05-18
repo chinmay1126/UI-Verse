@@ -201,13 +201,13 @@ textarea:focus:not(:focus-visible) {
   flex-direction: column;
   gap: 16px;
   transition: all var(--transition);
-  opacity: 0;
-  transform: translateY(16px);
+  opacity: 1;
+  transform: none;
 }
 
 .component-card.in-view {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .component-card:hover {

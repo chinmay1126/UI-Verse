@@ -937,6 +937,538 @@ body {
 }
 
 
+/* =========================================================
+   6. TIMELINE JOURNEY STEPPER CSS
+   ========================================================= */
+.timeline-journey-stepper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.journey-track {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+}
+
+.journey-track-fill {
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  filter: drop-shadow(0 0 6px var(--color-purple-glow));
+}
+
+.journey-nodes {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 2;
+}
+
+.journey-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+
+.j-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #111424;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.j-label {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+  background: rgba(7, 9, 19, 0.8);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Active & Completed Timeline Nodes */
+.journey-node.active .j-dot {
+  background: #7b61ff;
+  border-color: #fff;
+  box-shadow: 0 0 12px #7b61ff;
+  transform: scale(1.2);
+}
+
+.journey-node.active .j-label {
+  color: #fff;
+  font-weight: 800;
+}
+
+.journey-node.completed .j-dot {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  box-shadow: 0 0 10px var(--color-success-glow);
+}
+
+.journey-node.completed .j-label {
+  color: var(--color-success);
+}
+
+/* =========================================================
+   7. GLASSMORPHISM WIZARD FLOW CSS
+   ========================================================= */
+.glassmorphism-wizard {
+  width: 100%;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.wizard-header {
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 12px;
+}
+
+.wizard-step-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--color-orange);
+  background: rgba(255, 122, 61, 0.12);
+  padding: 3px 8px;
+  border-radius: 99px;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.wizard-header h4 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.wizard-carousel {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.wizard-slider {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1.1);
+}
+
+.wizard-slide {
+  width: 33.333%;
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.wizard-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wizard-input-group label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.wizard-input-group input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+}
+
+.wizard-success-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.wizard-success-card i {
+  font-size: 32px;
+  color: var(--color-success);
+  filter: drop-shadow(0 0 8px var(--color-success-glow));
+}
+
+.wizard-success-card span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.wizard-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.wizard-btn-prev, .wizard-btn-next {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.wizard-btn-prev {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.wizard-btn-prev:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.wizard-btn-next {
+  background: linear-gradient(135deg, var(--color-purple), #583fe6);
+  color: #fff;
+}
+
+.wizard-btn-next:hover {
+  box-shadow: 0 0 15px var(--color-purple-glow);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   8. CIRCULAR ORBIT STEP INDICATOR CSS
+   ========================================================= */
+.circular-orbit-stepper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-wheel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.orbit-node {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0f1222;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.orbit-node:hover {
+  border-color: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.orbit-node.active {
+  border-color: #ff7a3d;
+  color: #fff;
+  background: #ff7a3d;
+  box-shadow: 0 0 15px var(--color-orange-glow);
+  animation: orbitPulse 2s infinite ease-in-out;
+}
+
+@keyframes orbitPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.12); }
+}
+
+.orbit-hub {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #18113c 0%, #0d0f1a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 0 25px rgba(123, 97, 255, 0.15);
+}
+
+.hub-label {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.hub-status {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--color-purple);
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   9. EXPANDABLE ACCORDION STEPPER CSS
+   ========================================================= */
+.expandable-accordion-stepper {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.acc-row {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.acc-row:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.acc-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.acc-indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.acc-title {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.acc-arrow {
+  font-size: 12px;
+  color: #475569;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 16px;
+  transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), padding 0.4s;
+}
+
+.acc-body p {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* Active Accordion Row */
+.acc-row.active {
+  border-color: rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.02);
+}
+
+.acc-row.active .acc-indicator {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: #fff;
+  box-shadow: 0 0 10px var(--color-success-glow);
+}
+
+.acc-row.active .acc-title {
+  color: #fff;
+}
+
+.acc-row.active .acc-arrow {
+  transform: rotate(180deg);
+  color: var(--color-success);
+}
+
+.acc-row.active .acc-body {
+  max-height: 120px;
+  padding: 0 16px;
+}
+
+/* =========================================================
+   10. MOBILE SWIPE STEP FLOW CSS
+   ========================================================= */
+.mobile-swipe-stepper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.phone-screen {
+  width: 220px;
+  height: 230px;
+  background: #0b0d18;
+  border: 4px solid #1e293b;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.swipe-carousel {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swipe-slider {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1.1);
+}
+
+.swipe-page {
+  width: 33.333%;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+.swipe-icon {
+  font-size: 28px;
+  color: var(--color-purple);
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 8px var(--color-purple-glow));
+}
+
+.swipe-page h5 {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.swipe-page p {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.swipe-footer {
+  height: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.swipe-nav-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.swipe-nav-btn:hover {
+  color: #fff;
+}
+
+.swipe-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.swipe-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.swipe-dot.active {
+  background: var(--color-purple);
+  box-shadow: 0 0 8px var(--color-purple-glow);
+  transform: scale(1.2);
+}
+
 /* ---- RESPONSIVE MEDIA QUERIES ---- */
 @media (max-width: 1100px) {
   .hero {

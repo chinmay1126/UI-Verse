@@ -550,6 +550,248 @@
       </div>
     </div>
 
+    <!-- 10. LIQUID DISTORTION HOVER CARD -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>Liquid Distortion Hover Card</h2>
+        <p>Futuristic displacement map distortion waves on hover.</p>
+      </div>
+      <div class="component-preview" id="preview-10">
+        <div class="liquid-card">
+          <svg class="liquid-svg" viewBox="0 0 200 200">
+            <defs>
+              <filter id="liquid-filter-10">
+                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" class="disp-map" />
+              </filter>
+            </defs>
+            <image href="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=300&auto=format&fit=crop" x="0" y="0" width="200" height="200" filter="url(#liquid-filter-10)"/>
+          </svg>
+          <div class="liquid-content">
+            <h3>Cybernetic Wave</h3>
+            <p>Interactive Turbulence</p>
+          </div>
+        </div>
+        <script>
+          // Liquid Distortion Animation logic
+          (function() {
+            const liqCard = document.querySelector('#preview-10 .liquid-card');
+            const dispMap = document.querySelector('#preview-10 .disp-map');
+            if (liqCard && dispMap) {
+              let animFrame;
+              let scaleVal = 0;
+              let targetScale = 0;
+              
+              liqCard.addEventListener('mouseenter', () => { targetScale = 25; });
+              liqCard.addEventListener('mouseleave', () => { targetScale = 0; });
+              
+              function animateLiquid() {
+                scaleVal += (targetScale - scaleVal) * 0.1;
+                dispMap.setAttribute('scale', scaleVal);
+                animFrame = requestAnimationFrame(animateLiquid);
+              }
+              animateLiquid();
+            }
+          })();
+        </script>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-10">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 11. AURORA GRADIENT HOVER BUTTON -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>Aurora Gradient Hover Button</h2>
+        <p>A button surrounded by glowing fluid aurora colors on hover.</p>
+      </div>
+      <div class="component-preview" id="preview-11">
+        <button class="aurora-btn">
+          <span class="aurora-glow"></span>
+          <span class="aurora-glow"></span>
+          <span class="aurora-glow"></span>
+          <span class="aurora-btn-text">Initiate Aurora</span>
+        </button>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-11">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 12. TILT GLASSMORPHISM PANEL -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>Tilt Glassmorphism Panel</h2>
+        <p>A frosted glass panel featuring specular reflection highlights.</p>
+      </div>
+      <div class="component-preview" id="preview-12">
+        <div class="glass-tilt-container">
+          <div class="glass-tilt-card" id="glassTiltCard">
+            <div class="glass-shine"></div>
+            <div class="glass-content">
+              <span class="glass-badge">PREMIUM</span>
+              <h3>Specular Glass</h3>
+              <p>Realistic light reflection mapping.</p>
+            </div>
+          </div>
+        </div>
+        <script>
+          (function() {
+            const gCard = document.getElementById('glassTiltCard');
+            if (gCard) {
+              const gShine = gCard.querySelector('.glass-shine');
+              gCard.addEventListener('mousemove', (e) => {
+                const rect = gCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -12;
+                const rotateY = ((x - centerX) / centerX) * 12;
+                
+                gCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                
+                const shineX = (x / rect.width) * 100;
+                const shineY = (y / rect.height) * 100;
+                gShine.style.background = `radial-gradient(circle at ${shineX}% ${shineY}%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 60%)`;
+              });
+              gCard.addEventListener('mouseleave', () => {
+                gCard.style.transform = `rotateX(0deg) rotateY(0deg)`;
+                gShine.style.background = `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 60%)`;
+              });
+            }
+          })();
+        </script>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-12">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 13. CURSOR TRAIL HOVER EFFECT -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>Cursor Trail Hover Effect</h2>
+        <p>A interactive canvas container capturing neon particle cursor trails.</p>
+      </div>
+      <div class="component-preview" id="preview-13" style="position: relative; overflow: hidden; min-height: 220px; width: 100%;">
+        <div class="trail-card" id="trailCardBox">
+          <canvas id="trailCanvas"></canvas>
+          <div class="trail-content">Move cursor here</div>
+        </div>
+        <script>
+          (function() {
+            const trailBox = document.getElementById('trailCardBox');
+            const canvas = document.getElementById('trailCanvas');
+            if (trailBox && canvas) {
+              const ctx = canvas.getContext('2d');
+              let particles = [];
+              
+              function resizeCanvas() {
+                canvas.width = trailBox.clientWidth;
+                canvas.height = trailBox.clientHeight;
+              }
+              resizeCanvas();
+              const ro = new ResizeObserver(() => resizeCanvas());
+              ro.observe(trailBox);
+              
+              class Particle {
+                constructor(x, y) {
+                  this.x = x;
+                  this.y = y;
+                  this.size = Math.random() * 3 + 1;
+                  this.speedX = (Math.random() - 0.5) * 1.5;
+                  this.speedY = (Math.random() - 0.5) * 1.5;
+                  this.alpha = 1;
+                  const colors = ['#a855f7', '#06b6d4', '#ec4899'];
+                  this.color = colors[Math.floor(Math.random() * colors.length)];
+                }
+                update() {
+                  this.x += this.speedX;
+                  this.y += this.speedY;
+                  this.alpha -= 0.02;
+                }
+                draw() {
+                  ctx.save();
+                  ctx.globalAlpha = this.alpha;
+                  ctx.beginPath();
+                  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                  ctx.fillStyle = this.color;
+                  ctx.shadowBlur = 8;
+                  ctx.shadowColor = this.color;
+                  ctx.fill();
+                  ctx.restore();
+                }
+              }
+              
+              trailBox.addEventListener('mousemove', (e) => {
+                const rect = trailBox.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                for (let i = 0; i < 2; i++) {
+                  particles.push(new Particle(x, y));
+                }
+              });
+              
+              function handleParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                  particles[i].update();
+                  particles[i].draw();
+                  if (particles[i].alpha <= 0) {
+                    particles.splice(i, 1);
+                    i--;
+                  }
+                }
+                requestAnimationFrame(handleParticles);
+              }
+              handleParticles();
+            }
+          })();
+        </script>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-13">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 14. MORPHING ICON HOVER CARD -->
+    <div class="hover-card">
+      <div class="hover-info">
+        <h2>Morphing Icon Hover Card</h2>
+        <p>Seamless SVG shape morph transition from octagon to shield on hover.</p>
+      </div>
+      <div class="component-preview" id="preview-14">
+        <div class="morph-card">
+          <div class="morph-svg-wrapper">
+            <svg viewBox="0 0 100 100" class="morph-svg">
+              <path class="morph-path" d="M30,10 L70,10 L90,30 L90,70 L70,90 L30,90 L10,70 L10,30 Z" />
+            </svg>
+            <i class="fa-solid fa-shield-halved morph-icon"></i>
+          </div>
+          <div class="morph-content">
+            <h3>Quantum Security</h3>
+            <p>Shield engaged</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="copy-btn" data-target="preview-14">
+          <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
+        </button>
+      </div>
+    </div>
+
   </section>
 
   <!-- ================= FOOTER ================= -->

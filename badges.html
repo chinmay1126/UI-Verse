@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Badges Page</title>
+  <title>Badges — UIverse</title>
 
   <!-- Font Awesome -->
   <link
@@ -11,80 +11,21 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
   />
 
-  <!-- CSS -->
-  
+  <!-- Primary CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="badges.css">
-    <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badges — UIverse</title>
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="badges.css">
- 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/core/utils.js"></script>
-  <script src="js/features/toast.js"></script>
-  <script src="js/features/popup.js"></script>
-  <script src="js/features/code-tools.js"></script>
-  <script src="js/features/sidebar.js"></script>
-  <script src="js/features/search.js"></script>
-  <script src="js/features/theme.js"></script>
-  <script src="js/features/scroll.js"></script>
-  <script src="js/features/alerts.js"></script>
-  <script src="js/features/sandbox.js"></script>
-  <script src="js/features/accessibility.js"></script>
-  <script src="js/features/command-palette.js"></script>
-  <script src="js/features/url-state.js"></script>
-  <script src="js/features/url-state-integration.js"></script>
-  <script src="js/bootstrap.js"></script>
-
+  <link rel="stylesheet" href="shared-page.css">
+  <link rel="stylesheet" href="badges.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
 
   <!-- Primary Meta Tags -->
-  <title>Badges - UI-Verse</title>
-  <meta name="title" content="Badges - UI-Verse">
+  <meta name="title" content="Badges — UIverse">
   <meta name="description" content="Status badges, labels, and tag components. Small, colorful indicators for notifications, counts, and status display.">
-  <meta name="author" content="UI-Verse Community">
-  <meta name="keywords" content="ui components, css, html, javascript, open source, web components, frontend, ui library">
-  <link rel="canonical" href="https://uiverse.vercel.app/badges.html">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://uiverse.vercel.app/badges.html">
-  <meta property="og:title" content="Badges - UI-Verse">
-  <meta property="og:description" content="Status badges, labels, and tag components. Small, colorful indicators for notifications, counts, and status display.">
-  <meta property="og:image" content="https://uiverse.vercel.app/preview.png">
-  <meta property="og:site_name" content="UI-Verse">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://uiverse.vercel.app/badges.html">
-  <meta property="twitter:title" content="Badges - UI-Verse">
-  <meta property="twitter:description" content="Status badges, labels, and tag components. Small, colorful indicators for notifications, counts, and status display.">
-  <meta property="twitter:image" content="https://uiverse.vercel.app/preview.png">
-  <meta property="twitter:creator" content="@uiverse">
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "UI-Verse",
-    "url": "https://uiverse.vercel.app",
-    "description": "A curated collection of open-source HTML, CSS, and JavaScript UI components for modern web development. Free to use, regularly updated.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://uiverse.vercel.app/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <link rel="stylesheet" href="shared-sidebar.css">
+  <meta name="author" content="UIverse Community">
 </head>
 
 <body>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -92,7 +33,7 @@
     <span class="brand-text">UIverse</span>
   </div>
 
-          <nav class="sidebar-nav">
+  <nav class="sidebar-nav">
     <ul>
       <li>
         <a href="index.html">
@@ -106,7 +47,7 @@
           <span>Buttons</span>
         </a>
       </li>
-            <li>
+      <li>
         <a href="dropdown-components.html">
           <i class="fa-solid fa-caret-down"></i>
           <span>Dropdowns</span>
@@ -118,7 +59,7 @@
           <span>Profiles</span>
         </a>
       </li>
-<li>
+      <li>
         <a href="navbar.html">
           <i class="fa-solid fa-bars"></i>
           <span>Navbar</span>
@@ -352,42 +293,13 @@
           <span>Filters V2</span>
         </a>
       </li>
-<li>
-        <a href="about.html">
-          <i class="fa-solid fa-circle-info"></i>
-          <span>About</span>
-        </a>
-      </li>
-      <li>
-        <a href="documentation.html">
-          <i class="fa-solid fa-book"></i>
-          <span>Documentation</span>
-        </a>
-      </li>
-      <li>
-        <a href="faq.html">
-          <i class="fa-solid fa-circle-question"></i>
-          <span>Faq</span>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Contact Us</span>
-        </a>
-      </li>
     </ul>
   </nav>
-
-  <div class="sidebar-footer">
-    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-  </div>
 </aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
 <!-- ================= NAVBAR ================= -->
 <header class="navbar" id="navbar">
   <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
@@ -398,8 +310,7 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
-    <kbd class="search-kbd">⌘K</kbd>
+    <input type="text" id="searchInput" placeholder="Search components..." />
   </div>
 
   <div class="nav-right">
@@ -409,412 +320,401 @@
     <button class="nav-btn primary-nav-btn">
       <i class="fa-solid fa-bookmark"></i> My Collection
     </button>
-    <button id="syncCollectionsBtn" class="nav-btn outline-nav-btn" title="Sync collections now">
-      <i class="fa-solid fa-sync"></i>
-    </button>
     <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
       <i class="fa-solid fa-moon"></i>
     </button>
   </div>
 </header>
 
-  <!-- Main Content -->
-  <main class="badges-page">
-
-    <div class="page-header">
-      <h1>🏆 My Badges</h1>
-      <p>Track your achievements and contribution progress</p>
-    </div>
-
-    <!-- ================= BADGES HERO ================= -->
-<section class="badges-hero">
-  <div class="badges-hero-content">
-
-    <div class="badges-hero-left">
-      <span class="hero-chip">
-        <i class="fa-solid fa-award"></i>
-        Achievement System
-      </span>
-
-      <h1>
-        Unlock <span>Badges</span><br>
-        Build Your Reputation
-      </h1>
-
-      <p>
-        Track contributions, maintain streaks, complete challenges,
-        and showcase your developer achievements with modern collectible badges.
-      </p>
-
-      <div class="hero-actions">
-        <button class="hero-btn primary">
-          <i class="fa-solid fa-trophy"></i>
-          Explore Rewards
-        </button>
-
-        <button class="hero-btn secondary">
-          <i class="fa-solid fa-fire"></i>
-          View Streaks
-        </button>
+<!-- ================= MAIN CONTENT ================= -->
+<main class="main-home">
+  
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-left">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Badges</span>
       </div>
-
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <h3>28</h3>
-          <span>Badges Earned</span>
-        </div>
-
-        <div class="hero-stat">
-          <h3>94%</h3>
-          <span>Completion Rate</span>
-        </div>
-
-        <div class="hero-stat">
-          <h3>#12</h3>
-          <span>Global Rank</span>
-        </div>
+      <h1 class="page-title">Badges</h1>
+      <p class="page-desc">Small but powerful status indicators, notifications, count pills, and collectible badges optimized for clean interfaces.</p>
+      <div class="page-meta">
+        <span class="meta-badge"><i class="fa-solid fa-tags"></i> 14 Badges</span>
+        <span class="meta-badge"><i class="fa-solid fa-bolt"></i> CSS & HTML</span>
       </div>
     </div>
-
-    <div class="badges-hero-right">
-
-      <div class="floating-badge fb-1">
-        <i class="fa-solid fa-fire"></i>
-      </div>
-
-      <div class="floating-badge fb-2">
-        <i class="fa-solid fa-crown"></i>
-      </div>
-
-      <div class="floating-badge fb-3">
-        <i class="fa-solid fa-shield-halved"></i>
-      </div>
-
-      <div class="hero-card-glow"></div>
-
-      <div class="hero-preview-card">
-
-        <div class="hero-preview-top">
-          <div class="hero-user">
-            <div class="hero-avatar">D</div>
-
-            <div>
-              <h4>Dipanita</h4>
-              <p>Frontend Developer</p>
-            </div>
-          </div>
-
-          <span class="xp-pill">
-            <i class="fa-solid fa-bolt"></i>
-            4,820 XP
-          </span>
-        </div>
-
-        <div class="hero-badge-grid">
-
-          <div class="mini-badge gold">
-            <i class="fa-solid fa-code-pull-request"></i>
-          </div>
-
-          <div class="mini-badge purple">
-            <i class="fa-solid fa-fire"></i>
-          </div>
-
-          <div class="mini-badge blue">
-            <i class="fa-solid fa-users"></i>
-          </div>
-
-          <div class="mini-badge green">
-            <i class="fa-solid fa-bug-slash"></i>
-          </div>
-
-          <div class="mini-badge orange">
-            <i class="fa-solid fa-medal"></i>
-          </div>
-
-          <div class="mini-badge cyan">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-
-        </div>
-
-        <div class="hero-progress-wrap">
-          <div class="hero-progress-top">
-            <span>Level Progress</span>
-            <span>82%</span>
-          </div>
-
-          <div class="hero-progress-bar">
-            <div class="hero-progress-fill"></div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
   </div>
-</section>
 
-    <!-- Earned -->
-    <section class="badge-section">
-      <h2>Earned Badges</h2>
-<section class="badges-page">
-  <h1><i class="fa-solid fa-trophy"></i> My Badges</h1>
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-bar-left">
+      <button class="filter-btn active" onclick="filterBadges('all', this)">All Badges</button>
+      <button class="filter-btn" onclick="filterBadges('status', this)">Status Indicators</button>
+      <button class="filter-btn" onclick="filterBadges('notification', this)">Notifications</button>
+      <button class="filter-btn" onclick="filterBadges('premium', this)">Premium Glow</button>
+    </div>
+    <div class="filter-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search badges..." oninput="liveFilter(this.value)" />
+    </div>
+  </div>
 
-  <h2><i class="fa-solid fa-medal"></i> Earned Badges</h2>
-  <div class="badge-container">
+  <!-- Cards Grid -->
+  <div class="cards-grid">
     
-    <div class="badge">
-      <picture><source type="image/avif" srcset="generated-images/badge1/badge1-320.avif 320w, generated-images/badge1/badge1-480.avif 480w, generated-images/badge1/badge1-768.avif 768w, generated-images/badge1/badge1-1024.avif 1024w, generated-images/badge1/badge1-1300.avif 1300w" sizes="(max-width: 768px) 96px, 160px"><source type="image/webp" srcset="generated-images/badge1/badge1-320.webp 320w, generated-images/badge1/badge1-480.webp 480w, generated-images/badge1/badge1-768.webp 768w, generated-images/badge1/badge1-1024.webp 1024w, generated-images/badge1/badge1-1300.webp 1300w" sizes="(max-width: 768px) 96px, 160px"><img src="generated-images/badge1/badge1-optimized-1300.jpg" alt="First PR badge icon" sizes="(max-width: 768px) 96px, 160px" loading="lazy" decoding="async" width="1300" height="1390"></picture>
-      <h3>First PR</h3>
-      <p>Completed your first pull request</p>
-    </div>
-
-    <div class="badge">
-       <picture><source type="image/avif" srcset="generated-images/badge2/badge2-212.avif 212w" sizes="(max-width: 768px) 96px, 160px"><source type="image/webp" srcset="generated-images/badge2/badge2-212.webp 212w" sizes="(max-width: 768px) 96px, 160px"><img src="generated-images/badge2/badge2-optimized-212.jpg" alt="Contributor badge icon" sizes="(max-width: 768px) 96px, 160px" loading="lazy" decoding="async" width="212" height="238"></picture>
-      <h3>Contributor</h3>
-      <p>Contributed to 10 PRs</p>
-    </div>
-
-      <div class="badge-container">
-
-        <div class="badge earned">
-          <div class="badge-img">
-            <img src="badge1.jpg" alt="First PR Badge">
-          </div>
-
-          <h3>First PR</h3>
-          <p>Completed your first pull request</p>
-    <div class="badge progress">
-      <picture><source type="image/avif" srcset="generated-images/time/time-320.avif 320w, generated-images/time/time-480.avif 480w, generated-images/time/time-512.avif 512w" sizes="(max-width: 768px) 96px, 160px"><source type="image/webp" srcset="generated-images/time/time-320.webp 320w, generated-images/time/time-480.webp 480w, generated-images/time/time-512.webp 512w" sizes="(max-width: 768px) 96px, 160px"><img src="generated-images/time/time-optimized-512.png" alt="Top Contributor badge with progress indicator" sizes="(max-width: 768px) 96px, 160px" loading="lazy" decoding="async" width="512" height="512"></picture>
-      <h3>Top Contributor</h3>
-      <p>14/50 PRs completed</p>
-      <progress value="14" max="50"></progress>
-    </div>
-
-          <span class="badge-status success">
-            <i class="fa-solid fa-circle-check"></i>
-            Unlocked
-          </span>
-        </div>
-
-        <div class="badge earned">
-          <div class="badge-img">
-            <img src="badge2.jpg" alt="Contributor Badge">
-          </div>
-
-          <h3>Contributor</h3>
-          <p>Contributed to 10 pull requests</p>
-
-          <span class="badge-status success">
-            <i class="fa-solid fa-circle-check"></i>
-            Unlocked
-          </span>
-        </div>
-
+    <!-- 1. Soft Status Badges -->
+    <div class="component-card" data-name="soft status badges success warning danger" data-cat="status">
+      <div class="card-top">
+        <span class="card-label">Soft Status Badges</span>
+        <span class="card-tag tag-essential">Essential</span>
       </div>
-    </section>
-
-    <!-- Progress -->
-    <section class="badge-section">
-      <h2>In Progress</h2>
-
-      <div class="badge-container">
-
-        <div class="badge progress-card">
-
-          <div class="badge-img">
-            <img src="time.png" alt="Progress Badge">
-          </div>
-
-          <h3>Top Contributor</h3>
-          <p>14 / 50 PRs completed</p>
-
-          <div class="progress-wrapper">
-            <progress value="14" max="50"></progress>
-            <span>28%</span>
-          </div>
-
+      <div class="card-preview">
+        <div class="badge-row">
+          <span class="badge-soft badge-soft-success">Approved</span>
+          <span class="badge-soft badge-soft-warning">Pending</span>
+          <span class="badge-soft badge-soft-danger">Rejected</span>
         </div>
-
       </div>
-    </section>
+      <p class="card-desc">Clean, readable modern pill badges with transparent alert backgrounds suited for table headers and system cards.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-soft-badges', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-soft-badges', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-soft-badges"><code>&lt;span class="badge-soft badge-soft-success"&gt;Approved&lt;/span&gt;
+&lt;span class="badge-soft badge-soft-warning"&gt;Pending&lt;/span&gt;
+&lt;span class="badge-soft badge-soft-danger"&gt;Rejected&lt;/span&gt;</code></pre>
+    </div>
 
-    <!-- Locked -->
-    <section class="badge-section">
-      <h2>Locked Badges</h2>
-
-      <div class="badge-container">
-
-        <div class="badge locked">
-
-          <div class="badge-img">
-            <img src="lock.jpg" alt="Locked Badge">
-          </div>
-
-          <h3>Elite Hacker</h3>
-          <p>Complete 100 PRs to unlock</p>
-
-          <span class="badge-status locked-status">
-            <i class="fa-solid fa-lock"></i>
-            Locked
-          </span>
-
+    <!-- 2. Profile Pill Badge -->
+    <div class="component-card" data-name="profile avatar tag pill dismiss" data-cat="status">
+      <div class="card-top">
+        <span class="card-label">Avatar Pill Badge</span>
+        <span class="card-tag tag-new">New</span>
+      </div>
+      <div class="card-preview">
+        <div class="badge-profile">
+          <div class="badge-avatar">D</div>
+          <span class="badge-profile-name">Dipanita</span>
+          <button class="badge-dismiss-btn" aria-label="Remove">&times;</button>
         </div>
-
       </div>
-    </section>
-  <!-- Earned Badges -->
-<h2>✨ Earned Badges</h2>
-<div class="badge-container">
-
-  <div class="badge gold" data-collectible="badge-first-pr">
-    <div class="badge-icon">
-      <i class="fa-solid fa-code-pull-request"></i>
+      <p class="card-desc">Elegant active category pill that embeds a user profile initial or photo, featuring a micro-interactive close button.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-profile-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-profile-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-profile-badge"><code>&lt;div class="badge-profile"&gt;
+  &lt;div class="badge-avatar"&gt;D&lt;/div&gt;
+  &lt;span class="badge-profile-name"&gt;Dipanita&lt;/span&gt;
+  &lt;button class="badge-dismiss-btn"&gt;&amp;times;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
-    <h3>First PR</h3>
-    <p>Completed your first pull request</p>
-    <span class="badge-tag">Unlocked</span>
-    <button class="collect-btn" data-action="add" aria-label="Add to collection">👉 Save</button>
+
+    <!-- 3. Neon Glow Badge -->
+    <div class="component-card" data-name="neon glow sci-fi futuristic border" data-cat="premium">
+      <div class="card-top">
+        <span class="card-label">Cyber Neon Glow Badge</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview dark-preview">
+        <span class="badge-neon">ONLINE</span>
+      </div>
+      <p class="card-desc">High-contrast futuristic tag with intense cyan shadows and fluorescent borders built for gamers and dashboard terminals.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-neon-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-neon-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-neon-badge"><code>&lt;span class="badge-neon"&gt;ONLINE&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 4. Glassmorphism Blur Badge -->
+    <div class="component-card" data-name="glassmorphism blur frosted ice border" data-cat="premium">
+      <div class="card-top">
+        <span class="card-label">Glassmorphic Tag</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview glass-preview">
+        <span class="badge-glass"><i class="fa-solid fa-bolt"></i> PRO FEATURE</span>
+      </div>
+      <p class="card-desc">Backdrop-filtered ice glass panel with pure white translucent thin borders, floating elegantly over any background grid.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-glass-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-glass-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-glass-badge"><code>&lt;span class="badge-glass"&gt;
+  &lt;i class="fa-solid fa-bolt"&gt;&lt;/i&gt; PRO FEATURE
+&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 5. Pulsating Live Badge -->
+    <div class="component-card" data-name="pulsating live indicator active online" data-cat="status">
+      <div class="card-top">
+        <span class="card-label">Live Indicator Badge</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="card-preview">
+        <span class="badge-pulse">
+          <span class="pulse-dot"></span>
+          LIVE BROADCAST
+        </span>
+      </div>
+      <p class="card-desc">Highly interactive indicator utilizing a double-ring keyframe opacity pulse animation to alert users of live status.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-pulse-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-pulse-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-pulse-badge"><code>&lt;span class="badge-pulse"&gt;
+  &lt;span class="pulse-dot"&gt;&lt;/span&gt;
+  LIVE BROADCAST
+&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 6. Modern Notification Count Pill -->
+    <div class="component-card" data-name="notification count pill alert red" data-cat="notification">
+      <div class="card-top">
+        <span class="card-label">Notification Bubble</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="card-preview">
+        <div class="bell-container">
+          <i class="fa-solid fa-bell"></i>
+          <span class="badge-count">99+</span>
+        </div>
+      </div>
+      <p class="card-desc">Floating badge styled absolute positioning, optimized for high contrast warning and messaging notification counts.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-count-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-count-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-count-badge"><code>&lt;div class="bell-container"&gt;
+  &lt;i class="fa-solid fa-bell"&gt;&lt;/i&gt;
+  &lt;span class="badge-count"&gt;99+&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 7. Cyberpunk Bracket Badge -->
+    <div class="component-card" data-name="cyberpunk bracket industrial angle tech tag" data-cat="status">
+      <div class="card-top">
+        <span class="card-label">Cyber Bracket Tech Badge</span>
+        <span class="card-tag tag-new">New</span>
+      </div>
+      <div class="card-preview">
+        <span class="badge-cyber-bracket">// SYSTEM_ACTIVE_</span>
+      </div>
+      <p class="card-desc">Industrial cyberpunk tag styled with left/right terminal brackets and a computer console font overlay.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-cyber-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-cyber-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-cyber-badge"><code>&lt;span class="badge-cyber-bracket"&gt;// SYSTEM_ACTIVE_&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 8. Bold Flat Shadow Retro Badge -->
+    <div class="component-card" data-name="bold flat shadow retro brutualist" data-cat="status">
+      <div class="card-top">
+        <span class="card-label">Brutalist Neo-Retro Badge</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview">
+        <span class="badge-retro">HOT DEAL</span>
+      </div>
+      <p class="card-desc">Bold outline yellow brutalist label carrying a massive 3D flat black offset drop-shadow. Great for e-commerce.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-retro-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-retro-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-retro-badge"><code>&lt;span class="badge-retro"&gt;HOT DEAL&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 9. Metallic Achievement Badge -->
+    <div class="component-card" data-name="metallic gold silver bronze achievement medal" data-cat="premium">
+      <div class="card-top">
+        <span class="card-label">Gold Metallic Medal Badge</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <span class="badge-metallic"><i class="fa-solid fa-medal"></i> CHAMPION</span>
+      </div>
+      <p class="card-desc">Polished premium gold foil texture with micro angle lighting reflections, ideal for rankings and high tier medals.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-metallic-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-metallic-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-metallic-badge"><code>&lt;span class="badge-metallic"&gt;
+  &lt;i class="fa-solid fa-medal"&gt;&lt;/i&gt; CHAMPION
+&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 10. Gradient Trophy Badge -->
+    <div class="component-card" data-name="gradient trophy achievement unlocked gold orange" data-cat="premium">
+      <div class="card-top">
+        <span class="card-label">Warm Horizon Gradient Badge</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="card-preview">
+        <span class="badge-trophy"><i class="fa-solid fa-trophy"></i> ACHIEVEMENT UNLOCKED</span>
+      </div>
+      <p class="card-desc">Smooth deep orange to neon magenta gradient background utilizing beautiful white typography and trophy icons.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-trophy-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-trophy-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-trophy-badge"><code>&lt;span class="badge-trophy"&gt;
+  &lt;i class="fa-solid fa-trophy"&gt;&lt;/i&gt; ACHIEVEMENT UNLOCKED
+&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 11. [NEW BRAND COMPONENT #1] Holographic Liquid Glow Badge -->
+    <div class="component-card" data-name="holographic liquid glow multi layer gradient transition" data-cat="premium">
+      <div class="card-top">
+        <span class="card-label">Holographic Liquid Badge</span>
+        <span class="card-tag tag-new">Brand New</span>
+      </div>
+      <div class="card-preview">
+        <span class="badge-holographic">ULTRA ACCORD</span>
+      </div>
+      <p class="card-desc">Stunning multi-layer dynamic fluid color shift badge. Its iridescent surface dynamically alters gradients on hover.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-holographic-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-holographic-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-holographic-badge"><code>&lt;span class="badge-holographic"&gt;ULTRA ACCORD&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 12. [NEW BRAND COMPONENT #2] Shimmering Cosmic Border Badge -->
+    <div class="component-card" data-name="shimmering cosmic border gold animated purple glow" data-cat="premium">
+      <div class="card-top">
+        <span class="card-label">Cosmic Shimmer Border Badge</span>
+        <span class="card-tag tag-new">Brand New</span>
+      </div>
+      <div class="card-preview">
+        <span class="badge-cosmic">
+          <span class="cosmic-glow"></span>
+          COSMIC LEGEND
+        </span>
+      </div>
+      <p class="card-desc">Highly animated celestial cosmic label featuring an infinite rotating starry gold border and deep violet aura.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-cosmic-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-cosmic-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-cosmic-badge"><code>&lt;span class="badge-cosmic"&gt;
+  &lt;span class="cosmic-glow"&gt;&lt;/span&gt;
+  COSMIC LEGEND
+&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 13. [NEW BRAND COMPONENT #3] Interactive Counter Badge -->
+    <div class="component-card" data-name="interactive counter increment decrement clickable tag" data-cat="status">
+      <div class="card-top">
+        <span class="card-label">Interactive Counter Badge</span>
+        <span class="card-tag tag-new">Brand New</span>
+      </div>
+      <div class="card-preview">
+        <span class="badge-counter-wrap">
+          <button onclick="changeBadgeCount(-1)" class="badge-count-btn">-</button>
+          <span id="badge-count-val" class="badge-count-value">12 ALERTS</span>
+          <button onclick="changeBadgeCount(1)" class="badge-count-btn">+</button>
+        </span>
+      </div>
+      <p class="card-desc">A highly innovative status tag containing custom plus and minus click controllers for managing real-time count metrics.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-counter-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-counter-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-counter-badge"><code>&lt;span class="badge-counter-wrap"&gt;
+  &lt;button onclick="changeBadgeCount(-1)" class="badge-count-btn"&gt;-&lt;/button&gt;
+  &lt;span id="badge-count-val" class="badge-count-value"&gt;12 ALERTS&lt;/span&gt;
+  &lt;button onclick="changeBadgeCount(1)" class="badge-count-btn"&gt;+&lt;/button&gt;
+&lt;/span&gt;</code></pre>
+    </div>
+
+    <!-- 14. [NEW BRAND COMPONENT #4] Cybertech Spinner Badge -->
+    <div class="component-card" data-name="cybertech spinner rotating loader indicator" data-cat="status">
+      <div class="card-top">
+        <span class="card-label">Cybertech Spinner Badge</span>
+        <span class="card-tag tag-new">Brand New</span>
+      </div>
+      <div class="card-preview">
+        <span class="badge-cyber-spinner">
+          <span class="spinner-ring"></span>
+          <span class="badge-spinner-text">SECURE</span>
+        </span>
+      </div>
+      <p class="card-desc">A micro-spinner tag presenting an infinite rotating gradient border for security and validation checkpoints.</p>
+      <div class="actions">
+        <button class="view-btn" onclick="toggleCode('code-spinner-badge', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="copy-btn" onclick="copyCode('code-spinner-badge', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="code-block" id="code-spinner-badge"><code>&lt;span class="badge-cyber-spinner"&gt;
+  &lt;span class="spinner-ring"&gt;&lt;/span&gt;
+  &lt;span class="badge-spinner-text"&gt;SECURE&lt;/span&gt;
+&lt;/span&gt;</code></pre>
+    </div>
+
   </div>
+</main>
 
-  <div class="badge blue">
-    <div class="badge-icon">
-      <i class="fa-solid fa-users"></i>
-    </div>
-    <h3>Contributor</h3>
-    <p>Contributed to 10 PRs</p>
-    <span class="badge-tag">Level 1</span>
-  </div>
-
-  <div class="badge purple">
-    <div class="badge-icon">
-      <i class="fa-solid fa-fire"></i>
-    </div>
-    <h3>Streak Master</h3>
-    <p>Maintained a 30-day coding streak</p>
-    <span class="badge-tag">Hot</span>
-  </div>
-
-  <div class="badge green">
-    <div class="badge-icon">
-      <i class="fa-solid fa-bug-slash"></i>
-    </div>
-    <h3>Bug Hunter</h3>
-    <p>Resolved 25 reported issues</p>
-    <span class="badge-tag">Expert</span>
-  </div>
-
-  <div class="badge orange">
-    <div class="badge-icon">
-      <i class="fa-solid fa-medal"></i>
-    </div>
-    <h3>Open Source Hero</h3>
-    <p>Made impactful open-source contributions</p>
-    <span class="badge-tag">Popular</span>
-  </div>
-
-</div>
-
-
-<!-- In Progress -->
-<h2 class="prog-1">🚀 In Progress</h2>
-<div class="badge-container">
-
-  <div class="badge progress">
-    <div class="badge-icon">
-      <i class="fa-solid fa-chart-line"></i>
-    </div>
-    <h3>Top Contributor</h3>
-    <p>14/50 PRs completed</p>
-    <progress value="14" max="50"></progress>
-  </div>
-
-  <div class="badge progress">
-    <div class="badge-icon">
-      <i class="fa-solid fa-terminal"></i>
-    </div>
-    <h3>Code Wizard</h3>
-    <p>40/100 coding challenges solved</p>
-    <progress value="40" max="100"></progress>
-  </div>
-
-</div>
-
-
-<!-- Locked Badges -->
-<h2 class="prog-2">🔒 Locked Badges</h2>
-<div class="badge-container">
-
-  <div class="badge locked">
-    <div class="badge-icon">
-      <i class="fa-solid fa-crown"></i>
-    </div>
-    <h3>Elite Hacker</h3>
-    <p>Complete 100 PRs</p>
-  </div>
-
-  <div class="badge locked">
-    <div class="badge-icon">
-      <i class="fa-solid fa-rocket"></i>
-    </div>
-    <h3>Launch Legend</h3>
-    <p>Deploy 50 successful projects</p>
-  </div>
-
-  <div class="badge locked">
-    <div class="badge-icon">
-      <i class="fa-solid fa-shield-halved"></i>
-    </div>
-    <h3>Security Master</h3>
-    <p>Fix 100 security vulnerabilities</p>
-  </div>
-
-</div>
-
-  <!-- Locked Badges -->
-  <h2 class="prog-2">Locked Badges</h2>
-  <div class="badge-container">
-
-    <div class="badge locked">
-      <picture><source type="image/avif" srcset="generated-images/lock/lock-320.avif 320w, generated-images/lock/lock-480.avif 480w, generated-images/lock/lock-612.avif 612w" sizes="(max-width: 768px) 96px, 160px"><source type="image/webp" srcset="generated-images/lock/lock-320.webp 320w, generated-images/lock/lock-480.webp 480w, generated-images/lock/lock-612.webp 612w" sizes="(max-width: 768px) 96px, 160px"><img src="generated-images/lock/lock-optimized-612.jpg" alt="Elite Hacker locked badge icon" sizes="(max-width: 768px) 96px, 160px" loading="lazy" decoding="async" width="612" height="612"></picture>
-      <h3>Elite Hacker</h3>
-      <p>Complete 100 PRs</p>
-    </div>
-
-  </main>
-
-  <!-- JS -->
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const sidebar = document.getElementById("sidebar");
-
-    menuToggle.addEventListener("click", () => {
-      sidebar.classList.toggle("show");
-    });
-  </script>
-
-</body>
-</html>
-  <!-- UIverse Modular Scripts -->
-  <script src="js/core/utils.js"></script>
-  <script src="js/features/toast.js"></script>
-  <script src="js/features/popup.js"></script>
-  <script src="js/features/code-tools.js"></script>
-  <script src="js/features/sidebar.js"></script>
-  <script src="js/features/search.js"></script>
-  <script src="js/features/theme.js"></script>
-  <script src="js/features/scroll.js"></script>
-  <script src="js/features/alerts.js"></script>
-  <script src="js/features/sandbox.js"></script>
-  <script src="js/features/accessibility.js"></script>
-<script src="js/bootstrap.js"></script>
-
-  <!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
-
     <div class="footer-col brand">
       <h2 class="footer-logo"><i class="fa-solid fa-cube"></i> UIverse</h2>
       <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
@@ -860,10 +760,9 @@
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
         <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+        <button type="button">Subscribe</button>
       </div>
     </div>
-
   </div>
 
   <div class="footer-bottom">
@@ -871,37 +770,79 @@
   </div>
 </footer>
 
-<!-- ================= COMMAND PALETTE ================= -->
-<div id="commandPaletteOverlay" class="command-palette-overlay">
-  <div class="command-palette-container">
-    <div class="command-palette-input-wrapper">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input 
-        type="text" 
-        id="commandPaletteInput" 
-        class="command-palette-input" 
-        placeholder="Search components... (Cmd+K)"
-        autocomplete="off"
-      />
-    </div>
-    <ul id="commandPaletteResults" class="command-palette-results"></ul>
-    <div class="command-palette-footer">
-      <div class="command-palette-footer-item">
-        <span class="command-palette-footer-kbd">↑↓</span>
-        <span>Navigate</span>
-      </div>
-      <div class="command-palette-footer-item">
-        <span class="command-palette-footer-kbd">⏎</span>
-        <span>Select</span>
-      </div>
-      <div class="command-palette-footer-item">
-        <span class="command-palette-footer-kbd">Esc</span>
-        <span>Close</span>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Standard Scripts -->
+<script>
+  /* ---------- Dark Mode Toggle ---------- */
+  const toggle = document.getElementById('darkModeToggle');
+  const icon = toggle.querySelector('i');
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    icon.className = 'fa-solid fa-sun';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  /* ---------- Sidebar Control ---------- */
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('sidebarBackdrop').classList.toggle('visible');
+  }
+
+  /* ---------- Code Toggle ---------- */
+  function toggleCode(id, btn) {
+    const block = document.getElementById(id);
+    const isOpen = block.classList.toggle('open');
+    btn.innerHTML = isOpen
+      ? '<i class="fa-solid fa-eye-slash"></i> Hide Code'
+      : '<i class="fa-solid fa-code"></i> View Code';
+  }
+
+  /* ---------- Copy Code ---------- */
+  function copyCode(id, btn) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  /* ---------- Filter Badges ---------- */
+  function filterBadges(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.component-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+  }
+
+  /* ---------- Live Search ---------- */
+  function liveFilter(val) {
+    const q = val.toLowerCase();
+    document.querySelectorAll('.component-card').forEach(card => {
+      const match = card.dataset.name.toLowerCase().includes(q) ||
+                    card.querySelector('.card-label')?.textContent.toLowerCase().includes(q);
+      card.style.display = match ? '' : 'none';
+    });
+  }
+
+  /* ---------- Interactive Count Badge Handler ---------- */
+  let currentBadgeCount = 12;
+  function changeBadgeCount(diff) {
+    currentBadgeCount = Math.max(0, currentBadgeCount + diff);
+    const valSpan = document.getElementById('badge-count-val');
+    if (valSpan) {
+      valSpan.textContent = `${currentBadgeCount} ALERTS`;
+    }
+  }
+</script>
 
 </body>
 </html>
-
