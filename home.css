@@ -21,11 +21,11 @@
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --navbar-bg: var(--nav-bg, rgba(245, 244, 242, 0.85));
   --navbar-border: var(--nav-border, rgba(0, 0, 0, 0.06));
-  --sidebar-bg: var(--sidebar-bg, linear-gradient(160deg, #141428 0%, #1c1c35 100%));
-  --sidebar-border: var(--sidebar-border, rgba(255,255,255,0.05));
-  --sidebar-text: var(--sidebar-text, #8a9bc0);
-  --sidebar-hover: var(--sidebar-hover, rgba(255,255,255,0.07));
-  --sidebar-active: var(--sidebar-active, linear-gradient(90deg, rgba(235,104,53,0.2) 0%, rgba(235,104,53,0.05) 100%));
+  --sidebar-bg: linear-gradient(160deg, #141428 0%, #1c1c35 100%);
+  --sidebar-border: rgba(255,255,255,0.05);
+  --sidebar-text: #8a9bc0;
+  --sidebar-hover: rgba(255,255,255,0.07);
+  --sidebar-active: linear-gradient(90deg, rgba(235,104,53,0.2) 0%, rgba(235,104,53,0.05) 100%);
   --hero-bg: linear-gradient(135deg, var(--surface) 60%, var(--surface-alt) 100%);
   --hero-stats-bg: rgba(0, 0, 0, 0.04);
   --hero-orb-1: rgba(235,104,53,0.12);

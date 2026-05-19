@@ -4,6 +4,75 @@
    =================================================== */
 
 /* ============================================================
+   DESIGN TOKENS & SYSTEM THEME IMPLEMENTATION
+   ============================================================ */
+:root {
+  /* Brand colors */
+  --accent: #eb6835;
+  --accent-2: #6c5ce7;
+  --accent-glow: rgba(235, 104, 53, 0.18);
+
+  /* Structure and Spacing */
+  --sidebar-w: 240px;
+  --sidebar-width: 240px;
+  --navbar-h: 64px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  /* Fonts */
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Global Theme Backgrounds & Colors (Light Mode) */
+  --bg: #f5f4f2;
+  --body-bg: #f5f4f2;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --card-bg: #ffffff;
+  --card-border: #ebebeb;
+  
+  /* Text Colors (Light Mode) */
+  --text: #111111;
+  --text-muted: #666666;
+  --text-primary: #111111;
+  --text-secondary: #666666;
+
+  /* Transitions */
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark theme overrides */
+body.dark-mode {
+  --bg: #0f0f12;
+  --body-bg: #0f0f12;
+  --surface: #1a1a1e;
+  --surface-muted: #25252b;
+  --card-bg: #1a1a1e;
+  --card-border: #2a2a30;
+  
+  --text: #f0f0f0;
+  --text-muted: #999999;
+  --text-primary: #f0f0f0;
+  --text-secondary: #999999;
+}
+
+/* Apply background and color resets to override messy style.css */
+html, body {
+  background-color: var(--body-bg) !important;
+  background: var(--body-bg) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Fix text contrast in inputs and toggles inside content */
+input, select, textarea {
+  color: var(--text-primary);
+  background-color: var(--surface);
+  border-color: var(--card-border);
+}
+
+/* ============================================================
    HERO
    ============================================================ */
 .gl-hero {

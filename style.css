@@ -5363,6 +5363,7 @@ body {
   color: var(--text);
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
+}
 /* profile.html */
 .profile-container {
   margin-left: 240px;
@@ -5429,6 +5430,7 @@ body {
 
 .btnn:hover {
   opacity: 0.7;
+}
 .feature-actions {
   display: flex;
   gap: 10px;
@@ -6923,8 +6925,6 @@ body{
     display: block;
     width: 100%;
   }
-}
-    0 0 20px rgba(168,85,247,0.25);
 }
 .card {
   transition: all 0.3s ease;
