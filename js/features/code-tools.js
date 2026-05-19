@@ -456,6 +456,281 @@ const CodeTools = {
   },
 
   /**
+   * Extract CSS rules for a specific component from all stylesheets
+   * @param {string} componentSelector - Component class or element selector (e.g., ".profile-card")
+   * @returns {Promise<{css: string, selectorCount: number}>}
+   */
+  async _extractComponentCSS(componentSelector) {
+    if (!componentSelector) {
+      return { css: '', selectorCount: 0 };
+    }
+
+    // Normalize selector
+    const mainSelector = componentSelector.startsWith('.') 
+      ? componentSelector 
+      : '.' + componentSelector;
+
+    const styleSheets = Array.from(document.styleSheets);
+    const rules = [];
+    let selectorCount = 0;
+
+    for (const sheet of styleSheets) {
+      try {
+        // Skip external stylesheets that are from CDNs (focus on local CSS)
+        const href = sheet.href || '';
+        if (href && (href.includes('cdnjs.cloudflare.com') || href.includes('googleapis.com') || href.includes('cdn.'))) {
+          continue;
+        }
+
+        const cssRules = sheet.cssRules || sheet.rules || [];
+        
+        for (let i = 0; i < cssRules.length; i++) {
+          const rule = cssRules[i];
+          
+          // Handle regular CSS rules
+          if (rule.type === CSSRule.STYLE_RULE) {
+            const selector = rule.selectorText;
+            
+            // Check if selector matches the component or its children
+            if (this._selectorMatchesComponent(selector, mainSelector)) {
+              rules.push({
+                selector: selector,
+                text: rule.cssText
+              });
+              selectorCount++;
+            }
+          }
+          
+          // Handle media queries
+          if (rule.type === CSSRule.MEDIA_RULE) {
+            const mediaRules = rule.cssRules || [];
+            let mediaHasRules = false;
+            const mediaInnerRules = [];
+            
+            for (let j = 0; j < mediaRules.length; j++) {
+              const innerRule = mediaRules[j];
+              if (innerRule.type === CSSRule.STYLE_RULE) {
+                const selector = innerRule.selectorText;
+                
+                if (this._selectorMatchesComponent(selector, mainSelector)) {
+                  mediaInnerRules.push({
+                    selector: selector,
+                    text: innerRule.cssText
+                  });
+                  mediaHasRules = true;
+                  selectorCount++;
+                }
+              }
+            }
+            
+            if (mediaHasRules) {
+              rules.push({
+                isMedia: true,
+                media: rule.media.mediaText,
+                rules: mediaInnerRules
+              });
+            }
+          }
+        }
+      } catch (error) {
+        // Cross-origin or restricted stylesheets will throw; skip them
+        console.warn('[CodeTools] Skipping restricted stylesheet:', error.message);
+      }
+    }
+
+    // Format extracted rules into CSS text
+    const cssText = this._formatExtractedCSS(rules);
+    return { css: cssText, selectorCount };
+  },
+
+  /**
+   * Check if a CSS selector matches or is a child of the component selector
+   * @param {string} selector - Full CSS selector to check
+   * @param {string} componentSelector - Component selector to match (e.g., ".profile-card")
+   * @returns {boolean}
+   */
+  _selectorMatchesComponent(selector, componentSelector) {
+    if (!selector || !componentSelector) return false;
+
+    // Exact match or component is parent
+    return (
+      selector === componentSelector ||
+      selector.startsWith(componentSelector + ' ') ||
+      selector.startsWith(componentSelector + ':') ||
+      selector.startsWith(componentSelector + '.') ||
+      selector.startsWith(componentSelector + '>') ||
+      selector.startsWith(componentSelector + '[') ||
+      // Match when component is combined selector like ".card:hover"
+      selector === componentSelector.split(':')[0] + ':' + selector.split(':').slice(1).join(':')
+    );
+  },
+
+  /**
+   * Format extracted CSS rules into readable CSS text
+   * @param {Array} rules - Array of CSS rule objects
+   * @returns {string}
+   */
+  _formatExtractedCSS(rules) {
+    const lines = [];
+    
+    for (const rule of rules) {
+      if (rule.isMedia) {
+        lines.push('');
+        lines.push(`@media ${rule.media} {`);
+        
+        for (const innerRule of rule.rules) {
+          lines.push(`  ${innerRule.text}`);
+        }
+        
+        lines.push('}');
+      } else {
+        lines.push(rule.text);
+      }
+    }
+    
+    return lines.join('\n');
+  },
+
+  /**
+   * Copy complete CSS for a component
+   * @param {string} componentId - Component identifier (from data-name)
+   * @param {HTMLElement} btn - Button element (for feedback)
+   */
+  async copyFullCSS(componentId, btn) {
+    const originalText = btn ? btn.innerHTML : '';
+    
+    try {
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner"></i> Copying...';
+      }
+
+      const componentSelector = componentId.split(' ')[0]; // Get first word as main selector
+      const { css, selectorCount } = await this._extractComponentCSS(componentSelector);
+
+      if (!css || selectorCount === 0) {
+        showToast('No CSS styles found for this component');
+        return;
+      }
+
+      await this.copyText(css);
+      showToast(`CSS copied! (${selectorCount} selector${selectorCount !== 1 ? 's' : ''})`);
+
+      if (btn) {
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        btn.classList.add('copied');
+        
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      }
+    } catch (error) {
+      console.error('[CodeTools] CSS copy failed:', error);
+      showToast('Failed to copy CSS ❌');
+      
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+  },
+
+  /**
+   * Inject "Copy CSS" buttons into component cards
+   */
+  _injectCSSButtons() {
+    document.querySelectorAll('.component-card').forEach((card) => {
+      if (card.dataset.cssButtonInjected === '1') return;
+
+      const actions = card.querySelector('.actions');
+      if (!actions) return;
+
+      // Check if CSS button already exists
+      if (actions.querySelector('button[onclick*="copyFullCSS"]')) {
+        card.dataset.cssButtonInjected = '1';
+        return;
+      }
+
+      const componentId = card.dataset.name;
+      if (!componentId) return;
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'action-btn copy-css-btn';
+      button.setAttribute('aria-label', 'Copy all component CSS styles');
+      button.setAttribute('title', 'Copy All CSS');
+      button.setAttribute('onclick', `copyFullCSS('${componentId}', this)`);
+      button.innerHTML = '<i class="fa-solid fa-code"></i> CSS';
+
+      actions.appendChild(button);
+      card.dataset.cssButtonInjected = '1';
+    });
+  },
+
+  /**
+   * Inject styles for the CSS copy button
+   */
+  _injectCSSButtonStyles() {
+    if (document.getElementById('code-tools-css-styles')) return;
+
+    const style = document.createElement('style');
+    style.id = 'code-tools-css-styles';
+    style.textContent = `
+      .copy-css-btn {
+        background: rgba(0, 0, 0, 0.03) !important;
+        border: 1px solid rgba(0, 0, 0, 0.06) !important;
+        color: #475569 !important;
+        padding: 8px 12px !important;
+        border-radius: 12px !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        cursor: pointer !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        min-height: 38px !important;
+        box-shadow: none !important;
+      }
+
+      .copy-css-btn:hover {
+        background: rgba(0, 0, 0, 0.08) !important;
+        color: #0f172a !important;
+      }
+
+      .copy-css-btn:disabled {
+        opacity: 0.6 !important;
+        cursor: not-allowed !important;
+      }
+
+      .copy-css-btn.copied {
+        background: rgba(34, 197, 94, 0.1) !important;
+        color: #22c55e !important;
+      }
+
+      body.dark-mode .copy-css-btn {
+        background: rgba(255, 255, 255, 0.04) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        color: #cbd5e1 !important;
+      }
+
+      body.dark-mode .copy-css-btn:hover {
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: #ffffff !important;
+      }
+
+      body.dark-mode .copy-css-btn.copied {
+        background: rgba(34, 197, 94, 0.15) !important;
+        color: #86efac !important;
+      }
+    `;
+    document.head.appendChild(style);
+  },
+
+  /**
    * Initialize code tools feature
    */
   init() {
@@ -465,8 +740,11 @@ const CodeTools = {
     window.copyColor = (color) => this.copyColor(color);
     window.copyRGB = (value) => this.copyRGB(value);
     window.exportCode = (id, btn) => this.exportCode(id, btn);
+    window.copyFullCSS = (componentId, btn) => this.copyFullCSS(componentId, btn);
 
+    this._injectCSSButtonStyles();
     this._injectExportButtons();
+    this._injectCSSButtons();
   }
 };
 
