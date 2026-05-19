@@ -23,12 +23,13 @@ This guide will walk you through the entire contribution process, from setting u
 4. [How You Can Contribute](#how-you-can-contribute)
 5. [Getting Started](#getting-started)
 6. [Project Structure](#project-structure)
-7. [PR review Process](#pr-review-process)
-8. [Guidelines](#guidelines)
-9. [How To Contribute](#how-to-contribute)
-10. [Need More Help](#need-more-help)
-11. [Attribution](#attribution)
-12. [Thank you for your contribution](#thank-you-for-your-contribution)
+7. [How to Create a Component](#how-to-create-a-component)
+8. [PR review Process](#pr-review-process)
+9. [Guidelines](#guidelines)
+10. [How To Contribute](#how-to-contribute)
+11. [Need More Help](#need-more-help)
+12. [Attribution](#attribution)
+13. [Thank you for your contribution](#thank-you-for-your-contribution)
 
 ![Line](https://user-images.githubusercontent.com/85225156/171937799-8fc9e255-9889-4642-9c92-6df85fb86e82.gif)
 
@@ -124,6 +125,120 @@ uiverse/
 ├── assets/
 ├── components/
 ├── docs/
+
+![Line](https://user-images.githubusercontent.com/85225156/171937799-8fc9e255-9889-4642-9c92-6df85fb86e82.gif)
+
+## 🎯 How to Create a Component <a id="how-to-create-a-component"></a>
+
+Follow these steps when adding a new UI component. This helps keep new contributions consistent, accessible, and easy to review.
+
+### 1. Pick a clear component name
+
+- Use lowercase words and hyphens for filenames: `gradient-button.html`, `gradient-button.css`.
+- Use PascalCase or kebab-case in documentation examples and component IDs when relevant.
+
+### 2. Create the files in the right folder
+
+- Add the component markup in the root folder if it is a standalone example page.
+- Add the accompanying stylesheet alongside the HTML file if the component has its own CSS.
+- For reusable shared components, place them under `components/` and update docs or index pages if required.
+
+Example structure for a new component:
+
+```
+gradient-button.html
+gradient-button.css
+```
+
+### 3. Follow the sample component template
+
+Use this boilerplate for a new component so reviewers can quickly understand the structure.
+
+```html
+<!-- gradient-button.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Button Component</title>
+    <link rel="stylesheet" href="gradient-button.css" />
+  </head>
+  <body>
+    <div class="component-wrapper">
+      <button class="gradient-button" type="button">
+        Gradient Button
+      </button>
+    </div>
+  </body>
+</html>
+```
+
+```css
+/* gradient-button.css */
+:root {
+  --button-bg: linear-gradient(135deg, #4f46e5, #6366f1);
+  --button-text: #ffffff;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: #f8fafc;
+}
+
+.component-wrapper {
+  text-align: center;
+}
+
+.gradient-button {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 9999px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradient-button:hover,
+.gradient-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(99, 102, 241, 0.18);
+  outline: none;
+}
+
+.gradient-button:focus-visible {
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
+}
+```
+
+### 4. Keep accessibility and responsiveness in mind
+
+- Use semantic HTML and logical structure.
+- Add visible focus styles for keyboard users.
+- Ensure text contrast is strong enough for readability.
+- Test resizing the browser to confirm layout and spacing look good on mobile.
+
+### 5. Update documentation and examples
+
+- Add a short description of the component in the comments or page header.
+- If the component is reusable, link it from the relevant docs/index page.
+- Include screenshots in your pull request when possible.
+
+### 6. Submit your contribution
+
+- Commit with a descriptive message: `git commit -m "Add: Gradient Button component"`
+- Push to your feature branch and open a PR.
+- Mention that this change follows the component tutorial and naming conventions.
+
+> Suggested labels for first-time component contributions: `documentation`, `good first issue`.
 
 ![Line](https://user-images.githubusercontent.com/85225156/171937799-8fc9e255-9889-4642-9c92-6df85fb86e82.gif)
 
