@@ -22,34 +22,53 @@
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   />
 
   <!-- CSS -->
   <link rel="stylesheet" href="breadcrums.css" />
 
   <link rel="stylesheet" href="shared-sidebar.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  
+  <link rel="stylesheet" href="shared-page.css">
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="playground.css">
 </head>
 
-<body>
-
 <!-- =========================================================
-   SIDEBAR
+   NAVBAR
 ========================================================= -->
 
-<aside class="sidebar">
-
-  <div class="sidebar-brand">
-
-    <span class="brand-icon">
-      ⬡
-    </span>
-
-    <span class="brand-text">
-      UIverse
-    </span>
-
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <kbd class="search-kbd">⌘K</kbd>
   </div>
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+<body>
 
+
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
           <nav class="sidebar-nav">
     <ul>
       <li>
@@ -130,7 +149,7 @@
           <span>Alerts</span>
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="color.html">
           <i class="fa-solid fa-palette"></i>
           <span>Colors</span>
@@ -360,31 +379,16 @@
       </li>
     </ul>
   </nav>
-
+  <div class="sidebar-footer">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+  </div>
 </aside>
 
-<!-- =========================================================
-   NAVBAR
-========================================================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
-<header class="navbar">
 
-  <div class="logo">
-    UIverse
-  </div>
-
-  <div class="search-bar">
-
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <input
-      type="text"
-      placeholder="Search breadcrumb UI..."
-    />
-
-  </div>
-
-</header>
 
 <!-- =========================================================
    MAIN
@@ -508,7 +512,7 @@
   <section class="breadcrumb-grid">
 
     <!-- COMPONENT -->
-    <div class="component-card">
+    <div class="component-card"style="border:2px solid lightskyblue;">
 
       <div class="card-top">
 
@@ -554,7 +558,7 @@
     </div>
 
     <!-- COMPONENT -->
-    <div class="component-card">
+    <div class="component-card"style="border:2px solid blueviolet;">
 
       <div class="card-top">
 
@@ -600,7 +604,7 @@
     </div>
 
     <!-- COMPONENT -->
-    <div class="component-card">
+    <div class="component-card"style="border:2px solid palevioletred;">
 
       <div class="card-top">
 
@@ -646,7 +650,7 @@
     </div>
 
     <!-- COMPONENT -->
-    <div class="component-card">
+    <div class="component-card" style="border:2px solid lightskyblue;">
 
       <div class="card-top">
 
@@ -692,7 +696,7 @@
     </div>
 
     <!-- COMPONENT -->
-    <div class="component-card">
+    <div class="component-card" style="border:2px solid blueviolet;">
 
       <div class="card-top">
 
@@ -740,7 +744,7 @@
     </div>
 
     <!-- COMPONENT -->
-    <div class="component-card">
+    <div class="component-card" style="border:2px solid palevioletred;">
 
       <div class="card-top">
 
@@ -786,7 +790,7 @@
     </div>
 
     <!-- COMPONENT -->
-    <div class="component-card">
+    <div class="component-card" style="border:2px solid blueviolet;">
 
       <div class="card-top">
 
@@ -852,7 +856,7 @@
     </div>
 
     <!-- COMPONENT -->
-    <div class="component-card">
+    <div class="component-card"style="border:2px solid palevioletred;">
 
       <div class="card-top">
 
@@ -896,10 +900,176 @@
       </p>
 
     </div>
+    <!-- COMPONENT -->
+<div class="component-card" style="border:2px solid blueviolet;">
+
+  <div class="card-top">
+    <span class="card-label">
+      Shadow Breadcrumb
+    </span>
+    <span class="card-tag tag-modern">
+      Modern
+    </span>
+  </div>
+
+  <div class="card-preview">
+    <div class="breadcrumb shadow-breadcrumb">
+      <a href="#">Home</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <a href="#">Projects</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <span>UI Design</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Breadcrumb with subtle shadow and depth
+    for elevated modern UI styling.
+  </p>
+</div>
+
+
+<!-- COMPONENT -->
+<div class="component-card" style="border:2px solid palevioletred;">
+
+  <div class="card-top">
+    <span class="card-label">
+      Dashed Breadcrumb
+    </span>
+    <span class="card-tag tag-trending">
+      Trending
+    </span>
+  </div>
+
+  <div class="card-preview dark-preview">
+    <div class="breadcrumb dashed-breadcrumb">
+      <a href="#">Docs</a>
+      <i class="fa-solid fa-ellipsis"></i>
+      <a href="#">API</a>
+      <i class="fa-solid fa-ellipsis"></i>
+      <span>Reference</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Dashed separator breadcrumb for
+    technical documentation and guides.
+  </p>
+</div>
+
+
+<!-- COMPONENT -->
+<div class="component-card" style="border:2px solid lightskyblue;">
+
+  <div class="card-top">
+    <span class="card-label">
+      Highlight Breadcrumb
+    </span>
+    <span class="card-tag tag-popular">
+      Premium
+    </span>
+  </div>
+
+  <div class="card-preview">
+    <div class="breadcrumb highlight-breadcrumb">
+      <a href="#">Store</a>
+      <i class="fa-solid fa-angle-right"></i>
+      <a href="#">Electronics</a>
+      <i class="fa-solid fa-angle-right"></i>
+      <span class="highlight">Laptops</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Breadcrumb with highlighted active step
+    for clear navigation focus.
+  </p>
+</div>
+
+
+<!-- COMPONENT -->
+<div class="component-card" style="border:2px solid blueviolet;">
+
+  <div class="card-top">
+    <span class="card-label">
+      Vertical Breadcrumb
+    </span>
+    <span class="card-tag tag-modern">
+      Unique
+    </span>
+  </div>
+
+  <div class="card-preview dark-preview">
+    <div class="breadcrumb vertical-breadcrumb">
+      <a href="#">Root</a>
+      <i class="fa-solid fa-arrow-down"></i>
+      <a href="#">Folder</a>
+      <i class="fa-solid fa-arrow-down"></i>
+      <span>File</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Vertical breadcrumb layout for file
+    explorers and hierarchical navigation.
+  </p>
+</div>
+
 
   </section>
-
+  
 </main>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com">
+        <button type="button">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
 
 <script src="breadcrumbs.js"></script>
 
