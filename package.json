@@ -28,6 +28,7 @@
     "test:storybook": "playwright test --config playwright.storybook.config.ts",
     "quality": "npm run lint:html && npm run lint:css && npm run lint:js && npm run link-check && npm run audit:a11y && npm run test:visual",
     "test:e2e:accessibility": "playwright test tests/visual/accessibility --project=chromium-desktop --reporter=list",
+    "components:index:generate": "node scripts/generate-components-index-data.js",
     "perf": "node scripts/perf-budgets.js",
     "perf:ci": "node scripts/perf-budgets.js",
     "perf:monitor": "node scripts/performance-monitor.js",

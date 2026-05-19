@@ -120,14 +120,53 @@ function toggleSidebar() {
   }
 }
 
+function getNormalizedRoutePath(href = window.location.href) {
+  const normalized = new URL(href, window.location.href);
+  return normalized.pathname.toLowerCase();
+}
+
+function getComponentsIndexSidebarHref() {
+  const homeAnchor = document.querySelector('.sidebar a[href$="index.html"]');
+  const homeHref = homeAnchor?.getAttribute('href') || 'index.html';
+
+  if (/index\.html$/i.test(homeHref)) {
+    return homeHref.replace(/index\.html$/i, 'components/index.html');
+  }
+
+  return 'components/index.html';
+}
+
+function ensureSidebarComponentsIndexLink() {
+  const sidebarList = document.querySelector(".sidebar ul");
+  if (!sidebarList) return;
+
+  const alreadyExists = Array.from(sidebarList.querySelectorAll("a")).some((anchor) => {
+    const href = (anchor.getAttribute("href") || "").toLowerCase();
+    return href.includes("components/index.html");
+  });
+
+  if (alreadyExists) return;
+
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <a href="${getComponentsIndexSidebarHref()}">
+      <i class="fa-solid fa-table-cells-large"></i>
+      <span>Components Index</span>
+    </a>
+  `;
+  sidebarList.appendChild(li);
+}
+
 function updateSidebarActiveLink() {
-  const currentPage = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+  const currentRoute = getNormalizedRoutePath();
 
   document.querySelectorAll(".sidebar ul li").forEach((li) => {
     const anchor = li.querySelector("a");
     if (!anchor) return;
 
-    if (anchor.getAttribute("href").toLowerCase() === currentPage) {
+    const anchorRoute = getNormalizedRoutePath(anchor.getAttribute("href") || "index.html");
+
+    if (anchorRoute === currentRoute) {
       li.classList.add("active");
     } else {
       li.classList.remove("active");
@@ -149,16 +188,16 @@ function initSidebarLinkClose() {
         document.querySelector(".sidebar-backdrop")?.classList.remove("active");
       }
     });
+  });
 }
 
 function toggleMenu() {
-  document.querySelector(".sidebar").classList.toggle("active");
-}
-  });
+  document.querySelector(".sidebar")?.classList.toggle("active");
 }
 
 function initSidebar() {
   restoreSidebarState();
+  ensureSidebarComponentsIndexLink();
   updateSidebarActiveLink();
   initSidebarLinkClose();
 }

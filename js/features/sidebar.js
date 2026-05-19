@@ -9,6 +9,41 @@ const Sidebar = {
     listeners: []
   },
 
+  getComponentsIndexRoute() {
+    const homeAnchor = document.querySelector('.sidebar a[href$="index.html"]');
+    const homeHref = homeAnchor?.getAttribute('href') || 'index.html';
+    if (/index\.html$/i.test(homeHref)) {
+      return homeHref.replace(/index\.html$/i, 'components/index.html');
+    }
+    return 'components/index.html';
+  },
+
+  ensureComponentsIndexLink() {
+    const sidebarList = document.querySelector('.sidebar ul');
+    if (!sidebarList) return;
+
+    const hasLink = Array.from(sidebarList.querySelectorAll('a')).some((anchor) => {
+      const href = (anchor.getAttribute('href') || '').toLowerCase();
+      return href.includes('components/index.html');
+    });
+
+    if (hasLink) return;
+
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    const icon = document.createElement('i');
+    const label = document.createElement('span');
+
+    a.setAttribute('href', this.getComponentsIndexRoute());
+    icon.className = 'fa-solid fa-table-cells-large';
+    label.textContent = 'Components Index';
+
+    a.appendChild(icon);
+    a.appendChild(label);
+    li.appendChild(a);
+    sidebarList.appendChild(li);
+  },
+
   /**
    * Toggle sidebar visibility
    */
@@ -28,15 +63,17 @@ const Sidebar = {
    * Update active link in sidebar based on current page
    */
   updateActiveLink() {
-    const currentPage = getCurrentPageName();
+    const currentPath = new URL(window.location.href).pathname.toLowerCase();
 
     document.querySelectorAll(".sidebar ul li").forEach((li) => {
       const anchor = li.querySelector("a");
       if (!anchor) return;
 
-      const anchorPage = getCurrentPageName(anchor.getAttribute("href") || "index.html");
+      const anchorPath = new URL(anchor.getAttribute("href") || "index.html", window.location.href)
+        .pathname
+        .toLowerCase();
 
-      if (anchorPage === currentPage) {
+      if (anchorPath === currentPath) {
         li.classList.add("active");
       } else {
         li.classList.remove("active");
@@ -90,6 +127,7 @@ const Sidebar = {
     if (this._state.initialized) return;
 
     this.restoreState();
+    this.ensureComponentsIndexLink();
     this.updateActiveLink();
     this.initLinkClose();
 
