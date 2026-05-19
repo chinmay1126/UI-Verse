@@ -36,7 +36,9 @@
                     "visual:scale":  "playwright test --config=playwright.visual-scale.config.ts",
                     "visual:scale:quick":  "node scripts/run-visual-scale-quick.js",
                     "visual:scale:update":  "playwright test --config=playwright.visual-scale.config.ts --update-snapshots",
-                    "visual:scale:summary":  "node scripts/visual-results-summary.js"
+                    "visual:scale:summary":  "node scripts/visual-results-summary.js",
+                    "docs:generate":  "node scripts/documentation-generator.js",
+                    "docs:generate:check":  "node scripts/documentation-generator-check.js"
                 },
     "devDependencies":  {
                             "@axe-core/playwright":  "^4.0.0",
