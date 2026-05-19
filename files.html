@@ -9,11 +9,48 @@
 
   <link rel="stylesheet" href="files.css">
   <link rel="stylesheet" href="shared-sidebar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="shared-page.css">
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="playground.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
+
+
 </head>
 <body>
 
 <div class="main-content">
 
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="logo">UIverse</div>
+
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn">
+      <i class="fa-solid fa-plus"></i> Add Component
+    </button>
+    <a href="contributorss.html">
+    <button class="nav-btn primary-nav-btn">
+      Contributors
+    </button>
+    </a>
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
   <!-- HERO -->
 
   <section class="hero">
@@ -387,6 +424,7 @@
   </div>
 </aside>
 
+
   <!-- COMPONENT GRID -->
 
   <section class="upload-grid">
@@ -514,10 +552,254 @@
       </div>
 
     </div>
+    <div class="upload-card neon-card">
+  <div class="card-preview">
 
-  </section>
+    <div class="upload-box neon-upload">
+      <div class="upload-icon">⚡</div>
+      <h3>Neon Upload</h3>
+      <p>Cyberpunk glowing effect</p>
+    </div>
+
+  </div>
+
+  <div class="card-content">
+
+    <div class="card-top">
+      <h3>Neon Upload</h3>
+      <span>Hot</span>
+    </div>
+
+    <p>
+      Futuristic glowing upload box with animated neon borders.
+    </p>
+
+    <div class="card-actions">
+      <button>View Code</button>
+      <button>Copy</button>
+    </div>
+
+  </div>
+</div>
+<div class="upload-card">
+
+  <div class="card-preview">
+
+    <div class="upload-box dashed-upload">
+      <div class="upload-icon">📁</div>
+      <h3>Dashed Upload</h3>
+      <p>Minimal clean style</p>
+    </div>
+
+  </div>
+
+  <div class="card-content">
+
+    <div class="card-top">
+      <h3>Dashed Upload</h3>
+      <span>Minimal</span>
+    </div>
+
+    <p>
+      Lightweight upload area with modern dashed border styling.
+    </p>
+
+    <div class="card-actions">
+      <button>View Code</button>
+      <button>Copy</button>
+    </div>
+
+  </div>
 
 </div>
+<div class="upload-card floating-card">
+
+  <div class="card-preview">
+
+    <div class="upload-box floating-upload">
+      <div class="upload-icon">🪄</div>
+      <h3>Floating Upload</h3>
+      <p>Soft floating animation</p>
+    </div>
+
+  </div>
+
+  <div class="card-content">
+
+    <div class="card-top">
+      <h3>Floating Upload</h3>
+      <span>Animated</span>
+    </div>
+
+    <p>
+      Upload card with smooth floating hover animation effect.
+    </p>
+
+    <div class="card-actions">
+      <button>View Code</button>
+      <button>Copy</button>
+    </div>
+
+  </div>
+
+</div>
+<div class="upload-card dark-card">
+
+  <div class="card-preview">
+
+    <div class="upload-box dark-upload">
+      <div class="upload-icon">🌙</div>
+      <h3>Dark Upload</h3>
+      <p>Elegant dark interface</p>
+    </div>
+
+  </div>
+
+  <div class="card-content">
+
+    <div class="card-top">
+      <h3>Dark Upload</h3>
+      <span>Dark UI</span>
+    </div>
+
+    <p>
+      Professional dark themed upload component for dashboards.
+    </p>
+
+    <div class="card-actions">
+      <button>View Code</button>
+      <button>Copy</button>
+    </div>
+
+  </div>
+
+</div>
+<div class="upload-card preview-card">
+
+  <div class="card-preview">
+
+    <div class="upload-box image-upload">
+      <div class="preview-circle">🖼</div>
+      <h3>Image Preview</h3>
+      <p>Preview selected images</p>
+    </div>
+
+  </div>
+
+  <div class="card-content">
+
+    <div class="card-top">
+      <h3>Image Upload</h3>
+      <span>Useful</span>
+    </div>
+
+    <p>
+      Upload component designed for profile and gallery images.
+    </p>
+
+    <div class="card-actions">
+      <button>View Code</button>
+      <button>Copy</button>
+    </div>
+
+  </div>
+
+</div>
+<div class="upload-card progress-card">
+
+  <div class="card-preview">
+
+    <div class="upload-box progress-upload">
+
+      <div class="upload-icon">🚀</div>
+
+      <h3>Progress Upload</h3>
+
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+
+      <p>Uploading files...</p>
+
+    </div>
+
+  </div>
+
+  <div class="card-content">
+
+    <div class="card-top">
+      <h3>Progress Upload</h3>
+      <span>Advanced</span>
+    </div>
+
+    <p>
+      Upload UI with animated progress indicator and status updates.
+    </p>
+
+    <div class="card-actions">
+      <button>View Code</button>
+      <button>Copy</button>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>
+  
+
+</div>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
 
 <script>
 
