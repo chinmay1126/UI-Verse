@@ -491,19 +491,19 @@
       <div class="about-stats">
 
         <div class="stat-card">
-          <h3>120+</h3>
-          <p>UI Components</p>
-        </div>
+  <h3><span class="counter" data-target="120">0</span>+</h3>
+  <p>UI Components</p>
+</div>
 
-        <div class="stat-card">
-          <h3>25+</h3>
-          <p>Modern Layouts</p>
-        </div>
+<div class="stat-card">
+  <h3><span class="counter" data-target="25">0</span>+</h3>
+  <p>Modern Layouts</p>
+</div>
 
-        <div class="stat-card">
-          <h3>24/7</h3>
-          <p>Community Support</p>
-        </div>
+<div class="stat-card">
+  <h3><span class="counter" data-target="24">0</span>/7</h3>
+  <p>Community Support</p>
+</div>
 
       </div>
 
@@ -545,10 +545,49 @@
             Clean layouts with modern UI/UX principles.
           </p>
         </div>
+        <div class="team-card">
+  <i class="fa-solid fa-circle-half-stroke"></i>
+  <h3>Theme Support</h3>
+  <p>
+    Built-in light and dark mode support for modern projects.
+  </p>
+</div>
 
-      </div>
+<div class="team-card">
+  <i class="fa-solid fa-gauge-high"></i>
+  <h3>Performance Optimized</h3>
+  <p>
+    Lightweight components designed for speed and efficiency.
+  </p>
+</div>
+</div>
+<div class="section-title">
+  <h2>What Our Community Says</h2>
+  <p>
+    Hear directly from developers and designers who use UIverse
+    to build faster and design better.
+  </p>
+</div>
+      <section class="about-grid">
 
-    </section>
+  <div class="about-card">
+    <h1></h1>
+    <div class="card-icon orange">
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <h3>Jane Doe</h3>
+    <p>"UIverse helped me speed up my workflow and deliver polished designs faster."</p>
+  </div>
+
+  <div class="about-card">
+    <div class="card-icon purple">
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <h3>John Smith</h3>
+    <p>"The reusable components are a lifesaver for rapid prototyping."</p>
+  </div>
+
+</section>
 
   </main>
 
@@ -701,22 +740,44 @@
         );
 
     });
+    
 
   </script>
+  <script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // lower = faster
 
-    </section>
-  </main>
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col brand">
-        <h2 class="footer-logo">UIverse</h2>
-        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      </div>
-      <div class="footer-col"><h3>Explore</h3><ul><li><a href="button.html">Buttons</a></li><li><a href="navbar.html">Navbars</a></li><li><a href="cards.html">Cards</a></li></ul></div>
-      <div class="footer-col"><h3>Resources</h3><ul><li><a href="#">Documentation</a></li><li><a href="#">Community</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    </div>
-  </footer>
+      const increment = target / speed;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    // Trigger animation when visible
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateCount();
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(counter);
+  });
+</script>
+
+
+    
 
   <script>
     const sidebar = document.getElementById('sidebar');
