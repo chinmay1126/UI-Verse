@@ -819,3 +819,343 @@ body.dark-mode .feature-card
     padding: 30px 20px;
   }
 }
+
+/* ============================================================
+   AURORA MESH GRADIENT COMPONENT
+   ============================================================ */
+.aurora-upload {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(15, 15, 20, 0.6);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.aurora-upload:hover {
+  transform: scale(1.02);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.aurora-bg {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 1;
+  background: radial-gradient(circle at 30% 30%, #ff007f 0%, transparent 40%),
+              radial-gradient(circle at 70% 40%, #7b61ff 0%, transparent 45%),
+              radial-gradient(circle at 40% 70%, #00f3ff 0%, transparent 40%),
+              radial-gradient(circle at 80% 80%, #ffb800 0%, transparent 35%);
+  filter: blur(40px);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  animation: aurora-spin 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes aurora-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.aurora-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 24px 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 85%;
+  height: 80%;
+  justify-content: center;
+}
+
+.aurora-content .upload-icon {
+  font-size: 32px;
+  animation: float-slow 4s ease-in-out infinite;
+  margin-bottom: 4px;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.aurora-content h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.aurora-content p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  margin: 0;
+}
+
+/* ============================================================
+   SECURE BIOMETRIC COMPONENT
+   ============================================================ */
+.biometric-upload {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  border: 1px solid #1a2333;
+  background: #090e17;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.biometric-upload:hover {
+  border-color: #00f3ff;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.25);
+}
+
+.biometric-upload .scan-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-image: linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+.biometric-upload .scan-laser {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 2;
+  background: linear-gradient(90deg, transparent, #00f3ff, transparent);
+  box-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+  animation: laser-scan 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes laser-scan {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.biometric-upload .security-icon {
+  font-size: 38px;
+  z-index: 3;
+  color: #00f3ff;
+  text-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+  margin-bottom: 12px;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.biometric-upload h3 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  z-index: 3;
+  letter-spacing: 0.5px;
+}
+
+.biometric-upload p {
+  color: #00f3ff;
+  font-size: 11px;
+  font-weight: 500;
+  margin: 0;
+  z-index: 3;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   MINIMALIST STACK / LIST UPLOAD COMPONENT
+   ============================================================ */
+.stack-upload {
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stack-upload .mini-dropzone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1.5px dashed var(--card-border);
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stack-upload .mini-dropzone:hover {
+  border-color: var(--accent);
+  background: rgba(235, 104, 53, 0.03);
+}
+
+.mini-dropzone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(235, 104, 53, 0.1);
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.mini-dropzone span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.file-stack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-stack-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--body-bg);
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--card-border);
+}
+
+.file-stack-item.loading {
+  border-color: rgba(235, 104, 53, 0.2);
+}
+
+.file-item-icon {
+  font-size: 18px;
+}
+
+.file-item-icon.text-pdf {
+  color: #ff2a2a;
+}
+
+.file-item-icon.text-img {
+  color: #00b894;
+}
+
+.file-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.file-item-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-item-size {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.file-item-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.file-item-status.status-check {
+  color: #00b894;
+  font-size: 14px;
+}
+
+/* Spinner loader ring */
+.spinner-ring-mini {
+  border: 2px solid rgba(235, 104, 53, 0.2);
+  border-top: 2px solid var(--accent);
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  animation: mini-spin 1s linear infinite;
+}
+
+@keyframes mini-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark mode compatibility fixes for variables */
+body.dark-mode .stack-upload {
+  background: #111827;
+  border-color: #1f2937;
+}
+
+body.dark-mode .file-stack-item {
+  background: #1f2937;
+  border-color: #374151;
+}
