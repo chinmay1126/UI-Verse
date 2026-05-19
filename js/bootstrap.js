@@ -70,6 +70,11 @@ const Bootstrap = {
       UIverse.register('Accessibility', Accessibility);
     }
 
+    if (typeof AccessibilityChecker !== 'undefined') {
+      UIverse.register('AccessibilityChecker', AccessibilityChecker);
+    }
+
+
     if (typeof CommandPalette !== 'undefined') {
       UIverse.register('CommandPalette', CommandPalette);
     }
