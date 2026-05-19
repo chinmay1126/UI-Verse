@@ -377,6 +377,18 @@
     </div>
   </div>
 
+
+
+  
+  
+  <div>
+    <form class="scearch">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Filter forms..." id="formSearch">
+    </form>
+  </div>
+
+
   <!-- Forms Grid -->
   <div class="forms-grid">
 
@@ -1070,6 +1082,7 @@
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 
+
   /* Sidebar */
   function toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('open');
@@ -1109,6 +1122,22 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.form-component-card').forEach(el => observer.observe(el));
+
+/*SCEARCH FILTER*/
+// FORM SEARCH (FIXED)
+const formSearchInput = document.getElementById("formSearch");
+formSearchInput.addEventListener("input", function (){
+  const filter = formSearchInput.value.toLowerCase();
+  const cards = document.querySelectorAll(".form-component-card");
+  cards.forEach(card =>{
+    const data = card.getAttribute("data-name");
+    if(data.includes(filter)){card.style.display = "";}
+    else{card.style.display = "none";}
+  });
+});
+
+
+</script>
 
   /* =================================================================
      5 NEW PREMIUM FORM COMPONENTS JAVASCRIPT
