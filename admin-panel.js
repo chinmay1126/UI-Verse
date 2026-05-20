@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function initThemeSystem() {
   const themeBtn = document.querySelector('.theme-btn');
   if (!themeBtn) return;
+  if (themeBtn.dataset.initialized) return;
+  themeBtn.dataset.initialized = 'true';
 
   const icon = themeBtn.querySelector('i');
 
@@ -43,6 +45,8 @@ function initGlobalFilters() {
   const cards = document.querySelectorAll('.component-card');
 
   filterTabs.forEach(tab => {
+    if (tab.dataset.initialized) return;
+    tab.dataset.initialized = 'true';
     tab.addEventListener('click', () => {
       // Toggle active filter style
       filterTabs.forEach(t => t.classList.remove('active'));
@@ -64,6 +68,8 @@ function initGlobalFilters() {
   // Sidebar header links redirection simulation
   const sidebarLinks = document.querySelectorAll('.sidebar-nav li a');
   sidebarLinks.forEach(link => {
+    if (link.dataset.initialized) return;
+    link.dataset.initialized = 'true';
     link.addEventListener('click', (e) => {
       // If it is same page anchor or just testing, we can simulate
       const href = link.getAttribute('href');
