@@ -54,6 +54,50 @@ body.dark-mode {
   --feature-shadow-hover: 0 20px 40px rgba(0,0,0,0.3);
 }
 
+/* Respect OS-level dark mode preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #1a1a1e;
+    --card-border: #2a2a30;
+    --body-bg: #0f0f12;
+    --text-primary: #f0f0f0;
+    --text-secondary: #999;
+  }
+}
+
+/* Generic overrides to handle inline styles that use hard-coded colors
+   These use !important so they can override inline `style="color:..."` usages
+   and improve dark-mode consistency across pages quickly. */
+body.dark-mode [style*="color:#fff"],
+body.dark-mode [style*="color:#ffffff"] {
+  color: var(--text-primary) !important;
+}
+
+body.dark-mode [style*="color:#aaa"],
+body.dark-mode [style*="color:#a9a9a9"] {
+  color: var(--text-secondary) !important;
+}
+
+body.dark-mode [style*="background:#fff"],
+body.dark-mode [style*="background:#ffffff"] {
+  background: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+/* Override common light-gray inline text used in dark preview snippets */
+body.dark-mode [style*="color:#e0e0e0"],
+body.dark-mode [style*="color:#ccc"] {
+  color: var(--text-secondary) !important;
+}
+
+/* Ensure navbar / sidebar elements pick up theme vars */
+body.dark-mode .brand-text,
+body.dark-mode .brand-icon,
+body.dark-mode .sidebar-nav li a,
+body.dark-mode .sidebar-footer a {
+  color: var(--text-primary) !important;
+}
+
 /* ---------- BASE RESET ---------- */
 *, *::before, *::after {
   box-sizing: border-box;

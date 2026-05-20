@@ -12,48 +12,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="navbar.css">
-
-
-  <!-- Primary Meta Tags -->
-  <title>Navbar - UI-Verse</title>
-  <meta name="title" content="Navbar - UI-Verse">
-  <meta name="description" content="Responsive navigation bars and menu components. Sidebars, headers, and mobile-friendly navigation for your projects.">
-  <meta name="author" content="UI-Verse Community">
-  <meta name="keywords" content="ui components, css, html, javascript, open source, web components, frontend, ui library">
-  <link rel="canonical" href="https://uiverse.vercel.app/navbar.html">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://uiverse.vercel.app/navbar.html">
-  <meta property="og:title" content="Navbar - UI-Verse">
-  <meta property="og:description" content="Responsive navigation bars and menu components. Sidebars, headers, and mobile-friendly navigation for your projects.">
-  <meta property="og:image" content="https://uiverse.vercel.app/preview.png">
-  <meta property="og:site_name" content="UI-Verse">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://uiverse.vercel.app/navbar.html">
-  <meta property="twitter:title" content="Navbar - UI-Verse">
-  <meta property="twitter:description" content="Responsive navigation bars and menu components. Sidebars, headers, and mobile-friendly navigation for your projects.">
-  <meta property="twitter:image" content="https://uiverse.vercel.app/preview.png">
-  <meta property="twitter:creator" content="@uiverse">
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "UI-Verse",
-    "url": "https://uiverse.vercel.app",
-    "description": "A curated collection of open-source HTML, CSS, and JavaScript UI components for modern web development. Free to use, regularly updated.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://uiverse.vercel.app/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <link rel="stylesheet" href="shared-sidebar.css">
+  <link rel="stylesheet" href="command-palette.css">
 </head>
 
 <body>
@@ -393,6 +352,9 @@
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
     <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
     <kbd class="search-kbd">⌘K</kbd>
+  </div>
+  <div id="searchDropdown" class="search-dropdown hidden">
+    <ul id="searchDropdownResults" class="search-dropdown-results"></ul>
   </div>
   <div class="nav-right">
     <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
@@ -2195,6 +2157,9 @@
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
+
+<script src="js/features/search.js"></script>
+<script src="js/features/command-palette.js"></script>
 
 <script>
   /* Dark Mode */

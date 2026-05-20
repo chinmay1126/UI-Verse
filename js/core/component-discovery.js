@@ -426,6 +426,21 @@
     return JSON.stringify({ query: result.query, filters: result.filters, sort: options.sort || result.filters.sort }, null, 2);
   }
 
+  function resolve(query) {
+    // Use ComponentVersioning if available for advanced resolution
+    const versioning = global.ComponentVersioning;
+    if (versioning && typeof versioning.resolve === 'function') {
+      const catalog = _state.items.map((item) => ({ id: item.id, title: item.title, path: item.path, version: item.metadata?.version || item.version || '0.0.0', versions: item.metadata?.versions || [], aliases: item.aliases, tags: item.tags, doc: item.doc, description: item.description }));
+      return versioning.resolve(query, catalog);
+    }
+
+    // Fallback: simple id/title match
+    const id = String(query || '').toLowerCase().trim();
+    const found = _state.items.find((it) => (it.id || '').toLowerCase() === id || (it.title || '').toLowerCase() === id || (it.aliases || []).map(a => a.toLowerCase()).includes(id));
+    if (!found) return { found: false, query: String(query), compatibility: { status: 'missing', fallbackUsed: false } };
+    return { found: true, id: found.id, path: found.path, title: found.title, version: found.version || '0.0.0', latestVersion: found.latestVersion || found.version, compatibility: { status: 'exact', fallbackUsed: false } };
+  }
+
   const ComponentDiscovery = {
     init,
     discover,
@@ -435,6 +450,7 @@
     getFacets,
     getRecentFilters: getRecentFiltersList,
     exportQuery,
+    resolve,
     _state
   };
 

@@ -49,6 +49,13 @@ const ComponentIndex = (function () {
     return _state.discovery.search(query, options);
   }
 
+  function resolve(query, options = {}) {
+    if (_state.discovery && typeof _state.discovery.resolve === 'function') {
+      return _state.discovery.resolve(query, options);
+    }
+    return { found: false, query: query || '', compatibility: { status: 'unavailable', fallbackUsed: false } };
+  }
+
   function discover(query, options = {}) {
     if (!_state.discovery) {
       return {
