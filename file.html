@@ -20,6 +20,80 @@
   />
 </head>
 
+
+<script>
+  const uploadBtn = document.getElementById("uploadBtn");
+  const fileInput = document.getElementById("fileInput");
+  const filesGrid = document.querySelector(".files-grid");
+
+  // Open file picker
+  uploadBtn.addEventListener("click", () => {
+    fileInput.click();
+  });
+
+  // Handle uploaded file
+  fileInput.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    // File size formatter
+    const formatSize = (bytes) => {
+      if (bytes < 1024) return bytes + " B";
+      if (bytes < 1024 * 1024)
+        return (bytes / 1024).toFixed(1) + " KB";
+      if (bytes < 1024 * 1024 * 1024)
+        return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+
+      return (bytes / (1024 * 1024 * 1024)).toFixed(1) + " GB";
+    };
+
+    // Detect icon
+    const getIcon = (type) => {
+      if (type.startsWith("image/")) return "📸";
+      if (type.startsWith("video/")) return "🎬";
+      if (type.includes("pdf")) return "📄";
+      if (type.includes("zip")) return "🗜";
+      return "📁";
+    };
+
+    // Create new file card
+    const card = document.createElement("div");
+    card.className = "file-card";
+
+    card.innerHTML = `
+      <div class="file-top">
+        <div class="file-icon purple">
+          ${getIcon(file.type)}
+        </div>
+
+        <div class="file-menu">
+          ⋮
+        </div>
+      </div>
+
+      <h3>${file.name}</h3>
+
+      <p>
+        Newly uploaded file added to your cloud workspace.
+      </p>
+
+      <div class="file-footer">
+        <span>${formatSize(file.size)}</span>
+        <span>Just now</span>
+      </div>
+    `;
+
+    // Add card to grid
+    filesGrid.prepend(card);
+
+    // Reset input
+    fileInput.value = "";
+
+    // Optional success message
+    alert(`${file.name} uploaded successfully!`);
+  });
+</script>
 <body>
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -372,8 +446,15 @@
       <div class="actions">
 
         <button class="btn-upload">
-          + Upload File
-        </button>
+  <span>⬆</span>
+  Upload File
+</button>
+
+<input
+  type="file"
+  id="fileInput"
+  hidden
+/>
 
         <div class="profile">
           DM
