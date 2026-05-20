@@ -974,6 +974,205 @@ MAIN
 }
 
 
+/* =====================================================
+   12. VERIFIED TICK BADGE
+===================================================== */
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(99,102,241,0.15));
+  border: 1px solid rgba(99,102,241,0.35);
+  color: #93c5fd;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  transition: all 0.3s;
+}
+
+.verified-badge i {
+  color: #60a5fa;
+  font-size: 16px;
+  filter: drop-shadow(0 0 6px rgba(96,165,250,0.7));
+  animation: tick-pulse 2s ease-in-out infinite;
+}
+
+@keyframes tick-pulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(96,165,250,0.5)); }
+  50%       { filter: drop-shadow(0 0 12px rgba(96,165,250,0.9)); }
+}
+
+/* =====================================================
+   13. XP PROGRESS BADGE
+===================================================== */
+
+.xp-badge {
+  width: 200px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+}
+
+.xp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.xp-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f9d71c;
+}
+
+.xp-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: #a29bfe;
+}
+
+.xp-bar-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  width: 72%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6c5ce7, #a29bfe, #f9d71c);
+  animation: xp-shimmer 2s ease-in-out infinite alternate;
+}
+
+@keyframes xp-shimmer {
+  from { box-shadow: 0 0 4px rgba(162,155,254,0.4); }
+  to   { box-shadow: 0 0 14px rgba(249,215,28,0.5); }
+}
+
+/* =====================================================
+   14. COUNTDOWN TIMER BADGE
+===================================================== */
+
+.countdown-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a0a2e, #0d1b2a);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: #fca5a5;
+  font-weight: 800;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+  box-shadow: 0 0 18px rgba(239,68,68,0.1);
+}
+
+.countdown-badge i {
+  color: #f87171;
+  font-size: 14px;
+}
+
+.cd-sep {
+  background: rgba(239,68,68,0.15);
+  padding: 3px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(239,68,68,0.2);
+  color: #f87171;
+}
+
+.cd-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* =====================================================
+   15. TAG STACK BADGE
+===================================================== */
+
+.tag-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.tag-chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: transform 0.2s;
+}
+
+.tag-chip:hover {
+  transform: translateY(-2px);
+}
+
+.tag-chip.blue {
+  background: rgba(59,130,246,0.12);
+  color: #93c5fd;
+  border: 1px solid rgba(59,130,246,0.25);
+}
+
+.tag-chip.purple {
+  background: rgba(139,92,246,0.12);
+  color: #c4b5fd;
+  border: 1px solid rgba(139,92,246,0.25);
+}
+
+.tag-chip.green {
+  background: rgba(34,197,94,0.1);
+  color: #86efac;
+  border: 1px solid rgba(34,197,94,0.2);
+}
+
+.tag-chip.orange {
+  background: rgba(249,115,22,0.12);
+  color: #fdba74;
+  border: 1px solid rgba(249,115,22,0.25);
+}
+
+/* =====================================================
+   16. AURORA GLOW BADGE
+===================================================== */
+
+.aurora-badge {
+  padding: 13px 26px;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 2px;
+  position: relative;
+  background: linear-gradient(135deg,
+    #0ea5e9 0%, #8b5cf6 40%, #ec4899 70%, #06b6d4 100%);
+  background-size: 300% 300%;
+  animation: aurora-shift 5s ease-in-out infinite;
+  box-shadow:
+    0 0 20px rgba(139,92,246,0.35),
+    0 0 40px rgba(14,165,233,0.2);
+}
+
+@keyframes aurora-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */
