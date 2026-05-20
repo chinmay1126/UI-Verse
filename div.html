@@ -2062,6 +2062,15 @@
   margin:30px 0;
 }
 
+      <span class="section-tag">
+        UI BLOCKS
+      </span>
+      <div>
+        <form class="scearch">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Filter Divs..." id="DivSearch">
+        </form>
+      </div>
 .premium-pricing li{
   display:flex;
   align-items:center;
@@ -2568,6 +2577,29 @@
     </div>
 
   </div>
+
+<script>
+
+/*====================
+Filter Scearch
+=====================*/
+  
+const input = document.getElementById("DivSearch");
+input.addEventListener("input", function () {
+  const filter = input.value.toLowerCase();
+  const cards = document.querySelectorAll(".form-component-card");
+  cards.forEach(card => {
+    const data = card.textContent.toLowerCase();
+    if (data.includes(filter)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+
+</script>
+
 
   <div class="footer-bottom">
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
