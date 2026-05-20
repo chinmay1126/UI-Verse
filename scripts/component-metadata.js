@@ -23,6 +23,30 @@ function semverBump(version, level){
   return parts.join('.');
 }
 
+function buildDependencies(componentId, componentPath){
+  const id = String(componentId || path.basename(componentPath || 'component', '.html')).toLowerCase();
+  const localStyle = id === 'index' ? 'home.css' : (id === 'color' ? 'colors.css' : `${id}.css`);
+
+  if (id === 'index') {
+    return {
+      styles: ['style.css', 'home.css'],
+      scripts: ['script.js', 'js/features/theme.js', 'js/features/search.js', 'js/features/command-palette.js', 'js/features/accessibility.js']
+    };
+  }
+
+  if (id === 'settings') {
+    return {
+      styles: ['style.css', 'css/main.css'],
+      scripts: ['script.js', 'js/features/theme.js', 'js/features/sidebar.js', 'js/features/search.js', 'js/features/code-tools.js', 'js/features/sandbox.js', 'js/features/accessibility.js', 'js/features/toast.js', 'js/features/popup.js']
+    };
+  }
+
+  return {
+    styles: ['style.css', 'css/main.css', localStyle],
+    scripts: ['script.js', 'js/features/theme.js', 'js/features/accessibility.js', 'js/features/code-tools.js', 'js/features/sandbox.js']
+  };
+}
+
 function today(){ return new Date().toISOString().split('T')[0]; }
 
 function ensureMeta(component){
@@ -34,6 +58,7 @@ function ensureMeta(component){
       id,
       title: component.title || id,
       path: component.path || component.file || '',
+      dependencies: buildDependencies(id, component.path || component.file || ''),
       version: '0.1.0',
       changelog: [ { version: '0.1.0', date: today(), note: 'Initial metadata generated' } ]
     };
@@ -43,6 +68,7 @@ function ensureMeta(component){
     // normalize fields
     meta.title = meta.title || component.title || id;
     meta.path = meta.path || component.path || meta.path || '';
+    meta.dependencies = meta.dependencies || buildDependencies(id, meta.path || component.path || component.file || '');
     writeJson(metaPath, meta);
   }
   return { id, metaPath, meta };
