@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<!-- ================= SIDEBAR ================= -->
+
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
     <span class="brand-icon">⬡</span>
@@ -350,10 +350,10 @@
 </div>
 </aside>
 
-<!-- ================= SIDEBAR BACKDROP ================= -->
+
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
-<!-- ================= NAVBAR ================= -->
+
 <header class="navbar" id="navbar">
   <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
     <i class="fa-solid fa-bars"></i>
@@ -380,10 +380,10 @@
   </div>
 </header>
 
-<!-- ================= MAIN ================= -->
+
 <main class="main-home">
 
-  <!-- Page Header -->
+  
   <div class="page-hero">
     <div class="page-hero-left">
       <div class="breadcrumb">
@@ -416,7 +416,7 @@
     </div>
   </div>
 
-  <!-- Filter Bar -->
+  
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
     <button class="filter-btn" onclick="filterCards('basic', this)">Basic</button>
@@ -430,7 +430,7 @@
     </div>
   </div>
 
-  <!-- Alerts Grid -->
+  
   <div class="alerts-grid" id="alertsGrid">
 
 <div class="component-card" data-name="glass blur modern transparent alert" data-cat="filled">
@@ -454,7 +454,7 @@
   </div>
 </div>
 
-    <!-- 2. Dismissible Alerts -->
+    
     <div class="component-card" data-name="dismissible closeable close button alert" data-cat="basic">
       <div class="card-top">
         <span class="card-label">Dismissible Alerts</span>
@@ -598,7 +598,7 @@
   </div>
 </div>
 
-    <!-- 6. Toast Notifications -->
+    
     <div class="component-card" data-name="toast notification popup bottom corner" data-cat="toast">
       <div class="card-top">
         <span class="card-label">Toast Notifications</span>
@@ -667,7 +667,7 @@
 }</code></pre>
 </div>
 
-    <!-- 7. Top Banner -->
+    
     <div class="component-card" data-name="top banner strip alert announcement" data-cat="banner">
       <div class="card-top">
         <span class="card-label">Top Banner</span>
@@ -1380,7 +1380,7 @@
         </pre>
       </div>
 
-<!-- NEW COMPONENT 1: Glassmorphism Success Alert -->
+
 <div class="component-card" data-cat="filled" data-name="glassmorphism success alert green">
   <h3>Glass Success Alert</h3>
   <div class="alert-box alert-glass-success" role="alert">
@@ -1394,10 +1394,16 @@
     <button class="action-btn view-btn" onclick="toggleCode('new1', this)"><i class="fa-solid fa-code"></i> View Code</button>
     <button class="action-btn copy-btn" onclick="copyCode('new1', this)"><i class="fa-solid fa-copy"></i> Copy</button>
   </div>
-  <pre id="new1" class="code-block"><code>&lt;!-- Code for Glass Success Alert --&gt;</code></pre>
+  <pre id="new1" class="code-block"><code>&lt;div class="alert-box alert-glass-success" role="alert"&gt;
+  &lt;div class="ag-icon"&gt;&lt;i class="fa-solid fa-check"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div class="ag-content"&gt;
+    &lt;strong&gt;Action Completed&lt;/strong&gt;
+    &lt;p&gt;Your profile has been updated successfully.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
-<!-- NEW COMPONENT 2: Gradient Border Warning -->
+
 <div class="component-card" data-cat="outlined" data-name="gradient border warning alert pulse">
   <h3>Gradient Warning Alert</h3>
   <div class="alert-box alert-gradient-warning" role="alert">
@@ -1411,10 +1417,16 @@
     <button class="action-btn view-btn" onclick="toggleCode('new2', this)"><i class="fa-solid fa-code"></i> View Code</button>
     <button class="action-btn copy-btn" onclick="copyCode('new2', this)"><i class="fa-solid fa-copy"></i> Copy</button>
   </div>
-  <pre id="new2" class="code-block"><code>&lt;!-- Code for Gradient Warning Alert --&gt;</code></pre>
+  <pre id="new2" class="code-block"><code>&lt;div class="alert-box alert-gradient-warning" role="alert"&gt;
+  &lt;div class="ag-icon"&gt;&lt;i class="fa-solid fa-bolt"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div class="ag-content"&gt;
+    &lt;strong&gt;Low Battery&lt;/strong&gt;
+    &lt;p&gt;Your device is at 10%. Please plug in charger.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
-<!-- NEW COMPONENT 3: Dark Mode Cyber Info Alert -->
+
 <div class="component-card" data-cat="filled" data-name="cyber dark mode info alert">
   <h3>Cyber Info Alert</h3>
   <div class="alert-box alert-cyber-info" role="alert">
@@ -1428,10 +1440,16 @@
     <button class="action-btn view-btn" onclick="toggleCode('new3', this)"><i class="fa-solid fa-code"></i> View Code</button>
     <button class="action-btn copy-btn" onclick="copyCode('new3', this)"><i class="fa-solid fa-copy"></i> Copy</button>
   </div>
-  <pre id="new3" class="code-block"><code>&lt;!-- Code for Cyber Info Alert --&gt;</code></pre>
+  <pre id="new3" class="code-block"><code>&lt;div class="alert-box alert-cyber-info" role="alert"&gt;
+  &lt;div class="ag-icon"&gt;&lt;i class="fa-solid fa-satellite-dish"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div class="ag-content"&gt;
+    &lt;strong&gt;Signal Acquired&lt;/strong&gt;
+    &lt;p&gt;Connection established with orbital satellite.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
-<!-- NEW COMPONENT 4: Notification Badge Alert -->
+
 <div class="component-card" data-cat="toast" data-name="notification badge alert message">
   <h3>Notification Alert</h3>
   <div class="alert-box alert-badge-notify" role="alert">
@@ -1449,10 +1467,20 @@
     <button class="action-btn view-btn" onclick="toggleCode('new4', this)"><i class="fa-solid fa-code"></i> View Code</button>
     <button class="action-btn copy-btn" onclick="copyCode('new4', this)"><i class="fa-solid fa-copy"></i> Copy</button>
   </div>
-  <pre id="new4" class="code-block"><code>&lt;!-- Code for Notification Badge Alert --&gt;</code></pre>
+  <pre id="new4" class="code-block"><code>&lt;div class="alert-box alert-badge-notify" role="alert"&gt;
+  &lt;div class="abn-avatar"&gt;
+    &lt;img src="https://i.pravatar.cc/150?img=68" alt="User"&gt;
+    &lt;span class="abn-badge"&gt;3&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="ag-content"&gt;
+    &lt;strong&gt;New Messages&lt;/strong&gt;
+    &lt;p&gt;You have 3 unread messages from Sarah.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button class="abn-close"&gt;✕&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
-<!-- NEW COMPONENT 5: Simple Stripe Error Alert -->
+
 <div class="component-card" data-cat="basic" data-name="simple stripe error alert red">
   <h3>Stripe Error Alert</h3>
   <div class="alert-box alert-stripe-error" role="alert">
@@ -1465,48 +1493,284 @@
     <button class="action-btn view-btn" onclick="toggleCode('new5', this)"><i class="fa-solid fa-code"></i> View Code</button>
     <button class="action-btn copy-btn" onclick="copyCode('new5', this)"><i class="fa-solid fa-copy"></i> Copy</button>
   </div>
-  <pre id="new5" class="code-block"><code>&lt;!-- Code for Stripe Error Alert --&gt;</code></pre>
+  <pre id="new5" class="code-block"><code>&lt;div class="alert-box alert-stripe-error" role="alert"&gt;
+  &lt;div class="ag-content"&gt;
+    &lt;strong&gt;Authentication Failed&lt;/strong&gt;
+    &lt;p&gt;The password you entered is incorrect.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
-  </div><!-- /alertsGrid -->
+
+<div class="component-card" data-cat="basic" data-name="neumorphic interactive action confirm alert box">
+  <h3>Neumorphic Confirm Alert</h3>
+  <div class="alert-box alert-neumorphic-confirm">
+    <div class="nc-icon"><i class="fa-solid fa-trash-can"></i></div>
+    <div class="nc-body">
+      <strong>Delete Project?</strong>
+      <p>This action is irreversible and will purge all repository assets.</p>
+      <div class="nc-actions">
+        <button class="nc-btn-cancel">Cancel</button>
+        <button class="nc-btn-confirm">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new6', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new6', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new6" class="code-block"><code>&lt;div class="alert-box alert-neumorphic-confirm"&gt;
+  &lt;div class="nc-icon"&gt;&lt;i class="fa-solid fa-trash-can"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div class="nc-body"&gt;
+    &lt;strong&gt;Delete Project?&lt;/strong&gt;
+    &lt;p&gt;This action is irreversible and will purge all repository assets.&lt;/p&gt;
+    &lt;div class="nc-actions"&gt;
+      &lt;button class="nc-btn-cancel"&gt;Cancel&lt;/button&gt;
+      &lt;button class="nc-btn-confirm"&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="component-card" data-cat="filled" data-name="mac console terminal alert system developer logs">
+  <h3>Console Terminal Alert</h3>
+  <div class="alert-box alert-terminal-log">
+    <div class="tl-header">
+      <span class="tl-dot red"></span>
+      <span class="tl-dot yellow"></span>
+      <span class="tl-dot green"></span>
+      <span class="tl-title">bash - system_monitor.sh</span>
+    </div>
+    <div class="tl-console">
+      <div class="tl-line"><span class="tl-prompt">guest@uiverse:~$</span> ./check_db.sh</div>
+      <div class="tl-line error"><span class="tl-status">[FATAL]</span> Database pool overflowed! 152 active connections.</div>
+      <div class="tl-line warning"><span class="tl-status">[WARN]</span> Re-routing traffic to secondary cluster... <span class="tl-cursor"></span></div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new7', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new7', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new7" class="code-block"><code>&lt;div class="alert-box alert-terminal-log"&gt;
+  &lt;div class="tl-header"&gt;
+    &lt;span class="tl-dot red"&gt;&lt;/span&gt;
+    &lt;span class="tl-dot yellow"&gt;&lt;/span&gt;
+    &lt;span class="tl-dot green"&gt;&lt;/span&gt;
+    &lt;span class="tl-title"&gt;bash - system_monitor.sh&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="tl-console"&gt;
+    &lt;div class="tl-line"&gt;&lt;span class="tl-prompt"&gt;guest@uiverse:~$&lt;/span&gt; ./check_db.sh&lt;/div&gt;
+    &lt;div class="tl-line error"&gt;&lt;span class="tl-status"&gt;[FATAL]&lt;/span&gt; Database pool overflowed! 152 active connections.&lt;/div&gt;
+    &lt;div class="tl-line warning"&gt;&lt;span class="tl-status"&gt;[WARN]&lt;/span&gt; Re-routing traffic to secondary cluster... &lt;span class="tl-cursor"&gt;&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="component-card" data-cat="filled" data-name="pulsing radar threat intrusion hack alert crimson glowing animate">
+  <h3>Radar Intrusion Alert</h3>
+  <div class="alert-box alert-radar-threat">
+    <div class="rt-radar-wrap">
+      <div class="rt-radar-circle circle1"></div>
+      <div class="rt-radar-circle circle2"></div>
+      <div class="rt-radar-circle circle3"></div>
+      <i class="fa-solid fa-circle-exclamation rt-threat-icon"></i>
+    </div>
+    <div class="rt-body">
+      <strong>Intrusion Detected</strong>
+      <p>Node 0x4F-A9 bypassed firewall port 8080. Immediate isolation sequence initiated.</p>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new8', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new8', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new8" class="code-block"><code>&lt;div class="alert-box alert-radar-threat"&gt;
+  &lt;div class="rt-radar-wrap"&gt;
+    &lt;div class="rt-radar-circle circle1"&gt;&lt;/div&gt;
+    &lt;div class="rt-radar-circle circle2"&gt;&lt;/div&gt;
+    &lt;div class="rt-radar-circle circle3"&gt;&lt;/div&gt;
+    &lt;i class="fa-solid fa-circle-exclamation rt-threat-icon"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;div class="rt-body"&gt;
+    &lt;strong&gt;Intrusion Detected&lt;/strong&gt;
+    &lt;p&gt;Node 0x4F-A9 bypassed firewall port 8080. Immediate isolation sequence initiated.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="component-card" data-cat="basic" data-name="retro 8bit pixel game alert box arcade yellow magenta font">
+  <h3>Retro Pixel Alert</h3>
+  <div class="alert-box alert-retro-pixel">
+    <div class="rp-icon">👾</div>
+    <div class="rp-body">
+      <strong>STAGE 4 LOCKED</strong>
+      <p>Defeat the giant alien boss to acquire additional credits!</p>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new9', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new9', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new9" class="code-block"><code>&lt;div class="alert-box alert-retro-pixel"&gt;
+  &lt;div class="rp-icon"&gt;👾&lt;/div&gt;
+  &lt;div class="rp-body"&gt;
+    &lt;strong&gt;STAGE 4 LOCKED&lt;/strong&gt;
+    &lt;p&gt;Defeat the giant alien boss to acquire additional credits!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="component-card" data-cat="toast" data-name="glassmorphic timer toast notification countdown progress bar automatic dismiss">
+  <h3>Glassmorphic Timer Toast</h3>
+  <div class="alert-box alert-glass-timer-toast">
+    <div class="gt-icon-wrap"><i class="fa-solid fa-hourglass-half"></i></div>
+    <div class="gt-body">
+      <strong>Session Expiring</strong>
+      <p>Automatic logout in 30 seconds due to inactivity. <a href="#" class="gt-link">Extend</a></p>
+    </div>
+    <button class="gt-close">✕</button>
+    <div class="gt-progress-track">
+      <div class="gt-progress-bar"></div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new10', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new10', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new10" class="code-block"><code>&lt;div class="alert-box alert-glass-timer-toast"&gt;
+  &lt;div class="gt-icon-wrap"&gt;&lt;i class="fa-solid fa-hourglass-half"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div class="gt-body"&gt;
+    &lt;strong&gt;Session Expiring&lt;/strong&gt;
+    &lt;p&gt;Automatic logout in 30 seconds due to inactivity.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button class="gt-close"&gt;✕&lt;/button&gt;
+  &lt;div class="gt-progress-track"&gt;
+    &lt;div class="gt-progress-bar"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="component-card" data-cat="banner" data-name="multi action expandable accordion system alert debugger details error">
+  <h3>Expandable Details Alert</h3>
+  <div class="alert-box alert-expandable-details" id="expAlertBox">
+    <div class="ed-main">
+      <i class="fa-solid fa-bug ed-bug-icon"></i>
+      <div class="ed-body">
+        <strong>Runtime Exception</strong>
+        <p>Unhandled dynamic linker lookup error in libc.so.6.</p>
+      </div>
+      <button class="ed-toggle-btn" onclick="document.getElementById('expAlertBox').classList.toggle('expanded')">Details</button>
+    </div>
+    <div class="ed-details">
+      <div class="ed-details-inner">
+        <div class="ed-log-line">Fatal: load_library: could not locate symbol "__pthread_cleanup_push"</div>
+        <div class="ed-log-line">Stack trace: at ld-linux.so.2 (line 1208)</div>
+        <div class="ed-log-line">Stack trace: at libc.so.6 (line 442)</div>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new11', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new11" class="code-block"><code>&lt;div class="alert-box alert-expandable-details" id="myExpandableAlert"&gt;
+  &lt;div class="ed-main"&gt;
+    &lt;i class="fa-solid fa-bug ed-bug-icon"&gt;&lt;/i&gt;
+    &lt;div class="ed-body"&gt;
+      &lt;strong&gt;Runtime Exception&lt;/strong&gt;
+      &lt;p&gt;Unhandled dynamic linker lookup error in libc.so.6.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="ed-toggle-btn" onclick="document.getElementById('myExpandableAlert').classList.toggle('expanded')"&gt;Details&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-details"&gt;
+    &lt;div class="ed-details-inner"&gt;
+      &lt;div class="ed-log-line"&gt;Fatal: load_library: could not locate symbol "__pthread_cleanup_push"&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+  </div>
 
 </main>
 
-<!-- Live Toast Container -->
+
 <div id="toastContainer" class="live-toast-container"></div>
 
-<!-- Scroll to Top -->
+
 <button id="scrollTopBtn" onclick="scrollToTop()">
   <i class="fa-solid fa-chevron-up"></i>
 </button>
 
-<!-- Copy Toast -->
+
 <div id="copyToast" class="copy-toast"><i class="fa-solid fa-check"></i> Copied to clipboard!</div>
 
-<!-- FOOTER -->
+
 <footer class="footer">
   <div class="footer-container">
-    <div class="footer-col brand">
-      <h2 class="footer-logo">⬡ UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      <div class="socials">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-      </div>
+
+    <div class="socials">
+  <a href="https://github.com" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://twitter.com" target="_blank" title="Twitter">
+    <i class="fab fa-x-twitter"></i>
+  </a>
+</div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
     </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+
     <div class="footer-col">
       <h3>Legal</h3>
-      <a href="privacypolicy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="license.html">License</a>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
     </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
 
 <script src="script.js"></script>
 <script>
-  /* ---------- Dark Mode ---------- */
+  
   const alertToggle = document.getElementById('darkModeToggle');
   const alertIcon = alertToggle ? alertToggle.querySelector('i') : null;
   if (alertToggle && alertIcon) {
@@ -1522,7 +1786,7 @@
     });
   }
 
-  /* ---------- Sidebar ---------- */
+  
   function toggleSidebar() {
     const sb = document.getElementById('sidebar');
     const sbd = document.getElementById('sidebarBackdrop');
@@ -1530,7 +1794,7 @@
     if (sbd) sbd.classList.toggle('visible');
   }
 
-  /* ---------- Scroll Top & Navbar Scroll ---------- */
+  
   function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
   window.addEventListener('scroll', () => {
     const topBtn = document.getElementById('scrollTopBtn');
@@ -1539,7 +1803,7 @@
     if (nv) nv.classList.toggle('scrolled', window.scrollY > 40);
   });
 
-  /* Dismiss alert */
+  
   function dismissAlert(id) {
     const el = document.getElementById(id);
     el.style.opacity = '0';
@@ -1559,7 +1823,7 @@
     });
   }
 
-  /* Live Toast Demo */
+  
   const toastIcons = {
     success: 'fa-circle-check',
     error:   'fa-circle-xmark',
@@ -1587,7 +1851,7 @@
     }, 3500);
   }
 
-  /* Code Toggle */
+  
   function toggleCode(id, btn) {
     const block = document.getElementById(id);
     if (!block) return;
@@ -1599,7 +1863,7 @@
     }
   }
 
-  /* ---------- Copy Code ---------- */
+  
   function copyCode(id, btn) {
     const block = document.getElementById(id);
     if (!block) return;
@@ -1616,7 +1880,7 @@
     });
   }
 
-  /* ---------- Filter by Category ---------- */
+  
   function filterCards(cat, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
@@ -1626,7 +1890,7 @@
     });
   }
 
-  /* ---------- Live Search Filter ---------- */
+  
   function liveFilter(val) {
     const q = val.toLowerCase();
     document.querySelectorAll('.component-card').forEach(card => {
@@ -1641,7 +1905,7 @@
     if (e.key === 'Enter') liveFilter(e.target.value);
   }
 
-  /* ---------- Scroll Animations ---------- */
+  
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
   }, { threshold: 0.08 });

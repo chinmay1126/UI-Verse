@@ -915,15 +915,16 @@ body.dark-mode .skeleton-card{
   }
 
 }
+
 /* ============================================================
    FOOTER
    ============================================================ */
 .footer {
+  margin-left: var(--sidebar-w);
   background: #111;
   color: #aaa;
   padding: 0;
   margin-top: 60px;
-  width: 100%;
 }
 
 .footer-container {
@@ -1050,4 +1051,3 @@ body.dark-mode .skeleton-card{
   font-size: 13px;
   color: #555;
 }
-

@@ -889,75 +889,69 @@
   <!-- Copy Toast -->
   <div id="copyToast" class="copy-toast"><i class="fa-solid fa-check"></i> Copied to clipboard!</div>
 
-  <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-container">
-      <div class="footer-col brand">
-        <h2 class="footer-logo"><span aria-label="Hexagon">⬡</span> UIverse</h2>
-        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-        <div class="socials" role="list">
-          <a href="#" role="listitem" aria-label="Visit our GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-          <a href="#" role="listitem" aria-label="Visit our LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-          <a href="#" role="listitem" aria-label="Visit our Twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h3>Explore</h3>
-        <ul role="list">
-          <li><a href="button.html">Buttons</a></li>
-          <li><a href="navbar.html">Navbars</a></li>
-          <li><a href="cards.html">Cards</a></li>
-          <li><a href="span.html">Span</a></li>
-          <li><a href="forms.html">Forms</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Resources</h3>
-        <ul role="list">
-          <li><a href="#">Documentation</a></li>
-          <li><a href="#">GitHub Repo</a></li>
-          <li><a href="#">Community</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Legal</h3>
-        <ul role="list">
-          <li><a href="privacypolicy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
-      </div>
-      <div class="footer-col newsletter">
-        <h3>Stay Updated</h3>
-        <p>Get notified when new components drop.</p>
-        <div class="newsletter-form">
-          <label for="newsletter-email" class="sr-only">Email address for newsletter</label>
-          <input 
-            type="email"
-            id="newsletter-email"
-            placeholder="your@email.com"
-            aria-label="Enter your email to subscribe"
-            style="
-              transition:0.3s ease;
-              padding:12px;
-              border-radius:8px;
-              border:none;
-              background:#1a1a1a;
-              color:white;
-            "
-            onmouseover="this.style.boxShadow='0 0 15px rgba(255,102,0,0.8)'"
-            onmouseout="this.style.boxShadow='none'"
-          />
-          <button type="button" aria-label="Subscribe to newsletter">Subscribe</button>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-    </div>
-  </footer>
-
 </main>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
 
+    <div class="socials">
+  <a href="https://github.com" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://twitter.com" target="_blank" title="Twitter">
+    <i class="fab fa-x-twitter"></i>
+  </a>
+</div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
 <script src="charts.js"></script>
 </body>
 </html>

@@ -116,6 +116,24 @@ Browse the component pages via the sidebar navigation. Each page contains reusab
 
 ---
 
+## Component Versioning
+
+UI-Verse tracks each core component with semantic versions in `data/meta/*.json` and publishes a combined changelog in `CHANGELOG_COMPONENTS.md`.
+
+Use these commands:
+
+```bash
+npm run components:version:generate
+npm run components:version:check
+npm run components:version:bump -- --bump=button:patch --note="Describe what changed"
+```
+
+- `generate`: ensures metadata exists for all components and refreshes the changelog.
+- `check`: verifies semver format, changelog consistency, and component path validity.
+- `bump`: increments one component version (`patch|minor|major`) and prepends a changelog entry.
+
+---
+
 ## Component Usage Quick Examples
 
 Use this quick workflow when you add any UIverse component to a project:

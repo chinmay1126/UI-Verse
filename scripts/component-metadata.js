@@ -5,6 +5,7 @@ const ROOT = process.cwd();
 const COMPONENTS = path.join(ROOT, 'data', 'components.json');
 const META_DIR = path.join(ROOT, 'data', 'meta');
 const CHANGELOG_FILE = path.join(ROOT, 'CHANGELOG_COMPONENTS.md');
+const SEMVER_RE = /^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z-.]+))?(?:\+([0-9A-Za-z-.]+))?$/;
 
 function readJson(file){
   try{ return JSON.parse(fs.readFileSync(file, 'utf8')); }catch(e){ return null; }
@@ -23,28 +24,8 @@ function semverBump(version, level){
   return parts.join('.');
 }
 
-function buildDependencies(componentId, componentPath){
-  const id = String(componentId || path.basename(componentPath || 'component', '.html')).toLowerCase();
-  const localStyle = id === 'index' ? 'home.css' : (id === 'color' ? 'colors.css' : `${id}.css`);
-
-  if (id === 'index') {
-    return {
-      styles: ['style.css', 'home.css'],
-      scripts: ['script.js', 'js/features/theme.js', 'js/features/search.js', 'js/features/command-palette.js', 'js/features/accessibility.js']
-    };
-  }
-
-  if (id === 'settings') {
-    return {
-      styles: ['style.css', 'css/main.css'],
-      scripts: ['script.js', 'js/features/theme.js', 'js/features/sidebar.js', 'js/features/search.js', 'js/features/code-tools.js', 'js/features/sandbox.js', 'js/features/accessibility.js', 'js/features/toast.js', 'js/features/popup.js']
-    };
-  }
-
-  return {
-    styles: ['style.css', 'css/main.css', localStyle],
-    scripts: ['script.js', 'js/features/theme.js', 'js/features/accessibility.js', 'js/features/code-tools.js', 'js/features/sandbox.js']
-  };
+function isSemver(version){
+  return SEMVER_RE.test(String(version || '').trim());
 }
 
 function today(){ return new Date().toISOString().split('T')[0]; }
@@ -67,31 +48,48 @@ function ensureMeta(component){
   } else {
     // normalize fields
     meta.title = meta.title || component.title || id;
-    meta.path = meta.path || component.path || meta.path || '';
-    meta.dependencies = meta.dependencies || buildDependencies(id, meta.path || component.path || component.file || '');
+    meta.path = component.path || component.file || meta.path || '';
     writeJson(metaPath, meta);
   }
   return { id, metaPath, meta };
 }
 
+function componentList(){
+  const list = readJson(COMPONENTS);
+  return Array.isArray(list) ? list : [];
+}
+
+function componentIds(){
+  return componentList().map((component) => (
+    component.id || path.basename(component.path || component.title || 'component', '.html')
+  ));
+}
+
+function readComponentMetasById(ids){
+  return ids
+    .map((id) => readJson(path.join(META_DIR, `${id}.json`)))
+    .filter(Boolean);
+}
+
 function generateAll(){
-  const list = readJson(COMPONENTS) || [];
+  const list = componentList();
   fs.mkdirSync(META_DIR, { recursive: true });
   const results = [];
   for(const c of list){
     results.push(ensureMeta(c));
   }
   // generate combined changelog markdown
-  const metas = fs.readdirSync(META_DIR).filter(f=>f.endsWith('.json')).map(f=>readJson(path.join(META_DIR,f)));
+  const metas = readComponentMetasById(componentIds());
   generateChangelog(metas);
   console.log(`\n✅ Component metadata generation complete (${results.length} components).`);
 }
 
 function generateChangelog(metas){
-  metas.sort((a,b)=> a.id.localeCompare(b.id));
+  const safeMetas = (metas || []).filter(Boolean);
+  safeMetas.sort((a,b)=> String(a.id || '').localeCompare(String(b.id || '')));
   let md = '# Component Changelog\n\n';
   md += `Generated: ${new Date().toISOString()}\n\n`;
-  for(const m of metas){
+  for(const m of safeMetas){
     md += `## ${m.title} — ${m.id}\n\n`;
     md += `Path: ${m.path || '-'}\n\n`;
     md += `Current version: **${m.version}**\n\n`;
@@ -106,23 +104,125 @@ function generateChangelog(metas){
 }
 
 function bump(componentId, level, note){
+  if(!['patch', 'minor', 'major'].includes(level)){
+    console.error("Bump level must be one of: patch, minor, major");
+    process.exit(2);
+  }
   const metaPath = path.join(META_DIR, `${componentId}.json`);
   const meta = readJson(metaPath);
   if(!meta){ console.error(`Metadata for '${componentId}' not found.`); process.exit(2); }
   const old = meta.version || '0.0.0';
+  if(!isSemver(old)){
+    console.error(`Current version '${old}' is not valid semver.`);
+    process.exit(2);
+  }
   const next = semverBump(old, level);
   meta.version = next;
   meta.changelog = meta.changelog || [];
   meta.changelog.unshift({ version: next, date: today(), note: note || `Bumped ${level}` });
   writeJson(metaPath, meta);
   console.log(`Bumped ${componentId}: ${old} -> ${next}`);
-  generateChangelog([meta].concat(fs.readdirSync(META_DIR).filter(f=>f.endsWith('.json') && f !== `${componentId}.json`).map(f=>readJson(path.join(META_DIR,f)))));
+  generateChangelog(readComponentMetasById(componentIds()));
+}
+
+function check(){
+  const list = componentList();
+  if(!list.length){
+    console.error(`Invalid components source: ${COMPONENTS}`);
+    process.exit(2);
+  }
+
+  const errors = [];
+  let checked = 0;
+
+  for(const component of list){
+    const id = component.id || path.basename(component.path || component.title || 'component', '.html');
+    const metaPath = path.join(META_DIR, `${id}.json`);
+    const meta = readJson(metaPath);
+    checked += 1;
+
+    if(!meta){
+      errors.push(`[${id}] Missing metadata file: data/meta/${id}.json`);
+      continue;
+    }
+
+    if(!isSemver(meta.version)){
+      errors.push(`[${id}] Invalid current version '${meta.version}'.`);
+    }
+
+    if(!Array.isArray(meta.changelog) || meta.changelog.length === 0){
+      errors.push(`[${id}] Missing changelog entries.`);
+    } else {
+      if(!meta.changelog.some((entry) => entry && entry.version === meta.version)){
+        errors.push(`[${id}] Current version '${meta.version}' is not present in changelog.`);
+      }
+
+      meta.changelog.forEach((entry, index) => {
+        if(!entry || !isSemver(entry.version)){
+          errors.push(`[${id}] Changelog entry #${index + 1} has invalid version.`);
+        }
+        if(!entry || !/^\d{4}-\d{2}-\d{2}$/.test(String(entry.date || ''))){
+          errors.push(`[${id}] Changelog entry #${index + 1} has invalid date.`);
+        }
+      });
+    }
+
+    const expectedPath = component.path || component.file || '';
+    const recordedPath = meta.path || expectedPath;
+    if(expectedPath && recordedPath !== expectedPath){
+      errors.push(`[${id}] Metadata path '${recordedPath}' does not match components path '${expectedPath}'.`);
+    }
+
+    if(recordedPath && !fs.existsSync(path.join(ROOT, recordedPath))){
+      errors.push(`[${id}] Component page does not exist at '${recordedPath}'.`);
+    }
+  }
+
+  if(errors.length){
+    console.error(`\n❌ Component metadata check failed (${errors.length} issue(s)).`);
+    errors.forEach((message) => console.error(`- ${message}`));
+    process.exit(1);
+  }
+
+  console.log(`\n✅ Component metadata check passed (${checked} components).`);
+}
+
+function parseArgs(argv){
+  const parsed = { _: [] };
+  for(let i = 0; i < argv.length; i += 1){
+    const token = argv[i];
+    if(!token.startsWith('--')){
+      parsed._.push(token);
+      continue;
+    }
+
+    const inlineSplit = token.indexOf('=');
+    if(inlineSplit !== -1){
+      const key = token.slice(2, inlineSplit);
+      parsed[key] = token.slice(inlineSplit + 1);
+      continue;
+    }
+
+    const key = token.slice(2);
+    const next = argv[i + 1];
+    if(next && !next.startsWith('--')){
+      parsed[key] = next;
+      i += 1;
+    } else {
+      parsed[key] = true;
+    }
+  }
+  return parsed;
 }
 
 // CLI
-const argv = require('minimist')(process.argv.slice(2));
+const argv = parseArgs(process.argv.slice(2));
 if(argv.generate || argv._.includes('generate')){
   generateAll();
+  process.exit(0);
+}
+if(argv.check || argv._.includes('check')){
+  check();
   process.exit(0);
 }
 if(argv.bump){

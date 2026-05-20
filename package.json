@@ -51,8 +51,10 @@
         "search:test": "playwright test tests/search --config=playwright.search.config.ts --reporter=list",
         "search:demo": "node -e \"console.log('Open components/Discovery/component-discovery.html in a browser served from the static server')\"",
         "search:check": "node scripts/component-discovery-check.js",
-        "a11y:test": "playwright test tests/a11y --config=playwright.a11y.config.ts --reporter=list"
-        "theme:demo": "node -e \"console.log('Open components/theme/demo-theme.html in a browser served from the static server')\""
+        "a11y:test": "playwright test tests/a11y --config=playwright.a11y.config.ts --reporter=list",
+        "components:version:generate": "node scripts/component-metadata.js --generate",
+        "components:version:check": "node scripts/component-metadata.js --check",
+        "components:version:bump": "node scripts/component-metadata.js"
     },
     "devDependencies": {
         "@axe-core/playwright": "^4.0.0",

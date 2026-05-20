@@ -16,6 +16,8 @@ function initThemeSystem() {
   const themeBtn = document.querySelector('.theme-btn');
 
   if (!themeBtn) return;
+  if (themeBtn.dataset.initialized) return;
+  themeBtn.dataset.initialized = 'true';
 
   const icon = themeBtn.querySelector('i');
 
@@ -82,6 +84,8 @@ function initGlobalFilters() {
 
   filterTabs.forEach(tab => {
 
+    if (tab.dataset.initialized) return;
+    tab.dataset.initialized = 'true';
     tab.addEventListener('click', () => {
 
       filterTabs.forEach(t =>
@@ -107,6 +111,18 @@ function initGlobalFilters() {
 
       });
 
+  // Sidebar header links redirection simulation
+  const sidebarLinks = document.querySelectorAll('.sidebar-nav li a');
+  sidebarLinks.forEach(link => {
+    if (link.dataset.initialized) return;
+    link.dataset.initialized = 'true';
+    link.addEventListener('click', (e) => {
+      // If it is same page anchor or just testing, we can simulate
+      const href = link.getAttribute('href');
+      if (href === 'admin-panel.html') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
 
   });
@@ -488,6 +504,11 @@ function toggleUserRowStatus(btn) {
   const statusSpan =
     tr.querySelector('.td-status');
 
+  if (!btn) return;
+  const tr = btn.closest('tr');
+  if (!tr) return;
+  
+  const statusSpan = tr.querySelector('.td-status');
   if (!statusSpan) return;
 
   const isActive =
@@ -583,6 +604,35 @@ async function copyCode(id) {
 
   }
 
+  const rawCode = pre.querySelector('code').textContent;
+  
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(rawCode).then(() => {
+      if (typeof showLiveToast === 'function') showLiveToast('Source code copied to clipboard!', 'success');
+    }).catch(() => {
+      if (typeof showLiveToast === 'function') showLiveToast('Copy failed, please retry.', 'error');
+    });
+  } else {
+    // Fallback for non-secure HTTP contexts
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = rawCode;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      
+      if (successful) {
+        if (typeof showLiveToast === 'function') showLiveToast('Source code copied to clipboard!', 'success');
+      } else {
+        if (typeof showLiveToast === 'function') showLiveToast('Copy failed, please retry.', 'error');
+      }
+    } catch (err) {
+      if (typeof showLiveToast === 'function') showLiveToast('Copy failed, please retry.', 'error');
+    }
+  }
 }
 
 /* ==========================================
