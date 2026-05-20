@@ -2,6 +2,10 @@
   "id": "navbar",
   "title": "Navbar",
   "path": "Navbar.html",
+  "dependencies": {
+    "styles": ["style.css", "css/main.css", "navbar.css"],
+    "scripts": ["script.js", "js/features/theme.js", "js/features/accessibility.js", "js/features/sidebar.js", "js/features/search.js"]
+  },
   "version": "0.1.0",
   "changelog": [
     {

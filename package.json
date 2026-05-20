@@ -20,6 +20,9 @@
         "a11y:remediate:apply": "node scripts/a11y-remediation.js --apply",
         "a11y:dashboard": "node scripts/a11y-dashboard.js",
         "a11y:remediation:check": "node scripts/a11y-remediation-check.js",
+        "audit:a11y": "node scripts/a11y-audit.js",
+        "a11y:dashboard": "node scripts/a11y-dashboard.js",
+        "a11y:remediation:check": "node scripts/a11y-remediation-check.js",
         "test:visual": "playwright test",
         "test:visual:ui": "playwright test --ui",
         "test:visual:update": "playwright test --update-snapshots",
@@ -49,6 +52,7 @@
         "search:demo": "node -e \"console.log('Open components/discovery/component-discovery.html in a browser served from the static server')\"",
         "search:check": "node scripts/component-discovery-check.js",
         "a11y:test": "playwright test tests/a11y --config=playwright.a11y.config.ts --reporter=list"
+        "theme:demo": "node -e \"console.log('Open components/theme/demo-theme.html in a browser served from the static server')\""
     },
     "devDependencies": {
         "@axe-core/playwright": "^4.0.0",
