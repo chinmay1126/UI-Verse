@@ -28,8 +28,7 @@ function initThemeSystem() {
   }
 
   themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
+    const isLight = document.body.classList.toggle('light-mode');
     icon.className = isLight ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
     showLiveToast(isLight ? 'Switched to Light Theme' : 'Switched to Premium Dark Theme', 'success');
