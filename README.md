@@ -25,8 +25,9 @@ The goal of UIverse is to help developers—especially beginners—make their fi
 ---
 
 ## 🖥️ Live Preview
+Live demo: https://tushar-sonawane06.github.io/UI-Verse/
 
-> (Add your deployed link here after hosting)
+> This repository is configured to auto-deploy to GitHub Pages via GitHub Actions. After pushing this change the Pages workflow will run — deployment may take a few minutes. If the site is not live yet, trigger the "Deploy to Pages" workflow from the Actions tab or check again in a few minutes.
 
 ---
 
