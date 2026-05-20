@@ -27,10 +27,37 @@
   <!-- CSS -->
   <link rel="stylesheet" href="calendarcomponent.css" />
 
+  
   <link rel="stylesheet" href="shared-sidebar.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  
+  <link rel="stylesheet" href="shared-page.css">
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="playground.css">
 </head>
 
 <body>
+<!-- =========================================================
+   NAVBAR
+========================================================= -->
+
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
 
 <!-- =========================================================
    SIDEBAR
@@ -361,28 +388,7 @@
 
 </aside>
 
-<!-- =========================================================
-   NAVBAR
-========================================================= -->
 
-<header class="navbar">
-
-  <div class="logo">
-    UIverse
-  </div>
-
-  <div class="search-bar">
-
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <input
-      type="text"
-      placeholder="Search calendar components..."
-    />
-
-  </div>
-
-</header>
 
 <!-- =========================================================
    MAIN
@@ -440,8 +446,679 @@
       </div>
 
     </div>
+  </section>
 
-<!-- TEAM SCHEDULER -->
+
+<style>
+
+/* TEAM SCHEDULER */
+
+.team-scheduler{
+  padding:24px;
+  border-radius:24px;
+
+  background:white;
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.schedule-user{
+  display:flex;
+  align-items:center;
+  gap:16px;
+
+  margin-bottom:18px;
+}
+
+.user-avatar{
+  width:55px;
+  height:55px;
+
+  border-radius:50%;
+
+  display:grid;
+  place-items:center;
+
+  font-weight:700;
+
+  background:linear-gradient(135deg,#7f5cff,#00d4ff);
+}
+
+.schedule-user span{
+  color:rgba(255,255,255,0.65);
+}
+
+.schedule-time{
+  font-size:1.8rem;
+  font-weight:700;
+
+  margin-bottom:20px;
+  
+}
+
+.schedule-progress{
+  height:10px;
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  background:white;
+}
+
+.schedule-progress span{
+  display:block;
+
+  width:72%;
+  height:100%;
+
+  background:linear-gradient(90deg,#00d4ff,#7f5cff);
+}
+
+/* ANALYTICS */
+
+.analytics-calendar{
+  padding:26px;
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(127,92,255,0.15),
+    rgba(0,212,255,0.08)
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.analytics-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:28px;
+}
+
+.analytics-top span{
+  color:rgba(255,255,255,0.65);
+}
+
+.analytics-top h2{
+  margin-top:8px;
+  font-size:2.5rem;
+}
+
+.analytics-top i{
+  font-size:2rem;
+  color:#00d4ff;
+}
+
+.analytics-bars{
+  display:flex;
+  align-items:flex-end;
+  gap:12px;
+}
+
+.analytics-bars span{
+  width:18%;
+  height:45px;
+
+  border-radius:12px;
+
+  background:rgba(255,255,255,0.12);
+}
+
+.analytics-bars .active-bar{
+  height:80px;
+
+  background:linear-gradient(
+    180deg,
+    #00d4ff,
+    #7f5cff
+  );
+}
+
+/* WEEKLY PLANNER */
+
+.weekly-planner{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.planner-day{
+  flex:1;
+
+  padding:18px 0;
+
+  text-align:center;
+
+  border-radius:18px;
+
+  background:white;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.active-day-card{
+  background:linear-gradient(
+    135deg,
+    #7f5cff,
+    #00d4ff
+  );
+
+  box-shadow:0 10px 25px rgba(0,212,255,0.25);
+}
+
+/* EVENT TIMELINE */
+
+.event-timeline{
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.event-line{
+  position:absolute;
+
+  left:9px;
+  top:10px;
+
+  width:2px;
+  height:90%;
+
+  background:rgba(255,255,255,0.12);
+}
+
+.event-item{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+
+  position:relative;
+  z-index:2;
+}
+
+.event-dot{
+  width:18px;
+  height:18px;
+
+  border-radius:50%;
+
+  background:#555;
+}
+
+.active-dot{
+  background:#00d4ff;
+
+  box-shadow:0 0 18px rgba(0,212,255,0.8);
+}
+
+.event-item span{
+  color:rgba(255,255,255,0.65);
+}
+
+/* SMART REMINDER */
+
+.smart-reminder{
+  display:flex;
+  align-items:center;
+  gap:18px;
+
+  padding:24px;
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.smart-icon{
+  width:60px;
+  height:60px;
+
+  border-radius:18px;
+
+  display:grid;
+  place-items:center;
+
+  font-size:1.4rem;
+
+  background:linear-gradient(
+    135deg,
+    #ff4fd8,
+    #7f5cff
+  );
+}
+
+.smart-reminder p{
+  color:rgba(255,255,255,0.68);
+  margin-top:8px;
+}
+
+/* APPOINTMENT */
+
+.appointment-card{
+  padding:24px;
+  border-radius:24px;
+
+  background:white;
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.appointment-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:24px;
+}
+
+.appointment-top span{
+  display:block;
+  margin-top:8px;
+
+  color:rgba(255,255,255,0.65);
+}
+
+.appointment-top i{
+  font-size:1.7rem;
+  color:#00d4ff;
+}
+
+.appointment-btn{
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+  border-radius:16px;
+
+  background:linear-gradient(
+    135deg,
+    #7f5cff,
+    #00d4ff
+  );
+
+  color:white;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.appointment-btn:hover{
+  transform:translateY(-4px);
+}
+
+/* TASK BOARD */
+
+.task-board{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.task-row{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.task-check{
+  width:20px;
+  height:20px;
+
+  border-radius:50%;
+
+  border:2px solid rgba(255,255,255,0.3);
+}
+
+.active-check{
+  background:linear-gradient(
+    135deg,
+    #7f5cff,
+    #00d4ff
+  );
+
+  border:none;
+
+  box-shadow:0 0 15px rgba(0,212,255,0.4);
+}
+
+</style>
+
+    
+
+  
+
+  <!-- FILTERS -->
+  <div class="filter-bar">
+
+    <button class="filter-btn active">
+      All
+    </button>
+
+    <button class="filter-btn">
+      Event
+    </button>
+
+    <button class="filter-btn">
+      Booking
+    </button>
+
+    <button class="filter-btn">
+      Schedule
+    </button>
+
+    <button class="filter-btn">
+      Productivity
+    </button>
+
+  </div>
+
+  <!-- =========================================================
+     GRID
+  ========================================================= -->
+
+  <section class="calendar-grid-layout">
+
+    <!-- COMPONENT -->
+    <div class="component-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          Modern Calendar
+        </span>
+
+        <span class="card-tag tag-popular">
+          Popular
+        </span>
+
+      </div>
+
+      <div class="card-preview">
+
+        <div class="mini-calendar">
+
+          <div class="mini-header">
+
+            <h4>
+              August
+            </h4>
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+          </div>
+
+          <div class="mini-days">
+
+            <span>12</span>
+            <span>13</span>
+            <span class="selected">
+              14
+            </span>
+            <span>15</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Minimal modern calendar component
+        with clean productivity UI.
+      </p>
+
+    </div>
+
+    <!-- COMPONENT -->
+    <div class="component-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          Event Calendar
+        </span>
+
+        <span class="card-tag tag-trending">
+          Trending
+        </span>
+
+      </div>
+
+      <div class="card-preview dark-preview">
+
+        <div class="event-card">
+
+          <span class="event-date">
+            24 JUL
+          </span>
+
+          <h3>
+            Design Meeting
+          </h3>
+
+          <p>
+            UIverse Team Discussion
+          </p>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Event scheduling card perfect
+        for dashboards and organizers.
+      </p>
+
+    </div>
+
+    <!-- COMPONENT -->
+    <div class="component-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          Booking Calendar
+        </span>
+
+        <span class="card-tag tag-modern">
+          Modern
+        </span>
+
+      </div>
+
+      <div class="card-preview">
+
+        <div class="booking-calendar">
+
+          <h4>
+            Select Date
+          </h4>
+
+          <div class="booking-days">
+
+            <button>12</button>
+            <button class="active-book">
+              13
+            </button>
+            <button>14</button>
+            <button>15</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Interactive booking date selector
+        with modern rounded layout.
+      </p>
+
+    </div>
+
+    <!-- COMPONENT -->
+    <div class="component-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          Schedule Timeline
+        </span>
+
+        <span class="card-tag tag-essential">
+          Essential
+        </span>
+
+      </div>
+
+      <div class="card-preview dark-preview">
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+
+            <span class="dot"></span>
+
+            <div>
+
+              <h4>9:00 AM</h4>
+
+              <p>Morning Standup</p>
+
+            </div>
+
+          </div>
+
+          <div class="timeline-item">
+
+            <span class="dot"></span>
+
+            <div>
+
+              <h4>2:00 PM</h4>
+
+              <p>UI Review</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Vertical timeline schedule UI
+        with event tracking design.
+      </p>
+
+    </div>
+
+    <!-- COMPONENT -->
+    <div class="component-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          Productivity Widget
+        </span>
+
+        <span class="card-tag tag-trending">
+          Interactive
+        </span>
+
+      </div>
+
+      <div class="card-preview">
+
+        <div class="productivity-widget">
+
+          <h3>
+            Tasks Completed
+          </h3>
+
+          <div class="progress-circle">
+
+            <span>
+              78%
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Productivity inspired calendar
+        widget with progress visuals.
+      </p>
+
+    </div>
+
+    <!-- COMPONENT -->
+    <div class="component-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          Reminder Card
+        </span>
+
+        <span class="card-tag tag-popular">
+          Popular
+        </span>
+
+      </div>
+
+      <div class="card-preview">
+
+        <div class="reminder-card">
+
+          <div class="reminder-icon">
+
+            <i class="fa-solid fa-bell"></i>
+
+          </div>
+
+          <h4>
+            Team Sync
+          </h4>
+
+          <p>
+            Tomorrow • 11:00 AM
+          </p>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Reminder and notification
+        calendar inspired card UI.
+      </p>
+
+    </div>
+    <!-- TEAM SCHEDULER -->
 <div class="component-card">
 
   <div class="card-top">
@@ -794,360 +1471,7 @@
   </p>
 
 </div>
-
-<style>
-
-/* TEAM SCHEDULER */
-
-.team-scheduler{
-  padding:24px;
-  border-radius:24px;
-
-  background:rgba(255,255,255,0.06);
-
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-.schedule-user{
-  display:flex;
-  align-items:center;
-  gap:16px;
-
-  margin-bottom:18px;
-}
-
-.user-avatar{
-  width:55px;
-  height:55px;
-
-  border-radius:50%;
-
-  display:grid;
-  place-items:center;
-
-  font-weight:700;
-
-  background:linear-gradient(135deg,#7f5cff,#00d4ff);
-}
-
-.schedule-user span{
-  color:rgba(255,255,255,0.65);
-}
-
-.schedule-time{
-  font-size:1.8rem;
-  font-weight:700;
-
-  margin-bottom:20px;
-}
-
-.schedule-progress{
-  height:10px;
-
-  border-radius:999px;
-
-  overflow:hidden;
-
-  background:rgba(255,255,255,0.08);
-}
-
-.schedule-progress span{
-  display:block;
-
-  width:72%;
-  height:100%;
-
-  background:linear-gradient(90deg,#00d4ff,#7f5cff);
-}
-
-/* ANALYTICS */
-
-.analytics-calendar{
-  padding:26px;
-  border-radius:24px;
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(127,92,255,0.15),
-    rgba(0,212,255,0.08)
-  );
-
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-.analytics-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  margin-bottom:28px;
-}
-
-.analytics-top span{
-  color:rgba(255,255,255,0.65);
-}
-
-.analytics-top h2{
-  margin-top:8px;
-  font-size:2.5rem;
-}
-
-.analytics-top i{
-  font-size:2rem;
-  color:#00d4ff;
-}
-
-.analytics-bars{
-  display:flex;
-  align-items:flex-end;
-  gap:12px;
-}
-
-.analytics-bars span{
-  width:18%;
-  height:45px;
-
-  border-radius:12px;
-
-  background:rgba(255,255,255,0.12);
-}
-
-.analytics-bars .active-bar{
-  height:80px;
-
-  background:linear-gradient(
-    180deg,
-    #00d4ff,
-    #7f5cff
-  );
-}
-
-/* WEEKLY PLANNER */
-
-.weekly-planner{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.planner-day{
-  flex:1;
-
-  padding:18px 0;
-
-  text-align:center;
-
-  border-radius:18px;
-
-  background:rgba(255,255,255,0.08);
-
-  font-weight:700;
-
-  transition:0.3s ease;
-}
-
-.active-day-card{
-  background:linear-gradient(
-    135deg,
-    #7f5cff,
-    #00d4ff
-  );
-
-  box-shadow:0 10px 25px rgba(0,212,255,0.25);
-}
-
-/* EVENT TIMELINE */
-
-.event-timeline{
-  position:relative;
-
-  display:flex;
-  flex-direction:column;
-  gap:24px;
-}
-
-.event-line{
-  position:absolute;
-
-  left:9px;
-  top:10px;
-
-  width:2px;
-  height:90%;
-
-  background:rgba(255,255,255,0.12);
-}
-
-.event-item{
-  display:flex;
-  align-items:flex-start;
-  gap:16px;
-
-  position:relative;
-  z-index:2;
-}
-
-.event-dot{
-  width:18px;
-  height:18px;
-
-  border-radius:50%;
-
-  background:#555;
-}
-
-.active-dot{
-  background:#00d4ff;
-
-  box-shadow:0 0 18px rgba(0,212,255,0.8);
-}
-
-.event-item span{
-  color:rgba(255,255,255,0.65);
-}
-
-/* SMART REMINDER */
-
-.smart-reminder{
-  display:flex;
-  align-items:center;
-  gap:18px;
-
-  padding:24px;
-  border-radius:24px;
-
-  background:rgba(255,255,255,0.06);
-
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-.smart-icon{
-  width:60px;
-  height:60px;
-
-  border-radius:18px;
-
-  display:grid;
-  place-items:center;
-
-  font-size:1.4rem;
-
-  background:linear-gradient(
-    135deg,
-    #ff4fd8,
-    #7f5cff
-  );
-}
-
-.smart-reminder p{
-  color:rgba(255,255,255,0.68);
-  margin-top:8px;
-}
-
-/* APPOINTMENT */
-
-.appointment-card{
-  padding:24px;
-  border-radius:24px;
-
-  background:rgba(255,255,255,0.06);
-
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-.appointment-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  margin-bottom:24px;
-}
-
-.appointment-top span{
-  display:block;
-  margin-top:8px;
-
-  color:rgba(255,255,255,0.65);
-}
-
-.appointment-top i{
-  font-size:1.7rem;
-  color:#00d4ff;
-}
-
-.appointment-btn{
-  width:100%;
-
-  padding:16px;
-
-  border:none;
-  border-radius:16px;
-
-  background:linear-gradient(
-    135deg,
-    #7f5cff,
-    #00d4ff
-  );
-
-  color:white;
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:0.3s ease;
-}
-
-.appointment-btn:hover{
-  transform:translateY(-4px);
-}
-
-/* TASK BOARD */
-
-.task-board{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-
-.task-row{
-  display:flex;
-  align-items:center;
-  gap:14px;
-
-  padding:18px;
-
-  border-radius:18px;
-
-  background:rgba(255,255,255,0.06);
-
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-.task-check{
-  width:20px;
-  height:20px;
-
-  border-radius:50%;
-
-  border:2px solid rgba(255,255,255,0.3);
-}
-
-.active-check{
-  background:linear-gradient(
-    135deg,
-    #7f5cff,
-    #00d4ff
-  );
-
-  border:none;
-
-  box-shadow:0 0 15px rgba(0,212,255,0.4);
-}
-
-</style>
-
-    <!-- HERO PREVIEW -->
+<!-- HERO PREVIEW -->
     <div class="hero-calendar">
 
       <div class="calendar-top">
@@ -1191,321 +1515,117 @@
       </div>
 
     </div>
+    <!-- COMPONENT -->
+<div class="component-card">
 
-  </section>
-
-  <!-- FILTERS -->
-  <div class="filter-bar">
-
-    <button class="filter-btn active">
-      All
-    </button>
-
-    <button class="filter-btn">
-      Event
-    </button>
-
-    <button class="filter-btn">
-      Booking
-    </button>
-
-    <button class="filter-btn">
-      Schedule
-    </button>
-
-    <button class="filter-btn">
-      Productivity
-    </button>
-
+  <div class="card-top">
+    <span class="card-label">Focus Timer</span>
+    <span class="card-tag tag-modern">New</span>
   </div>
 
-  <!-- =========================================================
-     GRID
-  ========================================================= -->
-
-  <section class="calendar-grid-layout">
-
-    <!-- COMPONENT -->
-    <div class="component-card">
-
-      <div class="card-top">
-
-        <span class="card-label">
-          Modern Calendar
-        </span>
-
-        <span class="card-tag tag-popular">
-          Popular
-        </span>
-
-      </div>
-
-      <div class="card-preview">
-
-        <div class="mini-calendar">
-
-          <div class="mini-header">
-
-            <h4>
-              August
-            </h4>
-
-            <i class="fa-solid fa-calendar-days"></i>
-
-          </div>
-
-          <div class="mini-days">
-
-            <span>12</span>
-            <span>13</span>
-            <span class="selected">
-              14
-            </span>
-            <span>15</span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Minimal modern calendar component
-        with clean productivity UI.
-      </p>
-
+  <div class="card-preview dark-preview">
+    <div class="focus-timer">
+      <h3>Pomodoro Session</h3>
+      <div class="timer-display">25:00</div>
+      <button class="start-btn">Start</button>
     </div>
+  </div>
 
-    <!-- COMPONENT -->
-    <div class="component-card">
+  <p class="card-desc">
+    Countdown timer card for focused work sessions.
+  </p>
+</div>
+<!-- COMPONENT -->
+<div class="component-card">
 
-      <div class="card-top">
+  <div class="card-top">
+    <span class="card-label">Goal Tracker</span>
+    <span class="card-tag tag-essential">Productivity</span>
+  </div>
 
-        <span class="card-label">
-          Event Calendar
-        </span>
-
-        <span class="card-tag tag-trending">
-          Trending
-        </span>
-
+  <div class="card-preview">
+    <div class="goal-tracker">
+      <h4>Weekly Goal</h4>
+      <div class="progress-bar">
+        <span style="width: 60%;"></span>
       </div>
-
-      <div class="card-preview dark-preview">
-
-        <div class="event-card">
-
-          <span class="event-date">
-            24 JUL
-          </span>
-
-          <h3>
-            Design Meeting
-          </h3>
-
-          <p>
-            UIverse Team Discussion
-          </p>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Event scheduling card perfect
-        for dashboards and organizers.
-      </p>
-
+      <p>60% Completed</p>
     </div>
+  </div>
 
-    <!-- COMPONENT -->
-    <div class="component-card">
+  <p class="card-desc">
+    Track progress toward weekly or monthly goals.
+  </p>
+</div>
+<!-- COMPONENT -->
+<div class="component-card">
 
-      <div class="card-top">
+  <div class="card-top">
+    <span class="card-label">Daily Checklist</span>
+    <span class="card-tag tag-essential">Productivity</span>
+  </div>
 
-        <span class="card-label">
-          Booking Calendar
-        </span>
-
-        <span class="card-tag tag-modern">
-          Modern
-        </span>
-
+  <div class="card-preview">
+    <div class="daily-checklist">
+      <div class="check-item">
+        <input type="checkbox" />
+        <label>Morning Standup</label>
       </div>
-
-      <div class="card-preview">
-
-        <div class="booking-calendar">
-
-          <h4>
-            Select Date
-          </h4>
-
-          <div class="booking-days">
-
-            <button>12</button>
-            <button class="active-book">
-              13
-            </button>
-            <button>14</button>
-            <button>15</button>
-
-          </div>
-
-        </div>
-
+      <div class="check-item">
+        <input type="checkbox" />
+        <label>Client Call</label>
       </div>
-
-      <p class="card-desc">
-        Interactive booking date selector
-        with modern rounded layout.
-      </p>
-
+      <div class="check-item">
+        <input type="checkbox" />
+        <label>Code Review</label>
+      </div>
     </div>
+  </div>
 
-    <!-- COMPONENT -->
-    <div class="component-card">
+  <p class="card-desc">
+    Interactive checklist for daily tasks and quick wins.
+  </p>
+</div>
+<!-- COMPONENT -->
+<div class="component-card">
 
-      <div class="card-top">
+  <div class="card-top">
+    <span class="card-label">Habit Tracker</span>
+    <span class="card-tag tag-modern">Productivity</span>
+  </div>
 
-        <span class="card-label">
-          Schedule Timeline
-        </span>
-
-        <span class="card-tag tag-essential">
-          Essential
-        </span>
-
-      </div>
-
-      <div class="card-preview dark-preview">
-
-        <div class="timeline">
-
-          <div class="timeline-item">
-
-            <span class="dot"></span>
-
-            <div>
-
-              <h4>9:00 AM</h4>
-
-              <p>Morning Standup</p>
-
-            </div>
-
-          </div>
-
-          <div class="timeline-item">
-
-            <span class="dot"></span>
-
-            <div>
-
-              <h4>2:00 PM</h4>
-
-              <p>UI Review</p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Vertical timeline schedule UI
-        with event tracking design.
-      </p>
-
+  <div class="card-preview dark-preview">
+    <div class="habit-tracker">
+      <h3>Water Intake</h3>
+      <div class="habit-streak">5 Days</div>
+      <p class="streak-label">Current Streak</p>
     </div>
+  </div>
 
-    <!-- COMPONENT -->
-    <div class="component-card">
+  <p class="card-desc">
+    Track habits and maintain streaks for consistency.
+  </p>
+</div>
+<!-- COMPONENT -->
+<div class="component-card">
 
-      <div class="card-top">
+  <div class="card-top">
+    <span class="card-label">Streak Tracker</span>
+    <span class="card-tag tag-essential">Productivity</span>
+  </div>
 
-        <span class="card-label">
-          Productivity Widget
-        </span>
-
-        <span class="card-tag tag-trending">
-          Interactive
-        </span>
-
-      </div>
-
-      <div class="card-preview">
-
-        <div class="productivity-widget">
-
-          <h3>
-            Tasks Completed
-          </h3>
-
-          <div class="progress-circle">
-
-            <span>
-              78%
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Productivity inspired calendar
-        widget with progress visuals.
-      </p>
-
+  <div class="card-preview dark-preview">
+    <div class="streak-tracker">
+      <h3>Daily Coding</h3>
+      <div class="streak-count">🔥 7 Days</div>
+      <p class="streak-label">Current Streak</p>
     </div>
+  </div>
 
-    <!-- COMPONENT -->
-    <div class="component-card">
-
-      <div class="card-top">
-
-        <span class="card-label">
-          Reminder Card
-        </span>
-
-        <span class="card-tag tag-popular">
-          Popular
-        </span>
-
-      </div>
-
-      <div class="card-preview">
-
-        <div class="reminder-card">
-
-          <div class="reminder-icon">
-
-            <i class="fa-solid fa-bell"></i>
-
-          </div>
-
-          <h4>
-            Team Sync
-          </h4>
-
-          <p>
-            Tomorrow • 11:00 AM
-          </p>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Reminder and notification
-        calendar inspired card UI.
-      </p>
-
-    </div>
+  <p class="card-desc">
+    Track daily habits and visualize streaks for motivation.
+  </p>
+</div>
 
   </section>
 
