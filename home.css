@@ -373,7 +373,13 @@ body.dark-mode .search-kbd {
   text-align: center;
   overflow: hidden;
   margin-bottom: 0;
+
+  /* Column layout for hero content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 body.dark-mode .hero {
   background: linear-gradient(135deg, #1a1a1e 60%, #1e1614 100%);
@@ -421,11 +427,14 @@ body.dark-mode .hero {
 
 .hero-actions {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 14px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-bottom: 48px;
 }
+
 
 .btn-primary {
   display: inline-flex;
