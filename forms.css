@@ -176,8 +176,8 @@
 }
 .forms-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
   align-items: start;
 }
 
@@ -1597,6 +1597,43 @@ input[type="file"] {
 
 .newsletter-form button:hover {
   filter: brightness(1.1);
+}
+
+/* ==========================
+   New Form Component Styles
+   ========================== */
+
+.dropzone-card .dropzone {
+  display: block;
+  border: 2px dashed rgba(15,23,42,0.06);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255,255,255,0.03);
+}
+.dropzone-card .dropzone .dz-inner { display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:center; }
+.dropzone-card .dz-inner i { font-size: 26px; color: var(--accent); }
+.dz-previews { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
+.dz-preview { width:72px; height:56px; border-radius:8px; background:#f3f4f6; display:flex; align-items:center; justify-content:center; font-size:12px; color:#111; border:1px solid rgba(0,0,0,0.04); }
+body.dark-mode .dz-preview { background:#1b1b22; color:#fff; border-color: rgba(255,255,255,0.04); }
+
+.searchable-select { display:flex; flex-direction:column; gap:8px; }
+.searchable-select input { padding:10px 12px; border-radius:10px; border:1px solid var(--card-border); }
+.searchable-select select { border-radius:10px; border:1px solid var(--card-border); padding:8px; }
+
+.coupon-card .coupon-row { display:flex; gap:10px; align-items:center; }
+.coupon-card .coupon-row input { flex:1; padding:12px 14px; border-radius:12px; border:1px solid var(--card-border); }
+.coupon-card .coupon-msg { margin-top:8px; color:var(--text-secondary); font-size:13px; }
+
+.rating-slider-card .slider-row { display:flex; align-items:center; gap:12px; }
+.rating-slider-card input[type="range"] { flex:1; appearance:none; height:6px; border-radius:6px; background: linear-gradient(90deg,var(--accent),#ff8c5f); }
+.rating-slider-card #ratingValue { min-width:28px; display:inline-block; text-align:center; font-weight:800; }
+
+.captcha-card .captcha-check { display:flex; align-items:center; gap:10px; font-weight:700; }
+
+@media (max-width: 768px) {
+  .forms-grid { grid-template-columns: 1fr; }
 }
 
 .newsletter-note {
