@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UIverse — UI Component Library</title>
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:;">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -13,6 +17,7 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="command-palette.css">
 </head>
 
 <body>
@@ -78,9 +83,17 @@
   </nav>
 
   <div class="sidebar-footer">
-    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://github.com/Tushar-sonawane06" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/tushar-sonawane-800422336/" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="mailto:tusharsonawane1903@gmail.com" title="Email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
   </div>
 </aside>
 
@@ -97,8 +110,12 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components" />
     <kbd class="search-kbd">⌘K</kbd>
+  </div>
+
+  <div id="searchDropdown" class="search-dropdown hidden">
+    <ul id="searchDropdownResults" class="search-dropdown-results"></ul>
   </div>
 
   <div class="nav-right">
@@ -502,19 +519,29 @@
   </div>
 </footer>
 
+<script src="js/core/utils.js"></script>
+<script src="js/core/component-discovery.js"></script>
+<script src="js/core/component-index.js"></script>
+<script src="js/features/search.js"></script>
 <script src="script.js"></script>
 <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.Search && typeof Search.init === 'function') {
+      Search.init();
+    }
+  });
+
   // Dark mode toggle
-  const toggle = document.getElementById('darkModeToggle');
-  const icon = toggle.querySelector('i');
+  const darkModeToggleBtn = document.getElementById('darkModeToggle');
+  const darkModeIcon = darkModeToggleBtn.querySelector('i');
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
-    icon.className = 'fa-solid fa-sun';
+    darkModeIcon.className = 'fa-solid fa-sun';
   }
-  toggle.addEventListener('click', () => {
+  darkModeToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
-    icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    darkModeIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 
@@ -544,7 +571,7 @@
   });
 
   // Animate elements on scroll
-  const observer = new IntersectionObserver((entries) => {
+  const homeObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('in-view');
@@ -553,15 +580,8 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.feature-card, .cat-card, .why-card').forEach(el => {
-    observer.observe(el);
+    homeObserver.observe(el);
   });
-
-  function handleSearch(e) {
-    if (e.key === 'Enter') {
-      const q = document.getElementById('searchInput').value.trim();
-      if (q) alert('Searching for: ' + q);
-    }
-  }
 
   function subscribe() {
     const input = document.querySelector('.newsletter-form input');

@@ -350,6 +350,41 @@
     <p>Responsive modern error layouts, status screens, and application fallback pages.</p>
   </header>
 
+  <!-- SEARCH + SORT TOOLBAR -->
+  <div class="toolbar">
+    <div class="toolbar-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="componentSearch" placeholder="Filter error components..." autocomplete="off">
+    </div>
+
+    <div class="sort-dropdown-wrapper" id="sortWrapper">
+      <button class="sort-trigger" id="sortTrigger" onclick="toggleSortMenu()">
+        <i class="fa-solid fa-arrow-up-arrow-down"></i>
+        <span id="sortLabel">Order</span>
+        <i class="fa-solid fa-chevron-down sort-chevron" id="sortChevron"></i>
+      </button>
+      <div class="sort-menu" id="sortMenu">
+        <label class="sort-option">
+          <span>Default</span>
+          <input type="radio" name="sort" value="default" checked onchange="sortCards('default')">
+          <span class="radio-dot"></span>
+        </label>
+        <label class="sort-option">
+          <span>A → Z</span>
+          <input type="radio" name="sort" value="az" onchange="sortCards('az')">
+          <span class="radio-dot"></span>
+        </label>
+        <label class="sort-option">
+          <span>Z → A</span>
+          <input type="radio" name="sort" value="za" onchange="sortCards('za')">
+          <span class="radio-dot"></span>
+        </label>
+      </div>
+    </div>
+
+    <span class="results-count" id="resultsCount">18 components</span>
+  </div>
+
   <section class="error-grid">
 
     <!-- 1. 404 ERROR PAGE -->
@@ -867,6 +902,71 @@
         }
       });
     });
+
+    // Toolbar: search + sort
+    function initToolbar() {
+      const input = document.getElementById('componentSearch');
+      const grid = document.querySelector('.error-grid');
+      const cards = [...grid.querySelectorAll('.error-card')];
+      const countEl = document.getElementById('resultsCount');
+      const originalOrder = [...cards];
+      let currentSort = 'default';
+
+      document.addEventListener('click', function(e) {
+        if (!document.getElementById('sortWrapper').contains(e.target)) {
+          closeSortMenu();
+        }
+      });
+
+      function update() {
+        const q = input.value.toLowerCase();
+
+        cards.forEach(card => {
+          const text = card.querySelector('h2').textContent.toLowerCase()
+                    + card.querySelector('p').textContent.toLowerCase();
+          card.style.display = text.includes(q) ? '' : 'none';
+        });
+
+        const visible = cards.filter(c => c.style.display !== 'none');
+        countEl.textContent = visible.length + ' component' + (visible.length === 1 ? '' : 's');
+
+        const sorted = [...visible].sort((a, b) => {
+          if (currentSort === 'default') return originalOrder.indexOf(a) - originalOrder.indexOf(b);
+          const ta = a.querySelector('h2').textContent;
+          const tb = b.querySelector('h2').textContent;
+          return currentSort === 'az' ? ta.localeCompare(tb) : tb.localeCompare(ta);
+        });
+
+        sorted.forEach(c => grid.appendChild(c));
+        cards.filter(c => c.style.display === 'none').forEach(c => grid.appendChild(c));
+      }
+
+      window.toggleSortMenu = function() {
+        const menu = document.getElementById('sortMenu');
+        const trigger = document.getElementById('sortTrigger');
+        const isOpen = menu.classList.contains('open');
+        menu.classList.toggle('open', !isOpen);
+        trigger.classList.toggle('open', !isOpen);
+      };
+
+      function closeSortMenu() {
+        document.getElementById('sortMenu').classList.remove('open');
+        document.getElementById('sortTrigger').classList.remove('open');
+      }
+
+      window.sortCards = function(dir) {
+        currentSort = dir;
+        const labels = { default: 'Order', az: 'A → Z', za: 'Z → A' };
+        document.getElementById('sortLabel').textContent = labels[dir];
+        closeSortMenu();
+        update();
+      };
+
+      input.addEventListener('input', update);
+      update();
+    }
+
+    initToolbar();
   });
 </script>
 

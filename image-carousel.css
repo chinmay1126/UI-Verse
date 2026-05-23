@@ -985,3 +985,352 @@ body{
     transform:translateY(-12px);
   }
 }
+
+/* ================= CYBERPUNK ================= */
+.cyberpunk-carousel {
+  position: relative;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.cyberpunk-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#00f5ff,#ff00c8);
+  opacity: 0.9;
+}
+
+.cyberpunk-overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.cyberpunk-lines::before,
+.cyberpunk-lines::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 2px;
+  background: rgba(255,255,255,.2);
+  left: -10%;
+}
+
+.cyberpunk-lines::before {
+  top: 30%;
+}
+
+.cyberpunk-lines::after {
+  top: 60%;
+}
+
+/* ================= CUBE ================= */
+.cube-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.cube {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  animation: rotateCube 8s infinite linear;
+}
+
+.cube-face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg,#6366f1,#8b5cf6);
+  border-radius: 18px;
+}
+
+.front { transform: translateZ(50px); }
+.back { transform: rotateY(180deg) translateZ(50px); }
+.left { transform: rotateY(-90deg) translateZ(50px); }
+.right { transform: rotateY(90deg) translateZ(50px); }
+
+@keyframes rotateCube {
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+
+/* ================= LIQUID ================= */
+.liquid-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#3b82f6,#06b6d4);
+}
+
+.liquid-wave {
+  position: absolute;
+  bottom: -30px;
+  width: 200%;
+  height: 60px;
+  background: rgba(255,255,255,.25);
+  border-radius: 50%;
+  animation: waveMove 6s infinite linear;
+}
+
+@keyframes waveMove {
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= HEXAGON ================= */
+.hexagon-gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hex {
+  width: 70px;
+  height: 80px;
+  background: linear-gradient(135deg,#ec4899,#8b5cf6);
+  clip-path: polygon(
+    25% 6%, 75% 6%,
+    100% 50%, 75% 94%,
+    25% 94%, 0% 50%
+  );
+}
+
+/* ================= STORY ================= */
+.story-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-frame {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#fb7185,#f59e0b);
+}
+
+.story-progress {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.story-progress span {
+  flex: 1;
+  height: 4px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.3);
+}
+
+.story-progress .active {
+  background: #fff;
+}
+
+/* ================= MAGAZINE ================= */
+.magazine-carousel {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+}
+
+.mag-main,
+.mag-side div {
+  border-radius: 18px;
+  background: linear-gradient(135deg,#4f46e5,#06b6d4);
+}
+
+.mag-main {
+  height: 180px;
+}
+
+.mag-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mag-side div {
+  flex: 1;
+}
+
+/* ================= CIRCULAR ================= */
+.circular-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-track {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.circle-item {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg,#14b8a6,#0ea5e9);
+  border-radius: 50%;
+}
+
+.circle-item:nth-child(1) {
+  top: 0;
+  left: 60px;
+}
+
+.circle-item:nth-child(2) {
+  top: 60px;
+  right: 0;
+}
+
+.circle-item:nth-child(3) {
+  bottom: 0;
+  left: 60px;
+}
+
+.circle-item:nth-child(4) {
+  top: 60px;
+  left: 0;
+}
+
+/* ================= MORPH ================= */
+.morph-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.morph-image {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg,#a855f7,#ec4899);
+  animation: morph 6s infinite ease-in-out;
+}
+
+@keyframes morph {
+  0%,100% {
+    border-radius: 30% 70% 70% 30%;
+  }
+  50% {
+    border-radius: 70% 30% 30% 70%;
+  }
+}
+
+/* ================= FRAME ================= */
+.frame-slider {
+  position: relative;
+}
+
+.frame-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#0ea5e9,#2563eb);
+}
+
+.frame-border {
+  position: absolute;
+  inset: 12px;
+  border: 3px solid rgba(255,255,255,.5);
+  border-radius: 20px;
+}
+
+/* ================= VHS ================= */
+.retro-vhs {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+}
+
+.vhs-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#22c55e,#0ea5e9);
+  filter: contrast(1.2);
+}
+
+.vhs-noise {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,.05),
+    rgba(255,255,255,.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+.vhs-text {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* ================= FROSTED ================= */
+.frosted-gallery {
+  position: relative;
+  overflow: hidden;
+}
+
+.frosted-img {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#06b6d4,#6366f1);
+}
+
+.frost-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,.08);
+}
+
+/* ================= TIMELINE ================= */
+.timeline-carousel {
+  position: relative;
+}
+
+.timeline-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#f97316,#ef4444);
+}
+
+.timeline-bar {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  gap: 6px;
+}
+
+.timeline-bar span {
+  flex: 1;
+  height: 5px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.25);
+}
+
+.timeline-bar .active {
+  background: #fff;
+}

@@ -2661,3 +2661,25 @@ body{
   color:#111;
   overflow-x:hidden;
 }
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: #eb8825;
+  color: white;
+  cursor: pointer;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#scrollTopBtn.visible {
+  display: flex;
+}

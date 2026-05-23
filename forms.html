@@ -381,17 +381,6 @@
   </div>
 
 
-
-  
-  
-  <div>
-    <form class="scearch">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Filter forms..." id="formSearch">
-    </form>
-  </div>
-
-
   <!-- Forms Grid -->
   <div class="forms-grid">
 
@@ -1346,6 +1335,137 @@
 &lt;/div&gt;</code></pre>
     </div>
 
+
+
+    <!-- New Form Components: Multi-file Upload, Searchable Select, Coupon Input, Rating Slider, Human Check -->
+    <!-- Multi-file Upload -->
+    <div class="form-component-card" data-name="file upload dropzone multiple preview">
+      <div class="card-top">
+        <span class="card-label">Multi-file Upload</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card dropzone-card">
+          <h3>Upload Files</h3>
+          <p class="form-sub">Drag & drop files or click to select</p>
+          <label class="dropzone" for="multiUpload">
+            <input id="multiUpload" type="file" multiple hidden onchange="previewFiles(this.files)">
+            <div class="dz-inner">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <p>Drop files here or click to browse</p>
+            </div>
+          </label>
+          <div class="dz-previews" id="dzPreviews"></div>
+          <button class="form-btn">Upload</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc20', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc20', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc20" class="code-block"><code>&lt;label class="dropzone"&gt;&lt;input type="file" multiple hidden&gt;Drop files here&lt;/label&gt;</code></pre>
+    </div>
+
+    <!-- Searchable Select -->
+    <div class="form-component-card" data-name="searchable select dropdown filter">
+      <div class="card-top">
+        <span class="card-label">Searchable Select</span>
+        <span class="card-tag tag-new">New</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card searchable-select-card">
+          <h3>Choose Option</h3>
+          <p class="form-sub">Type to filter options</p>
+          <div class="searchable-select">
+            <input type="text" placeholder="Search countries..." oninput="filterOptions(this)" aria-label="Search select">
+            <select size="5">
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Canada</option>
+              <option>Germany</option>
+              <option>India</option>
+              <option>Australia</option>
+            </select>
+          </div>
+          <button class="form-btn">Choose</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc21', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc21', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc21" class="code-block"><code>&lt;div class="searchable-select"&gt;&lt;input&gt;&lt;select&gt;&lt;option&gt;...&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- Coupon Code Input -->
+    <div class="form-component-card" data-name="coupon code promo input inline apply">
+      <div class="card-top">
+        <span class="card-label">Coupon Code</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card coupon-card">
+          <h3>Apply Coupon</h3>
+          <p class="form-sub">Enter promo code to redeem</p>
+          <div class="coupon-row">
+            <input type="text" placeholder="Enter coupon code" id="couponInput">
+            <button class="form-btn outline-btn" onclick="applyCoupon()">Apply</button>
+          </div>
+          <p class="coupon-msg" id="couponMsg"></p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc22', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc22', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc22" class="code-block"><code>&lt;div class="coupon-row"&gt;&lt;input type="text"&gt;&lt;button&gt;Apply&lt;/button&gt;&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- Rating Slider -->
+    <div class="form-component-card" data-name="rating slider range feedback score">
+      <div class="card-top">
+        <span class="card-label">Rating Slider</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card rating-slider-card">
+          <h3>Rate Experience</h3>
+          <p class="form-sub">Drag to set a rating</p>
+          <div class="slider-row">
+            <input type="range" min="0" max="10" value="7" id="ratingRange" oninput="document.getElementById('ratingValue').textContent=this.value">
+            <span id="ratingValue">7</span>
+          </div>
+          <button class="form-btn">Submit Rating</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc23', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc23', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc23" class="code-block"><code>&lt;input type="range" min="0" max="10" oninput="..."&gt;</code></pre>
+    </div>
+
+    <!-- Human Check (Simple CAPTCHA) -->
+    <div class="form-component-card" data-name="human check captcha simple checkbox spam protection">
+      <div class="card-top">
+        <span class="card-label">Human Check</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card captcha-card">
+          <h3>Are you human?</h3>
+          <p class="form-sub">Simple anti-bot checkbox</p>
+          <label class="captcha-check"><input type="checkbox" id="humanCheck"> I'm not a robot</label>
+          <button class="form-btn" onclick="if(!document.getElementById('humanCheck').checked){alert('Please confirm you are human.');}else{alert('Thanks!');}">Confirm</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc24', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc24', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc24" class="code-block"><code>&lt;label&gt;&lt;input type="checkbox"&gt; I'm not a robot&lt;/label&gt;</code></pre>
+    </div>
+
   </div>
 
 </main>
@@ -1465,6 +1585,41 @@ formSearchInput.addEventListener("input", function (){
     else{card.style.display = "none";}
   });
 });
+
+  /* ---------- Helpers for new components ---------- */
+  function previewFiles(files){
+    const container = document.getElementById('dzPreviews');
+    container.innerHTML = '';
+    Array.from(files).forEach(f => {
+      const el = document.createElement('div');
+      el.className = 'dz-preview';
+      el.textContent = f.name.split('.').pop().toUpperCase();
+      container.appendChild(el);
+    });
+  }
+
+  function filterOptions(input){
+    const q = input.value.toLowerCase();
+    const sel = input.nextElementSibling; // the select
+    Array.from(sel.options).forEach(opt => {
+      opt.style.display = opt.text.toLowerCase().includes(q) ? '' : 'none';
+    });
+  }
+
+  function applyCoupon(){
+    const input = document.getElementById('couponInput');
+    const msg = document.getElementById('couponMsg');
+    const code = input.value.trim();
+    if(!code){ msg.textContent = 'Please enter a coupon code.'; return; }
+    // simple demo behavior
+    if(code.toUpperCase() === 'UIVERSE10'){
+      msg.textContent = 'Coupon applied: 10% off';
+      msg.style.color = '#00b894';
+    } else {
+      msg.textContent = 'Invalid coupon code.';
+      msg.style.color = '#ff6b6b';
+    }
+  }
 
 
 </script>

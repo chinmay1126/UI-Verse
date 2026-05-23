@@ -958,6 +958,32 @@
       transform: rotate(15deg);
     }
 
+    /* NEW: Glass Toggle */
+    .toggle-glass label{
+      width:60px; height:30px; border-radius:999px; background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.06); backdrop-filter: blur(6px); position:relative; overflow:hidden;
+    }
+    .toggle-glass label::after{ content:""; position:absolute; top:3px; left:3px; width:24px; height:24px; border-radius:50%; background:#fff; opacity:.95; transition:.28s; box-shadow:0 4px 12px rgba(0,0,0,.18);}    
+    .toggle-glass input:checked + label{ background: linear-gradient(90deg,#6c5ce7,#eb6835); }
+    .toggle-glass input:checked + label::after{ transform: translateX(30px); background:#fff; }
+
+    /* NEW: Retro Slider */
+    .toggle-retro label{ width:58px; height:30px; border-radius:6px; background:#0b1220; border:2px solid #071126; position:relative; }
+    .toggle-retro label::after{ content:""; position:absolute; top:4px; left:6px; width:18px; height:22px; border-radius:4px; background:linear-gradient(90deg,#ef4444,#f97316); transition:.25s; box-shadow:0 2px 6px rgba(0,0,0,.5);}    
+    .toggle-retro input:checked + label{ border-color:#16a34a; }
+    .toggle-retro input:checked + label::after{ transform: translateX(30px); background:linear-gradient(90deg,#22c55e,#16a34a);}    
+
+    /* NEW: Minimal Dot */
+    .toggle-minimal label{ width:40px; height:24px; border-radius:999px; background:#e6edf3; position:relative; }
+    .toggle-minimal label::after{ content:""; position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.12); transition:.2s; }
+    .toggle-minimal input:checked + label{ background:#34d399; }
+    .toggle-minimal input:checked + label::after{ transform: translateX(16px); }
+
+    /* NEW: Swirl Toggle (animated) */
+    .toggle-swirl label{ width:64px; height:32px; border-radius:999px; background:#f1f5f9; position:relative; overflow:hidden; }
+    .toggle-swirl label::after{ content:""; position:absolute; top:3px; left:3px; width:26px; height:26px; border-radius:50%; background:linear-gradient(90deg,#6c5ce7,#eb6835); transition:.35s cubic-bezier(.2,.9,.3,1); box-shadow:0 6px 18px rgba(108,92,231,.16);}    
+    .toggle-swirl input:checked + label{ background:linear-gradient(90deg,#0f172a,#0b1220);}    
+    .toggle-swirl input:checked + label::after{ transform: translateX(34px) rotate(360deg); }
+
     /* ============================================================
        FOOTER
        ============================================================ */
@@ -2191,6 +2217,122 @@
       <pre id="code14" class="code-block"><code>.toggle-arcade input:checked + label .arcade-knob{
   transform:rotate(15deg);
 }</code></pre>
+    </div>
+
+    <!-- NEW: Glass Toggle -->
+    <div class="component-card" data-cat="styled" data-name="glass toggle">
+      <div class="card-top">
+        <span class="card-label">Glass Toggle</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <div class="toggle-demo-rows">
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-glass">
+              <input type="checkbox" id="glass-t1" />
+              <label for="glass-t1"></label>
+            </div>
+            <span class="toggle-label-text">Frosted UI</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">A modern frosted glass style toggle with subtle blur and bright active gradient.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('code15', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="action-btn copy-btn" onclick="copyCode('code15', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre id="code15" class="code-block"><code>.toggle-glass input:checked + label{ background:linear-gradient(90deg,#6c5ce7,#eb6835); }</code></pre>
+    </div>
+
+    <!-- NEW: Retro Slider -->
+    <div class="component-card" data-cat="themed" data-name="retro slider">
+      <div class="card-top">
+        <span class="card-label">Retro Slider</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview dark-preview">
+        <div class="toggle-demo-rows">
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-retro">
+              <input type="checkbox" id="retro-t1" />
+              <label for="retro-t1"></label>
+            </div>
+            <span class="toggle-label-text" style="color:#e2e8f0;">Retro Mode</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">Classic retro slider with bold knob and strong color transitions for status indication.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('code16', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="action-btn copy-btn" onclick="copyCode('code16', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre id="code16" class="code-block"><code>.toggle-retro input:checked + label::after{ transform:translateX(30px); }</code></pre>
+    </div>
+
+    <!-- NEW: Minimal Dot -->
+    <div class="component-card" data-cat="simple" data-name="minimal dot">
+      <div class="card-top">
+        <span class="card-label">Minimal Dot</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="card-preview">
+        <div class="toggle-demo-rows">
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-minimal">
+              <input type="checkbox" id="min-t1" />
+              <label for="min-t1"></label>
+            </div>
+            <span class="toggle-label-text">Compact</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">Tiny, unobtrusive toggle designed for space-constrained UIs.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('code17', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="action-btn copy-btn" onclick="copyCode('code17', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre id="code17" class="code-block"><code>.toggle-minimal input:checked + label{ background:#34d399; }</code></pre>
+    </div>
+
+    <!-- NEW: Swirl Toggle -->
+    <div class="component-card" data-cat="styled" data-name="swirl toggle">
+      <div class="card-top">
+        <span class="card-label">Swirl Toggle</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <div class="toggle-demo-rows">
+          <div class="toggle-demo-row">
+            <div class="toggle-wrap toggle-swirl">
+              <input type="checkbox" id="swirl-t1" />
+              <label for="swirl-t1"></label>
+            </div>
+            <span class="toggle-label-text">Animated</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">A playful animated knob that rotates while sliding, adding motion personality.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('code18', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="action-btn copy-btn" onclick="copyCode('code18', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre id="code18" class="code-block"><code>.toggle-swirl input:checked + label::after{ transform:translateX(34px) rotate(360deg); }</code></pre>
     </div>
 
   </main>

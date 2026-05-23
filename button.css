@@ -1077,3 +1077,230 @@
   transform: none !important;
   box-shadow: none !important;
 }
+
+/* buttons.css */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#111827;
+  transition:0.4s;
+}
+
+.container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+  justify-content:center;
+  padding:40px;
+}
+
+.btn{
+  position:relative;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  padding:15px 35px;
+  font-size:16px;
+  border-radius:12px;
+  overflow:hidden;
+  transition:0.3s ease;
+}
+
+/* Gradient Button */
+
+.gradient-btn{
+  background:linear-gradient(135deg,#ff416c,#ff4b2b);
+  color:#fff;
+}
+
+.gradient-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 20px rgba(255,75,43,0.4);
+}
+
+/* Neon Button */
+
+.neon-btn{
+  background:#0f172a;
+  color:#00ffff;
+  border:2px solid #00ffff;
+  box-shadow:0 0 10px #00ffff;
+}
+
+.neon-btn:hover{
+  background:#00ffff;
+  color:#000;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 30px #00ffff,
+    0 0 60px #00ffff;
+}
+
+/* Outline Fill Button */
+
+.outline-btn{
+  background:transparent;
+  border:2px solid #fff;
+  color:#fff;
+}
+
+.outline-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:#fff;
+  transition:0.4s;
+  z-index:-1;
+}
+
+.outline-btn:hover::before{
+  left:0;
+}
+
+.outline-btn:hover{
+  color:#000;
+}
+
+/* 3D Button */
+
+.three-d-btn{
+  background:#2563eb;
+  color:#fff;
+  box-shadow:0 6px #1d4ed8;
+}
+
+.three-d-btn:active{
+  transform:translateY(6px);
+  box-shadow:0 0 #1d4ed8;
+}
+
+/* Glass Button */
+
+.glass-btn{
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+}
+
+.glass-btn:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+/* Arrow Button */
+
+.arrow-btn{
+  background:#9333ea;
+  color:#fff;
+  padding-right:55px;
+}
+
+.arrow-btn span{
+  position:relative;
+  transition:0.3s;
+}
+
+.arrow-btn span::after{
+  content:"➜";
+  position:absolute;
+  opacity:0;
+  right:-25px;
+  transition:0.3s;
+}
+
+.arrow-btn:hover span{
+  padding-right:20px;
+}
+
+.arrow-btn:hover span::after{
+  opacity:1;
+}
+
+/* Pulse Button */
+
+.pulse-btn{
+  background:#10b981;
+  color:#fff;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{
+    box-shadow:0 0 0 0 rgba(16,185,129,0.6);
+  }
+  70%{
+    box-shadow:0 0 0 18px rgba(16,185,129,0);
+  }
+  100%{
+    box-shadow:0 0 0 0 rgba(16,185,129,0);
+  }
+}
+
+/* Toggle Button */
+
+.toggle-btn{
+  background:#facc15;
+  color:#000;
+}
+
+.toggle-btn:hover{
+  transform:scale(1.05);
+}
+
+/* Shine Button */
+
+.shine-btn{
+  background:#111827;
+  color:#fff;
+  border:1px solid #fff;
+}
+
+.shine-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:rgba(255,255,255,0.4);
+  transform:skewX(-20deg);
+}
+
+.shine-btn:hover::before{
+  animation:shine 0.8s;
+}
+
+@keyframes shine{
+  100%{
+    left:150%;
+  }
+}
+
+/* Floating Button */
+
+.floating-btn{
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:#ec4899;
+  color:#fff;
+  font-size:30px;
+  box-shadow:0 10px 25px rgba(236,72,153,0.4);
+}
+
+.floating-btn:hover{
+  transform:translateY(-8px) rotate(90deg);
+}

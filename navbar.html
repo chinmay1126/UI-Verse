@@ -2123,9 +2123,14 @@
 
 </main>
 
-<!-- Scroll to Top -->
-<button id="scrollTopBtn" onclick="scrollToTop()">
-  <i class="fa-solid fa-chevron-up"></i>
+<button
+  id="scrollTopBtn"
+  class="scroll-top-btn"
+  type="button"
+  aria-label="Scroll to top"
+  title="Scroll to top"
+>
+  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
 </button>
 
 <!-- FOOTER -->
@@ -2181,6 +2186,7 @@
 
 <script src="js/features/search.js"></script>
 <script src="js/features/command-palette.js"></script>
+<script src="navbar.js"></script>
 
 <script>
   /* Dark Mode */
@@ -2203,12 +2209,6 @@
     document.getElementById('sidebarBackdrop').classList.toggle('visible');
   }
 
-  /* Scroll Top */
-  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-  window.addEventListener('scroll', () => {
-    document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
-  });
 
   /* Code Toggle */
   function toggleCode(id, btn) {

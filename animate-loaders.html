@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Advanced Animated Loader</title>
+
+  <link rel="stylesheet" href="animate-loaders.css" />
+</head>
+<body>
+
+  <div class="background-glow"></div>
+
+  <div class="loader-wrapper">
+
+    <!-- Top Badge -->
+    <div class="status-badge">
+      <span class="dot"></span>
+      System Active
+    </div>
+
+    <!-- Main Loader Card -->
+    <div class="loader-card">
+
+      <!-- Ring Loader -->
+      <div class="loader">
+
+        <div class="ring ring-one"></div>
+        <div class="ring ring-two"></div>
+        <div class="ring ring-three"></div>
+
+        <div class="center-circle">
+          <span id="percentage">0%</span>
+        </div>
+
+      </div>
+
+      <!-- Loading Text -->
+      <div class="content">
+
+        <h1 id="loadingText">Loading Assets</h1>
+
+        <p>
+          Initializing animations and preparing interface...
+        </p>
+
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <!-- Loader Info -->
+      <div class="stats">
+
+        <div class="stat-box">
+          <h3>Files</h3>
+          <span id="files">128</span>
+        </div>
+
+        <div class="stat-box">
+          <h3>Speed</h3>
+          <span>1.2 GB/s</span>
+        </div>
+
+        <div class="stat-box">
+          <h3>Status</h3>
+          <span id="status">Running</span>
+        </div>
+
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+
+        <button id="toggleBtn">
+          Pause Loader
+        </button>
+
+        <button id="resetBtn" class="secondary">
+          Reset
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="animate-loaders.js"></script>
+
+</body>
+</html>
