@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltips — UIverse</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="shared-page.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
+  <link rel="stylesheet" href="tooltips.css">
+</head>
+<body data-playground-type="tooltip">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-text">UIverse <span class="brand-badge">V2</span></span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+        <li><a href="breadcrumbs.html"><i class="fa-solid fa-angles-right"></i><span>Breadcrumbs</span></a></li>
+        <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+        <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+        <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Inputs</span></a></li>
+        <li class="active"><a href="tooltips.html"><i class="fa-solid fa-comment-dots"></i><span>Tooltips</span></a></li>
+        <li><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Hover Effects</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </aside>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+  <header class="navbar" id="navbar">
+    <button type="button" class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Sidebar Navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="logo">UIverse</div>
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Search tooltips..." oninput="liveFilter(this.value)">
+      <kbd class="search-kbd">⌘K</kbd>
+    </div>
+    <div class="nav-right">
+      <button type="button" class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+      <a href="MyCollection.html" class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</a>
+      <button type="button" id="darkModeToggle" class="theme-toggle" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+    </div>
+  </header>
+
+  <main class="main-home">
+    <section class="page-hero tooltip-hero">
+      <div class="page-hero-left">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Tooltips</span>
+        </div>
+        <h1 class="page-title">Tooltip Components</h1>
+        <p class="page-desc">Five reusable tooltip patterns for labels, icon actions, helper hints, and rich hover content. Each component is optimized for clean interaction states and easy reuse across modern interfaces.</p>
+        <div class="page-meta">
+          <span class="meta-badge"><i class="fa-solid fa-layer-group"></i> 5 Components</span>
+          <span class="meta-badge"><i class="fa-solid fa-bolt"></i> Hover Ready</span>
+          <span class="meta-badge"><i class="fa-solid fa-comment-dots"></i> Accessible UI</span>
+        </div>
+      </div>
+      <div class="page-hero-right tooltip-hero-art">
+        <div class="tooltip-mini tooltip-mini-one">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="tooltip-mini tooltip-mini-two">
+          <i class="fa-solid fa-info"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="tooltips-section">
+      <div class="section-header-row">
+        <h2 class="inputs-section-title">Tooltip Gallery</h2>
+        <span class="section-count">5 components</span>
+      </div>
+
+      <div class="tooltips-grid">
+        <article class="component-card tooltip-card" data-name="top tooltip" data-sec="placement">
+          <div class="card-top">
+            <span class="card-label">Top Tooltip</span>
+            <span class="card-tag tag-popular">Popular</span>
+          </div>
+          <div class="card-preview tooltip-preview tooltip-stage top-stage">
+            <div class="tooltip-anchor">
+              <button type="button" class="tooltip-demo-btn">Hover me</button>
+              <span class="floating-tooltip top">Top tooltip message</span>
+            </div>
+          </div>
+          <p class="card-desc">Appears above the trigger and works well for compact action hints.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('t1', this)"><i class="fa-solid fa-code"></i> View Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('t1', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+          </div>
+          <pre id="t1" class="code-block"><code>&lt;div class="tooltip-anchor"&gt;
+  &lt;button class="tooltip-demo-btn"&gt;Hover me&lt;/button&gt;
+  &lt;span class="floating-tooltip top"&gt;Top tooltip message&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+        </article>
+
+        <article class="component-card tooltip-card" data-name="bottom tooltip" data-sec="placement">
+          <div class="card-top">
+            <span class="card-label">Bottom Tooltip</span>
+            <span class="card-tag tag-essential">Essential</span>
+          </div>
+          <div class="card-preview tooltip-preview tooltip-stage bottom-stage">
+            <div class="tooltip-anchor">
+              <button type="button" class="tooltip-demo-btn dark">Project Structure</button>
+              <span class="floating-tooltip bottom">Bottom tooltip message</span>
+            </div>
+          </div>
+          <p class="card-desc">Useful for forms, buttons, and inline helper content near controls.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('t2', this)"><i class="fa-solid fa-code"></i> View Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('t2', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+          </div>
+          <pre id="t2" class="code-block"><code>&lt;div class="tooltip-anchor"&gt;
+  &lt;button class="tooltip-demo-btn dark"&gt;Project Structure&lt;/button&gt;
+  &lt;span class="floating-tooltip bottom"&gt;Bottom tooltip message&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+        </article>
+
+        <article class="component-card tooltip-card" data-name="left tooltip" data-sec="placement">
+          <div class="card-top">
+            <span class="card-label">Left Tooltip</span>
+            <span class="card-tag tag-trending">Trending</span>
+          </div>
+          <div class="card-preview tooltip-preview tooltip-stage left-stage">
+            <div class="tooltip-anchor">
+              <button type="button" class="tooltip-demo-icon"><i class="fa-solid fa-circle-question"></i></button>
+              <span class="floating-tooltip left">Left aligned tooltip</span>
+            </div>
+          </div>
+          <p class="card-desc">A clean side placement for icons, action chips, and constrained layouts.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('t3', this)"><i class="fa-solid fa-code"></i> View Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('t3', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+          </div>
+          <pre id="t3" class="code-block"><code>&lt;div class="tooltip-anchor"&gt;
+  &lt;button class="tooltip-demo-icon"&gt;&lt;i class="fa-solid fa-circle-question"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="floating-tooltip left"&gt;Left aligned tooltip&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+        </article>
+
+        <article class="component-card tooltip-card" data-name="right tooltip" data-sec="placement">
+          <div class="card-top">
+            <span class="card-label">Right Tooltip</span>
+            <span class="card-tag tag-new">New</span>
+          </div>
+          <div class="card-preview tooltip-preview tooltip-stage right-stage">
+            <div class="tooltip-anchor">
+              <button type="button" class="tooltip-demo-chip">Info Label</button>
+              <span class="floating-tooltip right">Right aligned tooltip</span>
+            </div>
+          </div>
+          <p class="card-desc">Great for labels, badges, and compact callouts beside UI controls.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('t4', this)"><i class="fa-solid fa-code"></i> View Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('t4', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+          </div>
+          <pre id="t4" class="code-block"><code>&lt;div class="tooltip-anchor"&gt;
+  &lt;button class="tooltip-demo-chip"&gt;Info Label&lt;/button&gt;
+  &lt;span class="floating-tooltip right"&gt;Right aligned tooltip&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+        </article>
+
+        <article class="component-card tooltip-card" data-name="glass tooltip rich info" data-sec="rich">
+          <div class="card-top">
+            <span class="card-label">Glass Tooltip</span>
+            <span class="card-tag tag-warning">Featured</span>
+          </div>
+          <div class="card-preview tooltip-preview tooltip-stage glass-stage">
+            <div class="tooltip-anchor glass-anchor">
+              <button type="button" class="tooltip-demo-btn glass">Hover for Info</button>
+              <div class="rich-tooltip">
+                <strong>Build faster</strong>
+                <span>Use compact helper content with icon, title, and a short note.</span>
+              </div>
+            </div>
+          </div>
+          <p class="card-desc">A richer glassmorphism tooltip for onboarding, previews, and guided actions.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('t5', this)"><i class="fa-solid fa-code"></i> View Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('t5', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+          </div>
+          <pre id="t5" class="code-block"><code>&lt;div class="tooltip-anchor glass-anchor"&gt;
+  &lt;button class="tooltip-demo-btn glass"&gt;Hover for Info&lt;/button&gt;
+  &lt;div class="rich-tooltip"&gt;
+    &lt;strong&gt;Build faster&lt;/strong&gt;
+    &lt;span&gt;Use compact helper content with icon, title, and a short note.&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <button type="button" id="scrollTopBtn" onclick="scrollToTop()" title="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('darkModeToggle');
+    const icon = toggle.querySelector('i');
+
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      icon.className = 'fa-solid fa-sun';
+    }
+
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarBackdrop').classList.toggle('visible');
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    function toggleCode(id, btn) {
+      const block = document.getElementById(id);
+      const isOpen = block.classList.toggle('open');
+      btn.innerHTML = isOpen ? '<i class="fa-solid fa-eye-slash"></i> Hide Code' : '<i class="fa-solid fa-code"></i> View Code';
+    }
+
+    function copyCode(id, btn) {
+      navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+          btn.classList.remove('copied');
+        }, 1600);
+      });
+    }
+
+    function liveFilter(val) {
+      const q = val.toLowerCase();
+      document.querySelectorAll('.component-card').forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const label = card.querySelector('.card-label')?.textContent.toLowerCase() || '';
+        const match = name.includes(q) || label.includes(q);
+        card.style.display = match ? '' : 'none';
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in-view'); });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
+      setTimeout(() => {
+        document.querySelectorAll('.component-card').forEach(el => el.classList.add('in-view'));
+      }, 300);
+    } else {
+      document.querySelectorAll('.component-card').forEach(el => el.classList.add('in-view'));
+    }
+  </script>
+</body>
+</html>

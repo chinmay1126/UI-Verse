@@ -287,3 +287,5 @@ const Search = {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = Search;
 }
+
+window.Search = Search;

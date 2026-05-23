@@ -654,6 +654,131 @@ body.dark-mode .hero-btn-preview {
 }
 
 
+.rec-card-wrapper {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.rec-card-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
 
+.rec-card-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
 
+.rec-card-header p {
+  font-size: 0.92rem;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+ .rec-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 14px;
+  border-radius: 12px;
+  transition: 0.25s ease;
+}
+
+.rec-input:focus {
+  border-color: #7c5cff;
+  box-shadow: 0 0 0 4px rgba(124,92,255,0.15);
+  transform: scale(1.01);
+}
+
+.rec-submit-btn {
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.rec-submit-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.rec-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.rec-otp-digit {
+  width: 52px;
+  height: 58px;
+  font-size: 1.4rem;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  transition: 0.2s ease;
+}
+
+.rec-otp-digit:focus {
+  border-color: #7c5cff;
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(124,92,255,0.25);
+}
+
+.pwd-strength-fill {
+  height: 6px;
+  border-radius: 50px;
+  transition: width 0.4s ease, background 0.3s ease;
+}
+
+.pwd-strength-fill.weak {
+  width: 25%;
+  background: linear-gradient(90deg, #ff4d6d, #ff6b6b);
+}
+
+.pwd-strength-fill.fair {
+  width: 50%;
+  background: linear-gradient(90deg, #ffa726, #ffcc80);
+}
+
+.pwd-strength-fill.good {
+  width: 75%;
+  background: linear-gradient(90deg, #42a5f5, #7c5cff);
+}
+
+.pwd-strength-fill.strong {
+  width: 100%;
+  background: linear-gradient(90deg, #00c853, #64dd17);
+}
+
+.component-card {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rec-success-card {
+  background: radial-gradient(circle at top, rgba(124,92,255,0.15), transparent);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.success-check-circle {
+  box-shadow: 0 0 40px rgba(124,92,255,0.4);
+}

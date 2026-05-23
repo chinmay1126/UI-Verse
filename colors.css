@@ -369,6 +369,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .color-section-title {
@@ -387,6 +389,7 @@
   border: 1px solid var(--card-border);
   padding: 3px 12px;
   border-radius: 20px;
+  white-space: nowrap;
 }
 
 /* ============================================================

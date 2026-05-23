@@ -34,6 +34,12 @@
     <ul>
       <li>
         <a href="index.html">
+      <li>
+        <a href="leaderboard-components.html">
+          <i class="fa-solid fa-ranking-star"></i>
+          <span>Leaderboards</span>
+        </a>
+      </li>
           <i class="fa-solid fa-house"></i>
           <span>Home</span>
         </a>
@@ -361,8 +367,12 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components" />
     <kbd class="search-kbd">⌘K</kbd>
+  </div>
+
+  <div id="searchDropdown" class="search-dropdown hidden">
+    <ul id="searchDropdownResults" class="search-dropdown-results"></ul>
   </div>
 
   <div class="nav-right">
@@ -1314,6 +1324,60 @@
       <i class="fa-solid fa-copy"></i> Copy
     </button>
   </div>
+  
+  <div class="container">
+
+    <!-- Gradient Button -->
+    <button class="btn gradient-btn">
+      Gradient Button
+    </button>
+
+    <!-- Neon Button -->
+    <button class="btn neon-btn">
+      Neon Glow
+    </button>
+
+    <!-- Outline Hover Fill -->
+    <button class="btn outline-btn">
+      Hover Fill
+    </button>
+
+    <!-- 3D Button -->
+    <button class="btn three-d-btn">
+      3D Button
+    </button>
+
+    <!-- Glass Button -->
+    <button class="btn glass-btn">
+      Glass Effect
+    </button>
+
+    <!-- Slide Arrow Button -->
+    <button class="btn arrow-btn">
+      <span>Explore</span>
+    </button>
+
+    <!-- Pulse Button -->
+    <button class="btn pulse-btn">
+      Pulse Button
+    </button>
+
+    <!-- Dark Mode Toggle -->
+    <button class="btn toggle-btn" id="themeBtn">
+      🌙 Dark Mode
+    </button>
+
+    <!-- Shine Effect -->
+    <button class="btn shine-btn">
+      Shine Button
+    </button>
+
+    <!-- Floating Button -->
+    <button class="btn floating-btn">
+      +
+    </button>
+
+  </div>
 
   <pre id="c27" class="code-block"><code>&lt;button class="underline-btn"&gt;Learn More&lt;/button&gt;
 
@@ -1736,20 +1800,20 @@
 <script src="script.js"></script>
 <script>
   /* ---------- Dark Mode ---------- */
-  const toggle = document.getElementById('darkModeToggle');
-  if (toggle) {
-    const icon = toggle.querySelector('i');
+  const darkModeToggleBtn = document.getElementById('darkModeToggle');
+  if (darkModeToggleBtn) {
+    const darkModeIcon = darkModeToggleBtn.querySelector('i');
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-mode');
-      if (icon) {
-        icon.className = 'fa-solid fa-sun';
+      if (darkModeIcon) {
+        darkModeIcon.className = 'fa-solid fa-sun';
       }
     }
-    toggle.addEventListener('click', () => {
+    darkModeToggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       const isDark = document.body.classList.contains('dark-mode');
-      if (icon) {
-        icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      if (darkModeIcon) {
+        darkModeIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
       }
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
@@ -1767,6 +1831,26 @@
     document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
   });
+
+  // buttons.js
+
+const themeBtn = document.getElementById("themeBtn");
+
+let darkMode = true;
+
+themeBtn.addEventListener("click", () => {
+
+  darkMode = !darkMode;
+
+  if(darkMode){
+    document.body.style.background = "#111827";
+    themeBtn.innerHTML = "🌙 Dark Mode";
+  }else{
+    document.body.style.background = "#f3f4f6";
+    themeBtn.innerHTML = "☀️ Light Mode";
+  }
+
+});
 
   /* ---------- Code Toggle ---------- */
   function getCodeBlock(id, btn) {
@@ -1836,15 +1920,11 @@
     });
   }
 
-  function handleSearch(e) {
-    if (e.key === 'Enter') liveFilter(e.target.value);
-  }
-
   /* ---------- Scroll Animations ---------- */
-  const observer = new IntersectionObserver(entries => {
+  const buttonPageObserver = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
+  document.querySelectorAll('.component-card').forEach(el => buttonPageObserver.observe(el));
 
   /* ---------- Magnetic Hover Proximity pull ---------- */
   document.addEventListener('mousemove', (e) => {
@@ -1940,6 +2020,12 @@
 </script>
 <script src="playground.js"></script>
 <script>
+window.addEventListener('load', () => {
+  if (window.Search && typeof Search.init === 'function') {
+    Search.init();
+  }
+});
+
 window.addToCollectionFromCard = function(button, name) {
   const card = button.closest('.component-card');
   const previewBox = card.querySelector('.preview-box');

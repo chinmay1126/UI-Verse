@@ -388,7 +388,13 @@ body.dark-mode .search-kbd {
   text-align: center;
   overflow: hidden;
   margin-bottom: 0;
+
+  /* Column layout for hero content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 body.dark-mode .hero {
   background: linear-gradient(135deg, #1a1a1e 60%, #1e1614 100%);
@@ -436,11 +442,14 @@ body.dark-mode .hero {
 
 .hero-actions {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 14px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-bottom: 48px;
 }
+
 
 .btn-primary {
   display: inline-flex;
@@ -971,11 +980,39 @@ body.dark-mode .feature-card:hover {
   color: #888;
   text-decoration: none;
   font-size: 14px;
-  transition: color var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
 }
 
 .footer-col ul li a:hover {
   color: var(--accent);
+  transform: translateX(3px);
+  text-shadow: 0 0 8px rgba(235, 104, 53, 0.4);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+.socials a {
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 12px rgba(235, 104, 53, 0.35);
 }
 
 .socials {
