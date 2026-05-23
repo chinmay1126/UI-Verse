@@ -1409,3 +1409,127 @@ MAIN
   }
 
 }
+
+/* =========================================
+VERIFIED BADGE
+========================================= */
+
+.verified-badge{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#e8fff2;
+  color:#00b86b;
+  padding:10px 18px;
+  border-radius:30px;
+  font-weight:700;
+  font-size:13px;
+  box-shadow:0 8px 20px rgba(0,184,107,0.15);
+}
+
+/* =========================================
+GRADIENT BADGE
+========================================= */
+
+.gradient-badge{
+  padding:12px 22px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:700;
+  color:white;
+  background:linear-gradient(
+    135deg,
+    #7b61ff,
+    #eb6835,
+    #00c6ff
+  );
+  background-size:300% 300%;
+  animation:gradientMove 5s ease infinite;
+  box-shadow:0 0 25px rgba(123,97,255,0.4);
+}
+
+@keyframes gradientMove{
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+/* =========================================
+SALE BADGE
+========================================= */
+
+.sale-badge{
+  background:#ff3d57;
+  color:white;
+  padding:12px 24px;
+  border-radius:14px;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:1px;
+  transform:rotate(-6deg);
+  box-shadow:0 12px 25px rgba(255,61,87,0.3);
+}
+
+/* =========================================
+AI BADGE
+========================================= */
+
+.ai-badge{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:30px;
+  background:rgba(0,255,255,0.08);
+  border:1px solid rgba(0,255,255,0.3);
+  color:#6ff;
+  font-weight:700;
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 25px rgba(0,255,255,0.15);
+}
+
+/* =========================================
+BETA BADGE
+========================================= */
+
+.beta-badge{
+  background:#eef2ff;
+  color:#5b5ff8;
+  padding:10px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1px;
+  border:1px solid rgba(91,95,248,0.2);
+}
+
+/* =========================================
+VIP BADGE
+========================================= */
+
+.vip-badge{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:30px;
+  background:linear-gradient(
+    135deg,
+    #ffcf40,
+    #ff9d00
+  );
+  color:#111;
+  font-weight:800;
+  letter-spacing:0.5px;
+  box-shadow:
+    0 0 20px rgba(255,193,7,0.4),
+    0 10px 30px rgba(255,157,0,0.25);
+}
