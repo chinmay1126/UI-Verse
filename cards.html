@@ -40,6 +40,12 @@
         </a>
       </li>
       <li>
+        <a href="leaderboard-components.html">
+          <i class="fa-solid fa-ranking-star"></i>
+          <span>Leaderboards</span>
+        </a>
+      </li>
+      <li>
         <a href="button.html">
           <i class="fa-solid fa-hand-pointer"></i>
           <span>Buttons</span>
@@ -1874,6 +1880,8 @@
 <script src="js/features/download.js"></script>
 <script src="js/features/accessibility.js"></script>
 <script src="js/features/a11y-checker.js"></script>
+<script src="js/features/tutorial-mode-steps.js"></script>
+<script src="js/features/tutorial-mode.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/features/compare.js"></script>
 <script src="script.js"></script>
@@ -1960,6 +1968,24 @@
       setTimeout(() => btn.closest('.notif-card').style.display = 'none', 300);
     });
   });
+</script>
+<script>
+  (function () {
+    const button = document.getElementById('startTutorialMode');
+    if (!button || !window.TutorialMode || !window.TutorialModeSteps) return;
+
+    const steps = window.TutorialModeSteps.cards || window.TutorialModeSteps.default;
+    if (!Array.isArray(steps) || steps.length === 0) return;
+
+    button.addEventListener('click', () => {
+      window.TutorialMode.start({
+        pageKey: 'cards',
+        categoryKey: 'cards',
+        steps,
+        force: true
+      });
+    });
+  })();
 </script>
 <script src="playground.js"></script>
 </body>

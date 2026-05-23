@@ -72,3 +72,26 @@ if (navbar) {
     }
   );
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    document.body.classList.add(savedTheme);
+
+    const themeIcon = document.getElementById("themeIcon");
+    themeIcon.className = savedTheme === "dark" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+  });
+
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    const themeIcon = document.getElementById("themeIcon");
+
+    if (document.body.classList.contains("light")) {
+      document.body.classList.replace("light", "dark");
+      localStorage.setItem("theme", "dark");
+      themeIcon.className = "fa-solid fa-moon"; // 🌙
+    } else {
+      document.body.classList.replace("dark", "light");
+      localStorage.setItem("theme", "light");
+      themeIcon.className = "fa-solid fa-sun"; // ☀️
+    }
+  });

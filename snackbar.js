@@ -166,3 +166,70 @@ window.addEventListener(
 
   }
 );
+
+const container = document.getElementById("snackbarContainer");
+
+function createSnackbar(type, title, message, duration = 4000) {
+  const snackbar = document.createElement("div");
+  snackbar.classList.add("snackbar", type);
+
+  const iconMap = {
+    success: "fa-circle-check",
+    error: "fa-circle-xmark",
+    info: "fa-circle-info",
+  };
+
+  snackbar.innerHTML = `
+    <div class="snackbar-icon">
+      <i class="fa-solid ${iconMap[type]}"></i>
+    </div>
+
+    <div class="snackbar-content">
+      <div class="snackbar-title">${title}</div>
+      <div class="snackbar-message">${message}</div>
+    </div>
+
+    <div class="snackbar-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+
+    <div class="snackbar-progress">
+      <div class="snackbar-progress-bar"></div>
+    </div>
+  `;
+
+  container.appendChild(snackbar);
+
+  // Close button
+  snackbar.querySelector(".snackbar-close").onclick = () => removeSnackbar(snackbar);
+
+  // Auto remove
+  const timeout = setTimeout(() => {
+    removeSnackbar(snackbar);
+  }, duration);
+
+  function removeSnackbar(el) {
+    clearTimeout(timeout);
+    el.classList.add("hide");
+    setTimeout(() => el.remove(), 300);
+  }
+}
+
+// Button triggers
+document.querySelectorAll(".show-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const type = btn.dataset.type;
+
+    if (type === "success") {
+      createSnackbar("success", "Success", "Your action was completed successfully!");
+    }
+
+    if (type === "error") {
+      createSnackbar("error", "Error", "Something went wrong. Try again.");
+    }
+
+    if (type === "info") {
+      createSnackbar("info", "Info", "Here is some useful information.");
+    }
+  });
+});

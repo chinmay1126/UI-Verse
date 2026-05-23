@@ -904,3 +904,174 @@ body{
   }
 
 }
+
+/* =======================
+   DESIGN TOKENS
+======================= */
+:root {
+  --bg: #0f1115;
+  --card: rgba(255, 255, 255, 0.06);
+  --stroke: rgba(255, 255, 255, 0.12);
+  --text: #eaeef5;
+  --muted: rgba(255, 255, 255, 0.6);
+
+  --primary: #7b61ff;
+  --success: #2de38c;
+  --danger: #ff4d6d;
+
+  --radius: 14px;
+  --transition: 0.35s cubic-bezier(.2,.9,.2,1);
+}
+
+/* =======================
+   SWITCH BASE
+======================= */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Track */
+.slider {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+  backdrop-filter: blur(12px);
+}
+
+/* Knob */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border-radius: 50%;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Checked state */
+.switch input:checked + .slider {
+  background: rgba(123, 97, 255, 0.35);
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+}
+
+.switch input:checked + .slider::before {
+  transform: translate(22px, -50%);
+  background: white;
+}
+
+/* Hover effect */
+.switch:hover .slider {
+  transform: scale(1.03);
+}
+
+/* Focus accessibility */
+.switch input:focus + .slider {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* =======================
+   ICON SWITCH (MODERN)
+======================= */
+.icon-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  display: inline-block;
+}
+
+.icon-switch input {
+  display: none;
+}
+
+.icon-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+.icon-slider i {
+  color: var(--muted);
+  transition: var(--transition);
+}
+
+.icon-switch input:checked + .icon-slider {
+  background: rgba(45, 227, 140, 0.15);
+  border-color: var(--success);
+  box-shadow: 0 0 18px rgba(45, 227, 140, 0.3);
+}
+
+.icon-switch input:checked + .icon-slider i.fa-moon {
+  color: var(--success);
+}
+
+/* =======================
+   IOS STYLE SWITCH
+======================= */
+.ios-switch {
+  position: relative;
+  width: 54px;
+  height: 32px;
+  display: inline-block;
+}
+
+.ios-switch input {
+  opacity: 0;
+}
+
+.ios-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #2a2f3a;
+  transition: var(--transition);
+}
+
+.ios-slider::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 3px;
+  left: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.ios-switch input:checked + .ios-slider {
+  background: linear-gradient(135deg, #7b61ff, #4f46e5);
+}
+
+.ios-switch input:checked + .ios-slider::before {
+  transform: translateX(22px);
+}

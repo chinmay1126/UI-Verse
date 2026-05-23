@@ -334,11 +334,6 @@
       </ul>
     </nav>
 
-    <div class="sidebar-footer">
-      <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-    </div>
   </aside>
 
   <!-- ================= SIDEBAR BACKDROP ================= -->
@@ -376,7 +371,7 @@
         <p class="page-desc">Every HTML input type you'll ever need — text, email, password, date, range, file, select,
           checkbox, radio and more. Click to copy.</p>
         <div class="page-meta">
-          <span class="meta-badge"><i class="fa-solid fa-layer-group"></i> 18 Components</span>
+          <span class="meta-badge"><i class="fa-solid fa-layer-group"></i> 23 Components</span>
           <span class="meta-badge"><i class="fa-solid fa-code"></i> Pure HTML</span>
           <span class="meta-badge"><i class="fa-solid fa-bolt"></i> No JS Required</span>
         </div>
@@ -403,6 +398,7 @@
       <button type="button" class="filter-btn" onclick="filterSection('datetime', this)">Date &amp; Time</button>
       <button type="button" class="filter-btn" onclick="filterSection('advanced', this)">Advanced</button>
       <button type="button" class="filter-btn" onclick="filterSection('selection', this)">Selection</button>
+      <button type="button" class="filter-btn" onclick="filterSection('specialized', this)">Specialized</button>
       <button type="button" class="filter-btn" onclick="filterSection('attributes', this)">Attributes</button>
       <div class="filter-search">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -706,6 +702,129 @@
   &lt;option&gt;Option 1&lt;/option&gt;
   &lt;option&gt;Option 2&lt;/option&gt;
 &lt;/select&gt;</code></pre>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== SPECIALIZED INPUTS ===== -->
+    <div class="inputs-section" data-section="specialized">
+      <div class="section-header-row">
+        <h2 class="inputs-section-title">Specialized Inputs</h2>
+        <span class="section-count">5 components</span>
+      </div>
+      <div class="inputs-grid">
+
+        <div class="component-card" data-name="search input specialized" data-sec="specialized">
+          <div class="card-top">
+            <span class="card-label">Search Input</span>
+            <span class="card-tag tag-essential">Essential</span>
+          </div>
+          <div class="card-preview">
+            <input class="demo-input" type="search" placeholder="Search the catalog" >
+          </div>
+          <p class="card-desc">A search field with a native clear button in supported browsers.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('c19', this)"><i class="fa-solid fa-code"></i> View
+              Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('c19', this)"><i class="fa-solid fa-copy"></i>
+              Copy</button>
+          </div>
+          <pre id="c19" class="code-block"><code>&lt;input type="search" placeholder="Search the catalog"&gt;</code></pre>
+        </div>
+
+        <div class="component-card" data-name="url input specialized" data-sec="specialized">
+          <div class="card-top">
+            <span class="card-label">URL Input</span>
+            <span class="card-tag tag-popular">Popular</span>
+          </div>
+          <div class="card-preview">
+            <input class="demo-input" type="url" placeholder="https://example.com" >
+          </div>
+          <p class="card-desc">Validates web addresses and helps users enter full links safely.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('c20', this)"><i class="fa-solid fa-code"></i> View
+              Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('c20', this)"><i class="fa-solid fa-copy"></i>
+              Copy</button>
+          </div>
+          <pre id="c20" class="code-block"><code>&lt;input type="url" placeholder="https://example.com"&gt;</code></pre>
+        </div>
+
+        <div class="component-card" data-name="tel input specialized" data-sec="specialized">
+          <div class="card-top">
+            <span class="card-label">Telephone Input</span>
+            <span class="card-tag tag-essential">Essential</span>
+          </div>
+          <div class="card-preview">
+            <input class="demo-input" type="tel" placeholder="(555) 123-4567" >
+          </div>
+          <p class="card-desc">Optimized for phone number entry and mobile keypad support.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('c21', this)"><i class="fa-solid fa-code"></i> View
+              Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('c21', this)"><i class="fa-solid fa-copy"></i>
+              Copy</button>
+          </div>
+          <pre id="c21" class="code-block"><code>&lt;input type="tel" placeholder="(555) 123-4567"&gt;</code></pre>
+        </div>
+
+        <div class="component-card" data-name="datalist input specialized" data-sec="specialized">
+          <div class="card-top">
+            <span class="card-label">Datalist Input</span>
+            <span class="card-tag tag-trending">Trending</span>
+          </div>
+          <div class="card-preview">
+            <input class="demo-input" list="browser-list" placeholder="Choose a browser" >
+            <datalist id="browser-list">
+              <option value="Chrome"></option>
+              <option value="Firefox"></option>
+              <option value="Safari"></option>
+              <option value="Edge"></option>
+            </datalist>
+          </div>
+          <p class="card-desc">Combines a text input with suggested values in a native dropdown.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('c22', this)"><i class="fa-solid fa-code"></i> View
+              Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('c22', this)"><i class="fa-solid fa-copy"></i>
+              Copy</button>
+          </div>
+          <pre id="c22" class="code-block"><code>&lt;input list="browser-list" placeholder="Choose a browser"&gt;
+&lt;datalist id="browser-list"&gt;
+  &lt;option value="Chrome"&gt;
+  &lt;option value="Firefox"&gt;
+  &lt;option value="Safari"&gt;
+  &lt;option value="Edge"&gt;
+&lt;/datalist&gt;</code></pre>
+        </div>
+
+        <div class="component-card" data-name="otp input specialized" data-sec="specialized">
+          <div class="card-top">
+            <span class="card-label">OTP Code Input</span>
+            <span class="card-tag tag-popular">Popular</span>
+          </div>
+          <div class="card-preview">
+            <div class="otp-input-group" aria-label="One-time passcode input preview">
+              <input class="otp-input" type="text" maxlength="1" inputmode="numeric" placeholder="•" aria-label="Digit 1" >
+              <input class="otp-input" type="text" maxlength="1" inputmode="numeric" placeholder="•" aria-label="Digit 2" >
+              <input class="otp-input" type="text" maxlength="1" inputmode="numeric" placeholder="•" aria-label="Digit 3" >
+              <input class="otp-input" type="text" maxlength="1" inputmode="numeric" placeholder="•" aria-label="Digit 4" >
+            </div>
+          </div>
+          <p class="card-desc">A split code entry pattern used for verification and login flows.</p>
+          <div class="actions">
+            <button type="button" class="action-btn view-btn" onclick="toggleCode('c23', this)"><i class="fa-solid fa-code"></i> View
+              Code</button>
+            <button type="button" class="action-btn copy-btn" onclick="copyCode('c23', this)"><i class="fa-solid fa-copy"></i>
+              Copy</button>
+          </div>
+          <pre id="c23" class="code-block"><code>&lt;div class="otp-input-group"&gt;
+  &lt;input type="text" maxlength="1" inputmode="numeric"&gt;
+  &lt;input type="text" maxlength="1" inputmode="numeric"&gt;
+  &lt;input type="text" maxlength="1" inputmode="numeric"&gt;
+  &lt;input type="text" maxlength="1" inputmode="numeric"&gt;
+&lt;/div&gt;</code></pre>
         </div>
 
       </div>
