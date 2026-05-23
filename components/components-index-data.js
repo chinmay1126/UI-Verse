@@ -1,6 +1,6 @@
 window.UIVerseComponentsIndexData = {
   "generatedAt": "2026-05-19T14:10:52.508Z",
-  "totalComponents": 298,
+  "totalComponents": 299,
   "totalCategories": 11,
   "categories": [
     {
@@ -637,9 +637,9 @@ window.UIVerseComponentsIndexData = {
       "id": "data-display",
       "name": "Data Display",
       "icon": "fa-chart-column",
-      "count": 16,
+      "count": 17,
       "popularityScore": 86,
-      "latestUpdatedAt": "2026-05-19T14:07:05.559Z",
+      "latestUpdatedAt": "2026-05-23T00:00:00.000Z",
       "previewItems": [
         {
           "title": "Calendarcomponent",
@@ -650,6 +650,12 @@ window.UIVerseComponentsIndexData = {
         {
           "title": "Calendar Components",
           "path": "calendar-components.html",
+          "popularity": 87,
+          "updatedAt": "2026-05-23T00:00:00.000Z"
+        },
+        {
+          "title": "Notes Components",
+          "path": "notes-components.html",
           "popularity": 87,
           "updatedAt": "2026-05-23T00:00:00.000Z"
         },
@@ -709,6 +715,14 @@ window.UIVerseComponentsIndexData = {
           "id": "calendar-components",
           "title": "Calendar Components",
           "path": "calendar-components.html",
+          "categoryId": "data-display",
+          "popularity": 87,
+          "updatedAt": "2026-05-23T00:00:00.000Z"
+        },
+        {
+          "id": "notes-components",
+          "title": "Notes Components",
+          "path": "notes-components.html",
           "categoryId": "data-display",
           "popularity": 87,
           "updatedAt": "2026-05-23T00:00:00.000Z"

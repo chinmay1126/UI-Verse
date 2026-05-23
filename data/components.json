@@ -80,6 +80,14 @@
     "description": "Testimonial components and examples"
   },
   {
+    "id": "notes-components",
+    "title": "Notes Components",
+    "path": "notes-components.html",
+    "tags": ["notes", "productivity", "components"],
+    "aliases": ["notes", "sticky notes", "notepad"],
+    "description": "Sticky note, memo and note-taking UI components"
+  },
+  {
     "id": "pricing",
     "title": "Pricing",
     "path": "pricing.html",
