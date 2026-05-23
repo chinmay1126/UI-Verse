@@ -71,6 +71,11 @@
     <button onclick="filterCategory('date', this)">Date Range</button>
     <button onclick="filterCategory('color', this)">Color</button>
     <button onclick="filterCategory('autocomplete', this)">Autocomplete</button>
+    <button onclick="filterCategory('brands', this)">Brands</button>
+    <button onclick="filterCategory('distance', this)">Distance</button>
+    <button onclick="filterCategory('size', this)">Sizes</button>
+    <button onclick="filterCategory('toggles', this)">Toggles</button>
+    <button onclick="filterCategory('layout', this)">Layout</button>
   </section>
 
   <!-- SHOWROOM GRID -->
@@ -588,6 +593,176 @@
 &lt;/div&gt;</code></pre>
     </div>
 
+    <!-- 11. BRAND LOGO FILTER -->
+    <div class="component-card" data-category="brands">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-brand-filter">
+            <div class="brand-grid">
+              <div class="brand-item active" onclick="toggleBrand(this)"><i class="fa-brands fa-apple"></i></div>
+              <div class="brand-item" onclick="toggleBrand(this)"><i class="fa-brands fa-windows"></i></div>
+              <div class="brand-item" onclick="toggleBrand(this)"><i class="fa-brands fa-android"></i></div>
+              <div class="brand-item" onclick="toggleBrand(this)"><i class="fa-brands fa-linux"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Brand Filter Grid</h3>
+          <span>Brands</span>
+        </div>
+        <p>A grid of brand icons with interactive glowing borders and solid active states.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeBrands', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeBrands', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeBrands" style="display:none;"><code>&lt;div class="brand-grid"&gt;
+  &lt;div class="brand-item active"&gt;&lt;i class="fa-brands fa-apple"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div class="brand-item"&gt;&lt;i class="fa-brands fa-windows"&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 12. DISTANCE SLIDER FILTER -->
+    <div class="component-card" data-category="distance">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-distance-filter">
+            <div class="distance-header">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Within <span id="distLabel">15</span> km</span>
+            </div>
+            <div class="distance-slider-wrap">
+              <input type="range" min="1" max="100" value="15" class="distance-thumb" oninput="updateDistance(this)">
+              <div class="distance-track-bg"></div>
+              <div class="distance-track-fill" id="distFill" style="width: 15%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Distance Slider</h3>
+          <span>Distance</span>
+        </div>
+        <p>A smooth range slider with custom gradient fill and live distance readout.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeDist', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeDist', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeDist" style="display:none;"><code>&lt;div class="distance-slider-wrap"&gt;
+  &lt;input type="range" class="distance-thumb" oninput="updateDistance(this)"&gt;
+  &lt;div class="distance-track-bg"&gt;&lt;/div&gt;
+  &lt;div class="distance-track-fill" style="width: 15%;"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 13. SIZE SELECTION FILTER -->
+    <div class="component-card" data-category="size">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-size-filter">
+            <div class="size-grid">
+              <div class="size-box" onclick="toggleSize(this)">S</div>
+              <div class="size-box active" onclick="toggleSize(this)">M</div>
+              <div class="size-box" onclick="toggleSize(this)">L</div>
+              <div class="size-box" onclick="toggleSize(this)">XL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Size Selection Grid</h3>
+          <span>Sizes</span>
+        </div>
+        <p>A multi-select size filter with glowing active states and subtle hover transitions.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeSize', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeSize', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeSize" style="display:none;"><code>&lt;div class="size-grid"&gt;
+  &lt;div class="size-box"&gt;S&lt;/div&gt;
+  &lt;div class="size-box active"&gt;M&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 14. TOGGLES FILTER -->
+    <div class="component-card" data-category="toggles">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-toggles-filter">
+            <label class="premium-toggle">
+              <span>In Stock Only</span>
+              <input type="checkbox" checked>
+              <div class="toggle-slider"></div>
+            </label>
+            <label class="premium-toggle">
+              <span>Sale Items</span>
+              <input type="checkbox">
+              <div class="toggle-slider"></div>
+            </label>
+            <label class="premium-toggle">
+              <span>Free Shipping</span>
+              <input type="checkbox">
+              <div class="toggle-slider"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Toggle Switches</h3>
+          <span>Toggles</span>
+        </div>
+        <p>A set of smooth iOS-style toggle switches for fast boolean filtering.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeToggle', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeToggle', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeToggle" style="display:none;"><code>&lt;label class="premium-toggle"&gt;
+  &lt;span&gt;In Stock Only&lt;/span&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;div class="toggle-slider"&gt;&lt;/div&gt;
+&lt;/label&gt;</code></pre>
+    </div>
+
+    <!-- 15. LAYOUT STYLE FILTER -->
+    <div class="component-card" data-category="layout">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-layout-filter">
+            <div class="layout-toggle">
+              <div class="layout-btn active" onclick="toggleLayout(this)"><i class="fa-solid fa-table-cells-large"></i></div>
+              <div class="layout-btn" onclick="toggleLayout(this)"><i class="fa-solid fa-list"></i></div>
+              <div class="layout-btn" onclick="toggleLayout(this)"><i class="fa-solid fa-border-all"></i></div>
+              <div class="layout-slider" id="layoutSlider"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Layout Style Filter</h3>
+          <span>Layout</span>
+        </div>
+        <p>A multi-view layout toggle with an animated sliding backdrop indicating selection.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeLayout', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeLayout', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeLayout" style="display:none;"><code>&lt;div class="layout-toggle"&gt;
+  &lt;div class="layout-btn active"&gt;&lt;i class="fa-solid fa-table-cells-large"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div class="layout-btn"&gt;&lt;i class="fa-solid fa-list"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div class="layout-slider"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
   </div>
 
   
@@ -1071,6 +1246,28 @@
       if (list) list.classList.remove('open');
     }
   });
+
+  function toggleBrand(btn) {
+    btn.classList.toggle('active');
+  }
+
+  function updateDistance(input) {
+    document.getElementById('distLabel').textContent = input.value;
+    document.getElementById('distFill').style.width = input.value + '%';
+  }
+
+  function toggleSize(btn) {
+    btn.classList.toggle('active');
+  }
+
+  function toggleLayout(btn) {
+    const parent = btn.parentElement;
+    parent.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const index = Array.from(parent.querySelectorAll('.layout-btn')).indexOf(btn);
+    const slider = parent.querySelector('.layout-slider');
+    slider.style.left = `calc(4px + ${index * 44}px)`;
+  }
 
   updatePriceSliders();
 

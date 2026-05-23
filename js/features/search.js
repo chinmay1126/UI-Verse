@@ -204,8 +204,12 @@ const Search = {
     try {
       if (window.ComponentsRegistry) {
         await window.ComponentsRegistry.load();
-        const path = window.ComponentsRegistry.findRoute(query);
+        const resolution = typeof window.ComponentsRegistry.resolve === 'function' ? window.ComponentsRegistry.resolve(query) : null;
+        const path = resolution ? resolution.path : window.ComponentsRegistry.findRoute(query);
         if (path) {
+          if (resolution && resolution.compatibility && resolution.compatibility.fallbackUsed) {
+            console.warn('[Search] Version fallback used', resolution);
+          }
           window.location.href = resolveRouteURL(path);
           return;
         }
@@ -283,3 +287,5 @@ const Search = {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = Search;
 }
+
+window.Search = Search;

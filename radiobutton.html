@@ -696,6 +696,169 @@
 }</code></pre>
     </div>
 
+    <!-- ============ ADDITIONAL COMPONENTS (5 NEW) ============ -->
+
+    <!-- BADGE RADIO -->
+    <div class="component-card">
+      <div class="card-preview">
+        <div class="badge-radio-group">
+          <label class="badge-radio">
+            <input type="radio" name="badge" checked>
+            <span class="badge-indicator"></span>
+            <span class="badge-count">4</span>
+          </label>
+          <label class="badge-radio">
+            <input type="radio" name="badge">
+            <span class="badge-indicator"></span>
+            <span class="badge-count">12</span>
+          </label>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Badge Radio</h3><span>Compact</span></div>
+        <p>Small badge-style radios ideal for notifications and quick counts.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('r11')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('r11')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button><i class="fa-solid fa-bookmark"></i> Save</button>
+        </div>
+      </div>
+      <pre id="r11" class="code-block" style="display:none;"><code>&lt;label class="badge-radio"&gt;
+  &lt;input type="radio" name="badge" checked&gt;
+  &lt;span class="badge-indicator"&gt;&lt;/span&gt;
+  &lt;span class="badge-count"&gt;4&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+    </div>
+
+    <!-- ICON RADIO -->
+    <div class="component-card">
+      <div class="card-preview">
+        <div class="icon-radio-group">
+          <label class="icon-radio">
+            <input type="radio" name="icon">
+            <i class="fa-solid fa-wifi"></i>
+          </label>
+          <label class="icon-radio">
+            <input type="radio" name="icon" checked>
+            <i class="fa-solid fa-bluetooth"></i>
+          </label>
+          <label class="icon-radio">
+            <input type="radio" name="icon">
+            <i class="fa-solid fa-bell"></i>
+          </label>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Icon Radio</h3><span>UI</span></div>
+        <p>Centered icon radios for compact control panels and quick toggles.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('r12')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('r12')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button><i class="fa-solid fa-bookmark"></i> Save</button>
+        </div>
+      </div>
+      <pre id="r12" class="code-block" style="display:none;"><code>&lt;label class="icon-radio"&gt;
+  &lt;input type="radio" name="icon" checked&gt;
+  &lt;i class="fa-solid fa-bluetooth"&gt;&lt;/i&gt;
+&lt;/label&gt;</code></pre>
+    </div>
+
+    <!-- RING RADIO -->
+    <div class="component-card">
+      <div class="card-preview">
+        <div class="ring-radio-group">
+          <label class="ring-radio">
+            <input type="radio" name="ring" checked>
+            <span class="ring-dot"></span>
+            <span class="minimal-label">Primary</span>
+          </label>
+          <label class="ring-radio">
+            <input type="radio" name="ring">
+            <span class="ring-dot"></span>
+            <span class="minimal-label">Secondary</span>
+          </label>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Ring Radio</h3><span>Focus</span></div>
+        <p>Radio with an animated outer ring — great for emphasizing selection.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('r13')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('r13')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button><i class="fa-solid fa-bookmark"></i> Save</button>
+        </div>
+      </div>
+      <pre id="r13" class="code-block" style="display:none;"><code>&lt;label class="ring-radio"&gt;
+  &lt;input type="radio" name="ring" checked&gt;
+  &lt;span class="ring-dot"&gt;&lt;/span&gt;
+  &lt;span&gt;Primary&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+    </div>
+
+    <!-- STEPPER RADIO -->
+    <div class="component-card">
+      <div class="card-preview">
+        <div class="stepper-radio-group">
+          <label class="stepper-radio">
+            <input type="radio" name="stepper" checked>
+            <div class="step-number">1</div>
+            <div class="stepper-body">Account setup<br><small>Enter profile details</small></div>
+          </label>
+          <label class="stepper-radio">
+            <input type="radio" name="stepper">
+            <div class="step-number">2</div>
+            <div class="stepper-body">Billing<br><small>Choose plan</small></div>
+          </label>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Stepper Radio</h3><span>Workflow</span></div>
+        <p>Numbered stepper radios for multi-step flows and wizards.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('r14')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('r14')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button><i class="fa-solid fa-bookmark"></i> Save</button>
+        </div>
+      </div>
+      <pre id="r14" class="code-block" style="display:none;"><code>&lt;label class="stepper-radio"&gt;
+  &lt;input type="radio" name="stepper" checked&gt;
+  &lt;div class="step-number"&gt;1&lt;/div&gt;
+  &lt;div class="stepper-body"&gt;Account setup&lt;/div&gt;
+&lt;/label&gt;</code></pre>
+    </div>
+
+    <!-- INLINE RADIO -->
+    <div class="component-card">
+      <div class="card-preview">
+        <div class="inline-radio-group">
+          <label class="inline-radio">
+            <input type="radio" name="inline" checked>
+            <span class="inline-dot"></span>
+            <span class="minimal-label">Yes</span>
+          </label>
+          <label class="inline-radio">
+            <input type="radio" name="inline">
+            <span class="inline-dot"></span>
+            <span class="minimal-label">No</span>
+          </label>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Compact Inline Radio</h3><span>Form</span></div>
+        <p>Compact inline radios built for dense form rows and settings panels.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('r15')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('r15')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button><i class="fa-solid fa-bookmark"></i> Save</button>
+        </div>
+      </div>
+      <pre id="r15" class="code-block" style="display:none;"><code>&lt;label class="inline-radio"&gt;
+  &lt;input type="radio" name="inline" checked&gt;
+  &lt;span class="inline-dot"&gt;&lt;/span&gt;
+  &lt;span&gt;Yes&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+    </div>
+
   </section>
 
 </div>

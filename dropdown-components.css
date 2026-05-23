@@ -1040,12 +1040,31 @@ body{
   color: #888;
   text-decoration: none;
   font-size: 14px;
-  transition: color var(--transition);
+  position: relative;  
+  transition: color var(--transition), transform 0.3s ease;
+}
+ 
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
 .footer-col ul li a:hover {
-  color: var(--accent);
+  color: var(--accent);        
+  transform: scale(1.05);      
 }
+
+.footer-col ul li a:hover::after {
+  width: 100%;                
+}
+
+
 
 .socials {
   display: flex;
@@ -1225,6 +1244,27 @@ body{
 .copy-toast.show {
   transform: translateY(0);
   opacity: 1;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #FFA500; /* light orange */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+#scrollTopBtn:hover {
+  background: #FFB84D; /* softer orange on hover */
 }
 
 

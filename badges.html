@@ -2,42 +2,19 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Badges UI — UIverse</title>
-
-  <!-- FONTS -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- ICONS -->
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  >
-
-  <!-- CSS -->
-
-  <link
-    rel="stylesheet"
-    href="badges.css"
-  >
-
+    <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badges — UIverse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="badges.css">
+  <link rel="stylesheet" href="command-palette.css">
+  <link rel="stylesheet" href="css/url-state.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- UIverse Modular CSS Architecture -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- UIverse Runtime Loader -->
+  <script src="js/loader.js" defer></script>
 </head>
 
 <body>
@@ -364,20 +341,6 @@
       </li>
     </ul>
   </nav>
-
- <div class="socials">
-  <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-
-  <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-
-  <a href="https://twitter.com/yourusername" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
 </aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
@@ -1163,6 +1126,321 @@ BADGE CARD — VIP BADGE
 
     </div>
 
+    <!-- CARD 7 -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Gaming</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview">
+        <span class="rank-badge">
+          <i class="fa-solid fa-crown"></i> MVP
+        </span>
+      </div>
+      <h2>Rank Badge</h2>
+      <p>Gold themed prestige badge for leaderboards and gaming.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Animated</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview">
+        <span class="outline-pulse-badge">Recording</span>
+      </div>
+      <h2>Pulsing Outline Badge</h2>
+      <p>Minimalistic outline badge with a radiating animation effect.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Premium</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview">
+        <span class="gradient-border-badge">PRO PLAN</span>
+      </div>
+      <h2>Gradient Border Badge</h2>
+      <p>Sleek badge featuring a colorful gradient border and dark core.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">UI</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview">
+        <span class="role-pill-badge moderator">
+          <span class="role-icon"><i class="fa-solid fa-shield-halved"></i></span>
+          <span class="role-text">Moderator</span>
+        </span>
+      </div>
+      <h2>Role Pill Badge</h2>
+      <p>Split pill design ideal for user roles and forum titles.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+    <!-- CARD 11 -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">3D</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview">
+        <span class="chip-3d-badge">v2.0 Beta</span>
+      </div>
+      <h2>Floating 3D Badge</h2>
+      <p>Isometric 3D pill badge with soft floating shadow effects.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+
+    <!-- CARD 12 — Verified Tick Badge -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Verified</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <span class="verified-badge">
+          <i class="fa-solid fa-circle-check"></i>
+          Verified Creator
+        </span>
+      </div>
+      <h2>Verified Tick Badge</h2>
+      <p>Sleek identity badge with a glowing checkmark for verified accounts and creators.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+    <!-- CARD 13 — XP Progress Badge -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Gaming</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <div class="xp-badge">
+          <div class="xp-top">
+            <span class="xp-label">⚡ Level 24</span>
+            <span class="xp-pct">72%</span>
+          </div>
+          <div class="xp-bar-track">
+            <div class="xp-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+      <h2>XP Progress Badge</h2>
+      <p>Animated XP bar badge for gaming dashboards and gamified apps.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+    <!-- CARD 14 — Countdown Timer Badge -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Event</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview">
+        <span class="countdown-badge">
+          <i class="fa-regular fa-clock"></i>
+          <span class="cd-sep">02</span>:
+          <span class="cd-sep">47</span>:
+          <span class="cd-sep">59</span>
+          <span class="cd-label">left</span>
+        </span>
+      </div>
+      <h2>Countdown Timer Badge</h2>
+      <p>Live-style countdown badge for sales, events, and limited offers.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+    <!-- CARD 15 — Tag Stack Badge -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Labels</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview">
+        <div class="tag-stack">
+          <span class="tag-chip blue">React</span>
+          <span class="tag-chip purple">TypeScript</span>
+          <span class="tag-chip green">Node.js</span>
+          <span class="tag-chip orange">+4</span>
+        </div>
+      </div>
+      <h2>Tag Stack Badge</h2>
+      <p>Compact stacked tag chips for skills, frameworks, and category labels.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+    <!-- CARD 16 — Aurora Glow Badge -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Premium</span>
+        <button class="save-btn active-save"><i class="fa-solid fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <span class="aurora-badge">✦ ELITE ACCESS</span>
+      </div>
+      <h2>Aurora Glow Badge</h2>
+      <p>Dreamy aurora-tinted badge with shifting colour glow for elite or VIP tiers.</p>
+      <div class="card-actions">
+        <button>Preview</button><button>Copy</button>
+      </div>
+    </div>
+
+    <!-- CARD 17 — AI Status Badge -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">AI / System</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <span class="ai-status-badge"><span class="ai-dot"></span> AI Processing</span>
+      </div>
+      <h2>AI Status Badge</h2>
+      <p>Pulsing dot badge for AI and async processing states in dashboards.</p>
+      <div class="card-actions"><button>Preview</button><button>Copy</button></div>
+    </div>
+
+    <!-- CARD 18 — Beta Tag -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Label</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <span class="beta-tag"><i class="fa-solid fa-vial"></i></i> Beta</span>
+      </div>
+      <h2>Beta Tag</h2>
+      <p>Compact amber label for marking experimental or unreleased features.</p>
+      <div class="card-actions"><button>Preview</button><button>Copy</button></div>
+    </div>
+
+    <!-- CARD 19 — Version Chip -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Dev</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <span class="version-chip"><span class="vc-label">v</span><span class="vc-num">3.2.1</span></span>
+      </div>
+      <h2>Version Chip</h2>
+      <p>Split-pill version label for changelogs, release notes, and package badges.</p>
+      <div class="card-actions"><button>Preview</button><button>Copy</button></div>
+    </div>
+
+    <!-- CARD 20 — Streak Badge -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Gamification</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <span class="streak-badge"><span class="streak-flame"><i class="fa-solid fa-fire"></i></span> 14-Day Streak</span>
+      </div>
+      <h2>Streak Badge</h2>
+      <p>Animated flame badge for streaks, daily goals, and habit trackers.</p>
+      <div class="card-actions"><button>Preview</button><button>Copy</button></div>
+    </div>
+
+    <!-- CARD 21 — Trust Score -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Reputation</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <span class="trust-badge">
+          <span class="trust-num">98</span>
+          <span class="trust-meta">
+            <span class="trust-label">Trust Score</span>
+            <span class="trust-sub">Top 1% seller</span>
+          </span>
+        </span>
+      </div>
+      <h2>Trust Score Badge</h2>
+      <p>Numeric reputation badge for marketplaces, profiles, and review systems.</p>
+      <div class="card-actions"><button>Preview</button><button>Copy</button></div>
+    </div>
+
+    <!-- CARD 22 — New Arrival -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">E-commerce</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <span class="new-arrival-badge"><i class="fa-solid fa-tag"></i> New Arrival</span>
+      </div>
+      <h2>New Arrival Badge</h2>
+      <p>Glowing gradient pill for highlighting new products and featured drops.</p>
+      <div class="card-actions"><button>Preview</button><button>Copy</button></div>
+    </div>
+
+    <!-- CARD 23 — Permission Chips -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Permissions</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <div class="perm-set">
+          <span class="perm-chip read"><i class="fa-solid fa-eye"></i> Read</span>
+          <span class="perm-chip write"><i class="fa-solid fa-pencil"></i> Write</span>
+          <span class="perm-chip admin"><i class="fa-solid fa-shield-halved"></i> Admin</span>
+        </div>
+      </div>
+      <h2>Permission Chips</h2>
+      <p>Color-coded access level chips for admin panels and user management UIs.</p>
+      <div class="card-actions"><button>Preview</button><button>Copy</button></div>
+    </div>
+
+    <!-- CARD 24 — Typing Indicator -->
+    <div class="badge-card">
+      <div class="card-top">
+        <span class="card-tag">Chat / UI</span>
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+      </div>
+      <div class="badge-preview dark-preview">
+        <span class="typing-badge">
+          <div class="dots">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          AI is typing
+        </span>
+      </div>
+      <h2>Typing Indicator Badge</h2>
+      <p>Bouncing dots badge for chat apps and AI response loading states.</p>
+      <div class="card-actions"><button>Preview</button><button>Copy</button></div>
+    </div>
+
   </section>
 
 </main>
@@ -1170,17 +1448,29 @@ BADGE CARD — VIP BADGE
 <footer class="footer">
   <div class="footer-container">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+    <!-- ✅ BRAND COLUMN -->
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+
+      <p>
+        Build modern, reusable UI components with clean HTML, CSS, and JavaScript.
+      </p>
+
+      <!-- ✅ SOCIALS MUST STAY HERE -->
+      <div class="footer-socials">
+        <a href="https://github.com" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://twitter.com" target="_blank">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
 
     <div class="footer-col">
       <h3>Explore</h3>

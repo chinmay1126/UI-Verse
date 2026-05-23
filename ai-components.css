@@ -1,24 +1,29 @@
 /* ===================================================
-   AI-COMPONENTS.CSS — AI UI Components Styling
+   AI-COMPONENTS.CSS — AI UI Components & Styling
    Futuristic Design with Glassmorphism & Glow Effects
+   Import AFTER style.css & home.css
    =================================================== */
 
-/* ============================================================
-   ROOT VARIABLES & TOKENS
-   ============================================================ */
+/* ---------- ROOT TOKENS ---------- */
 :root {
-  /* Colors */
-  --primary-accent: #eb6835;
-  --secondary-accent: #6c5ce7;
+  /* Primary Colors */
+  --accent: #eb6835;
+  --accent-secondary: #6c5ce7;
   --neon-blue: #00d4ff;
   --neon-purple: #a855f7;
   --neon-pink: #ec4899;
+  
+  /* Background & Surface */
   --dark-bg: #0f0f12;
   --dark-surface: #1a1a1e;
   --dark-surface-2: #22222a;
   --glass-bg: rgba(26, 26, 30, 0.8);
-  --text-primary: #f0f0f0;
-  --text-secondary: #9ca3af;
+  
+    /* Text */
+  --text-primary: #111;
+  --text-secondary: #666;
+  
+  /* Borders */
   --border-color: rgba(255, 255, 255, 0.08);
   --border-color-light: rgba(255, 255, 255, 0.12);
 
@@ -43,15 +48,15 @@
   --radius-xl: 20px;
 
   /* Transitions */
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Font Families */
   --font-heading: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 
-  /* Shadows */
+  /* Shadows & Glows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -61,9 +66,7 @@
   --glow-lg: 0 0 30px rgba(108, 92, 231, 0.5);
 }
 
-/* ============================================================
-   AI HERO SECTION
-   ============================================================ */
+/* ---------- HERO SECTION ---------- */
 .ai-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -115,7 +118,8 @@
 }
 
 .ai-hero-highlight {
-  background: var(--gradient-glow);
+  /*background: var(--gradient-glow);*/
+  background-color: rgb(235, 104, 57);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -160,7 +164,7 @@
 
 .primary-cta {
   background: var(--gradient-glow);
-  color: #000;
+  color: var(--text-primary); 
   box-shadow: var(--glow-md);
 }
 
@@ -216,12 +220,11 @@
   }
 }
 
-/* ============================================================
-   COMPONENT SECTION HEADER
-   ============================================================ */
+/* ---------- COMPONENT SECTION HEADER ---------- */
 .ai-component-section {
   margin-bottom: var(--spacing-3xl);
   padding: 0 var(--spacing-xl);
+
 }
 
 .section-header {
@@ -235,7 +238,7 @@
   font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: rgb(235, 104, 57);
 }
 
 .section-badge {
@@ -248,9 +251,317 @@
   border: 1px solid rgba(0, 212, 255, 0.3);
 }
 
-/* ============================================================
-   AI CHATBOT COMPONENT
-   ============================================================ */
+/* ---------- AI COMPONENT TEXT VISIBILITY ---------- */
+
+/* Titles inside cards */
+.ai-component-section h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Lists inside cards */
+.ai-component-section ul li {
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Paragraphs inside cards */
+.ai-component-section p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Labels and values inside stats */
+.ai-component-section .stat-label {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.ai-component-section .stat-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+
+/* ===== AI Recommendations ===== */
+.recommendation-card {
+  background: var(--card-bg, #1e1e2f);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.recommendation-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+.recommendation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px;
+}
+.recommendation-list li {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+.recommendation-btn {
+  background: var(--primary-color, #4a90e2);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.recommendation-btn:hover {
+  background: var(--primary-hover, #357ab8);
+}
+
+/* ===== AI Analytics ===== */
+.analytics-card {
+  background: var(--card-bg, #1e1e2f);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  text-align: center;
+}
+.analytics-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+.analytics-placeholder {
+  font-size: 2rem;
+  color: var(--accent-color, #4a90e2);
+  margin: 20px 0;
+}
+.analytics-desc {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+/* ===== AI Tools Panel ===== */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+.tool-btn {
+  background: var(--card-bg, #1e1e2f);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  color: #fff;
+}
+.tool-btn:hover {
+  background: var(--primary-color, #4a90e2);
+  transform: translateY(-2px);
+}
+
+/* ===== AI Voice Assistant ===== */
+.voice-widget {
+  background: var(--card-bg, #1e1e2f);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  text-align: center;
+}
+.voice-btn {
+  background: var(--primary-color, #4a90e2);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.voice-btn:hover {
+  background: var(--primary-hover, #357ab8);
+}
+.voice-status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+/* ===== AI Task Scheduler ===== */
+.task-card {
+  background: var(--card-bg, #1e1e2f);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.task-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px;
+}
+.task-list li {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+.task-btn {
+  background: var(--primary-color, #4a90e2);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.task-btn:hover {
+  background: var(--primary-hover, #357ab8);
+}
+
+/* ===== AI Performance Monitor ===== */
+.performance-card {
+  background: var(--card-bg, #1e1e2f);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+}
+.performance-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.performance-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-bottom: 15px;
+}
+.stat-item {
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+.stat-value {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--accent-color, #4a90e2);
+}
+.performance-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ===== AI Component Generator ===== */
+.generator-card {
+  background: var(--card-bg, #1e1e2f);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  text-align: center;
+}
+.generator-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.generator-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 12px;
+  background: #111;
+  color: #fff;
+}
+.generator-btn {
+  background: var(--primary-color, #4a90e2);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.generator-btn:hover {
+  background: var(--primary-hover, #357ab8);
+}
+.generator-hint {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ===== AI Security Checker ===== */
+.security-card {
+  background: var(--card-bg, #1e1e2f);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.security-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-primary); /* ✅ makes title visible */
+  font-weight: 600;
+}
+
+.security-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px;
+}
+
+.security-list li {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary); /* ✅ ensures list items are readable */
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.security-btn {
+  background: var(--primary-color, #4a90e2);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+.security-btn:hover {
+  background: var(--primary-hover, #357ab8);
+  transform: translateY(-2px); /* ✅ adds hover lift */
+}
+
+
+
+
+/* ---------- CHATBOT COMPONENT ---------- */
 .chatbot-container {
   background: var(--glass-bg);
   border: 1px solid var(--border-color-light);
@@ -483,9 +794,7 @@
   margin: 0;
 }
 
-/* ============================================================
-   PROMPT INPUT SECTION
-   ============================================================ */
+/* ---------- PROMPT INPUT SECTION ---------- */
 .prompt-input-container {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -629,9 +938,7 @@
   box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
 }
 
-/* ============================================================
-   AI DASHBOARD CARDS
-   ============================================================ */
+/* ---------- DASHBOARD CARDS ---------- */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -799,9 +1106,7 @@
   color: var(--neon-purple);
 }
 
-/* ============================================================
-   AI SEARCH BAR
-   ============================================================ */
+/* ---------- SEARCH BAR ---------- */
 .ai-search-container {
   background: var(--glass-bg);
   border: 1px solid var(--border-color-light);
@@ -869,9 +1174,7 @@
   text-align: center;
 }
 
-/* ============================================================
-   AI ASSISTANT PROFILE CARD
-   ============================================================ */
+/* ---------- ASSISTANT PROFILE CARD ---------- */
 .assistant-profile {
   background: var(--glass-bg);
   border: 1px solid var(--border-color-light);
@@ -960,7 +1263,7 @@
   font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 700;
-  color: var(--neon-blue);
+  color: var(--text-primary);
 }
 
 .profile-bio {
@@ -998,7 +1301,7 @@
 
 .profile-btn.primary {
   background: var(--gradient-glow);
-  color: #000;
+  color: var(--text-primary);
   box-shadow: var(--glow-md);
   min-width: 100%;
 }
@@ -1042,9 +1345,7 @@
   border-color: var(--neon-blue);
 }
 
-/* ============================================================
-   AI LOADER ANIMATIONS
-   ============================================================ */
+/* ---------- LOADER ANIMATIONS ---------- */
 .loaders-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1314,6 +1615,7 @@
   padding: var(--spacing-3xl) var(--spacing-xl);
   max-width: 1200px;
   margin: 0 auto;
+  color: #000;
 }
 
 .footer-col {
@@ -1373,6 +1675,7 @@
 .socials a {
   width: 36px;
   height: 36px;
+  margin-right: 12px;
   border-radius: 50%;
   background: rgba(0, 212, 255, 0.1);
   border: 1px solid rgba(0, 212, 255, 0.2);
@@ -1380,12 +1683,13 @@
   align-items: center;
   justify-content: center;
   color: var(--neon-blue);
-  transition: all var(--transition-fast);
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .socials a:hover {
   background: var(--neon-blue);
   color: #000;
+  transform: scale(1.1);
   box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
 }
 
@@ -1474,9 +1778,7 @@
   box-shadow: var(--glow-lg);
 }
 
-/* ============================================================
-   RESPONSIVE DESIGN
-   ============================================================ */
+/* ---------- RESPONSIVE DESIGN ---------- */
 
 /* Large Screens (1200px and up) */
 @media (min-width: 1200px) {

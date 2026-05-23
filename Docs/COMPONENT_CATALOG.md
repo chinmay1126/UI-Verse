@@ -1314,7 +1314,7 @@ Usage snippet:
   &lt;span class="brand"&gt;⬡ UIverse&lt;/span&gt;
 
   &lt;div class="profile-menu"&gt;
-    &lt;img src="avatar.jpg" alt="Avatar"&gt;
+    &lt;img src="https://i.pravatar.cc/40?img=12" alt="Avatar"&gt;
 
     &lt;div class="dropdown-menu"&gt;
       &lt;a href="#"&gt;Profile&lt;/a&gt;
@@ -3058,7 +3058,7 @@ Usage snippet:
         <button onclick="addToCollection('Image Card')">Add to My Collection</button>
       </div>
       <pre id="c6" class="code-block"><code>&lt;div class="image-card"&gt;
-  &lt;img src="your-image.jpg" alt="..."&gt;
+  &lt;img src="https://picsum.photos/500/300?random=30" alt="..."&gt;
   &lt;div class="image-card-body"&gt;
     &lt;span class="tag"&gt;Nature&lt;/span&gt;
     &lt;h4&gt;Scenic View&lt;/h4&gt;

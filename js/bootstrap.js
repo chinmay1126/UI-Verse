@@ -20,17 +20,38 @@ const Bootstrap = {
    * Register all available modules with the UIverse registry
    */
   registerModules() {
+    const dependencyManager = window.DependencyManager || globalThis.DependencyManager || null;
+    const dependenciesFor = (name) => (dependencyManager && typeof dependencyManager.getDependencies === 'function')
+      ? dependencyManager.getDependencies(name)
+      : [];
+
     // Register core modules
+    if (typeof DependencyManager !== 'undefined') {
+      UIverse.register('DependencyManager', DependencyManager, dependenciesFor('DependencyManager'));
+    }
+
     if (typeof Security !== 'undefined') {
-      UIverse.register('Security', Security);
+      UIverse.register('Security', Security, dependenciesFor('Security'));
+    }
+
+    if (typeof DesignTokens !== 'undefined') {
+      UIverse.register('DesignTokens', DesignTokens, dependenciesFor('DesignTokens'));
+    }
+
+    if (typeof ComponentVersioning !== 'undefined') {
+      UIverse.register('ComponentVersioning', ComponentVersioning, dependenciesFor('ComponentVersioning'));
     }
 
     if (typeof ComponentsRegistry !== 'undefined') {
-      UIverse.register('ComponentsRegistry', ComponentsRegistry);
+      UIverse.register('ComponentsRegistry', ComponentsRegistry, dependenciesFor('ComponentsRegistry'));
+    }
+
+    if (typeof ComponentDiscovery !== 'undefined') {
+      UIverse.register('ComponentDiscovery', ComponentDiscovery, dependenciesFor('ComponentDiscovery'));
     }
 
     if (typeof ComponentIndex !== 'undefined') {
-      UIverse.register('ComponentIndex', ComponentIndex);
+      UIverse.register('ComponentIndex', ComponentIndex, dependenciesFor('ComponentIndex'));
     }
 
     // Register feature modules (with optional conditional initialization)
@@ -47,15 +68,15 @@ const Bootstrap = {
     }
 
     if (typeof Sidebar !== 'undefined') {
-      UIverse.register('Sidebar', Sidebar);
+      UIverse.register('Sidebar', Sidebar, { domSelector: '.sidebar' });
     }
 
     if (typeof Search !== 'undefined') {
-      UIverse.register('Search', Search, ['ComponentIndex']);
+      UIverse.register('Search', Search, dependenciesFor('Search'));
     }
 
     if (typeof Theme !== 'undefined') {
-      UIverse.register('Theme', Theme);
+      UIverse.register('Theme', Theme, dependenciesFor('Theme'));
     }
 
     if (typeof Scroll !== 'undefined') {
@@ -67,7 +88,7 @@ const Bootstrap = {
     }
 
     if (typeof Sandbox !== 'undefined') {
-      UIverse.register('Sandbox', Sandbox);
+      UIverse.register('Sandbox', Sandbox, { domSelector: '.component-card' });
     }
 
     if (typeof Accessibility !== 'undefined') {
@@ -80,7 +101,7 @@ const Bootstrap = {
 
 
     if (typeof CommandPalette !== 'undefined') {
-      UIverse.register('CommandPalette', CommandPalette, ['ComponentIndex']);
+      UIverse.register('CommandPalette', CommandPalette, dependenciesFor('CommandPalette'));
     }
 
     if (typeof URLStateManager !== 'undefined') {
@@ -88,11 +109,11 @@ const Bootstrap = {
     }
 
     if (typeof ProfileEditor !== 'undefined') {
-      UIverse.register('ProfileEditor', ProfileEditor);
+      UIverse.register('ProfileEditor', ProfileEditor, { domSelector: '.btnn' });
     }
 
     if (typeof ComponentGallery !== 'undefined') {
-      UIverse.register('ComponentGallery', ComponentGallery);
+      UIverse.register('ComponentGallery', ComponentGallery, dependenciesFor('ComponentGallery'), { domSelector: '.component-card' });
     }
 
     if (typeof Favorites !== 'undefined') {
@@ -141,40 +162,11 @@ const Bootstrap = {
     // Register all modules
     this.registerModules();
 
-    // Initialize only modules with required DOM elements
-    this.initConditionalModules();
-
     // Initialize all registered modules (with dependencies handled by registry)
     const report = UIverse.initAll();
     
     this.initialized = true;
     this.logStatus(report);
-  },
-
-  /**
-   * Initialize only modules that have required DOM elements
-   * This prevents errors from modules expecting specific page elements
-   */
-  initConditionalModules() {
-    // Ensure TutorialMode exists even if feature ordering changes
-    if (typeof TutorialMode === 'undefined') {
-      // no-op
-    }
-    // Skip Sidebar if element not present
-    if (!document.querySelector(".sidebar")) {
-      UIverse.modules['Sidebar'] && (UIverse.modules['Sidebar'].module.init = () => {});
-    }
-
-    // Skip Sandbox if component cards not present
-    if (!document.querySelector(".component-card")) {
-      UIverse.modules['Sandbox'] && (UIverse.modules['Sandbox'].module.init = () => {});
-      UIverse.modules['ComponentGallery'] && (UIverse.modules['ComponentGallery'].module.init = () => {});
-    }
-
-    // Skip ProfileEditor if profile button not present
-    if (!document.querySelector('.btnn')) {
-      UIverse.modules['ProfileEditor'] && (UIverse.modules['ProfileEditor'].module.init = () => {});
-    }
   },
 
   /**

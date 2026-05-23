@@ -1046,3 +1046,322 @@ body{
 @media(max-width:768px){
   .widgets-grid { grid-template-columns: 1fr; }
 }
+
+/* =========================================================
+   COPY BUTTON & TOAST STYLES
+   ========================================================= */
+.widget-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.widget-info-text {
+  flex: 1;
+}
+.widget-copy-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.widget-copy-btn:hover {
+  background: var(--gradient-main, linear-gradient(90deg, #38bdf8, #818cf8));
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #10b981;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  animation: slideInRight 0.3s forwards, fadeOut 0.3s forwards 2.7s;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* =========================================================
+   NEW WIDGETS
+   ========================================================= */
+
+/* Weather Widget */
+.weather-widget {
+  background: linear-gradient(to bottom, #1e3a8a, #0f172a);
+  border-radius: 16px;
+  padding: 24px;
+  color: #fff;
+}
+.weather-current {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.weather-icon {
+  font-size: 48px;
+  color: #fbbf24;
+}
+.weather-temp {
+  font-size: 36px;
+  font-weight: 700;
+}
+.weather-temp span {
+  font-size: 18px;
+  vertical-align: super;
+}
+.weather-desc {
+  font-size: 13px;
+  color: #93c5fd;
+  line-height: 1.4;
+}
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 16px;
+}
+.forecast-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+.forecast-day i {
+  font-size: 18px;
+  color: #fbbf24;
+}
+.forecast-day i.fa-cloud { color: #94a3b8; }
+.forecast-day i.fa-cloud-rain { color: #60a5fa; }
+
+/* Music Player Widget */
+.music-player-widget {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.music-cover {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.music-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.music-info {
+  flex: 1;
+}
+.music-info h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #f1f5f9;
+}
+.music-info p {
+  font-size: 12px;
+  color: #94a3b8;
+}
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.music-controls button {
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.music-controls button:hover {
+  color: #fff;
+}
+.music-controls .play-btn {
+  width: 36px;
+  height: 36px;
+  background: #38bdf8;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Crypto Ticker Widget */
+.crypto-widget {
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 20px;
+}
+.crypto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.crypto-coin {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.crypto-icon {
+  font-size: 28px;
+}
+.crypto-icon.btc { color: #f7931a; }
+.coin-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+}
+.coin-sym {
+  font-size: 12px;
+  color: #64748b;
+}
+.crypto-price {
+  text-align: right;
+}
+.price-val {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+}
+.price-change {
+  font-size: 12px;
+}
+.price-change.positive { color: #10b981; }
+
+/* Smart Home Widget */
+.smart-home-widget {
+  background: transparent;
+}
+.sh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.sh-item {
+  background: #1e293b;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sh-item:hover {
+  background: rgba(255,255,255,0.05);
+}
+.sh-item i {
+  font-size: 20px;
+  color: #64748b;
+}
+.sh-item span {
+  font-size: 13px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+.sh-item.active {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+.sh-item.active i {
+  color: #38bdf8;
+}
+.sh-item.active span {
+  color: #fff;
+}
+
+/* Calendar Widget */
+.calendar-widget {
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.cal-header i {
+  cursor: pointer;
+  color: #64748b;
+}
+.cal-header i:hover { color: #fff; }
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+  font-size: 12px;
+}
+.day-name {
+  color: #64748b;
+  margin-bottom: 8px;
+}
+.day {
+  padding: 6px 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #cbd5e1;
+}
+.day:hover { background: rgba(255,255,255,0.1); }
+.day.muted { color: #334155; }
+.day.active {
+  background: #38bdf8;
+  color: #fff;
+  font-weight: 600;
+}
+.day.has-event {
+  position: relative;
+}
+.day.has-event::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #f43f5e;
+  border-radius: 50%;
+}

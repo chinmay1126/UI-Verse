@@ -35,6 +35,14 @@ jobs:
         run: |
           npm run lint:js
 
+      - name: Dependency graph check
+        run: |
+          npm run dependencies:check
+
+      - name: Component versioning metadata check
+        run: |
+          npm run components:version:check
+
       - name: Link validation (linkinator)
         run: |
           npm run link-check
