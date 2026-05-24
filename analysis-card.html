@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Advanced Analytics Card</title>
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="analysis-card.css" />
+</head>
+
+<body>
+
+  <div class="analytics-card">
+
+    <!-- HEADER -->
+    <div class="card-header">
+
+      <div class="title-section">
+        <span class="tag">Dashboard</span>
+        <h2>Analytics Overview</h2>
+        <p>Track your weekly business growth</p>
+      </div>
+
+      <button class="menu-btn">
+        <i class="fa-solid fa-ellipsis"></i>
+      </button>
+
+    </div>
+
+    <!-- TOP STATS -->
+    <div class="stats-section">
+
+      <div class="stat-box revenue">
+        <div class="icon">
+          <i class="fa-solid fa-dollar-sign"></i>
+        </div>
+
+        <div class="stat-info">
+          <span class="label">Revenue</span>
+          <h3>$12.4K</h3>
+
+          <div class="growth positive">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            +12%
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-box users">
+        <div class="icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div class="stat-info">
+          <span class="label">Users</span>
+          <h3>8,450</h3>
+
+          <div class="growth positive">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            +8%
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-box bounce">
+        <div class="icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+
+        <div class="stat-info">
+          <span class="label">Bounce Rate</span>
+          <h3>32%</h3>
+
+          <div class="growth negative">
+            <i class="fa-solid fa-arrow-trend-down"></i>
+            -3%
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PROGRESS SECTION -->
+    <div class="progress-wrapper">
+
+      <div class="progress-item">
+        <div class="progress-top">
+          <span>Monthly Target</span>
+          <span>78%</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill target-fill"></div>
+        </div>
+      </div>
+
+      <div class="progress-item">
+        <div class="progress-top">
+          <span>Customer Growth</span>
+          <span>65%</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill customer-fill"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-container">
+
+      <div class="chart-header">
+        <h3>Weekly Traffic</h3>
+
+        <div class="chart-badge">
+          Live
+        </div>
+      </div>
+
+      <div class="chart-section">
+
+        <div class="chart-item">
+          <div class="bar" style="height: 50%;"></div>
+          <span>Mon</span>
+        </div>
+
+        <div class="chart-item">
+          <div class="bar" style="height: 75%;"></div>
+          <span>Tue</span>
+        </div>
+
+        <div class="chart-item">
+          <div class="bar active" style="height: 100%;"></div>
+          <span>Wed</span>
+        </div>
+
+        <div class="chart-item">
+          <div class="bar" style="height: 65%;"></div>
+          <span>Thu</span>
+        </div>
+
+        <div class="chart-item">
+          <div class="bar" style="height: 40%;"></div>
+          <span>Fri</span>
+        </div>
+
+        <div class="chart-item">
+          <div class="bar" style="height: 90%;"></div>
+          <span>Sat</span>
+        </div>
+
+        <div class="chart-item">
+          <div class="bar" style="height: 70%;"></div>
+          <span>Sun</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ACTIVITY -->
+    <div class="activity-section">
+
+      <div class="activity-header">
+        <h3>Recent Activity</h3>
+      </div>
+
+      <div class="activity-list">
+
+        <div class="activity-item">
+          <div class="activity-icon green">
+            <i class="fa-solid fa-check"></i>
+          </div>
+
+          <div class="activity-text">
+            <h4>Payment Received</h4>
+            <p>$1,240 from client</p>
+          </div>
+
+          <span class="time">2m ago</span>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon blue">
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
+
+          <div class="activity-text">
+            <h4>New User Joined</h4>
+            <p>245 registrations today</p>
+          </div>
+
+          <span class="time">10m ago</span>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon orange">
+            <i class="fa-solid fa-chart-column"></i>
+          </div>
+
+          <div class="activity-text">
+            <h4>Report Generated</h4>
+            <p>Weekly report updated</p>
+          </div>
+
+          <span class="time">1h ago</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+
+      <button id="refreshBtn" class="refresh-btn">
+        <i class="fa-solid fa-rotate"></i>
+        Refresh Data
+      </button>
+
+      <button class="export-btn">
+        <i class="fa-solid fa-download"></i>
+        Export
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="analysis-card.js"></script>
+
+</body>
+</html>

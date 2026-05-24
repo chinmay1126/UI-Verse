@@ -1023,3 +1023,125 @@ body {
 @media(max-width:992px){
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
+
+/* ================= MODERN TABLES ================= */
+
+.modern-table,
+.glass-table,
+.ecommerce-table,
+.premium-table,
+.neon-table {
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+/* USER CELL */
+
+.table-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.table-user img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* BADGES */
+
+.badge {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge.success {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.badge.active {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.badge.pending {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+}
+
+.badge.danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* POSITIVE / NEGATIVE */
+
+.positive {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.negative {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* GLASS EFFECT */
+
+.glass-table {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+}
+
+/* PREMIUM TABLE */
+
+.premium-table tbody tr:hover {
+  background: rgba(99,102,241,0.12);
+  transition: 0.3s ease;
+}
+
+/* NEON TABLE */
+
+.neon-table {
+  border: 1px solid rgba(0,255,255,0.2);
+  box-shadow: 0 0 25px rgba(0,255,255,0.08);
+}
+
+.neon-table thead {
+  background: linear-gradient(
+    90deg,
+    #0f172a,
+    #111827
+  );
+}
+
+/* ECOMMERCE */
+
+.ecommerce-table tbody tr {
+  transition: 0.25s ease;
+}
+
+.ecommerce-table tbody tr:hover {
+  transform: scale(1.01);
+  background: rgba(255,255,255,0.04);
+}
+
+/* TABLE ROW HOVER */
+
+.ui-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.ui-table tbody tr:hover {
+  background: rgba(255,255,255,0.03);
+}

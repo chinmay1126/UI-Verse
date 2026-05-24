@@ -1538,6 +1538,21 @@ body{
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; }
 .footer-bottom p { color: #6a7a94; font-size: 13px; }
 .footer-bottom .heart { color: #ef4444; }
+.footer-links ul li a {  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block; }
+
+  .footer-links  ul li a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  transform: translateY(-2px);
+  transform: translateX(3px);
+  text-shadow: 0 0 8px rgba(235, 104, 53, 0.4);
+}
 
 /* =========================================================
    RESPONSIVE

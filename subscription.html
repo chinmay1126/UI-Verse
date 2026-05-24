@@ -344,6 +344,77 @@
   </div>
 </aside>
 
+<div class="pricing-toggle">
+  <button class="toggle active" onclick="setBilling('monthly')">Monthly</button>
+  <button class="toggle" onclick="setBilling('annual')">
+    Annual <span>Save 20%</span>
+  </button>
+</div>
+
+<div class="pricing-grid">
+
+  <!-- Starter -->
+  <div class="pricing-card">
+    <h3>Starter</h3>
+    <p>For individuals exploring the platform</p>
+
+    <div class="price">
+      <span id="starter-price" data-month="$19" data-year="$15">$19</span>
+      <small>/mo</small>
+    </div>
+
+    <ul>
+      <li>✔ 5 Projects</li>
+      <li>✔ Community Support</li>
+      <li>✔ Basic Analytics</li>
+    </ul>
+
+    <button class="btn secondary">Get Started</button>
+  </div>
+
+  <!-- Pro (Highlighted) -->
+  <div class="pricing-card featured">
+    <div class="badge">Most Popular</div>
+
+    <h3>Professional</h3>
+    <p>Perfect for growing teams</p>
+
+    <div class="price">
+      <span id="pro-price" data-month="$49" data-year="$39">$49</span>
+      <small>/mo</small>
+    </div>
+
+    <ul>
+      <li>✔ Unlimited Projects</li>
+      <li>✔ Priority Support</li>
+      <li>✔ Advanced Analytics</li>
+      <li>✔ Custom Branding</li>
+    </ul>
+
+    <button class="btn primary">Choose Plan</button>
+  </div>
+
+  <!-- Enterprise -->
+  <div class="pricing-card">
+    <h3>Enterprise</h3>
+    <p>For large scale systems</p>
+
+    <div class="price">
+      <span id="enterprise-price" data-month="$99" data-year="$79">$99</span>
+      <small>/mo</small>
+    </div>
+
+    <ul>
+      <li>✔ Dedicated Engineer</li>
+      <li>✔ SLA Guarantee</li>
+      <li>✔ Custom Infrastructure</li>
+    </ul>
+
+    <button class="btn secondary">Contact Sales</button>
+  </div>
+
+</div>
+
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
@@ -1065,6 +1136,24 @@
       closeUpgradeModal();
     }
   }
+
+  function setBilling(type) {
+  const isAnnual = type === "annual";
+
+  document.querySelectorAll("[id$='-price']").forEach(el => {
+    el.textContent = isAnnual
+      ? el.dataset.year
+      : el.dataset.month;
+  });
+
+  document.querySelectorAll(".toggle").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  event.target.classList.add("active");
+
+  showToast(isAnnual ? "Annual plan selected 🎉" : "Monthly plan selected");
+}
 </script>
 
 </body>
