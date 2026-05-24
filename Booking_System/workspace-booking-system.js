@@ -629,3 +629,39 @@ dateElement.innerHTML =
    ${new Date().toLocaleDateString("en-US", options)}`;
 
 topbar.appendChild(dateElement);
+
+// ================= BOOKING MODAL =================
+const modal = document.getElementById("bookingModal");
+
+document.querySelectorAll(".book-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+
+// ================= NOTIFICATION PANEL =================
+const bell = document.querySelector(".notification-btn");
+const panel = document.getElementById("notificationPanel");
+
+bell.addEventListener("click", () => {
+  panel.classList.toggle("active");
+});
+
+
+// ================= SEARCH FILTER =================
+const searchInput = document.querySelector(".search-box input");
+
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+  document.querySelectorAll(".workspace-card").forEach(card => {
+    const title = card.querySelector("h3").innerText.toLowerCase();
+    card.style.display = title.includes(value) ? "block" : "none";
+  });
+});
