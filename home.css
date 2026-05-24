@@ -996,6 +996,7 @@ body.dark-mode .feature-card:hover {
   height: 2px;
   background: var(--accent);
   transition: width 0.3s ease;
+  transition: color var(--transition);
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
@@ -1029,6 +1030,21 @@ body.dark-mode .feature-card:hover {
 .socials a:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 0 12px rgba(235, 104, 53, 0.35);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent);
 }
 
 .footer-col ul li a:hover::after {
