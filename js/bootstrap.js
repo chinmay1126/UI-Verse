@@ -3,15 +3,19 @@
  * 
  * Entry point for all JavaScript functionality
  * Registers and initializes all features using the UIverse registry system
- * with automatic dependency management
+ * with automatic dependency management, lazy loading, and duplicate prevention
  * 
  * All feature modules must be loaded before this script:
  * - js/registry.js (UIverse registry)
  * - js/core/*.js (core modules)
  * - js/features/*.js (feature modules)
+ * 
+ * Lazy loading is handled by js/core/lazy-loader.js
+ * Duplicate prevention via js/core/script-loader.js
  */
 
 const Bootstrap = {
+  initialized: false,
   /**
    * Register all available modules with the UIverse registry
    */
@@ -64,7 +68,7 @@ const Bootstrap = {
     }
 
     if (typeof Sidebar !== 'undefined') {
-      UIverse.register('Sidebar', Sidebar);
+      UIverse.register('Sidebar', Sidebar, { domSelector: '.sidebar' });
     }
 
     if (typeof Search !== 'undefined') {
@@ -84,12 +88,17 @@ const Bootstrap = {
     }
 
     if (typeof Sandbox !== 'undefined') {
-      UIverse.register('Sandbox', Sandbox);
+      UIverse.register('Sandbox', Sandbox, { domSelector: '.component-card' });
     }
 
     if (typeof Accessibility !== 'undefined') {
       UIverse.register('Accessibility', Accessibility);
     }
+
+    if (typeof AccessibilityChecker !== 'undefined') {
+      UIverse.register('AccessibilityChecker', AccessibilityChecker);
+    }
+
 
     if (typeof CommandPalette !== 'undefined') {
       UIverse.register('CommandPalette', CommandPalette, dependenciesFor('CommandPalette'));
@@ -100,11 +109,35 @@ const Bootstrap = {
     }
 
     if (typeof ProfileEditor !== 'undefined') {
-      UIverse.register('ProfileEditor', ProfileEditor);
+      UIverse.register('ProfileEditor', ProfileEditor, { domSelector: '.btnn' });
     }
 
     if (typeof ComponentGallery !== 'undefined') {
-      UIverse.register('ComponentGallery', ComponentGallery, dependenciesFor('ComponentGallery'));
+      UIverse.register('ComponentGallery', ComponentGallery, dependenciesFor('ComponentGallery'), { domSelector: '.component-card' });
+    }
+
+    if (typeof Favorites !== 'undefined') {
+      UIverse.register('Favorites', Favorites);
+    }
+
+    if (typeof DevicePreview !== 'undefined') {
+      UIverse.register('DevicePreview', DevicePreview);
+    }
+
+    if (typeof KeyboardShortcuts !== 'undefined') {
+      UIverse.register('KeyboardShortcuts', KeyboardShortcuts);
+    }
+
+    if (typeof Download !== 'undefined') {
+      UIverse.register('Download', Download);
+    }
+
+    if (typeof Recent !== 'undefined') {
+      UIverse.register('Recent', Recent);
+    }
+
+    if (typeof TutorialMode !== 'undefined') {
+      UIverse.register('TutorialMode', TutorialMode);
     }
 
     if (window.UIVERSE_DEBUG) {
@@ -112,10 +145,15 @@ const Bootstrap = {
     }
   },
 
-  /**
-   * Initialize all features with conditional DOM checks
-   */
+/**
+    * Initialize all features with conditional DOM checks
+    */
   init() {
+    if (this.initialized) {
+      console.warn('[Bootstrap] Already initialized, skipping duplicate init');
+      return;
+    }
+    
     if (!window.UIverse) {
       console.error('[Bootstrap] UIverse registry not found. Make sure js/registry.js is loaded first.');
       return;
@@ -124,35 +162,11 @@ const Bootstrap = {
     // Register all modules
     this.registerModules();
 
-    // Initialize only modules with required DOM elements
-    this.initConditionalModules();
-
     // Initialize all registered modules (with dependencies handled by registry)
     const report = UIverse.initAll();
-
+    
+    this.initialized = true;
     this.logStatus(report);
-  },
-
-  /**
-   * Initialize only modules that have required DOM elements
-   * This prevents errors from modules expecting specific page elements
-   */
-  initConditionalModules() {
-    // Skip Sidebar if element not present
-    if (!document.querySelector(".sidebar")) {
-      UIverse.modules['Sidebar'] && (UIverse.modules['Sidebar'].module.init = () => {});
-    }
-
-    // Skip Sandbox if component cards not present
-    if (!document.querySelector(".component-card")) {
-      UIverse.modules['Sandbox'] && (UIverse.modules['Sandbox'].module.init = () => {});
-      UIverse.modules['ComponentGallery'] && (UIverse.modules['ComponentGallery'].module.init = () => {});
-    }
-
-    // Skip ProfileEditor if profile button not present
-    if (!document.querySelector('.btnn')) {
-      UIverse.modules['ProfileEditor'] && (UIverse.modules['ProfileEditor'].module.init = () => {});
-    }
   },
 
   /**
@@ -170,9 +184,15 @@ const Bootstrap = {
 };
 
 /**
- * Start bootstrap on DOM ready
- */
+  * Start bootstrap on DOM ready
+  */
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize lazy loader for dynamic imports
+  if (typeof LazyLoader !== 'undefined') {
+    LazyLoader.init();
+    console.log('[Bootstrap] Lazy loader initialized');
+  }
+  
   Bootstrap.init();
 });
 

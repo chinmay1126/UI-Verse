@@ -63,3 +63,21 @@ window.addEventListener("scroll",()=>{
   );
 
 });
+
+/* ==============================
+Filter Scearch
+================================*/
+
+const input = document.getElementById("blogSearch");
+input.addEventListener("input", function () {
+  const filter = input.value.toLowerCase();
+  const cards = document.querySelectorAll(".blog-card");
+  cards.forEach(card => {
+    const data = card.textContent.toLowerCase();
+    if (data.includes(filter)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
