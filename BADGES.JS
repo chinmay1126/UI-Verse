@@ -49,3 +49,14 @@ searchInput.addEventListener("input",e=>{
     });
 
 });
+
+const badgeSearchInput =document.getElementById("badgesSearch");
+badgeSearchInput.addEventListener("input", function(){
+  const filter =badgeSearchInput.value.toLowerCase();
+  const cards =document.querySelectorAll(".badge-card");
+  cards.forEach(card =>{
+    const data=card.textContent.toLowerCase();
+    if (data.includes(filter)){card.style.display ="";}
+    else{card.style.display ="none";}
+  });
+});

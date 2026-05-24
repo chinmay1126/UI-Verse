@@ -1,37 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music Player UI</title>
-  <link rel="stylesheet" href="player.css">
+  <meta charset="UTF-8" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-inline' 'unsafe-hashes'; style-src 'self' https: 'unsafe-inline' 'unsafe-hashes';"
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NeoBeat Music Player</title>
+
+  <!-- GOOGLE FONT -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="player.css" />
 </head>
+
 <body>
+
+  <div class="bg-blur"></div>
 
   <div class="music-player">
 
-    <div class="album-cover">
-      IMAGE
+    <!-- TOP -->
+    <div class="top-bar">
+      <i class="fa-solid fa-chevron-left"></i>
+
+      <span>Now Playing</span>
+
+      <i class="fa-solid fa-ellipsis"></i>
     </div>
 
+    <!-- ALBUM -->
+    <div class="album-wrapper">
+
+      <div class="vinyl-ring"></div>
+
+      <img
+        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop"
+        alt="Album Cover"
+        class="album-cover"
+      />
+
+    </div>
+
+    <!-- SONG DETAILS -->
     <div class="song-details">
       <h2>Dream Waves</h2>
+
       <p>Unknown Artist</p>
     </div>
 
-    <div class="progress-container">
-      <div class="progress-bar"></div>
+    <!-- PROGRESS -->
+    <div class="music-progress">
+
+      <div class="time">
+        <span>1:24</span>
+        <span>3:45</span>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-bar">
+          <span class="progress-dot"></span>
+        </div>
+      </div>
+
     </div>
 
+    <!-- CONTROLS -->
     <div class="controls">
-      <button id="prev">⏮</button>
-      <button id="play">▶</button>
-      <button id="next">⏭</button>
+
+      <button class="control-btn">
+        <i class="fa-solid fa-backward-step"></i>
+      </button>
+
+      <button class="play-btn" id="playBtn">
+        <i class="fa-solid fa-play"></i>
+      </button>
+
+      <button class="control-btn">
+        <i class="fa-solid fa-forward-step"></i>
+      </button>
+
+    </div>
+
+    <!-- EXTRA -->
+    <div class="bottom-options">
+
+      <div class="option">
+        <i class="fa-solid fa-heart"></i>
+      </div>
+
+      <div class="option">
+        <i class="fa-solid fa-music"></i>
+      </div>
+
+      <div class="option">
+        <i class="fa-solid fa-volume-high"></i>
+      </div>
+
     </div>
 
   </div>
 
   <script src="player.js"></script>
+
 </body>
 </html>

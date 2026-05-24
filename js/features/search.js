@@ -19,6 +19,10 @@ const Search = {
   initFilter() {
     if (this._state.listener) return;
 
+    if (window.ComponentGallery && document.querySelector('.component-card')) {
+      return;
+    }
+
     const searchInput = getElement("searchInput");
     if (!searchInput) return;
 
@@ -283,3 +287,5 @@ const Search = {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = Search;
 }
+
+window.Search = Search;

@@ -1,33 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
   <title>Reaction Emoji Picker</title>
-  <link rel="stylesheet" href="emoji.css">
+
+  <link rel="stylesheet" href="emoji.css" />
 </head>
+
 <body>
 
-<div class="container">
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
 
-  <h1>Reaction Emoji Picker</h1>
+  <div class="container">
 
-  <div class="emoji-box">
-    <button class="emoji">😀</button>
-    <button class="emoji">😍</button>
-    <button class="emoji">😂</button>
-    <button class="emoji">😎</button>
-    <button class="emoji">🔥</button>
-    <button class="emoji">👍</button>
+    <div class="top-badge">
+      ✨ Interactive Reaction Picker
+    </div>
+
+    <h1>Reaction Emoji Picker</h1>
+
+    <p class="subtitle">
+      Choose your mood and react instantly with animated emojis.
+    </p>
+
+    <div class="emoji-box">
+
+      <button class="emoji active">
+        <span>😀</span>
+      </button>
+
+      <button class="emoji">
+        <span>😍</span>
+      </button>
+
+      <button class="emoji">
+        <span>😂</span>
+      </button>
+
+      <button class="emoji">
+        <span>😎</span>
+      </button>
+
+      <button class="emoji">
+        <span>🔥</span>
+      </button>
+
+      <button class="emoji">
+        <span>👍</span>
+      </button>
+
+      <button class="emoji">
+        <span>🎉</span>
+      </button>
+
+      <button class="emoji">
+        <span>🤯</span>
+      </button>
+
+    </div>
+
+    <div class="preview-card">
+
+      <div class="preview-label">
+        Selected Reaction
+      </div>
+
+      <div class="emoji-preview" id="selectedEmoji">
+        😀
+      </div>
+
+      <div class="reaction-text" id="reactionText">
+        Happy Mood
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="preview">
-    Selected Reaction:
-    <span id="selectedEmoji">😀</span>
-  </div>
+  <script src="emoji.js"></script>
 
-</div>
-
-<script src="emoji.js"></script>
 </body>
 </html>

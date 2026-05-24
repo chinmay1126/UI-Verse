@@ -1,254 +1,725 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Clock UI</title>
 
-  <title>UIverse Clock Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Icons -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="clock.css">
 </head>
 
 <body>
 
-  <!-- ================= SIDEBAR ================= -->
+<div>
 
-  <aside class="sidebar">
+<h1>
+⏰ Advanced Clock Studio
+</h1>
 
-    <div class="logo">
-      ⬡ UIverse
-    </div>
+<p>
+Modern Analog Clock, Digital Clock, Stopwatch, Timer and World Clock
+</p>
 
-    <nav>
+<hr>
 
-      <a href="#" class="active">
-        <i class="fa-solid fa-clock"></i>
-        Clock
-      </a>
+<!-- ANALOG CLOCK -->
 
-      <a href="#">
-        <i class="fa-solid fa-stopwatch"></i>
-        Stopwatch
-      </a>
+<div>
 
-      <a href="#">
-        <i class="fa-solid fa-hourglass-half"></i>
-        Timer
-      </a>
+<h2>
+🕒 Analog Clock
+</h2>
 
-      <a href="#">
-        <i class="fa-solid fa-globe"></i>
-        World Time
-      </a>
+<div id="analogClock">
 
-    </nav>
+<div id="hourHand">Hour Hand</div>
 
-  </aside>
+<div id="minuteHand">Minute Hand</div>
 
-  <!-- ================= MAIN ================= -->
+<div id="secondHand">Second Hand</div>
 
-  <main class="main">
+</div>
 
-    <!-- HERO -->
+</div>
 
-    <section class="hero">
+<hr>
 
-      <span class="hero-badge">
-        ⏰ Time Experience
-      </span>
+<!-- DIGITAL CLOCK -->
 
-      <h1>
-        Modern Clock Studio
-      </h1>
+<div>
 
-      <p>
-        Beautiful real-time analog & digital clocks with
-        smooth animations and modern glassmorphism UI.
-      </p>
+<h2>
+💻 Digital Clock
+</h2>
 
-    </section>
+<h1 id="digitalClock">
+00:00:00
+</h1>
 
-    <!-- ================= CLOCK GRID ================= -->
+<p id="dateText">
+Monday, January 1
+</p>
 
-    <section class="clock-grid">
+<p id="greeting">
+Good Evening
+</p>
 
-      <!-- ANALOG CLOCK -->
+</div>
 
-      <div class="clock-card">
+<hr>
 
-        <div class="card-header">
+<!-- STOPWATCH -->
 
-          <h2>
-            Analog Clock
-          </h2>
+<div>
 
-          <button class="theme-btn">
-            <i class="fa-solid fa-palette"></i>
-          </button>
+<h2>
+⏱ Stopwatch
+</h2>
 
-        </div>
+<h1 id="stopwatch">
+00:00:00
+</h1>
 
-        <div class="analog-clock">
+<button id="startBtn">
+Start
+</button>
 
-          <div class="center-dot"></div>
+<button id="pauseBtn">
+Pause
+</button>
 
-          <div class="hand hour" id="hourHand"></div>
-          <div class="hand minute" id="minuteHand"></div>
-          <div class="hand second" id="secondHand"></div>
+<button id="resetBtn">
+Reset
+</button>
 
-          <!-- NUMBERS -->
+</div>
 
-          <span class="num n12">12</span>
-          <span class="num n3">3</span>
-          <span class="num n6">6</span>
-          <span class="num n9">9</span>
+<hr>
 
-        </div>
+<!-- TIMER -->
 
-      </div>
+<div>
 
-      <!-- DIGITAL CLOCK -->
+<h2>
+⏳ Countdown Timer
+</h2>
 
-      <div class="clock-card">
+<input type="number"
+id="minutesInput"
+placeholder="Minutes">
 
-        <div class="card-header">
+<input type="number"
+id="secondsInput"
+placeholder="Seconds">
 
-          <h2>
-            Digital Clock
-          </h2>
+<h1 id="timerDisplay">
+00:00
+</h1>
+
+<button id="timerStart">
+Start
+</button>
 
-          <button class="theme-btn">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-          </button>
+<button id="timerPause">
+Pause
+</button>
 
-        </div>
+<button id="timerReset">
+Reset
+</button>
 
-        <div class="digital-wrapper">
+</div>
 
-          <div class="digital-time"
-          id="digitalClock">
+<hr>
 
-            00:00:00
+<!-- WORLD CLOCKS -->
 
-          </div>
+<div>
 
-          <div class="date"
-          id="dateText">
+<h2>
+🌍 World Clocks
+</h2>
 
-            Monday, Jan 1
+<h3>
+New York
+</h3>
 
-          </div>
+<p class="world-time"
+data-offset="-4">
+--:--:--
+</p>
 
-        </div>
+<h3>
+London
+</h3>
 
-      </div>
+<p class="world-time"
+data-offset="1">
+--:--:--
+</p>
 
-    </section>
+<h3>
+Tokyo
+</h3>
 
-    <!-- ================= WORLD CLOCKS ================= -->
+<p class="world-time"
+data-offset="9">
+--:--:--
+</p>
 
-    <section class="world-section">
+<h3>
+Kolkata
+</h3>
 
-      <div class="section-header">
+<p class="world-time"
+data-offset="5.5">
+--:--:--
+</p>
 
-        <h2>
-          🌍 World Clocks
-        </h2>
+</div>
 
-        <p>
-          Multiple timezone tracking.
-        </p>
+<hr>
 
-      </div>
+<!-- LIVE INFO -->
 
-      <div class="world-grid">
+<div>
 
-        <div class="world-card">
+<h2>
+📊 Live Stats
+</h2>
 
-          <h3>
-            New York
-          </h3>
+<p>
+Timezone:
+<span id="timezone">
+UTC
+</span>
+</p>
 
-          <span class="timezone">
-            UTC -4
-          </span>
+<p>
+Milliseconds:
+<span id="milliseconds">
+000
+</span>
+</p>
 
-          <div class="world-time"
-          data-offset="-4">
-            --:--:--
-          </div>
+<p>
+Day Progress:
+<span id="dayProgress">
+0%
+</span>
+</p>
 
-        </div>
+<p>
+Week Day:
+<span id="weekday">
+Mon
+</span>
+</p>
 
-        <div class="world-card">
+</div>
 
-          <h3>
-            London
-          </h3>
+</div>
 
-          <span class="timezone">
-            UTC +1
-          </span>
+<!-- ALARM CLOCK -->
 
-          <div class="world-time"
-          data-offset="1">
-            --:--:--
-          </div>
+<div class="card">
 
-        </div>
+<div class="header">
 
-        <div class="world-card">
+<h2>
+⏰ Alarm Clock
+</h2>
 
-          <h3>
-            Tokyo
-          </h3>
+<button class="icon-btn">
+<i class="fa-solid fa-bell"></i>
+</button>
 
-          <span class="timezone">
-            UTC +9
-          </span>
+</div>
 
-          <div class="world-time"
-          data-offset="9">
-            --:--:--
-          </div>
+<div class="alarm">
 
-        </div>
+<input type="time" id="alarmTime">
 
-        <div class="world-card">
+<button class="control-btn"
+id="setAlarmBtn">
 
-          <h3>
-            Kolkata
-          </h3>
+Set Alarm
 
-          <span class="timezone">
-            UTC +5:30
-          </span>
+</button>
 
-          <div class="world-time"
-          data-offset="5.5">
-            --:--:--
-          </div>
+<h3 id="alarmStatus">
+No Alarm Set
+</h3>
 
-        </div>
+</div>
 
-      </div>
+</div>
 
-    </section>
+<!-- POMODORO CLOCK -->
 
-  </main>
+<div class="card">
 
-  <!-- JS -->
+<div class="header">
 
-  <script src="clock.js"></script>
+<h2>
+🍅 Pomodoro Timer
+</h2>
+
+<button class="icon-btn">
+<i class="fa-solid fa-fire"></i>
+</button>
+
+</div>
+
+<div class="pomodoro">
+
+<h1 id="pomodoroDisplay">
+25:00
+</h1>
+
+<div class="controls">
+
+<button class="control-btn"
+id="pomodoroStart">
+
+Start
+
+</button>
+
+<button class="control-btn"
+id="pomodoroPause">
+
+Pause
+
+</button>
+
+<button class="control-btn"
+id="pomodoroReset">
+
+Reset
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MILLISECOND CLOCK -->
+
+<div class="card">
+
+<div class="header">
+
+<h2>
+⚡ Millisecond Clock
+</h2>
+
+<button class="icon-btn">
+<i class="fa-solid fa-gauge-high"></i>
+</button>
+
+</div>
+
+<div class="digital">
+
+<h1 id="msClock">
+00:00:00:000
+</h1>
+
+<p>
+Ultra Precision Real-Time Clock
+</p>
+
+</div>
+
+</div>
+
+<!-- FUTURE COUNTDOWN -->
+
+<div class="card">
+
+<div class="header">
+
+<h2>
+🚀 Event Countdown
+</h2>
+
+<button class="icon-btn">
+<i class="fa-solid fa-rocket"></i>
+</button>
+
+</div>
+
+<div class="timer">
+
+<input type="date"
+id="futureDate">
+
+<h1 id="futureCountdown">
+0 Days
+</h1>
+
+<button class="control-btn"
+id="startCountdown">
+
+Start Countdown
+
+</button>
+
+</div>
+
+</div>
+
+<!-- SUN / MOON CLOCK -->
+
+<div class="card">
+
+<div class="header">
+
+<h2>
+🌞 Day & Night
+</h2>
+
+<button class="icon-btn">
+<i class="fa-solid fa-cloud-sun"></i>
+</button>
+
+</div>
+
+<div class="digital">
+
+<h1 id="dayNight">
+Day
+</h1>
+
+<p id="sunMessage">
+Sunlight Time
+</p>
+
+</div>
+
+</div>
+
+<!-- BINARY CLOCK -->
+
+<div class="card">
+
+<div class="header">
+
+<h2>
+💻 Binary Clock
+</h2>
+
+<button class="icon-btn">
+<i class="fa-solid fa-code"></i>
+</button>
+
+</div>
+
+<div class="digital">
+
+<h1 id="binaryClock">
+000000 : 000000 : 000000
+</h1>
+
+<p>
+Hours : Minutes : Seconds
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* DIGITAL CLOCK */
+
+const digitalClock =
+document.getElementById("digitalClock");
+
+const dateText =
+document.getElementById("dateText");
+
+const greeting =
+document.getElementById("greeting");
+
+function updateClock(){
+
+const now = new Date();
+
+const hours =
+now.getHours();
+
+const minutes =
+now.getMinutes();
+
+const seconds =
+now.getSeconds();
+
+const milliseconds =
+now.getMilliseconds();
+
+digitalClock.innerHTML =
+now.toLocaleTimeString();
+
+dateText.innerHTML =
+now.toLocaleDateString(undefined,{
+weekday:"long",
+month:"long",
+day:"numeric",
+year:"numeric"
+});
+
+if(hours < 12){
+
+greeting.innerHTML =
+"Good Morning ☀";
+
+}
+else if(hours < 18){
+
+greeting.innerHTML =
+"Good Afternoon ⚡";
+
+}
+else{
+
+greeting.innerHTML =
+"Good Evening 🌙";
+
+}
+
+/* LIVE INFO */
+
+document.getElementById("timezone")
+.innerHTML =
+Intl.DateTimeFormat()
+.resolvedOptions()
+.timeZone;
+
+document.getElementById("milliseconds")
+.innerHTML =
+milliseconds;
+
+const totalSeconds =
+hours * 3600 +
+minutes * 60 +
+seconds;
+
+const progress =
+((totalSeconds / 86400) * 100)
+.toFixed(1);
+
+document.getElementById("dayProgress")
+.innerHTML =
+progress + "%";
+
+document.getElementById("weekday")
+.innerHTML =
+now.toLocaleDateString(undefined,{
+weekday:"short"
+});
+
+/* WORLD CLOCKS */
+
+document.querySelectorAll(".world-time")
+.forEach(clock=>{
+
+const offset =
+parseFloat(clock.dataset.offset);
+
+const utc =
+now.getTime() +
+now.getTimezoneOffset() * 60000;
+
+const cityTime =
+new Date(
+utc + (3600000 * offset)
+);
+
+clock.innerHTML =
+cityTime.toLocaleTimeString();
+
+});
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+/* STOPWATCH */
+
+let stopwatchInterval;
+
+let elapsed = 0;
+
+let running = false;
+
+const stopwatch =
+document.getElementById("stopwatch");
+
+document.getElementById("startBtn")
+.addEventListener("click",()=>{
+
+if(running) return;
+
+running = true;
+
+const start =
+Date.now() - elapsed;
+
+stopwatchInterval =
+setInterval(()=>{
+
+elapsed =
+Date.now() - start;
+
+let totalSeconds =
+Math.floor(elapsed / 1000);
+
+let hrs =
+String(
+Math.floor(totalSeconds / 3600)
+).padStart(2,"0");
+
+let mins =
+String(
+Math.floor((totalSeconds % 3600)/60)
+).padStart(2,"0");
+
+let secs =
+String(
+totalSeconds % 60
+).padStart(2,"0");
+
+stopwatch.innerHTML =
+`${hrs}:${mins}:${secs}`;
+
+},1000);
+
+});
+
+document.getElementById("pauseBtn")
+.addEventListener("click",()=>{
+
+running = false;
+
+clearInterval(stopwatchInterval);
+
+});
+
+document.getElementById("resetBtn")
+.addEventListener("click",()=>{
+
+running = false;
+
+clearInterval(stopwatchInterval);
+
+elapsed = 0;
+
+stopwatch.innerHTML =
+"00:00:00";
+
+});
+
+/* TIMER */
+
+let timer;
+
+let timerSeconds = 0;
+
+const timerDisplay =
+document.getElementById("timerDisplay");
+
+function updateTimerDisplay(){
+
+const mins =
+String(
+Math.floor(timerSeconds / 60)
+).padStart(2,"0");
+
+const secs =
+String(
+timerSeconds % 60
+).padStart(2,"0");
+
+timerDisplay.innerHTML =
+`${mins}:${secs}`;
+
+}
+
+document.getElementById("timerStart")
+.addEventListener("click",()=>{
+
+const mins =
+parseInt(
+document.getElementById("minutesInput").value
+) || 0;
+
+const secs =
+parseInt(
+document.getElementById("secondsInput").value
+) || 0;
+
+if(timerSeconds <= 0){
+
+timerSeconds =
+mins * 60 + secs;
+
+}
+
+clearInterval(timer);
+
+timer =
+setInterval(()=>{
+
+if(timerSeconds > 0){
+
+timerSeconds--;
+
+updateTimerDisplay();
+
+}
+else{
+
+clearInterval(timer);
+
+alert("⏰ Timer Finished!");
+
+}
+
+},1000);
+
+});
+
+document.getElementById("timerPause")
+.addEventListener("click",()=>{
+
+clearInterval(timer);
+
+});
+
+document.getElementById("timerReset")
+.addEventListener("click",()=>{
+
+clearInterval(timer);
+
+timerSeconds = 0;
+
+updateTimerDisplay();
+
+});
+
+updateTimerDisplay();
+
+</script>
 
 </body>
 </html>

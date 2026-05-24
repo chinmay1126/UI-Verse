@@ -56,6 +56,7 @@ function ensureMeta(component, options = {}){
       id,
       title: component.title || id,
       path: component.path || component.file || '',
+      dependencies: buildDependencies(id, component.path || component.file || ''),
       version: '0.1.0',
       changelog: [ { version: '0.1.0', date: today(), note: 'Initial metadata generated' } ]
     };

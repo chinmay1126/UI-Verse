@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bench Result Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Bench Results</h1>
+      <p>Performance overview & analytics</p>
+    </header>
+
+    <div class="stats">
+      <div class="card">
+        <h3>Total Candidates</h3>
+        <p id="total">120</p>
+      </div>
+
+      <div class="card success">
+        <h3>Passed</h3>
+        <p id="passed">78</p>
+      </div>
+
+      <div class="card danger">
+        <h3>Failed</h3>
+        <p id="failed">42</p>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="resultTable">
+          <!-- JS data -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -169,3 +169,152 @@ body{
     align-items: flex-start;
   }
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+}
+
+/* LAYOUT */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: #111827;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h2 {
+  font-size: 22px;
+}
+
+.sidebar span {
+  color: #38bdf8;
+}
+
+nav {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+nav a {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #cbd5e1;
+}
+
+nav a.active,
+nav a:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.user-box {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-btn {
+  background: #38bdf8;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.card h2 {
+  margin-top: 10px;
+}
+
+/* CONTENT */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* PANELS */
+.panel {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.txn {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #374151;
+}
+
+.txn.income b {
+  color: #22c55e;
+}
+
+.txn.expense b {
+  color: #ef4444;
+}
+
+/* BUTTONS */
+.actions button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #111827;
+  color: white;
+}
+
+.actions button:hover {
+  background: #38bdf8;
+}
