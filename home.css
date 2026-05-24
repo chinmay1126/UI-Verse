@@ -13,24 +13,39 @@
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 8px;
+
+  /* Cards */
   --card-bg: #ffffff;
   --card-border: #ebebeb;
+
+  /* Backgrounds */
   --body-bg: #f5f4f2;
+  --bg-color: var(--body-bg);   /* ✅ unify background */
+
+  /* Text */
   --text-primary: #111;
   --text-secondary: #666;
+
+  /* Fonts */
   --font-heading: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
+
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dark mode vars */
 body.dark-mode {
   --card-bg: #1a1a1e;
   --card-border: #2a2a30;
+
+  /* Backgrounds */
   --body-bg: #0f0f12;
+  --bg-color: var(--body-bg);   /* ✅ unify background */
+
+  /* Text */
   --text-primary: #f0f0f0;
   --text-secondary: #999;
 }
+
 
 /* ---------- BASE RESET ---------- */
 *, *::before, *::after {
@@ -373,7 +388,13 @@ body.dark-mode .search-kbd {
   text-align: center;
   overflow: hidden;
   margin-bottom: 0;
+
+  /* Column layout for hero content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 body.dark-mode .hero {
   background: linear-gradient(135deg, #1a1a1e 60%, #1e1614 100%);
@@ -421,11 +442,14 @@ body.dark-mode .hero {
 
 .hero-actions {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 14px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-bottom: 48px;
 }
+
 
 .btn-primary {
   display: inline-flex;
@@ -972,6 +996,51 @@ body.dark-mode .feature-card:hover {
   height: 2px;
   background: var(--accent);
   transition: width 0.3s ease;
+  transition: color var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent);
+  transform: translateX(3px);
+  text-shadow: 0 0 8px rgba(235, 104, 53, 0.4);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+.socials a {
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 12px rgba(235, 104, 53, 0.35);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
 .footer-col ul li a:hover {
@@ -998,8 +1067,10 @@ body.dark-mode .feature-card:hover {
   justify-content: center;
   color: #888;
   text-decoration: none;
+  margin-right: 12px;
   font-size: 14px;
   transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .socials a:hover {
@@ -1007,6 +1078,7 @@ body.dark-mode .feature-card:hover {
   color: #fff;
   transform: translateY(-2px) scale(1.1);
   box-shadow: 0 0 8px var(--accent);
+  transform: scale(1.1);
 }
 
 .newsletter-form {

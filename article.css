@@ -815,6 +815,39 @@ body.dark-mode .navbar {
   max-width: 100%;
 }
 
+
+.article-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  transition: 0.4s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.35);
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.category {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right,
+    rgba(99,102,241,.3),
+    transparent 50%);
+}
+
 .footer-logo {
   font-family: var(--font-heading);
   font-size: 20px;
@@ -852,11 +885,15 @@ body.dark-mode .navbar {
   color: #888;
   text-decoration: none;
   font-size: 14px;
-  transition: color var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
 }
 
 .footer-col ul li a:hover {
   color: var(--accent);
+  transform: translateX(3px);
+  text-shadow: 0 0 8px rgba(235, 104, 53, 0.4);
 }
 
 .socials {

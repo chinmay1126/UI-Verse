@@ -19,10 +19,9 @@
   --dark-surface-2: #22222a;
   --glass-bg: rgba(26, 26, 30, 0.8);
   
-  /* Text Colors */
-  --text-primary: #f0f0f0;
-  --text-secondary:black;
-  --text-secondary: #9ca3af;
+    /* Text */
+  --text-primary: #111;
+  --text-secondary: #666;
   
   /* Borders */
   --border-color: rgba(255, 255, 255, 0.08);
@@ -114,7 +113,7 @@
   font-size: 48px;
   font-weight: 800;
   line-height: 1.2;
-  color: black;
+  color: var(--text-primary);
   letter-spacing: -1px;
 }
 
@@ -139,7 +138,7 @@
 .ai-hero-subtitle {
   font-size: 16px;
   line-height: 1.6;
-  color: black;
+  color: var(--text-secondary);
   max-width: 500px;
 }
 
@@ -165,7 +164,7 @@
 
 .primary-cta {
   background: var(--gradient-glow);
-  color: #000;
+  color: var(--text-primary); 
   box-shadow: var(--glow-md);
 }
 
@@ -251,6 +250,44 @@
   font-weight: 600;
   border: 1px solid rgba(0, 212, 255, 0.3);
 }
+
+/* ---------- AI COMPONENT TEXT VISIBILITY ---------- */
+
+/* Titles inside cards */
+.ai-component-section h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Lists inside cards */
+.ai-component-section ul li {
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Paragraphs inside cards */
+.ai-component-section p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Labels and values inside stats */
+.ai-component-section .stat-label {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.ai-component-section .stat-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+
 /* ===== AI Recommendations ===== */
 .recommendation-card {
   background: var(--card-bg, #1e1e2f);
@@ -262,6 +299,7 @@
 .recommendation-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: var(--text-primary);
 }
 .recommendation-list {
   list-style: none;
@@ -273,6 +311,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
 }
 .recommendation-btn {
   background: var(--primary-color, #4a90e2);
@@ -298,6 +338,7 @@
 .analytics-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: var(--text-primary);
 }
 .analytics-placeholder {
   font-size: 2rem;
@@ -306,7 +347,7 @@
 }
 .analytics-desc {
   font-size: 0.9rem;
-  color: #aaa;
+  color: var(--text-primary);
 }
 
 /* ===== AI Tools Panel ===== */
@@ -354,7 +395,7 @@
 .voice-status {
   margin-top: 10px;
   font-size: 0.9rem;
-  color: #aaa;
+  color: var(--text-secondary);
 }
 /* ===== AI Task Scheduler ===== */
 .task-card {
@@ -367,6 +408,7 @@
 .task-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: var(--text-primary);
 }
 .task-list {
   list-style: none;
@@ -378,6 +420,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
 }
 .task-btn {
   background: var(--primary-color, #4a90e2);
@@ -426,7 +470,7 @@
 }
 .performance-desc {
   font-size: 0.9rem;
-  color: #aaa;
+  color: var(--text-secondary);
 }
 
 /* ===== AI Component Generator ===== */
@@ -465,7 +509,7 @@
 .generator-hint {
   margin-top: 8px;
   font-size: 0.85rem;
-  color: #aaa;
+  color: var(--text-secondary);
 }
 
 /* ===== AI Security Checker ===== */
@@ -475,21 +519,30 @@
   padding: 20px;
   margin-top: 15px;
 }
+
 .security-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: var(--text-primary); /* ✅ makes title visible */
+  font-weight: 600;
 }
+
 .security-list {
   list-style: none;
   padding: 0;
   margin: 0 0 15px;
 }
+
 .security-list li {
   margin: 6px 0;
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--text-secondary); /* ✅ ensures list items are readable */
+  font-size: 14px;
+  line-height: 1.6;
 }
+
 .security-btn {
   background: var(--primary-color, #4a90e2);
   color: #fff;
@@ -497,11 +550,15 @@
   padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s ease;
 }
+
 .security-btn:hover {
   background: var(--primary-hover, #357ab8);
+  transform: translateY(-2px); /* ✅ adds hover lift */
 }
+
+
 
 
 /* ---------- CHATBOT COMPONENT ---------- */
@@ -1206,7 +1263,7 @@
   font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 700;
-  color: var(--neon-blue);
+  color: var(--text-primary);
 }
 
 .profile-bio {
@@ -1244,7 +1301,7 @@
 
 .profile-btn.primary {
   background: var(--gradient-glow);
-  color: #000;
+  color: var(--text-primary);
   box-shadow: var(--glow-md);
   min-width: 100%;
 }
@@ -1653,6 +1710,9 @@
 .socials a {
   width: 40px;
   height: 40px;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
   border-radius: 50%;
   background: rgba(0, 212, 255, 0.08);
   border: 1px solid rgba(0, 212, 255, 0.18);
@@ -1662,6 +1722,7 @@
   color: var(--neon-blue);
   transition: all 0.3s ease;
   font-size: 15px;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 /* Icon Hover */
@@ -1670,6 +1731,8 @@
   color: #000;
   transform: translateY(-4px) scale(1.08);
   box-shadow: 0 0 18px rgba(0, 212, 255, 0.45);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
 }
 
 /* ================= NEWSLETTER ================= */

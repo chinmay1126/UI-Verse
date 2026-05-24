@@ -1585,3 +1585,344 @@ body{
   }
 
 }
+
+/* =========================================
+   PROJECT CALENDAR
+========================================= */
+
+.project-calendar{
+  padding:24px;
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.project-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:24px;
+}
+
+.project-top span{
+  color:rgba(255,255,255,0.65);
+}
+
+.project-top i{
+  font-size:1.5rem;
+  color:#00d4ff;
+}
+
+.project-members{
+  display:flex;
+  gap:12px;
+
+  margin-bottom:24px;
+}
+
+.project-members span{
+  width:42px;
+  height:42px;
+
+  border-radius:50%;
+
+  display:grid;
+  place-items:center;
+
+  font-weight:700;
+
+  background:linear-gradient(
+    135deg,
+    #7f5cff,
+    #00d4ff
+  );
+}
+
+.project-progress{
+  height:10px;
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  background:rgba(255,255,255,0.08);
+}
+
+.project-progress span{
+  display:block;
+
+  width:76%;
+  height:100%;
+
+  background:linear-gradient(
+    90deg,
+    #00d4ff,
+    #7f5cff
+  );
+}
+
+/* =========================================
+   MEETING BOOKING
+========================================= */
+
+.meeting-booking{
+  padding:24px;
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.meeting-room{
+  margin-bottom:24px;
+}
+
+.meeting-room span{
+  color:rgba(255,255,255,0.65);
+}
+
+.meeting-slots{
+  display:flex;
+  gap:12px;
+}
+
+.meeting-slots button{
+  flex:1;
+
+  padding:14px;
+
+  border:none;
+  border-radius:14px;
+
+  background:rgba(255,255,255,0.08);
+
+  color:white;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.slot-active{
+  background:linear-gradient(
+    135deg,
+    #7f5cff,
+    #00d4ff
+  );
+
+  box-shadow:0 10px 25px rgba(0,212,255,0.25);
+}
+
+/* =========================================
+   EVENT SCHEDULER
+========================================= */
+
+.event-scheduler{
+  padding:24px;
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.event-schedule-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:24px;
+}
+
+.event-schedule-top span{
+  color:#00d4ff;
+}
+
+.event-session{
+  display:flex;
+  align-items:center;
+  gap:16px;
+
+  padding:14px 0;
+}
+
+.session-dot{
+  width:16px;
+  height:16px;
+
+  border-radius:50%;
+
+  background:#555;
+}
+
+.active-session{
+  background:#00d4ff;
+
+  box-shadow:0 0 15px rgba(0,212,255,0.7);
+}
+
+.event-session span{
+  color:rgba(255,255,255,0.65);
+}
+
+/* =========================================
+   DAY PLANNER
+========================================= */
+
+.day-planner{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.planner-slot{
+  padding:18px;
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.planner-slot span{
+  display:block;
+
+  margin-bottom:8px;
+
+  color:#00d4ff;
+
+  font-weight:700;
+}
+
+.active-slot{
+  background:linear-gradient(
+    135deg,
+    rgba(127,92,255,0.25),
+    rgba(0,212,255,0.18)
+  );
+
+  border:1px solid rgba(0,212,255,0.25);
+}
+
+/* =========================================
+   AI CALENDAR
+========================================= */
+
+.ai-calendar{
+  padding:24px;
+  border-radius:24px;
+
+  background:linear-gradient(
+    135deg,
+    rgba(127,92,255,0.18),
+    rgba(0,212,255,0.12)
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.ai-top{
+  display:flex;
+  align-items:center;
+  gap:18px;
+
+  margin-bottom:24px;
+}
+
+.ai-icon{
+  width:58px;
+  height:58px;
+
+  border-radius:18px;
+
+  display:grid;
+  place-items:center;
+
+  font-size:1.4rem;
+
+  background:linear-gradient(
+    135deg,
+    #7f5cff,
+    #00d4ff
+  );
+}
+
+.ai-top span{
+  color:rgba(255,255,255,0.65);
+}
+
+.ai-status{
+  padding:16px;
+
+  border-radius:16px;
+
+  text-align:center;
+
+  font-weight:700;
+
+  background:rgba(255,255,255,0.08);
+}
+
+/* =========================================
+   DEADLINE TRACKER
+========================================= */
+
+.deadline-tracker{
+  padding:24px;
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.deadline-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:24px;
+}
+
+.deadline-top span{
+  color:#ff4fd8;
+  font-weight:700;
+}
+
+.deadline-progress{
+  height:12px;
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  background:rgba(255,255,255,0.08);
+
+  margin-bottom:18px;
+}
+
+.deadline-progress span{
+  display:block;
+
+  width:82%;
+  height:100%;
+
+  background:linear-gradient(
+    90deg,
+    #ff4fd8,
+    #7f5cff
+  );
+}
+
+.deadline-footer{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.deadline-footer p{
+  color:rgba(255,255,255,0.68);
+}

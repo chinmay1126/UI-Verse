@@ -110,6 +110,8 @@ function initGlobalFilters() {
           shouldShow ? 'block' : 'none';
 
       });
+    });
+  });
 
   // Sidebar header links redirection simulation
   const sidebarLinks = document.querySelectorAll('.sidebar-nav li a');
@@ -484,6 +486,10 @@ function filterUserDirectoryTable() {
 
 }
 
+function simulateUserAddition() {
+  showLiveToast('Mock Operator Added Successfully', 'success');
+}
+
 function toggleAllUserCheckboxes(masterCheckbox) {
 
   const checkboxes =
@@ -504,11 +510,6 @@ function toggleUserRowStatus(btn) {
   const statusSpan =
     tr.querySelector('.td-status');
 
-  if (!btn) return;
-  const tr = btn.closest('tr');
-  if (!tr) return;
-  
-  const statusSpan = tr.querySelector('.td-status');
   if (!statusSpan) return;
 
   const isActive =

@@ -171,3 +171,17 @@ cards.forEach(card => {
   });
 
 });
+
+document.querySelectorAll(".donor button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert("Contact request sent to donor!");
+  });
+});
+
+document.querySelector(".primary").addEventListener("click", () => {
+  alert("Searching nearby donors...");
+});
+
+document.querySelector(".secondary").addEventListener("click", () => {
+  alert("Emergency request initiated!");
+});
