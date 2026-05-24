@@ -16,7 +16,10 @@
   <link rel="stylesheet" href="shared-page.css">
   <link rel="stylesheet" href="cards.css">
   <link rel="stylesheet" href="playground.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
+  <link rel="stylesheet" href="command-palette.css">
+  <link rel="stylesheet" href="css/url-state.css">
+  <!-- UIverse Runtime Loader -->
+  <script src="js/loader.js" defer></script>
 </head>
 
 <body data-playground-type="card">
@@ -34,6 +37,12 @@
         <a href="index.html">
           <i class="fa-solid fa-house"></i>
           <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="leaderboard-components.html">
+          <i class="fa-solid fa-ranking-star"></i>
+          <span>Leaderboards</span>
         </a>
       </li>
       <li>
@@ -1265,7 +1274,7 @@
         <button onclick="addToCollection('Image Card')">Add to My Collection</button>
       </div>
       <pre id="c6" class="code-block"><code>&lt;div class="image-card"&gt;
-  &lt;img src="your-image.jpg" alt="..."&gt;
+  &lt;img src="https://picsum.photos/500/300?random=20" alt="..."&gt;
   &lt;div class="image-card-body"&gt;
     &lt;span class="tag"&gt;Nature&lt;/span&gt;
     &lt;h4&gt;Scenic View&lt;/h4&gt;
@@ -1365,7 +1374,7 @@
               <p>You have received a new message from Alex.</p>
               <span class="notif-time">2 min ago</span>
             </div>
-            <button class="notif-close"><i class="fa-solid fa-xmark"></i></button>
+            <button class="notif-close" aria-label="Dismiss notification" type="button"><i class="fa-solid fa-xmark"></i></button>
           </div>
           <div class="notif-card notif-green">
             <div class="notif-icon notif-icon-green"><i class="fa-solid fa-check"></i></div>
@@ -1374,7 +1383,7 @@
               <p>Your file has been successfully uploaded.</p>
               <span class="notif-time">Just now</span>
             </div>
-            <button class="notif-close"><i class="fa-solid fa-xmark"></i></button>
+            <button class="notif-close" aria-label="Dismiss notification" type="button"><i class="fa-solid fa-xmark"></i></button>
           </div>
         </div>
       </div>
@@ -1871,6 +1880,8 @@
 <script src="js/features/download.js"></script>
 <script src="js/features/accessibility.js"></script>
 <script src="js/features/a11y-checker.js"></script>
+<script src="js/features/tutorial-mode-steps.js"></script>
+<script src="js/features/tutorial-mode.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/features/compare.js"></script>
 <script src="script.js"></script>
@@ -1959,6 +1970,24 @@
       setTimeout(() => btn.closest('.notif-card').style.display = 'none', 300);
     });
   });
+</script>
+<script>
+  (function () {
+    const button = document.getElementById('startTutorialMode');
+    if (!button || !window.TutorialMode || !window.TutorialModeSteps) return;
+
+    const steps = window.TutorialModeSteps.cards || window.TutorialModeSteps.default;
+    if (!Array.isArray(steps) || steps.length === 0) return;
+
+    button.addEventListener('click', () => {
+      window.TutorialMode.start({
+        pageKey: 'cards',
+        categoryKey: 'cards',
+        steps,
+        force: true
+      });
+    });
+  })();
 </script>
 <script src="playground.js"></script>
 </body>

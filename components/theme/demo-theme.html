@@ -8,91 +8,82 @@
   <style>
     body {
       margin: 0;
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
+      color: var(--text-primary);
       min-height: 100vh;
-      font-family: var(--font-body, Arial, sans-serif);
-      background: var(--bg-primary, #f5f4f2);
-      color: var(--text-primary, #111111);
-      transition: background-color var(--transition, 0.25s ease), color var(--transition, 0.25s ease);
     }
 
     .wrap {
-      max-width: 1100px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 3rem 1.25rem 4rem;
-    }
-
-    .hero {
-      display: grid;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.75rem;
-      color: var(--text-secondary, #666666);
-    }
-
-    h1 {
-      margin: 0;
-      font-family: var(--font-heading, sans-serif);
-      font-size: clamp(2.5rem, 6vw, 4.25rem);
-      line-height: 0.95;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      padding: 1rem;
-      border-radius: var(--radius-lg, 20px);
-      background: var(--card-bg, #ffffff);
-      border: 1px solid var(--border-primary, #ebebeb);
-      box-shadow: var(--shadow-md, 0 4px 16px rgba(0,0,0,0.08));
-    }
-
-    .swatch {
-      height: 72px;
-      border-radius: 16px;
-      background: var(--accent, #eb6835);
-      margin-bottom: 0.75rem;
-    }
-
-    .sample-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      border: 0;
-      border-radius: 999px;
-      padding: 0.85rem 1.2rem;
-      color: #fff;
-      background: var(--accent, #eb6835);
-      box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.06));
+      padding: 48px 24px;
     }
 
     .toolbar {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      align-items: end;
-      flex-wrap: wrap;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border-primary, #ebebeb);
-      margin-bottom: 1.5rem;
+      gap: 24px;
+      padding: 24px;
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(16px);
+    }
+
+    .eyebrow {
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    uv-theme-switcher {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .uv-theme-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid var(--border-primary);
+      border-radius: 999px;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .uv-theme-switcher__label {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .uv-theme-switcher__select {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      outline: none;
+      cursor: pointer;
     }
   </style>
   <script type="module">
     import '/js/features/design-tokens.js';
-    import '/components/web-components/uv-theme-switcher.js';
+    import '/components/WebComponents/uv-theme-switcher.js';
 
     window.addEventListener('DOMContentLoaded', () => {
-      DesignTokens.init();
+      DesignTokens.init && DesignTokens.init();
     });
   </script>
 </head>
@@ -104,25 +95,6 @@
         <h1>Theme Management</h1>
       </div>
       <uv-theme-switcher></uv-theme-switcher>
-    </div>
-
-    <div class="grid">
-      <section class="card">
-        <div class="swatch"></div>
-        <h2>Accent</h2>
-        <p>Uses the shared accent token across themes.</p>
-        <button class="sample-button" type="button">Primary Action</button>
-      </section>
-      <section class="card">
-        <div class="swatch" style="background: var(--bg-secondary, #ffffff); border: 1px solid var(--border-primary, #ebebeb);"></div>
-        <h2>Surface</h2>
-        <p>Surface and border tokens adapt automatically.</p>
-      </section>
-      <section class="card">
-        <div class="swatch" style="background: linear-gradient(135deg, var(--accent, #eb6835), var(--color-surface-2, #f0ede9));"></div>
-        <h2>Elevated surface</h2>
-        <p>Theme-specific palette values are centralized in one manager.</p>
-      </section>
     </div>
   </div>
 </body>

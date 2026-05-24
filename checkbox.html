@@ -14,22 +14,30 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <link rel="stylesheet" href="checkbox.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
+  
+   <link rel="stylesheet" href="checkbox.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="style.css">
+  
+  
+ 
 </head>
 
 <body>
+   <html data-theme="light">
 
   <div class="main-content">
 
     <!-- TOPBAR -->
     <header class="topbar">
       <div class="search-box">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-text">UIverse</span>
         <i class="fa-solid fa-magnifying-glass"></i>
         <input type="text" placeholder="Search components...">
       </div>
       <div class="topbar-actions">
+        
         <button class="add-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
         <button class="collection-btn">My Collection</button>
         <button class="theme-btn"><i class="fa-solid fa-moon"></i></button>
@@ -712,8 +720,175 @@
   &lt;span class="depth-box"&gt;&lt;/span&gt;
   &lt;span class="depth-text"&gt;Enable 3D Acceleration&lt;/span&gt;
 &lt;/label&gt;</code></pre>
+      </section>
+
+  </div> <!-- main-content -->
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <div class="footer-logo">UIverse</div>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+<div class="component-card">
+  <div class="card-preview">
+    <label class="rainbow-cb">
+      <input type="checkbox">
+      <span class="rainbow-box"><i class="fa-solid fa-check"></i></span>
+      <span class="rainbow-text">Celebrate Diversity</span>
+    </label>
+  </div>
+  <div class="card-content">
+    <div class="card-top">
+      <h3>Rainbow Checkbox</h3>
+      <span>Colorful</span>
+    </div>
+    <p>Animated rainbow gradient fill with smooth transitions when checked.</p>
+    <div class="card-actions">
+      <button onclick="toggleCode('cb16')"><i class="fa-solid fa-code"></i> View Code</button>
+      <button onclick="copyCode('cb16')"><i class="fa-solid fa-copy"></i> Copy</button>
+      <button><i class="fa-solid fa-bookmark"></i> Save</button>
+    </div>
+  </div>
+  <pre id="cb16" class="code-block" style="display:none;"><code>&lt;label class="rainbow-cb"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="rainbow-box"&gt;&lt;i class="fa-solid fa-check"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;span class="rainbow-text"&gt;Celebrate Diversity&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+</div>
+<div class="component-card">
+  <div class="card-preview">
+    <label class="music-cb">
+      <input type="checkbox">
+      <span class="music-box"><i class="fa-solid fa-music"></i>🎵</span>
+      <span class="music-text"> Enable Sound Effects</span>
+    </label>
+  </div>
+  <div class="card-content">
+    <div class="card-top">
+      <h3>Music Note Checkbox</h3>
+      <span>Fun</span>
+    </div>
+    <p>Checkbox with animated music note icon that pulses when selected.</p>
+    <div class="card-actions">
+      <button onclick="toggleCode('cb17')"><i class="fa-solid fa-code"></i> View Code</button>
+      <button onclick="copyCode('cb17')"><i class="fa-solid fa-copy"></i> Copy</button>
+      <button><i class="fa-solid fa-bookmark"></i> Save</button>
+    </div>
+  </div>
+  <pre id="cb17" class="code-block" style="display:none;"><code>&lt;label class="music-cb"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="music-box"&gt;&lt;i class="fa-solid fa-music"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;span class="music-text"&gt;Enable Sound Effects&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+</div>
+<div class="component-card">
+  <div class="card-preview">
+    <label class="earth-cb">
+      <input type="checkbox">
+      <span class="earth-box"><i class="fa-solid fa-earth-americas"></i>🌍</span>
+      <span class="earth-text">Eco Mode</span>
+    </label>
+  </div>
+  <div class="card-content">
+    <div class="card-top">
+      <h3>Earth Checkbox</h3>
+      <span>Eco</span>
+    </div>
+    <p>Eco-friendly themed checkbox with animated globe icon and green glow.</p>
+    <div class="card-actions">
+      <button onclick="toggleCode('cb18')"><i class="fa-solid fa-code"></i> View Code</button>
+      <button onclick="copyCode('cb18')"><i class="fa-solid fa-copy"></i> Copy</button>
+      <button><i class="fa-solid fa-bookmark"></i> Save</button>
+    </div>
+  </div>
+  <pre id="cb18" class="code-block" style="display:none;"><code>&lt;label class="earth-cb"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="earth-box"&gt;&lt;i class="fa-solid fa-earth-americas"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;span class="earth-text"&gt;Eco Mode&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+</div>
+<div class="component-card">
+  <div class="card-preview">
+    <label class="lightning-cb">
+      <input type="checkbox">
+      <span class="lightning-box"><i class="fa-solid fa-bolt"></i>⚡</span>
+      <span class="lightning-text">High Performance</span>
+    </label>
+  </div>
+  <div class="card-content">
+    <div class="card-top">
+      <h3>Lightning Checkbox</h3>
+      <span>Power</span>
+    </div>
+    <p>Dynamic lightning bolt icon with a flash animation when toggled.</p>
+    <div class="card-actions">
+      <button onclick="toggleCode('cb19')"><i class="fa-solid fa-code"></i> View Code</button>
+      <button onclick="copyCode('cb19')"><i class="fa-solid fa-copy"></i> Copy</button>
+      <button><i class="fa-solid fa-bookmark"></i> Save</button>
+    </div>
+  </div>
+  <pre id="cb19" class="code-block" style="display:none;"><code>&lt;label class="lightning-cb"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="lightning-box"&gt;&lt;i class="fa-solid fa-bolt"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;span class="lightning-text"&gt;High Performance&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+</div>
+
+
+
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
       </div>
 
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="contribute.html">Contribute</a></li>
+          <li><a href="#" target="_blank">GitHub Repo</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="license.html">License</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" />
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
 
       <script>
         function toggleCode(id) {
@@ -725,7 +900,28 @@
           if (!el) return;
           navigator.clipboard.writeText(el.textContent).then(() => alert('Code copied!'));
         }
+        function loadTheme() {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme, false);
+}
+
+function setTheme(theme, persist = true) {
+  document.documentElement.setAttribute("data-theme", theme);
+  if (persist) localStorage.setItem("theme", theme);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  setTheme(newTheme);
+}
+
+window.onload = loadTheme;
+
+    
       </script>
+
+
 
 </body>
 

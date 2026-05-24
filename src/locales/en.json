@@ -1,0 +1,5 @@
+{
+  "uv.sample.hello": "Hello from UI‑Verse",
+  "uv.button.submit": "Submit",
+  "uv.welcome": "Welcome, {{name}}"
+}

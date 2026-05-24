@@ -444,7 +444,7 @@ function initSidebar() {
 
 /* ================= LIVE IFRAME SANDBOX ================= */
 function initLiveSandboxes() {
-  const componentCards = document.querySelectorAll(".component-card");
+  const componentCards = document.querySelectorAll(".component-card:not(.no-sandbox)");
 
   componentCards.forEach((card, index) => {
     const h3 = card.querySelector("h3");

@@ -884,7 +884,7 @@ export default function cards(){
               <button onclick="addToCollection('Image Card')">Add to My Collection</button>
             </div>
             <pre id="c6" className="code-block"><code>&lt;div className="image-card"&gt;
-        &lt;img src="your-image.jpg" alt="..."&gt;
+        &lt;img src="https://picsum.photos/500/300?random=20" alt="..."&gt;
         &lt;div className="image-card-body"&gt;
           &lt;span className="tag"&gt;Nature&lt;/span&gt;
           &lt;h4&gt;Scenic View&lt;/h4&gt;

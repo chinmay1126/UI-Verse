@@ -754,6 +754,217 @@
 &lt;/div&gt;</code></pre>
     </div>
 
+    <!-- 11. DOTTED PATH STEPPER -->
+    <div class="component-card" data-category="horizontal">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-dotted-stepper">
+            <div class="dot-step active">
+              <div class="dot-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+              <span>Cart</span>
+            </div>
+            <div class="dot-line active"></div>
+            <div class="dot-step active">
+              <div class="dot-icon"><i class="fa-solid fa-credit-card"></i></div>
+              <span>Pay</span>
+            </div>
+            <div class="dot-line"></div>
+            <div class="dot-step">
+              <div class="dot-icon"><i class="fa-solid fa-box-open"></i></div>
+              <span>Done</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Dotted Path Stepper</h3>
+          <span>Horizontal</span>
+        </div>
+        <p>A minimalist horizontal stepper with connected dashed lines and icon-based step indicators.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeDot', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeDot', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeDot" style="display:none;"><code>&lt;div class="premium-dotted-stepper"&gt;
+  &lt;div class="dot-step active"&gt;
+    &lt;div class="dot-icon"&gt;&lt;i class="fa-solid fa-cart-shopping"&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;span&gt;Cart&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="dot-line active"&gt;&lt;/div&gt;
+  &lt;!-- More steps... --&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 12. MINIMAL TEXT STEPPER -->
+    <div class="component-card" data-category="vertical">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-text-stepper">
+            <div class="text-step completed">
+              <span class="t-step-num">01</span>
+              <span class="t-step-label">Account Setup</span>
+            </div>
+            <div class="text-step active">
+              <span class="t-step-num">02</span>
+              <span class="t-step-label">Profile Details</span>
+            </div>
+            <div class="text-step">
+              <span class="t-step-num">03</span>
+              <span class="t-step-label">Verification</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Minimal Text Stepper</h3>
+          <span>Vertical</span>
+        </div>
+        <p>A sleek, typography-focused vertical stepper relying on opacity and clean spacing to indicate progress.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeText', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeText', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeText" style="display:none;"><code>&lt;div class="premium-text-stepper"&gt;
+  &lt;div class="text-step active"&gt;
+    &lt;span class="t-step-num"&gt;02&lt;/span&gt;
+    &lt;span class="t-step-label"&gt;Profile Details&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 13. CARD-BASED STEPPER -->
+    <div class="component-card" data-category="horizontal">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-card-stepper">
+            <div class="card-step completed">
+              <i class="fa-solid fa-check"></i>
+              <span>Plan</span>
+            </div>
+            <div class="card-step active">
+              <i class="fa-solid fa-pen-nib"></i>
+              <span>Design</span>
+            </div>
+            <div class="card-step">
+              <i class="fa-solid fa-code"></i>
+              <span>Build</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Card-Based Stepper</h3>
+          <span>Horizontal</span>
+        </div>
+        <p>A modern segmented control style stepper using distinct interactive cards with dynamic glow effects.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeCardStep', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeCardStep', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeCardStep" style="display:none;"><code>&lt;div class="premium-card-stepper"&gt;
+  &lt;div class="card-step active"&gt;
+    &lt;i class="fa-solid fa-pen-nib"&gt;&lt;/i&gt;
+    &lt;span&gt;Design&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 14. NEON PROGRESS STEPPER -->
+    <div class="component-card" data-category="animated">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-neon-stepper">
+            <div class="neon-track">
+              <div class="neon-fill" style="width: 50%;"></div>
+            </div>
+            <div class="neon-nodes">
+              <div class="neon-node active"></div>
+              <div class="neon-node active"></div>
+              <div class="neon-node"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Neon Progress Stepper</h3>
+          <span>Animated</span>
+        </div>
+        <p>A bright, glowing neon progress bar with pulsating active nodes for a futuristic, cyberpunk aesthetic.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeNeon', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeNeon', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeNeon" style="display:none;"><code>&lt;div class="premium-neon-stepper"&gt;
+  &lt;div class="neon-track"&gt;
+    &lt;div class="neon-fill" style="width: 50%;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="neon-nodes"&gt;
+    &lt;div class="neon-node active"&gt;&lt;/div&gt;
+    &lt;div class="neon-node active"&gt;&lt;/div&gt;
+    &lt;div class="neon-node"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 15. TIMELINE STEPS -->
+    <div class="component-card" data-category="vertical">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="premium-timeline-stepper">
+            <div class="timeline-step completed">
+              <div class="t-dot"></div>
+              <div class="t-content">
+                <h5>Order Placed</h5>
+                <p>Dec 12, 10:00 AM</p>
+              </div>
+            </div>
+            <div class="timeline-step active">
+              <div class="t-dot"></div>
+              <div class="t-content">
+                <h5>Processing</h5>
+                <p>Dec 13, 02:30 PM</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="t-dot"></div>
+              <div class="t-content">
+                <h5>Delivered</h5>
+                <p>Pending</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Timeline Steps</h3>
+          <span>Vertical</span>
+        </div>
+        <p>An elegant vertical timeline stepper ideal for order tracking, complete with descriptive meta data.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('codeTimeline', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('codeTimeline', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="codeTimeline" style="display:none;"><code>&lt;div class="premium-timeline-stepper"&gt;
+  &lt;div class="timeline-step active"&gt;
+    &lt;div class="t-dot"&gt;&lt;/div&gt;
+    &lt;div class="t-content"&gt;
+      &lt;h5&gt;Processing&lt;/h5&gt;
+      &lt;p&gt;Dec 13, 02:30 PM&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
   </div>
 
 </div>

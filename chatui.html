@@ -35,6 +35,13 @@
     rel="stylesheet"
     href="chatui.css"
   >
+  <link rel="stylesheet" href="shared-sidebar.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  
+  <link rel="stylesheet" href="shared-page.css">
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="playground.css">
 
 </head>
 
@@ -76,6 +83,12 @@
         <a href="cards.html">
           <i class="fa-solid fa-table-cells-large"></i>
           <span>Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="chatui.html">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span>chat</span>
         </a>
       </li>
       <li>
@@ -348,32 +361,24 @@
 NAVBAR
 ===================================================== -->
 
-<header class="navbar">
-
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
   <div class="search-bar">
-
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <input
-      type="text"
-      placeholder="Search chat components..."
-    >
-
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <kbd class="search-kbd">⌘K</kbd>
   </div>
-
-  <div class="nav-actions">
-
-    <button class="outline-btn">
-      Documentation
-    </button>
-
-    <button class="primary-btn">
-      Explore UI
-    </button>
-
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
   </div>
-
 </header>
+
+
 
 <!-- =====================================================
 MAIN
@@ -709,10 +714,130 @@ MAIN
       </div>
 
     </div>
+    <div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">PINNED</span>
+    <h2>Important Notes</h2>
+  </div><br>
+  <div class="pinned-list">
+    <div class="pinned-item">
+      🚀 Launch meeting at 3 PM
+    </div><br>
+    <div class="pinned-item">
+      ✅ UI fixes due by Friday
+    </div><br>
+    <div class="pinned-item">📊 Share analytics report in #general</div><br>
+    <div class="pinned-item">🎨 Update theme colors for dark mode</div><br>
+    <div class="pinned-item">📝 Prepare PR description templates</div>
+  </div>
+</div>
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">VOICE</span>
+    <h2>Audio Message</h2>
+  </div>
+  <div class="voice-message">
+    <div class="bubble">
+      <strong>Olivia</strong>
+      <p>
+        <i class="fa-solid fa-play"></i> ▶️ 0:45
+      </p>
+      <span>10:15 AM</span>
+    </div>
+  </div>
+</div>
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">GROUP</span>
+    <h2>Project Team</h2>
+  </div>
+  <div class="group-chat">
+    <div class="message received">
+      <img src="https://i.pravatar.cc/100?img=30" alt="">
+      <div class="bubble">
+        <strong>Ava</strong>
+        <p>Let’s finalize the UI mockups today.</p>
+        <span>10:05 AM</span>
+      </div>
+    </div>
+    <div class="message sent">
+      <div class="bubble">
+        <strong>You</strong>
+        <p>Sure, I’ll share updates after lunch.</p>
+        <span>10:07 AM</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">NOTIFICATIONS</span>
+    <h2>System Alerts</h2>
+  </div>
+  <div class="notification-box">
+    <p>🔔 New message in #frontend-help</p><br>
+    <p>⚡ Server update scheduled at 11 PM</p><br>
+     <p>📢 Olivia mentioned you in #ui-components</p><br>
+    <p>📥 Mason uploaded "design-mockup.png"</p><br>
+    <p>🔒 Security patch applied successfully</p>
+  </div>
+</div>
 
-  </section>
+</section>
 
 </main>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com">
+        <button type="button">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
+
 
 <script src="chatui.js"></script>
 

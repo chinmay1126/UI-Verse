@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UIverse — UI Component Library</title>
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:;">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -11,29 +15,10 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="command-palette.css">
-  <link rel="stylesheet" href="css/url-state.css">
-<!-- UIverse Modular Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-    <script src="js/core/utils.js"></script>
-    <script src="js/core/component-index.js"></script>
-    <script src="js/features/toast.js"></script>
-    <script src="js/features/popup.js"></script>
-    <script src="js/features/code-tools.js"></script>
-    <script src="js/features/sidebar.js"></script>
-    <script src="js/features/search.js"></script>
-    <script src="js/features/theme.js"></script>
-    <script src="js/features/scroll.js"></script>
-    <script src="js/features/alerts.js"></script>
-    <script src="js/features/sandbox.js"></script>
-    <script src="js/features/accessibility.js"></script>
-    <script src="js/features/command-palette.js"></script>
-    <script src="js/features/url-state.js"></script>
-    <script src="js/features/url-state-integration.js"></script>
-<script src="js/bootstrap.js"></script>
-  </head>
+</head>
 
 <body>
 
@@ -41,10 +26,10 @@
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
     <span class="brand-icon">⬡</span>
-    <span class="brand-text">UIverse <span style="font-size: 9px; background: linear-gradient(135deg, #eb6835, #7b61ff); color: white; padding: 1px 6px; border-radius: 10px; font-weight: 800; margin-left: 4px; letter-spacing: 0.5px; vertical-align: middle; box-shadow: 0 0 8px rgba(235,104,53,0.3);">V2</span></span>
+    <span class="brand-text">UIverse</span>
   </div>
 
-          <nav class="sidebar-nav">
+  <nav class="sidebar-nav">
     <ul>
       <li class="active">
         <a href="index.html">
@@ -53,15 +38,9 @@
         </a>
       </li>
       <li>
-        <a href="components/index.html">
-          <i class="fa-solid fa-table-cells-large"></i>
-          <span>Components Index</span>
-        </a>
-      </li>
-      <li>
-        <a href="favorites.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Favorites</span>
+        <a href="leaderboard-components.html">
+          <i class="fa-solid fa-ranking-star"></i>
+          <span>Leaderboards</span>
         </a>
       </li>
       <li>
@@ -70,13 +49,19 @@
           <span>Buttons</span>
         </a>
       </li>
-            <li>
+      <li>
         <a href="dropdown-components.html">
           <i class="fa-solid fa-caret-down"></i>
           <span>Dropdowns</span>
         </a>
       </li>
-<li>
+      <li>
+        <a href="profile-components.html">
+          <i class="fa-solid fa-user"></i>
+          <span>Profiles</span>
+        </a>
+      </li>
+      <li>
         <a href="navbar.html">
           <i class="fa-solid fa-bars"></i>
           <span>Navbar</span>
@@ -239,23 +224,11 @@
         </a>
       </li>
       <li>
-        <a href="empty-state.html">
-          <i class="fa-solid fa-folder-open"></i>
-          <span>Empty States</span>
+        <a href="recovery.html">
+          <i class="fa-solid fa-key" aria-hidden="true"></i>
+          <span>Password Recovery</span>
         </a>
       </li>
-      <li>
-        <a href="maintenance.html">
-          <i class="fa-solid fa-screwdriver-wrench"></i>
-          <span>Maintenance</span>
-        </a>
-      </li>
-        <li>
-          <a href="recovery.html">
-            <i class="fa-solid fa-key" aria-hidden="true"></i>
-            <span>Password Recovery</span>
-          </a>
-        </li>
       <li>
         <a href="section.html">
           <i class="fa-solid fa-rectangle-list"></i>
@@ -346,7 +319,7 @@
           <span>Admin Panel V2</span>
         </a>
       </li>
-<li>
+      <li>
         <a href="about.html">
           <i class="fa-solid fa-circle-info"></i>
           <span>About</span>
@@ -373,19 +346,11 @@
     </ul>
   </nav>
 
- <div class="socials">
-  <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-
-  <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-
-  <a href="https://twitter.com/yourusername" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+  <div class="sidebar-footer">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+  </div>
 </aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
@@ -401,22 +366,21 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." />
+    <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components" />
     <kbd class="search-kbd">⌘K</kbd>
-    <div id="searchDropdown" class="search-dropdown hidden">
-      <ul id="searchDropdownResults" class="search-dropdown-results"></ul>
-    </div>
+  </div>
+
+  <div id="searchDropdown" class="search-dropdown hidden">
+    <ul id="searchDropdownResults" class="search-dropdown-results"></ul>
   </div>
 
   <div class="nav-right">
     <button class="nav-btn outline-nav-btn">
       <i class="fa-solid fa-plus"></i> Add Component
     </button>
-    <a href="contributorss.html">
     <button class="nav-btn primary-nav-btn">
-      Contributors
+      <i class="fa-solid fa-bookmark"></i> My Collection
     </button>
-    </a>
     <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
       <i class="fa-solid fa-moon"></i>
     </button>
@@ -554,6 +518,58 @@
         <a href="alerts.html" class="feature-link">View <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="--icon-color: #4ecdc4;">🌾</div>
+        <div class="feature-card-body">
+          <h3>Crop ROI Lab</h3>
+          <p>Predict yield, revenue, and return on investment for the next harvest cycle.</p>
+          <div class="feature-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-essential">Finance</span>
+          </div>
+        </div>
+        <a href="roi_dashboard.html" class="feature-link">View <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="--icon-color: #86c06a;">📦</div>
+        <div class="feature-card-body">
+          <h3>Produce Traceability</h3>
+          <p>Generate a QR code for each batch and verify the full farm-to-shelf timeline.</p>
+          <div class="feature-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-essential">Supply Chain</span>
+          </div>
+        </div>
+        <a href="trace.html" class="feature-link">View <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="--icon-color: #2f6f9f;">📡</div>
+        <div class="feature-card-body">
+          <h3>IoT Sensor Hub</h3>
+          <p>Track moisture, temperature, humidity, and nutrient levels from connected farm sensors.</p>
+          <div class="feature-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-essential">Realtime</span>
+          </div>
+        </div>
+        <a href="farm_dashboard.html" class="feature-link">View <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-wrap" style="--icon-color: #d97706;">🚜</div>
+        <div class="feature-card-body">
+          <h3>Equipment Marketplace</h3>
+          <p>Share tractors and heavy machinery with neighboring farms through a rental marketplace.</p>
+          <div class="feature-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-essential">Sharing Economy</span>
+          </div>
+        </div>
+        <a href="equipment.html" class="feature-link">View <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
     </div>
   </section>
 
@@ -594,6 +610,30 @@
         <h3>Forms</h3>
         <p>Complete form templates</p>
         <span class="cat-count">10 items</span>
+      </a>
+      <a href="roi_dashboard.html" class="cat-card">
+        <div class="cat-icon">🌾</div>
+        <h3>Finance Tools</h3>
+        <p>Predict crop ROI and yield</p>
+        <span class="cat-count">1 dashboard</span>
+      </a>
+      <a href="trace.html" class="cat-card">
+        <div class="cat-icon">📦</div>
+        <h3>Traceability</h3>
+        <p>QR code and ledger verification</p>
+        <span class="cat-count">2 pages</span>
+      </a>
+      <a href="farm_dashboard.html" class="cat-card">
+        <div class="cat-icon">📡</div>
+        <h3>IoT Hub</h3>
+        <p>Realtime sensor telemetry</p>
+        <span class="cat-count">2 pages</span>
+      </a>
+      <a href="equipment.html" class="cat-card">
+        <div class="cat-icon">🚜</div>
+        <h3>Equipment</h3>
+        <p>Rental listings and booking</p>
+        <span class="cat-count">2 pages</span>
       </a>
       <a href="badges.html" class="cat-card">
         <div class="cat-icon">🏅</div>
@@ -679,17 +719,15 @@
 <footer class="footer">
   <div class="footer-container">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
 
     <div class="footer-col">
       <h3>Explore</h3>
@@ -705,11 +743,10 @@
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
 
@@ -718,7 +755,7 @@
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
+        <li><a href="#">License</a></li>
       </ul>
     </div>
 
@@ -738,19 +775,29 @@
   </div>
 </footer>
 
+<script src="js/core/utils.js"></script>
+<script src="js/core/component-discovery.js"></script>
+<script src="js/core/component-index.js"></script>
+<script src="js/features/search.js"></script>
 <script src="script.js"></script>
 <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.Search && typeof Search.init === 'function') {
+      Search.init();
+    }
+  });
+
   // Dark mode toggle
-  const toggle = document.getElementById('darkModeToggle');
-  const icon = toggle.querySelector('i');
+  const darkModeToggleBtn = document.getElementById('darkModeToggle');
+  const darkModeIcon = darkModeToggleBtn.querySelector('i');
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
-    icon.className = 'fa-solid fa-sun';
+    darkModeIcon.className = 'fa-solid fa-sun';
   }
-  toggle.addEventListener('click', () => {
+  darkModeToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
-    icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    darkModeIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 
@@ -780,7 +827,7 @@
   });
 
   // Animate elements on scroll
-  const observer = new IntersectionObserver((entries) => {
+  const homeObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('in-view');
@@ -789,16 +836,8 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.feature-card, .cat-card, .why-card').forEach(el => {
-    observer.observe(el);
+    homeObserver.observe(el);
   });
-
-
-  function handleSearch(e) {
-    if (e.key === 'Enter') {
-      const q = document.getElementById('searchInput').value.trim();
-      if (q) alert('Searching for: ' + q);
-    }
-  }
 
   function subscribe() {
     const input = document.querySelector('.newsletter-form input');

@@ -1,8 +1,26 @@
 {
     "name": "ui-verse",
     "version": "1.0.0",
-    "private": true,
     "description": "UI-Verse static site — quality gate tooling",
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.esm.js",
+    "types": "./dist/index.d.ts",
+    "sideEffects": true,
+    "exports": {
+        ".": "./dist/index.js",
+        "./design-tokens": "./dist/design-tokens.js",
+        "./design-tokens.css": "./design-tokens.css",
+        "./button": "./dist/components/uv-button.js",
+        "./modal": "./dist/components/uv-modal.js",
+        "./tooltip": "./dist/components/uv-tooltip.js",
+        "./language-switcher": "./dist/components/uv-language-switcher.js",
+        "./theme-switcher": "./dist/components/uv-theme-switcher.js"
+    },
+    "files": [
+        "dist/**",
+        "design-tokens.css",
+        "README.md"
+    ],
     "scripts": {
         "lint:js": "eslint '**/*.js' --ext .js",
         "lint:css": "stylelint '**/*.css'",
@@ -14,8 +32,15 @@
         "images:verify": "node scripts/image-pipeline.js --check",
         "security:csp": "node scripts/csp-hardening.js",
         "security:csp:verify": "node scripts/csp-hardening.js --check",
+        "audit:a11y": "node scripts/a11y-remediation.js",
+        "audit:a11y:apply": "node scripts/a11y-remediation.js --apply",
+        "a11y:remediate": "node scripts/a11y-remediation.js",
+        "a11y:remediate:apply": "node scripts/a11y-remediation.js --apply",
+        "a11y:dashboard": "node scripts/a11y-dashboard.js",
+        "a11y:remediation:check": "node scripts/a11y-remediation-check.js",
         "audit:a11y": "node scripts/a11y-audit.js",
         "a11y:dashboard": "node scripts/a11y-dashboard.js",
+        "a11y:remediation:check": "node scripts/a11y-remediation-check.js",
         "test:visual": "playwright test",
         "test:visual:ui": "playwright test --ui",
         "test:visual:update": "playwright test --update-snapshots",
@@ -40,9 +65,34 @@
         "docs:generate": "node scripts/documentation-generator.js",
         "docs:generate:check": "node scripts/documentation-generator-check.js",
         "theme:test": "playwright test tests/theme --config=playwright.theme.config.ts --reporter=list",
-        "theme:demo": "node -e \"console.log('Open components/theme/demo-theme.html in a browser served from the static server')\""
+        "theme:demo": "node -e \"console.log('Open components/Theme/demo-theme.html in a browser served from the static server')\"",
+        "search:test": "playwright test tests/search --config=playwright.search.config.ts --reporter=list",
+        "search:demo": "node -e \"console.log('Open components/Discovery/component-discovery.html in a browser served from the static server')\"",
+        "search:check": "node scripts/component-discovery-check.js",
+        "a11y:test": "playwright test tests/a11y --config=playwright.a11y.config.ts --reporter=list",
+        "package:check": "playwright test tests/webcomponents/package.spec.js --config=playwright.webcomponents.config.ts --reporter=list",
+        "dependencies:check": "node scripts/dependency-manager-check.js",
+        "components:version:generate": "node scripts/component-metadata.js --generate",
+        "components:version:check": "node scripts/component-metadata.js --check",
+        "components:version:bump": "node scripts/component-metadata.js",
+        "state:test": "playwright test tests/state --reporter=list",
+        "i18n:extract": "node scripts/i18n-extract.js",
+        "i18n:validate": "node scripts/i18n-validate.js",
+        "build": "npm run build:ts && npm run build:rollup",
+        "build:ts": "tsc -p tsconfig.json",
+        "build:rollup": "rollup -c",
+        "prepare": "npm run build"
     },
+    "bench": "node bench/bench.js",
+    "bench:sizes": "node bench/bundle-sizes.js",
+    "bench:all": "npm run bench && npm run bench:sizes",
+    "security:test": "playwright test tests/security --config=playwright.state.config.ts --reporter=list",
     "devDependencies": {
+        "rollup": "^3.30.0",
+        "@rollup/plugin-node-resolve": "^15.0.0",
+        "@rollup/plugin-commonjs": "^25.0.0",
+        "@rollup/plugin-typescript": "^11.1.0",
+        "typescript": "^5.4.2",
         "@axe-core/playwright": "^4.0.0",
         "@playwright/test": "^1.40.0",
         "@storybook/addon-essentials": "^8.6.14",
@@ -57,6 +107,7 @@
         "stylelint-config-standard": "^30.0.0"
     },
     "dependencies": {
+        "dompurify": "^3.4.5",
         "fuse.js": "^7.3.0"
     }
 }

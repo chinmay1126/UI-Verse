@@ -1,18 +1,19 @@
-:root{
+/*:root{
 
-  --bg:#060816;
-  --card:#12192b;
-
+  
+  --card:white;
+   --bg: #ffffff;
+  --text: #000000;
   --border:rgba(255,255,255,.08);
 
-  --text:#ffffff;
+  
   --muted:#98a3bd;
 
   --accent:#ff7a3d;
   --accent2:#7b61ff;
 
   --transition:.35s ease;
-}
+}*/
 
 *{
   margin:0;
@@ -20,21 +21,61 @@
   box-sizing:border-box;
 }
 
-body{
+/*body{
 
-  background:
-    linear-gradient(
-      180deg,
-      #050816,
-      #0b1022
-    );
-
-  color:var(--text);
-
-  font-family:'DM Sans',sans-serif;
-
-  overflow-x:hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
 }
+body.light {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background: #0f172a;
+  color: #ffffff;
+}*/
+/* Default (light mode) */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --card: #ffffff;
+  --border: rgba(0,0,0,.08);
+  --sidebar-bg: #f8f9fa;
+  --sidebar-text: #333;
+  --sidebar-border: rgba(0,0,0,.1);
+  --sidebar-hover: rgba(0,0,0,.05);
+  --sidebar-active: rgba(0,0,0,.08);
+}
+
+/* Light Theme */
+body.light {
+  --bg: #ffffff;
+  --text: #000000;
+  --card: #ffffff;
+  --border: rgba(0,0,0,.08);
+  --sidebar-bg: #f8f9fa;
+  --sidebar-text: #333;
+  --sidebar-border: rgba(0,0,0,.1);
+  --sidebar-hover: rgba(0,0,0,.05);
+  --sidebar-active: rgba(0,0,0,.08);
+}
+
+/* Dark Theme */
+body.dark {
+  --bg: #0f172a;
+  --text: #ffffff;
+  --card: #1e293b;
+  --border: rgba(255,255,255,.1);
+  --sidebar-bg: #1e293b;
+  --sidebar-text: #cbd5e1;
+  --sidebar-border: rgba(255,255,255,.1);
+  --sidebar-hover: rgba(255,255,255,.08);
+  --sidebar-active: rgba(123,97,255,.2);
+}
+
 /* ============================================================
    SIDEBAR
    ============================================================ */
@@ -174,7 +215,7 @@ body{
   padding:0 30px;
 
   background:
-    rgba(5,8,22,.82);
+    #ffffff;
 
   backdrop-filter:blur(18px);
 
@@ -197,8 +238,7 @@ body{
 
   border-radius:999px;
 
-  background:
-    rgba(255,255,255,.05);
+  
 
   border:
     1px solid var(--border);
@@ -213,7 +253,7 @@ body{
 
   background:none;
 
-  color:white;
+  color:#ffffff;
 }
 
 .nav-actions{
@@ -238,8 +278,7 @@ body{
 
 .outline-btn{
 
-  background:
-    rgba(255,255,255,.06);
+  background:#ffffff;
 
   color:white;
 }
@@ -263,6 +302,7 @@ body{
   margin-left:240px;
 
   padding:120px 40px 60px;
+  background-color: #fff;
 }
 
 /* HERO */
@@ -282,8 +322,7 @@ body{
 
   border-radius:999px;
 
-  background:
-    rgba(255,255,255,.06);
+  background:#ffffff;
 
   border:
     1px solid var(--border);
@@ -342,16 +381,13 @@ body{
   gap:30px;
 }
 
+
+
 /* CARD */
 
 .accordion-card{
 
-  background:
-    linear-gradient(
-      145deg,
-      #12192b,
-      #172038
-    );
+  background:#ffffff;
 
   border:
     1px solid var(--border);
@@ -391,6 +427,7 @@ body{
   line-height:1.2;
 
   font-family:'Syne',sans-serif;
+  color: orangered;
 }
 
 /* ACCORDION */
@@ -429,7 +466,7 @@ body{
 
   background:none;
 
-  color:white;
+  color:blueviolet;
 
   display:flex;
   justify-content:space-between;

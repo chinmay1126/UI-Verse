@@ -1,7 +1,7 @@
 :root{
 
-  --bg:#060816;
-  --card:#12192b;
+  --bg:white;
+  --card:white;
 
   --border:rgba(255,255,255,.08);
 
@@ -24,12 +24,7 @@
 
 body{
 
-  background:
-    linear-gradient(
-      180deg,
-      #050816,
-      #0b1022
-    );
+  background:white;
 
   color:var(--text);
 
@@ -175,7 +170,7 @@ body{
   padding:0 30px;
 
   background:
-    rgba(5,8,22,.82);
+    white;
 
   backdrop-filter:blur(18px);
 
@@ -199,7 +194,7 @@ body{
   border-radius:999px;
 
   background:
-    rgba(255,255,255,.05);
+    white;
 
   border:
     1px solid var(--border);
@@ -283,8 +278,7 @@ body{
 
   border-radius:999px;
 
-  background:
-    rgba(255,255,255,.06);
+  background:white;
 
   border:
     1px solid var(--border);

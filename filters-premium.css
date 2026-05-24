@@ -1468,6 +1468,258 @@ body {
 }
 
 
+/* =========================================================
+   11. BRAND LOGO FILTER CSS
+========================================================= */
+.premium-brand-filter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 250px;
+}
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.brand-item {
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-size: 20px;
+  color: var(--text-muted);
+}
+.brand-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.brand-item.active {
+  background: var(--color-purple-glow);
+  border-color: var(--color-purple);
+  color: var(--color-purple);
+  box-shadow: 0 0 15px var(--color-purple-glow);
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   12. DISTANCE SLIDER FILTER CSS
+========================================================= */
+.premium-distance-filter {
+  width: 100%;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.distance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: 14px;
+}
+.distance-header i {
+  color: var(--color-orange);
+}
+.distance-slider-wrap {
+  position: relative;
+  height: 24px;
+}
+.distance-thumb {
+  position: absolute;
+  top: 9px;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+  height: 6px;
+}
+.distance-thumb::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+}
+.distance-track-bg {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 99px;
+}
+.distance-track-fill {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ff7a3d, #f59e0b);
+  border-radius: 99px;
+}
+.distance-track-fill::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-orange);
+  box-shadow: 0 0 10px var(--color-orange-glow);
+  transition: var(--transition-smooth);
+  pointer-events: none;
+}
+.distance-thumb:hover ~ .distance-track-fill::after {
+  transform: scale(1.2);
+}
+
+/* =========================================================
+   13. SIZE SELECTION FILTER CSS
+========================================================= */
+.premium-size-filter {
+  width: 100%;
+  max-width: 250px;
+}
+.size-grid {
+  display: flex;
+  gap: 10px;
+}
+.size-box {
+  flex: 1;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+.size-box:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.size-box.active {
+  color: #10b981;
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   14. TOGGLES FILTER CSS
+========================================================= */
+.premium-toggles-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 250px;
+}
+.premium-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+.premium-toggle input {
+  display: none;
+}
+.toggle-slider {
+  width: 44px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  position: relative;
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.toggle-slider::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.premium-toggle input:checked + .toggle-slider {
+  background: var(--color-purple);
+  border-color: var(--color-purple);
+  box-shadow: 0 0 12px var(--color-purple-glow);
+}
+.premium-toggle input:checked + .toggle-slider::after {
+  left: 22px;
+}
+
+/* =========================================================
+   15. LAYOUT STYLE FILTER CSS
+========================================================= */
+.premium-layout-filter {
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+}
+.layout-toggle {
+  display: flex;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  position: relative;
+  padding: 4px;
+}
+.layout-btn {
+  width: 44px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  z-index: 2;
+  transition: var(--transition-smooth);
+  font-size: 16px;
+  border-radius: 8px;
+}
+.layout-btn.active {
+  color: #fff;
+}
+.layout-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 44px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  z-index: 1;
+  transition: var(--transition-spring);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
 /* ---- RESPONSIVE MEDIA QUERIES ---- */
 @media (max-width: 1200px) {
   .footer-grid {

@@ -968,3 +968,49 @@ body.dark-mode .skills-progress-card {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* ============================================================
+   ADDITIONAL NEW PROFILE STYLES (Cards 11-15)
+   ============================================================ */
+
+.outline-card {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(15,23,42,0.06);
+  background: transparent;
+  text-align: left;
+}
+.outline-card .avatar { width:56px; height:56px; border-radius:12px; }
+.outline-meta { display:flex; gap:8px; margin-top:8px; }
+.outline-meta span { font-size:0.75rem; color:var(--muted); background: rgba(15,23,42,0.04); padding:6px 8px; border-radius:999px; }
+
+.contact-card { width:100%; max-width:300px; padding:18px; border-radius:16px; text-align:center; }
+.contact-card .contact-list { display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+.contact-card .contact-list a { display:block; text-decoration:none; color:var(--accent); background: rgba(108,92,231,0.06); padding:8px 10px; border-radius:8px; font-weight:700; }
+
+.portfolio-card { width:100%; max-width:300px; padding:16px; border-radius:16px; text-align:center; }
+.portfolio-card .thumbs { display:flex; gap:8px; justify-content:center; margin-top:12px; }
+.portfolio-card .thumb { width:56px; height:40px; border-radius:8px; background:linear-gradient(135deg,#7b61ff,#eb6835); box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+
+.badge-card { width:100%; max-width:300px; padding:20px; border-radius:20px; text-align:center; position:relative; }
+.badge-wrap { position:relative; display:inline-block; }
+.badge-wrap .avatar { width:72px; height:72px; border-radius:50%; }
+.badge-wrap .badge { position:absolute; right:-6px; bottom:-6px; background:var(--accent-2); color:#fff; padding:6px 8px; border-radius:12px; font-weight:800; font-size:0.75rem; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+
+.compact-card { display:flex; align-items:center; gap:12px; width:100%; max-width:300px; padding:12px; border-radius:12px; }
+.compact-card .compact-info h3 { margin:0; font-size:1rem; }
+.compact-card .compact-info .muted { margin:0; font-size:0.78rem; color:var(--muted); }
+
+/* Dark mode adjustments for new cards */
+body.dark-mode .outline-card,
+body.dark-mode .contact-card,
+body.dark-mode .portfolio-card,
+body.dark-mode .badge-card,
+body.dark-mode .compact-card {
+  background: #141420;
+  border-color: rgba(255,255,255,0.06);
+  color: #fff;
+}
+
+

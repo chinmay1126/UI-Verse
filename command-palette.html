@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Command Palette Components | UIverse</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- CSS Placeholder -->
+  <link rel="stylesheet" href="command-palette.css" />
+  <link rel="stylesheet" href="shared-sidebar.css" />
+</head>
+
+<body>
+  <!-- APP LAYOUT -->
+  <div class="app-shell">
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-title">UIverse</span>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Primary navigation">
+        <ul>
+          <li class="sidebar-item">
+            <a href="index.html">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="button.html">
+              <i class="fa-solid fa-square-nfi"></i>
+              <span>Buttons</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="cards.html">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Cards</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="search.html">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Search Bars</span>
+            </a>
+          </li>
+          <li class="sidebar-item active">
+            <a href="command-palette.html">
+              <i class="fa-solid fa-terminal"></i>
+              <span>Command Palette</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </aside>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-shell">
+
+      <!-- TOP NAVBAR -->
+      <header class="topbar">
+        <button class="topbar-menu" type="button" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="topbar-brand">
+          <span class="brand-icon">⬡</span>
+          <span class="brand-title">UIverse</span>
+        </div>
+
+        <div class="topbar-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" placeholder="Search palette, commands, or docs..." aria-label="Top navigation search" />
+        </div>
+
+        <div class="topbar-actions">
+          <button class="action-btn icon-btn" type="button" aria-label="Toggle theme placeholder">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </button>
+          <button class="action-btn primary-btn" type="button">
+            <i class="fa-solid fa-rocket"></i>
+            Launch
+          </button>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+
+        <!-- HERO SECTION -->
+        <section class="hero-panel">
+          <div class="hero-copy">
+            <span class="hero-badge">Premium Collection</span>
+            <h1>Modern Command Palette Components</h1>
+            <p>
+              Discover premium spotlight search and command launcher patterns inspired by VS Code, Linear,
+              Raycast, Notion, and ChatGPT desktop experiences.
+            </p>
+            <div class="hero-badges">
+              <span class="pill">Keyboard Friendly</span>
+              <span class="pill">Spotlight Search</span>
+              <span class="pill">AI Inspired</span>
+            </div>
+            <div class="hero-actions">
+              <button class="primary-btn">Explore Components</button>
+              <button class="outline-btn">See Example</button>
+            </div>
+          </div>
+
+          <div class="hero-preview">
+            <div class="palette-modal">
+              <div class="palette-header">
+                <span>Search commands</span>
+                <kbd>⌘K</kbd>
+              </div>
+              <div class="palette-search-panel">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Type a command or action..." aria-label="Hero command search" />
+              </div>
+              <div class="palette-suggestions">
+                <div class="suggestion-row active">
+                  <span class="suggestion-icon"><i class="fa-solid fa-terminal"></i></span>
+                  <div>
+                    <p class="suggestion-title">Open Command Palette</p>
+                    <p class="suggestion-subtitle">Quick launch global actions and navigation.</p>
+                  </div>
+                  <kbd>⌘P</kbd>
+                </div>
+                <div class="suggestion-row">
+                  <span class="suggestion-icon"><i class="fa-solid fa-lightbulb"></i></span>
+                  <div>
+                    <p class="suggestion-title">AI Search Assistant</p>
+                    <p class="suggestion-subtitle">Generate instant prompts and smart actions.</p>
+                  </div>
+                  <kbd>AI</kbd>
+                </div>
+                <div class="suggestion-row">
+                  <span class="suggestion-icon"><i class="fa-solid fa-file-lines"></i></span>
+                  <div>
+                    <p class="suggestion-title">Find file</p>
+                    <p class="suggestion-subtitle">Locate components, pages, or docs fast.</p>
+                  </div>
+                  <kbd>F</kbd>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FILTER BAR -->
+        <section class="filter-panel" aria-label="Component filters">
+          <div class="filter-title">
+            <h2>Filter components</h2>
+            <p>Choose a category to browse polished command palette demos.</p>
+          </div>
+          <div class="filter-actions">
+            <button class="filter-chip active" type="button">All</button>
+            <button class="filter-chip" type="button">Search</button>
+            <button class="filter-chip" type="button">Spotlight</button>
+            <button class="filter-chip" type="button">AI</button>
+            <button class="filter-chip" type="button">Glassmorphism</button>
+            <button class="filter-chip" type="button">Dark Mode</button>
+          </div>
+        </section>
+
+        <!-- COMPONENTS GRID -->
+        <section class="components-section" aria-label="Command palette components">
+          <div class="section-header">
+            <h2>Palette Component Library</h2>
+            <p>Premium command palette templates ready for styling and interaction.</p>
+          </div>
+
+          <div class="component-grid">
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">VS Code style command menu</span>
+                <span class="tag">Productivity</span>
+              </div>
+              <div class="card-preview card-preview-terminal">
+                <div class="preview-search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="search" placeholder="Search commands..." aria-label="VS Code command menu search" />
+                </div>
+                <div class="preview-group">
+                  <span class="group-title">Navigation</span>
+                  <ul>
+                    <li class="command-row active"><i class="fa-solid fa-file-lines"></i> Open file <kbd>Ctrl+P</kbd></li>
+                    <li class="command-row"><i class="fa-solid fa-cube"></i> Go to symbol <kbd>Ctrl+Shift+O</kbd></li>
+                  </ul>
+                </div>
+                <div class="preview-group">
+                  <span class="group-title">Workspace</span>
+                  <ul>
+                    <li class="command-row"><i class="fa-solid fa-gear"></i> Open settings <kbd>Ctrl+,</kbd></li>
+                  </ul>
+                </div>
+              </div>
+              <p>Classic palette layout with grouped command rows, active selection, and keyboard shortcuts.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Use pattern</button>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">AI assistant search palette</span>
+                <span class="tag">AI</span>
+              </div>
+              <div class="card-preview card-preview-ai">
+                <div class="preview-search">
+                  <i class="fa-solid fa-robot"></i>
+                  <input type="search" placeholder="Ask your assistant..." aria-label="AI assistant search" />
+                </div>
+                <div class="preview-suggestions">
+                  <div class="ai-suggestion active">
+                    <span class="suggestion-icon"><i class="fa-solid fa-brain"></i></span>
+                    <div>
+                      <p class="suggestion-title">Summarize meeting notes</p>
+                      <p class="suggestion-subtitle">AI suggestion based on recent docs.</p>
+                    </div>
+                  </div>
+                  <div class="ai-suggestion">
+                    <span class="suggestion-icon"><i class="fa-solid fa-language"></i></span>
+                    <div>
+                      <p class="suggestion-title">Translate to Spanish</p>
+                      <p class="suggestion-subtitle">Instant language support.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p>AI-first palette with intelligent suggestions, grouped prompts, and quick action previews.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Copy code</button>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">Spotlight search overlay</span>
+                <span class="tag">Spotlight</span>
+              </div>
+              <div class="card-preview card-preview-spotlight">
+                <div class="preview-overlay-header">
+                  <span>Spotlight search</span>
+                  <kbd>⌘</kbd><kbd>Space</kbd>
+                </div>
+                <div class="preview-search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="search" placeholder="Search apps, commands, or docs" aria-label="Spotlight search" />
+                </div>
+                <ul class="preview-results">
+                  <li class="command-row active"><i class="fa-solid fa-folder-open"></i> Open project settings</li>
+                  <li class="command-row"><i class="fa-solid fa-comments"></i> Show chat history</li>
+                </ul>
+              </div>
+              <p>Minimal overlay with instant search, grouped results, and highlighted active items.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Details</button>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">Floating quick launcher</span>
+                <span class="tag">Launcher</span>
+              </div>
+              <div class="card-preview card-preview-float">
+                <div class="preview-floating-panel">
+                  <div class="preview-search">
+                    <i class="fa-solid fa-meteor"></i>
+                    <input type="search" placeholder="Launch action..." aria-label="Floating launcher search" />
+                  </div>
+                  <div class="quick-actions">
+                    <button type="button">New tab</button>
+                    <button type="button">Create note</button>
+                    <button type="button">Search files</button>
+                  </div>
+                </div>
+              </div>
+              <p>Floating palette with quick action buttons, compact search, and an effortless launcher layout.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Copy code</button>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">Recent searches dropdown</span>
+                <span class="tag">History</span>
+              </div>
+              <div class="card-preview card-preview-history">
+                <div class="preview-search">
+                  <i class="fa-solid fa-clock-rotate-left"></i>
+                  <input type="search" placeholder="Search history..." aria-label="Recent search history" />
+                </div>
+                <div class="dropdown-list">
+                  <div class="dropdown-group">
+                    <span class="group-title">Recent</span>
+                    <ul>
+                      <li class="command-row">Open roadmap</li>
+                      <li class="command-row">Switch workspace</li>
+                      <li class="command-row">Run deploy</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <p>Recent history dropdown with searchable items and fast access to past commands.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Use pattern</button>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">Keyboard shortcuts panel</span>
+                <span class="tag">Workflow</span>
+              </div>
+              <div class="card-preview card-preview-shortcuts">
+                <div class="shortcut-row">
+                  <span><i class="fa-solid fa-magnifying-glass"></i> Search command</span>
+                  <kbd>⌘</kbd><kbd>K</kbd>
+                </div>
+                <div class="shortcut-row">
+                  <span><i class="fa-solid fa-file-code"></i> Find file</span>
+                  <kbd>⌘</kbd><kbd>P</kbd>
+                </div>
+                <div class="shortcut-row">
+                  <span><i class="fa-solid fa-bolt"></i> Run action</span>
+                  <kbd>⌘</kbd><kbd>R</kbd>
+                </div>
+              </div>
+              <p>Keyboard-focused panel with shortcut badges, command labels, and quick key guidance.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Details</button>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">File finder command menu</span>
+                <span class="tag">Files</span>
+              </div>
+              <div class="card-preview card-preview-files">
+                <div class="preview-search">
+                  <i class="fa-solid fa-file-circle-plus"></i>
+                  <input type="search" placeholder="Type file name..." aria-label="File finder search" />
+                </div>
+                <ul>
+                  <li class="command-row active"><i class="fa-solid fa-file-code"></i> src/app/main.js <span class="file-path">/src/app</span></li>
+                  <li class="command-row"><i class="fa-solid fa-file-alt"></i> README.md <span class="file-path">/docs</span></li>
+                  <li class="command-row"><i class="fa-solid fa-file-lines"></i> package.json <span class="file-path">/</span></li>
+                </ul>
+              </div>
+              <p>File finder menu with instant search, file previews, and grouped file commands.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Copy code</button>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">Glassmorphism search overlay</span>
+                <span class="tag">Glass</span>
+              </div>
+              <div class="card-preview card-preview-glass">
+                <div class="preview-overlay-header">
+                  <span>Glass overlay</span>
+                  <span class="tag sm">Blur</span>
+                </div>
+                <div class="preview-search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="search" placeholder="Search commands" aria-label="Glass command overlay search" />
+                </div>
+                <div class="preview-actions">
+                  <button type="button">Recent</button>
+                  <button type="button">Favorites</button>
+                </div>
+              </div>
+              <p>Translucent glass palette with blurred background, pill actions, and soft focus.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Details</button>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">Minimal command palette</span>
+                <span class="tag">Minimal</span>
+              </div>
+              <div class="card-preview card-preview-minimal">
+                <div class="preview-search">
+                  <input type="search" placeholder="Type command..." aria-label="Minimal command palette search" />
+                </div>
+                <ul>
+                  <li class="command-row active">Open command palette</li>
+                  <li class="command-row">Toggle sidebar</li>
+                  <li class="command-row">Run workflow</li>
+                </ul>
+              </div>
+              <p>Minimal interface for fast command entry, understated visuals, and essential actions.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Copy code</button>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="card-meta">
+                <span class="card-label">Dark premium search panel</span>
+                <span class="tag">Dark</span>
+              </div>
+              <div class="card-preview card-preview-dark">
+                <div class="preview-search dark-mode">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="search" placeholder="Search premium commands" aria-label="Dark command panel search" />
+                </div>
+                <ul>
+                  <li class="command-row active"><i class="fa-solid fa-star"></i> Open premium dashboard</li>
+                  <li class="command-row"><i class="fa-solid fa-shield-alt"></i> Security scan</li>
+                  <li class="command-row"><i class="fa-solid fa-sun"></i> Theme settings</li>
+                </ul>
+              </div>
+              <p>Premium dark palette with neon highlights, command groups, and active item emphasis.</p>
+              <div class="card-actions">
+                <button type="button">Preview</button>
+                <button type="button">Details</button>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- PREMIUM UI FEATURES -->
+        <section class="premium-features">
+          <div class="features-header">
+            <h2>Premium UI Features</h2>
+            <p>Build a complete command palette experience with smart suggestions and workflow depth.</p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <i class="fa-solid fa-star"></i>
+              <h3>Search suggestions</h3>
+              <p>Intelligent suggestions surface matches as users type.</p>
+            </article>
+            <article class="feature-card">
+              <i class="fa-solid fa-keyboard"></i>
+              <h3>Keyboard shortcuts</h3>
+              <p>Dedicated shortcut labels keep your palette fast and efficient.</p>
+            </article>
+            <article class="feature-card">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <h3>Recent commands</h3>
+              <p>Reuse recent actions without leaving the current context.</p>
+            </article>
+            <article class="feature-card">
+              <i class="fa-solid fa-layer-group"></i>
+              <h3>Command categories</h3>
+              <p>Group actions into categories like navigation, tools, and AI.</p>
+            </article>
+            <article class="feature-card">
+              <i class="fa-solid fa-bolt"></i>
+              <h3>Quick actions</h3>
+              <p>Action buttons and quick toggles are always visible in the palette.</p>
+            </article>
+            <article class="feature-card">
+              <i class="fa-solid fa-lightbulb"></i>
+              <h3>AI assistant suggestions</h3>
+              <p>Context-aware AI tips power the next generation of search workflows.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="footer" aria-labelledby="footerHeading">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <span class="footer-logo">⬡ UIverse</span>
+            <p>Explore premium component UI patterns built for designers and developers.</p>
+          </div>
+
+          <div class="footer-links" role="navigation" aria-label="Footer navigation">
+            <div>
+              <h4>Navigation</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Components</a></li>
+                <li><a href="#">Templates</a></li>
+                <li><a href="#">Design system</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Guides</a></li>
+                <li><a href="#">Updates</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Stay connected</h4>
+              <div class="footer-socials">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Subscribe for premium UI updates, new palette drafts, and design toolkit releases.</p>
+            <form class="newsletter-form">
+              <label for="newsletterEmail" class="sr-only">Email address</label>
+              <input id="newsletterEmail" type="email" placeholder="you@example.com" aria-label="Newsletter email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 UIverse. Crafted for modern design systems and premium interface libraries.</p>
+          <nav class="footer-legal" aria-label="Footer legal links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
