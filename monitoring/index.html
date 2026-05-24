@@ -1,66 +1,44 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CPU/RAM Monitoring Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Movie Search Interface</title>
+  <link rel="stylesheet" href="ms.css">
 </head>
 <body>
 
-  <header>
-    <h1>🖥 CPU/RAM Monitoring Dashboard</h1>
-  </header>
+<div class="container">
 
-  <main class="container">
+  <h1>Movie Search</h1>
 
-    <!-- CPU Usage -->
-    <section class="card">
-      <h2>CPU Usage</h2>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search movies...">
+    <button id="searchBtn">Search</button>
+  </div>
 
-      <div class="circle">
-        <div class="inner-circle">
-          <span id="cpuValue">72%</span>
-        </div>
+  <div class="movie-container" id="movieContainer">
+
+    <div class="movie-card" data-title="inception">
+      <img src="https://picsum.photos/300/400?random=1" alt="Movie Poster">
+      <div class="movie-info">
+        <h2>Inception</h2>
+        <p>⭐ 8.8 IMDb</p>
       </div>
-    </section>
+    </div>
 
-    <!-- RAM Usage -->
-    <section class="card">
-      <h2>RAM Usage</h2>
-
-      <div class="circle ram-circle">
-        <div class="inner-circle">
-          <span id="ramValue">58%</span>
-        </div>
+    <div class="movie-card" data-title="interstellar">
+      <img src="https://picsum.photos/300/400?random=2" alt="Movie Poster">
+      <div class="movie-info">
+        <h2>Interstellar</h2>
+        <p>⭐ 8.6 IMDb</p>
       </div>
-    </section>
+    </div>
 
-    <!-- System Info -->
-    <section class="card">
-      <h2>System Information</h2>
+  </div>
 
-      <div class="info-box">
-        <p><strong>OS:</strong> Windows 11</p>
-        <p><strong>Processor:</strong> Intel i7</p>
-        <p><strong>Storage:</strong> 512GB SSD</p>
-        <p><strong>GPU:</strong> NVIDIA RTX</p>
-      </div>
-    </section>
+</div>
 
-    <!-- Live Graph -->
-    <section class="card">
-      <h2>Live Activity</h2>
-
-      <div class="graph">
-        <div class="line"></div>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
+<script src="ms.js"></script>
 </body>
 </html>
