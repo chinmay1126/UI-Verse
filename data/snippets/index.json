@@ -1,80 +1,93 @@
 [
   {
     "id": "index",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\index\\index.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\index\\index.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\index\\index.vue"
+    "html": "data/snippets/index/index.html",
+    "jsx": "data/snippets/index/index.jsx",
+    "vue": "data/snippets/index/index.vue",
+    "hash": "fed2a2439f6d845c9c5e85c2cc2797687653e5fc"
   },
   {
     "id": "button",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\button\\button.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\button\\button.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\button\\button.vue"
+    "html": "data/snippets/button/button.html",
+    "jsx": "data/snippets/button/button.jsx",
+    "vue": "data/snippets/button/button.vue",
+    "hash": "796d779fd0067b4a7e5d320ad975aedb68bacfa3"
   },
   {
     "id": "navbar",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\navbar\\navbar.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\navbar\\navbar.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\navbar\\navbar.vue"
+    "html": "data/snippets/navbar/navbar.html",
+    "jsx": "data/snippets/navbar/navbar.jsx",
+    "vue": "data/snippets/navbar/navbar.vue",
+    "hash": "e67a04dc1a5c1875bd6c57c3da2cfbe7f6425214"
   },
   {
     "id": "cards",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\cards\\cards.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\cards\\cards.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\cards\\cards.vue"
+    "html": "data/snippets/cards/cards.html",
+    "jsx": "data/snippets/cards/cards.jsx",
+    "vue": "data/snippets/cards/cards.vue",
+    "hash": "675f18a011ba66f8506165a547af91b881b2ff4c"
   },
   {
     "id": "badges",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\badges\\badges.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\badges\\badges.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\badges\\badges.vue"
+    "html": "data/snippets/badges/badges.html",
+    "jsx": "data/snippets/badges/badges.jsx",
+    "vue": "data/snippets/badges/badges.vue",
+    "hash": "4a96ee127dbbc8414ab3e8e5537e408001fdec05"
   },
   {
     "id": "form",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\form\\form.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\form\\form.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\form\\form.vue"
+    "html": "data/snippets/form/form.html",
+    "jsx": "data/snippets/form/form.jsx",
+    "vue": "data/snippets/form/form.vue",
+    "hash": "90780393219c37b1b6d5ab7d253bf0d37d542f02"
   },
   {
     "id": "footer",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\footer\\footer.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\footer\\footer.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\footer\\footer.vue"
+    "html": "data/snippets/footer/footer.html",
+    "jsx": "data/snippets/footer/footer.jsx",
+    "vue": "data/snippets/footer/footer.vue",
+    "hash": "fa1e7d9a55251c5c71ee65e290f59c7b1a67540f"
   },
   {
     "id": "color",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\color\\color.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\color\\color.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\color\\color.vue"
+    "html": "data/snippets/color/color.html",
+    "jsx": "data/snippets/color/color.jsx",
+    "vue": "data/snippets/color/color.vue",
+    "hash": "360c582526a75b777fed7933c16a6595db88bf25"
   },
   {
     "id": "settings",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\settings\\settings.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\settings\\settings.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\settings\\settings.vue"
+    "html": "data/snippets/settings/settings.html",
+    "jsx": "data/snippets/settings/settings.jsx",
+    "vue": "data/snippets/settings/settings.vue",
+    "hash": "f491dcae23b8e9c3a6d7c1cdfdc1a7975cb9bba7"
   },
   {
     "id": "testimonials",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\testimonials\\testimonials.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\testimonials\\testimonials.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\testimonials\\testimonials.vue"
+    "html": "data/snippets/testimonials/testimonials.html",
+    "jsx": "data/snippets/testimonials/testimonials.jsx",
+    "vue": "data/snippets/testimonials/testimonials.vue",
+    "hash": "b9e61a24029ad3d26f12388d393b7575d9bcfcbc"
   },
   {
     "id": "pricing",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\pricing\\pricing.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\pricing\\pricing.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\pricing\\pricing.vue"
+    "html": "data/snippets/pricing/pricing.html",
+    "jsx": "data/snippets/pricing/pricing.jsx",
+    "vue": "data/snippets/pricing/pricing.vue",
+    "hash": "e00cad8eb64c180204ef19f2d8ceabd4aead2474"
   },
   {
     "id": "alerts",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\alerts\\alerts.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\alerts\\alerts.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\alerts\\alerts.vue"
+    "html": "data/snippets/alerts/alerts.html",
+    "jsx": "data/snippets/alerts/alerts.jsx",
+    "vue": "data/snippets/alerts/alerts.vue",
+    "hash": "c372a98a99e88166134502c60eb8abbe0c9189fb"
   },
   {
     "id": "toggles",
-    "htmlFile": "E:\\nsoc26\\UI-Verse\\data\\snippets\\toggles\\toggles.html",
-    "jsx": "E:\\nsoc26\\UI-Verse\\data\\snippets\\toggles\\toggles.jsx",
-    "vue": "E:\\nsoc26\\UI-Verse\\data\\snippets\\toggles\\toggles.vue"
+    "html": "data/snippets/toggles/toggles.html",
+    "jsx": "data/snippets/toggles/toggles.jsx",
+    "vue": "data/snippets/toggles/toggles.vue",
+    "hash": "ff3299447f46068ec40633f1c83d68dea0413efa"
   }
 ]

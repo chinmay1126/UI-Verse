@@ -1,144 +1,116 @@
 <template>
-<main class="badges-page">
-
-    <div class="page-header">
-      <h1>🏆 My Badges</h1>
-      <p>Track your achievements and contribution progress</p>
-    </div>
-
-    <!-- ================= BADGES HERO ================= -->
-<section class="badges-hero">
-  <div class="badges-hero-content">
-
-    <div class="badges-hero-left">
-      <span class="hero-chip">
-        <i class="fa-solid fa-award"></i>
-        Achievement System
-      </span>
-
-      <h1>
-        Unlock <span>Badges</span><br>
-        Build Your Reputation
-      </h1>
-
-      <p>
-        Track contributions, maintain streaks, complete challenges,
-        and showcase your developer achievements with modern collectible badges.
-      </p>
-
-      <div class="hero-actions">
-        <button class="hero-btn primary">
-          <i class="fa-solid fa-trophy"></i>
-          Explore Rewards
-        </button>
-
-        <button class="hero-btn secondary">
-          <i class="fa-solid fa-fire"></i>
-          View Streaks
-        </button>
-      </div>
-
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <h3>28</h3>
-          <span>Badges Earned</span>
-        </div>
-
-        <div class="hero-stat">
-          <h3>94%</h3>
-          <span>Completion Rate</span>
-        </div>
-
-        <div class="hero-stat">
-          <h3>#12</h3>
-          <span>Global Rank</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="badges-hero-right">
-
-      <div class="floating-badge fb-1">
-        <i class="fa-solid fa-fire"></i>
-      </div>
-
-      <div class="floating-badge fb-2">
-        <i class="fa-solid fa-crown"></i>
-      </div>
-
-      <div class="floating-badge fb-3">
-        <i class="fa-solid fa-shield-halved"></i>
-      </div>
-
-      <div class="hero-card-glow"></div>
-
-      <div class="hero-preview-card">
-
-        <div class="hero-preview-top">
-          <div class="hero-user">
-            <div class="hero-avatar">D</div>
-
-            <div>
-              <h4>Dipanita</h4>
-              <p>Frontend Developer</p>
-            </div>
-          </div>
-
-          <span class="xp-pill">
-            <i class="fa-solid fa-bolt"></i>
-            4,820 XP
-          </span>
-        </div>
-
-        <div class="hero-badge-grid">
-
-          <div class="mini-badge gold">
-            <i class="fa-solid fa-code-pull-request"></i>
-          </div>
-
-          <div class="mini-badge purple">
-            <i class="fa-solid fa-fire"></i>
-          </div>
-
-          <div class="mini-badge blue">
-            <i class="fa-solid fa-users"></i>
-          </div>
-
-          <div class="mini-badge green">
-            <i class="fa-solid fa-bug-slash"></i>
-          </div>
-
-          <div class="mini-badge orange">
-            <i class="fa-solid fa-medal"></i>
-          </div>
-
-          <div class="mini-badge cyan">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-
-        </div>
-
-        <div class="hero-progress-wrap">
-          <div class="hero-progress-top">
-            <span>Level Progress</span>
-            <span>82%</span>
-          </div>
-
-          <div class="hero-progress-bar">
-            <div class="hero-progress-fill"></div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
   </div>
-</section>
 
-    <!-- Earned -->
-    <section class="badge-section">
-      <h2>Earned Badges</h2>
+  <nav class="sidebar-nav">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="button.html">
+          <i class="fa-solid fa-hand-pointer"></i>
+          <span>Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="navbar.html">
+          <i class="fa-solid fa-bars"></i>
+          <span>Navbar</span>
+        </a>
+      </li>
+      <li>
+        <a href="cards.html">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span>Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="inputs.html">
+          <i class="fa-solid fa-keyboard"></i>
+          <span>Inputs</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fa-regular fa-user"></i>
+          <span>Contact Us</span>
+        </a>
+      </li>
+      <li>
+        <a href="forms.html">
+          <i class="fa-brands fa-wpforms"></i>
+          <span>Forms</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="badges.html">
+          <i class="fa-solid fa-award"></i>
+          <span>Badges</span>
+        </a>
+      </li>
+      <li>
+        <a href="loaders.html">
+          <i class="fa-solid fa-award"></i>
+          <span>Loaders</span>
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <i class="fa-solid fa-award"></i>
+          <span>About us</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
+
+<!-- ================= SIDEBAR BACKDROP ================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="logo">UIverse</div>
+
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn">
+      <i class="fa-solid fa-plus"></i> Add Component
+    </button>
+    <button class="nav-btn primary-nav-btn">
+      <i class="fa-solid fa-bookmark"></i> My Collection
+    </button>
+    <button id="syncCollectionsBtn" class="nav-btn outline-nav-btn" title="Sync collections now">
+      <i class="fa-solid fa-sync"></i>
+    </button>
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
+
 <section class="badges-page">
   <h1><i class="fa-solid fa-trophy"></i> My Badges</h1>
 
@@ -157,15 +129,12 @@
       <p>Contributed to 10 PRs</p>
     </div>
 
-      <div class="badge-container">
+  </div>
 
-        <div class="badge earned">
-          <div class="badge-img">
-            <img src="badge1.jpg" alt="First PR Badge">
-          </div>
+  <!-- In Progress -->
+  <h2 class="prog-1">In Progress</h2>
+  <div class="badge-container">
 
-          <h3>First PR</h3>
-          <p>Completed your first pull request</p>
     <div class="badge progress">
       <picture><source type="image/avif" srcset="generated-images/time/time-320.avif 320w, generated-images/time/time-480.avif 480w, generated-images/time/time-512.avif 512w" sizes="(max-width: 768px) 96px, 160px"><source type="image/webp" srcset="generated-images/time/time-320.webp 320w, generated-images/time/time-480.webp 480w, generated-images/time/time-512.webp 512w" sizes="(max-width: 768px) 96px, 160px"><img src="generated-images/time/time-optimized-512.png" alt="Top Contributor badge with progress indicator" sizes="(max-width: 768px) 96px, 160px" loading="lazy" decoding="async" width="512" height="512"></picture>
       <h3>Top Contributor</h3>
@@ -173,78 +142,8 @@
       <progress value="14" max="50"></progress>
     </div>
 
-          <span class="badge-status success">
-            <i class="fa-solid fa-circle-check"></i>
-            Unlocked
-          </span>
-        </div>
+  </div>
 
-        <div class="badge earned">
-          <div class="badge-img">
-            <img src="badge2.jpg" alt="Contributor Badge">
-          </div>
-
-          <h3>Contributor</h3>
-          <p>Contributed to 10 pull requests</p>
-
-          <span class="badge-status success">
-            <i class="fa-solid fa-circle-check"></i>
-            Unlocked
-          </span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Progress -->
-    <section class="badge-section">
-      <h2>In Progress</h2>
-
-      <div class="badge-container">
-
-        <div class="badge progress-card">
-
-          <div class="badge-img">
-            <img src="time.png" alt="Progress Badge">
-          </div>
-
-          <h3>Top Contributor</h3>
-          <p>14 / 50 PRs completed</p>
-
-          <div class="progress-wrapper">
-            <progress value="14" max="50"></progress>
-            <span>28%</span>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Locked -->
-    <section class="badge-section">
-      <h2>Locked Badges</h2>
-
-      <div class="badge-container">
-
-        <div class="badge locked">
-
-          <div class="badge-img">
-            <img src="lock.jpg" alt="Locked Badge">
-          </div>
-
-          <h3>Elite Hacker</h3>
-          <p>Complete 100 PRs to unlock</p>
-
-          <span class="badge-status locked-status">
-            <i class="fa-solid fa-lock"></i>
-            Locked
-          </span>
-
-        </div>
-
-      </div>
-    </section>
   <!-- Earned Badges -->
 <h2>✨ Earned Badges</h2>
 <div class="badge-container">
@@ -363,7 +262,114 @@
       <p>Complete 100 PRs</p>
     </div>
 
-  </main>
+  </div>
+
+</section>
+
+  <!-- UIverse Modular Scripts -->
+  <script src="js/core/utils.js"></script>
+  <script src="js/features/toast.js"></script>
+  <script src="js/features/popup.js"></script>
+  <script src="js/features/code-tools.js"></script>
+  <script src="js/features/sidebar.js"></script>
+  <script src="js/features/search.js"></script>
+  <script src="js/features/theme.js"></script>
+  <script src="js/features/scroll.js"></script>
+  <script src="js/features/alerts.js"></script>
+  <script src="js/features/sandbox.js"></script>
+  <script src="js/features/accessibility.js"></script>
+<script src="js/bootstrap.js"></script>
+
+  <!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col brand">
+      <h2 class="footer-logo"><i class="fa-solid fa-cube"></i> UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="#">License</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
+<!-- ================= COMMAND PALETTE ================= -->
+<div id="commandPaletteOverlay" class="command-palette-overlay">
+  <div class="command-palette-container">
+    <div class="command-palette-input-wrapper">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input 
+        type="text" 
+        id="commandPaletteInput" 
+        class="command-palette-input" 
+        placeholder="Search components... (Cmd+K)"
+        autocomplete="off"
+      />
+    </div>
+    <ul id="commandPaletteResults" class="command-palette-results"></ul>
+    <div class="command-palette-footer">
+      <div class="command-palette-footer-item">
+        <span class="command-palette-footer-kbd">↑↓</span>
+        <span>Navigate</span>
+      </div>
+      <div class="command-palette-footer-item">
+        <span class="command-palette-footer-kbd">⏎</span>
+        <span>Select</span>
+      </div>
+      <div class="command-palette-footer-item">
+        <span class="command-palette-footer-kbd">Esc</span>
+        <span>Close</span>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>

@@ -10,7 +10,11 @@
         <span>Navbars</span>
       </div>
       <h1 class="page-title">Navbar Components</h1>
+<<<<<<< HEAD
+      <p class="page-desc">A complete collection of navigation bar styles G�� from simple to glassmorphic, dark themed, search-enabled, and split layouts. Copy and use instantly.</p>
+=======
       <p class="page-desc">A complete collection of navigation bar styles — from simple to glassmorphic, dark themed, search-enabled, and split layouts. Copy and use instantly.</p>
+>>>>>>> upstream/main
       <div class="page-meta">
         <span class="meta-badge"><i class="fa-solid fa-layer-group"></i> 8 Components</span>
         <span class="meta-badge"><i class="fa-solid fa-code"></i> Pure CSS</span>
@@ -20,7 +24,11 @@
     <div class="page-hero-right">
       <div class="hero-nav-preview">
         <div class="mini-nav">
+<<<<<<< HEAD
+          <span class="mini-brand">G�� UIverse</span>
+=======
           <span class="mini-brand">⬡ UIverse</span>
+>>>>>>> upstream/main
           <div class="mini-links">
             <span>Home</span>
             <span>Docs</span>
@@ -46,8 +54,14 @@
 
   <!-- Navbars Grid -->
   <div class="navbar-grid" id="navbarGrid">
+<<<<<<< HEAD
+  <!-- =========================================================
+     NAVBAR 9 G�� FLOATING NAVBAR
+=======
    <!-- =========================================================
      TRANSPARENT HERO NAVBAR
+>>>>>>> upstream/main
+========================================================= -->
 
 <div class="component-card" data-name="transparent hero navbar landing page" data-cat="glass">
 
@@ -67,11 +81,15 @@
 
     <nav class="demo-hero-nav">
 
+<<<<<<< HEAD
+      <span class="dnav-brand">G�� UIverse</span>
+=======
       <span class="hero-brand">
         ⬡ UIverse
       </span>
 
       <div class="hero-links">
+>>>>>>> upstream/main
 
         <a href="#">Home</a>
 
@@ -109,8 +127,13 @@
 
   </div>
 
+<<<<<<< HEAD
+  <pre id="c9" class="code-block"><code>&lt;nav class="navbar-floating"&gt;
+  &lt;span class="brand"&gt;G�� UIverse&lt;/span&gt;
+=======
   <pre id="c18" class="code-block"><code>&lt;nav class="hero-navbar"&gt;
   &lt;span class="brand"&gt;⬡ UIverse&lt;/span&gt;
+>>>>>>> upstream/main
 
   &lt;div class="links"&gt;
     &lt;a href="#"&gt;Home&lt;/a&gt;
@@ -123,186 +146,12 @@
 </div>
 
 <!-- =========================================================
-     SAAS APP NAVBAR
-
-<div class="component-card" data-name="saas app navbar modern workspace ai" data-cat="advanced">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      SaaS App Navbar
-    </span>
-
-    <span class="card-tag tag-popular">
-      Popular
-    </span>
-
-  </div>
-
-  <div class="nav-card-preview saas-preview">
-
-    <nav class="demo-saas-nav">
-
-      <div class="saas-left">
-
-        <span class="saas-brand">
-          ⚡ UIverse
-        </span>
-
-        <div class="saas-links">
-
-          <a href="#">Products</a>
-
-          <a href="#">Solutions</a>
-
-          <a href="#">Enterprise</a>
-
-          <a href="#">Resources</a>
-
-        </div>
-
-      </div>
-
-      <div class="saas-right">
-
-        <button class="saas-outline">
-          Login
-        </button>
-
-        <button class="saas-primary">
-          Start Free
-        </button>
-
-      </div>
-
-    </nav>
-
-  </div>
-
-  <p class="card-desc">
-    A modern SaaS navbar with enterprise links and dual CTA actions.
-  </p>
-
-  <div class="actions">
-
-    <button class="action-btn view-btn" onclick="toggleCode('c20', this)">
-      <i class="fa-solid fa-code"></i>
-      View Code
-    </button>
-
-    <button class="action-btn copy-btn" onclick="copyCode('c20', this)">
-      <i class="fa-solid fa-copy"></i>
-      Copy
-    </button>
-
-  </div>
-
-  <pre id="c20" class="code-block"><code>&lt;nav class="saas-navbar"&gt;
-  &lt;span class="brand"&gt;⚡ UIverse&lt;/span&gt;
-
-  &lt;div class="links"&gt;
-    &lt;a href="#"&gt;Products&lt;/a&gt;
-    &lt;a href="#"&gt;Solutions&lt;/a&gt;
-    &lt;a href="#"&gt;Enterprise&lt;/a&gt;
-  &lt;/div&gt;
-
-  &lt;div class="actions"&gt;
-    &lt;button class="outline"&gt;Login&lt;/button&gt;
-    &lt;button class="primary"&gt;Start Free&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
-
-</div>
-
-<!-- =========================================================
-     ECOMMERCE NAVBAR
-
-<div class="component-card" data-name="ecommerce navbar shopping cart store" data-cat="advanced">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      E-Commerce Navbar
-    </span>
-
-    <span class="card-tag tag-trending">
-      Trending
-    </span>
-
-  </div>
-
-  <div class="nav-card-preview ecommerce-preview">
-
-    <nav class="demo-ecommerce-nav">
-
-      <span class="ecommerce-brand">
-        🛍 ShopUI
-      </span>
-
-      <div class="ecommerce-search">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <input type="text" placeholder="Search products..." />
-
-      </div>
-
-      <div class="ecommerce-actions">
-
-        <button>
-          <i class="fa-regular fa-heart"></i>
-        </button>
-
-        <button>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-
-        <button>
-          <i class="fa-regular fa-user"></i>
-        </button>
-
-      </div>
-
-    </nav>
-
-  </div>
-
-  <p class="card-desc">
-    A premium shopping navbar with search and cart action buttons.
-  </p>
-
-  <div class="actions">
-
-    <button class="action-btn view-btn" onclick="toggleCode('c21', this)">
-      <i class="fa-solid fa-code"></i>
-      View Code
-    </button>
-
-    <button class="action-btn copy-btn" onclick="copyCode('c21', this)">
-      <i class="fa-solid fa-copy"></i>
-      Copy
-    </button>
-
-  </div>
-
-  <pre id="c21" class="code-block"><code>&lt;nav class="ecommerce-navbar"&gt;
-  &lt;span class="brand"&gt;🛍 ShopUI&lt;/span&gt;
-
-  &lt;div class="search"&gt;
-    &lt;i class="fa-solid fa-magnifying-glass"&gt;&lt;/i&gt;
-    &lt;input type="text" placeholder="Search products..."&gt;
-  &lt;/div&gt;
-
-  &lt;div class="actions"&gt;
-    &lt;i class="fa-regular fa-heart"&gt;&lt;/i&gt;
-    &lt;i class="fa-solid fa-cart-shopping"&gt;&lt;/i&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
-
-</div>
-
-<!-- =========================================================
+<<<<<<< HEAD
+     NAVBAR 10 G�� NEON NAVBAR
+=======
      DASHBOARD NAVBAR
+>>>>>>> upstream/main
+========================================================= -->
 
 <div class="component-card" data-name="dashboard navbar admin analytics" data-cat="advanced">
 
@@ -391,6 +240,7 @@
 </div> 
     <!-- =========================================================
      MACOS DOCK NAVBAR
+========================================================= -->
 
 <div class="component-card" data-name="macos dock navbar floating apple glass" data-cat="advanced">
 
@@ -462,6 +312,7 @@
 
 <!-- =========================================================
      MEGA MENU NAVBAR
+========================================================= -->
 
 <div class="component-card" data-name="mega menu navbar enterprise dropdown" data-cat="advanced">
 
@@ -607,6 +458,7 @@
     
     <!-- =========================================================
      PROFILE DROPDOWN NAVBAR
+========================================================= -->
 
 <div class="component-card" data-name="profile dropdown navbar settings logout" data-cat="advanced">
 
@@ -626,571 +478,337 @@
 
     <nav class="demo-profile-nav">
 
-<div class="component-card" data-name="transparent hero navbar landing page" data-cat="glass">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      Transparent Hero Navbar
-    </span>
-
-    <span class="card-tag tag-trending">
-      Trending
-    </span>
-
-  </div>
-
-  <div class="nav-card-preview hero-nav-preview">
-
-    <nav class="demo-hero-nav">
-
-      <span class="hero-brand">
+      <span class="profile-brand">
         ⬡ UIverse
       </span>
 
-      <div class="hero-links">
-
-        <a href="#">Home</a>
-
-        <a href="#">Features</a>
-
-        <a href="#">Pricing</a>
-
-        <a href="#">Contact</a>
-
-      </div>
-
-      <button class="hero-nav-btn">
-        Get Started
-      </button>
-
-    </nav>
-
-  </div>
-
-  <p class="card-desc">
-    A transparent landing-page navbar with glassmorphism and blur effects.
-  </p>
-
-  <div class="actions">
-
-    <button class="action-btn view-btn" onclick="toggleCode('c18', this)">
-      <i class="fa-solid fa-code"></i>
-      View Code
-    </button>
-
-    <button class="action-btn copy-btn" onclick="copyCode('c18', this)">
-      <i class="fa-solid fa-copy"></i>
-      Copy
-    </button>
-
-  </div>
-
-  <pre id="c18" class="code-block"><code>&lt;nav class="hero-navbar"&gt;
-  &lt;span class="brand"&gt;⬡ UIverse&lt;/span&gt;
-
-  &lt;div class="links"&gt;
-    &lt;a href="#"&gt;Home&lt;/a&gt;
-    &lt;a href="#"&gt;Features&lt;/a&gt;
-  &lt;/div&gt;
-
-  &lt;button&gt;Get Started&lt;/button&gt;
-&lt;/nav&gt;</code></pre>
-
-</div>
-
-<!-- =========================================================
-     SAAS APP NAVBAR
-
-<div class="component-card" data-name="saas app navbar modern workspace ai" data-cat="advanced">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      SaaS App Navbar
-    </span>
-
-    <span class="card-tag tag-popular">
-      Popular
-    </span>
-
-  </div>
-
-  <div class="nav-card-preview saas-preview">
-
-    <nav class="demo-saas-nav">
-
-      <div class="saas-left">
-
-        <span class="saas-brand">
-          ⚡ UIverse
-        </span>
-
-        <div class="saas-links">
-
-          <a href="#">Products</a>
-
-          <a href="#">Solutions</a>
-
-          <a href="#">Enterprise</a>
-
-          <a href="#">Resources</a>
-
-        </div>
-
-      </div>
-
-      <div class="saas-right">
-
-        <button class="saas-outline">
-          Login
-        </button>
-
-        <button class="saas-primary">
-          Start Free
-        </button>
-
-      </div>
-
-    </nav>
-
-  </div>
-
-  <p class="card-desc">
-    A modern SaaS navbar with enterprise links and dual CTA actions.
-  </p>
-
-  <div class="actions">
-
-    <button class="action-btn view-btn" onclick="toggleCode('c20', this)">
-      <i class="fa-solid fa-code"></i>
-      View Code
-    </button>
-
-    <button class="action-btn copy-btn" onclick="copyCode('c20', this)">
-      <i class="fa-solid fa-copy"></i>
-      Copy
-    </button>
-
-  </div>
-
-  <pre id="c20" class="code-block"><code>&lt;nav class="saas-navbar"&gt;
-  &lt;span class="brand"&gt;⚡ UIverse&lt;/span&gt;
-
-  &lt;div class="links"&gt;
-    &lt;a href="#"&gt;Products&lt;/a&gt;
-    &lt;a href="#"&gt;Solutions&lt;/a&gt;
-    &lt;a href="#"&gt;Enterprise&lt;/a&gt;
-  &lt;/div&gt;
-
-  &lt;div class="actions"&gt;
-    &lt;button class="outline"&gt;Login&lt;/button&gt;
-    &lt;button class="primary"&gt;Start Free&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
-
-</div>
-
-<!-- =========================================================
-     ECOMMERCE NAVBAR
-
-<div class="component-card" data-name="ecommerce navbar shopping cart store" data-cat="advanced">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      E-Commerce Navbar
-    </span>
-
-    <span class="card-tag tag-trending">
-      Trending
-    </span>
-
-  </div>
-
-  <div class="nav-card-preview ecommerce-preview">
-
-    <nav class="demo-ecommerce-nav">
-
-      <span class="ecommerce-brand">
-        🛍 ShopUI
-      </span>
-
-      <div class="ecommerce-search">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <input type="text" placeholder="Search products..." />
-
-      </div>
-
-      <div class="ecommerce-actions">
-
-        <button>
-          <i class="fa-regular fa-heart"></i>
-        </button>
-
-        <button>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-
-        <button>
-          <i class="fa-regular fa-user"></i>
-        </button>
-
-      </div>
-
-    </nav>
-
-  </div>
-
-  <p class="card-desc">
-    A premium shopping navbar with search and cart action buttons.
-  </p>
-
-  <div class="actions">
-
-    <button class="action-btn view-btn" onclick="toggleCode('c21', this)">
-      <i class="fa-solid fa-code"></i>
-      View Code
-    </button>
-
-    <button class="action-btn copy-btn" onclick="copyCode('c21', this)">
-      <i class="fa-solid fa-copy"></i>
-      Copy
-    </button>
-
-  </div>
-
-  <pre id="c21" class="code-block"><code>&lt;nav class="ecommerce-navbar"&gt;
-  &lt;span class="brand"&gt;🛍 ShopUI&lt;/span&gt;
-
-  &lt;div class="search"&gt;
-    &lt;i class="fa-solid fa-magnifying-glass"&gt;&lt;/i&gt;
-    &lt;input type="text" placeholder="Search products..."&gt;
-  &lt;/div&gt;
-
-  &lt;div class="actions"&gt;
-    &lt;i class="fa-regular fa-heart"&gt;&lt;/i&gt;
-    &lt;i class="fa-solid fa-cart-shopping"&gt;&lt;/i&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
-
-</div>
-
-<!-- =========================================================
-     DASHBOARD NAVBAR
-
-<div class="component-card" data-name="dashboard navbar admin analytics" data-cat="advanced">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      Dashboard Navbar
-    </span>
-
-    <span class="card-tag tag-popular">
-      Popular
-    </span>
-
-  </div>
-
-  <div class="nav-card-preview dashboard-preview">
-
-    <nav class="demo-dashboard-nav">
-
-      <div class="dashboard-left">
-
-        <span class="dashboard-brand">
-          ⬡ Dashboard
-        </span>
-
-        <div class="dashboard-search">
-
-          <i class="fa-solid fa-magnifying-glass"></i>
-
-          <input type="text" placeholder="Search..." />
-
-        </div>
-
-      </div>
-
-      <div class="dashboard-right">
-
-        <button class="dashboard-icon">
-          <i class="fa-regular fa-bell"></i>
-        </button>
-
-        <button class="dashboard-icon">
-          <i class="fa-regular fa-envelope"></i>
-        </button>
+      <div class="profile-menu">
 
         <img
-          src="https://i.pravatar.cc/100?img=15"
+          src="https://i.pravatar.cc/100?img=12"
           alt="Avatar"
         />
 
-      </div>
-
-    </nav>
-
-  </div>
-
-  <p class="card-desc">
-    A professional admin dashboard navbar with search and notification actions.
-  </p>
-
-  <div class="actions">
-
-    <button class="action-btn view-btn" onclick="toggleCode('c19', this)">
-      <i class="fa-solid fa-code"></i>
-      View Code
-    </button>
-
-    <button class="action-btn copy-btn" onclick="copyCode('c19', this)">
-      <i class="fa-solid fa-copy"></i>
-      Copy
-    </button>
-
-  </div>
-
-  <pre id="c19" class="code-block"><code>&lt;nav class="dashboard-navbar"&gt;
-  &lt;span class="brand"&gt;⬡ Dashboard&lt;/span&gt;
-
-  &lt;input type="text" placeholder="Search..."&gt;
-
-  &lt;div class="actions"&gt;
-    &lt;i class="fa-regular fa-bell"&gt;&lt;/i&gt;
-    &lt;i class="fa-regular fa-envelope"&gt;&lt;/i&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
-
-</div> 
-    <!-- =========================================================
-     MACOS DOCK NAVBAR
-
-<div class="component-card" data-name="macos dock navbar floating apple glass" data-cat="advanced">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      MacOS Dock Navbar
-    </span>
-
-    <span class="card-tag tag-trending">
-      Trending
-    </span>
-
-  </div>
-
-  <div class="nav-card-preview dock-preview">
-
-    <nav class="demo-dock-nav">
-
-      <a href="#">
-        <i class="fa-solid fa-house"></i>
-      </a>
-
-      <a href="#">
-        <i class="fa-solid fa-compass"></i>
-      </a>
-
-      <a href="#">
-        <i class="fa-solid fa-heart"></i>
-      </a>
-
-      <a href="#">
-        <i class="fa-solid fa-message"></i>
-      </a>
-
-      <a href="#">
-        <i class="fa-solid fa-user"></i>
-      </a>
-
-    </nav>
-
-  </div>
-
-  <p class="card-desc">
-    An Apple-inspired floating dock navbar with magnify hover effects.
-  </p>
-
-  <div class="actions">
-
-    <button class="action-btn view-btn" onclick="toggleCode('c16', this)">
-      <i class="fa-solid fa-code"></i>
-      View Code
-    </button>
-
-    <button class="action-btn copy-btn" onclick="copyCode('c16', this)">
-      <i class="fa-solid fa-copy"></i>
-      Copy
-    </button>
-
-  </div>
-
-  <pre id="c16" class="code-block"><code>&lt;nav class="dock-navbar"&gt;
-  &lt;a href="#"&gt;&lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;&lt;/a&gt;
-  &lt;a href="#"&gt;&lt;i class="fa-solid fa-heart"&gt;&lt;/i&gt;&lt;/a&gt;
-  &lt;a href="#"&gt;&lt;i class="fa-solid fa-user"&gt;&lt;/i&gt;&lt;/a&gt;
-&lt;/nav&gt;</code></pre>
-
-</div>
-
-<!-- =========================================================
-     MEGA MENU NAVBAR
-
-<div class="component-card" data-name="mega menu navbar enterprise dropdown" data-cat="advanced">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      Mega Menu Navbar
-    </span>
-
-    <span class="card-tag tag-popular">
-      Popular
-    </span>
-
-  </div>
-
-  <div class="nav-card-preview mega-preview">
-
-    <nav class="demo-mega-nav">
-
-      <span class="mega-brand">
-        ⬡ UIverse
-      </span>
-
-      <div class="mega-links">
-
-        <div class="mega-item">
+        <div class="dropdown-menu">
 
           <a href="#">
-            Components
+            <i class="fa-regular fa-user"></i>
+            Profile
           </a>
 
-          <div class="mega-dropdown">
+          <a href="#">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+          </a>
 
-            <div class="mega-column">
-
-              <h4>UI Elements</h4>
-
-              <a href="#">
-                Buttons
-              </a>
-
-              <a href="#">
-                Cards
-              </a>
-
-              <a href="#">
-                Inputs
-              </a>
-
-            </div>
-
-            <div class="mega-column">
-
-              <h4>Navigation</h4>
-
-              <a href="#">
-                Navbars
-              </a>
-
-              <a href="#">
-                Sidebars
-              </a>
-
-              <a href="#">
-                Menus
-              </a>
-
-            </div>
-
-            <div class="mega-column">
-
-              <h4>Advanced</h4>
-
-              <a href="#">
-                Dashboards
-              </a>
-
-              <a href="#">
-                Charts
-              </a>
-
-              <a href="#">
-                Animations
-              </a>
-
-            </div>
-
-          </div>
+          <a href="#">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </a>
 
         </div>
 
-        <a href="#">
-          Pricing
-        </a>
-
-        <a href="#">
-          Docs
-        </a>
-
       </div>
-
-      <button class="mega-btn">
-        Get Started
-      </button>
 
     </nav>
 
   </div>
 
   <p class="card-desc">
-    A professional enterprise-style navbar with large mega dropdown menus.
+    A professional navbar with avatar dropdown and quick profile actions.
   </p>
 
   <div class="actions">
 
-    <button class="action-btn view-btn" onclick="toggleCode('c17', this)">
+    <button class="action-btn view-btn" onclick="toggleCode('c13', this)">
       <i class="fa-solid fa-code"></i>
       View Code
     </button>
 
-    <button class="action-btn copy-btn" onclick="copyCode('c17', this)">
+    <button class="action-btn copy-btn" onclick="copyCode('c13', this)">
       <i class="fa-solid fa-copy"></i>
       Copy
     </button>
 
   </div>
 
-  <pre id="c17" class="code-block"><code>&lt;nav class="mega-navbar"&gt;
+  <pre id="c13" class="code-block"><code>&lt;nav class="profile-navbar"&gt;
   &lt;span class="brand"&gt;⬡ UIverse&lt;/span&gt;
 
-  &lt;div class="mega-menu"&gt;
-    &lt;a href="#"&gt;Components&lt;/a&gt;
+  &lt;div class="profile-menu"&gt;
+    &lt;img src="https://i.pravatar.cc/40?img=12" alt="Avatar"&gt;
 
-    &lt;div class="dropdown"&gt;
-      &lt;a href="#"&gt;Buttons&lt;/a&gt;
-      &lt;a href="#"&gt;Cards&lt;/a&gt;
-      &lt;a href="#"&gt;Inputs&lt;/a&gt;
+    &lt;div class="dropdown-menu"&gt;
+      &lt;a href="#"&gt;Profile&lt;/a&gt;
+      &lt;a href="#"&gt;Settings&lt;/a&gt;
+      &lt;a href="#"&gt;Logout&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/nav&gt;</code></pre>
 
 </div>
-    
-    <!-- =========================================================
-     PROFILE DROPDOWN NAVBAR
 
-<div class="component-card" data-name="profile dropdown navbar settings logout" data-cat="advanced">
+<!-- =========================================================
+     COMMUNITY NAVBAR
+========================================================= -->
+
+<div class="component-card" data-name="community navbar discussions tags members" data-cat="advanced">
 
   <div class="card-top">
 
     <span class="card-label">
-      Profile Dropdown Navbar
+      Community Navbar
+    </span>
+
+    <span class="card-tag tag-trending">
+      Trending
+    </span>
+
+  </div>
+
+  <div class="nav-card-preview">
+
+    <nav class="demo-community-nav">
+
+      <span class="community-brand">
+        🌍 Community
+      </span>
+
+      <div class="community-links">
+
+        <a href="#">Feed</a>
+
+        <a href="#">Discussions</a>
+
+        <a href="#">Trending</a>
+
+      </div>
+
+      <div class="community-meta">
+
+        <span class="tag-pill">
+          #frontend
+        </span>
+
+        <span class="tag-pill">
+          #css
+        </span>
+
+        <span class="members-count">
+          24K Members
+        </span>
+
+      </div>
+
+    </nav>
+
+  </div>
+
+  <p class="card-desc">
+    A modern community-focused navbar with trending tags and member count.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('c14', this)">
+      <i class="fa-solid fa-code"></i>
+      View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c14', this)">
+      <i class="fa-solid fa-copy"></i>
+      Copy
+    </button>
+
+  </div>
+
+  <pre id="c14" class="code-block"><code>&lt;nav class="community-navbar"&gt;
+  &lt;span class="brand"&gt;🌍 Community&lt;/span&gt;
+
+  &lt;div class="links"&gt;
+    &lt;a href="#"&gt;Feed&lt;/a&gt;
+    &lt;a href="#"&gt;Discussions&lt;/a&gt;
+    &lt;a href="#"&gt;Trending&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;span&gt;24K Members&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+
+</div>
+
+<!-- =========================================================
+     PARTICLE ANIMATED NAVBAR
+========================================================= -->
+
+<div class="component-card" data-name="particle animated navbar glow futuristic" data-cat="dark">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Particle Animated Navbar
+    </span>
+
+    <span class="card-tag tag-trending">
+      Trending
+    </span>
+
+  </div>
+
+  <div class="nav-card-preview particle-preview">
+
+    <nav class="demo-particle-nav">
+
+      <div class="particles">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+      <span class="particle-brand">
+        ✨ UIverse
+      </span>
+
+      <div class="particle-links">
+
+        <a href="#">Home</a>
+
+        <a href="#">Components</a>
+
+        <a href="#">Docs</a>
+
+      </div>
+
+    </nav>
+
+  </div>
+
+  <p class="card-desc">
+    A futuristic navbar with animated floating particle effects and glow styling.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('c15', this)">
+      <i class="fa-solid fa-code"></i>
+      View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c15', this)">
+      <i class="fa-solid fa-copy"></i>
+      Copy
+    </button>
+
+  </div>
+
+  <pre id="c15" class="code-block"><code>&lt;nav class="particle-navbar"&gt;
+  &lt;div class="particles"&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;span class="brand"&gt;✨ UIverse&lt;/span&gt;
+
+  &lt;div class="links"&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;Docs&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+</div>
+
+    <!-- =========================================================
+     COMMAND PALETTE NAVBAR
+========================================================= -->
+
+<div class="component-card" data-name="command palette navbar search quick actions" data-cat="advanced">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Command Palette Navbar
+    </span>
+
+    <span class="card-tag tag-trending">
+      Trending
+    </span>
+
+  </div>
+
+  <div class="nav-card-preview command-preview">
+
+    <nav class="demo-command-nav">
+
+      <span class="command-brand">
+        ⬡ UIverse
+      </span>
+
+      <button class="command-palette-btn">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <span>
+          Search components...
+        </span>
+
+        <kbd>⌘K</kbd>
+
+      </button>
+
+      <div class="command-actions">
+
+        <i class="fa-regular fa-bell"></i>
+
+        <i class="fa-regular fa-user"></i>
+
+      </div>
+
+    </nav>
+
+  </div>
+
+  <p class="card-desc">
+    A modern command palette navbar with quick search and action shortcuts.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('c11', this)">
+      <i class="fa-solid fa-code"></i>
+      View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c11', this)">
+      <i class="fa-solid fa-copy"></i>
+      Copy
+    </button>
+
+  </div>
+
+  <pre id="c11" class="code-block"><code>&lt;nav class="command-navbar"&gt;
+  &lt;span class="brand"&gt;⬡ UIverse&lt;/span&gt;
+
+  &lt;button class="command-btn"&gt;
+    &lt;i class="fa-solid fa-magnifying-glass"&gt;&lt;/i&gt;
+    &lt;span&gt;Search components...&lt;/span&gt;
+    &lt;kbd&gt;⌘K&lt;/kbd&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+
+</div>
+
+<!-- =========================================================
+     CATEGORY TABS NAVBAR
+========================================================= -->
+
+<div class="component-card" data-name="category tabs navbar ui kits components" data-cat="advanced">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Category Tabs Navbar
     </span>
 
     <span class="card-tag tag-popular">
@@ -1199,10 +817,220 @@
 
   </div>
 
-  <div class="nav-card-preview">
+  <div class="nav-card-preview tabs-preview">
 
-    <nav class="demo-profile-nav">
+    <nav class="demo-tabs-nav">
 
+      <button class="tab-link active-tab">
+        Components
+      </button>
+
+      <button class="tab-link">
+        Templates
+      </button>
+
+      <button class="tab-link">
+        UI Kits
+      </button>
+
+      <button class="tab-link">
+        Animations
+      </button>
+
+      <button class="tab-link">
+        Icons
+      </button>
+
+    </nav>
+
+  </div>
+
+  <p class="card-desc">
+    A clean tab-style navigation system for switching between categories.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('c12', this)">
+      <i class="fa-solid fa-code"></i>
+      View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c12', this)">
+      <i class="fa-solid fa-copy"></i>
+      Copy
+    </button>
+
+  </div>
+
+  <pre id="c12" class="code-block"><code>&lt;nav class="tabs-navbar"&gt;
+  &lt;button class="active"&gt;Components&lt;/button&gt;
+  &lt;button&gt;Templates&lt;/button&gt;
+  &lt;button&gt;UI Kits&lt;/button&gt;
+  &lt;button&gt;Animations&lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+
+</div>
+    <!-- =========================================================
+     MOBILE BOTTOM NAVBAR
+========================================================= -->
+
+<div class="component-card" data-name="mobile bottom navbar app navigation" data-cat="advanced">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Mobile Bottom Navbar
+    </span>
+
+    <span class="card-tag tag-trending">
+      Trending
+    </span>
+
+  </div>
+
+  <div class="nav-card-preview mobile-preview">
+
+    <nav class="demo-mobile-nav">
+
+      <a href="#" class="active-mobile">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-compass"></i>
+        <span>Explore</span>
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-heart"></i>
+        <span>Likes</span>
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+      </a>
+
+    </nav>
+
+  </div>
+
+  <p class="card-desc">
+    A floating mobile bottom navigation bar inspired by modern mobile apps.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('c9', this)">
+      <i class="fa-solid fa-code"></i>
+      View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c9', this)">
+      <i class="fa-solid fa-copy"></i>
+      Copy
+    </button>
+
+  </div>
+
+  <pre id="c9" class="code-block"><code>&lt;nav class="mobile-bottom-nav"&gt;
+  &lt;a href="#" class="active"&gt;
+    &lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;
+    &lt;span&gt;Home&lt;/span&gt;
+  &lt;/a&gt;
+
+  &lt;a href="#"&gt;
+    &lt;i class="fa-solid fa-compass"&gt;&lt;/i&gt;
+    &lt;span&gt;Explore&lt;/span&gt;
+  &lt;/a&gt;
+
+  &lt;a href="#"&gt;
+    &lt;i class="fa-solid fa-heart"&gt;&lt;/i&gt;
+    &lt;span&gt;Likes&lt;/span&gt;
+  &lt;/a&gt;
+
+  &lt;a href="#"&gt;
+    &lt;i class="fa-solid fa-user"&gt;&lt;/i&gt;
+    &lt;span&gt;Profile&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+
+</div>
+
+<!-- =========================================================
+     MINIMAL STICKY NAVBAR
+========================================================= -->
+
+<div class="component-card" data-name="minimal sticky navbar transparent modern" data-cat="simple">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Minimal Sticky Navbar
+    </span>
+
+    <span class="card-tag tag-essential">
+      Essential
+    </span>
+
+  </div>
+
+  <div class="nav-card-preview sticky-preview">
+
+    <nav class="demo-sticky-nav">
+
+      <span class="sticky-brand">
+        UIverse
+      </span>
+
+      <div class="sticky-links">
+
+        <a href="#">Home</a>
+
+        <a href="#">Work</a>
+
+        <a href="#">About</a>
+
+        <a href="#">Contact</a>
+
+      </div>
+
+    </nav>
+
+  </div>
+
+  <p class="card-desc">
+    A clean transparent sticky navbar with elegant hover underline animations.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('c10', this)">
+      <i class="fa-solid fa-code"></i>
+      View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('c10', this)">
+      <i class="fa-solid fa-copy"></i>
+      Copy
+    </button>
+
+  </div>
+
+  <pre id="c10" class="code-block"><code>&lt;nav class="minimal-sticky-navbar"&gt;
+  &lt;span class="brand"&gt;UIverse&lt;/span&gt;
+
+  &lt;div class="links"&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;Work&lt;/a&gt;
+    &lt;a href="#"&gt;About&lt;/a&gt;
+    &lt;a href="#"&gt;Contact&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+</div>
     <!-- Simple Navbar -->
     <div class="component-card" data-name="simple navbar basic" data-cat="simple">
       <div class="card-top">
@@ -1359,7 +1187,11 @@
       </div>
       <div class="nav-card-preview dark-preview">
         <nav class="demo-nav-dark">
+<<<<<<< HEAD
+          <span class="dnav-brand" style="color:#fff;">G�� UIverse</span>
+=======
           <span class="dnav-brand" style="color:#fff;">⬡ UIverse</span>
+>>>>>>> upstream/main
           <div class="dnav-links">
             <a href="#" style="color:#aaa;">Home</a>
             <a href="#" style="color:#aaa;">Docs</a>
@@ -1368,13 +1200,21 @@
           <button class="dnav-primary">Launch App</button>
         </nav>
       </div>
+<<<<<<< HEAD
+      <p class="card-desc">A sleek dark-themed navbar with an accent CTA button G�� great for SaaS and dev tools.</p>
+=======
       <p class="card-desc">A sleek dark-themed navbar with an accent CTA button — great for SaaS and dev tools.</p>
+>>>>>>> upstream/main
       <div class="actions">
         <button class="action-btn view-btn" onclick="toggleCode('c4', this)"><i class="fa-solid fa-code"></i> View Code</button>
         <button class="action-btn copy-btn" onclick="copyCode('c4', this)"><i class="fa-solid fa-copy"></i> Copy</button>
       </div>
       <pre id="c4" class="code-block"><code>&lt;nav class="navbar-dark"&gt;
+<<<<<<< HEAD
+  &lt;span class="brand"&gt;G�� UIverse&lt;/span&gt;
+=======
   &lt;span class="brand"&gt;⬡ UIverse&lt;/span&gt;
+>>>>>>> upstream/main
   &lt;div class="links"&gt;
     &lt;a href="#"&gt;Home&lt;/a&gt;
     &lt;a href="#"&gt;Docs&lt;/a&gt;
@@ -1418,7 +1258,11 @@
           <button class="dnav-glass-btn">Contact</button>
         </nav>
       </div>
+<<<<<<< HEAD
+      <p class="card-desc">A frosted-glass navbar with backdrop blur G�� perfect for image or gradient hero sections.</p>
+=======
       <p class="card-desc">A frosted-glass navbar with backdrop blur — perfect for image or gradient hero sections.</p>
+>>>>>>> upstream/main
       <div class="actions">
         <button class="action-btn view-btn" onclick="toggleCode('c5', this)"><i class="fa-solid fa-code"></i> View Code</button>
         <button class="action-btn copy-btn" onclick="copyCode('c5', this)"><i class="fa-solid fa-copy"></i> Copy</button>
@@ -1469,10 +1313,17 @@
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Search docs..." />
           </div>
+<<<<<<< HEAD
+          <a class="dnav-primary-link" href="#">Get Started G��</a>
+        </nav>
+      </div>
+      <p class="card-desc">A navbar with an integrated search input G�� ideal for documentation or component libraries.</p>
+=======
           <a class="dnav-primary-link" href="#">Get Started →</a>
         </nav>
       </div>
       <p class="card-desc">A navbar with an integrated search input — ideal for documentation or component libraries.</p>
+>>>>>>> upstream/main
       <div class="actions">
         <button class="action-btn view-btn" onclick="toggleCode('c6', this)"><i class="fa-solid fa-code"></i> View Code</button>
         <button class="action-btn copy-btn" onclick="copyCode('c6', this)"><i class="fa-solid fa-copy"></i> Copy</button>
@@ -1483,7 +1334,11 @@
     &lt;i class="fa-solid fa-magnifying-glass"&gt;&lt;/i&gt;
     &lt;input type="text" placeholder="Search docs..."&gt;
   &lt;/div&gt;
+<<<<<<< HEAD
+  &lt;a href="#"&gt;Get Started G��&lt;/a&gt;
+=======
   &lt;a href="#"&gt;Get Started →&lt;/a&gt;
+>>>>>>> upstream/main
 &lt;/nav&gt;
 
 .navbar-search {
@@ -1529,7 +1384,11 @@
           </div>
         </nav>
       </div>
+<<<<<<< HEAD
+      <p class="card-desc">A three-section navbar G�� brand left, main links center, utility links right.</p>
+=======
       <p class="card-desc">A three-section navbar — brand left, main links center, utility links right.</p>
+>>>>>>> upstream/main
       <div class="actions">
         <button class="action-btn view-btn" onclick="toggleCode('c7', this)"><i class="fa-solid fa-code"></i> View Code</button>
         <button class="action-btn copy-btn" onclick="copyCode('c7', this)"><i class="fa-solid fa-copy"></i> Copy</button>
@@ -1574,7 +1433,11 @@
       </div>
       <div class="nav-card-preview">
         <nav class="demo-nav-gradient">
+<<<<<<< HEAD
+          <span class="dnav-brand" style="color:#fff;">G�� UIverse</span>
+=======
           <span class="dnav-brand" style="color:#fff;">⬡ UIverse</span>
+>>>>>>> upstream/main
           <div class="dnav-links">
             <a href="#" style="color:rgba(255,255,255,0.8);">Home</a>
             <a href="#" style="color:rgba(255,255,255,0.8);">Work</a>
@@ -1583,13 +1446,21 @@
           <button class="dnav-white-btn">Sign Up Free</button>
         </nav>
       </div>
+<<<<<<< HEAD
+      <p class="card-desc">A bold gradient navbar G�� eye-catching and modern for landing pages.</p>
+=======
       <p class="card-desc">A bold gradient navbar — eye-catching and modern for landing pages.</p>
+>>>>>>> upstream/main
       <div class="actions">
         <button class="action-btn view-btn" onclick="toggleCode('c8', this)"><i class="fa-solid fa-code"></i> View Code</button>
         <button class="action-btn copy-btn" onclick="copyCode('c8', this)"><i class="fa-solid fa-copy"></i> Copy</button>
       </div>
       <pre id="c8" class="code-block"><code>&lt;nav class="navbar-gradient"&gt;
+<<<<<<< HEAD
+  &lt;span class="brand"&gt;G�� UIverse&lt;/span&gt;
+=======
   &lt;span class="brand"&gt;⬡ UIverse&lt;/span&gt;
+>>>>>>> upstream/main
   &lt;div class="links"&gt;
     &lt;a href="#"&gt;Home&lt;/a&gt;
     &lt;a href="#"&gt;Work&lt;/a&gt;
