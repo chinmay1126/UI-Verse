@@ -55,6 +55,7 @@
         "i18n:test": "playwright test tests/i18n --config=playwright.i18n.config.ts --reporter=list",
         "dependencies:analyze": "node scripts/dependency-analyzer.js",
         "dependencies:dashboard": "npm run dependencies:analyze && echo '📊 Open dependency-dashboard.html in your browser'",
+        "test:dependencies:graph": "node --test tests/dependencies/dependency-graph.test.js",
         "visual:scale": "playwright test --config=playwright.visual-scale.config.ts",
         "visual:scale:quick": "node scripts/run-visual-scale-quick.js",
         "visual:scale:update": "playwright test --config=playwright.visual-scale.config.ts --update-snapshots",

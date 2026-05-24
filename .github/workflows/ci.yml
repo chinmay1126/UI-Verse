@@ -36,6 +36,9 @@ jobs:
       - name: Dependency graph check
         run: npm run dependencies:check
 
+      - name: Dependency graph regression tests
+        run: npm run test:dependencies:graph
+
       - name: Component metadata check
         run: npm run components:version:check
 
