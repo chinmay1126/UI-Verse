@@ -98,15 +98,34 @@
     const previewWrap = document.createElement('div');
     previewWrap.className = 'uiverse-compare-cell-preview';
 
-    // Clone ONLY preview area if possible
+    // Rebuild a lightweight snapshot instead of deep-cloning the whole card.
     if (preview) {
-      previewWrap.appendChild(preview.cloneNode(true));
+      const previewSnapshot = preview.cloneNode(false);
+      previewSnapshot.innerHTML = preview.innerHTML;
+      previewWrap.appendChild(previewSnapshot);
     } else {
-      // fallback: clone whole card
-      previewWrap.appendChild(cardEl.cloneNode(true));
-      // remove checkbox from clone if present
-      const cloned = previewWrap.querySelector('.uiverse-compare-checkbox-wrap');
-      if (cloned) cloned.remove();
+      const snapshot = document.createElement('div');
+      snapshot.className = 'uiverse-compare-card-snapshot';
+
+      const top = cardEl.querySelector('.card-top');
+      if (top) {
+        const topSnapshot = top.cloneNode(false);
+        topSnapshot.innerHTML = top.innerHTML;
+        snapshot.appendChild(topSnapshot);
+      }
+
+      const desc = cardEl.querySelector('.card-desc');
+      if (desc) {
+        const descSnapshot = desc.cloneNode(false);
+        descSnapshot.textContent = desc.textContent || '';
+        snapshot.appendChild(descSnapshot);
+      }
+
+      if (!snapshot.childNodes.length) {
+        snapshot.textContent = cardEl.getAttribute('data-name') || cardEl.getAttribute('data-cat') || 'Preview unavailable';
+      }
+
+      previewWrap.appendChild(snapshot);
     }
 
     cell.appendChild(label);
