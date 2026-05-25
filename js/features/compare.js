@@ -1,6 +1,6 @@
 (function () {
   const MAX_COMPARE = 3;
-  const STORAGE_KEY = 'uiVerseCompare.selectedComponentIds.v1';
+  const STORAGE_KEY = 'uiVerseCompare.selectedComponentIds.v2';
 
   const CARD_SELECTOR = '.component-card';
   const CARD_ID_ATTR = 'data-compare-id';
@@ -131,6 +131,42 @@
     return `${name}::${cat}::${contentSignature}`;
   }
 
+  function normalizeCompareSignaturePart(value) {
+    return String(value || '').trim().replace(/\s+/g, ' ').toLowerCase();
+  }
+
+  function hashCompareSignature(signature) {
+    let hash = 2166136261;
+
+    for (let index = 0; index < signature.length; index += 1) {
+      hash ^= signature.charCodeAt(index);
+      hash = Math.imul(hash, 16777619);
+    }
+
+    return (hash >>> 0).toString(36);
+  }
+
+  function buildCompareIdSignature(cardEl) {
+    if (!cardEl) return '';
+
+    const stableAttributes = ['data-component-id', 'data-name', 'data-title', 'data-cat', 'data-id', 'id'];
+    const attributeParts = stableAttributes
+      .map((attr) => normalizeCompareSignaturePart(cardEl.getAttribute(attr)))
+      .filter(Boolean);
+
+    if (attributeParts.length) {
+      return attributeParts.join('::');
+    }
+
+    const preview = cardEl.querySelector('.card-preview');
+    const previewSignature = preview ? preview.outerHTML : cardEl.outerHTML;
+    const textSignature = normalizeCompareSignaturePart(cardEl.textContent || '');
+
+    return [cardEl.tagName, textSignature.slice(0, 200), normalizeCompareSignaturePart(previewSignature).slice(0, 4000)]
+      .filter(Boolean)
+      .join('::');
+  }
+
   function ensureCompareCell(compareId, cardEl, onActivate) {
     if (!compareId || !cardEl) return null;
 
@@ -185,22 +221,20 @@
 
   function ensureCompareId(cardEl) {
     if (!cardEl || !(cardEl instanceof HTMLElement)) return null;
-    if (cardEl.getAttribute(CARD_ID_ATTR)) return cardEl.getAttribute(CARD_ID_ATTR);
+    const existingId = cardEl.getAttribute(CARD_ID_ATTR);
+    if (existingId) return existingId;
 
-    // Prefer stable-ish identifier
-    const name = (cardEl.getAttribute('data-name') || '').trim();
-    const cat = (cardEl.getAttribute('data-cat') || '').trim();
-
-    // Fallback: index within grid
-    const all = cachedCards.length ? cachedCards : getCardElements();
-    const idx = all.indexOf(cardEl);
-
-    const metaKey = [name, cat].filter(Boolean).join('__');
-    const raw = metaKey || `card__${idx}`;
-    const safe = raw.replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 80);
-
-    // Keep metadata-backed IDs stable across DOM re-renders.
-    const id = metaKey ? safe : `${safe}__${idx}`;
+    const signature = buildCompareIdSignature(cardEl);
+    const primaryLabel = normalizeCompareSignaturePart(
+      cardEl.getAttribute('data-component-id') ||
+      cardEl.getAttribute('data-name') ||
+      cardEl.getAttribute('data-title') ||
+      cardEl.getAttribute('data-id') ||
+      cardEl.getAttribute('id') ||
+      'card'
+    );
+    const safeLabel = primaryLabel.replace(/[^a-z0-9_-]/g, '_').slice(0, 40) || 'card';
+    const id = `cmp_${safeLabel}_${hashCompareSignature(signature)}`;
 
     cardEl.setAttribute(CARD_ID_ATTR, id);
     return id;
