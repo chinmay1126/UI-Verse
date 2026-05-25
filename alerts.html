@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="shared-sidebar.css">
   <link rel="stylesheet" href="alerts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -838,7 +839,7 @@
 
 <div class="component-card">
         <h3>Info Alert</h3>
-        <div class="alert-box alert-info">
+        <div class="alert-box alert-info" role="status" aria-live="polite">
           <div>
             <strong>Info</strong>
             <p>This is an informational message. Learn more about our new features.</p>
@@ -864,7 +865,7 @@
 
 <div class="component-card">
         <h3>Critical Alert</h3>
-        <div class="alert-box alert-critical">
+        <div class="alert-box alert-critical" role="alert" aria-live="assertive">
           <div>
             <strong>Critical</strong>
             <p>Immediate action required! Your account has been locked due to suspicious activity.</p>
@@ -890,7 +891,7 @@
 
 <div class="component-card">
         <h3>Pending Alert</h3>
-        <div class="alert-box alert-pending">
+        <div class="alert-box alert-pending" role="status" aria-live="polite">
           <div>
             <strong>Pending</strong>
             <p>Your request is being processed. You'll be notified once it's complete.</p>
@@ -947,7 +948,7 @@
 <div class="component-card">
         <h3>Alert with Icon</h3>
         <div class="alert-box alert-warning alert-with-icon">
-          <span class="alert-icon">⚠️</span>
+          <span class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
           <div>
             <strong>Warning</strong>
             <p>Please review your input before proceeding.</p>
@@ -1705,22 +1706,18 @@
 
 <div id="copyToast" class="copy-toast"><i class="fa-solid fa-check"></i> Copied to clipboard!</div>
 
-
+ <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
-
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
-
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
     <div class="footer-col">
       <h3>Explore</h3>
       <ul>
@@ -1731,38 +1728,30 @@
         <li><a href="forms.html">Forms</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Legal</h3>
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
       </ul>
     </div>
-
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+        <input type="email" placeholder="your@email.com">
+        <button type="button">Subscribe</button>
       </div>
     </div>
-
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
