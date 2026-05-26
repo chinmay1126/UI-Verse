@@ -1860,6 +1860,8 @@
   
   function dismissAlert(id) {
     const el = document.getElementById(id);
+    if (!el) return;
+    el.setAttribute('aria-hidden', 'true');
     el.style.opacity = '0';
     el.style.transform = 'translateX(10px)';
     el.style.maxHeight = el.offsetHeight + 'px';
@@ -1867,13 +1869,17 @@
       el.style.maxHeight = '0';
       el.style.padding = '0';
       el.style.margin = '0';
+      el.style.border = '0';
     }, 200);
   }
 
   function resetDismiss() {
     ['dis1','dis2','dis3'].forEach(id => {
       const el = document.getElementById(id);
-      el.style.cssText = '';
+      if (el) {
+        el.removeAttribute('aria-hidden');
+        el.style.cssText = '';
+      }
     });
   }
 
