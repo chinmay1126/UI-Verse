@@ -5,6 +5,22 @@ const I18n = (function () {
   let current = 'en';
   const cache = {};
 
+  function syncDocumentLanguage(lang) {
+    if (typeof document === 'undefined' || !document.documentElement) return;
+    document.documentElement.lang = lang || 'en';
+    document.documentElement.dataset.lang = lang || 'en';
+  }
+
+  function emitLanguageChange(lang, dict) {
+    if (typeof window === 'undefined' || typeof window.dispatchEvent !== 'function') return;
+    window.dispatchEvent(new CustomEvent('uiverse:i18n-change', {
+      detail: {
+        lang,
+        translations: dict || {}
+      }
+    }));
+  }
+
   async function loadLocale(lang) {
     if (cache[lang]) return cache[lang];
     try {
@@ -39,12 +55,19 @@ const I18n = (function () {
     const dict = await loadLocale(lang) || {};
     document.querySelectorAll('[data-i18n]').forEach((el) => translateElement(el, dict));
     current = lang;
+    syncDocumentLanguage(lang);
+    emitLanguageChange(lang, dict);
     // Save preference
     try { localStorage.setItem('uv_lang', lang); } catch(e){}
   }
 
   async function init(defaultLang) {
-    const stored = localStorage.getItem('uv_lang');
+    let stored = null;
+    try {
+      stored = localStorage.getItem('uv_lang');
+    } catch (e) {
+      stored = null;
+    }
     const lang = defaultLang || stored || 'en';
     await applyLanguage(lang);
   }

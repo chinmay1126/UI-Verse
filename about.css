@@ -15,7 +15,7 @@
   top:0;
   left:0;
 
-  width:240px;
+  width:250px;
   height:100vh;
 
   background:
@@ -156,7 +156,7 @@
   position:fixed;
 
   top:0;
-  left:240px;
+  left:250px;
   right:0;
 
   height:74px;
@@ -272,7 +272,7 @@
 
 .main-home{
 
-  margin-left:240px;
+  margin-left:250px;
   margin-top:74px;
 
   padding:40px;
@@ -754,23 +754,54 @@
 ================================== */
 
 .footer{
-  margin-left:260px;
-  background:var(--footer-bg);
+  margin-left:250px;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(245,247,251,0.94) 100%);
   color:var(--footer-text);
-  border-top:1px solid var(--footer-border);
+  border-top:1px solid rgba(255,255,255,0.55);
   padding:60px 40px 20px;
+  box-shadow:
+    0 -20px 60px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+  backdrop-filter: blur(18px);
+}
+
+.footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(235,104,53,0.18) 0, transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(108,92,231,0.12) 0, transparent 24%),
+    linear-gradient(135deg, rgba(255,255,255,0.3), transparent 42%, rgba(255,255,255,0.08) 58%, transparent 78%);
+  pointer-events:none;
 }
 
 .footer-container{
+  position:relative;
+  z-index:1;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:40px;
+  grid-template-columns:1.5fr;
+  gap:24px;
+  max-width:1200px;
+  margin:0 auto;
+  padding:26px 28px;
+  border:1px solid rgba(255,255,255,0.55);
+  border-radius:32px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.68), rgba(255,255,255,0.36));
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.75);
+  backdrop-filter: blur(20px);
 }
 
 .footer-logo{
   font-family:"Syne", sans-serif;
   margin-bottom:14px;
   color:var(--primary);
+  text-shadow:0 1px 0 rgba(255,255,255,0.65);
 }
 
 .footer-col p{
@@ -811,26 +842,34 @@
   width:42px;
   height:42px;
   border-radius:14px;
-  background:var(--footer-social-bg);
-  border:1px solid var(--footer-border);
+  background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.38));
+  border:1px solid rgba(255,255,255,0.68);
   display:flex;
   align-items:center;
   justify-content:center;
   color:var(--footer-muted);
-  transition:var(--transition);
+  transition:transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.85);
 }
 
 .socials a:hover{
-  background:var(--primary);
+  background:linear-gradient(135deg, var(--primary), #ff8e53);
   color:#fff;
   border-color:var(--primary);
-  transform:translateY(-2px);
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:
+    0 14px 24px rgba(235,104,53,0.24),
+    0 0 0 1px rgba(255,255,255,0.2) inset;
 }
 
 .footer-bottom{
-  border-top:1px solid var(--footer-border);
-  margin-top:40px;
-  padding-top:20px;
+  position:relative;
+  z-index:1;
+  border-top:1px solid rgba(255,255,255,0.45);
+  margin-top:24px;
+  padding-top:18px;
   text-align:center;
   color:var(--footer-muted);
 }
@@ -851,6 +890,33 @@ body.dark-mode{
 
 body.dark-mode .navbar{
   background:rgba(15,23,42,0.75);
+}
+
+body.dark-mode .footer{
+  background:
+    linear-gradient(180deg, rgba(12,17,30,0.94) 0%, rgba(9,14,26,0.98) 100%);
+  border-top:1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 -20px 60px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+body.dark-mode .footer-container{
+  background:linear-gradient(180deg, rgba(17,24,39,0.78), rgba(17,24,39,0.48));
+  border-color:rgba(255,255,255,0.08);
+}
+
+body.dark-mode .footer::before{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(235,104,53,0.2) 0, transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(108,92,231,0.16) 0, transparent 24%),
+    linear-gradient(135deg, rgba(255,255,255,0.1), transparent 42%, rgba(255,255,255,0.04) 58%, transparent 78%);
+}
+
+body.dark-mode .socials a{
+  background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border-color:rgba(255,255,255,0.08);
+  color:#cbd5e1;
 }
 
 body.dark-mode .search-bar input,
