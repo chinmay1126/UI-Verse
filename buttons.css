@@ -95,6 +95,15 @@
   border: 2px solid #eb6835;
   background: transparent;
   color: #eb6835;
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 340px));
+  gap: 22px;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 10px auto 40px;
+  padding: 0 18px;
+}
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
