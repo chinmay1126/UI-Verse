@@ -11,6 +11,7 @@
   let state = {
     selectedIds: [],
     overlayOpen: false,
+    activeCompareId: null,
   };
 
   let cardsObserver = null;
@@ -97,15 +98,34 @@
     const previewWrap = document.createElement('div');
     previewWrap.className = 'uiverse-compare-cell-preview';
 
-    // Clone ONLY preview area if possible
+    // Rebuild a lightweight snapshot instead of deep-cloning the whole card.
     if (preview) {
-      previewWrap.appendChild(preview.cloneNode(true));
+      const previewSnapshot = preview.cloneNode(false);
+      previewSnapshot.innerHTML = preview.innerHTML;
+      previewWrap.appendChild(previewSnapshot);
     } else {
-      // fallback: clone whole card
-      previewWrap.appendChild(cardEl.cloneNode(true));
-      // remove checkbox from clone if present
-      const cloned = previewWrap.querySelector('.uiverse-compare-checkbox-wrap');
-      if (cloned) cloned.remove();
+      const snapshot = document.createElement('div');
+      snapshot.className = 'uiverse-compare-card-snapshot';
+
+      const top = cardEl.querySelector('.card-top');
+      if (top) {
+        const topSnapshot = top.cloneNode(false);
+        topSnapshot.innerHTML = top.innerHTML;
+        snapshot.appendChild(topSnapshot);
+      }
+
+      const desc = cardEl.querySelector('.card-desc');
+      if (desc) {
+        const descSnapshot = desc.cloneNode(false);
+        descSnapshot.textContent = desc.textContent || '';
+        snapshot.appendChild(descSnapshot);
+      }
+
+      if (!snapshot.childNodes.length) {
+        snapshot.textContent = cardEl.getAttribute('data-name') || cardEl.getAttribute('data-cat') || 'Preview unavailable';
+      }
+
+      previewWrap.appendChild(snapshot);
     }
 
     cell.appendChild(label);
@@ -179,6 +199,7 @@
     }
 
     const cell = renderCompareCell(cardEl, onActivate);
+    cell.dataset.compareId = compareId;
     cachedCompareCells.set(compareId, {
       cell,
       signature: nextSignature,
@@ -205,18 +226,21 @@
     });
 
     for (const [compareId, entry] of cachedCompareCells.entries()) {
-      if (nextIds.includes(compareId)) continue;
-      if (entry && entry.cell && entry.cell.parentElement === gridEl) {
-        gridEl.removeChild(entry.cell);
-      }
-    }
+      const cell = entry && entry.cell;
+      const cellInGrid = !!cell && gridEl.contains(cell);
 
-    cachedCompareCells.forEach((entry, compareId) => {
-      if (nextIds.includes(compareId)) return;
-      if (entry && entry.cell && !entry.cell.isConnected) {
+      if (nextIds.includes(compareId)) {
+        continue;
+      }
+
+      if (cellInGrid) {
+        gridEl.removeChild(cell);
+      }
+
+      if (!cellInGrid || !cell.isConnected) {
         cachedCompareCells.delete(compareId);
       }
-    });
+    }
   }
 
   function ensureCompareId(cardEl) {
@@ -305,6 +329,79 @@
     return renderCompareCell(cardEl, syncActive);
   }
 
+  function getOverlayCells(gridEl = cachedOverlayGrid || document.getElementById(OVERLAY_GRID_ID)) {
+    if (!gridEl) return [];
+    return Array.from(gridEl.querySelectorAll('.uiverse-compare-cell'));
+  }
+
+  function getActiveOverlayCell(gridEl = cachedOverlayGrid || document.getElementById(OVERLAY_GRID_ID)) {
+    return getOverlayCells(gridEl).find((cell) => cell.classList.contains('uiverse-compare-cell--active')) || null;
+  }
+
+  function focusOverlayCell(cell) {
+    if (!cell) return;
+
+    syncActive(cell);
+
+    if (typeof cell.focus === 'function') {
+      try {
+        cell.focus({ preventScroll: true });
+      } catch {
+        cell.focus();
+      }
+    }
+
+    if (typeof cell.scrollIntoView === 'function') {
+      try {
+        cell.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      } catch {
+        cell.scrollIntoView();
+      }
+    }
+  }
+
+  function moveOverlaySelection(direction) {
+    const grid = cachedOverlayGrid || document.getElementById(OVERLAY_GRID_ID);
+    const cells = getOverlayCells(grid);
+    if (!cells.length) return;
+
+    const currentCell = getActiveOverlayCell(grid);
+    const currentIndex = currentCell ? cells.indexOf(currentCell) : -1;
+
+    let nextIndex = currentIndex;
+    if (currentIndex < 0) {
+      nextIndex = direction >= 0 ? 0 : cells.length - 1;
+    } else {
+      nextIndex = (currentIndex + direction + cells.length) % cells.length;
+    }
+
+    focusOverlayCell(cells[nextIndex]);
+  }
+
+  function scrollSourceCardForCell(cell) {
+    if (!cell) return;
+
+    const compareId = cell.dataset && cell.dataset.compareId;
+    const entry = compareId ? cachedCompareCells.get(compareId) : null;
+    const sourceCardEl = entry && entry.sourceCardEl;
+
+    if (sourceCardEl && typeof sourceCardEl.scrollIntoView === 'function') {
+      try {
+        sourceCardEl.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+      } catch {
+        sourceCardEl.scrollIntoView();
+      }
+    }
+
+    if (sourceCardEl && typeof sourceCardEl.focus === 'function') {
+      try {
+        sourceCardEl.focus({ preventScroll: true });
+      } catch {
+        sourceCardEl.focus();
+      }
+    }
+  }
+
   function syncActive(activeCell) {
     const grid = cachedOverlayGrid || document.getElementById(OVERLAY_GRID_ID);
     if (!grid) {
@@ -333,7 +430,9 @@
     // Grid is available now; any queued state has been superseded.
     pendingActiveCell = undefined;
 
-    const cells = Array.from(cachedCompareCells.values()).map((entry) => entry && entry.cell).filter(Boolean);
+    state.activeCompareId = activeCell && activeCell.dataset ? activeCell.dataset.compareId || null : null;
+
+    const cells = getOverlayCells(grid);
     const isActiveCell = (cell) => !!activeCell && cell === activeCell;
 
     cells.forEach((c) => {
@@ -400,16 +499,9 @@
     state.overlayOpen = true;
 
     // initial active styling based on first cell
-    const first = grid && grid.querySelector('.uiverse-compare-cell');
+    const first = getActiveOverlayCell(grid) || (grid && grid.querySelector('.uiverse-compare-cell'));
     if (first) {
-      syncActive(first);
-      if (typeof first.focus === 'function') {
-        try {
-          first.focus({ preventScroll: true });
-        } catch {
-          first.focus();
-        }
-      }
+      focusOverlayCell(first);
     }
   }
 
@@ -447,7 +539,30 @@
   }
 
   function onKeyDown(e) {
-    if (e.key !== 'Escape' || !state.overlayOpen) return;
+    if (!state.overlayOpen) return;
+
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      moveOverlaySelection(-1);
+      return;
+    }
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      moveOverlaySelection(1);
+      return;
+    }
+
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const activeCell = getActiveOverlayCell();
+      if (activeCell) {
+        scrollSourceCardForCell(activeCell);
+      }
+      return;
+    }
+
+    if (e.key !== 'Escape') return;
 
     // Escape exits compare mode completely.
     e.preventDefault();

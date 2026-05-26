@@ -10,6 +10,7 @@ const TutorialMode = {
     resolvedSteps: [],
     activeSteps: [],
     missingSteps: [],
+    renderedStepCount: 0,
     currentIndex: 0,
     active: false,
     pageKey: 'global',
@@ -26,7 +27,9 @@ const TutorialMode = {
   },
 
   _storageKeys: {
-    completedPrefix: 'tutorialMode.completed'
+    completedPrefix: 'tutorialMode.completed',
+    lastContext: 'tutorialMode.lastContext',
+    lastSteps: 'tutorialMode.lastSteps'
   },
 
   _buildCompletionKey(pageKey, categoryKey) {
@@ -119,17 +122,127 @@ const TutorialMode = {
     } catch {}
   },
 
+  _getLastTutorialContext(storage = localStorage) {
+    try {
+      const raw = storage.getItem(this._storageKeys.lastContext);
+      if (!raw) return null;
+
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object') return null;
+
+      const pageKey = typeof parsed.pageKey === 'string' ? parsed.pageKey : '';
+      const categoryKey = typeof parsed.categoryKey === 'string' ? parsed.categoryKey : '';
+      if (!pageKey || !categoryKey) return null;
+
+      return { pageKey, categoryKey };
+    } catch {
+      return null;
+    }
+  },
+
+  _getLastTutorialSteps(storage = localStorage) {
+    try {
+      const raw = storage.getItem(this._storageKeys.lastSteps);
+      if (!raw) return null;
+
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : null;
+    } catch {
+      return null;
+    }
+  },
+
+  _setLastTutorialContext({ pageKey, categoryKey, steps } = {}, storage = localStorage) {
+    if (!pageKey || !categoryKey) return;
+
+    try {
+      storage.setItem(this._storageKeys.lastContext, JSON.stringify({ pageKey, categoryKey }));
+    } catch {}
+
+    try {
+      if (Array.isArray(steps) && steps.length > 0) {
+        storage.setItem(this._storageKeys.lastSteps, JSON.stringify(steps));
+      } else {
+        storage.removeItem(this._storageKeys.lastSteps);
+      }
+    } catch {}
+  },
+
+  _resolveTutorialStartOptions({ pageKey, categoryKey, steps } = {}) {
+    const explicitPageKey = typeof pageKey === 'string' && pageKey ? pageKey : null;
+    const explicitCategoryKey = typeof categoryKey === 'string' && categoryKey ? categoryKey : null;
+    const explicitSteps = Array.isArray(steps) && steps.length > 0 ? steps : null;
+
+    const restoredContext = this._getLastTutorialContext();
+    const restoredPageKey = explicitPageKey || (restoredContext && restoredContext.pageKey) || this._state.lastOptions?.pageKey || null;
+    const restoredCategoryKey = explicitCategoryKey || (restoredContext && restoredContext.categoryKey) || this._state.lastOptions?.categoryKey || null;
+
+    let resolvedSteps = explicitSteps;
+    if (!resolvedSteps) {
+      resolvedSteps = Array.isArray(this._state.lastOptions?.steps) && this._state.lastOptions.steps.length > 0
+        ? this._state.lastOptions.steps
+        : this._getLastTutorialSteps();
+    }
+
+    if (!resolvedSteps && restoredCategoryKey && window.TutorialModeSteps) {
+      resolvedSteps = window.TutorialModeSteps[restoredCategoryKey] || window.TutorialModeSteps[restoredPageKey] || window.TutorialModeSteps.default || null;
+    }
+
+    return {
+      pageKey: restoredPageKey,
+      categoryKey: restoredCategoryKey,
+      steps: resolvedSteps,
+      restored: !explicitPageKey && !explicitCategoryKey && !explicitSteps,
+    };
+  },
+
+  _getOverlayClickHandler() {
+    if (!this._state.overlayClickHandler) {
+      this._state.overlayClickHandler = (e) => {
+        const btn = e.target && e.target.closest && e.target.closest('button[data-action]');
+        if (!btn) return;
+        const action = btn.getAttribute('data-action');
+
+        if (action === 'next') this.next();
+        else if (action === 'back') this.back();
+        else if (action === 'skip') this.skip();
+        else if (action === 'restart') this.restart();
+      };
+    }
+
+    return this._state.overlayClickHandler;
+  },
+
+  _getKeydownHandler() {
+    if (!this._state.keydownHandler) {
+      this._state.keydownHandler = (e) => {
+        if (!this._state.active) return;
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          this.skip();
+          return;
+        }
+        if (e.key === 'ArrowRight') this.next();
+        if (e.key === 'ArrowLeft') this.back();
+      };
+    }
+
+    return this._state.keydownHandler;
+  },
+
   /**
    * Start tutorial for a given page/category.
    * @param {{pageKey?: string, categoryKey?: string, steps: Array, force?: boolean}} options
    */
   start({ pageKey, categoryKey, steps, force = false } = {}) {
-    const resolvedPageKey = pageKey || 'global';
-    const resolvedCategoryKey = categoryKey || 'general';
+    const startOptions = this._resolveTutorialStartOptions({ pageKey, categoryKey, steps });
+    const resolvedPageKey = startOptions.pageKey || 'global';
+    const resolvedCategoryKey = startOptions.categoryKey || 'general';
+    const resolvedSteps = startOptions.steps;
 
-    if (!this._assertUsableState({ pageKey: resolvedPageKey, categoryKey: resolvedCategoryKey, steps })) return;
+    if (!this._assertUsableState({ pageKey: resolvedPageKey, categoryKey: resolvedCategoryKey, steps: resolvedSteps })) return;
 
-    const normalizedSteps = this._normalizeSteps(steps);
+    const normalizedSteps = this._normalizeSteps(resolvedSteps);
     if (!normalizedSteps.activeSteps.length) {
       this._warnMissingSteps({
         pageKey: resolvedPageKey,
@@ -144,11 +257,13 @@ const TutorialMode = {
     this._state.pageKey = resolvedPageKey;
     this._state.categoryKey = resolvedCategoryKey;
     this._state.completionKey = completionKey;
-    this._state.lastOptions = { pageKey: resolvedPageKey, categoryKey: resolvedCategoryKey, steps };
-    this._state.steps = steps;
+    this._state.lastOptions = { pageKey: resolvedPageKey, categoryKey: resolvedCategoryKey, steps: resolvedSteps };
+    this._state.steps = resolvedSteps;
     this._state.resolvedSteps = normalizedSteps.resolvedSteps;
     this._state.activeSteps = normalizedSteps.activeSteps;
     this._state.missingSteps = normalizedSteps.missingSteps;
+
+    this._setLastTutorialContext({ pageKey: resolvedPageKey, categoryKey: resolvedCategoryKey, steps: resolvedSteps });
 
     this._warnMissingSteps({
       pageKey: resolvedPageKey,
@@ -156,10 +271,11 @@ const TutorialMode = {
       missingSteps: normalizedSteps.missingSteps,
     });
 
-    if (!force && this._isCompleted()) return;
+    if (!startOptions.restored && !force && this._isCompleted()) return;
 
     this._state.currentIndex = 0;
     this._state.active = true;
+    this._state.renderedStepCount = 0;
 
     this._ensureUI();
     this._bindUIEvents();
@@ -266,38 +382,13 @@ const TutorialMode = {
   _bindUIEvents() {
     if (!this._state.overlayEl) return;
 
-    if (this._state.overlayClickHandler) {
-      this._state.overlayEl.removeEventListener('click', this._state.overlayClickHandler);
-    }
+    const overlayClickHandler = this._getOverlayClickHandler();
+    const keydownHandler = this._getKeydownHandler();
 
-    if (this._state.keydownHandler) {
-      document.removeEventListener('keydown', this._state.keydownHandler);
-    }
-
-    this._state.overlayClickHandler = (e) => {
-      const btn = e.target && e.target.closest && e.target.closest('button[data-action]');
-      if (!btn) return;
-      const action = btn.getAttribute('data-action');
-
-      if (action === 'next') this.next();
-      else if (action === 'back') this.back();
-      else if (action === 'skip') this.skip();
-      else if (action === 'restart') this.restart();
-    };
-
-    this._state.keydownHandler = (e) => {
-      if (!this._state.active) return;
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        this.skip();
-        return;
-      }
-      if (e.key === 'ArrowRight') this.next();
-      if (e.key === 'ArrowLeft') this.back();
-    };
-
-    this._state.overlayEl.addEventListener('click', this._state.overlayClickHandler);
-    document.addEventListener('keydown', this._state.keydownHandler);
+    this._state.overlayEl.removeEventListener('click', overlayClickHandler);
+    document.removeEventListener('keydown', keydownHandler);
+    this._state.overlayEl.addEventListener('click', overlayClickHandler);
+    document.addEventListener('keydown', keydownHandler);
 
   },
 
@@ -313,6 +404,7 @@ const TutorialMode = {
       const el = step.targetEl && step.targetEl.isConnected ? step.targetEl : null;
       if (el) {
         this._state.currentIndex = idx;
+        this._state.renderedStepCount += 1;
         this._showStep(step, el);
         return;
       }
@@ -320,7 +412,7 @@ const TutorialMode = {
     }
 
     // If we reach here, all remaining steps have missing selectors
-    this.complete();
+    this.complete(false, this._state.renderedStepCount > 0);
   },
 
   _showStep(step, el) {
@@ -459,9 +551,12 @@ const TutorialMode = {
     this.complete(true);
   },
 
-  complete(skip = false) {
+  complete(skip = false, shouldMarkCompleted = true) {
     this._state.active = false;
-    this._setCompleted();
+
+    if (shouldMarkCompleted) {
+      this._setCompleted();
+    }
 
     if (this._state.refreshHandler) {
       window.removeEventListener('scroll', this._state.refreshHandler);
@@ -480,12 +575,10 @@ const TutorialMode = {
 
     if (this._state.overlayEl && this._state.overlayClickHandler) {
       this._state.overlayEl.removeEventListener('click', this._state.overlayClickHandler);
-      this._state.overlayClickHandler = null;
     }
 
     if (this._state.keydownHandler) {
       document.removeEventListener('keydown', this._state.keydownHandler);
-      this._state.keydownHandler = null;
     }
 
     if (this._state.highlightEl) this._state.highlightEl.style.display = 'none';

@@ -348,6 +348,38 @@
 .session-swatch:hover .swatch-check,
 .session-swatch.just-copied .swatch-check { opacity: 1; }
 
+.session-swatch .remove-swatch {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+  line-height: 1;
+  padding: 0;
+  z-index: 2;
+}
+
+.session-swatch:hover .remove-swatch {
+  opacity: 1;
+}
+
+.dark-mode .session-swatch .remove-swatch {
+  background: #eee;
+  color: #111;
+  border-color: #333;
+}
+
 /* Dark mode */
 .dark-mode .creator-card,
 .dark-mode .palette-panel { background: #1a1a2e; border-color: #2d2d44; }

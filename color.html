@@ -1221,7 +1221,11 @@
     swatch.className = 'session-swatch';
     swatch.style.background = hex;
     swatch.title = hex;
-    swatch.innerHTML = `<span class="swatch-check">✓</span>`;
+    swatch.style.position = 'relative';
+    swatch.innerHTML = `
+      <span class="swatch-check">✓</span>
+      <button class="remove-swatch" title="Remove" onclick="event.stopPropagation(); removeSwatch(this)">×</button>
+    `;
     swatch.onclick = () => {
       copyText(hex, null);
       swatch.classList.add('just-copied');
@@ -1230,7 +1234,14 @@
     palette.appendChild(swatch);
   }
 
-  updateCreator(); // init on load
+  function removeSwatch(btn) {
+    const swatch = btn.closest('.session-swatch');
+    const palette = document.getElementById('sessionPalette');
+    swatch.remove();
+    if (!palette.querySelector('.session-swatch')) {
+      palette.innerHTML = `<div class="empty-palette-msg">No colors yet.<br>Pick one and click Add.</div>`;
+    }
+  }
 
   /* Live search */
   function liveFilter(val) {
