@@ -9,6 +9,7 @@ const activities = [
   "System running smoothly..."
 ];
 
+
 setInterval(() => {
 
   const log = document.createElement("p");

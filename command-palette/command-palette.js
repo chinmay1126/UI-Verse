@@ -5,6 +5,7 @@ document.getElementById(
 "paletteOverlay"
 );
 
+
 const openBtn =
 document.getElementById(
 "openPaletteBtn"

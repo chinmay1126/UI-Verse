@@ -7,247 +7,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Breadcrumb Components — UIverse</title>
-<<<<<<< HEAD
 
   <!-- Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
     rel="stylesheet"
   />
-Create a modern premium `command-palette.html` page for the UIverse project using ONLY HTML first (no CSS yet).
-
-The page should follow the existing UIverse design system and structure.
-
-Use:
-
-* semantic HTML5
-* reusable class names
-* responsive-friendly structure
-* clean professional indentation
-* premium frontend architecture
-* Font Awesome icons
-
-The page should represent modern command palette and spotlight search UI components inspired by:
-
-* VS Code
-* Linear
-* Raycast
-* Notion
-* ChatGPT desktop apps
-
-Include these sections:
-
-1. Sidebar Navigation
-   Include standard UIverse sidebar structure with:
-
-* Home
-* Buttons
-* Cards
-* Search Bars
-* Command Palette (active)
-
-2. Top Navbar
-   Include:
-
-* logo
-* search bar
-* theme toggle placeholder
-* action button
-
-3. Hero Section
-   Include:
-
-* premium badge
-* heading:
-  "Modern Command Palette Components"
-* short description
-* feature badges:
-  Keyboard Friendly
-  Spotlight Search
-  AI Inspired
-* hero preview command palette modal
-
-4. Filter Bar
-   Buttons:
-
-* All
-* Search
-* Spotlight
-* AI
-* Glassmorphism
-* Dark Mode
-
-5. Components Grid
-
-Create multiple premium command palette component cards.
-
-Each card must include:
-
-* component label
-* tag badge
-* preview section
-* short description
-* action buttons
-
-Add these component previews:
-
-* VS Code style command menu
-* AI search assistant palette
-* Spotlight search modal
-* Floating command launcher
-* Recent search dropdown
-* Keyboard shortcuts palette
-* File finder palette
-* Glassmorphism search overlay
-* Minimal command menu
-* Dark premium command panel
-
-6. Premium UI Features
-   Add structures for:
-
-* search suggestions
-* keyboard shortcuts
-* recent commands
-* command categories
-* quick actions
-* command icons
-* highlighted active search
-* AI assistant suggestions
-
-7. Footer
-   Add modern footer with:
-
-* navigation links
-* resources
-* social icons
-* newsletter section
-
-Requirements:
-
-* Add comments for every major section
-* Use realistic placeholder commands
-* Make structure scalable for CSS later
-* Keep layout modern and production-ready
-* Use premium reusable class names
-* DO NOT generate CSS yet
-* HTML only
-Create a modern premium `command-palette.html` page for the UIverse project using ONLY HTML first (no CSS yet).
-
-The page should follow the existing UIverse design system and structure.
-
-Use:
-
-* semantic HTML5
-* reusable class names
-* responsive-friendly structure
-* clean professional indentation
-* premium frontend architecture
-* Font Awesome icons
-
-The page should represent modern command palette and spotlight search UI components inspired by:
-
-* VS Code
-* Linear
-* Raycast
-* Notion
-* ChatGPT desktop apps
-
-Include these sections:
-
-1. Sidebar Navigation
-   Include standard UIverse sidebar structure with:
-
-* Home
-* Buttons
-* Cards
-* Search Bars
-* Command Palette (active)
-
-2. Top Navbar
-   Include:
-
-* logo
-* search bar
-* theme toggle placeholder
-* action button
-
-3. Hero Section
-   Include:
-
-* premium badge
-* heading:
-  "Modern Command Palette Components"
-* short description
-* feature badges:
-  Keyboard Friendly
-  Spotlight Search
-  AI Inspired
-* hero preview command palette modal
-
-4. Filter Bar
-   Buttons:
-
-* All
-* Search
-* Spotlight
-* AI
-* Glassmorphism
-* Dark Mode
-
-5. Components Grid
-
-Create multiple premium command palette component cards.
-
-Each card must include:
-
-* component label
-* tag badge
-* preview section
-* short description
-* action buttons
-
-Add these component previews:
-
-* VS Code style command menu
-* AI search assistant palette
-* Spotlight search modal
-* Floating command launcher
-* Recent search dropdown
-* Keyboard shortcuts palette
-* File finder palette
-* Glassmorphism search overlay
-* Minimal command menu
-* Dark premium command panel
-
-6. Premium UI Features
-   Add structures for:
-
-* search suggestions
-* keyboard shortcuts
-* recent commands
-* command categories
-* quick actions
-* command icons
-* highlighted active search
-* AI assistant suggestions
-
-7. Footer
-   Add modern footer with:
-
-* navigation links
-* resources
-* social icons
-* newsletter section
-
-Requirements:
-
-* Add comments for every major section
-* Use realistic placeholder commands
-* Make structure scalable for CSS later
-* Keep layout modern and production-ready
-* Use premium reusable class names
-* DO NOT generate CSS yet
-* HTML only
 
   <!-- Font Awesome -->
   <link
@@ -259,10 +24,6 @@ Requirements:
   />
 
   <!-- CSS -->
-=======
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
->>>>>>> 97b968b2b374e7aa6e350df6d007a4d1ea607ec9
   <link rel="stylesheet" href="breadcrums.css" />
 </head>
 <body>
@@ -271,7 +32,7 @@ Requirements:
       <span class="brand-mark">⬡</span>
       <span>UIverse</span>
     </div>
-    <nav class="topnav" aria-label="Primary">
+    <nav aria-label="Breadcrumb"  class="topnav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="cards.html">Cards</a>
       <a href="breadcrumbs.html" class="active">Breadcrumbs</a>
@@ -298,10 +59,10 @@ Requirements:
       <a href="inputs.html">Inputs</a>
     </section>
 
-    <section class="breadcrumb-grid">
+    <section class="breadcrumb-grid" role="region" aria-label="Breadcrumb types">
       <article class="component-card" data-name="glass breadcrumb">
         <div class="card-preview glass-preview">
-          <nav class="trail glass-trail" aria-label="Breadcrumb">
+          <nav aria-label="Breadcrumb"  class="trail glass-trail" aria-label="Breadcrumb">
             <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
             <i class="fa-solid fa-chevron-right"></i>
             <a href="dashboard.html">Dashboard</a>
@@ -325,7 +86,7 @@ Requirements:
 
       <article class="component-card" data-name="pill breadcrumb">
         <div class="card-preview pill-preview">
-          <nav class="trail pill-trail" aria-label="Breadcrumb">
+          <nav aria-label="Breadcrumb"  class="trail pill-trail" aria-label="Breadcrumb">
             <a href="index.html">Home</a>
             <a href="ecommerce.html">Shop</a>
             <a href="product.html">Category</a>
@@ -348,7 +109,7 @@ Requirements:
 
       <article class="component-card" data-name="underline breadcrumb">
         <div class="card-preview underline-preview">
-          <nav class="trail underline-trail" aria-label="Breadcrumb">
+          <nav aria-label="Breadcrumb"  class="trail underline-trail" aria-label="Breadcrumb">
             <a href="index.html">Home</a>
             <i class="fa-solid fa-chevron-right"></i>
             <a href="files.html">Assets</a>
@@ -370,7 +131,7 @@ Requirements:
 
       <article class="component-card" data-name="icon breadcrumb">
         <div class="card-preview icon-preview">
-          <nav class="trail icon-trail" aria-label="Breadcrumb">
+          <nav aria-label="Breadcrumb"  class="trail icon-trail" aria-label="Breadcrumb">
             <a href="index.html"><i class="fa-solid fa-house"></i></a>
             <i class="fa-solid fa-chevron-right"></i>
             <a href="settings.html"><i class="fa-solid fa-sliders"></i> Settings</a>
@@ -392,7 +153,7 @@ Requirements:
 
       <article class="component-card" data-name="step breadcrumb">
         <div class="card-preview step-preview">
-          <nav class="trail step-trail" aria-label="Breadcrumb">
+          <nav aria-label="Breadcrumb"  class="trail step-trail" aria-label="Breadcrumb">
             <span class="step-item active"><span>1</span> Project</span>
             <span class="step-item active"><span>2</span> Build</span>
             <span class="step-item active"><span>3</span> Review</span>

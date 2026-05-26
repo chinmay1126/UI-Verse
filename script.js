@@ -93,6 +93,129 @@ function copyCode(id, btn) {
       if (btn) btn.innerText = "Error";
     });
 }
+/* =================================================================
+   COPY HTML / COPY CSS  —  UI-Verse
+   Add these two functions anywhere in script.js after the existing
+   copyCode() function. They share the same toast + feedback helpers.
+   ================================================================= */
+
+/**
+ * Decode HTML entities inside a <pre><code> block so we get clean
+ * source code rather than &lt;button&gt; etc.
+ */
+function decodeEntities(raw) {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = raw;
+  return txt.value;
+}
+
+/**
+ * Given the innerText of a code block, split it into { html, css }.
+ * Rules:
+ *  - HTML comes first (may span multiple lines).
+ *  - CSS starts at the first line that looks like a CSS rule
+ *    (begins with . # * @ a-z [ after optional whitespace AND
+ *     either contains { or is a pure selector line).
+ *  - If no CSS is found, css is an empty string.
+ */
+function splitHTMLandCSS(rawInnerText) {
+  const decoded = decodeEntities(rawInnerText);
+  const lines   = decoded.split("\n");
+
+  // CSS line detector: starts with a CSS-like selector token
+  const CSS_START = /^\s*([\.\#\*\@a-zA-Z\[:])/;
+  // Must also contain { to avoid matching stray words
+  const HAS_BRACE = /\{/;
+
+  let splitIndex = -1;
+  let seenHTML   = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    // Track that we have seen at least one non-empty HTML line
+    if (!seenHTML && line.trim().length > 0) {
+      seenHTML = true;
+    }
+
+    // Only look for CSS after we have seen HTML content
+    if (seenHTML && CSS_START.test(line) && HAS_BRACE.test(line)) {
+      splitIndex = i;
+      break;
+    }
+  }
+
+  if (splitIndex === -1) {
+    // No CSS found — entire block is HTML
+    return { html: decoded.trim(), css: "" };
+  }
+
+  const html = lines.slice(0, splitIndex).join("\n").trim();
+  const css  = lines.slice(splitIndex).join("\n").trim();
+  return { html, css };
+}
+
+/**
+ * Copy only the HTML portion of a component code block.
+ * Usage:  onclick="copyHTML('c1', this)"
+ */
+function copyHTML(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const { html } = splitHTMLandCSS(el.innerText);
+
+  if (!html) {
+    showToast("No HTML found in this component.");
+    return;
+  }
+
+  navigator.clipboard.writeText(html)
+    .then(() => {
+      showToast("HTML copied!");
+      if (btn) {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> HTML Copied!';
+        btn.classList.add("copied");
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.classList.remove("copied");
+        }, 2000);
+      }
+    })
+    .catch(() => showToast("Failed to copy HTML. Please try again."));
+}
+
+/**
+ * Copy only the CSS portion of a component code block.
+ * Usage:  onclick="copyCSS('c1', this)"
+ */
+function copyCSS(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const { css } = splitHTMLandCSS(el.innerText);
+
+  if (!css) {
+    showToast("No CSS found for this component.");
+    return;
+  }
+
+  navigator.clipboard.writeText(css)
+    .then(() => {
+      showToast("CSS copied!");
+      if (btn) {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> CSS Copied!';
+        btn.classList.add("copied");
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.classList.remove("copied");
+        }, 2000);
+      }
+    })
+    .catch(() => showToast("Failed to copy CSS. Please try again."));
+}
 
 
 /* ================= COPY COLOR ================= */

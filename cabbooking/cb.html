@@ -1,83 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cab Booking Pro</title>
+<div class="card">
 
-  <link rel="stylesheet" href="cb.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-<div class="bg-glow"></div>
-
-<div class="app">
-
-  <!-- HEADER -->
-  <div class="header">
-    <h1>🚖 CabGo</h1>
-    <p>Book your ride in seconds</p>
+  <div class="input-box">
+    <span>📍</span>
+    <input id="pickup" type="text" placeholder="Pickup location">
   </div>
 
-  <!-- FORM CARD -->
-  <div class="card">
-
-    <div class="input-box">
-      <span>📍</span>
-      <input type="text" placeholder="Pickup location">
-    </div>
-
-    <div class="input-box">
-      <span>🏁</span>
-      <input type="text" placeholder="Destination">
-    </div>
-
-    <!-- RIDES -->
-    <h3 class="title">Choose Ride</h3>
-
-    <div class="rides">
-
-      <div class="ride active" onclick="selectRide(this)">
-        <h4>Mini</h4>
-        <p>₹120</p>
-        <small>Budget</small>
-      </div>
-
-      <div class="ride" onclick="selectRide(this)">
-        <h4>Sedan</h4>
-        <p>₹220</p>
-        <small>Comfort</small>
-      </div>
-
-      <div class="ride" onclick="selectRide(this)">
-        <h4>SUV</h4>
-        <p>₹350</p>
-        <small>Premium</small>
-      </div>
-
-    </div>
-
-    <!-- DRIVER CARD -->
-    <div class="driver">
-      <div class="driver-left">
-        <div class="avatar">👨‍✈️</div>
-      </div>
-
-      <div class="driver-right">
-        <h4>Rahul Sharma</h4>
-        <p>TS09 AB 1234 • ETA 5 min</p>
-      </div>
-    </div>
-
-    <!-- BUTTON -->
-    <button onclick="bookRide()">Confirm Ride</button>
-
+  <div class="input-box">
+    <span>🏁</span>
+    <input id="drop" type="text" placeholder="Destination">
   </div>
+
+  <h3 class="title">Choose Ride</h3>
+
+  <div class="rides" id="rides"></div>
+
+  <div class="fare-box">
+    Estimated Fare: <span id="fare">₹120</span>
+  </div>
+
+  <div class="driver">
+    <div class="driver-left">
+      <div class="avatar">👨‍✈️</div>
+    </div>
+
+    <div class="driver-right">
+      <h4>Rahul Sharma</h4>
+      <p>TS09 AB 1234 • ETA <span id="eta">5</span> min</p>
+    </div>
+  </div>
+
+  <button onclick="bookRide()">Confirm Ride</button>
 
 </div>
 
-<script src="cb.js"></script>
-</body>
-</html>
+<div id="toast"></div>

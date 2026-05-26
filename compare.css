@@ -1,3 +1,43 @@
+/* Compare Page Styles — compare.css */
+:root{
+  --bg: #ffffff;
+  --muted:#6b7280;
+  --border:#e6e6e6;
+  --toolbar-bg:#ffffff;
+  --accent:#2563eb;
+}
+
+html,body{height:100%;}
+body{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'DM Sans', sans-serif; margin:0; background:var(--bg); color:#111}
+
+.toolbar{background:var(--toolbar-bg);border-bottom:1px solid var(--border);padding:10px 18px;display:flex;gap:12px;align-items:center;position:sticky;top:0;z-index:60}
+.toolbar label{font-size:14px;color:var(--muted)}
+.select{padding:8px 10px;border:1px solid var(--border);border-radius:6px;background:#fff}
+.controls{margin-left:auto;display:flex;gap:10px;align-items:center}
+button{padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:#fff;cursor:pointer}
+button#swapBtn{background:linear-gradient(90deg,var(--accent),#7b61ff);color:#fff;border:none}
+button#openBoth{background:#fff}
+
+.layout{display:flex;height:calc(100vh - 56px);gap:12px;padding:12px}
+.pane{flex:1;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.pane header{padding:8px 12px;background:#fafafa;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.pane .view{flex:1}
+iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+
+.muted{color:var(--muted);font-size:0.95rem}
+
+/* responsive — stack panes on small screens */
+@media (max-width:880px){
+  .layout{flex-direction:column;height:auto;}
+  .pane{height:45vh}
+}
+
+/* small polish for selects and inputs */
+.select:focus{outline:2px solid rgba(37,99,235,0.18);box-shadow:0 6px 18px rgba(37,99,235,0.06)}
+label.muted input{margin-right:6px}
+
+/* ensure sidebar from shared styles doesn't overlap layout */
+body{padding-left:0}
 .uiverse-compare-checkbox-wrap{
   position:absolute;
   top:12px;
