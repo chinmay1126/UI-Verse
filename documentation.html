@@ -379,10 +379,10 @@ if (localStorage.getItem('theme') === 'dark') {
 
           <div class="gl-steps">
             <div class="gl-step">
-              <div class="gl-step-num gl-step-github"><i class="fa-brands fa-github"></i></div>
+              <div class="gl-step-num">1</div>
               <div class="gl-step-body">
                 <h4>Fork the repository</h4>
-                <p>Go to <a class="gl-link" href="https://github.com/chinmay1126/UI-Verse" target="_blank">github.com/chinmay1126/UI-Verse</a> and click "Fork" to create your own copy.</p>
+                <p>Go to <a class="gl-link" href="https://github.com/Tushar-sonawane06/UI-Verse" target="_blank">github.com/Tushar-sonawane06/UI-Verse</a> and click "Fork" to create your own copy.</p>
               </div>
             </div>
             <div class="gl-step">
@@ -433,12 +433,91 @@ if (localStorage.getItem('theme') === 'dark') {
     &lt;button class="action-btn copy-btn" onclick="copyCode('id', this)"&gt;Copy&lt;/button&gt;
   &lt;/div&gt;
 
-  &lt;!-- Code snippet --&gt;
-  &lt;pre id="id" class="code-block"&gt;&lt;code&gt;
-    /* HTML + CSS + JS goes here */
-  &lt;/code&gt;&lt;/pre&gt;
+      <p>
+        UIverse includes reusable components such as cards,
+        buttons, forms, navbars, inputs and more. Follow this
+        pattern: include stylesheet, paste markup, then attach
+        optional JavaScript behavior.
+      </p>
 
+      <ol class="usage-steps">
+        <li>Import global styles and the component stylesheet.</li>
+        <li>Paste the HTML snippet for the variant you need.</li>
+        <li>Adjust colors and spacing using CSS variables.</li>
+        <li>Add JavaScript only if the component is interactive.</li>
+      </ol>
+
+    </div>
+
+    <div class="usage-grid">
+
+      <article class="usage-item">
+        <h3>Buttons</h3>
+<pre class="code-block"><code>&lt;link rel="stylesheet" href="button.css"&gt;
+
+&lt;button class="primary-btn"&gt;Get Started&lt;/button&gt;</code></pre>
+      </article>
+
+      <article class="usage-item">
+        <h3>Cards</h3>
+<pre class="code-block"><code>&lt;link rel="stylesheet" href="cards.css"&gt;
+
+&lt;div class="profile-card"&gt;
+  &lt;div class="profile-avatar"&gt;UI&lt;/div&gt;
+  &lt;h3&gt;UIverse Card&lt;/h3&gt;
 &lt;/div&gt;</code></pre>
+      </article>
+
+      <article class="usage-item">
+        <h3>Alerts</h3>
+<pre class="code-block"><code>&lt;link rel="stylesheet" href="alerts.css"&gt;
+
+&lt;div class="alert success"&gt;
+  &lt;i class="fa-solid fa-circle-check"&gt;&lt;/i&gt;
+  Saved successfully.
+&lt;/div&gt;</code></pre>
+      </article>
+
+      <article class="usage-item">
+        <h3>Forms</h3>
+<pre class="code-block"><code>&lt;link rel="stylesheet" href="forms.css"&gt;
+
+&lt;form class="form-card"&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input type="email" required&gt;
+&lt;/form&gt;</code></pre>
+      </article>
+
+      <article class="usage-item">
+        <h3>Inputs</h3>
+<pre class="code-block"><code>&lt;link rel="stylesheet" href="input.css"&gt;
+
+&lt;input class="preview-input"
+  type="text"
+  placeholder="Search components"&gt;</code></pre>
+      </article>
+
+      <article class="usage-item">
+        <h3>Navbar</h3>
+<pre class="code-block"><code>&lt;link rel="stylesheet" href="navbar.css"&gt;
+
+&lt;nav class="mini-nav"&gt;
+  &lt;span class="mini-brand"&gt;UIverse&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+      </article>
+
+    </div>
+
+    <div class="usage-card usage-note">
+
+      <p>
+        Need more variants? Open component pages like
+        <a href="button.html">Buttons</a>,
+        <a href="cards.html">Cards</a>,
+        <a href="alerts.html">Alerts</a>, and
+        <a href="forms.html">Forms</a>
+        to copy complete production-ready examples.
+      </p>
 
           <div class="gl-callout gl-callout-tip">
             <i class="fa-solid fa-lightbulb"></i>
