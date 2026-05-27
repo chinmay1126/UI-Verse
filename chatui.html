@@ -42,6 +42,18 @@
   <link rel="stylesheet" href="shared-page.css">
   <link rel="stylesheet" href="cards.css">
   <link rel="stylesheet" href="playground.css">
+  <style>
+    /* Message wrapping & dynamic height constraints */
+    .bubble {
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .chat-window {
+      max-height: 480px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+  </style>
 
 </head>
 
@@ -780,6 +792,88 @@ MAIN
      <p>📢 Olivia mentioned you in #ui-components</p><br>
     <p>📥 Mason uploaded "design-mockup.png"</p><br>
     <p>🔒 Security patch applied successfully</p>
+  </div>
+</div>
+
+<!-- NEW COMPONENTS: Thread, Reactions, Typing Indicator, Message Options, File Preview -->
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">THREAD</span>
+    <h2>Threaded Conversation</h2>
+  </div>
+  <div class="thread-card">
+    <div class="thread-parent">
+      <div class="message received">
+        <img src="https://i.pravatar.cc/100?img=18" alt="">
+        <div class="bubble"><strong>Sam</strong><p>Can we ship the new modal this week?</p><span>09:12 AM</span></div>
+      </div>
+    </div>
+    <div class="thread-replies">
+      <div class="message sent"><div class="bubble"><strong>You</strong><p>Yes — will finalize by Thursday.</p><span>09:14 AM</span></div></div>
+      <div class="message received"><img src="https://i.pravatar.cc/100?img=19" alt=""><div class="bubble"><strong>Jamie</strong><p>I can help QA the changes.</p><span>09:16 AM</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">REACTIONS</span>
+    <h2>Message Reactions</h2>
+  </div>
+  <div class="reactions-row">
+    <div class="message-sample">
+      <div class="bubble"><strong>Olivia</strong><p>Loved the new animations!</p><span>10:02 AM</span></div>
+      <div class="reactions">👍 <span class="count">12</span> ❤️ <span class="count">4</span> 🔥 <span class="count">3</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">TYPING</span>
+    <h2>Typing Indicator</h2>
+  </div>
+  <div class="typing-demo">
+    <div class="contact-item">
+      <img src="https://i.pravatar.cc/100?img=25" alt="">
+      <div>
+        <strong>Alex</strong>
+        <div class="typing-indicator"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">OPTIONS</span>
+    <h2>Message Options</h2>
+  </div>
+  <div class="message-options">
+    <div class="message received">
+      <img src="https://i.pravatar.cc/100?img=28" alt="">
+      <div class="bubble">
+        <strong>Riley</strong>
+        <p>Here's the layout idea — share feedback.</p>
+        <span>11:23 AM</span>
+      </div>
+      <div class="msg-actions">⋯</div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">FILES</span>
+    <h2>File Preview</h2>
+  </div>
+  <div class="file-preview">
+    <div class="file-thumb">📄</div>
+    <div class="file-meta">
+      <strong>design-mockup.png</strong>
+      <p>1.8 MB · Uploaded by Mason</p>
+      <div class="file-actions"><button class="outline-btn">Download</button><button class="primary-btn">Open</button></div>
+    </div>
   </div>
 </div>
 

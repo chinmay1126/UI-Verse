@@ -8,7 +8,7 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0" />
 
-  <title>Command Palette UI</title>
+  <title>Advanced Command Palette UI</title>
 
   <!-- Fonts -->
 
@@ -21,10 +21,510 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- CSS -->
+  <style>
 
-  <link rel="stylesheet"
-    href="command-palette.css" />
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:"DM Sans",sans-serif;
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px;
+      background:
+      radial-gradient(circle at top,#8b5cf633,transparent 45%),
+      radial-gradient(circle at bottom,#4f46e533,transparent 45%);
+    }
+
+    .hero-content{
+      max-width:850px;
+    }
+
+    .hero-badge{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.08);
+      margin-bottom:30px;
+      font-size:14px;
+      backdrop-filter:blur(10px);
+    }
+
+    .hero h1{
+      font-family:"Syne",sans-serif;
+      font-size:78px;
+      line-height:1.1;
+      margin-bottom:24px;
+    }
+
+    .hero p{
+      font-size:18px;
+      opacity:0.75;
+      line-height:1.8;
+      max-width:700px;
+      margin:auto;
+      margin-bottom:40px;
+    }
+
+    .hero button{
+      padding:18px 34px;
+      border:none;
+      border-radius:18px;
+      background:linear-gradient(135deg,#8b5cf6,#4f46e5);
+      color:white;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      transition:0.4s;
+      box-shadow:0 10px 30px rgba(139,92,246,0.35);
+    }
+
+    .hero button:hover{
+      transform:translateY(-5px);
+    }
+
+    .hero button span{
+      background:rgba(255,255,255,0.18);
+      padding:8px 12px;
+      border-radius:10px;
+      font-size:14px;
+    }
+
+    /* ================= QUICK STATS ================= */
+
+    .quick-stats{
+      width:90%;
+      max-width:1200px;
+      margin:40px auto 100px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .stat-card{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(14px);
+      padding:25px;
+      border-radius:24px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      transition:0.4s;
+    }
+
+    .stat-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .stat-card i{
+      font-size:30px;
+      color:#8b5cf6;
+    }
+
+    .stat-card h3{
+      font-size:30px;
+      margin-bottom:4px;
+    }
+
+    .stat-card p{
+      opacity:0.7;
+    }
+
+    /* ================= FEATURES ================= */
+
+    .features{
+      width:90%;
+      max-width:1200px;
+      margin:100px auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:28px;
+    }
+
+    .feature-card{
+      background:#111827;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:36px;
+      transition:0.4s;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .feature-icon{
+      width:70px;
+      height:70px;
+      border-radius:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:24px;
+      background:linear-gradient(135deg,#8b5cf6,#4f46e5);
+    }
+
+    .feature-icon i{
+      font-size:28px;
+    }
+
+    .feature-card h3{
+      font-size:24px;
+      margin-bottom:12px;
+    }
+
+    .feature-card p{
+      opacity:0.7;
+      line-height:1.8;
+    }
+
+    /* ================= SECTION TITLE ================= */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:50px;
+      margin-bottom:14px;
+      font-family:"Syne",sans-serif;
+    }
+
+    .section-title p{
+      opacity:0.7;
+    }
+
+    /* ================= RECENT COMMANDS ================= */
+
+    .recent-section{
+      width:90%;
+      max-width:1200px;
+      margin:100px auto;
+    }
+
+    .recent-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:24px;
+    }
+
+    .recent-card{
+      background:#0f172a;
+      border-radius:24px;
+      padding:24px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.4s;
+    }
+
+    .recent-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .recent-card i{
+      font-size:24px;
+      color:#8b5cf6;
+    }
+
+    .recent-card h4{
+      margin-bottom:5px;
+    }
+
+    .recent-card span{
+      opacity:0.6;
+      font-size:14px;
+    }
+
+    /* ================= SHORTCUT GUIDE ================= */
+
+    .shortcut-guide{
+      width:90%;
+      max-width:900px;
+      margin:100px auto;
+    }
+
+    .shortcut-list{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .shortcut-item{
+      background:#111827;
+      border-radius:20px;
+      padding:18px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .shortcut-item kbd{
+      background:#1f2937;
+      border:1px solid rgba(255,255,255,0.08);
+      padding:8px 14px;
+      border-radius:10px;
+    }
+
+    /* ================= TEAM ================= */
+
+    .team-section{
+      width:90%;
+      max-width:1200px;
+      margin:100px auto;
+    }
+
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .team-card{
+      background:#111827;
+      padding:36px;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,0.08);
+      text-align:center;
+      transition:0.4s;
+    }
+
+    .team-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .team-card i{
+      font-size:42px;
+      margin-bottom:20px;
+      color:#8b5cf6;
+    }
+
+    .team-card h3{
+      margin-bottom:12px;
+    }
+
+    .team-card p{
+      opacity:0.7;
+      line-height:1.7;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer{
+      width:90%;
+      max-width:1200px;
+      margin:120px auto 60px;
+      background:linear-gradient(135deg,#8b5cf6,#4f46e5);
+      border-radius:40px;
+      padding:70px 40px;
+      text-align:center;
+    }
+
+    .footer h2{
+      font-size:52px;
+      margin-bottom:18px;
+      font-family:"Syne",sans-serif;
+    }
+
+    .footer p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:32px;
+    }
+
+    .footer button{
+      padding:18px 34px;
+      border:none;
+      border-radius:16px;
+      background:white;
+      color:black;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .footer button:hover{
+      transform:scale(1.05);
+    }
+
+    /* ================= COMMAND PALETTE ================= */
+
+    .palette-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.65);
+      backdrop-filter:blur(10px);
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding-top:80px;
+      opacity:0;
+      visibility:hidden;
+      transition:0.35s;
+      z-index:1000;
+    }
+
+    .palette-overlay.active{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .command-palette{
+      width:90%;
+      max-width:720px;
+      background:#0f172a;
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 30px 80px rgba(0,0,0,0.5);
+      animation:popup 0.35s ease;
+    }
+
+    @keyframes popup{
+      from{
+        transform:translateY(-20px) scale(0.96);
+        opacity:0;
+      }
+      to{
+        transform:translateY(0) scale(1);
+        opacity:1;
+      }
+    }
+
+    .palette-search{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:22px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .palette-search i{
+      color:#8b5cf6;
+      font-size:18px;
+    }
+
+    .palette-search input{
+      flex:1;
+      background:none;
+      border:none;
+      outline:none;
+      color:white;
+      font-size:16px;
+    }
+
+    .palette-search kbd{
+      background:#1e293b;
+      padding:6px 12px;
+      border-radius:10px;
+      font-size:12px;
+    }
+
+    .command-list{
+      max-height:500px;
+      overflow-y:auto;
+      padding:20px;
+    }
+
+    .command-group{
+      margin-bottom:28px;
+    }
+
+    .command-group h4{
+      opacity:0.6;
+      margin-bottom:14px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .command-item{
+      width:100%;
+      border:none;
+      background:#111827;
+      color:white;
+      border-radius:18px;
+      padding:16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:12px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .command-item:hover{
+      background:#1f2937;
+      transform:translateX(5px);
+    }
+
+    .command-left{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .command-left i{
+      color:#8b5cf6;
+      font-size:18px;
+    }
+
+    .command-item kbd{
+      background:#0f172a;
+      padding:6px 10px;
+      border-radius:10px;
+      font-size:12px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:52px;
+      }
+
+      .section-title h2{
+        font-size:36px;
+      }
+
+      .footer h2{
+        font-size:36px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -64,6 +564,294 @@
     </div>
 
   </section>
+
+  <!-- ================= QUICK STATS ================= -->
+
+  <section class="quick-stats">
+
+    <div class="stat-card">
+      <i class="fa-solid fa-bolt"></i>
+      <div>
+        <h3>120+</h3>
+        <p>Commands</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <i class="fa-solid fa-keyboard"></i>
+      <div>
+        <h3>25</h3>
+        <p>Shortcuts</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <i class="fa-solid fa-layer-group"></i>
+      <div>
+        <h3>8</h3>
+        <p>Categories</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <i class="fa-solid fa-user-check"></i>
+      <div>
+        <h3>98%</h3>
+        <p>Efficiency</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+
+  <section class="features">
+
+    <div class="feature-card">
+
+      <div class="feature-icon">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+
+      <h3>Smart Suggestions</h3>
+
+      <p>
+        Predictive commands appear instantly
+        based on your recent activity.
+      </p>
+
+    </div>
+
+    <div class="feature-card">
+
+      <div class="feature-icon">
+        <i class="fa-solid fa-terminal"></i>
+      </div>
+
+      <h3>Developer Friendly</h3>
+
+      <p>
+        Designed for keyboard-first workflows
+        and ultra-fast navigation.
+      </p>
+
+    </div>
+
+    <div class="feature-card">
+
+      <div class="feature-icon">
+        <i class="fa-solid fa-shield"></i>
+      </div>
+
+      <h3>Secure Actions</h3>
+
+      <p>
+        Execute sensitive actions safely
+        with confirmations and permissions.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ================= RECENT COMMANDS ================= -->
+
+  <section class="recent-section">
+
+    <div class="section-title">
+
+      <h2>
+        Recent Commands
+      </h2>
+
+      <p>
+        Your most frequently used actions
+      </p>
+
+    </div>
+
+    <div class="recent-grid">
+
+      <div class="recent-card">
+
+        <i class="fa-solid fa-clock-rotate-left"></i>
+
+        <div>
+          <h4>Open Dashboard</h4>
+          <span>2 minutes ago</span>
+        </div>
+
+      </div>
+
+      <div class="recent-card">
+
+        <i class="fa-solid fa-folder-open"></i>
+
+        <div>
+          <h4>Project Overview</h4>
+          <span>10 minutes ago</span>
+        </div>
+
+      </div>
+
+      <div class="recent-card">
+
+        <i class="fa-solid fa-chart-pie"></i>
+
+        <div>
+          <h4>Analytics Panel</h4>
+          <span>20 minutes ago</span>
+        </div>
+
+      </div>
+
+      <div class="recent-card">
+
+        <i class="fa-solid fa-user-gear"></i>
+
+        <div>
+          <h4>Profile Settings</h4>
+          <span>1 hour ago</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= SHORTCUT GUIDE ================= -->
+
+  <section class="shortcut-guide">
+
+    <div class="section-title">
+
+      <h2>
+        Keyboard Shortcuts
+      </h2>
+
+      <p>
+        Master productivity instantly
+      </p>
+
+    </div>
+
+    <div class="shortcut-list">
+
+      <div class="shortcut-item">
+        <span>Open Command Palette</span>
+        <div>
+          <kbd>⌘</kbd>
+          <kbd>K</kbd>
+        </div>
+      </div>
+
+      <div class="shortcut-item">
+        <span>Search Commands</span>
+        <kbd>/</kbd>
+      </div>
+
+      <div class="shortcut-item">
+        <span>Close Palette</span>
+        <kbd>ESC</kbd>
+      </div>
+
+      <div class="shortcut-item">
+        <span>Navigate Down</span>
+        <kbd>↓</kbd>
+      </div>
+
+      <div class="shortcut-item">
+        <span>Navigate Up</span>
+        <kbd>↑</kbd>
+      </div>
+
+      <div class="shortcut-item">
+        <span>Execute Command</span>
+        <kbd>ENTER</kbd>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= TEAM SECTION ================= -->
+
+  <section class="team-section">
+
+    <div class="section-title">
+
+      <h2>
+        Built For Teams
+      </h2>
+
+      <p>
+        Collaborate with shared shortcuts,
+        workflows and workspace commands.
+      </p>
+
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+
+        <i class="fa-solid fa-code"></i>
+
+        <h3>Developers</h3>
+
+        <p>
+          Faster debugging and project navigation.
+        </p>
+
+      </div>
+
+      <div class="team-card">
+
+        <i class="fa-solid fa-palette"></i>
+
+        <h3>Designers</h3>
+
+        <p>
+          Quick access to assets and layouts.
+        </p>
+
+      </div>
+
+      <div class="team-card">
+
+        <i class="fa-solid fa-briefcase"></i>
+
+        <h3>Managers</h3>
+
+        <p>
+          Streamlined productivity workflows.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+    <h2>
+      Ready to Boost Productivity?
+    </h2>
+
+    <p>
+      Experience lightning-fast navigation
+      with the modern command palette system.
+    </p>
+
+    <button>
+      Launch Workspace
+    </button>
+
+  </footer>
 
   <!-- ================= COMMAND PALETTE ================= -->
 
@@ -256,9 +1044,103 @@
 
   </div>
 
-  <!-- JS -->
+  <!-- ================= JAVASCRIPT ================= -->
 
-  <script src="command-palette.js"></script>
+  <script>
+
+    /* ================= COMMAND SEARCH ================= */
+
+    const commandInput =
+    document.getElementById("commandInput");
+
+    const commandItems =
+    document.querySelectorAll(".command-item");
+
+    commandInput.addEventListener("keyup", () => {
+
+      let value =
+      commandInput.value.toLowerCase();
+
+      commandItems.forEach(item => {
+
+        let text =
+        item.innerText.toLowerCase();
+
+        item.style.display =
+        text.includes(value)
+        ? "flex"
+        : "none";
+
+      });
+
+    });
+
+    /* ================= OPEN/CLOSE PALETTE ================= */
+
+    const overlay =
+    document.getElementById("paletteOverlay");
+
+    const openBtn =
+    document.getElementById("openPaletteBtn");
+
+    openBtn.onclick = () => {
+
+      overlay.classList.add("active");
+
+      commandInput.focus();
+
+    };
+
+    document.addEventListener("keydown", (e) => {
+
+      if (
+        (e.metaKey || e.ctrlKey)
+        && e.key.toLowerCase() === "k"
+      ) {
+
+        e.preventDefault();
+
+        overlay.classList.toggle("active");
+
+        commandInput.focus();
+
+      }
+
+      if (e.key === "Escape") {
+
+        overlay.classList.remove("active");
+
+      }
+
+    });
+
+    /* ================= CLOSE ON OUTSIDE CLICK ================= */
+
+    overlay.addEventListener("click", (e) => {
+
+      if (e.target === overlay) {
+
+        overlay.classList.remove("active");
+
+      }
+
+    });
+
+    /* ================= DEMO ALERT ================= */
+
+    commandItems.forEach(item => {
+
+      item.addEventListener("click", () => {
+
+        alert(
+          item.innerText.trim()
+        );
+
+      });
+
+    });
+
+  </script>
 
 </body>
 

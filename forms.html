@@ -631,12 +631,12 @@
           <p class="form-sub">Sign in with floating inputs</p>
           
           <div class="floating-group">
-            <input type="email" class="floating-input" placeholder=" " required />
+            <input aria-required="true"  type="email" class="floating-input" placeholder=" " required />
             <label class="floating-label">Email Address</label>
           </div>
           
           <div class="floating-group">
-            <input type="password" class="floating-input" placeholder=" " required />
+            <input aria-required="true"  type="password" class="floating-input" placeholder=" " required />
             <label class="floating-label">Password</label>
           </div>
           
@@ -921,7 +921,7 @@
           <p class="form-sub">Get direct premium updates to your inbox</p>
           <form class="inline-pill-form" onsubmit="event.preventDefault();">
             <i class="fa-regular fa-envelope pill-icon" aria-hidden="true"></i>
-            <input type="email" class="pill-input" aria-label="Email Address" placeholder="Enter your email address" required>
+            <input aria-required="true"  type="email" class="pill-input" aria-label="Email Address" placeholder="Enter your email address" required>
             <button type="submit" class="pill-btn">Subscribe</button>
           </form>
           <p class="pill-terms">Zero spam. Unsubscribe at any time.</p>
@@ -1513,7 +1513,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
   </div>
 </footer>
 
@@ -1627,3 +1627,5 @@ formSearchInput.addEventListener("input", function (){
 
 </body>
 </html>
+
+<!-- improved by script -->

@@ -19,6 +19,29 @@
 <body>
   <!-- APP SHELL -->
   <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="sidebar-brand">
+        <span class="brand-icon"><i class="fa-solid fa-wave-square"></i></span>
+        <span class="brand-text">UIverse</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+          <li class="active"><a href="activity-feed.html"><i class="fa-solid fa-stream"></i> Activity Feed</a></li>
+          <li><a href="alerts.html"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+          <li><a href="chatui.html"><i class="fa-solid fa-comments"></i> Messages</a></li>
+          <li><a href="calendar.html"><i class="fa-solid fa-calendar-days"></i> Calendar</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="about.html" aria-label="About UIverse"><i class="fa-solid fa-circle-info"></i></a>
+        <a href="documentation.html" aria-label="Documentation"><i class="fa-solid fa-book"></i></a>
+        <a href="contact.html" aria-label="Contact"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </aside>
+
     <main class="page-shell">
 
       <!-- HEADER -->
@@ -76,7 +99,7 @@
                   <span class="item-icon"><i class="fa-solid fa-circle"></i></span>
                   <div>
                     <p class="item-title">New comment on task <strong>Design refresh</strong></p>
-                    <p class="item-meta">Just now · Alex</p>
+                    <p class="item-meta"><time datetime="2026-05-26T01:46:19+05:30">Just now</time> · Alex</p>
                   </div>
                 </li>
                 <li class="feed-item">
@@ -229,7 +252,52 @@
 
       <!-- FOOTER -->
       <footer class="page-footer">
-        <p>Designed for modern dashboards and collaborative experiences. Build activity feeds that feel polished and informative.</p>
+        <div class="footer-top">
+          <div class="footer-brand-block">
+            <div class="footer-brand">⬡ Uiverse</div>
+            <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+            <div class="footer-socials" aria-label="Social links">
+              <a href="https://github.com" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://x.com" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <a href="button.html">Buttons</a>
+            <a href="navbar.html">Navbars</a>
+            <a href="cards.html">Cards</a>
+            <a href="inputs.html">Inputs</a>
+            <a href="forms.html">Forms</a>
+          </div>
+
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <a href="documentation.html">Documentation</a>
+            <a href="https://github.com/Tushar-sonawane06/UI-Verse">GitHub Repo</a>
+            <a href="about.html">Community</a>
+          </div>
+
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+          </div>
+
+          <div class="footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Get notified when new components drop.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="your@email.com" aria-label="Email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Uiverse. Made with <span class="heart">♥</span> for developers worldwide.</p>
+        </div>
       </footer>
     </main>
   </div>

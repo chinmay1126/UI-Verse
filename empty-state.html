@@ -9,6 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="empty-state.css">
+  <style>
+    /* CSS overrides to constrain empty-state CTA button widths */
+    .state-actions .cta {
+      min-width: 130px;
+      max-width: 180px;
+      width: 100%;
+      text-align: center;
+    }
+    @media (max-width: 480px) {
+      .state-actions {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
 

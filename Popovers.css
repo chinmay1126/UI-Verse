@@ -1,6 +1,6 @@
 :root{
 
-  --bg:#060816;
+  --bg:#fff;
   --card:#12192b;
 
   --border:rgba(255,255,255,.08);
@@ -24,12 +24,7 @@
 
 body{
 
-  background:
-    linear-gradient(
-      180deg,
-      #050816,
-      #0b1022
-    );
+  background:#fff;
 
   color:var(--text);
 
@@ -663,7 +658,246 @@ body{
 
   font-size:13px;
 }
+/* =========================================================
+NEW ICON COLORS
+========================================================= */
 
+.cyan{
+  background:linear-gradient(135deg,#06b6d4,#3b82f6);
+}
+
+.pink{
+  background:linear-gradient(135deg,#ec4899,#f43f5e);
+}
+
+.green{
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+.red{
+  background:linear-gradient(135deg,#ef4444,#f97316);
+}
+
+/* =========================================================
+TOOLTIP
+========================================================= */
+
+.tooltip-demo{
+  position:relative;
+}
+
+.tooltip-box{
+  position:absolute;
+  bottom:70px;
+  left:50%;
+  transform:translateX(-50%) translateY(10px);
+  width:220px;
+
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(16px);
+
+  border:1px solid rgba(255,255,255,0.4);
+
+  border-radius:20px;
+
+  padding:18px;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.35s ease;
+
+  box-shadow:
+  0 20px 40px rgba(0,0,0,0.08);
+}
+
+.tooltip-demo:hover .tooltip-box{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(0);
+}
+
+.tooltip-box strong{
+  display:block;
+  color:#111827;
+  margin-bottom:6px;
+}
+
+.tooltip-box span{
+  color:#6b7280;
+  font-size:14px;
+}
+
+/* =========================================================
+TEAM BOX
+========================================================= */
+
+.team-box{
+  width:300px;
+}
+
+.team-user{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  padding:12px 0;
+}
+
+.team-user img{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.team-user strong{
+  display:block;
+  color:#111827;
+}
+
+.team-user span{
+  font-size:13px;
+  color:#6b7280;
+}
+
+.online-dot{
+  margin-left:auto;
+
+  width:12px;
+  height:12px;
+
+  border-radius:50%;
+
+  background:#22c55e;
+
+  box-shadow:
+  0 0 0 4px rgba(34,197,94,0.15);
+}
+
+.green{
+  background:#10b981;
+}
+
+/* =========================================================
+STATS BOX
+========================================================= */
+
+.stats-box{
+  width:280px;
+}
+
+.stat-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:14px;
+}
+
+.stat-row span{
+  color:#6b7280;
+}
+
+.stat-row strong{
+  color:#111827;
+}
+
+.green-text{
+  color:#22c55e;
+}
+
+.progress-line{
+  width:100%;
+  height:10px;
+
+  background:#e5e7eb;
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  margin-bottom:20px;
+}
+
+.progress-fill{
+  width:72%;
+  height:100%;
+
+  background:linear-gradient(
+    90deg,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  border-radius:999px;
+}
+
+/* =========================================================
+MUSIC PLAYER
+========================================================= */
+
+.music-box{
+  width:280px;
+}
+
+.music-box img{
+  width:100%;
+  height:140px;
+
+  object-fit:cover;
+
+  border-radius:18px;
+
+  margin-bottom:16px;
+}
+
+.music-info{
+  margin-bottom:18px;
+}
+
+.music-info strong{
+  display:block;
+  color:#111827;
+  margin-bottom:6px;
+}
+
+.music-info span{
+  color:#6b7280;
+  font-size:14px;
+}
+
+.music-controls{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+
+  font-size:18px;
+  color:#111827;
+}
+
+.music-controls i{
+  width:44px;
+  height:44px;
+
+  border-radius:50%;
+
+  background:#f3f4f6;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.music-controls i:hover{
+  transform:translateY(-4px);
+  background:#8b5cf6;
+  color:white;
+}
 /* RESPONSIVE */
 
 @media(max-width:900px){
