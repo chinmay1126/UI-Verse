@@ -576,15 +576,24 @@
 }
 
 .footer-col ul li a {
-  color: #888;
+  position: relative;
+  color: #a1a1aa;
   text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
   font-size: 14px;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
 }
 
+/* Hover Animation */
 .footer-col ul li a:hover {
+  color: #ff7a3d;  
+  transform: translateX(6px);
+}
+
+/* Animated Underline */
   color: var(--accent);
   transform: translateX(3px);
   text-shadow: 0 0 8px rgba(235, 104, 53, 0.4);
@@ -594,6 +603,12 @@
   content: "";
   position: absolute;
   left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ff7a3d;
+  transition: width 0.3s ease;
+  border-radius: 10px;
   bottom: -3px;
   width: 0%;
   height: 1px;
@@ -608,6 +623,8 @@
 .socials {
   display: flex;
   gap: 12px;
+  padding-right: 12px;
+  margin-right: 12px;
 }
 
 .socials a {
@@ -676,6 +693,8 @@
   padding: 20px 48px;
   text-align: center;
   font-size: 13px;
+  color: #aaa;
+}
   color: #555;
 }
 .minimal-card{

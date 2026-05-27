@@ -16,3 +16,24 @@ fab.addEventListener("click", () => {
   }
 
 });
+
+function initFAB(fabId, optionsId){
+
+  const fab = document.getElementById(fabId);
+  const options = document.getElementById(optionsId);
+
+  fab.addEventListener("click", () => {
+
+    options.classList.toggle("active");
+    fab.classList.toggle("active");
+
+  });
+
+}
+
+/* INITIALIZE ALL FLOATING BUTTONS */
+
+initFAB("fab1", "fabOptions1");
+initFAB("fab2", "fabOptions2");
+initFAB("fab3", "fabOptions3");
+initFAB("fab4", "fabOptions4");

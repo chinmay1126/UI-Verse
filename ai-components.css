@@ -15,13 +15,20 @@
   
   /* Background & Surface */
   --dark-bg: #0f0f12;
-  --dark-surface: #1a1a1e;
-  --dark-surface-2: #22222a;
+  --dark-surface: #141619;
+  --dark-surface-2: #1b1d22;
   --glass-bg: rgba(26, 26, 30, 0.8);
   
     /* Text */
-  --text-primary: #111;
-  --text-secondary: #666;
+    --text-primary: #eef2ff;
+    --text-secondary: #9ca3af;
+
+    /* Card background */
+    --card-bg: #0b1116;
+    /* Primary / theme tokens */
+    --primary-color: var(--neon-blue);
+    --primary-hover: rgba(0, 212, 255, 0.6);
+    --accent-color: var(--accent);
   
   /* Borders */
   --border-color: rgba(255, 255, 255, 0.08);
@@ -164,7 +171,7 @@
 
 .primary-cta {
   background: var(--gradient-glow);
-  color: var(--text-primary); 
+  color: #ffffff;
   box-shadow: var(--glow-md);
 }
 
@@ -489,10 +496,10 @@
   width: 100%;
   padding: 10px;
   border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.08);
   margin-bottom: 12px;
-  background: #111;
-  color: #fff;
+  background: var(--dark-surface);
+  color: var(--text-primary);
 }
 .generator-btn {
   background: var(--primary-color, #4a90e2);
@@ -673,8 +680,8 @@
 }
 
 .message-bubble {
-  background: var(--dark-surface);
-  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.04);
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   max-width: 70%;

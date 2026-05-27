@@ -19,16 +19,41 @@ body{
   background:#fff;
   font-family:Arial,sans-serif;
 
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
-  gap:30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:40px;
 
   min-height:100vh;
 
   overflow-y:auto;
+}
+
+.loader-wrapper {
+  width: min(1700px, 100%);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  justify-content: center;
+  gap: 32px 36px;
+  align-items: start;
+}
+
+.loader-wrapper > * {
+  justify-self: stretch;
+}
+
+.status-badge {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.loader-card,
+.aurora-panel,
+.holo-panel,
+.cyber-panel,
+.floating-panel {
+  width: 100%;
+  max-width: none;
 }
 
 .loader-container {
@@ -116,7 +141,6 @@ button:hover {
   animation-play-state: paused;
 }
 .aurora-panel{
-  width:420px;
   padding:40px;
   border-radius:32px;
   background:#070b1a;
@@ -232,7 +256,6 @@ button:hover {
   }
 }
 .holo-panel{
-  width:420px;
   padding:40px;
   border-radius:30px;
   background:rgba(255,255,255,0.08);
@@ -292,7 +315,6 @@ button:hover {
   }
 }
 .cyber-panel{
-  width:420px;
   padding:40px;
   border:2px solid #00f5ff;
   background:#050816;
@@ -344,7 +366,6 @@ button:hover {
   }
 }
 .floating-panel{
-  width:420px;
   padding:40px;
   border-radius:30px;
   background:#0f172a;
@@ -403,5 +424,21 @@ button:hover {
     transform:
       translateY(-24px)
       rotate(180deg);
+  }
+}
+
+@media (max-width: 920px) {
+  .loader-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .status-badge {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .loader-wrapper {
+    grid-template-columns: 1fr;
   }
 }

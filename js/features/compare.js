@@ -1,6 +1,6 @@
 (function () {
   const MAX_COMPARE = 3;
-  const STORAGE_KEY = 'uiVerseCompare.selectedComponentIds.v1';
+  const STORAGE_KEY = 'uiVerseCompare.selectedComponentIds.v2';
 
   const CARD_SELECTOR = '.component-card';
   const CARD_ID_ATTR = 'data-compare-id';
@@ -11,6 +11,7 @@
   let state = {
     selectedIds: [],
     overlayOpen: false,
+    activeCompareId: null,
   };
 
   let cardsObserver = null;
@@ -33,7 +34,19 @@
     cachedOverlayGrid = document.getElementById(OVERLAY_GRID_ID);
   }
 
-  function loadSelectionFromStorage(storage = sessionStorage) {
+  function getOverlayElement() {
+    return document.getElementById(OVERLAY_ID);
+  }
+
+  function getOverlayGridElement() {
+    return document.getElementById(OVERLAY_GRID_ID);
+  }
+
+  function getCachedOverlayGrid() {
+    return cachedOverlayGrid || getOverlayGridElement();
+  }
+
+  function loadSelectionFromStorage(storage = localStorage) {
     try {
       const raw = storage.getItem(STORAGE_KEY);
       if (!raw) return [];
@@ -45,12 +58,16 @@
     }
   }
 
-  function persistSelectionToStorage(selectedIds, storage = sessionStorage) {
+  function persistSelectionToStorage(selectedIds, storage = localStorage) {
     try {
       storage.setItem(STORAGE_KEY, JSON.stringify(selectedIds));
     } catch (e) {
       // ignore
     }
+  }
+
+  function getSelectedCards(cards, ids) {
+    return getSelectedCardsById(cards, ids, ensureCompareId);
   }
 
   function toggleSelected(selectedIds, compareId, max = MAX_COMPARE) {
@@ -97,15 +114,34 @@
     const previewWrap = document.createElement('div');
     previewWrap.className = 'uiverse-compare-cell-preview';
 
-    // Clone ONLY preview area if possible
+    // Rebuild a lightweight snapshot instead of deep-cloning the whole card.
     if (preview) {
-      previewWrap.appendChild(preview.cloneNode(true));
+      const previewSnapshot = preview.cloneNode(false);
+      previewSnapshot.innerHTML = preview.innerHTML;
+      previewWrap.appendChild(previewSnapshot);
     } else {
-      // fallback: clone whole card
-      previewWrap.appendChild(cardEl.cloneNode(true));
-      // remove checkbox from clone if present
-      const cloned = previewWrap.querySelector('.uiverse-compare-checkbox-wrap');
-      if (cloned) cloned.remove();
+      const snapshot = document.createElement('div');
+      snapshot.className = 'uiverse-compare-card-snapshot';
+
+      const top = cardEl.querySelector('.card-top');
+      if (top) {
+        const topSnapshot = top.cloneNode(false);
+        topSnapshot.innerHTML = top.innerHTML;
+        snapshot.appendChild(topSnapshot);
+      }
+
+      const desc = cardEl.querySelector('.card-desc');
+      if (desc) {
+        const descSnapshot = desc.cloneNode(false);
+        descSnapshot.textContent = desc.textContent || '';
+        snapshot.appendChild(descSnapshot);
+      }
+
+      if (!snapshot.childNodes.length) {
+        snapshot.textContent = cardEl.getAttribute('data-name') || cardEl.getAttribute('data-cat') || 'Preview unavailable';
+      }
+
+      previewWrap.appendChild(snapshot);
     }
 
     cell.appendChild(label);
@@ -131,6 +167,42 @@
     return `${name}::${cat}::${contentSignature}`;
   }
 
+  function normalizeCompareSignaturePart(value) {
+    return String(value || '').trim().replace(/\s+/g, ' ').toLowerCase();
+  }
+
+  function hashCompareSignature(signature) {
+    let hash = 2166136261;
+
+    for (let index = 0; index < signature.length; index += 1) {
+      hash ^= signature.charCodeAt(index);
+      hash = Math.imul(hash, 16777619);
+    }
+
+    return (hash >>> 0).toString(36);
+  }
+
+  function buildCompareIdSignature(cardEl) {
+    if (!cardEl) return '';
+
+    const stableAttributes = ['data-component-id', 'data-name', 'data-title', 'data-cat', 'data-id', 'id'];
+    const attributeParts = stableAttributes
+      .map((attr) => normalizeCompareSignaturePart(cardEl.getAttribute(attr)))
+      .filter(Boolean);
+
+    if (attributeParts.length) {
+      return attributeParts.join('::');
+    }
+
+    const preview = cardEl.querySelector('.card-preview');
+    const previewSignature = preview ? preview.outerHTML : cardEl.outerHTML;
+    const textSignature = normalizeCompareSignaturePart(cardEl.textContent || '');
+
+    return [cardEl.tagName, textSignature.slice(0, 200), normalizeCompareSignaturePart(previewSignature).slice(0, 4000)]
+      .filter(Boolean)
+      .join('::');
+  }
+
   function ensureCompareCell(compareId, cardEl, onActivate) {
     if (!compareId || !cardEl) return null;
 
@@ -143,6 +215,7 @@
     }
 
     const cell = renderCompareCell(cardEl, onActivate);
+    cell.dataset.compareId = compareId;
     cachedCompareCells.set(compareId, {
       cell,
       signature: nextSignature,
@@ -150,6 +223,25 @@
     });
 
     return cell;
+  }
+
+  function pruneCompareCellCache(gridEl, nextIds) {
+    for (const [compareId, entry] of cachedCompareCells.entries()) {
+      const cell = entry && entry.cell;
+      const cellInGrid = !!cell && gridEl.contains(cell);
+
+      if (nextIds.includes(compareId)) {
+        continue;
+      }
+
+      if (cellInGrid) {
+        gridEl.removeChild(cell);
+      }
+
+      if (!cellInGrid || !cell.isConnected) {
+        cachedCompareCells.delete(compareId);
+      }
+    }
   }
 
   function renderOverlayGrid(gridEl, selectedCards, onActivate) {
@@ -168,39 +260,25 @@
       }
     });
 
-    for (const [compareId, entry] of cachedCompareCells.entries()) {
-      if (nextIds.includes(compareId)) continue;
-      if (entry && entry.cell && entry.cell.parentElement === gridEl) {
-        gridEl.removeChild(entry.cell);
-      }
-    }
-
-    cachedCompareCells.forEach((entry, compareId) => {
-      if (nextIds.includes(compareId)) return;
-      if (entry && entry.cell && !entry.cell.isConnected) {
-        cachedCompareCells.delete(compareId);
-      }
-    });
+    pruneCompareCellCache(gridEl, nextIds);
   }
 
   function ensureCompareId(cardEl) {
     if (!cardEl || !(cardEl instanceof HTMLElement)) return null;
-    if (cardEl.getAttribute(CARD_ID_ATTR)) return cardEl.getAttribute(CARD_ID_ATTR);
+    const existingId = cardEl.getAttribute(CARD_ID_ATTR);
+    if (existingId) return existingId;
 
-    // Prefer stable-ish identifier
-    const name = (cardEl.getAttribute('data-name') || '').trim();
-    const cat = (cardEl.getAttribute('data-cat') || '').trim();
-
-    // Fallback: index within grid
-    const all = cachedCards.length ? cachedCards : getCardElements();
-    const idx = all.indexOf(cardEl);
-
-    const metaKey = [name, cat].filter(Boolean).join('__');
-    const raw = metaKey || `card__${idx}`;
-    const safe = raw.replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 80);
-
-    // Keep metadata-backed IDs stable across DOM re-renders.
-    const id = metaKey ? safe : `${safe}__${idx}`;
+    const signature = buildCompareIdSignature(cardEl);
+    const primaryLabel = normalizeCompareSignaturePart(
+      cardEl.getAttribute('data-component-id') ||
+      cardEl.getAttribute('data-name') ||
+      cardEl.getAttribute('data-title') ||
+      cardEl.getAttribute('data-id') ||
+      cardEl.getAttribute('id') ||
+      'card'
+    );
+    const safeLabel = primaryLabel.replace(/[^a-z0-9_-]/g, '_').slice(0, 40) || 'card';
+    const id = `cmp_${safeLabel}_${hashCompareSignature(signature)}`;
 
     cardEl.setAttribute(CARD_ID_ATTR, id);
     return id;
@@ -271,8 +349,140 @@
     return renderCompareCell(cardEl, syncActive);
   }
 
+  function getOverlayCells(gridEl = getCachedOverlayGrid()) {
+    if (!gridEl) return [];
+    return Array.from(gridEl.querySelectorAll('.uiverse-compare-cell'));
+  }
+
+  function getActiveOverlayCell(gridEl = getCachedOverlayGrid()) {
+    return getOverlayCells(gridEl).find((cell) => cell.classList.contains('uiverse-compare-cell--active')) || null;
+  }
+
+  function syncOverlayOpenState(isOpen) {
+    state.overlayOpen = isOpen;
+  }
+
+  function syncOverlayVisibility(overlay, isOpen) {
+    if (!overlay) return;
+    overlay.classList.toggle('uiverse-compare-overlay--open', isOpen);
+  }
+
+  function bindOverlayCloseInteractions(overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target instanceof Element && !e.target.closest('.uiverse-compare-overlay__panel')) {
+        closeOverlayKeepSelection();
+      }
+    });
+
+    const clearBtn = document.getElementById('uiverse-compare-clear');
+    const closeBtn = document.getElementById('uiverse-compare-close');
+
+    clearBtn.addEventListener('click', () => closeOverlayClearSelection());
+    closeBtn.addEventListener('click', () => closeOverlayKeepSelection());
+  }
+
+  function createOverlayShell() {
+    const overlay = document.createElement('div');
+    overlay.id = OVERLAY_ID;
+    overlay.className = 'uiverse-compare-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+
+    overlay.innerHTML = `
+        <div class="uiverse-compare-overlay__panel">
+          <div class="uiverse-compare-overlay__header">
+            <div class="uiverse-compare-overlay__title">
+              Multi-Component Compare
+              <span class="uiverse-compare-overlay__hint">(hover/focus sync)</span>
+            </div>
+            <div class="uiverse-compare-overlay__actions">
+              <button type="button" class="uiverse-compare-clear" id="uiverse-compare-clear">Clear Compare</button>
+              <button type="button" class="uiverse-compare-close" id="uiverse-compare-close">Close</button>
+            </div>
+          </div>
+          <div class="uiverse-compare-overlay__body">
+            <div class="uiverse-compare-grid" id="${OVERLAY_GRID_ID}"></div>
+          </div>
+        </div>
+      `;
+
+    document.body.appendChild(overlay);
+    bindOverlayCloseInteractions(overlay);
+    bindOverlayKeydown();
+    cachedOverlayGrid = overlay.querySelector(`#${OVERLAY_GRID_ID}`);
+    return overlay;
+  }
+
+  function ensureOverlayShell() {
+    return getOverlayElement() || createOverlayShell();
+  }
+
+  function focusOverlayCell(cell) {
+    if (!cell) return;
+
+    syncActive(cell);
+
+    if (typeof cell.focus === 'function') {
+      try {
+        cell.focus({ preventScroll: true });
+      } catch {
+        cell.focus();
+      }
+    }
+
+    if (typeof cell.scrollIntoView === 'function') {
+      try {
+        cell.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      } catch {
+        cell.scrollIntoView();
+      }
+    }
+  }
+
+  function moveOverlaySelection(direction) {
+    const grid = getCachedOverlayGrid();
+    const cells = getOverlayCells(grid);
+    if (!cells.length) return;
+
+    const currentCell = getActiveOverlayCell(grid);
+    const currentIndex = currentCell ? cells.indexOf(currentCell) : -1;
+
+    let nextIndex = currentIndex;
+    if (currentIndex < 0) {
+      nextIndex = direction >= 0 ? 0 : cells.length - 1;
+    } else {
+      nextIndex = (currentIndex + direction + cells.length) % cells.length;
+    }
+
+    focusOverlayCell(cells[nextIndex]);
+  }
+
+  function scrollSourceCardForCell(cell) {
+    if (!cell) return;
+
+    const compareId = cell.dataset && cell.dataset.compareId;
+    const entry = compareId ? cachedCompareCells.get(compareId) : null;
+    const sourceCardEl = entry && entry.sourceCardEl;
+
+    if (sourceCardEl && typeof sourceCardEl.scrollIntoView === 'function') {
+      try {
+        sourceCardEl.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+      } catch {
+        sourceCardEl.scrollIntoView();
+      }
+    }
+
+    if (sourceCardEl && typeof sourceCardEl.focus === 'function') {
+      try {
+        sourceCardEl.focus({ preventScroll: true });
+      } catch {
+        sourceCardEl.focus();
+      }
+    }
+  }
+
   function syncActive(activeCell) {
-    const grid = cachedOverlayGrid || document.getElementById(OVERLAY_GRID_ID);
+    const grid = getCachedOverlayGrid();
     if (!grid) {
       pendingActiveCell = activeCell;
       if (!syncRetryQueued) {
@@ -299,7 +509,9 @@
     // Grid is available now; any queued state has been superseded.
     pendingActiveCell = undefined;
 
-    const cells = Array.from(cachedCompareCells.values()).map((entry) => entry && entry.cell).filter(Boolean);
+    state.activeCompareId = activeCell && activeCell.dataset ? activeCell.dataset.compareId || null : null;
+
+    const cells = getOverlayCells(grid);
     const isActiveCell = (cell) => !!activeCell && cell === activeCell;
 
     cells.forEach((c) => {
@@ -311,71 +523,21 @@
   }
 
   function openOverlay() {
-    const selectedCards = getSelectedCardsById(cachedCards.length ? cachedCards : getCardElements(), state.selectedIds, ensureCompareId);
+    const selectedCards = getSelectedCards(cachedCards.length ? cachedCards : getCardElements(), state.selectedIds);
     if (selectedCards.length < 2) return;
 
-    let overlay = document.getElementById(OVERLAY_ID);
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = OVERLAY_ID;
-      overlay.className = 'uiverse-compare-overlay';
-      overlay.setAttribute('role', 'dialog');
-      overlay.setAttribute('aria-modal', 'true');
-
-      overlay.innerHTML = `
-        <div class="uiverse-compare-overlay__panel">
-          <div class="uiverse-compare-overlay__header">
-            <div class="uiverse-compare-overlay__title">
-              Multi-Component Compare
-              <span class="uiverse-compare-overlay__hint">(hover/focus sync)</span>
-            </div>
-            <div class="uiverse-compare-overlay__actions">
-              <button type="button" class="uiverse-compare-clear" id="uiverse-compare-clear">Clear Compare</button>
-              <button type="button" class="uiverse-compare-close" id="uiverse-compare-close">Close</button>
-            </div>
-          </div>
-          <div class="uiverse-compare-overlay__body">
-            <div class="uiverse-compare-grid" id="${OVERLAY_GRID_ID}"></div>
-          </div>
-        </div>
-      `;
-
-      document.body.appendChild(overlay);
-
-      overlay.addEventListener('click', (e) => {
-        if (e.target instanceof Element && !e.target.closest('.uiverse-compare-overlay__panel')) {
-          closeOverlayKeepSelection();
-        }
-      });
-
-      const clearBtn = document.getElementById('uiverse-compare-clear');
-      const closeBtn = document.getElementById('uiverse-compare-close');
-
-      clearBtn.addEventListener('click', () => closeOverlayClearSelection());
-
-      closeBtn.addEventListener('click', () => closeOverlayKeepSelection());
-
-      bindOverlayKeydown();
-    }
-
-    const grid = cachedOverlayGrid || document.getElementById(OVERLAY_GRID_ID);
+    const overlay = ensureOverlayShell();
+    const grid = getCachedOverlayGrid();
     cachedOverlayGrid = grid;
     renderOverlayGrid(grid, selectedCards, syncActive);
 
-    overlay.classList.add('uiverse-compare-overlay--open');
-    state.overlayOpen = true;
+    syncOverlayVisibility(overlay, true);
+    syncOverlayOpenState(true);
 
     // initial active styling based on first cell
-    const first = grid && grid.querySelector('.uiverse-compare-cell');
+    const first = getActiveOverlayCell(grid) || (grid && grid.querySelector('.uiverse-compare-cell'));
     if (first) {
-      syncActive(first);
-      if (typeof first.focus === 'function') {
-        try {
-          first.focus({ preventScroll: true });
-        } catch {
-          first.focus();
-        }
-      }
+      focusOverlayCell(first);
     }
   }
 
@@ -393,15 +555,15 @@
 
   function closeOverlayKeepSelection() {
     unbindOverlayKeydown();
-    const overlay = document.getElementById(OVERLAY_ID);
+    const overlay = getOverlayElement();
     if (!overlay) {
-      state.overlayOpen = false;
+      syncOverlayOpenState(false);
       cachedOverlayGrid = null;
       return;
     }
     syncActive(null);
-    overlay.classList.remove('uiverse-compare-overlay--open');
-    state.overlayOpen = false;
+    syncOverlayVisibility(overlay, false);
+    syncOverlayOpenState(false);
     cachedOverlayGrid = overlay.querySelector(`#${OVERLAY_GRID_ID}`);
   }
 
@@ -413,7 +575,30 @@
   }
 
   function onKeyDown(e) {
-    if (e.key !== 'Escape' || !state.overlayOpen) return;
+    if (!state.overlayOpen) return;
+
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      moveOverlaySelection(-1);
+      return;
+    }
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      moveOverlaySelection(1);
+      return;
+    }
+
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const activeCell = getActiveOverlayCell();
+      if (activeCell) {
+        scrollSourceCardForCell(activeCell);
+      }
+      return;
+    }
+
+    if (e.key !== 'Escape') return;
 
     // Escape exits compare mode completely.
     e.preventDefault();
@@ -498,19 +683,8 @@
     const link = document.createElement('link');
     link.id = 'uiverse-compare-styles';
     link.rel = 'stylesheet';
-
-    const scriptSource = (() => {
-      if (document.currentScript && document.currentScript.src) {
-        return document.currentScript.src;
-      }
-
-      const scriptEl = document.querySelector('script[src*="js/features/compare.js"]');
-      return scriptEl ? scriptEl.src : '';
-    })();
-
-    link.href = scriptSource
-      ? new URL('../../compare.css', scriptSource).href
-      : 'compare.css';
+    // compare.css is a root-level asset; resolve it from the current document, not the script URL.
+    link.href = new URL('compare.css', document.baseURI).href;
 
     document.head.appendChild(link);
   }
