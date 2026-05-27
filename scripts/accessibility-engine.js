@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DEFAULT_ROOT = process.cwd();
-const IGNORE_DIRS = new Set(['.git', 'node_modules', 'Public', 'playwright-report', 'test-results', 'reports']);
+const IGNORE_DIRS = new Set(['.git', 'node_modules', 'Public', 'public', 'playwright-report', 'test-results', 'reports', 'snippets']);
 const EXCLUDED_FILES = new Set(['a11y-dashboard.html']);
 
 function walk(dir, files = [], options = {}) {
