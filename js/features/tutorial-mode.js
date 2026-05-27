@@ -18,6 +18,8 @@ const TutorialMode = {
     overlayEl: null,
     tooltipEl: null,
     highlightEl: null,
+    activeTargetEl: null,
+    activeTargetDescribedBy: null,
     overlayClickHandler: null,
     keydownHandler: null,
     refreshHandler: null,
@@ -230,6 +232,53 @@ const TutorialMode = {
     return this._state.keydownHandler;
   },
 
+  _getTooltipDescriptionIds() {
+    return ['tutorialModeTitle', 'tutorialModeInstruction', 'tutorialModeProgress'];
+  },
+
+  _syncTargetDescription(el) {
+    if (!el || typeof el.getAttribute !== 'function' || typeof el.setAttribute !== 'function') return;
+
+    if (this._state.activeTargetEl && this._state.activeTargetEl !== el) {
+      this._restoreTargetDescription();
+    }
+
+    const previousDescription = this._state.activeTargetEl === el && this._state.activeTargetDescribedBy !== null
+      ? this._state.activeTargetDescribedBy
+      : el.getAttribute('aria-describedby');
+    const describedByIds = new Set(
+      String(previousDescription || '')
+        .split(/\s+/)
+        .map((id) => id.trim())
+        .filter(Boolean)
+    );
+
+    this._getTooltipDescriptionIds().forEach((id) => describedByIds.add(id));
+
+    this._state.activeTargetEl = el;
+    this._state.activeTargetDescribedBy = previousDescription;
+    el.setAttribute('aria-describedby', Array.from(describedByIds).join(' '));
+  },
+
+  _restoreTargetDescription() {
+    const el = this._state.activeTargetEl;
+    if (!el || typeof el.setAttribute !== 'function') {
+      this._state.activeTargetEl = null;
+      this._state.activeTargetDescribedBy = null;
+      return;
+    }
+
+    const previousDescription = this._state.activeTargetDescribedBy;
+    if (previousDescription) {
+      el.setAttribute('aria-describedby', previousDescription);
+    } else {
+      el.removeAttribute('aria-describedby');
+    }
+
+    this._state.activeTargetEl = null;
+    this._state.activeTargetDescribedBy = null;
+  },
+
   /**
    * Start tutorial for a given page/category.
    * @param {{pageKey?: string, categoryKey?: string, steps: Array, force?: boolean}} options
@@ -345,12 +394,16 @@ const TutorialMode = {
     overlay.id = 'tutorialModeOverlay';
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-labelledby', 'tutorialModeTitle');
+    overlay.setAttribute('aria-describedby', 'tutorialModeInstruction tutorialModeProgress');
     overlay.style.display = 'none';
 
     // Tooltip panel
     const panel = document.createElement('div');
     panel.id = 'tutorialModePanel';
     panel.setAttribute('aria-live', 'polite');
+    panel.setAttribute('role', 'group');
+    panel.setAttribute('aria-label', 'Tutorial step');
 
     panel.innerHTML = `
       <div class="tutorialMode-kicker">Tutorial Mode</div>
@@ -424,6 +477,8 @@ const TutorialMode = {
     this._state.overlayEl.querySelector('#tutorialModeTitle').textContent = title;
     this._state.overlayEl.querySelector('#tutorialModeInstruction').textContent = instruction;
     this._state.overlayEl.querySelector('#tutorialModeProgress').textContent = `${i + 1} of ${total}`;
+
+    this._syncTargetDescription(el);
 
     // Highlight
     this._highlightElement(el);
@@ -553,6 +608,7 @@ const TutorialMode = {
 
   complete(skip = false, shouldMarkCompleted = true) {
     this._state.active = false;
+    this._restoreTargetDescription();
 
     if (shouldMarkCompleted) {
       this._setCompleted();
