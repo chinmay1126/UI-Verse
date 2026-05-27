@@ -8,40 +8,28 @@ const accordionItems =
   );
 
 accordionItems.forEach(item=>{
-
-  const button =
-    item.querySelector(
-      ".accordion-btn"
-    );
+  const button = item.querySelector(".accordion-btn");
 
   if (button) {
-    button.addEventListener(
-      "click",
-      ()=>{
+    button.addEventListener("click", ()=>{
+      const isActive = item.classList.contains("active");
 
-        const isActive =
-          item.classList.contains(
-            "active"
-          );
-
-        accordionItems.forEach(i=>
-          i.classList.remove(
-            "active"
-          )
-        );
-
-        if(!isActive){
-
-          item.classList.add(
-            "active"
-          );
-
+      // Reset all items and set aria-expanded to false
+      accordionItems.forEach(i => {
+        i.classList.remove("active");
+        const btn = i.querySelector(".accordion-btn");
+        if (btn) {
+          btn.setAttribute("aria-expanded", "false");
         }
+      });
 
+      // If the clicked item wasn't active, activate it and set aria-expanded to true
+      if (!isActive) {
+        item.classList.add("active");
+        button.setAttribute("aria-expanded", "true");
       }
-    );
+    });
   }
-
 });
 
 /* =====================================================
