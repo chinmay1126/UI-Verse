@@ -3,13 +3,13 @@
   --primary:#7c3aed;
   --secondary:#06b6d4;
 
-  --bg:#0b1120;
+  --bg:#ffffff;
   --card:#111827;
 
   --border:rgba(255,255,255,.08);
 
-  --text:#ffffff;
-  --muted:#9ca3af;
+  --text:#0b1120;
+   --muted: #111;
 
   --sidebar:#0f172a;
 
@@ -161,88 +161,6 @@ SIDEBAR
   transform:translateX(4px);
 }
 
-/* =========================================================
-NAVBAR
-========================================================= */
-
-.navbar{
-
-  position:fixed;
-
-  top:0;
-  left:260px;
-  right:0;
-
-  height:90px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:0 40px;
-
-  background:rgba(11,17,32,.72);
-
-  backdrop-filter:blur(20px);
-
-  border-bottom:1px solid var(--border);
-
-  z-index:999;
-}
-
-.logo{
-
-  font-size:30px;
-
-  font-family:"Syne",sans-serif;
-
-  font-weight:800;
-
-  background:var(--gradient);
-
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.search-bar{
-
-  width:340px;
-
-  display:flex;
-  align-items:center;
-
-  gap:14px;
-
-  padding:14px 18px;
-
-  border-radius:18px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid var(--border);
-}
-
-.search-bar i{
-  color:var(--muted);
-}
-
-.search-bar input{
-
-  flex:1;
-
-  background:transparent;
-
-  border:none;
-  outline:none;
-
-  color:white;
-
-  font-size:15px;
-}
-
-.search-bar input::placeholder{
-  color:var(--muted);
-}
 
 /* =========================================================
 MAIN
@@ -536,7 +454,7 @@ PRICING GRID
 
   gap:12px;
 
-  color:#d1d5db;
+  color:#06b6d4;
 }
 
 .pricing-card li i.fa-check{
@@ -613,12 +531,12 @@ COMPARISON TABLE
 
   font-size:16px;
 
-  color:white;
+  color:peru;
 }
 
 .comparison-table td{
 
-  color:#d1d5db;
+  color:purple;
 }
 
 .comparison-table tr:hover{
@@ -638,11 +556,12 @@ FEATURE GRID
     repeat(auto-fit,minmax(260px,1fr));
 
   gap:28px;
+  background-color:lightblue;
 }
 
 .feature-card{
 
-  background:rgba(255,255,255,.04);
+  background:#d1d5db;
 
   border:1px solid var(--border);
 
@@ -685,11 +604,12 @@ FEATURE GRID
   margin-bottom:14px;
 
   font-family:"Syne",sans-serif;
+  
 }
 
 .feature-card p{
 
-  color:var(--muted);
+  
 
   line-height:1.8;
 }
@@ -766,9 +686,575 @@ STACKED CARDS
 
   gap:16px;
 
-  color:#d1d5db;
+  color:#0f172a;
+}
+/* =========================================================
+MODERN WHITE THEME COMPARISON COMPONENTS
+Creative + Premium UI
+========================================================= */
+
+:root{
+  --primary:#5b5ff8;
+  --secondary:#8b5cf6;
+  --dark:#111827;
+  --text:#4b5563;
+  --border:#ececf3;
+  --surface:#ffffff;
+  --soft:#f8f8fc;
 }
 
+/* =========================================================
+SECTION
+========================================================= */
+
+.component-section{
+  padding:110px 8%;
+  background:#fff;
+  position:relative;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title span{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 20px;
+  background:#f3f4ff;
+  border:1px solid #e6e8ff;
+  border-radius:999px;
+  color:var(--primary);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.4px;
+  margin-bottom:20px;
+}
+
+.section-title h2{
+  font-size:52px;
+  font-weight:800;
+  color:var(--dark);
+  line-height:1.1;
+  letter-spacing:-1px;
+}
+
+/* =========================================================
+PREMIUM PRICING GRID
+========================================================= */
+
+.glass-pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+  gap:35px;
+}
+
+/* =========================================================
+CARD
+========================================================= */
+
+.glass-card{
+  position:relative;
+  overflow:hidden;
+  padding:42px;
+  border-radius:34px;
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,1) 0%,
+    rgba(248,249,255,1) 100%
+  );
+
+  border:1px solid var(--border);
+
+  transition:0.45s ease;
+
+  box-shadow:
+  0 10px 30px rgba(20,20,43,0.04),
+  inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* GLOW EFFECT */
+
+.glass-card::before{
+  content:"";
+  position:absolute;
+  top:-120px;
+  right:-120px;
+  width:220px;
+  height:220px;
+  background:radial-gradient(
+    circle,
+    rgba(91,95,248,0.14),
+    transparent 70%
+  );
+}
+
+/* HOVER */
+
+.glass-card:hover{
+  transform:translateY(-12px);
+  border-color:#d9ddff;
+
+  box-shadow:
+  0 25px 60px rgba(91,95,248,0.14);
+}
+
+/* FEATURED CARD */
+
+.featured-glass{
+  background:
+  linear-gradient(
+    135deg,
+    #5b5ff8 0%,
+    #7c4dff 100%
+  );
+
+  border:none;
+}
+
+.featured-glass h3,
+.featured-glass p,
+.featured-glass li,
+.featured-glass .glass-price,
+.featured-glass .glass-price span{
+  color:#fff;
+}
+
+.featured-glass .divider{
+  background:rgba(255,255,255,0.14);
+}
+
+.featured-glass button{
+  background:#fff !important;
+  color:#5b5ff8 !important;
+}
+
+/* =========================================================
+TOP BADGE
+========================================================= */
+
+.top-row{
+  margin-bottom:26px;
+}
+
+.mini-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:#eef2ff;
+  color:var(--primary);
+
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.8px;
+}
+
+.featured-glass .mini-badge{
+  background:rgba(255,255,255,0.14);
+  color:#fff;
+}
+
+/* =========================================================
+POPULAR TAG
+========================================================= */
+
+.popular-pill{
+  position:absolute;
+  top:22px;
+  right:22px;
+
+  padding:10px 16px;
+
+  border-radius:999px;
+
+  background:#fff;
+  color:var(--primary);
+
+  font-size:12px;
+  font-weight:700;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* =========================================================
+TEXT
+========================================================= */
+
+.glass-card h3{
+  font-size:34px;
+  font-weight:800;
+  color:var(--dark);
+  margin-top:20px;
+}
+
+.glass-price{
+  margin:24px 0 18px;
+  font-size:68px;
+  font-weight:800;
+  line-height:1;
+  color:var(--dark);
+  letter-spacing:-3px;
+}
+
+.glass-price span{
+  font-size:18px;
+  font-weight:500;
+  color:#6b7280;
+}
+
+.glass-card p{
+  color:var(--text);
+  line-height:1.8;
+  font-size:15px;
+}
+
+/* =========================================================
+DIVIDER
+========================================================= */
+
+.divider{
+  width:100%;
+  height:1px;
+  background:#ebeef5;
+  margin:30px 0;
+}
+
+/* =========================================================
+FEATURE LIST
+========================================================= */
+
+.glass-card ul{
+  list-style:none;
+}
+
+.glass-card ul li{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  margin-bottom:18px;
+
+  color:#374151;
+  font-weight:500;
+}
+
+.glass-card ul li::before{
+  content:"✔";
+
+  width:24px;
+  height:24px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#eef2ff;
+  color:var(--primary);
+
+  font-size:12px;
+  font-weight:700;
+}
+
+.featured-glass ul li::before{
+  background:rgba(255,255,255,0.18);
+  color:#fff;
+}
+
+/* =========================================================
+BUTTON
+========================================================= */
+
+.glass-card button{
+  width:100%;
+  margin-top:32px;
+
+  padding:17px;
+
+  border:none;
+  border-radius:18px;
+
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  color:#fff;
+
+  font-size:15px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+}
+
+.glass-card button:hover{
+  transform:scale(1.03);
+}
+
+/* =========================================================
+MODERN TABLE
+========================================================= */
+
+.minimal-table-wrap{
+  overflow-x:auto;
+  border-radius:30px;
+}
+
+.minimal-table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+
+  background:#fff;
+
+  border:1px solid #eef0f5;
+
+  border-radius:30px;
+
+  box-shadow:
+  0 12px 35px rgba(20,20,43,0.05);
+}
+
+.minimal-table thead{
+  background:
+  linear-gradient(
+    135deg,
+    #5b5ff8,
+    #8b5cf6
+  );
+}
+
+.minimal-table th{
+  padding:24px;
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  text-align:left;
+}
+
+.minimal-table td{
+  padding:24px;
+  color:#374151;
+  border-bottom:1px solid #f1f2f6;
+  font-weight:500;
+}
+
+.minimal-table tbody tr{
+  transition:0.3s;
+}
+
+.minimal-table tbody tr:hover{
+  background:#fafaff;
+}
+
+/* =========================================================
+TOGGLE PRICING
+========================================================= */
+
+.toggle-wrapper{
+  padding:55px;
+  border-radius:38px;
+
+  background:
+  linear-gradient(
+    180deg,
+    #fafaff 0%,
+    #ffffff 100%
+  );
+
+  border:1px solid #eff1f6;
+}
+
+.toggle-header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+
+  margin-bottom:60px;
+
+  font-weight:700;
+  color:#111827;
+}
+
+.toggle-switch{
+  position:relative;
+
+  width:74px;
+  height:40px;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+    135deg,
+    #5b5ff8,
+    #8b5cf6
+  );
+
+  box-shadow:
+  0 10px 25px rgba(91,95,248,0.3);
+}
+
+.toggle-switch::before{
+  content:"";
+
+  position:absolute;
+  top:5px;
+  left:5px;
+
+  width:30px;
+  height:30px;
+
+  border-radius:50%;
+  background:#fff;
+}
+
+/* =========================================================
+TOGGLE GRID
+========================================================= */
+
+.toggle-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:35px;
+}
+
+.toggle-card{
+  position:relative;
+
+  padding:38px;
+
+  border-radius:30px;
+
+  background:#fff;
+
+  border:1px solid #ececf4;
+
+  transition:0.4s ease;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.04);
+}
+
+.toggle-card:hover{
+  transform:translateY(-10px);
+}
+
+.active-toggle{
+  background:
+  linear-gradient(
+    135deg,
+    #5b5ff8,
+    #7c4dff
+  );
+
+  border:none;
+}
+
+.active-toggle h3,
+.active-toggle p,
+.active-toggle .toggle-price{
+  color:#fff;
+}
+
+.save-badge{
+  position:absolute;
+  top:20px;
+  right:20px;
+
+  padding:10px 15px;
+
+  border-radius:999px;
+
+  background:#fff;
+
+  color:#5b5ff8;
+
+  font-size:12px;
+  font-weight:700;
+}
+
+/* =========================================================
+TOGGLE CONTENT
+========================================================= */
+
+.toggle-card h3{
+  font-size:30px;
+  font-weight:800;
+  color:#111827;
+}
+
+.toggle-price{
+  font-size:64px;
+  font-weight:800;
+  color:#111827;
+  margin:24px 0 18px;
+  letter-spacing:-2px;
+}
+
+.toggle-card p{
+  line-height:1.8;
+  color:#6b7280;
+}
+
+.toggle-card button{
+  width:100%;
+  margin-top:28px;
+
+  padding:16px;
+
+  border:none;
+  border-radius:16px;
+
+  background:#111827;
+  color:#fff;
+
+  font-weight:700;
+  cursor:pointer;
+}
+
+.active-toggle button{
+  background:#fff;
+  color:#5b5ff8;
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media(max-width:768px){
+
+  .section-title h2{
+    font-size:38px;
+  }
+
+  .glass-card,
+  .toggle-card{
+    padding:32px;
+  }
+
+  .glass-price,
+  .toggle-price{
+    font-size:54px;
+  }
+
+  .toggle-wrapper{
+    padding:35px 24px;
+  }
+
+}
 /* =========================================================
 CTA
 ========================================================= */

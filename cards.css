@@ -227,8 +227,10 @@
    ============================================================ */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  /* constrain columns so cards keep a readable max width and multiple columns appear on wide viewports */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 380px));
   gap: 20px;
+  justify-content: center; /* center the grid if extra space remains */
 }
 
 /* Override card-preview min-height for cards page (taller previews) */
