@@ -392,6 +392,8 @@ function renderDashboard(report) {
 
 function applyFixes(fixes, rootDir = DEFAULT_ROOT) {
   const grouped = new Map();
+  let filesChanged = 0;
+  let fixesApplied = 0;
 
   for (const fix of fixes) {
     if (!grouped.has(fix.path)) grouped.set(fix.path, []);
@@ -442,8 +444,16 @@ function applyFixes(fixes, rootDir = DEFAULT_ROOT) {
 
     if (changed) {
       fs.writeFileSync(absolutePath, content, 'utf8');
+      filesChanged += 1;
     }
+
+    fixesApplied += fileFixes.length;
   }
+
+  return {
+    filesChanged,
+    fixesApplied
+  };
 }
 
 function run(options = {}) {

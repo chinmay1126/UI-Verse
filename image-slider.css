@@ -366,3 +366,167 @@ body{
     transform: translateX(-50%);
   }
 }
+
+/* ================= MASONRY GRID ================= */
+
+.masonry-grid{
+  columns: 3 250px;
+  column-gap: 18px;
+}
+
+.masonry-item{
+  margin-bottom: 18px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.masonry-item img{
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  transition: 0.4s ease;
+}
+
+.masonry-item img:hover{
+  transform: scale(1.05);
+}
+
+/* ================= HOVER GRID ================= */
+
+.hover-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+
+.hover-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.hover-card img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.hover-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.hover-overlay h3{
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.hover-card:hover img{
+  transform: scale(1.1);
+}
+
+.hover-card:hover .hover-overlay{
+  opacity: 1;
+}
+
+/* ================= PINTEREST GRID ================= */
+
+.pinterest-grid{
+  columns: 4 220px;
+  column-gap: 18px;
+}
+
+.pin-card{
+  margin-bottom: 18px;
+  break-inside: avoid;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.pin-card img{
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  transition: 0.4s ease;
+}
+
+.pin-card img:hover{
+  transform: scale(1.05);
+}
+
+/* ================= ZOOM GRID ================= */
+
+.zoom-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+
+.zoom-card{
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.zoom-card img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.zoom-card:hover img{
+  transform: scale(1.2) rotate(2deg);
+}
+
+/* ================= PARALLAX GRID ================= */
+
+.parallax-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 24px;
+}
+
+.parallax-card{
+  height: 420px;
+  overflow: hidden;
+  border-radius: 22px;
+  position: relative;
+}
+
+.parallax-card img{
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.parallax-card:hover img{
+  transform: translateY(-20px) scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+  .pinterest-grid,
+  .masonry-grid{
+    columns: 2;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .pinterest-grid,
+  .masonry-grid{
+    columns: 1;
+  }
+
+}

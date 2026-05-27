@@ -4,6 +4,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const DependencyManager = require('../js/core/dependency-manager.js');
 
 class DependencyAnalyzer {
   constructor(rootDir = './') {
@@ -150,6 +151,17 @@ class DependencyAnalyzer {
     this.detectCircularDeps();
     this.analyzeUnusedImports();
 
+    const dependencyNames = DependencyManager.getRegisteredNames();
+    const dependencyValidation = DependencyManager.validateGraph(dependencyNames);
+    const dependencyVisualization = DependencyManager.getGraphVisualization(dependencyNames);
+    const transitiveDependencies = dependencyVisualization.map((entry) => ({
+      name: entry.name,
+      dependencies: entry.dependencies,
+      transitiveDependencies: entry.transitiveDependencies,
+      dependents: entry.dependents,
+      depth: entry.transitiveDependencies.length
+    })).sort((a, b) => b.depth - a.depth || a.name.localeCompare(b.name));
+
     const report = {
       timestamp: new Date().toISOString(),
       components: Object.keys(this.graph).length,
@@ -164,12 +176,25 @@ class DependencyAnalyzer {
         imports,
         count: imports.length
       })),
+      dependencyGraph: {
+        names: dependencyNames,
+        valid: dependencyValidation.valid,
+        missing: dependencyValidation.missing,
+        circular: dependencyValidation.circular,
+        transitive: dependencyValidation.transitive,
+        visualization: dependencyVisualization,
+        transitiveSummary: transitiveDependencies
+      },
       graph: this.graph,
       summary: {
         hasCircularDeps: this.circularDeps.length > 0,
         circularDepCount: this.circularDeps.length,
         filesWithUnusedImports: Object.keys(this.unusedImports).length,
-        totalUnusedImports: Object.values(this.unusedImports).reduce((sum, arr) => sum + arr.length, 0)
+        totalUnusedImports: Object.values(this.unusedImports).reduce((sum, arr) => sum + arr.length, 0),
+        dependencyValid: dependencyValidation.valid,
+        transitiveDependencyCount: dependencyValidation.transitive.length,
+        dependencyCycleCount: dependencyValidation.circular.length,
+        dependencyNodeCount: dependencyVisualization.length
       }
     };
 

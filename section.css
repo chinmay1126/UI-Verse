@@ -513,11 +513,9 @@ body{
    FOOTER
    ============================================================ */
 .footer {
-  margin-left: var(--sidebar-w);
-  background: #111;
-  color: #aaa;
-  padding: 0;
-  margin-top: 60px;
+  background: var(--bg2);
+  padding: 20px 0;
+  margin-left: 250px; /* offset for sidebar */
 }
 
 .footer-container {
@@ -562,19 +560,40 @@ body{
 }
 
 .footer-col ul li a {
-  color: #888;
+  position: relative;
+  color: #a1a1aa;
   text-decoration: none;
-  font-size: 14px;
-  transition: color var(--transition);
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .footer-col ul li a:hover {
-  color: var(--accent);
+  color: var(--accent);  
+  transform: translateX(6px);
 }
 
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+/* Social icons fix */
 .socials {
   display: flex;
   gap: 12px;
+  margin-top: 12px;
 }
 
 .socials a {
@@ -585,9 +604,9 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #888;
+  color: #aaa;
+  font-size: 16px;
   text-decoration: none;
-  font-size: 14px;
   transition: all var(--transition);
 }
 
@@ -641,8 +660,12 @@ body{
   border-top: 1px solid #1e1e1e;
   padding: 20px 48px;
   text-align: center;
+  padding: 30px;
+  color: #777;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-left: 260px;
   font-size: 13px;
-  color: #555;
+  color: #aaa;
 }
 /* RESPONSIVE */
 
@@ -747,4 +770,111 @@ body{
 
 .section-card a:hover{
   gap: 14px;
+}
+
+/* ADDITIONAL MODERN SECTION CARD STYLES */
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.premium-card:hover::before {
+  opacity: 1;
+}
+
+.premium-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+.card-tag {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* GRADIENT ICONS */
+
+.gradient-purple {
+  background: linear-gradient(135deg, #7f5af0, #6246ea);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.gradient-pink {
+  background: linear-gradient(135deg, #ff4d9d, #ff006e);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #00c896, #00a86b);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #ff9f43, #ff6b00);
+}
+
+.gradient-cyan {
+  background: linear-gradient(135deg, #00c2ff, #007cf0);
+}
+
+.gradient-red {
+  background: linear-gradient(135deg, #ff5f6d, #d7263d);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #f9c74f, #f8961e);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #111827, #4f46e5);
+}
+
+.gradient-sky {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+}
+
+.gradient-violet {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.gradient-lime {
+  background: linear-gradient(135deg, #84cc16, #65a30d);
+}
+
+/* ICON STYLE */
+
+.section-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 }
