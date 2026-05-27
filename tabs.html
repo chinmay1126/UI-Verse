@@ -1098,18 +1098,20 @@
     cssCode += `  border-radius: ${style === 'pill' ? '99px' : style === 'card' ? `${radius}px ${radius}px 0 0` : `${radius}px`};\n`;
     
     if (style === 'glass') {
-      cssCode += `  background: transparent;\n`;
-      cssCode += `  color: #94a3b8;\n`;
-      cssCode += `  border: 1px solid transparent;\n`;
-      cssCode += `}\n`;
-      cssCode += `.tab-btn.active {\n`;
-      cssCode += `  background: rgba(255,255,255,0.08);\n`;
-      cssCode += `  color: ${color};\n`;
-      cssCode += `  border: 1px solid ${color}33;\n`;
-      cssCode += `  box-shadow: 0 4px 12px ${color}1a;\n`;
-    } else if (style === 'card') {
-      cssCode += `  background: rgba(255,255,255,0.02);\n`;
-      cssCode += `  color: #94a3b8;\n`;
+  cssCode += `  background: var(--bg-card);\n`;
+  cssCode += `  color: var(--text-primary);\n`;
+  cssCode += `  border: 1px solid var(--border-color);\n`;
+  cssCode += `}\n`;
+
+  cssCode += `.tab-btn.active {\n`;
+  cssCode += `  background: rgba(255,255,255,0.08);\n`;
+  cssCode += `  color: #fff;\n`;
+  cssCode += `  border: 1px solid ${color}33;\n`;
+  cssCode += `  box-shadow: 0 4px 12px ${color}1a;\n`;
+}
+else if (style === 'card') {
+  cssCode += `  background: var(--bg-card);\n`;
+  cssCode += `  color: var(--text-primary);\n`;
       cssCode += `  border: 1px solid rgba(255,255,255,0.05);\n`;
       cssCode += `  border-bottom: none;\n`;
       cssCode += `}\n`;

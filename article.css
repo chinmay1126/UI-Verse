@@ -22,6 +22,7 @@
   --font-body: 'DM Sans', sans-serif;
 
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --sidebar-w: 260px;
 }
 
 /* ================= DARK MODE ================= */
@@ -42,6 +43,19 @@ body.dark-mode {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.main-content {
+  margin-left: var(--sidebar-w);
+  padding: 24px;
+}
+
+/* On smaller screens, remove offset */
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+    padding: 16px;
+  }
 }
 
 /* ================= BODY ================= */

@@ -1,5 +1,5 @@
 :root {
-  --bg: #060816;
+  --bg:#fff;
   --card: #12192b;
   --panel: rgba(255, 255, 255, 0.06);
   --border: rgba(255, 255, 255, 0.08);
@@ -27,10 +27,7 @@ body {
   min-height: 100vh;
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(123, 97, 255, 0.18), transparent 24%),
-    radial-gradient(circle at top right, rgba(255, 122, 61, 0.14), transparent 24%),
-    linear-gradient(180deg, #050816 0%, #0b1022 100%);
+  background:#fff;
   overflow-x: hidden;
 }
 
@@ -289,6 +286,7 @@ input {
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: linear-gradient(145deg, rgba(18, 25, 43, 0.95), rgba(23, 32, 56, 0.92));
+  
   box-shadow: var(--shadow);
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
@@ -305,10 +303,8 @@ input {
   place-items: center;
   min-height: 210px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  background:
-    radial-gradient(circle at top right, rgba(123, 97, 255, 0.18), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(255, 122, 61, 0.14), transparent 24%),
-    rgba(255, 255, 255, 0.03);
+  background:#fff;
+    
 }
 
 .state-art i {
@@ -476,6 +472,370 @@ input {
   box-shadow: 0 0 0 8px rgba(123, 97, 255, 0.08);
 }
 
+/* =========================================================
+CREATIVE EMPTY STATES
+========================================================= */
+
+.creative-empty-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:28px;
+  margin-top:40px;
+}
+
+.creative-card{
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:28px;
+  padding:28px;
+  transition:0.4s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.creative-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.12);
+}
+
+.creative-visual{
+  position:relative;
+  height:180px;
+  border-radius:24px;
+  margin-bottom:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+/* =========================================================
+CONTENT
+========================================================= */
+
+.creative-content h3{
+  font-size:1.5rem;
+  margin-bottom:12px;
+  color:#111827;
+}
+
+.creative-content p{
+  color:#6b7280;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:0.82rem;
+  font-weight:600;
+  margin-bottom:16px;
+  background:#f3f4f6;
+  color:#4b5563;
+}
+
+.creative-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+  border:none;
+  padding:12px 18px;
+  border-radius:14px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s ease;
+}
+
+.btn-primary{
+  background:#111827;
+  color:white;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+}
+
+.btn-secondary{
+  background:#f3f4f6;
+  color:#111827;
+}
+
+/* =========================================================
+ANALYTICS
+========================================================= */
+
+.analytics-card .creative-visual{
+  background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+}
+
+.graph-bars{
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+}
+
+.graph-bars span{
+  width:18px;
+  border-radius:20px;
+  background:#6366f1;
+  animation:bounce 2s infinite ease-in-out;
+}
+
+.graph-bars span:nth-child(1){height:50px;}
+.graph-bars span:nth-child(2){height:90px;}
+.graph-bars span:nth-child(3){height:70px;}
+.graph-bars span:nth-child(4){height:120px;}
+
+.floating-circle{
+  position:absolute;
+  width:120px;
+  height:120px;
+  background:rgba(99,102,241,0.15);
+  border-radius:50%;
+  top:-20px;
+  right:-20px;
+}
+
+/* =========================================================
+TEAM
+========================================================= */
+
+.avatars-visual{
+  background:linear-gradient(135deg,#f0fdf4,#ecfeff);
+}
+
+.avatar{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  position:absolute;
+  border:4px solid white;
+}
+
+.avatar-1{
+  background:#34d399;
+  left:90px;
+}
+
+.avatar-2{
+  background:#60a5fa;
+}
+
+.avatar-3{
+  background:#f472b6;
+  right:90px;
+}
+
+.plus-circle{
+  position:absolute;
+  bottom:35px;
+  right:35px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#111827;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* =========================================================
+MUSIC
+========================================================= */
+
+.music-visual{
+  background:linear-gradient(135deg,#faf5ff,#fdf2f8);
+}
+
+.vinyl{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:#111827;
+  position:absolute;
+}
+
+.vinyl::before{
+  content:"";
+  position:absolute;
+  inset:20px;
+  border-radius:50%;
+  border:3px solid #fff;
+}
+
+.music-wave{
+  position:absolute;
+  bottom:35px;
+  display:flex;
+  gap:6px;
+}
+
+.music-wave span{
+  width:6px;
+  border-radius:20px;
+  background:#a855f7;
+  animation:wave 1.2s infinite ease-in-out;
+}
+
+.music-wave span:nth-child(1){height:20px;}
+.music-wave span:nth-child(2){height:40px;}
+.music-wave span:nth-child(3){height:60px;}
+.music-wave span:nth-child(4){height:30px;}
+
+/* =========================================================
+SHOPPING
+========================================================= */
+
+.cart-visual{
+  background:linear-gradient(135deg,#fff7ed,#fef2f2);
+}
+
+.cart-box{
+  width:120px;
+  height:120px;
+  border-radius:28px;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:3rem;
+  color:#f97316;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.cart-dot{
+  position:absolute;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#fb7185;
+}
+
+.dot-1{
+  top:40px;
+  left:70px;
+}
+
+.dot-2{
+  bottom:30px;
+  right:80px;
+}
+
+/* =========================================================
+CALENDAR
+========================================================= */
+
+.calendar-visual{
+  background:linear-gradient(135deg,#ecfeff,#eef2ff);
+}
+
+.calendar-box{
+  width:130px;
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.calendar-top{
+  height:40px;
+  background:#6366f1;
+}
+
+.calendar-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  padding:18px;
+}
+
+.calendar-grid span{
+  height:20px;
+  border-radius:8px;
+  background:#e5e7eb;
+}
+
+/* =========================================================
+BOOKMARK
+========================================================= */
+
+.bookmark-visual{
+  background:linear-gradient(135deg,#fefce8,#fff7ed);
+}
+
+.bookmark-shape{
+  width:90px;
+  height:120px;
+  background:#f59e0b;
+  border-radius:18px 18px 8px 8px;
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);
+}
+
+.bookmark-shadow{
+  position:absolute;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:rgba(245,158,11,0.15);
+}
+
+/* =========================================================
+ICONS
+========================================================= */
+
+.creative-visual i{
+  position:absolute;
+  font-size:2rem;
+  color:#111827;
+}
+
+/* =========================================================
+ANIMATIONS
+========================================================= */
+
+@keyframes bounce{
+  0%,100%{
+    transform:scaleY(1);
+  }
+
+  50%{
+    transform:scaleY(1.2);
+  }
+}
+
+@keyframes wave{
+  0%,100%{
+    transform:scaleY(1);
+  }
+
+  50%{
+    transform:scaleY(1.5);
+  }
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media(max-width:768px){
+
+  .creative-card{
+    padding:22px;
+  }
+
+  .creative-visual{
+    height:160px;
+  }
+
+}
 .footer {
   position: relative;
   margin-left: 240px;

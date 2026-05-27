@@ -1,5 +1,7 @@
 :root{
 
+  --sidebar-w:240px;
+
   --bg:#060816;
   --bg2:#0b1022;
 
@@ -915,6 +917,10 @@ body{
     margin-left:0;
 
     left:0;
+  }
+
+  .footer {
+    margin-left: 0;
   }
 
 }

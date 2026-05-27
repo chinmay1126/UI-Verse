@@ -139,3 +139,22 @@ setTimeout(() => {
 setTimeout(() => {
   addLine("> Welcome Operator.");
 }, 2200);
+
+const input = document.getElementById("commandInput");
+const consoleBody = document.getElementById("consoleBody");
+
+input.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    const command = input.value.trim();
+
+    if (command !== "") {
+      const line = document.createElement("p");
+      line.textContent = `> ${command}`;
+      consoleBody.appendChild(line);
+
+      input.value = "";
+
+      consoleBody.scrollTop = consoleBody.scrollHeight;
+    }
+  }
+});

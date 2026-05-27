@@ -296,6 +296,69 @@ moodButtons.forEach(button=>{
   });
 
 });
+const saveBtn = document.getElementById("saveBtn");
+
+saveBtn.addEventListener("click", () => {
+  const text = document.getElementById("journalInput").value;
+  const title = document.getElementById("entryTitle").value;
+  const tags = document.getElementById("entryTags").value;
+  const mood = document.querySelector(".mood-btn.active").innerText;
+
+  if (!text.trim()) return;
+
+  const entry = {
+    id: Date.now(),
+    title: title || "Untitled Entry",
+    text,
+    tags: tags.split(",").map(t => t.trim()),
+    mood,
+    date: new Date().toLocaleString()
+  };
+
+  let entries = JSON.parse(localStorage.getItem("entries")) || [];
+  entries.unshift(entry);
+
+  localStorage.setItem("entries", JSON.stringify(entries));
+
+  renderEntries();
+});
+
+function renderEntries() {
+  const list = document.getElementById("entriesList");
+  let entries = JSON.parse(localStorage.getItem("entries")) || [];
+
+  list.innerHTML = "";
+
+  entries.forEach(entry => {
+    const div = document.createElement("div");
+    div.className = "entry-card";
+
+    div.innerHTML = `
+      <h3>${entry.title} ${entry.mood}</h3>
+      <small>${entry.date}</small>
+      <p>${entry.text}</p>
+      <div class="tags">
+        ${entry.tags.map(t => `<span>#${t}</span>`).join(" ")}
+      </div>
+    `;
+
+    list.appendChild(div);
+  });
+}
+
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+  const entries = JSON.parse(localStorage.getItem("entries")) || [];
+
+  const filtered = entries.filter(entry =>
+    entry.text.toLowerCase().includes(value) ||
+    entry.title.toLowerCase().includes(value) ||
+    entry.tags.join(" ").toLowerCase().includes(value)
+  );
+
+  renderFiltered(filtered);
+});
 
 journalInput.addEventListener('input',()=>{
 

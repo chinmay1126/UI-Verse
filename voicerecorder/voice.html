@@ -15,13 +15,11 @@
     <h1>Voice Recorder</h1>
 
     <div class="visualizer">
-
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
-
     </div>
 
     <div class="timer" id="timer">
@@ -29,16 +27,11 @@
     </div>
 
     <div class="controls">
-
-      <button id="recordBtn">
-        Record
-      </button>
-
-      <button id="stopBtn">
-        Stop
-      </button>
-
+      <button id="recordBtn">Record</button>
+      <button id="stopBtn" disabled>Stop</button>
     </div>
+
+    <audio id="audioPlayback" controls></audio>
 
   </div>
 

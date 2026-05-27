@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cards — UIverse</title>
+  <title>Navbar Components — UIverse</title>
 
   <!-- Fonts -->
   <link
@@ -362,9 +362,9 @@
     <div class="logo">UIverse</div>
     <div class="search-bar">
       <i class="fa-solid fa-magnifying-glass search-icon"></i>
-      <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)"
+      <input type="text" id="searchInput" placeholder="Search navbars..." oninput="liveFilter(this.value)"
         aria-label="Search components" />
-      <kbd class="search-kbd">G��K</kbd>
+      <kbd class="search-kbd">Ctrl K</kbd>
       <kbd class="search-kbd">⌘K</kbd>
     </div>
     <div id="searchDropdown" class="search-dropdown hidden">
@@ -427,8 +427,9 @@
       <button class="filter-btn" onclick="filterCards('advanced', this)">Advanced</button>
       <div class="filter-search">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Filter navbars..." oninput="liveFilter(this.value)" />
+        <input type="text" id="filterSearchInput" placeholder="Filter navbars..." oninput="liveFilter(this.value)" />
       </div>
+      <p class="filter-summary" id="filterSummary" aria-live="polite"></p>
     </div>
 
     <!-- Navbars Grid -->
@@ -2232,8 +2233,14 @@
 
   /* Sidebar */
   function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('open');
-    document.getElementById('sidebarBackdrop').classList.toggle('visible');
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const isOpen = sidebar.classList.toggle('open');
+    backdrop.classList.toggle('visible', isOpen);
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    }
   }
 
   /* Code Toggle */
@@ -2257,24 +2264,69 @@
     });
   }
 
+  const cards = Array.from(document.querySelectorAll('.component-card'));
+  let activeCategory = 'all';
+  let activeQuery = '';
+
+  function updateFilterSummary(visibleCount) {
+    const summary = document.getElementById('filterSummary');
+    if (!summary) return;
+    summary.textContent = `${visibleCount} navbar${visibleCount === 1 ? '' : 's'} shown`;
+  }
+
+  function applyFilters() {
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const name = (card.dataset.name || '').toLowerCase();
+      const label = (card.querySelector('.card-label')?.textContent || '').toLowerCase();
+      const matchesCategory = activeCategory === 'all' || card.dataset.cat === activeCategory;
+      const matchesQuery = !activeQuery || name.includes(activeQuery) || label.includes(activeQuery);
+      const shouldShow = matchesCategory && matchesQuery;
+
+      card.style.display = shouldShow ? '' : 'none';
+      if (shouldShow) visibleCount += 1;
+    });
+
+    updateFilterSummary(visibleCount);
+  }
+
   /* Filter */
   function filterCards(cat, btn) {
+    activeCategory = cat;
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    document.querySelectorAll('.component-card').forEach(card => {
-      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
-    });
+    applyFilters();
   }
 
   /* Live search */
   function liveFilter(val) {
-    const q = val.toLowerCase();
-    document.querySelectorAll('.component-card').forEach(card => {
-      const match = card.dataset.name.toLowerCase().includes(q) ||
-        card.querySelector('.card-label')?.textContent.toLowerCase().includes(q);
-      card.style.display = match ? '' : 'none';
-    });
+    activeQuery = (val || '').trim().toLowerCase();
+
+    const searchInput = document.getElementById('searchInput');
+    const filterInput = document.getElementById('filterSearchInput');
+    if (searchInput && searchInput.value !== val) searchInput.value = val;
+    if (filterInput && filterInput.value !== val) filterInput.value = val;
+
+    applyFilters();
   }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
+      }
+    }
+  });
+
+  applyFilters();
 
   /* Scroll animations */
   const observer = new IntersectionObserver(entries => {
