@@ -1036,11 +1036,29 @@ body.dark-mode .act-timeline-info p {
   color: #888;
   text-decoration: none;
   font-size: 14px;
+  position: relative; /* needed for underline effect */
   transition: color var(--transition);
 }
 
+/* Hover effect: color + underline */
 .footer-col ul li a:hover {
   color: var(--accent);
+}
+
+/* Animated underline effect */
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* adjust spacing under text */
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
 }
 
 .socials {
@@ -1113,7 +1131,7 @@ body.dark-mode .act-timeline-info p {
   padding: 20px 48px;
   text-align: center;
   font-size: 13px;
-  color: #555;
+  color: #aaa;
 }
 
 
