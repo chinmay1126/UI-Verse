@@ -98,3 +98,68 @@ searchInput.addEventListener("keyup", () => {
 });
 
 displayBookmarks(bookmarks);
+
+const defaultBookmarks = [
+  {
+    name: "GitHub",
+    url: "https://github.com",
+    category: "Development"
+  },
+  {
+    name: "Stack Overflow",
+    url: "https://stackoverflow.com",
+    category: "Development"
+  },
+  {
+    name: "MDN Web Docs",
+    url: "https://developer.mozilla.org",
+    category: "Development"
+  },
+  {
+    name: "Figma",
+    url: "https://figma.com",
+    category: "Design"
+  },
+  {
+    name: "Dribbble",
+    url: "https://dribbble.com",
+    category: "Design"
+  },
+  {
+    name: "freeCodeCamp",
+    url: "https://www.freecodecamp.org",
+    category: "Education"
+  },
+  {
+    name: "Coursera",
+    url: "https://www.coursera.org",
+    category: "Education"
+  },
+  {
+    name: "YouTube",
+    url: "https://youtube.com",
+    category: "Entertainment"
+  },
+  {
+    name: "Dev.to",
+    url: "https://dev.to",
+    category: "Development"
+  }
+];
+
+function renderBookmarks(list = bookmarks) {
+  const container = document.getElementById("bookmarkList");
+  container.innerHTML = "";
+
+  list.forEach((b, index) => {
+    container.innerHTML += `
+      <div class="bookmark">
+        <div>
+          <a href="${b.url}" target="_blank">${b.name}</a>
+          <span class="tag">${b.category}</span>
+        </div>
+        <button onclick="deleteBookmark(${index})">❌</button>
+      </div>
+    `;
+  });
+}
