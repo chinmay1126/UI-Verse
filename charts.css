@@ -1090,3 +1090,164 @@ body.dark-mode .component-card .card-desc,
     transform:translateY(0);
   }
 }
+
+/* =========================
+   16. Stacked Area Chart
+========================= */
+.stacked-area-card {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.stacked-area-svg {
+  width: 100%;
+  height: 160px;
+  display: block;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.4));
+}
+
+/* =========================
+   17. Gauge Chart
+========================= */
+.gauge-card {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gauge-svg {
+  width: 180px;
+  height: 120px;
+}
+
+.gauge-center {
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+}
+
+.gauge-center h2 {
+  font-size: 2rem;
+  color: var(--ch-green);
+  margin: 0;
+}
+
+/* =========================
+   18. Multi Ring KPI
+========================= */
+.multi-ring-card {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.multi-ring-card svg {
+  width: 140px;
+  height: 140px;
+  transform: rotate(-90deg);
+}
+
+.multi-ring-card .ring-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.08);
+  stroke-width: 8;
+}
+
+.multi-ring-card .ring-progress {
+  fill: none;
+  stroke: var(--ch-purple);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: 0.5s ease;
+}
+
+.multi-ring-card .ring-progress.alt {
+  stroke: var(--ch-cyan);
+}
+
+/* Center text */
+.multi-ring-card .radial-center {
+  position: absolute;
+  text-align: center;
+}
+
+.multi-ring-card .radial-center h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+/* =========================
+   19. Benchmark Bars
+========================= */
+.benchmark-card {
+  padding: 10px;
+}
+
+.bench-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0;
+  gap: 10px;
+}
+
+.bench-row span {
+  width: 70px;
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+.bench-bar {
+  flex: 1;
+  height: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bench-bar div {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--ch-purple), var(--ch-cyan));
+  transition: width 0.6s ease;
+}
+
+/* =========================
+   20. Calendar Heatmap
+========================= */
+.calendar-heatmap-card {
+  padding: 15px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.day {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  transition: 0.3s ease;
+}
+
+.day.low { background: rgba(6,182,212,0.15); }
+.day.mid { background: rgba(6,182,212,0.35); }
+.day.high { background: rgba(139,92,246,0.5); }
+.day.max { background: rgba(236,72,153,0.7); }
+
+.day:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(139,92,246,0.5);
+}
