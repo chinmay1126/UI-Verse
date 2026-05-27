@@ -879,11 +879,12 @@ body{
   color: #888;
   text-decoration: none;
   font-size: 14px;
-  transition: color var(--transition);
+  transition: color var(--transition), transform 0.3s ease;
 }
 
 .footer-col ul li a:hover {
   color: var(--accent);
+  transform: translateX(6px);
 }
 
 .socials {
@@ -956,7 +957,7 @@ body{
   padding: 20px 48px;
   text-align: center;
   font-size: 13px;
-  color: #555;
+  color: #aaa;
 }
 
 
