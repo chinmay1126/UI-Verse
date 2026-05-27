@@ -11,6 +11,21 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="documentation.css">
+  <style>
+    /* Responsive layout hierarchy and TOC list spacing rules */
+    .gl-toc-list {
+      gap: 6px !important;
+    }
+    @media (max-width: 768px) {
+      .gl-toc-pills {
+        gap: 10px !important;
+        margin-top: 12px;
+      }
+      .gl-section {
+        padding: 32px 0 !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -32,7 +47,7 @@
       <li><a href="progress.html"><i class="fa-solid fa-bars-progress"></i><span>Progress</span></a></li>
       <li><a href="tabs.html"><i class="fa-solid fa-folder-open"></i><span>Tabs</span></a></li>
       <li><a href="toggles.html"><i class="fa-solid fa-toggle-on"></i><span>Toggles</span></a></li>
-      <li class="active"><a href="guidelines.html"><i class="fa-solid fa-book-open"></i><span>Guidelines</span></a></li>
+      <li class="active"><a href="documentation.html"><i class="fa-solid fa-book-open"></i><span>Guidelines</span></a></li>
     </ul>
   </nav>
   <div class="sidebar-footer">
@@ -379,10 +394,10 @@ if (localStorage.getItem('theme') === 'dark') {
 
           <div class="gl-steps">
             <div class="gl-step">
-              <div class="gl-step-num gl-step-github"><i class="fa-brands fa-github"></i></div>
+              <div class="gl-step-num">1</div>
               <div class="gl-step-body">
                 <h4>Fork the repository</h4>
-                <p>Go to <a class="gl-link" href="https://github.com/chinmay1126/UI-Verse" target="_blank">github.com/chinmay1126/UI-Verse</a> and click "Fork" to create your own copy.</p>
+                <p>Go to <a class="gl-link" href="https://github.com/Tushar-sonawane06/UI-Verse" target="_blank">github.com/Tushar-sonawane06/UI-Verse</a> and click "Fork" to create your own copy.</p>
               </div>
             </div>
             <div class="gl-step">

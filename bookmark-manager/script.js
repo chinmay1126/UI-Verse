@@ -6,6 +6,7 @@ const searchInput = document.getElementById("searchInput");
 let bookmarks =
   JSON.parse(localStorage.getItem("bookmarks")) || [];
 
+  
 
 // Display Bookmarks
 

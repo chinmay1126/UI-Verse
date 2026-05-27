@@ -27,11 +27,11 @@
   <!-- CSS -->
   <link rel="stylesheet" href="calendarcomponent.css" />
 
-  
+
   <link rel="stylesheet" href="shared-sidebar.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
-  
+
   <link rel="stylesheet" href="shared-page.css">
   <link rel="stylesheet" href="cards.css">
   <link rel="stylesheet" href="playground.css">
@@ -43,7 +43,7 @@
 ========================================================= -->
 
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button type="button" class="menu-toggle" onclick="toggleSidebar()" aria-label="menu toggle">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
@@ -448,6 +448,322 @@
     </div>
   </section>
 
+    <!-- =========================================
+     PROJECT MANAGEMENT CALENDAR -->
+<div class="component-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Project Calendar
+    </span>
+
+    <span class="card-tag tag-modern">
+      Workspace
+    </span>
+
+  </div>
+
+  <div class="card-preview dark-preview">
+
+    <div class="project-calendar">
+
+      <div class="project-top">
+
+        <div>
+          <h4>Launch Sprint</h4>
+          <span>4 Active Tasks</span>
+        </div>
+
+        <i class="fa-solid fa-layer-group"></i>
+
+      </div>
+
+      <div class="project-members">
+
+        <span>A</span>
+        <span>L</span>
+        <span>M</span>
+        <span>+</span>
+
+      </div>
+
+      <div class="project-progress">
+        <span></span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Premium project scheduling UI
+    for SaaS dashboards and teams.
+  </p>
+
+</div>
+
+<!-- =========================================
+     MEETING ROOM BOOKING -->
+<div class="component-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Meeting Booking
+    </span>
+
+    <span class="card-tag tag-trending">
+      Corporate
+    </span>
+
+  </div>
+
+  <div class="card-preview">
+
+    <div class="meeting-booking">
+
+      <div class="meeting-room">
+        <h4>Room A12</h4>
+        <span>Available Today</span>
+      </div>
+
+      <div class="meeting-slots">
+
+        <button>09:00</button>
+        <button class="slot-active">11:00</button>
+        <button>02:00</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Modern meeting room booking
+    calendar with time selection.
+  </p>
+
+</div>
+
+<!-- =========================================
+     DARK EVENT SCHEDULER -->
+<div class="component-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Event Scheduler
+    </span>
+
+    <span class="card-tag tag-popular">
+      Events
+    </span>
+
+  </div>
+
+  <div class="card-preview dark-preview">
+
+    <div class="event-scheduler">
+
+      <div class="event-schedule-top">
+
+        <h4>Tech Conference</h4>
+
+        <span>July 18</span>
+
+      </div>
+
+      <div class="event-session">
+
+        <div class="session-dot"></div>
+
+        <div>
+          <p>Main Keynote</p>
+          <span>10:00 AM</span>
+        </div>
+
+      </div>
+
+      <div class="event-session">
+
+        <div class="session-dot active-session"></div>
+
+        <div>
+          <p>Product Showcase</p>
+          <span>02:30 PM</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Elegant conference and event
+    scheduling timeline component.
+  </p>
+
+</div>
+
+<!-- =========================================
+     MINIMAL DAY PLANNER -->
+<div class="component-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Day Planner
+    </span>
+
+    <span class="card-tag tag-essential">
+      Minimal
+    </span>
+
+  </div>
+
+  <div class="card-preview">
+
+    <div class="day-planner">
+
+      <div class="planner-slot active-slot">
+
+        <span>08:00</span>
+
+        <p>Morning Planning</p>
+
+      </div>
+
+      <div class="planner-slot">
+
+        <span>12:00</span>
+
+        <p>Lunch Break</p>
+
+      </div>
+
+      <div class="planner-slot">
+
+        <span>03:00</span>
+
+        <p>Client Call</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Clean minimal planner layout
+    for productivity applications.
+  </p>
+
+</div>
+
+<!-- =========================================
+     AI SMART ASSISTANT -->
+<div class="component-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      AI Calendar Assistant
+    </span>
+
+    <span class="card-tag tag-modern">
+      AI Powered
+    </span>
+
+  </div>
+
+  <div class="card-preview dark-preview">
+
+    <div class="ai-calendar">
+
+      <div class="ai-top">
+
+        <div class="ai-icon">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+
+        <div>
+          <h4>Schedule Optimized</h4>
+          <span>2 Conflicts Resolved</span>
+        </div>
+
+      </div>
+
+      <div class="ai-status">
+        Productivity Increased +18%
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Futuristic AI scheduling widget
+    for next generation dashboards.
+  </p>
+
+</div>
+
+<!-- =========================================
+     DEADLINE TRACKER -->
+<div class="component-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      Deadline Tracker
+    </span>
+
+    <span class="card-tag tag-trending">
+      Tracking
+    </span>
+
+  </div>
+
+  <div class="card-preview">
+
+    <div class="deadline-tracker">
+
+      <div class="deadline-top">
+
+        <h4>Product Launch</h4>
+
+        <span>4 Days Left</span>
+
+      </div>
+
+      <div class="deadline-progress">
+
+        <span></span>
+
+      </div>
+
+      <div class="deadline-footer">
+
+        <p>82% Completed</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Deadline monitoring calendar UI
+    with premium progress styling.
+  </p>
+
+</div>
+
+<!-- TEAM SCHEDULER -->
+<div class="component-card">
 
 <style>
 
@@ -1694,7 +2010,7 @@
   </div>
 </footer>
 
-<script src="calendar.js"></script>
+<script src="calendarcomponent.js"></script>
 
 </body>
 </html>

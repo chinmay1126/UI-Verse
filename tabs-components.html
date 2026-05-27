@@ -1,0 +1,313 @@
+<script defer>
+
+  /* =========================================
+     TAB SWITCH FUNCTION
+  ========================================= */
+
+  function switchTab(
+    container,
+    clickedItem
+  ) {
+
+    const items =
+      container.querySelectorAll(
+        '.tab-item-js'
+      );
+
+    items.forEach(item => {
+
+      item.classList.remove(
+        'active'
+      );
+
+      item.setAttribute(
+        'aria-selected',
+        'false'
+      );
+
+    });
+
+    clickedItem.classList.add(
+      'active'
+    );
+
+    clickedItem.setAttribute(
+      'aria-selected',
+      'true'
+    );
+
+  }
+
+  /* =========================================
+     SEGMENTED TAB SWITCH
+  ========================================= */
+
+  function switchSegment(
+    container,
+    clickedItem,
+    index
+  ) {
+
+    switchTab(
+      container,
+      clickedItem
+    );
+
+    const indicator =
+      container.querySelector(
+        '.tab-seg-indicator'
+      );
+
+    if (indicator) {
+
+      indicator.style.transform =
+        `translateX(${index * 100}%)`;
+
+    }
+
+  }
+
+  /* =========================================
+     COPY BUTTON
+  ========================================= */
+
+  const copyButtons =
+    document.querySelectorAll(
+      '.btn-primary'
+    );
+
+  copyButtons.forEach(button => {
+
+    button.addEventListener(
+      'click',
+      () => {
+
+        navigator.clipboard.writeText(
+          'UI-Verse Component Copied'
+        );
+
+        const originalText =
+          button.innerText;
+
+        button.innerText =
+          'Copied ✓';
+
+        button.disabled = true;
+
+        setTimeout(() => {
+
+          button.innerText =
+            originalText;
+
+          button.disabled = false;
+
+        }, 1800);
+
+      }
+    );
+
+  });
+
+  /* =========================================
+     VIEW CODE BUTTON
+  ========================================= */
+
+  const viewButtons =
+    document.querySelectorAll(
+      '.btn-secondary'
+    );
+
+  viewButtons.forEach(button => {
+
+    button.addEventListener(
+      'click',
+      () => {
+
+        const original =
+          button.innerText;
+
+        button.innerText =
+          'Opening...';
+
+        button.disabled = true;
+
+        setTimeout(() => {
+
+          button.innerText =
+            original;
+
+          button.disabled = false;
+
+        }, 1200);
+
+      }
+    );
+
+  });
+
+  /* =========================================
+     ACCESSIBILITY ATTRIBUTES
+  ========================================= */
+
+  const tabContainers =
+    document.querySelectorAll(
+      '.tab-horizontal, .tab-pills, .tab-vertical, .tab-segmented, .tab-icon'
+    );
+
+  tabContainers.forEach(container => {
+
+    container.setAttribute(
+      'role',
+      'tablist'
+    );
+
+    const tabs =
+      container.querySelectorAll(
+        '.tab-item-js'
+      );
+
+    tabs.forEach(tab => {
+
+      tab.setAttribute(
+        'role',
+        'tab'
+      );
+
+      tab.setAttribute(
+        'tabindex',
+        '0'
+      );
+
+      if (
+        tab.classList.contains(
+          'active'
+        )
+      ) {
+
+        tab.setAttribute(
+          'aria-selected',
+          'true'
+        );
+
+      } else {
+
+        tab.setAttribute(
+          'aria-selected',
+          'false'
+        );
+
+      }
+
+    });
+
+  });
+
+  /* =========================================
+     KEYBOARD NAVIGATION
+  ========================================= */
+
+  document.querySelectorAll(
+    '.tab-item-js'
+  ).forEach((tab, index, tabs) => {
+
+    tab.addEventListener(
+      'keydown',
+      (e) => {
+
+        if (
+          e.key === 'ArrowRight'
+        ) {
+
+          e.preventDefault();
+
+          const next =
+            tabs[
+              (index + 1)
+              % tabs.length
+            ];
+
+          next.focus();
+          next.click();
+
+        }
+
+        if (
+          e.key === 'ArrowLeft'
+        ) {
+
+          e.preventDefault();
+
+          const prev =
+            tabs[
+              (index - 1 + tabs.length)
+              % tabs.length
+            ];
+
+          prev.focus();
+          prev.click();
+
+        }
+
+      }
+    );
+
+  });
+
+  /* =========================================
+     SUBSCRIBE FORM
+  ========================================= */
+
+  const subscribeForm =
+    document.querySelector(
+      '.subscribe-form'
+    );
+
+  if (subscribeForm) {
+
+    subscribeForm.addEventListener(
+      'submit',
+      (e) => {
+
+        e.preventDefault();
+
+        const button =
+          subscribeForm.querySelector(
+            'button'
+          );
+
+        const input =
+          subscribeForm.querySelector(
+            'input'
+          );
+
+        const original =
+          button.innerText;
+
+        if (
+          input.value.trim() !== ''
+        ) {
+
+          button.innerText =
+            'Subscribed ✓';
+
+          button.disabled = true;
+
+          input.value = '';
+
+          setTimeout(() => {
+
+            button.innerText =
+              original;
+
+            button.disabled = false;
+
+          }, 2000);
+
+        }
+
+      }
+    );
+
+  }
+
+</script>

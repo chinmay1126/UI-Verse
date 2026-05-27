@@ -358,21 +358,22 @@
     </ul>
   </nav>
 
-  <div class="sidebar-footer">
+  <!-- <div class="sidebar-footer">
     <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
     <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-  </div>
+  </div> -->
 </aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
 <!-- ================= HERO ================= -->
+<main id="main-content">
 <section class="hero">
 
   <div class="hero-badge">
-    ✨ UI Articles & Tutorials
+    <i class="fa-solid fa-sparkles"></i> UI Articles & Tutorials
   </div>
 
   <h1>
@@ -406,7 +407,7 @@
 </div>
 
 <!-- ARTICLE -->
-<article class="article-card">
+<article class="article-card" role="article" aria-label="React component article">
 
   <div class="article-image">
     <img src="https://picsum.photos/500/300?random=5" alt="">
@@ -438,11 +439,236 @@
 
 </article>
 
+<section class="split-featured">
+
+  <div class="split-image">
+    <img src="https://picsum.photos/800/600?random=101" alt="">
+  </div>
+
+  <div class="split-content">
+
+    <span class="split-badge">
+      <i class="fa-solid fa-rocket"></i> Featured Story
+    </span>
+
+    <h2>
+      The Future of Interactive UI Design in 2026
+    </h2>
+
+    <p>
+      Discover immersive interfaces, AI-assisted workflows,
+      kinetic typography, and next-generation frontend experiences.
+    </p>
+
+    <div class="split-meta">
+      <span><i class="fa-regular fa-user"></i> Sarah Johnson</span>
+      <span><i class="fa-regular fa-clock"></i> 12 min read</span>
+    </div>
+
+    <a href="#" class="primary-btn">
+      Read Full Article
+    </a>
+
+  </div>
+
+</section>
+
+<article class="horizontal-article">
+
+  <div class="horizontal-image">
+    <img src="https://picsum.photos/500/300?random=102" alt="">
+  </div>
+
+  <div class="horizontal-content">
+
+    <span class="mini-category">
+      Development
+    </span>
+
+    <h3>
+      Building Advanced Component Libraries
+    </h3>
+
+    <p>
+      Learn scalable architecture patterns for reusable
+      frontend component systems.
+    </p>
+
+    <div class="horizontal-meta">
+      <span>May 2026</span>
+      <span>8 min read</span>
+    </div>
+
+  </div>
+
+</article>
+
+<article class="glass-article">
+
+  <img src="https://picsum.photos/500/300?random=103" alt="">
+
+  <div class="glass-overlay">
+
+    <span>UI Trends</span>
+
+    <h3>
+      Modern Glassmorphism Interfaces
+    </h3>
+
+    <a href="#">
+      Explore →
+    </a>
+
+  </div>
+
+</article>
+
+<section class="author-spotlight">
+
+  <div class="author-avatar">
+    <img src="https://i.pravatar.cc/200?img=12" alt="">
+  </div>
+
+  <div class="author-details">
+
+    <span class="section-tag">
+      <i class="fa-solid fa-pen-nib"></i> Featured Author
+    </span>
+
+    <h2>
+      Alex Morgan
+    </h2>
+
+    <p>
+      UI Engineer & Design System Architect passionate
+      about creating scalable frontend experiences.
+    </p>
+
+    <div class="author-stats">
+
+      <div>
+        <strong>48</strong>
+        <span>Articles</span>
+      </div>
+
+      <div>
+        <strong>120K</strong>
+        <span>Readers</span>
+      </div>
+
+      <div>
+        <strong>4.9</strong>
+        <span>Rating</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="newsletter-premium">
+
+  <div class="newsletter-box">
+
+    <span class="newsletter-tag">
+      <i class="fa-solid fa-rocket"></i> Weekly UI Digest
+    </span>
+
+    <h2>
+      Get Modern UI Inspiration Every Week
+    </h2>
+
+    <p>
+      UI trends, frontend tutorials, animations,
+      and component ideas directly in your inbox.
+    </p>
+
+    <form class="newsletter-modern">
+
+      <input type="email" placeholder="Enter your email">
+
+      <button>
+        Join Newsletter
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<section class="article-stats">
+
+  <div class="stat-box">
+    <h3>250+</h3>
+    <p>Articles Published</p>
+  </div>
+
+  <div class="stat-box">
+    <h3>1.2M</h3>
+    <p>Monthly Readers</p>
+  </div>
+
+  <div class="stat-box">
+    <h3>80+</h3>
+    <p>UI Categories</p>
+  </div>
+
+  <div class="stat-box">
+    <h3>4.9★</h3>
+    <p>Community Rating</p>
+  </div>
+
+</section>
+
+<aside class="trending-sidebar">
+
+  <h3>
+    <i class="fa-solid fa-fire"></i> Trending Topics
+  </h3>
+
+  <ul>
+
+    <li>
+      <a href="#">
+        AI Interfaces
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Dashboard Design
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        React Patterns
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Motion UI
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Glassmorphism
+      </a>
+    </li>
+
+  </ul>
+
+</aside>
 <!-- ================= TRENDING ARTICLES SECTION ================= -->
 <section class="articles-section trending-section">
 
   <div class="section-header">
-    <span class="section-tag">🔥 Trending</span>
+    <span class="section-tag"><i class="fa-solid fa-fire"></i> Trending</span>
     <h2>Modern Frontend Articles</h2>
     <p>
       Discover premium UI/UX tutorials, design systems, animations,
@@ -1078,7 +1304,7 @@
   <div class="newsletter-content">
 
     <h2>
-      Stay Updated 🚀
+      Stay Updated <i class="fa-solid fa-rocket"></i>
     </h2>
 
     <p>
@@ -1098,22 +1324,38 @@
   </div>
 
 </section>
+</main>
 <!-- ================= FOOTER ================= -->
+ <!-- FOOTER -->
+
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
 
+        <a href="https://github.com" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
     <div class="footer-col">
       <h3>Explore</h3>
       <ul>
@@ -1124,42 +1366,37 @@
         <li><a href="forms.html">Forms</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Legal</h3>
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
+        <li><a href="#">License</a></li>
       </ul>
     </div>
-
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+        <input type="email" placeholder="your@email.com">
+        <button type="button">Subscribe</button>
       </div>
     </div>
-
   </div>
-
   <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
   </div>
 </footer>
+
 <!-- ================= SCRIPT ================= -->
 <script>
 
@@ -1176,6 +1413,23 @@ toggle.addEventListener("click", () => {
   } else {
     icon.className = "fa-solid fa-moon";
   }
+
+});
+
+window.addEventListener("scroll", () => {
+
+  const scrollTop = window.scrollY;
+
+  const docHeight =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  const progress =
+    (scrollTop / docHeight) * 100;
+
+  document.getElementById(
+    "readingProgress"
+  ).style.width = progress + "%";
 
 });
 

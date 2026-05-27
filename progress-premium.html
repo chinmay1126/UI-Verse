@@ -26,6 +26,13 @@
       <i class="fa-solid fa-magnifying-glass"></i>
       <input type="text" placeholder="Search progress components..." id="searchInput">
     </div>
+
+    <div class="topbar-actions">
+      <button class="add-btn" onclick="fillAllProgress()"><i class="fa-solid fa-play"></i> Fill All</button>
+      <button class="collection-btn" onclick="resetAllProgress()"><i class="fa-solid fa-rotate-left"></i> Reset All</button>
+      <button class="theme-btn"><i class="fa-solid fa-moon"></i></button>
+    </div>
+
     <div class="topbar-actions">
       <button class="add-btn" onclick="fillAllProgress()"><i class="fa-solid fa-play"></i> Fill All</button>
       <button class="collection-btn" onclick="resetAllProgress()"><i class="fa-solid fa-rotate-left"></i> Reset All</button>
@@ -629,6 +636,150 @@
 &lt;/div&gt;</code></pre>
     </div>
 
+    <!-- ============ 11-15: ADDITIONAL PROGRESS COMPONENTS ============ -->
+
+    <!-- 11. DOWNLOAD MANAGER -->
+    <div class="component-card" data-category="progress">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="download-manager" id="downloadManagerPreview">
+            <div class="d-item">
+              <div class="d-thumb"><i class="fa-solid fa-file-arrow-down"></i></div>
+              <div class="d-meta">
+                <div class="d-title">assets_bundle.zip</div>
+                <div class="d-sub">Downloading • 12.4 MB / 32.1 MB</div>
+                <div class="d-progress"><div class="d-fill dwn-fill" style="width:38%"></div></div>
+              </div>
+              <div class="d-actions"><button onclick="simulateDownloadManager()"><i class="fa-solid fa-play"></i></button></div>
+            </div>
+            <div class="d-item">
+              <div class="d-thumb"><i class="fa-solid fa-file-zipper"></i></div>
+              <div class="d-meta">
+                <div class="d-title">icons_pack.zip</div>
+                <div class="d-sub">Queued • 0 MB</div>
+                <div class="d-progress"><div class="d-fill dwn-fill" style="width:0%"></div></div>
+              </div>
+              <div class="d-actions"><button onclick="simulateDownloadManager()"><i class="fa-solid fa-rotate"></i></button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Download Manager</h3><span>Progress</span></div>
+        <p>Multiple concurrent downloads with per-file progress fills and small inline controls.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('code11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('code11', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="code11" style="display:none;"><code>&lt;div class="d-item"&gt;...&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 12. INDETERMINATE SKELETON STRIP -->
+    <div class="component-card" data-category="loaders">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="indeterminate-strip" id="indStripPreview"></div>
+          <div style="margin-top:18px;"><button class="trigger-live-btn purple" onclick="toggleIndeterminateStrip()">Toggle</button></div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Indeterminate Strip</h3><span>Loaders</span></div>
+        <p>A subtle skeleton loader strip used to indicate indeterminate loading states in place of numeric progress.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('code12', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('code12', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="code12" style="display:none;"><code>&lt;div class="indeterminate-strip"&gt;...&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 13. DONUT METER -->
+    <div class="component-card" data-category="circular">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="donut-meter" id="donutPreview">
+            <svg class="donut-svg" width="140" height="140" viewBox="0 0 140 140">
+              <defs>
+                <linearGradient id="donutGradient" x1="0%" x2="100%">
+                  <stop offset="0%" stop-color="#7b61ff" />
+                  <stop offset="100%" stop-color="#ff7a3d" />
+                </linearGradient>
+              </defs>
+              <circle class="donut-track" cx="70" cy="70" r="52"></circle>
+              <circle class="donut-fill" id="donutFill" cx="70" cy="70" r="52" stroke-dasharray="326.73" stroke-dashoffset="130"></circle>
+            </svg>
+            <div class="donut-center"><div class="num" id="donutNum">60%</div><div class="muted" style="font-size:12px;color:var(--text-muted);">Overall</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Donut Meter</h3><span>Circular</span></div>
+        <p>A decorative donut meter with gradient stroke and center label for compact KPI displays.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('code13', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('code13', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="code13" style="display:none;"><code>&lt;svg class="donut-svg"&gt;...&lt;/svg&gt;</code></pre>
+    </div>
+
+    <!-- 14. TRANSFER QUEUE -->
+    <div class="component-card" data-category="cards">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="transfer-queue" id="transferQueuePreview">
+            <div class="t-item">
+              <div style="width:36px;text-align:center;color:#a394ff;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+              <div class="t-meta">
+                <div style="display:flex;justify-content:space-between"><strong>backup.tar</strong><span class="muted">28%</span></div>
+                <div class="t-progress"><div class="t-fill" style="width:28%"></div></div>
+              </div>
+              <div class="t-actions"><button onclick="simulateTransferQueue()"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></div>
+            </div>
+            <div class="t-item">
+              <div style="width:36px;text-align:center;color:#10b981;"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+              <div class="t-meta">
+                <div style="display:flex;justify-content:space-between"><strong>db_snapshot.sql</strong><span class="muted">4%</span></div>
+                <div class="t-progress"><div class="t-fill" style="width:4%"></div></div>
+              </div>
+              <div class="t-actions"><button onclick="simulateTransferQueue()"><i class="fa-solid fa-rotate"></i></button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Transfer Queue</h3><span>Cards</span></div>
+        <p>Queue view for file transfers with per-item progress and quick cancel or retry actions.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('code14', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('code14', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="code14" style="display:none;"><code>&lt;div class="t-item"&gt;...&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 15. MARATHON LINEAR -->
+    <div class="component-card" data-category="linear">
+      <div class="card-preview">
+        <div class="card-interactive-area full-width">
+          <div class="marathon-track" id="marathonPreview">
+            <div class="marathon-fill"></div>
+          </div>
+          <div style="margin-top:18px;"><button class="trigger-live-btn orange" onclick="startMarathon(this)">Start</button></div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top"><h3>Marathon Progress</h3><span>Linear</span></div>
+        <p>A long-running marquee-style progress bar ideal for background syncs and live gradients.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('code15', this)"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('code15', this)"><i class="fa-solid fa-copy"></i> Copy HTML</button>
+        </div>
+      </div>
+      <pre class="code-block" id="code15" style="display:none;"><code>&lt;div class="marathon-track"&gt;&lt;div class="marathon-fill"&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+    </div>
+
   </div>
 
 </div>
@@ -1155,6 +1306,53 @@
   updateBatteryUI();
   updateActivityRings();
   updateChartsUI();
+
+  /* --------------------
+     New helpers for added components
+     -------------------- */
+  function simulateDownloadManager(){
+    const fills = document.querySelectorAll('.dwn-fill');
+    fills.forEach((f) => {
+      const cur = parseInt(f.style.width) || 0;
+      const next = Math.min(100, cur + Math.floor(Math.random()*22)+8);
+      f.style.width = next + '%';
+    });
+  }
+
+  function toggleIndeterminateStrip(){
+    const el = document.getElementById('indStripPreview');
+    if (!el) return;
+    el.classList.toggle('active');
+    triggerToastDemo('info', el.classList.contains('active') ? 'Indeterminate started' : 'Indeterminate stopped');
+  }
+
+  function animateDonutMeter(){
+    const fill = document.getElementById('donutFill');
+    const num = document.getElementById('donutNum');
+    if (!fill) return;
+    const target = Math.floor(Math.random()*80) + 10;
+    const circumference = 2 * Math.PI * 52; // ~326.73
+    const offset = circumference - (target/100 * circumference);
+    fill.style.strokeDashoffset = offset;
+    num.innerText = target + '%';
+  }
+
+  function simulateTransferQueue(){
+    const fills = document.querySelectorAll('.t-fill');
+    fills.forEach((f) => {
+      const cur = parseInt(f.style.width) || 0;
+      const next = Math.min(100, cur + Math.floor(Math.random()*30)+4);
+      f.style.width = next + '%';
+    });
+    triggerToastDemo('info', 'Queue progressed');
+  }
+
+  function startMarathon(btn){
+    const track = document.getElementById('marathonPreview');
+    if (!track) return;
+    track.classList.toggle('running');
+    btn.innerText = track.classList.contains('running') ? 'Stop' : 'Start';
+  }
 </script>
 
 </body>

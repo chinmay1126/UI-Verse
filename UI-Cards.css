@@ -712,3 +712,175 @@ body.dark-mode .view-btn:hover {
   color: #6b7280;
   margin: 0;
 }
+
+/* UI-Cards.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: 0.45s ease;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(59, 130, 246, 0.25);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+/* Content */
+.content {
+  padding: 24px;
+  color: #fff;
+}
+
+.content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.content p {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #d1d5db;
+  margin-bottom: 22px;
+}
+
+/* Button */
+.content button {
+  padding: 12px 22px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.35s ease;
+  letter-spacing: 0.5px;
+}
+
+.content button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #2563eb, #0891b2);
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.35);
+}
+
+/* Decorative Top Glow */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  transition: 0.5s ease;
+}
+
+.card:hover::before {
+  transform: scale(1.4);
+}
+
+/* Different Accent Colors */
+.card-one {
+  border-top: 4px solid #3b82f6;
+}
+
+.card-two {
+  border-top: 4px solid #ec4899;
+}
+
+.card-three {
+  border-top: 4px solid #10b981;
+}
+
+.card-four {
+  border-top: 4px solid #f59e0b;
+}
+
+.tech-world {
+  border-top: 4px solid #8b5cf6;
+}
+
+.code-craft {
+  border-top: 4px solid #06b6d4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    gap: 25px;
+  }
+
+  .card img {
+    height: 210px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .content h2 {
+    font-size: 1.35rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .content button {
+    width: 100%;
+  }
+}

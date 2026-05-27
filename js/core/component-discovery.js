@@ -28,6 +28,42 @@
 
   const COMMON_TAGS = ['responsive', 'dark', 'light', 'modern', 'minimal', 'gradient', 'glass', 'neon', 'animated', 'interactive', 'accessible'];
 
+  const SEMANTIC_GROUPS = [
+    ['button', 'buttons', 'btn', 'cta', 'action', 'actions'],
+    ['navbar', 'nav', 'navigation', 'menu', 'header', 'topbar'],
+    ['card', 'cards', 'panel', 'panels', 'tile', 'tiles'],
+    ['form', 'forms', 'input', 'inputs', 'field', 'fields', 'textfield'],
+    ['alert', 'alerts', 'toast', 'toasts', 'notification', 'notifications', 'message', 'messages'],
+    ['loader', 'loaders', 'spinner', 'spinners', 'skeleton', 'loading'],
+    ['tab', 'tabs', 'segment', 'segments', 'switcher'],
+    ['pricing', 'plan', 'plans', 'subscription', 'billing'],
+    ['testimonial', 'testimonials', 'review', 'reviews', 'quote', 'quotes'],
+    ['gallery', 'galleries', 'image', 'images', 'photo', 'photos', 'carousel', 'slider'],
+    ['color', 'colors', 'palette', 'theme', 'themes', 'token', 'tokens'],
+    ['chart', 'charts', 'graph', 'graphs', 'analytics', 'stats', 'dashboard'],
+    ['footer', 'footers', 'layout', 'site'],
+    ['about', 'faq', 'docs', 'documentation', 'guide', 'guidelines', 'help']
+  ];
+
+  function buildSemanticLookup(groups) {
+    const lookup = new Map();
+
+    groups.forEach((group) => {
+      const normalizedTokens = Array.from(new Set(group.flatMap((term) => splitTokens(term))));
+      const tokenSet = new Set(normalizedTokens);
+
+      normalizedTokens.forEach((token) => {
+        const existing = lookup.get(token) || new Set();
+        tokenSet.forEach((value) => existing.add(value));
+        lookup.set(token, existing);
+      });
+    });
+
+    return lookup;
+  }
+
+  const SEMANTIC_LOOKUP = buildSemanticLookup(SEMANTIC_GROUPS);
+
   const _state = {
     initialized: false,
     items: [],
@@ -77,6 +113,70 @@
     return Array.from(new Set(toArray(tags).map((tag) => normalizeString(tag).toLowerCase()).filter(Boolean)));
   }
 
+  function splitTokens(value) {
+    return normalizeString(value)
+      .toLowerCase()
+      .split(/[^a-z0-9]+/)
+      .filter(Boolean);
+  }
+
+  function expandToken(token) {
+    const variants = new Set([token]);
+
+    if (token.length > 4 && token.endsWith('ies')) {
+      variants.add(`${token.slice(0, -3)}y`);
+    }
+
+    if (token.length > 4 && token.endsWith('ses')) {
+      variants.add(token.slice(0, -2));
+    }
+
+    if (token.length > 3 && token.endsWith('s')) {
+      variants.add(token.slice(0, -1));
+    }
+
+    if (token.length > 5 && token.endsWith('ing')) {
+      variants.add(token.slice(0, -3));
+    }
+
+    return Array.from(variants);
+  }
+
+  function collectSearchTokens(item) {
+    const tokens = new Set();
+    [item.id, item.title, item.description, item.category, item.tags.join(' '), item.aliases.join(' ')].forEach((value) => {
+      splitTokens(value).forEach((token) => {
+        expandToken(token).forEach((variant) => tokens.add(variant));
+      });
+    });
+
+    tokens.forEach((token) => {
+      const synonyms = SEMANTIC_LOOKUP.get(token);
+      if (!synonyms) return;
+      synonyms.forEach((value) => tokens.add(value));
+    });
+
+    return Array.from(tokens);
+  }
+
+  function expandQueryTerms(query) {
+    const rawTerms = splitTokens(query);
+    const expanded = new Set();
+
+    rawTerms.forEach((term) => {
+      expandToken(term).forEach((variant) => expanded.add(variant));
+      const synonyms = SEMANTIC_LOOKUP.get(term);
+      if (synonyms) {
+        synonyms.forEach((value) => expanded.add(value));
+      }
+    });
+
+    return {
+      rawTerms,
+      expandedTerms: Array.from(expanded)
+    };
+  }
+
   function guessCategory(item) {
     const base = [item.id, item.title, item.description, normalizeTags(item.tags).join(' ')].join(' ');
     const match = CATEGORY_RULES.find((rule) => rule.test(item.id || '', item.title || '', item.description || '', normalizeTags(item.tags)));
@@ -113,6 +213,14 @@
       source: component.source || 'metadata',
       metadata: component,
       doc: metaDoc || null,
+      searchTokens: collectSearchTokens({
+        id: component.id,
+        title,
+        description,
+        category,
+        tags,
+        aliases: normalizeTags(component.aliases || [])
+      }),
       searchableText: [component.id, title, description, category, tags.join(' '), normalizeTags(component.aliases || []).join(' ')].join(' ').toLowerCase()
     };
   }
@@ -132,30 +240,132 @@
     };
   }
 
-  function getWeightScore(item, query) {
-    if (!query) return 0;
-    const q = query.toLowerCase().trim();
-    if (!q) return 0;
+  function scoreSearchResult(item, query) {
+    if (!query) {
+      return {
+        score: item.documentationScore,
+        reasons: [],
+        matchedTerms: []
+      };
+    }
 
+    const q = normalizeString(query).toLowerCase();
+    if (!q) {
+      return {
+        score: item.documentationScore,
+        reasons: [],
+        matchedTerms: []
+      };
+    }
+
+    const { rawTerms, expandedTerms } = expandQueryTerms(q);
+    const searchableTokens = new Set(item.searchTokens || []);
+    const searchableText = item.searchableText || '';
     let score = 0;
-    const fields = [item.id, item.title, item.description, item.category, item.aliases.join(' '), item.tags.join(' ')].map((value) => normalizeString(value).toLowerCase());
+    const reasons = [];
+    const matchedTerms = new Set();
+
+    const fields = [
+      { name: 'id', value: item.id, weight: 140 },
+      { name: 'title', value: item.title, weight: 130 },
+      { name: 'aliases', value: item.aliases.join(' '), weight: 110 },
+      { name: 'category', value: item.category, weight: 95 },
+      { name: 'tags', value: item.tags.join(' '), weight: 85 },
+      { name: 'description', value: item.description, weight: 65 }
+    ];
 
     fields.forEach((field, index) => {
-      if (!field) return;
-      if (field === q) score += 120 - index * 6;
-      if (field.startsWith(q)) score += 80 - index * 4;
-      if (field.includes(q)) score += 45 - index * 3;
+      const normalized = normalizeString(field.value).toLowerCase();
+      if (!normalized) return;
+
+      if (normalized === q) {
+        score += field.weight;
+        reasons.push(`${field.name}:exact`);
+      } else if (normalized.startsWith(q)) {
+        score += Math.max(12, field.weight - 18 - index * 2);
+        reasons.push(`${field.name}:prefix`);
+      } else if (normalized.includes(q)) {
+        score += Math.max(8, field.weight - 42 - index * 2);
+        reasons.push(`${field.name}:contains`);
+      }
     });
 
-    q.split(/\s+/).forEach((term) => {
-      if (!term) return;
-      if (item.searchableText.includes(term)) score += 10;
-      if (item.tags.includes(term)) score += 12;
-      if (item.category.toLowerCase().includes(term)) score += 14;
-      if (item.aliases.some((alias) => alias.includes(term))) score += 11;
+    rawTerms.forEach((term) => {
+      const variants = new Set([term]);
+      expandToken(term).forEach((variant) => variants.add(variant));
+      const synonyms = SEMANTIC_LOOKUP.get(term);
+      if (synonyms) {
+        synonyms.forEach((value) => variants.add(value));
+      }
+
+      let matched = false;
+      variants.forEach((variant) => {
+        if (matched) return;
+        if (searchableTokens.has(variant) || searchableText.includes(variant)) {
+          matched = true;
+          matchedTerms.add(term);
+          score += 18;
+          reasons.push(`term:${term}->${variant}`);
+        }
+      });
+
+      if (!matched && item.aliases.some((alias) => variants.has(alias) || alias.includes(term))) {
+        matchedTerms.add(term);
+        matched = true;
+        score += 16;
+        reasons.push(`alias:${term}`);
+      }
+
+      if (!matched && item.tags.some((tag) => variants.has(tag) || tag.includes(term))) {
+        matchedTerms.add(term);
+        matched = true;
+        score += 14;
+        reasons.push(`tag:${term}`);
+      }
+
+      if (!matched && item.category.toLowerCase().includes(term)) {
+        matchedTerms.add(term);
+        matched = true;
+        score += 14;
+        reasons.push(`category:${term}`);
+      }
     });
 
-    return score;
+    const expandedCoverage = expandedTerms.filter((term) => searchableTokens.has(term) || searchableText.includes(term));
+    if (expandedTerms.length > 0) {
+      const coverageScore = Math.round((expandedCoverage.length / expandedTerms.length) * 40);
+      if (coverageScore > 0) {
+        score += coverageScore;
+        reasons.push(`coverage:${expandedCoverage.length}/${expandedTerms.length}`);
+      }
+    }
+
+    const queryWeight = rawTerms.length * 4;
+    score += queryWeight;
+    score += Math.min(18, Math.round(item.documentationScore / 6));
+    if (item.hasDocs) score += 6;
+    if (item.hasPage) score += 4;
+
+    return {
+      score,
+      reasons,
+      matchedTerms: Array.from(matchedTerms)
+    };
+  }
+
+  function rankSearchResults(items, query, filters = {}, sort = 'relevance', limit = DEFAULT_LIMIT) {
+    const filtered = items.filter((item) => matchesFilters(item, filters));
+    const scored = filtered.map((item) => {
+      const ranking = scoreSearchResult(item, query);
+      return {
+        ...item,
+        _score: ranking.score,
+        matchReasons: ranking.reasons,
+        matchedTerms: ranking.matchedTerms
+      };
+    }).filter((item) => !query || item._score > 0 || matchesFilters(item, filters));
+
+    return applySort(scored, sort, query).slice(0, limit);
   }
 
   function matchesFilters(item, filters = {}) {
@@ -371,13 +581,8 @@
     const limit = typeof options.limit === 'number' ? options.limit : DEFAULT_LIMIT;
     const sort = options.sort || mergedFilters.sort || 'relevance';
 
+    const ranked = rankSearchResults(_state.items, queryText, mergedFilters, sort, limit);
     const filtered = _state.items.filter((item) => matchesFilters(item, mergedFilters));
-    const scored = filtered.map((item) => {
-      const _score = queryText ? getWeightScore(item, queryText) : item.documentationScore;
-      return { ...item, _score };
-    }).filter((item) => !queryText || item._score > 0 || matchesFilters(item, mergedFilters));
-
-    const ranked = applySort(scored, sort, queryText).slice(0, limit);
     const summary = {
       total: filtered.length,
       returned: ranked.length,
@@ -431,14 +636,28 @@
     const versioning = global.ComponentVersioning;
     if (versioning && typeof versioning.resolve === 'function') {
       const catalog = _state.items.map((item) => ({ id: item.id, title: item.title, path: item.path, version: item.metadata?.version || item.version || '0.0.0', versions: item.metadata?.versions || [], aliases: item.aliases, tags: item.tags, doc: item.doc, description: item.description }));
-      return versioning.resolve(query, catalog);
+      const resolved = versioning.resolve(query, catalog);
+      if (resolved && resolved.found) return resolved;
     }
 
-    // Fallback: simple id/title match
-    const id = String(query || '').toLowerCase().trim();
-    const found = _state.items.find((it) => (it.id || '').toLowerCase() === id || (it.title || '').toLowerCase() === id || (it.aliases || []).map(a => a.toLowerCase()).includes(id));
-    if (!found) return { found: false, query: String(query), compatibility: { status: 'missing', fallbackUsed: false } };
-    return { found: true, id: found.id, path: found.path, title: found.title, version: found.version || '0.0.0', latestVersion: found.latestVersion || found.version, compatibility: { status: 'exact', fallbackUsed: false } };
+    const ranked = rankSearchResults(_state.items, query, {}, 'relevance', 1);
+    const found = ranked[0];
+    if (!found) {
+      return { found: false, query: String(query), compatibility: { status: 'missing', fallbackUsed: false } };
+    }
+
+    return {
+      found: true,
+      id: found.id,
+      path: found.path,
+      title: found.title,
+      version: found.version || '0.0.0',
+      latestVersion: found.latestVersion || found.version,
+      aliases: found.aliases,
+      compatibility: { status: 'semantic', fallbackUsed: true },
+      matchReasons: found.matchReasons,
+      matchedTerms: found.matchedTerms
+    };
   }
 
   const ComponentDiscovery = {

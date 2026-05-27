@@ -14,22 +14,49 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <link rel="stylesheet" href="checkbox.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
+  
+   <link rel="stylesheet" href="checkbox.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Keyboard navigation focus indicators for custom inputs */
+    label input:focus-visible ~ .minimal-box,
+    label input:focus-visible ~ .gradient-box,
+    label input:focus-visible ~ .glass-box,
+    label input:focus-visible ~ .anim-track,
+    label input:focus-visible ~ .task-box,
+    label input:focus-visible ~ .cyber-box,
+    label input:focus-visible ~ .neu-box,
+    label input:focus-visible ~ .heart-icon,
+    label input:focus-visible ~ .plan-card,
+    label input:focus-visible ~ .terms-box,
+    label input:focus-visible ~ .jelly-box,
+    label input:focus-visible ~ .neon-box,
+    label input:focus-visible ~ .arcade-box,
+    label input:focus-visible ~ .slidelock-track,
+    label input:focus-visible ~ .depth-box {
+      outline: 2px solid #7b61ff !important;
+      outline-offset: 3px !important;
+      box-shadow: 0 0 0 4px rgba(123, 97, 255, 0.35) !important;
+    }
+  </style>
 </head>
 
 <body>
+   <html data-theme="light">
 
   <div class="main-content">
 
     <!-- TOPBAR -->
     <header class="topbar">
       <div class="search-box">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-text">UIverse</span>
         <i class="fa-solid fa-magnifying-glass"></i>
         <input type="text" placeholder="Search components...">
       </div>
       <div class="topbar-actions">
+        
         <button class="add-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
         <button class="collection-btn">My Collection</button>
         <button class="theme-btn"><i class="fa-solid fa-moon"></i></button>
@@ -729,6 +756,9 @@
           <a href="#" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
         </div>
       </div>
+ 
+
+
 
       <div class="footer-col">
         <h3>Explore</h3>
@@ -786,7 +816,28 @@
           if (!el) return;
           navigator.clipboard.writeText(el.textContent).then(() => alert('Code copied!'));
         }
+        function loadTheme() {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme, false);
+}
+
+function setTheme(theme, persist = true) {
+  document.documentElement.setAttribute("data-theme", theme);
+  if (persist) localStorage.setItem("theme", theme);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  setTheme(newTheme);
+}
+
+window.onload = loadTheme;
+
+    
       </script>
+
+
 
 </body>
 
