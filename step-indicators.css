@@ -11,7 +11,6 @@
   --card-border: rgba(255, 255, 255, 0.06);
   --text-main: #f1f5f9;
   --text-muted: #94a3b8;
-  
   /* Accent Colors */
   --color-purple: #7b61ff;
   --color-purple-glow: rgba(123, 97, 255, 0.25);
@@ -1475,10 +1474,13 @@ body {
    ============================================================ */
 .footer {
   margin-left: var(--sidebar-w);
+  width: calc(100% - var(--sidebar-w));
   background: #111;
   color: #aaa;
   padding: 0;
   margin-top: 60px;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .footer-container {
@@ -1487,6 +1489,7 @@ body {
   gap: 40px;
   padding: 56px 48px 40px;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-logo {
@@ -1605,6 +1608,252 @@ body {
   font-size: 13px;
   color: #555;
 }
+/* =========================================================
+   NEW STEPPER COMPONENTS
+========================================================= */
+
+/* Dotted Path Stepper */
+.premium-dotted-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+}
+.dot-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+.dot-step.active {
+  color: #10b981;
+}
+.dot-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  transition: var(--transition-smooth);
+}
+.dot-step.active .dot-icon {
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+.dot-line {
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.1) 0, rgba(255,255,255,0.1) 4px, transparent 4px, transparent 8px);
+  margin: 0 10px;
+  transform: translateY(-10px);
+}
+.dot-line.active {
+  background: repeating-linear-gradient(90deg, #10b981 0, #10b981 4px, transparent 4px, transparent 8px);
+}
+
+/* Minimal Text Stepper */
+.premium-text-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.text-step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0.4;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+.text-step:hover {
+  opacity: 0.7;
+}
+.text-step.active {
+  opacity: 1;
+}
+.text-step.completed {
+  opacity: 0.6;
+}
+.t-step-num {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  transition: var(--transition-smooth);
+}
+.text-step.active .t-step-num {
+  color: var(--color-purple);
+  -webkit-text-stroke: 0px;
+  text-shadow: 0 0 15px var(--color-purple-glow);
+}
+.t-step-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Card-Based Stepper */
+.premium-card-stepper {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 320px;
+}
+.card-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+.card-step i {
+  font-size: 18px;
+}
+.card-step.active {
+  background: rgba(255, 122, 61, 0.1);
+  border-color: var(--color-orange);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--color-orange-glow);
+}
+.card-step.completed {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+}
+
+/* Neon Progress Stepper */
+.premium-neon-stepper {
+  width: 100%;
+  max-width: 280px;
+  position: relative;
+  padding: 20px 0;
+}
+.neon-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.neon-fill {
+  height: 100%;
+  background: #06b6d4;
+  box-shadow: 0 0 10px #06b6d4, 0 0 20px #06b6d4;
+  border-radius: 4px;
+  transition: width 0.5s ease-in-out;
+}
+.neon-nodes {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.neon-node {
+  width: 16px;
+  height: 16px;
+  background: var(--bg-primary);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+}
+.neon-node.active {
+  border-color: #06b6d4;
+  background: #06b6d4;
+  box-shadow: 0 0 15px #06b6d4, inset 0 0 5px #fff;
+}
+
+/* Timeline Steps */
+.premium-timeline-stepper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.timeline-step {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 25px;
+}
+.timeline-step:last-child {
+  padding-bottom: 0;
+}
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 15px;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.05);
+}
+.timeline-step:last-child::before {
+  display: none;
+}
+.t-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+  margin-top: 3px;
+  transition: var(--transition-smooth);
+}
+.timeline-step.completed .t-dot {
+  background: var(--color-purple);
+  border-color: var(--color-purple);
+}
+.timeline-step.completed::before {
+  background: var(--color-purple);
+}
+.timeline-step.active .t-dot {
+  border-color: var(--color-purple);
+  box-shadow: 0 0 10px var(--color-purple-glow);
+}
+.timeline-step.active .t-dot::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 6px; height: 6px;
+  background: var(--color-purple);
+  border-radius: 50%;
+}
+.t-content h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.t-content p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.timeline-step:not(.completed):not(.active) .t-content h5 {
+  color: var(--text-muted);
+}
+
 /* ---- RESPONSIVE MEDIA QUERIES ---- */
 @media (max-width: 1100px) {
   .hero {

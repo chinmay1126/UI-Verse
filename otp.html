@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -16,8 +17,7 @@
 
   <link rel="stylesheet" href="otp.css">
   
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
 <!-- ================= SIDEBAR ================= -->
@@ -215,12 +215,12 @@
           <span>Authentication</span>
         </a>
       </li>
-        <li>
-          <a href="recovery.html">
-            <i class="fa-solid fa-key" aria-hidden="true"></i>
-            <span>Password Recovery</span>
-          </a>
-        </li>
+      <li class="active">
+        <a href="otp.html">
+          <i class="fa-solid fa-key"></i>
+          <span>OTP</span>
+        </a>
+      </li>
       <li>
         <a href="section.html">
           <i class="fa-solid fa-rectangle-list"></i>
@@ -695,5 +695,6 @@ document.querySelectorAll(
 });
 
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

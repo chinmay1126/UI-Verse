@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https:; style-src 'self' https: 'unsafe-inline'">
@@ -44,14 +45,6 @@
     <p class="footer-text">Smooth UI • Glass effect • Modern UX</p>
   </div>
 
-  <script>
-    const toggle = document.getElementById("toggle");
-    const body = document.body;
-
-    toggle.addEventListener("change", () => {
-      body.classList.toggle("dark");
-    });
-  </script>
-
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

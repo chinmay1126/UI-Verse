@@ -152,20 +152,25 @@ const Search = {
   handleKeydown(event) {
     if (!this._state.dropdownVisible) return;
 
+    const contract = window.KeyboardContract || globalThis.KeyboardContract || null;
+
     switch (event.key) {
       case 'ArrowDown':
+        if (contract && typeof contract.isArrowKey === 'function' && !contract.isArrowKey(event)) break;
         event.preventDefault();
         this._state.selectedIndex = Math.min(this._state.selectedIndex + 1, this._state.results.length - 1);
         this.renderDropdownResults(this._state.results);
         break;
 
       case 'ArrowUp':
+        if (contract && typeof contract.isArrowKey === 'function' && !contract.isArrowKey(event)) break;
         event.preventDefault();
         this._state.selectedIndex = Math.max(this._state.selectedIndex - 1, 0);
         this.renderDropdownResults(this._state.results);
         break;
 
       case 'Enter':
+        if (contract && typeof contract.isEnterKey === 'function' && !contract.isEnterKey(event)) break;
         event.preventDefault();
         if (this._state.results[this._state.selectedIndex]) {
           window.location.href = this._state.results[this._state.selectedIndex].path;
@@ -173,6 +178,7 @@ const Search = {
         break;
 
       case 'Escape':
+        if (contract && typeof contract.isEscapeKey === 'function' && !contract.isEscapeKey(event)) break;
         event.preventDefault();
         this.hideDropdown();
         break;
@@ -204,8 +210,12 @@ const Search = {
     try {
       if (window.ComponentsRegistry) {
         await window.ComponentsRegistry.load();
-        const path = window.ComponentsRegistry.findRoute(query);
+        const resolution = typeof window.ComponentsRegistry.resolve === 'function' ? window.ComponentsRegistry.resolve(query) : null;
+        const path = resolution ? resolution.path : window.ComponentsRegistry.findRoute(query);
         if (path) {
+          if (resolution && resolution.compatibility && resolution.compatibility.fallbackUsed) {
+            console.warn('[Search] Version fallback used', resolution);
+          }
           window.location.href = resolveRouteURL(path);
           return;
         }
@@ -283,3 +293,5 @@ const Search = {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = Search;
 }
+
+window.Search = Search;

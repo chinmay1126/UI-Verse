@@ -1,0 +1,49 @@
+{
+  "base": "http://localhost:8000",
+  "results": [
+    {
+      "route": "/",
+      "url": "http://localhost:8000/",
+      "status": 200,
+      "metrics": {
+        "timestamp": 1779299218504,
+        "fcp": null,
+        "domContentLoaded": 497,
+        "loadEvent": 1488
+      }
+    },
+    {
+      "route": "/index.html",
+      "url": "http://localhost:8000/index.html",
+      "status": 200,
+      "metrics": {
+        "timestamp": 1779299218653,
+        "fcp": null,
+        "domContentLoaded": 64,
+        "loadEvent": 143
+      }
+    },
+    {
+      "route": "/button.html",
+      "url": "http://localhost:8000/button.html",
+      "status": 200,
+      "metrics": {
+        "timestamp": 1779299218916,
+        "fcp": null,
+        "domContentLoaded": 85,
+        "loadEvent": 179
+      }
+    },
+    {
+      "route": "/components/state/demo-state.html",
+      "url": "http://localhost:8000/components/state/demo-state.html",
+      "status": 200,
+      "metrics": {
+        "timestamp": 1779299218947,
+        "fcp": null,
+        "domContentLoaded": 26,
+        "loadEvent": 26
+      }
+    }
+  ]
+}

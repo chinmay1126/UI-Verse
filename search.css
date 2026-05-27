@@ -234,6 +234,161 @@ body{
   border-color: rgba(34, 197, 94, 0.2);
 }
 
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+}
+
+.toolbar-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 200px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  padding: 0 16px;
+  height: 40px;
+}
+
+.toolbar-search i { color: var(--muted); font-size: 14px; }
+
+.toolbar-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Sort dropdown */
+.sort-dropdown-wrapper {
+  position: relative;
+}
+
+.sort-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.sort-trigger:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.sort-trigger.open {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.sort-chevron {
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+
+.sort-trigger.open .sort-chevron {
+  transform: rotate(180deg);
+}
+
+.sort-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #1a2236;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 6px;
+  min-width: 160px;
+  z-index: 100;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+}
+
+.sort-menu.open {
+  display: block;
+}
+
+.sort-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #aab4cc;
+  transition: background 0.15s;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.sort-option:hover {
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+}
+
+.sort-option input[type="radio"] {
+  display: none;
+}
+
+.radio-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+
+.sort-option input[type="radio"]:checked ~ .radio-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255,122,61,0.2);
+}
+
+.sort-option input[type="radio"]:checked ~ .radio-dot::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.sort-option:has(input[type="radio"]:checked) {
+  color: #fff;
+  background: #ff7a3d14;
+}
+
+.results-count {
+  font-size: 13px;
+  color: #ffffff6a;
+  margin-left: auto;
+}
+
 /* =========================================================
    1. EXPANDING SEARCH BAR
 ========================================================= */
@@ -1064,11 +1219,9 @@ body{
    FOOTER
    ============================================================ */
 .footer {
-  margin-left: var(--sidebar-w);
-  background: #111;
-  color: #aaa;
-  padding: 0;
-  margin-top: 60px;
+  background: var(--bg2);
+  padding: 20px 0;
+  margin-left: 250px; /* offset for sidebar */
 }
 
 .footer-container {
@@ -1113,19 +1266,40 @@ body{
 }
 
 .footer-col ul li a {
-  color: #888;
+  position: relative;
+  color: #a1a1aa;
   text-decoration: none;
-  font-size: 14px;
-  transition: color var(--transition);
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .footer-col ul li a:hover {
-  color: var(--accent);
+  color: var(--accent);  
+  transform: translateX(6px);
 }
 
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+/* Social icons fix */
 .socials {
   display: flex;
   gap: 12px;
+  margin-top: 12px;
 }
 
 .socials a {
@@ -1136,9 +1310,9 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #888;
+  color: #aaa;
+  font-size: 16px;
   text-decoration: none;
-  font-size: 14px;
   transition: all var(--transition);
 }
 
@@ -1193,8 +1367,25 @@ body{
   padding: 20px 48px;
   text-align: center;
   font-size: 13px;
-  color: #555;
+  color: #aaa;
 }
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .footer {
+    margin-left: 0; /* remove sidebar offset */
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .socials {
+    justify-content: center;
+  }
+}
+
 
 /* =========================================================
    16. LIQUID BORDER SEARCH

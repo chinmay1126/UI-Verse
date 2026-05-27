@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Live Cricket Score</title>
-</head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Cricket Score UI</title>
+  </head>
 <body>
 
   <header>
@@ -165,49 +165,6 @@
 
   </main>
 
-  <script>
-
-    let indiaRuns = 182;
-    let wickets = 4;
-    let ballsLeft = 12;
-    let target = 185;
-
-    function updateScore() {
-
-      if (ballsLeft > 0 && indiaRuns < target) {
-
-        let run = Math.floor(Math.random() * 7);
-
-        indiaRuns += run;
-
-        if (Math.random() > 0.9) {
-          wickets++;
-        }
-
-        ballsLeft--;
-
-        document.getElementById("indiaScore").innerText =
-          indiaRuns + "/" + wickets;
-
-        let runsNeeded = target - indiaRuns;
-
-        if (runsNeeded <= 0) {
-
-          document.getElementById("matchStatus").innerText =
-            "🎉 India won the match!";
-
-          return;
-        }
-
-        document.getElementById("matchStatus").innerText =
-          "India need " + runsNeeded +
-          " runs in " + ballsLeft + " balls";
-      }
-    }
-
-    setInterval(updateScore, 3000);
-
-  </script>
-
+        <script src="../dist/shared.js"></script>
 </body>
 </html>

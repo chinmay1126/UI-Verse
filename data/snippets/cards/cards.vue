@@ -35,6 +35,13 @@
     </div>
   </div>
 
+  <!-- Tutorial Mode entry -->
+  <div class="tutorial-mode-entry" style="margin: 14px 0; display:flex; justify-content:flex-end;">
+    <button id="startTutorialMode" type="button" class="nav-btn outline-nav-btn" style="padding: 10px 14px; cursor:pointer;">
+      <i class="fa-solid fa-graduation-cap"></i> Start tutorial
+    </button>
+  </div>
+
   <!-- Filter Bar -->
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
@@ -880,7 +887,7 @@
         <button onclick="addToCollection('Image Card')">Add to My Collection</button>
       </div>
       <pre id="c6" class="code-block"><code>&lt;div class="image-card"&gt;
-  &lt;img src="your-image.jpg" alt="..."&gt;
+  &lt;img src="https://picsum.photos/500/300?random=20" alt="..."&gt;
   &lt;div class="image-card-body"&gt;
     &lt;span class="tag"&gt;Nature&lt;/span&gt;
     &lt;h4&gt;Scenic View&lt;/h4&gt;
@@ -980,7 +987,7 @@
               <p>You have received a new message from Alex.</p>
               <span class="notif-time">2 min ago</span>
             </div>
-            <button class="notif-close"><i class="fa-solid fa-xmark"></i></button>
+            <button class="notif-close" aria-label="Dismiss notification" type="button"><i class="fa-solid fa-xmark"></i></button>
           </div>
           <div class="notif-card notif-green">
             <div class="notif-icon notif-icon-green"><i class="fa-solid fa-check"></i></div>
@@ -989,7 +996,7 @@
               <p>Your file has been successfully uploaded.</p>
               <span class="notif-time">Just now</span>
             </div>
-            <button class="notif-close"><i class="fa-solid fa-xmark"></i></button>
+            <button class="notif-close" aria-label="Dismiss notification" type="button"><i class="fa-solid fa-xmark"></i></button>
           </div>
         </div>
       </div>
