@@ -101,6 +101,13 @@ const TutorialMode = {
     });
   },
 
+  _getTutorialStepOutcome({ activeSteps, renderedStepCount = 0 } = {}) {
+    return {
+      hasRenderableSteps: Array.isArray(activeSteps) && activeSteps.length > 0,
+      shouldMarkCompleted: renderedStepCount > 0,
+    };
+  },
+
   _assertUsableState({ pageKey, categoryKey, steps } = {}) {
     return Boolean(
       pageKey &&
@@ -292,7 +299,8 @@ const TutorialMode = {
     if (!this._assertUsableState({ pageKey: resolvedPageKey, categoryKey: resolvedCategoryKey, steps: resolvedSteps })) return;
 
     const normalizedSteps = this._normalizeSteps(resolvedSteps);
-    if (!normalizedSteps.activeSteps.length) {
+    const startOutcome = this._getTutorialStepOutcome({ activeSteps: normalizedSteps.activeSteps });
+    if (!startOutcome.hasRenderableSteps) {
       this._warnMissingSteps({
         pageKey: resolvedPageKey,
         categoryKey: resolvedCategoryKey,
@@ -351,7 +359,9 @@ const TutorialMode = {
     this._state.currentIndex = 0;
     this._state.active = true;
 
-    if (this._state.steps.length === 0 && Array.isArray(lastOptions.steps) && lastOptions.steps.length > 0) {
+    const restartOutcome = this._getTutorialStepOutcome({ activeSteps: this._state.activeSteps, renderedStepCount: this._state.renderedStepCount });
+
+    if (!restartOutcome.hasRenderableSteps && Array.isArray(lastOptions.steps) && lastOptions.steps.length > 0) {
       this.start({
         pageKey,
         categoryKey,
@@ -465,7 +475,8 @@ const TutorialMode = {
     }
 
     // If we reach here, all remaining steps have missing selectors
-    this.complete(false, this._state.renderedStepCount > 0);
+    const renderOutcome = this._getTutorialStepOutcome({ activeSteps: this._state.activeSteps, renderedStepCount: this._state.renderedStepCount });
+    this.complete(false, renderOutcome.shouldMarkCompleted);
   },
 
   _showStep(step, el) {
