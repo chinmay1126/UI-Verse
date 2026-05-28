@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkbox Components — UIverse</title>
@@ -14,23 +15,28 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <link rel="stylesheet" href="checkbox.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  
+   <link rel="stylesheet" href="checkbox.css">
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+   <html data-theme="light">
 
   <div class="main-content">
 
     <!-- TOPBAR -->
     <header class="topbar">
       <div class="search-box">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-text">UIverse</span>
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search components...">
+        <input type="text" placeholder="Search components..." data-a11y-remediation="label-needed">
       </div>
       <div class="topbar-actions">
-        <button class="add-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+        
+        <button class="add-btn" data-a11y-remediation="button-label-needed"><i class="fa-solid fa-plus"></i> Add Component</button>
         <button class="collection-btn">My Collection</button>
         <button class="theme-btn"><i class="fa-solid fa-moon"></i></button>
       </div>
@@ -729,6 +735,9 @@
           <a href="#" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
         </div>
       </div>
+ 
+
+
 
       <div class="footer-col">
         <h3>Explore</h3>
@@ -786,8 +795,30 @@
           if (!el) return;
           navigator.clipboard.writeText(el.textContent).then(() => alert('Code copied!'));
         }
+        function loadTheme() {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme, false);
+}
+
+function setTheme(theme, persist = true) {
+  document.documentElement.setAttribute("data-theme", theme);
+  if (persist) localStorage.setItem("theme", theme);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  setTheme(newTheme);
+}
+
+window.onload = loadTheme;
+
+    
       </script>
 
+
+
+    <script src="dist/shared.js"></script>
 </body>
 
 </html>

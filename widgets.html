@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Developer Widgets — UIverse</title>
@@ -15,14 +16,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="shared-page.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
   <link rel="stylesheet" href="widgets.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
   <aside class="sidebar" id="sidebar">
@@ -354,7 +353,7 @@
 
   <!-- ================= NAVBAR ================= -->
   <header class="navbar" id="navbar">
-    <button type="button" class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <button type="button" class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu" data-a11y-remediation="button-label-needed">
       <i class="fa-solid fa-bars"></i>
     </button>
 
@@ -362,7 +361,7 @@
 
     <div class="search-bar">
       <i class="fa-solid fa-magnifying-glass search-icon"></i>
-      <input type="text" id="searchInput" placeholder="Search components...">
+      <input type="text" id="searchInput" placeholder="Search components..." data-a11y-remediation="label-needed">
       <kbd class="search-kbd">⌘K</kbd>
     </div>
 
@@ -904,6 +903,355 @@
         </div>
       </div>
 
+      <!-- =========================================================
+           16. POMODORO TIMER WIDGET
+           ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Pomodoro Timer</h2>
+            <p>Focus session timer with break modes and session tracking.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="pomodoro-widget">
+          <div class="pomo-modes">
+            <button class="pomo-mode-btn active" data-minutes="25" data-label="Focus session" onclick="switchPomoMode(this)">Focus</button>
+            <button class="pomo-mode-btn" data-minutes="5" data-label="Short break" onclick="switchPomoMode(this)">Short break</button>
+            <button class="pomo-mode-btn" data-minutes="15" data-label="Long break" onclick="switchPomoMode(this)">Long break</button>
+          </div>
+      
+          <div class="pomo-ring-wrap">
+            <svg class="pomo-svg" viewBox="0 0 120 120">
+              <circle class="pomo-track" cx="60" cy="60" r="52"/>
+              <circle class="pomo-progress" id="pomoProgress" cx="60" cy="60" r="52"/>
+            </svg>
+            <div class="pomo-center">
+              <div class="pomo-time" id="pomoTime">25:00</div>
+              <div class="pomo-session-label" id="pomoLabel">Focus session</div>
+            </div>
+          </div>
+      
+          <div class="pomo-controls">
+            <button class="pomo-ctrl-btn" onclick="pomoSkip()" title="Skip">
+              <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button class="pomo-ctrl-btn primary" id="pomoPlayBtn" onclick="pomoToggle()">
+              <i class="fa-solid fa-play" id="pomoPlayIcon"></i>
+            </button>
+            <button class="pomo-ctrl-btn" onclick="pomoReset()" title="Reset">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+          </div>
+      
+          <div class="pomo-dots" id="pomoDots">
+            <div class="pomo-dot"></div>
+            <div class="pomo-dot"></div>
+            <div class="pomo-dot"></div>
+            <div class="pomo-dot"></div>
+          </div>
+          <p class="pomo-session-info" id="pomoInfo">Session 1 of 4 · Long break after 4</p>
+        </div>
+      </div>
+      
+      
+      <!-- =========================================================
+          17. NOTIFICATION CENTER WIDGET
+          ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Notification Center</h2>
+            <p>Dev-focused alert feed for deploys, errors, and PRs.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="notif-center-widget">
+          <div class="notif-header">
+            <span class="notif-title">Activity</span>
+            <span class="notif-count-badge">3 new</span>
+            <button class="notif-clear-btn" onclick="clearNotifications(this)">Mark all read</button>
+          </div>
+      
+          <div class="notif-list" id="notifList">
+            <div class="notif-item unread" data-type="deploy">
+              <div class="notif-icon-wrap deploy">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-top">
+                  <strong>Deploy succeeded</strong>
+                  <span class="notif-dot"></span>
+                </div>
+                <p>ui-verse/main → production · 47s build</p>
+                <span class="notif-time">2 min ago</span>
+              </div>
+            </div>
+      
+            <div class="notif-item unread" data-type="warn">
+              <div class="notif-icon-wrap warn">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-top">
+                  <strong>Memory threshold at 89%</strong>
+                  <span class="notif-dot"></span>
+                </div>
+                <p>api-server-02 is approaching its memory limit</p>
+                <span class="notif-time">14 min ago</span>
+              </div>
+            </div>
+      
+            <div class="notif-item unread" data-type="pr">
+              <div class="notif-icon-wrap pr">
+                <i class="fa-solid fa-code-pull-request"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-top">
+                  <strong>PR #204 needs review</strong>
+                  <span class="notif-dot"></span>
+                </div>
+                <p>lena-moore: feat/dark-mode-refactor</p>
+                <span class="notif-time">1 hour ago</span>
+              </div>
+            </div>
+      
+            <div class="notif-item" data-type="error">
+              <div class="notif-icon-wrap error">
+                <i class="fa-solid fa-bug"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-top">
+                  <strong>TypeError in /api/v1/auth</strong>
+                </div>
+                <p>Cannot read property 'token' of null · line 42</p>
+                <span class="notif-time">2 hours ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- =========================================================
+          18. DEPENDENCY TRACKER WIDGET
+          ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Dependency Tracker</h2>
+            <p>Package version status with update indicators.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="deps-widget">
+          <div class="deps-summary">
+            <span class="deps-badge current"><i class="fa-solid fa-circle-check"></i> 4 current</span>
+            <span class="deps-badge minor"><i class="fa-solid fa-circle-up"></i> 2 minor</span>
+            <span class="deps-badge major"><i class="fa-solid fa-circle-exclamation"></i> 1 major</span>
+          </div>
+      
+          <div class="deps-list">
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">react</span>
+                <span class="dep-version current-ver">18.3.1</span>
+              </div>
+              <span class="dep-status current">✓ Latest</span>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">vite</span>
+                <span class="dep-version current-ver">4.3.9</span>
+              </div>
+              <div class="dep-right">
+                <span class="dep-new-ver">→ 5.2.0</span>
+                <span class="dep-status minor">minor</span>
+              </div>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">tailwindcss</span>
+                <span class="dep-version current-ver">3.4.1</span>
+              </div>
+              <span class="dep-status current">✓ Latest</span>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">eslint</span>
+                <span class="dep-version current-ver">7.32.0</span>
+              </div>
+              <div class="dep-right">
+                <span class="dep-new-ver">→ 9.4.0</span>
+                <span class="dep-status major">major</span>
+              </div>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">axios</span>
+                <span class="dep-version current-ver">1.4.0</span>
+              </div>
+              <div class="dep-right">
+                <span class="dep-new-ver">→ 1.7.2</span>
+                <span class="dep-status minor">minor</span>
+              </div>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">typescript</span>
+                <span class="dep-version current-ver">5.4.5</span>
+              </div>
+              <span class="dep-status current">✓ Latest</span>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">vitest</span>
+                <span class="dep-version current-ver">1.6.0</span>
+              </div>
+              <span class="dep-status current">✓ Latest</span>
+            </div>
+          </div>
+      
+          <button class="deps-update-btn" onclick="runDepUpdate(this)">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i> Update 2 minor patches
+          </button>
+        </div>
+      </div>
+      
+      
+      <!-- =========================================================
+          19. NETWORK SPEED MONITOR WIDGET
+          ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Network Monitor</h2>
+            <p>Live connection stats with download, upload and latency.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="network-widget">
+          <div class="net-status-bar">
+            <div class="net-online-dot"></div>
+            <span class="net-status-text">Connected · Cloudflare WARP</span>
+            <span class="net-protocol">IPv6 · TLS 1.3</span>
+          </div>
+      
+          <div class="net-speeds-grid">
+            <div class="net-speed-card">
+              <div class="net-speed-icon dl"><i class="fa-solid fa-arrow-down"></i></div>
+              <div class="net-speed-val" id="netDL">842</div>
+              <div class="net-speed-unit">Mbps</div>
+              <div class="net-speed-lbl">Download</div>
+              <div class="net-speed-bar">
+                <div class="net-bar-fill dl" id="netDLBar" style="width: 84%"></div>
+              </div>
+            </div>
+            <div class="net-speed-card">
+              <div class="net-speed-icon ul"><i class="fa-solid fa-arrow-up"></i></div>
+              <div class="net-speed-val" id="netUL">421</div>
+              <div class="net-speed-unit">Mbps</div>
+              <div class="net-speed-lbl">Upload</div>
+              <div class="net-speed-bar">
+                <div class="net-bar-fill ul" id="netULBar" style="width: 42%"></div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="net-stats-row">
+            <div class="net-stat">
+              <span class="net-stat-label">Ping</span>
+              <span class="net-stat-value good" id="netPing">12 ms</span>
+            </div>
+            <div class="net-stat">
+              <span class="net-stat-label">DNS</span>
+              <span class="net-stat-value">3 ms</span>
+            </div>
+            <div class="net-stat">
+              <span class="net-stat-label">Jitter</span>
+              <span class="net-stat-value" id="netJitter">0.8 ms</span>
+            </div>
+            <div class="net-stat">
+              <span class="net-stat-label">Packet loss</span>
+              <span class="net-stat-value good">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- =========================================================
+          20. READING STREAK WIDGET
+          ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Reading Streak</h2>
+            <p>Dev documentation reading progress and streak tracker.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="streak-widget">
+          <div class="streak-hero">
+            <div class="streak-flame-wrap">
+              <span class="streak-flame">🔥</span>
+              <div class="streak-count" id="streakCount">14</div>
+            </div>
+            <div class="streak-hero-info">
+              <p class="streak-hero-title">Day streak</p>
+              <p class="streak-hero-sub">Best: 31 days &nbsp;·&nbsp; Keep going!</p>
+              <div class="streak-today-badge">Today's goal: 20 min reading</div>
+            </div>
+          </div>
+      
+          <div class="streak-week">
+            <div class="streak-week-labels">
+              <span>Mon</span><span>Tue</span><span>Wed</span>
+              <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+            <div class="streak-week-dots">
+              <div class="streak-dot done" title="Monday · 32 min"></div>
+              <div class="streak-dot done" title="Tuesday · 18 min"></div>
+              <div class="streak-dot done" title="Wednesday · 45 min"></div>
+              <div class="streak-dot done" title="Thursday · 22 min"></div>
+              <div class="streak-dot done" title="Friday · 29 min"></div>
+              <div class="streak-dot missed" title="Saturday · missed"></div>
+              <div class="streak-dot today" title="Today · in progress"></div>
+            </div>
+          </div>
+      
+          <div class="streak-progress-wrap">
+            <div class="streak-progress-label">
+              <span>Today's progress</span>
+              <span id="streakMins">14 / 20 min</span>
+            </div>
+            <div class="streak-progress-bg">
+              <div class="streak-progress-fill" id="streakProgressFill" style="width: 70%"></div>
+            </div>
+          </div>
+      
+          <div class="streak-stats-grid">
+            <div class="streak-stat-box">
+              <div class="streak-stat-val">38</div>
+              <div class="streak-stat-lbl">Articles read</div>
+            </div>
+            <div class="streak-stat-box">
+              <div class="streak-stat-val">5.2h</div>
+              <div class="streak-stat-lbl">This week</div>
+            </div>
+            <div class="streak-stat-box">
+              <div class="streak-stat-val">12</div>
+              <div class="streak-stat-lbl">Topics covered</div>
+            </div>
+          </div>
+        </div>
+</div>
+
     </section>
   </div>
 
@@ -975,7 +1323,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
   <script>
     // Dark mode toggle
     const toggle = document.getElementById('darkModeToggle');
@@ -1071,8 +1418,158 @@ initWidget();`;
         console.error('Failed to copy widget HTML: ', err);
       });
     }
+
+    // ---- POMODORO TIMER ----
+    (function() {
+      let pomoTotalSec = 25 * 60;
+      let pomoRemaining = pomoTotalSec;
+      let pomoRunning = false;
+      let pomoInterval = null;
+      let pomoSession = 1;
+      const CIRCUMFERENCE = 2 * Math.PI * 52; // r=52
+    
+      function updatePomoDisplay() {
+        const m = Math.floor(pomoRemaining / 60);
+        const s = pomoRemaining % 60;
+        document.getElementById('pomoTime').textContent =
+          String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        const progress = pomoRemaining / pomoTotalSec;
+        const offset = CIRCUMFERENCE * (1 - progress);
+        document.getElementById('pomoProgress').style.strokeDashoffset = offset;
+      }
+    
+      function updatePomoDots() {
+        const dots = document.querySelectorAll('.pomo-dot');
+        dots.forEach((d, i) => {
+          d.classList.toggle('done', i < pomoSession - 1);
+          d.classList.toggle('active', i === pomoSession - 1);
+        });
+        document.getElementById('pomoInfo').textContent =
+          `Session ${pomoSession} of 4 · Long break after 4`;
+      }
+    
+      window.pomoToggle = function() {
+        if (pomoRunning) {
+          clearInterval(pomoInterval);
+          pomoRunning = false;
+          document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+        } else {
+          pomoInterval = setInterval(() => {
+            if (pomoRemaining > 0) {
+              pomoRemaining--;
+              updatePomoDisplay();
+            } else {
+              clearInterval(pomoInterval);
+              pomoRunning = false;
+              document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+              pomoSession = pomoSession < 4 ? pomoSession + 1 : 1;
+              updatePomoDots();
+            }
+          }, 1000);
+          pomoRunning = true;
+          document.getElementById('pomoPlayIcon').className = 'fa-solid fa-pause';
+        }
+      };
+    
+      window.pomoReset = function() {
+        clearInterval(pomoInterval);
+        pomoRunning = false;
+        pomoRemaining = pomoTotalSec;
+        document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+        updatePomoDisplay();
+      };
+    
+      window.pomoSkip = function() {
+        clearInterval(pomoInterval);
+        pomoRunning = false;
+        pomoRemaining = 0;
+        updatePomoDisplay();
+        document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+      };
+    
+      window.switchPomoMode = function(btn) {
+        document.querySelectorAll('.pomo-mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        clearInterval(pomoInterval);
+        pomoRunning = false;
+        pomoTotalSec = parseInt(btn.dataset.minutes) * 60;
+        pomoRemaining = pomoTotalSec;
+        document.getElementById('pomoLabel').textContent = btn.dataset.label;
+        document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+        updatePomoDisplay();
+      };
+    
+      // Init
+      document.getElementById('pomoProgress').style.strokeDasharray = CIRCUMFERENCE;
+      document.getElementById('pomoProgress').style.strokeDashoffset = 0;
+      updatePomoDisplay();
+      updatePomoDots();
+    })();
+    
+    // ---- NOTIFICATIONS ----
+    window.clearNotifications = function(btn) {
+      document.querySelectorAll('.notif-item.unread').forEach(el => {
+        el.classList.remove('unread');
+        const dot = el.querySelector('.notif-dot');
+        if (dot) dot.remove();
+      });
+      const badge = document.querySelector('.notif-count-badge');
+      if (badge) { badge.textContent = '0 new'; badge.style.background = 'rgba(255,255,255,0.05)'; }
+      btn.textContent = 'All caught up ✓';
+      btn.disabled = true;
+    };
+    
+    // ---- DEPENDENCY UPDATE ----
+    window.runDepUpdate = function(btn) {
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Updating...';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.querySelectorAll('.dep-status.minor').forEach(el => {
+          const row = el.closest('.dep-row');
+          const newVer = row.querySelector('.dep-new-ver');
+          const curVer = row.querySelector('.current-ver');
+          if (newVer && curVer) {
+            curVer.textContent = newVer.textContent.replace('→ ', '');
+            newVer.remove();
+          }
+          el.className = 'dep-status current';
+          el.textContent = '✓ Latest';
+        });
+        const badge = document.querySelector('.deps-badge.minor');
+        if (badge) { badge.style.opacity = '0.4'; }
+        btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> All minor packages updated';
+        btn.style.background = 'rgba(16,185,129,0.12)';
+        btn.style.borderColor = 'rgba(16,185,129,0.3)';
+        btn.style.color = '#34d399';
+      }, 1200);
+    };
+    
+    // ---- NETWORK LIVE UPDATE ----
+    (function() {
+      const dlBase = 842, ulBase = 421;
+      function rand(base, range) { return base + Math.round((Math.random() - 0.5) * range); }
+      setInterval(() => {
+        const dl = rand(dlBase, 80);
+        const ul = rand(ulBase, 50);
+        const ping = rand(12, 6);
+        const jitter = (Math.random() * 1.5 + 0.3).toFixed(1);
+        const dlEl = document.getElementById('netDL');
+        const ulEl = document.getElementById('netUL');
+        const pingEl = document.getElementById('netPing');
+        const jitterEl = document.getElementById('netJitter');
+        const dlBar = document.getElementById('netDLBar');
+        const ulBar = document.getElementById('netULBar');
+        if (dlEl) dlEl.textContent = dl;
+        if (ulEl) ulEl.textContent = ul;
+        if (pingEl) pingEl.textContent = ping + ' ms';
+        if (jitterEl) jitterEl.textContent = jitter + ' ms';
+        if (dlBar) dlBar.style.width = Math.min(100, Math.round(dl / 10)) + '%';
+        if (ulBar) ulBar.style.width = Math.min(100, Math.round(ul / 10)) + '%';
+      }, 2000);
+    })();
   </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 
 </html>

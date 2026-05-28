@@ -392,6 +392,9 @@ body{
   background:#050816;
   color:white;
 }
+.neon-card h2{
+  color: #111;
+}
 
 .neon-otp{
   display:flex;
@@ -414,6 +417,7 @@ body{
 
   font-size:28px;
   font-weight:700;
+  font-family: consolas;
 
   outline:none;
 

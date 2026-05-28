@@ -142,3 +142,21 @@ cards.forEach(card => {
   });
 
 });
+
+// Smooth card hover enhancement
+document.querySelectorAll(".news-card").forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    card.style.boxShadow = "0 10px 30px rgba(0,0,0,0.3)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.boxShadow = "none";
+  });
+});
+
+// Bookmark toggle effect
+document.querySelectorAll(".bookmark-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("active");
+  });
+});

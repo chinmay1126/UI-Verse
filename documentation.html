@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guidelines — UIverse</title>
@@ -8,12 +9,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="documentation.css">
+  <style>
+    /* Responsive layout hierarchy and TOC list spacing rules */
+    .gl-toc-list {
+      gap: 6px !important;
+    }
+    @media (max-width: 768px) {
+      .gl-toc-pills {
+        gap: 10px !important;
+        margin-top: 12px;
+      }
+      .gl-section {
+        padding: 32px 0 !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
@@ -32,7 +48,7 @@
       <li><a href="progress.html"><i class="fa-solid fa-bars-progress"></i><span>Progress</span></a></li>
       <li><a href="tabs.html"><i class="fa-solid fa-folder-open"></i><span>Tabs</span></a></li>
       <li><a href="toggles.html"><i class="fa-solid fa-toggle-on"></i><span>Toggles</span></a></li>
-      <li class="active"><a href="guidelines.html"><i class="fa-solid fa-book-open"></i><span>Guidelines</span></a></li>
+      <li class="active"><a href="documentation.html"><i class="fa-solid fa-book-open"></i><span>Guidelines</span></a></li>
     </ul>
   </nav>
   <div class="sidebar-footer">
@@ -46,13 +62,13 @@
 
 <!-- NAVBAR -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" placeholder="Search guidelines..." />
+    <input type="text" placeholder="Search guidelines..." / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -379,10 +395,10 @@ if (localStorage.getItem('theme') === 'dark') {
 
           <div class="gl-steps">
             <div class="gl-step">
-              <div class="gl-step-num gl-step-github"><i class="fa-brands fa-github"></i></div>
+              <div class="gl-step-num">1</div>
               <div class="gl-step-body">
                 <h4>Fork the repository</h4>
-                <p>Go to <a class="gl-link" href="https://github.com/chinmay1126/UI-Verse" target="_blank">github.com/chinmay1126/UI-Verse</a> and click "Fork" to create your own copy.</p>
+                <p>Go to <a class="gl-link" href="https://github.com/Tushar-sonawane06/UI-Verse" target="_blank">github.com/Tushar-sonawane06/UI-Verse</a> and click "Fork" to create your own copy.</p>
               </div>
             </div>
             <div class="gl-step">
@@ -913,5 +929,6 @@ id="snippet-for-gradient-button"</pre>
     if (!isOpen) item.classList.add('open');
   }
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

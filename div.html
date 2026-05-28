@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
   <!-- SECURITY -->
@@ -37,8 +37,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="div.css">
-  <link rel="stylesheet" href="home.css">
-
   <style>
     /* =========================================================
        GLOBAL
@@ -159,11 +157,13 @@
       background: #00d4ff;
       color: #000;
     }
-
+</style>
     /* =========================================================
        MAIN
     ========================================================= */
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -490,7 +490,9 @@
   </div>
 </aside>
 
-<!-- ================= SIDEBAR BACKDROP ================= -->
+<style>
+
+/* <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 <!-- =========================================================
      MAIN
@@ -502,7 +504,246 @@
 
     <div class="hero-badge">
       ✨ Modern Layout Components
+    </div> */
+
+    <!-- CRM CARD -->
+<div class="form-component-card">
+
+  <div class="card-top">
+    <span class="card-label">CRM Overview</span>
+
+    <span class="card-tag tag-popular">
+      SaaS
+    </span>
+  </div>
+
+  <div class="form-preview">
+
+    <div class="crm-card">
+
+      <div class="crm-header">
+
+        <div>
+          <p>Total Clients</p>
+          <h2>1,284</h2>
+        </div>
+
+        <div class="crm-icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+      </div>
+
+      <div class="crm-progress">
+        <div class="crm-progress-fill"></div>
+      </div>
+
+      <div class="crm-footer">
+        <span>+24% this month</span>
+        <span>Target: 2K</span>
+      </div>
+
     </div>
+
+  </div>
+
+</div>
+
+<!-- FILE MANAGER -->
+<div class="form-component-card">
+
+  <div class="card-top">
+    <span class="card-label">File Manager</span>
+
+    <span class="card-tag tag-essential">
+      Cloud
+    </span>
+  </div>
+
+  <div class="form-preview">
+
+    <div class="file-card">
+
+      <div class="file-top">
+        <i class="fa-solid fa-folder-open"></i>
+        <span>Design Assets</span>
+      </div>
+
+      <div class="file-storage">
+
+        <div class="storage-bar">
+          <span class="storage-fill"></span>
+        </div>
+
+        <p>18GB of 32GB used</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- MUSIC PLAYER -->
+<div class="form-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Music Widget</span>
+
+    <span class="card-tag tag-new">
+      Audio
+    </span>
+  </div>
+
+  <div class="form-preview">
+
+    <div class="music-card">
+
+      <div class="music-cover">
+        <i class="fa-solid fa-compact-disc"></i>
+      </div>
+
+      <h3>Midnight Waves</h3>
+      <p>Synthwave Playlist</p>
+
+      <div class="music-controls">
+
+        <button>
+          <i class="fa-solid fa-backward"></i>
+        </button>
+
+        <button class="play-btn">
+          <i class="fa-solid fa-play"></i>
+        </button>
+
+        <button>
+          <i class="fa-solid fa-forward"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ACTIVITY FEED -->
+<div class="form-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Activity Feed</span>
+
+    <span class="card-tag tag-trending">
+      Live
+    </span>
+  </div>
+
+  <div class="form-preview">
+
+    <div class="activity-card">
+
+      <div class="activity-item">
+        <div class="activity-dot"></div>
+        <p><strong>Sarah</strong> uploaded new files</p>
+      </div>
+
+      <div class="activity-item">
+        <div class="activity-dot"></div>
+        <p><strong>Michael</strong> updated dashboard</p>
+      </div>
+
+      <div class="activity-item">
+        <div class="activity-dot"></div>
+        <p><strong>Emma</strong> joined the workspace</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- WEATHER CARD -->
+<div class="form-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Weather Widget</span>
+
+    <span class="card-tag tag-popular">
+      Widget
+    </span>
+  </div>
+
+  <div class="form-preview">
+
+    <div class="weather-card">
+
+      <div class="weather-top">
+
+        <div>
+          <h2>26°</h2>
+          <p>Mumbai, India</p>
+        </div>
+
+        <i class="fa-solid fa-cloud-sun"></i>
+
+      </div>
+
+      <div class="weather-bottom">
+        <span>Humidity: 72%</span>
+        <span>Wind: 12km/h</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SOCIAL INSIGHTS -->
+<div class="form-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Social Insights</span>
+
+    <span class="card-tag tag-essential">
+      Analytics
+    </span>
+  </div>
+
+  <div class="form-preview">
+
+    <div class="social-card">
+
+      <div class="social-stat">
+
+        <i class="fab fa-instagram"></i>
+
+        <div>
+          <h3>28.4K</h3>
+          <span>Followers</span>
+        </div>
+
+      </div>
+
+      <div class="social-stat">
+
+        <i class="fab fa-youtube"></i>
+
+        <div>
+          <h3>14.2K</h3>
+          <span>Subscribers</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
     .main-home {
       margin-left: 280px;
@@ -1189,8 +1430,7 @@
     }
   </style>
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
 
@@ -2062,19 +2302,20 @@
   margin:30px 0;
 }
 
-      <span class="section-tag">
+      /* <span class="section-tag">
         UI BLOCKS
       </span>
       <div>
         <form class="scearch">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Filter Divs..." id="DivSearch">
+          <input type="text" placeholder="Filter Divs..." id="DivSearch" data-a11y-remediation="label-needed">
         </form>
-      </div>
+      </div> */
+
 .premium-pricing li{
   display:flex;
-  align-items:center;
-  gap:12px;
+  align-items: center;
+  gap: 12px;
 
   margin-bottom:16px;
   color:rgba(255,255,255,0.72);
@@ -2519,22 +2760,18 @@
 
   </main>
 
-<!-- ================= FOOTER ================= -->
+ <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
-
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
-
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
     <div class="footer-col">
       <h3>Explore</h3>
       <ul>
@@ -2545,37 +2782,34 @@
         <li><a href="forms.html">Forms</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Legal</h3>
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
       </ul>
     </div>
-
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+        <input type="email" placeholder="your@email.com">
+        <button type="button">Subscribe</button>
       </div>
     </div>
-
   </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
 
 <script>
 
@@ -2604,6 +2838,7 @@ input.addEventListener("input", function () {
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
+    <script src="dist/shared.js"></script>
 </body>
 
 </html>

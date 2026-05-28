@@ -1274,6 +1274,368 @@ body{
   box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
 }
 
+
+/* =========================================================
+   CRM CARD
+========================================================= */
+
+.crm-card{
+  padding:28px;
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(0,212,255,0.14),
+    rgba(127,92,255,0.12)
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.crm-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:24px;
+}
+
+.crm-header p{
+  color:rgba(255,255,255,0.68);
+  margin-bottom:10px;
+}
+
+.crm-header h2{
+  font-size:2.5rem;
+}
+
+.crm-icon{
+  width:70px;
+  height:70px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:20px;
+
+  background:linear-gradient(135deg,#7f5cff,#00d4ff);
+
+  font-size:1.5rem;
+}
+
+.crm-progress{
+  width:100%;
+  height:14px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.08);
+
+  overflow:hidden;
+
+  margin-bottom:18px;
+}
+
+.crm-progress-fill{
+  width:68%;
+  height:100%;
+
+  background:linear-gradient(90deg,#00d4ff,#7f5cff);
+
+  border-radius:999px;
+}
+
+.crm-footer{
+  display:flex;
+  justify-content:space-between;
+
+  color:rgba(255,255,255,0.68);
+}
+
+/* =========================================================
+   FILE MANAGER
+========================================================= */
+
+.file-card{
+  padding:28px;
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.file-top{
+  display:flex;
+  align-items:center;
+  gap:16px;
+
+  margin-bottom:28px;
+
+  font-size:1.1rem;
+  font-weight:700;
+}
+
+.file-top i{
+  width:60px;
+  height:60px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:18px;
+
+  background:linear-gradient(135deg,#ffb347,#ff4fd8);
+
+  font-size:1.5rem;
+}
+
+.storage-bar{
+  width:100%;
+  height:14px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.08);
+
+  overflow:hidden;
+
+  margin-bottom:16px;
+}
+
+.storage-fill{
+  display:block;
+
+  width:56%;
+  height:100%;
+
+  border-radius:999px;
+
+  background:linear-gradient(90deg,#ff4fd8,#7f5cff);
+}
+
+.file-storage p{
+  color:rgba(255,255,255,0.68);
+}
+
+/* =========================================================
+   MUSIC PLAYER
+========================================================= */
+
+.music-card{
+  text-align:center;
+
+  padding:30px;
+  border-radius:26px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(127,92,255,0.15),
+    rgba(255,79,216,0.12)
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.music-cover{
+  width:110px;
+  height:110px;
+
+  margin:auto auto 24px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  background:linear-gradient(135deg,#7f5cff,#ff4fd8);
+
+  font-size:2.5rem;
+
+  animation:spinDisc 10s linear infinite;
+}
+
+@keyframes spinDisc{
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+.music-card p{
+  color:rgba(255,255,255,0.68);
+  margin-top:10px;
+}
+
+.music-controls{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+
+  margin-top:28px;
+}
+
+.music-controls button{
+  width:48px;
+  height:48px;
+
+  border:none;
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.08);
+
+  color:white;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.music-controls button:hover{
+  transform:translateY(-4px);
+}
+
+.play-btn{
+  background:linear-gradient(135deg,#7f5cff,#00d4ff) !important;
+}
+
+/* =========================================================
+   ACTIVITY FEED
+========================================================= */
+
+.activity-card{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.activity-item{
+  display:flex;
+  align-items:center;
+  gap:16px;
+
+  padding:18px 20px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+.activity-item p{
+  color:rgba(255,255,255,0.72);
+}
+
+.activity-dot{
+  width:14px;
+  height:14px;
+
+  border-radius:50%;
+
+  background:#00ffbf;
+
+  box-shadow:0 0 14px #00ffbf;
+}
+
+/* =========================================================
+   WEATHER CARD
+========================================================= */
+
+.weather-card{
+  padding:28px;
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(0,212,255,0.18),
+    rgba(255,255,255,0.05)
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.weather-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:30px;
+}
+
+.weather-top h2{
+  font-size:3rem;
+}
+
+.weather-top p{
+  color:rgba(255,255,255,0.68);
+}
+
+.weather-top i{
+  font-size:3rem;
+  color:#00d4ff;
+}
+
+.weather-bottom{
+  display:flex;
+  justify-content:space-between;
+
+  color:rgba(255,255,255,0.7);
+}
+
+/* =========================================================
+   SOCIAL INSIGHTS
+========================================================= */
+
+.social-card{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.social-stat{
+  display:flex;
+  align-items:center;
+  gap:20px;
+
+  padding:22px;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  transition:0.3s ease;
+}
+
+.social-stat:hover{
+  transform:translateY(-6px);
+}
+
+.social-stat i{
+  width:60px;
+  height:60px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:18px;
+
+  background:linear-gradient(135deg,#7f5cff,#00d4ff);
+
+  font-size:1.4rem;
+}
+
+.social-stat span{
+  color:rgba(255,255,255,0.65);
+}
 /* =========================================================
    ACTIONS
 ========================================================= */

@@ -29,6 +29,15 @@
   --sidebar-w: 250px;
 }
 
+body.light-mode {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --card-bg: rgb(255 255 255 / 80%);
+  --card-border: rgb(0 0 0 / 8%);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1369,6 +1378,9 @@ body {
   color: #aaa;
   padding: 0;
   margin-top: 60px;
+  background: var(--bg2);
+  padding: 20px 0;
+  margin-left: 250px; /* offset for sidebar */
 }
 
 .footer-container {
@@ -1426,6 +1438,40 @@ body {
 .socials {
   display: flex;
   gap: 12px;
+  position: relative;
+  color: #a1a1aa;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent);  
+  transform: translateX(6px);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+/* Social icons fix */
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .socials a {
@@ -1439,6 +1485,9 @@ body {
   color: #888;
   text-decoration: none;
   font-size: 14px;
+  color: #aaa;
+  font-size: 16px;
+  text-decoration: none;
   transition: all var(--transition);
 }
 
@@ -1494,4 +1543,11 @@ body {
   text-align: center;
   font-size: 13px;
   color: #555;
+}
+  padding: 30px;
+  color: #777;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-left: 260px;
+  font-size: 13px;
+  color: #aaa;
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -27,10 +27,11 @@
   <!-- CSS -->
   <link rel="stylesheet" href="icon.css" />
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
    SIDEBAR
@@ -379,7 +380,7 @@
       type="text"
       id="iconSearch"
       placeholder="Search icons..."
-    />
+    / data-a11y-remediation="label-needed">
 
   </div>
 
@@ -735,5 +736,6 @@
   </div>
 </footer>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
