@@ -855,3 +855,56 @@ body{
   margin-bottom: 18px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 }
+
+/* =====================================================
+EXTRA PROFESSIONAL GRADIENTS
+ADD INSIDE section.css
+===================================================== */
+
+.gradient-indigo {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.gradient-emerald {
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.gradient-rose {
+  background: linear-gradient(135deg, #f43f5e, #fb7185);
+}
+
+.gradient-teal {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+}
+
+.gradient-yellow {
+  background: linear-gradient(135deg, #f59e0b, #facc15);
+}
+
+.gradient-magenta {
+  background: linear-gradient(135deg, #d946ef, #f472b6);
+}
+
+.gradient-navy {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
+
+.gradient-crimson {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.gradient-silver {
+  background: linear-gradient(135deg, #6b7280, #9ca3af);
+}
+
+.gradient-aqua {
+  background: linear-gradient(135deg, #06b6d4, #67e8f9);
+}
+
+.gradient-platinum {
+  background: linear-gradient(135deg, #374151, #6b7280);
+}
+
+.gradient-lavender {
+  background: linear-gradient(135deg, #8b5cf6, #c084fc);
+}
