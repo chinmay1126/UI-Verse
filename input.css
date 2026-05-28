@@ -583,3 +583,40 @@ select.demo-input option {
     grid-column: span 1;
   }
 }
+/* General text fixes */
+.card-label,
+.card-desc,
+.section-count,
+.inputs-section-title {
+  color: var(--text) !important;
+}
+
+/* Placeholder contrast */
+.demo-input::placeholder {
+  color: var(--muted) !important;
+}
+
+/* Input text */
+.demo-input {
+  color: var(--text) !important;
+}
+
+/* Textarea text */
+.demo-textarea {
+  color: var(--text) !important;
+}
+
+.demo-textarea::placeholder {
+  color: var(--muted) !important;
+}
+
+/* Checkbox & radio labels */
+.demo-check-label {
+  color: var(--text) !important;
+}
+
+/* Select dropdown options */
+select.demo-input option {
+  color: var(--text) !important;
+  background: var(--card);
+}
