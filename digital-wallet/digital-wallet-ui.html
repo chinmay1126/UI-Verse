@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   
@@ -33,6 +33,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -92,7 +94,7 @@
         Your monthly spending is 14% lower than last month.
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         View Report
       </button>
 
@@ -128,7 +130,7 @@
 
           <input
             type="text"
-            placeholder="Search payments..." />
+            placeholder="Search payments..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -667,6 +669,7 @@
 
   <script src="digital-wallet-ui.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

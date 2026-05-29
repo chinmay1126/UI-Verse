@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
   <meta
     name="viewport"
@@ -38,6 +38,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -120,7 +122,7 @@
 
       </div>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Upgrade Workspace
       </button>
 
@@ -159,7 +161,7 @@
           <input
             type="text"
             placeholder="Search clients or projects..."
-          >
+           data-a11y-remediation="label-needed">
 
         </div>
 
@@ -793,5 +795,6 @@
 
   </main>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

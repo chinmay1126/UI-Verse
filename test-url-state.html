@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-12SKlOd+X8BVvuXNmjEnjQCv/WRsc5O7r58LBlrLdtE= sha256-6zFysbn5qUSEjgFJjNp7JEBwtim/46YuSUm3VGcTtNY= sha256-QCmnbrNkxAMCxcYTp9DW6hXkLH/yYTgGMVzwVJEF9n4= sha256-fy3Tr5DGY5pPaNOvuTXuawFTe72EgRk2iynVVUHBWBQ= sha256-hNJNtJw28aUF9+jXOMVCJIoizErmj7ZvN1hBpVKB2Qw= sha256-poftGLBNoeO4HVPFx4XfYk1T19zhbRYti/1dsgieRqU= sha256-zW7WJWAspAsSCb7ike/KnL+HDslmodhHGwfFg2zUyQU=; script-src-attr 'unsafe-hashes' sha256-12SKlOd+X8BVvuXNmjEnjQCv/WRsc5O7r58LBlrLdtE= sha256-6zFysbn5qUSEjgFJjNp7JEBwtim/46YuSUm3VGcTtNY= sha256-QCmnbrNkxAMCxcYTp9DW6hXkLH/yYTgGMVzwVJEF9n4= sha256-fy3Tr5DGY5pPaNOvuTXuawFTe72EgRk2iynVVUHBWBQ= sha256-hNJNtJw28aUF9+jXOMVCJIoizErmj7ZvN1hBpVKB2Qw= sha256-poftGLBNoeO4HVPFx4XfYk1T19zhbRYti/1dsgieRqU= sha256-zW7WJWAspAsSCb7ike/KnL+HDslmodhHGwfFg2zUyQU=; style-src 'self' https: 'unsafe-hashes' sha256-lSpgZfCtA1OK1l1nfJNRP8GDhtsUw+wuZ80txlk/ypI= sha256-qsnrxUxnaE64NadnS1ap3hHTTWeKdsZtSxSlFGCvTxY=; style-src-attr 'unsafe-hashes' sha256-lSpgZfCtA1OK1l1nfJNRP8GDhtsUw+wuZ80txlk/ypI= sha256-qsnrxUxnaE64NadnS1ap3hHTTWeKdsZtSxSlFGCvTxY=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>URL State Test - UIverse</title>
-  <link rel="stylesheet" href="css/url-state.css">
   <script src="js/features/url-state.js"></script>
   <script src="js/features/url-state-integration.js"></script>
   <style>
@@ -107,9 +107,10 @@
       font-size: 16px;
     }
   </style>
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="test-container">
   <h1>🔗 URL State Shareable Search Test</h1>
@@ -299,5 +300,6 @@ URLStateIntegration.observeStateChanges((state) => {
   setInterval(updateDisplay, 1000);
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

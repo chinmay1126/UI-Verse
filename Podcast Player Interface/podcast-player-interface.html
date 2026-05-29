@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta name="viewport"
@@ -29,6 +29,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -101,7 +103,7 @@
       </div>
 
       <!-- PLAY BUTTONS (fix accessibility + behavior) -->
-<button class="play-btn" type="button" aria-label="Play episode">
+<button class="play-btn" type="button" aria-label="Play episode" data-a11y-remediation="button-label-needed">
   <i class="fa-solid fa-play"></i>
   Play Episode
 </button>
@@ -186,7 +188,7 @@
   </div>
 
   <div class="hero-card">
-    <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618" />
+    <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618" / alt="">
     <div class="hero-card-info">
       <h3>AI Creators Podcast</h3>
       <p>Episode 24 • 48 mins</p>
@@ -221,7 +223,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-            placeholder="Search podcasts..." />
+            placeholder="Search podcasts..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -301,7 +303,7 @@
     <section class="player">
 
   <div class="player-info">
-    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81">
+    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81" alt="">
     <div>
       <h4>Startup Talks</h4>
       <p>Episode 08 • Building Better Products</p>
@@ -612,6 +614,7 @@
 
   <script src="podcast-player-interface.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

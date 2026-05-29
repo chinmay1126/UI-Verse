@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-
-  
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0" />
@@ -29,6 +28,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -128,7 +129,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-            placeholder="Search candidates..." />
+            placeholder="Search candidates..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -482,6 +483,7 @@
 
   <script src="recruitment-management-system.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

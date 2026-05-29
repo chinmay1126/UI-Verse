@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
 
   <meta
@@ -41,6 +42,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="bg-glow glow-1"></div>
   <div class="bg-glow glow-2"></div>
@@ -256,7 +259,7 @@
           type="text"
           id="messageInput"
           placeholder="Ask me anything..."
-        >
+         data-a11y-remediation="label-needed">
 
         <button
           class="voice-btn"
@@ -278,6 +281,6 @@
   </div>
 
   <script src="chat.js"></script>
-
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

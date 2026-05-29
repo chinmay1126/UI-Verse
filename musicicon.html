@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta
     name="viewport"
@@ -26,10 +26,11 @@
   <!-- CSS -->
   <link rel="stylesheet" href="musicicon.css" />
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
    SIDEBAR
@@ -377,13 +378,13 @@
     <input
       type="text"
       placeholder="Search music players..."
-    />
+    / data-a11y-remediation="label-needed">
 
   </div>
 
   <div class="nav-actions">
 
-    <button class="outline-btn">
+    <button class="outline-btn" data-a11y-remediation="button-label-needed">
       <i class="fa-solid fa-plus"></i>
       Add Component
     </button>
@@ -914,5 +915,6 @@
 
 </main>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
