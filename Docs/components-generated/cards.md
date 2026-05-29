@@ -789,7 +789,7 @@ Component ID: cards
         <button onclick="addToCollection('Image Card')">Add to My Collection</button>
       </div>
       <pre id="c6" class="code-block"><code>&lt;div class="image-card"&gt;
-  &lt;img src="your-image.jpg" alt="..."&gt;
+  &lt;img src="https://picsum.photos/500/300?random=20" alt="..."&gt;
   &lt;div class="image-card-body"&gt;
     &lt;span class="tag"&gt;Nature&lt;/span&gt;
     &lt;h4&gt;Scenic View&lt;/h4&gt;

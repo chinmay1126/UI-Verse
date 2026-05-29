@@ -1,3 +1,7 @@
+:root {
+  --sidebar-w: 240px;
+}
+
 *{
   margin:0;
   padding:0;
@@ -8,14 +12,15 @@ body{
   font-family:'DM Sans',sans-serif;
   background:#f3f4f6;
   color:#111827;
+  overflow-x: hidden;
 }
 
 /* MAIN CONTENT */
 
 .main-content{
-  margin-left:250px; /* remove if no sidebar */
+  margin-left: var(--sidebar-w); /* remove if no sidebar */
   min-height:100vh;
-  width:calc(100% - 250px); /* remove if no sidebar */
+  width: calc(100% - var(--sidebar-w)); /* remove if no sidebar */
 }
 
 /* TOPBAR */
@@ -584,21 +589,15 @@ body{
 ========================================================= */
 
 /* Common 3D Flip Mechanics */
-.glass-flip-card,
-.product-flip-card,
-.team-flip-card,
-.pricing-flip-card,
-.neon-flip-card {
+.glass-flip-card, .product-flip-card, .team-flip-card, .pricing-flip-card, .neon-flip-card,
+.music-flip-card, .event-flip-card, .recipe-flip-card, .weather-flip-card, .crypto-flip-card {
   width: 170px;
   height: 200px;
   perspective: 1200px;
 }
 
-.glass-flip-inner,
-.product-flip-inner,
-.team-flip-inner,
-.pricing-flip-inner,
-.neon-flip-inner {
+.glass-flip-inner, .product-flip-inner, .team-flip-inner, .pricing-flip-inner, .neon-flip-inner,
+.music-flip-inner, .event-flip-inner, .recipe-flip-inner, .weather-flip-inner, .crypto-flip-inner {
   width: 100%;
   height: 100%;
   position: relative;
@@ -606,19 +605,19 @@ body{
   transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.glass-flip-card:hover .glass-flip-inner,
-.product-flip-card:hover .product-flip-inner,
-.team-flip-card:hover .team-flip-inner,
-.pricing-flip-card:hover .pricing-flip-inner,
-.neon-flip-card:hover .neon-flip-inner {
+.glass-flip-card:hover .glass-flip-inner, .product-flip-card:hover .product-flip-inner,
+.team-flip-card:hover .team-flip-inner, .pricing-flip-card:hover .pricing-flip-inner,
+.neon-flip-card:hover .neon-flip-inner, .music-flip-card:hover .music-flip-inner,
+.event-flip-card:hover .event-flip-inner, .recipe-flip-card:hover .recipe-flip-inner,
+.weather-flip-card:hover .weather-flip-inner, .crypto-flip-card:hover .crypto-flip-inner {
   transform: rotateY(180deg);
 }
 
-.glass-flip-front, .glass-flip-back,
-.product-flip-front, .product-flip-back,
-.team-flip-front, .team-flip-back,
-.pricing-flip-front, .pricing-flip-back,
-.neon-flip-front, .neon-flip-back {
+.glass-flip-front, .glass-flip-back, .product-flip-front, .product-flip-back,
+.team-flip-front, .team-flip-back, .pricing-flip-front, .pricing-flip-back,
+.neon-flip-front, .neon-flip-back, .music-flip-front, .music-flip-back,
+.event-flip-front, .event-flip-back, .recipe-flip-front, .recipe-flip-back,
+.weather-flip-front, .weather-flip-back, .crypto-flip-front, .crypto-flip-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -632,11 +631,8 @@ body{
   text-align: center;
 }
 
-.glass-flip-back,
-.product-flip-back,
-.team-flip-back,
-.pricing-flip-back,
-.neon-flip-back {
+.glass-flip-back, .product-flip-back, .team-flip-back, .pricing-flip-back, .neon-flip-back,
+.music-flip-back, .event-flip-back, .recipe-flip-back, .weather-flip-back, .crypto-flip-back {
   transform: rotateY(180deg);
 }
 
@@ -977,6 +973,695 @@ body{
   box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
 }
 
+/* 10. Music Player Flip Card Styles */
+.music-flip-front {
+  background: linear-gradient(135deg, #4c1d95, #7e22ce);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: white;
+}
+.music-flip-front .album-art {
+  font-size: 38px;
+  color: #d8b4fe;
+  margin-bottom: 12px;
+}
+.music-flip-front h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.music-flip-front p { font-size: 12px; color: #d8b4fe; margin: 0; }
+.music-flip-back {
+  background: #3b0764;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: white;
+  justify-content: space-between;
+}
+.music-flip-back .track-list {
+  text-align: left;
+  width: 100%;
+  font-size: 11px;
+  color: #e9d5ff;
+  line-height: 1.8;
+}
+.music-flip-back .music-controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  margin-top: 10px;
+}
+.music-controls i { cursor: pointer; transition: color 0.2s; }
+.music-controls i:hover { color: #d8b4fe; }
+
+/* 11. Event Invite Flip Card Styles */
+.event-flip-front {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  color: white;
+}
+.event-flip-front .event-date {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.1);
+  padding: 8px 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.event-date .day { font-size: 24px; font-weight: 800; }
+.event-date .month { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #bfdbfe; }
+.event-flip-front h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.event-flip-front p { font-size: 11px; color: #bfdbfe; margin: 0; }
+.event-flip-back {
+  background: #1e3a8a;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  color: white;
+}
+.event-flip-back h5 { font-size: 12px; text-transform: uppercase; color: #93c5fd; margin-bottom: 8px; }
+.event-flip-back p { font-size: 10px; color: #dbeafe; margin-bottom: 6px; }
+.event-flip-back .rsvp-btn {
+  background: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 8px 16px;
+  margin-top: auto;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.event-flip-back .rsvp-btn:hover { background: #2563eb; }
+
+/* 12. Recipe Card Flip Styles */
+.recipe-flip-front {
+  background: linear-gradient(135deg, #9f1239, #e11d48);
+  border: 1px solid rgba(251, 113, 133, 0.3);
+  color: white;
+}
+.recipe-flip-front .recipe-icon { font-size: 38px; color: #fecdd3; margin-bottom: 12px; }
+.recipe-flip-front h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.recipe-flip-front .recipe-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 10px;
+  color: #fecdd3;
+}
+.recipe-flip-back {
+  background: #881337;
+  border: 1px solid rgba(251, 113, 133, 0.3);
+  color: white;
+}
+.recipe-flip-back h5 { font-size: 12px; text-transform: uppercase; color: #fda4af; margin-bottom: 8px; }
+.recipe-flip-back ul { list-style: none; padding: 0; margin: 0; text-align: center; }
+.recipe-flip-back ul li { font-size: 10px; color: #ffe4e6; margin-bottom: 6px; }
+.recipe-flip-back .cook-btn {
+  background: #e11d48;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 8px 16px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* 13. Weather Widget Flip Styles */
+.weather-flip-front {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  border: 1px solid rgba(186, 230, 253, 0.3);
+  color: white;
+}
+.weather-flip-front .weather-icon { font-size: 38px; color: #e0f2fe; margin-bottom: 12px; }
+.weather-flip-front h2 { font-size: 28px; font-weight: 800; margin: 0 0 4px 0; }
+.weather-flip-front p { font-size: 12px; color: #e0f2fe; margin: 0; }
+.weather-flip-back {
+  background: #0284c7;
+  border: 1px solid rgba(186, 230, 253, 0.3);
+  color: white;
+}
+.weather-flip-back h5 { font-size: 12px; text-transform: uppercase; color: #bae6fd; margin-bottom: 12px; }
+.forecast-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 11px;
+}
+.forecast-row:last-child { border-bottom: none; }
+
+/* 14. Crypto Stats Flip Styles */
+.crypto-flip-front {
+  background: linear-gradient(135deg, #1f2937, #374151);
+  border: 1px solid rgba(252, 211, 77, 0.3);
+  color: white;
+}
+.crypto-flip-front .crypto-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  color: #fbbf24;
+  margin-bottom: 16px;
+}
+.crypto-header span { font-size: 14px; font-weight: 700; color: #f3f4f6; }
+.crypto-flip-front h3 { font-size: 22px; font-weight: 800; margin: 0 0 8px 0; }
+.crypto-flip-front .trend { font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; background: rgba(16,185,129,0.15); color: #10b981; }
+.crypto-flip-back {
+  background: #111827;
+  border: 1px solid rgba(252, 211, 77, 0.3);
+  color: white;
+  justify-content: space-between;
+}
+.crypto-flip-back h5 { font-size: 12px; text-transform: uppercase; color: #9ca3af; margin-bottom: 12px; }
+.crypto-flip-back .stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+}
+.stat-grid div {
+  background: rgba(255,255,255,0.05);
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+.stat-grid div span { display: block; font-size: 9px; color: #9ca3af; font-weight: 400; margin-bottom: 2px; }
+.crypto-flip-back .trade-btn {
+  background: #fbbf24;
+  border: none;
+  border-radius: 8px;
+  color: #111827;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 8px 16px;
+  margin-top: 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* 15. Social Stats Flip */
+.social-flip-card {
+  width: 170px;
+  height: 200px;
+  perspective: 1200px;
+}
+
+.social-flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-flip-card:hover .social-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.social-flip-front, .social-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+.social-flip-front {
+  background: linear-gradient(135deg, #e11d48, #f43f5e);
+  border: 1px solid rgba(251, 113, 133, 0.3);
+  color: white;
+}
+
+.social-flip-front .social-avatar {
+  font-size: 34px;
+  color: #fecdd3;
+  margin-bottom: 12px;
+}
+
+.social-flip-front h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.social-flip-front p {
+  font-size: 11px;
+  color: #fecdd3;
+  margin: 0;
+}
+
+.social-flip-back {
+  background: #831843;
+  border: 1px solid rgba(251, 113, 133, 0.3);
+  color: white;
+  justify-content: space-between;
+}
+
+.social-flip-back h5 {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #fda4af;
+  margin-top: 4px;
+}
+
+.social-stats-grid {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.social-stats-grid div {
+  background: rgba(255,255,255,0.1);
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 10px;
+  color: #fecdd3;
+  flex: 1;
+}
+
+.social-stats-grid div span {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fecdd3;
+}
+
+.social-btn {
+  background: #e11d48;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 7px 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* 16. Team Member Flip */
+.team-flip-card {
+  width: 170px;
+  height: 200px;
+  perspective: 1200px;
+}
+
+.team-flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.team-flip-card:hover .team-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.team-flip-front, .team-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+.team-flip-front {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  color: white;
+}
+
+.team-flip-front .team-avatar {
+  font-size: 34px;
+  color: #dbeafe;
+  margin-bottom: 12px;
+}
+
+.team-flip-front h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.team-flip-front p {
+  font-size: 11px;
+  color: #dbeafe;
+  margin: 0;
+}
+
+.team-flip-back {
+  background: #1e40af;
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  color: white;
+}
+
+.team-flip-back h5 {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #93c5fd;
+  margin-bottom: 8px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.skill-tags span {
+  font-size: 9px;
+  background: rgba(255,255,255,0.15);
+  color: #dbeafe;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.bio-text {
+  font-size: 10px;
+  color: #dbeafe;
+  margin: 0;
+}
+
+/* 17. Product Card Flip */
+.product-flip-card {
+  width: 170px;
+  height: 200px;
+  perspective: 1200px;
+}
+
+.product-flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-flip-card:hover .product-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.product-flip-front, .product-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+.product-flip-front {
+  background: linear-gradient(135deg, #059669, #10b981);
+  border: 1px solid rgba(167, 243, 208, 0.3);
+  color: white;
+}
+
+.product-flip-front .product-icon {
+  font-size: 38px;
+  color: #d1fae5;
+  margin-bottom: 12px;
+}
+
+.product-flip-front h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.product-flip-front .product-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #a7f3d0;
+}
+
+.product-flip-back {
+  background: #047857;
+  border: 1px solid rgba(167, 243, 208, 0.3);
+  color: white;
+  justify-content: space-between;
+}
+
+.product-flip-back h5 {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #a7f3d0;
+  margin-top: 4px;
+}
+
+.product-flip-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  text-align: center;
+}
+
+.product-flip-back ul li {
+  font-size: 10px;
+  color: #d1fae5;
+  margin-bottom: 4px;
+}
+
+.product-btn {
+  background: #10b981;
+  border: none;
+  border-radius: 8px;
+  color: #047857;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 7px 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* 18. Learning/Course Flip */
+.course-flip-card {
+  width: 170px;
+  height: 200px;
+  perspective: 1200px;
+}
+
+.course-flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.course-flip-card:hover .course-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.course-flip-front, .course-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+.course-flip-front {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  border: 1px solid rgba(221, 214, 254, 0.3);
+  color: white;
+}
+
+.course-flip-front .course-icon {
+  font-size: 34px;
+  color: #ede9fe;
+  margin-bottom: 12px;
+}
+
+.course-flip-front h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.course-flip-front p {
+  font-size: 11px;
+  color: #e9d5ff;
+  margin: 0;
+}
+
+.course-flip-back {
+  background: #6d28d9;
+  border: 1px solid rgba(221, 214, 254, 0.3);
+  color: white;
+  justify-content: space-between;
+}
+
+.course-flip-back h5 {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #ddd6fe;
+  margin-top: 4px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 65%;
+  background: #e9d5ff;
+  border-radius: 999px;
+}
+
+.progress-text {
+  font-size: 10px;
+  color: #e9d5ff;
+  margin-bottom: 8px;
+}
+
+.course-btn {
+  background: #7c3aed;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 7px 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* 19. Smart Home Flip */
+.smart-flip-card {
+  width: 170px;
+  height: 200px;
+  perspective: 1200px;
+}
+
+.smart-flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.smart-flip-card:hover .smart-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.smart-flip-front, .smart-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+.smart-flip-front {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  border: 1px solid rgba(254, 243, 199, 0.3);
+  color: white;
+}
+
+.smart-flip-front .smart-icon {
+  font-size: 34px;
+  color: #fef3c7;
+  margin-bottom: 12px;
+}
+
+.smart-flip-front h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.smart-flip-front p {
+  font-size: 11px;
+  color: #fef3c7;
+  margin: 0;
+}
+
+.smart-flip-back {
+  background: #d97706;
+  border: 1px solid rgba(254, 243, 199, 0.3);
+  color: white;
+  justify-content: space-between;
+}
+
+.smart-flip-back h5 {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #fef3c7;
+  margin-top: 4px;
+}
+
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  font-size: 10px;
+  color: #fef3c7;
+  margin-bottom: 8px;
+}
+
+.device-list div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.device-list em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.smart-btn {
+  background: #f59e0b;
+  border: none;
+  border-radius: 8px;
+  color: #78350f;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 7px 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
 /* Animations */
 @keyframes floatPulse {
   0%, 100% {
@@ -1084,109 +1769,190 @@ body{
 /* ============================================================
    FOOTER
    ============================================================ */
+/* ================= FOOTER ================= */
+
 .footer {
+  position: relative;
   margin-left: var(--sidebar-w);
-  background: #111;
+  width: calc(100% - var(--sidebar-w));
+  background: #080808;
   color: #aaa;
-  padding: 0;
   margin-top: 60px;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .footer-container {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
-  gap: 40px;
-  padding: 56px 48px 40px;
-  max-width: 100%;
+  gap: 50px;
+  padding: 70px 60px 45px;
+  align-items: flex-start;
 }
 
+/* Brand Section */
 .footer-logo {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 34px;
   font-weight: 800;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 .footer-col p {
-  font-size: 14px;
-  line-height: 1.7;
-  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #9a9a9a;
+  margin-bottom: 20px;
+  max-width: 320px;
 }
 
+/* Headings */
 .footer-col h3 {
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: #fff;
+  margin-bottom: 20px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  margin-bottom: 16px;
 }
 
+/* Links */
 .footer-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+}
+
+.footer-col ul li {
+  margin-bottom: 14px;
 }
 
 .footer-col ul li a {
-  color: #888;
+  position: relative;
+  color: #a1a1aa;
   text-decoration: none;
-  font-size: 14px;
-  transition: color var(--transition);
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
+/* Hover Animation */
 .footer-col ul li a:hover {
-  color: var(--accent);
+  color: #ff7a3d;  
+  transform: translateX(6px);
 }
 
+/* Animated Underline */
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ff7a3d;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+/* Social Icons */
 .socials {
   display: flex;
-  gap: 12px;
+  gap: 14px;
+  margin-top: 24px;
 }
 
 .socials a {
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: #1e1e1e;
+  background: #161616;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #888;
+  color: #b5b5b5;
   text-decoration: none;
-  font-size: 14px;
-  transition: all var(--transition);
+  font-size: 16px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Hover Animation */
 .socials a:hover {
-  background: var(--accent);
+  background: #ff7a3d;
   color: #fff;
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 18px rgba(255, 102, 0, 0.35);
+}
+
+/* Glow Effect */
+.socials a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  transform: scale(0);
+  transition: transform 0.35s ease;
+}
+
+.socials a:hover::before {
+  transform: scale(1.6);
+}
+
+.footer-col h3 {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+/* Small Accent Line */
+.footer-col h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-col h3:hover::after {
+  width: 100%;
+}
+
+/* Newsletter */
+.newsletter p {
+  margin-bottom: 18px;
 }
 
 .newsletter-form {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 12px;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .newsletter-form input {
   flex: 1;
-  min-width: 0;
-  padding: 10px 14px;
-  background: #1e1e1e;
-  border: 1px solid #2a2a2a;
-  border-radius: var(--radius-sm);
+  height: 48px;
+  padding: 0 16px;
+  background: #161616;
+  border: 1px solid #262626;
+  border-radius: 10px;
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   outline: none;
-  transition: border-color var(--transition);
+  min-width: 220px;
 }
 
 .newsletter-form input:focus {
@@ -1194,25 +1960,70 @@ body{
 }
 
 .newsletter-form button {
-  padding: 10px 18px;
+  height: 48px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 10px;
   background: var(--accent);
   color: #fff;
-  border: none;
-  border-radius: var(--radius-sm);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background var(--transition);
+  transition: 0.3s ease;
+  white-space: nowrap;
 }
 
 .newsletter-form button:hover {
   background: #d45c28;
 }
 
+/* Bottom Bar */
 .footer-bottom {
-  border-top: 1px solid #1e1e1e;
-  padding: 20px 48px;
+  border-top: 1px solid #1c1c1c;
+  padding: 24px;
   text-align: center;
-  font-size: 13px;
-  color: #555;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 50px 24px 35px;
+    gap: 35px;
+  }
+
+  .newsletter {
+    grid-column: span 1;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .footer-col p {
+    max-width: 100%;
+  }
 }

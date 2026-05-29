@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maps ? UIverse</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="map.css" />
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
  
 
 <!-- ================= SIDEBAR ================= -->
@@ -331,12 +332,6 @@
       </li>
     </ul>
   </nav>
-
-  <div class="sidebar-footer">
-    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-  </div>
 </aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
@@ -345,7 +340,7 @@
   <header class="navbar">
     <div class="search-bar">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search map components..." />
+      <input type="text" placeholder="Search map components..." / data-a11y-remediation="label-needed">
     </div>
     <div class="nav-actions">
       <button class="outline-btn">Docs</button>
@@ -414,24 +409,73 @@
         </div>
         <pre id="m3" class="code-block">Map card layout</pre>
       </article>
+
+      <article class="map-card">
+        <div class="card-header">
+          <div>
+            <span class="card-label">Marker</span>
+            <h2>Mini Marker</h2>
+          </div>
+        </div>
+        <div class="map-box small-map"><div id="map4"></div></div>
+        <div class="actions">
+          <button onclick="toggleCode('m4')">View Code</button>
+          <button onclick="copyCode('m4')">Copy</button>
+        </div>
+        <pre id="m4" class="code-block">L.marker([13.0827,80.2707]).addTo(map4).bindPopup('Mini marker - Chennai');</pre>
+      </article>
+
+      <article class="map-card">
+        <div class="card-header">
+          <div>
+            <span class="card-label">Route</span>
+            <h2>Route Map</h2>
+          </div>
+        </div>
+        <div class="map-box small-map"><div id="map5"></div></div>
+        <div class="actions">
+          <button onclick="toggleCode('m5')">View Code</button>
+          <button onclick="copyCode('m5')">Copy</button>
+        </div>
+        <pre id="m5" class="code-block">const route = [[12.9716,77.5946],[13.0827,80.2707],[19.0760,72.8777]]; L.polyline(route).addTo(map5);</pre>
+      </article>
+
+      <article class="map-card">
+        <div class="card-header">
+          <div>
+            <span class="card-label">Heat</span>
+            <h2>Heat / Hotspots</h2>
+          </div>
+        </div>
+        <div class="map-box small-map"><div id="map6"></div></div>
+        <div class="actions">
+          <button onclick="toggleCode('m6')">View Code</button>
+          <button onclick="copyCode('m6')">Copy</button>
+        </div>
+        <pre id="m6" class="code-block">// Simple hotspot circles added via L.circle on map6</pre>
+      </article>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" title="Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
 
     <div class="footer-col">
       <h3>Explore</h3>
@@ -447,11 +491,10 @@
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
 
@@ -460,7 +503,7 @@
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
+        <li><a href="#">License</a></li>
       </ul>
     </div>
 
@@ -492,5 +535,6 @@
       if (block) navigator.clipboard.writeText(block.innerText);
     }
   </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

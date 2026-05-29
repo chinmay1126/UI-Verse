@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Smart Notes Sidebar</title>
 
-  <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="app">
 
@@ -21,7 +23,7 @@
       </div>
 
       <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search notes...">
+        <input type="text" id="searchInput" placeholder="Search notes..." data-a11y-remediation="label-needed">
       </div>
 
       <div class="add-box">
@@ -40,6 +42,6 @@
 
   </div>
 
-  <script src="script.js"></script>
+        <script src="../dist/shared.js"></script>
 </body>
 </html>

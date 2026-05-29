@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Span Components — UIverse</title>
@@ -9,12 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="span.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -358,13 +359,13 @@
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 <!-- ================= NAVBAR ================= -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -660,6 +661,149 @@
 }
 .tooltip:hover .tooltip-text { opacity: 1; visibility: visible; }</code></pre>
     </div>
+
+  </div>
+
+  <div class="preview-box">
+
+    <span class="avatar-status">
+
+      <img
+        src="https://i.pravatar.cc/40"
+        alt=""
+      />
+
+      <span class="dot"></span>
+
+    </span>
+
+  </div>
+
+  <div class="actions">
+
+    <button onclick="toggleCode('s12')">
+
+      <i class="fa-solid fa-code"></i>
+
+      View Code
+
+    </button>
+
+    <button onclick="copyCode('s12',this)">
+
+      <i class="fa-regular fa-copy"></i>
+
+      Copy
+
+    </button>
+
+  </div>
+
+<pre id="s12" class="code-block">
+&lt;span class="avatar-status"&gt;
+
+  &lt;img src="https://i.pravatar.cc/40?img=12" alt="" /&gt;
+
+  &lt;span class="dot"&gt;&lt;/span&gt;
+
+&lt;/span&gt;
+</pre>
+
+</div>
+
+      <!-- Tags -->
+<div class="component-card" data-name="tags ui react css design" data-cat="text">
+  <div class="card-top">
+    <span class="card-label">Tag Elements</span>
+    <span class="card-tag tag-trending">Trending</span>
+  </div>
+  <div class="card-preview">
+    <span class="tag-span">UI</span>
+    <span class="tag-span">React</span>
+    <span class="tag-span">CSS</span>
+    <span class="tag-span">Design</span>
+  </div>
+  <p class="card-desc">Reusable <code class="inline-code">&lt;span&gt;</code> styles for tags and labels.</p>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s3', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('s3', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+  <pre id="s3" class="code-block"><code>&lt;span class="tag-span"&gt;UI&lt;/span&gt;</code></pre>
+</div>
+
+<!-- Status Indicators -->
+<div class="component-card" data-name="status online offline busy away" data-cat="status">
+  <div class="card-top">
+    <span class="card-label">Status Indicator</span>
+    <span class="card-tag tag-popular">Popular</span>
+  </div>
+  <div class="card-preview">
+    <p>User: <span class="status online">● Online</span></p>
+    <p>User: <span class="status offline">● Offline</span></p>
+    <p>User: <span class="status busy">● Busy</span></p>
+    <p>User: <span class="status away">● Away</span></p>
+  </div>
+  <p class="card-desc">Inline status indicators with dot and label — Online, Offline, Busy, and Away variants.</p>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s4', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('s4', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+  <pre id="s4" class="code-block"><code>&lt;span class="status online"&gt;● Online&lt;/span&gt;</code></pre>
+</div>
+
+<!-- Pills -->
+<div class="component-card" data-name="pill labels new success" data-cat="labels">
+  <div class="card-top">
+    <span class="card-label">Pill Labels</span>
+    <span class="card-tag tag-new">New</span>
+  </div>
+  <div class="card-preview">
+    <span class="pill">New</span>
+    <span class="pill success">Success</span>
+  </div>
+  <p class="card-desc">Rounded modern pill-style labels for highlighting status or categories.</p>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s5', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('s5', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+  <pre id="s5" class="code-block"><code>&lt;span class="pill success"&gt;Success&lt;/span&gt;</code></pre>
+</div>
+
+<!-- Tooltip -->
+<div class="component-card" data-name="tooltip hover text" data-cat="interaction">
+  <div class="card-top">
+    <span class="card-label">Tooltip</span>
+    <span class="card-tag tag-trending">Trending</span>
+  </div>
+  <div class="card-preview">
+    <span class="tooltip">
+      Hover Me
+      <span class="tooltip-text">Beautiful tooltip text</span>
+    </span>
+  </div>
+  <p class="card-desc">Interactive hover tooltip component with styled text bubble.</p>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s6', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('s6', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+  <pre id="s6" class="code-block"><code>&lt;span class="tooltip"&gt;Hover Me&lt;/span&gt;</code></pre>
+</div>
 
     <!-- Keyboard Shortcut -->
     <div class="component-card" data-name="keyboard shortcut kbd key hotkey" data-cat="text">
@@ -1106,5 +1250,6 @@ function copyTag(el, text) {
   }, { threshold: 0.08 });
   document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>
