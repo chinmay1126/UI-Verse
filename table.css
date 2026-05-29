@@ -1305,3 +1305,93 @@ body {
 .ui-table tbody tr:hover {
   background: rgba(255,255,255,0.03);
 }
+
+/* ================= EXTRA PROFESSIONAL TABLES ================= */
+
+.healthcare-table tbody tr:hover,
+.banking-table tbody tr:hover,
+.education-table tbody tr:hover,
+.inventory-table tbody tr:hover,
+.flight-table tbody tr:hover,
+.recruitment-table tbody tr:hover {
+  background: rgba(255,255,255,0.04);
+  transition: 0.3s ease;
+}
+
+.healthcare-table th,
+.banking-table th,
+.education-table th,
+.inventory-table th,
+.flight-table th,
+.recruitment-table th {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.healthcare-table td,
+.banking-table td,
+.education-table td,
+.inventory-table td,
+.flight-table td,
+.recruitment-table td {
+  vertical-align: middle;
+}
+
+.healthcare-table .user-cell,
+.recruitment-table .user-cell {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.healthcare-table .user-cell img,
+.recruitment-table .user-cell img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.healthcare-table .user-cell span,
+.recruitment-table .user-cell span {
+  display: block;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.inventory-table td:nth-child(4),
+.education-table td:last-child,
+.banking-table td:nth-child(4) {
+  font-weight: 700;
+}
+
+.flight-table tbody tr td:first-child {
+  font-weight: 700;
+  color: #7c5cff;
+}
+
+.banking-table .negative {
+  color: #ff4d6d;
+  font-weight: 700;
+}
+
+.banking-table .positive {
+  color: #00d68f;
+  font-weight: 700;
+}
+
+.education-table tbody tr:hover {
+  transform: scale(1.01);
+}
+
+.inventory-table tbody tr:hover {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.flight-table tbody tr:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(124,92,255,0.12),
+    transparent
+  );
+}
