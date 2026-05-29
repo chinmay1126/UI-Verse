@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test.describe('Design Tokens Theme Management', () => {
   test('applies a theme, persists it, and updates tokens', async ({ page }) => {
-    await page.goto('/components/theme/demo-theme.html');
+    await page.goto('/components/Theme/demo-theme.html');
     await page.waitForFunction(() => !!window.DesignTokens);
 
     const switcher = page.locator('uv-theme-switcher select');
@@ -24,7 +24,7 @@ test.describe('Design Tokens Theme Management', () => {
 
   test('restores stored theme on reload', async ({ page }) => {
     await page.addInitScript(() => localStorage.setItem('ui-verse-theme', 'ocean'));
-    await page.goto('/components/theme/demo-theme.html');
+    await page.goto('/components/Theme/demo-theme.html');
     await page.waitForFunction(() => document.documentElement.dataset.theme === 'ocean');
 
     const resolved = await page.evaluate(() => localStorage.getItem('theme'));

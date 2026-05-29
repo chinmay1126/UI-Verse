@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VisionCut — Video Editing Studio</title>
@@ -15,6 +17,8 @@
   <link rel="stylesheet" href="video-editing-studio.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- Sidebar -->
   <aside class="sidebar">
@@ -75,7 +79,7 @@
 
       <p>720GB of 1TB used</p>
 
-      <button>Upgrade Plan</button>
+      <button data-a11y-remediation="button-label-needed">Upgrade Plan</button>
 
     </div>
 
@@ -98,7 +102,7 @@
 
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search clips..." />
+          <input type="text" placeholder="Search clips..." / data-a11y-remediation="label-needed">
         </div>
 
         <button class="notification-btn">
@@ -274,5 +278,6 @@
 
   <script src="video-editing-studio.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

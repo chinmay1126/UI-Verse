@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe Recommendation Dashboard</title>
   <link rel="stylesheet" href="recipe.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="dashboard">
 
@@ -15,7 +18,7 @@
       <h1>Recipe Recommendations</h1>
 
       <div class="search-box">
-        <input type="text" placeholder="Search recipes...">
+        <input type="text" placeholder="Search recipes..." data-a11y-remediation="label-needed">
       </div>
 
     </header>
@@ -122,5 +125,6 @@
     </div>
 
   <script src="recipe.js"></script>
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

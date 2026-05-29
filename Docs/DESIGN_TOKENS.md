@@ -51,7 +51,7 @@ Semantic aliases are also exposed, such as:
 
 ## Demo
 
-Open `components/theme/demo-theme.html` to preview the theme switcher and token samples.
+Open `components/Theme/demo-theme.html` to preview the theme switcher and token samples.
 
 ## Test
 

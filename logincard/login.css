@@ -414,4 +414,169 @@ button:hover{
   .social-login{
     flex-direction:column;
   }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+/* Background shapes */
+.background .shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.7;
+  animation: float 6s infinite ease-in-out;
+}
+
+.shape1 {
+  width: 250px;
+  height: 250px;
+  background: #7c3aed;
+  top: -50px;
+  left: -50px;
+}
+
+.shape2 {
+  width: 300px;
+  height: 300px;
+  background: #06b6d4;
+  bottom: -80px;
+  right: -80px;
+}
+
+.shape3 {
+  width: 200px;
+  height: 200px;
+  background: #f97316;
+  top: 40%;
+  left: 10%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+}
+
+/* Card */
+.login-card {
+  width: 380px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-box label {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+/* floating label effect */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  font-size: 11px;
+  color: #06b6d4;
+}
+
+.input-box input:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 10px rgba(6,182,212,0.4);
+}
+
+/* Options */
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.options a {
+  color: #06b6d4;
+  text-decoration: none;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(124,58,237,0.4);
+}
+
+/* Signup */
+.signup-text {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.signup-text a {
+  color: #06b6d4;
+  text-decoration: none;
 }

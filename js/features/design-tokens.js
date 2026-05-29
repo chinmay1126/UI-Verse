@@ -228,6 +228,10 @@
     return { theme: themeName, resolvedTheme, tokens: theme.tokens };
   }
 
+  function setTheme(themeName, options = {}) {
+    return applyTheme(themeName, options);
+  }
+
   function init(options = {}) {
     const storedTheme = getStoredTheme();
     const theme = options.theme || storedTheme || SYSTEM_THEME;
@@ -272,6 +276,7 @@
     getTheme,
     getThemeNames,
     applyTheme,
+    setTheme,
     init,
     registerTheme,
     exportTheme

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
+  <link rel="stylesheet" href="../dist/shared.css">
+  <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>BudgetFlow Dashboard</title>
@@ -14,6 +15,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="app">
 
@@ -59,7 +62,7 @@
       <h4>🎯 Monthly Goal</h4>
       <h2>₹45,000</h2>
       <p>78% achieved this month</p>
-      <button type="button">View Progress</button>
+      <button type="button" data-a11y-remediation="button-label-needed">View Progress</button>
     </div>
 
   </aside>
@@ -79,7 +82,7 @@
 
         <div class="search">
           <i class="fa fa-search"></i>
-          <input type="text" placeholder="Search transactions..." />
+          <input type="text" placeholder="Search transactions..." / data-a11y-remediation="label-needed">
         </div>
 
         <button class="avatar-btn" type="button">
@@ -228,5 +231,6 @@
 
 <script src="budget-planner.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

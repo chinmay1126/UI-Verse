@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
 
   <meta
@@ -41,6 +41,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =====================================================
 SIDEBAR
@@ -80,6 +82,11 @@ SIDEBAR
       <a href="#">
         <i class="fa-solid fa-layer-group"></i>
         <span>Components</span>
+      </a>
+
+      <a href="breadcrumbs.html">
+        <i class="fa-solid fa-angles-right"></i>
+        <span>Breadcrumbs</span>
       </a>
 
       <a href="#">
@@ -127,13 +134,13 @@ TOPBAR
     <input
       type="text"
       placeholder="Search gallery components..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
   <div class="topbar-actions">
 
-    <button class="outline-btn">
+    <button class="outline-btn" data-a11y-remediation="button-label-needed">
       Explore
     </button>
 
@@ -1513,5 +1520,6 @@ CTA SECTION
 
 <script src="gallery.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
