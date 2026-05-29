@@ -5,6 +5,11 @@ const pendingTasks = document.getElementById("pendingTasks");
 const completedTasks = document.getElementById("completedTasks");
 
 addTaskBtn.addEventListener("click", addTask);
+taskInput.addEventListener("keydown", e => { if(e.key === "Enter") addTask(); });
+taskInput.addEventListener("input", () => {
+  addTaskBtn.disabled = taskInput.value.trim() === "";
+});
+addTaskBtn.disabled = true;
 
 function addTask(){
 
@@ -26,11 +31,13 @@ function addTask(){
 
   const completeBtn = document.createElement('button');
   completeBtn.className = 'complete-btn';
-  completeBtn.textContent = 'Done';
+  completeBtn.setAttribute('aria-label', 'Mark as completed');
+  completeBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
 
   const deleteBtn = document.createElement('button');
   deleteBtn.className = 'delete-btn';
-  deleteBtn.textContent = 'Delete';
+  deleteBtn.setAttribute('aria-label', 'Delete task');
+  deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
 
   buttonsDiv.appendChild(completeBtn);
   buttonsDiv.appendChild(deleteBtn);
