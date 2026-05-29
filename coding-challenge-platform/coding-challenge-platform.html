@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f172a" />
@@ -19,6 +20,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="dashboard">
 
@@ -60,7 +63,7 @@
 
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search challenges..." />
+          <input type="text" placeholder="Search challenges..." / data-a11y-remediation="label-needed">
         </div>
 
         <button class="notify-btn" type="button" aria-label="Notifications">
@@ -242,5 +245,6 @@
 
 <script src="coding-challenge-platform.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-inline'; style-src 'self' https: 'unsafe-inline'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,12 +15,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="timeline.css" />
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- BACKDROP -->
   <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
@@ -341,12 +342,6 @@
       </li>
     </ul>
   </nav>
-
-    <div class="sidebar-footer">
-      <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-    </div>
   </aside>
 
   <!-- NAVBAR -->
@@ -359,7 +354,7 @@
 
     <div class="search-bar">
       <i class="fa-solid fa-magnifying-glass search-icon"></i>
-      <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+      <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" / data-a11y-remediation="label-needed">
       <kbd class="search-kbd">⌘K</kbd>
     </div>
 
@@ -1068,102 +1063,6 @@
         </div>
       </div>
 
-      <!-- ITEM -->
-<div class="timeline-item">
-  <div class="timeline-dot"></div>
-  <div class="timeline-content">
-    <span class="timeline-date">Dec 2026</span>
-    <h3>UI Library Open-Sourced</h3>
-    <p>Released on GitHub for global contributors.</p>
-  </div>
-</div>
-
-<!-- ITEM -->
-<div class="timeline-item">
-  <div class="timeline-dot"></div>
-  <div class="timeline-content">
-    <span class="timeline-date">Feb 2027</span>
-    <h3>Dark Mode System Added</h3>
-    <p>Introduced theme switching and design tokens.</p>
-  </div>
-</div>
-
-<!-- ITEM -->
-<div class="timeline-item">
-  <div class="timeline-dot"></div>
-  <div class="timeline-content">
-    <span class="timeline-date">Apr 2027</span>
-    <h3>1M+ Component Downloads</h3>
-    <p>Reached major adoption across developer communities.</p>
-  </div>
-</div>
-
-<div class="timeline-block right">
-  <span class="timeline-year">2022</span>
-  <p>Mastered React and component-based architecture.</p>
-</div>
-
-<div class="timeline-block left">
-  <span class="timeline-year">2023</span>
-  <p>Built multiple SaaS UI templates and dashboards.</p>
-</div>
-
-<div class="timeline-block right">
-  <span class="timeline-year">2024</span>
-  <p>Started contributing to open-source UI libraries.</p>
-</div>
-
-<h1>Product Roadmap Timeline</h1>
-
-<div class="timeline-container">
-
-  <div class="timeline-item">
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
-      <span class="timeline-date">Q1 2027</span>
-      <h3>Component Standardization</h3>
-      <p>Unified design system and spacing rules.</p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
-      <span class="timeline-date">Q2 2027</span>
-      <h3>AI-Powered UI Generator</h3>
-      <p>Generate components using prompts.</p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
-      <span class="timeline-date">Q3 2027</span>
-      <h3>Design System Plugin</h3>
-      <p>Figma + VS Code integration release.</p>
-    </div>
-  </div>
-
-</div>
-      <!-- ITEM -->
-      <div class="timeline-item">
-
-        <div class="timeline-dot"></div>
-
-        <div class="timeline-content">
-
-          <span class="timeline-date">
-            Jul 2026
-          </span>
-
-          <h3>
-            Dashboard UI Released
-          </h3>
-
-          <p>
-            Added modern admin dashboard and analytics layouts.
-          </p>
-
       <!-- 3. Project Progress & Milestone Timeline (Glassmorphism) -->
       <div class="component-card">
         <div class="card-header">
@@ -1465,21 +1364,20 @@
   <button id="scrollTopBtn" title="Go to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
 
     <div class="footer-col">
       <h3>Explore</h3>
@@ -1495,11 +1393,10 @@
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
 
@@ -1508,7 +1405,7 @@
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
+        <li><a href="#">License</a></li>
       </ul>
     </div>
 
@@ -1533,5 +1430,6 @@
 
   <!-- JAVASCRIPT -->
   <script src="timeline.js"></script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

@@ -272,6 +272,18 @@ const Favorites = {
         const tags = (item.tags || []).slice(0, 4).map((tag) => `<span class="favorite-tag">${tag}</span>`).join('');
         const savedDate = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(item.savedAt));
 
+        let previewHTML = '';
+        const cat = String(item.category).toLowerCase();
+        if (cat.includes('button')) {
+          previewHTML = `<div class="favorite-preview"><button class="mock-btn">Hover Me</button></div>`;
+        } else if (cat.includes('card')) {
+          previewHTML = `<div class="favorite-preview"><div class="mock-card"><div class="mock-line"></div><div class="mock-line short"></div></div></div>`;
+        } else if (cat.includes('navbar')) {
+          previewHTML = `<div class="favorite-preview"><div class="mock-nav"><div class="mock-nav-item"></div><div class="mock-nav-item"></div><div class="mock-nav-item"></div></div></div>`;
+        } else {
+          previewHTML = `<div class="favorite-preview"><div class="mock-generic"><i class="fa-solid fa-layer-group"></i></div></div>`;
+        }
+
         return `
           <article class="favorite-card" data-favorite-id="${item.id}">
             <div class="favorite-head">
@@ -280,6 +292,7 @@ const Favorites = {
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
+            ${previewHTML}
             <p class="favorite-meta">${item.category} • Saved ${savedDate}</p>
             <div class="favorite-tags">${tags}</div>
             <a class="favorite-link" href="${pageHref}">Open Source Page</a>
@@ -405,6 +418,73 @@ const Favorites = {
 
       .favorite-link:hover {
         text-decoration: underline;
+      }
+
+      .favorite-preview {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 8px 0;
+        overflow: hidden;
+      }
+      .mock-btn {
+        background: linear-gradient(135deg, #eb6835, #f97316);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .mock-btn:hover {
+        transform: scale(1.05);
+      }
+      .mock-card {
+        width: 80%;
+        height: 60%;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        backdrop-filter: blur(4px);
+      }
+      .mock-line {
+        height: 8px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+        width: 100%;
+      }
+      .mock-line.short {
+        width: 60%;
+      }
+      .mock-nav {
+        width: 90%;
+        height: 30px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        gap: 8px;
+        backdrop-filter: blur(8px);
+      }
+      .mock-nav-item {
+        width: 20px;
+        height: 6px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 3px;
+      }
+      .mock-generic {
+        font-size: 32px;
+        color: rgba(255,255,255,0.2);
       }
     `;
 

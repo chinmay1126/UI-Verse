@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
 
   <meta
@@ -41,6 +41,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -364,20 +366,6 @@
       </li>
     </ul>
   </nav>
-
- <div class="socials">
-  <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-
-  <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-
-  <a href="https://twitter.com/yourusername" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
 </aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
@@ -395,7 +383,7 @@ NAVBAR
     <input
       type="text"
       placeholder="Search dropdown components..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
@@ -1236,24 +1224,374 @@ MAIN
 &lt;/div&gt;</code></pre>
     </div>
 
+    <!-- 9. STATUS FILTER DROPDOWN -->
+    <div class="dropdown-card">
+      <div class="card-top">
+        <span class="card-label">
+          FILTER
+        </span>
+        <div class="card-icon pink-grad">
+          <i class="fa-solid fa-filter"></i>
+        </div>
+      </div>
+      <h2>
+        Status Filter
+      </h2>
+      <p>
+        Quick status selector with pills, counts, and a subtle active state.
+      </p>
+      <div class="dropdown-wrapper status-wrap">
+        <button class="dropdown-btn">
+          <span>All statuses</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-menu status-menu">
+          <div class="dropdown-item">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>All</span>
+            <span class="count-pill">128</span>
+          </div>
+          <div class="dropdown-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Completed</span>
+            <span class="count-pill green">52</span>
+          </div>
+          <div class="dropdown-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>In review</span>
+            <span class="count-pill purple">19</span>
+          </div>
+          <div class="dropdown-item">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Blocked</span>
+            <span class="count-pill red">7</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('code9', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="action-btn copy-btn" onclick="copyCode('code9', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+
+      <pre id="code9" class="code-block"><code>&lt;div class="dropdown-wrapper status-wrap"&gt;
+  &lt;button class="dropdown-btn"&gt;
+    &lt;span&gt;All statuses&lt;/span&gt;
+    &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;div class="dropdown-menu status-menu"&gt;
+    &lt;div class="dropdown-item"&gt;&lt;i class="fa-solid fa-layer-group"&gt;&lt;/i&gt; &lt;span&gt;All&lt;/span&gt; &lt;span class="count-pill"&gt;128&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="dropdown-item"&gt;&lt;i class="fa-solid fa-circle-check"&gt;&lt;/i&gt; &lt;span&gt;Completed&lt;/span&gt; &lt;span class="count-pill green"&gt;52&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="dropdown-item"&gt;&lt;i class="fa-solid fa-clock"&gt;&lt;/i&gt; &lt;span&gt;In review&lt;/span&gt; &lt;span class="count-pill purple"&gt;19&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="dropdown-item"&gt;&lt;i class="fa-solid fa-triangle-exclamation"&gt;&lt;/i&gt; &lt;span&gt;Blocked&lt;/span&gt; &lt;span class="count-pill red"&gt;7&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 10. THEME SWATCH DROPDOWN -->
+    <div class="dropdown-card">
+      <div class="card-top">
+        <span class="card-label">
+          THEMES
+        </span>
+        <div class="card-icon teal-grad">
+          <i class="fa-solid fa-palette"></i>
+        </div>
+      </div>
+      <h2>
+        Theme Swatches
+      </h2>
+      <p>
+        Visual color choices with gradient swatches and a compact preview grid.
+      </p>
+      <div class="dropdown-wrapper swatch-wrap">
+        <button class="dropdown-btn">
+          <span>Midnight</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-menu swatch-menu">
+          <div class="swatch-grid">
+            <div class="dropdown-item swatch-item">
+              <span class="swatch-dot swatch-midnight"></span>
+              <span>Midnight</span>
+              <i class="fa-solid fa-circle-check check-icon"></i>
+            </div>
+            <div class="dropdown-item swatch-item">
+              <span class="swatch-dot swatch-sunset"></span>
+              <span>Sunset</span>
+              <i class="fa-solid fa-circle check-icon empty"></i>
+            </div>
+            <div class="dropdown-item swatch-item">
+              <span class="swatch-dot swatch-mint"></span>
+              <span>Mint</span>
+              <i class="fa-solid fa-circle check-icon empty"></i>
+            </div>
+            <div class="dropdown-item swatch-item">
+              <span class="swatch-dot swatch-royal"></span>
+              <span>Royal</span>
+              <i class="fa-solid fa-circle check-icon empty"></i>
+            </div>
+          </div>
+          <div class="swatch-footer">
+            <span class="hint">Tip:</span>
+            <span class="hint-text">Pick a theme for your dashboard.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('code10', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="action-btn copy-btn" onclick="copyCode('code10', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+
+      <pre id="code10" class="code-block"><code>&lt;div class="dropdown-wrapper swatch-wrap"&gt;
+  &lt;button class="dropdown-btn"&gt;
+    &lt;span&gt;Midnight&lt;/span&gt;
+    &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;div class="dropdown-menu swatch-menu"&gt;
+    &lt;div class="swatch-grid"&gt;
+      &lt;div class="dropdown-item swatch-item"&gt;&lt;span class="swatch-dot swatch-midnight"&gt;&lt;/span&gt; &lt;span&gt;Midnight&lt;/span&gt; &lt;i class="fa-solid fa-circle-check check-icon"&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;div class="dropdown-item swatch-item"&gt;&lt;span class="swatch-dot swatch-sunset"&gt;&lt;/span&gt; &lt;span&gt;Sunset&lt;/span&gt; &lt;i class="fa-solid fa-circle check-icon empty"&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;div class="dropdown-item swatch-item"&gt;&lt;span class="swatch-dot swatch-mint"&gt;&lt;/span&gt; &lt;span&gt;Mint&lt;/span&gt; &lt;i class="fa-solid fa-circle check-icon empty"&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;div class="dropdown-item swatch-item"&gt;&lt;span class="swatch-dot swatch-royal"&gt;&lt;/span&gt; &lt;span&gt;Royal&lt;/span&gt; &lt;i class="fa-solid fa-circle check-icon empty"&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 11. AVATAR SWITCHER DROPDOWN -->
+    <div class="dropdown-card">
+      <div class="card-top">
+        <span class="card-label">
+          TEAMS
+        </span>
+        <div class="card-icon cyan-grad">
+          <i class="fa-solid fa-users"></i>
+        </div>
+      </div>
+      <h2>
+        Workspace Switcher
+      </h2>
+      <p>
+        Fast workspace switching with avatars, roles, and a pinned active team.
+      </p>
+      <div class="dropdown-wrapper workspace-wrap">
+        <button class="dropdown-btn profile-btn">
+          <img src="https://i.pravatar.cc/100?img=13" alt="">
+          <span>UIverse Studio</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-menu workspace-menu">
+          <div class="dropdown-item active-team">
+            <img src="https://i.pravatar.cc/100?img=13" alt="">
+            <div class="ws-meta">
+              <strong>UIverse Studio</strong>
+              <span>Owner</span>
+            </div>
+            <i class="fa-solid fa-circle-check check-icon"></i>
+          </div>
+          <div class="dropdown-item">
+            <img src="https://i.pravatar.cc/100?img=32" alt="">
+            <div class="ws-meta">
+              <strong>Design Lab</strong>
+              <span>Member</span>
+            </div>
+            <i class="fa-solid fa-circle check-icon empty"></i>
+          </div>
+          <div class="dropdown-item">
+            <img src="https://i.pravatar.cc/100?img=45" alt="">
+            <div class="ws-meta">
+              <strong>Ops Squad</strong>
+              <span>Viewer</span>
+            </div>
+            <i class="fa-solid fa-circle check-icon empty"></i>
+          </div>
+          <div class="divider"></div>
+          <div class="dropdown-item">
+            <i class="fa-solid fa-plus"></i>
+            <span>Create workspace</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('code11', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="action-btn copy-btn" onclick="copyCode('code11', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+
+      <pre id="code11" class="code-block"><code>&lt;div class="dropdown-wrapper workspace-wrap"&gt;
+  &lt;button class="dropdown-btn profile-btn"&gt;
+    &lt;img src="https://i.pravatar.cc/100?img=13" alt=""&gt;
+    &lt;span&gt;UIverse Studio&lt;/span&gt;
+    &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;div class="dropdown-menu workspace-menu"&gt;
+    &lt;div class="dropdown-item active-team"&gt;...&lt;/div&gt;
+    &lt;div class="dropdown-item"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 12. DATE RANGE DROPDOWN -->
+    <div class="dropdown-card">
+      <div class="card-top">
+        <span class="card-label">
+          ANALYTICS
+        </span>
+        <div class="card-icon yellow-grad">
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+      </div>
+      <h2>
+        Date Range
+      </h2>
+      <p>
+        Compact date range picker layout for dashboards (static UI, no calendar JS).
+      </p>
+      <div class="dropdown-wrapper daterange-wrap">
+        <button class="dropdown-btn">
+          <span>Last 30 days</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-menu daterange-menu">
+          <div class="range-presets">
+            <div class="dropdown-item"><span>Today</span></div>
+            <div class="dropdown-item"><span>Last 7 days</span></div>
+            <div class="dropdown-item"><span>Last 30 days</span></div>
+            <div class="dropdown-item"><span>This quarter</span></div>
+          </div>
+          <div class="range-divider"></div>
+          <div class="range-fields">
+            <label class="range-field">
+              <span>From</span>
+              <input type="text" value="Apr 20, 2026" readonly>
+            </label>
+            <label class="range-field">
+              <span>To</span>
+              <input type="text" value="May 20, 2026" readonly>
+            </label>
+          </div>
+          <div class="range-actions">
+            <button class="range-btn ghost">Cancel</button>
+            <button class="range-btn primary">Apply</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('code12', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="action-btn copy-btn" onclick="copyCode('code12', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+
+      <pre id="code12" class="code-block"><code>&lt;div class="dropdown-wrapper daterange-wrap"&gt;
+  &lt;button class="dropdown-btn"&gt;
+    &lt;span&gt;Last 30 days&lt;/span&gt;
+    &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;div class="dropdown-menu daterange-menu"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 13. PRIORITY SORT DROPDOWN -->
+    <div class="dropdown-card">
+      <div class="card-top">
+        <span class="card-label">
+          SORTING
+        </span>
+        <div class="card-icon purple">
+          <i class="fa-solid fa-arrow-up-wide-short"></i>
+        </div>
+      </div>
+      <h2>
+        Priority Sort
+      </h2>
+      <p>
+        Radio-style sort options with an inline check indicator and descriptions.
+      </p>
+      <div class="dropdown-wrapper sort-wrap">
+        <button class="dropdown-btn">
+          <span>Sort: Recommended</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-menu sort-menu">
+          <div class="dropdown-item sort-item active-sort">
+            <div class="sort-text">
+              <strong>Recommended</strong>
+              <span>Balanced for most lists</span>
+            </div>
+            <i class="fa-solid fa-circle-check check-icon"></i>
+          </div>
+          <div class="dropdown-item sort-item">
+            <div class="sort-text">
+              <strong>Newest</strong>
+              <span>Recently updated first</span>
+            </div>
+            <i class="fa-solid fa-circle check-icon empty"></i>
+          </div>
+          <div class="dropdown-item sort-item">
+            <div class="sort-text">
+              <strong>Highest priority</strong>
+              <span>Urgent tasks on top</span>
+            </div>
+            <i class="fa-solid fa-circle check-icon empty"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('code13', this)">
+          <i class="fa-solid fa-code"></i> View Code
+        </button>
+        <button class="action-btn copy-btn" onclick="copyCode('code13', this)">
+          <i class="fa-solid fa-copy"></i> Copy
+        </button>
+      </div>
+
+      <pre id="code13" class="code-block"><code>&lt;div class="dropdown-wrapper sort-wrap"&gt;
+  &lt;button class="dropdown-btn"&gt;
+    &lt;span&gt;Sort: Recommended&lt;/span&gt;
+    &lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;div class="dropdown-menu sort-menu"&gt;
+    &lt;div class="dropdown-item sort-item"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
   </section>
 
 </main>
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
 
     <div class="footer-col">
       <h3>Explore</h3>
@@ -1269,11 +1607,10 @@ MAIN
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
 
@@ -1282,7 +1619,7 @@ MAIN
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
+        <li><a href="#">License</a></li>
       </ul>
     </div>
 
@@ -1307,7 +1644,18 @@ MAIN
   Copied to clipboard!
 </div>
 
+<button
+  id="scrollTopBtn"
+  type="button"
+  aria-label="Scroll to top"
+  title="Scroll to top"
+>
+  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+</button>
+
+
 <script src="dropdown.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

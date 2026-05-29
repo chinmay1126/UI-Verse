@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -32,6 +32,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- SIDEBAR -->
 
@@ -96,7 +98,7 @@
         Your team performance increased by 18% this month with better collaboration.
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Open Insights
       </button>
 
@@ -132,7 +134,7 @@
 
           <input
             type="text"
-            placeholder="Search projects..." />
+            placeholder="Search projects..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -682,6 +684,7 @@
 
   <script src="task-collaboration-workspace.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>
