@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium Notification Components — UIverse</title>
@@ -13,10 +14,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <link rel="stylesheet" href="notifications-premium.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="main-content">
 
@@ -24,10 +26,10 @@
   <header class="topbar">
     <div class="search-box">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search notification components..." id="searchInput">
+      <input type="text" placeholder="Search notification components..." id="searchInput" data-a11y-remediation="label-needed">
     </div>
     <div class="topbar-actions">
-      <button class="add-btn" onclick="triggerAllShowcase()"><i class="fa-solid fa-play"></i> Test All</button>
+      <button class="add-btn" onclick="triggerAllShowcase()" data-a11y-remediation="button-label-needed"><i class="fa-solid fa-play"></i> Test All</button>
       <button class="collection-btn" onclick="clearLiveToasts()"><i class="fa-solid fa-trash"></i> Clear Toasts</button>
       <button class="theme-btn"><i class="fa-solid fa-moon"></i></button>
     </div>
@@ -842,6 +844,168 @@
 
   </section>
 
+  <!-- ============ 11-15: ADDED PREMIUM VARIANTS ============ -->
+  <section class="notification-grid" aria-label="Additional Premium Variants">
+
+    <!-- 11: Sticky Persistent Banner -->
+    <div class="component-card" data-category="banners">
+      <div class="card-preview dark-preview">
+        <div class="card-interactive-area full-width">
+          <div class="sticky-banner" id="stickyBannerPreview">
+            <div class="sb-left">
+              <div class="sb-icon"><i class="fa-solid fa-bell"></i></div>
+              <div>
+                <strong>Maintenance Window</strong>
+                <div class="muted">Planned maintenance at 02:00 UTC — 5m</div>
+              </div>
+            </div>
+            <div class="sb-actions">
+              <button class="sb-cta" onclick="triggerToastDemo('warning','Planned maintenance starting soon')">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Sticky Banner</h3>
+          <span>Banners</span>
+        </div>
+        <p>A compact persistent banner ideal for global maintenance alerts and account notices.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('nt11')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('nt11')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button onclick="triggerToastDemo('warning','Maintenance scheduled')"><i class="fa-solid fa-bell"></i> Trigger</button>
+        </div>
+      </div>
+      <pre id="nt11" class="code-block" style="display:none;"><code>&lt;div class="sticky-banner"&gt;
+  &lt;div class="sb-left"&gt;&lt;i class="fa-solid fa-bell"&gt;&lt;/i&gt; &lt;strong&gt;Maintenance Window&lt;/strong&gt;&lt;/div&gt;
+  &lt;button class="sb-cta"&gt;View Details&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 12: Actionable Inline Snackbar -->
+    <div class="component-card" data-category="snackbars">
+      <div class="card-preview dark-preview">
+        <div class="card-interactive-area full-width">
+          <div class="inline-snackbar" id="inlineSnackPreview">
+            <div class="snack-msg">Settings saved</div>
+            <button class="snack-action" onclick="triggerToastDemo('success','Settings applied')">Undo</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Inline Snackbar</h3>
+          <span>Snackbars</span>
+        </div>
+        <p>Small inline confirmation with optional undo action for quick interactions.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('nt12')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('nt12')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button onclick="triggerToastDemo('success','Settings saved')"><i class="fa-solid fa-check"></i> Simulate</button>
+        </div>
+      </div>
+      <pre id="nt12" class="code-block" style="display:none;"><code>&lt;div class="inline-snackbar"&gt;
+  &lt;div class="snack-msg"&gt;Settings saved&lt;/div&gt;
+  &lt;button class="snack-action"&gt;Undo&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 13: Centered Critical Modal Alert -->
+    <div class="component-card" data-category="modals">
+      <div class="card-preview dark-preview">
+        <div class="card-interactive-area full-width modal-alert-preview">
+          <div class="critical-modal" id="criticalModalPreview">
+            <h4>Critical: Service Degraded</h4>
+            <p>Multiple regions reporting increased latency. Immediate investigation recommended.</p>
+            <div class="modal-actions">
+              <button class="modal-btn ack" onclick="triggerToastDemo('error','Acknowledged')">Acknowledge</button>
+              <button class="modal-btn dismiss" onclick="triggerToastDemo('info','Dismissed')">Dismiss</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Modal Alert</h3>
+          <span>Critical</span>
+        </div>
+        <p>Centered modal-style alert for urgent system-wide notifications (preview only).</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('nt13')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('nt13')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button onclick="triggerToastDemo('error','Modal Acknowledge')"><i class="fa-solid fa-exclamation-triangle"></i> Acknowledge</button>
+        </div>
+      </div>
+      <pre id="nt13" class="code-block" style="display:none;"><code>&lt;div class="critical-modal"&gt;
+  &lt;h4&gt;Critical: Service Degraded&lt;/h4&gt;
+  &lt;p&gt;Multiple regions reporting increased latency.&lt;/p&gt;
+  &lt;div class="modal-actions"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 14: Progress Toast List -->
+    <div class="component-card" data-category="progress">
+      <div class="card-preview dark-preview">
+        <div class="card-interactive-area full-width">
+          <div class="progress-toast-list" id="progressToastPreview">
+            <div class="progress-toast-item">
+              <div class="progress-thumb"><i class="fa-solid fa-upload"></i></div>
+              <div class="progress-line"><div class="progress-fill" style="width:38%"></div></div>
+            </div>
+            <div class="progress-toast-item">
+              <div class="progress-thumb"><i class="fa-solid fa-database"></i></div>
+              <div class="progress-line"><div class="progress-fill" style="width:62%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Progress List</h3>
+          <span>Multi-Progress</span>
+        </div>
+        <p>A vertical list of short progress toasts for concurrent transfers and background tasks.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('nt14')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('nt14')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button onclick="simulateProgressList()"><i class="fa-solid fa-play"></i> Simulate</button>
+        </div>
+      </div>
+      <pre id="nt14" class="code-block" style="display:none;"><code>&lt;div class="progress-toast-item"&gt;&lt;div class="progress-thumb"&gt;&lt;/div&gt;&lt;div class="progress-line"&gt;&lt;div class="progress-fill" style="width:40%"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- 15: Avatar Notification Cluster -->
+    <div class="component-card" data-category="avatars">
+      <div class="card-preview dark-preview">
+        <div class="card-interactive-area full-width">
+          <div class="avatar-cluster" id="avatarClusterPreview">
+            <div class="avatar-stack">
+              <img src="https://i.pravatar.cc/100?img=13" alt="A">
+              <img src="https://i.pravatar.cc/100?img=27" alt="B">
+              <img src="https://i.pravatar.cc/100?img=51" alt="C">
+            </div>
+            <div class="avatar-count">+12</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <h3>Avatar Cluster</h3>
+          <span>Groups</span>
+        </div>
+        <p>Compact representation of multiple participants or recipients with stacked avatars and overflow counts.</p>
+        <div class="card-actions">
+          <button onclick="toggleCode('nt15')"><i class="fa-solid fa-code"></i> View Code</button>
+          <button onclick="copyCode('nt15')"><i class="fa-solid fa-copy"></i> Copy</button>
+          <button onclick="triggerToastDemo('info','3 participants added')"><i class="fa-solid fa-user-plus"></i> Notify</button>
+        </div>
+      </div>
+      <pre id="nt15" class="code-block" style="display:none;"><code>&lt;div class="avatar-cluster"&gt;&lt;div class="avatar-stack"&gt;...&lt;/div&gt;&lt;div class="avatar-count"&gt;+12&lt;/div&gt;&lt;/div&gt;</code></pre>
+    </div>
+
+  </section>
+
 </div>
 
 <!-- LIVE TOAST CONTAINER FOR CORNER BANNERS -->
@@ -1199,6 +1363,16 @@ function triggerGlassSync() {
   }
 }
 
+// Simulation for progress list
+function simulateProgressList(){
+  const fills = document.querySelectorAll('.progress-fill');
+  fills.forEach((f, i) => {
+    const target = [38,62,18,84][i] || Math.floor(Math.random()*80)+10;
+    f.style.width = target + '%';
+  });
+  triggerToastDemo('info','Progress simulation started');
+}
+
 function pulseGlassGlow() {
   const card = document.getElementById('glassCardPreview');
   const glow = card.querySelector('.glass-bg-glow');
@@ -1484,5 +1658,6 @@ function triggerAllShowcase() {
 }
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maintenance Page Components — UIverse</title>
@@ -12,12 +13,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
   <link rel="stylesheet" href="maintenance.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -116,7 +116,7 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search maintenance components..." oninput="liveFilter(this.value)" />
+    <input type="text" id="searchInput" placeholder="Search maintenance components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
 
@@ -867,5 +867,6 @@
   }
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

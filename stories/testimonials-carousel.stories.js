@@ -25,7 +25,7 @@ const testimonialsMarkup = `
 function renderTestimonialsCarousel() {
   return createShadowRootStory({
     title: 'Testimonials Carousel',
-    styles: ['/components/tc.css'],
+    styles: ['/components/Tc.css'],
     extraStyles: `
       .carousel-stage {
         min-height: calc(100vh - 48px);

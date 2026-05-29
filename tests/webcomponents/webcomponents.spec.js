@@ -5,7 +5,7 @@ const root = path.join(__dirname, '..', '..');
 
 test.describe('Web Components - UI-Verse', () => {
   test('uv-button registers and dispatches event', async ({ page }) => {
-    await page.goto('/components/web-components/demo-uv-button.html');
+    await page.goto('/components/WebComponents/demo-uv-button.html');
     // Wait for registration via customElements
     await page.waitForFunction(() => !!customElements.get('uv-button'));
     const exists = await page.evaluate(() => !!customElements.get('uv-button'));
@@ -20,7 +20,7 @@ test.describe('Web Components - UI-Verse', () => {
   });
 
   test('uv-modal open/close works', async ({ page }) => {
-    await page.goto('/components/web-components/demo-uv-modal.html');
+    await page.goto('/components/WebComponents/demo-uv-modal.html');
     // Wait for the custom element to be registered
     await page.waitForFunction(() => !!customElements.get('uv-modal'));
     const exists = await page.evaluate(() => !!customElements.get('uv-modal'));
@@ -37,7 +37,7 @@ test.describe('Web Components - UI-Verse', () => {
   });
 
   test('uv-tooltip shows on hover', async ({ page }) => {
-    await page.goto('/components/web-components/demo-uv-tooltip.html');
+    await page.goto('/components/WebComponents/demo-uv-tooltip.html');
     // Wait for the custom element to be registered
     await page.waitForFunction(() => !!customElements.get('uv-tooltip'));
     const exists = await page.evaluate(() => !!customElements.get('uv-tooltip'));

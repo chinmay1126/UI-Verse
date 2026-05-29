@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
 
@@ -31,6 +31,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -140,7 +142,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-            placeholder="Search files..." />
+            placeholder="Search files..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -536,6 +538,7 @@
 
   <script src="cloud-storage-ui.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

@@ -564,7 +564,7 @@ Component ID: navbar
   &lt;span class="brand"&gt;⬡ UIverse&lt;/span&gt;
 
   &lt;div class="profile-menu"&gt;
-    &lt;img src="avatar.jpg" alt="Avatar"&gt;
+    &lt;img src="https://i.pravatar.cc/40?img=12" alt="Avatar"&gt;
 
     &lt;div class="dropdown-menu"&gt;
       &lt;a href="#"&gt;Profile&lt;/a&gt;

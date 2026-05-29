@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   
   <meta
@@ -38,6 +39,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="background-blur"></div>
 
@@ -102,7 +105,7 @@
           <p>Upload documents, videos, images & more</p>
         </div>
 
-        <button class="theme-btn">
+        <button class="theme-btn" data-a11y-remediation="button-label-needed">
           <i class="fa-solid fa-moon"></i>
         </button>
 
@@ -232,5 +235,6 @@
 
   <script src="drag.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

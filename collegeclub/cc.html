@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>College Club Dashboard</title>
@@ -12,6 +13,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- NAVBAR -->
 
@@ -157,7 +160,7 @@
 
       <form id="eventForm">
 
-        <input type="text" placeholder="Your Name" required>
+        <input type="text" placeholder="Your Name" required data-a11y-remediation="label-needed">
 
         <input type="email" placeholder="Email Address" required>
 
@@ -178,6 +181,6 @@
   </footer>
 
   <script src="cc.js"></script>
-
+      <script src="../dist/shared.js"></script>
 </body>
 </html>
