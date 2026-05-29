@@ -1100,6 +1100,387 @@ body {
 }
 
 /* =========================================================
+   COMPONENT 11+: ADDITIONAL RADIO VARIANTS
+========================================================= */
+
+/* Badge Radio - small badge indicator with count */
+.badge-radio-group {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.badge-radio { position:relative; cursor:pointer; display:flex; align-items:center; gap:12px; padding:8px 12px; border-radius:12px; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); }
+.badge-radio input{ position:absolute; opacity:0; pointer-events:none; }
+.badge-indicator{ width:14px; height:14px; border-radius:50%; background:#94a3b8; flex-shrink:0; transition:all .25s; }
+.badge-count{ font-size:12px; color:#94a3b8; font-weight:700; }
+.badge-radio input:checked ~ .badge-indicator{ background:#10b981; box-shadow:0 0 10px rgba(16,185,129,0.12); }
+.badge-radio input:checked ~ .badge-count{ color:#e2e8f0; }
+
+/* Icon Radio - icon centered cards */
+.icon-radio-group{ display:flex; gap:14px; }
+.icon-radio{ cursor:pointer; width:86px; height:86px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); transition:all .25s; position:relative; }
+.icon-radio input{ position:absolute; opacity:0; pointer-events:none; }
+.icon-radio i{ font-size:24px; color:#94a3b8; transition:all .25s; }
+.icon-radio input:checked ~ i{ color:#7c3aed; transform:scale(1.08); }
+.icon-radio input:checked ~ .icon-radio{ box-shadow:0 12px 30px rgba(124,58,237,0.08); }
+
+/* Ring Radio - animated outer ring on select */
+.ring-radio-group{ display:flex; gap:12px; align-items:center; }
+.ring-radio{ position:relative; cursor:pointer; padding:10px 14px; border-radius:999px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); }
+.ring-radio input{ position:absolute; opacity:0; pointer-events:none; }
+.ring-dot{ width:18px; height:18px; border-radius:50%; background:#475569; position:relative; }
+.ring-dot::after{ content:''; position:absolute; inset:-8px; border-radius:50%; border:2px solid transparent; transition:all .45s ease; opacity:0; }
+.ring-radio input:checked ~ .ring-dot{ background:#6366f1; }
+.ring-radio input:checked ~ .ring-dot::after{ border-color:rgba(99,102,241,0.18); transform:scale(1); opacity:1; }
+
+/* Stepper Radio - numbered steps */
+.stepper-radio-group{ display:flex; flex-direction:column; gap:12px; width:100%; max-width:320px; }
+.stepper-radio{ cursor:pointer; display:flex; gap:14px; align-items:flex-start; }
+.stepper-radio input{ position:absolute; opacity:0; pointer-events:none; }
+.step-number{ width:36px; height:36px; border-radius:8px; background:#0d1221; color:#94a3b8; display:flex; align-items:center; justify-content:center; font-weight:800; border:1px solid rgba(255,255,255,0.04); }
+.stepper-radio input:checked ~ .step-number{ background:#10b981; color:#071126; box-shadow:0 6px 18px rgba(16,185,129,0.12); }
+.stepper-body{ color:#94a3b8; font-size:13px; }
+
+/* Compact Inline Radio - small inline options */
+.inline-radio-group{ display:flex; gap:10px; align-items:center; }
+.inline-radio{ cursor:pointer; display:flex; align-items:center; gap:8px; padding:6px 8px; border-radius:8px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); }
+.inline-radio input{ position:absolute; opacity:0; pointer-events:none; }
+.inline-dot{ width:12px; height:12px; border-radius:50%; border:2px solid #475569; background:transparent; transition:all .2s; }
+.inline-radio input:checked ~ .inline-dot{ background:#eb6835; border-color:transparent; }
+
+/* small responsive tweak */
+@media(max-width:720px){
+  .icon-radio{ width:72px; height:72px; }
+  .card-preview{ height:220px; }
+}
+
+/* =========================================================
+   COLOR SWATCH RADIO
+========================================================= */
+.swatch-radio-group {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.swatch-radio {
+  position: relative;
+  cursor: pointer;
+}
+.swatch-radio input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.swatch-dot {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s;
+}
+.swatch-radio input:checked ~ .swatch-dot {
+  transform: scale(1.18);
+  box-shadow: 0 0 0 3px #0b0f1a, 0 0 0 5px var(--swatch-color, #6366f1);
+  outline: none;
+}
+/* Set --swatch-color per swatch via JS or leave as-is — the border adopts the bg colour */
+.swatch-radio:nth-child(1) input:checked ~ .swatch-dot { box-shadow: 0 0 0 3px #0b0f1a, 0 0 0 5px #6366f1; }
+.swatch-radio:nth-child(2) input:checked ~ .swatch-dot { box-shadow: 0 0 0 3px #0b0f1a, 0 0 0 5px #10b981; }
+.swatch-radio:nth-child(3) input:checked ~ .swatch-dot { box-shadow: 0 0 0 3px #0b0f1a, 0 0 0 5px #f97316; }
+.swatch-radio:nth-child(4) input:checked ~ .swatch-dot { box-shadow: 0 0 0 3px #0b0f1a, 0 0 0 5px #ec4899; }
+.swatch-radio:nth-child(5) input:checked ~ .swatch-dot { box-shadow: 0 0 0 3px #0b0f1a, 0 0 0 5px #eab308; }
+
+/* =========================================================
+   ADDRESS / HORIZONTAL CARD RADIO
+========================================================= */
+.hcard-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+}
+.hcard-radio {
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+.hcard-radio input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.hcard-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.03);
+  transition: all 0.3s;
+}
+.hcard-radio:hover .hcard-inner {
+  background: rgba(255,255,255,0.06);
+}
+.hcard-radio input:checked ~ .hcard-inner {
+  border-color: #6366f1;
+  background: rgba(99,102,241,0.08);
+}
+.hcard-inner > i {
+  font-size: 18px;
+  color: #64748b;
+  width: 22px;
+  text-align: center;
+  transition: color 0.3s;
+  flex-shrink: 0;
+}
+.hcard-radio input:checked ~ .hcard-inner > i {
+  color: #818cf8;
+}
+.hcard-text {
+  flex: 1;
+}
+.hcard-text strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+.hcard-text span {
+  font-size: 11px;
+  color: #64748b;
+}
+.hcard-pip {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #475569;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.hcard-radio input:checked ~ .hcard-inner .hcard-pip {
+  background: #6366f1;
+  border-color: #6366f1;
+  box-shadow: 0 0 8px rgba(99,102,241,0.5);
+}
+
+/* =========================================================
+   STAR RATING RADIO
+========================================================= */
+.star-radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+.star-radio {
+  position: relative;
+  cursor: pointer;
+}
+.star-radio input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.star-radio i {
+  font-size: 32px;
+  color: #334155;
+  transition: color 0.2s, transform 0.2s;
+  display: block;
+}
+
+/* Hover: fill hovered star and all before it */
+.star-radio-group:hover .star-radio i {
+  color: #334155;
+}
+.star-radio:hover i,
+.star-radio:hover ~ .star-radio i {
+  color: #334155;
+}
+.star-radio-group .star-radio:hover i,
+.star-radio-group .star-radio:hover ~ .star-radio i {
+  color: #334155 !important;
+}
+
+/* Fill stars up to and including hovered one */
+.star-radio-group:has(.star-radio:nth-child(1):hover) .star-radio:nth-child(1) i { color: #eab308 !important; }
+
+.star-radio-group:has(.star-radio:nth-child(2):hover) .star-radio:nth-child(1) i,
+.star-radio-group:has(.star-radio:nth-child(2):hover) .star-radio:nth-child(2) i { color: #eab308 !important; }
+
+.star-radio-group:has(.star-radio:nth-child(3):hover) .star-radio:nth-child(1) i,
+.star-radio-group:has(.star-radio:nth-child(3):hover) .star-radio:nth-child(2) i,
+.star-radio-group:has(.star-radio:nth-child(3):hover) .star-radio:nth-child(3) i { color: #eab308 !important; }
+
+.star-radio-group:has(.star-radio:nth-child(4):hover) .star-radio:nth-child(1) i,
+.star-radio-group:has(.star-radio:nth-child(4):hover) .star-radio:nth-child(2) i,
+.star-radio-group:has(.star-radio:nth-child(4):hover) .star-radio:nth-child(3) i,
+.star-radio-group:has(.star-radio:nth-child(4):hover) .star-radio:nth-child(4) i { color: #eab308 !important; }
+
+.star-radio-group:has(.star-radio:nth-child(5):hover) .star-radio i { color: #eab308 !important; }
+
+/* Checked: fill stars up to and including selected one */
+.star-radio-group:has(.star-radio:nth-child(1) input:checked) .star-radio:nth-child(1) i { color: #eab308; }
+
+.star-radio-group:has(.star-radio:nth-child(2) input:checked) .star-radio:nth-child(1) i,
+.star-radio-group:has(.star-radio:nth-child(2) input:checked) .star-radio:nth-child(2) i { color: #eab308; }
+
+.star-radio-group:has(.star-radio:nth-child(3) input:checked) .star-radio:nth-child(1) i,
+.star-radio-group:has(.star-radio:nth-child(3) input:checked) .star-radio:nth-child(2) i,
+.star-radio-group:has(.star-radio:nth-child(3) input:checked) .star-radio:nth-child(3) i { color: #eab308; }
+
+.star-radio-group:has(.star-radio:nth-child(4) input:checked) .star-radio:nth-child(1) i,
+.star-radio-group:has(.star-radio:nth-child(4) input:checked) .star-radio:nth-child(2) i,
+.star-radio-group:has(.star-radio:nth-child(4) input:checked) .star-radio:nth-child(3) i,
+.star-radio-group:has(.star-radio:nth-child(4) input:checked) .star-radio:nth-child(4) i { color: #eab308; }
+
+.star-radio-group:has(.star-radio:nth-child(5) input:checked) .star-radio i { color: #eab308; }
+
+/* Hover overrides checked state visually */
+.star-radio-group:hover .star-radio i {
+  color: #334155;
+}
+.star-radio-group:has(.star-radio:nth-child(1):hover) .star-radio:nth-child(1) i { color: #eab308 !important; }
+.star-radio-group:has(.star-radio:nth-child(2):hover) .star-radio:nth-child(1) i,
+.star-radio-group:has(.star-radio:nth-child(2):hover) .star-radio:nth-child(2) i { color: #eab308 !important; }
+.star-radio-group:has(.star-radio:nth-child(3):hover) .star-radio:nth-child(1) i,
+.star-radio-group:has(.star-radio:nth-child(3):hover) .star-radio:nth-child(2) i,
+.star-radio-group:has(.star-radio:nth-child(3):hover) .star-radio:nth-child(3) i { color: #eab308 !important; }
+.star-radio-group:has(.star-radio:nth-child(4):hover) .star-radio:nth-child(1) i,
+.star-radio-group:has(.star-radio:nth-child(4):hover) .star-radio:nth-child(2) i,
+.star-radio-group:has(.star-radio:nth-child(4):hover) .star-radio:nth-child(3) i,
+.star-radio-group:has(.star-radio:nth-child(4):hover) .star-radio:nth-child(4) i { color: #eab308 !important; }
+.star-radio-group:has(.star-radio:nth-child(5):hover) .star-radio i { color: #eab308 !important; }
+/* =========================================================
+   PILL CHIP RADIO
+========================================================= */
+.chip-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.chip-radio {
+  position: relative;
+  cursor: pointer;
+}
+.chip-radio input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.chip-radio span {
+  display: block;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.chip-radio:hover span {
+  background: rgba(255,255,255,0.08);
+  color: #e2e8f0;
+}
+.chip-radio input:checked ~ span {
+  background: #6366f1;
+  color: #fff;
+  border-color: #6366f1;
+  box-shadow: 0 4px 14px rgba(99,102,241,0.35);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   THEME MODE RADIO
+========================================================= */
+.theme-radio-group {
+  display: flex;
+  gap: 12px;
+}
+.theme-radio {
+  position: relative;
+  cursor: pointer;
+  flex: 1;
+}
+.theme-radio input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.theme-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 10px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s;
+  position: relative;
+}
+.theme-light-card {
+  background: rgba(255,255,255,0.08);
+}
+.theme-dark-card {
+  background: rgba(10,10,20,0.5);
+}
+.theme-auto-card {
+  background: rgba(99,102,241,0.07);
+}
+.theme-card-inner i {
+  font-size: 22px;
+  color: #94a3b8;
+  transition: color 0.3s;
+}
+.theme-card-inner span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  transition: color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.theme-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.theme-check i {
+  font-size: 9px !important;
+  color: white !important;
+}
+.theme-radio:hover .theme-card-inner {
+  border-color: rgba(255,255,255,0.15);
+}
+.theme-radio input:checked ~ .theme-card-inner {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.25);
+}
+.theme-radio input:checked ~ .theme-card-inner i {
+  color: #818cf8;
+}
+.theme-radio input:checked ~ .theme-card-inner span {
+  color: #c7d2fe;
+}
+.theme-radio input:checked ~ .theme-card-inner .theme-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================================================
    SIDEBAR (mirrored from project standard)
 ========================================================= */
 .sidebar {

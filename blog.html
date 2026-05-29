@@ -1,379 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog — UIverse</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<!-- SIDEBAR -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <span class="brand-icon">⬡</span>
-    <span class="brand-text">UIverse</span>
-  </div>
-          <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a href="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="button.html">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Buttons</span>
-        </a>
-      </li>
-            <li>
-        <a href="dropdown-components.html">
-          <i class="fa-solid fa-caret-down"></i>
-          <span>Dropdowns</span>
-        </a>
-      </li>
-      <li>
-        <a href="profile-components.html">
-          <i class="fa-solid fa-user"></i>
-          <span>Profiles</span>
-        </a>
-      </li>
-<li>
-        <a href="navbar.html">
-          <i class="fa-solid fa-bars"></i>
-          <span>Navbar</span>
-        </a>
-      </li>
-      <li>
-        <a href="cards.html">
-          <i class="fa-solid fa-table-cells-large"></i>
-          <span>Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="flipcards.html">
-          <i class="fa-solid fa-clone"></i>
-          <span>3D Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="inputs.html">
-          <i class="fa-solid fa-keyboard"></i>
-          <span>Inputs</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms.html">
-          <i class="fa-brands fa-wpforms"></i>
-          <span>Forms</span>
-        </a>
-      </li>
-      <li>
-        <a href="badges.html">
-          <i class="fa-solid fa-award"></i>
-          <span>Badges</span>
-        </a>
-      </li>
-      <li class="active">
-        <a href="blog.html">
-          <i class="fa-solid fa-blog"></i>
-          <span>Blog</span>
-        </a>
-      </li>
-      <li>
-        <a href="article.html">
-          <i class="fa-solid fa-newspaper"></i>
-          <span>Articles</span>
-        </a>
-      </li>
-      <li>
-        <a href="alerts.html">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <span>Alerts</span>
-        </a>
-      </li>
-      <li>
-        <a href="color.html">
-          <i class="fa-solid fa-palette"></i>
-          <span>Colors</span>
-        </a>
-      </li>
-      <li>
-        <a href="charts.html">
-          <i class="fa-solid fa-chart-pie"></i>
-          <span>Charts</span>
-        </a>
-      </li>
-      <li>
-        <a href="dashboard.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="div.html">
-          <i class="fa-solid fa-square"></i>
-          <span>DIV</span>
-        </a>
-      </li>
-      <li>
-        <a href="widgets.html">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Widgets</span>
-        </a>
-      </li>
-      <li>
-        <a href="search.html">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span>Search Bars</span>
-        </a>
-      </li>
-      <li>
-        <a href="hover.html">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          <span>Hover Effects</span>
-        </a>
-      </li>
-      <li>
-        <a href="error.html">
-          <i class="fa-solid fa-circle-exclamation"></i>
-          <span>Error Pages</span>
-        </a>
-      </li>
-      <li>
-        <a href="ecommerce.html">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span>E-commerce</span>
-        </a>
-      </li>
-      <li>
-        <a href="files.html">
-          <i class="fa-solid fa-file-arrow-up"></i>
-          <span>Drag & Drop</span>
-        </a>
-      </li>
-      <li>
-        <a href="hero.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Hero Sections</span>
-        </a>
-      </li>
-      <li>
-        <a href="loaders.html">
-          <i class="fa-solid fa-spinner"></i>
-          <span>Loaders</span>
-        </a>
-      </li>
-      <li>
-        <a href="timeline.html">
-          <i class="fa-solid fa-clock-rotate-left"></i>
-          <span>Timeline</span>
-        </a>
-      </li>
-      <li>
-        <a href="map.html">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <span>Maps</span>
-        </a>
-      </li>
-      <li>
-        <a href="menu.html">
-          <i class="fa-solid fa-bars-staggered"></i>
-          <span>Menu</span>
-        </a>
-      </li>
-      <li>
-        <a href="pricing.html">
-          <i class="fa-solid fa-tags"></i>
-          <span>Pricing</span>
-        </a>
-      </li>
-      <li>
-        <a href="subscription.html">
-          <i class="fa-solid fa-credit-card"></i>
-          <span>Subscription</span>
-        </a>
-      </li>
-      <li>
-        <a href="auth.html">
-          <i class="fa-solid fa-user-shield"></i>
-          <span>Authentication</span>
-        </a>
-      </li>
-        <li>
-          <a href="recovery.html">
-            <i class="fa-solid fa-key" aria-hidden="true"></i>
-            <span>Password Recovery</span>
-          </a>
-        </li>
-      <li>
-        <a href="section.html">
-          <i class="fa-solid fa-rectangle-list"></i>
-          <span>Section</span>
-        </a>
-      </li>
-      <li>
-        <a href="span.html">
-          <i class="fa-solid fa-code"></i>
-          <span>Span</span>
-        </a>
-      </li>
-      <li>
-        <a href="table.html">
-          <i class="fa-solid fa-table"></i>
-          <span>Table</span>
-        </a>
-      </li>
-      <li>
-        <a href="tabs.html">
-          <i class="fa-solid fa-table-columns"></i>
-          <span>Tabs</span>
-        </a>
-      </li>
-      <li>
-        <a href="terms.html">
-          <i class="fa-solid fa-file-contract"></i>
-          <span>Terms</span>
-        </a>
-      </li>
-      <li>
-        <a href="testimonials.html">
-          <i class="fa-solid fa-comments"></i>
-          <span>Testimonials</span>
-        </a>
-      </li>
-      <li>
-        <a href="toggles.html">
-          <i class="fa-solid fa-toggle-on"></i>
-          <span>Toggle</span>
-        </a>
-      </li>
-      <li>
-        <a href="radiobutton.html">
-          <i class="fa-solid fa-circle-dot"></i>
-          <span>Radio Buttons</span>
-        </a>
-      </li>
-      <li>
-        <a href="checkbox.html">
-          <i class="fa-solid fa-square-check"></i>
-          <span>Checkboxes</span>
-        </a>
-      </li>
-      <li>
-        <a href="notifications-premium.html">
-          <i class="fa-solid fa-bell"></i>
-          <span>Notifications V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="step-indicators.html">
-          <i class="fa-solid fa-list-check"></i>
-          <span>Steppers</span>
-        </a>
-      </li>
-      <li>
-        <a href="progress-premium.html">
-          <i class="fa-solid fa-bars-progress"></i>
-          <span>Progress V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="ratings-premium.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Ratings V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="filters-premium.html">
-          <i class="fa-solid fa-sliders"></i>
-          <span>Filters V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="admin-panel.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Admin Panel V2</span>
-        </a>
-      </li>
-<li>
-        <a href="about.html">
-          <i class="fa-solid fa-circle-info"></i>
-          <span>About</span>
-        </a>
-      </li>
-      <li>
-        <a href="documentation.html">
-          <i class="fa-solid fa-book"></i>
-          <span>Documentation</span>
-        </a>
-      </li>
-      <li>
-        <a href="faq.html">
-          <i class="fa-solid fa-circle-question"></i>
-          <span>Faq</span>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Contact Us</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <div class="sidebar-footer">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="#"><i class="fab fa-x-twitter"></i></a>
-  </div>
-</aside>
-
-<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-
-<!-- NAVBAR -->
-<header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-  <div class="logo">UIverse</div>
-  <div class="search-bar">
-    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search articles..." oninput="searchPosts(this.value)" />
-    <kbd class="search-kbd">⌘K</kbd>
-  </div>
-  <div class="nav-right">
-    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
-    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
-    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
-  </div>
-</header>
-
-<!-- MAIN -->
-<main class="main-home">
-
-
-  <!-- HERO -->
-
-  <section class="hero-section">
-
-    <div class="hero-badge">
-      ✦ Blog Components Collection
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-text">UIverse</span>
     </div>
 
-    <h1>
-      Modern <span>Blog Cards</span>
-    </h1>
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="button.html">
+            <i class="fa-solid fa-hand-pointer"></i>
+            <span>Buttons</span>
+          </a>
+        </li>
+        <li>
+          <a href="cards.html">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span>Cards</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="blog.html">
+            <i class="fa-solid fa-blog"></i>
+            <span>Blog</span>
+          </a>
+        </li>
+        <li>
+          <a href="article.html">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Articles</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <i class="fa-regular fa-envelope"></i>
+            <span>Contact Us</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </aside>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
     <p>
 
@@ -390,7 +87,7 @@
 <section class="trending-section">
 
   <div class="section-heading">
-    <span class="section-badge">🔥 Trending Now</span>
+    <span class="section-badge"><i class="fa-solid fa-fire"></i> Trending Now</span>
     <h2>Most Popular This Week</h2>
   </div>
 
@@ -510,7 +207,7 @@
         9 min read
       </span>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Explore
       </button>
 
@@ -523,7 +220,7 @@
 <!-- BLOG STATS -->
 <section class="blog-stats">
 
-  <div class="stat-box">
+  <div class="stat-box" role="status">
     <h2>250+</h2>
     <p>Published Articles</p>
   </div>
@@ -594,624 +291,548 @@
 
     <button class="filter-btn">
       Minimal
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <button class="menu-toggle" type="button" onclick="toggleSidebar()" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
     </button>
 
-    <button class="filter-btn">
-      Featured
-    </button>
+    <div class="logo">UIverse</div>
 
-    <div>
-      <form class="scearch">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Filter blogs..." id="blogSearch">
-      </form>
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Search articles..." oninput="searchPosts(this.value)" / data-a11y-remediation="label-needed">
+      <kbd class="search-kbd">⌘K</kbd>
     </div>
-  </section>
 
-  <!-- BLOG GRID -->
-
-  <section class="blog-grid">
-
-    <!-- CARD -->
-
-    <div class="blog-card">
-
-      <div class="blog-image">
-
-        <img
-          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
-          alt=""
-        >
-
-
-  <!-- ===== BLOG HERO ===== -->
-  <div class="blog-hero">
-    <div class="blog-hero-text">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right"></i>
-        <span>Blog</span>
-      </div>
-      <h1 class="blog-hero-title">
-        The <span class="blog-hero-italic">UIverse</span> Blog
-      </h1>
-      <p class="blog-hero-desc">Tutorials, design tips, component deep-dives, and UI inspiration — all from the UIverse community.</p>
-      <div class="blog-hero-meta">
-        <span><i class="fa-solid fa-newspaper"></i> 24 Articles</span>
-        <span><i class="fa-solid fa-users"></i> 8 Authors</span>
-        <span><i class="fa-solid fa-fire"></i> Updated weekly</span>
-      </div>
+    <div class="nav-right">
+      <button class="nav-btn outline-nav-btn" type="button"><i class="fa-solid fa-plus"></i> Add Component</button>
+      <button class="nav-btn primary-nav-btn" type="button"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+      <button id="darkModeToggle" class="theme-toggle" type="button" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
     </div>
-    <div class="blog-hero-featured">
-      <div class="blog-featured-chip">📌 Featured</div>
-      <div class="blog-featured-thumb blog-thumb-featured"></div>
-      <div class="blog-featured-body">
-        <div class="blog-tag-row">
-          <span class="blog-cat-tag bct-tutorial">Tutorial</span>
-          <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 8 min read</span>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main-home">
+    <!-- ===== BLOG HERO ===== -->
+    <section class="blog-hero" aria-label="Blog hero">
+      <div class="blog-hero-text">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Blog</span>
         </div>
-        <h2 class="blog-featured-title">Building a Complete Design System from Scratch with Pure CSS</h2>
-        <p class="blog-featured-excerpt">Learn how to build a scalable, token-based design system using only CSS custom properties — no Sass, no frameworks, no build tools required.</p>
-        <div class="blog-featured-footer">
-          <div class="blog-author-row">
-            <div class="blog-avatar blog-avatar-orange">AK</div>
-            <div>
-              <span class="blog-author-name">Ankit Pardeshi</span>
-              <span class="blog-author-date">May 12, 2026</span>
-            </div>
-          </div>
-          <a href="#" class="blog-read-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+
+        <h1 class="blog-hero-title">The <span class="blog-hero-italic">UIverse</span> Blog</h1>
+        <p class="blog-hero-desc">Tutorials, design tips, component deep-dives, and UI inspiration — all from the UIverse community.</p>
+
+        <div class="blog-hero-meta">
+          <span><i class="fa-solid fa-newspaper"></i> 24 Articles</span>
+          <span><i class="fa-solid fa-users"></i> 8 Authors</span>
+          <span><i class="fa-solid fa-fire"></i> Updated weekly</span>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ===== CATEGORY FILTERS ===== -->
-  <div class="blog-filter-row">
-    <div class="blog-cats">
-      <button class="blog-cat-btn active" onclick="filterPosts('all', this)">All</button>
-      <button class="blog-cat-btn" onclick="filterPosts('tutorial', this)">Tutorials</button>
-      <button class="blog-cat-btn" onclick="filterPosts('tips', this)">Tips & Tricks</button>
-      <button class="blog-cat-btn" onclick="filterPosts('news', this)">News</button>
-      <button class="blog-cat-btn" onclick="filterPosts('showcase', this)">Showcase</button>
-      <button class="blog-cat-btn" onclick="filterPosts('deep-dive', this)">Deep Dives</button>
-    </div>
-    <div class="blog-sort">
-      <select onchange="sortPosts(this.value)">
-        <option value="latest">Latest First</option>
-        <option value="popular">Most Popular</option>
-        <option value="oldest">Oldest First</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- ===== MAIN BLOG LAYOUT ===== -->
-  <div class="blog-layout">
-
-    <!-- Posts Grid -->
-    <div class="blog-posts" id="blogPosts">
-
-      <!-- Post 1 -->
-      <article class="blog-card" data-cat="tutorial" data-title="css grid layout complete guide 2026">
-        <div class="blog-card-thumb blog-thumb-1"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-tutorial">Tutorial</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 6 min</span>
-          </div>
-          <h3 class="blog-card-title">CSS Grid Layout: The Complete 2026 Guide</h3>
-          <p class="blog-card-excerpt">Master CSS Grid from the basics to advanced subgrid, named areas, and responsive layouts. With live examples.</p>
-          <div class="blog-card-footer">
-            <div class="blog-author-row">
-              <div class="blog-avatar blog-avatar-purple">CN</div>
-              <span class="blog-author-name">Chinmay N.</span>
-            </div>
-            <div class="blog-card-stats">
-              <span><i class="fa-regular fa-heart"></i> 142</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 2 -->
-      <article class="blog-card" data-cat="tips" data-title="css variables design tokens tips tricks">
-        <div class="blog-card-thumb blog-thumb-2"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-tips">Tips & Tricks</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 4 min</span>
-          </div>
-          <h3 class="blog-card-title">10 CSS Custom Property Tricks Every Dev Should Know</h3>
-          <p class="blog-card-excerpt">CSS variables are more powerful than you think. Here are 10 clever patterns that will upgrade your codebase.</p>
-          <div class="blog-card-footer">
-            <div class="blog-author-row">
-              <div class="blog-avatar blog-avatar-green">LN</div>
-              <span class="blog-author-name">Likhitha N.</span>
-            </div>
-            <div class="blog-card-stats">
-              <span><i class="fa-regular fa-heart"></i> 98</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 3 -->
-      <article class="blog-card" data-cat="deep-dive" data-title="flexbox deep dive advanced techniques">
-        <div class="blog-card-thumb blog-thumb-3"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-deepdive">Deep Dive</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 12 min</span>
-          </div>
-          <h3 class="blog-card-title">Flexbox Demystified: Every Property, Every Edge Case</h3>
-          <p class="blog-card-excerpt">A definitive deep dive into Flexbox — from flex-grow and shrink to complex alignment tricks most devs miss.</p>
-          <div class="blog-card-footer">
-            <div class="blog-author-row">
-              <div class="blog-avatar blog-avatar-orange">AK</div>
-              <span class="blog-author-name">Ankit K.</span>
-            </div>
-            <div class="blog-card-stats">
-              <span><i class="fa-regular fa-heart"></i> 231</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 4 -->
-      <article class="blog-card" data-cat="news" data-title="uiverse v2 launch new features news">
-        <div class="blog-card-thumb blog-thumb-4"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-news">News</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 3 min</span>
-          </div>
-          <h3 class="blog-card-title">UIverse v2.0 Is Here — Here's Everything That's New</h3>
-          <p class="blog-card-excerpt">Dark mode, 40 new components, a complete redesign, and an open-source launch. Meet UIverse 2.0.</p>
-          <div class="blog-card-footer">
-            <div class="blog-author-row">
-              <div class="blog-avatar blog-avatar-blue">TM</div>
-              <span class="blog-author-name">Team UIverse</span>
-            </div>
-            <div class="blog-card-stats">
-              <span><i class="fa-regular fa-heart"></i> 408</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 5 -->
-      <article class="blog-card" data-cat="tutorial" data-title="dark mode css implementation tutorial">
-        <div class="blog-card-thumb blog-thumb-5"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-tutorial">Tutorial</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 7 min</span>
-          </div>
-          <h3 class="blog-card-title">Implementing Dark Mode the Right Way in 2026</h3>
-          <p class="blog-card-excerpt">Using CSS variables and a single class toggle — the cleanest approach to dark mode that respects user preferences.</p>
-          <div class="blog-card-footer">
-            <div class="blog-author-row">
-              <div class="blog-avatar blog-avatar-purple">CN</div>
-              <span class="blog-author-name">Chinmay N.</span>
-            </div>
-            <div class="blog-card-stats">
-              <span><i class="fa-regular fa-heart"></i> 187</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 6 -->
-      <article class="blog-card" data-cat="showcase" data-title="community showcase best components ui">
-        <div class="blog-card-thumb blog-thumb-6"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-showcase">Showcase</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 5 min</span>
-          </div>
-          <h3 class="blog-card-title">Community Showcase: 15 Stunning Components Built with UIverse</h3>
-          <p class="blog-card-excerpt">This month's best community-contributed components — from animated loaders to full pricing sections.</p>
-          <div class="blog-card-footer">
-            <div class="blog-author-row">
-              <div class="blog-avatar blog-avatar-green">LN</div>
-              <span class="blog-author-name">Likhitha N.</span>
-            </div>
-            <div class="blog-card-stats">
-              <span><i class="fa-regular fa-heart"></i> 312</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 7 -->
-      <article class="blog-card" data-cat="tips" data-title="accessibility tips aria labels keyboard">
-        <div class="blog-card-thumb blog-thumb-7"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-tips">Tips & Tricks</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 5 min</span>
-          </div>
-          <h3 class="blog-card-title">5 Accessibility Mistakes Every UI Dev Makes (And How to Fix Them)</h3>
-          <p class="blog-card-excerpt">Missing ARIA labels, missing focus rings, low contrast — here's how to spot and fix the most common a11y issues.</p>
-          <div class="blog-card-footer">
-            <div class="blog-author-row">
-              <div class="blog-avatar blog-avatar-blue">TM</div>
-              <span class="blog-author-name">Team UIverse</span>
-            </div>
-            <div class="blog-card-stats">
-              <span><i class="fa-regular fa-heart"></i> 76</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 8 -->
-      <article class="blog-card" data-cat="deep-dive" data-title="css animations keyframes performance deep dive">
-        <div class="blog-card-thumb blog-thumb-8"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-deepdive">Deep Dive</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 10 min</span>
-          </div>
-          <h3 class="blog-card-title">CSS Animations & Performance: A Developer's Deep Dive</h3>
-          <p class="blog-card-excerpt">Not all animations are equal. Learn which CSS properties animate on the compositor thread and how to achieve 60fps.</p>
-          <div class="blog-card-footer">
+      <a class="blog-hero-featured" href="#" aria-label="Featured post">
+        <div class="blog-featured-chip">Featured</div>
+        <div class="blog-thumb-featured"></div>
+        <div class="blog-featured-body">
+          <h2 class="blog-featured-title">CSS Animations & Performance: A Developer's Deep Dive</h2>
+          <p class="blog-featured-excerpt">Not all animations are equal. Learn which CSS properties animate on the compositor thread and how to achieve 60fps.</p>
+          <div class="blog-featured-footer">
             <div class="blog-author-row">
               <div class="blog-avatar blog-avatar-orange">AK</div>
               <span class="blog-author-name">Ankit K.</span>
             </div>
             <div class="blog-card-stats">
               <span><i class="fa-regular fa-heart"></i> 154</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
+              <span class="blog-read-btn">Read <i class="fa-solid fa-arrow-right"></i></span>
             </div>
           </div>
         </div>
-      </article>
+      </a>
+    </section>
 
-      <!-- Post 9 -->
-      <article class="blog-card" data-cat="showcase" data-title="landing page design inspiration showcase">
-        <div class="blog-card-thumb blog-thumb-9"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-showcase">Showcase</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 4 min</span>
-          </div>
-          <h3 class="blog-card-title">10 Landing Page Designs That Made Us Stop Scrolling</h3>
-          <p class="blog-card-excerpt">Pure inspiration — 10 stunning landing page UIs that pushed the boundaries of what's possible with HTML and CSS.</p>
-          <div class="blog-card-footer">
-            <div class="blog-author-row">
-              <div class="blog-avatar blog-avatar-purple">CN</div>
-              <span class="blog-author-name">Chinmay N.</span>
-            </div>
-            <div class="blog-card-stats">
-              <span><i class="fa-regular fa-heart"></i> 289</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 10 -->
-      <article class="blog-card" data-cat="tutorial" data-title="how ui impacts user experience tutorial">
-        <div class="blog-card-thumb blog-thumb-10"></div>
-        <div class="blog-card-body">
-          <div class="blog-tag-row">
-            <span class="blog-cat-tag bct-tutorial">Tutorial</span>
-            <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 6 min</span>
-          </div>
-          <h3 class="blog-card-title">How UI Impacts User Experience</h3>
-          <p class="blog-card-excerpt">UI design directly affects user experience by improving usability, accessibility, navigation, and overall interaction satisfaction on websites and applications.</p>
-          <div class="blog-card-footer">
-            <div class="blog-author-row">
-              <div class="blog-avatar blog-avatar-red">SH</div>
-              <span class="blog-author-name">Shantanu K.</span>
-            </div>
-            <div class="blog-card-stats">
-              <span><i class="fa-regular fa-heart"></i> 0</span>
-              <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Empty state -->
-      <div class="blog-empty" id="blogEmpty" style="display:none;">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <h3>No articles found</h3>
-        <p>Try a different search term or category.</p>
-        <button onclick="resetSearch()">Clear Search</button>
+    <!-- ===== CATEGORY FILTERS ===== -->
+    <section class="blog-filter-row" aria-label="Blog filters">
+      <div class="blog-cats">
+        <button class="blog-cat-btn active" type="button" onclick="filterPosts('all', this)">All</button>
+        <button class="blog-cat-btn" type="button" onclick="filterPosts('tutorial', this)">Tutorials</button>
+        <button class="blog-cat-btn" type="button" onclick="filterPosts('tips', this)">Tips & Tricks</button>
+        <button class="blog-cat-btn" type="button" onclick="filterPosts('news', this)">News</button>
+        <button class="blog-cat-btn" type="button" onclick="filterPosts('showcase', this)">Showcase</button>
+        <button class="blog-cat-btn" type="button" onclick="filterPosts('deep-dive', this)">Deep Dives</button>
       </div>
 
-    </div><!-- /blog-posts -->
+      <div class="blog-sort">
+        <select onchange="sortPosts(this.value)" aria-label="Sort posts">
+          <option value="latest">Latest First</option>
+          <option value="popular">Most Popular</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+      </div>
+    </section>
 
-    <!-- Sidebar -->
-    <aside class="blog-sidebar">
+    <!-- ===== MAIN BLOG LAYOUT ===== -->
+    <section class="blog-layout" aria-label="Blog layout">
+      <!-- Posts Grid -->
+      <div class="blog-posts" id="blogPosts">
+        <article class="blog-card" data-cat="tutorial" data-title="css grid layout complete guide 2026">
+          <div class="blog-card-thumb blog-thumb-1"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag-row">
+              <span class="blog-cat-tag bct-tutorial">Tutorial</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 6 min</span>
+            </div>
+            <h3 class="blog-card-title">CSS Grid Layout: The Complete 2026 Guide</h3>
+            <p class="blog-card-excerpt">Master CSS Grid from the basics to advanced subgrid, named areas, and responsive layouts. With live examples.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-row">
+                <div class="blog-avatar blog-avatar-purple">CN</div>
+                <span class="blog-author-name">Chinmay N.</span>
+              </div>
+              <div class="blog-card-stats">
+                <span><i class="fa-regular fa-heart"></i> 142</span>
+                <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
 
-      <!-- Newsletter -->
-      <div class="bs-card bs-newsletter">
-        <div class="bs-newsletter-icon">✉️</div>
-        <h3>Stay in the loop</h3>
-        <p>Get new articles and component drops delivered to your inbox every week.</p>
-        <div class="bs-newsletter-form">
+        <article class="blog-card" data-cat="tips" data-title="css variables design tokens tips tricks">
+          <div class="blog-card-thumb blog-thumb-2"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag-row">
+              <span class="blog-cat-tag bct-tips">Tips & Tricks</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 4 min</span>
+            </div>
+            <h3 class="blog-card-title">10 CSS Custom Property Tricks Every Dev Should Know</h3>
+            <p class="blog-card-excerpt">CSS variables are more powerful than you think. Here are 10 clever patterns that will upgrade your codebase.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-row">
+                <div class="blog-avatar blog-avatar-green">LN</div>
+                <span class="blog-author-name">Likhitha N.</span>
+              </div>
+              <div class="blog-card-stats">
+                <span><i class="fa-regular fa-heart"></i> 98</span>
+                <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="deep-dive" data-title="flexbox deep dive advanced techniques">
+          <div class="blog-card-thumb blog-thumb-3"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag-row">
+              <span class="blog-cat-tag bct-deepdive">Deep Dive</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 12 min</span>
+            </div>
+            <h3 class="blog-card-title">Flexbox Demystified: Every Property, Every Edge Case</h3>
+            <p class="blog-card-excerpt">A definitive deep dive into Flexbox — from flex-grow and shrink to complex alignment tricks most devs miss.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-row">
+                <div class="blog-avatar blog-avatar-orange">AK</div>
+                <span class="blog-author-name">Ankit K.</span>
+              </div>
+              <div class="blog-card-stats">
+                <span><i class="fa-regular fa-heart"></i> 231</span>
+                <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="news" data-title="uiverse v2 launch new features news">
+          <div class="blog-card-thumb blog-thumb-4"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag-row">
+              <span class="blog-cat-tag bct-news">News</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 3 min</span>
+            </div>
+            <h3 class="blog-card-title">UIverse v2.0 Is Here — Here's Everything That's New</h3>
+            <p class="blog-card-excerpt">Dark mode, 40 new components, a complete redesign, and an open-source launch. Meet UIverse 2.0.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-row">
+                <div class="blog-avatar blog-avatar-blue">TM</div>
+                <span class="blog-author-name">Team UIverse</span>
+              </div>
+              <div class="blog-card-stats">
+                <span><i class="fa-regular fa-heart"></i> 408</span>
+                <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="tutorial" data-title="dark mode css implementation tutorial">
+          <div class="blog-card-thumb blog-thumb-5"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag-row">
+              <span class="blog-cat-tag bct-tutorial">Tutorial</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 7 min</span>
+            </div>
+            <h3 class="blog-card-title">Implementing Dark Mode the Right Way in 2026</h3>
+            <p class="blog-card-excerpt">Using CSS variables and a single class toggle — the cleanest approach to dark mode that respects user preferences.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-row">
+                <div class="blog-avatar blog-avatar-purple">CN</div>
+                <span class="blog-author-name">Chinmay N.</span>
+              </div>
+              <div class="blog-card-stats">
+                <span><i class="fa-regular fa-heart"></i> 187</span>
+                <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="showcase" data-title="community showcase best components ui">
+          <div class="blog-card-thumb blog-thumb-6"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag-row">
+              <span class="blog-cat-tag bct-showcase">Showcase</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 5 min</span>
+            </div>
+            <h3 class="blog-card-title">Community Showcase: 15 Stunning Components Built with UIverse</h3>
+            <p class="blog-card-excerpt">This month's best community-contributed components — from animated loaders to full pricing sections.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-row">
+                <div class="blog-avatar blog-avatar-green">LN</div>
+                <span class="blog-author-name">Likhitha N.</span>
+              </div>
+              <div class="blog-card-stats">
+                <span><i class="fa-regular fa-heart"></i> 312</span>
+                <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="news" data-title="release notes updates changelog">
+          <div class="blog-card-thumb blog-thumb-7"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag-row">
+              <span class="blog-cat-tag bct-news">News</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 3 min</span>
+            </div>
+            <h3 class="blog-card-title">Release Notes: What's New This Week</h3>
+            <p class="blog-card-excerpt">A quick roundup of the latest component drops, bug fixes, and quality-of-life improvements.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-row">
+                <div class="blog-avatar blog-avatar-blue">TM</div>
+                <span class="blog-author-name">Team UIverse</span>
+              </div>
+              <div class="blog-card-stats">
+                <span><i class="fa-regular fa-heart"></i> 76</span>
+                <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-cat="tips" data-title="accessibility mistakes common ui dev">
+          <div class="blog-card-thumb blog-thumb-8"></div>
+          <div class="blog-card-body">
+            <div class="blog-tag-row">
+              <span class="blog-cat-tag bct-tips">Tips & Tricks</span>
+              <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 5 min</span>
+            </div>
+            <h3 class="blog-card-title">5 Accessibility Mistakes Every UI Dev Makes</h3>
+            <p class="blog-card-excerpt">Keyboard focus, color contrast, semantics, and motion — avoid these common pitfalls with practical fixes.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-row">
+                <div class="blog-avatar blog-avatar-red">SH</div>
+                <span class="blog-author-name">Shantanu K.</span>
+              </div>
+              <div class="blog-card-stats">
+                <span><i class="fa-regular fa-heart"></i> 204</span>
+                <a href="#" class="blog-link-btn">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="blog-empty" id="blogEmpty" style="display:none;">
+          <h3>No posts found</h3>
+          <p>Try a different search term or filter.</p>
+          <button class="blog-cat-btn" type="button" onclick="resetSearch()">Reset</button>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <div class="bs-card bs-newsletter">
+          <div class="bs-newsletter-icon"><i class="fa-solid fa-envelope"></i></div>
+          <h3>Stay in the loop</h3>
+          <p>Get new articles and component drops delivered to your inbox every week.</p>
+          <form class="bs-newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="you@email.com" />
+            <button type="button">Subscribe</button>
+          </form>
+          <span class="bs-newsletter-note">No spam. Unsubscribe anytime.</span>
+        </div>
+
+        <div class="bs-card">
+          <div class="bs-heading"><span><i class="fa-solid fa-square"></i></span> Popular Posts</div>
+          <div class="bs-popular-list">
+            <a href="#" class="bs-popular-item">
+              <div class="bs-popular-num">01</div>
+              <div>
+                <p>CSS Grid Layout: The Complete 2026 Guide</p>
+                <span><i class="fa-regular fa-heart"></i> 142 likes</span>
+              </div>
+            </a>
+            <a href="#" class="bs-popular-item">
+              <div class="bs-popular-num">02</div>
+              <div>
+                <p>UIverse v2.0 Is Here — Everything That's New</p>
+                <span><i class="fa-regular fa-heart"></i> 408 likes</span>
+              </div>
+            </a>
+            <a href="#" class="bs-popular-item">
+              <div class="bs-popular-num">03</div>
+              <div>
+                <p>Flexbox Demystified: Every Property, Every Edge Case</p>
+                <span><i class="fa-regular fa-heart"></i> 231 likes</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="bs-card">
+          <div class="bs-heading"><span><i class="fa-solid fa-square"></i></span> Browse Topics</div>
+          <div class="bs-topics">
+            <button type="button" onclick="filterPosts('tutorial', null)" class="bs-topic-tag">Tutorials</button>
+            <button type="button" onclick="filterPosts('tips', null)" class="bs-topic-tag">Tips & Tricks</button>
+            <button type="button" onclick="filterPosts('news', null)" class="bs-topic-tag">News</button>
+            <button type="button" onclick="filterPosts('showcase', null)" class="bs-topic-tag">Showcase</button>
+            <button type="button" onclick="filterPosts('deep-dive', null)" class="bs-topic-tag">Deep Dives</button>
+            <button type="button" onclick="filterPosts('all', document.querySelector('.blog-cat-btn'))" class="bs-topic-tag bs-topic-all">All Articles</button>
+          </div>
+        </div>
+
+        <div class="bs-card">
+          <div class="bs-heading"><span><i class="fa-solid fa-square"></i></span> Authors</div>
+          <div class="bs-authors">
+            <div class="bs-author-item">
+              <div class="blog-avatar blog-avatar-purple">CN</div>
+              <div>
+                <strong>Chinmay N.</strong>
+                <span>7 articles · CSS & Design Systems</span>
+              </div>
+            </div>
+            <div class="bs-author-item">
+              <div class="blog-avatar blog-avatar-green">LN</div>
+              <div>
+                <strong>Likhitha N.</strong>
+                <span>5 articles · UI/UX & Components</span>
+              </div>
+            </div>
+            <div class="bs-author-item">
+              <div class="blog-avatar blog-avatar-orange">AK</div>
+              <div>
+                <strong>Ankit K.</strong>
+                <span>6 articles · Performance & CSS</span>
+              </div>
+            </div>
+            <div class="bs-author-item">
+              <div class="blog-avatar blog-avatar-blue">TM</div>
+              <div>
+                <strong>Team UIverse</strong>
+                <span>8 articles · News & Updates</span>
+              </div>
+            </div>
+            <div class="bs-author-item">
+              <div class="blog-avatar blog-avatar-red">SH</div>
+              <div>
+                <strong>Shantanu K.</strong>
+                <span>1 article · UI Components & Frontend</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Pagination (UI-only) -->
+    <nav class="blog-pagination" aria-label="Pagination">
+      <button class="page-btn" type="button"><i class="fa-solid fa-chevron-left"></i> Previous</button>
+      <button class="page-num active" type="button">1</button>
+      <button class="page-num" type="button">2</button>
+      <button class="page-num" type="button">3</button>
+      <span style="color:#8f99b6;">…</span>
+      <button class="page-num" type="button">8</button>
+      <button class="page-btn" type="button">Next <i class="fa-solid fa-chevron-right"></i></button>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">UIverse</div>
+        <p>Premium UI components crafted for modern web apps.</p>
+        <div class="socials">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cards.html">Components</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
           <input type="email" placeholder="your@email.com" />
           <button type="button">Subscribe</button>
         </div>
-        <span class="bs-newsletter-note">No spam. Unsubscribe anytime.</span>
-      </div>
-
-      <!-- Popular Posts -->
-      <div class="bs-card">
-        <h3 class="bs-heading"><i class="fa-solid fa-fire-flame-curved"></i> Popular Posts</h3>
-        <div class="bs-popular-list">
-          <a href="#" class="bs-popular-item">
-            <span class="bs-popular-num">01</span>
-            <div>
-              <p>CSS Grid Layout: The Complete 2026 Guide</p>
-              <span><i class="fa-regular fa-heart"></i> 142 likes</span>
-            </div>
-          </a>
-          <a href="#" class="bs-popular-item">
-            <span class="bs-popular-num">02</span>
-            <div>
-              <p>UIverse v2.0 Is Here — Everything That's New</p>
-              <span><i class="fa-regular fa-heart"></i> 408 likes</span>
-            </div>
-          </a>
-          <a href="#" class="bs-popular-item">
-            <span class="bs-popular-num">03</span>
-            <div>
-              <p>Community Showcase: 15 Stunning Components</p>
-              <span><i class="fa-regular fa-heart"></i> 312 likes</span>
-            </div>
-          </a>
-          <a href="#" class="bs-popular-item">
-            <span class="bs-popular-num">04</span>
-            <div>
-              <p>Flexbox Demystified: Every Property, Every Edge Case</p>
-              <span><i class="fa-regular fa-heart"></i> 231 likes</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Topics -->
-      <div class="bs-card">
-        <h3 class="bs-heading"><i class="fa-solid fa-tags"></i> Browse Topics</h3>
-        <div class="bs-topics">
-          <button onclick="filterPosts('tutorial', document.querySelector('.blog-cat-btn[data-cat=tutorial]'))" class="bs-topic-tag">Tutorials</button>
-          <button onclick="filterPosts('tips', null)" class="bs-topic-tag">Tips & Tricks</button>
-          <button onclick="filterPosts('news', null)" class="bs-topic-tag">News</button>
-          <button onclick="filterPosts('showcase', null)" class="bs-topic-tag">Showcase</button>
-          <button onclick="filterPosts('deep-dive', null)" class="bs-topic-tag">Deep Dives</button>
-          <button onclick="filterPosts('all', null)" class="bs-topic-tag bs-topic-all">All Articles</button>
-        </div>
-      </div>
-
-      <!-- Authors -->
-      <div class="bs-card">
-        <h3 class="bs-heading"><i class="fa-solid fa-pen-nib"></i> Authors</h3>
-        <div class="bs-authors">
-          <div class="bs-author-item">
-            <div class="blog-avatar blog-avatar-purple">CN</div>
-            <div>
-              <strong>Chinmay N.</strong>
-              <span>7 articles · CSS & Design Systems</span>
-            </div>
-          </div>
-          <div class="bs-author-item">
-            <div class="blog-avatar blog-avatar-green">LN</div>
-            <div>
-              <strong>Likhitha N.</strong>
-              <span>5 articles · UI/UX & Components</span>
-            </div>
-          </div>
-          <div class="bs-author-item">
-            <div class="blog-avatar blog-avatar-orange">AK</div>
-            <div>
-              <strong>Ankit K.</strong>
-              <span>6 articles · Performance & CSS</span>
-            </div>
-          </div>
-          <div class="bs-author-item">
-            <div class="blog-avatar blog-avatar-blue">TM</div>
-            <div>
-              <strong>Team UIverse</strong>
-              <span>6 articles · News & Updates</span>
-            </div>
-          </div>
-          <div class="bs-author-item">
-            <div class="blog-avatar blog-avatar-red">SH</div>
-            <div>
-              <strong>Shantanu K.</strong>
-              <span>1 article · UI Components & Frontend Design</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </aside>
-
-  </div><!-- /blog-layout -->
-
-  <!-- Pagination -->
-  <div class="blog-pagination">
-    <button class="page-btn page-prev" disabled><i class="fa-solid fa-chevron-left"></i> Previous</button>
-    <div class="page-nums">
-      <button class="page-num active">1</button>
-      <button class="page-num">2</button>
-      <button class="page-num">3</button>
-      <span class="page-dots">…</span>
-      <button class="page-num">8</button>
-    </div>
-    <button class="page-btn page-next">Next <i class="fa-solid fa-chevron-right"></i></button>
-  </div>
-
-</main>
-
-<!-- Scroll to Top -->
-<button id="scrollTopBtn" onclick="scrollToTop()">
-  <i class="fa-solid fa-chevron-up"></i>
-</button>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col brand">
-      <h2 class="footer-logo">⬡ UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      <div class="socials">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="alerts.html">Alerts</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="guidelines.html">Guidelines</a></li>
-      </ul>
+
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
     </div>
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="guidelines.html">Documentation</a></li>
-        <li><a href="#">GitHub Repo</a></li>
-        <li><a href="#">Community</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-      </ul>
-    </div>
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button">Subscribe</button>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  /* Dark Mode */
-  const toggle = document.getElementById('darkModeToggle');
-  const icon = toggle.querySelector('i');
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    icon.className = 'fa-solid fa-sun';
-  }
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
+  <button id="scrollTopBtn" type="button" onclick="scrollToTop()" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
-  /* Sidebar */
-  function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('open');
-    document.getElementById('sidebarBackdrop').classList.toggle('visible');
-  }
-
-  /* Scroll Top */
-  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-  window.addEventListener('scroll', () => {
-    document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
-  });
-
-  /* Filter posts by category */
-  function filterPosts(cat, btn) {
-    if (btn) {
-      document.querySelectorAll('.blog-cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-    const posts = document.querySelectorAll('.blog-card');
-    let visible = 0;
-    posts.forEach(post => {
-      const match = cat === 'all' || post.dataset.cat === cat;
-      post.style.display = match ? '' : 'none';
-      if (match) visible++;
-    });
-    document.getElementById('blogEmpty').style.display = visible === 0 ? 'flex' : 'none';
-  }
-
-  /* Search posts */
-  function searchPosts(val) {
-    const q = val.toLowerCase();
-    const posts = document.querySelectorAll('.blog-card');
-    let visible = 0;
-    posts.forEach(post => {
-      const match = post.dataset.title?.toLowerCase().includes(q) ||
-                    post.querySelector('.blog-card-title')?.textContent.toLowerCase().includes(q);
-      post.style.display = match ? '' : 'none';
-      if (match) visible++;
-    });
-    document.getElementById('blogEmpty').style.display = visible === 0 ? 'flex' : 'none';
-    // reset category buttons
-    if (val) document.querySelectorAll('.blog-cat-btn').forEach(b => b.classList.remove('active'));
-  }
-
-  function resetSearch() {
-    document.getElementById('searchInput').value = '';
-    filterPosts('all', document.querySelector('.blog-cat-btn'));
-  }
-
-  /* Sort posts */
-  function sortPosts(val) {
-    const grid = document.getElementById('blogPosts');
-    const posts = [...grid.querySelectorAll('.blog-card')];
-    const likesOf = el => parseInt(el.querySelector('.blog-card-stats span')?.textContent.replace(/\D/g, '') || 0);
-    if (val === 'popular') {
-      posts.sort((a, b) => likesOf(b) - likesOf(a));
-    } else if (val === 'oldest') {
-      posts.reverse();
-    } else {
-      posts.sort((a, b) => {
-        const order = ['news','tutorial','tips','deep-dive','showcase'];
-        return order.indexOf(a.dataset.cat) - order.indexOf(b.dataset.cat);
+  <script>
+    /* Dark Mode (local-only; blog.css is dark-first) */
+    const toggle = document.getElementById('darkModeToggle');
+    if (toggle) {
+      const icon = toggle.querySelector('i');
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (icon) icon.className = 'fa-solid fa-sun';
+      }
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        if (icon) icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
       });
     }
-    posts.forEach(p => grid.appendChild(p));
-  }
 
-  /* Scroll animations */
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.blog-card, .bs-card').forEach(el => observer.observe(el));
+    function toggleSidebar() {
+      document.getElementById('sidebar')?.classList.toggle('open');
+      document.getElementById('sidebarBackdrop')?.classList.toggle('visible');
+    }
 
-  /* Like button toggle on heart click */
-  document.querySelectorAll('.blog-card-stats span').forEach(span => {
-    span.addEventListener('click', () => {
-      const icon = span.querySelector('i');
-      const liked = icon.classList.contains('fa-solid');
-      icon.classList.toggle('fa-regular', liked);
-      icon.classList.toggle('fa-solid', !liked);
-      icon.style.color = liked ? '' : '#d63031';
-      const num = parseInt(span.textContent.replace(/\D/g, ''));
-      span.innerHTML = `<i class="${liked ? 'fa-regular' : 'fa-solid'} fa-heart" style="color:${liked ? '' : '#d63031'}"></i> ${liked ? num - 1 : num + 1}`;
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('scrollTopBtn')?.classList.toggle('visible', window.scrollY > 400);
+      document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 40);
     });
-  });
-</script>
+
+    /* Filter posts by category (only the main grid) */
+    function filterPosts(cat, btn) {
+      if (btn) {
+        document.querySelectorAll('.blog-cat-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+
+      const posts = document.querySelectorAll('#blogPosts .blog-card');
+      let visible = 0;
+      posts.forEach((post) => {
+        const match = cat === 'all' || post.dataset.cat === cat;
+        post.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      const empty = document.getElementById('blogEmpty');
+      if (empty) empty.style.display = visible === 0 ? 'flex' : 'none';
+    }
+
+    function searchPosts(val) {
+      const q = (val || '').toLowerCase();
+      const posts = document.querySelectorAll('#blogPosts .blog-card');
+      let visible = 0;
+
+      posts.forEach((post) => {
+        const title = post.dataset.title || '';
+        const text = post.querySelector('.blog-card-title')?.textContent || '';
+        const match = title.toLowerCase().includes(q) || text.toLowerCase().includes(q);
+        post.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      const empty = document.getElementById('blogEmpty');
+      if (empty) empty.style.display = visible === 0 ? 'flex' : 'none';
+
+      if (val) document.querySelectorAll('.blog-cat-btn').forEach((b) => b.classList.remove('active'));
+    }
+
+    function resetSearch() {
+      const input = document.getElementById('searchInput');
+      if (input) input.value = '';
+      filterPosts('all', document.querySelector('.blog-cat-btn'));
+    }
+
+    function sortPosts(val) {
+      const grid = document.getElementById('blogPosts');
+      if (!grid) return;
+
+      const posts = [...grid.querySelectorAll('.blog-card')];
+      const likesOf = (el) => parseInt(el.querySelector('.blog-card-stats span')?.textContent.replace(/\D/g, '') || 0, 10);
+
+      if (val === 'popular') {
+        posts.sort((a, b) => likesOf(b) - likesOf(a));
+      } else if (val === 'oldest') {
+        posts.reverse();
+      } else {
+        posts.sort((a, b) => 0);
+      }
+
+      posts.forEach((p) => grid.appendChild(p));
+    }
+
+    /* Scroll animations */
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('in-view')),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('#blogPosts .blog-card, .bs-card').forEach((el) => observer.observe(el));
+
+    /* Like button toggle */
+    document.querySelectorAll('#blogPosts .blog-card-stats span').forEach((span) => {
+      span.addEventListener('click', () => {
+        const icon = span.querySelector('i');
+        const liked = icon?.classList.contains('fa-solid');
+        const num = parseInt(span.textContent.replace(/\D/g, ''), 10) || 0;
+        span.innerHTML = `<i class="${liked ? 'fa-regular' : 'fa-solid'} fa-heart" style="color:${liked ? '' : '#d63031'}"></i> ${liked ? num - 1 : num + 1}`;
+      });
+    });
+
+    // initial state
+    filterPosts('all', document.querySelector('.blog-cat-btn'));
+  </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

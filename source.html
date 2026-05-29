@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-PZ71PLNCXz4RUDRR2I+n8eQOFvyDpoo/c8L7sDCgd0s=; script-src-attr 'unsafe-hashes' sha256-PZ71PLNCXz4RUDRR2I+n8eQOFvyDpoo/c8L7sDCgd0s=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
@@ -28,10 +28,11 @@
   <!-- CSS -->
   <link rel="stylesheet" href="source.css" />
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
    NAVBAR
@@ -124,7 +125,7 @@
       type="text"
       id="searchInput"
       placeholder="Search components..."
-    />
+    / data-a11y-remediation="label-needed">
 
   </div>
 
@@ -936,5 +937,6 @@
 
 <script src="source.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

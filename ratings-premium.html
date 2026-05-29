@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium Rating Components — UIverse</title>
@@ -13,10 +14,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <link rel="stylesheet" href="ratings-premium.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="main-content">
 
@@ -24,10 +26,10 @@
   <header class="topbar">
     <div class="search-box">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search rating components..." id="searchInput">
+      <input type="text" placeholder="Search rating components..." id="searchInput" data-a11y-remediation="label-needed">
     </div>
     <div class="topbar-actions">
-      <button class="add-btn" onclick="rateAllFive()"><i class="fa-solid fa-star"></i> Max Ratings</button>
+      <button class="add-btn" onclick="rateAllFive()" data-a11y-remediation="button-label-needed"><i class="fa-solid fa-star"></i> Max Ratings</button>
       <button class="collection-btn" onclick="resetAllRatings()"><i class="fa-solid fa-rotate-left"></i> Reset All</button>
       <button class="theme-btn"><i class="fa-solid fa-moon"></i></button>
     </div>
@@ -1184,5 +1186,6 @@
   updateCircularUI();
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

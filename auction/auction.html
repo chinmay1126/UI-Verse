@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Auction Platform UI</title>
   <link rel="stylesheet" href="auction.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="auction-container">
 
@@ -43,7 +46,7 @@
             Photography Collectibles
           </div>
 
-          <button class="watchlist">
+          <button class="watchlist" data-a11y-remediation="button-label-needed">
             <i class="fa-regular fa-heart"></i>
           </button>
 
@@ -116,7 +119,7 @@
             type="number"
             id="bidInput"
             placeholder="Enter your bid amount"
-          />
+          / data-a11y-remediation="label-needed">
 
           <button id="bidBtn">
             <i class="fa-solid fa-hammer"></i>
@@ -251,5 +254,6 @@
   </div>
 
   <script src="auction.js"></script>
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta name="viewport"
@@ -29,6 +29,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -140,11 +142,11 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-            placeholder="Search projects..." />
+            placeholder="Search projects..." / data-a11y-remediation="label-needed">
 
         </div>
 
-        <button class="theme-btn">
+        <button class="theme-btn" data-a11y-remediation="button-label-needed">
           <i class="fa-solid fa-moon"></i>
         </button>
 
@@ -510,6 +512,7 @@ const developer = {
 
   <script src="dev-portfolio-dashboard.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

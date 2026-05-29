@@ -34,6 +34,21 @@ jobs:
         run: npm run test:e2e:accessibility
         continue-on-error: false
 
+      - name: Run shared accessibility checklist
+        run: |
+          npm run a11y:checklist
+        continue-on-error: false
+
+      - name: Attach checklist summary
+        if: always()
+        run: |
+          if [ -f reports/a11y/checklist-summary.md ]; then
+            echo "## Accessibility Checklist" >> $GITHUB_STEP_SUMMARY
+            cat reports/a11y/checklist-summary.md >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ Checklist summary not generated" >> $GITHUB_STEP_SUMMARY
+          fi
+
       - name: Generate accessibility report
         if: always()
         run: |

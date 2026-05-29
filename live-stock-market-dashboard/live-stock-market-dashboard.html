@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -30,6 +30,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -89,7 +91,7 @@
         +12.4% This Month
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Invest More
       </button>
 
@@ -125,7 +127,7 @@
 
           <input
             type="text"
-            placeholder="Search stocks..." />
+            placeholder="Search stocks..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -570,6 +572,7 @@
 
   <script src="live-stock-market-dashboard.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

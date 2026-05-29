@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta
     name="viewport"
@@ -95,6 +96,8 @@
   });
 </script>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -439,7 +442,7 @@
         <input
           type="text"
           placeholder="Search files, folders, images..."
-        />
+        / data-a11y-remediation="label-needed">
 
       </div>
 
@@ -728,5 +731,6 @@
 
   </main>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
