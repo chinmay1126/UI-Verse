@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,11 +18,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Mobile Toggle -->
   <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
@@ -80,7 +81,7 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
 
@@ -497,6 +498,7 @@
 
   <script src="toasts.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
 

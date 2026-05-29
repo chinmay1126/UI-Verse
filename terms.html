@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self' https:;
@@ -23,13 +24,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="terms.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -387,7 +387,7 @@
   <div class="logo">UIverse</div>
 
   <div class="nav-right">
-    <button class="nav-btn outline-btn">Documentation</button>
+    <button class="nav-btn outline-btn" data-a11y-remediation="button-label-needed">Documentation</button>
     <button class="nav-btn primary-btn">Explore UI</button>
 
     <button class="theme-toggle" id="themeToggle">
@@ -611,7 +611,7 @@
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
+        <input type="email" placeholder="your@email.com" / data-a11y-remediation="label-needed">
         <button type="button" onclick="subscribe()">Subscribe</button>
       </div>
     </div>
@@ -652,5 +652,6 @@ window.addEventListener('scroll', () => {
 });
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

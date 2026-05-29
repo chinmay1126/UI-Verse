@@ -808,6 +808,112 @@ MAIN
   font-weight:700;
 }
 
+/* 7. RANK BADGE */
+.rank-badge {
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #1f1406, #3b2a0c);
+  border: 1px solid #d4af37;
+  color: #fce79c;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.rank-badge i { color: #d4af37; }
+
+/* 8. OUTLINE PULSE BADGE */
+.outline-pulse-badge {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 2px solid #ec4899;
+  color: #ec4899;
+  font-weight: 700;
+  position: relative;
+  background: transparent;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.outline-pulse-badge::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 999px;
+  border: 1px solid #ec4899;
+  animation: outlinePulse 2s infinite ease-out;
+}
+@keyframes outlinePulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* 9. GRADIENT BORDER BADGE */
+.gradient-border-badge {
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #0c1222;
+  color: white;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+}
+.gradient-border-badge::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #3b82f6, #ec4899, #f59e0b);
+  z-index: -1;
+}
+
+/* 10. ROLE PILL BADGE */
+.role-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 700;
+  font-size: 13px;
+}
+.role-pill-badge .role-icon {
+  background: #3b82f6;
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.role-pill-badge .role-text {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  padding: 8px 16px;
+}
+
+/* 11. FLOATING 3D BADGE */
+.chip-3d-badge {
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #4b5563, #374151);
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  border-top: 2px solid #6b7280;
+  border-bottom: 4px solid #1f2937;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.chip-3d-badge:hover {
+  transform: translateY(0);
+  border-bottom: 2px solid #1f2937;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
 /* CARD TEXT */
 
 .badge-card h2{
@@ -868,24 +974,342 @@ MAIN
 }
 
 
+/* =====================================================
+   12. VERIFIED TICK BADGE
+===================================================== */
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(99,102,241,0.15));
+  border: 1px solid rgba(99,102,241,0.35);
+  color: #93c5fd;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  transition: all 0.3s;
+}
+
+.verified-badge i {
+  color: #60a5fa;
+  font-size: 16px;
+  filter: drop-shadow(0 0 6px rgba(96,165,250,0.7));
+  animation: tick-pulse 2s ease-in-out infinite;
+}
+
+@keyframes tick-pulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(96,165,250,0.5)); }
+  50%       { filter: drop-shadow(0 0 12px rgba(96,165,250,0.9)); }
+}
+
+/* =====================================================
+   13. XP PROGRESS BADGE
+===================================================== */
+
+.xp-badge {
+  width: 200px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+}
+
+.xp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.xp-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f9d71c;
+}
+
+.xp-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: #a29bfe;
+}
+
+.xp-bar-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  width: 72%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6c5ce7, #a29bfe, #f9d71c);
+  animation: xp-shimmer 2s ease-in-out infinite alternate;
+}
+
+@keyframes xp-shimmer {
+  from { box-shadow: 0 0 4px rgba(162,155,254,0.4); }
+  to   { box-shadow: 0 0 14px rgba(249,215,28,0.5); }
+}
+
+/* =====================================================
+   14. COUNTDOWN TIMER BADGE
+===================================================== */
+
+.countdown-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a0a2e, #0d1b2a);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: #fca5a5;
+  font-weight: 800;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+  box-shadow: 0 0 18px rgba(239,68,68,0.1);
+}
+
+.countdown-badge i {
+  color: #f87171;
+  font-size: 14px;
+}
+
+.cd-sep {
+  background: rgba(239,68,68,0.15);
+  padding: 3px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(239,68,68,0.2);
+  color: #f87171;
+}
+
+.cd-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* =====================================================
+   15. TAG STACK BADGE
+===================================================== */
+
+.tag-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.tag-chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: transform 0.2s;
+}
+
+.tag-chip:hover {
+  transform: translateY(-2px);
+}
+
+.tag-chip.blue {
+  background: rgba(59,130,246,0.12);
+  color: #93c5fd;
+  border: 1px solid rgba(59,130,246,0.25);
+}
+
+.tag-chip.purple {
+  background: rgba(139,92,246,0.12);
+  color: #c4b5fd;
+  border: 1px solid rgba(139,92,246,0.25);
+}
+
+.tag-chip.green {
+  background: rgba(34,197,94,0.1);
+  color: #86efac;
+  border: 1px solid rgba(34,197,94,0.2);
+}
+
+.tag-chip.orange {
+  background: rgba(249,115,22,0.12);
+  color: #fdba74;
+  border: 1px solid rgba(249,115,22,0.25);
+}
+
+/* =====================================================
+   16. AURORA GLOW BADGE
+===================================================== */
+
+.aurora-badge {
+  padding: 13px 26px;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 2px;
+  position: relative;
+  background: linear-gradient(135deg,
+    #0ea5e9 0%, #8b5cf6 40%, #ec4899 70%, #06b6d4 100%);
+  background-size: 300% 300%;
+  animation: aurora-shift 5s ease-in-out infinite;
+  box-shadow:
+    0 0 20px rgba(139,92,246,0.35),
+    0 0 40px rgba(14,165,233,0.2);
+}
+
+@keyframes aurora-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 17. AI STATUS BADGE */
+.ai-status-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 999px;
+  background: rgba(123,97,255,0.12);
+  border: 1px solid rgba(123,97,255,0.3);
+  color: #a78bfa; font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
+}
+.ai-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #7c3aed;
+  animation: ai-blink 1.4s ease-in-out infinite;
+}
+@keyframes ai-blink {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.4; transform:scale(0.7); }
+}
+
+/* 18. BETA TAG */
+.beta-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 6px;
+  background: rgba(251,191,36,0.1);
+  border: 1px solid rgba(251,191,36,0.3);
+  color: #fbbf24; font-size: 11px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+}
+
+/* 19. VERSION CHIP */
+.version-chip {
+  display: inline-flex; align-items: center;
+  font-size: 12px; font-weight: 700;
+  border-radius: 8px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.version-chip .vc-label { background: #3b82f6; color: #fff; padding: 6px 10px; }
+.version-chip .vc-num   { background: rgba(255,255,255,0.06); color: #cbd5e1; padding: 6px 12px; }
+
+/* 20. STREAK BADGE */
+.streak-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 12px;
+  background: linear-gradient(135deg, #1c0a00, #2d1200);
+  border: 1px solid rgba(251,113,0,0.4);
+  color: #fb923c; font-weight: 800; font-size: 14px;
+  box-shadow: 0 0 18px rgba(251,113,0,0.12);
+}
+.streak-flame {
+  font-size: 18px; display: inline-block;
+  animation: flicker 1s ease-in-out infinite alternate;
+}
+@keyframes flicker {
+  0%   { transform: scaleY(1) rotate(-2deg); }
+  100% { transform: scaleY(1.12) rotate(2deg); }
+}
+
+/* 21. TRUST SCORE BADGE */
+.trust-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 18px; border-radius: 14px;
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.25);
+}
+.trust-num   { font-size: 22px; font-weight: 800; color: #34d399; line-height: 1; }
+.trust-meta  { display: flex; flex-direction: column; gap: 2px; }
+.trust-label { font-size: 10px; font-weight: 700; color: #6ee7b7; letter-spacing: 1px; text-transform: uppercase; }
+.trust-sub   { font-size: 10px; color: rgba(110,231,183,0.6); }
+
+/* 22. NEW ARRIVAL BADGE */
+.new-arrival-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 999px;
+  font-size: 12px; font-weight: 800; letter-spacing: 1px; color: #fff;
+  position: relative;
+  background: linear-gradient(135deg, #179eff, #375fff);
+}
+.new-arrival-badge::before {
+  content: ""; position: absolute; inset: -2px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ec4899, #f97316);
+  z-index: -1; filter: blur(6px); opacity: 0.5;
+  animation: new-glow 2s ease-in-out infinite alternate;
+}
+@keyframes new-glow { from{opacity:0.3} to{opacity:0.7} }
+
+/* 23. PERMISSION CHIPS */
+.perm-set  { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.perm-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 11px; border-radius: 999px;
+  font-size: 11px; font-weight: 700;
+}
+.perm-chip.read  { background: rgba(59,130,246,0.1); color: #93c5fd; border: 1px solid rgba(59,130,246,0.2); }
+.perm-chip.write { background: rgba(234,179,8,0.1);  color: #fde047; border: 1px solid rgba(234,179,8,0.2); }
+.perm-chip.admin { background: rgba(239,68,68,0.1);  color: #fca5a5; border: 1px solid rgba(239,68,68,0.2); }
+
+/* 24. TYPING INDICATOR BADGE */
+.typing-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 18px; border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #94a3b8; font-size: 13px; font-weight: 600;
+}
+.dots { display: flex; gap: 4px; align-items: center; }
+.dot  { width: 6px; height: 6px; border-radius: 50%; background: #64748b; animation: bounce 1.2s ease-in-out infinite; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce {
+  0%,60%,100% { transform: translateY(0); opacity: 0.5; }
+  30%          { transform: translateY(-5px); opacity: 1; }
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */
 .footer {
-  margin-left: var(--sidebar-w);
+  position: relative;
+  width: 100%;              /* span full width */
+  margin: 0;                /* remove sidebar offset */
   background: #111;
   color: #aaa;
-  padding: 0;
   margin-top: 60px;
+  padding: 0;
+  clear: both;              /* ensures it sits below floated elements */
+  z-index: 5;               /* keeps it layered correctly */
 }
+
 
 .footer-container {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
   gap: 40px;
   padding: 56px 48px 40px;
-  max-width: 100%;
+  max-width: 1300px;         /* limit width */
+  margin: auto;              /* center it */
 }
+
 
 .footer-logo {
   font-family: var(--font-heading);
@@ -924,36 +1348,109 @@ MAIN
   color: #888;
   text-decoration: none;
   font-size: 14px;
-  transition: color var(--transition);
+  transition: color var(--transition), transform var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
 }
 
 .footer-col ul li a:hover {
   color: var(--accent);
+  text-decoration: underline;
+  transform: translateY(-2px);
+  transform: translateX(3px);
+  text-shadow: 0 0 8px rgba(235, 104, 53, 0.4);
 }
 
-.socials {
-  display: flex;
-  gap: 12px;
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+.footer-socials {
 .socials a {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #1e1e1e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all var(--transition);
+  transition: all 0.3s ease;
 }
 
 .socials a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 12px rgba(235, 104, 53, 0.35);
+}
+
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
   background: var(--accent);
-  color: #fff;
-  transform: translateY(-2px);
+  transition: width 0.3s ease;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+.socials a {
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 12px rgba(235, 104, 53, 0.35);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 1rem;
+  flex-wrap: wrap; 
+}
+
+.footer-socials a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  color: white;
+
+  transition: 0.3s ease;
+}
+
+.footer-socials a:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
 }
 
 .newsletter-form {
@@ -1049,9 +1546,11 @@ MAIN
 
 }
 
+body {
+  padding-bottom: 120px; /* give space equal to footer height */
+}
 /* =========================================
 VERIFIED BADGE
-========================================= */
 
 .verified-badge{
   display:flex;
@@ -1068,7 +1567,6 @@ VERIFIED BADGE
 
 /* =========================================
 GRADIENT BADGE
-========================================= */
 
 .gradient-badge{
   padding:12px 22px;
@@ -1103,7 +1601,6 @@ GRADIENT BADGE
 
 /* =========================================
 SALE BADGE
-========================================= */
 
 .sale-badge{
   background:#ff3d57;
@@ -1119,7 +1616,6 @@ SALE BADGE
 
 /* =========================================
 AI BADGE
-========================================= */
 
 .ai-badge{
   display:flex;
@@ -1137,7 +1633,6 @@ AI BADGE
 
 /* =========================================
 BETA BADGE
-========================================= */
 
 .beta-badge{
   background:#eef2ff;
@@ -1152,7 +1647,6 @@ BETA BADGE
 
 /* =========================================
 VIP BADGE
-========================================= */
 
 .vip-badge{
   display:flex;
@@ -1175,7 +1669,6 @@ VIP BADGE
 
 /* =========================================
 NEW PROFESSIONAL BADGES
-========================================= */
 
 .security-badge{
   display:flex;
@@ -1277,7 +1770,6 @@ NEW PROFESSIONAL BADGES
 
 /* =========================================
 NEW PROFESSIONAL BADGES
-========================================= */
 
 .enterprise-badge{
   display:inline-flex;

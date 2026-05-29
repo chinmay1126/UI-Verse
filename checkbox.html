@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkbox Components — UIverse</title>
@@ -14,23 +15,28 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <link rel="stylesheet" href="checkbox.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  
+   <link rel="stylesheet" href="checkbox.css">
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+   <html data-theme="light">
 
   <div class="main-content">
 
     <!-- TOPBAR -->
     <header class="topbar">
       <div class="search-box">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-text">UIverse</span>
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search components...">
+        <input type="text" placeholder="Search components..." data-a11y-remediation="label-needed">
       </div>
       <div class="topbar-actions">
-        <button class="add-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+        
+        <button class="add-btn" data-a11y-remediation="button-label-needed"><i class="fa-solid fa-plus"></i> Add Component</button>
         <button class="collection-btn">My Collection</button>
         <button class="theme-btn"><i class="fa-solid fa-moon"></i></button>
       </div>
@@ -712,8 +718,72 @@
   &lt;span class="depth-box"&gt;&lt;/span&gt;
   &lt;span class="depth-text"&gt;Enable 3D Acceleration&lt;/span&gt;
 &lt;/label&gt;</code></pre>
+      </section>
+
+  </div> <!-- main-content -->
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <div class="footer-logo">UIverse</div>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+ 
+
+
+
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
       </div>
 
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="contribute.html">Contribute</a></li>
+          <li><a href="#" target="_blank">GitHub Repo</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="license.html">License</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" />
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
 
       <script>
         function toggleCode(id) {
@@ -725,8 +795,30 @@
           if (!el) return;
           navigator.clipboard.writeText(el.textContent).then(() => alert('Code copied!'));
         }
+        function loadTheme() {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme, false);
+}
+
+function setTheme(theme, persist = true) {
+  document.documentElement.setAttribute("data-theme", theme);
+  if (persist) localStorage.setItem("theme", theme);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  setTheme(newTheme);
+}
+
+window.onload = loadTheme;
+
+    
       </script>
 
+
+
+    <script src="dist/shared.js"></script>
 </body>
 
 </html>

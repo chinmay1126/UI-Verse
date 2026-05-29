@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-CZaDuwMSsspb3e3YDd5z3dU3/oM7DpI4HyRFD7B/dq0= sha256-FPas+NcgiiCQpxq0+EbI+38ZUneR9D2pjxZTBP1fGFU= sha256-bzN2eji/VGXAUUSKM8t2GCZ+KIPlwZpiCCePraiB4L0= sha256-d5+vm2HM0YPHkmt65fXjkhiKHUrXJqkysHLoUY3nCtY= sha256-pic2ZiUmMdHq8qrnYKmOTzRwkUDIpBSXyjXpZ1+hkxE=; style-src-attr 'unsafe-hashes' sha256-CZaDuwMSsspb3e3YDd5z3dU3/oM7DpI4HyRFD7B/dq0= sha256-FPas+NcgiiCQpxq0+EbI+38ZUneR9D2pjxZTBP1fGFU= sha256-bzN2eji/VGXAUUSKM8t2GCZ+KIPlwZpiCCePraiB4L0= sha256-d5+vm2HM0YPHkmt65fXjkhiKHUrXJqkysHLoUY3nCtY= sha256-pic2ZiUmMdHq8qrnYKmOTzRwkUDIpBSXyjXpZ1+hkxE=">
 
@@ -25,18 +26,17 @@
   />
 
   <!-- Global CSS -->
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="layout.css" />
 
   <!-- Page CSS -->
   <link rel="stylesheet" href="calendar.css" />
 
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= NAVBAR ================= -->
   <header class="calendar-navbar">
@@ -230,7 +230,7 @@
             </span>
 
             <span>
-              🚀 Launch Sync
+              <i class="fa-solid fa-rocket"></i> Launch Sync
             </span>
 
           </div>
@@ -257,7 +257,7 @@
       Event Details
     </h2>
 
-    <button id="closeEventModal">
+    <button id="closeEventModal" data-a11y-remediation="button-label-needed">
       ✕
     </button>
 
@@ -659,7 +659,7 @@
 
       </div>
 
-      <div class="calendar-grid">
+      <div class="calendar-grid" role="grid" aria-label="Monthly Calendar">
        <!-- ================= AI SCHEDULE ASSISTANT ================= -->
 
 <div class="calendar-card ai-schedule-card">
@@ -702,11 +702,11 @@
   <div class="ai-tips">
 
     <div class="tip-item">
-      ✨ Avoid meetings after 6 PM
+      <i class="fa-solid fa-sparkles"></i> Avoid meetings after 6 PM
     </div>
 
     <div class="tip-item">
-      🚀 Best productivity: 11 AM
+      <i class="fa-solid fa-rocket"></i> Best productivity: 11 AM
     </div>
 
     <div class="tip-item">
@@ -924,7 +924,7 @@
             </div>
 
             <div class="event-item">
-              🚀 Product Launch
+              <i class="fa-solid fa-rocket"></i> Product Launch
             </div>
 
             <div class="event-item">
@@ -1000,6 +1000,7 @@
 
   </main>
 
+    <script src="dist/shared.js"></script>
 </body>
 
 </html>
