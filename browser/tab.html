@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -53,6 +53,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="browser-container">
 
@@ -77,7 +79,7 @@
         <input
           type="text"
           placeholder="Search tabs, websites, history..."
-        />
+        / data-a11y-remediation="label-needed">
 
       </div>
 
@@ -110,7 +112,7 @@
 
         </div>
 
-        <button class="close-btn">
+        <button class="close-btn" data-a11y-remediation="button-label-needed">
           <i class="fa-solid fa-xmark"></i>
         </button>
 
@@ -424,6 +426,7 @@
 
   <script src="tab.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

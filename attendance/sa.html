@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta
     name="viewport"
@@ -19,6 +20,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="attendance-dashboard">
 
@@ -50,7 +53,7 @@
             type="text"
             id="searchInput"
             placeholder="Search student..."
-          />
+          / data-a11y-remediation="label-needed">
 
           <button class="add-btn">
             + Add Student
@@ -156,5 +159,6 @@
 
   <script src="sa.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

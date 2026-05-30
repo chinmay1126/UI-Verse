@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-iZWRNsj9Cu2c9XLfoqGljTO4iFktJe5ofOOiO39UKS0=; script-src-attr 'unsafe-hashes' sha256-iZWRNsj9Cu2c9XLfoqGljTO4iFktJe5ofOOiO39UKS0=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
@@ -29,34 +29,37 @@
 
 
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <section class="product-slider-section">
 
-    <!-- HEADER -->
-    <div class="slider-header">
+   <section class="product-slider-section">
 
-      <div>
+  <!-- HEADER -->
+  <div class="slider-header">
 
-        <span class="slider-tag">
-          🔥 Trending Products
-        </span>
+    <div class="slider-title">
 
-        <h2>
-          Featured
-          <span>Product Slider</span>
-        </h2>
+      <span class="slider-tag">
+        🔥 Trending Products
+      </span>
+      
+      <h2>
+        Featured <span>Product Slider</span>
+      </h2>
+    </div>
 
-      </div>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-home-btn"> Back to Home</a>
+  </div>
+
 
       <!-- NAVIGATION -->
       <div class="slider-buttons">
 
-        <button id="prevBtn">
+        <button id="prevBtn" data-a11y-remediation="button-label-needed">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
 
@@ -535,6 +538,7 @@
 
   </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
 

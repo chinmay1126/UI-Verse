@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
 
   <meta
@@ -32,7 +32,9 @@
   >
 
   <!-- CSS -->
-
+ <link rel="stylesheet" href="shared-sidebar.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
   <link
     rel="stylesheet"
     href="dockss.css"
@@ -41,6 +43,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -50,7 +54,7 @@
 
           <nav class="sidebar-nav">
     <ul>
-      <li class="active">
+      <li>
         <a href="index.html">
           <i class="fa-solid fa-house"></i>
           <span>Home</span>
@@ -144,6 +148,12 @@
         <a href="div.html">
           <i class="fa-solid fa-square"></i>
           <span>DIV</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="docks.html">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Docks UI</span>
         </a>
       </li>
       <li>
@@ -395,7 +405,7 @@ TOPBAR
     <input
       type="text"
       placeholder="Search dock components..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
@@ -655,6 +665,746 @@ MAIN
       </div>
 
     </div>
+    <!-- =====================================================
+CARD — CYBER ORBIT DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      CYBER
+    </span>
+
+    <div class="card-icon pink">
+      <i class="fa-solid fa-satellite"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Orbit Dock
+  </h2>
+
+  <p>
+
+    Circular futuristic dock
+    with orbit styled navigation
+    and glowing active states.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="orbit-dock">
+
+      <div class="orbit-ring"></div>
+
+      <div class="orbit-item center">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+
+      <div class="orbit-item top">
+        <i class="fa-solid fa-house"></i>
+      </div>
+
+      <div class="orbit-item right">
+        <i class="fa-solid fa-play"></i>
+      </div>
+
+      <div class="orbit-item bottom">
+        <i class="fa-solid fa-heart"></i>
+      </div>
+
+      <div class="orbit-item left">
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+CARD — LIQUID DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      LIQUID
+    </span>
+
+    <div class="card-icon cyan">
+      <i class="fa-solid fa-droplet"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Liquid Dock
+  </h2>
+
+  <p>
+
+    Smooth fluid inspired dock
+    with jelly hover animation
+    and soft glowing effects.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="mini-dock liquid-dock">
+
+      <div class="dock-item liquid">
+        <i class="fa-solid fa-cloud"></i>
+      </div>
+
+      <div class="dock-item liquid">
+        <i class="fa-solid fa-camera"></i>
+      </div>
+
+      <div class="dock-item liquid active">
+        <i class="fa-solid fa-water"></i>
+      </div>
+
+      <div class="dock-item liquid">
+        <i class="fa-solid fa-compass"></i>
+      </div>
+
+      <div class="dock-item liquid">
+        <i class="fa-solid fa-moon"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+CARD — TERMINAL DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      DEV
+    </span>
+
+    <div class="card-icon green">
+      <i class="fa-solid fa-terminal"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Terminal Dock
+  </h2>
+
+  <p>
+
+    Developer inspired dock
+    interface with terminal
+    styling and matrix glow.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="mini-dock terminal-dock">
+
+      <div class="dock-item terminal">
+        <i class="fa-solid fa-code"></i>
+      </div>
+
+      <div class="dock-item terminal">
+        <i class="fa-solid fa-bug"></i>
+      </div>
+
+      <div class="dock-item terminal active">
+        <i class="fa-solid fa-laptop-code"></i>
+      </div>
+
+      <div class="dock-item terminal">
+        <i class="fa-solid fa-server"></i>
+      </div>
+
+      <div class="dock-item terminal">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+CARD — STACKED DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      MODERN
+    </span>
+
+    <div class="card-icon orange">
+      <i class="fa-solid fa-layer-group"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Stacked Dock
+  </h2>
+
+  <p>
+
+    Layered navigation dock
+    with stacked depth cards
+    and floating shadows.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="stacked-dock">
+
+      <div class="stack-layer"></div>
+      <div class="stack-layer second"></div>
+
+      <div class="mini-dock">
+
+        <div class="dock-item stack">
+          <i class="fa-solid fa-book"></i>
+        </div>
+
+        <div class="dock-item stack">
+          <i class="fa-solid fa-chart-pie"></i>
+        </div>
+
+        <div class="dock-item stack active">
+          <i class="fa-solid fa-cube"></i>
+        </div>
+
+        <div class="dock-item stack">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+
+        <div class="dock-item stack">
+          <i class="fa-solid fa-wifi"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+CARD — AI DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      AI
+    </span>
+
+    <div class="card-icon violet">
+      <i class="fa-solid fa-brain"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Neural Dock
+  </h2>
+
+  <p>
+
+    AI inspired navigation
+    dock with connected nodes
+    and animated pulse lines.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="neural-dock">
+
+      <div class="neural-line"></div>
+
+      <div class="dock-item neural">
+        <i class="fa-solid fa-microchip"></i>
+      </div>
+
+      <div class="dock-item neural">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+
+      <div class="dock-item neural active">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+
+      <div class="dock-item neural">
+        <i class="fa-solid fa-network-wired"></i>
+      </div>
+
+      <div class="dock-item neural">
+        <i class="fa-solid fa-wave-square"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
+<!-- =====================================================
+CARD — CYBER ORBIT DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      CYBER
+    </span>
+
+    <div class="card-icon pink">
+      <i class="fa-solid fa-satellite"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Orbit Dock
+  </h2>
+
+  <p>
+
+    Circular futuristic dock
+    with orbit styled navigation
+    and glowing active states.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="orbit-dock">
+
+      <div class="orbit-ring"></div>
+
+      <div class="orbit-item center">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+
+      <div class="orbit-item top">
+        <i class="fa-solid fa-house"></i>
+      </div>
+
+      <div class="orbit-item right">
+        <i class="fa-solid fa-play"></i>
+      </div>
+
+      <div class="orbit-item bottom">
+        <i class="fa-solid fa-heart"></i>
+      </div>
+
+      <div class="orbit-item left">
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+CARD — LIQUID DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      LIQUID
+    </span>
+
+    <div class="card-icon cyan">
+      <i class="fa-solid fa-droplet"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Liquid Dock
+  </h2>
+
+  <p>
+
+    Smooth fluid inspired dock
+    with jelly hover animation
+    and soft glowing effects.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="mini-dock liquid-dock">
+
+      <div class="dock-item liquid">
+        <i class="fa-solid fa-cloud"></i>
+      </div>
+
+      <div class="dock-item liquid">
+        <i class="fa-solid fa-camera"></i>
+      </div>
+
+      <div class="dock-item liquid active">
+        <i class="fa-solid fa-water"></i>
+      </div>
+
+      <div class="dock-item liquid">
+        <i class="fa-solid fa-compass"></i>
+      </div>
+
+      <div class="dock-item liquid">
+        <i class="fa-solid fa-moon"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+CARD — TERMINAL DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      DEV
+    </span>
+
+    <div class="card-icon green">
+      <i class="fa-solid fa-terminal"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Terminal Dock
+  </h2>
+
+  <p>
+
+    Developer inspired dock
+    interface with terminal
+    styling and matrix glow.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="mini-dock terminal-dock">
+
+      <div class="dock-item terminal">
+        <i class="fa-solid fa-code"></i>
+      </div>
+
+      <div class="dock-item terminal">
+        <i class="fa-solid fa-bug"></i>
+      </div>
+
+      <div class="dock-item terminal active">
+        <i class="fa-solid fa-laptop-code"></i>
+      </div>
+
+      <div class="dock-item terminal">
+        <i class="fa-solid fa-server"></i>
+      </div>
+
+      <div class="dock-item terminal">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+CARD — STACKED DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      MODERN
+    </span>
+
+    <div class="card-icon orange">
+      <i class="fa-solid fa-layer-group"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Stacked Dock
+  </h2>
+
+  <p>
+
+    Layered navigation dock
+    with stacked depth cards
+    and floating shadows.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="stacked-dock">
+
+      <div class="stack-layer"></div>
+      <div class="stack-layer second"></div>
+
+      <div class="mini-dock">
+
+        <div class="dock-item stack">
+          <i class="fa-solid fa-book"></i>
+        </div>
+
+        <div class="dock-item stack">
+          <i class="fa-solid fa-chart-pie"></i>
+        </div>
+
+        <div class="dock-item stack active">
+          <i class="fa-solid fa-cube"></i>
+        </div>
+
+        <div class="dock-item stack">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+
+        <div class="dock-item stack">
+          <i class="fa-solid fa-wifi"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+CARD — AI DOCK
+===================================================== -->
+
+<div class="dock-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      AI
+    </span>
+
+    <div class="card-icon violet">
+      <i class="fa-solid fa-brain"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Neural Dock
+  </h2>
+
+  <p>
+
+    AI inspired navigation
+    dock with connected nodes
+    and animated pulse lines.
+
+  </p>
+
+  <div class="demo-box">
+
+    <div class="neural-dock">
+
+      <div class="neural-line"></div>
+
+      <div class="dock-item neural">
+        <i class="fa-solid fa-microchip"></i>
+      </div>
+
+      <div class="dock-item neural">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+
+      <div class="dock-item neural active">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+
+      <div class="dock-item neural">
+        <i class="fa-solid fa-network-wired"></i>
+      </div>
+
+      <div class="dock-item neural">
+        <i class="fa-solid fa-wave-square"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-buttons">
+
+    <button class="view-btn">
+      View Code
+    </button>
+
+    <button class="copy-btn">
+      Copy
+    </button>
+
+  </div>
+
+</div>
 
   </section>
 
@@ -758,5 +1508,6 @@ BOTTOM GLOBAL DOCK
 
 <script src="docks.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

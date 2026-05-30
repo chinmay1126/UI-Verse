@@ -1,128 +1,91 @@
-const actionButtons =
-  document.querySelectorAll(".quick-actions button");
-
-actionButtons.forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    if (window.UIVERSE_DEBUG) alert(`${button.textContent} feature clicked`);
-
-  });
-
-});
-
-function addMoney() {
-  let balance = document.getElementById("balance");
-  let current = parseInt(balance.innerText.replace(/[₹,]/g, ""));
-  current += 1000;
-  balance.innerText = "₹" + current.toLocaleString("en-IN");
-}
-
-function sendMoney() {
-  alert("Transfer window opened (demo)");
-}
-
-/* Sidebar active state */
-document.querySelectorAll("nav a").forEach(item => {
-  item.addEventListener("click", () => {
-    document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
-    item.classList.add("active");
-  });
-});
-
-const balanceElement = document.getElementById("balance");
-const transactionList = document.getElementById("transaction-list");
-
 let balance = 125000;
+let modalMode = 'add';
+const balanceEl = document.getElementById('balance');
+const txnList = document.getElementById('transaction-list');
+let isEmptyTxn = false;
+const toastEl = document.getElementById('toast');
+let toastTimer;
 
-function formatCurrency(amount) {
-  return `₹${amount.toLocaleString("en-IN")}`;
+function fmt(n) { return '₹' + n.toLocaleString('en-IN'); }
+function updateBalance() { balanceEl.textContent = fmt(balance); }
+
+function showToast(msg, type = 'success') {
+  clearTimeout(toastTimer);
+  toastEl.className = 'toast ' + type;
+  toastEl.innerHTML = `<i class="ti ti-${type === 'success' ? 'circle-check' : 'alert-circle'}"></i> ${msg}`;
+  toastEl.classList.add('show');
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2800);
 }
 
-function updateBalance() {
-  balanceElement.textContent = formatCurrency(balance);
-}
-
-function createTransaction(title, amount, type) {
-  const div = document.createElement("div");
-  div.classList.add("txn", type);
-
+function addTxn(name, amount, type) {
+  const icon = type === 'income' ? 'arrow-down-circle' : 'arrow-up-circle';
+  const now = new Date();
+  const time = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+  const div = document.createElement('div');
+  div.className = 'txn';
   div.innerHTML = `
-    <span>${title}</span>
-    <b>${type === "income" ? "+" : "-"} ${formatCurrency(amount)}</b>
-  `;
-
-  transactionList.prepend(div);
+    <div class="txn-icon ${type}"><i class="ti ti-${icon}"></i></div>
+    <div class="txn-body"><div class="txn-name">${name}</div><div class="txn-date">Today, ${time}</div></div>
+    <div class="txn-amount ${type}">${type === 'income' ? '+' : '-'}${fmt(amount)}</div>`;
+  if (isEmptyTxn) {
+    txnList.innerHTML = '';
+    isEmptyTxn = false;
+  }
+  txnList.prepend(div);
 }
 
-function addMoney() {
-  const amount = Number(prompt("Enter amount to add:"));
-
-  if (!amount || amount <= 0) {
-    alert("Please enter a valid amount.");
-    return;
-  }
-
-  balance += amount;
-  updateBalance();
-  createTransaction("Money Added", amount, "income");
-
-  alert(`${formatCurrency(amount)} added successfully!`);
+function openModal(mode) {
+  modalMode = mode;
+  document.getElementById('modal-title').textContent = mode === 'add' ? 'Add Money' : 'Send Money';
+  document.getElementById('modal-confirm').textContent = mode === 'add' ? 'Add' : 'Send';
+  document.getElementById('modal-input').value = '';
+  document.getElementById('modal-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('modal-input').focus(), 200);
 }
+function closeModal(e) { if (e.target.id === 'modal-overlay') closeModalDirect(); }
+function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); }
 
-function sendMoney() {
-  const amount = Number(prompt("Enter amount to send:"));
-
-  if (!amount || amount <= 0) {
-    alert("Please enter a valid amount.");
-    return;
+function confirmModal() {
+  const amount = Number(document.getElementById('modal-input').value);
+  if (!amount || amount <= 0) { showToast('Enter a valid amount', 'error'); return; }
+  if (modalMode === 'add') {
+    balance += amount; updateBalance(); addTxn('Money Added', amount, 'income');
+    showToast(`${fmt(amount)} added successfully`);
+  } else {
+    if (amount > balance) { showToast('Insufficient balance', 'error'); return; }
+    balance -= amount; updateBalance(); addTxn('Money Sent', amount, 'expense');
+    showToast(`${fmt(amount)} sent successfully`);
   }
-
-  if (amount > balance) {
-    alert("Insufficient balance.");
-    return;
-  }
-
-  balance -= amount;
-  updateBalance();
-  createTransaction("Money Sent", amount, "expense");
-
-  alert(`${formatCurrency(amount)} sent successfully!`);
+  closeModalDirect();
 }
 
 function payBills() {
   const amount = 2500;
-
-  if (balance < amount) {
-    alert("Insufficient balance.");
-    return;
-  }
-
-  balance -= amount;
-  updateBalance();
-  createTransaction("Bill Payment", amount, "expense");
-
-  alert("Bill paid successfully!");
+  if (balance < amount) { showToast('Insufficient balance', 'error'); return; }
+  balance -= amount; updateBalance(); addTxn('Bill Payment', amount, 'expense');
+  showToast('Bill paid - ₹2,500 debited');
 }
 
 function recharge() {
   const amount = 399;
-
-  if (balance < amount) {
-    alert("Insufficient balance.");
-    return;
-  }
-
-  balance -= amount;
-  updateBalance();
-  createTransaction("Mobile Recharge", amount, "expense");
-
-  alert("Recharge successful!");
+  if (balance < amount) { showToast('Insufficient balance', 'error'); return; }
+  balance -= amount; updateBalance(); addTxn('Mobile Recharge', amount, 'expense');
+  showToast('Recharge successful - ₹399 debited');
 }
 
 function clearTransactions() {
-  transactionList.innerHTML = "";
+  isEmptyTxn = true;
+  txnList.innerHTML = '<div class="empty"><i class="ti ti-receipt-off"></i>No transactions yet</div>';
+  showToast('Transaction history cleared');
 }
 
-updateBalance();
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelectorAll('nav a').forEach(x => x.classList.remove('active'));
+    a.classList.add('active');
+    document.getElementById('page-title').textContent = a.dataset.page;
+  });
+});
 
+document.getElementById('modal-input').addEventListener('keydown', e => { if (e.key === 'Enter') confirmModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });

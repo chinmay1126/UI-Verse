@@ -191,3 +191,26 @@ Each HTML file includes all modular scripts in the head:
 - No changes required to HTML element IDs or class names
 - All feature modules are independent and can be enhanced separately
 - Bootstrap process ensures features initialize in logical order
+
+## CSS Modularization & Styling Conventions
+
+To maintain visual consistency and prevent selector collisions across our modular layout, the project implements strict styling conventions:
+
+### 1. Design Tokens System
+All global parameters (colors, font families, shadows, border-radii, spacing) must reference variables declared in `design-tokens.css`.
+- **Primary Color:** Use `--color-primary`
+- **Backgrounds:** Use `--color-bg-dark` and `--color-bg-light` for theme-specific surfaces.
+- **Font Stack:** Standardize typography with `--font-sans`.
+
+### 2. Component Class Naming (BEM-lite)
+Avoid generic CSS class names like `.button` or `.container`. Instead, prefix all classes with the component scope:
+- Block: `.uv-card`
+- Element: `.uv-card__title`, `.uv-card__button`
+- Modifier: `.uv-card--featured`
+
+### 3. Responsive Styling
+Always utilize clean responsive breakpoints rather than absolute pixel declarations for layout widths:
+- Mobile: `max-width: 768px` for single-column views.
+- Tablet: `max-width: 1024px` for wrapping flex structures.
+- Use CSS Grid and Flexbox with `gap` utilities to manage spacing dynamically.
+

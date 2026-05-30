@@ -2,12 +2,28 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- SECURITY -->
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self' https:;
+      base-uri 'self';
+      frame-ancestors 'none';
+      object-src 'none';
+      connect-src 'self' https:;
+      img-src 'self' data: https:;
+      font-src 'self' data: https:;
+      script-src 'self' https: 'unsafe-inline';
+      style-src 'self' https: 'unsafe-inline';
+    "
   />
 
   <title>Rating Components — UIverse</title>
@@ -23,15 +39,18 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
-
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
   <!-- CSS -->
   <link rel="stylesheet" href="ratingpage.css" />
-
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- =========================================================
    SIDEBAR
 ========================================================= -->
@@ -84,6 +103,18 @@
         <a href="cards.html">
           <i class="fa-solid fa-table-cells-large"></i>
           <span>Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="notes-components.html">
+          <i class="fas fa-sticky-note"></i>
+          <span>Notes</span>
+        </a>
+      </li>
+      <li>
+        <a href="range-slider.html">
+          <i class="fas fa-sliders-h"></i>
+          <span>Range Slider</span>
         </a>
       </li>
       <li>
@@ -358,30 +389,52 @@
       </li>
     </ul>
   </nav>
-
 </aside>
 
-<!-- =========================================================
-   NAVBAR
-========================================================= -->
+  <!-- Sidebar Backdrop -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
 
-<header class="navbar">
+    <button
+      class="menu-toggle"
+      onclick="toggleSidebar()"
+      aria-label="Toggle Menu"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-  <div class="logo">
-    UIverse
-  </div>
+    <div class="logo">UIverse</div>
 
-  <div class="search-bar">
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
 
-    <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        placeholder="Search components..."
+      / data-a11y-remediation="label-needed">
 
-    <input
-      type="text"
-      placeholder="Search rating components..."
-    />
+      <kbd class="search-kbd">⌘K</kbd>
+    </div>
 
-  </div>
+    <div class="nav-right">
 
+      <button class="nav-btn outline-nav-btn">
+        <i class="fa-solid fa-plus"></i>
+        Add Component
+      </button>
+
+      <button class="nav-btn primary-nav-btn">
+        <i class="fa-solid fa-bookmark"></i>
+        My Collection
+      </button>
+
+      <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+    <i id="themeIcon" class="fa-solid fa-sun"></i>
+  </button>
+
+
+    </div>
 </header>
 
 <!-- =========================================================
@@ -397,11 +450,14 @@
 
       <div class="breadcrumb">
 
-        <a href="#">
+        <a href="index.html">
           Home
         </a>
 
-        <i class="fa-solid fa-chevron-right"></i>
+        <i
+          class="fa-solid fa-chevron-right"
+          aria-hidden="true"
+        ></i>
 
         <span>
           Rating Components
@@ -422,17 +478,17 @@
       <div class="page-meta">
 
         <span class="meta-badge">
-          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star" aria-hidden="true"></i>
           8 Components
         </span>
 
         <span class="meta-badge">
-          <i class="fa-solid fa-code"></i>
+          <i class="fa-solid fa-code" aria-hidden="true"></i>
           Pure HTML CSS JS
         </span>
 
         <span class="meta-badge">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
           Interactive
         </span>
 
@@ -440,7 +496,186 @@
 
     </div>
 
+</section>
+  
 
+  <!-- FILTER -->
+  <div class="filter-bar">
+
+    <button
+      type="button"
+      class="filter-btn active"
+    >
+      All
+    </button>
+
+    <button
+      type="button"
+      class="filter-btn"
+    >
+      Stars
+    </button>
+
+    <button
+      type="button"
+      class="filter-btn"
+    >
+      Reviews
+    </button>
+
+    <button
+      type="button"
+      class="filter-btn"
+    >
+      Emoji
+    </button>
+
+    <button
+      type="button"
+      class="filter-btn"
+    >
+      Progress
+    </button>
+
+  </div>
+
+  <!-- =========================================================
+     GRID
+  ========================================================= -->
+
+  <section class="rating-grid">
+
+    <!-- STAR RATING -->
+    <div class="component-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          Interactive Stars
+        </span>
+
+        <span class="card-tag tag-popular">
+          Popular
+        </span>
+
+      </div>
+
+      <div class="card-preview">
+
+        <div
+          class="star-rating"
+          aria-label="5 star rating"
+        >
+
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Interactive star rating system with hover
+        effects and active state animations.
+      </p>
+
+    </div>
+
+    <!-- THUMBS -->
+    <div class="component-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          Thumbs Feedback
+        </span>
+
+        <span class="card-tag tag-modern">
+          Minimal
+        </span>
+
+      </div>
+
+      <div class="card-preview">
+
+        <div class="thumb-rating">
+
+          <button
+            type="button"
+            aria-label="Like"
+          >
+            <i class="fa-solid fa-thumbs-up"></i>
+          </button>
+
+          <button
+            type="button"
+            aria-label="Dislike"
+          >
+            <i class="fa-solid fa-thumbs-down"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Simple thumbs up and down feedback
+        component for quick interactions.
+      </p>
+
+    </div>
+
+    <!-- SLIDER -->
+    <div class="component-card">
+
+      <div class="card-top">
+
+        <span class="card-label">
+          Slider Rating
+        </span>
+
+        <span class="card-tag tag-trending">
+          Interactive
+        </span>
+
+      </div>
+
+      <div class="card-preview">
+
+        <div class="slider-rating">
+
+          <label
+            for="ratingRange"
+            class="sr-only"
+          >
+            Rating Slider
+          </label>
+
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="78"
+            id="ratingRange"
+          />
+
+          <span id="rangeValue">
+            78%
+          </span>
+
+        </div>
+
+      </div>
+
+      <p class="card-desc">
+        Smooth slider based rating system
+        with dynamic value updates.
+      </p>
+
+    </div>
     <!-- =========================================================
    NEUMORPHIC STAR RATING
 ========================================================= -->
@@ -811,7 +1046,10 @@
           User Experience
         </span>
 
-        <div class="hero-stars">
+        <div
+          class="hero-stars"
+          aria-label="4 out of 5 stars"
+        >
 
           <i class="fa-solid fa-star active"></i>
           <i class="fa-solid fa-star active"></i>
@@ -828,600 +1066,163 @@
       </div>
 
     </div>
+    
 
-  </section>
+  
+<div class="arcade-rating">
 
-  <!-- FILTER -->
-  <div class="filter-bar">
+  <h2>LEVEL 9</h2>
 
-    <button class="filter-btn active">
-      All
-    </button>
-
-    <button class="filter-btn">
-      Stars
-    </button>
-
-    <button class="filter-btn">
-      Reviews
-    </button>
-
-    <button class="filter-btn">
-      Emoji
-    </button>
-
-    <button class="filter-btn">
-      Progress
-    </button>
-
+  <div class="arcade-stars">
+    ★★★★★
   </div>
 
-  <!-- =========================================================
-     GRID
-  ========================================================= -->
+  <span>Legendary</span>
 
-  <section class="rating-grid">
+</div>
+<div class="glass-rating">
 
-    <!-- STAR RATING -->
-    <div class="component-card">
+  <span>★★★★★</span>
 
-      <div class="card-top">
+  <h2>4.9</h2>
 
-        <span class="card-label">
-          Interactive Stars
-        </span>
+  <p>Exceptional</p>
 
-        <span class="card-tag tag-popular">
-          Popular
-        </span>
+</div>
+<div class="orbit-rating">
 
-      </div>
-
-      <div class="card-preview">
-
-        <div class="star-rating">
-
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Interactive star rating system with hover
-        effects and active state animations.
-      </p>
-
-    </div>
-
-
-    <!-- =========================================================
-   CIRCULAR RATING
-========================================================= -->
-
-<div class="component-card">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      Circular Progress Rating
-    </span>
-
-    <span class="card-tag tag-modern">
-      Animated
-    </span>
-
+  <div class="orbit-ring">
+    <div class="orbit-dot"></div>
   </div>
 
-  <div class="card-preview">
-
-    <div class="circle-rating">
-
-      <div class="circle">
-
-        <svg>
-          <circle cx="60" cy="60" r="52"></circle>
-          <circle
-            cx="60"
-            cy="60"
-            r="52"
-            class="progress-circle"
-          ></circle>
-        </svg>
-
-        <div class="circle-text">
-          92%
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <p class="card-desc">
-    Circular animated rating indicator with
-    glowing modern UI aesthetics.
-  </p>
+  <span>8.7</span>
 
 </div>
 
-<!-- =========================================================
-   HALF STAR RATING
-========================================================= -->
+<div class="dna-rating">
 
-<div class="component-card">
+  <div class="dna-bars">
 
-  <div class="card-top">
-
-    <span class="card-label">
-      Half Star Rating
-    </span>
-
-    <span class="card-tag tag-essential">
-      Flexible
-    </span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 
   </div>
 
-  <div class="card-preview">
+  <h3>Compatibility</h3>
 
-    <div class="half-star-rating">
+  <strong>92%</strong>
 
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-
-      <span class="half-star">
-        <i class="fa-solid fa-star"></i>
-      </span>
-
-      <i class="fa-regular fa-star"></i>
-
-      <span class="rating-number">
-        3.5
-      </span>
-
-    </div>
-
+</div>
+<div class="ai-header">
+    <i class="fa-solid fa-sparkles"></i>
+    AI Confidence
   </div>
 
-  <p class="card-desc">
-    Half filled star rating system ideal
-    for accurate product review scores.
-  </p>
+  <div class="ai-score">
+    94%
+  </div>
+
+  <div class="ai-bar">
+    <span></span>
+  </div>
+
+  <small>Prediction accuracy score</small>
 
 </div>
 
-<!-- =========================================================
-   HEART RATING
-========================================================= -->
 
-<div class="component-card">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      Heart Rating
-    </span>
-
-    <span class="card-tag tag-trending">
-      Social
-    </span>
-
-  </div>
-
-  <div class="card-preview">
-
-    <div class="heart-rating">
-
-      <i class="fa-solid fa-heart active"></i>
-      <i class="fa-solid fa-heart active"></i>
-      <i class="fa-solid fa-heart active"></i>
-      <i class="fa-solid fa-heart"></i>
-      <i class="fa-solid fa-heart"></i>
-
-    </div>
-
-  </div>
-
-  <p class="card-desc">
-    Social media inspired heart rating
-    component with hover animations.
-  </p>
-
-</div>
-
-<!-- =========================================================
-   NPS SCORE
-========================================================= -->
-
-<div class="component-card">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      NPS Rating
-    </span>
-
-    <span class="card-tag tag-popular">
-      Survey
-    </span>
-
-  </div>
-
-  <div class="card-preview">
-
-    <div class="nps-rating">
-
-      <span>0</span>
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
-      <span>6</span>
-      <span>7</span>
-      <span>8</span>
-      <span class="active">9</span>
-      <span>10</span>
-
-    </div>
-
-  </div>
-
-  <p class="card-desc">
-    Net Promoter Score rating system
-    designed for customer surveys.
-  </p>
-
-</div>
-
-<!-- =========================================================
-   THUMBS RATING
-========================================================= -->
-
-<div class="component-card">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      Thumbs Feedback
-    </span>
-
-    <span class="card-tag tag-modern">
-      Minimal
-    </span>
-
-  </div>
-
-  <div class="card-preview">
-
-    <div class="thumb-rating">
-
-      <button>
-        <i class="fa-solid fa-thumbs-up"></i>
-      </button>
-
-      <button>
-        <i class="fa-solid fa-thumbs-down"></i>
-      </button>
-
-    </div>
-
-  </div>
-
-  <p class="card-desc">
-    Simple thumbs up and down feedback
-    component for quick interactions.
-  </p>
-
-</div>
-
-<!-- =========================================================
-   DARK REVIEW CARD
-========================================================= -->
-
-<div class="component-card">
-
-  <div class="card-top">
-
-    <span class="card-label">
-      Dark Review Panel
-    </span>
-
-    <span class="card-tag tag-modern">
-      Premium
-    </span>
-
-  </div>
-
-  <div class="card-preview dark-preview">
-
-    <div class="dark-review-card">
-
-      <div class="dark-stars">
-
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-
-      </div>
-
-      <h4>
-        Outstanding Experience
-      </h4>
-
-      <p>
-        Loved the smooth UI animations
-        and modern design system.
-      </p>
-
-    </div>
-
-  </div>
-
-  <p class="card-desc">
-    Dark themed premium testimonial card
-    with glowing stars and typography.
-  </p>
-
-</div>
-    <!-- EMOJI -->
-    <div class="component-card">
-
-      <div class="card-top">
-
-        <span class="card-label">
-          Emoji Feedback
-        </span>
-
-        <span class="card-tag tag-trending">
-          Trending
-        </span>
-
-      </div>
-
-      <div class="card-preview">
-
-        <div class="emoji-rating">
-
-          <span>😡</span>
-          <span>😕</span>
-          <span>😐</span>
-          <span>😊</span>
-          <span>😍</span>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Emoji based feedback rating perfect
-        for surveys and reaction systems.
-      </p>
-
-    </div>
-
-    <!-- PROGRESS -->
-    <div class="component-card">
-
-      <div class="card-top">
-
-        <span class="card-label">
-          Review Bars
-        </span>
-
-        <span class="card-tag tag-essential">
-          Essential
-        </span>
-
-      </div>
-
-      <div class="card-preview dark-preview">
-
-        <div class="review-bars">
-
-          <div class="review-row">
-
-            <span>5★</span>
-
-            <div class="bar">
-              <div class="fill w90"></div>
-            </div>
-
-          </div>
-
-          <div class="review-row">
-
-            <span>4★</span>
-
-            <div class="bar">
-              <div class="fill w70"></div>
-            </div>
-
-          </div>
-
-          <div class="review-row">
-
-            <span>3★</span>
-
-            <div class="bar">
-              <div class="fill w40"></div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Customer review analytics bars with
-        smooth animated progress indicators.
-      </p>
-
-    </div>
-
-    <!-- GLASS -->
-    <div class="component-card">
-
-      <div class="card-top">
-
-        <span class="card-label">
-          Glass Rating Card
-        </span>
-
-        <span class="card-tag tag-modern">
-          Modern
-        </span>
-
-      </div>
-
-      <div class="card-preview">
-
-        <div class="glass-rating-card">
-
-          <h3>UI Quality</h3>
-
-          <div class="glass-stars">
-
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-
-          </div>
-
-          <p>
-            Rated by 12k+ developers
-          </p>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Premium glassmorphism inspired rating
-        card with modern floating aesthetics.
-      </p>
-
-    </div>
-
-    <!-- SLIDER -->
-    <div class="component-card">
-
-      <div class="card-top">
-
-        <span class="card-label">
-          Slider Rating
-        </span>
-
-        <span class="card-tag tag-trending">
-          Interactive
-        </span>
-
-      </div>
-
-      <div class="card-preview">
-
-        <div class="slider-rating">
-
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value="78"
-            id="ratingRange"
-          />
-
-          <span id="rangeValue">
-            78%
-          </span>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Smooth slider based rating system
-        with dynamic value updates.
-      </p>
-
-    </div>
-
-    <!-- REVIEW -->
-    <div class="component-card">
-
-      <div class="card-top">
-
-        <span class="card-label">
-          Review Card
-        </span>
-
-        <span class="card-tag tag-popular">
-          Popular
-        </span>
-
-      </div>
-
-      <div class="card-preview">
-
-        <div class="review-card">
-
-          <div class="review-top">
-
-            <img
-              src="https://i.pravatar.cc/100?img=12"
-              alt="User"
-            />
-
-            <div>
-
-              <h4>Alex Morgan</h4>
-
-              <div class="mini-stars">
-
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <p>
-            Amazing UI components and very
-            clean design system.
-          </p>
-
-        </div>
-
-      </div>
-
-      <p class="card-desc">
-        Modern testimonial style review card
-        with profile and ratings.
-      </p>
-
-    </div>
 
   </section>
 
 </main>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
 
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="#">License</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+  <!-- JS -->
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.body.classList.add(savedTheme);
+
+      const themeIcon = document.getElementById("themeIcon");
+      themeIcon.className = savedTheme === "dark" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+    });
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const themeIcon = document.getElementById("themeIcon");
+
+      if (document.body.classList.contains("light")) {
+        document.body.classList.replace("light", "dark");
+        localStorage.setItem("theme", "dark");
+        themeIcon.className = "fa-solid fa-moon"; // 🌙
+      } else {
+        document.body.classList.replace("dark", "light");
+        localStorage.setItem("theme", "light");
+        themeIcon.className = "fa-solid fa-sun"; // ☀️
+      }
+    });
+  </script>
 <script src="rating.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

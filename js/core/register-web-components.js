@@ -15,11 +15,11 @@ async function safeImport(specifier) {
 (async function registerAll(){
 	// Try local relative imports first (works when file served from server)
 	const candidates = [
-		'/components/web-components/uv-button.js',
-		'/components/web-components/uv-modal.js',
-		'/components/web-components/uv-tooltip.js',
-		'/components/web-components/uv-language-switcher.js',
-		'/components/web-components/uv-theme-switcher.js'
+		'/components/WebComponents/uv-button.js',
+		'/components/WebComponents/uv-modal.js',
+		'/components/WebComponents/uv-tooltip.js',
+		'/components/WebComponents/uv-language-switcher.js',
+		'/components/WebComponents/uv-theme-switcher.js'
 	];
 
 	for (const spec of candidates) {
