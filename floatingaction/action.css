@@ -234,3 +234,121 @@ body{
   }
 
 }
+
+.red{
+  background:#ef4444;
+}
+
+.green{
+  background:#22c55e;
+}
+
+.cyan{
+  background:#06b6d4;
+}
+
+.orange{
+  background:#f97316;
+}
+
+.purple{
+  background:#8b5cf6;
+}
+
+.dark{
+  background:#1f2937;
+}
+
+.gold{
+  background:#f59e0b;
+}
+
+.gradient{
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #06b6d4
+  );
+}
+
+.badge{
+  position:absolute;
+  top:-4px;
+  right:-4px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:red;
+  color:white;
+  font-size:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.top-left{
+  top:30px;
+  left:30px;
+}
+
+.top-center{
+  top:30px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.bottom-center{
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.center-left{
+  left:30px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* RADIAL MENU */
+
+.radial-fab{
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+
+.radial-menu{
+  position:absolute;
+}
+
+.radial-item{
+  position:absolute;
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:50%;
+  opacity:0;
+  pointer-events:none;
+  transition:.4s;
+}
+
+.radial-menu.active .item1{
+  transform:translate(-90px,0);
+  opacity:1;
+}
+
+.radial-menu.active .item2{
+  transform:translate(90px,0);
+  opacity:1;
+}
+
+.radial-menu.active .item3{
+  transform:translate(0,-90px);
+  opacity:1;
+}
+
+.radial-menu.active .item4{
+  transform:translate(0,90px);
+  opacity:1;
+}
