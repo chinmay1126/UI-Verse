@@ -26,14 +26,22 @@ const Search = {
     const searchInput = getElement("searchInput");
     if (!searchInput) return;
 
-    const onKeyUp = (e) => {
+    const debounce = (func, wait) => {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    };
+
+    const onKeyUp = debounce((e) => {
       const value = e.target.value.toLowerCase().trim();
 
       document.querySelectorAll(".component-card").forEach((item) => {
         const text = (item.dataset.name || item.innerText).toLowerCase();
         item.style.display = text.includes(value) ? "block" : "none";
       });
-    };
+    }, 250);
 
     searchInput.addEventListener("keyup", onKeyUp);
     this._state.listener = { el: searchInput, event: "keyup", handler: onKeyUp };
