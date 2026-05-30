@@ -3,6 +3,7 @@ function postComment(){
   const input = document.getElementById("commentInput");
   const wrapper = document.getElementById("commentsWrapper");
 
+  
   if (!input || !wrapper) {
     return;
   }

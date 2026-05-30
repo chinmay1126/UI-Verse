@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
 
   <meta
@@ -38,10 +38,11 @@
     href="notification.css"
   >
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -384,7 +385,7 @@ NAVBAR
       type="text"
       placeholder="Search notifications..."
       id="searchInput"
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
@@ -904,5 +905,6 @@ MAIN
 
 <script src="notification.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

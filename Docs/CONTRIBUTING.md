@@ -100,15 +100,32 @@ Click on the Fork button.
 
 ### 3️⃣ Create a Branch
 
-git checkout -b feature/your-feature-name
+Create a branch using lowercase letters, hyphens, and descriptive prefixes:
+- `fix/` for bug fixes (e.g., `fix/navbar-mobile-overflow`)
+- `feat/` for new components or features (e.g., `feat/loading-skeleton-ui`)
+- `refactor/` for refactoring existing components (e.g., `refactor/reusable-modal`)
+- `docs/` for documentation changes (e.g., `docs/improve-setup-guide`)
+- `ci/` or `chore/` for workflows and maintenance (e.g., `ci/pr-title-validator`)
+
+```bash
+git checkout -b prefix/descriptive-branch-name
+```
 
 ### 4️⃣ Make Changes
 
-Follow structure, keep code clean, add comments if needed.
+Follow the project structure, maintain Vanilla CSS styling, verify responsiveness, and ensure semantic accessibility.
 
 ### 5️⃣ Commit Changes
 
-git commit -m "Added: new feature"
+Use Conventional Commits syntax for all commit messages to ensure clean changelogs:
+- `feat: add new gradient button component`
+- `fix: resolve mobile overflow on cards layout`
+- `docs: update setup and local testing instructions`
+- `refactor: extract reusable dropdown trigger logic`
+
+```bash
+git commit -m "prefix: brief description of changes"
+```
 
 ### 6️⃣ Push Changes
 

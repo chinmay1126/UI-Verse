@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -59,10 +59,11 @@
     href="dashboard.css"
   >
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
 LOADER
@@ -91,7 +92,7 @@ MOBILE TOGGLE
 <button
   class="mobile-toggle"
   id="mobileToggle"
->
+ data-a11y-remediation="button-label-needed">
 
   <i class="fa-solid fa-bars"></i>
 
@@ -142,7 +143,7 @@ SIDEBAR
       <input
         type="text"
         placeholder="Search..."
-      >
+       data-a11y-remediation="label-needed">
 
     </div>
 
@@ -1304,10 +1305,10 @@ MAIN
 
       <div class="team-members">
 
-        <img src="https://i.pravatar.cc/100?img=12" alt="">
-        <img src="https://i.pravatar.cc/100?img=22" alt="">
-        <img src="https://i.pravatar.cc/100?img=32" alt="">
-        <img src="https://i.pravatar.cc/100?img=42" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=12" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=22" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=32" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=42" alt="">
 
       </div>
 
@@ -1317,10 +1318,10 @@ MAIN
     <h2>Team Members</h2>
   </div>
   <div class="team-members">
-    <img src="https://i.pravatar.cc/100?img=12" alt="">
-    <img src="https://i.pravatar.cc/100?img=22" alt="">
-    <img src="https://i.pravatar.cc/100?img=32" alt="">
-    <img src="https://i.pravatar.cc/100?img=42" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=12" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=22" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=32" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=42" alt="">
   </div>
 </div></textarea>
 
@@ -1438,7 +1439,7 @@ MAIN
       </div>
       <div class="performers-list">
         <div class="performer-item">
-          <img src="https://i.pravatar.cc/100?img=1" alt="Avatar">
+          <img loading="lazy" src="https://i.pravatar.cc/100?img=1" alt="Avatar">
           <div class="performer-details">
             <strong>John Doe</strong>
             <span>1,430 Sales</span>
@@ -1446,7 +1447,7 @@ MAIN
           <div class="rank gold">#1</div>
         </div>
         <div class="performer-item">
-          <img src="https://i.pravatar.cc/100?img=5" alt="Avatar">
+          <img loading="lazy" src="https://i.pravatar.cc/100?img=5" alt="Avatar">
           <div class="performer-details">
             <strong>Jane Smith</strong>
             <span>1,200 Sales</span>
@@ -1454,7 +1455,7 @@ MAIN
           <div class="rank silver">#2</div>
         </div>
         <div class="performer-item">
-          <img src="https://i.pravatar.cc/100?img=9" alt="Avatar">
+          <img loading="lazy" src="https://i.pravatar.cc/100?img=9" alt="Avatar">
           <div class="performer-details">
             <strong>Mike Johnson</strong>
             <span>980 Sales</span>
@@ -1469,7 +1470,7 @@ MAIN
   </div>
   <div class="performers-list">
     <div class="performer-item">
-      <img src="https://i.pravatar.cc/100?img=1" alt="Avatar">
+      <img loading="lazy" src="https://i.pravatar.cc/100?img=1" alt="Avatar">
       <div class="performer-details">
         <strong>John Doe</strong>
         <span>1,430 Sales</span>
@@ -1477,7 +1478,7 @@ MAIN
       <div class="rank gold">#1</div>
     </div>
     <div class="performer-item">
-      <img src="https://i.pravatar.cc/100?img=5" alt="Avatar">
+      <img loading="lazy" src="https://i.pravatar.cc/100?img=5" alt="Avatar">
       <div class="performer-details">
         <strong>Jane Smith</strong>
         <span>1,200 Sales</span>
@@ -1958,7 +1959,7 @@ MAIN
               <span class="note-dot"></span>
               <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday 🚀</textarea>
+            <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday <i class="fa-solid fa-rocket"></i></textarea>
           </div>
 
           <div class="sticky-note note-blue">
@@ -1999,7 +2000,7 @@ MAIN
         <span class="note-dot"></span>
         <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday 🚀</textarea>
+      <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday <i class="fa-solid fa-rocket"></i></textarea>
     </div>
     <div class="sticky-note note-blue">
       <div class="note-header">
@@ -2021,7 +2022,7 @@ function addNote() {
   grid.appendChild(note);
 }
 function deleteNote(btn) { btn.closest('.sticky-note').remove(); }
-<\/script></textarea>
+</script></textarea>
 
       </div>
 
@@ -2040,65 +2041,60 @@ function deleteNote(btn) { btn.closest('.sticky-note').remove(); }
 <div id="ncToast">✓ Code copied to clipboard!</div>
 
 <!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
-
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
 
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
   </div>
 </footer>
 <!-- =========================================================
@@ -2194,5 +2190,8 @@ SCRIPT
 
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
+
+<!-- improved by script -->

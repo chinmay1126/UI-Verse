@@ -3,12 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neural Network Visualizer</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <header>
     <h1>🧠 Neural Network Visualizer</h1>
@@ -17,34 +19,62 @@
   <main class="container">
 
     <!-- Neural Network -->
-    <section class="card">
-      <h2>Neural Layers</h2>
+    <!-- Neural Network -->
+<section class="card">
+  <h2>Neural Layers</h2>
 
-      <div class="network">
+  <div class="network-wrapper">
 
-        <div class="layer">
-          <div class="node"></div>
-          <div class="node"></div>
-          <div class="node"></div>
-        </div>
+    <!-- SVG Connections -->
+    <svg class="connections" viewBox="0 0 600 200" preserveAspectRatio="none">
 
-        <div class="layer">
-          <div class="node"></div>
-          <div class="node"></div>
-          <div class="node"></div>
-          <div class="node"></div>
-        </div>
+      <!-- Input → Hidden -->
+      <line x1="80" y1="40" x2="280" y2="30" />
+      <line x1="80" y1="40" x2="280" y2="80" />
+      <line x1="80" y1="40" x2="280" y2="130" />
 
-        <div class="layer">
-          <div class="node"></div>
-          <div class="node"></div>
-          <div class="node"></div>
-        </div>
+      <line x1="80" y1="100" x2="280" y2="30" />
+      <line x1="80" y1="100" x2="280" y2="80" />
+      <line x1="80" y1="100" x2="280" y2="130" />
 
+      <line x1="80" y1="160" x2="280" y2="30" />
+      <line x1="80" y1="160" x2="280" y2="80" />
+      <line x1="80" y1="160" x2="280" y2="130" />
+
+      <!-- Hidden → Output -->
+      <line x1="280" y1="30" x2="520" y2="50" />
+      <line x1="280" y1="80" x2="520" y2="100" />
+      <line x1="280" y1="130" x2="520" y2="150" />
+
+    </svg>
+
+    <!-- Nodes -->
+    <div class="network">
+      
+      <div class="layer input">
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
       </div>
-    </section>
 
-    <!-- Training Progress -->
+      <div class="layer hidden">
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+      </div>
+
+      <div class="layer output">
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  
+<!-- Training Progress -->
     <section class="card">
       <h2>Training Progress</h2>
 
@@ -78,6 +108,6 @@
 
   </main>
 
-  <script src="script.js"></script>
+        <script src="../dist/shared.js"></script>
 </body>
 </html>

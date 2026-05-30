@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-iZWRNsj9Cu2c9XLfoqGljTO4iFktJe5ofOOiO39UKS0=; script-src-attr 'unsafe-hashes' sha256-iZWRNsj9Cu2c9XLfoqGljTO4iFktJe5ofOOiO39UKS0=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
@@ -31,11 +31,11 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
    <section class="product-slider-section">
 
@@ -61,7 +61,7 @@
       <!-- NAVIGATION -->
       <div class="slider-buttons">
 
-        <button id="prevBtn">
+        <button id="prevBtn" data-a11y-remediation="button-label-needed">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
 
@@ -118,6 +118,270 @@
 
         </div>
 
+
+        <!-- PRODUCT CARD 5 -->
+<div class="product-card">
+
+  <div class="product-image">
+
+    <img
+      src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8"
+      alt="Laptop"
+      srcset="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=480&auto=format&fit=crop&q=80 480w, https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=768&auto=format&fit=crop&q=80 768w, https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=1024&auto=format&fit=crop&q=80 1024w"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      loading="lazy"
+      decoding="async"
+    >
+
+    <span class="badge">
+      Premium
+    </span>
+
+  </div>
+
+  <div class="product-content">
+
+    <h3>MacBook Air</h3>
+
+    <p>
+      Lightweight laptop with powerful performance and battery life.
+    </p>
+
+    <div class="product-bottom">
+
+      <span class="price">
+        $1499
+      </span>
+
+      <button>
+        Add Cart
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PRODUCT CARD 6 -->
+<div class="product-card">
+
+  <div class="product-image">
+
+    <img
+      src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
+      alt="Jacket"
+      srcset="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=480&auto=format&fit=crop&q=80 480w, https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=768&auto=format&fit=crop&q=80 768w, https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1024&auto=format&fit=crop&q=80 1024w"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      loading="lazy"
+      decoding="async"
+    >
+
+    <span class="badge">
+      Fashion
+    </span>
+
+  </div>
+
+  <div class="product-content">
+
+    <h3>Leather Jacket</h3>
+
+    <p>
+      Stylish premium leather jacket with modern streetwear design.
+    </p>
+
+    <div class="product-bottom">
+
+      <span class="price">
+        $199
+      </span>
+
+      <button>
+        Add Cart
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PRODUCT CARD 7 -->
+<div class="product-card">
+
+  <div class="product-image">
+
+    <img
+      src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad"
+      alt="Gaming Chair"
+      srcset="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=480&auto=format&fit=crop&q=80 480w, https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=768&auto=format&fit=crop&q=80 768w, https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1024&auto=format&fit=crop&q=80 1024w"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      loading="lazy"
+      decoding="async"
+    >
+
+    <span class="badge">
+      Gaming
+    </span>
+
+  </div>
+
+  <div class="product-content">
+
+    <h3>Gaming Chair</h3>
+
+    <p>
+      Ergonomic gaming chair built for comfort and long sessions.
+    </p>
+
+    <div class="product-bottom">
+
+      <span class="price">
+        $429
+      </span>
+
+      <button>
+        Add Cart
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PRODUCT CARD 8 -->
+<div class="product-card">
+
+  <div class="product-image">
+
+    <img
+      src="https://images.unsplash.com/photo-1546868871-7041f2a55e12"
+      alt="VR Headset"
+      srcset="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=480&auto=format&fit=crop&q=80 480w, https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=768&auto=format&fit=crop&q=80 768w, https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=1024&auto=format&fit=crop&q=80 1024w"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      loading="lazy"
+      decoding="async"
+    >
+
+    <span class="badge">
+      Future Tech
+    </span>
+
+  </div>
+
+  <div class="product-content">
+
+    <h3>VR Headset</h3>
+
+    <p>
+      Experience immersive gaming and virtual reality adventures.
+    </p>
+
+    <div class="product-bottom">
+
+      <span class="price">
+        $599
+      </span>
+
+      <button>
+        Add Cart
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PRODUCT CARD 9 -->
+<div class="product-card">
+
+  <div class="product-image">
+
+    <img
+      src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
+      alt="Camera"
+      srcset="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=480&auto=format&fit=crop&q=80 480w, https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=768&auto=format&fit=crop&q=80 768w, https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=1024&auto=format&fit=crop&q=80 1024w"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      loading="lazy"
+      decoding="async"
+    >
+
+    <span class="badge">
+      Pro
+    </span>
+
+  </div>
+
+  <div class="product-content">
+
+    <h3>DSLR Camera</h3>
+
+    <p>
+      Capture stunning photos and cinematic videos in ultra HD.
+    </p>
+
+    <div class="product-bottom">
+
+      <span class="price">
+        $899
+      </span>
+
+      <button>
+        Add Cart
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PRODUCT CARD 10 -->
+<div class="product-card">
+
+  <div class="product-image">
+
+    <img
+      src="https://images.unsplash.com/photo-1586495777744-4413f21062fa"
+      alt="Perfume"
+      srcset="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=480&auto=format&fit=crop&q=80 480w, https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=768&auto=format&fit=crop&q=80 768w, https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=1024&auto=format&fit=crop&q=80 1024w"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      loading="lazy"
+      decoding="async"
+    >
+
+    <span class="badge">
+      Luxury
+    </span>
+
+  </div>
+
+  <div class="product-content">
+
+    <h3>Luxury Perfume</h3>
+
+    <p>
+      Elegant fragrance crafted with long-lasting premium notes.
+    </p>
+
+    <div class="product-bottom">
+
+      <span class="price">
+        $149
+      </span>
+
+      <button>
+        Add Cart
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
         <!-- CARD -->
         <div class="product-card">
 
@@ -347,6 +611,7 @@
 
   </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
 

@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Breadcrumb Components — UIverse</title>
 
   <!-- Fonts -->
@@ -29,548 +26,175 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="breadcrums.css" />
-
-  <link rel="stylesheet" href="shared-sidebar.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  
-  <link rel="stylesheet" href="shared-page.css">
-  <link rel="stylesheet" href="cards.css">
-  <link rel="stylesheet" href="playground.css">
 </head>
-
-<!-- =========================================================
-   NAVBAR
-========================================================= -->
-
-<header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-  <div class="logo">UIverse</div>
-  <div class="search-bar">
-    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
-    <kbd class="search-kbd">⌘K</kbd>
-  </div>
-  <div class="nav-right">
-    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
-    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
-    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
-  </div>
-</header>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-
-
-<!-- ================= SIDEBAR ================= -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <span class="brand-icon">⬡</span>
-    <span class="brand-text">UIverse</span>
-  </div>
-          <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a href="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="button.html">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Buttons</span>
-        </a>
-      </li>
-            <li>
-        <a href="dropdown-components.html">
-          <i class="fa-solid fa-caret-down"></i>
-          <span>Dropdowns</span>
-        </a>
-      </li>
-      <li>
-        <a href="profile-components.html">
-          <i class="fa-solid fa-user"></i>
-          <span>Profiles</span>
-        </a>
-      </li>
-<li>
-        <a href="navbar.html">
-          <i class="fa-solid fa-bars"></i>
-          <span>Navbar</span>
-        </a>
-      </li>
-      <li>
-        <a href="cards.html">
-          <i class="fa-solid fa-table-cells-large"></i>
-          <span>Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="flipcards.html">
-          <i class="fa-solid fa-clone"></i>
-          <span>3D Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="inputs.html">
-          <i class="fa-solid fa-keyboard"></i>
-          <span>Inputs</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms.html">
-          <i class="fa-brands fa-wpforms"></i>
-          <span>Forms</span>
-        </a>
-      </li>
-      <li>
-        <a href="badges.html">
-          <i class="fa-solid fa-award"></i>
-          <span>Badges</span>
-        </a>
-      </li>
-      <li>
-        <a href="blog.html">
-          <i class="fa-solid fa-blog"></i>
-          <span>Blog</span>
-        </a>
-      </li>
-      <li>
-        <a href="article.html">
-          <i class="fa-solid fa-newspaper"></i>
-          <span>Articles</span>
-        </a>
-      </li>
-      <li>
-        <a href="alerts.html">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <span>Alerts</span>
-        </a>
-      </li>
-      <li class="active">
-        <a href="color.html">
-          <i class="fa-solid fa-palette"></i>
-          <span>Colors</span>
-        </a>
-      </li>
-      <li>
-        <a href="charts.html">
-          <i class="fa-solid fa-chart-pie"></i>
-          <span>Charts</span>
-        </a>
-      </li>
-      <li>
-        <a href="dashboard.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="div.html">
-          <i class="fa-solid fa-square"></i>
-          <span>DIV</span>
-        </a>
-      </li>
-      <li>
-        <a href="widgets.html">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Widgets</span>
-        </a>
-      </li>
-      <li>
-        <a href="search.html">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span>Search Bars</span>
-        </a>
-      </li>
-      <li>
-        <a href="hover.html">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          <span>Hover Effects</span>
-        </a>
-      </li>
-      <li>
-        <a href="error.html">
-          <i class="fa-solid fa-circle-exclamation"></i>
-          <span>Error Pages</span>
-        </a>
-      </li>
-      <li>
-        <a href="ecommerce.html">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span>E-commerce</span>
-        </a>
-      </li>
-      <li>
-        <a href="files.html">
-          <i class="fa-solid fa-file-arrow-up"></i>
-          <span>Drag & Drop</span>
-        </a>
-      </li>
-      <li>
-        <a href="hero.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Hero Sections</span>
-        </a>
-      </li>
-      <li>
-        <a href="loaders.html">
-          <i class="fa-solid fa-spinner"></i>
-          <span>Loaders</span>
-        </a>
-      </li>
-      <li>
-        <a href="timeline.html">
-          <i class="fa-solid fa-clock-rotate-left"></i>
-          <span>Timeline</span>
-        </a>
-      </li>
-      <li>
-        <a href="map.html">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <span>Maps</span>
-        </a>
-      </li>
-      <li>
-        <a href="menu.html">
-          <i class="fa-solid fa-bars-staggered"></i>
-          <span>Menu</span>
-        </a>
-      </li>
-      <li>
-        <a href="pricing.html">
-          <i class="fa-solid fa-tags"></i>
-          <span>Pricing</span>
-        </a>
-      </li>
-      <li>
-        <a href="subscription.html">
-          <i class="fa-solid fa-credit-card"></i>
-          <span>Subscription</span>
-        </a>
-      </li>
-      <li>
-        <a href="auth.html">
-          <i class="fa-solid fa-user-shield"></i>
-          <span>Authentication</span>
-        </a>
-      </li>
-        <li>
-          <a href="recovery.html">
-            <i class="fa-solid fa-key" aria-hidden="true"></i>
-            <span>Password Recovery</span>
-          </a>
-        </li>
-      <li>
-        <a href="section.html">
-          <i class="fa-solid fa-rectangle-list"></i>
-          <span>Section</span>
-        </a>
-      </li>
-      <li>
-        <a href="span.html">
-          <i class="fa-solid fa-code"></i>
-          <span>Span</span>
-        </a>
-      </li>
-      <li>
-        <a href="table.html">
-          <i class="fa-solid fa-table"></i>
-          <span>Table</span>
-        </a>
-      </li>
-      <li>
-        <a href="tabs.html">
-          <i class="fa-solid fa-table-columns"></i>
-          <span>Tabs</span>
-        </a>
-      </li>
-      <li>
-        <a href="terms.html">
-          <i class="fa-solid fa-file-contract"></i>
-          <span>Terms</span>
-        </a>
-      </li>
-      <li>
-        <a href="testimonials.html">
-          <i class="fa-solid fa-comments"></i>
-          <span>Testimonials</span>
-        </a>
-      </li>
-      <li>
-        <a href="toggles.html">
-          <i class="fa-solid fa-toggle-on"></i>
-          <span>Toggle</span>
-        </a>
-      </li>
-      <li>
-        <a href="radiobutton.html">
-          <i class="fa-solid fa-circle-dot"></i>
-          <span>Radio Buttons</span>
-        </a>
-      </li>
-      <li>
-        <a href="checkbox.html">
-          <i class="fa-solid fa-square-check"></i>
-          <span>Checkboxes</span>
-        </a>
-      </li>
-      <li>
-        <a href="notifications-premium.html">
-          <i class="fa-solid fa-bell"></i>
-          <span>Notifications V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="step-indicators.html">
-          <i class="fa-solid fa-list-check"></i>
-          <span>Steppers</span>
-        </a>
-      </li>
-      <li>
-        <a href="progress-premium.html">
-          <i class="fa-solid fa-bars-progress"></i>
-          <span>Progress V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="ratings-premium.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Ratings V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="filters-premium.html">
-          <i class="fa-solid fa-sliders"></i>
-          <span>Filters V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="admin-panel.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Admin Panel V2</span>
-        </a>
-      </li>
-<li>
-        <a href="about.html">
-          <i class="fa-solid fa-circle-info"></i>
-          <span>About</span>
-        </a>
-      </li>
-      <li>
-        <a href="documentation.html">
-          <i class="fa-solid fa-book"></i>
-          <span>Documentation</span>
-        </a>
-      </li>
-      <li>
-        <a href="faq.html">
-          <i class="fa-solid fa-circle-question"></i>
-          <span>Faq</span>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Contact Us</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <div class="sidebar-footer">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="#"><i class="fab fa-x-twitter"></i></a>
-  </div>
-</aside>
-
-<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-
-
-
-<!-- =========================================================
-   MAIN
-========================================================= -->
-
-<main class="main-home">
-
-  <!-- HERO -->
-  <section class="page-hero">
-
-    <div class="page-hero-left">
-
-      <div class="preview-breadcrumb">
-
-        <a href="#">
-          Home
-        </a>
-
-        <i class="fa-solid fa-chevron-right"></i>
-
-        <a href="#">
-          Components
-        </a>
-
-        <i class="fa-solid fa-chevron-right"></i>
-
-        <span>
-          Breadcrumbs
-        </span>
-
-      </div>
-
-      <h1 class="page-title">
-        Breadcrumb UI Components
-      </h1>
-
-      <p class="page-desc">
-        Beautiful breadcrumb navigation styles
-        including glassmorphism, pills, steppers,
-        modern navigation trails and dashboard
-        inspired breadcrumb systems.
-      </p>
-
-      <div class="page-meta">
-
-        <span class="meta-badge">
-          <i class="fa-solid fa-link"></i>
-          8 Components
-        </span>
-
-        <span class="meta-badge">
-          <i class="fa-solid fa-code"></i>
-          HTML CSS JS
-        </span>
-
-        <span class="meta-badge">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          Interactive
-        </span>
-
-      </div>
-
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">⬡</span>
+      <span>UIverse</span>
     </div>
+    <nav aria-label="Breadcrumb"  class="topnav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="cards.html">Cards</a>
+      <a href="breadcrumbs.html" class="active">Breadcrumbs</a>
+    </nav>
+  </header>
 
-    <!-- HERO PREVIEW -->
-    <div class="hero-preview">
-
-      <div class="glass-breadcrumb breadcrumb">
-
-        <a href="#">
-          Dashboard
-        </a>
-
-        <i class="fa-solid fa-angle-right"></i>
-
-        <a href="#">
-          Workspace
-        </a>
-
-        <i class="fa-solid fa-angle-right"></i>
-
-        <span>
-          UIverse
-        </span>
-
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-badge">🧭 Reusable Breadcrumb Navigation</div>
+      <h1>Breadcrumb UI for dashboards, admin panels, ecommerce, and web apps.</h1>
+      <p>Five flexible breadcrumb patterns for clean hierarchy and quick back navigation.</p>
+      <div class="hero-meta">
+        <span class="meta-pill">5 Components</span>
+        <span class="meta-pill">HTML CSS JS</span>
+        <span class="meta-pill">Responsive</span>
       </div>
+    </section>
 
-    </div>
+    <section class="related-pages">
+      <a href="calendar-components.html">Calendar</a>
+      <a href="notes-components.html">Notes</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="tooltips.html">Tooltips</a>
+      <a href="inputs.html">Inputs</a>
+    </section>
 
-  </section>
-
-  <!-- FILTER -->
-  <div class="filter-bar">
-
-    <button class="filter-btn active">
-      All
-    </button>
-
-    <button class="filter-btn">
-      Glass
-    </button>
-
-    <button class="filter-btn">
-      Pills
-    </button>
-
-    <button class="filter-btn">
-      Stepper
-    </button>
-
-    <button class="filter-btn">
-      Minimal
-    </button>
-
-  </div>
-
-  <!-- =========================================================
-     GRID
-  ========================================================= -->
-
-  <section class="breadcrumb-grid">
-
-    <!-- COMPONENT -->
-    <div class="component-card"style="border:2px solid lightskyblue;">
-
-      <div class="card-top">
-
-        <span class="card-label">
-          Minimal Breadcrumb
-        </span>
-
-        <span class="card-tag tag-popular">
-          Popular
-        </span>
-
-      </div>
-
-      <div class="card-preview">
-
-        <div class="breadcrumb">
-
-          <a href="#">
-            Home
-          </a>
-
-          <i class="fa-solid fa-chevron-right"></i>
-
-          <a href="#">
-            Components
-          </a>
-
-          <i class="fa-solid fa-chevron-right"></i>
-
-          <span>
-            Breadcrumbs
-          </span>
-
+    <section class="breadcrumb-grid" role="region" aria-label="Breadcrumb types">
+      <article class="component-card" data-name="glass breadcrumb">
+        <div class="card-preview glass-preview">
+          <nav aria-label="Breadcrumb"  class="trail glass-trail" aria-label="Breadcrumb">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="dashboard.html">Dashboard</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Analytics</span>
+          </nav>
         </div>
+        <div class="card-body">
+          <h3>Glass Breadcrumb</h3>
+          <p>Soft glassmorphism trail for modern dashboards and admin panels.</p>
+          <div class="card-actions">
+            <button onclick="toggleCode('bc1', this)">View code</button>
+            <button onclick="copyCode('bc1', this)">Copy code</button>
+          </div>
+          <pre id="bc1" class="code-block"><code>&lt;nav class="trail glass-trail"&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;span&gt;Analytics&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </article>
 
-      </div>
+      <article class="component-card" data-name="pill breadcrumb">
+        <div class="card-preview pill-preview">
+          <nav aria-label="Breadcrumb"  class="trail pill-trail" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <a href="ecommerce.html">Shop</a>
+            <a href="product.html">Category</a>
+            <span>Product Detail</span>
+          </nav>
+        </div>
+        <div class="card-body">
+          <h3>Pill Breadcrumb</h3>
+          <p>Rounded breadcrumb chips for ecommerce and catalog flows.</p>
+          <div class="card-actions">
+            <button onclick="toggleCode('bc2', this)">View code</button>
+            <button onclick="copyCode('bc2', this)">Copy code</button>
+          </div>
+          <pre id="bc2" class="code-block"><code>&lt;nav class="trail pill-trail"&gt;
+  &lt;a href="ecommerce.html"&gt;Shop&lt;/a&gt;
+  &lt;span&gt;Product Detail&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </article>
 
-      <p class="card-desc">
-        Clean minimal breadcrumb navigation
-        perfect for dashboards and websites.
-      </p>
+      <article class="component-card" data-name="underline breadcrumb">
+        <div class="card-preview underline-preview">
+          <nav aria-label="Breadcrumb"  class="trail underline-trail" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="files.html">Assets</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Uploads</span>
+          </nav>
+        </div>
+        <div class="card-body">
+          <h3>Underline Breadcrumb</h3>
+          <p>Minimal links with hover underlines for lightweight layouts.</p>
+          <div class="card-actions">
+            <button onclick="toggleCode('bc3', this)">View code</button>
+            <button onclick="copyCode('bc3', this)">Copy code</button>
+          </div>
+          <pre id="bc3" class="code-block"><code>&lt;a href="files.html"&gt;Assets&lt;/a&gt;
+&lt;span&gt;Uploads&lt;/span&gt;</code></pre>
+        </div>
+      </article>
 
-    </div>
+      <article class="component-card" data-name="icon breadcrumb">
+        <div class="card-preview icon-preview">
+          <nav aria-label="Breadcrumb"  class="trail icon-trail" aria-label="Breadcrumb">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="settings.html"><i class="fa-solid fa-sliders"></i> Settings</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span><i class="fa-solid fa-gear"></i> Preferences</span>
+          </nav>
+        </div>
+        <div class="card-body">
+          <h3>Icon Breadcrumb</h3>
+          <p>Icon-led navigation for settings, app menus, and utility pages.</p>
+          <div class="card-actions">
+            <button onclick="toggleCode('bc4', this)">View code</button>
+            <button onclick="copyCode('bc4', this)">Copy code</button>
+          </div>
+          <pre id="bc4" class="code-block"><code>&lt;a href="settings.html"&gt;Settings&lt;/a&gt;
+&lt;span&gt;Preferences&lt;/span&gt;</code></pre>
+        </div>
+      </article>
 
-    <!-- COMPONENT -->
-    <div class="component-card"style="border:2px solid blueviolet;">
+      <article class="component-card" data-name="step breadcrumb">
+        <div class="card-preview step-preview">
+          <nav aria-label="Breadcrumb"  class="trail step-trail" aria-label="Breadcrumb">
+            <span class="step-item active"><span>1</span> Project</span>
+            <span class="step-item active"><span>2</span> Build</span>
+            <span class="step-item active"><span>3</span> Review</span>
+            <span class="step-item"><span>4</span> Publish</span>
+          </nav>
+        </div>
+        <div class="card-body">
+          <h3>Step Breadcrumb</h3>
+          <p>Process-style breadcrumb for flows, checkouts, and setup wizards.</p>
+          <div class="card-actions">
+            <button onclick="toggleCode('bc5', this)">View code</button>
+            <button onclick="copyCode('bc5', this)">Copy code</button>
+          </div>
+          <pre id="bc5" class="code-block"><code>&lt;span class="step-item active"&gt;&lt;span&gt;3&lt;/span&gt; Review&lt;/span&gt;
+&lt;span class="step-item"&gt;&lt;span&gt;4&lt;/span&gt; Publish&lt;/span&gt;</code></pre>
+        </div>
+      </article>
+    </section>
+  </main>
 
-      <div class="card-top">
+  <script>
+    function toggleCode(id, button) {
+      const block = document.getElementById(id);
+      const isOpen = block.classList.toggle('open');
+      button.textContent = isOpen ? 'Hide code' : 'View code';
+    }
 
-        <span class="card-label">
-          Glass Breadcrumb
-        </span>
-
-        <span class="card-tag tag-modern">
-          Modern
-        </span>
-
-      </div>
+    async function copyCode(id, button) {
+      const block = document.getElementById(id);
+      await navigator.clipboard.writeText(block.innerText.trim());
+      const label = button.textContent;
+      button.textContent = 'Copied!';
+      setTimeout(() => button.textContent = label, 1200);
+    }
+  </script>
+    <script src="dist/shared.js"></script>
+</body>
+</html>
 
       <div class="card-preview dark-preview">
 
@@ -1060,7 +684,7 @@
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com">
+        <input type="email" placeholder="your@email.com" data-a11y-remediation="label-needed">
         <button type="button">Subscribe</button>
       </div>
     </div>
