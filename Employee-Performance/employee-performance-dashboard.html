@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8"/>
   <meta name="viewport"
   content="width=device-width, initial-scale=1.0"/>
@@ -24,6 +24,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -83,7 +85,7 @@
         Overall employee productivity improved this month.
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         View Insights
       </button>
 
@@ -119,7 +121,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-          placeholder="Search employee..."/>
+          placeholder="Search employee..."/ data-a11y-remediation="label-needed">
 
         </div>
 
@@ -543,5 +545,6 @@
   <!-- JS -->
   <script src="employee-performance-dashboard.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

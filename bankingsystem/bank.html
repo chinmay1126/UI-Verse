@@ -1,101 +1,149 @@
+# index.html
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Banking Dashboard</title>
-  <link rel="stylesheet" href="bank.css">
+  <title>Bankify Pro Dashboard</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="bank.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div class="dashboard">
 
-    <aside class="sidebar">
-      <h2>Bankify</h2>
+<div class="app">
 
-      <ul>
-        <li class="active">Dashboard</li>
-        <li>Accounts</li>
-        <li>Transactions</li>
-        <li>Cards</li>
-        <li>Settings</li>
-      </ul>
-    </aside>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div>
+      <h2 class="logo">Bankify<span>Pro</span></h2>
 
-    <main class="main-content">
+      <nav>
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">Accounts</a>
+        <a href="#">Transactions</a>
+        <a href="#">Cards</a>
+        <a href="#">Analytics</a>
+        <a href="#">Settings</a>
+      </nav>
+    </div>
 
-      <div class="top-bar">
-        <h1>Banking Dashboard</h1>
+    <div class="user-box">
+      <div class="avatar">JD</div>
+      <div>
+        <p>Logged in as</p>
+        <h4>John Doe</h4>
+      </div>
+    </div>
+  </aside>
 
-        <button>Transfer Money</button>
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div>
+        <h1>Dashboard</h1>
+        <p>Welcome back 👋</p>
       </div>
 
-      <div class="cards-section">
+      <button class="primary-btn" onclick="sendMoney()">
+        + Transfer Money
+      </button>
+    </header>
 
-        <div class="balance-card">
+    <!-- CARDS -->
+    <section class="cards">
+
+      <div class="card balance-card">
+        <div>
           <h3>Total Balance</h3>
-          <h2>₹1,25,000</h2>
-          <p>Updated just now</p>
+          <h2 id="balance">₹1,25,000</h2>
         </div>
-
-        <div class="stats-card">
-          <h3>Income</h3>
-          <h2>₹80,000</h2>
-        </div>
-
-        <div class="stats-card expense">
-          <h3>Expenses</h3>
-          <h2>₹25,000</h2>
-        </div>
-
+        <span>Updated just now</span>
       </div>
 
-      <div class="bottom-section">
+      <div class="card income-card">
+        <h3>Income</h3>
+        <h2 id="income">₹80,000</h2>
+        <p>This Month</p>
+      </div>
 
-        <div class="transactions">
+      <div class="card expense-card">
+        <h3>Expenses</h3>
+        <h2 id="expense">₹25,000</h2>
+        <p>This Month</p>
+      </div>
 
+    </section>
+
+    <!-- CONTENT -->
+    <section class="content">
+
+      <!-- TRANSACTIONS -->
+      <div class="panel">
+        <div class="panel-header">
           <h2>Recent Transactions</h2>
+          <button class="small-btn" onclick="clearTransactions()">
+            Clear
+          </button>
+        </div>
 
-          <div class="transaction">
-            <span>Amazon Purchase</span>
-            <p>- ₹2,500</p>
-          </div>
+        <div id="transaction-list">
 
-          <div class="transaction">
+          <div class="txn income">
             <span>Salary Credit</span>
-            <p class="income">+ ₹50,000</p>
+            <b>+ ₹50,000</b>
           </div>
 
-          <div class="transaction">
+          <div class="txn expense">
+            <span>Amazon Purchase</span>
+            <b>- ₹2,500</b>
+          </div>
+
+          <div class="txn expense">
             <span>Electricity Bill</span>
-            <p>- ₹1,200</p>
+            <b>- ₹1,200</b>
           </div>
 
-          <div class="transaction">
-            <span>Netflix Subscription</span>
-            <p>- ₹799</p>
+          <div class="txn expense">
+            <span>Netflix</span>
+            <b>- ₹799</b>
           </div>
 
         </div>
-
-        <div class="quick-actions">
-
-          <h2>Quick Actions</h2>
-
-          <button>Send Money</button>
-          <button>Pay Bills</button>
-          <button>Recharge</button>
-          <button>View Statements</button>
-
-        </div>
-
       </div>
 
-    </main>
+      <!-- QUICK ACTIONS -->
+      <div class="panel actions">
+        <h2>Quick Actions</h2>
 
-  </div>
+        <button onclick="addMoney()">Add Money</button>
+        <button onclick="sendMoney()">Send Money</button>
+        <button onclick="payBills()">Pay Bills</button>
+        <button onclick="recharge()">Recharge</button>
+      </div>
 
-  <script src="bank.js"></script>
+    </section>
+
+  </main>
+</div>
+
+<script src="bank.js"></script>
+      <script src="../dist/shared.js"></script>
 </body>
-</html> 
+</html>

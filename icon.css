@@ -1,4 +1,4 @@
-=/* =========================================================
+/* =========================================================
    ROOT VARIABLES
 ========================================================= */
 
@@ -7,7 +7,7 @@
   --accent: #eb6835;
   --accent-2: #6c5ce7;
 
-  --bg: #0f172a;
+  --bg:#fff;
 
   --card: rgba(255,255,255,0.05);
 
@@ -52,10 +52,11 @@ body {
 
   font-family: "DM Sans", sans-serif;
 
-  background:
+  /*background:
     radial-gradient(circle at top left,#1e293b 0%,transparent 30%),
     radial-gradient(circle at bottom right,#312e81 0%,transparent 35%),
-    var(--bg);
+    var(--bg);*/
+  background: #fff;
 
   color: var(--text);
 
@@ -679,21 +680,210 @@ body {
     0 12px 30px rgba(124,58,237,0.35);
 
 }
+/* =========================================================
+ADVANCED ICON GRID
+========================================================= */
 
+body{
+  background:#0b1020;
+  font-family:Inter,sans-serif;
+  color:white;
+}
+
+.advanced-icons-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:28px;
+  padding:40px;
+}
+
+.advanced-icon-card{
+  position:relative;
+  overflow:hidden;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:28px;
+  padding:28px;
+  text-align:center;
+  backdrop-filter:blur(20px);
+  transition:0.4s ease;
+  box-shadow:0 15px 35px rgba(0,0,0,0.35);
+}
+
+.advanced-icon-card:hover{
+  transform:translateY(-10px) scale(1.03);
+}
+
+.icon-glow{
+  position:absolute;
+  inset:-40%;
+  opacity:0.18;
+  filter:blur(80px);
+}
+
+.purple{
+  background:#7b61ff;
+}
+
+.blue{
+  background:#4cc9f0;
+}
+
+.orange{
+  background:#ff9f1c;
+}
+
+.green{
+  background:#00d68f;
+}
+
+.pink{
+  background:#ff4d9d;
+}
+
+.cyan{
+  background:#00f5ff;
+}
+
+.red{
+  background:#ff4d6d;
+}
+
+.yellow{
+  background:#ffd60a;
+}
+
+.sky{
+  background:#38bdf8;
+}
+
+.violet{
+  background:#c084fc;
+}
+
+.teal{
+  background:#2dd4bf;
+}
+
+.white{
+  background:#ffffff;
+}
+
+.advanced-icon{
+  position:relative;
+  width:95px;
+  height:95px;
+  margin:auto;
+  border-radius:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+  margin-bottom:22px;
+  transition:0.4s;
+}
+
+.advanced-icon-card:hover .advanced-icon{
+  transform:rotateY(180deg);
+}
+
+.advanced-icon i{
+  position:relative;
+  z-index:2;
+}
+
+.advanced-icon::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:28px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.08),
+      transparent
+    );
+}
+
+.advanced-icon-card h3{
+  font-size:22px;
+  margin-bottom:10px;
+  position:relative;
+  z-index:2;
+}
+
+.advanced-icon-card p{
+  color:#9ca3af;
+  margin-bottom:24px;
+  font-size:14px;
+  position:relative;
+  z-index:2;
+}
+
+.copy-icon-btn{
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:16px;
+  background:#171f35;
+  color:white;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.copy-icon-btn:hover{
+  background:#24304d;
+  transform:translateY(-2px);
+}
+
+.copy-icon-btn:active{
+  transform:scale(0.97);
+}
+
+/* FLOATING EFFECT */
+
+.advanced-icon-card:nth-child(odd){
+  animation:floatCard 5s infinite ease-in-out;
+}
+
+.advanced-icon-card:nth-child(even){
+  animation:floatCard2 6s infinite ease-in-out;
+}
+
+@keyframes floatCard{
+  0%,100%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+@keyframes floatCard2{
+  0%,100%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(8px);
+  }
+}
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .footer {
-
-  margin-left: var(--sidebar-w);
-
-  background: #111;
+ background: #111;
 
   color: #aaa;
 
   margin-top: 60px;
-
+  
 }
 
 .footer-container {
@@ -703,9 +893,7 @@ body {
   grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
 
   gap: 40px;
-
-  padding: 56px 48px 40px;
-
+  
 }
 
 .footer-logo {

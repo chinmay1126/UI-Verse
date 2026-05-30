@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menus ? UIverse</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="menu.css" />
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <aside class="sidebar">
     <div class="sidebar-brand">
       <span class="brand-icon"><i class="fa-solid fa-bars"></i></span>
@@ -330,9 +331,9 @@
 
   <header class="navbar">
     <div class="logo">UIverse</div>
-    <div class="search-bar"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search components..." /></div>
+    <div class="search-bar"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search components..." / data-a11y-remediation="label-needed"></div>
     <div class="nav-actions">
-      <button class="outline-btn">Docs</button>
+      <button class="outline-btn" data-a11y-remediation="button-label-needed">Docs</button>
       <button class="primary-btn">Add Component</button>
     </div>
   </header>
@@ -356,6 +357,220 @@
         </div>
       </div>
     </section>
+    <!-- ================= MODERN MEGA MENU ================= -->
+<section class="menu-showcase">
+
+  <!-- SECTION TITLE -->
+  <div class="section-heading">
+    <span class="section-badge">
+      <i class="fa-solid fa-bars-staggered"></i>
+      Navigation Systems
+    </span>
+
+    <h2>Professional Modern Menu Components</h2>
+
+    <p>
+      Elegant navigation layouts with premium interactions,
+      glassmorphism effects, animated dropdowns, and dashboard-ready menus.
+    </p>
+  </div>
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <div class="menu-grid">
+
+    <!-- COMPONENT 1 -->
+    <article class="menu-card">
+      <div class="menu-card-header">
+        <div>
+          <span class="menu-label">Glassmorphism</span>
+          <h3>Premium Navbar</h3>
+        </div>
+
+        <button class="live-btn">Live</button>
+      </div>
+
+      <nav class="premium-navbar">
+        <div class="nav-logo">
+          <span>⬡</span>
+          UIverse
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+
+          <li class="dropdown">
+            <a href="#">
+              Components
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="dropdown-menu">
+              <a href="#">
+                <i class="fa-solid fa-layer-group"></i>
+                Cards
+              </a>
+
+              <a href="#">
+                <i class="fa-solid fa-toggle-on"></i>
+                Toggles
+              </a>
+
+              <a href="#">
+                <i class="fa-solid fa-table"></i>
+                Tables
+              </a>
+
+              <a href="#">
+                <i class="fa-solid fa-chart-simple"></i>
+                Charts
+              </a>
+            </div>
+          </li>
+
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Docs</a></li>
+        </ul>
+
+        <div class="nav-actions-modern">
+          <button class="ghost-btn">Login</button>
+          <button class="gradient-btn">Get Started</button>
+        </div>
+      </nav>
+    </article>
+
+    <!-- COMPONENT 2 -->
+    <article class="menu-card">
+      <div class="menu-card-header">
+        <div>
+          <span class="menu-label">Dashboard</span>
+          <h3>Admin Sidebar</h3>
+        </div>
+      </div>
+
+      <div class="dashboard-sidebar">
+
+        <div class="dashboard-brand">
+          <span class="brand-circle"></span>
+          NeoAdmin
+        </div>
+
+        <ul class="dashboard-menu">
+          <li class="active">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </li>
+
+          <li>
+            <i class="fa-solid fa-chart-line"></i>
+            Analytics
+          </li>
+
+          <li>
+            <i class="fa-solid fa-user-group"></i>
+            Customers
+          </li>
+
+          <li>
+            <i class="fa-solid fa-credit-card"></i>
+            Transactions
+          </li>
+
+          <li>
+            <i class="fa-solid fa-gear"></i>
+            Settings
+          </li>
+        </ul>
+
+      </div>
+    </article>
+
+    <!-- COMPONENT 3 -->
+    <article class="menu-card">
+      <div class="menu-card-header">
+        <div>
+          <span class="menu-label">Mobile</span>
+          <h3>Floating Dock Menu</h3>
+        </div>
+      </div>
+
+      <div class="dock-wrapper">
+
+        <div class="floating-dock">
+
+          <button>
+            <i class="fa-solid fa-house"></i>
+          </button>
+
+          <button>
+            <i class="fa-solid fa-heart"></i>
+          </button>
+
+          <button class="dock-active">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+
+          <button>
+            <i class="fa-solid fa-message"></i>
+          </button>
+
+          <button>
+            <i class="fa-solid fa-user"></i>
+          </button>
+
+        </div>
+
+      </div>
+    </article>
+
+    <!-- COMPONENT 4 -->
+    <article class="menu-card">
+      <div class="menu-card-header">
+        <div>
+          <span class="menu-label">Minimal</span>
+          <h3>Command Menu</h3>
+        </div>
+      </div>
+
+      <div class="command-menu">
+
+        <div class="command-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search commands..." />
+        </div>
+
+        <div class="command-items">
+
+          <div class="command-item">
+            <div>
+              <i class="fa-solid fa-file"></i>
+              New File
+            </div>
+            <kbd>⌘N</kbd>
+          </div>
+
+          <div class="command-item">
+            <div>
+              <i class="fa-solid fa-folder-open"></i>
+              Open Project
+            </div>
+            <kbd>⌘O</kbd>
+          </div>
+
+          <div class="command-item">
+            <div>
+              <i class="fa-solid fa-gear"></i>
+              Preferences
+            </div>
+            <kbd>⌘,</kbd>
+          </div>
+
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+</section>
 
     <section class="menu-grid">
       <article class="menu-card">
@@ -643,82 +858,56 @@
     </section>
   </main>
 
-
-
-
-
-
-
-
   <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <div class="footer-container">
-
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
-
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
       </div>
     </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
-</footer>
-
-
-
-
-
-
-
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
 
   <script>
     // JS for dropdowns and command menu
@@ -795,5 +984,6 @@
       }
     });
   </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

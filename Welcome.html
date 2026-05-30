@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
   <!-- Improved CSP -->
@@ -27,8 +28,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="css/main.css" />
-
   <style>
     * {
       margin: 0;
@@ -497,20 +496,22 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- Theme Toggle -->
   <div class="theme-toggle">
-    <button id="themeBtn" aria-label="Toggle theme">🌙</button>
+    <button id="themeBtn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
   </div>
 
   <!-- Welcome Section -->
   <section class="welcome">
 
-    <!-- Navbar -->
+  <!-- Header & Navbar -->
+  <header>
     <nav class="navbar">
 
       <h2 class="logo">UI-Verse</h2>
@@ -525,9 +526,13 @@
       <button class="nav-btn">Login</button>
 
     </nav>
+  </header>
+
+  <!-- Welcome Main Content -->
+  <main class="welcome">
 
     <!-- Hero -->
-    <div class="hero">
+    <section class="hero">
 
       <div class="hero-text">
 
@@ -561,11 +566,143 @@
 
       </div>
 
+    </section>
+
+  </main>
+
+  # UI-Verse Additional UI Components
+
+Add these modern UI components below your hero section to make the landing page more interactive and visually rich.
+
+---
+
+# 1. Features Section (HTML)
+
+```html
+<section class="features">
+
+  <div class="section-title">
+    <h2>Why Choose UI-Verse?</h2>
+    <p>Modern components crafted for developers and designers.</p>
+  </div>
+
+  <div class="feature-grid">
+
+    <div class="feature-card">
+      <i class="fa-solid fa-layer-group"></i>
+      <h3>Reusable Components</h3>
+      <p>Create interfaces faster using modular UI elements.</p>
     </div>
 
-  </section>
+    <div class="feature-card">
+      <i class="fa-solid fa-bolt"></i>
+      <h3>Fast Performance</h3>
+      <p>Optimized layouts and lightweight design system.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fa-solid fa-mobile-screen-button"></i>
+      <h3>Responsive Design</h3>
+      <p>Perfectly adapts to desktop, tablet, and mobile devices.</p>
+    </div>
+
+  </div>
+
+</section>
+```
+
+---
+
+# 2. Stats Section (HTML)
+
+```html
+<section class="stats-section">
+
+  <div class="stat-box">
+    <h2>120+</h2>
+    <p>UI Components</p>
+  </div>
+
+  <div class="stat-box">
+    <h2>15K+</h2>
+    <p>Developers</p>
+  </div>
+
+  <div class="stat-box">
+    <h2>98%</h2>
+    <p>User Satisfaction</p>
+  </div>
+
+</section>
+```
+
+---
+
+# 3. Testimonial Section (HTML)
+
+```html
+<section class="testimonials">
+
+  <div class="section-title">
+    <h2>What Developers Say</h2>
+  </div>
+
+  <div class="testimonial-grid">
+
+    <div class="testimonial-card">
+      <p>
+        “UI-Verse helped me build beautiful dashboards in half the time.”
+      </p>
+      <h4>— Alex Carter</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “The clean design and responsiveness are absolutely amazing.”
+      </p>
+      <h4>— Sarah Wilson</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “Perfect UI toolkit for modern frontend projects.”
+      </p>
+      <h4>— John Lee</h4>
+    </div>
+
+  </div>
+
+</section>
+```
+
+---
+
+# 4. Newsletter Section (HTML)
+
+```html
+<section class="newsletter">
+
+  <div class="newsletter-box">
+
+    <h2>Stay Updated</h2>
+
+    <p>
+      Subscribe to get the latest UI kits and component updates.
+    </p>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+
+  </div>
+
+</section>
+
+
 
   <!-- FOOTER -->
+ <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col brand">
@@ -647,13 +784,14 @@
       document.body.classList.toggle("dark");
 
       if (document.body.classList.contains("dark")) {
-        themeBtn.textContent = "☀️";
+        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
       } else {
-        themeBtn.textContent = "🌙";
+        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
       }
     });
   </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 
 </html>

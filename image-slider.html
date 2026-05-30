@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Image Slider - UIverse</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="image-slider.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= PAGE ================= -->
 <section class="slider-page">
@@ -54,7 +55,7 @@
       </div>
 
       <!-- Controls -->
-      <button class="prev">
+      <button class="prev" data-a11y-remediation="button-label-needed">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
 
@@ -91,6 +92,190 @@
         <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58" alt="">
       </div>
 
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= GLASSMORPHISM GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Glassmorphism Image Grid</h2>
+
+  <div class="glass-grid">
+
+    <div class="glass-card">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+      <div class="glass-overlay">
+        <h3>Creative Studio</h3>
+        <p>Modern workspace inspiration</p>
+      </div>
+    </div>
+
+    <div class="glass-card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+      <div class="glass-overlay">
+        <h3>Developer Setup</h3>
+        <p>Clean coding environment</p>
+      </div>
+    </div>
+
+    <div class="glass-card">
+      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702" alt="">
+      <div class="glass-overlay">
+        <h3>Creative Team</h3>
+        <p>Collaboration & innovation</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= BENTO GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Modern Bento Grid</h2>
+
+  <div class="bento-grid">
+
+    <div class="bento-card large">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="">
+      <div class="bento-content">
+        <h3>Technology Workspace</h3>
+      </div>
+    </div>
+
+    <div class="bento-card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+    </div>
+
+    <div class="bento-card">
+      <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58" alt="">
+    </div>
+
+    <div class="bento-card wide">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+      <div class="bento-content">
+        <h3>Modern Office</h3>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= STACKED PHOTO GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Stacked Photo Grid</h2>
+
+  <div class="stack-grid">
+
+    <div class="stack-card">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+    </div>
+
+    <div class="stack-card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+    </div>
+
+    <div class="stack-card">
+      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702" alt="">
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= DARK PORTFOLIO GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Dark Portfolio Grid</h2>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card">
+      <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58" alt="">
+      <div class="portfolio-overlay">
+        <span>UI Design</span>
+        <h3>Creative Dashboard</h3>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+      <div class="portfolio-overlay">
+        <span>Workspace</span>
+        <h3>Modern Office</h3>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="">
+      <div class="portfolio-overlay">
+        <span>Technology</span>
+        <h3>Developer Setup</h3>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= FLOATING IMAGE GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Floating Image Cards</h2>
+
+  <div class="floating-grid">
+
+    <div class="floating-card">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+    </div>
+
+    <div class="floating-card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+    </div>
+
+    <div class="floating-card">
+      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702" alt="">
+    </div>
+
+    <div class="floating-card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= MINIMAL GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Minimal Clean Grid</h2>
+
+  <div class="minimal-grid">
+
+    <div class="minimal-card">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="">
+      <h4>Creative Workspace</h4>
+    </div>
+
+    <div class="minimal-card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+      <h4>Development Setup</h4>
+    </div>
+
+    <div class="minimal-card">
+      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702" alt="">
+      <h4>Creative Team</h4>
+    </div>
+
+    <div class="minimal-card">
+      <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58" alt="">
+      <h4>Office Interior</h4>
     </div>
 
   </div>
@@ -271,6 +456,165 @@
 
   </div>
 
+  <!-- ================= MASONRY IMAGE GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Masonry Image Grid</h2>
+
+  <div class="masonry-grid">
+
+    <div class="masonry-item">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="">
+    </div>
+
+    <div class="masonry-item tall">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+    </div>
+
+    <div class="masonry-item">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+    </div>
+
+    <div class="masonry-item wide">
+      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702" alt="">
+    </div>
+
+    <div class="masonry-item">
+      <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58" alt="">
+    </div>
+
+    <div class="masonry-item">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= HOVER IMAGE GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Hover Overlay Grid</h2>
+
+  <div class="hover-grid">
+
+    <div class="hover-card">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="">
+      <div class="hover-overlay">
+        <h3>Workspace</h3>
+      </div>
+    </div>
+
+    <div class="hover-card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+      <div class="hover-overlay">
+        <h3>Development</h3>
+      </div>
+    </div>
+
+    <div class="hover-card">
+      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702" alt="">
+      <div class="hover-overlay">
+        <h3>Creative Team</h3>
+      </div>
+    </div>
+
+    <div class="hover-card">
+      <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58" alt="">
+      <div class="hover-overlay">
+        <h3>Modern Office</h3>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= PINTEREST GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Pinterest Style Grid</h2>
+
+  <div class="pinterest-grid">
+
+    <div class="pin-card">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="">
+    </div>
+
+    <div class="pin-card">
+      <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e" alt="">
+    </div>
+
+    <div class="pin-card">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455" alt="">
+    </div>
+
+    <div class="pin-card">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+    </div>
+
+    <div class="pin-card">
+      <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58" alt="">
+    </div>
+
+    <div class="pin-card">
+      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702" alt="">
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= ZOOM IMAGE GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Zoom Hover Grid</h2>
+
+  <div class="zoom-grid">
+
+    <div class="zoom-card">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="">
+    </div>
+
+    <div class="zoom-card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+    </div>
+
+    <div class="zoom-card">
+      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702" alt="">
+    </div>
+
+    <div class="zoom-card">
+      <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58" alt="">
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= PARALLAX IMAGE GRID ================= -->
+<div class="slider-section">
+
+  <h2 class="slider-title">Parallax Image Grid</h2>
+
+  <div class="parallax-grid">
+
+    <div class="parallax-card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+    </div>
+
+    <div class="parallax-card">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+    </div>
+
+    <div class="parallax-card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+    </div>
+
+  </div>
+
+</div>
+
   <!-- ================= GALLERY SLIDER ================= -->
   <div class="slider-section">
 
@@ -337,5 +681,6 @@
 <!-- JS -->
 <script src="image-slider.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

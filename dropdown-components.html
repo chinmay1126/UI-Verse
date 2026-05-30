@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
 
   <meta
@@ -41,6 +41,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -364,20 +366,6 @@
       </li>
     </ul>
   </nav>
-
- <div class="socials">
-  <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-
-  <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-
-  <a href="https://twitter.com/yourusername" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
 </aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
@@ -395,7 +383,7 @@ NAVBAR
     <input
       type="text"
       placeholder="Search dropdown components..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
@@ -1590,21 +1578,20 @@ MAIN
   </section>
 
 </main>
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
 
     <div class="footer-col">
       <h3>Explore</h3>
@@ -1620,11 +1607,10 @@ MAIN
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
 
@@ -1633,7 +1619,7 @@ MAIN
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
+        <li><a href="#">License</a></li>
       </ul>
     </div>
 
@@ -1658,7 +1644,18 @@ MAIN
   Copied to clipboard!
 </div>
 
+<button
+  id="scrollTopBtn"
+  type="button"
+  aria-label="Scroll to top"
+  title="Scroll to top"
+>
+  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+</button>
+
+
 <script src="dropdown.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
