@@ -28,6 +28,29 @@ const emojiLabels = {
   "🤯": "Mind Blown"
 };
 
+const reactions = {
+  "👍": "Approved",
+  "❤️": "Loved It",
+  "🔥": "Trending",
+  "👏": "Great Work",
+  "🎉": "Celebration",
+  "🚀": "Launch Ready",
+  "💡": "Brilliant Idea",
+  "✨": "Amazing",
+  "😄": "Happy",
+  "😍": "Favorite",
+  "🤩": "Impressed",
+  "😂": "Funny",
+  "😎": "Cool",
+  "🤔": "Thinking",
+  "🤯": "Mind Blown",
+  "🙌": "Well Done",
+  "💯": "Perfect",
+  "⭐": "Outstanding",
+  "🏆": "Winner",
+  "👀": "Interesting"
+};
+
 emojis.forEach((emojiBtn) => {
 
   emojiBtn.addEventListener("click", () => {
