@@ -140,5 +140,10 @@
     "dependencies": {
         "dompurify": "^3.4.5",
         "fuse.js": "^7.3.0"
+    },
+    "lint-staged": {
+        "*.html": "html-validate",
+        "*.css": "stylelint",
+        "*.js": "eslint"
     }
 }
