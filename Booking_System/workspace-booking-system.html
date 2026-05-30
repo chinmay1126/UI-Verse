@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -34,6 +34,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -102,7 +104,7 @@
         Workspace Manager
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Manage Team
       </button>
 
@@ -144,7 +146,7 @@
 
           <input
             type="text"
-            placeholder="Search workspace, room or office..." />
+            placeholder="Search workspace, room or office..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -898,6 +900,7 @@
 
   <script src="workspace-booking-system.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

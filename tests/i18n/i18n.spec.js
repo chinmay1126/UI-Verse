@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test.describe('I18n System', () => {
   test('loads default language and switches to Spanish', async ({ page }) => {
-    await page.goto('/components/i18n/demo-i18n.html');
+    await page.goto('/components/I18n/demo-i18n.html');
     // Wait for I18n to initialize and translation to apply
     await page.waitForFunction(() => document.querySelector('h1')?.textContent.trim().length > 0);
 

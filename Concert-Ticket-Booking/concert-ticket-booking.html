@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta name="viewport"
@@ -30,6 +30,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= NAVBAR ================= -->
 
@@ -113,7 +115,7 @@
         <i class="fa-solid fa-location-dot"></i>
 
         <input type="text"
-          placeholder="Choose City" />
+          placeholder="Choose City" / data-a11y-remediation="label-needed">
 
       </div>
 
@@ -506,6 +508,7 @@
 
   <script src="concert-ticket-booking.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

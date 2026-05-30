@@ -8,6 +8,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../dist/shared.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>PulseWire — News Aggregator Dashboard</title>
 
@@ -40,6 +43,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
   <aside class="sidebar" aria-label="Sidebar navigation">
@@ -130,6 +135,7 @@
             type="text"
             placeholder="Search articles, topics..."
           />
+          <input type="text" placeholder="Search articles, topics..." / data-a11y-remediation="label-needed">
         </div>
 
         <button class="notification-btn" aria-label="Notifications">
@@ -373,5 +379,6 @@
 
   <script src="news-aggregator-dashboard.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

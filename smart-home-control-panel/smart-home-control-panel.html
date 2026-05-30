@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -32,6 +32,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- SIDEBAR -->
 
@@ -96,7 +98,7 @@
         Your smart home reduced electricity usage by 14% this month.
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         View Analytics
       </button>
 
@@ -132,7 +134,7 @@
 
           <input
             type="text"
-            placeholder="Search devices..." />
+            placeholder="Search devices..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -663,6 +665,7 @@
 
   <script src="smart-home-control-panel.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

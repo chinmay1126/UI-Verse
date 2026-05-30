@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8"/>
   <meta name="viewport"
   content="width=device-width, initial-scale=1.0"/>
@@ -23,6 +23,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -101,7 +103,7 @@
 
       </div>
 
-      <button class="profile-btn">
+      <button class="profile-btn" data-a11y-remediation="button-label-needed">
         <img
         src="https://i.pravatar.cc/100"
         alt="profile">
@@ -379,5 +381,6 @@
   <!-- JS -->
   <script src="meditation-app.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

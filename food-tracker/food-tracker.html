@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NutriTrack — Improved Dashboard</title>
@@ -189,6 +190,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <aside class="sidebar">
     <div class="logo">🥗 NutriTrack</div>
@@ -208,7 +211,7 @@
 
       <div class="search">
         <i class="fa fa-search"></i>
-        <input placeholder="Search food..." />
+        <input placeholder="Search food..." / data-a11y-remediation="label-needed">
       </div>
     </div>
 
@@ -249,7 +252,7 @@
 
     <section class="meals">
       <div class="meal">
-        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" />
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" / alt="">
         <div class="meal-content">
           <h3>Avocado Salad</h3>
           <p class="muted">420 kcal</p>
@@ -258,7 +261,7 @@
       </div>
 
       <div class="meal">
-        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" />
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" / alt="">
         <div class="meal-content">
           <h3>Protein Bowl</h3>
           <p class="muted">560 kcal</p>
@@ -275,5 +278,6 @@
     }
   </script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forms — UIverse</title>
@@ -8,12 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="forms.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
@@ -44,13 +45,13 @@
 
 <!-- NAVBAR -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" placeholder="Search components..." />
+    <input type="text" placeholder="Search components..." / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -92,7 +93,7 @@
           <h3>Welcome back</h3>
           <p class="form-sub">Sign in to your account</p>
           <div class="form-field">
-            <label>Email</label>
+            <label for="email-input">Email</label>
             <input type="email" placeholder="you@example.com" />
           </div>
           <div class="form-field">
@@ -137,7 +138,7 @@
             <input type="text" placeholder="John Doe" />
           </div>
           <div class="form-field">
-            <label>Email</label>
+            <label for="email-input">Email</label>
             <input type="email" placeholder="you@example.com" />
           </div>
           <div class="form-field">
@@ -372,5 +373,6 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.form-component-card').forEach(el => observer.observe(el));
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

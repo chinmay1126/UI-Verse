@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+/* Toggle */
+.toggle-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.toggle-label {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.save-badge {
+  background: #4ade80;
+  color: #000;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.2);
+  border-radius: 26px;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: #7c3aed;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Base Card */
+.price-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 35px 25px;
+  width: 240px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+/* Popular Card */
+.popular {
+  border-color: #7c3aed;
+  background: rgba(124, 58, 237, 0.15);
+  transform: scale(1.05);
+}
+
+.popular:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  padding: 5px 18px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Gradient Card */
+.gradient-card {
+  background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(59,130,246,0.3));
+  border-color: rgba(124,58,237,0.5);
+}
+
+/* Free Card */
+.free-card {
+  background: rgba(255,255,255,0.04);
+}
+
+/* Card Header */
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(124,58,237,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin: 0 auto 12px;
+  color: #a78bfa;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.card-header p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Price */
+.card-price {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #a78bfa;
+  transition: all 0.3s ease;
+}
+
+.period {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Features */
+.features {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.features li {
+  padding: 7px 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.features li i.fa-check {
+  color: #4ade80;
+}
+
+.features li.disabled {
+  color: rgba(255,255,255,0.3);
+}
+
+.features li.disabled i.fa-times {
+  color: rgba(255,255,255,0.3);
+}
+
+/* Button */
+.price-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.price-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.price-btn.outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.price-btn.outline:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 600px) {
+  .price-card {
+    width: 100%;
+  }
+  .popular {
+    transform: scale(1);
+  }
+}

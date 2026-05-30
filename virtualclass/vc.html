@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Virtual Classroom UI</title>
 
   <!-- Google Font -->
@@ -19,6 +20,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="classroom-dashboard">
 
@@ -132,7 +135,7 @@
               type="text"
               id="chatInput"
               placeholder="Type message..."
-            />
+            / data-a11y-remediation="label-needed">
 
             <button id="sendBtn">
               Send
@@ -149,6 +152,6 @@
   </div>
 
   <script src="vc.js"></script>
-
+  <script src="dist/shared.js"></script>
 </body>
 </html>
