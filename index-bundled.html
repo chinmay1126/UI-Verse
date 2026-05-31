@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta
     name="viewport"
@@ -30,53 +31,14 @@
   >
 
   <link rel="stylesheet" href="dist/css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
-
+  
+  <!-- Vite will inject scripts here -->
+  </head>
 <body>
-  <div class="aurora aurora-1"></div>
-  <div class="aurora aurora-2"></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div id="app">
-    <div class="boot-loader">
-      <div class="loader-logo">UIverse</div>
-      <div class="loader-bar"></div>
-    </div>
-  </div>
-
-  <style>body{
-  min-height:100vh;
-  background:
-    radial-gradient(circle at top left,#6d28d920,transparent 40%),
-    radial-gradient(circle at bottom right,#06b6d420,transparent 40%),
-    #050816;
-  overflow-x:hidden;
-}
-
-.aurora{
-  position:fixed;
-  border-radius:50%;
-  filter:blur(120px);
-  pointer-events:none;
-}
-
-.aurora-1{
-  width:450px;
-  height:450px;
-  background:#7c3aed;
-  top:-150px;
-  left:-100px;
-  opacity:.25;
-}
-
-.aurora-2{
-  width:400px;
-  height:400px;
-  background:#06b6d4;
-  bottom:-150px;
-  right:-100px;
-  opacity:.2;
-}</style>
+  <div id="app"></div>
   <script type="module" src="dist/js/main.js"></script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

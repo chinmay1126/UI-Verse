@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Cards - UIverse</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <h1 class="page-title">Profile Card Components</h1>
+  <p class="page-subtitle">Modern and professional profile card UI components</p>
+
+  <div class="container">
+
+    <!-- Card 1: Social Media Profile Card -->
+    <div class="profile-card social-card">
+      <div class="cover-photo"></div>
+      <div class="avatar-wrap">
+        <div class="avatar">PC</div>
+      </div>
+      <div class="card-body">
+        <h3>Priyanshi Choudhary</h3>
+        <p class="role">Frontend Developer</p>
+        <div class="stats-row">
+          <div class="stat">
+            <span class="num">128</span>
+            <span class="lbl">Posts</span>
+          </div>
+          <div class="stat">
+            <span class="num">4.2K</span>
+            <span class="lbl">Followers</span>
+          </div>
+          <div class="stat">
+            <span class="num">312</span>
+            <span class="lbl">Following</span>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn primary">Follow</button>
+          <button class="btn outline">Message</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Developer Profile Card -->
+    <div class="profile-card dev-card">
+      <div class="dev-header">
+        <div class="dev-avatar">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="dev-info">
+          <h3>Priyanshi Choudhary</h3>
+          <p class="role"><i class="fas fa-map-marker-alt"></i> Ajmer, India</p>
+        </div>
+      </div>
+      <p class="bio">B.Tech ECE student passionate about VLSI design and frontend development. Open source contributor.</p>
+      <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">VLSI</span>
+        <span class="skill">RTL</span>
+      </div>
+      <div class="dev-stats">
+        <div class="dev-stat">
+          <i class="fas fa-code-branch"></i>
+          <span>42 Repos</span>
+        </div>
+        <div class="dev-stat">
+          <i class="fas fa-star"></i>
+          <span>128 Stars</span>
+        </div>
+        <div class="dev-stat">
+          <i class="fas fa-users"></i>
+          <span>56 Followers</span>
+        </div>
+      </div>
+      <button class="btn primary full">View GitHub</button>
+    </div>
+
+    <!-- Card 3: Team Member Card -->
+    <div class="profile-card team-card">
+      <div class="team-avatar">P</div>
+      <h3>Priyanshi Choudhary</h3>
+      <p class="role">UI/UX Designer</p>
+      <p class="dept">Design Team</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+      <button class="btn primary full">View Profile</button>
+    </div>
+
+    <!-- Card 4: Animated Hover Profile Card -->
+    <div class="profile-card hover-card">
+      <div class="hover-front">
+        <div class="hover-avatar">PC</div>
+        <h3>Priyanshi Choudhary</h3>
+        <p class="role">Open Source Contributor</p>
+        <p class="hover-hint"><i class="fas fa-hand-pointer"></i> Hover to see more</p>
+      </div>
+      <div class="hover-back">
+        <h3>About Me</h3>
+        <p>B.Tech ECE student from GWECA Ajmer. Passionate about frontend development and VLSI design.</p>
+        <div class="social-icons light">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <button class="btn white">Connect</button>
+      </div>
+    </div>
+
+    <!-- Card 5: Minimalist Profile Card -->
+    <div class="profile-card minimal-card">
+      <div class="minimal-top">
+        <div class="minimal-avatar">PC</div>
+        <div class="online-badge"></div>
+      </div>
+      <h3>Priyanshi Choudhary</h3>
+      <p class="role">ECE Student · VLSI Enthusiast</p>
+      <div class="divider"></div>
+      <div class="minimal-info">
+        <p><i class="fas fa-university"></i> GWECA Ajmer</p>
+        <p><i class="fas fa-envelope"></i> priyanshich6199@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Ajmer, Rajasthan</p>
+      </div>
+      <button class="btn primary full">Get In Touch</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

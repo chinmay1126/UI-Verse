@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MediCore — Hospital Admin Dashboard</title>
@@ -17,6 +18,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="app-wrapper">
 
@@ -68,7 +71,7 @@
 
         <label class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search patients..." />
+          <input type="text" placeholder="Search patients..." / data-a11y-remediation="label-needed">
         </label>
 
         <button class="notification-btn" type="button" aria-label="Notifications">
@@ -298,5 +301,6 @@
 
 <script src="hospital-admin-dashboard.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

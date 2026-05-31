@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bookmark Manager</title>
@@ -124,6 +125,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <header>
   <h1>🔖 Bookmark Manager</h1>
@@ -136,7 +139,7 @@
     <h2>Add Bookmark</h2>
 
     <form id="bookmarkForm">
-      <input type="text" id="siteName" placeholder="Website Name" required>
+      <input type="text" id="siteName" placeholder="Website Name" required data-a11y-remediation="label-needed">
       <input type="url" id="siteURL" placeholder="https://example.com" required>
 
       <select id="category">
@@ -170,6 +173,6 @@
 
 </main>
 
-<script src="script.js"></script>
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

@@ -204,10 +204,34 @@ const Sidebar = {
     this.initLinkClose();
 
     // Expose to global for backward compatibility
-    window.toggleSidebar = () => this.toggle();
+    window.toggleSidebar = () => { this.toggle(); this._syncMenuToggleAttributes(); };
     window.toggleMenu = () => this.toggleMenu();
 
+    // Ensure menu-toggle buttons have accessible attributes
+    this._ensureMenuToggleA11y();
+
+    // Sync initial state
+    this._syncMenuToggleAttributes();
+
     this._state.initialized = true;
+  },
+
+  _ensureMenuToggleA11y() {
+    const toggles = Array.from(document.querySelectorAll('.menu-toggle'));
+    toggles.forEach((btn) => {
+      if (!btn.hasAttribute('aria-controls')) btn.setAttribute('aria-controls', 'sidebar');
+      if (!btn.hasAttribute('aria-expanded')) btn.setAttribute('aria-expanded', 'false');
+      if (!btn.hasAttribute('aria-label')) btn.setAttribute('aria-label', 'Toggle sidebar');
+      if (!btn.hasAttribute('type')) btn.setAttribute('type', 'button');
+    });
+  },
+
+  _syncMenuToggleAttributes() {
+    const isOpen = document.body.classList.contains('sidebar-open') || document.body.classList.contains('sidebar-hidden') === false;
+    const toggles = Array.from(document.querySelectorAll('.menu-toggle'));
+    toggles.forEach((btn) => {
+      try { btn.setAttribute('aria-expanded', String(isOpen === true)); } catch (e) {}
+    });
   },
 
   destroy() {

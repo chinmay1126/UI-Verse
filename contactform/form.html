@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self' https:;
@@ -16,10 +17,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Form UI</title>
 
-  <link rel="stylesheet" href="style.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="bg"></div>
 
@@ -30,7 +32,7 @@
       <p class="subtitle">We’d love to hear from you 👋</p>
 
       <div class="input-box">
-        <input type="text" id="name" required>
+        <input type="text" id="name" required data-a11y-remediation="label-needed">
         <label>Your Name</label>
       </div>
 
@@ -52,5 +54,6 @@
   </div>
 
   <script src="form.js"></script>
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

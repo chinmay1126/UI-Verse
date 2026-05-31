@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
 
   <meta
@@ -32,7 +32,9 @@
   >
 
   <!-- CSS -->
-
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
   <link
     rel="stylesheet"
     href="Spotlightui.css"
@@ -41,6 +43,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -50,7 +54,7 @@
 
           <nav class="sidebar-nav">
     <ul>
-      <li class="active">
+      <li>
         <a href="index.html">
           <i class="fa-solid fa-house"></i>
           <span>Home</span>
@@ -260,6 +264,12 @@
           <span>Tabs</span>
         </a>
       </li>
+      <li class="active">
+        <a href="Spotlightui.html">
+          <i class="fa-solid fa-camera-retro"></i>
+          <span>Spotlight</span>
+        </a>
+      </li>
       <li>
         <a href="terms.html">
           <i class="fa-solid fa-file-contract"></i>
@@ -370,35 +380,23 @@
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-<!-- =====================================================
-TOPBAR
-===================================================== -->
 
-<header class="navbar">
-
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
   <div class="search-bar">
-
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <input
-      type="text"
-      placeholder="Search spotlight components..."
-    >
-
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search colors..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
+    <kbd class="search-kbd">⌘K</kbd>
   </div>
-
-  <div class="nav-actions">
-
-    <button class="outline-btn">
-      Documentation
-    </button>
-
-    <button class="primary-btn">
-      Explore UI
-    </button>
-
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
   </div>
-
 </header>
 
 <!-- =====================================================
@@ -544,6 +542,10 @@ SPOTLIGHT MODAL
         type="text"
         placeholder="Search components..."
         id="spotlightInput"
+        role="combobox"
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-controls="spotlight-results-list"
       >
 
       <button id="closeSpotlight">
@@ -717,10 +719,482 @@ SPOTLIGHT MODAL
     </div>
 
   </div>
+  </div>
+  <!-- =====================================================
+SPOTLIGHT COMPONENTS SECTION
+===================================================== -->
 
-</div>
+<section class="advanced-spotlight-grid">
+
+  <!-- COMMAND PALETTE CARD -->
+
+  <div class="advanced-spotlight-card glass-card">
+
+    <div class="card-top">
+
+      <div class="advanced-icon violet">
+        <i class="fa-solid fa-terminal"></i>
+      </div>
+
+      <span class="live-badge">
+        LIVE
+      </span>
+
+    </div>
+
+    <h2>
+      Command Runner
+    </h2>
+
+    <p>
+      Execute commands, launch workflows
+      and navigate your entire dashboard
+      from one place.
+    </p>
+
+    <div class="command-preview">
+
+      <span>
+        >
+      </span>
+
+      <p>
+        deploy production build
+      </p>
+
+    </div>
+
+    <div class="bottom-shortcuts">
+
+      <kbd>⌘</kbd>
+      <kbd>⇧</kbd>
+      <kbd>P</kbd>
+
+    </div>
+
+  </div>
+
+  <!-- SEARCH ANALYTICS -->
+
+  <div class="advanced-spotlight-card gradient-card">
+
+    <div class="card-top">
+
+      <div class="advanced-icon blue">
+        <i class="fa-solid fa-chart-line"></i>
+      </div>
+
+      <span class="analytics-tag">
+        +42%
+      </span>
+
+    </div>
+
+    <h2>
+      Search Analytics
+    </h2>
+
+    <p>
+      Track trending searches,
+      popular components and
+      interaction behavior.
+    </p>
+
+    <div class="mini-chart">
+
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+
+    <div class="stats-row">
+
+      <div>
+        <strong>
+          12k
+        </strong>
+
+        <small>
+          Searches
+        </small>
+      </div>
+
+      <div>
+        <strong>
+          96%
+        </strong>
+
+        <small>
+          Accuracy
+        </small>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- AI ASSISTANT -->
+
+  <div class="advanced-spotlight-card ai-card">
+
+    <div class="ai-glow"></div>
+
+    <div class="card-top">
+
+      <div class="advanced-icon pink">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+
+      <span class="ai-pill">
+        AI POWERED
+      </span>
+
+    </div>
+
+    <h2>
+      Smart Assistant
+    </h2>
+
+    <p>
+      Generate layouts, suggest
+      components and automate
+      repetitive tasks instantly.
+    </p>
+
+    <div class="assistant-box">
+
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+
+    </div>
+
+    <button class="ai-btn">
+      Start Assistant
+    </button>
+
+  </div>
+
+  
+
+</section>
+<!-- =====================================================
+PREMIUM SPOTLIGHT COMPONENTS
+===================================================== -->
+
+<section class="premium-spotlight-layout">
+
+  <!-- ACTIVITY CARD -->
+
+  <div class="premium-card activity-card">
+
+    <div class="premium-header">
+
+      <div class="premium-icon cyan">
+        <i class="fa-solid fa-wave-square"></i>
+      </div>
+
+      <span class="status-pill">
+        Realtime
+      </span>
+
+    </div>
+
+    <h2>
+      Activity Stream
+    </h2>
+
+    <p>
+      Monitor live platform actions,
+      updates and recent interactions
+      across your workspace.
+    </p>
+
+    <div class="activity-list">
+
+      <div class="activity-item">
+        <span class="dot green"></span>
+        New component published
+      </div>
+
+      <div class="activity-item">
+        <span class="dot blue"></span>
+        Team updated dashboard
+      </div>
+
+      <div class="activity-item">
+        <span class="dot pink"></span>
+        AI generated new layout
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FILE MANAGER -->
+
+  <div class="premium-card">
+
+    <div class="premium-header">
+
+      <div class="premium-icon orange">
+        <i class="fa-solid fa-folder-open"></i>
+      </div>
+
+      <button class="mini-btn">
+        Open
+      </button>
+
+    </div>
+
+    <h2>
+      File Explorer
+    </h2>
+
+    <p>
+      Organize UI files, templates
+      and design systems with
+      lightning fast access.
+    </p>
+
+    <div class="file-grid">
+
+      <div class="file-box">
+        <i class="fa-solid fa-file-code"></i>
+        <span>dashboard.jsx</span>
+      </div>
+
+      <div class="file-box">
+        <i class="fa-solid fa-file-lines"></i>
+        <span>notes.md</span>
+      </div>
+
+      <div class="file-box">
+        <i class="fa-solid fa-image"></i>
+        <span>assets.png</span>
+      </div>
+
+      <div class="file-box">
+        <i class="fa-solid fa-folder"></i>
+        <span>components</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SECURITY CARD -->
+
+  <div class="premium-card security-card">
+
+    <div class="security-ring">
+
+      <div class="ring-center">
+        98%
+      </div>
+
+    </div>
+
+    <h2>
+      Security Shield
+    </h2>
+
+    <p>
+      Protect your workspace with
+      encrypted access and secure
+      authentication systems.
+    </p>
+
+    <div class="security-footer">
+
+      <span>
+        <i class="fa-solid fa-lock"></i>
+        Protected Session
+      </span>
+
+    </div>
+
+  </div>
+
+  <!-- VOICE SEARCH -->
+
+  <div class="premium-card voice-card">
+
+    <div class="voice-circle">
+
+      <i class="fa-solid fa-microphone"></i>
+
+    </div>
+
+    <h2>
+      Voice Commands
+    </h2>
+
+    <p>
+      Trigger actions, search
+      components and control
+      workflows using voice.
+    </p>
+
+    <div class="wave-bars">
+
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+
+  </div>
+
+  <!-- PERFORMANCE CARD -->
+
+  <div class="premium-card performance-card">
+
+    <div class="premium-header">
+
+      <div class="premium-icon purple">
+        <i class="fa-solid fa-gauge-high"></i>
+      </div>
+
+      <span class="speed-badge">
+        Ultra Fast
+      </span>
+
+    </div>
+
+    <h2>
+      Performance Monitor
+    </h2>
+
+    <p>
+      Analyze response speed,
+      optimization metrics and
+      overall application health.
+    </p>
+
+    <div class="progress-wrapper">
+
+      <div class="progress-row">
+
+        <span>
+          Speed
+        </span>
+
+        <strong>
+          92%
+        </strong>
+
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- NOTIFICATION CARD -->
+
+  <div class="premium-card notification-card">
+
+    <div class="notification-glow"></div>
+
+    <div class="premium-header">
+
+      <div class="premium-icon red">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+
+      <span class="notify-count">
+        12 New
+      </span>
+
+    </div>
+
+    <h2>
+      Notification Hub
+    </h2>
+
+    <p>
+      Receive instant updates,
+      alerts and personalized
+      activity notifications.
+    </p>
+
+    <div class="notification-stack">
+
+      <div class="notify-item">
+        New teammate joined workspace
+      </div>
+
+      <div class="notify-item">
+        Dashboard analytics updated
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="color.html">Colors</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
 
 <script src="Spotlightui.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; script-src-attr 'unsafe-hashes' sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- SECURITY -->
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self' https:;
+      base-uri 'self';
+      frame-ancestors 'none';
+      object-src 'none';
+      connect-src 'self' https:;
+      img-src 'self' data: https:;
+      font-src 'self' data: https:;
+      script-src 'self' https: 'unsafe-inline';
+      style-src 'self' https: 'unsafe-inline';
+    "
+  />
+
   <title>Guidelines | UIverse</title>
 
   <!-- GOOGLE FONT -->
@@ -18,53 +40,75 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   />
 
-  <!-- CSS FILE -->
+  <!-- CSS -->
   <link rel="stylesheet" href="guide.css" />
-
-  <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="container">
 
   <!-- SIDEBAR -->
-  <aside class="sidebar">
+  <aside
+    class="sidebar"
+    aria-label="Sidebar Navigation"
+  >
 
     <div class="logo">
+
       <h2>UIverse</h2>
+
       <p>Modern UI Library</p>
+
     </div>
 
     <nav>
+
       <ul>
+
         <li><a href="index.html">🏠 Home</a></li>
+
         <li><a href="button.html">🔘 Buttons</a></li>
+
         <li><a href="navbar.html">📑 Navbars</a></li>
+
         <li><a href="cards.html">🪪 Cards</a></li>
+
         <li><a href="footer.html">📌 Footer</a></li>
+
         <li><a href="form.html">📝 Forms</a></li>
+
         <li><a href="color.html">🎨 Colors</a></li>
+
         <li><a href="about.html">ℹ️ About</a></li>
+
         <li><a href="contribute.html">❤️ Contribute</a></li>
+
         <li><a href="faq.html">❓ FAQ</a></li>
+
         <li class="active">
           <a href="guidelines.html">📘 Guidelines</a>
         </li>
+
       </ul>
+
     </nav>
 
   </aside>
 
   <!-- MAIN -->
-  <main class="main">
+  <main
+    class="main"
+    aria-label="Guidelines Content"
+  >
 
     <!-- HERO -->
     <section class="hero">
 
       <div class="hero-glow"></div>
+
       <div class="hero-grid"></div>
 
       <div class="hero-badge">
@@ -83,12 +127,18 @@
 
       <div class="hero-buttons">
 
-        <a href="contribute.html" class="primary-btn">
+        <a
+          href="contribute.html"
+          class="primary-btn"
+        >
           Start Contributing
           <span>→</span>
         </a>
 
-        <a href="#guides" class="secondary-btn">
+        <a
+          href="#guides"
+          class="secondary-btn"
+        >
           Explore Rules
         </a>
 
@@ -117,14 +167,27 @@
     </section>
 
     <!-- DOCUMENTATION -->
-    <section class="documentation" id="guides">
+    <section
+      class="documentation"
+      id="guides"
+    >
 
   <div class="section-heading">
     <span class="section-badge">
       📘 Contribution Standards
     </span>
 
+<<<<<<< HEAD
     <h2>UIverse Development Guidelines</h2>
+=======
+        <div class="doc-top">
+
+          <div class="doc-icon">💻</div>
+
+          <span class="doc-tag">Frontend</span>
+
+        </div>
+>>>>>>> origin/main
 
     <p>
       Follow modern frontend practices to maintain quality,
@@ -144,10 +207,20 @@
 
       <h3>Code Style</h3>
 
+<<<<<<< HEAD
       <p>
         Write maintainable and scalable code using semantic
         structures and reusable architecture.
       </p>
+=======
+        <div class="doc-top">
+
+          <div class="doc-icon">🎨</div>
+
+          <span class="doc-tag">Design</span>
+
+        </div>
+>>>>>>> origin/main
 
       <ul>
         <li>Semantic HTML</li>
@@ -230,8 +303,11 @@
 
 </section>
         <div class="doc-top">
+
           <div class="doc-icon">🧩</div>
+
           <span class="doc-tag">Components</span>
+
         </div>
 
         <h3>Component Rules</h3>
@@ -254,8 +330,11 @@
       <div class="doc-block">
 
         <div class="doc-top">
+
           <div class="doc-icon">🌱</div>
+
           <span class="doc-tag">Git Workflow</span>
+
         </div>
 
         <h3>Contribution Workflow</h3>
@@ -299,11 +378,17 @@
 
         <div class="cta-buttons">
 
-          <a href="contribute.html" class="primary-btn">
+          <a
+            href="contribute.html"
+            class="primary-btn"
+          >
             Start Contributing
           </a>
 
-          <a href="index.html" class="secondary-btn">
+          <a
+            href="index.html"
+            class="secondary-btn"
+          >
             Explore Components
           </a>
 
@@ -316,22 +401,55 @@
   </main>
 
 </div>
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
+
   <div class="footer-container">
 
     <div class="footer-col brand">
+
       <h2 class="footer-logo">⬡ UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+
+      <p>
+        Build modern, reusable UI components with clean HTML,
+        CSS, and JavaScript.
+      </p>
+
       <div class="socials">
-        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+
+        <a
+          href="#"
+          title="GitHub"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a
+          href="#"
+          title="LinkedIn"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a
+          href="#"
+          title="Twitter"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-x-twitter"></i>
+        </a>
+
       </div>
+
     </div>
 
     <div class="footer-col">
+
       <h3>Explore</h3>
+
       <ul>
         <li><a href="button.html">Buttons</a></li>
         <li><a href="navbar.html">Navbars</a></li>
@@ -339,43 +457,68 @@
         <li><a href="inputs.html">Inputs</a></li>
         <li><a href="forms.html">Forms</a></li>
       </ul>
+
     </div>
 
     <div class="footer-col">
+
       <h3>Resources</h3>
+
       <ul>
         <li><a href="#">Documentation</a></li>
         <li><a href="#">Contribute</a></li>
         <li><a href="#">GitHub Repo</a></li>
         <li><a href="#">Community</a></li>
       </ul>
+
     </div>
 
     <div class="footer-col">
+
       <h3>Legal</h3>
+
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
         <li><a href="#">License</a></li>
       </ul>
+
     </div>
 
     <div class="footer-col newsletter">
+
       <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
+
+      <p>
+        Get notified when new components drop.
+      </p>
+
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+
+        <input
+          type="email"
+          placeholder="your@email.com"
+          aria-label="Email Address"
+        />
+
+        <button type="button">
+          Subscribe
+        </button>
+
       </div>
+
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    <p>
+      © 2026 UIverse. Made with ❤️ for developers worldwide.
+    </p>
   </div>
+
 </footer>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
-

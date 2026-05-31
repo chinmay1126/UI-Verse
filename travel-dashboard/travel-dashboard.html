@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8"/>
   <meta name="viewport"
   content="width=device-width, initial-scale=1.0"/>
@@ -23,6 +23,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -82,7 +84,7 @@
         Departure in 12 days.
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         View Trip
       </button>
 
@@ -117,7 +119,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-          placeholder="Search destinations...">
+          placeholder="Search destinations..." data-a11y-remediation="label-needed">
 
         </div>
 
@@ -492,5 +494,6 @@
   <!-- JS -->
   <script src="travel-dashboard.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

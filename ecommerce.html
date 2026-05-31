@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>E-commerce Components — UIverse</title>
@@ -13,9 +14,10 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="ecommerce.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -371,7 +373,7 @@
             <div class="pc-color c2"></div>
             <div class="pc-color c3"></div>
           </div>
-          <button class="pc-add-btn">Add to Cart</button>
+          <button class="pc-add-btn" data-a11y-remediation="button-label-needed">Add to Cart</button>
         </div>
       </div>
       <div class="card-actions">
@@ -445,7 +447,7 @@
           <div class="co-grid full">
             <div class="co-input-group">
               <label>Cardholder Name</label>
-              <input type="text" placeholder="John Doe">
+              <input type="text" placeholder="John Doe" data-a11y-remediation="label-needed">
             </div>
           </div>
           <div class="co-grid full">
@@ -889,7 +891,7 @@
   <div class="container">
 
     <h2 class="section-title">
-      ❤️ Customer Reviews
+      <i class="fa-solid fa-heart" style="color: #ff4757;"></i> Customer Reviews
     </h2>
 
     <div class="testimonial-grid">
@@ -1169,7 +1171,7 @@
     <div class="container">
 
       <h2 class="section-title">
-        ✨ E-commerce Features
+        <i class="fa-solid fa-sparkles"></i> E-commerce Features
       </h2>
 
       <p class="section-subtitle">
@@ -1443,5 +1445,8 @@
   });
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
+
+<!-- improved by script -->

@@ -272,7 +272,7 @@ body {
   font-size: 1.7rem;
   font-weight: 800;
 
-  color: var(--text);
+  color: #000;
 }
 
 .card-tag {
@@ -896,10 +896,10 @@ body {
   padding:34px;
   border-radius:24px;
   background:#0f1117;
-  border:1px solid rgba(255,255,255,0.08);
+  border:2px solid #222; 
   text-align:center;
   overflow:hidden;
-  transition:0.4s;
+  transition: all 0.4s ease;
 }
 
 .neon-card:hover{
@@ -907,23 +907,37 @@ body {
 }
 
 .silver{
-  box-shadow:0 0 30px rgba(255,255,255,0.08);
+  border-color: #e2e8f0;
+  box-shadow: 0 0 5px #fff,
+              0 0 10px #cbd5e1,
+              0 0 20px #94a3b8,
+              inset 0 0 15px rgba(255,255,255,0.1);
 }
 
 .gold{
-  box-shadow:0 0 40px rgba(255,215,0,0.35);
+  border-color: #ffd700;
+  box-shadow: 0 0 5px #fff,
+              0 0 10px #ffd700,
+              0 0 25px #ff8c00,
+              inset 0 0 15px rgba(255,215,0,0.1);
 }
 
 .platinum{
-  box-shadow:0 0 40px rgba(0,255,255,0.25);
+  border-color: #00ffff;
+  box-shadow: 0 0 5px #fff,
+              0 0 10px #00ffff,
+              0 0 25px #008b8b,
+              inset 0 0 15px rgba(0,255,255,0.1);
 }
 
 .neon-badge{
-  position:absolute;
+position:absolute;
   top:16px;
   right:16px;
-  background:gold;
-  color:#111;
+  background:#0f1117;
+  color:#ffd700;
+  border: 1px solid #ffd700;
+  box-shadow: 0 0 8px #ffd700;
   padding:6px 12px;
   border-radius:999px;
   font-size:11px;
@@ -934,12 +948,30 @@ body {
   font-size:58px;
   font-weight:800;
   margin:18px 0;
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px rgba(255,255,255,0.5),
+               0 0 20px rgba(255,255,255,0.2);
+}
+
+.gold .neon-price {
+  text-shadow: 0 0 5px #fff, 0 0 15px #ffd700;
+}
+.platinum .neon-price {
+  text-shadow: 0 0 5px #fff, 0 0 15px #00ffff;
+}
+
+.neon-desc {
+  color: #9ca3af;
+  line-height:1.8;
+  margin-bottom:24px;
 }
 
 .neon-card ul{
   list-style:none;
   padding:0;
   margin:24px 0;
+  color:#e5e7eb;
 }
 
 .neon-card li{

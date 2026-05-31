@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-0fds28+lgzA9MINaleymnaoa4excmxB0Mhjg2ism8bk=; script-src-attr 'unsafe-hashes' sha256-0fds28+lgzA9MINaleymnaoa4excmxB0Mhjg2ism8bk=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,14 +14,13 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-
   <!-- CSS -->
   <link rel="stylesheet" href="article.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <header class="navbar">
 
   <div class="logo">
@@ -28,13 +28,22 @@
   </div>
 
   <nav class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">Components</a>
-    <a href="#">Articles</a>
-    <a href="#">Contact</a>
-  </nav>
+  <a href="index.html">
+    Home
+  </a>
+  <a href="ai-components.html">
+    Components
+  </a>
+  <a href="article.html">
+    Articles
+  </a>
+  <a href="contact.html">
+    Contact
+  </a>
+</nav>
 
-  <button class="theme-toggle" id="themeToggle">
+
+  <button class="theme-toggle" id="themeToggle" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-moon"></i>
   </button>
 
@@ -358,21 +367,22 @@
     </ul>
   </nav>
 
-  <div class="sidebar-footer">
+  <!-- <div class="sidebar-footer">
     <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
     <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-  </div>
+  </div> -->
 </aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-
+<main class="main-content">
 <!-- ================= HERO ================= -->
+<main id="main-content">
 <section class="hero">
 
   <div class="hero-badge">
-    ✨ UI Articles & Tutorials
+    <i class="fa-solid fa-sparkles"></i> UI Articles & Tutorials
   </div>
 
   <h1>
@@ -401,12 +411,12 @@
 <div>
   <form class="scearch">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text" placeholder="Filter Articles..." id="articleSearch">
+    <input type="text" placeholder="Filter Articles..." id="articleSearch" data-a11y-remediation="label-needed">
   </form>
 </div>
 
 <!-- ARTICLE -->
-<article class="article-card">
+<article class="article-card" role="article" aria-label="React component article">
 
   <div class="article-image">
     <img src="https://picsum.photos/500/300?random=5" alt="">
@@ -447,7 +457,7 @@
   <div class="split-content">
 
     <span class="split-badge">
-      🚀 Featured Story
+      <i class="fa-solid fa-rocket"></i> Featured Story
     </span>
 
     <h2>
@@ -870,7 +880,7 @@
   <div class="author-details">
 
     <span class="section-tag">
-      ✍ Featured Author
+      <i class="fa-solid fa-pen-nib"></i> Featured Author
     </span>
 
     <h2>
@@ -910,7 +920,7 @@
   <div class="newsletter-box">
 
     <span class="newsletter-tag">
-      🚀 Weekly UI Digest
+      <i class="fa-solid fa-rocket"></i> Weekly UI Digest
     </span>
 
     <h2>
@@ -964,7 +974,7 @@
 <aside class="trending-sidebar">
 
   <h3>
-    🔥 Trending Topics
+    <i class="fa-solid fa-fire"></i> Trending Topics
   </h3>
 
   <ul>
@@ -1006,7 +1016,7 @@
 <section class="articles-section trending-section">
 
   <div class="section-header">
-    <span class="section-tag">🔥 Trending</span>
+    <span class="section-tag"><i class="fa-solid fa-fire"></i> Trending</span>
     <h2>Modern Frontend Articles</h2>
     <p>
       Discover premium UI/UX tutorials, design systems, animations,
@@ -1635,6 +1645,7 @@
   </div>
 
 </section>
+</main>
 
 <!-- ================= NEWSLETTER ================= -->
 <section class="newsletter">
@@ -1642,7 +1653,7 @@
   <div class="newsletter-content">
 
     <h2>
-      Stay Updated 🚀
+      Stay Updated <i class="fa-solid fa-rocket"></i>
     </h2>
 
     <p>
@@ -1662,107 +1673,79 @@
   </div>
 
 </section>
-
+</main>
 <!-- ================= FOOTER ================= -->
+ <!-- FOOTER -->
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="footer">
-
   <div class="footer-container">
 
-    <!-- BRAND -->
     <div class="footer-col brand">
-
       <h2 class="footer-logo">⬡ UIverse</h2>
-
-      <p>
-        Build modern, reusable UI components with clean
-        HTML, CSS & JavaScript.
-      </p>
-
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
       <div class="socials">
-
-        <a href="#" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-
-        <a href="#" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-
-        <a href="#" title="Twitter">
-          <i class="fab fa-x-twitter"></i>
-        </a>
-
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
-
     </div>
 
-    <!-- LINKS -->
+        <a href="https://github.com" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
     <div class="footer-col">
-
       <h3>Explore</h3>
-
       <ul>
         <li><a href="button.html">Buttons</a></li>
         <li><a href="navbar.html">Navbars</a></li>
         <li><a href="cards.html">Cards</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
       </ul>
-
     </div>
-
-    <!-- RESOURCES -->
     <div class="footer-col">
-
       <h3>Resources</h3>
-
       <ul>
         <li><a href="#">Documentation</a></li>
-        <li><a href="#">Community</a></li>
-        <li><a href="#">GitHub Repo</a></li>
         <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
-
     </div>
-
-    <!-- NEWSLETTER -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="#">License</a></li>
+      </ul>
+    </div>
     <div class="footer-col newsletter">
-
       <h3>Stay Updated</h3>
-
-      <p>
-        Get notified when new article components are added.
-        Get notified when new gallery components are added.
-      </p>
-
+      <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
-
-        <input
-          type="email"
-          placeholder="your@email.com"
-        />
-
-        <button type="button">
-          Subscribe
-        </button>
-
+        <input type="email" placeholder="your@email.com">
+        <button type="button">Subscribe</button>
       </div>
-
     </div>
-
   </div>
-
-  <!-- BOTTOM -->
   <div class="footer-bottom">
-
-    <p>
-      © 2026 UIverse. Made with ❤️ for developers.
-    </p>
-
+    <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
   </div>
-
 </footer>
+
 <!-- ================= SCRIPT ================= -->
 <script>
 
@@ -1821,6 +1804,7 @@ input.addEventListener("input",function(){
 
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
 </html>

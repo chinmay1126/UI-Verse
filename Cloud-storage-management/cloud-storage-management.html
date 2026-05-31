@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0" />
@@ -25,6 +25,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -96,7 +98,7 @@
         720GB of 1TB Used
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Upgrade Plan
       </button>
 
@@ -131,7 +133,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-            placeholder="Search files..." />
+            placeholder="Search files..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -460,6 +462,7 @@
   <!-- JS -->
   <script src="cloud-storage-management.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

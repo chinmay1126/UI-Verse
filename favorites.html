@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Favorites | UIverse</title>
@@ -9,134 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-  <style>
-    :root {
-      --bg: #0e1015;
-      --panel: #181c25;
-      --panel-border: rgba(255, 255, 255, 0.14);
-      --text: #f4f4f4;
-      --muted: #b8beca;
-      --accent: #eb6835;
-      --accent-2: #5ab0ff;
-      --card: #151924;
-      --card-border: rgba(255, 255, 255, 0.18);
-      --radius: 16px;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "DM Sans", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(880px 420px at 10% -8%, rgba(90, 176, 255, 0.2), transparent 62%),
-        radial-gradient(760px 400px at 95% -14%, rgba(235, 104, 53, 0.18), transparent 58%),
-        var(--bg);
-      min-height: 100vh;
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(10, 11, 15, 0.75);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-    }
-
-    .menu-toggle {
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-      background: transparent;
-      color: var(--text);
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-    }
-
-    .main {
-      margin-left: 280px;
-      padding: 24px;
-      transition: margin-left 0.25s ease;
-    }
-
-    body.sidebar-hidden .main {
-      margin-left: 0;
-    }
-
-    .hero {
-      border: 1px solid var(--panel-border);
-      border-radius: 20px;
-      background: linear-gradient(140deg, rgba(235, 104, 53, 0.14), rgba(90, 176, 255, 0.12));
-      padding: 20px;
-      display: grid;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-family: "Syne", sans-serif;
-      font-size: clamp(1.5rem, 3vw, 2.1rem);
-    }
-
-    .hero p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .hero-meta {
-      display: inline-flex;
-      width: fit-content;
-      align-items: center;
-      gap: 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 6px 12px;
-      font-size: 0.85rem;
-      color: #dde5f4;
-      background: rgba(14, 16, 21, 0.5);
-    }
-
-    .favorites-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 14px;
-    }
-
-    .favorites-actions {
-      display: flex;
-      justify-content: flex-end;
-      margin: 10px 0 16px;
-    }
-
-    .clear-btn {
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-      padding: 9px 12px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    @media (max-width: 980px) {
-      .main {
-        margin-left: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="favorites.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- ================= SIDEBAR ================= -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
@@ -499,10 +377,101 @@
     <section class="favorites-grid" id="favoritesList" aria-live="polite"></section>
   </main>
 
-  <script src="script.js"></script>
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <div class="footer-logo">UIverse</div>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="contribute.html">Contribute</a></li>
+          <li><a href="#" target="_blank">GitHub Repo</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="license.html">License</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" / data-a11y-remediation="label-needed">
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
+
   <script src="js/features/favorites.js"></script>
   <script>
     (function initFavoritesPage() {
+      // Pre-populate dummy components if empty so user has some components to see
+      const rawInit = localStorage.getItem('uiVerseFavorites');
+      if (!rawInit || rawInit === '[]') {
+        const dummyFavorites = [
+          {
+            id: 'btn-gradient',
+            title: 'Gradient Button',
+            category: 'Button',
+            tags: ['Popular', 'Trending'],
+            page: 'button.html',
+            savedAt: new Date().toISOString()
+          },
+          {
+            id: 'card-glass',
+            title: 'Glassmorphism Card',
+            category: 'Card',
+            tags: ['Premium'],
+            page: 'cards.html',
+            savedAt: new Date(Date.now() - 86400000).toISOString()
+          },
+          {
+            id: 'nav-blur',
+            title: 'Blurred Navbar',
+            category: 'Navbar',
+            tags: ['Essential'],
+            page: 'navbar.html',
+            savedAt: new Date(Date.now() - 172800000).toISOString()
+          }
+        ];
+        localStorage.setItem('uiVerseFavorites', JSON.stringify(dummyFavorites));
+      }
+
       if (window.Favorites && typeof window.Favorites.init === 'function') {
         window.Favorites.init();
       }
@@ -538,5 +507,6 @@
       syncMeta();
     })();
   </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

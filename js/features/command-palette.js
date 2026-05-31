@@ -239,25 +239,31 @@ const CommandPalette = (function () {
   function handleKeydown(event) {
     if (!_state.isOpen) return;
 
+    const contract = window.KeyboardContract || globalThis.KeyboardContract || null;
+
     switch (event.key) {
       case 'Escape':
+        if (contract && typeof contract.isEscapeKey === 'function' && !contract.isEscapeKey(event)) break;
         event.preventDefault();
         close();
         break;
 
       case 'ArrowDown':
+        if (contract && typeof contract.isArrowKey === 'function' && !contract.isArrowKey(event)) break;
         event.preventDefault();
         _state.selectedIndex = Math.min(_state.selectedIndex + 1, _state.results.length - 1);
         renderResults();
         break;
 
       case 'ArrowUp':
+        if (contract && typeof contract.isArrowKey === 'function' && !contract.isArrowKey(event)) break;
         event.preventDefault();
         _state.selectedIndex = Math.max(_state.selectedIndex - 1, 0);
         renderResults();
         break;
 
       case 'Enter':
+        if (contract && typeof contract.isEnterKey === 'function' && !contract.isEnterKey(event)) break;
         event.preventDefault();
         if (_state.results[_state.selectedIndex]) {
           navigateToItem(_state.results[_state.selectedIndex]);
@@ -265,6 +271,7 @@ const CommandPalette = (function () {
         break;
 
       case 'Tab':
+        if (contract && typeof contract.isTabKey === 'function' && !contract.isTabKey(event)) break;
         event.preventDefault();
         if (event.shiftKey) {
           _state.selectedIndex = Math.max(_state.selectedIndex - 1, 0);
@@ -397,7 +404,14 @@ const CommandPalette = (function () {
       }
     };
     const onDocumentKeydown = (event) => {
-      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+      const contract = window.KeyboardContract || globalThis.KeyboardContract || null;
+      if (contract && typeof contract.matchesCombo === 'function' && contract.matchesCombo(event, contract.shortcuts.commandPalette)) {
+        event.preventDefault();
+        toggle();
+        return;
+      }
+
+      if (!contract && (event.metaKey || event.ctrlKey) && event.key === 'k') {
         event.preventDefault();
         toggle();
       }

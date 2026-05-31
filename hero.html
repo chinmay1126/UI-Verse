@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hero Section Components — UIverse</title>
@@ -12,10 +13,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="hero.css">
+   <link rel="stylesheet" href="home.css">
+   <link rel="stylesheet" href="style.css">
+  
   <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  <link rel="stylesheet" href="hero.css">
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -341,6 +347,26 @@
     <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
   </div>
 </aside>
+<!-- =========================================================
+   NAVBAR
+========================================================= -->
+
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
 
 <header class="page-header premium-header">
   <div class="header-badge">
@@ -538,7 +564,7 @@
             <form class="hgl-premium-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
               <div class="hgl-input-wrapper">
                 <i class="fa-regular fa-envelope"></i>
-                <input type="email" placeholder="yourname@domain.com" required>
+                <input type="email" placeholder="yourname@domain.com" required data-a11y-remediation="label-needed">
               </div>
               <button type="submit" class="hgl-premium-btn">Join Waitlist</button>
             </form>
@@ -673,6 +699,181 @@
         </button>
       </div>
     </div>
+    <!-- =========================================================
+8. NEON CYBER HERO
+========================================================= -->
+<div class="hero-info">
+  <h2>Neon Cyber Hero</h2>
+  <p>
+    A futuristic neon-inspired hero section with glowing gradients,
+    animated grid overlays, glassmorphism effects, and immersive
+    cyberpunk aesthetics.
+  </p>
+</div>
+<div class="hero-wrapper hero-neon">
+
+  <div class="hn-grid"></div>
+
+  <div class="hn-content">
+
+    <div class="hn-badge">
+      <i class="fa-solid fa-sparkles"></i>
+      AI Powered
+    </div>
+
+    <h1 class="hn-title">
+      Enter The
+      <span>Cyber Future</span>
+    </h1>
+
+    <p class="hn-desc">
+      Futuristic hero section with glowing neon borders,
+      animated gradients, and immersive glassmorphism effects.
+    </p>
+
+    <div class="hn-btns">
+      <button class="hn-btn-primary">
+        Launch App
+      </button>
+
+      <button class="hn-btn-secondary">
+        Learn More
+      </button>
+    </div>
+
+  </div>
+
+</div>
+<div class="hero-info">
+  <h2>SaaS Dashboard Hero</h2>
+  <p>
+    A clean modern SaaS landing hero featuring a stylish dashboard
+    mockup, analytics cards, interactive chart visuals, and premium
+    startup-inspired layouts.
+  </p>
+</div>
+<!-- =========================================================
+9. SAAS DASHBOARD HERO
+========================================================= -->
+
+<div class="hero-wrapper hero-dashboard">
+
+  <div class="hd-left">
+
+    <div class="hd-badge">
+      Trusted by 40k+ teams
+    </div>
+
+    <h1 class="hd-title">
+      The easiest way
+      to manage projects
+    </h1>
+
+    <p class="hd-desc">
+      Organize workflows, collaborate with your team,
+      and track progress in one beautiful dashboard.
+    </p>
+
+    <div class="hd-btns">
+      <button class="hd-btn-main">
+        Start Free
+      </button>
+
+      <button class="hd-btn-outline">
+        View Demo
+      </button>
+    </div>
+
+  </div>
+
+  <div class="hd-right">
+
+    <div class="hd-window">
+
+      <div class="hd-window-header">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="hd-window-body">
+
+        <div class="hd-sidebar"></div>
+
+        <div class="hd-main">
+
+          <div class="hd-card large"></div>
+
+          <div class="hd-row">
+            <div class="hd-card"></div>
+            <div class="hd-card"></div>
+          </div>
+
+          <div class="hd-chart">
+            <div class="bar" style="--h:40%"></div>
+            <div class="bar" style="--h:65%"></div>
+            <div class="bar" style="--h:80%"></div>
+            <div class="bar" style="--h:55%"></div>
+            <div class="bar" style="--h:95%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<div class="hero-info">
+  <h2>Minimal Portfolio Hero</h2>
+  <p>
+    A minimalist portfolio hero with elegant typography, soft abstract
+    floating shapes, smooth spacing, and a refined creative studio vibe.
+  </p>
+</div>
+<!-- =========================================================
+10. MINIMAL PORTFOLIO HERO
+========================================================= -->
+
+<div class="hero-wrapper hero-portfolio">
+
+  <div class="hp-circle hp-circle-1"></div>
+  <div class="hp-circle hp-circle-2"></div>
+
+  <div class="hp-content">
+
+    <p class="hp-small">
+      CREATIVE DESIGNER
+    </p>
+
+    <h1 class="hp-title">
+      Crafting digital
+      experiences that
+      inspire people.
+    </h1>
+
+    <p class="hp-desc">
+      Modern portfolio hero section with elegant typography,
+      abstract floating shapes, and minimal aesthetics.
+    </p>
+
+    <div class="hp-btns">
+
+      <button class="hp-btn-dark">
+        View Portfolio
+      </button>
+
+      <button class="hp-btn-light">
+        Contact Me
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 
   </section>
 
@@ -772,5 +973,6 @@
   });
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
