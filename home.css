@@ -1250,4 +1250,33 @@ body.dark-mode .feature-card:hover {
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+<<<<<<< HEAD
+}
+
+
+.privacy-stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1rem;
+  margin-top:2rem;
+}
+
+.stat-card{
+  background:var(--card-bg);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  padding:1.2rem;
+  text-align:center;
+  transition:.3s;
+}
+
+.stat-card:hover{
+  transform:translateY(-5px);
+}
+
+.stat-card i{
+  font-size:1.8rem;
+  margin-bottom:.7rem;
+=======
+>>>>>>> origin/main
 }
