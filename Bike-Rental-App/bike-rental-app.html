@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta name="viewport"
@@ -29,6 +29,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -93,7 +95,7 @@
         Premium Rider
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Upgrade Plan
       </button>
 
@@ -128,7 +130,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-            placeholder="Search bikes..." />
+            placeholder="Search bikes..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -481,6 +483,7 @@
 
   <script src="bike-rental-app.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

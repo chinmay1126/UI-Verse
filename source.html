@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-PZ71PLNCXz4RUDRR2I+n8eQOFvyDpoo/c8L7sDCgd0s=; script-src-attr 'unsafe-hashes' sha256-PZ71PLNCXz4RUDRR2I+n8eQOFvyDpoo/c8L7sDCgd0s=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
@@ -28,10 +28,11 @@
   <!-- CSS -->
   <link rel="stylesheet" href="source.css" />
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
    NAVBAR
@@ -124,10 +125,205 @@
       type="text"
       id="searchInput"
       placeholder="Search components..."
-    />
+    / data-a11y-remediation="label-needed">
 
   </div>
 
+<!-- Neon Glow Tag -->
+<div class="component-card" data-name="neon glow futuristic badge" data-cat="label">
+  <div class="card-top">
+    <span class="card-label">Neon Glow Tag</span>
+    <span class="card-tag tag-trending">Trending</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="preview-wrap">
+      <span class="sp-neon sp-neon-pink">Premium</span>
+      <span class="sp-neon sp-neon-cyan">Online</span>
+      <span class="sp-neon sp-neon-green">Verified</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Futuristic glowing span tags with neon borders and soft ambient lighting.
+  </p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s15', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s15', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s15" class="code-block"><code>&lt;span class="sp-neon"&gt;Premium&lt;/span&gt;</code></pre>
+</div>
+
+
+<!-- Gradient Border Label -->
+<div class="component-card" data-name="gradient border label outline" data-cat="label">
+  <div class="card-top">
+    <span class="card-label">Gradient Border Label</span>
+    <span class="card-tag tag-essential">Essential</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="preview-wrap">
+      <span class="sp-outline-gradient">UI Kit</span>
+      <span class="sp-outline-gradient purple">Dashboard</span>
+      <span class="sp-outline-gradient teal">Analytics</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Modern gradient outline labels for premium interfaces.
+  </p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s16', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s16', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s16" class="code-block"><code>&lt;span class="sp-outline-gradient"&gt;UI Kit&lt;/span&gt;</code></pre>
+</div>
+
+
+<!-- Floating Notification -->
+<div class="component-card" data-name="floating notification bubble alert" data-cat="interactive">
+  <div class="card-top">
+    <span class="card-label">Floating Notification</span>
+    <span class="card-tag tag-trending">Trending</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="preview-wrap">
+      <span class="sp-float-note">+12 New</span>
+      <span class="sp-float-note success">Success</span>
+      <span class="sp-float-note danger">Error</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Floating animated notification pills with soft hover bounce.
+  </p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s17', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s17', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s17" class="code-block"><code>&lt;span class="sp-float-note"&gt;+12 New&lt;/span&gt;</code></pre>
+</div>
+
+
+<!-- Glass Badge -->
+<div class="component-card" data-name="glassmorphism transparent badge" data-cat="label">
+  <div class="card-top">
+    <span class="card-label">Glass Badge</span>
+    <span class="card-tag tag-popular">Popular</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="preview-wrap">
+      <span class="sp-glass">PRO</span>
+      <span class="sp-glass">GLASS UI</span>
+      <span class="sp-glass">FROSTED</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Frosted glass badges with premium translucent aesthetics.
+  </p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s18', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s18', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s18" class="code-block"><code>&lt;span class="sp-glass"&gt;PRO&lt;/span&gt;</code></pre>
+</div>
+
+
+<!-- Animated Underline -->
+<div class="component-card" data-name="underline hover link animation" data-cat="interactive">
+  <div class="card-top">
+    <span class="card-label">Animated Underline</span>
+    <span class="card-tag tag-essential">Essential</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="preview-wrap">
+      <span class="sp-hover-line">Documentation</span>
+      <span class="sp-hover-line">Resources</span>
+      <span class="sp-hover-line">Components</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Smooth animated underline spans for navigation links and actions.
+  </p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s19', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s19', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s19" class="code-block"><code>&lt;span class="sp-hover-line"&gt;Documentation&lt;/span&gt;</code></pre>
+</div>
+
+
+<!-- Shimmer Text -->
+<div class="component-card" data-name="shimmer loading text animation" data-cat="interactive">
+  <div class="card-top">
+    <span class="card-label">Shimmer Text</span>
+    <span class="card-tag tag-trending">Trending</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="preview-wrap">
+      <span class="sp-shimmer">Loading Content...</span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Animated shimmer text effect ideal for loading states and futuristic UIs.
+  </p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s20', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s20', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s20" class="code-block"><code>&lt;span class="sp-shimmer"&gt;Loading Content...&lt;/span&gt;</code></pre>
+</div>
+  
   <div class="filter-buttons">
 
     <button class="filter-btn active">
@@ -154,6 +350,298 @@
    COMPONENT GRID
 ========================================================= -->
 
+
+<!-- =========================================================
+   ADVANCED SOURCE COMPONENTS
+========================================================= -->
+
+<!-- Code Snippet Card -->
+<div class="component-card" data-name="developer code snippet terminal" data-cat="developer">
+
+  <div class="card-top">
+    <span class="card-label">Code Snippet Card</span>
+    <span class="card-tag tag-popular">Popular</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="preview-wrap">
+      <div class="snippet-preview">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+
+        <div class="code-lines">
+          <span></span>
+          <span></span>
+          <span class="small"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Professional terminal style snippet preview for code showcase layouts.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('s21', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s21', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+
+  </div>
+
+  <pre id="s21" class="code-block"><code>&lt;div class="snippet-preview"&gt;&lt;/div&gt;</code></pre>
+
+</div>
+
+
+<!-- API Badge -->
+<div class="component-card" data-name="api integration badge" data-cat="developer">
+
+  <div class="card-top">
+    <span class="card-label">API Status Badge</span>
+    <span class="card-tag tag-essential">Essential</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="preview-wrap">
+      <span class="api-badge success">
+        <i class="fa-solid fa-circle-check"></i> Connected
+      </span>
+
+      <span class="api-badge warning">
+        <i class="fa-solid fa-triangle-exclamation"></i> Pending
+      </span>
+
+      <span class="api-badge danger">
+        <i class="fa-solid fa-circle-xmark"></i> Offline
+      </span>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Clean API status indicators for dashboards and developer tools.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('s22', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s22', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+
+  </div>
+
+  <pre id="s22" class="code-block"><code>&lt;span class="api-badge success"&gt;Connected&lt;/span&gt;</code></pre>
+
+</div>
+
+
+<!-- Terminal Window -->
+<div class="component-card" data-name="terminal console developer" data-cat="developer">
+
+  <div class="card-top">
+    <span class="card-label">Terminal Window</span>
+    <span class="card-tag tag-trending">Trending</span>
+  </div>
+
+  <div class="card-preview">
+
+    <div class="preview-wrap">
+
+      <div class="terminal-preview">
+
+        <div class="terminal-top">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="terminal-body">
+          <p>$ npm install uiverse</p>
+          <p class="success-text">✔ Packages installed</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Modern command line terminal component for developer portfolios.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('s23', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s23', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+
+  </div>
+
+  <pre id="s23" class="code-block"><code>&lt;div class="terminal-preview"&gt;&lt;/div&gt;</code></pre>
+
+</div>
+
+
+<!-- Documentation Card -->
+<div class="component-card" data-name="documentation docs card" data-cat="documentation">
+
+  <div class="card-top">
+    <span class="card-label">Documentation Block</span>
+    <span class="card-tag tag-essential">Docs</span>
+  </div>
+
+  <div class="card-preview">
+
+    <div class="preview-wrap">
+
+      <div class="docs-preview">
+
+        <div class="docs-title"></div>
+
+        <div class="docs-line"></div>
+        <div class="docs-line"></div>
+        <div class="docs-line short"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Minimal documentation style block for technical content layouts.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('s24', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s24', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+
+  </div>
+
+  <pre id="s24" class="code-block"><code>&lt;div class="docs-preview"&gt;&lt;/div&gt;</code></pre>
+
+</div>
+
+
+<!-- Browser Window -->
+<div class="component-card" data-name="browser mockup preview" data-cat="mockup">
+
+  <div class="card-top">
+    <span class="card-label">Browser Mockup</span>
+    <span class="card-tag tag-popular">Popular</span>
+  </div>
+
+  <div class="card-preview">
+
+    <div class="preview-wrap">
+
+      <div class="browser-preview">
+
+        <div class="browser-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="browser-content">
+          <div class="browser-card"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Responsive browser mockup for UI presentation and portfolios.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('s25', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s25', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+
+  </div>
+
+  <pre id="s25" class="code-block"><code>&lt;div class="browser-preview"&gt;&lt;/div&gt;</code></pre>
+
+</div>
+
+
+<!-- AI Prompt Card -->
+<div class="component-card" data-name="ai prompt futuristic ui" data-cat="ai">
+
+  <div class="card-top">
+    <span class="card-label">AI Prompt Card</span>
+    <span class="card-tag tag-trending">AI</span>
+  </div>
+
+  <div class="card-preview">
+
+    <div class="preview-wrap">
+
+      <div class="ai-card">
+
+        <div class="ai-icon">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+
+        <div class="ai-text">
+          Generate futuristic UI design
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="card-desc">
+    Futuristic AI assistant style card for modern SaaS dashboards.
+  </p>
+
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('s26', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('s26', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+
+  </div>
+
+  <pre id="s26" class="code-block"><code>&lt;div class="ai-card"&gt;&lt;/div&gt;</code></pre>
+
+</div>
 <section class="components-grid">
 
   <!-- CARD -->
@@ -449,5 +937,6 @@
 
 <script src="source.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

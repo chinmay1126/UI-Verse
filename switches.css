@@ -904,3 +904,380 @@ body{
   }
 
 }
+
+/* =====================================================
+ADVANCED SWITCHES CSS
+===================================================== */
+
+/* COMMON */
+
+.gradient-switch,
+.neon-switch,
+.power-switch,
+.status-switch {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-switch input,
+.neon-switch input,
+.power-switch input,
+.status-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* =====================================================
+GRADIENT SWITCH
+===================================================== */
+
+.gradient-slider {
+  width: 74px;
+  height: 38px;
+  background: #1b1b2b;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.gradient-slider::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 4px;
+  top: 3px;
+  border-radius: 50%;
+  background: white;
+  transition: 0.4s;
+}
+
+.gradient-switch input:checked + .gradient-slider {
+  background: linear-gradient(135deg, #7b61ff, #eb6835);
+  box-shadow: 0 0 20px rgba(123,97,255,0.4);
+}
+
+.gradient-switch input:checked + .gradient-slider::before {
+  transform: translateX(35px);
+}
+
+/* =====================================================
+NEON SWITCH
+===================================================== */
+
+.neon-slider {
+  width: 78px;
+  height: 38px;
+  background: #111827;
+  border-radius: 50px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  border: 1px solid #1f2937;
+  transition: 0.4s;
+}
+
+.neon-slider::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 5px;
+  top: 4px;
+  background: #06b6d4;
+  border-radius: 50%;
+  transition: 0.4s;
+  box-shadow: 0 0 12px #06b6d4;
+}
+
+.neon-switch input:checked + .neon-slider {
+  box-shadow: 0 0 20px rgba(6,182,212,0.5);
+}
+
+.neon-switch input:checked + .neon-slider::before {
+  transform: translateX(38px);
+}
+
+/* =====================================================
+POWER SWITCH
+===================================================== */
+
+.power-slider {
+  width: 82px;
+  height: 42px;
+  border-radius: 50px;
+  background: #18181b;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.power-slider i {
+  width: 32px;
+  height: 32px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.4s;
+  font-size: 14px;
+}
+
+.power-switch input:checked + .power-slider {
+  background: rgba(34,197,94,0.12);
+}
+
+.power-switch input:checked + .power-slider i {
+  transform: translateX(40px);
+  background: #22c55e;
+  box-shadow: 0 0 18px rgba(34,197,94,0.6);
+}
+
+/* =====================================================
+STATUS SWITCH
+===================================================== */
+
+.status-slider {
+  width: 90px;
+  height: 40px;
+  border-radius: 50px;
+  background: #23263a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.status-slider::before {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: white;
+  left: 3px;
+  top: 3px;
+  transition: 0.4s;
+}
+
+.status-text {
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.status-text.on {
+  color: #22c55e;
+}
+
+.status-text.off {
+  color: #ef4444;
+}
+
+.status-switch input:checked + .status-slider {
+  background: rgba(34,197,94,0.15);
+}
+
+.status-switch input:checked + .status-slider::before {
+  transform: translateX(50px);
+}
+
+/* =====================================================
+EXTRA CARD COLORS
+===================================================== */
+
+.card-icon.pink {
+  background: linear-gradient(135deg, #ff4ecd, #ff6b81);
+}
+
+.card-icon.cyan {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+}
+
+.card-icon.red {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+}
+
+/* =======================
+   DESIGN TOKENS
+======================= */
+:root {
+  --bg: #0f1115;
+  --card: rgba(255, 255, 255, 0.06);
+  --stroke: rgba(255, 255, 255, 0.12);
+  --text: #eaeef5;
+  --muted: rgba(255, 255, 255, 0.6);
+
+  --primary: #7b61ff;
+  --success: #2de38c;
+  --danger: #ff4d6d;
+
+  --radius: 14px;
+  --transition: 0.35s cubic-bezier(.2,.9,.2,1);
+}
+
+/* =======================
+   SWITCH BASE
+======================= */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Track */
+.slider {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+  backdrop-filter: blur(12px);
+}
+
+/* Knob */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border-radius: 50%;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Checked state */
+.switch input:checked + .slider {
+  background: rgba(123, 97, 255, 0.35);
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+}
+
+.switch input:checked + .slider::before {
+  transform: translate(22px, -50%);
+  background: white;
+}
+
+/* Hover effect */
+.switch:hover .slider {
+  transform: scale(1.03);
+}
+
+/* Focus accessibility */
+.switch input:focus + .slider {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* =======================
+   ICON SWITCH (MODERN)
+======================= */
+.icon-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  display: inline-block;
+}
+
+.icon-switch input {
+  display: none;
+}
+
+.icon-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+.icon-slider i {
+  color: var(--muted);
+  transition: var(--transition);
+}
+
+.icon-switch input:checked + .icon-slider {
+  background: rgba(45, 227, 140, 0.15);
+  border-color: var(--success);
+  box-shadow: 0 0 18px rgba(45, 227, 140, 0.3);
+}
+
+.icon-switch input:checked + .icon-slider i.fa-moon {
+  color: var(--success);
+}
+
+/* =======================
+   IOS STYLE SWITCH
+======================= */
+.ios-switch {
+  position: relative;
+  width: 54px;
+  height: 32px;
+  display: inline-block;
+}
+
+.ios-switch input {
+  opacity: 0;
+}
+
+.ios-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #2a2f3a;
+  transition: var(--transition);
+}
+
+.ios-slider::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 3px;
+  left: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.ios-switch input:checked + .ios-slider {
+  background: linear-gradient(135deg, #7b61ff, #4f46e5);
+}
+
+.ios-switch input:checked + .ios-slider::before {
+  transform: translateX(22px);
+}

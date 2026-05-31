@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8"/>
   <meta name="viewport"
   content="width=device-width, initial-scale=1.0"/>
@@ -23,6 +23,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -32,7 +34,7 @@
       ⚡ EnergyFlow
     </div>
 
-    <nav>
+    <nav class="sidebar-nav">
 
       <a href="#" class="active">
         <i class="fa-solid fa-chart-line"></i>
@@ -74,7 +76,7 @@
         🌱 Green Energy
       </span>
 
-      <h2>
+      <h2 id="renewableEfficiency">
         84%
       </h2>
 
@@ -82,7 +84,7 @@
         Current renewable usage efficiency.
       </p>
 
-      <button>
+      <button id="optimizeBtn" data-a11y-remediation="button-label-needed">
         Optimize Usage
       </button>
 
@@ -117,7 +119,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-          placeholder="Search devices...">
+          placeholder="Search devices..." data-a11y-remediation="label-needed">
 
         </div>
 
@@ -149,7 +151,7 @@
           Total Energy Usage
         </span>
 
-        <h2>
+        <h2 id="energyUsage">
           14.6 kWh
         </h2>
 
@@ -165,7 +167,7 @@
           Solar Production
         </span>
 
-        <h2>
+        <h2 id="solarProduction">
           9.2 kWh
         </h2>
 
@@ -181,7 +183,7 @@
           Battery Storage
         </span>
 
-        <h2>
+        <h2 id="batteryLevel">
           68%
         </h2>
 
@@ -487,5 +489,6 @@
   <!-- JS -->
   <script src="smart-energy-dashboard.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

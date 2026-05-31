@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport"
   content="width=device-width, initial-scale=1.0"/>
@@ -24,6 +24,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= HERO ================= -->
 
@@ -64,7 +66,7 @@
 
       <div class="dropdown basic-dropdown">
 
-        <button class="dropdown-btn">
+        <button class="dropdown-btn" data-a11y-remediation="button-label-needed">
           Choose Option
           <i class="fa-solid fa-chevron-down"></i>
         </button>
@@ -350,5 +352,6 @@
   <!-- JS -->
   <script src="dropdown-library.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

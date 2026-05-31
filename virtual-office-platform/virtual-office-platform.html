@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta name="viewport"
@@ -29,8 +29,10 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- ================= SIDEBAR ================= -->
+
+  <!-- SIDEBAR -->
 
   <aside class="sidebar">
 
@@ -93,7 +95,7 @@
         Product Manager
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Start Meeting
       </button>
 
@@ -101,11 +103,11 @@
 
   </aside>
 
-  <!-- ================= MAIN ================= -->
+  <!-- MAIN -->
 
   <main class="main">
 
-    <!-- ================= TOPBAR ================= -->
+    <!-- TOPBAR -->
 
     <header class="topbar">
 
@@ -116,7 +118,7 @@
         </h1>
 
         <p>
-          Collaborate with teams, manage meetings and boost productivity remotely.
+          Collaborate with teams remotely and boost productivity.
         </p>
 
       </div>
@@ -128,7 +130,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-            placeholder="Search workspace..." />
+            placeholder="Search workspace..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -136,11 +138,15 @@
           <i class="fa-solid fa-bell"></i>
         </button>
 
+        <button class="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
       </div>
 
     </header>
 
-    <!-- ================= HERO ================= -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -157,8 +163,7 @@
 
         <p>
           Connect teams with smart meetings,
-          collaborative workspaces, productivity tracking
-          and seamless communication tools.
+          collaborative workspaces and productivity tracking.
         </p>
 
         <div class="hero-buttons">
@@ -201,61 +206,118 @@
 
     </section>
 
-    <!-- ================= STATS ================= -->
+    <!-- STATS -->
 
     <section class="stats-grid">
 
-      <div class="stat-card purple">
+      <div class="stat-card">
+        <h2>124</h2>
+        <p>Active Employees</p>
+      </div>
 
-        <h2>
-          124
-        </h2>
+      <div class="stat-card">
+        <h2>28</h2>
+        <p>Scheduled Meetings</p>
+      </div>
 
-        <p>
-          Active Employees
-        </p>
+      <div class="stat-card">
+        <h2>92%</h2>
+        <p>Productivity Score</p>
+      </div>
+
+      <div class="stat-card">
+        <h2>16</h2>
+        <p>Shared Projects</p>
+      </div>
+
+    </section>
+
+    <!-- QUICK ACTIONS -->
+
+    <section class="quick-actions">
+
+      <button>
+        <i class="fa-solid fa-video"></i>
+        New Meeting
+      </button>
+
+      <button>
+        <i class="fa-solid fa-folder"></i>
+        Workspace
+      </button>
+
+      <button>
+        <i class="fa-solid fa-share-nodes"></i>
+        Share Files
+      </button>
+
+      <button>
+        <i class="fa-solid fa-user-plus"></i>
+        Invite Team
+      </button>
+
+    </section>
+
+    <!-- ANALYTICS -->
+
+    <section class="analytics-section">
+
+      <div class="analytics-card">
+
+        <h3>Team Performance</h3>
+
+        <div class="progress-item">
+          <span>Development</span>
+
+          <div class="progress-bar">
+            <div class="progress-fill"
+              style="width:92%">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="progress-item">
+          <span>Design</span>
+
+          <div class="progress-bar">
+            <div class="progress-fill blue"
+              style="width:78%">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="progress-item">
+          <span>Marketing</span>
+
+          <div class="progress-bar">
+            <div class="progress-fill pink"
+              style="width:84%">
+            </div>
+          </div>
+
+        </div>
 
       </div>
 
-      <div class="stat-card blue">
+      <div class="clock-card">
 
-        <h2>
-          28
-        </h2>
+        <h3>Current Time</h3>
 
-        <p>
-          Scheduled Meetings
-        </p>
-
-      </div>
-
-      <div class="stat-card pink">
-
-        <h2>
-          92%
-        </h2>
+        <div id="liveClock">
+          00:00:00
+        </div>
 
         <p>
-          Productivity Score
-        </p>
-
-      </div>
-
-      <div class="stat-card green">
-
-        <h2>
-          16
-        </h2>
-
-        <p>
-          Shared Projects
+          Global Workspace Sync
         </p>
 
       </div>
 
     </section>
 
-    <!-- ================= TEAM SECTION ================= -->
+    <!-- TEAM SECTION -->
 
     <section class="team-section">
 
@@ -273,8 +335,6 @@
 
       <div class="team-grid">
 
-        <!-- CARD -->
-
         <div class="team-card">
 
           <div class="team-image purple-bg">
@@ -289,21 +349,7 @@
             24 Members • Building new features
           </p>
 
-          <div class="team-footer">
-
-            <span>
-              8 Tasks Pending
-            </span>
-
-            <button class="manage-btn">
-              Open
-            </button>
-
-          </div>
-
         </div>
-
-        <!-- CARD -->
 
         <div class="team-card">
 
@@ -319,21 +365,7 @@
             12 Members • UI/UX collaboration
           </p>
 
-          <div class="team-footer">
-
-            <span>
-              3 Reviews
-            </span>
-
-            <button class="manage-btn">
-              Open
-            </button>
-
-          </div>
-
         </div>
-
-        <!-- CARD -->
 
         <div class="team-card">
 
@@ -349,25 +381,13 @@
             18 Members • Campaign strategy
           </p>
 
-          <div class="team-footer">
-
-            <span>
-              5 Campaigns
-            </span>
-
-            <button class="manage-btn">
-              Open
-            </button>
-
-          </div>
-
         </div>
 
       </div>
 
     </section>
 
-    <!-- ================= MEETING SECTION ================= -->
+    <!-- MEETINGS -->
 
     <section class="meeting-section">
 
@@ -380,8 +400,6 @@
       </div>
 
       <div class="meeting-list">
-
-        <!-- ITEM -->
 
         <div class="meeting-item">
 
@@ -411,8 +429,6 @@
 
         </div>
 
-        <!-- ITEM -->
-
         <div class="meeting-item">
 
           <div class="meeting-left">
@@ -441,36 +457,6 @@
 
         </div>
 
-        <!-- ITEM -->
-
-        <div class="meeting-item">
-
-          <div class="meeting-left">
-
-            <div class="meeting-icon pink-bg">
-              <i class="fa-solid fa-chart-line"></i>
-            </div>
-
-            <div>
-
-              <h3>
-                Weekly Analytics Review
-              </h3>
-
-              <p>
-                4:00 PM • Microsoft Teams
-              </p>
-
-            </div>
-
-          </div>
-
-          <button class="join-btn">
-            Join
-          </button>
-
-        </div>
-
       </div>
 
     </section>
@@ -481,6 +467,7 @@
 
   <script src="virtual-office-platform.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

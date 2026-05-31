@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cyberpunk Command Console</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
+
+<body>
   <div class="console-container">
+    
     <div class="console-header">
       <span class="dot red"></span>
       <span class="dot yellow"></span>
@@ -21,11 +25,19 @@
     </div>
 
     <div class="input-area">
-      <span>>></span>
-      <input type="text" id="commandInput" placeholder="Enter command...">
+      <span class="prompt">>></span>
+      <input 
+        type="text" 
+        id="commandInput" 
+        placeholder="Enter command..." 
+        autocomplete="off"
+       data-a11y-remediation="label-needed">
     </div>
+
   </div>
 
-  <script src="script.js"></script>
+  <!-- FIXED FILE NAME -->
+  <script src="scrit.js"></script>
+      <script src="../dist/shared.js"></script>
 </body>
 </html>
