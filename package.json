@@ -86,6 +86,7 @@
         "dependencies:check": "node scripts/dependency-manager-check.js",
         "components:version:generate": "node scripts/component-metadata.js --generate",
         "components:version:check": "node scripts/component-metadata.js --check",
+        "components:registry:generate": "node scripts/generate-component-registry.js",
         "components:metadata:normalize": "node scripts/normalize-metadata.js",
         "components:metadata:normalize:check": "node scripts/normalize-metadata.js --check",
         "components:changelog:generate": "node scripts/generate-changelog.js",
