@@ -193,3 +193,102 @@ body.dark .toggle-ball {
   font-size: 12px;
   opacity: 0.6;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  transition: 0.4s ease;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  z-index: -1;
+}
+
+.card {
+  width: 380px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+.card h1 {
+  margin-bottom: 10px;
+}
+
+.toggle-container {
+  margin: 30px 0;
+}
+
+#toggle {
+  display: none;
+}
+
+.toggle-label {
+  position: relative;
+  width: 90px;
+  height: 45px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+
+.toggle-ball {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 35px;
+  height: 35px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.35s;
+}
+
+#toggle:checked + .toggle-label .toggle-ball {
+  transform: translateX(45px);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.moon {
+  left: 12px;
+}
+
+.sun {
+  right: 12px;
+}
+
+body.dark {
+  background: #111827;
+}
+
+body.dark .background {
+  background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+.footer-text {
+  margin-top: 15px;
+  opacity: 0.8;
+}

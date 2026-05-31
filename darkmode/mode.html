@@ -3,17 +3,32 @@
 <head>
   <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https:; style-src 'self' https: 'unsafe-inline'">
+
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self' https:;
+      base-uri 'self';
+      frame-ancestors 'none';
+      object-src 'none';
+      connect-src 'self' https:;
+      img-src 'self' data: https:;
+      font-src 'self' data: https:;
+      script-src 'self';
+      style-src 'self' https: 'unsafe-inline';
+    "
+  >
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Dark Mode Toggle UI</title>
 
-  <link rel="stylesheet" href="mode.css">
+  <link rel="stylesheet" href="./mode.css">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
 </head>
 
 <body>
@@ -24,6 +39,7 @@
 
   <div class="card">
     <h1>Theme Switch</h1>
+
     <p>Toggle between light & dark mode</p>
 
     <div class="toggle-container">
@@ -44,8 +60,12 @@
       </label>
     </div>
 
-    <p class="footer-text">Smooth UI • Glass effect • Modern UX</p>
+    <p class="footer-text">
+      Smooth UI • Glass effect • Modern UX
+    </p>
   </div>
+
+  <script src="./mode.js"></script>
 
   <script src="dist/shared.js"></script>
 </body>
