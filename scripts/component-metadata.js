@@ -190,7 +190,8 @@ function buildVersioningState(options = {}){
         if(!entry || !isSemver(entry.version)){
           errors.push(`[${id}] Changelog entry #${index + 1} has invalid version.`);
         }
-        if(!entry || !/^\d{4}-\d{2}-\d{2}$/.test(String(entry.date || ''))){
+        const parsedDate = Date.parse(String(entry.date || ''));
+        if(!entry || (isNaN(parsedDate) && !/^\d{4}-\d{2}-\d{2}$/.test(String(entry.date || '')))){
           errors.push(`[${id}] Changelog entry #${index + 1} has invalid date.`);
         }
       });
