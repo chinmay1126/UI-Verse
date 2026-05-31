@@ -616,6 +616,32 @@ tbody tr:hover{
   text-align:center;
 }
 
+
+.premium-hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+  padding:50px;
+  border-radius:28px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+  backdrop-filter:blur(25px);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+
+.pagination{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:25px;
+}
+
 .analytics-box h3{
 
   font-size:42px;
