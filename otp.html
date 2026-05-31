@@ -345,6 +345,69 @@
   </div>
 </aside>
 
+<section class="otp-section">
+
+  <div class="otp-card premium-otp-card">
+
+    <div class="otp-header">
+
+      <span class="otp-badge">
+        Verification
+      </span>
+
+      <div class="otp-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+
+    </div>
+
+    <h2>Verify Your Account</h2>
+
+    <p>
+      We've sent a 6-digit verification code to
+      <strong>example@email.com</strong>
+    </p>
+
+    <div class="otp-progress">
+      <div class="otp-progress-fill"></div>
+    </div>
+
+    <div class="otp-container premium-otp">
+
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+
+    </div>
+
+    <div class="otp-status">
+      Enter the verification code
+    </div>
+
+    <div class="otp-footer">
+
+      <div class="timer">
+        <i class="fa-regular fa-clock"></i>
+        <span id="countdown">01:30</span>
+      </div>
+
+      <button class="resend-btn">
+        Resend Code
+      </button>
+
+    </div>
+
+    <button class="verify-btn">
+      Verify OTP
+    </button>
+
+  </div>
+
+</section>
+
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 <!-- MAIN -->
@@ -691,6 +754,68 @@ document.querySelectorAll(
     });
 
   });
+
+});
+
+const premiumOtp = document.querySelector(".premium-otp");
+
+if (premiumOtp) {
+
+  const inputs = premiumOtp.querySelectorAll("input");
+
+  premiumOtp.addEventListener("paste", (e) => {
+
+    const pasted = (
+      e.clipboardData.getData("text")
+    ).replace(/\D/g, "");
+
+    if (pasted.length) {
+
+      inputs.forEach((input, i) => {
+        input.value = pasted[i] || "";
+      });
+
+      e.preventDefault();
+    }
+
+  });
+
+}
+
+let time = 90;
+
+const countdown = document.getElementById("countdown");
+
+setInterval(() => {
+
+  if(time <= 0) return;
+
+  time--;
+
+  const min = String(
+    Math.floor(time / 60)
+  ).padStart(2, "0");
+
+  const sec = String(
+    time % 60
+  ).padStart(2, "0");
+
+  countdown.textContent =
+    `${min}:${sec}`;
+
+}, 1000);
+
+document
+.querySelector(".verify-btn")
+?.addEventListener("click", () => {
+
+  const status =
+    document.querySelector(".otp-status");
+
+  status.innerHTML =
+    '<i class="fa-solid fa-circle-check"></i> Verification Successful';
+
+  status.style.color = "#10b981";
 
 });
 

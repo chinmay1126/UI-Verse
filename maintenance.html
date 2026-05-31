@@ -96,7 +96,47 @@
       </li>
     </ul>
   </nav>
+
+  <div class="maint-stats-grid">
+  <div class="maint-stat-card">
+    <h3>5+</h3>
+    <span>Maintenance Layouts</span>
+  </div>
+
+  <div class="maint-stat-card">
+    <h3>100%</h3>
+    <span>Responsive</span>
+  </div>
+
+  <div class="maint-stat-card">
+    <h3>Dark</h3>
+    <span>Theme Ready</span>
+  </div>
+
+  <div class="maint-stat-card">
+    <h3>Pure</h3>
+    <span>HTML CSS JS</span>
+  </div>
+</div>
   
+
+<div class="preview-controls">
+  <button onclick="toggleDarkPreview()">
+    Toggle Theme
+  </button>
+
+  <button onclick="restartCountdown()">
+    Restart Timer
+  </button>
+</div>
+
+<div class="maint-bg-effects">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
   <div class="sidebar-footer">
     <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -682,6 +722,24 @@
     }, 2200);
   }
 
+
+  function liveFilter(val){
+  const q = val.toLowerCase();
+  let found = false;
+
+  document.querySelectorAll('.component-card').forEach(card=>{
+    const match =
+      card.dataset.name.toLowerCase().includes(q) ||
+      card.querySelector('h2').textContent.toLowerCase().includes(q);
+
+    card.style.display = match ? '' : 'none';
+
+    if(match) found = true;
+  });
+
+  document.getElementById('emptySearchState').style.display =
+    found ? 'none' : 'block';
+}
   // Code Block Toggle
   function toggleCode(id, btn) {
     const block = document.getElementById(id);
