@@ -1177,6 +1177,137 @@ function updateBar(val) {
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('.component-card').forEach(el => barObserver.observe(el));
+
+  let currentCategory = 'all';
+let currentSearch = '';
+
+function applyFilters() {
+  document.querySelectorAll('.component-card').forEach(card => {
+    const categoryMatch =
+      currentCategory === 'all' ||
+      card.dataset.cat === currentCategory;
+
+    const searchMatch =
+      !currentSearch ||
+      card.dataset.name.toLowerCase().includes(currentSearch) ||
+      card.querySelector('.card-label')
+        .textContent
+        .toLowerCase()
+        .includes(currentSearch);
+
+    card.style.display =
+      categoryMatch && searchMatch ? '' : 'none';
+  });
+}
+
+function filterCards(cat, btn) {
+  currentCategory = cat;
+
+  document
+    .querySelectorAll('.filter-btn')
+    .forEach(b => b.classList.remove('active'));
+
+  btn.classList.add('active');
+
+  applyFilters();
+}
+
+function liveFilter(value) {
+  currentSearch = value.toLowerCase().trim();
+  applyFilters();
+}
+
+const barObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (
+      entry.isIntersecting &&
+      !entry.target.dataset.animated
+    ) {
+      entry.target.dataset.animated = "true";
+
+      entry.target
+        .querySelectorAll('.pb-fill:not(.pb-indeterminate)')
+        .forEach(bar => {
+          const targetWidth = bar.style.width;
+
+          bar.style.width = '0';
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              bar.style.width = targetWidth;
+            });
+          });
+        });
+    }
+  });
+}, { threshold: 0.3 });
+
+async function copyCode(id, btn) {
+  const text = document.getElementById(id).innerText;
+
+  try {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+
+    showCopySuccess(btn);
+
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function showCopySuccess(btn) {
+  btn.innerHTML =
+    '<i class="fa-solid fa-check"></i> Copied!';
+
+  btn.classList.add('copied');
+
+  const toast =
+    document.getElementById('copyToast');
+
+  toast.classList.add('show');
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+
+    btn.innerHTML =
+      '<i class="fa-solid fa-copy"></i> Copy';
+
+    btn.classList.remove('copied');
+  }, 2000);
+}
+
+
+function toggleSidebar() {
+  const sidebar =
+    document.getElementById('sidebar');
+
+  const backdrop =
+    document.getElementById('sidebarBackdrop');
+
+  const button =
+    document.querySelector('.menu-toggle');
+
+  const open =
+    sidebar.classList.toggle('open');
+
+  backdrop.classList.toggle('visible');
+
+  button.setAttribute(
+    'aria-expanded',
+    open
+  );
+}
 </script>
     <script src="dist/shared.js"></script>
 </body>
