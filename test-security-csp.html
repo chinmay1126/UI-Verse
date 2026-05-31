@@ -617,6 +617,16 @@
             updateSummary();
         }
 
+        if (
+ !window.Security ||
+ typeof window.Security.getStatus !==
+ 'function'
+) {
+   throw new Error(
+     'Security API unavailable'
+   );
+}
+
         function testCSPMetaTag() {
             const resultEl = document.getElementById('status-csp');
             try {
