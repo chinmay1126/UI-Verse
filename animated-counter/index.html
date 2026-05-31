@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Counter - UIverse</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <h1 class="page-title">Animated Counter Components</h1>
+  <p class="page-subtitle">Modern animated counter UI components</p>
+
+  <div class="container">
+
+    <!-- Counter 1: Count Up -->
+    <div class="counter-card">
+      <h3>Count Up</h3>
+      <p>Number count up animation</p>
+      <div class="preview">
+        <div class="countup-wrap">
+          <span class="countup" data-target="1250">0</span>
+          <span class="countup-label">Users</span>
+        </div>
+        <div class="countup-wrap">
+          <span class="countup" data-target="340">0</span>
+          <span class="countup-label">Projects</span>
+        </div>
+        <div class="countup-wrap">
+          <span class="countup" data-target="99">0</span>
+          <span class="countup-label">Reviews</span>
+        </div>
+      </div>
+      <button class="replay-btn" onclick="startCountUp()">
+        <i class="fas fa-redo"></i> Replay
+      </button>
+    </div>
+
+    <!-- Counter 2: Stats Counter -->
+    <div class="counter-card">
+      <h3>Stats Counter</h3>
+      <p>Stats counter with icons</p>
+      <div class="preview vertical">
+        <div class="stat-counter">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-info">
+            <span class="countup" data-target="5420">0</span>
+            <span class="stat-label">Total Users</span>
+          </div>
+        </div>
+        <div class="stat-counter">
+          <div class="stat-icon purple"><i class="fas fa-star"></i></div>
+          <div class="stat-info">
+            <span class="countup" data-target="4800">0</span>
+            <span class="stat-label">5-Star Reviews</span>
+          </div>
+        </div>
+        <div class="stat-counter">
+          <div class="stat-icon green"><i class="fas fa-download"></i></div>
+          <div class="stat-info">
+            <span class="countup" data-target="12000">0</span>
+            <span class="stat-label">Downloads</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Counter 3: Circular Counter -->
+    <div class="counter-card">
+      <h3>Circular Counter</h3>
+      <p>Circular progress counter</p>
+      <div class="preview">
+        <div class="circular-counter">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg-circle" cx="50" cy="50" r="40"/>
+            <circle class="progress-circle" id="circle1" cx="50" cy="50" r="40"/>
+          </svg>
+          <div class="circular-text">
+            <span class="countup" data-target="75">0</span>
+            <span>%</span>
+          </div>
+        </div>
+        <div class="circular-counter">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg-circle" cx="50" cy="50" r="40"/>
+            <circle class="progress-circle purple-circle" id="circle2" cx="50" cy="50" r="40"/>
+          </svg>
+          <div class="circular-text">
+            <span class="countup" data-target="90">0</span>
+            <span>%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Counter 4: Odometer Counter -->
+    <div class="counter-card">
+      <h3>Odometer Counter</h3>
+      <p>Rolling digit style counter</p>
+      <div class="preview">
+        <div class="odometer" id="odometer">
+          <div class="digit-wrap">
+            <div class="digit" id="d1">0</div>
+          </div>
+          <div class="digit-wrap">
+            <div class="digit" id="d2">0</div>
+          </div>
+          <div class="digit-wrap">
+            <div class="digit" id="d3">0</div>
+          </div>
+          <div class="digit-wrap">
+            <div class="digit" id="d4">0</div>
+          </div>
+          <div class="digit-wrap">
+            <div class="digit" id="d5">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Counter 5: Minimal Counter Card -->
+    <div class="counter-card">
+      <h3>Minimal Counter</h3>
+      <p>Clean minimal counter card</p>
+      <div class="preview vertical">
+        <div class="minimal-counter">
+          <button class="minus-btn" onclick="changeCount(-1)">
+            <i class="fas fa-minus"></i>
+          </button>
+          <div class="minimal-count" id="minCount">0</div>
+          <button class="plus-btn" onclick="changeCount(1)">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <p class="minimal-hint">Click + or - to change</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

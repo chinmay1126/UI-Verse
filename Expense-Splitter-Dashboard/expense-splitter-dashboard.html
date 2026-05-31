@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   
@@ -33,6 +33,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- SIDEBAR -->
 
@@ -97,7 +99,7 @@
         You are owed ₹12,430 and owe ₹4,290 across all active groups.
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Settle Expenses
       </button>
 
@@ -133,7 +135,7 @@
 
           <input
             type="text"
-            placeholder="Search groups..." />
+            placeholder="Search groups..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -664,6 +666,7 @@
 
   <script src="expense-splitter-dashboard.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

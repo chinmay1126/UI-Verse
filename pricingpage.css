@@ -23,6 +23,34 @@ body {
   flex: 1;
 }
 
+.pricing-header {
+  display: flex;
+  justify-content: space-between; /* title left, button right */
+  align-items: center;
+  margin-bottom: 16px; /* tighter spacing */
+}
+
+.back-home-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px; /* oval pill */
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-left: 0px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #3b82f6, #7c3aed); /* blue → purple gradient */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.back-home-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #6d28d9); /* darker hover gradient */
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+  transform: translateY(-2px);
+}
+
+
+
 .heading {
   text-align: center;
   margin-bottom: 60px;

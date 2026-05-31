@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Community Comments — Enhanced UI</title>
@@ -239,6 +240,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <button class="dark-toggle" onclick="toggleTheme()">🌓 Theme</button>
 
@@ -252,7 +255,7 @@
 
   <div class="comment-box">
     <div class="comment-user">
-      <img src="https://i.pravatar.cc/100?img=12" />
+      <img src="https://i.pravatar.cc/100?img=12" / alt="">
     </div>
 
     <div style="flex:1">
@@ -313,7 +316,7 @@ function postComment(){
   card.innerHTML=`
     <div class="comment-top">
       <div class="comment-profile">
-        <img src="https://i.pravatar.cc/100?img=32" />
+        <img src="https://i.pravatar.cc/100?img=32" / alt="">
         <div>
           <h3>You</h3>
           <span>Just now</span>
@@ -342,5 +345,6 @@ function toggleTheme(){
 }
 </script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

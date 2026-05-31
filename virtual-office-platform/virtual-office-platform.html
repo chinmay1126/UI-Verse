@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta name="viewport"
@@ -24,11 +24,13 @@
   <!-- CSS -->
 
   <link rel="stylesheet"
-    href="style.css" />
+    href="virtual-office-platform.css" />
 
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- SIDEBAR -->
 
@@ -93,7 +95,7 @@
         Product Manager
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Start Meeting
       </button>
 
@@ -128,7 +130,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-            placeholder="Search workspace..." />
+            placeholder="Search workspace..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -463,8 +465,9 @@
 
   <!-- JS -->
 
-  <script src="script.js"></script>
+  <script src="virtual-office-platform.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

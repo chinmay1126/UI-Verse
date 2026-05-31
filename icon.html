@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -23,14 +23,19 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
-
+  
   <!-- CSS -->
+   <link rel="stylesheet" href="home.css">
+   <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="shared-sidebar.css">
   <link rel="stylesheet" href="icon.css" />
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
    SIDEBAR
@@ -365,24 +370,21 @@
    NAVBAR
 ========================================================= -->
 
-<header class="navbar">
-
-  <div class="logo">
-    UIverse
-  </div>
-
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
   <div class="search-bar">
-
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <input
-      type="text"
-      id="iconSearch"
-      placeholder="Search icons..."
-    />
-
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
+    <kbd class="search-kbd">⌘K</kbd>
   </div>
-
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
 </header>
 
 
@@ -899,6 +901,253 @@
       </button>
 
     </div>
+    <!-- =========================================================
+MODERN ICON GRID
+========================================================= -->
+
+
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow purple"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-brain"></i>
+    </div>
+
+    <h3>AI Brain</h3>
+
+    <p>fa-brain</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow blue"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-microchip"></i>
+    </div>
+
+    <h3>Chip</h3>
+
+    <p>fa-microchip</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow orange"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-bolt"></i>
+    </div>
+
+    <h3>Energy</h3>
+
+    <p>fa-bolt</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow green"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-leaf"></i>
+    </div>
+
+    <h3>Nature</h3>
+
+    <p>fa-leaf</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow pink"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-gem"></i>
+    </div>
+
+    <h3>Gem</h3>
+
+    <p>fa-gem</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow cyan"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-satellite"></i>
+    </div>
+
+    <h3>Satellite</h3>
+
+    <p>fa-satellite</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow red"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-dragon"></i>
+    </div>
+
+    <h3>Dragon</h3>
+
+    <p>fa-dragon</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow yellow"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-crown"></i>
+    </div>
+
+    <h3>Crown</h3>
+
+    <p>fa-crown</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow sky"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-paper-plane"></i>
+    </div>
+
+    <h3>Plane</h3>
+
+    <p>fa-paper-plane</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow violet"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-mask"></i>
+    </div>
+
+    <h3>Mask</h3>
+
+    <p>fa-mask</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow teal"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+
+    <h3>Robot</h3>
+
+    <p>fa-robot</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+  <!-- ICON CARD -->
+
+  <div class="advanced-icon-card">
+
+    <div class="icon-glow white"></div>
+
+    <div class="advanced-icon">
+      <i class="fa-solid fa-moon"></i>
+    </div>
+
+    <h3>Moon</h3>
+
+    <p>fa-moon</p>
+
+    <button class="copy-icon-btn">
+      Copy Icon
+    </button>
+
+  </div>
+
+
 
   </section>
 
@@ -970,5 +1219,6 @@
   </div>
 </footer>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

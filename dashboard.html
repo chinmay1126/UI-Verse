@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -59,10 +59,11 @@
     href="dashboard.css"
   >
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
 LOADER
@@ -91,7 +92,7 @@ MOBILE TOGGLE
 <button
   class="mobile-toggle"
   id="mobileToggle"
->
+ data-a11y-remediation="button-label-needed">
 
   <i class="fa-solid fa-bars"></i>
 
@@ -142,7 +143,7 @@ SIDEBAR
       <input
         type="text"
         placeholder="Search..."
-      >
+       data-a11y-remediation="label-needed">
 
     </div>
 
@@ -989,7 +990,12 @@ MAIN
 
     <!-- ANALYTICS -->
 
-    <div class="dashboard-card large-card">
+    <div class="dashboard-card large-card" id="card-traffic">
+
+      <div class="nc-copy-btn" onclick="copyCode('card-traffic')" title="Copy Code">
+        <i class="fa-regular fa-copy"></i>
+        <span class="copy-label">Copy</span>
+      </div>
 
       <div class="card-header">
 
@@ -1041,11 +1047,43 @@ MAIN
 
       </div>
 
+      <textarea class="nc-code-storage" id="code-card-traffic" readonly><!-- Traffic Analytics Card -->
+<div class="dashboard-card large-card">
+  <div class="card-header">
+    <div>
+      <h2>Traffic Analytics</h2>
+      <p>Website traffic for last 6 months</p>
+    </div>
+    <button class="filter-btn">Monthly <i class="fa-solid fa-angle-down"></i></button>
+  </div>
+  <div class="line-chart">
+    <span style="height:40%"></span>
+    <span style="height:65%"></span>
+    <span style="height:55%"></span>
+    <span style="height:85%"></span>
+    <span style="height:75%"></span>
+    <span style="height:95%"></span>
+  </div>
+  <div class="chart-labels">
+    <span>Jan</span>
+    <span>Feb</span>
+    <span>Mar</span>
+    <span>Apr</span>
+    <span>May</span>
+    <span>Jun</span>
+  </div>
+</div></textarea>
+
     </div>
 
     <!-- RECENT ACTIVITY -->
 
-    <div class="dashboard-card">
+    <div class="dashboard-card" id="card-activity">
+
+      <div class="nc-copy-btn" onclick="copyCode('card-activity')" title="Copy Code">
+        <i class="fa-regular fa-copy"></i>
+        <span class="copy-label">Copy</span>
+      </div>
 
       <div class="card-header">
 
@@ -1113,11 +1151,46 @@ MAIN
 
       </div>
 
+      <textarea class="nc-code-storage" id="code-card-activity" readonly><!-- Recent Activity Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Recent Activity</h2>
+  </div>
+  <div class="activity-list">
+    <div class="activity-item">
+      <div class="activity-dot green"></div>
+      <div>
+        <strong>New component uploaded</strong>
+        <span>2 minutes ago</span>
+      </div>
+    </div>
+    <div class="activity-item">
+      <div class="activity-dot purple"></div>
+      <div>
+        <strong>UI template updated</strong>
+        <span>15 minutes ago</span>
+      </div>
+    </div>
+    <div class="activity-item">
+      <div class="activity-dot orange"></div>
+      <div>
+        <strong>New contributor joined</strong>
+        <span>1 hour ago</span>
+      </div>
+    </div>
+  </div>
+</div></textarea>
+
     </div>
 
     <!-- PROGRESS -->
 
-    <div class="dashboard-card">
+    <div class="dashboard-card" id="card-progress">
+
+      <div class="nc-copy-btn" onclick="copyCode('card-progress')" title="Copy Code">
+        <i class="fa-regular fa-copy"></i>
+        <span class="copy-label">Copy</span>
+      </div>
 
       <div class="card-header">
 
@@ -1206,11 +1279,43 @@ MAIN
 
       </div>
 
+      <textarea class="nc-code-storage" id="code-card-progress" readonly><!-- Project Progress Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Project Progress</h2>
+  </div>
+  <div class="progress-group">
+    <div class="progress-item">
+      <div class="progress-top">
+        <span>Dashboard UI</span>
+        <strong>90%</strong>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill orange-fill" style="width:90%"></div>
+      </div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-top">
+        <span>Components</span>
+        <strong>75%</strong>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill purple-fill" style="width:75%"></div>
+      </div>
+    </div>
+  </div>
+</div></textarea>
+
     </div>
 
     <!-- TEAM -->
 
-    <div class="dashboard-card">
+    <div class="dashboard-card" id="card-team">
+
+      <div class="nc-copy-btn" onclick="copyCode('card-team')" title="Copy Code">
+        <i class="fa-regular fa-copy"></i>
+        <span class="copy-label">Copy</span>
+      </div>
 
       <div class="card-header">
 
@@ -1222,78 +1327,796 @@ MAIN
 
       <div class="team-members">
 
-        <img src="https://i.pravatar.cc/100?img=12" alt="">
-        <img src="https://i.pravatar.cc/100?img=22" alt="">
-        <img src="https://i.pravatar.cc/100?img=32" alt="">
-        <img src="https://i.pravatar.cc/100?img=42" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=12" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=22" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=32" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=42" alt="">
 
       </div>
 
+      <textarea class="nc-code-storage" id="code-card-team" readonly><!-- Team Members Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Team Members</h2>
+  </div>
+  <div class="team-members">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=12" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=22" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=32" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=42" alt="">
+  </div>
+</div></textarea>
+
+    </div>
+
+    <!-- REVENUE OVERVIEW -->
+    <div class="dashboard-card" id="card-revenue">
+      <div class="nc-copy-btn" onclick="copyCode('card-revenue')" title="Copy Code">
+        <i class="fa-regular fa-copy"></i>
+        <span class="copy-label">Copy</span>
+      </div>
+      <div class="card-header">
+        <h2>Revenue</h2>
+        <button class="filter-btn">This Week <i class="fa-solid fa-angle-down"></i></button>
+      </div>
+      <div class="revenue-stats">
+        <h3>$45,231</h3>
+        <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> 14.5%</span>
+      </div>
+      <div class="revenue-chart">
+        <div class="bar" style="height: 40%;"></div>
+        <div class="bar" style="height: 60%;"></div>
+        <div class="bar" style="height: 30%;"></div>
+        <div class="bar" style="height: 80%;"></div>
+        <div class="bar" style="height: 50%;"></div>
+        <div class="bar" style="height: 90%;"></div>
+        <div class="bar" style="height: 100%;"></div>
+      </div>
+      <textarea class="nc-code-storage" id="code-card-revenue" readonly><!-- Revenue Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Revenue</h2>
+    <button class="filter-btn">This Week <i class="fa-solid fa-angle-down"></i></button>
+  </div>
+  <div class="revenue-stats">
+    <h3>$45,231</h3>
+    <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> 14.5%</span>
+  </div>
+  <div class="revenue-chart">
+    <div class="bar" style="height: 40%;"></div>
+    <div class="bar" style="height: 60%;"></div>
+    <div class="bar" style="height: 30%;"></div>
+    <div class="bar" style="height: 80%;"></div>
+    <div class="bar" style="height: 50%;"></div>
+    <div class="bar" style="height: 90%;"></div>
+    <div class="bar" style="height: 100%;"></div>
+  </div>
+</div></textarea>
+    </div>
+
+    <!-- SERVER STATUS -->
+    <div class="dashboard-card" id="card-server">
+      <div class="nc-copy-btn" onclick="copyCode('card-server')" title="Copy Code">
+        <i class="fa-regular fa-copy"></i>
+        <span class="copy-label">Copy</span>
+      </div>
+      <div class="card-header">
+        <h2>Server Status</h2>
+      </div>
+      <div class="server-status-list">
+        <div class="server-item">
+          <div class="server-info">
+            <i class="fa-solid fa-server"></i>
+            <span>Main DB</span>
+          </div>
+          <div class="status-badge online">Online</div>
+        </div>
+        <div class="server-item">
+          <div class="server-info">
+            <i class="fa-solid fa-cloud"></i>
+            <span>CDN</span>
+          </div>
+          <div class="status-badge online">Online</div>
+        </div>
+        <div class="server-item">
+          <div class="server-info">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Worker</span>
+          </div>
+          <div class="status-badge offline">Offline</div>
+        </div>
+      </div>
+      <textarea class="nc-code-storage" id="code-card-server" readonly><!-- Server Status Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Server Status</h2>
+  </div>
+  <div class="server-status-list">
+    <div class="server-item">
+      <div class="server-info">
+        <i class="fa-solid fa-server"></i>
+        <span>Main DB</span>
+      </div>
+      <div class="status-badge online">Online</div>
+    </div>
+    <div class="server-item">
+      <div class="server-info">
+        <i class="fa-solid fa-cloud"></i>
+        <span>CDN</span>
+      </div>
+      <div class="status-badge online">Online</div>
+    </div>
+  </div>
+</div></textarea>
+    </div>
+
+    <!-- TOP PERFORMERS -->
+    <div class="dashboard-card" id="card-performers">
+      <div class="nc-copy-btn" onclick="copyCode('card-performers')" title="Copy Code">
+        <i class="fa-regular fa-copy"></i>
+        <span class="copy-label">Copy</span>
+      </div>
+      <div class="card-header">
+        <h2>Top Performers</h2>
+      </div>
+      <div class="performers-list">
+        <div class="performer-item">
+          <img loading="lazy" src="https://i.pravatar.cc/100?img=1" alt="Avatar">
+          <div class="performer-details">
+            <strong>John Doe</strong>
+            <span>1,430 Sales</span>
+          </div>
+          <div class="rank gold">#1</div>
+        </div>
+        <div class="performer-item">
+          <img loading="lazy" src="https://i.pravatar.cc/100?img=5" alt="Avatar">
+          <div class="performer-details">
+            <strong>Jane Smith</strong>
+            <span>1,200 Sales</span>
+          </div>
+          <div class="rank silver">#2</div>
+        </div>
+        <div class="performer-item">
+          <img loading="lazy" src="https://i.pravatar.cc/100?img=9" alt="Avatar">
+          <div class="performer-details">
+            <strong>Mike Johnson</strong>
+            <span>980 Sales</span>
+          </div>
+          <div class="rank bronze">#3</div>
+        </div>
+      </div>
+      <textarea class="nc-code-storage" id="code-card-performers" readonly><!-- Top Performers Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Top Performers</h2>
+  </div>
+  <div class="performers-list">
+    <div class="performer-item">
+      <img loading="lazy" src="https://i.pravatar.cc/100?img=1" alt="Avatar">
+      <div class="performer-details">
+        <strong>John Doe</strong>
+        <span>1,430 Sales</span>
+      </div>
+      <div class="rank gold">#1</div>
+    </div>
+    <div class="performer-item">
+      <img loading="lazy" src="https://i.pravatar.cc/100?img=5" alt="Avatar">
+      <div class="performer-details">
+        <strong>Jane Smith</strong>
+        <span>1,200 Sales</span>
+      </div>
+      <div class="rank silver">#2</div>
+    </div>
+  </div>
+</div></textarea>
+    </div>
+
+    <!-- SYSTEM LOAD -->
+    <div class="dashboard-card" id="card-system">
+      <div class="nc-copy-btn" onclick="copyCode('card-system')" title="Copy Code">
+        <i class="fa-regular fa-copy"></i>
+        <span class="copy-label">Copy</span>
+      </div>
+      <div class="card-header">
+        <h2>System Load</h2>
+      </div>
+      <div class="system-load-circle">
+        <div class="circle-outer">
+          <div class="circle-inner">
+            <span class="load-value">78%</span>
+            <span class="load-label">CPU</span>
+          </div>
+        </div>
+      </div>
+      <div class="load-stats">
+        <div class="load-stat-item">
+          <span>RAM</span>
+          <strong>12GB/16GB</strong>
+        </div>
+        <div class="load-stat-item">
+          <span>Temp</span>
+          <strong>65°C</strong>
+        </div>
+      </div>
+      <textarea class="nc-code-storage" id="code-card-system" readonly><!-- System Load Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>System Load</h2>
+  </div>
+  <div class="system-load-circle">
+    <div class="circle-outer">
+      <div class="circle-inner">
+        <span class="load-value">78%</span>
+        <span class="load-label">CPU</span>
+      </div>
+    </div>
+  </div>
+  <div class="load-stats">
+    <div class="load-stat-item">
+      <span>RAM</span>
+      <strong>12GB/16GB</strong>
+    </div>
+    <div class="load-stat-item">
+      <span>Temp</span>
+      <strong>65°C</strong>
+    </div>
+  </div>
+</div></textarea>
+    </div>
+
+    <!-- UPCOMING TASKS -->
+    <div class="dashboard-card" id="card-tasks">
+      <div class="nc-copy-btn" onclick="copyCode('card-tasks')" title="Copy Code">
+        <i class="fa-regular fa-copy"></i>
+        <span class="copy-label">Copy</span>
+      </div>
+      <div class="card-header">
+        <h2>Upcoming Tasks</h2>
+      </div>
+      <div class="task-list">
+        <label class="task-item">
+          <input type="checkbox" checked>
+          <span class="task-text">Review Q3 Financials</span>
+          <span class="task-tag urgent">Urgent</span>
+        </label>
+        <label class="task-item">
+          <input type="checkbox">
+          <span class="task-text">Update Marketing Assets</span>
+          <span class="task-tag medium">Medium</span>
+        </label>
+        <label class="task-item">
+          <input type="checkbox">
+          <span class="task-text">Team Sync Meeting</span>
+          <span class="task-tag low">Low</span>
+        </label>
+      </div>
+      <textarea class="nc-code-storage" id="code-card-tasks" readonly><!-- Upcoming Tasks Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Upcoming Tasks</h2>
+  </div>
+  <div class="task-list">
+    <label class="task-item">
+      <input type="checkbox" checked>
+      <span class="task-text">Review Q3 Financials</span>
+      <span class="task-tag urgent">Urgent</span>
+    </label>
+    <label class="task-item">
+      <input type="checkbox">
+      <span class="task-text">Update Marketing Assets</span>
+      <span class="task-tag medium">Medium</span>
+    </label>
+    <label class="task-item">
+      <input type="checkbox">
+      <span class="task-text">Team Sync Meeting</span>
+      <span class="task-tag low">Low</span>
+    </label>
+  </div>
+</div></textarea>
     </div>
 
   </section>
 
-</main>
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="footer-container">
+  <!-- ======================================================
+  NEW COMPONENTS SECTION
+  ====================================================== -->
+  <section class="new-components-section">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
+    <div class="section-title-row">
+      <h2 class="section-heading">Premium Components <span>+5 New</span></h2>
+      <p class="section-sub">Click the copy icon on any card to grab the code instantly.</p>
+    </div>
+
+    <div class="dashboard-grid new-grid">
+
+      <!-- ── 1. CRYPTO WALLET ── -->
+      <div class="dashboard-card nc-card" id="nc-crypto">
+
+        <div class="nc-copy-btn" onclick="copyCode('nc-crypto')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+
+        <div class="card-header">
+          <h2>Crypto Wallet</h2>
+          <span class="nc-badge">Live</span>
+        </div>
+
+        <div class="wallet-balance-row">
+          <div>
+            <p class="wallet-label">Total Balance</p>
+            <h3 class="wallet-total">$84,231.50</h3>
+          </div>
+          <div class="wallet-change positive">
+            <i class="fa-solid fa-arrow-trend-up"></i> +6.4%
+          </div>
+        </div>
+
+        <div class="crypto-list">
+          <div class="crypto-item">
+            <div class="crypto-icon btc-icon"><i class="fa-brands fa-bitcoin"></i></div>
+            <div class="crypto-details">
+              <strong>Bitcoin</strong>
+              <span>BTC</span>
+            </div>
+            <div class="crypto-right">
+              <strong>$51,320</strong>
+              <span class="positive-sm">+2.3%</span>
+            </div>
+          </div>
+          <div class="crypto-item">
+            <div class="crypto-icon eth-icon"><i class="fa-brands fa-ethereum"></i></div>
+            <div class="crypto-details">
+              <strong>Ethereum</strong>
+              <span>ETH</span>
+            </div>
+            <div class="crypto-right">
+              <strong>$22,411</strong>
+              <span class="positive-sm">+1.7%</span>
+            </div>
+          </div>
+          <div class="crypto-item">
+            <div class="crypto-icon sol-icon"><i class="fa-solid fa-coins"></i></div>
+            <div class="crypto-details">
+              <strong>Solana</strong>
+              <span>SOL</span>
+            </div>
+            <div class="crypto-right">
+              <strong>$10,500</strong>
+              <span class="negative-sm">-0.9%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- hidden code block -->
+        <textarea class="nc-code-storage" id="code-nc-crypto" readonly><!-- Crypto Wallet Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Crypto Wallet</h2>
+    <span class="nc-badge">Live</span>
+  </div>
+  <div class="wallet-balance-row">
+    <div>
+      <p class="wallet-label">Total Balance</p>
+      <h3 class="wallet-total">$84,231.50</h3>
+    </div>
+    <div class="wallet-change positive">
+      <i class="fa-solid fa-arrow-trend-up"></i> +6.4%
+    </div>
+  </div>
+  <div class="crypto-list">
+    <div class="crypto-item">
+      <div class="crypto-icon btc-icon"><i class="fa-brands fa-bitcoin"></i></div>
+      <div class="crypto-details"><strong>Bitcoin</strong><span>BTC</span></div>
+      <div class="crypto-right"><strong>$51,320</strong><span class="positive-sm">+2.3%</span></div>
+    </div>
+    <div class="crypto-item">
+      <div class="crypto-icon eth-icon"><i class="fa-brands fa-ethereum"></i></div>
+      <div class="crypto-details"><strong>Ethereum</strong><span>ETH</span></div>
+      <div class="crypto-right"><strong>$22,411</strong><span class="positive-sm">+1.7%</span></div>
+    </div>
+  </div>
+</div></textarea>
+
+      </div>
+
+      <!-- ── 2. NOTIFICATION CENTER ── -->
+      <div class="dashboard-card nc-card" id="nc-notif">
+
+        <div class="nc-copy-btn" onclick="copyCode('nc-notif')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+
+        <div class="card-header">
+          <h2>Notifications</h2>
+          <span class="notif-count">3 New</span>
+        </div>
+
+        <div class="notif-feed">
+
+          <div class="notif-row unread">
+            <div class="notif-avatar" style="background:linear-gradient(135deg,#7b5cff,#00d4ff)">
+              <i class="fa-solid fa-user-plus"></i>
+            </div>
+            <div class="notif-body">
+              <strong>New user registered</strong>
+              <span>Alex joined UIverse · 3m ago</span>
+            </div>
+            <div class="notif-dot"></div>
+          </div>
+
+          <div class="notif-row unread">
+            <div class="notif-avatar" style="background:linear-gradient(135deg,#ff7a3d,#ffb347)">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="notif-body">
+              <strong>Server spike detected</strong>
+              <span>CPU hit 94% · 12m ago</span>
+            </div>
+            <div class="notif-dot"></div>
+          </div>
+
+          <div class="notif-row unread">
+            <div class="notif-avatar" style="background:linear-gradient(135deg,#22c55e,#4ade80)">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="notif-body">
+              <strong>Deployment successful</strong>
+              <span>v2.4.0 is live · 1h ago</span>
+            </div>
+            <div class="notif-dot"></div>
+          </div>
+
+          <div class="notif-row">
+            <div class="notif-avatar" style="background:linear-gradient(135deg,#ff4fd8,#9b59b6)">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="notif-body">
+              <strong>Design feedback received</strong>
+              <span>From Sarah · 3h ago</span>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="nc-mark-read-btn">Mark all as read</button>
+
+        <textarea class="nc-code-storage" id="code-nc-notif" readonly><!-- Notification Center Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Notifications</h2>
+    <span class="notif-count">3 New</span>
+  </div>
+  <div class="notif-feed">
+    <div class="notif-row unread">
+      <div class="notif-avatar"><i class="fa-solid fa-user-plus"></i></div>
+      <div class="notif-body">
+        <strong>New user registered</strong>
+        <span>Alex joined UIverse · 3m ago</span>
+      </div>
+      <div class="notif-dot"></div>
+    </div>
+    <div class="notif-row unread">
+      <div class="notif-avatar"><i class="fa-solid fa-bolt"></i></div>
+      <div class="notif-body">
+        <strong>Server spike detected</strong>
+        <span>CPU hit 94% · 12m ago</span>
+      </div>
+      <div class="notif-dot"></div>
+    </div>
+  </div>
+  <button class="nc-mark-read-btn">Mark all as read</button>
+</div></textarea>
+
+      </div>
+
+      <!-- ── 3. USER ACQUISITION DONUT ── -->
+      <div class="dashboard-card nc-card" id="nc-donut">
+
+        <div class="nc-copy-btn" onclick="copyCode('nc-donut')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+
+        <div class="card-header">
+          <h2>User Acquisition</h2>
+        </div>
+
+        <div class="donut-wrapper">
+          <svg class="donut-svg" viewBox="0 0 120 120">
+            <circle class="donut-track" cx="60" cy="60" r="48"/>
+            <circle class="donut-seg seg1" cx="60" cy="60" r="48" stroke-dasharray="90 212"/>
+            <circle class="donut-seg seg2" cx="60" cy="60" r="48" stroke-dasharray="62 212" stroke-dashoffset="-90"/>
+            <circle class="donut-seg seg3" cx="60" cy="60" r="48" stroke-dasharray="40 212" stroke-dashoffset="-152"/>
+            <circle class="donut-seg seg4" cx="60" cy="60" r="48" stroke-dasharray="20 212" stroke-dashoffset="-192"/>
+          </svg>
+          <div class="donut-center">
+            <span class="donut-total">24K</span>
+            <span class="donut-lbl">Users</span>
+          </div>
+        </div>
+
+        <div class="donut-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#7b5cff"></span>Organic <strong>42%</strong></div>
+          <div class="legend-item"><span class="legend-dot" style="background:#00d4ff"></span>Social <strong>29%</strong></div>
+          <div class="legend-item"><span class="legend-dot" style="background:#ff7a3d"></span>Referral <strong>19%</strong></div>
+          <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span>Direct <strong>10%</strong></div>
+        </div>
+
+        <textarea class="nc-code-storage" id="code-nc-donut" readonly><!-- User Acquisition Donut Card -->
+<div class="dashboard-card">
+  <div class="card-header"><h2>User Acquisition</h2></div>
+  <div class="donut-wrapper">
+    <svg class="donut-svg" viewBox="0 0 120 120">
+      <circle class="donut-track" cx="60" cy="60" r="48"/>
+      <circle class="donut-seg seg1" cx="60" cy="60" r="48" stroke-dasharray="90 212"/>
+      <circle class="donut-seg seg2" cx="60" cy="60" r="48" stroke-dasharray="62 212" stroke-dashoffset="-90"/>
+      <circle class="donut-seg seg3" cx="60" cy="60" r="48" stroke-dasharray="40 212" stroke-dashoffset="-152"/>
+      <circle class="donut-seg seg4" cx="60" cy="60" r="48" stroke-dasharray="20 212" stroke-dashoffset="-192"/>
+    </svg>
+    <div class="donut-center">
+      <span class="donut-total">24K</span>
+      <span class="donut-lbl">Users</span>
+    </div>
+  </div>
+  <div class="donut-legend">
+    <div class="legend-item"><span class="legend-dot" style="background:#7b5cff"></span>Organic <strong>42%</strong></div>
+    <div class="legend-item"><span class="legend-dot" style="background:#00d4ff"></span>Social <strong>29%</strong></div>
+  </div>
+</div></textarea>
+
+      </div>
+
+      <!-- ── 4. WEATHER WIDGET ── -->
+      <div class="dashboard-card nc-card weather-card" id="nc-weather">
+
+        <div class="nc-copy-btn" onclick="copyCode('nc-weather')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+
+        <div class="weather-main">
+          <div class="weather-icon-wrap">
+            <i class="fa-solid fa-sun weather-sun"></i>
+          </div>
+          <div class="weather-info">
+            <h2 class="weather-temp">28°C</h2>
+            <p class="weather-condition">Sunny & Clear</p>
+            <span class="weather-loc"><i class="fa-solid fa-location-dot"></i> Mumbai, IN</span>
+          </div>
+        </div>
+
+        <div class="weather-stats-row">
+          <div class="weather-stat">
+            <i class="fa-solid fa-droplet"></i>
+            <span>Humidity</span>
+            <strong>68%</strong>
+          </div>
+          <div class="weather-stat">
+            <i class="fa-solid fa-wind"></i>
+            <span>Wind</span>
+            <strong>14 km/h</strong>
+          </div>
+          <div class="weather-stat">
+            <i class="fa-solid fa-eye"></i>
+            <span>Visibility</span>
+            <strong>10 km</strong>
+          </div>
+        </div>
+
+        <div class="weather-forecast">
+          <div class="forecast-day">
+            <span>Mon</span>
+            <i class="fa-solid fa-sun"></i>
+            <strong>30°</strong>
+          </div>
+          <div class="forecast-day">
+            <span>Tue</span>
+            <i class="fa-solid fa-cloud-sun"></i>
+            <strong>27°</strong>
+          </div>
+          <div class="forecast-day">
+            <span>Wed</span>
+            <i class="fa-solid fa-cloud-rain"></i>
+            <strong>22°</strong>
+          </div>
+          <div class="forecast-day">
+            <span>Thu</span>
+            <i class="fa-solid fa-cloud"></i>
+            <strong>25°</strong>
+          </div>
+          <div class="forecast-day">
+            <span>Fri</span>
+            <i class="fa-solid fa-sun"></i>
+            <strong>31°</strong>
+          </div>
+        </div>
+
+        <textarea class="nc-code-storage" id="code-nc-weather" readonly><!-- Weather Widget Card -->
+<div class="dashboard-card weather-card">
+  <div class="weather-main">
+    <div class="weather-icon-wrap">
+      <i class="fa-solid fa-sun weather-sun"></i>
+    </div>
+    <div class="weather-info">
+      <h2 class="weather-temp">28°C</h2>
+      <p class="weather-condition">Sunny & Clear</p>
+      <span class="weather-loc"><i class="fa-solid fa-location-dot"></i> Mumbai, IN</span>
+    </div>
+  </div>
+  <div class="weather-stats-row">
+    <div class="weather-stat"><i class="fa-solid fa-droplet"></i><span>Humidity</span><strong>68%</strong></div>
+    <div class="weather-stat"><i class="fa-solid fa-wind"></i><span>Wind</span><strong>14 km/h</strong></div>
+    <div class="weather-stat"><i class="fa-solid fa-eye"></i><span>Visibility</span><strong>10 km</strong></div>
+  </div>
+  <div class="weather-forecast">
+    <div class="forecast-day"><span>Mon</span><i class="fa-solid fa-sun"></i><strong>30°</strong></div>
+    <div class="forecast-day"><span>Tue</span><i class="fa-solid fa-cloud-sun"></i><strong>27°</strong></div>
+    <div class="forecast-day"><span>Wed</span><i class="fa-solid fa-cloud-rain"></i><strong>22°</strong></div>
+  </div>
+</div></textarea>
+
+      </div>
+
+      <!-- ── 5. QUICK NOTES ── -->
+      <div class="dashboard-card nc-card" id="nc-notes">
+
+        <div class="nc-copy-btn" onclick="copyCode('nc-notes')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+
+        <div class="card-header">
+          <h2>Quick Notes</h2>
+          <button class="add-note-btn" onclick="addNote()" title="Add note">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+
+        <div class="notes-grid" id="notesGrid">
+
+          <div class="sticky-note note-purple">
+            <div class="note-header">
+              <span class="note-dot"></span>
+              <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday <i class="fa-solid fa-rocket"></i></textarea>
+          </div>
+
+          <div class="sticky-note note-blue">
+            <div class="note-header">
+              <span class="note-dot"></span>
+              <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <textarea class="note-area" placeholder="Write something...">Team standup at 10 AM – prepare sprint update</textarea>
+          </div>
+
+          <div class="sticky-note note-orange">
+            <div class="note-header">
+              <span class="note-dot"></span>
+              <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <textarea class="note-area" placeholder="Write something...">Follow up with client re: API integration docs 📋</textarea>
+          </div>
+
+          <div class="sticky-note note-green">
+            <div class="note-header">
+              <span class="note-dot"></span>
+              <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <textarea class="note-area" placeholder="Write something...">Ship v2.4.0 changelog to product team ✅</textarea>
+          </div>
+
+        </div>
+
+        <textarea class="nc-code-storage" id="code-nc-notes" readonly><!-- Quick Notes Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Quick Notes</h2>
+    <button class="add-note-btn" onclick="addNote()"><i class="fa-solid fa-plus"></i></button>
+  </div>
+  <div class="notes-grid" id="notesGrid">
+    <div class="sticky-note note-purple">
+      <div class="note-header">
+        <span class="note-dot"></span>
+        <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday <i class="fa-solid fa-rocket"></i></textarea>
+    </div>
+    <div class="sticky-note note-blue">
+      <div class="note-header">
+        <span class="note-dot"></span>
+        <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <textarea class="note-area" placeholder="Write something...">Team standup at 10 AM – prepare sprint update</textarea>
+    </div>
+  </div>
 </div>
 
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
-      </ul>
-    </div>
+<script>
+function addNote() {
+  const colors = ['note-purple','note-blue','note-orange','note-green'];
+  const grid = document.getElementById('notesGrid');
+  const note = document.createElement('div');
+  note.className = 'sticky-note ' + colors[Math.floor(Math.random()*colors.length)];
+  note.innerHTML = '<div class="note-header"><span class="note-dot"></span><button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button></div><textarea class="note-area" placeholder="Write something..."></textarea>';
+  grid.appendChild(note);
+}
+function deleteNote(btn) { btn.closest('.sticky-note').remove(); }
+</script></textarea>
 
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-    </div>
+      </div>
 
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
-      </ul>
-    </div>
+    </div><!-- /.new-grid -->
 
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+  </section>
+
+  <!-- ── TOAST NOTIFICATION ── -->
+  <div class="nc-toast" id="ncToast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Code copied to clipboard!</span>
+  </div>
+
+</main>
+<!-- ================= TOAST NOTIFICATION ================= -->
+<div id="ncToast">✓ Code copied to clipboard!</div>
+
+<!-- ================= FOOTER ================= -->
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
 
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
   </div>
 </footer>
 <!-- =========================================================
@@ -1344,7 +2167,53 @@ SCRIPT
 
   });
 
+  /* ── COPY CODE ── */
+  function copyCode(cardId) {
+    const ta = document.getElementById('code-' + cardId);
+    if (!ta) return;
+    navigator.clipboard.writeText(ta.value).then(() => {
+      const toast = document.getElementById('ncToast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2600);
+    });
+  }
+
+  /* ── QUICK NOTES ── */
+  function addNote() {
+    const colors = ['note-purple','note-blue','note-orange','note-green'];
+    const grid   = document.getElementById('notesGrid');
+    const note   = document.createElement('div');
+    note.className = 'sticky-note ' + colors[Math.floor(Math.random() * colors.length)];
+    note.innerHTML =
+      '<div class="note-header">' +
+        '<span class="note-dot"></span>' +
+        '<button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>' +
+      '</div>' +
+      '<textarea class="note-area" placeholder="Write something..."></textarea>';
+    grid.appendChild(note);
+    note.querySelector('textarea').focus();
+    note.style.animation = 'noteIn .35s cubic-bezier(.34,1.56,.64,1) both';
+  }
+
+  function deleteNote(btn) {
+    const note = btn.closest('.sticky-note');
+    note.style.animation = 'noteOut .25s ease forwards';
+    setTimeout(() => note.remove(), 250);
+  }
+
+  /* ── MARK ALL READ ── */
+  document.addEventListener('click', e => {
+    if (e.target.closest('.nc-mark-read-btn')) {
+      const feed = e.target.closest('.dashboard-card').querySelector('.notif-feed');
+      feed.querySelectorAll('.notif-row.unread').forEach(r => r.classList.remove('unread'));
+      e.target.closest('.dashboard-card').querySelector('.notif-count').textContent = '0 New';
+    }
+  });
+
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
+
+<!-- improved by script -->
