@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta name="viewport"
@@ -29,6 +29,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= NAVBAR ================= -->
 
@@ -51,7 +53,7 @@
 
     <div class="nav-actions">
 
-      <button class="icon-btn">
+      <button class="icon-btn" data-a11y-remediation="button-label-needed">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
 
@@ -101,6 +103,14 @@
 
     </div>
 
+    <section class="brands">
+  <div class="marquee">
+    <div class="track">
+      GUCCI • PRADA • CHANEL • NIKE • DIOR • LV • ZARA •
+      GUCCI • PRADA • CHANEL • NIKE • DIOR • LV • ZARA
+    </div>
+  </div>
+</section>
     <!-- HERO IMAGE -->
 
     <div class="hero-image">
@@ -536,6 +546,7 @@
 
   <script src="fashion-store-homepage.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

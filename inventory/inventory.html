@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Inventory Dashboard</title>
   <link rel="stylesheet" href="inventory.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="inventory-dashboard">
 
@@ -18,7 +21,7 @@
         type="text"
         id="searchInput"
         placeholder="Search products..."
-      >
+       data-a11y-remediation="label-needed">
 
     </header>
 
@@ -96,5 +99,6 @@
   </div>
 
   <script src="inventory.js"></script>
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

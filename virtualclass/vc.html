@@ -1,75 +1,119 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Virtual Classroom UI</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="vc.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="classroom-dashboard">
 
+    <!-- Sidebar -->
     <aside class="sidebar">
 
-      <h2>EduClass</h2>
+      <div>
+        <h2 class="logo">EduClass</h2>
 
-      <ul>
-        <li class="active">Live Class</li>
-        <li>Assignments</li>
-        <li>Schedule</li>
-        <li>Participants</li>
-        <li>Settings</li>
-      </ul>
+        <ul class="menu">
+          <li class="active">Live Class</li>
+          <li>Assignments</li>
+          <li>Schedule</li>
+          <li>Participants</li>
+          <li>Settings</li>
+        </ul>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">👩‍🎓</div>
+        <div>
+          <h4>Dipanita</h4>
+          <p>Student</p>
+        </div>
+      </div>
 
     </aside>
 
+    <!-- Main Content -->
     <main class="main-content">
 
-      <div class="video-section">
+      <!-- Video Area -->
+      <section class="video-section">
 
         <div class="video-screen">
 
-          <h1>Web Development Class</h1>
+          <div class="live-badge">
+            🔴 LIVE
+          </div>
 
-          <p>Live Session in Progress</p>
+          <div class="video-overlay">
+            <h1>Web Development Class</h1>
+            <p>Live Session in Progress</p>
+          </div>
 
         </div>
 
         <div class="controls">
 
-          <button>🎤</button>
-          <button>📹</button>
-          <button class="leave-btn">Leave</button>
+          <button class="control-btn" id="micBtn">
+            🎤
+          </button>
+
+          <button class="control-btn" id="camBtn">
+            📹
+          </button>
+
+          <button class="leave-btn">
+            Leave
+          </button>
 
         </div>
 
-      </div>
+      </section>
 
-      <div class="bottom-section">
+      <!-- Bottom Cards -->
+      <section class="bottom-section">
 
-        <div class="participants-card">
+        <!-- Participants -->
+        <div class="participants-card card">
 
           <h2>Participants</h2>
 
           <div class="participant">
             <span>👨‍🎓 Saiteja</span>
-            <p>Online</p>
+            <p class="online">Online</p>
           </div>
 
           <div class="participant">
             <span>👩‍🎓 Rahul</span>
-            <p>Online</p>
+            <p class="online">Online</p>
           </div>
 
           <div class="participant">
             <span>👨‍🏫 Mentor</span>
-            <p>Teaching</p>
+            <p class="teaching">Teaching</p>
           </div>
 
         </div>
 
-        <div class="chat-card">
+        <!-- Chat -->
+        <div class="chat-card card">
 
           <h2>Class Chat</h2>
 
@@ -91,7 +135,7 @@
               type="text"
               id="chatInput"
               placeholder="Type message..."
-            >
+            / data-a11y-remediation="label-needed">
 
             <button id="sendBtn">
               Send
@@ -101,12 +145,13 @@
 
         </div>
 
-      </div>
+      </section>
 
     </main>
 
   </div>
 
   <script src="vc.js"></script>
+  <script src="dist/shared.js"></script>
 </body>
 </html>

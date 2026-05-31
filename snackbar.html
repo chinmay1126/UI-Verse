@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
 
   <meta
@@ -41,6 +41,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -383,7 +385,7 @@ NAVBAR
     <input
       type="text"
       placeholder="Search snackbar components..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
@@ -429,6 +431,176 @@ MAIN
 
   </section>
 
+
+  <!-- =====================================================
+ADVANCED SNACKBAR GRID
+===================================================== -->
+
+<section class="snackbar-grid advanced-snackbar-grid">
+
+  <!-- WARNING -->
+
+  <div class="snackbar-card premium-card">
+
+    <div class="card-icon orange">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>
+
+    <h2>
+      Warning Snackbar
+    </h2>
+
+    <p>
+      Highlight risky actions and
+      attention-required events with
+      premium warning feedback.
+    </p>
+
+    <button
+      class="show-btn warning-btn"
+      data-type="warning"
+    >
+      Show Snackbar
+    </button>
+
+  </div>
+
+  <!-- DARK MODE -->
+
+  <div class="snackbar-card premium-card dark-card">
+
+    <div class="card-icon purple">
+      <i class="fa-solid fa-moon"></i>
+    </div>
+
+    <h2>
+      Dark Snackbar
+    </h2>
+
+    <p>
+      Elegant dark-glass notifications
+      for modern admin dashboards and
+      futuristic interfaces.
+    </p>
+
+    <button
+      class="show-btn dark-btn"
+      data-type="dark"
+    >
+      Show Snackbar
+    </button>
+
+  </div>
+
+  <!-- FILE UPLOAD -->
+
+  <div class="snackbar-card premium-card">
+
+    <div class="card-icon cyan">
+      <i class="fa-solid fa-cloud-arrow-up"></i>
+    </div>
+
+    <h2>
+      Upload Snackbar
+    </h2>
+
+    <p>
+      Beautiful upload progress and
+      file synchronization feedback
+      with live animations.
+    </p>
+
+    <button
+      class="show-btn upload-btn"
+      data-type="upload"
+    >
+      Show Snackbar
+    </button>
+
+  </div>
+
+  <!-- MESSAGE -->
+
+  <div class="snackbar-card premium-card">
+
+    <div class="card-icon pink">
+      <i class="fa-solid fa-paper-plane"></i>
+    </div>
+
+    <h2>
+      Message Snackbar
+    </h2>
+
+    <p>
+      Realtime communication alerts
+      for chats, messages, and team
+      collaboration systems.
+    </p>
+
+    <button
+      class="show-btn message-btn"
+      data-type="message"
+    >
+      Show Snackbar
+    </button>
+
+  </div>
+
+  <!-- SECURITY -->
+
+  <div class="snackbar-card premium-card">
+
+    <div class="card-icon gold">
+      <i class="fa-solid fa-shield-halved"></i>
+    </div>
+
+    <h2>
+      Security Snackbar
+    </h2>
+
+    <p>
+      Secure authentication and
+      account protection alerts
+      with premium visuals.
+    </p>
+
+    <button
+      class="show-btn security-btn"
+      data-type="security"
+    >
+      Show Snackbar
+    </button>
+
+  </div>
+
+  <!-- NETWORK -->
+
+  <div class="snackbar-card premium-card">
+
+    <div class="card-icon teal">
+      <i class="fa-solid fa-wifi"></i>
+    </div>
+
+    <h2>
+      Network Snackbar
+    </h2>
+
+    <p>
+      Smart connectivity indicators
+      for offline sync and realtime
+      network monitoring.
+    </p>
+
+    <button
+      class="show-btn network-btn"
+      data-type="network"
+    >
+      Show Snackbar
+    </button>
+
+  </div>
+
+</section>
   <!-- GRID -->
 
   <section class="snackbar-grid">
@@ -535,5 +707,6 @@ SNACKBAR CONTAINER
 
 <script src="snackbar.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

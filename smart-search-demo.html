@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Search & Filter Demo — UIverse</title>
@@ -249,6 +250,8 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <div class="container">
     <!-- Header -->
     <div class="header">
@@ -266,7 +269,7 @@
         type="search" 
         id="search-input" 
         placeholder="Search components (e.g., button, form, responsive)..."
-      />
+      / data-a11y-remediation="label-needed">
       <div id="suggestions" class="suggestions"></div>
     </div>
 
@@ -495,5 +498,6 @@
       displayResults();
     });
   </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

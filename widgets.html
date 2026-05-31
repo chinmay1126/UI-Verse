@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Developer Widgets — UIverse</title>
@@ -13,16 +14,15 @@
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="shared-page.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
+  <!-- CSS -->
   <link rel="stylesheet" href="widgets.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
   <aside class="sidebar" id="sidebar">
@@ -354,7 +354,7 @@
 
   <!-- ================= NAVBAR ================= -->
   <header class="navbar" id="navbar">
-    <button type="button" class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <button type="button" class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu" data-a11y-remediation="button-label-needed">
       <i class="fa-solid fa-bars"></i>
     </button>
 
@@ -362,7 +362,7 @@
 
     <div class="search-bar">
       <i class="fa-solid fa-magnifying-glass search-icon"></i>
-      <input type="text" id="searchInput" placeholder="Search components...">
+      <input type="text" id="searchInput" placeholder="Search components..." data-a11y-remediation="label-needed">
       <kbd class="search-kbd">⌘K</kbd>
     </div>
 
@@ -380,7 +380,7 @@
   </header>
 
   <!-- ================= MAIN CONTENT ================= -->
-  <div class="main-content">
+  <!--<div class="main-content">
 
     <div class="page-hero">
       <div class="page-hero-left">
@@ -398,7 +398,39 @@
           <span class="meta-badge"><i class="fa-solid fa-mobile-screen-button"></i> Responsive</span>
         </div>
       </div>
+    </div>-->
+    <div class="main-content">
+
+  <!-- HERO SECTION -->
+  <section class="page-hero">
+    <div class="page-hero-left">
+      
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Widgets</span>
+      </nav>
+
+      <!-- Title & Description -->
+      <header class="page-header">
+        <h1 class="page-title">Developer Widgets</h1>
+        <p class="page-desc">
+          Modern reusable developer-focused UI widgets with interactive styling and clean structures.
+        </p>
+      </header>
+
+      <!-- Meta Badges -->
+      <div class="page-meta">
+        <span class="meta-badge"><i class="fa-solid fa-tags"></i> 15 Components</span>
+        <span class="meta-badge"><i class="fa-solid fa-bolt"></i> Pure HTML/CSS/JS</span>
+        <span class="meta-badge"><i class="fa-solid fa-mobile-screen-button"></i> Responsive</span>
+      </div>
     </div>
+  </section>
+
+</div>
+
 
     <section class="widgets-grid">
 
@@ -782,6 +814,188 @@
         </div>
       </div>
 
+    
+   <div class="widget-wrapper">
+  <div class="widget-info">
+    <h2>Deployment Status</h2>
+    <p>Track recent production deployments and environments.</p>
+  </div>
+
+  <div class="deploy-widget">
+    <div class="deploy-top">
+      <div>
+        <h3>Production Deploy</h3>
+        <span class="deploy-version">v2.4.1</span>
+      </div>
+      <span class="deploy-badge success">Successful</span>
+    </div>
+
+    <div class="deploy-timeline">
+      <div class="deploy-step completed">
+        <i class="fa-solid fa-check"></i>
+        <span>Build</span>
+      </div>
+      <div class="deploy-step completed">
+        <i class="fa-solid fa-check"></i>
+        <span>Tests</span>
+      </div>
+      <div class="deploy-step completed">
+        <i class="fa-solid fa-check"></i>
+        <span>Deploy</span>
+      </div>
+      <div class="deploy-step active">
+        <i class="fa-solid fa-rocket"></i>
+        <span>Monitoring</span>
+      </div>
+    </div>
+
+    <div class="deploy-footer">
+      <span><i class="fa-regular fa-clock"></i> 2 mins ago</span>
+      <span><i class="fa-solid fa-server"></i> AWS eu-central</span>
+    </div>
+  </div>
+  </div>
+
+<!-- 12. TEAM CHAT WIDGET -->
+<div class="widget-wrapper">
+  <div class="widget-info">
+    <h2>Team Chat</h2>
+    <p>Compact developer collaboration widget.</p>
+  </div>
+
+  <div class="team-chat-widget">
+    <div class="chat-header">
+      <h3>#frontend-team</h3>
+      <span class="online-count">12 online</span>
+    </div>
+
+    <div class="chat-messages">
+      <div class="chat-msg">
+        <img src="https://i.pravatar.cc/40?img=12" alt="User">
+        <div>
+          <strong>Lena</strong>
+          <p>Pushed the responsive navbar fix.</p>
+        </div>
+      </div>
+
+      <div class="chat-msg">
+        <img src="https://i.pravatar.cc/40?img=32" alt="User">
+        <div>
+          <strong>Ryan</strong>
+          <p>Dark mode animations look smooth ✨</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-wrap">
+      <input type="text" placeholder="Send message...">
+      <button type="button">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 13. AI ASSISTANT WIDGET -->
+<div class="widget-wrapper">
+  <div class="widget-info">
+    <h2>AI Assistant</h2>
+    <p>Modern assistant panel for developer tooling.</p>
+  </div>
+
+  <div class="ai-widget">
+    <div class="ai-header">
+      <div class="ai-avatar">AI</div>
+      <div>
+        <h3>UIverse Copilot</h3>
+        <span>Online</span>
+      </div>
+    </div>
+
+    <div class="ai-response">
+      <p>
+        Suggested improvement:
+        <br>
+        Convert repeated button styles into reusable utility classes.
+      </p>
+    </div>
+
+    <div class="ai-actions">
+      <button type="button">Accept</button>
+      <button type="button" class="outline">Ignore</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- 14. ANALYTICS OVERVIEW WIDGET -->
+<div class="widget-wrapper">
+  <div class="widget-info">
+    <h2>Analytics Overview</h2>
+    <p>Mini analytics dashboard with trends.</p>
+  </div>
+
+  <div class="analytics-widget">
+    <div class="analytics-top">
+      <div>
+        <span class="analytics-label">Visitors</span>
+        <h2>128.4k</h2>
+      </div>
+      <span class="analytics-growth">
+        <i class="fa-solid fa-arrow-trend-up"></i> +18%
+      </span>
+    </div>
+
+    <div class="analytics-bars">
+      <div class="bar" style="height: 40%"></div>
+      <div class="bar" style="height: 65%"></div>
+      <div class="bar" style="height: 55%"></div>
+      <div class="bar" style="height: 85%"></div>
+      <div class="bar" style="height: 100%"></div>
+      <div class="bar" style="height: 72%"></div>
+      <div class="bar" style="height: 90%"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 15. SECURITY ALERT WIDGET -->
+<div class="widget-wrapper">
+  <div class="widget-info">
+    <h2>Security Alert</h2>
+    <p>Security monitoring and vulnerability checks.</p>
+  </div>
+
+  <div class="security-widget">
+    <div class="security-header">
+      <div class="security-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+
+      <div>
+        <h3>2 Vulnerabilities Found</h3>
+        <span>Last scan 4 minutes ago</span>
+      </div>
+    </div>
+
+    <div class="security-list">
+      <div class="security-item warning">
+        <span>Outdated dependency detected</span>
+        <span>Medium</span>
+      </div>
+
+      <div class="security-item danger">
+        <span>JWT secret exposed in logs</span>
+        <span>Critical</span>
+      </div>
+    </div>
+
+    <button type="button" class="security-btn">
+      Resolve Issues
+    </button>
+  </div>
+</div>
+
+    
       <!-- 12. MUSIC PLAYER WIDGET -->
       <div class="widget-wrapper">
         <div class="widget-info">
@@ -904,6 +1118,737 @@
         </div>
       </div>
 
+      <!-- =========================================================
+           16. POMODORO TIMER WIDGET
+           ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Pomodoro Timer</h2>
+            <p>Focus session timer with break modes and session tracking.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="pomodoro-widget">
+          <div class="pomo-modes">
+            <button class="pomo-mode-btn active" data-minutes="25" data-label="Focus session" onclick="switchPomoMode(this)">Focus</button>
+            <button class="pomo-mode-btn" data-minutes="5" data-label="Short break" onclick="switchPomoMode(this)">Short break</button>
+            <button class="pomo-mode-btn" data-minutes="15" data-label="Long break" onclick="switchPomoMode(this)">Long break</button>
+          </div>
+      
+          <div class="pomo-ring-wrap">
+            <svg class="pomo-svg" viewBox="0 0 120 120">
+              <circle class="pomo-track" cx="60" cy="60" r="52"/>
+              <circle class="pomo-progress" id="pomoProgress" cx="60" cy="60" r="52"/>
+            </svg>
+            <div class="pomo-center">
+              <div class="pomo-time" id="pomoTime">25:00</div>
+              <div class="pomo-session-label" id="pomoLabel">Focus session</div>
+            </div>
+          </div>
+      
+          <div class="pomo-controls">
+            <button class="pomo-ctrl-btn" onclick="pomoSkip()" title="Skip">
+              <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button class="pomo-ctrl-btn primary" id="pomoPlayBtn" onclick="pomoToggle()">
+              <i class="fa-solid fa-play" id="pomoPlayIcon"></i>
+            </button>
+            <button class="pomo-ctrl-btn" onclick="pomoReset()" title="Reset">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+          </div>
+      
+          <div class="pomo-dots" id="pomoDots">
+            <div class="pomo-dot"></div>
+            <div class="pomo-dot"></div>
+            <div class="pomo-dot"></div>
+            <div class="pomo-dot"></div>
+          </div>
+          <p class="pomo-session-info" id="pomoInfo">Session 1 of 4 · Long break after 4</p>
+        </div>
+      </div>
+      
+      
+      <!-- =========================================================
+          17. NOTIFICATION CENTER WIDGET
+          ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Notification Center</h2>
+            <p>Dev-focused alert feed for deploys, errors, and PRs.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="notif-center-widget">
+          <div class="notif-header">
+            <span class="notif-title">Activity</span>
+            <span class="notif-count-badge">3 new</span>
+            <button class="notif-clear-btn" onclick="clearNotifications(this)">Mark all read</button>
+          </div>
+      
+          <div class="notif-list" id="notifList">
+            <div class="notif-item unread" data-type="deploy">
+              <div class="notif-icon-wrap deploy">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-top">
+                  <strong>Deploy succeeded</strong>
+                  <span class="notif-dot"></span>
+                </div>
+                <p>ui-verse/main → production · 47s build</p>
+                <span class="notif-time">2 min ago</span>
+              </div>
+            </div>
+      
+            <div class="notif-item unread" data-type="warn">
+              <div class="notif-icon-wrap warn">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-top">
+                  <strong>Memory threshold at 89%</strong>
+                  <span class="notif-dot"></span>
+                </div>
+                <p>api-server-02 is approaching its memory limit</p>
+                <span class="notif-time">14 min ago</span>
+              </div>
+            </div>
+      
+            <div class="notif-item unread" data-type="pr">
+              <div class="notif-icon-wrap pr">
+                <i class="fa-solid fa-code-pull-request"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-top">
+                  <strong>PR #204 needs review</strong>
+                  <span class="notif-dot"></span>
+                </div>
+                <p>lena-moore: feat/dark-mode-refactor</p>
+                <span class="notif-time">1 hour ago</span>
+              </div>
+            </div>
+      
+            <div class="notif-item" data-type="error">
+              <div class="notif-icon-wrap error">
+                <i class="fa-solid fa-bug"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-top">
+                  <strong>TypeError in /api/v1/auth</strong>
+                </div>
+                <p>Cannot read property 'token' of null · line 42</p>
+                <span class="notif-time">2 hours ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- =========================================================
+          18. DEPENDENCY TRACKER WIDGET
+          ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Dependency Tracker</h2>
+            <p>Package version status with update indicators.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="deps-widget">
+          <div class="deps-summary">
+            <span class="deps-badge current"><i class="fa-solid fa-circle-check"></i> 4 current</span>
+            <span class="deps-badge minor"><i class="fa-solid fa-circle-up"></i> 2 minor</span>
+            <span class="deps-badge major"><i class="fa-solid fa-circle-exclamation"></i> 1 major</span>
+          </div>
+      
+          <div class="deps-list">
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">react</span>
+                <span class="dep-version current-ver">18.3.1</span>
+              </div>
+              <span class="dep-status current">✓ Latest</span>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">vite</span>
+                <span class="dep-version current-ver">4.3.9</span>
+              </div>
+              <div class="dep-right">
+                <span class="dep-new-ver">→ 5.2.0</span>
+                <span class="dep-status minor">minor</span>
+              </div>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">tailwindcss</span>
+                <span class="dep-version current-ver">3.4.1</span>
+              </div>
+              <span class="dep-status current">✓ Latest</span>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">eslint</span>
+                <span class="dep-version current-ver">7.32.0</span>
+              </div>
+              <div class="dep-right">
+                <span class="dep-new-ver">→ 9.4.0</span>
+                <span class="dep-status major">major</span>
+              </div>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">axios</span>
+                <span class="dep-version current-ver">1.4.0</span>
+              </div>
+              <div class="dep-right">
+                <span class="dep-new-ver">→ 1.7.2</span>
+                <span class="dep-status minor">minor</span>
+              </div>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">typescript</span>
+                <span class="dep-version current-ver">5.4.5</span>
+              </div>
+              <span class="dep-status current">✓ Latest</span>
+            </div>
+            <div class="dep-row">
+              <div class="dep-left">
+                <span class="dep-name">vitest</span>
+                <span class="dep-version current-ver">1.6.0</span>
+              </div>
+              <span class="dep-status current">✓ Latest</span>
+            </div>
+          </div>
+      
+          <button class="deps-update-btn" onclick="runDepUpdate(this)">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i> Update 2 minor patches
+          </button>
+        </div>
+      </div>
+      
+      
+      <!-- =========================================================
+          19. NETWORK SPEED MONITOR WIDGET
+          ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Network Monitor</h2>
+            <p>Live connection stats with download, upload and latency.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="network-widget">
+          <div class="net-status-bar">
+            <div class="net-online-dot"></div>
+            <span class="net-status-text">Connected · Cloudflare WARP</span>
+            <span class="net-protocol">IPv6 · TLS 1.3</span>
+          </div>
+      
+          <div class="net-speeds-grid">
+            <div class="net-speed-card">
+              <div class="net-speed-icon dl"><i class="fa-solid fa-arrow-down"></i></div>
+              <div class="net-speed-val" id="netDL">842</div>
+              <div class="net-speed-unit">Mbps</div>
+              <div class="net-speed-lbl">Download</div>
+              <div class="net-speed-bar">
+                <div class="net-bar-fill dl" id="netDLBar" style="width: 84%"></div>
+              </div>
+            </div>
+            <div class="net-speed-card">
+              <div class="net-speed-icon ul"><i class="fa-solid fa-arrow-up"></i></div>
+              <div class="net-speed-val" id="netUL">421</div>
+              <div class="net-speed-unit">Mbps</div>
+              <div class="net-speed-lbl">Upload</div>
+              <div class="net-speed-bar">
+                <div class="net-bar-fill ul" id="netULBar" style="width: 42%"></div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="net-stats-row">
+            <div class="net-stat">
+              <span class="net-stat-label">Ping</span>
+              <span class="net-stat-value good" id="netPing">12 ms</span>
+            </div>
+            <div class="net-stat">
+              <span class="net-stat-label">DNS</span>
+              <span class="net-stat-value">3 ms</span>
+            </div>
+            <div class="net-stat">
+              <span class="net-stat-label">Jitter</span>
+              <span class="net-stat-value" id="netJitter">0.8 ms</span>
+            </div>
+            <div class="net-stat">
+              <span class="net-stat-label">Packet loss</span>
+              <span class="net-stat-value good">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- =========================================================
+          20. READING STREAK WIDGET
+          ========================================================= -->
+      <div class="widget-wrapper">
+        <div class="widget-info">
+          <div class="widget-info-text">
+            <h2>Reading Streak</h2>
+            <p>Dev documentation reading progress and streak tracker.</p>
+          </div>
+          <button class="widget-copy-btn" onclick="copyWidgetHTML(this)"><i class="fa-solid fa-copy"></i> Copy Code</button>
+        </div>
+      
+        <div class="streak-widget">
+          <div class="streak-hero">
+            <div class="streak-flame-wrap">
+              <span class="streak-flame">🔥</span>
+              <div class="streak-count" id="streakCount">14</div>
+            </div>
+            <div class="streak-hero-info">
+              <p class="streak-hero-title">Day streak</p>
+              <p class="streak-hero-sub">Best: 31 days &nbsp;·&nbsp; Keep going!</p>
+              <div class="streak-today-badge">Today's goal: 20 min reading</div>
+            </div>
+          </div>
+      
+          <div class="streak-week">
+            <div class="streak-week-labels">
+              <span>Mon</span><span>Tue</span><span>Wed</span>
+              <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+            <div class="streak-week-dots">
+              <div class="streak-dot done" title="Monday · 32 min"></div>
+              <div class="streak-dot done" title="Tuesday · 18 min"></div>
+              <div class="streak-dot done" title="Wednesday · 45 min"></div>
+              <div class="streak-dot done" title="Thursday · 22 min"></div>
+              <div class="streak-dot done" title="Friday · 29 min"></div>
+              <div class="streak-dot missed" title="Saturday · missed"></div>
+              <div class="streak-dot today" title="Today · in progress"></div>
+            </div>
+          </div>
+      
+          <div class="streak-progress-wrap">
+            <div class="streak-progress-label">
+              <span>Today's progress</span>
+              <span id="streakMins">14 / 20 min</span>
+            </div>
+            <div class="streak-progress-bg">
+              <div class="streak-progress-fill" id="streakProgressFill" style="width: 70%"></div>
+            </div>
+          </div>
+      
+          <div class="streak-stats-grid">
+            <div class="streak-stat-box">
+              <div class="streak-stat-val">38</div>
+              <div class="streak-stat-lbl">Articles read</div>
+            </div>
+            <div class="streak-stat-box">
+              <div class="streak-stat-val">5.2h</div>
+              <div class="streak-stat-lbl">This week</div>
+            </div>
+            <div class="streak-stat-box">
+              <div class="streak-stat-val">12</div>
+              <div class="streak-stat-lbl">Topics covered</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="widget-wrapper">
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>AI Mood Analyzer</h2>
+      <p>Detect emotional energy from user activity.</p>
+    </div>
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+  
+
+  <div class="mood-widget">
+    <div class="mood-orb"></div>
+
+    <h4>Creative Energy</h4>
+
+    <div class="mood-meter">
+      <div class="mood-fill"></div>
+    </div>
+
+    <span>87% Inspired Today</span>
+  </div>
+</div>
+<div class="widget-wrapper">
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Planet Explorer</h2>
+      <p>Interactive sci-fi destination card.</p>
+    </div>
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="planet-widget">
+
+    <div class="planet"></div>
+
+    <h4>Kepler-X9</h4>
+
+    <div class="planet-stats">
+      <span>Gravity 1.4x</span>
+      <span>Habitable</span>
+    </div>
+
+  </div>
+</div>
+<div class="widget-wrapper">
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Potion Generator</h2>
+      <p>Fantasy inspired potion crafting card.</p>
+    </div>
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="potion-widget">
+
+    <div class="bottle">
+      <div class="liquid"></div>
+    </div>
+
+    <h4>Dream Essence</h4>
+
+    <p>Rarity: Legendary</p>
+
+  </div>
+</div>
+<div class="widget-wrapper">
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Threat Scanner</h2>
+      <p>Cyberpunk security monitoring interface.</p>
+    </div>
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="scanner-widget">
+
+    <div class="scanner-circle">
+      <div class="scan-line"></div>
+    </div>
+
+    <h4>System Safe</h4>
+
+    <span>0 Threats Found</span>
+
+  </div>
+</div>
+<div class="widget-wrapper">
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Dragon Incubator</h2>
+      <p>Fantasy creature growth tracker.</p>
+    </div>
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="egg-widget">
+
+    <div class="dragon-egg"></div>
+
+    <div class="egg-progress">
+      <div></div>
+    </div>
+
+    <span>Hatching 74%</span>
+
+  </div>
+</div>
+<div class="widget-wrapper">
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Dream Journey</h2>
+      <p>Track milestones like an RPG quest.</p>
+    </div>
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="journey-widget">
+
+    <div class="journey-line">
+      <span class="active"></span>
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <h4>Quest Progress</h4>
+
+    <p>2 / 4 Dreams Completed</p>
+
+  </div>
+</div>
+<!-- 29. CYBERPUNK HACKER TERMINAL -->
+<div class="widget-wrapper">
+
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Cyberpunk Terminal</h2>
+      <p>Neural network infiltration dashboard.</p>
+    </div>
+
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="hacker-widget">
+
+    <div class="terminal-top">
+
+      <div class="terminal-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <span>ROOT_ACCESS.exe</span>
+
+    </div>
+
+    <div class="terminal-screen">
+
+      <p>> Initializing neural bridge...</p>
+      <p>> Firewall bypassed</p>
+      <p>> Accessing satellite grid...</p>
+      <p class="success">ACCESS GRANTED</p>
+
+    </div>
+
+    <div class="terminal-stats">
+
+      <div>
+        <strong>98%</strong>
+        <span>Signal</span>
+      </div>
+
+      <div>
+        <strong>42</strong>
+        <span>Nodes</span>
+      </div>
+
+      <div>
+        <strong>7ms</strong>
+        <span>Ping</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- 30. GALAXY MAP NAVIGATOR -->
+<div class="widget-wrapper">
+
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Galaxy Navigator</h2>
+      <p>Explore distant star systems.</p>
+    </div>
+
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="galaxy-widget">
+
+    <div class="galaxy-map">
+
+      <span class="planet p1"></span>
+      <span class="planet p2"></span>
+      <span class="planet p3 active"></span>
+      <span class="planet p4"></span>
+
+      <div class="orbit orbit1"></div>
+      <div class="orbit orbit2"></div>
+
+    </div>
+
+    <div class="galaxy-info">
+
+      <h4>Andromeda IX</h4>
+      <span>Distance: 4.2 LY</span>
+
+    </div>
+
+    <button class="warp-btn">
+      Warp Jump
+    </button>
+
+  </div>
+
+</div>
+<!-- 31. KINGDOM MANAGEMENT -->
+<div class="widget-wrapper">
+
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Kingdom Manager</h2>
+      <p>Rule and expand your empire.</p>
+    </div>
+
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="kingdom-widget">
+
+    <div class="kingdom-header">
+
+      <i class="fa-solid fa-crown"></i>
+
+      <div>
+        <h4>Eldoria</h4>
+        <span>Prosperous Realm</span>
+      </div>
+
+    </div>
+
+    <div class="kingdom-resources">
+
+      <div>
+        <i class="fa-solid fa-coins"></i>
+        <span>14.2k</span>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-wheat-awn"></i>
+        <span>8.7k</span>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-shield"></i>
+        <span>5.4k</span>
+      </div>
+
+    </div>
+
+    <div class="kingdom-happiness">
+
+      <span>Citizen Happiness</span>
+
+      <div class="happiness-bar">
+        <div></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- 32. TREASURE CHEST INVENTORY -->
+<div class="widget-wrapper">
+
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Treasure Inventory</h2>
+      <p>Rare loot collection system.</p>
+    </div>
+
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="treasure-widget">
+
+    <div class="treasure-chest">
+
+      <i class="fa-solid fa-box-open"></i>
+
+    </div>
+
+    <div class="loot-grid">
+
+      <div class="loot legendary">💎</div>
+
+      <div class="loot epic">⚔️</div>
+
+      <div class="loot rare">🛡️</div>
+
+      <div class="loot common">🪙</div>
+
+    </div>
+
+    <button class="open-btn">
+      Open Chest
+    </button>
+
+  </div>
+
+</div>
+<!-- 33. MAGIC CRYSTAL BALL -->
+<div class="widget-wrapper">
+
+  <div class="widget-info">
+    <div class="widget-info-text">
+      <h2>Crystal Ball</h2>
+      <p>Mystical future prediction orb.</p>
+    </div>
+
+    <button class="widget-copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy Code
+    </button>
+  </div>
+
+  <div class="crystal-widget">
+
+    <div class="crystal-ball">
+
+      <div class="orb-glow"></div>
+
+    </div>
+
+    <div class="prediction">
+
+      ✨ Great opportunities await ahead.
+
+    </div>
+
+    <div class="fortune-actions">
+
+      <button>Reveal Future</button>
+
+      <button>Ask Again</button>
+
+    </div>
+
+  </div>
+
+</div>
     </section>
   </div>
 
@@ -975,7 +1920,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
   <script>
     // Dark mode toggle
     const toggle = document.getElementById('darkModeToggle');
@@ -1071,8 +2015,158 @@ initWidget();`;
         console.error('Failed to copy widget HTML: ', err);
       });
     }
+
+    // ---- POMODORO TIMER ----
+    (function() {
+      let pomoTotalSec = 25 * 60;
+      let pomoRemaining = pomoTotalSec;
+      let pomoRunning = false;
+      let pomoInterval = null;
+      let pomoSession = 1;
+      const CIRCUMFERENCE = 2 * Math.PI * 52; // r=52
+    
+      function updatePomoDisplay() {
+        const m = Math.floor(pomoRemaining / 60);
+        const s = pomoRemaining % 60;
+        document.getElementById('pomoTime').textContent =
+          String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        const progress = pomoRemaining / pomoTotalSec;
+        const offset = CIRCUMFERENCE * (1 - progress);
+        document.getElementById('pomoProgress').style.strokeDashoffset = offset;
+      }
+    
+      function updatePomoDots() {
+        const dots = document.querySelectorAll('.pomo-dot');
+        dots.forEach((d, i) => {
+          d.classList.toggle('done', i < pomoSession - 1);
+          d.classList.toggle('active', i === pomoSession - 1);
+        });
+        document.getElementById('pomoInfo').textContent =
+          `Session ${pomoSession} of 4 · Long break after 4`;
+      }
+    
+      window.pomoToggle = function() {
+        if (pomoRunning) {
+          clearInterval(pomoInterval);
+          pomoRunning = false;
+          document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+        } else {
+          pomoInterval = setInterval(() => {
+            if (pomoRemaining > 0) {
+              pomoRemaining--;
+              updatePomoDisplay();
+            } else {
+              clearInterval(pomoInterval);
+              pomoRunning = false;
+              document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+              pomoSession = pomoSession < 4 ? pomoSession + 1 : 1;
+              updatePomoDots();
+            }
+          }, 1000);
+          pomoRunning = true;
+          document.getElementById('pomoPlayIcon').className = 'fa-solid fa-pause';
+        }
+      };
+    
+      window.pomoReset = function() {
+        clearInterval(pomoInterval);
+        pomoRunning = false;
+        pomoRemaining = pomoTotalSec;
+        document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+        updatePomoDisplay();
+      };
+    
+      window.pomoSkip = function() {
+        clearInterval(pomoInterval);
+        pomoRunning = false;
+        pomoRemaining = 0;
+        updatePomoDisplay();
+        document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+      };
+    
+      window.switchPomoMode = function(btn) {
+        document.querySelectorAll('.pomo-mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        clearInterval(pomoInterval);
+        pomoRunning = false;
+        pomoTotalSec = parseInt(btn.dataset.minutes) * 60;
+        pomoRemaining = pomoTotalSec;
+        document.getElementById('pomoLabel').textContent = btn.dataset.label;
+        document.getElementById('pomoPlayIcon').className = 'fa-solid fa-play';
+        updatePomoDisplay();
+      };
+    
+      // Init
+      document.getElementById('pomoProgress').style.strokeDasharray = CIRCUMFERENCE;
+      document.getElementById('pomoProgress').style.strokeDashoffset = 0;
+      updatePomoDisplay();
+      updatePomoDots();
+    })();
+    
+    // ---- NOTIFICATIONS ----
+    window.clearNotifications = function(btn) {
+      document.querySelectorAll('.notif-item.unread').forEach(el => {
+        el.classList.remove('unread');
+        const dot = el.querySelector('.notif-dot');
+        if (dot) dot.remove();
+      });
+      const badge = document.querySelector('.notif-count-badge');
+      if (badge) { badge.textContent = '0 new'; badge.style.background = 'rgba(255,255,255,0.05)'; }
+      btn.textContent = 'All caught up ✓';
+      btn.disabled = true;
+    };
+    
+    // ---- DEPENDENCY UPDATE ----
+    window.runDepUpdate = function(btn) {
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Updating...';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.querySelectorAll('.dep-status.minor').forEach(el => {
+          const row = el.closest('.dep-row');
+          const newVer = row.querySelector('.dep-new-ver');
+          const curVer = row.querySelector('.current-ver');
+          if (newVer && curVer) {
+            curVer.textContent = newVer.textContent.replace('→ ', '');
+            newVer.remove();
+          }
+          el.className = 'dep-status current';
+          el.textContent = '✓ Latest';
+        });
+        const badge = document.querySelector('.deps-badge.minor');
+        if (badge) { badge.style.opacity = '0.4'; }
+        btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> All minor packages updated';
+        btn.style.background = 'rgba(16,185,129,0.12)';
+        btn.style.borderColor = 'rgba(16,185,129,0.3)';
+        btn.style.color = '#34d399';
+      }, 1200);
+    };
+    
+    // ---- NETWORK LIVE UPDATE ----
+    (function() {
+      const dlBase = 842, ulBase = 421;
+      function rand(base, range) { return base + Math.round((Math.random() - 0.5) * range); }
+      setInterval(() => {
+        const dl = rand(dlBase, 80);
+        const ul = rand(ulBase, 50);
+        const ping = rand(12, 6);
+        const jitter = (Math.random() * 1.5 + 0.3).toFixed(1);
+        const dlEl = document.getElementById('netDL');
+        const ulEl = document.getElementById('netUL');
+        const pingEl = document.getElementById('netPing');
+        const jitterEl = document.getElementById('netJitter');
+        const dlBar = document.getElementById('netDLBar');
+        const ulBar = document.getElementById('netULBar');
+        if (dlEl) dlEl.textContent = dl;
+        if (ulEl) ulEl.textContent = ul;
+        if (pingEl) pingEl.textContent = ping + ' ms';
+        if (jitterEl) jitterEl.textContent = jitter + ' ms';
+        if (dlBar) dlBar.style.width = Math.min(100, Math.round(dl / 10)) + '%';
+        if (ulBar) ulBar.style.width = Math.min(100, Math.round(ul / 10)) + '%';
+      }, 2000);
+    })();
   </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 
 </html>
