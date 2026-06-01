@@ -242,6 +242,21 @@
         </a>
       </li>
       <li>
+        <div class="component-actions">
+  <button class="preview-btn">
+    <i class="fa-solid fa-eye"></i>
+    Preview
+  </button>
+
+  <button class="copy-btn">
+    <i class="fa-solid fa-copy"></i>
+    Copy Code
+  </button>
+
+  <button class="save-btn">
+    <i class="fa-regular fa-bookmark"></i>
+  </button>
+</div>
         <a href="tabs.html">
           <i class="fa-solid fa-table-columns"></i>
           <span>Tabs</span>
@@ -754,6 +769,29 @@ document.querySelectorAll(
       }
 
     });
+
+    function checkOtpComplete(inputs){
+
+  const otp =
+    [...inputs]
+    .map(i => i.value)
+    .join("");
+
+  if(otp.length === inputs.length){
+
+    document.querySelector(".otp-status").innerHTML =
+      '<i class="fa-solid fa-spinner fa-spin"></i> Verifying...';
+
+    setTimeout(()=>{
+
+      document.querySelector(".otp-status").innerHTML =
+        '<i class="fa-solid fa-circle-check"></i> Verified';
+
+    },1200);
+
+  }
+
+}
 
     input.addEventListener("keydown", (e) => {
 
