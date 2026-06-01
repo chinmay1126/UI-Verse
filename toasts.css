@@ -1,45 +1,52 @@
-:root {
-
-  --sidebar-width: 240px;
-
-  --primary: #6366f1;
-  --secondary: #4f46e5;
-
-  --bg: #f8fafc;
-  --card-bg: #ffffff;
-
-  --text: #111827;
-  --muted: #64748b;
-
-  --border: #e5e7eb;
-
-  --accent: peru;
-
-  --transition:
-    0.3s ease;
-
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-
-<<<<<<< HEAD
 
 body{
   font-family:'Inter',sans-serif;
   background:white;
   color:whitesmoke;
   min-height:100vh;
-=======
+}
+
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding: 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  border-radius: 0 10px 10px 0;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:white;
+  color:whitesmoke;
+  min-height:100vh;
 /* =========================================================
    RESET
-========================================================= */
 
 * {
 
-  margin: 0;
+.sidebar ul {
+  list-style: none;
   padding: 0;
 
   box-sizing: border-box;
 
->>>>>>> origin/main
 }
 
 body {

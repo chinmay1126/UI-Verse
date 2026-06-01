@@ -627,7 +627,7 @@ select.demo-input option {
     grid-column: span 1;
   }
 }
-<<<<<<< HEAD
+}
 .modern-preview{
   min-height:140px;
   display:flex;
@@ -751,7 +751,6 @@ select.demo-input option {
 
   font-size:.75rem;
 }
-=======
 /* General text fixes */
 .card-label,
 .card-desc,
@@ -789,4 +788,3 @@ select.demo-input option {
   color: var(--text) !important;
   background: var(--card);
 }
->>>>>>> origin/main
