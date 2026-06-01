@@ -627,6 +627,7 @@ select.demo-input option {
     grid-column: span 1;
   }
 }
+}
 .modern-preview{
   min-height:140px;
   display:flex;
