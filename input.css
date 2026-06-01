@@ -788,3 +788,82 @@ select.demo-input option {
   color: var(--text) !important;
   background: var(--card);
 }
+
+
+.icon-input{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  padding:10px 14px;
+  border:1px solid var(--border-color);
+  border-radius:12px;
+  background:var(--card-bg);
+}
+
+.icon-input input{
+  border:none;
+  background:transparent;
+  width:100%;
+  outline:none;
+}
+
+.phone-input{
+  display:flex;
+  gap:8px;
+}
+
+.phone-input select,
+.phone-input input{
+  padding:10px;
+  border:1px solid var(--border-color);
+  border-radius:10px;
+}
+
+.tag-input-demo{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+}
+
+.tag-chip{
+  padding:6px 12px;
+  border-radius:20px;
+  background:#eb6835;
+  color:#fff;
+  font-size:12px;
+}
+
+.rating-demo{
+  display:flex;
+  gap:6px;
+  font-size:20px;
+}
+
+.floating-field{
+  position:relative;
+}
+
+.floating-field input{
+  width:100%;
+  padding:14px;
+  border:1px solid #ccc;
+  border-radius:12px;
+}
+
+.floating-field label{
+  position:absolute;
+  left:14px;
+  top:14px;
+  background:white;
+  padding:0 6px;
+  transition:.3s;
+}
+
+.floating-field input:focus + label,
+.floating-field input:not(:placeholder-shown)+label{
+  top:-10px;
+  font-size:12px;
+}
+
