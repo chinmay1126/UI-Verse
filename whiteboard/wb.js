@@ -5,6 +5,7 @@ const brushSize = document.getElementById("brushSize");
 const clearBtn = document.getElementById("clearBtn");
 const brushBtn = document.getElementById("brushBtn");
 const eraserBtn = document.getElementById("eraserBtn");
+const fillBtn = document.getElementById("fillBtn");
 
 canvas.width = canvas.offsetWidth;
 canvas.height = canvas.offsetHeight;
@@ -25,18 +26,23 @@ colorPicker.addEventListener("input", e => {
 canvas.addEventListener("mousedown", () => { drawing = true; });
 canvas.addEventListener("mouseup", () => { drawing = false; ctx.beginPath(); });
 canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("click", (e) => {
+  if (!fillBtn.classList.contains("active")) return;
+  floodFill(e.offsetX, e.offsetY, currentColor);
+});
 
 function setActiveTool(tool) {
-  [brushBtn, eraserBtn].forEach(b => {
+  [brushBtn, eraserBtn, fillBtn].forEach(b => {
     b.classList.remove("active", "just-activated");
     b.setAttribute("aria-pressed", "false");
   });
   tool.classList.add("active");
   tool.setAttribute("aria-pressed", "true");
-  void tool.offsetWidth; // reflow to restart animation
+  void tool.offsetWidth;
   tool.classList.add("just-activated");
+  
+  canvas.classList.toggle("fill-mode", tool === fillBtn);
 }
-
 function draw(e) {
   if (!drawing) return;
   ctx.lineWidth = brushSize.value;
@@ -64,6 +70,10 @@ eraserBtn.addEventListener("click", () => {
   setActiveTool(eraserBtn);
 });
 
+fillBtn.addEventListener("click", () => {
+  setActiveTool(fillBtn);
+});
+
 let selectedFormat = "png";
 
 function saveCanvas() {
@@ -74,6 +84,51 @@ function saveCanvas() {
   link.href      = dataURL;
   link.download  = `drawing.${selectedFormat}`;
   link.click();
+}
+
+function floodFill(startX, startY, fillColor) {
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = imageData.data;
+
+  const toIndex = (x, y) => (y * canvas.width + x) * 4;
+  const idx = toIndex(Math.floor(startX), Math.floor(startY));
+  const target = [data[idx], data[idx+1], data[idx+2], data[idx+3]];
+
+  // Parse fill colour to RGBA
+  const tmp = document.createElement("canvas");
+  tmp.width = tmp.height = 1;
+  const tmpCtx = tmp.getContext("2d");
+  tmpCtx.fillStyle = fillColor;
+  tmpCtx.fillRect(0, 0, 1, 1);
+  const [fr, fg, fb, fa] = tmpCtx.getImageData(0, 0, 1, 1).data;
+
+  if (target[0]===fr && target[1]===fg && target[2]===fb && target[3]===fa) return;
+
+  const match = (i) =>
+    data[i]===target[0] && data[i+1]===target[1] &&
+    data[i+2]===target[2] && data[i+3]===target[3];
+
+  const stack = [Math.floor(startX) + Math.floor(startY) * canvas.width];
+  const visited = new Uint8Array(canvas.width * canvas.height);
+
+  while (stack.length) {
+    const pos = stack.pop();
+    if (visited[pos]) continue;
+    visited[pos] = 1;
+
+    const i = pos * 4;
+    if (!match(i)) continue;
+
+    data[i] = fr; data[i+1] = fg; data[i+2] = fb; data[i+3] = fa;
+
+    const x = pos % canvas.width, y = Math.floor(pos / canvas.width);
+    if (x > 0)               stack.push(pos - 1);
+    if (x < canvas.width-1)  stack.push(pos + 1);
+    if (y > 0)               stack.push(pos - canvas.width);
+    if (y < canvas.height-1) stack.push(pos + canvas.width);
+  }
+
+  ctx.putImageData(imageData, 0, 0);
 }
 
 function injectSaveControls() {
