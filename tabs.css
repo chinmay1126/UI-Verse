@@ -21,7 +21,16 @@
   --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.7);
   --shadow-glow: 0 0 25px rgba(123, 97, 255, 0.35);
-}
+
+ --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(123, 97, 255, 0.35);
+  
+  --accent-primary: #eb6835;
+  --accent-secondary: #7b61ff;
+  --accent-gradient: linear-gradient(135deg, #eb6835, #7b61ff);
+  --accent-gradient-hover: linear-gradient(135deg, #ff7e4d, #947eff);
+  
+  --text-primary: #ffffff;}
 
 .dark-mode {
   --bg-primary: #030303;

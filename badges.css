@@ -404,6 +404,90 @@ MAIN
   flex-wrap:wrap;
 }
 
+.security-level-badge,
+.soc-badge,
+.cloud-ready-badge,
+.agent-badge,
+.enterprise-plan-badge,
+.trending-now-badge,
+.growth-badge,
+.verified-org-badge,
+.nft-verified-badge,
+.achievement-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.security-level-badge{
+  background:#12212f;
+  color:#4dd4ff;
+  border:1px solid #2c4f6a;
+}
+
+.soc-badge{
+  background:#eefaf4;
+  color:#0d8b57;
+}
+
+.cloud-ready-badge{
+  background:#16243a;
+  color:#8ecbff;
+}
+
+.agent-badge{
+  background:#12151f;
+  color:#73ffbe;
+}
+
+.agent-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#00ff88;
+  animation:pulse 1.5s infinite;
+}
+
+.enterprise-plan-badge{
+  background:linear-gradient(135deg,#2f2f3d,#1d1d29);
+  color:#fff;
+}
+
+.trending-now-badge{
+  background:linear-gradient(135deg,#ff6b35,#ff3b3b);
+  color:#fff;
+}
+
+.growth-badge{
+  background:#e8fff2;
+  color:#00a44a;
+}
+
+.verified-org-badge{
+  background:#0f172a;
+  color:#60a5fa;
+}
+
+.nft-verified-badge{
+  background:linear-gradient(135deg,#7b61ff,#00d4ff);
+  color:#fff;
+}
+
+.achievement-badge{
+  background:linear-gradient(135deg,#ffb347,#ffcc33);
+  color:#111;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);opacity:1;}
+  50%{transform:scale(1.4);opacity:.6;}
+  100%{transform:scale(1);opacity:1;}
+}
 .hero-stat{
 
   padding:22px 28px;

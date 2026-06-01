@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Whiteboard UI</title>
   <link rel="stylesheet" href="wb.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -29,9 +30,14 @@
           value="4"
         >
 
-        <button id="eraserBtn">
-          Eraser
-        </button>
+        <div class="tool-toggle" id="toolToggle">
+          <button type="button" class="tool-btn active" id="brushBtn" title="Brush" aria-pressed="true">
+            <i class="fa-solid fa-paintbrush"></i>
+          </button>
+          <button type="button" class="tool-btn" id="eraserBtn" title="Eraser" aria-pressed="false">
+            <i class="fa-solid fa-eraser"></i>
+          </button>
+        </div>
 
         <button id="clearBtn">
           Clear

@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 const colorPicker = document.getElementById("colorPicker");
 const brushSize = document.getElementById("brushSize");
 const clearBtn = document.getElementById("clearBtn");
+const brushBtn = document.getElementById("brushBtn");
 const eraserBtn = document.getElementById("eraserBtn");
 
 canvas.width = canvas.offsetWidth;
@@ -16,11 +17,25 @@ ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 colorPicker.addEventListener("input", e => {
   currentColor = e.target.value;
+  if (eraserBtn.classList.contains("active")) {
+    setActiveTool(brushBtn);
+  }
 });
 
 canvas.addEventListener("mousedown", () => { drawing = true; });
 canvas.addEventListener("mouseup", () => { drawing = false; ctx.beginPath(); });
 canvas.addEventListener("mousemove", draw);
+
+function setActiveTool(tool) {
+  [brushBtn, eraserBtn].forEach(b => {
+    b.classList.remove("active", "just-activated");
+    b.setAttribute("aria-pressed", "false");
+  });
+  tool.classList.add("active");
+  tool.setAttribute("aria-pressed", "true");
+  void tool.offsetWidth; // reflow to restart animation
+  tool.classList.add("just-activated");
+}
 
 function draw(e) {
   if (!drawing) return;
@@ -39,8 +54,14 @@ clearBtn.addEventListener("click", () => {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
 
+brushBtn.addEventListener("click", () => {
+  currentColor = colorPicker.value;
+  setActiveTool(brushBtn);
+});
+
 eraserBtn.addEventListener("click", () => {
   currentColor = "#ffffff";
+  setActiveTool(eraserBtn);
 });
 
 let selectedFormat = "png";

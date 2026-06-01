@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="stylesheet" href="dist/shared.css">
@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="UIverse is an open-source library of reusable UI components crafted with pure HTML, CSS, and JavaScript. Explore buttons, cards, navbars, forms, and more.">
   <meta name="keywords" content="UIverse, UI library, CSS components, HTML components, frontend, web development, open source UI, CSS buttons, CSS cards">
-  <meta property="og:title" content="UIverse — UI Component Library">
+  <meta property="og:title" content="UIverse â€” UI Component Library">
   <meta property="og:description" content="Explore a curated library of reusable UI components crafted with pure HTML, CSS, and JavaScript.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tushar-sonawane06.github.io/UI-Verse/">
   <meta property="og:image" content="https://tushar-sonawane06.github.io/UI-Verse/uiverse.png">
   <meta name="twitter:card" content="summary_large_image">
-  <title>UIverse — UI Component Library</title>
+  <title>UIverse â€” UI Component Library</title>
   
   <!-- Security Headers -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -34,7 +34,7 @@
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
-    <span class="brand-icon">⬡</span>
+    <span class="brand-icon">â¬¡</span>
     <span class="brand-text">UIverse</span>
   </div>
 
@@ -147,8 +147,13 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    fix
+    <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components" / data-a11y-remediation="label-needed">
+    <kbd class="search-kbd">âŒ˜K</kbd>
+
     <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components" data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
+        main
   </div>
 
   <div class="nav-right">
@@ -170,7 +175,7 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <div class="hero-badge"><i class="fa-solid fa-rocket"></i> v2.0 — Now with 120+ components</div>
+    <div class="hero-badge"><i class="fa-solid fa-rocket"></i> v2.0 â€” Now with 120+ components</div>
 
     <h1 class="hero-title">
       Build <span class="hero-accent">beautiful UIs</span><br>
@@ -178,7 +183,7 @@
     </h1>
 
     <p class="hero-desc">
-      A curated library of reusable UI components crafted with pure HTML, CSS & JavaScript —
+      A curated library of reusable UI components crafted with pure HTML, CSS & JavaScript â€”
       no frameworks, no dependencies, just clean code.
     </p>
 
@@ -440,7 +445,7 @@
   <section class="section insights-section">
     <div class="section-header">
       <span class="section-tag">Community Insights</span>
-      <h2 class="section-title">📊 Component Analytics</h2>
+      <h2 class="section-title">ðŸ“Š Component Analytics</h2>
       <p class="section-subtitle">Popular, trending, and hidden gem components based on real usage</p>
     </div>
     <div class="trending-section"></div>
@@ -509,7 +514,7 @@
   <div class="footer-container">
 
     <div class="footer-col brand">
-  <h2 class="footer-logo">⬡ UIverse</h2>
+  <h2 class="footer-logo">â¬¡ UIverse</h2>
   <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
    
   <div class="socials">
@@ -563,7 +568,7 @@
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
+    <p>Â© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
   </div>
 </footer>
 
@@ -575,7 +580,7 @@
       Search.init();
     }
 
-    // Navbar Enter key → go to discovery page with query pre-filled
+    // Navbar Enter key â†’ go to discovery page with query pre-filled
     const navSearch = document.getElementById('searchInput');
     if (navSearch) {
       navSearch.addEventListener('keydown', function(e) {

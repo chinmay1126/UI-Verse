@@ -337,3 +337,42 @@ body {
 .checkout-btn:hover {
   background: #f97316;
 }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #f6f8fc, #eef2ff);
+  min-height: 100vh;
+  color: var(--text);
+}
+
+.food-card{
+  transition:all .35s ease;
+}
+
+.food-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.add-btn,
+.checkout-btn,
+.hero-content button,
+.offer-box button{
+  transition:all .3s ease;
+}
+
+.add-btn:hover,
+.checkout-btn:hover,
+.hero-content button:hover,
+.offer-box button:hover{
+  transform:translateY(-3px);
+}
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:var(--primary);
+  border-radius:20px;
+}
