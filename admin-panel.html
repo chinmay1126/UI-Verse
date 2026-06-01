@@ -24,6 +24,59 @@
   </head>
 
 <body>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="main-content">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search admin components..." id="searchInput">
+      </div>
+      <div class="topbar-actions">
+        <button type="button" class="add-btn" onclick="triggerAllShowcase()"><i class="fa-solid fa-play"></i> Test All
+          Panels</button>
+        <button type="button" class="collection-btn" onclick="resetAllPanels()"><i class="fa-solid fa-rotate-left"></i>
+          Reset Previews</button>
+        <button type="button" class="theme-btn" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="breadcrumb">Home &gt; Admin Panel Premium</div>
+        <h1>Admin Dashboards</h1>
+        <p>
+          Futuristic, highly-responsive administration widgets built with clean HTML, CSS, and Vanilla JavaScript.
+          Includes modular dashboard structural configurations, charts, collapsible navigations, telemetry stats, and
+          user listings.
+        </p>
+        <div class="hero-tags">
+          <span><i class="fa-solid fa-layer-group"></i> 5 Modern Categories</span>
+          <span><i class="fa-solid fa-wand-magic-sparkles"></i> Glows &amp; Interactions</span>
+          <span><i class="fa-solid fa-mobile-screen"></i> Responsive layouts</span>
+        </div>
+      </div>
+      <div class="hero-preview">
+        <div class="hero-notification-demo">
+          <div class="demo-bubble active">
+            <span class="demo-dot"></span>
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Admin Console Active</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SIDEBAR ================= -->
   <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-brand">
@@ -807,6 +860,16 @@ tr:hover {
     </section>
 
   </div>
+
+    <script>
+  const hamburger = document.getElementById("hamburger");
+  const sidebar = document.getElementById("sidebar");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    sidebar.classList.toggle("active");
+  });
+</script>
 
   <!-- ================= FOOTER ================= -->
 <footer class="footer">

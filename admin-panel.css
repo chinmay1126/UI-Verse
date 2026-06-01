@@ -1368,6 +1368,53 @@ body {
   }
 }
 
+/* Hamburger */
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* stays above everything */
+}
+
+.hamburger span {
+  height: 4px;
+  background: #fff; /* match dark theme */
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* Sidebar hidden by default */
+.sidebar {
+  position: fixed;
+  left: -250px; /* off-screen */
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #111;
+  transition: left 0.4s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0; /* slide in */
+}
+
+/* Hamburger transforms into X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 
 .bento-card{
     position:relative;
