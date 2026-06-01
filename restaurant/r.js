@@ -111,3 +111,28 @@ document.querySelector(".checkout-btn").addEventListener("click", () => {
   cart = [];
   renderCart();
 });
+
+const searchInput =
+document.querySelector(".search-box input");
+
+const cards =
+document.querySelectorAll(".food-card");
+
+searchInput.addEventListener("keyup", e => {
+
+  const value =
+  e.target.value.toLowerCase();
+
+  cards.forEach(card => {
+
+    const title =
+    card.querySelector("h3")
+    .textContent
+    .toLowerCase();
+
+    card.style.display =
+      title.includes(value)
+      ? "block"
+      : "none";
+  });
+});

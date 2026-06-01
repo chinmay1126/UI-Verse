@@ -202,6 +202,54 @@
         Add
       </button>
     </div>
+    <!-- Search -->
+<div class="search-box">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search tasks..."
+    onkeyup="renderTasks()"
+  >
+</div>
+
+<!-- Filters -->
+<div class="filters">
+  <button class="filter-btn active" onclick="setFilter('all',this)">
+    All
+  </button>
+
+  <button class="filter-btn" onclick="setFilter('active',this)">
+    Active
+  </button>
+
+  <button class="filter-btn" onclick="setFilter('completed',this)">
+    Completed
+  </button>
+</div>
+
+<!-- Progress -->
+<div class="progress-wrapper">
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <span id="progressText">0% Complete</span>
+</div>
+
+<!-- Task Details -->
+<div class="extra-inputs">
+
+  <select id="priority">
+    <option value="Low">Low Priority</option>
+    <option value="Medium">Medium Priority</option>
+    <option value="High">High Priority</option>
+  </select>
+
+  <input
+    type="date"
+    id="dueDate"
+  >
+
+</div>
 
     <div class="stats">
       <span id="totalTasks">Total: 0</span>
@@ -211,6 +259,23 @@
     <ul class="todo-list" id="todoList"></ul>
 
   </div>
+  <div>
+  <span class="task-text ${task.completed ? "completed" : ""}">
+    ${task.text}
+  </span>
+
+  <div class="task-meta">
+
+    <span class="priority ${task.priority.toLowerCase()}">
+      ${task.priority}
+    </span>
+
+    <small>
+      📅 ${task.dueDate || "No Date"}
+    </small>
+
+  </div>
+</div>
 
   <script>
 

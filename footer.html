@@ -500,7 +500,137 @@
 
     </footer>
 
+
   </div>
+
+  <!-- ================= FOOTER ================= -->
+<footer class="footer" role="contentinfo">
+
+  <div class="footer-card">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <h2>⬡ UIverse</h2>
+
+      <p>
+        Open-source UI components crafted for modern web development.
+      </p>
+
+      <div class="footer-socials">
+
+        <a
+          href="https://github.com/Tushar-sonawane06/UI-Verse"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-x-twitter"></i>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Explore -->
+    <div class="footer-col">
+      <h3>Explore</h3>
+
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div class="footer-col">
+      <h3>Resources</h3>
+
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+
+        <li>
+          <a
+            href="https://github.com/Tushar-sonawane06/UI-Verse"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub Repository
+          </a>
+        </li>
+
+        <li>
+          <a href="community/community.html">
+            Community
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+
+      <p>Get notified when new UI components are added.</p>
+
+      <label for="newsletterEmail" class="sr-only">
+        Email Address
+      </label>
+
+      <div class="newsletter-form">
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          aria-label="Email Address"
+        >
+
+        <button type="button" id="subscribeBtn">
+          Subscribe
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © 2026 UIverse. Made with ❤️ for developers worldwide.
+    </p>
+  </div>
+
+</footer>
 
   <div class="actions">
     <button class="action-btn view-btn">View Code</button>
@@ -1242,6 +1372,8 @@
       </ul>
     </div>
 
+    
+
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
@@ -1288,6 +1420,30 @@ window.addToCollectionFromCard = function(button, name) {
   addToCollection(name, html);
 };
 
+
+function subscribe() {
+  const email = document.getElementById("newsletterEmail").value.trim();
+
+  if (!email) {
+    showToast("Please enter an email address");
+    return;
+  }
+
+  const valid =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if (!valid) {
+    showToast("Enter a valid email");
+    return;
+  }
+
+  showToast("Thanks for subscribing!");
+  document.getElementById("newsletterEmail").value = "";
+}
+
+document
+  .getElementById("subscribeBtn")
+  ?.addEventListener("click", subscribe);
 window.addToCollection = function(name, html) {
   let items = JSON.parse(localStorage.getItem("collection")) || [];
 
