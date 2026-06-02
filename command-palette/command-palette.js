@@ -292,3 +292,245 @@ commandItems.forEach((item, index)=>{
     closePalette();
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const overlay = document.getElementById("paletteOverlay");
+  const openBtn = document.getElementById("openPaletteBtn");
+  const commandInput = document.getElementById("commandInput");
+
+  let visibleCommands = [];
+  let selectedIndex = 0;
+
+  /* ================= OPEN PALETTE ================= */
+
+  function openPalette() {
+    overlay.classList.add("active");
+
+    setTimeout(() => {
+      commandInput.focus();
+      commandInput.select();
+    }, 50);
+
+    updateVisibleCommands();
+  }
+
+  function closePalette() {
+    overlay.classList.remove("active");
+    commandInput.value = "";
+    filterCommands();
+  }
+
+  openBtn.addEventListener("click", openPalette);
+
+  /* ================= KEYBOARD SHORTCUT ================= */
+
+  document.addEventListener("keydown", (e) => {
+
+    if ((e.ctrlKey || e.metaKey) &&
+      e.key.toLowerCase() === "k") {
+
+      e.preventDefault();
+
+      if (overlay.classList.contains("active")) {
+        closePalette();
+      } else {
+        openPalette();
+      }
+    }
+
+    if (!overlay.classList.contains("active")) return;
+
+    if (e.key === "Escape") {
+      closePalette();
+    }
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+
+      selectedIndex =
+        (selectedIndex + 1) % visibleCommands.length;
+
+      updateSelection();
+    }
+
+    if (e.key === "ArrowUp") {
+      e.preventDefault();
+
+      selectedIndex =
+        (selectedIndex - 1 + visibleCommands.length)
+        % visibleCommands.length;
+
+      updateSelection();
+    }
+
+    if (e.key === "Enter") {
+      e.preventDefault();
+
+      if (visibleCommands[selectedIndex]) {
+        visibleCommands[selectedIndex].click();
+      }
+    }
+  });
+
+  /* ================= FILTER ================= */
+
+  commandInput.addEventListener("input", filterCommands);
+
+  function filterCommands() {
+
+    const query =
+      commandInput.value.toLowerCase().trim();
+
+    const groups =
+      document.querySelectorAll(".command-group");
+
+    groups.forEach(group => {
+
+      let visibleCount = 0;
+
+      group.querySelectorAll(".command-item")
+        .forEach(item => {
+
+          const text =
+            item.textContent.toLowerCase();
+
+          const match =
+            text.includes(query);
+
+          item.style.display =
+            match ? "flex" : "none";
+
+          if (match) visibleCount++;
+        });
+
+      group.style.display =
+        visibleCount ? "block" : "none";
+    });
+
+    updateVisibleCommands();
+  }
+
+  /* ================= COMMAND LIST ================= */
+
+  function updateVisibleCommands() {
+
+    visibleCommands =
+      [...document.querySelectorAll(".command-item")]
+      .filter(item =>
+        item.style.display !== "none"
+      );
+
+    selectedIndex = 0;
+
+    updateSelection();
+    showNoResults();
+  }
+
+  /* ================= ACTIVE ITEM ================= */
+
+  function updateSelection() {
+
+    visibleCommands.forEach(item =>
+      item.classList.remove("selected")
+    );
+
+    if (!visibleCommands.length) return;
+
+    const selected =
+      visibleCommands[selectedIndex];
+
+    selected.classList.add("selected");
+
+    selected.scrollIntoView({
+      block: "nearest"
+    });
+  }
+
+  /* ================= NO RESULTS ================= */
+
+  function showNoResults() {
+
+    let empty =
+      document.getElementById("emptyState");
+
+    if (!empty) {
+
+      empty = document.createElement("div");
+
+      empty.id = "emptyState";
+
+      empty.innerHTML =
+        "No matching commands found";
+
+      empty.style.padding = "20px";
+      empty.style.textAlign = "center";
+      empty.style.opacity = "0.6";
+
+      document
+        .getElementById("commandList")
+        .appendChild(empty);
+    }
+
+    empty.style.display =
+      visibleCommands.length ? "none" : "block";
+  }
+
+  /* ================= OUTSIDE CLICK ================= */
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      closePalette();
+    }
+  });
+
+  /* ================= COMMAND ACTIONS ================= */
+
+  document
+    .querySelectorAll(".command-item")
+    .forEach(item => {
+
+      item.addEventListener("click", () => {
+
+        const action =
+          item.querySelector("span")
+          .textContent.trim();
+
+        switch(action) {
+
+          case "Go to Dashboard":
+            console.log("Dashboard");
+            break;
+
+          case "Open Profile":
+            console.log("Profile");
+            break;
+
+          case "Create New Project":
+            console.log("New Project");
+            break;
+
+          case "Toggle Dark Mode":
+            document.body.classList.toggle("light-mode");
+            break;
+
+          case "Logout Account":
+            console.log("Logout");
+            break;
+
+          case "Open Analytics":
+            console.log("Analytics");
+            break;
+
+          case "Settings":
+            console.log("Settings");
+            break;
+        }
+
+        closePalette();
+      });
+
+    });
+
+});

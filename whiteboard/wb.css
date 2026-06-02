@@ -54,14 +54,174 @@ body{
   padding: 12px 18px;
   border: none;
   border-radius: 10px;
-  background: #2563eb;
   color: white;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
-.tools button:hover{
-  background: #1d4ed8;
+.tool-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: #1e2a3a;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  padding: 6px 8px;
+  gap: 4px;
+}
+
+.tool-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.tool-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #334155;
+  transition: all 0.28s ease;
+}
+
+.tool-btn.active {
+  width: 52px;
+  height: 52px;
+}
+
+.tool-btn.active::before {
+  border-color: #94a3b8;
+  border-width: 2.5px;
+}
+
+@keyframes ring-pop {
+  0%   { box-shadow: 0 0 0 0px rgba(148,163,184,0.5); }
+  60%  { box-shadow: 0 0 0 7px rgba(148,163,184,0); }
+  100% { box-shadow: 0 0 0 0px rgba(148,163,184,0); }
+}
+.tool-btn.just-activated::before {
+  animation: ring-pop 0.4s ease-out;
+}
+
+#clearBtn{
+  background: #ef4444;
+}
+
+#clearBtn:hover{
+  background: #dc2626;
+}
+
+#undoBtn, #redoBtn {
+  background: #374151;
+  padding: 10px 14px;
+}
+
+#undoBtn:hover, #redoBtn:hover {
+  background: #4b5563;
+}
+
+#saveWrapper {
+  position: relative;
+  height: 40px;
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+#saveBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+#saveBtn:hover { background: #1d4ed8; }
+
+#saveDivider {
+  width: 1px;
+  background: rgba(255,255,255,0.25);
+  flex-shrink: 0;
+}
+
+#saveChevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 11px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#saveChevron:hover { background: #1d4ed8; }
+
+/* Dropdown menu */
+#saveMenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 150px;
+  background: #1e293b;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+#saveMenu.open { display: block; }
+
+.save-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.save-option:hover { background: rgba(255,255,255,0.07); }
+
+.save-option.active { color: #fff; }
+
+.save-option-check {
+  width: 14px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.save-option small {
+  margin-left: auto;
+  font-size: 11px;
+  color: #64748b;
 }
 
 #canvas{
@@ -71,6 +231,10 @@ body{
   display: block;
   border-radius: 0 0 18px 18px;
   cursor: crosshair;
+}
+
+#canvas.fill-mode {
+  cursor: cell;
 }
 
 @media(max-width: 700px){

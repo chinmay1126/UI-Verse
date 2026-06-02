@@ -1250,7 +1250,7 @@ body.dark-mode .feature-card:hover {
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-<<<<<<< HEAD
+}
 }
 
 
@@ -1277,6 +1277,5 @@ body.dark-mode .feature-card:hover {
 .stat-card i{
   font-size:1.8rem;
   margin-bottom:.7rem;
-=======
->>>>>>> origin/main
 }
+
