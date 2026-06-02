@@ -151,7 +151,7 @@ body.dark {
 
 .sidebar-nav li a:hover {
   background: var(--sidebar-hover);
-  color: #fff;
+  color: black;
   transform: translateX(4px);
 }
 
@@ -294,7 +294,192 @@ body.dark {
 
   color:white;
 }
+body.light {
+      background: #ffffff;
+      color: #000000;
+      transition: background 0.3s, color 0.3s;
+    }
 
+    body.dark {
+      background: #0f172a;
+      color: #ffffff;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #e2e8f0;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background: #cbd5e1;
+    }
+
+    .theme-toggle i {
+      font-size: 20px;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    body.dark .theme-toggle {
+      background: #1e293b;
+    }
+
+    body.dark .theme-toggle i {
+      color: #facc15; /* yellow for moon */
+    }
+    .accordion-card{
+  background:#fff;
+  border:1px solid #edf2f7;
+  border-radius:24px;
+  padding:24px;
+  box-shadow:
+  0 10px 30px rgba(15,23,42,.05);
+  transition:.35s ease;
+}
+
+.accordion-card:hover{
+  transform:translateY(-6px);
+  box-shadow:
+  0 20px 45px rgba(15,23,42,.08);
+}
+
+.card-label{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:999px;
+  background:#eef2ff;
+  color:#6366f1;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.accordion-btn{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 0;
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  color:#111827;
+}
+.revenue-card .card-label{
+  background:#eef2ff;
+  color:#6366f1;
+}
+
+.accordion-item{
+  border-top:1px solid #f1f5f9;
+}
+
+.accordion-content p{
+  color:#64748b;
+  line-height:1.7;
+}
+.ai-card .card-label{
+  background:#eef2ff;
+  color:#6366f1;
+}
+
+.api-card .card-label{
+  background:#ecfeff;
+  color:#0891b2;
+}
+
+.design-card .card-label{
+  background:#fdf4ff;
+  color:#c026d3;
+}
+
+.tools-card .card-label{
+  background:#ecfccb;
+  color:#65a30d;
+}
+
+.showcase-card .card-label{
+  background:#fff7ed;
+  color:#ea580c;
+}
+
+.cert-card .card-label{
+  background:#fef3c7;
+  color:#ca8a04;
+}
+
+.success-card .card-label{
+  background:#dcfce7;
+  color:#16a34a;
+}
+
+.compare-card .card-label{
+  background:#ede9fe;
+  color:#7c3aed;
+}
+.startup-card .card-label{
+  background:#ecfdf5;
+  color:#10b981;
+}
+
+.creative-card .card-label{
+  background:#fdf4ff;
+  color:#d946ef;
+}
+
+.analytics-card .card-label{
+  background:#eff6ff;
+  color:#2563eb;
+}
+
+.community-card .card-label{
+  background:#fff7ed;
+  color:#ea580c;
+}
+
+.automation-card .card-label{
+  background:#ecfeff;
+  color:#0891b2;
+}
+
+.academy-card .card-label{
+  background:#fefce8;
+  color:#ca8a04;
+}
+
+.trending-card .card-label{
+  background:#fef2f2;
+  color:#dc2626;
+}
+
+.project-card .card-label{
+  background:#eef2ff;
+  color:#6366f1;
+}
+
+.premium-card .card-label{
+  background:#faf5ff;
+  color:#9333ea;
+}
+
+.gaming-card .card-label{
+  background:#f0fdf4;
+  color:#16a34a;
+}
 /* MAIN */
 
 .main-home{
