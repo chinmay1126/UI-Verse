@@ -115,3 +115,115 @@ function scanSuccessEffect() {
   }, 1500);
 
 }
+
+const scanBtn = document.getElementById("scanBtn");
+const uploadBtn = document.getElementById("uploadBtn");
+const fileInput = document.getElementById("fileInput");
+const video = document.getElementById("qr-video");
+const status = document.getElementById("scanStatus");
+
+let stream = null;
+
+scanBtn.addEventListener("click", startScanner);
+
+async function startScanner() {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: {
+        facingMode: "environment"
+      }
+    });
+
+    video.srcObject = stream;
+    status.textContent = "Scanning...";
+
+    requestAnimationFrame(scanFrame);
+
+  } catch (error) {
+    status.textContent = "Camera access denied";
+    console.error(error);
+  }
+}
+
+function scanFrame() {
+  if (!video.videoWidth) {
+    requestAnimationFrame(scanFrame);
+    return;
+  }
+
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+
+  ctx.drawImage(video, 0, 0);
+
+  const imageData = ctx.getImageData(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  const code = jsQR(
+    imageData.data,
+    imageData.width,
+    imageData.height
+  );
+
+  if (code) {
+    status.textContent = `QR Found: ${code.data}`;
+
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+    }
+
+    return;
+  }
+
+  requestAnimationFrame(scanFrame);
+}
+
+uploadBtn.addEventListener("click", () => {
+  fileInput.click();
+});
+
+fileInput.addEventListener("change", event => {
+  const file = event.target.files[0];
+
+  if (!file) return;
+
+  const img = new Image();
+
+  img.onload = () => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    ctx.drawImage(img, 0, 0);
+
+    const imageData = ctx.getImageData(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
+    const code = jsQR(
+      imageData.data,
+      imageData.width,
+      imageData.height
+    );
+
+    if (code) {
+      status.textContent = `QR Found: ${code.data}`;
+    } else {
+      status.textContent = "No QR code detected";
+    }
+  };
+
+  img.src = URL.createObjectURL(file);
+});

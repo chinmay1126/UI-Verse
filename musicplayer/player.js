@@ -142,3 +142,200 @@ document.addEventListener("keydown", (e) => {
     setProgress(elapsed - 10);
   }
 });
+
+// Sample playlist
+const playlist = [
+  {
+    title: "Dream Waves",
+    artist: "Unknown Artist",
+    cover:
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=600&auto=format&fit=crop",
+    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+  },
+  {
+    title: "Night Drive",
+    artist: "Synth Rider",
+    cover:
+      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600&auto=format&fit=crop",
+    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+  },
+];
+
+let currentTrack = 0;
+let isPlaying = false;
+
+// Audio
+const audio = new Audio();
+
+// Elements
+const playBtn = document.getElementById("playBtn");
+const playIcon = document.getElementById("playIcon");
+const progressRange = document.getElementById("progressRange");
+const progressFill = document.getElementById("progressFill");
+const currentTimeEl = document.getElementById("currentTime");
+const totalTimeEl = document.getElementById("totalTime");
+const volumeSlider = document.getElementById("volumeSlider");
+
+const songTitle = document.getElementById("songTitle");
+const artistName = document.getElementById("artistName");
+const albumCover = document.getElementById("albumCover");
+
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const repeatBtn = document.getElementById("repeatBtn");
+const shuffleBtn = document.getElementById("shuffleBtn");
+const likeBtn = document.getElementById("likeBtn");
+
+const vinylRing = document.getElementById("vinylRing");
+
+let repeatMode = false;
+let shuffleMode = false;
+
+// Format time
+function formatTime(seconds) {
+  if (isNaN(seconds)) return "0:00";
+
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+
+  return `${mins}:${secs.toString().padStart(2, "0")}`;
+}
+
+// Load track
+function loadTrack(index) {
+  const track = playlist[index];
+
+  audio.src = track.src;
+
+  songTitle.textContent = track.title;
+  artistName.textContent = track.artist;
+  albumCover.src = track.cover;
+  albumCover.alt = `${track.title} album art`;
+}
+
+loadTrack(currentTrack);
+
+// Metadata loaded
+audio.addEventListener("loadedmetadata", () => {
+  progressRange.max = Math.floor(audio.duration);
+  totalTimeEl.textContent = formatTime(audio.duration);
+});
+
+// Play/Pause
+function togglePlay() {
+  if (isPlaying) {
+    audio.pause();
+
+    playIcon.classList.remove("fa-pause");
+    playIcon.classList.add("fa-play");
+
+    albumCover.classList.remove("playing");
+    vinylRing.classList.remove("spinning");
+
+    playBtn.setAttribute("aria-label", "Play");
+  } else {
+    audio.play();
+
+    playIcon.classList.remove("fa-play");
+    playIcon.classList.add("fa-pause");
+
+    albumCover.classList.add("playing");
+    vinylRing.classList.add("spinning");
+
+    playBtn.setAttribute("aria-label", "Pause");
+  }
+
+  isPlaying = !isPlaying;
+}
+
+playBtn.addEventListener("click", togglePlay);
+
+// Update progress
+audio.addEventListener("timeupdate", () => {
+  const progress = (audio.currentTime / audio.duration) * 100;
+
+  progressFill.style.width = `${progress}%`;
+
+  progressRange.value = audio.currentTime;
+
+  currentTimeEl.textContent = formatTime(audio.currentTime);
+
+  progressRange.setAttribute(
+    "aria-valuetext",
+    `${Math.floor(audio.currentTime)} seconds`
+  );
+});
+
+// Seek
+progressRange.addEventListener("input", () => {
+  audio.currentTime = progressRange.value;
+});
+
+// Volume
+audio.volume = volumeSlider.value / 100;
+
+volumeSlider.addEventListener("input", () => {
+  audio.volume = volumeSlider.value / 100;
+});
+
+// Next Track
+function nextTrack() {
+  if (shuffleMode) {
+    currentTrack = Math.floor(Math.random() * playlist.length);
+  } else {
+    currentTrack = (currentTrack + 1) % playlist.length;
+  }
+
+  loadTrack(currentTrack);
+
+  if (isPlaying) {
+    audio.play();
+  }
+}
+
+// Previous Track
+function prevTrack() {
+  currentTrack =
+    (currentTrack - 1 + playlist.length) % playlist.length;
+
+  loadTrack(currentTrack);
+
+  if (isPlaying) {
+    audio.play();
+  }
+}
+
+nextBtn.addEventListener("click", nextTrack);
+prevBtn.addEventListener("click", prevTrack);
+
+// Repeat
+repeatBtn.addEventListener("click", () => {
+  repeatMode = !repeatMode;
+
+  audio.loop = repeatMode;
+
+  repeatBtn.classList.toggle("active", repeatMode);
+  repeatBtn.setAttribute("aria-pressed", repeatMode);
+});
+
+// Shuffle
+shuffleBtn.addEventListener("click", () => {
+  shuffleMode = !shuffleMode;
+
+  shuffleBtn.classList.toggle("active", shuffleMode);
+  shuffleBtn.setAttribute("aria-pressed", shuffleMode);
+});
+
+// Like button
+likeBtn.addEventListener("click", () => {
+  const liked = likeBtn.classList.toggle("liked");
+
+  likeBtn.setAttribute("aria-pressed", liked);
+});
+
+// Auto next track
+audio.addEventListener("ended", () => {
+  if (!repeatMode) {
+    nextTrack();
+  }
+});

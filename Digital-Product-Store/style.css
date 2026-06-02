@@ -545,6 +545,20 @@ img{
   max-width:100%;
 }
 
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-bottom {
+  margin-top: auto;
 /* ================= RESET ================= */
 * {
   margin: 0;

@@ -472,6 +472,147 @@
     </form>
   </div>
 
+  <!-- ================= FOOTER ================= -->
+<footer class="footer" aria-labelledby="footer-heading">
+
+  <h2 id="footer-heading" class="sr-only">Site Footer</h2>
+
+  <div class="footer-card">
+
+    <!-- Brand -->
+    <section class="footer-brand">
+      <h3>UIverse</h3>
+
+      <p>
+        Open-source HTML, CSS and JavaScript UI components for modern web development.
+      </p>
+
+      <div class="footer-socials">
+
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit GitHub"
+        >
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit LinkedIn"
+        >
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit X (Twitter)"
+        >
+          <i class="fab fa-x-twitter" aria-hidden="true"></i>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Explore -->
+    <nav class="footer-col" aria-labelledby="explore-links">
+      <h3 id="explore-links">Explore</h3>
+
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </nav>
+
+    <!-- Resources -->
+    <nav class="footer-col" aria-labelledby="resource-links">
+      <h3 id="resource-links">Resources</h3>
+
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+
+        <li>
+          <a
+            href="https://github.com/Tushar-sonawane06/UI-Verse"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub Repository
+          </a>
+        </li>
+
+        <li>
+          <a href="community/community.html">
+            Community
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Legal -->
+    <nav class="footer-col" aria-labelledby="legal-links">
+      <h3 id="legal-links">Legal</h3>
+
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
+    </nav>
+
+    <!-- Newsletter -->
+    <section class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+
+      <p>
+        Get notified when new components are released.
+      </p>
+
+      <form class="newsletter-form" id="newsletterForm">
+
+        <label for="newsletterEmail" class="sr-only">
+          Email Address
+        </label>
+
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+        >
+
+        <button type="submit">
+          Subscribe
+        </button>
+
+      </form>
+
+    </section>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © 2026 UIverse. Made with
+      <i
+        class="fa-solid fa-heart"
+        aria-hidden="true"
+      ></i>
+      for developers worldwide.
+    </p>
+  </div>
+
+</footer>
 
   <!-- GRID -->
   <div class="footer-grid">
@@ -1464,6 +1605,20 @@ window.addToCollection = function(name, html) {
     showToast("Already in collection");
   }
 };
+const newsletterForm =
+  document.getElementById("newsletterForm");
+
+newsletterForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const email =
+    document.getElementById("newsletterEmail").value.trim();
+
+  if (!email) return;
+
+  showToast("Subscription coming soon");
+  newsletterForm.reset();
+});
 
 window.goToCollection = function() {
   window.location.href = "MyCollection.html";
