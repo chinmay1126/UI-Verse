@@ -24,6 +24,59 @@
   </head>
 
 <body>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="main-content">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search admin components..." id="searchInput">
+      </div>
+      <div class="topbar-actions">
+        <button type="button" class="add-btn" onclick="triggerAllShowcase()"><i class="fa-solid fa-play"></i> Test All
+          Panels</button>
+        <button type="button" class="collection-btn" onclick="resetAllPanels()"><i class="fa-solid fa-rotate-left"></i>
+          Reset Previews</button>
+        <button type="button" class="theme-btn" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="breadcrumb">Home &gt; Admin Panel Premium</div>
+        <h1>Admin Dashboards</h1>
+        <p>
+          Futuristic, highly-responsive administration widgets built with clean HTML, CSS, and Vanilla JavaScript.
+          Includes modular dashboard structural configurations, charts, collapsible navigations, telemetry stats, and
+          user listings.
+        </p>
+        <div class="hero-tags">
+          <span><i class="fa-solid fa-layer-group"></i> 5 Modern Categories</span>
+          <span><i class="fa-solid fa-wand-magic-sparkles"></i> Glows &amp; Interactions</span>
+          <span><i class="fa-solid fa-mobile-screen"></i> Responsive layouts</span>
+        </div>
+      </div>
+      <div class="hero-preview">
+        <div class="hero-notification-demo">
+          <div class="demo-bubble active">
+            <span class="demo-dot"></span>
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Admin Console Active</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SIDEBAR ================= -->
   <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-brand">
@@ -108,18 +161,18 @@
         <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
     </aside>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-workspace">Skip to main content</a>
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 <!-- ================= NAVBAR ================= -->
-<header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
+<header class="navbar" id="navbar" role="banner">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Sidebar Navigation Menu">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" placeholder="Search components..." / data-a11y-remediation="label-needed">
+    <input type="text" placeholder="Search components..." aria-label="Search dashboard components">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -128,11 +181,11 @@
       <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
     </a>
     
-    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode theme color"><i class="fa-solid fa-moon"></i></button>
   </div>
 </header>
 
-  <div class="main-content" role="main">
+  <div class="main-content" id="main-workspace" role="main">
 
     <!-- HERO -->
     <section class="hero">
@@ -572,95 +625,34 @@
                     onkeyup="filterUserDirectoryTable()">
                 </div>
                 <span class="table-records-badge" id="tableRecordsCount">3 active records</span>
-              </div>
-
-              <div class="directory-table-container">
+                          <div class="directory-table-container">
                 <table id="user-directory-table">
                   <thead>
                     <tr>
                       <th scope="col">
                         <div class="td-checkbox-wrap">
-                          <input type="checkbox" id="userHeaderCheckbox" onclick="toggleAllUserCheckboxes(this)">
+                          <input type="checkbox" id="userHeaderCheckbox" onclick="toggleAllUserCheckboxes(this)" aria-label="Select all operators">
                         </div>
                       </th>
-                      <th scope="col">User Profile</th>
-                      <th scope="col">Clearance</th>
-                      <th scope="col">Condition</th>
+                      <th scope="col" class="sortable-header" onclick="sortTableByColumn('name')" role="columnheader" aria-sort="none">User Profile <i class="fa-solid fa-sort sort-icon"></i></th>
+                      <th scope="col" class="sortable-header" onclick="sortTableByColumn('role')" role="columnheader" aria-sort="none">Clearance <i class="fa-solid fa-sort sort-icon"></i></th>
+                      <th scope="col" class="sortable-header" onclick="sortTableByColumn('status')" role="columnheader" aria-sort="none">Condition <i class="fa-solid fa-sort sort-icon"></i></th>
                       <th scope="col">Control</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="user-row">
-                      <td>
-                        <div class="td-checkbox-wrap">
-                          <input type="checkbox" class="user-row-checkbox">
-                        </div>
-                      </td>
-                      <td>
-                        <div class="td-profile-box">
-                          <img src="https://i.pravatar.cc/100?img=33" alt="avatar" class="td-avatar">
-                          <div class="td-profile-info">
-                            <strong>Marcus V.</strong>
-                            <span>marcus@uiverse.io</span>
-                          </div>
-                        </div>
-                      </td>
-                      <td><span class="td-role-badge lead">Lead Admin</span></td>
-                      <td><span class="td-status active">Active</span></td>
-                      <td>
-                        <button type="button" class="td-action-icon-btn" onclick="toggleUserRowStatus(this)"><i
-                            class="fa-solid fa-power-off"></i> Toggle</button>
-                      </td>
-                    </tr>
-
-                    <tr class="user-row">
-                      <td>
-                        <div class="td-checkbox-wrap">
-                          <input type="checkbox" class="user-row-checkbox">
-                        </div>
-                      </td>
-                      <td>
-                        <div class="td-profile-box">
-                          <img src="https://i.pravatar.cc/100?img=12" alt="avatar" class="td-avatar">
-                          <div class="td-profile-info">
-                            <strong>Sarah Connor</strong>
-                            <span>sconnor@uiverse.io</span>
-                          </div>
-                        </div>
-                      </td>
-                      <td><span class="td-role-badge operator">Operator</span></td>
-                      <td><span class="td-status active">Active</span></td>
-                      <td>
-                        <button type="button" class="td-action-icon-btn" onclick="toggleUserRowStatus(this)"><i
-                            class="fa-solid fa-power-off"></i> Toggle</button>
-                      </td>
-                    </tr>
-
-                    <tr class="user-row">
-                      <td>
-                        <div class="td-checkbox-wrap">
-                          <input type="checkbox" class="user-row-checkbox">
-                        </div>
-                      </td>
-                      <td>
-                        <div class="td-profile-box">
-                          <img src="https://i.pravatar.cc/100?img=47" alt="avatar" class="td-avatar">
-                          <div class="td-profile-info">
-                            <strong>Clara Jenkins</strong>
-                            <span>clara@uiverse.io</span>
-                          </div>
-                        </div>
-                      </td>
-                      <td><span class="td-role-badge reviewer">Reviewer</span></td>
-                      <td><span class="td-status paused">Paused</span></td>
-                      <td>
-                        <button type="button" class="td-action-icon-btn" onclick="toggleUserRowStatus(this)"><i
-                            class="fa-solid fa-power-off"></i> Toggle</button>
-                      </td>
-                    </tr>
+                    <!-- Programmatically populated by admin-panel.js -->
                   </tbody>
                 </table>
               </div>
+
+              <!-- Interactive Pagination Controls -->
+              <div class="table-pagination-row">
+                <span class="pagination-info" id="paginationInfo">Showing 1 to 3 of 3 records</span>
+                <div class="pagination-controls" id="paginationControls">
+                  <!-- Pagination controls programmatically built by admin-panel.js -->
+                </div>
+              </div>      </div>
             </div>
           </div>
         </div>
@@ -808,6 +800,16 @@ tr:hover {
 
   </div>
 
+    <script>
+  const hamburger = document.getElementById("hamburger");
+  const sidebar = document.getElementById("sidebar");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    sidebar.classList.toggle("active");
+  });
+</script>
+
   <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
@@ -886,9 +888,62 @@ tr:hover {
   </div>
 </footer>
 
+  <!-- ACCESSIBILITY SCREEN ANNOUNCER -->
+  <div id="a11y-announcer" class="sr-only" aria-live="polite"></div>
+
+  <!-- FLOATING BULK ACTIONS TOOLBAR -->
+  <div class="bulk-actions-panel" id="bulkActionsPanel">
+    <div class="bulk-actions-count" id="bulkActionsCount">0 selected</div>
+    <button class="bulk-btn status" onclick="bulkChangeStatus('Active')"><i class="fa-solid fa-circle-check"></i> Make Active</button>
+    <button class="bulk-btn status" style="background:rgba(245,158,11,0.12); border-color:var(--color-warning); color:var(--color-warning);" onclick="bulkChangeStatus('Paused')"><i class="fa-solid fa-circle-pause"></i> Make Paused</button>
+    <button class="bulk-btn delete" onclick="bulkDeleteUsers()"><i class="fa-solid fa-trash-can"></i> Delete Selected</button>
+  </div>
+
+  <!-- ADD OPERATOR MODAL DIALOG -->
+  <div class="admin-modal" id="addUserModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modalFormTitle">
+    <div class="admin-modal-backdrop" onclick="closeUserModal()"></div>
+    <div class="admin-modal-content">
+      <header class="admin-modal-header">
+        <h2 id="modalFormTitle">Add New Operator</h2>
+        <button class="admin-modal-close" onclick="closeUserModal()" aria-label="Close modal">&times;</button>
+      </header>
+      <div class="admin-modal-body">
+        <form id="addUserForm" onsubmit="handleUserFormSubmit(event)">
+          <div class="admin-form-group">
+            <label for="newUserName">Full Name</label>
+            <input type="text" id="newUserName" required placeholder="e.g. John Doe">
+          </div>
+          <div class="admin-form-group">
+            <label for="newUserEmail">Email Address</label>
+            <input type="email" id="newUserEmail" required placeholder="e.g. jdoe@uiverse.io">
+          </div>
+          <div class="admin-form-group">
+            <label for="newUserRole">Clearance Role</label>
+            <select id="newUserRole" required>
+              <option value="Lead Admin">Lead Admin</option>
+              <option value="Operator" selected>Operator</option>
+              <option value="Reviewer">Reviewer</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label for="newUserStatus">Condition Status</label>
+            <select id="newUserStatus" required>
+              <option value="Active" selected>Active</option>
+              <option value="Paused">Paused</option>
+            </select>
+          </div>
+          <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:24px;">
+            <button type="button" class="admin-btn secondary" onclick="closeUserModal()">Cancel</button>
+            <button type="submit" class="admin-btn primary">Add Operator</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
   <script src="admin-panel.js"></script>
-    <script src="dist/shared.js"></script>
+  <script src="dist/shared.js"></script>
 </body>
 
 </html>
