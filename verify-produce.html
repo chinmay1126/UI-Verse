@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="traceability.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
@@ -638,6 +639,7 @@
 
   <main class="verify-shell">
     <section class="verify-hero">
+      <a href="index.html" id="backToHome" class="back-home-btn">Back to Home</a>
       <div>
         <span class="eyebrow">Consumer verification</span>
         <h1>Produce journey timeline</h1>
@@ -798,6 +800,257 @@
     </div>
 
   </div>
+
+    <!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>
+        Build modern reusable UI components with pure HTML, CSS &
+        JavaScript.
+      </p>
+
+      <div class="socials">
+        <a href="#" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="#" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="#" title="Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-col">
+      <h3>Components</h3>
+
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="carousel.html">Carousel</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="footer-col">
+      <h3>Resources</h3>
+
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Contribute</a></li>
+      </ul>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+
+      <p>
+        Get notified whenever new carousel components are added.
+      </p>
+
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com">
+        <button type="button">
+          Subscribe
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+  <p>© 2026 UIverse. Crafted with ❤️ for developers.</p>
+</div>
+
+</footer>
+
+<style> 
+  /* ================= FOOTER ================= */
+
+.footer {
+  margin-top: 100px;
+  background: #0f172a;
+  color: #fff;
+  padding: 70px 8% 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 50px;
+}
+
+.footer-col h3 {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.footer-col p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #38bdf8;
+  padding-left: 5px;
+}
+
+.socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.socials a:hover {
+  background: #38bdf8;
+  transform: translateY(-4px);
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 18px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 14px;
+  background: transparent;
+  color: white;
+}
+
+.newsletter-form input::placeholder {
+  color: #94a3b8;
+}
+
+.newsletter-form button {
+  border: none;
+  padding: 14px 20px;
+  background: #38bdf8;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #0ea5e9;
+}
+
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999; /* make sure it's above footer */
+  border: none;
+  background: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#backToTop:hover {
+  background: #45a049;
+  transform: scale(1.1);
+}
+
+.back-home-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #4CAF50, #2e7d32); /* gradient green */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px; /* pill shape */
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: background 0.3s ease, transform 0.3s ease;
+  position: absolute; /* keep it at top */
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.back-home-btn:hover {
+  background: linear-gradient(135deg, #45a049, #1b5e20);
+  transform: translateY(-2px) scale(1.05);
+}
+
+</style>
 
   <div class="footer-bottom">
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
