@@ -110,6 +110,26 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="js/features/farm-dashboard.js"></script>
+
+  <button id="scrollTopBtn" title="Go to top">↑</button>
+
+  <script>
+  const scrollBtn = document.getElementById("scrollTopBtn");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  };
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+
     <script src="dist/shared.js"></script>
 </body>
 </html>
