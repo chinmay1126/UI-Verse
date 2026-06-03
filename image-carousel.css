@@ -718,6 +718,425 @@ body{
   }
 }
 
+/* ===================================================
+   EXTRA IMAGE GRID COMPONENTS
+=================================================== */
+
+.collage-grid,
+.diagonal-gallery,
+.hover-reveal-grid,
+.travel-gallery,
+.photo-wall,
+.zoom-gallery,
+.lookbook-gallery,
+.drag-stack,
+.spotlight-gallery,
+.panorama-slider,
+.photo-reel,
+.mosaic-grid,
+.wave-gallery,
+.dual-focus,
+.catalog-grid,
+.frame-collage,
+.exposure-stack,
+.lightbox-gallery,
+.grid-slider,
+.marquee-gallery {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(99,102,241,.15),
+    rgba(236,72,153,.15)
+  );
+}
+
+/* ================= COLLAGE ================= */
+
+.collage-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8px;
+  padding: 10px;
+}
+
+.collage-item {
+  border-radius: 12px;
+  background: linear-gradient(135deg,#6366f1,#8b5cf6);
+}
+
+.collage-item.large {
+  grid-row: span 2;
+}
+
+/* ================= DIAGONAL ================= */
+
+.diagonal-gallery {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+}
+
+.diag-item{
+  width:70px;
+  height:140px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#06b6d4,#3b82f6);
+  transform:rotate(-12deg);
+}
+
+.diag-item:nth-child(2){
+  transform:rotate(0deg);
+}
+
+.diag-item:nth-child(3){
+  transform:rotate(12deg);
+}
+
+/* ================= HOVER REVEAL ================= */
+
+.reveal-image{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#f97316,#ec4899);
+}
+
+.reveal-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  opacity:0;
+  transition:.3s;
+}
+
+.hover-reveal-grid:hover .reveal-overlay{
+  opacity:1;
+}
+
+/* ================= TRAVEL ================= */
+
+.travel-gallery{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+
+.travel-card{
+  width:65px;
+  height:140px;
+  border-radius:16px;
+  background:linear-gradient(180deg,#22c55e,#0ea5e9);
+}
+
+/* ================= PHOTO WALL ================= */
+
+.photo-wall{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  padding:10px;
+}
+
+.wall-item{
+  min-height:60px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+}
+
+/* ================= ZOOM ================= */
+
+.zoom-image{
+  position:absolute;
+  inset:15px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#0ea5e9,#6366f1);
+  transition:.4s;
+}
+
+.zoom-gallery:hover .zoom-image{
+  transform:scale(1.08);
+}
+
+/* ================= LOOKBOOK ================= */
+
+.lookbook-main{
+  position:absolute;
+  inset:12px 12px 60px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#ec4899,#f97316);
+}
+
+.lookbook-thumbs{
+  position:absolute;
+  bottom:12px;
+  left:12px;
+  right:12px;
+  display:flex;
+  gap:8px;
+}
+
+.lookbook-thumbs span{
+  flex:1;
+  height:34px;
+  border-radius:10px;
+  background:#fff3;
+}
+
+/* ================= DRAG STACK ================= */
+
+.drag-stack{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.drag-card{
+  position:absolute;
+  width:120px;
+  height:150px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+}
+
+.drag-card:nth-child(1){transform:rotate(-12deg);}
+.drag-card:nth-child(2){transform:rotate(0);}
+.drag-card:nth-child(3){transform:rotate(12deg);}
+
+/* ================= SPOTLIGHT ================= */
+
+.spotlight-image{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#06b6d4,#8b5cf6);
+}
+
+.spotlight-effect{
+  position:absolute;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:rgba(255,255,255,.15);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  backdrop-filter:blur(6px);
+}
+
+/* ================= PANORAMA ================= */
+
+.panorama-track{
+  position:absolute;
+  width:180%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    #06b6d4,
+    #6366f1,
+    #ec4899,
+    #f97316
+  );
+  animation:panoramaMove 12s linear infinite;
+}
+
+@keyframes panoramaMove{
+  from{transform:translateX(0);}
+  to{transform:translateX(-35%);}
+}
+
+/* ================= PHOTO REEL ================= */
+
+.photo-reel{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.reel-item{
+  width:60px;
+  height:140px;
+  border-radius:12px;
+  background:linear-gradient(180deg,#f97316,#ec4899);
+}
+
+/* ================= MOSAIC ================= */
+
+.mosaic-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  padding:10px;
+}
+
+.mosaic{
+  min-height:60px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#14b8a6,#3b82f6);
+}
+
+.mosaic.big{
+  grid-column:span 2;
+  min-height:130px;
+}
+
+/* ================= WAVE ================= */
+
+.wave-image{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#0ea5e9,#8b5cf6);
+}
+
+.wave-gallery::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:50px;
+  background:rgba(255,255,255,.15);
+  border-radius:100% 100% 0 0;
+}
+
+/* ================= DUAL ================= */
+
+.dual-focus{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.focus-left{
+  background:linear-gradient(135deg,#ec4899,#8b5cf6);
+}
+
+.focus-right{
+  background:linear-gradient(135deg,#06b6d4,#22c55e);
+}
+
+/* ================= CATALOG ================= */
+
+.catalog-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  padding:12px;
+}
+
+.catalog-item{
+  border-radius:12px;
+  background:linear-gradient(135deg,#6366f1,#3b82f6);
+}
+
+/* ================= FRAME COLLAGE ================= */
+
+.frame-collage{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+}
+
+.frame-card{
+  width:70px;
+  height:110px;
+  padding:6px;
+  border-radius:10px;
+  background:white;
+}
+
+.frame-card::before{
+  content:"";
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:6px;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+}
+
+/* ================= EXPOSURE STACK ================= */
+
+.exposure-card{
+  position:absolute;
+  width:120px;
+  height:150px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#22c55e,#06b6d4);
+}
+
+.exposure-card:nth-child(1){transform:translateX(-20px);}
+.exposure-card:nth-child(2){transform:translateX(0);}
+.exposure-card:nth-child(3){transform:translateX(20px);}
+
+/* ================= LIGHTBOX ================= */
+
+.lightbox-image{
+  position:absolute;
+  inset:12px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#f97316,#ec4899);
+}
+
+.lightbox-icon{
+  position:absolute;
+  right:18px;
+  top:18px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ================= GRID SLIDER ================= */
+
+.grid-slider{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+  padding:10px;
+}
+
+.grid-slide{
+  border-radius:12px;
+  background:linear-gradient(135deg,#06b6d4,#6366f1);
+}
+
+/* ================= MARQUEE ================= */
+
+.marquee-track{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:max-content;
+  padding:30px;
+  animation:marqueeMove 10s linear infinite;
+}
+
+.marquee-item{
+  width:90px;
+  height:140px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#ec4899,#8b5cf6);
+}
+
+@keyframes marqueeMove{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
 /* ================= NEW PROFESSIONAL CAROUSELS ================= */
 
 /* Netflix Carousel */

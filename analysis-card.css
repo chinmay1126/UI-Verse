@@ -1031,3 +1031,50 @@ body{
 .footer button:hover {
   background: #0284c7;
 }*/
+.analytics-dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:24px;
+    max-width:1600px;
+    margin:auto;
+    padding:40px;
+}
+
+.analytics-card,
+.team-card,
+.sales-card,
+.crypto-card,
+.ai-card,
+.task-card,
+.storage-card,
+.social-card,
+.weather-card,
+.revenue-trend-card,
+.satisfaction-card,
+.live-visitors-card,
+.funnel-card,
+.prediction-card,
+.region-card,
+.kpi-card,
+.subscription-card,
+.server-card,
+.executive-card{
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:24px;
+    transition:.35s ease;
+}
+
+.analytics-card:hover,
+.team-card:hover,
+.sales-card:hover,
+.crypto-card:hover,
+.ai-card:hover,
+.task-card:hover,
+.storage-card:hover,
+.social-card:hover,
+.weather-card:hover{
+    transform:translateY(-6px);
+}

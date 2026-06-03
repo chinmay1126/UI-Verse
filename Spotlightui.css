@@ -1207,6 +1207,297 @@ PREMIUM SPOTLIGHT COMPONENTS
   transition:0.3s;
 }
 
+/* ==========================================
+RECENT SEARCHES
+========================================== */
+
+.search-history {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.history-item {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: .3s;
+}
+
+.history-item:hover {
+  transform: translateX(6px);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ==========================================
+TEAM WORKSPACE
+========================================== */
+
+.team-members {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.team-members span {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.08);
+  font-size: 1rem;
+}
+
+/* ==========================================
+SHORTCUTS
+========================================== */
+
+.shortcut-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+}
+
+.shortcut-item kbd {
+  background: #111827;
+  color: white;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: .8rem;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+/* ==========================================
+AI SUGGESTIONS
+========================================== */
+
+.suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.suggestion-item {
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,0,180,.15),
+    rgba(120,0,255,.15)
+  );
+  border: 1px solid rgba(255,255,255,.08);
+  transition: .3s;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+USAGE STATISTICS
+========================================== */
+
+.usage-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+}
+
+.usage-box {
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.usage-box strong {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.usage-box span {
+  color: #9ca3af;
+  font-size: .85rem;
+}
+
+/* ==========================================
+INTEGRATIONS SECTION
+========================================== */
+
+.integrations-section {
+  margin-top: 6rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  color: #9ca3af;
+}
+
+.integration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 20px;
+}
+
+.integration-card {
+  padding: 28px;
+  border-radius: 22px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: .35s;
+}
+
+.integration-card:hover {
+  transform: translateY(-8px);
+}
+
+.integration-card i {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.integration-card span {
+  display: block;
+  font-weight: 600;
+}
+
+/* ==========================================
+COMMAND CENTER
+========================================== */
+
+.command-center {
+  margin-top: 6rem;
+  padding: 80px 30px;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at top left,
+      rgba(124,58,237,.35),
+      transparent 50%),
+    radial-gradient(circle at bottom right,
+      rgba(59,130,246,.35),
+      transparent 50%),
+    #0f172a;
+}
+
+.command-center::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.04),
+      transparent
+    );
+}
+
+.command-center-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.command-center h2 {
+  font-size: clamp(2.2rem,5vw,4rem);
+  margin: 1rem 0;
+  line-height: 1.1;
+}
+
+.command-center p {
+  max-width: 600px;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================
+PREMIUM CARD EFFECTS
+========================================== */
+
+.recent-search-card,
+.collaboration-card,
+.shortcuts-card,
+.ai-suggestions-card,
+.usage-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.recent-search-card::before,
+.collaboration-card::before,
+.shortcuts-card::before,
+.ai-suggestions-card::before,
+.usage-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.05),
+      transparent
+    );
+  pointer-events: none;
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .usage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .integration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .command-center {
+    padding: 60px 24px;
+  }
+
+  .command-center h2 {
+    font-size: 2rem;
+  }
+
+}
+
 .file-box:hover{
   background:#f3f4f6;
   transform:translateY(-4px);

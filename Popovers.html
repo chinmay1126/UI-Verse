@@ -94,6 +94,7 @@ SIDEBAR
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
+  
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -341,6 +342,483 @@ SIDEBAR
   >
     <i class="fa-solid fa-bars"></i>
   </button>
+
+  <section class="tooltip-section">
+  <h2>Basic Tooltips</h2>
+
+  <div class="tooltip-grid">
+    <button class="tooltip top" data-tooltip="Tooltip on top">
+      Top
+    </button>
+
+    <button class="tooltip bottom" data-tooltip="Tooltip on bottom">
+      Bottom
+    </button>
+
+    <button class="tooltip left" data-tooltip="Tooltip on left">
+      Left
+    </button>
+
+    <button class="tooltip right" data-tooltip="Tooltip on right">
+      Right
+    </button>
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Rich Content Tooltips</h2>
+
+  <div class="card">
+    <span class="info-icon">i</span>
+
+    <div class="rich-tooltip">
+      <h3>Premium Plan</h3>
+      <p>
+        Includes unlimited projects, analytics, and team collaboration.
+      </p>
+      <button>Learn More</button>
+    </div>
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>User Profile Tooltip</h2>
+
+  <div class="profile-trigger">
+    <img src="avatar.jpg" alt="User Avatar">
+
+    <div class="profile-tooltip">
+      <h3>Sarah Johnson</h3>
+      <p>Senior Product Designer</p>
+
+      <div class="stats">
+        <span>1.2k Followers</span>
+        <span>350 Following</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Analytics Dashboard Tooltips</h2>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h3>
+        Revenue
+        <span class="tooltip-icon"
+          data-tooltip="Total revenue generated this month">
+          ?
+        </span>
+      </h3>
+
+      <p>$54,210</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>
+        Conversion Rate
+        <span class="tooltip-icon"
+          data-tooltip="Percentage of visitors who completed a purchase">
+          ?
+        </span>
+      </h3>
+
+      <p>8.2%</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Animation Styles</h2>
+
+  <div class="demo-row">
+    <button class="fade-tooltip">Fade</button>
+    <button class="scale-tooltip">Scale</button>
+    <button class="slide-tooltip">Slide</button>
+    <button class="glass-tooltip">Glassmorphism</button>
+  </div>
+</section>
+<section class="tooltip-section">
+  <h2>Mobile Variants</h2>
+
+  <div class="mobile-demo">
+    <button class="tap-tooltip">
+      Tap Me
+    </button>
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Tooltip Features</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Supported</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Keyboard Navigation</td>
+        <td>✓</td>
+      </tr>
+
+      <tr>
+        <td>Touch Support</td>
+        <td>✓</td>
+      </tr>
+
+      <tr>
+        <td>Custom Content</td>
+        <td>✓</td>
+      </tr>
+
+      <tr>
+        <td>Animation Variants</td>
+        <td>✓</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="cta">
+  <h2>Build Better User Experiences</h2>
+
+  <p>
+    Enhance usability with elegant tooltip interactions.
+  </p>
+
+  <button>Explore Components</button>
+</section>
+
+<div class="popover-card">
+
+  <div class="card-top">
+    <span class="card-label">CALENDAR</span>
+
+    <div class="card-icon blue">
+      <i class="fa-solid fa-calendar"></i>
+    </div>
+  </div>
+
+  <h2>Calendar Picker</h2>
+
+  <p>
+    Floating date selector for scheduling and booking interfaces.
+  </p>
+
+  <div class="popover-demo">
+
+    <button class="popover-btn">
+      Open Calendar
+    </button>
+
+    <div class="popover-box calendar-box">
+
+      <h4>September 2026</h4>
+
+      <div class="calendar-grid">
+        <span>Su</span><span>Mo</span><span>Tu</span>
+        <span>We</span><span>Th</span><span>Fr</span>
+        <span>Sa</span>
+
+        <button>14</button>
+        <button>15</button>
+        <button class="active">16</button>
+        <button>17</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="popover-card">
+
+  <div class="card-top">
+    <span class="card-label">SETTINGS</span>
+
+    <div class="card-icon purple">
+      <i class="fa-solid fa-sliders"></i>
+    </div>
+  </div>
+
+  <h2>Preferences</h2>
+
+  <p>
+    Quick personalization settings panel.
+  </p>
+
+  <div class="popover-demo">
+
+    <button class="popover-btn">
+      Open Settings
+    </button>
+
+    <div class="popover-box settings-box">
+
+      <label>
+        <input type="checkbox" checked>
+        Dark Mode
+      </label>
+
+      <label>
+        <input type="checkbox">
+        Notifications
+      </label>
+
+      <label>
+        <input type="checkbox" checked>
+        Auto Save
+      </label>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="popover-card">
+
+  <div class="card-top">
+    <span class="card-label">EMOJI</span>
+
+    <div class="card-icon yellow">
+      <i class="fa-regular fa-face-smile"></i>
+    </div>
+  </div>
+
+  <h2>Emoji Picker</h2>
+
+  <p>
+    Chat and messaging reaction selector.
+  </p>
+
+  <div class="popover-demo">
+
+    <button class="popover-btn">
+      Pick Emoji
+    </button>
+
+    <div class="popover-box emoji-box">
+
+      😀 😎 🚀 ❤️ 🔥
+
+      <br><br>
+
+      🎉 👍 🤖 💎 🌈
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="popover-card">
+
+  <div class="card-top">
+    <span class="card-label">COLORS</span>
+
+    <div class="card-icon pink">
+      <i class="fa-solid fa-palette"></i>
+    </div>
+  </div>
+
+  <h2>Color Picker</h2>
+
+  <p>
+    Floating color selection panel.
+  </p>
+
+  <div class="popover-demo">
+
+    <button class="popover-btn">
+      Select Color
+    </button>
+
+    <div class="popover-box color-box">
+
+      <span class="color red"></span>
+      <span class="color blue"></span>
+      <span class="color green"></span>
+      <span class="color purple"></span>
+      <span class="color orange"></span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="popover-card">
+
+  <div class="card-top">
+    <span class="card-label">UPLOAD</span>
+
+    <div class="card-icon cyan">
+      <i class="fa-solid fa-cloud-arrow-up"></i>
+    </div>
+  </div>
+
+  <h2>Quick Upload</h2>
+
+  <p>
+    Floating upload dialog for documents and images.
+  </p>
+
+  <div class="popover-demo">
+
+    <button class="popover-btn">
+      Upload File
+    </button>
+
+    <div class="popover-box upload-box">
+
+      <i class="fa-solid fa-file-arrow-up"></i>
+
+      <p>Drop files here</p>
+
+      <button>Browse</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="popover-card">
+
+  <div class="card-top">
+    <span class="card-label">STORE</span>
+
+    <div class="card-icon orange">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+  </div>
+
+  <h2>Mini Cart</h2>
+
+  <p>
+    E-commerce cart preview popover.
+  </p>
+
+  <div class="popover-demo">
+
+    <button class="popover-btn">
+      View Cart
+    </button>
+
+    <div class="popover-box cart-box">
+
+      <div class="cart-item">
+        <span>UI Kit Pro</span>
+        <strong>$49</strong>
+      </div>
+
+      <div class="cart-item">
+        <span>Dashboard Pack</span>
+        <strong>$29</strong>
+      </div>
+
+      <button>Checkout</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="popover-card">
+
+  <div class="card-top">
+    <span class="card-label">AI</span>
+
+    <div class="card-icon green">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+  </div>
+
+  <h2>AI Assistant</h2>
+
+  <p>
+    Floating chatbot quick-help interface.
+  </p>
+
+  <div class="popover-demo">
+
+    <button class="popover-btn">
+      Ask AI
+    </button>
+
+    <div class="popover-box ai-box">
+
+      <strong>AI Assistant</strong>
+
+      <p>
+        How can I help today?
+      </p>
+
+      <input type="text" placeholder="Ask anything..." />
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="popover-card">
+
+  <div class="card-top">
+    <span class="card-label">COMMAND</span>
+
+    <div class="card-icon purple">
+      <i class="fa-solid fa-terminal"></i>
+    </div>
+  </div>
+
+  <h2>Command Menu</h2>
+
+  <p>
+    Spotlight-inspired quick action search.
+  </p>
+
+  <div class="popover-demo">
+
+    <button class="popover-btn">
+      Open Palette
+    </button>
+
+    <div class="popover-box command-box">
+
+      <input
+        type="text"
+        placeholder="Search commands..."
+      />
+
+      <div class="action-item">
+        Create Project
+      </div>
+
+      <div class="action-item">
+        Open Dashboard
+      </div>
+
+      <div class="action-item">
+        Invite Team
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
   <div
     class="sidebar-backdrop"

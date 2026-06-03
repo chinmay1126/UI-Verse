@@ -584,6 +584,50 @@
 
         </div>
 
+    <div class="term-card premium">
+  <div class="term-icon">
+    <i class="fa-solid fa-copyright"></i>
+  </div>
+
+  <div class="term-content">
+    <span class="term-number">04</span>
+    <h3>Intellectual Property</h3>
+
+    <p>
+      All content, branding, components, and assets remain the
+      intellectual property of UIverse unless otherwise stated.
+    </p>
+
+    <ul>
+      <li>No unauthorized redistribution</li>
+      <li>Respect licensing requirements</li>
+      <li>Commercial usage follows license terms</li>
+    </ul>
+  </div>
+</div>
+
+<div class="term-card premium">
+  <div class="term-icon">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+  </div>
+
+  <div class="term-content">
+    <span class="term-number">05</span>
+    <h3>Limitation of Liability</h3>
+
+    <p>
+      UIverse is provided "as is" without warranties and shall
+      not be liable for indirect damages or service interruptions.
+    </p>
+
+    <ul>
+      <li>No warranty guarantees</li>
+      <li>Service availability may vary</li>
+      <li>Use at your own risk</li>
+    </ul>
+  </div>
+</div>
+
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
@@ -683,11 +727,31 @@ toggle.addEventListener('click', () => {
   localStorage.setItem('theme', dark ? 'dark' : 'light');
 });
 
+
+if (
+  !localStorage.getItem('theme') &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches
+) {
+  document.body.classList.add('dark-mode');
+  icon.className = 'fa-solid fa-sun';
+}
 // navbar scroll effect
 window.addEventListener('scroll', () => {
   document.getElementById('navbar')
     .classList.toggle('scrolled', window.scrollY > 40);
 });
+
+function subscribe() {
+  const email =
+    document.getElementById('newsletter-email').value;
+
+  if (!email) {
+    alert('Please enter an email address.');
+    return;
+  }
+
+  alert('Subscribed successfully!');
+}
 </script>
 
     <script src="dist/shared.js"></script>

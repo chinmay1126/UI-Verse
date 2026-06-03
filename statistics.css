@@ -91,6 +91,11 @@ body {
   transform:translateY(-8px);
 }
 
+.error-card.hidden{
+  opacity:0;
+  transform:scale(.95);
+  pointer-events:none;
+}
 .mini-icon{
   width:70px;
   height:70px;
