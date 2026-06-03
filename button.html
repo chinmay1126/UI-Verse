@@ -457,6 +457,67 @@
       </div>
       <pre id="c1" class="code-block"><code>&lt;button class="gradient-btn"&gt;Click Me&lt;/button&gt;
 
+      <h1>
+        Beautiful <span>Button Components</span>
+      </h1>
+
+      <p>
+        Explore reusable, modern, and interactive button styles designed for real-world UI development.
+      </p>
+
+      
+
+    </section>
+
+    <!-- Animated Gradient -->
+
+<div class="component-card" data-name="animated gradient button" data-cat="style">
+  <div class="card-top">
+
+    <span class="card-label">Animated Gradient</span>
+    <span class="card-tag tag-new">New</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="animated-gradient-btn">Click Me</button>
+    <button class="animated-gradient-btn fast">Fast</button>
+    <button class="animated-gradient-btn slow">Slow</button>
+    <button class="animated-gradient-btn alt">Alt Colors</button>
+  </div>
+
+  <p class="card-desc">A multi-color gradient button with smooth animated transitions.</p>
+  <div class="actions">
+
+    <button class="action-btn view-btn" onclick="toggleCode('cAnimated', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('cAnimated', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+    
+  </div>
+  <pre id="cAnimated" class="code-block"><code>&lt;button class="animated-gradient-btn"&gt;Click Me&lt;/button&gt;</code></pre>
+</div>
+
+
+    <!-- BUTTON GRID -->
+    <section class="features">
+
+      <!-- Gradient -->
+      <div class="feature-card">
+        <div class="icon">🌈</div>
+        <h3>Gradient Button</h3>
+        <button class="gradient-btn">Click Me</button>
+
+        <div class="actions">
+          <button onclick="toggleCode('c1', this)">View Code</button>
+          <button onclick="copyCode('c1', this)">Copy</button>
+        </div>
+
+        <pre id="c1" class="code-block">
+&lt;button class="gradient-btn"&gt;Click Me&lt;/button&gt;
+        </pre>
 .gradient-btn {
   padding: 10px 24px;
   border: none;
@@ -1896,6 +1957,11 @@ themeBtn.addEventListener("click", () => {
     ComponentPlayground.init();
   }
 
+  /* ---------- Code Diff Viewer ---------- */
+  if (window.CodeDiff) {
+    CodeDiff.init();
+  }
+
   /* ---------- Scroll Animations ---------- */
   const buttonPageObserver = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
@@ -1994,6 +2060,9 @@ themeBtn.addEventListener("click", () => {
   ]
 }
 </script>
+<script src="js/features/export-sandbox.js"></script>
+<script src="js/features/component-playground.js"></script>
+<script src="js/features/code-diff.js"></script>
 <script src="playground.js"></script>
 <script>
 window.addEventListener('load', () => {
@@ -2074,6 +2143,8 @@ function showToast(message) {
     border-radius: 8px;
     margin-top: 10px;
   }
+  </style>
+  
 <div id="commandPaletteOverlay" class="command-palette-overlay">
   <div class="command-palette-container">
     <div class="command-palette-input-wrapper">
