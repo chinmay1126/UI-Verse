@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Whiteboard UI</title>
   <link rel="stylesheet" href="wb.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="whiteboard-container">
 
@@ -16,7 +20,7 @@
 
       <div class="tools">
 
-        <input type="color" id="colorPicker">
+        <input type="color" id="colorPicker" data-a11y-remediation="label-needed">
 
         <input
           type="range"
@@ -26,12 +30,45 @@
           value="4"
         >
 
-        <button id="eraserBtn">
-          Eraser
-        </button>
-
+        <div class="tool-toggle" id="toolToggle">
+          <button type="button" class="tool-btn active" id="brushBtn" title="Brush" aria-pressed="true">
+            <i class="fa-solid fa-paintbrush"></i>
+          </button>
+          <button type="button" class="tool-btn" id="eraserBtn" title="Eraser" aria-pressed="false">
+            <i class="fa-solid fa-eraser"></i>
+          </button>
+          <button type="button" class="tool-btn" id="fillBtn" title="Fill" aria-pressed="false">
+            <i class="fa-solid fa-fill-drip"></i>
+          </button>
+        </div>
+        <div class="shape-picker-wrapper" id="shapePickerWrapper">
+          <button type="button" id="shapeBtn" class="tool-btn shape-trigger" title="Shapes" aria-pressed="false" aria-haspopup="true" aria-expanded="false">
+            <i class="fa-regular fa-square" id="shapeBtnIcon"></i>
+          </button>
+          <div class="shape-popover" id="shapePopover" role="menu" aria-label="Shape tools">
+            <button type="button" class="shape-opt" data-shape="line" title="Line" role="menuitem">
+              <i class="fa-solid fa-minus"></i>
+              <span>Line</span>
+            </button>
+            <button type="button" class="shape-opt" data-shape="rect" title="Rectangle" role="menuitem">
+              <i class="fa-regular fa-square"></i>
+              <span>Rect</span>
+            </button>
+            <button type="button" class="shape-opt" data-shape="ellipse" title="Ellipse" role="menuitem">
+              <i class="fa-regular fa-circle"></i>
+              <span>Ellipse</span>
+            </button>
+          </div>
+        </div>
         <button id="clearBtn">
           Clear
+        </button>
+
+        <button type="button" id="undoBtn" title="Undo (Ctrl+Z)" aria-label="Undo last action">
+          <i class="fa-solid fa-rotate-left"></i>
+        </button>
+        <button type="button" id="redoBtn" title="Redo (Ctrl+Y)" aria-label="Redo last action">
+          <i class="fa-solid fa-rotate-right"></i>
         </button>
 
       </div>
@@ -43,5 +80,6 @@
   </div>
 
   <script src="wb.js"></script>
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

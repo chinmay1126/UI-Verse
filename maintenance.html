@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maintenance Page Components — UIverse</title>
@@ -12,12 +13,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
   <link rel="stylesheet" href="maintenance.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -96,7 +96,47 @@
       </li>
     </ul>
   </nav>
+
+  <div class="maint-stats-grid">
+  <div class="maint-stat-card">
+    <h3>5+</h3>
+    <span>Maintenance Layouts</span>
+  </div>
+
+  <div class="maint-stat-card">
+    <h3>100%</h3>
+    <span>Responsive</span>
+  </div>
+
+  <div class="maint-stat-card">
+    <h3>Dark</h3>
+    <span>Theme Ready</span>
+  </div>
+
+  <div class="maint-stat-card">
+    <h3>Pure</h3>
+    <span>HTML CSS JS</span>
+  </div>
+</div>
   
+
+<div class="preview-controls">
+  <button onclick="toggleDarkPreview()">
+    Toggle Theme
+  </button>
+
+  <button onclick="restartCountdown()">
+    Restart Timer
+  </button>
+</div>
+
+<div class="maint-bg-effects">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
   <div class="sidebar-footer">
     <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -116,7 +156,7 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search maintenance components..." oninput="liveFilter(this.value)" />
+    <input type="text" id="searchInput" placeholder="Search maintenance components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
 
@@ -682,6 +722,24 @@
     }, 2200);
   }
 
+
+  function liveFilter(val){
+  const q = val.toLowerCase();
+  let found = false;
+
+  document.querySelectorAll('.component-card').forEach(card=>{
+    const match =
+      card.dataset.name.toLowerCase().includes(q) ||
+      card.querySelector('h2').textContent.toLowerCase().includes(q);
+
+    card.style.display = match ? '' : 'none';
+
+    if(match) found = true;
+  });
+
+  document.getElementById('emptySearchState').style.display =
+    found ? 'none' : 'block';
+}
   // Code Block Toggle
   function toggleCode(id, btn) {
     const block = document.getElementById(id);
@@ -867,5 +925,6 @@
   }
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,10 +18,11 @@
 
   <link rel="stylesheet" href="flipcards.css">
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- YOUR SIDEBAR HERE -->
 
@@ -35,13 +36,13 @@
 
       <i class="fa-solid fa-magnifying-glass"></i>
 
-      <input type="text" placeholder="Search components...">
+      <input type="text" placeholder="Search components..." data-a11y-remediation="label-needed">
 
     </div>
 
     <div class="topbar-actions">
 
-      <button class="add-btn">
+      <button class="add-btn" data-a11y-remediation="button-label-needed">
         <i class="fa-solid fa-plus"></i>
         Add Component
       </button>
@@ -1223,18 +1224,18 @@
 <footer class="footer">
   <div class="footer-container">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+    <!-- Brand row -->
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
 
+    <!-- Other footer columns -->
     <div class="footer-col">
       <h3>Explore</h3>
       <ul>
@@ -1249,11 +1250,10 @@
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
 
@@ -1271,15 +1271,16 @@
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
         <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+        <button type="button">Subscribe</button>
       </div>
     </div>
-
   </div>
 
   <div class="footer-bottom">
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
+
+    <script src="dist/shared.js"></script>
 </body>
 </html>

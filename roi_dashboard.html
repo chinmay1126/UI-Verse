@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' http://127.0.0.1:5000 http://localhost:5000 https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-inline'; style-src 'self' https: 'unsafe-inline'">
@@ -11,6 +12,8 @@
   <link rel="stylesheet" href="roi_dashboard.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <main class="roi-shell">
     <section class="hero-panel">
       <div class="hero-copy">
@@ -36,10 +39,112 @@
           <p>Use recent season data to estimate your next harvest.</p>
         </div>
 
+
+        <form id="roi-form" class="input-card" novalidate>
+  <div class="card-heading">
+    <h2>Forecast Inputs</h2>
+    <p>Use recent season data to estimate your next harvest.</p>
+  </div>
+
+  <div class="field-grid">
+
+    <div class="field">
+      <label for="acreage">Acreage</label>
+      <input
+        id="acreage"
+        name="acreage"
+        type="number"
+        min="0.1"
+        step="0.1"
+        value="40"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="seed_cost">Seed Cost</label>
+      <input
+        id="seed_cost"
+        name="seed_cost"
+        type="number"
+        min="0"
+        step="50"
+        value="1200"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="fertilizer_cost">Fertilizer Cost</label>
+      <input
+        id="fertilizer_cost"
+        name="fertilizer_cost"
+        type="number"
+        min="0"
+        step="50"
+        value="1500"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="budget">Current Budget</label>
+      <input
+        id="budget"
+        name="budget"
+        type="number"
+        min="0"
+        step="100"
+        value="7500"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="soil_type">Soil Type</label>
+      <select id="soil_type" name="soil_type" required>
+        <option value="Loamy">Loamy</option>
+        <option value="Sandy">Sandy</option>
+        <option value="Clay">Clay</option>
+        <option value="Silt">Silt</option>
+        <option value="Black">Black</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="target_crop">Target Crop</label>
+      <select id="target_crop" name="target_crop" required>
+        <option value="Corn">Corn</option>
+        <option value="Wheat">Wheat</option>
+        <option value="Rice">Rice</option>
+        <option value="Soybean">Soybean</option>
+        <option value="Cotton">Cotton</option>
+      </select>
+    </div>
+
+  </div>
+
+  <button type="submit" class="submit-btn">
+    <span class="btn-label">Predict ROI</span>
+    <span class="btn-arrow">↗</span>
+  </button>
+
+  <p class="form-note">
+    Estimates are generated from historical crop and pricing data.
+  </p>
+
+  <p
+    id="status"
+    class="status"
+    role="status"
+    aria-live="polite"
+  ></p>
+</form>
+
         <div class="field-grid">
           <label>
             Acreage
-            <input name="acreage" type="number" min="0.1" step="0.1" value="40" required>
+            <input name="acreage" type="number" min="0.1" step="0.1" value="40" required data-a11y-remediation="label-needed">
           </label>
           <label>
             Seed Cost
@@ -132,5 +237,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="js/features/roi-dashboard.js"></script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

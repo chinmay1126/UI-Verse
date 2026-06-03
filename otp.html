@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -16,10 +17,11 @@
 
   <link rel="stylesheet" href="otp.css">
   
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -215,12 +217,12 @@
           <span>Authentication</span>
         </a>
       </li>
-        <li>
-          <a href="recovery.html">
-            <i class="fa-solid fa-key" aria-hidden="true"></i>
-            <span>Password Recovery</span>
-          </a>
-        </li>
+      <li class="active">
+        <a href="otp.html">
+          <i class="fa-solid fa-key"></i>
+          <span>OTP</span>
+        </a>
+      </li>
       <li>
         <a href="section.html">
           <i class="fa-solid fa-rectangle-list"></i>
@@ -240,6 +242,21 @@
         </a>
       </li>
       <li>
+        <div class="component-actions">
+  <button class="preview-btn">
+    <i class="fa-solid fa-eye"></i>
+    Preview
+  </button>
+
+  <button class="copy-btn">
+    <i class="fa-solid fa-copy"></i>
+    Copy Code
+  </button>
+
+  <button class="save-btn">
+    <i class="fa-regular fa-bookmark"></i>
+  </button>
+</div>
         <a href="tabs.html">
           <i class="fa-solid fa-table-columns"></i>
           <span>Tabs</span>
@@ -337,13 +354,70 @@
       </li>
     </ul>
   </nav>
-
-  <div class="sidebar-footer">
-    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-  </div>
 </aside>
+
+<section class="otp-section">
+
+  <div class="otp-card premium-otp-card">
+
+    <div class="otp-header">
+
+      <span class="otp-badge">
+        Verification
+      </span>
+
+      <div class="otp-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+
+    </div>
+
+    <h2>Verify Your Account</h2>
+
+    <p>
+      We've sent a 6-digit verification code to
+      <strong>example@email.com</strong>
+    </p>
+
+    <div class="otp-progress">
+      <div class="otp-progress-fill"></div>
+    </div>
+
+    <div class="otp-container premium-otp">
+
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+      <input type="tel" maxlength="1" autocomplete="off">
+
+    </div>
+
+    <div class="otp-status">
+      Enter the verification code
+    </div>
+
+    <div class="otp-footer">
+
+      <div class="timer">
+        <i class="fa-regular fa-clock"></i>
+        <span id="countdown">01:30</span>
+      </div>
+
+      <button class="resend-btn">
+        Resend Code
+      </button>
+
+    </div>
+
+    <button class="verify-btn">
+      Verify OTP
+    </button>
+
+  </div>
+
+</section>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
@@ -355,12 +429,12 @@
 
     <div class="search-box">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search components...">
+      <input type="text" placeholder="Search components..." data-a11y-remediation="label-needed">
     </div>
 
     <div class="topbar-actions">
 
-      <button class="add-btn">
+      <button class="add-btn" data-a11y-remediation="button-label-needed">
         <i class="fa-solid fa-plus"></i>
         Add Component
       </button>
@@ -591,70 +665,84 @@
 
 
 
-  <!-- FOOTER -->
-  <footer class="footer">
+<!-- ================= FOOTER ================= -->
 
-    <div class="footer-container">
+<footer class="footer">
+  <div class="footer-container">
 
-      <div class="footer-col">
-
-        <h2 class="footer-logo">⬡ UIverse</h2>
-
-        <p>
-          Build modern, reusable UI components
-          with clean HTML, CSS and JavaScript.
-        </p>
-
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" title="Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
       </div>
-
-      <div class="footer-col">
-
-        <h3>Explore</h3>
-
-        <ul>
-          <li><a href="#">Buttons</a></li>
-          <li><a href="#">Inputs</a></li>
-          <li><a href="#">OTP Inputs</a></li>
-          <li><a href="#">Forms</a></li>
-        </ul>
-
-      </div>
-
-      <div class="footer-col">
-
-        <h3>Resources</h3>
-
-        <ul>
-          <li><a href="#">Documentation</a></li>
-          <li><a href="#">Community</a></li>
-          <li><a href="#">GitHub Repo</a></li>
-        </ul>
-
-      </div>
-
-      <div class="footer-col">
-
-        <h3>Stay Updated</h3>
-
-        <div class="newsletter">
-
-          <input type="email" placeholder="your@email.com">
-
-          <button>
-            Subscribe
-          </button>
-
-        </div>
-
-      </div>
-
     </div>
 
-    <div class="footer-bottom">
-      © 2026 UIverse. Made with ❤️ for developers.
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a>
+        </li>
+        <li><a href="navbar.html">Navbars</a>
+        </li>
+        <li><a href="cards.html">Cards</a>
+        </li>
+        <li><a href="inputs.html">Inputs</a>
+        </li>
+        <li><a href="forms.html">Forms</a>
+        </li>
+      </ul>
     </div>
 
-  </footer>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a>
+        </li>
+        <li><a href="#">Contribute</a>
+        </li>
+        <li><a href="#">GitHub Repo</a>
+        </li>
+        <li><a href="#">Community</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a>
+        </li>
+        <li><a href="terms.html">Terms of Service</a>
+        </li>
+        <li><a href="#">License</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
 
 </div>
 <script>
@@ -682,6 +770,29 @@ document.querySelectorAll(
 
     });
 
+    function checkOtpComplete(inputs){
+
+  const otp =
+    [...inputs]
+    .map(i => i.value)
+    .join("");
+
+  if(otp.length === inputs.length){
+
+    document.querySelector(".otp-status").innerHTML =
+      '<i class="fa-solid fa-spinner fa-spin"></i> Verifying...';
+
+    setTimeout(()=>{
+
+      document.querySelector(".otp-status").innerHTML =
+        '<i class="fa-solid fa-circle-check"></i> Verified';
+
+    },1200);
+
+  }
+
+}
+
     input.addEventListener("keydown", (e) => {
 
       if(e.key === "Backspace" && !input.value && inputs[index - 1]){
@@ -694,6 +805,69 @@ document.querySelectorAll(
 
 });
 
+const premiumOtp = document.querySelector(".premium-otp");
+
+if (premiumOtp) {
+
+  const inputs = premiumOtp.querySelectorAll("input");
+
+  premiumOtp.addEventListener("paste", (e) => {
+
+    const pasted = (
+      e.clipboardData.getData("text")
+    ).replace(/\D/g, "");
+
+    if (pasted.length) {
+
+      inputs.forEach((input, i) => {
+        input.value = pasted[i] || "";
+      });
+
+      e.preventDefault();
+    }
+
+  });
+
+}
+
+let time = 90;
+
+const countdown = document.getElementById("countdown");
+
+setInterval(() => {
+
+  if(time <= 0) return;
+
+  time--;
+
+  const min = String(
+    Math.floor(time / 60)
+  ).padStart(2, "0");
+
+  const sec = String(
+    time % 60
+  ).padStart(2, "0");
+
+  countdown.textContent =
+    `${min}:${sec}`;
+
+}, 1000);
+
+document
+.querySelector(".verify-btn")
+?.addEventListener("click", () => {
+
+  const status =
+    document.querySelector(".otp-status");
+
+  status.innerHTML =
+    '<i class="fa-solid fa-circle-check"></i> Verification Successful';
+
+  status.style.color = "#10b981";
+
+});
+
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

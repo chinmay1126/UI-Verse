@@ -148,18 +148,24 @@ You can also import single components with subpaths like `ui-verse/button` or `u
 
 ---
 
-## CI / CD
+## CI / CD & Local Quality Gates
 
-Pull requests run linting, tests, and package checks through GitHub Actions.
+Pull requests run a series of strict quality checks, linting rules, and tests through GitHub Actions. You should run these checks locally before opening a pull request to ensure your changes pass the quality gates:
 
-For Netlify previews, add these repository secrets:
+### 🛠️ Local Quality Gate Commands
 
-```text
-NETLIFY_AUTH_TOKEN
-NETLIFY_SITE_ID
-```
+Run the following commands in your workspace:
 
-When both secrets are set, the preview deploy job runs automatically on pull requests.
+- **Verify all files:** `npm run quality` (Runs HTML, CSS, JavaScript linting, accessibility scans, and visual regression tests).
+- **HTML Linting:** `npm run lint:html`
+- **CSS Style Linting:** `npm run lint:css`
+- **JavaScript Linting:** `npm run lint:js`
+- **Accessibility Verification:** `npm run audit:a11y`
+- **Visual E2E Regression Tests:** `npm run test:visual` (Requires Playwright browsers to be installed via `npx playwright install`).
+
+For Netlify previews on pull requests, configure the following secrets in your repository settings:
+- `NETLIFY_AUTH_TOKEN`
+- `NETLIFY_SITE_ID`
 
 ---
 

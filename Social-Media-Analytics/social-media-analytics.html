@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8"/>
   <meta name="viewport"
   content="width=device-width, initial-scale=1.0"/>
+
 
   <title>Social Media Analytics Dashboard</title>
 
@@ -24,6 +25,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -83,7 +86,7 @@
         Your content reach increased this week.
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         View Insights
       </button>
 
@@ -118,7 +121,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
 
           <input type="text"
-          placeholder="Search campaigns...">
+          placeholder="Search campaigns..." data-a11y-remediation="label-needed">
 
         </div>
 
@@ -191,6 +194,31 @@
       </div>
 
     </section>
+
+    <section class="dashboard-hero">
+  <div>
+    <h1>Social Media Analytics</h1>
+    <p>Track audience growth and campaign performance.</p>
+  </div>
+
+  <div class="hero-badge">
+    🚀 +248% Reach Growth
+  </div>
+</section>
+
+<div class="hero-card">
+  <div class="card-icon">
+    <i class="fa-solid fa-users"></i>
+  </div>
+
+  <div>
+    <span>Total Followers</span>
+    <h2>128.4K</h2>
+    <p class="positive">
+      ↑ 12.8%
+    </p>
+  </div>
+</div>
 
     <!-- QUICK ACTIONS -->
 
@@ -486,5 +514,6 @@
   <!-- JS -->
   <script src="social-media-analytics.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

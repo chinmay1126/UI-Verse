@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta
     name="viewport"
@@ -26,10 +26,11 @@
   <!-- CSS -->
   <link rel="stylesheet" href="musicicon.css" />
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
    SIDEBAR
@@ -360,6 +361,114 @@
 
 </aside>
 
+<div class="component-card" data-cat="podcast" data-name="podcast player">
+  <div class="card-top">
+    <span class="card-label">Podcast Player</span>
+    <span class="card-tag tag-new">New</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="podcast-player">
+      <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200" alt="Podcast">
+      <h3>Tech Weekly</h3>
+      <p>Episode #128</p>
+      <button><i class="fa-solid fa-play"></i></button>
+    </div>
+  </div>
+
+  <p class="card-desc">
+    Podcast inspired player with episode progress and playback controls.
+  </p>
+</div>
+
+<div class="component-card" data-cat="streaming" data-name="spotify now playing">
+  <div class="card-top">
+    <span class="card-label">Now Playing Bar</span>
+    <span class="card-tag tag-popular">Popular</span>
+  </div>
+
+  <div class="card-preview dark-preview">
+    <div class="spotify-bar">
+      <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800" alt="">
+      <div>
+        <h4>Dreamscape</h4>
+        <p>Nova Beats</p>
+      </div>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+  </div>
+</div>
+
+<div class="component-card" data-cat="cards">
+  <div class="card-top">
+    <span class="card-label">Circular Progress</span>
+    <span class="card-tag tag-modern">Modern</span>
+  </div>
+
+  <div class="card-preview">
+    <div class="circle-player">
+      <div class="circle-progress">72%</div>
+    </div>
+  </div>
+</div>
+
+<div class="component-card" data-cat="vinyl">
+  <div class="card-top">
+    <span class="card-label">DJ Mixer</span>
+    <span class="card-tag tag-premium">Premium</span>
+  </div>
+
+  <div class="card-preview dark-preview">
+    <div class="dj-deck">
+      <div class="disc"></div>
+      <div class="disc"></div>
+    </div>
+  </div>
+</div>
+
+<section class="featured-playlists">
+
+  <div class="section-header">
+    <h2>Featured Playlists</h2>
+    <a href="#">View All</a>
+  </div>
+
+  <div class="playlist-row">
+
+    <div class="featured-playlist">
+      <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200" alt="">
+      <h4>Late Night Coding</h4>
+    </div>
+
+    <div class="featured-playlist">
+      <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1200" alt="">
+      <h4>Lo-Fi Focus</h4>
+    </div>
+
+    <div class="featured-playlist">
+      <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200" alt="">
+      <h4>Podcast Collection</h4>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="visualizer-showcase">
+
+  <h2>Audio Visualizers</h2>
+
+  <div class="visualizer-grid">
+
+    <div class="visualizer-circle"></div>
+
+    <div class="visualizer-wave"></div>
+
+    <div class="visualizer-spectrum"></div>
+
+  </div>
+
+</section>
 <!-- =========================================================
    NAVBAR
 ========================================================= -->
@@ -377,13 +486,13 @@
     <input
       type="text"
       placeholder="Search music players..."
-    />
+    / data-a11y-remediation="label-needed">
 
   </div>
 
   <div class="nav-actions">
 
-    <button class="outline-btn">
+    <button class="outline-btn" data-a11y-remediation="button-label-needed">
       <i class="fa-solid fa-plus"></i>
       Add Component
     </button>
@@ -528,11 +637,11 @@
     </button>
 
     <button class="filter-btn">
-      Mini Players
+      Mini Player
     </button>
 
     <button class="filter-btn">
-      Vinyl
+      Vinyl Player
     </button>
 
     <button class="filter-btn">
@@ -559,19 +668,17 @@
   <section class="music-grid">
 
     <!-- PLAYER 1 -->
-    <div class="component-card">
+    <div class="component-card" data-cat="cards" data-name="glass music card">
+  <div class="card-top">
 
-      <div class="card-top">
+    <span class="card-label">
+      Glass Music Card
+    </span>
 
-        <span class="card-label">
-          Glass Music Card
-        </span>
-
-        <span class="card-tag tag-popular">
-          Popular
-        </span>
-
-      </div>
+    <span class="card-tag tag-popular">
+      Popular
+    </span>
+  </div>
 
       <div class="card-preview">
 
@@ -628,19 +735,18 @@
     </div>
 
     <!-- PLAYER 2 -->
-    <div class="component-card">
+   <div class="component-card" data-cat="vinyl" data-name="vinyl player">
+  <div class="card-top">
 
-      <div class="card-top">
+    <span class="card-label">
+      Vinyl Player
+    </span>
 
-        <span class="card-label">
-          Vinyl Player
-        </span>
+    <span class="card-tag tag-trending">
+      Trending
+    </span>
 
-        <span class="card-tag tag-trending">
-          Trending
-        </span>
-
-      </div>
+  </div>
 
       <div class="card-preview dark-preview">
 
@@ -676,19 +782,19 @@
     </div>
 
     <!-- PLAYER 3 -->
-    <div class="component-card">
+    <div class="component-card" data-cat="mini" data-name="mini player">
 
-      <div class="card-top">
+  <div class="card-top">
 
-        <span class="card-label">
-          Mini Player
-        </span>
+    <span class="card-label">
+      Mini Player
+    </span>
 
-        <span class="card-tag tag-essential">
-          Essential
-        </span>
+    <span class="card-tag tag-essential">
+      Essential
+    </span>
 
-      </div>
+  </div>
 
       <div class="card-preview">
 
@@ -739,19 +845,19 @@
     </div>
 
     <!-- PLAYER 4 -->
-    <div class="component-card">
+    <div class="component-card" data-cat="streaming" data-name="equalizer ui">
 
-      <div class="card-top">
+  <div class="card-top">
 
-        <span class="card-label">
-          Equalizer UI
-        </span>
+    <span class="card-label">
+      Equalizer UI
+    </span>
 
-        <span class="card-tag tag-trending">
-          Animated
-        </span>
-
-      </div>
+    <span class="card-tag tag-trending">
+      Animated
+    </span>
+    
+  </div>
 
       <div class="card-preview dark-preview">
 
@@ -914,5 +1020,121 @@
 
 </main>
 
+ <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+
+          <a href="https://github.com" aria-label="GitHub" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li>
+            <a href="button.html">Buttons</a>
+          </li>
+          <li>
+            <a href="navbar.html">Navbars</a>
+          </li>
+          <li>
+            <a href="cards.html">Cards</a>
+          </li>
+          <li>
+            <a href="inputs.html">Inputs</a>
+          </li>
+          <li>
+            <a href="forms.html">Forms</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li>
+            <a href="#">Documentation</a>
+          </li>
+          <li>
+            <a href="#">GitHub Repo</a>
+          </li>
+          <li>
+            <a href="#">Community</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a>
+          </li>
+          <li><a href="terms.html">Terms of Service</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
+
+  <script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const category = btn.textContent.trim().toLowerCase(); // get button text
+    const cards = document.querySelectorAll('.component-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    // Reset active state
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Show/hide cards
+    cards.forEach(card => {
+      const cardCat = card.dataset.cat;
+      if (category === 'all' || cardCat === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Live search
+document.querySelector('.filter-search input').addEventListener('input', e => {
+  const query = e.target.value.toLowerCase();
+  const cards = document.querySelectorAll('.component-card');
+
+  cards.forEach(card => {
+    const name = card.dataset.name?.toLowerCase() || '';
+    const label = card.querySelector('.card-label')?.textContent.toLowerCase() || '';
+    card.style.display = (name.includes(query) || label.includes(query)) ? 'block' : 'none';
+  });
+});
+</script>
+
+
+    <script src="dist/shared.js"></script>
 </body>
 </html>

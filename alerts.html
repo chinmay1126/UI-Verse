@@ -2,16 +2,20 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alerts - UIverse</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="shared-sidebar.css">
   <link rel="stylesheet" href="alerts.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -355,8 +359,8 @@
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
 
-<header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+<header class="navbar" id="navbar" role="banner">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Sidebar Navigation Menu">
     <i class="fa-solid fa-bars"></i>
   </button>
 
@@ -364,7 +368,7 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" aria-label="Search alert components">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
 
@@ -375,14 +379,14 @@
     <button class="nav-btn primary-nav-btn">
       <i class="fa-solid fa-bookmark"></i> My Collection
     </button>
-    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode theme">
       <i class="fa-solid fa-moon"></i>
     </button>
   </div>
 </header>
 
 
-<main class="main-home">
+<main class="main-home" id="main-content">
 
   
   <div class="page-hero">
@@ -401,15 +405,15 @@
     </div>
     <div class="page-hero-right">
       <div class="alert-hero-preview">
-        <div class="ahp-alert ahp-success">
+        <div class="ahp-alert ahp-success" role="alert">
           <i class="fa-solid fa-circle-check"></i>
           <span>Your changes were saved successfully.</span>
         </div>
-        <div class="ahp-alert ahp-warning">
+        <div class="ahp-alert ahp-warning" role="alert">
           <i class="fa-solid fa-triangle-exclamation"></i>
           <span>You are running low on storage.</span>
         </div>
-        <div class="ahp-alert ahp-error">
+        <div class="ahp-alert ahp-error" role="alert">
           <i class="fa-solid fa-circle-xmark"></i>
           <span>Connection failed. Please retry.</span>
         </div>
@@ -418,16 +422,16 @@
   </div>
 
   
-  <div class="filter-bar">
-    <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
-    <button class="filter-btn" onclick="filterCards('basic', this)">Basic</button>
-    <button class="filter-btn" onclick="filterCards('outlined', this)">Outlined</button>
-    <button class="filter-btn" onclick="filterCards('filled', this)">Filled</button>
-    <button class="filter-btn" onclick="filterCards('toast', this)">Toast</button>
-    <button class="filter-btn" onclick="filterCards('banner', this)">Banner</button>
+  <div class="filter-bar" role="tablist" aria-label="Alert category filters">
+    <button class="filter-btn active" role="tab" aria-selected="true" onclick="filterCards('all', this)">All</button>
+    <button class="filter-btn" role="tab" aria-selected="false" onclick="filterCards('basic', this)">Basic</button>
+    <button class="filter-btn" role="tab" aria-selected="false" onclick="filterCards('outlined', this)">Outlined</button>
+    <button class="filter-btn" role="tab" aria-selected="false" onclick="filterCards('filled', this)">Filled</button>
+    <button class="filter-btn" role="tab" aria-selected="false" onclick="filterCards('toast', this)">Toast</button>
+    <button class="filter-btn" role="tab" aria-selected="false" onclick="filterCards('banner', this)">Banner</button>
     <div class="filter-search">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Filter alerts..." oninput="liveFilter(this.value)" />
+      <input type="text" placeholder="Filter alerts..." oninput="liveFilter(this.value)" aria-label="Live search to filter alert components" />
     </div>
   </div>
 
@@ -463,7 +467,7 @@
       </div>
       <div class="card-preview">
         <div class="demo-alert-stack" id="dismissStack">
-          <div class="al al-success al-dismissible" id="dis1">
+          <div class="al al-success al-dismissible" id="dis1" role="alert">
             <i class="fa-solid fa-circle-check al-icon"></i>
             <div class="al-body">Payment completed successfully!</div>
             <button class="al-close" onclick="dismissAlert('dis1')" aria-label="Dismiss alert"><i class="fa-solid fa-xmark"></i></button>
@@ -839,7 +843,7 @@
 
 <div class="component-card">
         <h3>Info Alert</h3>
-        <div class="alert-box alert-info">
+        <div class="alert-box alert-info" role="status" aria-live="polite">
           <div>
             <strong>Info</strong>
             <p>This is an informational message. Learn more about our new features.</p>
@@ -865,7 +869,7 @@
 
 <div class="component-card">
         <h3>Critical Alert</h3>
-        <div class="alert-box alert-critical">
+        <div class="alert-box alert-critical" role="alert" aria-live="assertive">
           <div>
             <strong>Critical</strong>
             <p>Immediate action required! Your account has been locked due to suspicious activity.</p>
@@ -891,7 +895,7 @@
 
 <div class="component-card">
         <h3>Pending Alert</h3>
-        <div class="alert-box alert-pending">
+        <div class="alert-box alert-pending" role="status" aria-live="polite">
           <div>
             <strong>Pending</strong>
             <p>Your request is being processed. You'll be notified once it's complete.</p>
@@ -948,7 +952,7 @@
 <div class="component-card">
         <h3>Alert with Icon</h3>
         <div class="alert-box alert-warning alert-with-icon">
-          <span class="alert-icon">⚠️</span>
+          <span class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
           <div>
             <strong>Warning</strong>
             <p>Please review your input before proceeding.</p>
@@ -1690,8 +1694,417 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
+</div>
+<div class="alerts-grid">
+ <div class="component-card" data-cat="filled" data-name="cosmic galaxy emergency alert space distortion">
+  <h3>Cosmic Distress Alert</h3>
+
+  <div class="alert-box alert-cosmic-distress">
+    <div class="cd-orbit">
+      <div class="cd-planet"></div>
+      <div class="cd-ring"></div>
+    </div>
+
+    <div class="cd-body">
+      <strong>Signal Lost</strong>
+      <p>Deep-space communication channel disconnected from Sector 7.</p>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new11', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new11" class="code-block"><code>&lt;div class="alert-box alert-expandable-details" id="myExpandableAlert"&gt;
+  &lt;div class="ed-main"&gt;
+    &lt;i class="fa-solid fa-bug ed-bug-icon"&gt;&lt;/i&gt;
+    &lt;div class="ed-body"&gt;
+      &lt;strong&gt;Runtime Exception&lt;/strong&gt;
+      &lt;p&gt;Unhandled dynamic linker lookup error in libc.so.6.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="ed-toggle-btn" onclick="document.getElementById('myExpandableAlert').classList.toggle('expanded')"&gt;Details&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-details"&gt;
+    &lt;div class="ed-details-inner"&gt;
+      &lt;div class="ed-log-line"&gt;Fatal: load_library: could not locate symbol "__pthread_cleanup_push"&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;</code></pre>
+</div>
+
+<div class="component-card" data-cat="filled" data-name="fantasy dragon fire kingdom warning">
+  <h3>Dragon Fire Alert</h3>
+
+  <div class="alert-box alert-dragon-fire">
+    <div class="df-icon">
+      🐉
+    </div>
+
+    <div class="df-body">
+      <strong>Dragon Approaching</strong>
+      <p>Ancient beast detected near the northern kingdom gates.</p>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new11', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new11" class="code-block"><code>&lt;div class="alert-box alert-expandable-details" id="myExpandableAlert"&gt;
+  &lt;div class="ed-main"&gt;
+    &lt;i class="fa-solid fa-bug ed-bug-icon"&gt;&lt;/i&gt;
+    &lt;div class="ed-body"&gt;
+      &lt;strong&gt;Runtime Exception&lt;/strong&gt;
+      &lt;p&gt;Unhandled dynamic linker lookup error in libc.so.6.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="ed-toggle-btn" onclick="document.getElementById('myExpandableAlert').classList.toggle('expanded')"&gt;Details&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-details"&gt;
+    &lt;div class="ed-details-inner"&gt;
+      &lt;div class="ed-log-line"&gt;Fatal: load_library: could not locate symbol "__pthread_cleanup_push"&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="component-card" data-cat="toast" data-name="artificial intelligence core system warning futuristic">
+  <h3>AI Core Warning</h3>
+
+  <div class="alert-box alert-ai-core">
+    <div class="ac-brain">
+      <i class="fa-solid fa-microchip"></i>
+    </div>
+
+    <div class="ac-content">
+      <strong>AI Core Overload</strong>
+      <p>Neural processing exceeded safe computation limits.</p>
+    </div>
+
+    <button class="ac-close">✕</button>
+  </div>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new11', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new11" class="code-block"><code>&lt;div class="alert-box alert-expandable-details" id="myExpandableAlert"&gt;
+  &lt;div class="ed-main"&gt;
+    &lt;i class="fa-solid fa-bug ed-bug-icon"&gt;&lt;/i&gt;
+    &lt;div class="ed-body"&gt;
+      &lt;strong&gt;Runtime Exception&lt;/strong&gt;
+      &lt;p&gt;Unhandled dynamic linker lookup error in libc.so.6.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="ed-toggle-btn" onclick="document.getElementById('myExpandableAlert').classList.toggle('expanded')"&gt;Details&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-details"&gt;
+    &lt;div class="ed-details-inner"&gt;
+      &lt;div class="ed-log-line"&gt;Fatal: load_library: could not locate symbol "__pthread_cleanup_push"&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="alert-box executive-alert">
+  <div class="ea-icon">
+    <i class="fa-solid fa-chart-line"></i>
+  </div>
+
+  <div class="ea-content">
+    <strong>Performance Update Available</strong>
+    <p>Your monthly analytics report has been generated successfully.</p>
+  </div>
+
+  <button class="ea-action">
+    View Report
+  </button>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new11', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new11" class="code-block"><code>&lt;div class="alert-box alert-expandable-details" id="myExpandableAlert"&gt;
+  &lt;div class="ed-main"&gt;
+    &lt;i class="fa-solid fa-bug ed-bug-icon"&gt;&lt;/i&gt;
+    &lt;div class="ed-body"&gt;
+      &lt;strong&gt;Runtime Exception&lt;/strong&gt;
+      &lt;p&gt;Unhandled dynamic linker lookup error in libc.so.6.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="ed-toggle-btn" onclick="document.getElementById('myExpandableAlert').classList.toggle('expanded')"&gt;Details&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-details"&gt;
+    &lt;div class="ed-details-inner"&gt;
+      &lt;div class="ed-log-line"&gt;Fatal: load_library: could not locate symbol "__pthread_cleanup_push"&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="alert-box floating-glass-alert">
+
+  <div class="fga-status"></div>
+
+  <div class="fga-content">
+    <strong>Deployment Successful</strong>
+    <p>Version 4.2.0 has been deployed across all production servers.</p>
+  </div>
+
+  <button class="fga-btn">
+    Details
+  </button>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new11', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new11" class="code-block"><code>&lt;div class="alert-box alert-expandable-details" id="myExpandableAlert"&gt;
+  &lt;div class="ed-main"&gt;
+    &lt;i class="fa-solid fa-bug ed-bug-icon"&gt;&lt;/i&gt;
+    &lt;div class="ed-body"&gt;
+      &lt;strong&gt;Runtime Exception&lt;/strong&gt;
+      &lt;p&gt;Unhandled dynamic linker lookup error in libc.so.6.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="ed-toggle-btn" onclick="document.getElementById('myExpandableAlert').classList.toggle('expanded')"&gt;Details&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-details"&gt;
+    &lt;div class="ed-details-inner"&gt;
+      &lt;div class="ed-log-line"&gt;Fatal: load_library: could not locate symbol "__pthread_cleanup_push"&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+<div class="alert-box premium-ai-alert">
+
+  <div class="paa-icon">
+    <i class="fa-solid fa-sparkles"></i>
+  </div>
+
+  <div class="paa-content">
+    <strong>AI Recommendation</strong>
+    <p>Switching to smart caching could improve page speed by 24%.</p>
+  </div>
+
+  <button class="paa-close">
+    ✕
+  </button>
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new11', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new11" class="code-block"><code>&lt;div class="alert-box alert-expandable-details" id="myExpandableAlert"&gt;
+  &lt;div class="ed-main"&gt;
+    &lt;i class="fa-solid fa-bug ed-bug-icon"&gt;&lt;/i&gt;
+    &lt;div class="ed-body"&gt;
+      &lt;strong&gt;Runtime Exception&lt;/strong&gt;
+      &lt;p&gt;Unhandled dynamic linker lookup error in libc.so.6.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="ed-toggle-btn" onclick="document.getElementById('myExpandableAlert').classList.toggle('expanded')"&gt;Details&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-details"&gt;
+    &lt;div class="ed-details-inner"&gt;
+      &lt;div class="ed-log-line"&gt;Fatal: load_library: could not locate symbol "__pthread_cleanup_push"&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<div class="alert-box timeline-alert">
+
+  <div class="ta-line"></div>
+
+  <div class="ta-content">
+    <span class="ta-label">SYSTEM ACTIVITY</span>
+
+    <strong>Database Migration Completed</strong>
+
+    <p>All records have been successfully transferred to the new infrastructure.</p>
+
+    <span class="ta-time">2 minutes ago</span>
+  </div>
+<div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('new11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+    <button class="action-btn copy-btn" onclick="copyCode('new11', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+  </div>
+  <pre id="new11" class="code-block"><code>&lt;div class="alert-box alert-expandable-details" id="myExpandableAlert"&gt;
+  &lt;div class="ed-main"&gt;
+    &lt;i class="fa-solid fa-bug ed-bug-icon"&gt;&lt;/i&gt;
+    &lt;div class="ed-body"&gt;
+      &lt;strong&gt;Runtime Exception&lt;/strong&gt;
+      &lt;p&gt;Unhandled dynamic linker lookup error in libc.so.6.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="ed-toggle-btn" onclick="document.getElementById('myExpandableAlert').classList.toggle('expanded')"&gt;Details&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-details"&gt;
+    &lt;div class="ed-details-inner"&gt;
+      &lt;div class="ed-log-line"&gt;Fatal: load_library: could not locate symbol "__pthread_cleanup_push"&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<div class="component-card" data-cat="toast" data-name="achievement unlock trophy success reward">
+
+  <h3>Achievement Unlock Alert</h3>
+
+  <div class="alert-box achievement-alert">
+
+    <div class="aa-trophy">
+      🏆
+      <div class="aa-ring"></div>
+    </div>
+
+    <div class="aa-content">
+      <strong>Achievement Unlocked!</strong>
+      <p>You've completed 100 tasks successfully.</p>
+
+      <div class="aa-progress">
+        <div class="aa-progress-bar"></div>
+      </div>
+    </div>
+
+    <div class="aa-actions">
+      <button class="aa-btn aa-primary">View Badge</button>
+      <button class="aa-btn aa-secondary">Dismiss</button>
+    </div>
 
   </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('achievement1', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn" onclick="copyCode('achievement1', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="achievement1" class="code-block">
+<code>
+Achievement Unlock Alert Component
+</code>
+  </pre>
+
+</div>
+<div class="component-card" data-cat="toast" data-name="motivation streak progress alert">
+
+  <h3>Motivation Alert</h3>
+
+  <div class="alert-box motivation-alert">
+
+    <div class="ma-star">
+      🌟
+    </div>
+
+    <div class="ma-content">
+      <strong>Keep Going!</strong>
+      <p>You're close to completing your streak.</p>
+
+      <div class="ma-meter">
+        <div class="ma-fill"></div>
+      </div>
+
+      <span class="ma-text">87% Complete</span>
+    </div>
+
+    <div class="ma-actions">
+      <button class="ma-btn primary">View Progress</button>
+      <button class="ma-btn">Dismiss</button>
+    </div>
+
+  </div>
+
+</div>
+<div class="component-card" data-cat="toast" data-name="celebration confetti success reward">
+
+  <h3>Celebration Alert</h3>
+
+  <div class="alert-box celebration-alert">
+
+    <div class="confetti-wrap">
+      <span class="confetti c1"></span>
+      <span class="confetti c2"></span>
+      <span class="confetti c3"></span>
+      <span class="confetti c4"></span>
+      <span class="confetti c5"></span>
+      <div class="celebration-icon">🎉</div>
+    </div>
+
+    <div class="celebration-content">
+      <strong>Hooray!</strong>
+      <p>Your milestone has been achieved successfully.</p>
+
+      <div class="celebration-progress">
+        <div class="celebration-progress-bar"></div>
+      </div>
+    </div>
+
+    <div class="celebration-actions">
+      <button class="cele-btn primary">Share</button>
+      <button class="cele-btn">Dismiss</button>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+</div>
+<div class="component-card" data-cat="toast" data-name="deadline timer countdown alert">
+
+  <h3>Deadline Countdown Alert</h3>
+
+  <div class="alert-box deadline-alert">
+
+    <div class="timer-ring">
+
+      <svg viewBox="0 0 120 120">
+        <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+
+        <circle class="ring-progress"
+          cx="60"
+          cy="60"
+          r="50">
+        </circle>
+      </svg>
+
+      <div class="timer-text">
+        2h
+      </div>
+
+    </div>
+
+    <div class="deadline-content">
+      <strong>Deadline Approaching!</strong>
+      <p>Your assignment is due in 2 hours.</p>
+    </div>
+
+    <div class="deadline-actions">
+      <button class="deadline-btn primary">
+        Extend
+      </button>
+
+      <button class="deadline-btn">
+        Dismiss
+      </button>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+</div>
+
+</div>
 
 </main>
 
@@ -1706,7 +2119,7 @@
 
 <div id="copyToast" class="copy-toast"><i class="fa-solid fa-check"></i> Copied to clipboard!</div>
 
-
+ <!-- FOOTER -->
 <footer class="footer">
     <div class="footer-container">
 
@@ -1773,8 +2186,8 @@
       <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
     </div>
   </footer>
+ 
 
-<script src="script.js"></script>
 <script>
   
   const alertToggle = document.getElementById('darkModeToggle');
@@ -1812,6 +2225,8 @@
   
   function dismissAlert(id) {
     const el = document.getElementById(id);
+    if (!el) return;
+    el.setAttribute('aria-hidden', 'true');
     el.style.opacity = '0';
     el.style.transform = 'translateX(10px)';
     el.style.maxHeight = el.offsetHeight + 'px';
@@ -1819,13 +2234,17 @@
       el.style.maxHeight = '0';
       el.style.padding = '0';
       el.style.margin = '0';
+      el.style.border = '0';
     }, 200);
   }
 
   function resetDismiss() {
     ['dis1','dis2','dis3'].forEach(id => {
       const el = document.getElementById(id);
-      el.style.cssText = '';
+      if (el) {
+        el.removeAttribute('aria-hidden');
+        el.style.cssText = '';
+      }
     });
   }
 
@@ -1916,6 +2335,28 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
+  document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.body.classList.add(savedTheme);
+
+      const themeIcon = document.getElementById("themeIcon");
+      themeIcon.className = savedTheme === "dark" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+    });
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const themeIcon = document.getElementById("themeIcon");
+
+      if (document.body.classList.contains("light")) {
+        document.body.classList.replace("light", "dark");
+        localStorage.setItem("theme", "dark");
+        themeIcon.className = "fa-solid fa-moon"; // 🌙
+      } else {
+        document.body.classList.replace("dark", "light");
+        localStorage.setItem("theme", "light");
+        themeIcon.className = "fa-solid fa-sun"; // ☀️
+      }
+    });
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

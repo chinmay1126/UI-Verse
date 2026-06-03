@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k= sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc= sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ekasjfaqD+DPT+9HdPKSNKs/R6SpDJfojsCqLkW1lgE= sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k= sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc= sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ekasjfaqD+DPT+9HdPKSNKs/R6SpDJfojsCqLkW1lgE= sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-
-  
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="pricing.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -201,6 +199,8 @@
           <i class="fa-solid fa-tags"></i>
           <span>Pricing</span>
         </a>
+      </li>
+      <li>
         <a href="subscription.html">
           <i class="fa-solid fa-credit-card"></i>
           <span>Subscription</span>
@@ -334,13 +334,13 @@
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 <!-- ================= NAVBAR ================= -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" placeholder="Search components..." />
+    <input type="text" placeholder="Search components..." / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -397,6 +397,241 @@
 
 </div>
 
+
+<!-- ================= GLASSMORPHISM PRICING ================= -->
+
+<div class="component-card">
+
+  <div class="glass-pricing-grid">
+
+    <!-- BASIC -->
+    <div class="glass-card">
+
+      <div class="glass-top">
+        <span class="glass-plan">Basic</span>
+        <h2>$9</h2>
+        <p>/ month</p>
+      </div>
+
+      <ul class="glass-features">
+        <li><i class="fa-solid fa-check"></i> 5 Projects</li>
+        <li><i class="fa-solid fa-check"></i> Email Support</li>
+        <li><i class="fa-solid fa-check"></i> Analytics</li>
+      </ul>
+
+      <button class="glass-btn">
+        Start Free
+      </button>
+
+    </div>
+
+    <!-- TEAM -->
+    <div class="glass-card featured-glass">
+
+      <div class="popular-pill">
+        Recommended
+      </div>
+
+      <div class="glass-top">
+        <span class="glass-plan">Team</span>
+        <h2>$29</h2>
+        <p>/ month</p>
+      </div>
+
+      <ul class="glass-features">
+        <li><i class="fa-solid fa-check"></i> Unlimited Projects</li>
+        <li><i class="fa-solid fa-check"></i> Team Access</li>
+        <li><i class="fa-solid fa-check"></i> Priority Support</li>
+        <li><i class="fa-solid fa-check"></i> API Access</li>
+      </ul>
+
+      <button class="glass-btn active-btn">
+        Get Team Plan
+      </button>
+
+    </div>
+
+    <!-- AGENCY -->
+    <div class="glass-card">
+
+      <div class="glass-top">
+        <span class="glass-plan">Agency</span>
+        <h2>$79</h2>
+        <p>/ month</p>
+      </div>
+
+      <ul class="glass-features">
+        <li><i class="fa-solid fa-check"></i> White Label</li>
+        <li><i class="fa-solid fa-check"></i> Unlimited Users</li>
+        <li><i class="fa-solid fa-check"></i> Dedicated Manager</li>
+      </ul>
+
+      <button class="glass-btn">
+        Contact Us
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= NEON PRICING ================= -->
+
+<div class="component-card">
+
+  <div class="neon-pricing-grid">
+
+    <!-- SILVER -->
+    <div class="neon-card silver">
+
+      <h3>Silver</h3>
+
+      <div class="neon-price">
+        $15
+      </div>
+
+      <p class="neon-desc">
+        Great for freelancers
+      </p>
+
+      <ul>
+        <li>5 GB Storage</li>
+        <li>Custom Domain</li>
+        <li>Email Support</li>
+      </ul>
+
+      <button class="neon-btn">
+        Select Plan
+      </button>
+
+    </div>
+
+    <!-- GOLD -->
+    <div class="neon-card gold">
+
+      <div class="neon-badge">
+        <i class="fa-solid fa-crown"></i>
+        BEST VALUE
+      </div>
+
+      <h3>Gold</h3>
+
+      <div class="neon-price">
+        $49
+      </div>
+
+      <p class="neon-desc">
+        Ideal for startups
+      </p>
+
+      <ul>
+        <li>Unlimited Storage</li>
+        <li>AI Analytics</li>
+        <li>24/7 Support</li>
+      </ul>
+
+      <button class="neon-btn active-neon">
+        Choose Gold
+      </button>
+
+    </div>
+
+    <!-- PLATINUM -->
+    <div class="neon-card platinum">
+
+      <h3>Platinum</h3>
+
+      <div class="neon-price">
+        $99
+      </div>
+
+      <p class="neon-desc">
+        Enterprise solution
+      </p>
+
+      <ul>
+        <li>Unlimited Everything</li>
+        <li>Dedicated Manager</li>
+        <li>Custom Integrations</li>
+      </ul>
+
+      <button class="neon-btn">
+        Contact Sales
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= MINIMAL PRICING ================= -->
+
+<div class="component-card">
+
+  <div class="minimal-pricing-grid">
+
+    <!-- LITE -->
+    <div class="minimal-card">
+
+      <span class="mini-label">
+        Lite
+      </span>
+
+      <h2>$5</h2>
+
+      <p>
+        Small personal websites
+      </p>
+
+      <button class="minimal-btn">
+        Buy Now
+      </button>
+
+    </div>
+
+    <!-- PLUS -->
+    <div class="minimal-card dark-mini">
+
+      <span class="mini-label">
+        Plus
+      </span>
+
+      <h2>$19</h2>
+
+      <p>
+        Best for professionals
+      </p>
+
+      <button class="minimal-btn light-btn">
+        Choose Plus
+      </button>
+
+    </div>
+
+    <!-- ULTRA -->
+    <div class="minimal-card">
+
+      <span class="mini-label">
+        Ultra
+      </span>
+
+      <h2>$59</h2>
+
+      <p>
+        Built for agencies
+      </p>
+
+      <button class="minimal-btn">
+        Upgrade
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 <!-- ================= COMPONENT CARD ================= -->
 
 <div class="component-card">
@@ -1002,6 +1237,45 @@
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
   });
 
+
+  /* ================= PRICING CARD HOVER EFFECT ================= */
+
+document.querySelectorAll('.glass-card, .neon-card, .minimal-card')
+.forEach(card => {
+
+  card.addEventListener('mousemove', e => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    card.style.setProperty('--x', x + 'px');
+    card.style.setProperty('--y', y + 'px');
+
+  });
+
+});
+
+/* ================= ACTIVE BUTTON EFFECT ================= */
+
+document.querySelectorAll('.plan-btn, .glass-btn, .neon-btn, .minimal-btn')
+.forEach(btn => {
+
+  btn.addEventListener('click', () => {
+
+    btn.innerHTML =
+      '<i class="fa-solid fa-check"></i> Selected';
+
+    setTimeout(() => {
+
+      btn.innerHTML = 'Choose Plan';
+
+    }, 1800);
+
+  });
+
+});
   /* Billing Toggle */
   document.querySelectorAll('.billing-toggle .toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1045,5 +1319,6 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

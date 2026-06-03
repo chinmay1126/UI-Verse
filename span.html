@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Span Components — UIverse</title>
@@ -8,12 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
+  
   <link rel="stylesheet" href="span.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -357,13 +359,13 @@
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 <!-- ================= NAVBAR ================= -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -371,6 +373,130 @@
     <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
     <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
   </div>
+
+  <div class="component-card" data-name="live indicator streaming dot pulse" data-cat="status">
+  <div class="card-top">
+    <span class="card-label">Live Indicator</span>
+    <span class="card-tag tag-trending">New</span>
+  </div>
+
+  <div class="card-preview">
+    <p style="color:var(--text-primary); font-size:15px;">
+      Streaming now 
+      <span class="sp-live-dot">● Live</span>
+    </p>
+  </div>
+
+  <p class="card-desc">A glowing live indicator used in streaming dashboards and real-time apps.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s15', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('s15', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s15" class="code-block"><code>
+&lt;span class="live-dot"&gt;● Live&lt;/span&gt;
+
+.live-dot{
+  color:#d63031;
+  font-weight:700;
+  position:relative;
+}
+.live-dot::after{
+  content:"";
+  position:absolute;
+  width:8px;
+  height:8px;
+  background:#d63031;
+  border-radius:50%;
+  left:-14px;
+  top:50%;
+  transform:translateY(-50%);
+  animation:pulse 1.2s infinite;
+}
+  </code></pre>
+</div>
+
+<div class="component-card" data-name="loading skeleton text spinner inline" data-cat="interactive">
+  <div class="card-top">
+    <span class="card-label">Loading Span</span>
+    <span class="card-tag tag-trending">Trending</span>
+  </div>
+
+  <div class="card-preview">
+    <p style="color:var(--text-primary);">
+      Loading data 
+      <span class="sp-loading">...</span>
+    </p>
+  </div>
+
+  <p class="card-desc">Animated ellipsis loading span for inline states.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s18', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('s18', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s18" class="code-block"><code>
+&lt;span class="loading"&gt;...&lt;/span&gt;
+
+.loading::after{
+  content:"";
+  animation:dots 1.2s infinite;
+}
+
+@keyframes dots{
+  0%{content:"."}
+  50%{content:".."}
+  100%{content:"..."}
+}
+  </code></pre>
+</div>
+
+<div class="component-card" data-name="progress inline loading percent span" data-cat="status">
+  <div class="card-top">
+    <span class="card-label">Inline Progress</span>
+    <span class="card-tag tag-new">New</span>
+  </div>
+
+  <div class="card-preview">
+    <p style="color:var(--text-primary);">
+      Uploading file 
+      <span class="sp-progress">72%</span>
+    </p>
+  </div>
+
+  <p class="card-desc">Minimal inline progress indicator for uploads and tasks.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s19', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('s19', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s19" class="code-block"><code>
+&lt;span class="progress"&gt;72%&lt;/span&gt;
+
+.progress{
+  background:rgba(108,92,231,0.15);
+  color:#6c5ce7;
+  padding:2px 8px;
+  border-radius:6px;
+  font-weight:700;
+}
+  </code></pre>
+</div>
 </header>
 
 <!-- ================= MAIN ================= -->
@@ -415,6 +541,52 @@
       </div>
     </div>
   </div>
+
+  <div class="component-card" data-name="hot new glow badge label" data-cat="label">
+  <div class="card-top">
+    <span class="card-label">Glowing Label</span>
+    <span class="card-tag tag-popular">Popular</span>
+  </div>
+
+  <div class="card-preview">
+    <span class="sp-hot">HOT</span>
+    <span class="sp-new">NEW</span>
+  </div>
+
+  <p class="card-desc">Attention-grabbing glowing badges for trending content.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('s17', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('s17', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="s17" class="code-block"><code>
+&lt;span class="hot"&gt;HOT&lt;/span&gt;
+&lt;span class="new"&gt;NEW&lt;/span&gt;
+
+.hot{
+  background:#ff4757;
+  color:#fff;
+  padding:4px 10px;
+  border-radius:6px;
+  font-weight:800;
+  box-shadow:0 0 10px rgba(255,71,87,0.6);
+}
+
+.new{
+  background:#6c5ce7;
+  color:#fff;
+  padding:4px 10px;
+  border-radius:6px;
+  font-weight:800;
+  box-shadow:0 0 10px rgba(108,92,231,0.6);
+}
+  </code></pre>
+</div>
 
   <!-- Filter Bar -->
   <div class="filter-bar">
@@ -1248,5 +1420,6 @@ function copyTag(el, text) {
   }, { threshold: 0.08 });
   document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

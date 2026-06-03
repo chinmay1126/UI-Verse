@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -30,6 +30,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -89,7 +91,7 @@
         Available For Bidding
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Add Funds
       </button>
 
@@ -125,7 +127,7 @@
 
           <input
             type="text"
-            placeholder="Search auctions..." />
+            placeholder="Search auctions..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -525,6 +527,7 @@
 
   <script src="auction-bidding-platform.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

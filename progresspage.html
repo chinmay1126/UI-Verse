@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Progress Bars — UIverse</title>
@@ -8,13 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="progresspage.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
@@ -343,13 +343,13 @@
 
 <!-- NAVBAR -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -1177,6 +1177,138 @@ function updateBar(val) {
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('.component-card').forEach(el => barObserver.observe(el));
+
+  let currentCategory = 'all';
+let currentSearch = '';
+
+function applyFilters() {
+  document.querySelectorAll('.component-card').forEach(card => {
+    const categoryMatch =
+      currentCategory === 'all' ||
+      card.dataset.cat === currentCategory;
+
+    const searchMatch =
+      !currentSearch ||
+      card.dataset.name.toLowerCase().includes(currentSearch) ||
+      card.querySelector('.card-label')
+        .textContent
+        .toLowerCase()
+        .includes(currentSearch);
+
+    card.style.display =
+      categoryMatch && searchMatch ? '' : 'none';
+  });
+}
+
+function filterCards(cat, btn) {
+  currentCategory = cat;
+
+  document
+    .querySelectorAll('.filter-btn')
+    .forEach(b => b.classList.remove('active'));
+
+  btn.classList.add('active');
+
+  applyFilters();
+}
+
+function liveFilter(value) {
+  currentSearch = value.toLowerCase().trim();
+  applyFilters();
+}
+
+const barObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (
+      entry.isIntersecting &&
+      !entry.target.dataset.animated
+    ) {
+      entry.target.dataset.animated = "true";
+
+      entry.target
+        .querySelectorAll('.pb-fill:not(.pb-indeterminate)')
+        .forEach(bar => {
+          const targetWidth = bar.style.width;
+
+          bar.style.width = '0';
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              bar.style.width = targetWidth;
+            });
+          });
+        });
+    }
+  });
+}, { threshold: 0.3 });
+
+async function copyCode(id, btn) {
+  const text = document.getElementById(id).innerText;
+
+  try {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+
+    showCopySuccess(btn);
+
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function showCopySuccess(btn) {
+  btn.innerHTML =
+    '<i class="fa-solid fa-check"></i> Copied!';
+
+  btn.classList.add('copied');
+
+  const toast =
+    document.getElementById('copyToast');
+
+  toast.classList.add('show');
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+
+    btn.innerHTML =
+      '<i class="fa-solid fa-copy"></i> Copy';
+
+    btn.classList.remove('copied');
+  }, 2000);
+}
+
+
+function toggleSidebar() {
+  const sidebar =
+    document.getElementById('sidebar');
+
+  const backdrop =
+    document.getElementById('sidebarBackdrop');
+
+  const button =
+    document.querySelector('.menu-toggle');
+
+  const open =
+    sidebar.classList.toggle('open');
+
+  backdrop.classList.toggle('visible');
+
+  button.setAttribute(
+    'aria-expanded',
+    open
+  );
+}
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

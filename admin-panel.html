@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium Admin Panel Components — UIverse</title>
@@ -15,10 +16,12 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <link rel="stylesheet" href="admin-panel.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  <link rel="stylesheet" href="admin-panel.css">
+  </head>
 
 <body>
 
@@ -74,6 +77,7 @@
     </section>
 
     <!-- ================= SIDEBAR ================= -->
+  <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-brand">
         <span class="brand-icon">⬡</span>
@@ -157,6 +161,60 @@
         <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
     </aside>
+  <a class="skip-link" href="#main-workspace">Skip to main content</a>
+<!-- ================= SIDEBAR BACKDROP ================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar" role="banner">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Sidebar Navigation Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" placeholder="Search components..." aria-label="Search dashboard components">
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <a href="MyCollection.html">
+      <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    </a>
+    
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode theme color"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+
+  <div class="main-content" id="main-workspace" role="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="breadcrumb">Home &gt; Admin Panel Premium</div>
+        <h1>Admin Dashboards</h1>
+        <p>
+          Futuristic, highly-responsive administration widgets built with clean HTML, CSS, and Vanilla JavaScript.
+          Includes modular dashboard structural configurations, charts, collapsible navigations, telemetry stats, and
+          user listings.
+        </p>
+        <div class="hero-tags">
+          <span><i class="fa-solid fa-layer-group"></i> 5 Modern Categories</span>
+          <span><i class="fa-solid fa-wand-magic-sparkles"></i> Glows &amp; Interactions</span>
+          <span><i class="fa-solid fa-mobile-screen"></i> Responsive layouts</span>
+        </div>
+      </div>
+      <div class="hero-preview">
+        <div class="hero-notification-demo">
+          <div class="demo-bubble active">
+            <span class="demo-dot"></span>
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Admin Console Active</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
 
     <!-- FILTERS -->
     <div class="filters">
@@ -172,7 +230,7 @@
     <section class="admin-grid">
 
       <!-- ============ 1: DASHBOARD LAYOUTS ============ -->
-      <div class="component-card" data-category="layouts">
+      <div class="component-card no-sandbox" data-category="layouts">
         <div class="card-preview">
           <div class="card-interactive-area full-width">
             <div class="admin-layout-preview" id="layoutPreviewContainer">
@@ -275,7 +333,7 @@
       </div>
 
       <!-- ============ 2: ANALYTICS PANELS ============ -->
-      <div class="component-card" data-category="analytics">
+      <div class="component-card no-sandbox" data-category="analytics">
         <div class="card-preview">
           <div class="card-interactive-area full-width">
             <div class="analytics-card-preview">
@@ -387,7 +445,7 @@
       </div>
 
       <!-- ============ 3: ADMIN SIDEBARS ============ -->
-      <div class="component-card" data-category="sidebars">
+      <div class="component-card no-sandbox" data-category="sidebars">
         <div class="card-preview">
           <div class="card-interactive-area full-width">
             <div class="sidebar-showcase-panel">
@@ -468,7 +526,7 @@
       </div>
 
       <!-- ============ 4: KPI STATS CARDS ============ -->
-      <div class="component-card" data-category="kpis">
+      <div class="component-card no-sandbox" data-category="kpis">
         <div class="card-preview">
           <div class="card-interactive-area full-width">
             <div class="kpi-deck-showcase">
@@ -556,7 +614,7 @@
       </div>
 
       <!-- ============ 5: USER MANAGEMENT TABLES ============ -->
-      <div class="component-card" data-category="tables">
+      <div class="component-card no-sandbox" data-category="tables">
         <div class="card-preview">
           <div class="card-interactive-area full-width">
             <div class="admin-table-widget">
@@ -567,95 +625,34 @@
                     onkeyup="filterUserDirectoryTable()">
                 </div>
                 <span class="table-records-badge" id="tableRecordsCount">3 active records</span>
-              </div>
-
-              <div class="directory-table-container">
+                          <div class="directory-table-container">
                 <table id="user-directory-table">
                   <thead>
                     <tr>
                       <th scope="col">
                         <div class="td-checkbox-wrap">
-                          <input type="checkbox" id="userHeaderCheckbox" onclick="toggleAllUserCheckboxes(this)">
+                          <input type="checkbox" id="userHeaderCheckbox" onclick="toggleAllUserCheckboxes(this)" aria-label="Select all operators">
                         </div>
                       </th>
-                      <th scope="col">User Profile</th>
-                      <th scope="col">Clearance</th>
-                      <th scope="col">Condition</th>
+                      <th scope="col" class="sortable-header" onclick="sortTableByColumn('name')" role="columnheader" aria-sort="none">User Profile <i class="fa-solid fa-sort sort-icon"></i></th>
+                      <th scope="col" class="sortable-header" onclick="sortTableByColumn('role')" role="columnheader" aria-sort="none">Clearance <i class="fa-solid fa-sort sort-icon"></i></th>
+                      <th scope="col" class="sortable-header" onclick="sortTableByColumn('status')" role="columnheader" aria-sort="none">Condition <i class="fa-solid fa-sort sort-icon"></i></th>
                       <th scope="col">Control</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="user-row">
-                      <td>
-                        <div class="td-checkbox-wrap">
-                          <input type="checkbox" class="user-row-checkbox">
-                        </div>
-                      </td>
-                      <td>
-                        <div class="td-profile-box">
-                          <img src="https://i.pravatar.cc/100?img=33" alt="avatar" class="td-avatar">
-                          <div class="td-profile-info">
-                            <strong>Marcus V.</strong>
-                            <span>marcus@uiverse.io</span>
-                          </div>
-                        </div>
-                      </td>
-                      <td><span class="td-role-badge lead">Lead Admin</span></td>
-                      <td><span class="td-status active">Active</span></td>
-                      <td>
-                        <button type="button" class="td-action-icon-btn" onclick="toggleUserRowStatus(this)"><i
-                            class="fa-solid fa-power-off"></i> Toggle</button>
-                      </td>
-                    </tr>
-
-                    <tr class="user-row">
-                      <td>
-                        <div class="td-checkbox-wrap">
-                          <input type="checkbox" class="user-row-checkbox">
-                        </div>
-                      </td>
-                      <td>
-                        <div class="td-profile-box">
-                          <img src="https://i.pravatar.cc/100?img=12" alt="avatar" class="td-avatar">
-                          <div class="td-profile-info">
-                            <strong>Sarah Connor</strong>
-                            <span>sconnor@uiverse.io</span>
-                          </div>
-                        </div>
-                      </td>
-                      <td><span class="td-role-badge operator">Operator</span></td>
-                      <td><span class="td-status active">Active</span></td>
-                      <td>
-                        <button type="button" class="td-action-icon-btn" onclick="toggleUserRowStatus(this)"><i
-                            class="fa-solid fa-power-off"></i> Toggle</button>
-                      </td>
-                    </tr>
-
-                    <tr class="user-row">
-                      <td>
-                        <div class="td-checkbox-wrap">
-                          <input type="checkbox" class="user-row-checkbox">
-                        </div>
-                      </td>
-                      <td>
-                        <div class="td-profile-box">
-                          <img src="https://i.pravatar.cc/100?img=47" alt="avatar" class="td-avatar">
-                          <div class="td-profile-info">
-                            <strong>Clara Jenkins</strong>
-                            <span>clara@uiverse.io</span>
-                          </div>
-                        </div>
-                      </td>
-                      <td><span class="td-role-badge reviewer">Reviewer</span></td>
-                      <td><span class="td-status paused">Paused</span></td>
-                      <td>
-                        <button type="button" class="td-action-icon-btn" onclick="toggleUserRowStatus(this)"><i
-                            class="fa-solid fa-power-off"></i> Toggle</button>
-                      </td>
-                    </tr>
+                    <!-- Programmatically populated by admin-panel.js -->
                   </tbody>
                 </table>
               </div>
+
+              <!-- Interactive Pagination Controls -->
+              <div class="table-pagination-row">
+                <span class="pagination-info" id="paginationInfo">Showing 1 to 3 of 3 records</span>
+                <div class="pagination-controls" id="paginationControls">
+                  <!-- Pagination controls programmatically built by admin-panel.js -->
+                </div>
+              </div>      </div>
             </div>
           </div>
         </div>
@@ -713,7 +710,92 @@ tr:hover {
   background: rgba(255, 255, 255, 0.01);
 }</code></pre>
       </div>
+<section class="bento-grid">
 
+  <div class="bento-card large">
+    <span class="tag">Analytics</span>
+    <h3>Total Revenue</h3>
+    <h1>$128,450</h1>
+    <p>Revenue increased 24% this month.</p>
+  </div>
+
+  <div class="bento-card">
+    <span class="tag">Users</span>
+    <h3>Active Users</h3>
+    <h1>12.4K</h1>
+  </div>
+
+  <div class="bento-card">
+    <span class="tag">Orders</span>
+    <h3>Completed</h3>
+    <h1>4,298</h1>
+  </div>
+
+  <div class="bento-card wide">
+    <span class="tag">Performance</span>
+    <h3>System Health</h3>
+    <p>All services operating normally.</p>
+  </div>
+
+</section>
+<div class="floating-card">
+
+  <div class="glow purple"></div>
+  <div class="glow blue"></div>
+
+  <span>Total Revenue</span>
+
+  <h1>$128K</h1>
+
+  <div class="growth">
+      ↑ 24.8%
+  </div>
+
+</div>
+<div class="ai-card">
+
+    <div class="ai-icon">✦</div>
+
+    <h3>AI Insight</h3>
+
+    <p>
+        User engagement increased 18%
+        because mobile traffic grew
+        significantly this week.
+    </p>
+
+    <button>
+        View Analysis
+    </button>
+
+</div>
+<div class="liquid-card">
+    <h3>Progress Card</h3>
+    <div class="liquid-circle">
+
+        <div class="wave"></div>
+
+        <span>76%</span>
+
+    </div>
+    <p>Liquid Progress Card</p>
+
+</div>
+<div class="chart-card">
+  <h3>Charts</h3>
+    <div class="chart">
+         
+        <div class="bar b1"></div>
+        <div class="bar b2"></div>
+        <div class="bar b3"></div>
+        <div class="bar b4"></div>
+      
+
+    </div>
+    <h4>3D Chart Container</h4>
+    <button style="color:palevioletred">View the chart</button>
+
+</div>
     </section>
 
   </div>
@@ -728,9 +810,140 @@ tr:hover {
   });
 </script>
 
+  <!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" title="Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a>
+        </li>
+        <li><a href="navbar.html">Navbars</a>
+        </li>
+        <li><a href="cards.html">Cards</a>
+        </li>
+        <li><a href="inputs.html">Inputs</a>
+        </li>
+        <li><a href="forms.html">Forms</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a>
+        </li>
+        <li><a href="#">Contribute</a>
+        </li>
+        <li><a href="#">GitHub Repo</a>
+        </li>
+        <li><a href="#">Community</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a>
+        </li>
+        <li><a href="terms.html">Terms of Service</a>
+        </li>
+        <li><a href="#">License</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
+  <!-- ACCESSIBILITY SCREEN ANNOUNCER -->
+  <div id="a11y-announcer" class="sr-only" aria-live="polite"></div>
+
+  <!-- FLOATING BULK ACTIONS TOOLBAR -->
+  <div class="bulk-actions-panel" id="bulkActionsPanel">
+    <div class="bulk-actions-count" id="bulkActionsCount">0 selected</div>
+    <button class="bulk-btn status" onclick="bulkChangeStatus('Active')"><i class="fa-solid fa-circle-check"></i> Make Active</button>
+    <button class="bulk-btn status" style="background:rgba(245,158,11,0.12); border-color:var(--color-warning); color:var(--color-warning);" onclick="bulkChangeStatus('Paused')"><i class="fa-solid fa-circle-pause"></i> Make Paused</button>
+    <button class="bulk-btn delete" onclick="bulkDeleteUsers()"><i class="fa-solid fa-trash-can"></i> Delete Selected</button>
+  </div>
+
+  <!-- ADD OPERATOR MODAL DIALOG -->
+  <div class="admin-modal" id="addUserModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modalFormTitle">
+    <div class="admin-modal-backdrop" onclick="closeUserModal()"></div>
+    <div class="admin-modal-content">
+      <header class="admin-modal-header">
+        <h2 id="modalFormTitle">Add New Operator</h2>
+        <button class="admin-modal-close" onclick="closeUserModal()" aria-label="Close modal">&times;</button>
+      </header>
+      <div class="admin-modal-body">
+        <form id="addUserForm" onsubmit="handleUserFormSubmit(event)">
+          <div class="admin-form-group">
+            <label for="newUserName">Full Name</label>
+            <input type="text" id="newUserName" required placeholder="e.g. John Doe">
+          </div>
+          <div class="admin-form-group">
+            <label for="newUserEmail">Email Address</label>
+            <input type="email" id="newUserEmail" required placeholder="e.g. jdoe@uiverse.io">
+          </div>
+          <div class="admin-form-group">
+            <label for="newUserRole">Clearance Role</label>
+            <select id="newUserRole" required>
+              <option value="Lead Admin">Lead Admin</option>
+              <option value="Operator" selected>Operator</option>
+              <option value="Reviewer">Reviewer</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label for="newUserStatus">Condition Status</label>
+            <select id="newUserStatus" required>
+              <option value="Active" selected>Active</option>
+              <option value="Paused">Paused</option>
+            </select>
+          </div>
+          <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:24px;">
+            <button type="button" class="admin-btn secondary" onclick="closeUserModal()">Cancel</button>
+            <button type="submit" class="admin-btn primary">Add Operator</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
   <script src="admin-panel.js"></script>
+  <script src="dist/shared.js"></script>
 </body>
 
 </html>

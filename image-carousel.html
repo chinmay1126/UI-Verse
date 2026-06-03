@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-/Yz3LOm4jJYuvnmyIQcGt1s9JeDSCKQTWE4Hi4BkUqg=; script-src-attr 'unsafe-hashes' sha256-/Yz3LOm4jJYuvnmyIQcGt1s9JeDSCKQTWE4Hi4BkUqg=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta
@@ -25,16 +25,15 @@
   />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="image-carousel.css" />
 
 
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= NAVBAR ================= -->
   <header class="navbar">
@@ -56,7 +55,7 @@
       <button
         class="theme-toggle"
         id="darkModeToggle"
-      >
+       data-a11y-remediation="button-label-needed">
         <i class="fa-solid fa-moon"></i>
       </button>
 
@@ -90,6 +89,160 @@
 
   </section>
 
+
+  <div class="image-carousel-card">
+
+  <div class="image-preview apple-showcase">
+
+    <div class="apple-product"></div>
+
+    <div class="apple-content">
+      <h4>iPhone Pro</h4>
+      <span>Built for Apple Intelligence</span>
+    </div>
+
+  </div>
+
+  <h3>Apple Showcase</h3>
+
+  <p>
+    Premium Apple-style product presentation slider.
+  </p>
+
+  <a href="#">View Component</a>
+
+</div>
+
+<div class="image-carousel-card">
+
+  <div class="image-preview testimonial-carousel">
+
+    <div class="testimonial-avatar"></div>
+
+    <div class="testimonial-content">
+      <p>"Beautiful UI components."</p>
+      <span>Sarah Johnson</span>
+    </div>
+
+  </div>
+
+  <h3>Testimonial Slider</h3>
+
+  <p>
+    Modern customer review carousel layout.
+  </p>
+
+  <a href="#">View Component</a>
+
+</div>
+
+<div class="image-carousel-card">
+
+  <div class="image-preview ecommerce-carousel">
+
+    <div class="product-card"></div>
+
+    <div class="product-info">
+      <span>Wireless Headphones</span>
+    </div>
+
+  </div>
+
+  <h3>Product Carousel</h3>
+
+  <p>
+    Modern shopping and product showcase slider.
+  </p>
+
+  <a href="#">View Component</a>
+
+</div>
+
+<div class="image-carousel-card">
+
+  <div class="image-preview comparison-slider">
+
+    <div class="before"></div>
+
+    <div class="after"></div>
+
+    <div class="slider-handle"></div>
+
+  </div>
+
+  <h3>Comparison Slider</h3>
+
+  <p>
+    Before and after image comparison interface.
+  </p>
+
+  <a href="#">View Component</a>
+
+</div>
+
+
+<div class="image-carousel-card">
+
+  <div class="image-preview card-stack-carousel">
+
+    <div class="stack-card active"></div>
+    <div class="stack-card"></div>
+    <div class="stack-card"></div>
+
+  </div>
+
+  <h3>Card Stack</h3>
+
+  <p>
+    Tinder-style stacked image navigation effect.
+  </p>
+
+  <a href="#">View Component</a>
+
+</div>
+<div class="image-carousel-card">
+
+  <div class="image-preview dashboard-carousel">
+
+    <div class="dashboard-window">
+
+      <div class="chart"></div>
+
+      <div class="stats"></div>
+
+    </div>
+
+  </div>
+
+  <h3>Dashboard Preview</h3>
+
+  <p>
+    SaaS analytics and dashboard showcase slider.
+  </p>
+
+  <a href="#">View Component</a>
+
+</div>
+
+<div class="image-carousel-card">
+
+  <div class="image-preview portfolio-carousel">
+
+    <div class="portfolio-shot"></div>
+
+    <div class="portfolio-meta"></div>
+
+  </div>
+
+  <h3>Portfolio Slider</h3>
+
+  <p>
+    Dribbble-inspired creative portfolio showcase.
+  </p>
+
+  <a href="#">View Component</a>
+
+</div>
   <!-- ================= IMAGE CAROUSELS ================= -->
   <section class="section">
 
@@ -433,6 +586,308 @@
 
 </div>
 
+<!-- ================= CYBERPUNK CAROUSEL ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview cyberpunk-carousel">
+
+    <div class="cyberpunk-image"></div>
+
+    <div class="cyberpunk-overlay">
+      <span>2077</span>
+    </div>
+
+    <div class="cyberpunk-lines"></div>
+
+  </div>
+
+  <h3>Cyberpunk Slider</h3>
+
+  <p>
+    Futuristic neon cyberpunk inspired carousel interface.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= ROTATING CUBE ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview cube-carousel">
+
+    <div class="cube">
+      <div class="cube-face front"></div>
+      <div class="cube-face back"></div>
+      <div class="cube-face left"></div>
+      <div class="cube-face right"></div>
+    </div>
+
+  </div>
+
+  <h3>3D Cube Carousel</h3>
+
+  <p>
+    Interactive rotating cube image gallery effect.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= LIQUID SLIDER ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview liquid-carousel">
+
+    <div class="liquid-image"></div>
+
+    <div class="liquid-wave"></div>
+
+  </div>
+
+  <h3>Liquid Slider</h3>
+
+  <p>
+    Smooth fluid-inspired animated image transitions.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= HEXAGON GALLERY ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview hexagon-gallery">
+
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+
+  </div>
+
+  <h3>Hexagon Gallery</h3>
+
+  <p>
+    Stylish hexagonal image showcase carousel layout.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= VERTICAL STORY ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview story-carousel">
+
+    <div class="story-frame"></div>
+
+    <div class="story-progress">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <h3>Story Carousel</h3>
+
+  <p>
+    Instagram and Snapchat inspired story slider UI.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= MAGAZINE STYLE ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview magazine-carousel">
+
+    <div class="mag-main"></div>
+
+    <div class="mag-side">
+      <div></div>
+      <div></div>
+    </div>
+
+  </div>
+
+  <h3>Magazine Layout</h3>
+
+  <p>
+    Editorial style carousel with modern magazine feel.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= CIRCULAR SLIDER ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview circular-carousel">
+
+    <div class="circle-track">
+
+      <div class="circle-item"></div>
+      <div class="circle-item"></div>
+      <div class="circle-item"></div>
+      <div class="circle-item active"></div>
+
+    </div>
+
+  </div>
+
+  <h3>Circular Carousel</h3>
+
+  <p>
+    Circular rotating image gallery with depth effect.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= MORPHING GALLERY ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview morph-gallery">
+
+    <div class="morph-image"></div>
+
+  </div>
+
+  <h3>Morphing Gallery</h3>
+
+  <p>
+    Animated blob morphing carousel with soft transitions.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= FRAME SLIDER ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview frame-slider">
+
+    <div class="frame-image"></div>
+
+    <div class="frame-border"></div>
+
+  </div>
+
+  <h3>Frame Showcase</h3>
+
+  <p>
+    Elegant framed image carousel for premium galleries.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= RETRO VHS ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview retro-vhs">
+
+    <div class="vhs-image"></div>
+
+    <div class="vhs-noise"></div>
+
+    <div class="vhs-text">
+      PLAY ▷
+    </div>
+
+  </div>
+
+  <h3>Retro VHS Slider</h3>
+
+  <p>
+    Vintage VHS inspired nostalgic carousel component.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= FROSTED GALLERY ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview frosted-gallery">
+
+    <div class="frosted-img"></div>
+
+    <div class="frost-overlay"></div>
+
+  </div>
+
+  <h3>Frosted Carousel</h3>
+
+  <p>
+    Glass blur frosted effect modern image showcase.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
+<!-- ================= TIMELINE CAROUSEL ================= -->
+<div class="image-carousel-card">
+
+  <div class="image-preview timeline-carousel">
+
+    <div class="timeline-image"></div>
+
+    <div class="timeline-bar">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <h3>Timeline Slider</h3>
+
+  <p>
+    Timeline based image navigation carousel design.
+  </p>
+
+  <a href="#">
+    View Component
+  </a>
+
+</div>
+
       <!-- ================= MASONRY ================= -->
       <div class="image-carousel-card">
 
@@ -606,6 +1061,133 @@
       </ul>
     </div>
 
+    <div class="image-carousel-card">
+  <div class="image-preview infinite-carousel">
+    <div class="infinite-track">
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+    </div>
+  </div>
+
+  <h3>Infinite Loop</h3>
+  <p>Continuous seamless scrolling image carousel.</p>
+  <a href="#">View Component</a>
+</div>
+
+<div class="image-carousel-card">
+  <div class="image-preview perspective-carousel">
+    <div class="perspective-item left"></div>
+    <div class="perspective-item center"></div>
+    <div class="perspective-item right"></div>
+  </div>
+
+  <h3>Perspective Slider</h3>
+  <p>Deep perspective image presentation effect.</p>
+  <a href="#">View Component</a>
+</div>
+
+<div class="image-carousel-card">
+  <div class="image-preview bento-carousel">
+    <div class="bento large"></div>
+    <div class="bento"></div>
+    <div class="bento"></div>
+    <div class="bento wide"></div>
+  </div>
+
+  <h3>Bento Gallery</h3>
+  <p>Apple-inspired modern bento image showcase.</p>
+  <a href="#">View Component</a>
+</div>
+
+<div class="image-carousel-card">
+  <div class="image-preview expansion-carousel">
+    <div class="expand-card active"></div>
+    <div class="expand-card"></div>
+    <div class="expand-card"></div>
+  </div>
+
+  <h3>Expanding Cards</h3>
+  <p>Cards expand smoothly when active.</p>
+  <a href="#">View Component</a>
+</div>
+
+<div class="image-carousel-card">
+  <div class="image-preview dock-carousel">
+    <div class="dock-item"></div>
+    <div class="dock-item active"></div>
+    <div class="dock-item"></div>
+    <div class="dock-item"></div>
+  </div>
+
+  <h3>Dock Gallery</h3>
+  <p>MacOS dock-inspired scaling image slider.</p>
+  <a href="#">View Component</a>
+</div>
+
+<div class="image-carousel-card">
+  <div class="image-preview filmstrip-carousel">
+    <div class="film-frame"></div>
+    <div class="film-frame"></div>
+    <div class="film-frame"></div>
+  </div>
+
+  <h3>Film Strip</h3>
+  <p>Classic cinema film reel gallery design.</p>
+  <a href="#">View Component</a>
+</div>
+
+<div class="image-carousel-card">
+  <div class="image-preview flip-carousel">
+    <div class="flip-card">
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
+  </div>
+
+  <h3>Flip Gallery</h3>
+  <p>3D flipping image transition effect.</p>
+  <a href="#">View Component</a>
+</div>
+
+<div class="image-carousel-card">
+  <div class="image-preview orbit-carousel">
+    <div class="orbit-center"></div>
+    <div class="orbit-item"></div>
+    <div class="orbit-item"></div>
+    <div class="orbit-item"></div>
+  </div>
+
+  <h3>Orbit Slider</h3>
+  <p>Images rotate around a central element.</p>
+  <a href="#">View Component</a>
+</div>
+
+<div class="image-carousel-card">
+  <div class="image-preview wall-carousel">
+    <div class="wall-photo"></div>
+    <div class="wall-photo"></div>
+    <div class="wall-photo"></div>
+    <div class="wall-photo"></div>
+  </div>
+
+  <h3>Gallery Wall</h3>
+  <p>Modern art wall image arrangement.</p>
+  <a href="#">View Component</a>
+</div>
+
+<div class="image-carousel-card">
+  <div class="image-preview floating-polaroid">
+    <div class="polaroid-card"></div>
+    <div class="polaroid-card"></div>
+    <div class="polaroid-card"></div>
+  </div>
+
+  <h3>Floating Polaroids</h3>
+  <p>Animated floating memory-board gallery.</p>
+  <a href="#">View Component</a>
+</div>
     <!-- Resources -->
     <div class="footer-col">
       <h3>Resources</h3>
@@ -623,7 +1205,7 @@
       <p>Get notified when new components drop.</p>
 
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
+        <input type="email" placeholder="your@email.com" / data-a11y-remediation="label-needed">
         <button type="button">
           <i class="fa-solid fa-paper-plane"></i>
         </button>
@@ -674,6 +1256,7 @@
 
   </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
 

@@ -1,54 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>UI-Verse Web Components Demo</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="hero">
+    <h1>UI-Verse Web Components Demo</h1>
+    <p>
+      Framework-agnostic web components for React, Vue, Angular,
+      and Vanilla JS
+    </p>
+  </header>
+
+  <!-- BUTTONS -->
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UI-Verse Web Components Demo</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <h1>UI-Verse Web Components Demo</h1>
   <p>Framework-agnostic components that work with React, Vue, Angular, or vanilla HTML</p>
 
   <section>
     <h2>Buttons</h2>
-    <uiv-button variant="primary">Primary</uiv-button>
-    <uiv-button variant="secondary">Secondary</uiv-button>
-    <uiv-button variant="outline">Outline</uiv-button>
-    <uiv-button variant="ghost">Ghost</uiv-button>
-    <uiv-button size="small">Small</uiv-button>
-    <uiv-button size="large">Large</uiv-button>
-    <uiv-button disabled>Disabled</uiv-button>
+
+    <div class="demo-row">
+      <uiv-button variant="primary">Primary</uiv-button>
+      <uiv-button variant="secondary">Secondary</uiv-button>
+      <uiv-button variant="outline">Outline</uiv-button>
+      <uiv-button variant="ghost">Ghost</uiv-button>
+      <uiv-button size="small">Small</uiv-button>
+      <uiv-button size="large">Large</uiv-button>
+      <uiv-button disabled>Disabled</uiv-button>
+    </div>
   </section>
+
+  <!-- CARDS -->
 
   <section>
     <h2>Cards</h2>
-    <uiv-card shadow="small">Small shadow card</uiv-card>
-    <uiv-card shadow="medium" hoverable>Medium shadow (hover me)</uiv-card>
-    <uiv-card shadow="large">Large shadow card</uiv-card>
+
+    <div class="grid-3">
+      <uiv-card shadow="small">
+        <h3>Starter Card</h3>
+        <p>Simple reusable UI card component.</p>
+      </uiv-card>
+
+      <uiv-card shadow="medium" hoverable>
+        <h3>Hover Card</h3>
+        <p>Hover animation with smooth elevation effect.</p>
+      </uiv-card>
+
+      <uiv-card shadow="large">
+        <h3>Advanced Card</h3>
+        <p>Works across all modern frameworks.</p>
+      </uiv-card>
+    </div>
   </section>
+
+  <!-- BADGES -->
 
   <section>
     <h2>Badges</h2>
-    <uiv-badge color="primary">Primary</uiv-badge>
-    <uiv-badge color="success">Success</uiv-badge>
-    <uiv-badge color="warning">Warning</uiv-badge>
-    <uiv-badge color="danger">Danger</uiv-badge>
-    <uiv-badge color="info">Info</uiv-badge>
+
+    <div class="demo-row">
+      <uiv-badge color="primary">Primary</uiv-badge>
+      <uiv-badge color="success">Success</uiv-badge>
+      <uiv-badge color="warning">Warning</uiv-badge>
+      <uiv-badge color="danger">Danger</uiv-badge>
+      <uiv-badge color="info">Info</uiv-badge>
+    </div>
   </section>
+
+  <!-- INPUTS -->
+
+  <section>
+    <h2>Inputs</h2>
+
+    <div class="form-grid">
+      <uiv-input
+        label="Full Name"
+        placeholder="Enter your name">
+      </uiv-input>
+
+      <uiv-input
+        label="Email"
+        type="email"
+        placeholder="hello@example.com">
+      </uiv-input>
+
+      <uiv-input
+        label="Password"
+        type="password"
+        placeholder="••••••••">
+      </uiv-input>
+    </div>
+  </section>
+
+  <!-- ALERTS -->
+
+  <section>
+    <h2>Alerts</h2>
+
+    <div class="stack">
+      <uiv-alert type="success">
+        Profile updated successfully
+      </uiv-alert>
+
+      <uiv-alert type="warning">
+        Storage is almost full
+      </uiv-alert>
+
+      <uiv-alert type="danger">
+        Something went wrong
+      </uiv-alert>
+
+      <uiv-alert type="info">
+        New updates available
+      </uiv-alert>
+    </div>
+  </section>
+
+  <!-- AVATARS -->
+
+  <section>
+    <h2>Avatars</h2>
+
+    <div class="demo-row">
+      <uiv-avatar
+        src="https://i.pravatar.cc/100?img=1">
+      </uiv-avatar>
+
+      <uiv-avatar
+        src="https://i.pravatar.cc/100?img=2">
+      </uiv-avatar>
+
+      <uiv-avatar
+        src="https://i.pravatar.cc/100?img=3">
+      </uiv-avatar>
+
+      <uiv-avatar initials="DM"></uiv-avatar>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+
+  <section>
+    <h2>Modal</h2>
+
+    <uiv-button id="openModal" variant="primary">
+      Open Modal
+    </uiv-button>
+
+    <uiv-modal id="demoModal">
+      <h3 slot="title">UI-Verse Modal</h3>
+
+      <p>
+        This is a reusable modal web component.
+      </p>
+
+      <div slot="footer">
+        <uiv-button variant="ghost" id="closeModal">
+          Cancel
+        </uiv-button>
+
+        <uiv-button variant="primary">
+          Confirm
+        </uiv-button>
+      </div>
+    </uiv-modal>
+  </section>
+
+  <!-- TABS -->
+
+  <section>
+    <h2>Tabs</h2>
+
+    <uiv-tabs>
+      <uiv-tab title="Overview">
+        <p>
+          Fast and lightweight components.
+        </p>
+      </uiv-tab>
+
+      <uiv-tab title="Features">
+        <p>
+          Supports Shadow DOM and custom attributes.
+        </p>
+      </uiv-tab>
+
+      <uiv-tab title="Frameworks">
+        <p>
+          Compatible with React, Vue, Angular, and HTML.
+        </p>
+      </uiv-tab>
+    </uiv-tabs>
+  </section>
+
+  <!-- ACCORDION -->
+
+  <section>
+    <h2>Accordion</h2>
+
+    <uiv-accordion>
+      <uiv-accordion-item title="What are Web Components?">
+        Reusable browser-native custom elements.
+      </uiv-accordion-item>
+
+      <uiv-accordion-item title="Why use UI-Verse?">
+        Easy integration and framework independence.
+      </uiv-accordion-item>
+
+      <uiv-accordion-item title="Is it customizable?">
+        Yes — fully themeable with CSS variables.
+      </uiv-accordion-item>
+    </uiv-accordion>
+  </section>
+
+  <!-- PROGRESS -->
+
+  <section>
+    <h2>Progress Bars</h2>
+
+    <div class="stack">
+      <uiv-progress value="25"></uiv-progress>
+      <uiv-progress value="50"></uiv-progress>
+      <uiv-progress value="75"></uiv-progress>
+      <uiv-progress value="100"></uiv-progress>
+    </div>
+  </section>
+
+  <!-- TOGGLE -->
+
+  <section>
+    <h2>Toggle Switch</h2>
+
+    <div class="demo-row">
+      <uiv-switch checked></uiv-switch>
+      <uiv-switch></uiv-switch>
+    </div>
+  </section>
+
+  <!-- TOOLTIP -->
+
+  <section>
+    <h2>Tooltip</h2>
+
+    <div class="demo-row">
+      <uiv-tooltip text="This is a tooltip">
+        <uiv-button variant="outline">
+          Hover Me
+        </uiv-button>
+      </uiv-tooltip>
+    </div>
+  </section>
+
+  <!-- LOADER -->
+
+  <section>
+    <h2>Loader</h2>
+
+    <div class="demo-row">
+      <uiv-loader></uiv-loader>
+    </div>
+  </section>
+
+  <!-- DROPDOWN -->
+
+  <section>
+    <h2>Dropdown</h2>
+
+    <uiv-select>
+      <option>Select a framework</option>
+      <option>React</option>
+      <option>Vue</option>
+      <option>Angular</option>
+      <option>Svelte</option>
+    </uiv-select>
+  </section>
+
+  <!-- FRAMEWORK USAGE -->
 
   <section>
     <h2>Usage in Frameworks</h2>
-    <pre><code>&lt;!-- React --&gt;
+
+<pre><code>&lt;!-- React --&gt;
 &lt;uiv-button variant="primary"&gt;Click&lt;/uiv-button&gt;
 
 &lt;!-- Vue --&gt;
 &lt;uiv-card shadow="medium"&gt;Content&lt;/uiv-card&gt;
 
 &lt;!-- Angular --&gt;
-&lt;uiv-badge color="success"&gt;New&lt;/uiv-badge&gt;</code></pre>
+&lt;uiv-badge color="success"&gt;New&lt;/uiv-badge&gt;
+
+&lt;!-- Vanilla JS --&gt;
+&lt;uiv-alert type="info"&gt;Hello&lt;/uiv-alert&gt;</code></pre>
   </section>
 
+  <!-- SCRIPTS -->
+
   <script src="js/web-components/uiv-button.js"></script>
+  <script src="js/web-components/uiv-card.js"></script>
+  <script src="js/web-components/uiv-badge.js"></script>
+  <script src="js/web-components/uiv-input.js"></script>
+  <script src="js/web-components/uiv-alert.js"></script>
+  <script src="js/web-components/uiv-avatar.js"></script>
+  <script src="js/web-components/uiv-modal.js"></script>
+  <script src="js/web-components/uiv-tabs.js"></script>
+  <script src="js/web-components/uiv-accordion.js"></script>
+  <script src="js/web-components/uiv-progress.js"></script>
+  <script src="js/web-components/uiv-switch.js"></script>
+  <script src="js/web-components/uiv-tooltip.js"></script>
+  <script src="js/web-components/uiv-loader.js"></script>
+  <script src="js/web-components/uiv-select.js"></script>
+
+  <script>
+    const modal = document.getElementById("demoModal");
+
+    document
+      .getElementById("openModal")
+      .addEventListener("click", () => {
+        modal.setAttribute("open", "");
+      });
+
+    document
+      .getElementById("closeModal")
+      .addEventListener("click", () => {
+        modal.removeAttribute("open");
+      });
+  </script>
+
+    <script src="dist/shared.js"></script>
 </body>
 </html>

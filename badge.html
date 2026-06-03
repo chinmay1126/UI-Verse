@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-TPk8Ptcfplaeg5545jpydJkNH+Iu/Em2h71VzHAP0o0=; script-src-attr 'unsafe-hashes' sha256-TPk8Ptcfplaeg5545jpydJkNH+Iu/Em2h71VzHAP0o0=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,11 +23,11 @@
 
 
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
      MENU TOGGLE
@@ -185,6 +185,275 @@
 
   </section>
 
+  <!-- =========================================
+BADGE CARD — SECURITY LEVEL
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">Security</span>
+    <button class="save-btn active-save">
+      <i class="fa-solid fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview dark-preview">
+    <span class="security-level-badge">
+      <i class="fa-solid fa-shield-halved"></i>
+      LEVEL 5 SECURE
+    </span>
+  </div>
+
+  <h2>Security Level Badge</h2>
+  <p>Advanced protection indicator for enterprise systems and admin dashboards.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
+
+<!-- =========================================
+BADGE CARD — SOC2 COMPLIANT
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">Compliance</span>
+    <button class="save-btn">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview">
+    <span class="soc-badge">
+      <i class="fa-solid fa-certificate"></i>
+      SOC 2 CERTIFIED
+    </span>
+  </div>
+
+  <h2>SOC 2 Badge</h2>
+  <p>Trust-focused compliance badge for SaaS platforms and enterprises.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
+
+<!-- =========================================
+BADGE CARD — CLOUD READY
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">Cloud</span>
+    <button class="save-btn">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview dark-preview">
+    <span class="cloud-ready-badge">
+      <i class="fa-solid fa-cloud"></i>
+      CLOUD READY
+    </span>
+  </div>
+
+  <h2>Cloud Ready Badge</h2>
+  <p>Perfect for cloud-native applications, deployment tools and SaaS products.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
+
+<!-- =========================================
+BADGE CARD — AI AGENT
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">AI</span>
+    <button class="save-btn active-save">
+      <i class="fa-solid fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview dark-preview">
+    <span class="agent-badge">
+      <span class="agent-dot"></span>
+      AI AGENT ACTIVE
+    </span>
+  </div>
+
+  <h2>AI Agent Badge</h2>
+  <p>Real-time AI processing indicator for assistants and automation tools.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
+
+<!-- =========================================
+BADGE CARD — ENTERPRISE PLAN
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">Subscription</span>
+    <button class="save-btn">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview">
+    <span class="enterprise-plan-badge">
+      <i class="fa-solid fa-building"></i>
+      ENTERPRISE PLAN
+    </span>
+  </div>
+
+  <h2>Enterprise Plan Badge</h2>
+  <p>Premium SaaS plan badge for corporate customers and teams.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
+
+<!-- =========================================
+BADGE CARD — TRENDING NOW
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">Trending</span>
+    <button class="save-btn active-save">
+      <i class="fa-solid fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview dark-preview">
+    <span class="trending-now-badge">
+      <i class="fa-solid fa-fire"></i>
+      TRENDING NOW
+    </span>
+  </div>
+
+  <h2>Trending Badge</h2>
+  <p>Animated popularity badge for products, creators and content.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
+
+<!-- =========================================
+BADGE CARD — REVENUE GROWTH
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">Analytics</span>
+    <button class="save-btn">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview">
+    <span class="growth-badge">
+      <i class="fa-solid fa-arrow-trend-up"></i>
+      +42% GROWTH
+    </span>
+  </div>
+
+  <h2>Growth Badge</h2>
+  <p>Analytics-focused KPI badge for dashboards and business reports.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
+
+<!-- =========================================
+BADGE CARD — VERIFIED ORGANIZATION
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">Organization</span>
+    <button class="save-btn active-save">
+      <i class="fa-solid fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview dark-preview">
+    <span class="verified-org-badge">
+      <i class="fa-solid fa-badge-check"></i>
+      VERIFIED ORG
+    </span>
+  </div>
+
+  <h2>Verified Organization</h2>
+  <p>Premium trust badge for companies, brands and institutions.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
+
+<!-- =========================================
+BADGE CARD — NFT VERIFIED
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">Web3</span>
+    <button class="save-btn">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview dark-preview">
+    <span class="nft-verified-badge">
+      <i class="fa-solid fa-cube"></i>
+      NFT VERIFIED
+    </span>
+  </div>
+
+  <h2>NFT Verified Badge</h2>
+  <p>Modern blockchain verification badge for Web3 platforms.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
+
+<!-- =========================================
+BADGE CARD — ACHIEVEMENT
+========================================= -->
+<div class="badge-card">
+  <div class="card-top">
+    <span class="card-tag">Achievement</span>
+    <button class="save-btn active-save">
+      <i class="fa-solid fa-bookmark"></i>
+    </button>
+  </div>
+
+  <div class="badge-preview dark-preview">
+    <span class="achievement-badge">
+      <i class="fa-solid fa-medal"></i>
+      TOP CONTRIBUTOR
+    </span>
+  </div>
+
+  <h2>Achievement Badge</h2>
+  <p>Reward and recognition badge for communities and productivity apps.</p>
+
+  <div class="card-actions">
+    <button>Preview</button>
+    <button>Copy</button>
+  </div>
+</div>
   <!-- =========================================================
        EARNED
   ========================================================= -->
@@ -673,6 +942,7 @@ menuToggle.addEventListener("click",()=>{
 
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
 

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contributor Impact Dashboard — UIverse</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
+
+  <style>
+    /* ── Layout ── */
+    .cb-main {
+      padding: 32px 40px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cb-page-header {
+      margin-bottom: 32px;
+    }
+
+    .cb-page-header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .cb-page-header h1 span {
+      background: linear-gradient(135deg, #eb6835, #7b61ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cb-page-header p {
+      color: var(--text-secondary, #64748b);
+      font-size: 15px;
+    }
+
+    /* ── Toolbar ── */
+    .cb-toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .cb-search {
+      flex: 1;
+      min-width: 200px;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border, #e2e8f0);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      background: var(--surface, #fff);
+      color: var(--text-primary, #1a2332);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .cb-search:focus { border-color: #eb6835; }
+
+    .cb-sort {
+      padding: 10px 14px;
+      border: 1.5px solid var(--border, #e2e8f0);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      background: var(--surface, #fff);
+      color: var(--text-primary, #1a2332);
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* ── Split layout ── */
+    .cb-split {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .cb-split { grid-template-columns: 1fr; }
+      .cb-main  { padding: 20px 16px 60px; }
+    }
+
+    /* ── Leaderboard panel ── */
+    .cb-panel {
+      border: 1.5px solid var(--border, #e2e8f0);
+      border-radius: 14px;
+      background: var(--surface, #fff);
+      overflow: hidden;
+    }
+
+    .cb-panel-title {
+      padding: 14px 18px;
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--text-secondary, #64748b);
+      border-bottom: 1px solid var(--border, #e2e8f0);
+    }
+
+    /* ── Contributor card ── */
+    .cb-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 12px 16px;
+      border: none;
+      border-bottom: 1px solid var(--border, #e2e8f0);
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .cb-card:last-child { border-bottom: none; }
+    .cb-card:hover      { background: rgba(235,104,53,0.05); }
+
+    .cb-card--active {
+      background: rgba(235,104,53,0.08);
+      border-left: 3px solid #eb6835;
+    }
+
+    .cb-rank {
+      font-size: 12px;
+      font-weight: 700;
+      color: #eb6835;
+      min-width: 24px;
+    }
+
+    .cb-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--border, #e2e8f0);
+    }
+
+    .cb-avatar--lg {
+      width: 72px;
+      height: 72px;
+    }
+
+    .cb-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cb-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary, #1a2332);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cb-role {
+      font-size: 11px;
+      color: var(--text-secondary, #64748b);
+    }
+
+    .cb-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .cb-stat {
+      font-size: 11px;
+      color: var(--text-secondary, #64748b);
+      white-space: nowrap;
+    }
+
+    /* ── Detail panel ── */
+    .cb-detail-panel {
+      border: 1.5px solid var(--border, #e2e8f0);
+      border-radius: 14px;
+      background: var(--surface, #fff);
+      padding: 24px;
+      min-height: 500px;
+    }
+
+    .cb-hint {
+      color: var(--text-secondary, #64748b);
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 14px;
+    }
+
+    .cb-detail-header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .cb-detail-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cb-detail-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .cb-detail-role {
+      font-size: 12px;
+      color: var(--text-secondary, #64748b);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cb-github-link {
+      font-size: 13px;
+      color: #eb6835;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cb-github-link:hover { text-decoration: underline; }
+
+    /* ── Stat cards row ── */
+    .cb-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .cb-stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .cb-stat-card {
+      border: 1.5px solid var(--border, #e2e8f0);
+      border-radius: 10px;
+      padding: 12px 14px;
+      text-align: center;
+    }
+
+    .cb-stat-card--accent {
+      background: rgba(235,104,53,0.07);
+      border-color: rgba(235,104,53,0.25);
+    }
+
+    .cb-stat-card__num {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #eb6835;
+    }
+
+    .cb-stat-card__label {
+      display: block;
+      font-size: 11px;
+      color: var(--text-secondary, #64748b);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-top: 2px;
+    }
+
+    /* ── Highlight ── */
+    .cb-highlight {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(123,97,255,0.07);
+      border: 1.5px solid rgba(123,97,255,0.2);
+      border-radius: 10px;
+      padding: 10px 16px;
+      margin-bottom: 24px;
+    }
+
+    .cb-highlight__label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #7b61ff;
+      white-space: nowrap;
+    }
+
+    .cb-highlight__link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary, #1a2332);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .cb-highlight__link:hover { color: #7b61ff; }
+
+    .cb-highlight__score {
+      font-size: 12px;
+      color: #7b61ff;
+      background: rgba(123,97,255,0.1);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    /* ── Section title ── */
+    .cb-section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 20px 0 10px;
+      color: var(--text-primary, #1a2332);
+    }
+
+    .cb-section-hint {
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--text-secondary, #64748b);
+    }
+
+    /* ── Component list ── */
+    .cb-comp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .cb-comp-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s, border-color 0.15s;
+      font-size: 13px;
+    }
+
+    .cb-comp-row:hover {
+      background: rgba(235,104,53,0.05);
+      border-color: rgba(235,104,53,0.3);
+    }
+
+    .cb-comp-title { font-weight: 600; flex: 1; }
+
+    .cb-comp-cat {
+      font-size: 11px;
+      background: var(--surface-2, #f8fafc);
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 4px;
+      padding: 1px 6px;
+      color: var(--text-secondary, #64748b);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .cb-comp-metrics {
+      display: flex;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-secondary, #64748b);
+    }
+
+    .cb-comp-score {
+      font-weight: 700;
+      color: #eb6835;
+    }
+
+    /* ── Hidden gems ── */
+    .cb-gems {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .cb-gem-chip {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(123,97,255,0.08);
+      border: 1px solid rgba(123,97,255,0.25);
+      color: #7b61ff;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .cb-gem-chip:hover { background: rgba(123,97,255,0.18); }
+
+    /* ── Timeline ── */
+    .cb-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 16px;
+      padding-left: 8px;
+    }
+
+    .cb-tl-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      position: relative;
+      padding-bottom: 16px;
+    }
+
+    .cb-tl-item:last-child { padding-bottom: 0; }
+
+    .cb-tl-item:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 16px;
+      bottom: 0;
+      width: 2px;
+      background: var(--border, #e2e8f0);
+    }
+
+    .cb-tl-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid var(--border, #e2e8f0);
+      background: var(--surface, #fff);
+      flex-shrink: 0;
+      margin-top: 2px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cb-tl-dot--first {
+      border-color: #eb6835;
+      background: #eb6835;
+    }
+
+    .cb-tl-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cb-tl-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary, #1a2332);
+      text-decoration: none;
+    }
+
+    .cb-tl-title:hover { color: #eb6835; }
+
+    .cb-tl-date {
+      font-size: 11px;
+      color: var(--text-secondary, #64748b);
+    }
+
+    /* ── Footer ── */
+    .cb-joined {
+      font-size: 12px;
+      color: var(--text-secondary, #64748b);
+      text-align: right;
+      margin-top: 8px;
+    }
+
+    /* ── States ── */
+    #cbLoading {
+      text-align: center;
+      padding: 60px;
+      color: var(--text-secondary, #64748b);
+      font-size: 14px;
+    }
+
+    #cbError {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      color: #ef4444;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse <span style="font-size:9px;background:linear-gradient(135deg,#eb6835,#7b61ff);color:#fff;padding:1px 6px;border-radius:10px;font-weight:800;margin-left:4px;">V2</span></span>
+  </div>
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+      <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+      <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><span>Forms</span></a></li>
+      <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navbar</span></a></li>
+      <li><a href="loaders.html"><i class="fa-solid fa-spinner"></i><span>Loaders</span></a></li>
+      <li><a href="charts.html"><i class="fa-solid fa-chart-pie"></i><span>Charts</span></a></li>
+      <li><a href="about.html"><i class="fa-solid fa-circle-info"></i><span>About</span></a></li>
+      <li><a href="documentation.html"><i class="fa-solid fa-book"></i><span>Documentation</span></a></li>
+      <li class="active"><a href="contributor-dashboard.html"><i class="fa-solid fa-users"></i><span>Contributors</span></a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
+
+<!-- ================= SIDEBAR BACKDROP ================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="nav-right">
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="cb-main">
+
+  <div class="cb-page-header">
+    <h1>Contributor <span>Impact Dashboard</span></h1>
+    <p>Per-contributor component stats, adoption metrics, and activity timeline.</p>
+  </div>
+
+  <div id="cbLoading">Loading contributors…</div>
+  <div id="cbError">Failed to load contributor data. Make sure you are running on a local server.</div>
+
+  <div class="cb-toolbar">
+    <input
+      type="text"
+      id="cbSearch"
+      class="cb-search"
+      placeholder="Search contributors…"
+      autocomplete="off"
+    />
+    <select id="cbSort" class="cb-sort" aria-label="Sort contributors">
+      <option value="impact">Sort: Impact Score</option>
+      <option value="components">Sort: Most Components</option>
+      <option value="joined">Sort: Earliest Joined</option>
+    </select>
+  </div>
+
+  <div class="cb-split">
+    <div class="cb-panel">
+      <div class="cb-panel-title">Contributors</div>
+      <div id="cbLeaderboard"></div>
+    </div>
+    <div class="cb-detail-panel" id="cbDetail">
+      <p class="cb-hint">← Select a contributor to see their impact</p>
+    </div>
+  </div>
+
+  <div class="cb-overview">
+  <div class="cb-overview-card">
+    <span class="value">142</span>
+    <span class="label">Contributors</span>
+  </div>
+
+  <div class="cb-overview-card">
+    <span class="value">1,284</span>
+    <span class="label">Components</span>
+  </div>
+
+  <div class="cb-overview-card">
+    <span class="value">2.1M</span>
+    <span class="label">Total Views</span>
+  </div>
+
+  <div class="cb-overview-card">
+    <span class="value">87K</span>
+    <span class="label">Total Likes</span>
+  </div>
+</div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
+<!-- ================= SCROLL TO TOP ================= -->
+<button id="scrollTopBtn" onclick="scrollToTop()" title="Back to top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<script src="js/core/analytics.js"></script>
+<script src="js/features/contributor-dashboard.js"></script>
+<script>
+  /* ── Dark mode ── */
+  const _dmBtn  = document.getElementById('darkModeToggle');
+  const _dmIcon = _dmBtn.querySelector('i');
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    _dmIcon.className = 'fa-solid fa-sun';
+  }
+  _dmBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const dark = document.body.classList.contains('dark-mode');
+    _dmIcon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  });
+
+  /* ── Sidebar ── */
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('sidebarBackdrop').classList.toggle('visible');
+  }
+
+  /* ── Scroll top ── */
+  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* ── Boot dashboard ── */
+  document.addEventListener('DOMContentLoaded', () => {
+    ContributorDashboard.init();
+  });
+</script>
+
+</body>
+</html>

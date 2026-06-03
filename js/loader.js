@@ -1,12 +1,15 @@
 // Lightweight runtime loader for UIverse
 // Loads registry, core modules, page-specific feature modules, then bootstrap
 (function(){
-  const page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const pathClean = location.pathname.replace(/\.html$/i, '').toLowerCase();
+  const pageSegment = pathClean.split('/').pop() || 'index';
+  const page = pageSegment + '.html';
 
   const core = [
     'js/registry.js',
     'js/core/dependency-manager.js',
     'js/core/utils.js',
+    'js/core/keyboard-contract.js',
     'js/features/design-tokens.js',
     'js/core/component-versioning.js',
     'js/core/component-discovery.js',
