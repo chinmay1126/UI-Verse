@@ -16,7 +16,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="span.css"> <!-- Base component styles -->
+   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
+
   <link rel="stylesheet" href="charts.css"> <!-- Chart specific styles -->
   <link rel="stylesheet" href="accessibility.css"> <!-- Accessibility improvements -->
 </head>
@@ -794,10 +797,323 @@
           <p class="chart-subtitle">24 Hour Market Trend</p>
         </div>
       </div>
+    </div>
+  <!-- 31. Gradient Bar Chart -->
+<div class="component-card" id="component-31">
+  <div class="card-header">
+    <h3>Gradient Bar Chart</h3>
+    <p>Stylized bar chart with gradient-filled bars for visual impact.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-31" style="padding: 1.25rem 1rem;">
+    <div class="chart-card bar-card">
+      <div class="chart-header">
+        <div>
+          <h3 class="chart-title">Performance Metrics</h3>
+          <p class="chart-subtitle">Quarterly comparison</p>
+        </div>
+      </div>
+      <div class="bar-grid">
+        <div class="bar-node bar-lg red">Q1</div>
+        <div class="bar-node bar-md blue">Q2</div>
+        <div class="bar-node bar-sm green">Q3</div>
+        <div class="bar-node bar-lg orange">Q4</div>
+      </div>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-31', this)" aria-label="View HTML code for Gradient Bar Chart" aria-expanded="false" aria-controls="code-31">
+      <i class="fa-solid fa-code" aria-hidden="true"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-31-text', this)" aria-label="Copy Gradient Bar Chart code">
+      <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-31" role="region" aria-label="Code snippet for Gradient Bar Chart">
+    <pre id="code-31-text"><code>&lt;div class="bar-grid"&gt;
+  &lt;div class="bar-node bar-lg red"&gt;Q1&lt;/div&gt;
+  &lt;div class="bar-node bar-md blue"&gt;Q2&lt;/div&gt;
+  &lt;div class="bar-node bar-sm green"&gt;Q3&lt;/div&gt;
+  &lt;div class="bar-node bar-lg orange"&gt;Q4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<!-- 32. Line Chart -->
+<div class="component-card" id="component-32">
+  <div class="card-header">
+    <h3>Line Chart</h3>
+    <p>Animated line chart for trend visualization.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-32" style="padding:1.25rem 1rem;">
+    <svg class="line-chart" viewBox="0 0 200 100">
+      <polyline points="0,80 40,60 80,40 120,50 160,20 200,40" />
+    </svg>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-32', this)" aria-label="View HTML code for Line Chart" aria-expanded="false" aria-controls="code-32">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-32-text', this)" aria-label="Copy Line Chart code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-32" role="region" aria-label="Code snippet for Line Chart">
+    <pre id="code-32-text"><code>&lt;svg class="line-chart" viewBox="0 0 200 100"&gt;
+  &lt;polyline points="0,80 40,60 80,40 120,50 160,20 200,40" /&gt;
+&lt;/svg&gt;</code></pre>
+  </div>
+</div>
+<!-- 33. Pie Chart -->
+<div class="component-card" id="component-33">
+  <div class="card-header">
+    <h3>Pie Chart</h3>
+    <p>Segmented pie chart for distribution.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-33" style="padding:1.25rem 1rem;">
+    <div class="pie-chart"></div>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-33', this)" aria-label="View HTML code for Pie Chart" aria-expanded="false" aria-controls="code-33">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-33-text', this)" aria-label="Copy Pie Chart code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-33" role="region" aria-label="Code snippet for Pie Chart">
+    <pre id="code-33-text"><code>&lt;div class="pie-chart"&gt;&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<!-- 34. Donut Chart -->
+<div class="component-card" id="component-34">
+  <div class="card-header">
+    <h3>Donut Chart</h3>
+    <p>Ring-style chart for proportional data.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-34" style="padding:1.25rem 1rem;">
+    <div class="donut-chart"></div>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-34', this)" aria-label="View HTML code for Donut Chart" aria-expanded="false" aria-controls="code-34">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-34-text', this)" aria-label="Copy Donut Chart code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-34" role="region" aria-label="Code snippet for Donut Chart">
+    <pre id="code-34-text"><code>&lt;div class="donut-chart"&gt;&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<!-- 35. Radar Chart -->
+<div class="component-card" id="component-35">
+  <div class="card-header">
+    <h3>Radar Chart</h3>
+    <p>Polygon chart for multi-dimensional data.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-35" style="padding:1.25rem 1rem;">
+    <svg class="radar-chart" viewBox="0 0 200 200">
+      <polygon points="100,20 180,60 160,160 40,160 20,60" />
+    </svg>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-35', this)" aria-label="View HTML code for Radar Chart" aria-expanded="false" aria-controls="code-35">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-35-text', this)" aria-label="Copy Radar Chart code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-35" role="region" aria-label="Code snippet for Radar Chart">
+    <pre id="code-35-text"><code>&lt;svg class="radar-chart" viewBox="0 0 200 200"&gt;
+  &lt;polygon points="100,20 180,60 160,160 40,160 20,60" /&gt;
+&lt;/svg&gt;</code></pre>
+  </div>
+</div>
+<!-- 36. Progress Circle -->
+<div class="component-card" id="component-36">
+  <div class="card-header">
+    <h3>Progress Circle</h3>
+    <p>Circular progress indicator.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-36" style="padding:1.25rem 1rem;">
+    <svg class="progress-circle" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" />
+    </svg>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-36', this)" aria-label="View HTML code for Progress Circle" aria-expanded="false" aria-controls="code-36">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-36-text', this)" aria-label="Copy Progress Circle code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-36" role="region" aria-label="Code snippet for Progress Circle">
+    <pre id="code-36-text"><code>&lt;svg class="progress-circle" viewBox="0 0 100 100"&gt;
+  &lt;circle cx="50" cy="50" r="45" /&gt;
+&lt;/svg&gt;</code></pre>
+  </div>
+</div>
+<!-- 37. Heatmap Grid -->
+<div class="component-card" id="component-37">
+  <div class="card-header">
+    <h3>Heatmap Grid</h3>
+    <p>Color-coded grid for intensity visualization.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-37" style="padding:1.25rem 1rem;">
+    <div class="heatmap">
+      <div style="--color:#ff5722"></div>
+      <div style="--color:#ff9800"></div>
+      <div style="--color:#ffc107"></div>
+      <div style="--color:#8bc34a"></div>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-37', this)" aria-label="View HTML code for Heatmap Grid" aria-expanded="false" aria-controls="code-37">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-37',this)" aria-label="Copy Progress Circle code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-36" role="region" aria-label="Code snippet for Progress Circle">
+    <pre id="code-36-text"><code>&lt;svg class="progress-circle" viewBox="0 0 100 100"&gt;
+  &lt;circle cx="50" cy="50" r="45" /&gt;
+&lt;/svg&gt;</code></pre>
+  </div>
+</div>
+<!-- 41. Stacked Bar Chart -->
+<div class="component-card" id="component-41">
+  <div class="card-header">
+    <h3>Stacked Bar Chart</h3>
+    <p>Layered bars showing category breakdowns.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-41" style="padding:1.25rem 1rem;">
+    <div class="stacked-bar">
+      <div class="segment red" style="width:40%">40%</div>
+      <div class="segment blue" style="width:30%">30%</div>
+      <div class="segment green" style="width:30%">30%</div>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-41', this)" aria-label="View HTML code for Stacked Bar Chart" aria-expanded="false" aria-controls="code-41">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-41-text', this)" aria-label="Copy Stacked Bar Chart code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-41" role="region" aria-label="Code snippet for Stacked Bar Chart">
+    <pre id="code-41-text"><code>&lt;div class="stacked-bar"&gt;
+  &lt;div class="segment red" style="width:40%"&gt;40%&lt;/div&gt;
+  &lt;div class="segment blue" style="width:30%"&gt;30%&lt;/div&gt;
+  &lt;div class="segment green" style="width:30%"&gt;30%&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<!-- 42. Polar Area Chart -->
+<div class="component-card" id="component-42">
+  <div class="card-header">
+    <h3>Polar Area Chart</h3>
+    <p>Radial segments for proportional data.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-42" style="padding:1.25rem 1rem;">
+    <div class="polar-chart"></div>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-42', this)" aria-label="View HTML code for Polar Area Chart" aria-expanded="false" aria-controls="code-42">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-42-text', this)" aria-label="Copy Polar Area Chart code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-42" role="region" aria-label="Code snippet for Polar Area Chart">
+    <pre id="code-42-text"><code>&lt;div class="polar-chart"&gt;&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<!-- 43. Sparkline Chart -->
+<div class="component-card" id="component-43">
+  <div class="card-header">
+    <h3>Sparkline Chart</h3>
+    <p>Minimal line chart for quick trends.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-43" style="padding:1.25rem 1rem;">
+    <svg class="sparkline" viewBox="0 0 200 50">
+      <polyline points="0,40 40,30 80,20 120,25 160,10 200,20" />
+    </svg>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-43', this)" aria-label="View HTML code for Sparkline Chart" aria-expanded="false" aria-controls="code-43">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-43-text', this)" aria-label="Copy Sparkline Chart code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-43" role="region" aria-label="Code snippet for Sparkline Chart">
+    <pre id="code-43-text"><code>&lt;svg class="sparkline" viewBox="0 0 200 50"&gt;
+  &lt;polyline points="0,40 40,30 80,20 120,25 160,10 200,20" /&gt;
+&lt;/svg&gt;</code></pre>
+  </div>
+</div>
+<!-- 44. Funnel Chart -->
+<div class="component-card" id="component-44">
+  <div class="card-header">
+    <h3>Funnel Chart</h3>
+    <p>Step-down funnel for conversion stages.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-44" style="padding:1.25rem 1rem;">
+    <div class="funnel">
+      <div class="funnel-step step1">Stage 1</div>
+      <div class="funnel-step step2">Stage 2</div>
+      <div class="funnel-step step3">Stage 3</div>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="btn btn-code" onclick="toggleCode('code-44', this)" aria-label="View HTML code for Funnel Chart" aria-expanded="false" aria-controls="code-44">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="btn btn-copy" onclick="copyCode('code-44-text', this)" aria-label="Copy Funnel Chart code">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="code-snippet" id="code-44" role="region" aria-label="Code snippet for Funnel Chart">
+    <pre id="code-44-text"><code>&lt;div class="funnel"&gt;
+  &lt;div class="funnel-step step1"&gt;Stage 1&lt;/div&gt;
+  &lt;div class="funnel-step step2"&gt;Stage 2&lt;/div&gt;
+  &lt;div class="funnel-step step3"&gt;Stage 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<!-- 45. Timeline Chart -->
+<div class="component-card" id="component-45">
+  <div class="card-header">
+    <h3>Timeline Chart</h3>
+    <p>Sequential events displayed along a line.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-45" style="padding:1.25rem 1rem;">
+    <div class="timeline">
+      <div class="event">Start</div>
+      <div class="event">Milestone</div>
+      <div class="event">Finish</div>
+    </div>
+  </div>
+<!-- 45. Timeline Chart -->
+<div class="component-card" id="component-45">
+  <div class="card-header">
+    <h3>Timeline Chart</h3>
+    <p>Sequential events displayed along a line.</p>
+  </div>
+  <div class="preview-box charts-wrapper" id="preview-45" style="padding:1.25rem 1rem;">
+    <div class="timeline">
+      <div class="event">Start</div>
+      <div class="event">Milestone</div>
+      <div class="event">Finish</div>
+    </div>
+  </div>
 
-
-
-    <!-- 2. Animated Bar Chart -->
+<!-- 2. Animated Bar Chart -->
     <div class="component-card" id="component-2">
       <div class="card-header">
         <h3>Responsive Bar Chart</h3>
@@ -1498,7 +1814,7 @@
 &lt;/div&gt;</code></pre>
       </div>
     </div>
-
+  
   </section>
 
   <!-- Scroll to Top -->
