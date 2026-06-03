@@ -888,7 +888,8 @@ padding: 10px 20px;
 
   overflow:hidden;
 
-  min-width:340px;
+  min-width:280px;
+  max-width:calc(100vw - 32px);
 
   padding:18px 20px;
 
