@@ -9,9 +9,47 @@
 </head>
 <body>
 
+   <header class="counter-header">
+
+  <div class="logo-area">
+      <div class="logo-box">
+          <i class="fa-solid fa-chart-simple"></i>
+      </div>
+
+      <div>
+          <h2>CounterVerse</h2>
+          <span>Animated Counter Collection</span>
+      </div>
+  </div>
+
+  <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        placeholder="Search components..."
+      >
+  </div>
+
+  <div class="header-actions">
+
+      <button class="header-btn">
+          <i class="fa-solid fa-heart"></i>
+      </button>
+
+      <button class="header-btn">
+          <i class="fa-solid fa-code"></i>
+      </button>
+
+      <button class="header-btn">
+          <i class="fa-solid fa-moon"></i>
+      </button>
+
+  </div>
+
+</header>
+
   <h1 class="page-title">Animated Counter Components</h1>
   <p class="page-subtitle">Modern animated counter UI components</p>
-
   <div class="container">
 
     <!-- Counter 1: Count Up -->
@@ -136,7 +174,269 @@
         <p class="minimal-hint">Click + or - to change</p>
       </div>
     </div>
+    <div class="counter-card">
 
+    <h3>Live Visitors</h3>
+
+    <p>Real-time active visitors</p>
+
+    <div class="live-counter">
+
+        <div class="live-dot"></div>
+
+        <span id="visitorCount">
+            256
+        </span>
+
+    </div>
+
+</div>
+<div class="counter-card">
+
+    <h3>Revenue Counter</h3>
+
+    <p>Animated earnings</p>
+
+    <div class="revenue-counter">
+
+        <span>$</span>
+
+        <span id="revenue">
+            0
+        </span>
+
+    </div>
+
+</div>
+<div class="counter-card">
+
+    <h3>Like Counter</h3>
+
+    <p>Interactive social likes</p>
+
+    <div class="like-counter">
+
+        <button id="likeBtn">
+            ❤️
+        </button>
+
+        <span id="likeCount">
+            0
+        </span>
+
+    </div>
+
+</div>
+<div class="counter-card">
+
+    <h3>Achievements</h3>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-item">
+            🏆 25
+        </div>
+
+        <div class="achievement-item">
+            ⭐ 80
+        </div>
+
+        <div class="achievement-item">
+            🚀 40
+        </div>
+
+    </div>
+
+</div>
+<div class="counter-card">
+
+    <h3>Countdown Timer</h3>
+
+    <p>Launch countdown</p>
+
+    <div class="countdown">
+
+        <span id="countdown">
+            60
+        </span>
+
+    </div>
+
+</div>
+<div class="counter-card">
+
+    <h3>Goal Progress</h3>
+
+    <div class="goal-track">
+
+        <div class="goal-fill"></div>
+
+    </div>
+
+    <span id="goalPercent">
+        0%
+    </span>
+
+</div>
+<div class="counter-card xp-card">
+    <h3>XP Level Counter</h3>
+
+    <div class="xp-level">
+        <span id="xpLevel">1</span>
+        <small>LEVEL</small>
+    </div>
+
+    <div class="xp-bar">
+        <div id="xpFill"></div>
+    </div>
+</div>
+<div class="counter-card stock-card">
+
+    <h3>Stock Market</h3>
+
+    <div class="stock-price">
+        ₹<span id="stockValue">2500</span>
+    </div>
+
+    <div id="stockChange">
+        +0.00%
+    </div>
+
+</div>
+<div class="counter-card social-card">
+
+<h3>Followers Growth</h3>
+
+<div class="social-number">
+    <span id="followers">
+        1000
+    </span>
+</div>
+
+<p>Followers</p>
+
+</div>
+<div class="counter-card fitness-card">
+
+<h3>Fitness Tracker</h3>
+
+<div class="steps">
+    👟
+    <span id="stepsCount">
+        0
+    </span>
+</div>
+
+</div>
+<div class="counter-card sales-card">
+
+<h3>E-Commerce Sales</h3>
+
+<div class="sales-number">
+
+🛒
+<span id="salesCount">
+0
+</span>
+
+</div>
+
+</div>
+<div class="counter-card ai-card">
+
+<h3>AI Usage</h3>
+
+<div class="ai-counter">
+
+🤖
+<span id="aiRequests">
+0
+</span>
+
+</div>
+
+<p>Requests Processed</p>
+
+</div>
+<div class="counter-card performance-card">
+
+<h3>System Performance</h3>
+
+<div class="performance-circle">
+
+<span id="cpuValue">
+65
+</span>%
+
+</div>
+
+</div>
+<div class="counter-card rocket-card">
+
+    <div class="rocket">
+        🚀
+    </div>
+
+    <h3>Launch Progress</h3>
+
+    <div class="launch-counter">
+        <span id="launchCount">0</span>%
+    </div>
+
+</div>
+<div class="counter-card galaxy-card">
+
+<div class="planet"></div>
+
+<h3>Galaxy Energy</h3>
+
+<div id="energyValue">
+0
+</div>
+
+</div>
+<div class="counter-card lightning-card">
+
+<div class="lightning">
+⚡
+</div>
+
+<h3>Power Usage</h3>
+
+<div id="powerCount">
+0
+</div>
+
+</div>
+<div class="counter-card cyber-card">
+
+<div class="cyber-ring">
+
+<div class="cyber-number"
+id="xpNumber">
+
+1
+
+</div>
+
+</div>
+
+<h3>Cyber Level</h3>
+
+</div>
+<div class="counter-card crystal-card">
+
+<div class="crystal">
+💎
+</div>
+
+<h3>Crystal Collection</h3>
+
+<div id="crystalCount">
+0
+</div>
+
+</div>
   </div>
 
   <script src="script.js"></script>

@@ -55,6 +55,24 @@
   </div>
 
   <script src="js/features/compare.js"></script>
+  <script src="js/features/code-diff.js"></script>
+  <script>
+    // Add a Code Diff button to the compare toolbar
+    document.addEventListener('DOMContentLoaded', () => {
+      const toolbar = document.querySelector('.toolbar .controls');
+      if (!toolbar) return;
+      const btn = document.createElement('button');
+      btn.textContent = '⇄ Code Diff';
+      btn.title = 'Open side-by-side code diff viewer';
+      btn.addEventListener('click', () => {
+        // Gather components from registry if available
+        if (window.CodeDiff) {
+          CodeDiff.open(0, 1);
+        }
+      });
+      toolbar.appendChild(btn);
+    });
+  </script>
     <script src="dist/shared.js"></script>
 </body>
 </html>
