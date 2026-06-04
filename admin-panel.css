@@ -1368,6 +1368,53 @@ body {
   }
 }
 
+/* Hamburger */
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* stays above everything */
+}
+
+.hamburger span {
+  height: 4px;
+  background: #fff; /* match dark theme */
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* Sidebar hidden by default */
+.sidebar {
+  position: fixed;
+  left: -250px; /* off-screen */
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #111;
+  transition: left 0.4s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0; /* slide in */
+}
+
+/* Hamburger transforms into X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 
 .bento-card{
     position:relative;
@@ -1793,4 +1840,333 @@ body {
   font-size: 13px;
   color: #555;
 }
+
+/* ============================================================
+   11. DATA MANAGEMENT, ACCESS SYSTEM & INTERACTIVE STATS
+   ============================================================ */
+
+/* Sorting & Column Headers */
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition-smooth);
+}
+
+.sortable-header:hover {
+  color: #fff !important;
+}
+
+.sort-icon {
+  margin-left: 6px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* Floating Bulk Action Bar */
+.bulk-actions-panel {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(12, 15, 29, 0.96);
+  border: 1px solid var(--color-purple);
+  border-radius: 20px;
+  padding: 14px 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(123, 97, 255, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bulk-actions-panel.active {
+  transform: translateX(-50%) translateY(0);
+}
+
+.bulk-actions-count {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  border-right: 1px solid var(--card-border);
+  padding-right: 20px;
+}
+
+.bulk-btn {
+  border: none;
+  background: none;
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bulk-btn.delete {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}
+
+.bulk-btn.delete:hover {
+  background: var(--color-error);
+  color: #fff;
+}
+
+.bulk-btn.status {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.bulk-btn.status:hover {
+  background: var(--color-success);
+  color: #fff;
+}
+
+/* Glassmorphic Add User Modal */
+.admin-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.admin-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 22, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.admin-modal-content {
+  position: relative;
+  background: rgba(12, 15, 29, 0.98);
+  border: 1px solid rgba(123, 97, 255, 0.2);
+  border-radius: 28px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  z-index: 10001;
+  overflow: hidden;
+  animation: modalScale 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.admin-modal-header {
+  padding: 20px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-modal-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: var(--font-heading);
+}
+
+.admin-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  transition: var(--transition-smooth);
+}
+
+.admin-modal-close:hover {
+  color: #fff;
+}
+
+.admin-modal-body {
+  padding: 24px 28px;
+}
+
+.admin-form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.admin-form-group input,
+.admin-form-group select {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+  transition: var(--transition-smooth);
+}
+
+.admin-form-group input:focus,
+.admin-form-group select:focus {
+  border-color: var(--color-purple);
+  box-shadow: 0 0 10px rgba(123, 97, 255, 0.2);
+}
+
+.admin-modal-footer {
+  padding: 20px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.admin-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-smooth);
+}
+
+.admin-btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid var(--card-border);
+}
+
+.admin-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-btn.primary {
+  background: var(--color-purple);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(123, 97, 255, 0.3);
+}
+
+.admin-btn.primary:hover {
+  background: #6246ea;
+  box-shadow: 0 6px 16px rgba(123, 97, 255, 0.5);
+}
+
+/* Pagination row style */
+.table-pagination-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding: 0 8px;
+}
+
+.pagination-info {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.page-btn {
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.page-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.page-btn.active {
+  background: var(--color-purple);
+  color: #fff;
+  border-color: var(--color-purple);
+  box-shadow: 0 0 10px rgba(123, 97, 255, 0.2);
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Focus States and Skip Link for Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+.summary-card:focus-visible,
+.kpi-spotlight-card:focus-visible {
+  outline: 2px solid var(--color-purple) !important;
+  outline-offset: 4px !important;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  background: var(--color-purple);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  z-index: 100000;
+  transition: top 0.2s ease;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
   
