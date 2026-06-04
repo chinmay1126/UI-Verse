@@ -2,26 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-vpBN/YM0uVmmra/gSNNbzFb3oJPd8lC1Kou+r0jgoaE=; script-src-attr 'unsafe-hashes' sha256-vpBN/YM0uVmmra/gSNNbzFb3oJPd8lC1Kou+r0jgoaE=; style-src 'self' https: 'unsafe-hashes' sha256-syPEWtf1pbveiv7HCLKTjcfmq4U1BsbuKGcbuB+qM/Y=; style-src-attr 'unsafe-hashes' sha256-syPEWtf1pbveiv7HCLKTjcfmq4U1BsbuKGcbuB+qM/Y=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="description" content="Oops! The page you were looking for on UIverse was not found. Browse our high quality CSS components." />
     <title>404 – Page Not Found | UI-verse</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
     <style>
       /* ─── Reset ─────────────────────────────────────────── */
-      *,
-      *::before,
-      *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
       /* ─── Tokens ─────────────────────────────────────────── */
       :root {
@@ -57,39 +46,34 @@
       /* ─── Accessibility utilities ────────────────────────── */
       .sr-only {
         position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
         overflow: hidden;
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border: 0;
       }
 
-      /* Skip link — visible only on keyboard focus */
+      /* ─── Skip link ────────────────────────────── */
       .skip-link {
         position: fixed;
-        top: -100%;
-        left: 50%;
+        top: -100%; left: 50%;
         transform: translateX(-50%);
         background: var(--accent);
         color: #fff;
         padding: 8px 20px;
         border-radius: 0 0 var(--radius-sm) var(--radius-sm);
         font-family: "DM Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 14px; font-weight: 500;
         text-decoration: none;
         z-index: 200;
         transition: top var(--transition-base);
       }
-      .skip-link:focus {
-        top: 0;
-        outline: none;
-      }
+      .skip-link:focus { top: 0; outline: none; box-shadow: 0 0 0 3px var(--accent-focus); }
 
       /* ─── Base ───────────────────────────────────────────── */
+      html { scroll-behavior: smooth; }
+
       body {
         min-height: 100vh;
         display: flex;
@@ -99,44 +83,32 @@
         background: var(--bg);
         color: var(--text-1);
         text-align: center;
-        padding: 2rem;
+        padding: clamp(1rem, 5vw, 2rem);
         overflow: hidden;
         position: relative;
       }
 
       /* ─── Decorative backgrounds ─────────────────────────── */
       .bg-dots {
-        position: fixed;
-        inset: 0;
-        background-image: radial-gradient(
-          circle,
-          var(--accent-bg) 1px,
-          transparent 1px
-        );
+        position: fixed; inset: 0;
+        background-image: radial-gradient(circle, var(--accent-bg) 1px, transparent 1px);
         background-size: 28px 28px;
-        pointer-events: none;
-        z-index: 0;
+        pointer-events: none; z-index: 0;
       }
 
       .bg-ghost {
-        position: fixed;
-        top: 50%;
-        left: 50%;
+        position: fixed; top: 50%; left: 50%;
         transform: translate(-50%, -50%);
         font-family: "Syne", sans-serif;
-        font-size: clamp(160px, 38vw, 320px);
+        font-size: clamp(120px, 38vw, 320px);
         font-weight: 800;
         color: rgba(235, 104, 53, 0.045);
         letter-spacing: -16px;
-        pointer-events: none;
-        user-select: none;
-        z-index: 0;
-        white-space: nowrap;
+        pointer-events: none; user-select: none;
+        z-index: 0; white-space: nowrap;
       }
       @media (prefers-color-scheme: dark) {
-        .bg-ghost {
-          color: rgba(235, 104, 53, 0.07);
-        }
+        .bg-ghost { color: rgba(235, 104, 53, 0.07); }
       }
 
       /* ─── Floating chips ─────────────────────────────────── */
@@ -148,76 +120,64 @@
         padding: 8px 13px;
         font-size: 12px;
         color: var(--text-3);
-        display: flex;
-        align-items: center;
-        gap: 6px;
+        display: flex; align-items: center; gap: 6px;
         pointer-events: none;
         animation: bob linear infinite;
         z-index: 0;
+        /* Improve legibility at small sizes */
+        line-height: 1;
       }
-      .floater i {
-        font-size: 14px;
-        color: var(--accent);
-        opacity: 0.75;
-      }
+      .floater i { font-size: 14px; color: var(--accent); opacity: 0.75; }
 
-      /* Position each chip */
       .f1 { top: 12%;    left: 4%;   animation-duration: 6s;   animation-delay:  0s; }
       .f2 { top: 16%;    right: 5%;  animation-duration: 7s;   animation-delay: -2s; }
       .f3 { bottom: 18%; left: 6%;   animation-duration: 8s;   animation-delay: -1s; }
       .f4 { bottom: 14%; right: 4%;  animation-duration: 6.5s; animation-delay: -3s; }
       .f5 { top: 48%;    left: 2%;   animation-duration: 9s;   animation-delay: -4s; }
 
-      /* Hide floaters that would overlap content on small screens */
-      @media (max-width: 640px) {
-        .f1, .f3, .f5 { left: -200px; }
-        .f2, .f4 { right: -200px; }
+      /* Gracefully remove floaters that would overlap on small viewports */
+      @media (max-width: 700px) {
+        .f1, .f3, .f5 { display: none; }
+      }
+      @media (max-width: 900px) {
+        .f2, .f4 { display: none; }
       }
 
       /* ─── Main container ─────────────────────────────────── */
       .container {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
+        position: relative; z-index: 1;
+        display: flex; flex-direction: column;
         align-items: center;
-        max-width: 500px;
-        width: 100%;
+        max-width: 520px; width: 100%;
+        /* Ensure comfortable spacing at smallest viewports */
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
       }
 
       /* ─── Badge ──────────────────────────────────────────── */
       .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
+        display: inline-flex; align-items: center; gap: 6px;
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: var(--radius-pill);
         padding: 5px 14px;
-        font-size: 13px;
-        color: var(--text-3);
+        font-size: 13px; color: var(--text-3);
         letter-spacing: 0.04em;
         margin-bottom: 1.5rem;
         animation: fade-up 0.45s 0.05s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
-      .badge i {
-        font-size: 14px;
-        color: var(--accent);
-      }
+      .badge i { font-size: 14px; color: var(--accent); }
 
       /* ─── 404 display number ─────────────────────────────── */
       .big-404 {
         font-family: "Syne", sans-serif;
         font-size: clamp(72px, 18vw, 120px);
         font-weight: 800;
-        line-height: 1;
-        letter-spacing: -4px;
+        line-height: 1; letter-spacing: -4px;
         margin-bottom: 1.25rem;
         animation: pop 0.55s 0.1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
       }
-      .big-404 .accent {
-        color: var(--accent);
-      }
+      .big-404 .accent { color: var(--accent); }
 
       /* ─── Headings & body copy ───────────────────────────── */
       h1 {
@@ -238,6 +198,80 @@
         animation: fade-up 0.45s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
 
+      /* ─── Search bar ─────────────────────────────────────── */
+      .search-wrapper {
+        width: 100%;
+        max-width: 380px;
+        margin-bottom: 1.75rem;
+        position: relative;
+        animation: fade-up 0.45s 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      .search-wrapper label {
+        position: absolute;
+        width: 1px; height: 1px;
+        overflow: hidden; clip: rect(0,0,0,0);
+        white-space: nowrap;
+      }
+      .search-wrapper i.search-icon {
+        position: absolute;
+        left: 13px; top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: var(--text-3);
+        pointer-events: none;
+      }
+      .search-wrapper input[type="search"] {
+        width: 100%;
+        padding: 11px 44px 11px 38px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text-1);
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        outline: none;
+        transition: border-color var(--transition-base), box-shadow var(--transition-base);
+        /* Remove default search styling */
+        -webkit-appearance: none; appearance: none;
+      }
+      .search-wrapper input[type="search"]::placeholder { color: var(--text-3); }
+      .search-wrapper input[type="search"]:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-focus);
+      }
+      /* Clear button built-in to search input */
+      .search-wrapper input[type="search"]::-webkit-search-cancel-button { display: none; }
+      .search-clear {
+        position: absolute;
+        right: 8px; top: 50%;
+        transform: translateY(-50%);
+        background: none; border: none;
+        cursor: pointer;
+        padding: 4px;
+        color: var(--text-3);
+        border-radius: 50%;
+        display: none;
+        align-items: center; justify-content: center;
+        transition: color var(--transition-base), background var(--transition-base);
+      }
+      .search-clear:hover { color: var(--text-1); background: var(--accent-bg); }
+      .search-clear:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px var(--accent-focus);
+      }
+      .search-clear i { font-size: 14px; }
+      .search-wrapper.has-value .search-clear { display: flex; }
+
+      /* Search results hint */
+      .search-hint {
+        font-size: 12px;
+        color: var(--text-3);
+        margin-top: 6px;
+        text-align: left;
+        padding-left: 4px;
+        min-height: 1em;
+      }
+
       /* ─── Mini navigation cards ──────────────────────────── */
       .floating-cards {
         display: flex;
@@ -255,25 +289,22 @@
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
         padding: 10px 14px;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 13px;
-        color: var(--text-2);
+        display: inline-flex; align-items: center; gap: 8px;
+        font-size: 13px; color: var(--text-2);
         text-decoration: none;
         animation: bob linear infinite;
         transition:
           border-color var(--transition-base),
           color var(--transition-base),
-          transform var(--transition-base);
+          transform var(--transition-base),
+          box-shadow var(--transition-base);
+        /* Ensure adequate touch targets */
+        min-height: 44px;
       }
       .mini-card:nth-child(1) { animation-duration: 5s;   animation-delay:  0s; }
       .mini-card:nth-child(2) { animation-duration: 6.5s; animation-delay: -1.5s; }
       .mini-card:nth-child(3) { animation-duration: 7s;   animation-delay: -3s; }
-      .mini-card i {
-        font-size: 15px;
-        color: var(--accent);
-      }
+      .mini-card i { font-size: 15px; color: var(--accent); }
       .mini-card:hover,
       .mini-card:focus-visible {
         border-color: var(--accent);
@@ -283,29 +314,23 @@
         outline: none;
         box-shadow: 0 0 0 3px var(--accent-focus);
       }
-      .mini-card:active {
-        transform: scale(0.96);
-      }
+      .mini-card:active { transform: scale(0.95); }
 
       /* ─── CTA buttons ────────────────────────────────────── */
       .btn-group {
         display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
+        gap: 10px; flex-wrap: wrap;
         justify-content: center;
         animation: fade-up 0.45s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
 
       .btn-primary,
       .btn-ghost {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
+        display: inline-flex; align-items: center; gap: 7px;
         border-radius: var(--radius-sm);
         padding: 11px 24px;
         font-family: "DM Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 14px; font-weight: 500;
         cursor: pointer;
         text-decoration: none;
         border: 1px solid transparent;
@@ -315,96 +340,105 @@
           border-color var(--transition-base),
           box-shadow var(--transition-base),
           transform 120ms ease;
+        /* Accessible touch target */
+        min-height: 44px;
+        white-space: nowrap;
       }
 
-      /* Shared focus ring */
       .btn-primary:focus-visible,
       .btn-ghost:focus-visible {
         outline: none;
         box-shadow: 0 0 0 3px var(--accent-focus);
       }
 
-      /* Shared press state */
       .btn-primary:active,
-      .btn-ghost:active {
-        transform: scale(0.97);
-      }
+      .btn-ghost:active { transform: scale(0.97); }
 
-      .btn-primary {
-        background: var(--accent);
-        color: #fff;
-      }
-      .btn-primary:hover {
-        opacity: 0.87;
-      }
+      .btn-primary { background: var(--accent); color: #fff; }
+      .btn-primary:hover { opacity: 0.87; }
 
-      .btn-ghost {
-        background: var(--surface);
-        color: var(--text-2);
-        border-color: var(--border);
-      }
-      .btn-ghost:hover {
-        background: var(--bg);
-        border-color: #ccc;
-      }
+      .btn-ghost { background: var(--surface); color: var(--text-2); border-color: var(--border); }
+      .btn-ghost:hover { background: var(--bg); border-color: #ccc; }
       @media (prefers-color-scheme: dark) {
-        .btn-ghost:hover {
-          background: #2a2a28;
-          border-color: #444;
+        .btn-ghost:hover { background: #2a2a28; border-color: #444; }
+      }
+
+      @media (max-width: 400px) {
+        .btn-group { flex-direction: column; width: 100%; }
+        .btn-primary, .btn-ghost {
+          width: 100%; justify-content: center;
         }
       }
 
-      /* Stack buttons full-width on very small screens */
-      @media (max-width: 400px) {
-        .btn-group {
-          flex-direction: column;
-          width: 100%;
-        }
-        .btn-primary,
-        .btn-ghost {
-          width: 100%;
-          justify-content: center;
-        }
+      /* ─── Toast notification ─────────────────────────────── */
+      #toast {
+        position: fixed;
+        bottom: 24px; left: 50%;
+        transform: translateX(-50%) translateY(80px);
+        background: var(--text-1);
+        color: var(--bg);
+        border-radius: var(--radius-pill);
+        padding: 9px 18px;
+        font-size: 13px; font-weight: 500;
+        display: flex; align-items: center; gap: 8px;
+        opacity: 0;
+        transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1), opacity 250ms ease;
+        z-index: 100;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      #toast.show {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+      #toast i { font-size: 14px; color: var(--accent); }
+
+      /* ─── Live region for screen reader announcements ────── */
+      #sr-announcements {
+        position: absolute;
+        width: 1px; height: 1px;
+        overflow: hidden; clip: rect(0,0,0,0);
+        white-space: nowrap;
       }
 
       /* ─── Keyframes ──────────────────────────────────────── */
       @keyframes bob {
-        0%, 100% { transform: translateY(0);    }
+        0%, 100% { transform: translateY(0); }
         50%       { transform: translateY(-10px); }
       }
-
       @keyframes pop {
         from { transform: scale(0.8); opacity: 0; }
         to   { transform: scale(1);   opacity: 1; }
       }
-
       @keyframes fade-up {
         from { opacity: 0; transform: translateY(12px); }
-        to   { opacity: 1; transform: translateY(0);    }
+        to   { opacity: 1; transform: translateY(0); }
       }
 
-      /* ─── Reduced-motion: kill all decorative animation ──── */
+      /* ─── Reduced-motion ─────────────────────────────────── */
       @media (prefers-reduced-motion: reduce) {
-        .floater,
-        .mini-card,
-        .big-404,
-        .badge,
-        h1,
-        .description,
-        .floating-cards,
-        .btn-group {
+        .floater, .mini-card, .big-404, .badge,
+        h1, .description, .floating-cards, .btn-group,
+        .search-wrapper, #toast {
           animation: none !important;
           opacity: 1 !important;
           transform: none !important;
+          transition: none !important;
+        }
+        #toast.show {
+          transform: translateX(-50%) !important;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Skip nav for keyboard / AT users -->
+    <!-- Skip nav -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Decorative backgrounds (hidden from AT) -->
+    <!-- Screen-reader live region for dynamic announcements -->
+    <div id="sr-announcements" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Decorative backgrounds -->
     <div class="bg-dots" aria-hidden="true"></div>
     <div class="bg-ghost" aria-hidden="true">404</div>
 
@@ -415,16 +449,16 @@
     <div class="floater f4" aria-hidden="true"><i class="ti ti-code"></i> card.html</div>
     <div class="floater f5" aria-hidden="true"><i class="ti ti-photo"></i> avatar.svg</div>
 
-    <!-- ── Main content ──────────────────────────────────── -->
+    <!-- Main content -->
     <main id="main-content" class="container">
 
       <!-- Status badge -->
-      <div class="badge" role="status" aria-label="Navigation status: lost in UIverse">
+      <div class="badge" role="status">
         <i class="ti ti-compass-off" aria-hidden="true"></i>
-        lost in UIverse
+        <span>lost in UIverse</span>
       </div>
 
-      <!-- Error code — labelled for screen readers -->
+      <!-- Error code -->
       <p class="big-404" role="img" aria-label="Error 404">
         4<span class="accent">0</span>4
       </p>
@@ -436,7 +470,34 @@
         doesn't exist or may have been moved.
       </p>
 
-      <!-- Quick-explore nav (real links, keyboard-reachable) -->
+      <!-- Search bar — new interaction layer -->
+      <div class="search-wrapper" id="search-wrapper">
+        <label for="site-search">Search UIverse</label>
+        <i class="ti ti-search search-icon" aria-hidden="true"></i>
+        <input
+          type="search"
+          id="site-search"
+          name="q"
+          placeholder="Search components, themes…"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          aria-describedby="search-hint"
+        />
+        <button
+          type="button"
+          class="search-clear"
+          id="search-clear"
+          aria-label="Clear search"
+          tabindex="-1"
+        >
+          <i class="ti ti-x" aria-hidden="true"></i>
+        </button>
+        <div class="search-hint" id="search-hint" aria-live="polite"></div>
+      </div>
+
+      <!-- Quick-explore nav -->
       <nav aria-label="Explore UIverse sections">
         <ul class="floating-cards">
           <li>
@@ -466,12 +527,122 @@
           <i class="ti ti-home" aria-hidden="true"></i>
           Back to home
         </a>
-        <a class="btn-ghost" href="/components">
-          <i class="ti ti-layout-grid" aria-hidden="true"></i>
-          Browse components
-        </a>
+        <button
+          type="button"
+          class="btn-ghost"
+          id="copy-url-btn"
+          aria-label="Copy current URL to clipboard"
+        >
+          <i class="ti ti-copy" aria-hidden="true"></i>
+          Copy URL
+        </button>
       </div>
 
     </main>
+
+    <!-- Toast notification -->
+    <div id="toast" role="status" aria-live="polite">
+      <i class="ti ti-check" aria-hidden="true"></i>
+      <span id="toast-msg">URL copied!</span>
+    </div>
+
+    <script>
+      /* ─── Search input behaviour ─────────────────────────── */
+      const searchInput = document.getElementById('site-search');
+      const searchWrapper = document.getElementById('search-wrapper');
+      const searchClear = document.getElementById('search-clear');
+      const searchHint = document.getElementById('search-hint');
+      const announce = document.getElementById('sr-announcements');
+
+      searchInput.addEventListener('input', () => {
+        const val = searchInput.value.trim();
+        searchWrapper.classList.toggle('has-value', val.length > 0);
+        searchClear.tabIndex = val.length > 0 ? 0 : -1;
+
+        if (val.length === 0) {
+          searchHint.textContent = '';
+        } else if (val.length < 3) {
+          searchHint.textContent = 'Keep typing…';
+        } else {
+          searchHint.textContent = `Press Enter to search for "${val}"`;
+        }
+      });
+
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const val = searchInput.value.trim();
+          if (val) {
+            announce.textContent = `Searching for ${val}`;
+            window.location.href = `/search?q=${encodeURIComponent(val)}`;
+          }
+        }
+      });
+
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        searchWrapper.classList.remove('has-value');
+        searchClear.tabIndex = -1;
+        searchHint.textContent = '';
+        searchInput.focus();
+        announce.textContent = 'Search cleared';
+      });
+
+      /* ─── Copy URL button ─────────────────────────────────── */
+      const copyBtn = document.getElementById('copy-url-btn');
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      let toastTimeout;
+
+      function showToast(msg) {
+        clearTimeout(toastTimeout);
+        toastMsg.textContent = msg;
+        toast.classList.add('show');
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2800);
+      }
+
+      copyBtn.addEventListener('click', async () => {
+        const url = window.location.href;
+        try {
+          await navigator.clipboard.writeText(url);
+          showToast('URL copied to clipboard!');
+          announce.textContent = 'URL copied to clipboard';
+        } catch {
+          // Fallback for environments without clipboard API
+          const el = document.createElement('input');
+          el.value = url;
+          el.setAttribute('aria-hidden', 'true');
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand('copy');
+          document.body.removeChild(el);
+          showToast('URL copied!');
+          announce.textContent = 'URL copied to clipboard';
+        }
+      });
+
+      /* ─── 404 digit — subtle pointer interaction ──────────── */
+      const big404 = document.querySelector('.big-404');
+      if (window.matchMedia('(pointer: fine)').matches) {
+        document.addEventListener('mousemove', (e) => {
+          const cx = window.innerWidth / 2;
+          const cy = window.innerHeight / 2;
+          const dx = (e.clientX - cx) / cx;
+          const dy = (e.clientY - cy) / cy;
+          big404.style.transform = `translate(${dx * 6}px, ${dy * 4}px)`;
+        });
+      }
+
+      /* ─── Keyboard: Escape clears search ─────────────────── */
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.activeElement === searchInput) {
+          searchInput.value = '';
+          searchWrapper.classList.remove('has-value');
+          searchHint.textContent = '';
+          announce.textContent = 'Search cleared';
+        }
+      });
+    </script>
   </body>
 </html>
