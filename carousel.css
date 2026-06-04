@@ -1583,3 +1583,47 @@ body.dark-mode .testimonial-card p {
     transform:translateX(-50%);
   }
 }
+
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999; /* make sure it's above footer */
+  border: none;
+  background: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#backToTop:hover {
+  background: #45a049;
+  transform: scale(1.1);
+}
+
+.back-home-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #4CAF50, #2e7d32); /* gradient green */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px; /* pill shape */
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: background 0.3s ease, transform 0.3s ease;
+  position: absolute; /* keep it at top */
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.back-home-btn:hover {
+  background: linear-gradient(135deg, #45a049, #1b5e20);
+  transform: translateY(-2px) scale(1.05);
+}

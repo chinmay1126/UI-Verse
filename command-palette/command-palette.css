@@ -398,3 +398,18 @@ body{
     display:none;
   }
 }
+
+.command-item.selected{
+  background:linear-gradient(
+    135deg,
+    #8b5cf6,
+    #4f46e5
+  );
+  transform:translateX(6px);
+  box-shadow:
+    0 10px 30px rgba(139,92,246,.35);
+}
+
+.command-item.selected kbd{
+  background:rgba(255,255,255,.15);
+}
