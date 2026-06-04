@@ -131,6 +131,57 @@
 
       </div>
 
+      <section class="gradient-generator">
+
+  <div class="generator-header">
+    <span class="gallery-tag">Tool</span>
+    <h2>Gradient Generator</h2>
+    <p>Create beautiful CSS gradients instantly.</p>
+  </div>
+
+  <div class="gradient-preview" id="gradientPreview"></div>
+
+  <div class="gradient-controls">
+
+    <div class="control-group">
+      <label>Color 1</label>
+      <input type="color" id="color1" value="#7c3aed">
+    </div>
+
+    <div class="control-group">
+      <label>Color 2</label>
+      <input type="color" id="color2" value="#06b6d4">
+    </div>
+
+    <div class="control-group">
+      <label>Angle</label>
+      <input
+        type="range"
+        id="angle"
+        min="0"
+        max="360"
+        value="135"
+      >
+      <span id="angleValue">135°</span>
+    </div>
+
+  </div>
+
+  <div class="gradient-output">
+
+    <textarea
+      id="cssOutput"
+      readonly
+    ></textarea>
+
+    <button id="copyGradient">
+      Copy CSS
+    </button>
+
+  </div>
+
+</section>
+
       <!-- STATS -->
       <div class="hero-stats">
 
