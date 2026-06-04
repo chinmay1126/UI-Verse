@@ -1734,3 +1734,119 @@ body.dark-mode .skeleton-card{
 .favorite-btn.active{
   color:#ef4444;
 }
+
+/* ===============================
+   GRADIENT RING CASCADE (#27)
+================================= */
+
+.cascade-loader {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.cascade-loader span {
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  animation: cascade-spin 1.8s linear infinite;
+}
+
+.cascade-loader span:nth-child(1) {
+  border-top-color: #7c5cff;
+  border-right-color: #7c5cff;
+}
+
+.cascade-loader span:nth-child(2) {
+  inset: 8px;
+  border-bottom-color: #fd79a8;
+  border-left-color: #fd79a8;
+  animation-duration: 1.4s;
+  animation-direction: reverse;
+}
+
+.cascade-loader span:nth-child(3) {
+  inset: 16px;
+  border-top-color: #00f7ff;
+  border-right-color: #00f7ff;
+  animation-duration: 1s;
+}
+
+@keyframes cascade-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===============================
+   BOUNCING SQUARES (#28)
+================================= */
+
+.bouncing-squares {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 60px;
+}
+
+.bouncing-squares span {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  animation: sq-bounce 0.6s infinite alternate ease-in-out;
+}
+
+.bouncing-squares span:nth-child(1) {
+  background: #7c5cff;
+  animation-delay: 0s;
+}
+
+.bouncing-squares span:nth-child(2) {
+  background: #fd79a8;
+  animation-delay: 0.15s;
+}
+
+.bouncing-squares span:nth-child(3) {
+  background: #00f7ff;
+  animation-delay: 0.3s;
+}
+
+@keyframes sq-bounce {
+  0%   { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-30px) scale(0.85); }
+}
+
+/* ===============================
+   CIRCULAR DASH (#29)
+================================= */
+
+.circular-dash {
+  width: 60px;
+  height: 60px;
+  animation: circular-dash-rotate 2s linear infinite;
+}
+
+.circular-dash svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circular-dash circle {
+  fill: none;
+  stroke: #7c5cff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 90, 150;
+  stroke-dashoffset: 0;
+  animation: circular-dash-stroke 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(124,92,255,0.5));
+}
+
+@keyframes circular-dash-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes circular-dash-stroke {
+  0%   { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+  50%  { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+  100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
+}
