@@ -63,6 +63,46 @@ exploreBtn.addEventListener(
   }
 );
 
+
+function copyCode(id) {
+  const el = document.getElementById(id);
+
+  if (!el) return;
+
+  navigator.clipboard.writeText(el.textContent)
+    .then(() => {
+      const btn = event.target.closest("button");
+
+      const original = btn.innerHTML;
+
+      btn.innerHTML =
+        '<i class="fa-solid fa-check"></i> Copied';
+
+      setTimeout(() => {
+        btn.innerHTML = original;
+      }, 1500);
+    });
+}
+
+function setTheme(theme, persist = true) {
+  document.documentElement.setAttribute(
+    "data-theme",
+    theme
+  );
+
+  const icon = document.querySelector(".theme-btn i");
+
+  if (icon) {
+    icon.className =
+      theme === "dark"
+        ? "fa-solid fa-sun"
+        : "fa-solid fa-moon";
+  }
+
+  if (persist) {
+    localStorage.setItem("theme", theme);
+  }
+}
 /* =====================================================
 NAVBAR SCROLL
 ===================================================== */
