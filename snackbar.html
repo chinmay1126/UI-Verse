@@ -4,6 +4,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-Kz62CmQylxdBT0HhF+2vTBO1U5imkdinhslLpHa1kEg= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-Kz62CmQylxdBT0HhF+2vTBO1U5imkdinhslLpHa1kEg= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
@@ -32,7 +33,9 @@
   >
 
   <!-- CSS -->
-
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
   <link
     rel="stylesheet"
     href="snackbar.css"
@@ -372,20 +375,26 @@
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-<!-- =====================================================
-NAVBAR
-===================================================== -->
+<!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
 
-<header class="navbar">
+    <button
+      class="menu-toggle"
+      onclick="toggleSidebar()"
+      aria-label="Toggle Menu"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-  <div class="search-bar">
+    <div class="logo">UIverse</div>
 
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
 
-    <input
-      type="text"
-      placeholder="Search snackbar components..."
-     data-a11y-remediation="label-needed">
+      <input
+        type="text"
+        placeholder="Search components..."
+      / data-a11y-remediation="label-needed">
 
   </div>
   <!-- PAYMENT -->
@@ -675,19 +684,27 @@ NAVBAR
   </button>
 
 </div>
+      <kbd class="search-kbd">⌘K</kbd>
+    </div>
 
-  <div class="nav-actions">
+    <div class="nav-right">
 
-    <button class="outline-btn">
-      Documentation
-    </button>
+      <button class="nav-btn outline-nav-btn">
+        <i class="fa-solid fa-plus"></i>
+        Add Component
+      </button>
 
-    <button class="primary-btn">
-      Explore UI
-    </button>
+      <button class="nav-btn primary-nav-btn">
+        <i class="fa-solid fa-bookmark"></i>
+        My Collection
+      </button>
 
-  </div>
+      <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+    <i id="themeIcon" class="fa-solid fa-sun"></i>
+  </button>
 
+
+    </div>
 </header>
 
 <!-- =====================================================
@@ -978,11 +995,586 @@ ADVANCED SNACKBAR GRID
       </button>
 
     </div>
+    <!-- AI ASSISTANT -->
+
+<div class="snackbar-card premium-card ai-card">
+
+  <div class="card-icon violet">
+    <i class="fa-solid fa-sparkles"></i>
+  </div>
+
+  <h2>
+    AI Assistant
+  </h2>
+
+  <p>
+    Smart recommendations and
+    predictive suggestions generated
+    in realtime by AI systems.
+  </p>
+
+  <button
+    class="show-btn ai-btn"
+    data-type="ai"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- SPACE -->
+
+<div class="snackbar-card premium-card space-card">
+
+  <div class="card-icon galaxy">
+    <i class="fa-solid fa-rocket"></i>
+  </div>
+
+  <h2>
+    Space Mission
+  </h2>
+
+  <p>
+    Launch sequence completed.
+    Interstellar navigation systems
+    are now online.
+  </p>
+
+  <button
+    class="show-btn space-btn"
+    data-type="space"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- CRYPTO -->
+
+<div class="snackbar-card premium-card crypto-card">
+
+  <div class="card-icon emerald">
+    <i class="fa-brands fa-bitcoin"></i>
+  </div>
+
+  <h2>
+    Crypto Transfer
+  </h2>
+
+  <p>
+    Blockchain transaction verified
+    and permanently secured on-chain.
+  </p>
+
+  <button
+    class="show-btn crypto-btn"
+    data-type="crypto"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- GAMING -->
+
+<div class="snackbar-card premium-card gaming-card">
+
+  <div class="card-icon gold">
+    <i class="fa-solid fa-trophy"></i>
+  </div>
+
+  <h2>
+    Achievement Unlocked
+  </h2>
+
+  <p>
+    New milestone reached.
+    Reward points and exclusive
+    bonuses have been granted.
+  </p>
+
+  <button
+    class="show-btn gaming-btn"
+    data-type="gaming"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- CYBER -->
+
+<div class="snackbar-card premium-card cyber-card">
+
+  <div class="card-icon cyber">
+    <i class="fa-solid fa-fingerprint"></i>
+  </div>
+
+  <h2>
+    Threat Blocked
+  </h2>
+
+  <p>
+    Suspicious activity detected
+    and neutralized automatically.
+  </p>
+
+  <button
+    class="show-btn cyber-btn"
+    data-type="cyber"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- MAGIC -->
+
+<div class="snackbar-card premium-card magic-card">
+
+  <div class="card-icon magic">
+    <i class="fa-solid fa-wand-magic-sparkles"></i>
+  </div>
+
+  <h2>
+    Portal Activated
+  </h2>
+
+  <p>
+    Mystical gateway opened.
+    Travel between dimensions is
+    now available.
+  </p>
+
+  <button
+    class="show-btn magic-btn"
+    data-type="magic"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- ANALYTICS -->
+
+<div class="snackbar-card premium-card analytics-card">
+
+  <div class="card-icon analytics-icon">
+    <i class="fa-solid fa-chart-line"></i>
+  </div>
+
+  <h2>
+    Analytics Alert
+  </h2>
+
+  <p>
+    Monitor KPI changes and
+    performance insights with
+    realtime business analytics.
+  </p>
+
+  <button
+    class="show-btn analytics-btn"
+    data-type="analytics"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- TEAM -->
+
+<div class="snackbar-card premium-card team-card">
+
+  <div class="card-icon team-icon">
+    <i class="fa-solid fa-users"></i>
+  </div>
+
+  <h2>
+    Team Activity
+  </h2>
+
+  <p>
+    Receive updates about team
+    collaboration, mentions, and
+    project activity.
+  </p>
+
+  <button
+    class="show-btn team-btn"
+    data-type="team"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- PAYMENT -->
+
+<div class="snackbar-card premium-card payment-card">
+
+  <div class="card-icon payment-icon">
+    <i class="fa-solid fa-credit-card"></i>
+  </div>
+
+  <h2>
+    Payment Status
+  </h2>
+
+  <p>
+    Inform users about billing,
+    subscriptions, invoices and
+    successful transactions.
+  </p>
+
+  <button
+    class="show-btn payment-btn"
+    data-type="payment"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- SERVER -->
+
+<div class="snackbar-card premium-card server-card">
+
+  <div class="card-icon server-icon">
+    <i class="fa-solid fa-server"></i>
+  </div>
+
+  <h2>
+    Server Monitor
+  </h2>
+
+  <p>
+    Realtime infrastructure and
+    uptime notifications for cloud
+    applications.
+  </p>
+
+  <button
+    class="show-btn server-btn"
+    data-type="server"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- DEPLOYMENT -->
+
+<div class="snackbar-card premium-card deployment-card">
+
+  <div class="card-icon deployment-icon">
+    <i class="fa-solid fa-code-branch"></i>
+  </div>
+
+  <h2>
+    Deployment Update
+  </h2>
+
+  <p>
+    Notify teams about releases,
+    production deployments and
+    environment updates.
+  </p>
+
+  <button
+    class="show-btn deployment-btn"
+    data-type="deployment"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- WORKFLOW -->
+
+<div class="snackbar-card premium-card workflow-card">
+
+  <div class="card-icon workflow-icon">
+    <i class="fa-solid fa-diagram-project"></i>
+  </div>
+
+  <h2>
+    Workflow Status
+  </h2>
+
+  <p>
+    Track approvals, automations,
+    and task progression across
+    business processes.
+  </p>
+
+  <button
+    class="show-btn workflow-btn"
+    data-type="workflow"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+<!-- =========================================
+BACKUP COMPLETED
+========================================= -->
+
+<div class="snackbar-card premium-card backup-card">
+
+  <div class="card-icon backup-icon">
+    <i class="fa-solid fa-database"></i>
+  </div>
+
+  <h2>
+    Backup Completed
+  </h2>
+
+  <p>
+    All system data has been
+    securely backed up and
+    verified successfully.
+  </p>
+
+  <button
+    class="show-btn backup-btn"
+    data-type="backup"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+
+
+<!-- =========================================
+API REQUEST
+========================================= -->
+
+<div class="snackbar-card premium-card api-card">
+
+  <div class="card-icon api-icon">
+    <i class="fa-solid fa-code"></i>
+  </div>
+
+  <h2>
+    API Request
+  </h2>
+
+  <p>
+    Incoming endpoint request
+    processed successfully with
+    low response latency.
+  </p>
+
+  <button
+    class="show-btn api-btn"
+    data-type="api"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+
+
+<!-- =========================================
+USER INVITATION
+========================================= -->
+
+<div class="snackbar-card premium-card invite-card">
+
+  <div class="card-icon invite-icon">
+    <i class="fa-solid fa-user-plus"></i>
+  </div>
+
+  <h2>
+    User Invitation
+  </h2>
+
+  <p>
+    New workspace invitation
+    sent successfully to team
+    members.
+  </p>
+
+  <button
+    class="show-btn invite-btn"
+    data-type="invite"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+
+
+<!-- =========================================
+DATA EXPORT
+========================================= -->
+
+<div class="snackbar-card premium-card export-card">
+
+  <div class="card-icon export-icon">
+    <i class="fa-solid fa-file-export"></i>
+  </div>
+
+  <h2>
+    Data Export
+  </h2>
+
+  <p>
+    Report generated and
+    available for download
+    in multiple formats.
+  </p>
+
+  <button
+    class="show-btn export-btn"
+    data-type="export"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+
+
+<!-- =========================================
+MEETING REMINDER
+========================================= -->
+
+<div class="snackbar-card premium-card meeting-card">
+
+  <div class="card-icon meeting-icon">
+    <i class="fa-solid fa-calendar-check"></i>
+  </div>
+
+  <h2>
+    Meeting Reminder
+  </h2>
+
+  <p>
+    Upcoming team meeting
+    starts in fifteen minutes.
+  </p>
+
+  <button
+    class="show-btn meeting-btn"
+    data-type="meeting"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+
+
+<!-- =========================================
+DOCUMENT APPROVAL
+========================================= -->
+
+<div class="snackbar-card premium-card approval-card">
+
+  <div class="card-icon approval-icon">
+    <i class="fa-solid fa-file-signature"></i>
+  </div>
+
+  <h2>
+    Document Approval
+  </h2>
+
+  <p>
+    Contract approval request
+    has been reviewed and
+    approved successfully.
+  </p>
+
+  <button
+    class="show-btn approval-btn"
+    data-type="approval"
+  >
+    Show Snackbar
+  </button>
+
+</div>
+
+
+<!-- =========================================
+DATABASE MIGRATION
+========================================= -->
+
+<div class="snackbar-card premium-card migration-card">
+
+  <div class="card-icon migration-icon">
+    <i class="fa-solid fa-server"></i>
+  </div>
+
+  <h2>
+    Database Migration
+  </h2>
+
+  <p>
+    Records transferred safely
+    to the new production
+    environment.
+  </p>
+
+  <button
+    class="show-btn migration-btn"
+    data-type="migration"
+  >
+    Show Snackbar
+  </button>
+
+</div>
 
   </section>
 
 </main>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
 
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="#">License</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
 <!-- =====================================================
 SNACKBAR CONTAINER
 ===================================================== -->
@@ -991,7 +1583,30 @@ SNACKBAR CONTAINER
   class="snackbar-container"
   id="snackbarContainer"
 ></div>
+<!-- JS -->
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.body.classList.add(savedTheme);
 
+      const themeIcon = document.getElementById("themeIcon");
+      themeIcon.className = savedTheme === "dark" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+    });
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const themeIcon = document.getElementById("themeIcon");
+
+      if (document.body.classList.contains("light")) {
+        document.body.classList.replace("light", "dark");
+        localStorage.setItem("theme", "dark");
+        themeIcon.className = "fa-solid fa-moon"; // 🌙
+      } else {
+        document.body.classList.replace("dark", "light");
+        localStorage.setItem("theme", "light");
+        themeIcon.className = "fa-solid fa-sun"; // ☀️
+      }
+    });
+  </script>
 <script src="snackbar.js"></script>
 
     <script src="dist/shared.js"></script>
