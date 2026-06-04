@@ -446,6 +446,60 @@
 &lt;/div&gt;</pre>
       </div>
     </div>
+<div class="component-card" id="component-31">
+  <div class="card-header">
+    <h3>Sunburst Chart</h3>
+    <p>Radial hierarchy visualization.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+    <div class="sunburst-chart">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-3"></div>
+    </div>
+  </div>
+</div>
+
+<div class="component-card" id="component-32">
+  <div class="card-header">
+    <h3>Chord Diagram</h3>
+    <p>Visualize data flow between groups.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+    <svg viewBox="0 0 300 300" class="chord-svg">
+      <circle cx="150" cy="150" r="100"></circle>
+
+      <path d="M100 80 Q150 150 220 120"
+            class="chord-link"></path>
+
+      <path d="M80 180 Q150 150 220 220"
+            class="chord-link"></path>
+    </svg>
+  </div>
+</div>
+
+<div class="component-card" id="component-33">
+  <div class="card-header">
+    <h3>Stream Graph</h3>
+    <p>Flowing stacked trends over time.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+
+    <svg viewBox="0 0 500 180">
+
+      <path class="stream-layer layer-1"
+      d="M0 90 Q120 40 240 90 T500 70"></path>
+
+      <path class="stream-layer layer-2"
+      d="M0 120 Q120 70 240 120 T500 100"></path>
+
+    </svg>
+
+  </div>
+</div>
 
     <div class="component-card" id="component-16">
   <div class="card-header">
@@ -453,6 +507,184 @@
     <p>Multi-series trend visualization with layered data flow.</p>
   </div>
 
+  <div class="component-card" id="component-34">
+  <div class="card-header">
+    <h3>Parallel Coordinates</h3>
+    <p>Multi-dimensional comparison.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+
+    <svg viewBox="0 0 500 200">
+
+      <line x1="50" y1="20" x2="50" y2="180"></line>
+      <line x1="150" y1="20" x2="150" y2="180"></line>
+      <line x1="250" y1="20" x2="250" y2="180"></line>
+      <line x1="350" y1="20" x2="350" y2="180"></line>
+
+      <polyline points="50,70 150,40 250,120 350,80"
+      class="parallel-line"></polyline>
+
+    </svg>
+
+  </div>
+</div>
+
+<div class="component-card" id="component-35">
+  <div class="card-header">
+    <h3>Box Plot</h3>
+    <p>Distribution and quartile analysis.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+
+    <svg viewBox="0 0 400 160">
+
+      <line x1="50" y1="80" x2="350" y2="80"></line>
+
+      <rect x="130" y="50"
+      width="120"
+      height="60"></rect>
+
+      <line x1="190" y1="50"
+      x2="190" y2="110"></line>
+
+    </svg>
+
+  </div>
+</div>
+
+
+<div class="component-card" id="component-36">
+  <div class="card-header">
+    <h3>Violin Plot</h3>
+    <p>Density distribution chart.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+
+    <svg viewBox="0 0 250 200">
+
+      <path
+      d="M125 20
+      C70 60 70 140 125 180
+      C180 140 180 60 125 20"
+      class="violin-shape"></path>
+
+    </svg>
+
+  </div>
+</div>
+
+<div class="component-card" id="component-37">
+  <div class="card-header">
+    <h3>Gantt Chart</h3>
+    <p>Project planning timeline.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+
+    <div class="gantt-chart">
+
+      <div class="gantt-row">
+        <span>Design</span>
+        <div class="gantt-bar" style="width:40%"></div>
+      </div>
+
+      <div class="gantt-row">
+        <span>Development</span>
+        <div class="gantt-bar" style="width:70%"></div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="component-card" id="component-38">
+  <div class="card-header">
+    <h3>Cohort Retention</h3>
+    <p>User retention heatmap.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+
+    <div class="cohort-grid">
+
+      <div class="cohort-cell high"></div>
+      <div class="cohort-cell medium"></div>
+      <div class="cohort-cell low"></div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="component-card" id="component-39">
+  <div class="card-header">
+    <h3>Forecast Chart</h3>
+    <p>Predicted future growth.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+
+    <svg viewBox="0 0 500 180">
+
+      <path
+      d="M0 130 Q100 90 200 100 T350 70"
+      class="actual-line"></path>
+
+      <path
+      d="M350 70 Q420 40 500 20"
+      class="forecast-line"></path>
+
+    </svg>
+
+  </div>
+</div>
+
+<div class="component-card" id="component-40">
+  <div class="card-header">
+    <h3>Candlestick + Volume</h3>
+    <p>Professional trading dashboard.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+
+    <div class="trading-chart">
+
+      <svg viewBox="0 0 500 250">
+        <!-- Candlesticks -->
+      </svg>
+
+      <div class="volume-bars">
+
+        <div class="volume-bar"></div>
+        <div class="volume-bar"></div>
+        <div class="volume-bar"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="component-card" id="component-41">
+  <div class="card-header">
+    <h3>World Analytics Map</h3>
+    <p>Traffic by country.</p>
+  </div>
+
+  <div class="preview-box charts-wrapper">
+
+    <svg viewBox="0 0 600 300" class="world-map-svg">
+      <!-- Simplified SVG continents -->
+    </svg>
+
+  </div>
+</div>
   <div class="preview-box charts-wrapper">
     <div class="chart-card stacked-area-card">
       
