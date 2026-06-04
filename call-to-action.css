@@ -250,3 +250,109 @@ button {
     flex-wrap: wrap;
   }
 }
+
+.cta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+}
+
+.glow-1 {
+  width: 350px;
+  height: 350px;
+  background: #6c63ff;
+  top: -100px;
+  left: -100px;
+}
+
+.glow-2 {
+  width: 400px;
+  height: 400px;
+  background: #00d4ff;
+  bottom: -150px;
+  right: -150px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.trust-badges span {
+  background: rgba(255,255,255,0.08);
+  padding: 10px 16px;
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+}
+
+.cta-image {
+  position: relative;
+}
+
+.floating-card {
+  position: absolute;
+  background: rgba(255,255,255,0.95);
+  padding: 12px 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  font-weight: 600;
+}
+
+.top-card {
+  top: 20px;
+  left: -20px;
+}
+
+.bottom-card {
+  bottom: 20px;
+  right: -20px;
+}
+
+.final-cta {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(
+    135deg,
+    #6c63ff,
+    #00d4ff
+  );
+  color: white;
+}
+
+.final-cta h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 20px;
+}
+
+.cta-content,
+.cta-card,
+.final-cta {
+  animation: fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
