@@ -39,6 +39,34 @@ document.querySelectorAll(".mark-read").forEach(btn => {
 });
 
 
+
+function updateCounter() {
+  const unread = document.querySelectorAll(
+    ".activity-item.unread"
+  ).length;
+
+  document.getElementById("counter").textContent = unread;
+}
+
+updateCounter();
+
+document.querySelectorAll(".mark-read")
+.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const item = button.closest(".activity-item");
+
+    item.classList.remove("unread");
+
+    button.textContent = "Done";
+    button.disabled = true;
+
+    updateCounter();
+
+  });
+
+});
 const searchInput = document.getElementById("searchInput");
 
 searchInput.addEventListener("input", () => {

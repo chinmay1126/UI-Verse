@@ -95,6 +95,17 @@ body.dark-mode .uiverse-compare-overlay__panel{ background:rgba(15,23,42,0.92); 
   gap:2px;
   line-height:1.15;
 }
+
+.resizer{
+  width:6px;
+  background:#e5e7eb;
+  cursor:col-resize;
+  transition:.2s;
+}
+
+.resizer:hover{
+  background:#7c3aed;
+}
 .uiverse-compare-overlay__hint{ font-size:12px; opacity:0.8; font-weight:600; }
 .uiverse-compare-overlay__actions{ display:flex; gap:10px; }
 .uiverse-compare-clear,
@@ -164,4 +175,27 @@ body.dark-mode .uiverse-compare-close{
 body.dark-mode .uiverse-compare-clear:hover,
 body.dark-mode .uiverse-compare-close:hover{
   background: rgba(255,255,255,0.12);
+}
+
+
+@media (max-width:900px){
+
+  .layout{
+    flex-direction:column;
+    height:auto;
+  }
+
+  .pane{
+    min-height:60vh;
+  }
+
+  .toolbar{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .toolbar-right{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
 }

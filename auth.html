@@ -869,6 +869,174 @@
     });
   });
 
+  /* ── Card Buttons ── */
+document.querySelectorAll('.component-card').forEach(card => {
+  const label   = card.getAttribute('data-label') || card.getAttribute('data-id');
+  const id      = card.getAttribute('data-id');
+  const viewBtn = card.querySelector('.btn-main-view');
+  const copyBtn = card.querySelector('.btn-secondary-copy');
+  const zipBtn  = card.querySelector('.btn-icon-zip');
+  const favBtn  = card.querySelector('.favorite-toggle');
+
+  /* Favourite */
+  if (favBtn) {
+    favBtn.addEventListener('click', () => {
+      const ico = favBtn.querySelector('i');
+      ico.classList.toggle('fa-regular');
+      ico.classList.toggle('fa-solid');
+    });
+  }
+
+  /* View Code */
+  if (viewBtn) {
+    viewBtn.addEventListener('click', () => {
+      openModal(getCleanMarkup(card));
+    });
+  }
+
+  /* Copy */
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(getCleanMarkup(card))
+        .then(() => {
+          const original = copyBtn.innerHTML;
+
+          copyBtn.innerHTML =
+            '<i class="fa-solid fa-circle-check"></i> Copied!';
+
+          copyBtn.style.borderColor = '#10b981';
+          copyBtn.style.color = '#10b981';
+
+          showToast(`"${label}" copied to clipboard`);
+
+          setTimeout(() => {
+            copyBtn.innerHTML = original;
+            copyBtn.style.borderColor = '';
+            copyBtn.style.color = '';
+          }, 1500);
+        })
+        .catch(() => {
+          showToast('Copy failed');
+        });
+    });
+  }
+
+  /* ZIP Download */
+  if (zipBtn) {
+    zipBtn.addEventListener('click', async () => {
+      try {
+        if (typeof JSZip === 'undefined') {
+          showToast('JSZip not loaded');
+          return;
+        }
+
+        const markup = getCleanMarkup(card);
+
+        const htmlSrc = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${label}</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div style="
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:2rem;
+background:#f8fafc;
+">
+${markup}
+</div>
+</body>
+</html>`;
+
+        const css = await fetch('auth.css').then(r => {
+          if (!r.ok) throw new Error();
+          return r.text();
+        });
+
+        const zip = new JSZip();
+
+        zip.file('index.html', htmlSrc);
+        zip.file('style.css', css);
+
+        const blob = await zip.generateAsync({
+          type: 'blob'
+        });
+
+        const a = document.createElement('a');
+
+        a.href = URL.createObjectURL(blob);
+        a.download = `${id}.zip`;
+
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        URL.revokeObjectURL(a.href);
+
+        showToast(`"${label}" downloaded`);
+      } catch {
+        showToast(
+          'ZIP export requires Live Server or a local server'
+        );
+      }
+    });
+  }
+});
+
+/* ── Search Components ── */
+const searchInput = document.querySelector('.search-input');
+
+if (searchInput) {
+  searchInput.addEventListener('input', e => {
+    const value = e.target.value.toLowerCase();
+
+    document.querySelectorAll('.component-card').forEach(card => {
+      const searchableText =
+        `${card.dataset.label || ''} ${card.dataset.id || ''}`
+        .toLowerCase();
+
+      card.style.display =
+        searchableText.includes(value)
+          ? ''
+          : 'none';
+    });
+  });
+}
+
+/* ── ESC Modal Close ── */
+document.addEventListener('keydown', e => {
+  if (
+    e.key === 'Escape' &&
+    codeOverlay.classList.contains('active')
+  ) {
+    codeOverlay.classList.remove('active');
+  }
+});
+
+/* ── Sidebar Toggle ── */
+function toggleSidebar() {
+  document
+    .getElementById('sidebar')
+    .classList.toggle('open');
+
+  document
+    .getElementById('sidebarBackdrop')
+    .classList.toggle('active');
+}
 /* ── Card Buttons ── */
 document.querySelectorAll('.component-card').forEach(card => {
   const label   = card.getAttribute('data-label') || card.getAttribute('data-id');
@@ -944,7 +1112,7 @@ document.querySelectorAll('.component-card').forEach(card => {
       .catch(() => showToast('ZIP needs a local server — open with Live Server or python -m http.server'));
   });
 });
-    });
+  
 
     
 </script>

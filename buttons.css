@@ -161,6 +161,154 @@
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
   transition: 0.3s;
 }
+.shine-sweep-btn{
+  padding:12px 28px;
+  background:#111827;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  position:relative;
+  overflow:hidden;
+}
+.shine-sweep-btn::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:50%;
+  height:100%;
+  background:rgba(255,255,255,.4);
+  transform:skewX(-25deg);
+}
+.shine-sweep-btn:hover::after{
+  left:140%;
+  transition:.7s;
+}
+
+.aurora-btn{
+  padding:12px 28px;
+  border:none;
+  color:#fff;
+  border-radius:12px;
+  background:linear-gradient(
+    90deg,
+    #00c6ff,
+    #7f5af0,
+    #ff4ecd,
+    #00c6ff
+  );
+  background-size:300% 100%;
+  animation:aurora 4s linear infinite;
+}
+@keyframes aurora{
+  from{background-position:0%;}
+  to{background-position:300%;}
+}
+
+
+.press-3d-btn{
+  padding:14px 30px;
+  border:none;
+  border-radius:10px;
+  background:#22c55e;
+  color:#fff;
+  box-shadow:0 6px #15803d;
+  cursor:pointer;
+}
+.press-3d-btn:active{
+  transform:translateY(6px);
+  box-shadow:none;
+}
+
+.arrow-slide-btn{
+  padding:12px 24px;
+  border:none;
+  background:#6366f1;
+  color:#fff;
+  border-radius:10px;
+  transition:.3s;
+}
+.arrow-slide-btn span{
+  display:inline-block;
+  transition:.3s;
+}
+.arrow-slide-btn:hover span{
+  transform:translateX(6px);
+}
+
+.ripple-hover-btn{
+  padding:12px 28px;
+  border:none;
+  background:#ef4444;
+  color:#fff;
+  border-radius:10px;
+  position:relative;
+  overflow:hidden;
+}
+.ripple-hover-btn::before{
+  content:'';
+  position:absolute;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.3);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  transition:.5s;
+}
+.ripple-hover-btn:hover::before{
+  width:300px;
+  height:300px;
+}
+
+.pixel-btn{
+  padding:12px 28px;
+  background:#facc15;
+  color:#111;
+  border:4px solid #111;
+  font-family:monospace;
+  box-shadow:6px 6px #111;
+}
+.pixel-btn:hover{
+  transform:translate(3px,3px);
+  box-shadow:3px 3px #111;
+}
+.rotating-border-btn{
+  position:relative;
+  padding:12px 28px;
+  background:#111827;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  overflow:hidden;
+}
+.rotating-border-btn::before{
+  content:'';
+  position:absolute;
+  inset:-2px;
+  background:conic-gradient(
+    #00f7ff,
+    #ff00ff,
+    #00f7ff
+  );
+  animation:rotateBorder 3s linear infinite;
+  z-index:0;
+}
+.rotating-border-btn::after{
+  content:'';
+  position:absolute;
+  inset:2px;
+  background:#111827;
+  border-radius:10px;
+}
+.rotating-border-btn span{
+  position:relative;
+  z-index:2;
+}
+@keyframes rotateBorder{
+  to{transform:rotate(360deg);}
+}
 .shadow-btn:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(0,0,0,0.16); }
 
 /* Rounded / Pill */
