@@ -824,18 +824,25 @@ EVENT CARD
 
   border-radius:24px;
 
+  align-items: flex-start; 
+
   margin-bottom:20px;
 
   display:flex;
   gap:18px;
 
   transition:var(--transition);
+
+  border: 1px solid var(--border);    
+  backdrop-filter: blur(12px); 
 }
 
 .event-card:hover{
 
   transform:
     translateY(-6px);
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
 .purple-event{
@@ -886,20 +893,27 @@ EVENT CARD
   text-align:center;
 
   font-weight:700;
+
+  color: #ffffff;
+  font-size: 14px;
 }
 
-.event-content h4{
-
-  font-size:22px;
-
-  margin-bottom:10px;
+/* Event Content */
+.event-content {
+  flex: 1; /* take remaining space */
 }
 
-.event-content p{
+.event-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #f0f4ff;
+}
 
-  color:#a8b4cf;
-
-  line-height:1.7;
+.event-content p {
+  color: #a8b4cf;
+  line-height: 1.6;
+  font-size: 14px;
 }
 
 /* =====================================================
