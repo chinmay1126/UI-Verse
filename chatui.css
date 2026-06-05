@@ -768,6 +768,42 @@ body{
 
 }
 
+/* ============================================================
+   SCROLL TO TOP BUTTON
+   ============================================================ */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(235,104,53,0.35);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: all var(--transition);
+}
+
+#scrollTopBtn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(235,104,53,0.45);
+}
 /* ===== Additional Chat Components Styles ===== */
 .thread-card { display:flex; flex-direction:column; gap:12px; }
 .thread-parent .bubble { background: rgba(255,255,255,0.03); }

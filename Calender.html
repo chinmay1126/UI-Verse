@@ -742,5 +742,46 @@ MAIN
 
 <script src="calendar.js"></script>
 
+<script>
+  function generateCalendar(month, year) {
+    const calendarDates = document.getElementById("calendarDates");
+    calendarDates.innerHTML = "";
+
+    // Get first day of the month
+    const firstDay = new Date(year, month, 1).getDay();
+    // Get total days in the month
+    const totalDays = new Date(year, month + 1, 0).getDate();
+
+    // Add blank slots for days before the first day
+    for (let i = 0; i < firstDay; i++) {
+      const emptyCell = document.createElement("div");
+      emptyCell.classList.add("empty-cell");
+      calendarDates.appendChild(emptyCell);
+    }
+
+    // Add actual dates
+    const today = new Date();
+    for (let day = 1; day <= totalDays; day++) {
+      const dateCell = document.createElement("div");
+      dateCell.textContent = day;
+
+      // Highlight current day
+      if (
+        day === today.getDate() &&
+        month === today.getMonth() &&
+        year === today.getFullYear()
+      ) {
+        dateCell.classList.add("current-day");
+      }
+
+      calendarDates.appendChild(dateCell);
+    }
+  }
+
+  // Example: July 2026 (month index starts at 0)
+  generateCalendar(6, 2026);
+</script>
+
+
 </body>
 </html>

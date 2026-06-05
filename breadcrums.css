@@ -357,43 +357,50 @@ button, a { font: inherit; }
   transform:none;
 }
 .component-card {
-  border: 1px solid var(--border);   /* default border */
-  border-radius: 8px;                /* optional rounded corners */
-  transition: var(--transition);     /* smooth hover effect */
-  background: var(--card);           /* card background */
-  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .component-card:hover {
-  border-color: var(--accent);       /* highlight border on hover */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtle hover shadow */
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-.card-top{
+.card-top {
 
-  display:flex;
-  justify-content:space-between;
+  display: flex;
 
-  margin-bottom:20px;
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 16px;
 }
 
-.card-label{
+.card-label {
 
-  font-size:18px;
-  font-weight:700;
+  font-size: 18px;
 
-  font-family:"Syne",sans-serif;
+  font-weight: 700;
+
+  color: #ffffff;
 }
 
-.card-tag{
+.card-tag {
 
-  padding:5px 12px;
-
-  border-radius:999px;
-
-  font-size:11px;
-  font-weight:700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
 }
+
 
 .tag-popular{
   background:rgba(116,185,255,.15);
@@ -412,7 +419,7 @@ button, a { font: inherit; }
 
 .card-preview{
 
-  min-height:180px;
+  min-height:160px;
 
   display:flex;
   align-items:center;
@@ -420,11 +427,11 @@ button, a { font: inherit; }
 
   background:#11141b;
 
-  border-radius:20px;
+  border-radius:16px;
 
-  padding:24px;
+  padding:20px;
 
-  margin-bottom:18px;
+  margin-bottom:12px;
 }
 
 .dark-preview{
@@ -433,11 +440,11 @@ button, a { font: inherit; }
 
 .card-desc{
 
-  color:var(--muted);
+  color: #d0d6e2;
 
-  line-height:1.7;
+  line-height:1.6;
 
-  font-size:13px;
+  font-size:14px;
 }
 
 /* =========================================================

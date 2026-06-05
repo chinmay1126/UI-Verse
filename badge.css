@@ -1,0 +1,72 @@
+.badge-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px; /* consistent spacing */
+  align-items: start;
+}
+
+.badge {
+  background: linear-gradient(145deg, #12192b, #172038);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  text-align: center;
+  color: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.hero-stat h3 {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.hero-stat span {
+  color: #d0d6e2;
+  font-size: 14px;
+}
+
+.badge-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  font-size: 14px;
+  color: #cfe3ff;
+}
+
+.badge-ribbon,
+.badge-level,
+.badge-streak,
+.badge-points,
+.locked-badge {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #ffd966; /* gold highlight */
+}
+
+/* MAIN BADGES PAGE */
+.badges-page {
+  margin-left: 260px;   /* equal to sidebar width */
+  padding: 40px;
+  min-height: 100vh;
+  background: #0f1629;  /* consistent dark theme */
+  box-sizing: border-box;
+}
+
+/* RESPONSIVE FIXES */
+@media(max-width: 900px) {
+  .badges-page {
+    margin-left: 0;     /* remove offset when sidebar collapses */
+    padding: 20px;
+  }
+}
