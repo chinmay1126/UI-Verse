@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-CJLmHsFNKFyLE4WkvZTkcWuAlwE+cWi6XCPaOHHsmRs= sha256-S6d4FNO/1iV0V0FnzHkAQYcUblCxiNQaYtiR4SI0iEg= sha256-ZSwevDjx4JYKRPyZr4Fy5ODN1zCghPnMJ4DiCbdB3/k= sha256-awZC1gR1Ud9aisSi3fnOTOfLd1OWCGiT1EG6rP0+LqM=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-CJLmHsFNKFyLE4WkvZTkcWuAlwE+cWi6XCPaOHHsmRs= sha256-S6d4FNO/1iV0V0FnzHkAQYcUblCxiNQaYtiR4SI0iEg= sha256-ZSwevDjx4JYKRPyZr4Fy5ODN1zCghPnMJ4DiCbdB3/k= sha256-awZC1gR1Ud9aisSi3fnOTOfLd1OWCGiT1EG6rP0+LqM=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UI Cards - UIverse</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="UI-Cards.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
+
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
     <span class="brand-icon">⬡</span>
@@ -326,7 +327,7 @@
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -395,6 +396,474 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
     </div>
+
+    <div class="component-card">
+  <h3>Project Overview</h3>
+
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <h4>UIverse Redesign</h4>
+        <span>Design System</span>
+      </div>
+
+      <span class="status live">
+        ● Live
+      </span>
+    </div>
+
+    <div class="project-progress">
+      <div class="progress-bar">
+        <span style="width:82%"></span>
+      </div>
+      <small>82% Completed</small>
+    </div>
+
+    <div class="project-footer">
+      <div class="avatars">
+        <img src="https://i.pravatar.cc/40?img=1">
+        <img src="https://i.pravatar.cc/40?img=2">
+        <img src="https://i.pravatar.cc/40?img=3">
+      </div>
+
+      <button>Open Project</button>
+    </div>
+  </div>
+</div>
+
+<div class="component-card">
+  <h3>User Profile</h3>
+
+  <div class="profile-card-pro">
+    <img src="https://i.pravatar.cc/150?img=12">
+
+    <h4>Sarah Johnson</h4>
+
+    <span>Senior Product Designer</span>
+
+    <div class="profile-stats">
+      <div>
+        <strong>142</strong>
+        <small>Projects</small>
+      </div>
+
+      <div>
+        <strong>28K</strong>
+        <small>Followers</small>
+      </div>
+
+      <div>
+        <strong>4.9</strong>
+        <small>Rating</small>
+      </div>
+    </div>
+
+    <button>View Profile</button>
+  </div>
+</div>
+
+
+<div class="component-card">
+  <h3>AI Assistant</h3>
+
+  <div class="ai-chat-card">
+    <div class="chat-header">
+      <i class="fa-solid fa-sparkles"></i>
+      AI Copilot
+    </div>
+
+    <div class="chat-preview">
+      Generate landing pages,
+      write content and automate
+      workflows instantly.
+    </div>
+
+    <button>
+      Start Chat
+    </button>
+  </div>
+</div>
+
+<div class="component-card">
+  <h3>Product Showcase</h3>
+
+  <div class="premium-product-card">
+    <span class="product-badge">
+      NEW
+    </span>
+
+    <img src="headphones.jpg">
+
+    <h4>Air Studio Pro</h4>
+
+    <p>
+      Noise cancellation with
+      spatial audio support.
+    </p>
+
+    <div class="product-bottom">
+      <strong>$299</strong>
+
+      <button>
+        Buy Now
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="component-card bento-large">
+  <div class="bento-card">
+    <span>FEATURED</span>
+
+    <h2>
+      Design Faster
+      Build Better
+    </h2>
+
+    <p>
+      Premium UI components
+      crafted for modern products.
+    </p>
+
+    <button>
+      Explore Library
+    </button>
+  </div>
+</div>
+
+<div class="component-card">
+  <h3>Feature Highlight</h3>
+
+  <div class="highlight-card">
+    <div class="highlight-icon">
+      <i class="fa-solid fa-bolt"></i>
+    </div>
+
+    <h4>Lightning Performance</h4>
+
+    <p>
+      Optimized components with
+      ultra-fast rendering.
+    </p>
+
+    <a href="#">
+      Learn More →
+    </a>
+  </div>
+</div>
+    <!-- ========================= -->
+<!-- PREMIUM UI CARDS SECTION -->
+<!-- Add inside .cards-grid   -->
+<!-- ========================= -->
+
+<div class="component-card">
+  <h3>AI Assistant</h3>
+
+  <div class="ai-card">
+    <div class="ai-icon">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+
+    <h4>AI Workspace</h4>
+
+    <p>
+      Generate content, summarize documents and automate workflows.
+    </p>
+
+    <button class="ai-btn">
+      Launch AI
+    </button>
+  </div>
+</div>
+
+<div class="component-card">
+  <h3>AI Assistant</h3>
+
+  <div class="ai-card">
+    <div class="ai-icon">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+
+    <h4>AI Workspace</h4>
+
+    <p>
+      Generate content, summarize documents and automate workflows.
+    </p>
+
+    <button class="ai-btn">
+      Launch AI
+    </button>
+  </div>
+</div>
+
+<div class="component-card">
+  <h3>Crypto Tracker</h3>
+
+  <div class="crypto-card">
+    <div class="crypto-top">
+      <i class="fa-brands fa-bitcoin"></i>
+      <span>BTC</span>
+    </div>
+
+    <h2>$68,430</h2>
+
+    <p class="positive">
+      +4.8% Today
+    </p>
+  </div>
+</div>
+
+<div class="component-card">
+  <h3>Upcoming Event</h3>
+
+  <div class="event-card">
+    <div class="event-date">
+      <span>24</span>
+      <small>JUN</small>
+    </div>
+
+    <div class="event-content">
+      <h4>Frontend Summit</h4>
+      <p>Virtual Conference 2026</p>
+    </div>
+  </div>
+</div>
+
+<div class="component-card">
+  <h3>Job Listing</h3>
+
+  <div class="job-card">
+    <div class="job-top">
+      <i class="fa-solid fa-briefcase"></i>
+      <span>Remote</span>
+    </div>
+
+    <h4>Frontend Developer</h4>
+
+    <p>
+      Build modern UI systems using React and TypeScript.
+    </p>
+
+    <button>Apply Now</button>
+  </div>
+</div>
+
+<div class="component-card">
+  <h3>Weather Widget</h3>
+
+  <div class="weather-card">
+    <i class="fa-solid fa-cloud-sun"></i>
+
+    <h2>27°C</h2>
+
+    <p>Partly Cloudy</p>
+
+    <span>Kolkata, India</span>
+  </div>
+</div>
+
+<div class="component-card">
+  <h3>Feature Card</h3>
+
+  <div class="feature-card-ui">
+    <div class="feature-icon">
+      <i class="fa-solid fa-bolt"></i>
+    </div>
+
+    <h4>Lightning Fast</h4>
+
+    <p>
+      Optimized components with blazing-fast performance.
+    </p>
+
+    <a href="#">
+      Learn More →
+    </a>
+  </div>
+</div>
+<!-- SaaS Analytics Card -->
+<div class="component-card">
+  <h3>SaaS Analytics</h3>
+
+  <div class="card-analytics">
+    <div class="analytics-top">
+      <span class="analytics-badge">PRO</span>
+      <i class="fa-solid fa-chart-line analytics-icon"></i>
+    </div>
+
+    <h4 class="analytics-title">Growth Dashboard</h4>
+
+    <p class="analytics-text">
+      Track revenue, conversions, and performance metrics with a sleek analytics UI.
+    </p>
+
+    <div class="analytics-stats">
+      <div>
+        <strong>+48%</strong>
+        <span>Revenue</span>
+      </div>
+
+      <div>
+        <strong>12.4K</strong>
+        <span>Users</span>
+      </div>
+
+      <div>
+        <strong>92%</strong>
+        <span>Retention</span>
+      </div>
+    </div>
+
+    <button class="analytics-btn">Open Dashboard</button>
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+</div>
+
+
+<!-- Glassmorphism Card -->
+<div class="component-card">
+  <h3>Glass UI</h3>
+
+  <div class="glass-card">
+    <div class="glass-overlay"></div>
+
+    <div class="glass-content">
+      <span class="glass-tag">TRENDING</span>
+
+      <h4>Glassmorphism Card</h4>
+
+      <p>
+        Elegant transparent layout with blur effect and modern visual styling.
+      </p>
+
+      <button class="glass-btn">Learn More</button>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+</div>
+
+
+<!-- Team Member Card -->
+<div class="component-card">
+  <h3>Team Profile</h3>
+
+  <div class="team-card">
+    <img src="team.jpg" alt="Team Member">
+
+    <div class="team-body">
+      <h4>Emma Watson</h4>
+
+      <span>UI/UX Designer</span>
+
+      <p>
+        Passionate about creating immersive user experiences and clean interfaces.
+      </p>
+
+      <div class="team-socials">
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+</div>
+
+
+<!-- Pricing Card -->
+<div class="component-card">
+  <h3>Pricing Plan</h3>
+
+  <div class="pricing-card-ui">
+    <div class="pricing-header">
+      <span>POPULAR</span>
+      <h4>Pro Plan</h4>
+    </div>
+
+    <div class="pricing-price">
+      <h2>$29</h2>
+      <p>/month</p>
+    </div>
+
+    <ul class="pricing-features">
+      <li><i class="fa-solid fa-check"></i> Unlimited Projects</li>
+      <li><i class="fa-solid fa-check"></i> Premium Components</li>
+      <li><i class="fa-solid fa-check"></i> Priority Support</li>
+      <li><i class="fa-solid fa-check"></i> Free Updates</li>
+    </ul>
+
+    <button class="pricing-btn">Get Started</button>
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+</div>
+
+
+<!-- Neon Product Card -->
+<div class="component-card">
+  <h3>Neon Product</h3>
+
+  <div class="neon-card">
+    <img src="headphones.jpg" alt="Headphones">
+
+    <div class="neon-body">
+      <span class="neon-category">AUDIO</span>
+
+      <h4>Neon Headphones</h4>
+
+      <p>
+        Futuristic product card with glowing hover effect and vibrant gradients.
+      </p>
+
+      <button class="neon-btn">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+
+    <button class="action-btn copy-btn">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+</div>
     <div class="component-card">
       <h3>Digital Studio</h3>
       <div class="card-studio">
@@ -540,13 +1009,11 @@
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
-<script src="js/core/utils.js"></script>
 <script src="js/features/toast.js"></script>
 <script src="js/features/popup.js"></script>
 <script src="js/registry.js"></script>
 <script src="js/features/code-tools.js"></script>
 <script src="js/features/sidebar.js"></script>
-<script src="js/features/search.js"></script>
 <script src="js/features/theme.js"></script>
 <script src="js/features/scroll.js"></script>
 <script src="js/features/alerts.js"></script>
@@ -555,5 +1022,6 @@
 <script src="js/features/accessibility.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/features/cards-bind.js"></script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

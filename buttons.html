@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-/tf8JNW8iPUgJvenOi9CZXW21ORavctx0itN9rCk+To= sha256-0dTdakrRpIjxUXN5qs4/I7du+AgjHOMij6yGC1uFH8o= sha256-AgshRmVqX0sM4XuWDcoG8ZVLCexpdhLSgIjbRlK8pRg= sha256-CFSmkCZFfOSc4BDtV7xI+vSNf03AgHJB4vIoxK30Sn8= sha256-DvMDIIIZEph9CdnwX3ikzGh57cjR4+A9jCB7JZA2oYk= sha256-NT04fohxXGNdymonDrXKEZMlFP76LJgFttR9n79O4zU= sha256-ZPCww8rm5CoGl8fdiCui9CieIBGrLBAX+L/qgtNxBFY= sha256-ajDhJHonNe1mVVQk1JdkEIsY6m1vLAqzXGzF0optHSM= sha256-bMoiauAZnyBnI6UqfaVZWz0adlQMnl1ao53Eh4sZm4w= sha256-dd4maoOS8peluqZLz0QOG/ptsvFVmLLbh1UYwUblUuc= sha256-mwb0psy5qEke1Z625iwTFGkIFcPxGFkTj+iqLZvA7dI=; script-src-attr 'unsafe-hashes' sha256-/tf8JNW8iPUgJvenOi9CZXW21ORavctx0itN9rCk+To= sha256-0dTdakrRpIjxUXN5qs4/I7du+AgjHOMij6yGC1uFH8o= sha256-AgshRmVqX0sM4XuWDcoG8ZVLCexpdhLSgIjbRlK8pRg= sha256-CFSmkCZFfOSc4BDtV7xI+vSNf03AgHJB4vIoxK30Sn8= sha256-DvMDIIIZEph9CdnwX3ikzGh57cjR4+A9jCB7JZA2oYk= sha256-NT04fohxXGNdymonDrXKEZMlFP76LJgFttR9n79O4zU= sha256-ZPCww8rm5CoGl8fdiCui9CieIBGrLBAX+L/qgtNxBFY= sha256-ajDhJHonNe1mVVQk1JdkEIsY6m1vLAqzXGzF0optHSM= sha256-bMoiauAZnyBnI6UqfaVZWz0adlQMnl1ao53Eh4sZm4w= sha256-dd4maoOS8peluqZLz0QOG/ptsvFVmLLbh1UYwUblUuc= sha256-mwb0psy5qEke1Z625iwTFGkIFcPxGFkTj+iqLZvA7dI=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="refresh" content="0; url=button.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buttons</title>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="component-card" data-name="neon border pulse button" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Neon Pulse Border</span>
+    <span class="card-tag tag-trending">New</span>
+  </div>
+
+  <div class="card-preview dark-preview">
+    <button class="neon-pulse-border-btn">Pulse</button>
+  </div>
+
+  <div class="component-card" data-name="liquid fill button" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Liquid Fill</span>
+    <span class="card-tag tag-trending">Hover</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="liquid-fill-btn">Explore</button>
+  </div>
+
+  <pre id="c52" class="code-block"><code>
+.liquid-fill-btn{
+  padding:12px 28px;
+  border:none;
+  background:#fff;
+  color:#2563eb;
+  border:2px solid #2563eb;
+  border-radius:30px;
+  position:relative;
+  overflow:hidden;
+  z-index:1;
+}
+.liquid-fill-btn::before{
+  content:'';
+  position:absolute;
+  width:200%;
+  height:200%;
+  background:#2563eb;
+  left:-50%;
+  top:100%;
+  border-radius:40%;
+  transition:.5s;
+  z-index:-1;
+}
+.liquid-fill-btn:hover::before{
+  top:-40%;
+}
+.liquid-fill-btn:hover{
+  color:#fff;
+}
+  </code></pre>
+</div>
+  <p class="card-desc">Animated neon border with soft pulse glow effect.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c47', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('c47', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c47" class="code-block"><code>
+.neon-pulse-border-btn{
+  padding:12px 26px;
+  background:transparent;
+  color:#00f7ff;
+  border:2px solid #00f7ff;
+  border-radius:10px;
+  cursor:pointer;
+  animation:pulse 1.8s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(0,247,255,0.4);}
+  50%{box-shadow:0 0 20px rgba(0,247,255,0.8);}
+  100%{box-shadow:0 0 0 rgba(0,247,255,0.4);}
+}
+  </code></pre>
+</div>
+
+
+<div class="component-card" data-name="cyber fill button glitch" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Cyber Fill</span>
+    <span class="card-tag tag-new">Glitch</span>
+  </div>
+
+  <div class="card-preview dark-preview">
+    <button class="cyber-fill-btn">Hack</button>
+  </div>
+
+  <p class="card-desc">Glitch-style fill animation like futuristic UI.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c48', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('c48', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c48" class="code-block"><code>
+.cyber-fill-btn{
+  padding:12px 28px;
+  background:#111;
+  color:#0ff;
+  border:1px solid #0ff;
+  position:relative;
+  overflow:hidden;
+}
+.cyber-fill-btn::before{
+  content:'';
+  position:absolute;
+  top:0; left:-100%;
+  width:100%; height:100%;
+  background:#0ff;
+  transition:0.4s;
+  z-index:-1;
+}
+.cyber-fill-btn:hover::before{
+  left:0;
+}
+.cyber-fill-btn:hover{
+  color:#000;
+}
+  </code></pre>
+</div>
+
+<div class="component-card" data-name="rainbow border animated button" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Rainbow Border</span>
+    <span class="card-tag tag-popular">Colorful</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="rainbow-border-btn">Magic</button>
+  </div>
+
+  <p class="card-desc">Animated rainbow border rotating smoothly.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c49', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('c49', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c49" class="code-block"><code>
+.rainbow-border-btn{
+  padding:12px 26px;
+  border:3px solid transparent;
+  border-radius:10px;
+  background:linear-gradient(#fff,#fff) padding-box,
+             linear-gradient(45deg,red,blue,green,yellow) border-box;
+  cursor:pointer;
+}
+.rainbow-border-btn:hover{
+  filter:brightness(1.1);
+}
+  </code></pre>
+</div>
+
+<div class="component-card" data-name="magnetic hover button smooth follow" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Magnetic Lite</span>
+    <span class="card-tag tag-trending">UX</span>
+  </div>
+
+  <div class="card-preview">
+    <button class="magnetic-btn">Hover Me</button>
+  </div>
+
+  <p class="card-desc">Smooth hover lift gives magnetic feel.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c50', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('c50', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c50" class="code-block"><code>
+.magnetic-btn{
+  padding:12px 28px;
+  background:#6c5ce7;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  transition:0.2s;
+}
+.magnetic-btn:hover{
+  transform:translateY(-6px) scale(1.05);
+}
+  </code></pre>
+</div>
+
+<div class="component-card" data-name="frost glow glass button" data-cat="effect">
+  <div class="card-top">
+    <span class="card-label">Frost Glow</span>
+    <span class="card-tag tag-premium">Premium</span>
+  </div>
+
+  <div class="card-preview glass-preview">
+    <button class="frost-glow-btn">Frost</button>
+  </div>
+
+  <p class="card-desc">Glass button with glowing frost effect.</p>
+
+  <div class="actions">
+    <button class="action-btn view-btn" onclick="toggleCode('c51', this)">
+      <i class="fa-solid fa-code"></i> View Code
+    </button>
+    <button class="action-btn copy-btn" onclick="copyCode('c51', this)">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+  </div>
+
+  <pre id="c51" class="code-block"><code>
+.frost-glow-btn{
+  padding:12px 28px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.3);
+  color:#fff;
+  backdrop-filter:blur(10px);
+  border-radius:10px;
+  cursor:pointer;
+}
+.frost-glow-btn:hover{
+  box-shadow:0 0 20px rgba(255,255,255,0.4);
+}
+  </code></pre>
+</div>
+  <p>Redirecting to the button page...</p>
+  <script>location.replace('button.html');</script>
+</body>
+</html>

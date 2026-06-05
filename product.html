@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-aMhs/PtsvWRfbXvBVJBdTKASfkTisEfODfMov8VRq8k=; style-src-attr 'unsafe-hashes' sha256-aMhs/PtsvWRfbXvBVJBdTKASfkTisEfODfMov8VRq8k=">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products — UIverse</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b1020;
+  --surface:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.12);
+  --text:#fff;
+  --muted:#b8bfd3;
+  --primary:#7c5cff;
+  --accent:#00d4ff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  background:
+    radial-gradient(circle at top left,#7c5cff22,transparent 40%),
+    radial-gradient(circle at bottom right,#00d4ff22,transparent 40%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+
+.container{
+  width:min(1200px,92%);
+  margin:auto;
+}
+
+.hero{
+  padding:7rem 0 5rem;
+  text-align:center;
+}
+
+.hero h1{
+  font-family:"Syne",sans-serif;
+  font-size:clamp(3rem,7vw,5rem);
+  line-height:1;
+  margin-bottom:1rem;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  font-size:1.1rem;
+}
+
+.search-bar{
+  margin:2rem auto 0;
+  max-width:650px;
+  display:flex;
+  gap:1rem;
+}
+
+.search-bar input{
+  flex:1;
+  padding:1rem 1.25rem;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:white;
+  backdrop-filter:blur(20px);
+}
+
+.search-bar button{
+  border:none;
+  border-radius:16px;
+  padding:1rem 1.5rem;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:white;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1rem;
+  margin:4rem 0;
+}
+
+.category{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:1.5rem;
+  text-align:center;
+  backdrop-filter:blur(16px);
+  transition:.3s;
+}
+
+.category:hover{
+  transform:translateY(-6px);
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1.5rem;
+  margin-bottom:5rem;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  overflow:hidden;
+  backdrop-filter:blur(20px);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:1.25rem;
+}
+
+.card h3{
+  margin-bottom:.5rem;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.price{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:1rem;
+}
+
+.price strong{
+  font-size:1.2rem;
+}
+
+.price button{
+  background:var(--primary);
+  border:none;
+  color:white;
+  padding:.7rem 1rem;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-bottom:4rem;
+}
+
+.stat{
+  text-align:center;
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:1.5rem;
+  border-radius:20px;
+}
+
+.stat h2{
+  font-size:2rem;
+  margin-bottom:.4rem;
+}
+
+@media(max-width:768px){
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .search-bar{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="hero">
+  <div class="container">
+    <h1>Discover Premium Products</h1>
+    <p>
+      Explore thousands of beautifully crafted UI components,
+      templates, patterns, and design resources from the UIverse community.
+    </p>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search products...">
+      <button>Search</button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" class="container">
+
+  <section class="stats">
+    <div class="stat">
+      <h2>15K+</h2>
+      <p>Products</p>
+    </div>
+
+    <div class="stat">
+      <h2>4.9★</h2>
+      <p>Average Rating</p>
+    </div>
+
+    <div class="stat">
+      <h2>80K+</h2>
+      <p>Downloads</p>
+    </div>
+
+    <div class="stat">
+      <h2>1.2K+</h2>
+      <p>Creators</p>
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="category">🎨 UI Kits</div>
+    <div class="category">📦 Components</div>
+    <div class="category">🧩 Templates</div>
+    <div class="category">📱 Mobile UI</div>
+    <div class="category">⚡ Animations</div>
+    <div class="category">🚀 Landing Pages</div>
+  </section>
+
+  <section class="products">
+
+    <article class="card">
+      <img src="https://picsum.photos/500/300?1" alt="Product">
+      <div class="card-content">
+        <h3>Modern Dashboard Kit</h3>
+        <p>Beautiful analytics dashboard built for SaaS products.</p>
+
+        <div class="price">
+          <strong>$29</strong>
+          <button>View</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://picsum.photos/500/300?2" alt="Product">
+      <div class="card-content">
+        <h3>Glass UI Components</h3>
+        <p>Modern glassmorphism component library.</p>
+
+        <div class="price">
+          <strong>$19</strong>
+          <button>View</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://picsum.photos/500/300?3" alt="Product">
+      <div class="card-content">
+        <h3>Landing Page Bundle</h3>
+        <p>Collection of high-converting landing page templates.</p>
+
+        <div class="price">
+          <strong>$39</strong>
+          <button>View</button>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+import {
+  BookOpen,
+  Lightbulb,
+  Rocket,
+  Users,
+  Target,
+  Heart,
+} from "lucide-react";
+
+export default function Story() {
+  const milestones = [
+    {
+      icon: <Lightbulb size={22} />,
+      title: "The Idea",
+      description:
+        "The project began with a simple goal: make learning more interactive, accessible, and engaging for students everywhere.",
+    },
+    {
+      icon: <BookOpen size={22} />,
+      title: "Research & Planning",
+      description:
+        "We studied educational challenges, gathered feedback from students, and designed solutions focused on practical learning.",
+    },
+    {
+      icon: <Rocket size={22} />,
+      title: "Development",
+      description:
+        "Using modern technologies, we built a platform that combines innovation, usability, and performance.",
+    },
+    {
+      icon: <Users size={22} />,
+      title: "Community Growth",
+      description:
+        "Students, educators, and contributors helped shape the platform through continuous feedback and collaboration.",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-24 px-6">
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 via-purple-600/10 to-pink-600/20 blur-3xl" />
+
+        <div className="relative max-w-6xl mx-auto text-center">
+          <span className="inline-block px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm">
+            Our Journey
+          </span>
+
+          <h1 className="mt-6 text-5xl md:text-6xl font-bold">
+            The Story Behind
+            <span className="block text-indigo-400">Our Platform</span>
+          </h1>
+
+          <p className="mt-6 max-w-3xl mx-auto text-slate-300 text-lg">
+            Every great project starts with a problem worth solving. Our story
+            is about transforming learning into an interactive, engaging, and
+            meaningful experience.
+          </p>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="p-8 rounded-3xl border border-slate-800 bg-slate-900/60">
+            <Target className="text-indigo-400 mb-4" size={32} />
+            <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
+            <p className="text-slate-300 leading-relaxed">
+              To empower learners through innovative digital experiences that
+              make education accessible, practical, and enjoyable.
+            </p>
+          </div>
+
+          <div className="p-8 rounded-3xl border border-slate-800 bg-slate-900/60">
+            <Heart className="text-pink-400 mb-4" size={32} />
+            <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
+            <p className="text-slate-300 leading-relaxed">
+              To become a trusted platform where technology and education work
+              together to inspire curiosity, creativity, and lifelong learning.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl font-bold">Our Journey</h2>
+          <p className="text-slate-400 mt-3">
+            Key milestones that shaped our growth.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {milestones.map((item, index) => (
+            <div
+              key={index}
+              className="group p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-indigo-500/40 transition-all duration-300"
+            >
+              <div className="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-5">
+                {item.icon}
+              </div>
+
+              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+
+              <p className="text-slate-400 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="rounded-3xl bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border border-indigo-500/20 p-10">
+          <h2 className="text-4xl font-bold text-center mb-10">
+            What Drives Us
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-indigo-400">
+                Innovation
+              </h3>
+              <p className="text-slate-300">
+                Continuously improving educational experiences through modern
+                technology.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-indigo-400">
+                Accessibility
+              </h3>
+              <p className="text-slate-300">
+                Ensuring learning resources are available to everyone,
+                regardless of background.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-indigo-400">
+                Impact
+              </h3>
+              <p className="text-slate-300">
+                Creating meaningful educational outcomes that help learners
+                succeed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing Section */}
+      <section className="py-20 text-center px-6">
+        <h2 className="text-4xl font-bold mb-6">
+          The Journey Continues
+        </h2>
+
+        <p className="max-w-3xl mx-auto text-slate-400 text-lg">
+          We are constantly learning, improving, and growing alongside our
+          community. Every new feature, idea, and contribution becomes part of
+          the next chapter of our story.
+        </p>
+      </section>
+    </div>
+  );
+}

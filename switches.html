@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; style-src 'self' https: 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=; style-src-attr 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=">
 
   <meta
     name="viewport"
@@ -41,6 +42,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -395,9 +398,251 @@ NAVBAR
     <input
       type="text"
       placeholder="Search switch components..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
+
+  <!-- =====================================================
+ADVANCED SWITCH COMPONENTS
+Add below your existing switch-grid cards
+===================================================== -->
+
+<!-- GRADIENT SWITCH -->
+
+<div class="switch-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      GRADIENT
+    </span>
+
+    <div class="card-icon pink">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Gradient Switch
+  </h2>
+
+  <p>
+    Vibrant animated gradient
+    toggle with premium UI feel.
+  </p>
+
+  <div class="switch-demo">
+
+    <label class="gradient-switch">
+
+      <input type="checkbox" checked>
+
+      <span class="gradient-slider"></span>
+
+    </label>
+
+  </div>
+
+</div>
+
+<!-- NEON SWITCH -->
+
+<div class="switch-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      NEON
+    </span>
+
+    <div class="card-icon cyan">
+      <i class="fa-solid fa-bolt"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Neon Glow Switch
+  </h2>
+
+  <p>
+    Cyberpunk inspired glowing
+    switch for futuristic dashboards.
+  </p>
+
+  <div class="switch-demo">
+
+    <label class="neon-switch">
+
+      <input type="checkbox">
+
+      <span class="neon-slider"></span>
+
+    </label>
+
+  </div>
+
+</div>
+
+<!-- POWER SWITCH -->
+
+<div class="switch-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      POWER
+    </span>
+
+    <div class="card-icon red">
+      <i class="fa-solid fa-power-off"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Power Toggle
+  </h2>
+
+  <p>
+    Premium power style
+    interaction switch component.
+  </p>
+
+  <div class="switch-demo">
+
+    <label class="power-switch">
+
+      <input type="checkbox" checked>
+
+      <span class="power-slider">
+        <i class="fa-solid fa-power-off"></i>
+      </span>
+
+    </label>
+
+  </div>
+
+</div>
+
+<!-- STATUS SWITCH -->
+
+<div class="switch-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      STATUS
+    </span>
+
+    <div class="card-icon green">
+      <i class="fa-solid fa-shield"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Security Status
+  </h2>
+
+  <p>
+    Live status switch with
+    online and offline indicators.
+  </p>
+
+  <div class="switch-demo">
+
+    <label class="status-switch">
+
+      <input type="checkbox" checked>
+
+      <span class="status-slider">
+        <span class="status-text on">ON</span>
+        <span class="status-text off">OFF</span>
+      </span>
+
+    </label>
+
+  </div>
+
+</div>
+
+<!-- PREMIUM SETTINGS PANEL -->
+
+<div class="switch-card large-card">
+
+  <div class="card-top">
+
+    <span class="card-label">
+      PREMIUM PANEL
+    </span>
+
+    <div class="card-icon purple">
+      <i class="fa-solid fa-sliders"></i>
+    </div>
+
+  </div>
+
+  <h2>
+    Smart Preferences
+  </h2>
+
+  <p>
+    Advanced enterprise dashboard
+    settings with elegant toggles.
+  </p>
+
+  <div class="settings-list">
+
+    <div class="setting-item">
+
+      <div>
+        <strong>AI Assistant</strong>
+        <span>Enable smart recommendations</span>
+      </div>
+
+      <label class="gradient-switch">
+        <input type="checkbox" checked>
+        <span class="gradient-slider"></span>
+      </label>
+
+    </div>
+
+    <div class="setting-item">
+
+      <div>
+        <strong>Security Lock</strong>
+        <span>Protect account with 2FA</span>
+      </div>
+
+      <label class="neon-switch">
+        <input type="checkbox">
+        <span class="neon-slider"></span>
+      </label>
+
+    </div>
+
+    <div class="setting-item">
+
+      <div>
+        <strong>Cloud Sync</strong>
+        <span>Sync all devices instantly</span>
+      </div>
+
+      <label class="status-switch">
+        <input type="checkbox" checked>
+        <span class="status-slider">
+          <span class="status-text on">ON</span>
+          <span class="status-text off">OFF</span>
+        </span>
+      </label>
+
+    </div>
+
+  </div>
+
+</div>
 
   <div class="nav-actions">
 
@@ -766,5 +1011,6 @@ MAIN
 
 <script src="switches.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
