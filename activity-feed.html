@@ -23,6 +23,8 @@
 
   <!-- APP SHELL -->
   <div class="app-shell">
+
+    <!-- SIDEBAR -->
     <aside class="sidebar" aria-label="Primary navigation">
       <div class="sidebar-brand">
         <span class="brand-icon"><i class="fa-solid fa-wave-square"></i></span>
@@ -45,65 +47,67 @@
         <a href="contact.html" aria-label="Contact"><i class="fa-solid fa-envelope"></i></a>
       </div>
     </aside>
+    <!-- /SIDEBAR -->
 
-    <section class="feed-toolbar">
-  <div class="search-box">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="search" placeholder="Search activity..." />
-  </div>
-
-  <div class="feed-filters">
-    <button class="filter active">All</button>
-    <button class="filter">Comments</button>
-    <button class="filter">Tasks</button>
-    <button class="filter">Alerts</button>
-    <button class="filter">Uploads</button>
-  </div>
-</section>
-
-<section class="master-timeline">
-  <h2>Recent Activity Timeline</h2>
-
-  <div class="timeline-event">
-    <div class="timeline-dot"></div>
-
-    <div class="timeline-content">
-      <h4>Project deployment completed</h4>
-      <time>12 minutes ago</time>
-    </div>
-  </div>
-
-  <div class="timeline-event">
-    <div class="timeline-dot"></div>
-
-    <div class="timeline-content">
-      <h4>Design review scheduled</h4>
-      <time>42 minutes ago</time>
-    </div>
-  </div>
-</section>
-
-<aside class="stats-widget">
-  <h3>Activity Breakdown</h3>
-
-  <div class="stat-row">
-    <span>Comments</span>
-    <strong>48%</strong>
-  </div>
-
-  <div class="stat-row">
-    <span>Tasks</span>
-    <strong>32%</strong>
-  </div>
-
-  <div class="stat-row">
-    <span>Alerts</span>
-    <strong>20%</strong>
-  </div>
-</aside>
-
-    <main class="page-shell">
+    <!-- MAIN CONTENT -->
     <main class="page-shell" id="main-content">
+
+      <!-- FEED TOOLBAR (moved inside main) -->
+      <section class="feed-toolbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" placeholder="Search activity..." />
+        </div>
+
+        <div class="feed-filters">
+          <button class="filter active">All</button>
+          <button class="filter">Comments</button>
+          <button class="filter">Tasks</button>
+          <button class="filter">Alerts</button>
+          <button class="filter">Uploads</button>
+        </div>
+      </section>
+
+      <!-- MASTER TIMELINE (moved inside main) -->
+      <section class="master-timeline">
+        <h2>Recent Activity Timeline</h2>
+
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4>Project deployment completed</h4>
+            <time>12 minutes ago</time>
+          </div>
+        </div>
+
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4>Design review scheduled</h4>
+            <time>42 minutes ago</time>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS WIDGET (moved inside main) -->
+      <aside class="stats-widget">
+        <h3>Activity Breakdown</h3>
+
+        <div class="stat-row">
+          <span>Comments</span>
+          <strong>48%</strong>
+        </div>
+
+        <div class="stat-row">
+          <span>Tasks</span>
+          <strong>32%</strong>
+        </div>
+
+        <div class="stat-row">
+          <span>Alerts</span>
+          <strong>20%</strong>
+        </div>
+      </aside>
 
       <!-- HEADER -->
       <header class="page-header">
@@ -374,8 +378,12 @@
           <p>© 2026 Uiverse. Made with <span class="heart">♥</span> for developers worldwide.</p>
         </div>
       </footer>
+
     </main>
+    <!-- /MAIN CONTENT -->
+
   </div>
+  <!-- /APP SHELL -->
 
   <!-- TOAST CONTAINER -->
   <div id="toast-container" class="toast-container" aria-live="polite"></div>
@@ -518,7 +526,6 @@
       `;
       container.appendChild(toast);
 
-      // Smooth removal with animations
       setTimeout(() => {
         toast.style.opacity = '0';
         toast.style.transform = 'translateY(12px) scale(0.95)';
@@ -552,7 +559,6 @@
         showToast('Real-time Stream Connected!', 'success');
         
         realtimeInterval = setInterval(() => {
-          // Dynamic metric increases
           let todayCount = parseInt(todayCountEl.textContent);
           todayCountEl.textContent = (todayCount + 1) + ' items';
           
@@ -564,7 +570,6 @@
             systemCountEl.textContent = (systemCount + 1) + ' warnings';
           }
 
-          // Live Appends on stream-list
           const streamList = document.getElementById('stream-list');
           if (streamList) {
             const li = document.createElement('li');
@@ -583,12 +588,10 @@
             
             streamList.insertBefore(li, streamList.firstChild);
             
-            // Remove previous highlight
             if (streamList.children[1]) {
               streamList.children[1].classList.remove('active');
             }
             
-            // Limit items size
             if (streamList.children.length > 3) {
               streamList.removeChild(streamList.lastChild);
             }
@@ -666,7 +669,6 @@
       modal.setAttribute('hidden', 'true');
     }
 
-    // Escape Key to close modal
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
     });
