@@ -63,6 +63,46 @@ exploreBtn.addEventListener(
   }
 );
 
+
+function copyCode(id) {
+  const el = document.getElementById(id);
+
+  if (!el) return;
+
+  navigator.clipboard.writeText(el.textContent)
+    .then(() => {
+      const btn = event.target.closest("button");
+
+      const original = btn.innerHTML;
+
+      btn.innerHTML =
+        '<i class="fa-solid fa-check"></i> Copied';
+
+      setTimeout(() => {
+        btn.innerHTML = original;
+      }, 1500);
+    });
+}
+
+function setTheme(theme, persist = true) {
+  document.documentElement.setAttribute(
+    "data-theme",
+    theme
+  );
+
+  const icon = document.querySelector(".theme-btn i");
+
+  if (icon) {
+    icon.className =
+      theme === "dark"
+        ? "fa-solid fa-sun"
+        : "fa-solid fa-moon";
+  }
+
+  if (persist) {
+    localStorage.setItem("theme", theme);
+  }
+}
 /* =====================================================
 NAVBAR SCROLL
 ===================================================== */
@@ -90,3 +130,59 @@ window.addEventListener(
   }
 );
 
+
+const searchInput = document.querySelector(".search-box input");
+
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value.toLowerCase();
+
+  document.querySelectorAll(".component-card").forEach(card => {
+    const title = card.querySelector("h3").textContent.toLowerCase();
+
+    card.style.display =
+      title.includes(value) ? "flex" : "none";
+  });
+});
+
+document.querySelectorAll(".filters button").forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    document.querySelectorAll(".filters button")
+      .forEach(b => b.classList.remove("active"));
+
+    btn.classList.add("active");
+
+    const filter = btn.textContent.toLowerCase();
+
+    document.querySelectorAll(".component-card").forEach(card => {
+
+      if (
+        filter === "all" ||
+        card.dataset.category.includes(filter)
+      ) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+  });
+});
+
+function updateCounter() {
+  const checked =
+    document.querySelectorAll(
+      '.card-preview input[type="checkbox"]:checked'
+    ).length;
+
+  document.getElementById("checkedCount").textContent =
+    checked;
+}
+
+document
+  .querySelectorAll('.card-preview input[type="checkbox"]')
+  .forEach(cb => {
+    cb.addEventListener("change", updateCounter);
+  });
+
+updateCounter();

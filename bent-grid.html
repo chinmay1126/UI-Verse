@@ -1,659 +1,1031 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Advanced Bento Grid Layout</title>
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
-    rel="stylesheet"
-  />
+<title>UIverse • Premium Bento Grid</title>
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    
-  />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-   <link rel="stylesheet" href="shared-sidebar.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  
-  <link rel="stylesheet" href="bent-grid.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="bent-grid.css">
+
 </head>
 
 <body>
-  <!-- =========================================================
-   NAVBAR
-========================================================= -->
 
-<header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-  <div class="logo">UIverse</div>
-  <div class="search-bar">
-    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
-    <kbd class="search-kbd">⌘K</kbd>
-  </div>
-  <div class="nav-right">
-    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
-    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
-    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
-  </div>
-</header>
-<!-- ================= SIDEBAR ================= -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <span class="brand-icon">⬡</span>
-    <span class="brand-text">UIverse</span>
-  </div>
-          <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a href="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="button.html">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Buttons</span>
-        </a>
-      </li>
-            <li>
-        <a href="dropdown-components.html">
-          <i class="fa-solid fa-caret-down"></i>
-          <span>Dropdowns</span>
-        </a>
-      </li>
-      <li>
-        <a href="profile-components.html">
-          <i class="fa-solid fa-user"></i>
-          <span>Profiles</span>
-        </a>
-      </li>
+<!-- =========================
+SIDEBAR
+========================= -->
+
+<aside class="sidebar">
+
+<div class="sidebar-brand">
+
+<span class="brand-icon">⬡</span>
+
+<span class="brand-text">
+UIverse
+</span>
+
+</div>
+
+<nav class="sidebar-nav">
+
+<ul>
+
 <li>
-        <a href="navbar.html">
-          <i class="fa-solid fa-bars"></i>
-          <span>Navbar</span>
-        </a>
-      </li>
-      <li>
-        <a href="cards.html">
-          <i class="fa-solid fa-table-cells-large"></i>
-          <span>Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="flipcards.html">
-          <i class="fa-solid fa-clone"></i>
-          <span>3D Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="inputs.html">
-          <i class="fa-solid fa-keyboard"></i>
-          <span>Inputs</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms.html">
-          <i class="fa-brands fa-wpforms"></i>
-          <span>Forms</span>
-        </a>
-      </li>
-      <li>
-        <a href="badges.html">
-          <i class="fa-solid fa-award"></i>
-          <span>Badges</span>
-        </a>
-      </li>
-      <li>
-        <a href="blog.html">
-          <i class="fa-solid fa-blog"></i>
-          <span>Blog</span>
-        </a>
-      </li>
-      <li>
-        <a href="article.html">
-          <i class="fa-solid fa-newspaper"></i>
-          <span>Articles</span>
-        </a>
-      </li>
-      <li>
-        <a href="alerts.html">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <span>Alerts</span>
-        </a>
-      </li>
-      <li>
-        <a href="color.html">
-          <i class="fa-solid fa-palette"></i>
-          <span>Colors</span>
-        </a>
-      </li>
-      <li>
-        <a href="animate-loaders.html">
-          <i class="fas fa-circle-notch fa-spin"></i>
-          <span>Animate Loaders</span>
-        </a>
-      </li>
-      <li class="active">
-        <a href="bent-grid.html">
-          <i class="fas fa-th"></i>
-          <span>Bent Grid</span>
-        </a>
-      </li>
-      <li>
-        <a href="charts.html">
-          <i class="fa-solid fa-chart-pie"></i>
-          <span>Charts</span>
-        </a>
-      </li>
-      <li>
-        <a href="dashboard.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="div.html">
-          <i class="fa-solid fa-square"></i>
-          <span>DIV</span>
-        </a>
-      </li>
-      <li>
-        <a href="widgets.html">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Widgets</span>
-        </a>
-      </li>
-      <li>
-        <a href="search.html">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span>Search Bars</span>
-        </a>
-      </li>
-      <li>
-        <a href="hover.html">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          <span>Hover Effects</span>
-        </a>
-      </li>
-      <li>
-        <a href="error.html">
-          <i class="fa-solid fa-circle-exclamation"></i>
-          <span>Error Pages</span>
-        </a>
-      </li>
-      <li>
-        <a href="ecommerce.html">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span>E-commerce</span>
-        </a>
-      </li>
-      <li>
-        <a href="files.html">
-          <i class="fa-solid fa-file-arrow-up"></i>
-          <span>Drag & Drop</span>
-        </a>
-      </li>
-      <li>
-        <a href="hero.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Hero Sections</span>
-        </a>
-      </li>
-      <li>
-        <a href="loaders.html">
-          <i class="fa-solid fa-spinner"></i>
-          <span>Loaders</span>
-        </a>
-      </li>
-      <li>
-        <a href="timeline.html">
-          <i class="fa-solid fa-clock-rotate-left"></i>
-          <span>Timeline</span>
-        </a>
-      </li>
-      <li>
-        <a href="map.html">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <span>Maps</span>
-        </a>
-      </li>
-      <li>
-        <a href="menu.html">
-          <i class="fa-solid fa-bars-staggered"></i>
-          <span>Menu</span>
-        </a>
-      </li>
-      <li>
-        <a href="pricing.html">
-          <i class="fa-solid fa-tags"></i>
-          <span>Pricing</span>
-        </a>
-      </li>
-      <li>
-        <a href="subscription.html">
-          <i class="fa-solid fa-credit-card"></i>
-          <span>Subscription</span>
-        </a>
-      </li>
-      <li>
-        <a href="auth.html">
-          <i class="fa-solid fa-user-shield"></i>
-          <span>Authentication</span>
-        </a>
-      </li>
-        <li>
-          <a href="recovery.html">
-            <i class="fa-solid fa-key" aria-hidden="true"></i>
-            <span>Password Recovery</span>
-          </a>
-        </li>
-      <li>
-        <a href="section.html">
-          <i class="fa-solid fa-rectangle-list"></i>
-          <span>Section</span>
-        </a>
-      </li>
-      <li>
-        <a href="span.html">
-          <i class="fa-solid fa-code"></i>
-          <span>Span</span>
-        </a>
-      </li>
-      <li>
-        <a href="table.html">
-          <i class="fa-solid fa-table"></i>
-          <span>Table</span>
-        </a>
-      </li>
-      <li>
-        <a href="tabs.html">
-          <i class="fa-solid fa-table-columns"></i>
-          <span>Tabs</span>
-        </a>
-      </li>
-      <li>
-        <a href="terms.html">
-          <i class="fa-solid fa-file-contract"></i>
-          <span>Terms</span>
-        </a>
-      </li>
-      <li>
-        <a href="testimonials.html">
-          <i class="fa-solid fa-comments"></i>
-          <span>Testimonials</span>
-        </a>
-      </li>
-      <li>
-        <a href="toggles.html">
-          <i class="fa-solid fa-toggle-on"></i>
-          <span>Toggle</span>
-        </a>
-      </li>
-      <li>
-        <a href="radiobutton.html">
-          <i class="fa-solid fa-circle-dot"></i>
-          <span>Radio Buttons</span>
-        </a>
-      </li>
-      <li>
-        <a href="checkbox.html">
-          <i class="fa-solid fa-square-check"></i>
-          <span>Checkboxes</span>
-        </a>
-      </li>
-      <li>
-        <a href="notifications-premium.html">
-          <i class="fa-solid fa-bell"></i>
-          <span>Notifications V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="step-indicators.html">
-          <i class="fa-solid fa-list-check"></i>
-          <span>Steppers</span>
-        </a>
-      </li>
-      <li>
-        <a href="progress-premium.html">
-          <i class="fa-solid fa-bars-progress"></i>
-          <span>Progress V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="ratings-premium.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Ratings V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="filters-premium.html">
-          <i class="fa-solid fa-sliders"></i>
-          <span>Filters V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="admin-panel.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Admin Panel V2</span>
-        </a>
-      </li>
+<a href="index.html">
+<i class="fa-solid fa-house"></i>
+<span>Home</span>
+</a>
+</li>
+
 <li>
-        <a href="about.html">
-          <i class="fa-solid fa-circle-info"></i>
-          <span>About</span>
-        </a>
-      </li>
-      <li>
-        <a href="documentation.html">
-          <i class="fa-solid fa-book"></i>
-          <span>Documentation</span>
-        </a>
-      </li>
-      <li>
-        <a href="faq.html">
-          <i class="fa-solid fa-circle-question"></i>
-          <span>Faq</span>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Contact Us</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <div class="sidebar-footer">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="#"><i class="fab fa-x-twitter"></i></a>
-  </div>
+<a href="button.html">
+<i class="fa-solid fa-hand-pointer"></i>
+<span>Buttons</span>
+</a>
+</li>
+
+<li>
+<a href="cards.html">
+<i class="fa-solid fa-table-cells-large"></i>
+<span>Cards</span>
+</a>
+</li>
+
+<li>
+<a href="inputs.html">
+<i class="fa-solid fa-keyboard"></i>
+<span>Inputs</span>
+</a>
+</li>
+
+<li>
+<a href="forms.html">
+<i class="fa-brands fa-wpforms"></i>
+<span>Forms</span>
+</a>
+</li>
+
+<li class="active">
+<a href="bento-grid.html">
+<i class="fa-solid fa-border-all"></i>
+<span>Bento Grid</span>
+</a>
+</li>
+
+<li>
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-pie"></i>
+<span>Dashboard</span>
+</a>
+</li>
+
+<li>
+<a href="pricing.html">
+<i class="fa-solid fa-tags"></i>
+<span>Pricing</span>
+</a>
+</li>
+
+<li>
+<a href="documentation.html">
+<i class="fa-solid fa-book"></i>
+<span>Documentation</span>
+</a>
+</li>
+
+<li>
+<a href="faq.html">
+<i class="fa-solid fa-circle-question"></i>
+<span>FAQ</span>
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+<i class="fa-regular fa-envelope"></i>
+<span>Contact</span>
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<div class="sidebar-footer">
+
+<a href="#">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-discord"></i>
+</a>
+
+</div>
+
 </aside>
 
-<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+<!-- =========================
+TOP NAVBAR
+========================= -->
 
-  <section class="hero-bent">
-  <div class="hero-badge">
-    ✦ Bent Grid Layout
-  </div>
+<header class="navbar">
 
-  <h1>
-    Modern <span>Bent Grid</span>
-  </h1>
+<div class="nav-left">
 
-  <p>
-    Explore unique bent grid layouts that bring a fresh, modern look to your UI projects.
-  </p>
+<button class="menu-btn">
 
-  <div class="hero-actions">
-    <a href="#demo" class="btn-primary">View Demo</a>
-    <a href="#docs" class="btn-secondary">Documentation</a>
-  </div>
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<h2>
+
+Premium Bento
+
+</h2>
+
+</div>
+
+<div class="nav-search">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search layouts...">
+
+</div>
+
+<div class="nav-right">
+
+<button class="outline-btn">
+
+<i class="fa-solid fa-plus"></i>
+
+New Layout
+
+</button>
+
+<button class="primary-btn">
+
+Get Pro
+
+</button>
+
+</div>
+
+</header>
+
+<!-- =========================
+MAIN PAGE
+========================= -->
+
+<main class="page-content">
+
+<!-- =========================
+HERO SECTION
+========================= -->
+
+<section class="hero">
+
+<div class="hero-badge">
+
+✦ Premium Bento Collection
+
+</div>
+
+<h1>
+
+Advanced
+
+<span>
+Bento Grid
+</span>
+
+Layouts
+
+</h1>
+
+<p>
+
+Explore modern dashboard layouts,
+AI interfaces, analytics systems,
+SaaS products and futuristic UI
+components built with Bento Grids.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#layouts"
+class="primary-btn">
+
+Explore Layouts
+
+</a>
+
+<a href="#gallery"
+class="secondary-btn">
+
+Documentation
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div>
+
+<h3>50+</h3>
+
+<span>
+Layouts
+</span>
+
+</div>
+
+<div>
+
+<h3>120+</h3>
+
+<span>
+Components
+</span>
+
+</div>
+
+<div>
+
+<h3>25K+</h3>
+
+<span>
+Developers
+</span>
+
+</div>
+
+<div>
+
+<h3>4.9★</h3>
+
+<span>
+Rating
+</span>
+
+</div>
+
+</div>
+
 </section>
 
-  <section class="bento-container">
+<!-- =========================
+FEATURED SECTION
+========================= -->
 
-    <!-- Dashboard -->
-    <div class="box box1">
-      <div>
-        <span class="tag">Overview</span>
+<section class="featured-layouts">
 
-        <h2>Dashboard</h2>
+<div class="section-header">
 
-        <p>
-          Track your analytics, performance and insights
-          in one modern dashboard.
-        </p>
-      </div>
+<span>
 
-      <div class="stats">
+Featured Layouts
 
-        <div class="stat-card">
-          <h3>12K</h3>
-          <span>Users</span>
-        </div>
+</span>
 
-        <div class="stat-card">
-          <h3>89%</h3>
-          <span>Growth</span>
-        </div>
+<h2>
 
-        <div class="stat-card">
-          <h3>4.9</h3>
-          <span>Rating</span>
-        </div>
+Most Popular Bento Designs
 
-      </div>
+</h2>
 
-      <button>
-        Explore
-      </button>
-    </div>
+</div>
 
-    <!-- Projects -->
-    <div class="box box2">
-      <div class="top">
-        <span class="tag">Active</span>
+<div class="featured-grid">
 
-        <div class="icon">
-          📁
-        </div>
-      </div>
+<div class="featured-card">
 
-      <div>
-        <h2>Projects</h2>
+<i class="fa-solid fa-chart-line"></i>
 
-        <p>
-          Manage all active projects and workflows easily.
-        </p>
-      </div>
+<h3>
 
-      <div class="progress-area">
+Analytics Dashboard
 
-        <div class="progress-text">
-          <span>Progress</span>
-          <span>75%</span>
-        </div>
+</h3>
 
-        <div class="progress-bar">
-          <div class="progress-fill"></div>
-        </div>
+<p>
 
-      </div>
-    </div>
+Perfect for SaaS and metrics.
 
-    <!-- Team -->
-    <div class="box box3">
-      <span class="tag">Members</span>
+</p>
 
-      <h2>Team</h2>
+</div>
 
-      <p>
-        Collaborate with your team members in real time.
-      </p>
+<div class="featured-card">
 
-      <div class="avatars">
-        <img src="https://i.pravatar.cc/60?img=1">
-        <img src="https://i.pravatar.cc/60?img=2">
-        <img src="https://i.pravatar.cc/60?img=3">
-        <img src="https://i.pravatar.cc/60?img=4">
-      </div>
-    </div>
+<i class="fa-solid fa-robot"></i>
 
-    <!-- Notifications -->
-    <div class="box box4">
-      <div class="top">
-        <span class="tag">Alerts</span>
+<h3>
 
-        <div class="notification-dot"></div>
-      </div>
+AI Workspace
 
-      <h2>Notifications</h2>
+</h3>
 
-      <p>
-        Stay updated with recent activities and alerts.
-      </p>
+<p>
 
-      <ul class="list">
-        <li>New user registered</li>
-        <li>Server updated</li>
-        <li>Payment received</li>
-      </ul>
-    </div>
+Modern AI interface layouts.
 
-    <!-- Statistics -->
-    <div class="box box5">
-      <span class="tag">Analytics</span>
+</p>
 
-      <h2>Statistics</h2>
+</div>
 
-      <p>
-        Visualize data using beautiful charts and metrics.
-      </p>
+<div class="featured-card">
 
-      <div class="chart">
+<i class="fa-solid fa-cube"></i>
 
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
-        <div class="bar bar4"></div>
-        <div class="bar bar5"></div>
+<h3>
 
-      </div>
-    </div>
+3D Interface
 
-    <!-- Settings -->
-    <div class="box box6">
-      <span class="tag">Preferences</span>
+</h3>
 
-      <h2>Settings</h2>
+<p>
 
-      <p>
-        Customize themes, notifications and account settings.
-      </p>
+Interactive futuristic cards.
 
-      <div class="toggle-area">
+</p>
 
-        <div class="toggle-item">
-          <span>Dark Mode</span>
+</div>
 
-          <label class="switch">
-            <input type="checkbox" checked>
-            <span class="slider"></span>
-          </label>
-        </div>
+<div class="featured-card">
 
-        <div class="toggle-item">
-          <span>Email Alerts</span>
+<i class="fa-solid fa-layer-group"></i>
 
-          <label class="switch">
-            <input type="checkbox">
-            <span class="slider"></span>
-          </label>
-        </div>
+<h3>
 
-      </div>
-    </div>
+Glass Bento
 
-    <!-- Calendar -->
-    <div class="box box7">
-      <span class="tag">Schedule</span>
+</h3>
 
-      <h2>Calendar</h2>
+<p>
 
-      <p>
-        Organize meetings and upcoming events quickly.
-      </p>
+Premium glassmorphism layouts.
 
-      <div class="calendar-date">
-        22
-      </div>
-    </div>
+</p>
 
-    <!-- AI Assistant -->
-    <div class="box box8">
-      <span class="tag">AI</span>
+</div>
 
-      <h2>AI Assistant</h2>
+</div>
 
-      <p>
-        Automate tasks and boost productivity with AI tools.
-      </p>
+</section>
 
-      <button>
-        Start Chat
-      </button>
-    </div>
+<!-- =========================
+MAIN BENTO GRID
+========================= -->
 
-  </section>
-  <!-- FOOTER -->
+<section
+class="bento-grid"
+id="layouts">
+
+<!-- LARGE DASHBOARD -->
+
+<div class="bento-card dashboard-card">
+
+<span class="card-tag">
+
+Overview
+
+</span>
+
+<h2>
+
+Dashboard
+
+</h2>
+
+<p>
+
+Track analytics, revenue,
+users and performance
+in a single workspace.
+
+</p>
+
+<div class="mini-stats">
+
+<div>
+
+<h3>12K</h3>
+
+<span>Users</span>
+
+</div>
+
+<div>
+
+<h3>89%</h3>
+
+<span>Growth</span>
+
+</div>
+
+<div>
+
+<h3>4.9</h3>
+
+<span>Rating</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ANALYTICS -->
+
+<div class="bento-card analytics-card">
+
+<span class="card-tag">
+
+Analytics
+
+</span>
+
+<h2>
+
+Statistics
+
+</h2>
+
+<p>
+
+Real-time data
+visualization.
+
+</p>
+
+</div>
+
+<!-- PROJECTS -->
+
+<div class="bento-card projects-card">
+
+<span class="card-tag">
+
+Projects
+
+</span>
+
+<h2>
+
+Project Hub
+
+</h2>
+
+<p>
+
+Manage active
+workspaces.
+
+</p>
+
+</div>
+<!-- TEAM -->
+
+<div class="bento-card team-card">
+
+<span class="card-tag">
+
+Team
+
+</span>
+
+<h2>
+
+Team Workspace
+
+</h2>
+
+<p>
+
+Collaborate with your
+team members in real time.
+
+</p>
+
+<div class="team-avatars">
+
+<div class="avatar">A</div>
+<div class="avatar">J</div>
+<div class="avatar">M</div>
+<div class="avatar">+</div>
+
+</div>
+
+</div>
+
+<!-- REVENUE -->
+
+<div class="bento-card revenue-card">
+
+<span class="card-tag">
+
+Revenue
+
+</span>
+
+<h2>
+
+$84,250
+
+</h2>
+
+<p>
+
+Monthly recurring revenue.
+
+</p>
+
+<div class="mini-chart">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+</div>
+
+<!-- AI ASSISTANT -->
+
+<div class="bento-card ai-card">
+
+<span class="card-tag">
+
+AI Assistant
+
+</span>
+
+<h2>
+
+AI Workspace
+
+</h2>
+
+<p>
+
+Generate ideas, code,
+design systems and content.
+
+</p>
+
+<button class="card-btn">
+
+Launch AI
+
+</button>
+
+</div>
+
+<!-- NOTIFICATIONS -->
+
+<div class="bento-card notifications-card">
+
+<span class="card-tag">
+
+Activity
+
+</span>
+
+<h2>
+
+Recent Updates
+
+</h2>
+
+<ul class="activity-list">
+
+<li>
+Project updated
+</li>
+
+<li>
+New component added
+</li>
+
+<li>
+User joined workspace
+</li>
+
+</ul>
+
+</div>
+
+<!-- SMART HOME -->
+
+<div class="bento-card smart-card">
+
+<span class="card-tag">
+
+Devices
+
+</span>
+
+<h2>
+
+Smart Control
+
+</h2>
+
+<div class="device-grid">
+
+<div class="device active">
+💡
+</div>
+
+<div class="device">
+📺
+</div>
+
+<div class="device">
+🔊
+</div>
+
+<div class="device active">
+🌡️
+</div>
+
+</div>
+
+</div>
+
+<!-- CRYPTO -->
+
+<div class="bento-card crypto-card">
+
+<span class="card-tag">
+
+Market
+
+</span>
+
+<h2>
+
+Crypto Tracker
+
+</h2>
+
+<p>
+
+BTC +5.2%
+
+</p>
+
+<p>
+
+ETH +2.7%
+
+</p>
+
+<p>
+
+SOL +8.1%
+
+</p>
+
+</div>
+
+<!-- WEATHER -->
+
+<div class="bento-card weather-card">
+
+<span class="card-tag">
+
+Weather
+
+</span>
+
+<div class="weather-icon">
+
+☀️
+
+</div>
+
+<h2>
+
+27°C
+
+</h2>
+
+<p>
+
+Mumbai, India
+
+</p>
+
+</div>
+
+<!-- MUSIC -->
+
+<div class="bento-card music-card">
+
+<span class="card-tag">
+
+Music
+
+</span>
+
+<div class="album-cover">
+
+🎵
+
+</div>
+
+<h2>
+
+Night Drive
+
+</h2>
+
+<p>
+
+Lo-Fi Playlist
+
+</p>
+
+</div>
+
+<!-- SECURITY -->
+
+<div class="bento-card security-card">
+
+<span class="card-tag">
+
+Security
+
+</span>
+
+<h2>
+
+System Secure
+
+</h2>
+
+<div class="security-status">
+
+<div class="pulse"></div>
+
+Protected
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+COMPONENT GALLERY
+========================= -->
+
+<section
+class="gallery-section"
+id="gallery">
+
+<div class="section-header">
+
+<span>
+
+Component Gallery
+
+</span>
+
+<h2>
+
+Premium Bento Components
+
+</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-card">
+
+<i class="fa-solid fa-chart-simple"></i>
+
+<h3>
+
+Analytics Layout
+
+</h3>
+
+</div>
+
+<div class="gallery-card">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>
+
+AI Dashboard
+
+</h3>
+
+</div>
+
+<div class="gallery-card">
+
+<i class="fa-solid fa-cube"></i>
+
+<h3>
+
+3D Workspace
+
+</h3>
+
+</div>
+
+<div class="gallery-card">
+
+<i class="fa-solid fa-store"></i>
+
+<h3>
+
+E-Commerce
+
+</h3>
+
+</div>
+
+<div class="gallery-card">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<h3>
+
+Glass Bento
+
+</h3>
+
+</div>
+
+<div class="gallery-card">
+
+<i class="fa-solid fa-mobile-screen"></i>
+
+<h3>
+
+Mobile Layout
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- =========================
+FOOTER
+========================= -->
+
 <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col brand">
-      <h2 class="footer-logo">⬡ UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      <div class="socials">
-        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">Documentation</a></li>
-        <li><a href="#">GitHub Repo</a></li>
-        <li><a href="#">Community</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-      </ul>
-    </div>
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com">
-        <button type="button">Subscribe</button>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
+
+<div class="footer-container">
+
+<div class="footer-brand">
+
+<h2>
+
+⬡ UIverse
+
+</h2>
+
+<p>
+
+Modern UI components and
+premium Bento Grid layouts
+for developers and designers.
+
+</p>
+
+</div>
+
+<div class="footer-col">
+
+<h3>
+
+Explore
+
+</h3>
+
+<ul>
+
+<li><a href="#">Buttons</a></li>
+<li><a href="#">Cards</a></li>
+<li><a href="#">Inputs</a></li>
+<li><a href="#">Forms</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h3>
+
+Resources
+
+</h3>
+
+<ul>
+
+<li><a href="#">Docs</a></li>
+<li><a href="#">Community</a></li>
+<li><a href="#">GitHub</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h3>
+
+Newsletter
+
+</h3>
+
+<form class="newsletter">
+
+<input
+type="email"
+placeholder="your@email.com">
+
+<button>
+
+Subscribe
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 UIverse • Premium Bento Collection
+
+</div>
+
 </footer>
 
+<script>
 
-  <script src="bent-grid.js"></script>
+const menuBtn =
+document.querySelector(".menu-btn");
+
+const sidebar =
+document.querySelector(".sidebar");
+
+if(menuBtn){
+
+menuBtn.addEventListener(
+"click",
+()=>{
+
+sidebar.classList.toggle(
+"active"
+);
+
+});
+
+}
+
+</script>
 
 </body>
 </html>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-1Qwh1pS3zZuMQN1FsOHStsiloDWWy5WcWzYcBYxY7UU= sha256-Et7itMpk4y5/O4VwdQjco7K4OzSbIXzyU4H7iaCjq/M= sha256-GbOd/IJFN/G+V/jD+q/uSAzXgy6rXpGt3ZcniIVaU7c= sha256-NDSEiPHXu/v41NzO7o/iuUXO/623Hef+PlYmL2i4LxE= sha256-SAna37QLNVeBfHFa9RLAzTvyBMaE77QU/Cm8PgNEHMs= sha256-iklNbJwPuJNcu4UryGS7Wnp66TQ/9ToxGXiehN0xSxI= sha256-uJJbtHBtc62B5yg5vApdDVuEAl3ZbW94dv/7ZxXnotY= sha256-y4PsiKA7LJy1wpIR6/po2vCHtN6wq/Ji7rnJH+92hR8=; script-src-attr 'unsafe-hashes' sha256-1Qwh1pS3zZuMQN1FsOHStsiloDWWy5WcWzYcBYxY7UU= sha256-Et7itMpk4y5/O4VwdQjco7K4OzSbIXzyU4H7iaCjq/M= sha256-GbOd/IJFN/G+V/jD+q/uSAzXgy6rXpGt3ZcniIVaU7c= sha256-NDSEiPHXu/v41NzO7o/iuUXO/623Hef+PlYmL2i4LxE= sha256-SAna37QLNVeBfHFa9RLAzTvyBMaE77QU/Cm8PgNEHMs= sha256-iklNbJwPuJNcu4UryGS7Wnp66TQ/9ToxGXiehN0xSxI= sha256-uJJbtHBtc62B5yg5vApdDVuEAl3ZbW94dv/7ZxXnotY= sha256-y4PsiKA7LJy1wpIR6/po2vCHtN6wq/Ji7rnJH+92hR8=; style-src 'self' https: 'unsafe-hashes' sha256-vl1aV2hERHMThM6dWSOTS11/bPjMLPS/Cd4ho8N3fLs=; style-src-attr 'unsafe-hashes' sha256-vl1aV2hERHMThM6dWSOTS11/bPjMLPS/Cd4ho8N3fLs=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Todo App</title>
 
@@ -183,6 +185,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="todo-container">
 
@@ -193,12 +197,60 @@
         type="text"
         id="taskInput"
         placeholder="Add your task..."
-      >
+       data-a11y-remediation="label-needed">
 
       <button onclick="addTask()">
         Add
       </button>
     </div>
+    <!-- Search -->
+<div class="search-box">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search tasks..."
+    onkeyup="renderTasks()"
+  >
+</div>
+
+<!-- Filters -->
+<div class="filters">
+  <button class="filter-btn active" onclick="setFilter('all',this)">
+    All
+  </button>
+
+  <button class="filter-btn" onclick="setFilter('active',this)">
+    Active
+  </button>
+
+  <button class="filter-btn" onclick="setFilter('completed',this)">
+    Completed
+  </button>
+</div>
+
+<!-- Progress -->
+<div class="progress-wrapper">
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <span id="progressText">0% Complete</span>
+</div>
+
+<!-- Task Details -->
+<div class="extra-inputs">
+
+  <select id="priority">
+    <option value="Low">Low Priority</option>
+    <option value="Medium">Medium Priority</option>
+    <option value="High">High Priority</option>
+  </select>
+
+  <input
+    type="date"
+    id="dueDate"
+  >
+
+</div>
 
     <div class="stats">
       <span id="totalTasks">Total: 0</span>
@@ -208,6 +260,23 @@
     <ul class="todo-list" id="todoList"></ul>
 
   </div>
+  <div>
+  <span class="task-text ${task.completed ? "completed" : ""}">
+    ${task.text}
+  </span>
+
+  <div class="task-meta">
+
+    <span class="priority ${task.priority.toLowerCase()}">
+      ${task.priority}
+    </span>
+
+    <small>
+      📅 ${task.dueDate || "No Date"}
+    </small>
+
+  </div>
+</div>
 
   <script>
 
@@ -317,5 +386,6 @@
 
   </script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

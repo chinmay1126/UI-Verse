@@ -39,37 +39,39 @@ body{
   color:var(--text);
 
   font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
 }
 
 
 
-/*Filter Scearch*/
-
-.scearch{
-  display: flex;
-  align-items: center;
-  max-width: 250px;
-  gap: 8px;
-  background: var(--card-bg);
-  border: 1.5px solid white;
-  border-radius: 40px;
-  padding: 7px 16px;
-  transition: all var(--transition);
+/* Filter Search */
+.search{
+  display:flex;
+  align-items:center;
+  max-width:320px;
+  width:100%;
+  gap:8px;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--border);
+  border-radius:40px;
+  padding:10px 16px;
+  transition:all var(--transition);
 }
 
-.scearch i{
-  font-size: 12px;
-  color: #aaa;
+.search i{
+  font-size:12px;
+  color:#9ca9c5;
 }
 
 #badgesSearch{
-  border: none;
-  outline: none;
-  background: transparent;
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--text-primary);
-  width: 160px;
+  border:none;
+  outline:none;
+  background:transparent;
+  font-family:inherit;
+  font-size:13px;
+  color:var(--text);
+  width:100%;
+  min-width:0;
 }
 
 /* SIDEBAR */
@@ -330,6 +332,9 @@ MAIN
   margin-left:240px;
 
   padding:120px 40px 60px;
+  width:calc(100vw - 240px);
+  max-width:none;
+  min-width:0;
 }
 
 /* HERO */
@@ -404,6 +409,90 @@ MAIN
   flex-wrap:wrap;
 }
 
+.security-level-badge,
+.soc-badge,
+.cloud-ready-badge,
+.agent-badge,
+.enterprise-plan-badge,
+.trending-now-badge,
+.growth-badge,
+.verified-org-badge,
+.nft-verified-badge,
+.achievement-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.security-level-badge{
+  background:#12212f;
+  color:#4dd4ff;
+  border:1px solid #2c4f6a;
+}
+
+.soc-badge{
+  background:#eefaf4;
+  color:#0d8b57;
+}
+
+.cloud-ready-badge{
+  background:#16243a;
+  color:#8ecbff;
+}
+
+.agent-badge{
+  background:#12151f;
+  color:#73ffbe;
+}
+
+.agent-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#00ff88;
+  animation:pulse 1.5s infinite;
+}
+
+.enterprise-plan-badge{
+  background:linear-gradient(135deg,#2f2f3d,#1d1d29);
+  color:#fff;
+}
+
+.trending-now-badge{
+  background:linear-gradient(135deg,#ff6b35,#ff3b3b);
+  color:#fff;
+}
+
+.growth-badge{
+  background:#e8fff2;
+  color:#00a44a;
+}
+
+.verified-org-badge{
+  background:#0f172a;
+  color:#60a5fa;
+}
+
+.nft-verified-badge{
+  background:linear-gradient(135deg,#7b61ff,#00d4ff);
+  color:#fff;
+}
+
+.achievement-badge{
+  background:linear-gradient(135deg,#ffb347,#ffcc33);
+  color:#111;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);opacity:1;}
+  50%{transform:scale(1.4);opacity:.6;}
+  100%{transform:scale(1);opacity:1;}
+}
 .hero-stat{
 
   padding:22px 28px;
@@ -476,9 +565,10 @@ MAIN
   display:grid;
 
   grid-template-columns:
-    repeat(auto-fit,minmax(340px,1fr));
+    repeat(auto-fit,minmax(300px,1fr));
 
   gap:28px;
+  width:100%;
 }
 
 /* CARD */
@@ -1546,6 +1636,64 @@ MAIN
 
 }
 
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.badge-solid {
+  background: #333;
+  color: #fff;
+}
+
+.badge-outline {
+  border: 1px solid #333;
+  color: #333;
+  background: transparent;
+}
+
+.badge-gradient {
+  background: linear-gradient(135deg, #06b6d4, #9333ea);
+  color: #fff;
+}
+
+.badge-gradient {
+  background: linear-gradient(135deg, #06b6d4, #9333ea);
+  color: #fff;
+}
+
+.badge-sm { font-size: 10px; padding: 2px 6px; }
+.badge-md { font-size: 12px; padding: 4px 10px; }
+.badge-lg { font-size: 14px; padding: 6px 14px; }
+
+.badge-success { background: #22c55e; color: #fff; }
+.badge-danger { background: #ef4444; color: #fff; }
+.badge-warning { background: #f59e0b; color: #fff; }
+
+.badge-pulse {
+  position: relative;
+}
+
+.badge-pulse::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  border: 2px solid currentColor;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
 body {
   padding-bottom: 120px; /* give space equal to footer height */
 }
@@ -1665,4 +1813,206 @@ VIP BADGE
   box-shadow:
     0 0 20px rgba(255,193,7,0.4),
     0 10px 30px rgba(255,157,0,0.25);
+}
+
+/* =========================================
+NEW PROFESSIONAL BADGES
+
+.security-badge{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 20px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:#38bdf8;
+  font-weight:700;
+  letter-spacing:.5px;
+  box-shadow:0 0 20px rgba(56,189,248,.25);
+}
+
+.trending-badge{
+  padding:12px 20px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ff6b00,#ff3d00);
+  color:#fff;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  box-shadow:0 10px 30px rgba(255,98,0,.3);
+}
+
+.pro-badge{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 22px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#7b61ff,#9f7aea);
+  color:#fff;
+  font-weight:700;
+  box-shadow:0 0 20px rgba(123,97,255,.35);
+}
+
+.featured-badge{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 20px;
+  border-radius:999px;
+  background:#fff7ed;
+  color:#ea580c;
+  border:1px solid #fdba74;
+  font-weight:700;
+}
+
+.nft-badge{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 20px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#111827,#4f46e5);
+  color:#fff;
+  font-weight:700;
+  box-shadow:0 0 25px rgba(99,102,241,.4);
+}
+
+.cloud-badge{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 20px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#e0f2fe,#bae6fd);
+  color:#0369a1;
+  font-weight:700;
+}
+
+.elite-badge{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 24px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#facc15,#ca8a04);
+  color:#111827;
+  font-weight:800;
+  box-shadow:0 0 25px rgba(250,204,21,.35);
+}
+
+.dev-badge{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  border-radius:10px;
+  background:#111827;
+  color:#22c55e;
+  font-weight:700;
+  font-family:monospace;
+  border:1px solid rgba(34,197,94,.3);
+}
+
+
+/* =========================================
+NEW PROFESSIONAL BADGES
+
+.enterprise-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#1f2937,#111827);
+  color:#fff;
+  font-weight:700;
+  letter-spacing:1px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+.verified-pro-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  color:#fff;
+  font-weight:700;
+  box-shadow:0 8px 25px rgba(37,99,235,0.35);
+}
+
+.startup-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#ff6b2c,#ffb347);
+  color:#fff;
+  font-weight:800;
+  letter-spacing:1px;
+  box-shadow:0 10px 28px rgba(255,107,44,0.35);
+}
+
+.api-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 20px;
+  border-radius:12px;
+  border:2px solid #06b6d4;
+  background:#ecfeff;
+  color:#0f172a;
+  font-weight:700;
+}
+
+.gold-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 24px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#f59e0b,#fde68a);
+  color:#111827;
+  font-weight:800;
+  box-shadow:0 10px 30px rgba(245,158,11,0.35);
+}
+
+.payment-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 20px;
+  border-radius:999px;
+  background:#dcfce7;
+  color:#166534;
+  font-weight:700;
+  border:1px solid #86efac;
+}
+
+.analytics-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#7c3aed,#a855f7);
+  color:#fff;
+  font-weight:700;
+  box-shadow:0 10px 30px rgba(124,58,237,0.35);
+}
+
+.delivery-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 20px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#10b981,#34d399);
+  color:#fff;
+  font-weight:700;
+  box-shadow:0 10px 25px rgba(16,185,129,0.35);
 }

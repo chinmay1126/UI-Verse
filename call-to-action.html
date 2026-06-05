@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Call To Action Section</title>
 
@@ -18,23 +20,22 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-   <link rel="stylesheet" href="shared-sidebar.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-</head>
+   </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- =========================================================
    NAVBAR
 ========================================================= -->
 
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -378,6 +379,13 @@
   </div>
 </aside>
 
+
+<div class="trust-badges">
+  <span>⚡ No Framework Required</span>
+  <span>🎨 Fully Customizable</span>
+  <span>📱 Mobile First</span>
+</div>
+
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
   <section class="cta-section">
 
@@ -396,7 +404,7 @@
       </p>
 
       <div class="cta-buttons">
-        <button class="primary-btn" id="startBtn">
+        <button class="primary-btn" id="startBtn" aria-label="Start building now">
           Start Now
         </button>
 
@@ -416,6 +424,26 @@
   
 
   </section>
+
+  <section class="final-cta">
+  <div class="final-cta-content">
+
+    <h2>
+      Ready to Build Something Amazing?
+    </h2>
+
+    <p>
+      Start exploring hundreds of modern UI components today.
+    </p>
+
+    <a href="#explore" class="btn-primary">
+      Browse Components
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+  </div>
+</section>
+
   <section class="cta-split">
   <div class="cta-text">
     <h2>Ready to Elevate Your UI?</h2>
@@ -436,6 +464,41 @@
   <h2>Boost Your Productivity</h2>
   <p>Access ready-to-use UI blocks and accelerate your workflow.</p>
   <a href="#get-started" class="btn-primary">Get Started</a>
+</section>
+
+<!-- New CTA Components Grid -->
+<section class="cta-cards" id="explore">
+  <div class="cta-cards-inner">
+    <article class="cta-card">
+      <div class="card-icon">📦</div>
+      <h3>Download UI Kit</h3>
+      <p>Grab the full UI kit with components, tokens, and templates to get started quickly.</p>
+      <div class="card-actions">
+        <a class="btn-outline" href="#">Download</a>
+        <a class="btn-link" href="#">Release notes</a>
+      </div>
+    </article>
+
+    <article class="cta-card">
+      <div class="card-icon">⭐</div>
+      <h3>Premium Templates</h3>
+      <p>Beautiful, production-ready templates for landing pages, dashboards, and e‑commerce.</p>
+      <div class="card-actions">
+        <a class="btn-primary" href="#">Explore</a>
+        <a class="btn-link" href="#">See examples</a>
+      </div>
+    </article>
+
+    <article class="cta-card">
+      <div class="card-icon">📞</div>
+      <h3>Request a Demo</h3>
+      <p>Book a short walkthrough with our team to see how UIverse fits your workflow.</p>
+      <div class="card-actions">
+        <a class="btn-primary" href="#">Request</a>
+        <a class="btn-link" href="#">Contact sales</a>
+      </div>
+    </article>
+  </div>
 </section>
 
   
@@ -492,5 +555,6 @@
 
 
   <script src="call-to-action.js"></script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

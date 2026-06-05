@@ -1,48 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Interactive Roadmap Timeline</title>
-  <link rel="stylesheet" href="style.css">
+  <meta
+    name="description"
+    content="Interactive project roadmap timeline showing planning, design, development, and deployment phases."
+  >
 </head>
+
 <body>
+  <!-- Skip Navigation -->
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
 
-  <section class="timeline">
+  <!-- Main Content -->
+  <main id="main-content">
+    <section
+      class="timeline"
+      aria-labelledby="timeline-heading"
+    >
+      <h1 id="timeline-heading">
+        Project Roadmap Timeline
+      </h1>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h2>Phase 1</h2>
-        <p>Project planning and requirement analysis.</p>
-      </div>
-    </div>
+      <ol class="timeline-list">
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h2>Phase 2</h2>
-        <p>UI/UX design and wireframe creation.</p>
-      </div>
-    </div>
+        <li class="timeline-item">
+          <span
+            class="timeline-dot"
+            aria-hidden="true"
+          ></span>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h2>Phase 3</h2>
-        <p>Frontend and backend development process.</p>
-      </div>
-    </div>
+          <article class="timeline-content">
+            <h2>Phase 1</h2>
+            <p>Project planning and requirement analysis.</p>
+          </article>
+        </li>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h2>Phase 4</h2>
-        <p>Testing, optimization, and deployment.</p>
-      </div>
-    </div>
+        <li class="timeline-item">
+          <span
+            class="timeline-dot"
+            aria-hidden="true"
+          ></span>
 
-  </section>
+          <article class="timeline-content">
+            <h2>Phase 2</h2>
+            <p>UI/UX design and wireframe creation.</p>
+          </article>
+        </li>
 
+        <li class="timeline-item">
+          <span
+            class="timeline-dot"
+            aria-hidden="true"
+          ></span>
+
+          <article class="timeline-content">
+            <h2>Phase 3</h2>
+            <p>Frontend and backend development process.</p>
+          </article>
+        </li>
+
+        <li class="timeline-item">
+          <span
+            class="timeline-dot"
+            aria-hidden="true"
+          ></span>
+
+          <article class="timeline-content">
+            <h2>Phase 4</h2>
+            <p>Testing, optimization, and deployment.</p>
+          </article>
+        </li>
+
+      </ol>
+    </section>
+  </main>
+
+  <script src="../dist/shared.js"></script>
 </body>
 </html>

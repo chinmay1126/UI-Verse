@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
 
+
+<head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
@@ -41,6 +44,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 
       <!-- ================= SIDEBAR ================= -->
@@ -418,7 +423,7 @@ TOPBAR
     <input
       type="text"
       placeholder="Search kanban tasks..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
@@ -500,6 +505,9 @@ MAIN
         <div
           class="task-card"
           draggable="true"
+          tabindex="0"
+          aria-grabbed="false"
+          role="listitem"
         >
 
           <div class="task-top">
@@ -768,8 +776,493 @@ MAIN
       </div>
 
     </div>
+    <!-- =========================================
+    ADVANCED CREATIVE KANBAN COMPONENTS
+    ========================================= -->
 
-  </section>
+   
+
+  <!-- GLASS COLUMN -->
+
+  <div class="neo-column">
+
+    <div class="neo-header">
+
+      <div class="left">
+
+        <span class="pulse-dot red"></span>
+
+        <div>
+          <h2>Critical Tasks</h2>
+          <p>High priority missions</p>
+        </div>
+
+      </div>
+
+      <button class="add-btn">
+        +
+      </button>
+
+    </div>
+
+    <!-- TASK -->
+
+    <div class="neo-task danger-card">
+
+      <div class="task-cover gradient-red"></div>
+
+      <div class="neo-top">
+
+        <span class="tag urgent">
+          Urgent
+        </span>
+
+        <i class="fa-solid fa-bolt"></i>
+
+      </div>
+
+      <h3>
+        Fix Payment Gateway
+      </h3>
+
+      <p>
+        Resolve API timeout and checkout
+        transaction failures.
+      </p>
+
+      <div class="mini-progress">
+
+        <div class="mini-fill red-fill"></div>
+
+      </div>
+
+      <div class="neo-footer">
+
+        <div class="avatar-stack">
+
+          <img src="https://i.pravatar.cc/100?img=5">
+
+          <img src="https://i.pravatar.cc/100?img=8">
+
+          <img src="https://i.pravatar.cc/100?img=10">
+
+        </div>
+
+        <span class="deadline">
+          3h Left
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- TASK -->
+
+    <div class="neo-task dark-card">
+
+      <div class="neo-top">
+
+        <span class="tag bug">
+          Bug
+        </span>
+
+        <i class="fa-solid fa-bug"></i>
+
+      </div>
+
+      <h3>
+        Mobile Layout Crash
+      </h3>
+
+      <p>
+        Responsive layout breaking on
+        small screen devices.
+      </p>
+
+      <div class="task-stats">
+
+        <div>
+          <i class="fa-regular fa-comment"></i>
+          12
+        </div>
+
+        <div>
+          <i class="fa-regular fa-paperclip"></i>
+          6
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- AI COLUMN -->
+
+  <div class="neo-column">
+
+    <div class="neo-header">
+
+      <div class="left">
+
+        <span class="pulse-dot blue"></span>
+
+        <div>
+          <h2>AI Workflow</h2>
+          <p>Automation pipeline</p>
+        </div>
+
+      </div>
+
+      <button class="add-btn">
+        +
+      </button>
+
+    </div>
+
+    <!-- TASK -->
+
+    <div class="ai-card">
+
+      <div class="ai-glow"></div>
+
+      <div class="ai-top">
+
+        <span class="tag ai">
+          AI
+        </span>
+
+        <span class="live-badge">
+          LIVE
+        </span>
+
+      </div>
+
+      <h3>
+        Smart Assistant Training
+      </h3>
+
+      <p>
+        Fine tuning futuristic chatbot
+        behavior patterns.
+      </p>
+
+      <div class="wave-loader">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+      <div class="ai-footer">
+
+        <span>
+          Processing...
+        </span>
+
+        <span>
+          89%
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- TASK -->
+
+    <div class="music-task">
+
+      <div class="music-icon">
+        <i class="fa-solid fa-headphones"></i>
+      </div>
+
+      <div>
+
+        <h3>
+          Voice UI Design
+        </h3>
+
+        <p>
+          Audio interaction workflow.
+        </p>
+
+      </div>
+
+      <button class="play-btn">
+        <i class="fa-solid fa-play"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- FUTURE COLUMN -->
+
+  <div class="neo-column">
+
+    <div class="neo-header">
+
+      <div class="left">
+
+        <span class="pulse-dot green"></span>
+
+        <div>
+          <h2>Future Ideas</h2>
+          <p>Experimental concepts</p>
+        </div>
+
+      </div>
+
+      <button class="add-btn">
+        +
+      </button>
+
+    </div>
+
+    <!-- TASK -->
+
+    <div class="holo-card">
+
+      <div class="holo-bg"></div>
+
+      <span class="idea-chip">
+        Concept
+      </span>
+
+      <h3>
+        Holographic Dashboard
+      </h3>
+
+      <p>
+        Interactive futuristic analytics
+        with floating widgets.
+      </p>
+
+      <div class="idea-footer">
+
+        <span>
+          <i class="fa-solid fa-lightbulb"></i>
+          24 Ideas
+        </span>
+
+        <span>
+          Tomorrow
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- TASK -->
+
+    <div class="timeline-task">
+
+      <div class="timeline-line"></div>
+
+      <div class="timeline-content">
+
+        <span class="time">
+          11:45 PM
+        </span>
+
+        <h3>
+          Launch Beta System
+        </h3>
+
+        <p>
+          Release futuristic workspace
+          prototype to testers.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- =========================================
+CREATIVE KANBAN CARDS
+========================================= -->
+
+<!-- CYBER SECURITY CARD -->
+
+<div class="kanban-card cyber-card">
+
+  <div class="cyber-grid"></div>
+
+  <div class="card-top">
+
+    <span class="status-chip danger">
+      Security
+    </span>
+
+    <i class="fa-solid fa-shield-halved"></i>
+
+  </div>
+
+  <h3>
+    Firewall Protection Upgrade
+  </h3>
+
+  <p>
+    Deploy next generation cyber
+    security protocols across servers.
+  </p>
+
+  <div class="threat-box">
+
+    <div class="threat-bar">
+
+      <div class="threat-fill"></div>
+
+    </div>
+
+    <span>
+      Threat Level 92%
+    </span>
+
+  </div>
+
+  <div class="card-bottom">
+
+    <div class="mini-users">
+
+      <img src="https://i.pravatar.cc/100?img=33">
+      <img src="https://i.pravatar.cc/100?img=25">
+
+    </div>
+
+    <span class="priority-text">
+      Critical
+    </span>
+
+  </div>
+
+</div>
+
+<!-- SPACE MISSION CARD -->
+
+<div class="kanban-card space-card">
+
+  <div class="planet planet-1"></div>
+  <div class="planet planet-2"></div>
+
+  <div class="card-top">
+
+    <span class="status-chip galaxy">
+      Space
+    </span>
+
+    <i class="fa-solid fa-rocket"></i>
+
+  </div>
+
+  <h3>
+    Launch Orbit Dashboard
+  </h3>
+
+  <p>
+    Build futuristic mission control
+    analytics for deep space systems.
+  </p>
+
+  <div class="orbit-progress">
+
+    <div class="orbit-circle">
+
+      <span>
+        73%
+      </span>
+
+    </div>
+
+  </div>
+
+  <div class="space-footer">
+
+    <span>
+      <i class="fa-regular fa-clock"></i>
+      Tomorrow
+    </span>
+
+    <span>
+      12 Tasks
+    </span>
+
+  </div>
+
+</div>
+
+<!-- NEON MUSIC CARD -->
+
+<div class="kanban-card neon-music-card">
+
+  <div class="music-lines">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </div>
+
+  <div class="card-top">
+
+    <span class="status-chip music">
+      Audio
+    </span>
+
+    <i class="fa-solid fa-wave-square"></i>
+
+  </div>
+
+  <h3>
+    Synthwave Sound System
+  </h3>
+
+  <p>
+    Create immersive futuristic
+    ambient sound experience.
+  </p>
+
+  <div class="song-controls">
+
+    <button>
+      <i class="fa-solid fa-backward"></i>
+    </button>
+
+    <button class="play-main">
+      <i class="fa-solid fa-play"></i>
+    </button>
+
+    <button>
+      <i class="fa-solid fa-forward"></i>
+    </button>
+
+  </div>
+
+  <div class="audio-time">
+
+    <span>
+      01:42
+    </span>
+
+    <span>
+      04:58
+    </span>
+
+  </div>
+
+</div>
+  
+
+
+
+</div>
+
+</section>
 
 </main>
 
@@ -882,5 +1375,6 @@ MAIN
 
 <script src="Kanbanui.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

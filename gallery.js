@@ -2,6 +2,7 @@
 FILTER BUTTONS
 ===================================================== */
 
+
 const filterButtons =
   document.querySelectorAll(
     ".filter-btn"

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-3fNhDUVanma9ila57W913tYKh3C9djtNN/IxWtWBf3g= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=; script-src-attr 'unsafe-hashes' sha256-3fNhDUVanma9ila57W913tYKh3C9djtNN/IxWtWBf3g= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=; style-src 'self' https: 'unsafe-hashes' sha256-2umcn+agVXAAH7ybvLm4aYf1faMmAZXpCEitUvJ45hg= sha256-By5pltHU7VTuOgpf5wY8z38wc7gEJjqUzdk2qBa16L4= sha256-Dlylv5S1DjVmUJ85VXsWgR3xVzXnik999iy4GijsDNU= sha256-sMU3QaHK+HdjEfm/dPzbp9c7vVK3Trj6XcFFGU19EN8=; style-src-attr 'unsafe-hashes' sha256-2umcn+agVXAAH7ybvLm4aYf1faMmAZXpCEitUvJ45hg= sha256-By5pltHU7VTuOgpf5wY8z38wc7gEJjqUzdk2qBa16L4= sha256-Dlylv5S1DjVmUJ85VXsWgR3xVzXnik999iy4GijsDNU= sha256-sMU3QaHK+HdjEfm/dPzbp9c7vVK3Trj6XcFFGU19EN8=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authentication Components — UIverse</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,12 +26,10 @@
   />
 
   <link rel="stylesheet" href="auth.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-  
-  
-  
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="app-container">
 
@@ -364,10 +364,10 @@
     <div class="top-bar">
       <div class="search-wrapper">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" class="search-input" placeholder="Search components… (Press ⌘K)">
+        <input type="text" class="search-input" placeholder="Search components… (Press ⌘K)" data-a11y-remediation="label-needed">
       </div>
       <div class="header-actions">
-        <button class="btn-header primary"><i class="fa-solid fa-plus"></i> Add Component</button>
+        <button class="btn-header primary" data-a11y-remediation="button-label-needed"><i class="fa-solid fa-plus"></i> Add Component</button>
         <button class="btn-header"><i class="fa-solid fa-bookmark"></i> My Collection</button>
         <button class="btn-header-icon" id="mode-toggle-btn" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
       </div>
@@ -494,7 +494,7 @@
           <button class="favorite-toggle"><i class="fa-regular fa-star"></i></button>
           <div class="auth-demo-wrapper">
             <div class="input-field-group">
-              <input type="email" class="auth-text-input" placeholder="name@domain.com" style="margin-bottom:8px;padding-left:14px;">
+              <input type="email" class="auth-text-input" placeholder="name@domain.com" style="margin-bottom:8px;padding-left:14px;" required autocomplete="email" aria-required="true">
               <button class="submit-action-btn"><i class="fa-solid fa-paper-plane"></i> Send Magic Link</button>
             </div>
           </div>
@@ -725,18 +725,30 @@
 <!-- Toast -->
 <div class="toast" id="toastMsg"><i class="fa-solid fa-circle-check"></i> <span id="toastText">Copied!</span></div>
 
-<!-- Footer -->
+<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
+
   <div class="footer-container">
 
-    <div class="socials">
-      <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+
+      <p>
+        Build modern, reusable UI components with
+        clean HTML, CSS and JavaScript.
+      </p>
+
+      <div class="socials">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
     </div>
 
     <div class="footer-col">
       <h3>Explore</h3>
+
       <ul>
         <li><a href="button.html">Buttons</a></li>
         <li><a href="navbar.html">Navbars</a></li>
@@ -748,37 +760,52 @@
 
     <div class="footer-col">
       <h3>Resources</h3>
+
       <ul>
         <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h3>Legal</h3>
+
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
       </ul>
     </div>
 
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
+
+      <p>
+        Get notified whenever new
+        components are released.
+      </p>
+
       <div class="newsletter-form">
-        <input type="email" id="newsletterEmail" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+
+        <input
+          type="email"
+          id="newsletterEmail"
+          placeholder="your@email.com">
+
+        <button onclick="subscribe()">
+          Subscribe
+        </button>
+
       </div>
+
     </div>
 
   </div>
+
   <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    © 2026 UIverse. Made with ❤️ for developers worldwide.
   </div>
+
 </footer>
 
 <script>
@@ -875,39 +902,251 @@
   });
 
   /* ── Card Buttons ── */
-  document.querySelectorAll('.component-card').forEach(card => {
-    const label   = card.getAttribute('data-label') || card.getAttribute('data-id');
-    const id      = card.getAttribute('data-id');
-    const viewBtn = card.querySelector('.btn-main-view');
-    const copyBtn = card.querySelector('.btn-secondary-copy');
-    const zipBtn  = card.querySelector('.btn-icon-zip');
-    const favBtn  = card.querySelector('.favorite-toggle');
+document.querySelectorAll('.component-card').forEach(card => {
+  const label   = card.getAttribute('data-label') || card.getAttribute('data-id');
+  const id      = card.getAttribute('data-id');
+  const viewBtn = card.querySelector('.btn-main-view');
+  const copyBtn = card.querySelector('.btn-secondary-copy');
+  const zipBtn  = card.querySelector('.btn-icon-zip');
+  const favBtn  = card.querySelector('.favorite-toggle');
 
-    /* Favourite */
-    if (favBtn) {
-      favBtn.addEventListener('click', () => {
-        const ico = favBtn.querySelector('i');
-        ico.classList.toggle('fa-regular');
-        ico.classList.toggle('fa-solid');
-      });
-    }
+  /* Favourite */
+  if (favBtn) {
+    favBtn.addEventListener('click', () => {
+      const ico = favBtn.querySelector('i');
+      ico.classList.toggle('fa-regular');
+      ico.classList.toggle('fa-solid');
+    });
+  }
 
-    /* View Code */
-    viewBtn.addEventListener('click', () => openModal(getCleanMarkup(card)));
+  /* View Code */
+  if (viewBtn) {
+    viewBtn.addEventListener('click', () => {
+      openModal(getCleanMarkup(card));
+    });
+  }
 
-    /* Copy */
+  /* Copy */
+  if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(getCleanMarkup(card)).then(() => {
-        const orig = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Copied!';
-        copyBtn.style.cssText = 'border-color:#10b981;color:#10b981;';
-        showToast('"' + label + '" copied to clipboard');
-        setTimeout(() => { copyBtn.innerHTML = orig; copyBtn.style.cssText = ''; }, 1500);
-      }).catch(() => showToast('Copy failed — check browser permissions'));
+      navigator.clipboard.writeText(getCleanMarkup(card))
+        .then(() => {
+          const original = copyBtn.innerHTML;
+
+          copyBtn.innerHTML =
+            '<i class="fa-solid fa-circle-check"></i> Copied!';
+
+          copyBtn.style.borderColor = '#10b981';
+          copyBtn.style.color = '#10b981';
+
+          showToast(`"${label}" copied to clipboard`);
+
+          setTimeout(() => {
+            copyBtn.innerHTML = original;
+            copyBtn.style.borderColor = '';
+            copyBtn.style.color = '';
+          }, 1500);
+        })
+        .catch(() => {
+          showToast('Copy failed');
+        });
     });
+  }
+
+  /* ZIP Download */
+  if (zipBtn) {
+    zipBtn.addEventListener('click', async () => {
+      try {
+        if (typeof JSZip === 'undefined') {
+          showToast('JSZip not loaded');
+          return;
+        }
+
+        const markup = getCleanMarkup(card);
+
+        const htmlSrc = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${label}</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div style="
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:2rem;
+background:#f8fafc;
+">
+${markup}
+</div>
+</body>
+</html>`;
+
+        const css = await fetch('auth.css').then(r => {
+          if (!r.ok) throw new Error();
+          return r.text();
+        });
+
+        const zip = new JSZip();
+
+        zip.file('index.html', htmlSrc);
+        zip.file('style.css', css);
+
+        const blob = await zip.generateAsync({
+          type: 'blob'
+        });
+
+        const a = document.createElement('a');
+
+        a.href = URL.createObjectURL(blob);
+        a.download = `${id}.zip`;
+
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        URL.revokeObjectURL(a.href);
+
+        showToast(`"${label}" downloaded`);
+      } catch {
+        showToast(
+          'ZIP export requires Live Server or a local server'
+        );
+      }
     });
+  }
+});
+
+/* ── Search Components ── */
+const searchInput = document.querySelector('.search-input');
+
+if (searchInput) {
+  searchInput.addEventListener('input', e => {
+    const value = e.target.value.toLowerCase();
+
+    document.querySelectorAll('.component-card').forEach(card => {
+      const searchableText =
+        `${card.dataset.label || ''} ${card.dataset.id || ''}`
+        .toLowerCase();
+
+      card.style.display =
+        searchableText.includes(value)
+          ? ''
+          : 'none';
+    });
+  });
+}
+
+/* ── ESC Modal Close ── */
+document.addEventListener('keydown', e => {
+  if (
+    e.key === 'Escape' &&
+    codeOverlay.classList.contains('active')
+  ) {
+    codeOverlay.classList.remove('active');
+  }
+});
+
+/* ── Sidebar Toggle ── */
+function toggleSidebar() {
+  document
+    .getElementById('sidebar')
+    .classList.toggle('open');
+
+  document
+    .getElementById('sidebarBackdrop')
+    .classList.toggle('active');
+}
+/* ── Card Buttons ── */
+document.querySelectorAll('.component-card').forEach(card => {
+  const label   = card.getAttribute('data-label') || card.getAttribute('data-id');
+  const id      = card.getAttribute('data-id');
+  const viewBtn = card.querySelector('.btn-main-view');
+  const copyBtn = card.querySelector('.btn-secondary-copy');
+  const zipBtn  = card.querySelector('.btn-icon-zip');
+  const favBtn  = card.querySelector('.favorite-toggle');
+
+  /* Favourite */
+  if (favBtn) {
+    favBtn.addEventListener('click', () => {
+      const ico = favBtn.querySelector('i');
+      ico.classList.toggle('fa-regular');
+      ico.classList.toggle('fa-solid');
+    });
+  }
+
+  /* View Code */
+  viewBtn.addEventListener('click', () => openModal(getCleanMarkup(card)));
+
+  /* Copy */
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(getCleanMarkup(card)).then(() => {
+      const orig = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Copied!';
+      copyBtn.style.cssText = 'border-color:#10b981;color:#10b981;';
+      showToast('"' + label + '" copied to clipboard');
+      setTimeout(() => { copyBtn.innerHTML = orig; copyBtn.style.cssText = ''; }, 1500);
+    }).catch(() => showToast('Copy failed — check browser permissions'));
+  });
+
+  /* ZIP — needs a local server (Live Server / python -m http.server) */
+  zipBtn.addEventListener('click', () => {
+    if (typeof JSZip === 'undefined') { showToast('JSZip failed to load'); return; }
+    const markup = getCleanMarkup(card);
+    const htmlSrc = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${label} — UIverse Export</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div style="display:flex;justify-content:center;align-items:center;min-height:100vh;background:#f8fafc;padding:20px;">
+    ${markup}
+  </div>
+  <script src="dist/shared.js"></script>
+</body>
+</html>`;   /* 👈 CLOSE template string here */
+
+    fetch('auth.css')
+      .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+      .then(css => {
+        const zip = new JSZip();
+        zip.file('index.html', htmlSrc);
+        zip.file('style.css', css);
+        return zip.generateAsync({ type: 'blob' });
+      })
+      .then(blob => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = id + '.zip';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+        showToast('"' + label + '" downloaded as ZIP');
+      })
+      .catch(() => showToast('ZIP needs a local server — open with Live Server or python -m http.server'));
+  });
+});
+  
 
     
 </script>
-</body>
+  </body>
 </html>

@@ -113,6 +113,72 @@
     return Array.from(new Set(toArray(tags).map((tag) => normalizeString(tag).toLowerCase()).filter(Boolean)));
   }
 
+  function normalizeRegistryItems(registryItems = []) {
+    return toArray(registryItems).filter(Boolean).map((entry) => {
+      const files = entry.files || {};
+      const htmlPath = normalizeString(files.html || entry.path || entry.file || '');
+      const cssPath = normalizeString(files.css || entry.css || '');
+      const jsPath = normalizeString(files.js || entry.js || '');
+      const tags = normalizeTags(entry.tags || []);
+      const aliases = Array.from(new Set([
+        normalizeString(entry.name),
+        normalizeString(entry.title),
+        ...tags,
+        ...(entry.aliases || [])
+      ].map((value) => normalizeString(value).toLowerCase()).filter(Boolean)));
+
+      return {
+        id: normalizeString(entry.name || entry.id || htmlPath.replace(/\.html?$/i, '')).toLowerCase(),
+        title: normalizeString(entry.title || entry.name || entry.id || htmlPath),
+        path: htmlPath,
+        css: cssPath,
+        js: jsPath,
+        category: normalizeString(entry.category || guessCategory({
+          id: entry.name || entry.id || '',
+          title: entry.title || entry.name || '',
+          description: entry.description || '',
+          tags
+        })),
+        tags,
+        aliases,
+        description: normalizeString(entry.description || ''),
+        source: 'registry',
+        registry: entry,
+        dependencies: toArray(entry.dependencies || [])
+      };
+    });
+  }
+
+  function mergeComponentSources(primaryList, secondaryList) {
+    const merged = new Map();
+
+    toArray(primaryList).filter(Boolean).forEach((item) => {
+      if (!item || !item.id) return;
+      merged.set(item.id, { ...item });
+    });
+
+    toArray(secondaryList).filter(Boolean).forEach((item) => {
+      if (!item || !item.id) return;
+      if (merged.has(item.id)) {
+        const current = merged.get(item.id);
+        merged.set(item.id, {
+          ...item,
+          ...current,
+          tags: Array.from(new Set([...(current.tags || []), ...(item.tags || [])])),
+          aliases: Array.from(new Set([...(current.aliases || []), ...(item.aliases || [])])),
+          description: current.description || item.description || '',
+          path: current.path || item.path || '',
+          category: current.category || item.category || 'Component'
+        });
+        return;
+      }
+
+      merged.set(item.id, { ...item });
+    });
+
+    return Array.from(merged.values());
+  }
+
   function splitTokens(value) {
     return normalizeString(value)
       .toLowerCase()
@@ -522,6 +588,7 @@
     if (_state.initialized) return _state;
 
     let metadataList = [];
+    let registryList = [];
     if (Array.isArray(options.items)) {
       metadataList = options.items;
     } else {
@@ -529,7 +596,7 @@
         fetchJson(options.componentsUrl || '/data/components.json'),
         fetchJson(options.docsUrl || '/data/meta/documentation-catalog.json')
       ]);
-      metadataList = toArray(componentsData);
+      metadataList = toArray(componentsData?.components || componentsData);
       const docsArray = toArray(docsData?.components || docsData?.pages || docsData);
       const docsMap = new Map(docsArray.filter(Boolean).map((doc) => [doc.id, doc]));
       _state.docsById = docsMap;
@@ -550,9 +617,29 @@
       _state.docsById = new Map(options.docsItems.filter(Boolean).map((doc) => [doc.id, doc]));
     }
 
+    if (Array.isArray(options.registryItems)) {
+      registryList = options.registryItems;
+    } else if (options.registryUrl) {
+      const registryData = await fetchJson(options.registryUrl);
+      registryList = toArray(registryData?.registry || registryData);
+    }
+
     const docsArray = Array.from(_state.docsById.entries()).map(([id, doc]) => doc);
     const docsMap = _state.docsById.size > 0 ? _state.docsById : new Map(docsArray.map((doc) => [doc.id, doc]));
-    const items = metadataList.map((component) => {
+    const normalizedRegistry = normalizeRegistryItems(registryList);
+    const normalizedMetadata = toArray(metadataList).map((component) => ({
+      ...component,
+      id: normalizeString(component.id || component.name || component.path || '').toLowerCase(),
+      title: normalizeString(component.title || component.name || component.id || component.path || ''),
+      path: normalizeString(component.path || component.files?.html || ''),
+      description: normalizeString(component.description || ''),
+      category: normalizeString(component.category || ''),
+      tags: normalizeTags(component.tags || []),
+      aliases: normalizeTags(component.aliases || []),
+      source: component.source || 'metadata'
+    }));
+    const sourceList = mergeComponentSources(normalizedMetadata, normalizedRegistry);
+    const items = sourceList.map((component) => {
       const doc = docsMap.get(component.id) || null;
       const item = parseMetaItem(component, doc);
       if (!item.tags.length) {

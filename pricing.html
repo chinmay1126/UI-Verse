@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k= sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc= sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ekasjfaqD+DPT+9HdPKSNKs/R6SpDJfojsCqLkW1lgE= sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k= sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc= sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ekasjfaqD+DPT+9HdPKSNKs/R6SpDJfojsCqLkW1lgE= sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k= sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc= sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ekAbYmZ6ZbgUH3DIpDfwUIqwt1FDNMHCwt26Vi3nBhM= sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k= sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc= sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ekAbYmZ6ZbgUH3DIpDfwUIqwt1FDNMHCwt26Vi3nBhM= sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing — UIverse</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-
-  
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="pricing.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -336,13 +334,13 @@
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 <!-- ================= NAVBAR ================= -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" placeholder="Search components..." />
+    <input type="text" placeholder="Search components..." / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -1321,5 +1319,6 @@ document.querySelectorAll('.plan-btn, .glass-btn, .neon-btn, .minimal-btn')
   }, { threshold: 0.08 });
   document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

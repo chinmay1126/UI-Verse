@@ -30,3 +30,15 @@ data.forEach(user => {
 document.getElementById("passed").innerText = passed;
 document.getElementById("failed").innerText = failed;
 document.getElementById("total").innerText = data.length;
+
+function sortHigh() {
+  const sorted = [...results].sort((a, b) => b.score - a.score);
+  renderTable(sorted);
+  updateStats(sorted);
+}
+
+function sortLow() {
+  const sorted = [...results].sort((a, b) => a.score - b.score);
+  renderTable(sorted);
+  updateStats(sorted);
+}

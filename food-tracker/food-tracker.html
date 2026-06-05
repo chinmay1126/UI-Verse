@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-5J8QIN0uHa3X4+TaUpRKBKn3pljcpBNl9MhDpDECP+U= sha256-Czawdu2iy6YdMX921kiU5jasTU1dBVoK6eV0poMqNlI=; script-src-attr 'unsafe-hashes' sha256-5J8QIN0uHa3X4+TaUpRKBKn3pljcpBNl9MhDpDECP+U= sha256-Czawdu2iy6YdMX921kiU5jasTU1dBVoK6eV0poMqNlI=; style-src 'self' https: 'unsafe-hashes' sha256-2gcpFB35SLtmFltnzzrpTL5k8mzWeaK1BZmYvhqbvXo= sha256-3nQXB9BVtstV9Mu4nu0HJ1R97K06lV1NTzzS1YbFtfQ= sha256-5yP4k0BTMnsr2231uvL6gmFkpMju/UlA8ugAmseB6Mk= sha256-FyOLoMJoNNUDJDlTcb4TLOdsX6y32nWAXvm4IL8hfOE= sha256-UNK/cTBxT4m8IhwIB58yKwcoJ21qJx1QlDIrssKqITU= sha256-l+iujLpEOGxkx5N+OUbqjSjPUtLJ6bmiI1mW5inIXuo= sha256-o2tk+3CNWXGusxguI0wikvY6DyndRuC/7KJ7du4/L+4= sha256-yrfMfkpwKWDP1PBW5J6HLZ9+D0cVVVycOPxJE6tagSQ=; style-src-attr 'unsafe-hashes' sha256-2gcpFB35SLtmFltnzzrpTL5k8mzWeaK1BZmYvhqbvXo= sha256-3nQXB9BVtstV9Mu4nu0HJ1R97K06lV1NTzzS1YbFtfQ= sha256-5yP4k0BTMnsr2231uvL6gmFkpMju/UlA8ugAmseB6Mk= sha256-FyOLoMJoNNUDJDlTcb4TLOdsX6y32nWAXvm4IL8hfOE= sha256-UNK/cTBxT4m8IhwIB58yKwcoJ21qJx1QlDIrssKqITU= sha256-l+iujLpEOGxkx5N+OUbqjSjPUtLJ6bmiI1mW5inIXuo= sha256-o2tk+3CNWXGusxguI0wikvY6DyndRuC/7KJ7du4/L+4= sha256-yrfMfkpwKWDP1PBW5J6HLZ9+D0cVVVycOPxJE6tagSQ=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NutriTrack — Improved Dashboard</title>
 
@@ -189,6 +191,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <aside class="sidebar">
     <div class="logo">🥗 NutriTrack</div>
@@ -208,7 +212,7 @@
 
       <div class="search">
         <i class="fa fa-search"></i>
-        <input placeholder="Search food..." />
+        <input placeholder="Search food..." / data-a11y-remediation="label-needed">
       </div>
     </div>
 
@@ -237,6 +241,29 @@
         <p class="muted">Carbs</p>
         <h2>210g</h2>
       </div>
+
+      <div class="progress-ring">
+  <svg width="120" height="120">
+    <circle cx="60" cy="60" r="50" class="bg-ring"></circle>
+    <circle cx="60" cy="60" r="50" class="progress"></circle>
+  </svg>
+  <div class="ring-text">
+    <h2>1850</h2>
+    <span>2200 kcal</span>
+  </div>
+</div>
+<div class="card hydration">
+  <h3>💧 Water Intake</h3>
+  <div class="water-bar">
+    <div class="water-fill"></div>
+  </div>
+  <p>6 / 8 Glasses</p>
+</div> 
+
+<div class="card">
+  <h3>Macro Split</h3>
+  <div class="macro-chart"></div>
+</div>
       <div class="card">
         <p class="muted">Fat</p>
         <h2>56g</h2>
@@ -249,7 +276,7 @@
 
     <section class="meals">
       <div class="meal">
-        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" />
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" / alt="">
         <div class="meal-content">
           <h3>Avocado Salad</h3>
           <p class="muted">420 kcal</p>
@@ -258,7 +285,7 @@
       </div>
 
       <div class="meal">
-        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" />
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" / alt="">
         <div class="meal-content">
           <h3>Protein Bowl</h3>
           <p class="muted">560 kcal</p>
@@ -266,6 +293,20 @@
         </div>
       </div>
     </section>
+
+    <div class="card">
+  <h3>Weekly Calories</h3>
+
+  <div class="bars">
+    <div class="bar" style="height:50%"></div>
+    <div class="bar" style="height:80%"></div>
+    <div class="bar" style="height:70%"></div>
+    <div class="bar" style="height:95%"></div>
+    <div class="bar" style="height:65%"></div>
+    <div class="bar" style="height:85%"></div>
+    <div class="bar" style="height:75%"></div>
+  </div>
+</div>
 
   </main>
 
@@ -275,5 +316,6 @@
     }
   </script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

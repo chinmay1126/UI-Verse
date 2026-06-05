@@ -112,6 +112,29 @@ body {
   transition: var(--transition-smooth);
 }
 
+
+.toast {
+  background: #111827;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all .3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
 .add-btn {
   background: rgba(255, 255, 255, 0.05);
   color: #cbd5e1;
@@ -1161,6 +1184,41 @@ body {
   }
 }
 
+
+@media (max-width: 992px) {
+
+  .sidebar {
+    position: fixed;
+    left: -320px;
+    top: 0;
+    height: 100vh;
+    transition: .3s;
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 999;
+  }
+
+  .sidebar-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
 /* ============================================================
    PREMIUM NOTIFICATIONS V2 CUSTOM COMPONENTS STYLE SYSTEM
    ============================================================ */

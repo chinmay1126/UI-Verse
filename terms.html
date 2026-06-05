@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https:;
-                 base-uri 'self';
-                 frame-ancestors 'none';
-                 object-src 'none';
-                 connect-src 'self' https:;
-                 img-src 'self' data: https:;
-                 font-src 'self' data: https:;
-                 script-src 'self' https:;
-                 style-src 'self' https:;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4= sha256-zWWRQp5MvBLad9jarrhn08Ru5R1Y9/h8uyRO6IwGCpk=; script-src-attr 'unsafe-hashes' sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4= sha256-zWWRQp5MvBLad9jarrhn08Ru5R1Y9/h8uyRO6IwGCpk=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Terms & Conditions — UIverse</title>
@@ -23,13 +15,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="terms.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -387,7 +378,7 @@
   <div class="logo">UIverse</div>
 
   <div class="nav-right">
-    <button class="nav-btn outline-btn">Documentation</button>
+    <button class="nav-btn outline-btn" data-a11y-remediation="button-label-needed">Documentation</button>
     <button class="nav-btn primary-btn">Explore UI</button>
 
     <button class="theme-toggle" id="themeToggle">
@@ -560,68 +551,150 @@
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="footer-container">
+ <!-- FOOTER -->
+  <footer class="footer">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
+    <div class="footer-container">
+      <div class="footer-col brand">
+
+        <h2 class="footer-logo">⬡ UIverse</h2>
+
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+
+        <div class="socials">
+
+          <a href="https://github.com" aria-label="GitHub" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+
+        </div>
+
+    <div class="term-card premium">
+  <div class="term-icon">
+    <i class="fa-solid fa-copyright"></i>
+  </div>
+
+  <div class="term-content">
+    <span class="term-number">04</span>
+    <h3>Intellectual Property</h3>
+
+    <p>
+      All content, branding, components, and assets remain the
+      intellectual property of UIverse unless otherwise stated.
+    </p>
+
+    <ul>
+      <li>No unauthorized redistribution</li>
+      <li>Respect licensing requirements</li>
+      <li>Commercial usage follows license terms</li>
+    </ul>
+  </div>
 </div>
 
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
-      </ul>
-    </div>
+<div class="term-card premium">
+  <div class="term-icon">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+  </div>
 
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-    </div>
+  <div class="term-content">
+    <span class="term-number">05</span>
+    <h3>Limitation of Liability</h3>
 
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
-      </ul>
-    </div>
+    <p>
+      UIverse is provided "as is" without warranties and shall
+      not be liable for indirect damages or service interruptions.
+    </p>
+
+    <ul>
+      <li>No warranty guarantees</li>
+      <li>Service availability may vary</li>
+      <li>Use at your own risk</li>
+    </ul>
+  </div>
+</div>
 
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
+        <input type="email" placeholder="your@email.com" / data-a11y-remediation="label-needed">
         <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+      <div class="footer-col">
+
+        <h3>Explore</h3>
+        <ul>
+          <li>
+            <a href="button.html">Buttons</a>
+          </li>
+          <li>
+            <a href="navbar.html">Navbars</a>
+          </li>
+          <li>
+            <a href="cards.html">Cards</a>
+          </li>
+          <li>
+            <a href="inputs.html">Inputs</a>
+          </li>
+          <li>
+            <a href="forms.html">Forms</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+
+        <h3>Resources</h3>
+        <ul>
+          <li>
+            <a href="#">Documentation</a>
+          </li>
+          <li>
+            <a href="#">GitHub Repo</a>
+          </li>
+          <li>
+            <a href="#">Community</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Legal</h3>
+
+        <ul>
+          <li>
+            <a href="privacypolicy.html">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="terms.html">Terms of Service</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="footer-col newsletter">
+
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
+
       </div>
     </div>
 
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
-</footer>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+    
+  </footer>
 
 <!-- ================= SCRIPT ================= -->
 <script>
@@ -645,12 +718,33 @@ toggle.addEventListener('click', () => {
   localStorage.setItem('theme', dark ? 'dark' : 'light');
 });
 
+
+if (
+  !localStorage.getItem('theme') &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches
+) {
+  document.body.classList.add('dark-mode');
+  icon.className = 'fa-solid fa-sun';
+}
 // navbar scroll effect
 window.addEventListener('scroll', () => {
   document.getElementById('navbar')
     .classList.toggle('scrolled', window.scrollY > 40);
 });
+
+function subscribe() {
+  const email =
+    document.getElementById('newsletter-email').value;
+
+  if (!email) {
+    alert('Please enter an email address.');
+    return;
+  }
+
+  alert('Subscribed successfully!');
+}
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

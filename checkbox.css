@@ -79,6 +79,18 @@ body {
   align-items: center; gap: 50px; overflow: hidden;
   position: relative;
 }
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
 .hero::before {
   content: ''; position: absolute; top: -50%; right: -20%;
   width: 400px; height: 400px;
@@ -731,6 +743,13 @@ body {
   gap: 8px;
   cursor: pointer;
   background-color: #00f3ff;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+  grid-auto-flow: dense;
 }
 .rainbow-box {
   width: 22px;

@@ -163,3 +163,34 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 1000;
+}
+
+/* Remove default list styling */
+.timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Keyboard focus visibility */
+.timeline-content:focus-within {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Decorative dots */
+.timeline-dot {
+  pointer-events: none;
+}

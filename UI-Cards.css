@@ -1,6 +1,7 @@
 :root {
   --sidebar-width: 240px;
 }
+
 body {
   height: auto !important;
   min-height: 100vh !important;
@@ -174,6 +175,28 @@ body.dark-mode .card-dev-text {
 body.dark-mode .card-creative {
   background: #1f2937;
   border-color: #374151;
+}
+
+.component-card {
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: .35s ease;
+}
+
+.component-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+  0 30px 60px rgba(0,0,0,.25);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns:
+  repeat(auto-fill,minmax(340px,1fr));
+  gap: 28px;
 }
 .card-creative img {
   width: 100%;
@@ -781,6 +804,337 @@ body {
   color: #fff;
 }
 
+
+/* ========================= */
+/* PROFESSIONAL UI CARDS CSS */
+/* ========================= */
+
+
+/* Analytics Card */
+
+.card-analytics{
+  background: linear-gradient(145deg,#111827,#1f2937);
+  border-radius: 24px;
+  padding: 28px;
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  transition: 0.4s ease;
+}
+
+.card-analytics:hover{
+  transform: translateY(-10px);
+}
+
+.analytics-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.analytics-badge{
+  background:#3b82f6;
+  padding:6px 14px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.analytics-icon{
+  font-size:24px;
+  color:#60a5fa;
+}
+
+.analytics-title{
+  margin-top:20px;
+  font-size:28px;
+}
+
+.analytics-text{
+  color:#cbd5e1;
+  margin:14px 0 24px;
+  line-height:1.6;
+}
+
+.analytics-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-bottom:24px;
+}
+
+.analytics-stats div{
+  background:rgba(255,255,255,0.08);
+  border-radius:16px;
+  padding:14px;
+  text-align:center;
+}
+
+.analytics-stats strong{
+  display:block;
+  font-size:20px;
+}
+
+.analytics-stats span{
+  color:#94a3b8;
+  font-size:13px;
+}
+
+.analytics-btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:#3b82f6;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+
+/* Glass Card */
+
+.glass-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  min-height:340px;
+  background:
+    linear-gradient(135deg,
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0.04));
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.2);
+  padding:30px;
+}
+
+.glass-overlay{
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:#7c3aed;
+  filter:blur(80px);
+  top:-50px;
+  right:-50px;
+}
+
+.glass-content{
+  position:relative;
+  z-index:2;
+}
+
+.glass-tag{
+  background:rgba(255,255,255,0.2);
+  padding:8px 14px;
+  border-radius:40px;
+  font-size:12px;
+  color:#fff;
+}
+
+.glass-content h4{
+  margin-top:26px;
+  color:#fff;
+  font-size:30px;
+}
+
+.glass-content p{
+  color:#e2e8f0;
+  line-height:1.7;
+  margin:18px 0;
+}
+
+.glass-btn{
+  padding:14px 24px;
+  border:none;
+  border-radius:14px;
+  background:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+
+/* Team Card */
+
+.team-card{
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.12);
+  transition:0.4s;
+}
+
+.team-card:hover{
+  transform:translateY(-8px);
+}
+
+.team-card img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.team-body{
+  padding:24px;
+}
+
+.team-body h4{
+  font-size:24px;
+  margin-bottom:6px;
+}
+
+.team-body span{
+  color:#6366f1;
+  font-weight:600;
+}
+
+.team-body p{
+  margin:16px 0;
+  color:#555;
+  line-height:1.7;
+}
+
+.team-socials{
+  display:flex;
+  gap:14px;
+}
+
+.team-socials a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#f1f5f9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#111;
+  transition:0.3s;
+}
+
+.team-socials a:hover{
+  background:#6366f1;
+  color:#fff;
+}
+
+
+/* Pricing Card */
+
+.pricing-card-ui{
+  background:#0f172a;
+  color:#fff;
+  border-radius:24px;
+  padding:32px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.pricing-header span{
+  background:#22c55e;
+  padding:8px 14px;
+  border-radius:40px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.pricing-header h4{
+  margin-top:22px;
+  font-size:32px;
+}
+
+.pricing-price{
+  margin:28px 0;
+}
+
+.pricing-price h2{
+  font-size:56px;
+}
+
+.pricing-price p{
+  color:#94a3b8;
+}
+
+.pricing-features{
+  list-style:none;
+  padding:0;
+  margin:0 0 30px;
+}
+
+.pricing-features li{
+  margin:14px 0;
+  color:#cbd5e1;
+}
+
+.pricing-features i{
+  color:#22c55e;
+  margin-right:8px;
+}
+
+.pricing-btn{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:14px;
+  background:#6366f1;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+
+/* Neon Product Card */
+
+.neon-card{
+  background:#0a0a0a;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid #1f2937;
+  transition:0.4s;
+  box-shadow:0 0 0 transparent;
+}
+
+.neon-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 25px #8b5cf6;
+}
+
+.neon-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.neon-body{
+  padding:24px;
+}
+
+.neon-category{
+  color:#8b5cf6;
+  font-size:13px;
+  letter-spacing:1px;
+  font-weight:700;
+}
+
+.neon-body h4{
+  margin:14px 0;
+  color:#fff;
+  font-size:26px;
+}
+
+.neon-body p{
+  color:#9ca3af;
+  line-height:1.7;
+}
+
+.neon-btn{
+  margin-top:22px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
 .content h2 {
   font-size: 1.6rem;
   margin-bottom: 12px;

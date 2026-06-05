@@ -905,6 +905,212 @@ body{
 
 }
 
+/* =====================================================
+ADVANCED SWITCHES CSS
+===================================================== */
+
+/* COMMON */
+
+.gradient-switch,
+.neon-switch,
+.power-switch,
+.status-switch {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-switch input,
+.neon-switch input,
+.power-switch input,
+.status-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* =====================================================
+GRADIENT SWITCH
+===================================================== */
+
+.gradient-slider {
+  width: 74px;
+  height: 38px;
+  background: #1b1b2b;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.gradient-slider::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 4px;
+  top: 3px;
+  border-radius: 50%;
+  background: white;
+  transition: 0.4s;
+}
+
+.gradient-switch input:checked + .gradient-slider {
+  background: linear-gradient(135deg, #7b61ff, #eb6835);
+  box-shadow: 0 0 20px rgba(123,97,255,0.4);
+}
+
+.gradient-switch input:checked + .gradient-slider::before {
+  transform: translateX(35px);
+}
+
+/* =====================================================
+NEON SWITCH
+===================================================== */
+
+.neon-slider {
+  width: 78px;
+  height: 38px;
+  background: #111827;
+  border-radius: 50px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  border: 1px solid #1f2937;
+  transition: 0.4s;
+}
+
+.neon-slider::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 5px;
+  top: 4px;
+  background: #06b6d4;
+  border-radius: 50%;
+  transition: 0.4s;
+  box-shadow: 0 0 12px #06b6d4;
+}
+
+.neon-switch input:checked + .neon-slider {
+  box-shadow: 0 0 20px rgba(6,182,212,0.5);
+}
+
+.neon-switch input:checked + .neon-slider::before {
+  transform: translateX(38px);
+}
+
+/* =====================================================
+POWER SWITCH
+===================================================== */
+
+.power-slider {
+  width: 82px;
+  height: 42px;
+  border-radius: 50px;
+  background: #18181b;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.power-slider i {
+  width: 32px;
+  height: 32px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.4s;
+  font-size: 14px;
+}
+
+.power-switch input:checked + .power-slider {
+  background: rgba(34,197,94,0.12);
+}
+
+.power-switch input:checked + .power-slider i {
+  transform: translateX(40px);
+  background: #22c55e;
+  box-shadow: 0 0 18px rgba(34,197,94,0.6);
+}
+
+/* =====================================================
+STATUS SWITCH
+===================================================== */
+
+.status-slider {
+  width: 90px;
+  height: 40px;
+  border-radius: 50px;
+  background: #23263a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.status-slider::before {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: white;
+  left: 3px;
+  top: 3px;
+  transition: 0.4s;
+}
+
+.status-text {
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.status-text.on {
+  color: #22c55e;
+}
+
+.status-text.off {
+  color: #ef4444;
+}
+
+.status-switch input:checked + .status-slider {
+  background: rgba(34,197,94,0.15);
+}
+
+.status-switch input:checked + .status-slider::before {
+  transform: translateX(50px);
+}
+
+/* =====================================================
+EXTRA CARD COLORS
+===================================================== */
+
+.card-icon.pink {
+  background: linear-gradient(135deg, #ff4ecd, #ff6b81);
+}
+
+.card-icon.cyan {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+}
+
+.card-icon.red {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+}
+
 /* =======================
    DESIGN TOKENS
 ======================= */

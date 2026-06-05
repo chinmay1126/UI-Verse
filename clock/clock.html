@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <link rel="stylesheet" href="../dist/shared.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-/wbzEWzWOAi6sbd6fnFOZypTEYI1brt183sUJjrR5lg=; script-src-attr 'unsafe-hashes' sha256-/wbzEWzWOAi6sbd6fnFOZypTEYI1brt183sUJjrR5lg=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Advanced Clock UI</title>
 
@@ -13,6 +15,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div>
 
@@ -84,7 +88,7 @@ Good Evening
 00:00:00
 </h1>
 
-<button id="startBtn">
+<button id="startBtn" data-a11y-remediation="button-label-needed">
 Start
 </button>
 
@@ -110,7 +114,7 @@ Reset
 
 <input type="number"
 id="minutesInput"
-placeholder="Minutes">
+placeholder="Minutes" data-a11y-remediation="label-needed">
 
 <input type="number"
 id="secondsInput"
@@ -715,11 +719,13 @@ timerSeconds = 0;
 
 updateTimerDisplay();
 
+
 });
 
 updateTimerDisplay();
 
 </script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

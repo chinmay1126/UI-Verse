@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=; style-src-attr 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>3D Flip Cards</title>
@@ -18,10 +19,11 @@
 
   <link rel="stylesheet" href="flipcards.css">
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- YOUR SIDEBAR HERE -->
 
@@ -35,13 +37,13 @@
 
       <i class="fa-solid fa-magnifying-glass"></i>
 
-      <input type="text" placeholder="Search components...">
+      <input type="text" placeholder="Search components..." data-a11y-remediation="label-needed">
 
     </div>
 
     <div class="topbar-actions">
 
-      <button class="add-btn">
+      <button class="add-btn" data-a11y-remediation="button-label-needed">
         <i class="fa-solid fa-plus"></i>
         Add Component
       </button>
@@ -1280,5 +1282,6 @@
   </div>
 </footer>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

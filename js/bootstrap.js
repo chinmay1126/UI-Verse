@@ -42,6 +42,10 @@ const Bootstrap = {
       UIverse.register('ComponentVersioning', ComponentVersioning, dependenciesFor('ComponentVersioning'));
     }
 
+    if (typeof KeyboardContract !== 'undefined') {
+      UIverse.register('KeyboardContract', KeyboardContract, dependenciesFor('KeyboardContract'));
+    }
+
     if (typeof ComponentsRegistry !== 'undefined') {
       UIverse.register('ComponentsRegistry', ComponentsRegistry, dependenciesFor('ComponentsRegistry'));
     }

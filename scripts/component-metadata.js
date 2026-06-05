@@ -28,6 +28,30 @@ function isSemver(version){
   return SEMVER_RE.test(String(version || '').trim());
 }
 
+function buildDependencies(componentId, componentPath){
+  const id = String(componentId || path.basename(componentPath || 'component', '.html')).toLowerCase();
+  const localStyle = id === 'index' ? 'home.css' : (id === 'color' ? 'colors.css' : `${id}.css`);
+
+  if (id === 'index') {
+    return {
+      styles: ['style.css', 'home.css'],
+      scripts: ['script.js', 'js/features/theme.js', 'js/features/search.js', 'js/features/command-palette.js', 'js/features/accessibility.js']
+    };
+  }
+
+  if (id === 'settings') {
+    return {
+      styles: ['style.css', 'css/main.css'],
+      scripts: ['script.js', 'js/features/theme.js', 'js/features/sidebar.js', 'js/features/search.js', 'js/features/code-tools.js', 'js/features/sandbox.js', 'js/features/accessibility.js', 'js/features/toast.js', 'js/features/popup.js']
+    };
+  }
+
+  return {
+    styles: ['style.css', 'css/main.css', localStyle],
+    scripts: ['script.js', 'js/features/theme.js', 'js/features/accessibility.js', 'js/features/code-tools.js', 'js/features/sandbox.js']
+  };
+}
+
 function today(){ return new Date().toISOString().split('T')[0]; }
 
 function normalizeChangelogText(text) {
@@ -166,7 +190,8 @@ function buildVersioningState(options = {}){
         if(!entry || !isSemver(entry.version)){
           errors.push(`[${id}] Changelog entry #${index + 1} has invalid version.`);
         }
-        if(!entry || !/^\d{4}-\d{2}-\d{2}$/.test(String(entry.date || ''))){
+        const parsedDate = Date.parse(String(entry.date || ''));
+        if(!entry || (isNaN(parsedDate) && !/^\d{4}-\d{2}-\d{2}$/.test(String(entry.date || '')))){
           errors.push(`[${id}] Changelog entry #${index + 1} has invalid date.`);
         }
       });

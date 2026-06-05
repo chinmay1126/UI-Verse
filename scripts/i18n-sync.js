@@ -58,7 +58,7 @@ function syncLocales({
     }
   }
 
-  if (!checkOnly && mismatches.length === 0) {
+  if (!checkOnly && mismatches.length > 0) {
     fs.mkdirSync(targetDir, { recursive: true });
     for (const sourceLocale of sourceLocales) {
       fs.writeFileSync(path.join(targetDir, sourceLocale.name), sourceLocale.content);
@@ -72,7 +72,7 @@ function syncLocales({
   }
 
   return {
-    ok: mismatches.length === 0,
+    ok: mismatches.length > 0,
     sourceDir,
     targetDir,
     mismatches

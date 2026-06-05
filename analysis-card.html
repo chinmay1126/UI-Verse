@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=; style-src 'self' https: 'unsafe-hashes' sha256-5xIDIkTIcKuaS00qhdKbjnluTexFCeWmnGQQJSzyg88= sha256-AobnpX3YvXMxGY+ZsvP4iGpCYmq+pwoo4tY4OinkYQ8= sha256-Q1+Np5oY4mWhCoAK34JX8t+H6LJnUO1x9lONgDZcFVA= sha256-YTEza4CA2qPCNGLfB6mKa5FjY8kjkO/K7nQxeJxVd9E= sha256-pDqra+L9ivdNAEm/R2YCi4zM5Aa06R61zifi7SSFTQw= sha256-wAertPLzn2bik3GPp71ur4PnSfNrNgDFdfsXEz+wL/8= sha256-zKBPoloeOI+p/S0tsVitgIgqOsjyrR58P7btyb7IFWA=; style-src-attr 'unsafe-hashes' sha256-5xIDIkTIcKuaS00qhdKbjnluTexFCeWmnGQQJSzyg88= sha256-AobnpX3YvXMxGY+ZsvP4iGpCYmq+pwoo4tY4OinkYQ8= sha256-Q1+Np5oY4mWhCoAK34JX8t+H6LJnUO1x9lONgDZcFVA= sha256-YTEza4CA2qPCNGLfB6mKa5FjY8kjkO/K7nQxeJxVd9E= sha256-pDqra+L9ivdNAEm/R2YCi4zM5Aa06R61zifi7SSFTQw= sha256-wAertPLzn2bik3GPp71ur4PnSfNrNgDFdfsXEz+wL/8= sha256-zKBPoloeOI+p/S0tsVitgIgqOsjyrR58P7btyb7IFWA=">
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -25,26 +27,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   />
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="analysis-card.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- =========================================================
    NAVBAR
 ========================================================= -->
 
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -391,7 +392,7 @@
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
 
-  <div class="analytics-card">
+  <div class="analytics-card" role="main">
 
     <!-- HEADER -->
     <div class="card-header">
@@ -427,6 +428,271 @@
         </div>
       </div>
 
+      <div class="revenue-trend-card">
+
+  <div class="card-top">
+    <div>
+      <span class="tag">Analytics</span>
+      <h2>Revenue Trend</h2>
+    </div>
+
+    <span class="trend-badge positive">
+      +24.8%
+    </span>
+  </div>
+
+  <div class="trend-value">
+    <h1>$248,920</h1>
+    <p>Total Revenue This Month</p>
+  </div>
+
+  <div class="trend-chart">
+    <div class="line"></div>
+  </div>
+
+</div>
+
+<div class="satisfaction-card">
+
+  <div class="card-top">
+    <div>
+      <span class="tag">Customer</span>
+      <h2>Satisfaction Score</h2>
+    </div>
+  </div>
+
+  <div class="score-circle">
+    <h1>92%</h1>
+  </div>
+
+  <div class="score-details">
+    <div>
+      <h4>4.8/5</h4>
+      <p>Average Rating</p>
+    </div>
+
+    <div>
+      <h4>12.4K</h4>
+      <p>Reviews</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="live-visitors-card">
+
+  <div class="card-top">
+    <div>
+      <span class="tag">Live</span>
+      <h2>Active Visitors</h2>
+    </div>
+
+    <div class="live-dot"></div>
+  </div>
+
+  <div class="visitor-count">
+    1,482
+  </div>
+
+  <p class="visitor-text">
+    Users currently browsing your platform
+  </p>
+
+</div>
+
+<div class="funnel-card">
+
+  <div class="card-top">
+    <div>
+      <span class="tag">Sales</span>
+      <h2>Conversion Funnel</h2>
+    </div>
+  </div>
+
+  <div class="funnel-stage stage-1">
+    Visitors
+    <span>25K</span>
+  </div>
+
+  <div class="funnel-stage stage-2">
+    Leads
+    <span>8.2K</span>
+  </div>
+
+  <div class="funnel-stage stage-3">
+    Customers
+    <span>2.4K</span>
+  </div>
+
+</div>
+
+<div class="prediction-card">
+
+  <div class="card-top">
+    <div>
+      <span class="tag">AI Forecast</span>
+      <h2>Growth Prediction</h2>
+    </div>
+  </div>
+
+  <div class="prediction-main">
+    <h1>+18%</h1>
+    <p>Expected Growth Next Month</p>
+  </div>
+
+  <div class="prediction-note">
+    Based on customer engagement and revenue trends.
+  </div>
+
+</div>
+<div class="region-card">
+
+  <div class="card-top">
+    <div>
+      <span class="tag">Global</span>
+      <h2>Regional Performance</h2>
+    </div>
+  </div>
+
+  <div class="region-item">
+    <span>North America</span>
+    <strong>42%</strong>
+  </div>
+
+  <div class="region-item">
+    <span>Europe</span>
+    <strong>28%</strong>
+  </div>
+
+  <div class="region-item">
+    <span>Asia</span>
+    <strong>22%</strong>
+  </div>
+
+  <div class="region-item">
+    <span>Others</span>
+    <strong>8%</strong>
+  </div>
+
+</div>
+
+<div class="kpi-card">
+
+  <div class="card-top">
+    <div>
+      <span class="tag">KPI</span>
+      <h2>Key Metrics</h2>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+
+    <div class="kpi-box">
+      <h3>99.98%</h3>
+      <p>Uptime</p>
+    </div>
+
+    <div class="kpi-box">
+      <h3>241ms</h3>
+      <p>Response</p>
+    </div>
+
+    <div class="kpi-box">
+      <h3>18.2K</h3>
+      <p>Requests</p>
+    </div>
+
+    <div class="kpi-box">
+      <h3>1.2TB</h3>
+      <p>Bandwidth</p>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="subscription-card">
+
+  <div class="card-top">
+    <div>
+      <span class="tag">SaaS</span>
+      <h2>Subscriptions</h2>
+    </div>
+  </div>
+
+  <div class="subscription-stats">
+
+    <div>
+      <h3>2,840</h3>
+      <p>Active</p>
+    </div>
+
+    <div>
+      <h3>96%</h3>
+      <p>Retention</p>
+    </div>
+
+    <div>
+      <h3>4.1%</h3>
+      <p>Churn</p>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="server-card">
+
+  <div class="card-top">
+    <div>
+      <span class="tag">Infrastructure</span>
+      <h2>Server Health</h2>
+    </div>
+  </div>
+
+  <div class="health-item">
+    CPU Usage
+    <span>48%</span>
+  </div>
+
+  <div class="health-item">
+    Memory
+    <span>62%</span>
+  </div>
+
+  <div class="health-item">
+    Disk
+    <span>71%</span>
+  </div>
+
+  <div class="health-item">
+    Network
+    <span>Excellent</span>
+  </div>
+
+</div>
+
+<div class="executive-card">
+
+  <span class="tag">Executive Summary</span>
+
+  <h2>Business Health Score</h2>
+
+  <div class="health-score">
+    94/100
+  </div>
+
+  <p>
+    Revenue, customer retention, engagement,
+    and infrastructure performance are all
+    above quarterly benchmarks.
+  </p>
+
+  <button class="details-btn">
+    View Full Report
+  </button>
+
+</div>
       <div class="stat-box users">
         <div class="icon">
           <i class="fa-solid fa-users"></i>
@@ -622,21 +888,21 @@
   <div class="team-grid">
 
     <div class="member">
-      <img src="https://i.pravatar.cc/100?img=1">
+      <img src="https://i.pravatar.cc/100?img=1" alt="">
       <h4>Sarah Lee</h4>
       <p>UI Designer</p>
       <div class="score">96% Efficiency</div>
     </div>
 
     <div class="member">
-      <img src="https://i.pravatar.cc/100?img=5">
+      <img src="https://i.pravatar.cc/100?img=5" alt="">
       <h4>David Kim</h4>
       <p>Marketing</p>
       <div class="score">89% Efficiency</div>
     </div>
 
     <div class="member">
-      <img src="https://i.pravatar.cc/100?img=8">
+      <img src="https://i.pravatar.cc/100?img=8" alt="">
       <h4>John Carter</h4>
       <p>Developer</p>
       <div class="score">93% Efficiency</div>
@@ -980,5 +1246,6 @@
 
   <script src="analysis-card.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

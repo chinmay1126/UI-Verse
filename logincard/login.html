@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https:;
-        base-uri 'self';
-        frame-ancestors 'none';
-        object-src 'none';
-        connect-src 'self' https:;
-        img-src 'self' data: https:;
-        font-src 'self' data: https:;
-        script-src 'self' https:;
-        style-src 'self' https: 'unsafe-inline'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glass Login UI</title>
@@ -20,6 +12,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="background">
     <span class="shape shape1"></span>
@@ -35,7 +29,7 @@
 
     <form>
       <div class="input-box">
-        <input type="email" required />
+        <input type="email" required / data-a11y-remediation="label-needed">
         <label>Email Address</label>
       </div>
 
@@ -49,6 +43,57 @@
         <a href="#">Forgot password?</a>
       </div>
 
+      <div class="login-card">
+
+  <h2>Welcome Back</h2>
+  <p class="subtitle">Sign in to continue your journey</p>
+
+  <form>
+
+    <div class="input-box">
+      <input type="email" placeholder="Email Address" required>
+    </div>
+
+    <div class="input-box">
+      <input type="password" placeholder="Password" required>
+    </div>
+
+    <div class="options">
+      <label>
+        <input type="checkbox">
+        Remember me
+      </label>
+
+      <a href="#">Forgot Password?</a>
+    </div>
+
+    <button type="submit">Sign In</button>
+
+    <div class="divider">
+      OR CONTINUE WITH
+    </div>
+
+    <div class="social-login">
+
+      <div class="social-btn">
+        Google
+      </div>
+
+      <div class="social-btn">
+        GitHub
+      </div>
+
+    </div>
+
+    <p class="signup-text">
+      Don’t have an account?
+      <a href="#">Register</a>
+    </p>
+
+  </form>
+
+</div>
+
       <button type="submit">Sign In</button>
 
       <p class="signup-text">
@@ -58,5 +103,6 @@
     </form>
   </div>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

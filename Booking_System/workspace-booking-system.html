@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
@@ -34,6 +35,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= SIDEBAR ================= -->
 
@@ -102,7 +105,7 @@
         Workspace Manager
       </p>
 
-      <button>
+      <button data-a11y-remediation="button-label-needed">
         Manage Team
       </button>
 
@@ -144,7 +147,7 @@
 
           <input
             type="text"
-            placeholder="Search workspace, room or office..." />
+            placeholder="Search workspace, room or office..." / data-a11y-remediation="label-needed">
 
         </div>
 
@@ -269,6 +272,27 @@
 
       </div>
 
+      <section class="occupancy-map">
+
+  <div class="section-header">
+    <h2>🔥 Workspace Occupancy</h2>
+    <button>View Insights</button>
+  </div>
+
+  <div class="heatmap">
+
+    <div class="heat low"></div>
+    <div class="heat medium"></div>
+    <div class="heat high"></div>
+    <div class="heat high"></div>
+    <div class="heat medium"></div>
+    <div class="heat low"></div>
+    <div class="heat medium"></div>
+
+  </div>
+
+</section>
+
       <!-- HERO VISUAL -->
 
       <div class="workspace-visual">
@@ -299,6 +323,113 @@
 
     </section>
 
+    <section class="ai-section">
+
+  <div class="section-header">
+    <div>
+      <h2>🤖 AI Recommendations</h2>
+      <p>Smart suggestions for better utilization</p>
+    </div>
+  </div>
+
+  <div class="ai-grid">
+
+    <div class="ai-card">
+      <h3>Move Meeting</h3>
+      <p>
+        Shift Room A-12 meeting to 3 PM and reduce
+        occupancy conflicts by 28%.
+      </p>
+    </div>
+
+    <div class="ai-card">
+      <h3>Desk Optimization</h3>
+      <p>
+        Suggesting Desk Cluster B for hybrid teams.
+      </p>
+    </div>
+
+    <div class="ai-card">
+      <h3>Energy Saving</h3>
+      <p>
+        Closing unused floor 4 saves 14% electricity.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+    <section class="analytics-row">
+
+  <div class="analytics-card">
+    <span>Total Revenue</span>
+    <h2>₹1.24L</h2>
+    <small>+18.4% this month</small>
+  </div>
+
+
+
+  <div class="analytics-card">
+    <span>Bookings Today</span>
+    <h2>86</h2>
+    <small>24 active now</small>
+  </div>
+
+  <div class="analytics-card">
+    <span>Workspace Usage</span>
+    <h2>92%</h2>
+    <small>Peak performance</small>
+  </div>
+
+  <div class="analytics-card">
+    <span>AI Suggestions</span>
+    <h2>18</h2>
+    <small>Optimized schedules</small>
+  </div>
+
+</section>
+
+<div class="availability">
+
+  <div class="availability-top">
+    <span>Availability</span>
+    <span>78%</span>
+  </div>
+
+  <div class="progress">
+    <div class="progress-fill"></div>
+  </div>
+
+</div>
+
+
+<section class="activity-feed">
+
+  <div class="section-header">
+    <h2>⚡ Recent Activity</h2>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <span>09:20</span>
+      <p>Sarah booked Executive Cabin</p>
+    </div>
+
+    <div class="timeline-item">
+      <span>10:12</span>
+      <p>Room A-12 became available</p>
+    </div>
+
+    <div class="timeline-item">
+      <span>11:00</span>
+      <p>New team member joined</p>
+    </div>
+
+  </div>
+
+</section>
     <!-- ================= STATS ================= -->
 
     <section class="stats-grid">
@@ -400,6 +531,30 @@
       </div>
 
     </section>
+
+    <section class="quick-actions">
+
+  <button>
+    <i class="fa-solid fa-calendar-plus"></i>
+    New Booking
+  </button>
+
+  <button>
+    <i class="fa-solid fa-building"></i>
+    Add Workspace
+  </button>
+
+  <button>
+    <i class="fa-solid fa-users"></i>
+    Invite Team
+  </button>
+
+  <button>
+    <i class="fa-solid fa-chart-line"></i>
+    Reports
+  </button>
+
+</section>
 
     <!-- ================= FILTER BAR ================= -->
 <section class="filter-bar">
@@ -898,6 +1053,7 @@
 
   <script src="workspace-booking-system.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 
 </html>

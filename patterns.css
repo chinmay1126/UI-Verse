@@ -328,3 +328,75 @@ body.dark-mode .pattern-soft-grid {
     linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
 }
+
+
+.pattern-filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:30px 0;
+}
+
+.filter-chip{
+  padding:.75rem 1.2rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  cursor:pointer;
+  transition:.3s;
+}
+
+.filter-chip:hover,
+.filter-chip.active{
+  background:linear-gradient(135deg,#7c5cff,#00d4ff);
+  color:#fff;
+  border-color:transparent;
+}
+
+.pattern-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.4s ease;
+}
+
+.pattern-card:hover{
+  transform:translateY(-10px);
+  box-shadow:
+  0 20px 40px rgba(0,0,0,.25),
+  0 0 30px rgba(124,92,255,.25);
+}
+.card-glow{
+  position:absolute;
+  inset:-100px;
+  background:
+  radial-gradient(
+    circle at var(--x,50%) var(--y,50%),
+    rgba(124,92,255,.35),
+    transparent 45%
+  );
+  opacity:0;
+  transition:.3s;
+  pointer-events:none;
+}
+
+.pattern-card:hover .card-glow{
+  opacity:1;
+}
+
+
+.pattern-preview{
+  height:220px;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  transition:.5s;
+}
+
+.pattern-card:hover .pattern-preview{
+  transform:scale(1.04);
+}
