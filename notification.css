@@ -92,6 +92,30 @@ body{
   gap: 4px;
 }
 
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
+
+.menu-toggle{
+  display:none;
+  border:none;
+  background:none;
+  font-size:1.3rem;
+  cursor:pointer;
+}
+
+@media (max-width:900px){
+  .menu-toggle{
+    display:block;
+  }
+}
 .sidebar-nav li a {
   display: flex;
   align-items: center;

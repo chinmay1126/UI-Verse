@@ -212,6 +212,15 @@ body.dark-mode {
   color: var(--rec-primary);
 }
 
+
+.validation-match-badge {
+  display: none;
+}
+
+.validation-match-badge.visible {
+  display: flex;
+}
+
 /* Premium Buttons */
 .rec-submit-btn {
   width: 100%;
@@ -654,6 +663,545 @@ body.dark-mode .hero-btn-preview {
 }
 
 
+.rec-card-wrapper {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.rec-card-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
 
+.rec-card-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
 
+.rec-card-header p {
+  font-size: 0.92rem;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+ .rec-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 14px;
+  border-radius: 12px;
+  transition: 0.25s ease;
+}
+
+.rec-input:focus {
+  border-color: #7c5cff;
+  box-shadow: 0 0 0 4px rgba(124,92,255,0.15);
+  transform: scale(1.01);
+}
+
+.rec-submit-btn {
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.rec-submit-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.rec-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.rec-otp-digit {
+  width: 52px;
+  height: 58px;
+  font-size: 1.4rem;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  transition: 0.2s ease;
+}
+
+.rec-otp-digit:focus {
+  border-color: #7c5cff;
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(124,92,255,0.25);
+}
+
+.pwd-strength-fill {
+  height: 6px;
+  border-radius: 50px;
+  transition: width 0.4s ease, background 0.3s ease;
+}
+
+.pwd-strength-fill.weak {
+  width: 25%;
+  background: linear-gradient(90deg, #ff4d6d, #ff6b6b);
+}
+
+.pwd-strength-fill.fair {
+  width: 50%;
+  background: linear-gradient(90deg, #ffa726, #ffcc80);
+}
+
+.pwd-strength-fill.good {
+  width: 75%;
+  background: linear-gradient(90deg, #42a5f5, #7c5cff);
+}
+
+.pwd-strength-fill.strong {
+  width: 100%;
+  background: linear-gradient(90deg, #00c853, #64dd17);
+}
+
+.component-card {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rec-success-card {
+  background: radial-gradient(circle at top, rgba(124,92,255,0.15), transparent);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.success-check-circle {
+  box-shadow: 0 0 40px rgba(124,92,255,0.4);
+}
+
+# Enhanced Password Recovery Showcase Improvements
+
+## 1. Add Advanced Micro‑Interactions
+
+```css
+/* ================= ENHANCED GLASS EFFECT ================= */
+.rec-card-wrapper {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.rec-card-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background:
+    linear-gradient(
+      135deg,
+      hsla(280, 100%, 70%, 0.18),
+      hsla(190, 100%, 70%, 0.14),
+      transparent 60%
+    );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rec-card-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+.rec-card-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 24px 50px rgba(0,0,0,0.22),
+    0 0 40px rgba(139,92,246,0.15);
+  border-color: rgba(168,85,247,0.35);
+}
+```
+
+---
+
+## 2. Add Animated Gradient Background
+
+```css
+body {
+  background:
+    radial-gradient(circle at top left, rgba(168,85,247,0.12), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(59,130,246,0.12), transparent 25%),
+    linear-gradient(135deg, #09090f 0%, #0f172a 50%, #111827 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+  pointer-events: none;
+  z-index: -1;
+}
+```
+
+---
+
+## 3. Premium Floating Input Styling
+
+```css
+.rec-form-group {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+.rec-input {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  padding: 1.15rem 1rem;
+  font-size: 0.98rem;
+  transition: all 0.35s ease;
+}
+
+.rec-input:hover {
+  border-color: rgba(255,255,255,0.2);
+}
+
+.rec-input:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow:
+    0 0 0 4px rgba(139,92,246,0.18),
+    0 10px 30px rgba(139,92,246,0.18);
+  background: rgba(255,255,255,0.08);
+}
+
+.rec-form-group label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  color: rgba(255,255,255,0.6);
+  pointer-events: none;
+  padding-inline: 6px;
+}
+
+.rec-input:focus + label,
+.rec-input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 0.75rem;
+  color: #c084fc;
+  background: #0f172a;
+}
+```
+
+---
+
+## 4. Enhanced Buttons With Shine Animation
+
+```css
+.rec-submit-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.rec-submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.rec-submit-btn:hover::before {
+  left: 120%;
+}
+
+.rec-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 30px rgba(99,102,241,0.35),
+    0 0 20px rgba(139,92,246,0.25);
+}
+
+.rec-submit-btn:active {
+  transform: scale(0.98);
+}
+```
+
+---
+
+## 5. Improve OTP Inputs
+
+```css
+.rec-otp-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 1rem;
+}
+
+.rec-otp-digit {
+  width: 70px;
+  height: 74px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-radius: 20px;
+  border: 2px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  transition: all 0.25s ease;
+}
+
+.rec-otp-digit:focus {
+  transform: translateY(-4px) scale(1.05);
+  border-color: #8b5cf6;
+  box-shadow: 0 12px 28px rgba(139,92,246,0.22);
+}
+```
+
+---
+
+## 6. Add Success Animation
+
+```css
+.success-check-circle {
+  animation: bounceSuccess 1.5s infinite;
+}
+
+.success-pulse-ring {
+  animation: pulseRing 2.5s infinite;
+}
+
+@keyframes bounceSuccess {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+```
+
+---
+
+## 7. Add Modern Toast Notification UI
+
+```css
+.custom-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  min-width: 280px;
+  max-width: 420px;
+  padding: 1rem 1.2rem;
+  border-radius: 18px;
+  background: rgba(15,23,42,0.88);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  animation: toastIn 0.45s ease;
+  z-index: 9999;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+```
+
+---
+
+## 8. Add Accessibility Improvements
+
+```html
+<input
+  type="email"
+  id="recovery-email"
+  class="rec-input"
+  aria-label="Recovery Email Address"
+  autocomplete="email"
+  required
+>
+```
+
+```html
+<button
+  type="submit"
+  class="rec-submit-btn"
+  aria-live="polite"
+>
+  Send Reset Link
+</button>
+```
+
+---
+
+## 9. Add Smooth Scroll & Page Transitions
+
+```css
+html {
+  scroll-behavior: smooth;
+}
+
+.component-card {
+  animation: fadeSlideUp 0.7s ease both;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+```
+[i].value = char;
+      }
+
+.loading-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
+
+.loading-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .rec-card-wrapper {
+    padding: 1.4rem;
+  }
+
+  .rec-otp-digit {
+    width: 58px;
+    height: 60px;
+    font-size: 1.35rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .search-bar {
+    display: none;
+  }
+}
+```
+
+---
+
+## 14. Add Custom Cursor Glow Effect
+
+```css
+.rec-preview-area {
+  position: relative;
+}
+
+.rec-preview-area::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(168,85,247,0.15), transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rec-preview-area:hover::after {
+  opacity: 1;
+}

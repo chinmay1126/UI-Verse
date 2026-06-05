@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-0fds28+lgzA9MINaleymnaoa4excmxB0Mhjg2ism8bk=; script-src-attr 'unsafe-hashes' sha256-0fds28+lgzA9MINaleymnaoa4excmxB0Mhjg2ism8bk=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UIverse - Article Components & Tutorials</title>
 
-  <title>UIverse - Article Components</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-3TGu3MXeXy11eUrHvptBo1UVsvdEkIojBrR41fi1sqM= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-eV4Zi1IL4X5A+Hm2Rtp2RqrintaoXIRgMSj2O32PKgw=; script-src-attr 'unsafe-hashes' sha256-3TGu3MXeXy11eUrHvptBo1UVsvdEkIojBrR41fi1sqM= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-eV4Zi1IL4X5A+Hm2Rtp2RqrintaoXIRgMSj2O32PKgw=; style-src 'self' https: 'unsafe-hashes' sha256-6gdvEG2cC/rSjegTc+5Xlm7gcH/L0B5UtBxrTINqvG4=; style-src-attr 'unsafe-hashes' sha256-6gdvEG2cC/rSjegTc+5Xlm7gcH/L0B5UtBxrTINqvG4=">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- UIverse Modular CSS Architecture -->
   <!-- <link rel="stylesheet" href="css/main.css"> -->
 
   <!-- CSS -->
+  <link rel="stylesheet" href="dist/shared.css">
   <link rel="stylesheet" href="article.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <header class="navbar">
 
   <div class="logo">
@@ -33,8 +35,22 @@
     <a href="article.html">Articles</a>
     <a href="contact.html">Contact</a>
   </nav>
+  <a href="index.html">
+    Home
+  </a>
+  <a href="ai-components.html">
+    Components
+  </a>
+  <a href="article.html">
+    Articles
+  </a>
+  <a href="contact.html">
+    Contact
+  </a>
+</nav>
 
-  <button class="theme-toggle" id="themeToggle">
+
+  <button class="theme-toggle" id="themeToggle" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-moon"></i>
   </button>
 
@@ -358,23 +374,229 @@
     </ul>
   </nav>
 
-  <div class="sidebar-footer">
+  <!-- <div class="sidebar-footer">
     <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
     <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-  </div>
+  </div> -->
 </aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-
+<main class="main-content">
 <!-- ================= HERO ================= -->
+<main id="main-content">
 <section class="hero">
 
   <div class="hero-badge">
-    ✨ UI Articles & Tutorials
+    <i class="fa-solid fa-sparkles"></i> UI Articles & Tutorials
   </div>
 
+  <section class="video-article">
+
+  <div class="video-thumbnail">
+    <img src="https://picsum.photos/900/500?random=401" alt="">
+    <button class="play-btn">
+      <i class="fa-solid fa-play"></i>
+    </button>
+  </div>
+
+  <div class="video-content">
+    <span class="video-tag">🎥 Video Tutorial</span>
+
+    <h2>Build Modern Landing Pages From Scratch</h2>
+
+    <p>
+      Follow a complete walkthrough covering layouts,
+      animations, responsive design, and deployment.
+    </p>
+
+    <a href="#" class="primary-btn">
+      Watch Tutorial
+    </a>
+  </div>
+
+</section>
+
+<section class="case-study">
+
+  <span class="case-badge">
+    📊 Case Study
+  </span>
+
+  <h2>
+    How We Increased Conversions by 42%
+  </h2>
+
+  <p>
+    Learn how redesigning the onboarding experience
+    improved retention and engagement.
+  </p>
+
+  <div class="case-stats">
+
+    <div>
+      <strong>42%</strong>
+      <span>More Conversions</span>
+    </div>
+
+    <div>
+      <strong>2.8x</strong>
+      <span>Engagement</span>
+    </div>
+
+    <div>
+      <strong>35%</strong>
+      <span>Retention Growth</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="article-carousel">
+
+  <div class="section-header">
+    <span class="section-tag">🚀 New Releases</span>
+    <h2>Latest Tutorials</h2>
+  </div>
+
+  <div class="carousel-track">
+
+    <article class="mini-slide">
+      <h3>Master CSS Layers</h3>
+      <p>Organize large stylesheets efficiently.</p>
+    </article>
+
+    <article class="mini-slide">
+      <h3>Advanced Grid Systems</h3>
+      <p>Create magazine style layouts.</p>
+    </article>
+
+    <article class="mini-slide">
+      <h3>Motion Design Basics</h3>
+      <p>Build smooth micro-interactions.</p>
+    </article>
+
+  </div>
+
+</section>
+
+<section class="reading-analytics">
+
+  <div class="analytics-card">
+    <i class="fa-solid fa-book-open"></i>
+    <h3>18 Articles Read</h3>
+    <span>This Month</span>
+  </div>
+
+  <div class="analytics-card">
+    <i class="fa-solid fa-clock"></i>
+    <h3>9.4 Hours</h3>
+    <span>Reading Time</span>
+  </div>
+
+  <div class="analytics-card">
+    <i class="fa-solid fa-fire"></i>
+    <h3>12 Day Streak</h3>
+    <span>Consistency</span>
+  </div>
+
+</section>
+
+<section class="editor-recommendation">
+
+  <div class="editor-avatar">
+    <img src="https://i.pravatar.cc/200?img=55" alt="">
+  </div>
+
+  <div class="editor-body">
+
+    <span>⭐ Recommended By Editor</span>
+
+    <h2>
+      Building Accessible Components That Scale
+    </h2>
+
+    <p>
+      One of our most important guides covering
+      accessibility-first design systems.
+    </p>
+
+    <a href="#" class="primary-btn">
+      Read Recommendation
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="article-series">
+
+  <div class="section-header">
+    <span class="section-tag">📚 Learning Path</span>
+    <h2>Frontend Mastery Series</h2>
+  </div>
+
+  <div class="series-list">
+
+    <div class="series-item">
+      <span>01</span>
+      <h4>HTML Foundations</h4>
+    </div>
+
+    <div class="series-item">
+      <span>02</span>
+      <h4>Modern CSS Architecture</h4>
+    </div>
+
+    <div class="series-item">
+      <span>03</span>
+      <h4>JavaScript Essentials</h4>
+    </div>
+
+    <div class="series-item">
+      <span>04</span>
+      <h4>Advanced React Development</h4>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="article-categories">
+
+  <div class="section-header">
+    <span class="section-tag">📂 Categories</span>
+    <h2>Browse Topics</h2>
+  </div>
+
+  <div class="category-grid">
+
+    <a href="#" class="category-box">
+      <i class="fa-solid fa-code"></i>
+      <span>Frontend</span>
+    </a>
+
+    <a href="#" class="category-box">
+      <i class="fa-solid fa-palette"></i>
+      <span>UI Design</span>
+    </a>
+
+    <a href="#" class="category-box">
+      <i class="fa-solid fa-brain"></i>
+      <span>AI</span>
+    </a>
+
+    <a href="#" class="category-box">
+      <i class="fa-solid fa-chart-line"></i>
+      <span>Analytics</span>
+    </a>
+
+  </div>
+
+</section>
   <h1>
     Learn Modern <span>UI Design</span><br>
     & Frontend Development
@@ -398,15 +620,150 @@
 
 </section>
 
+<article class="article-card">
+
+  <div class="article-image">
+    <img src="https://picsum.photos/500/300?random=301" alt="Technology Article">
+    <span class="category">Technology</span>
+  </div>
+
+  <div class="article-content">
+
+    <div class="article-meta">
+      <span><i class="fa-regular fa-calendar"></i> July 2026</span>
+      <span><i class="fa-regular fa-clock"></i> 8 min</span>
+    </div>
+
+    <h3>
+      AI Powered Web Development in 2026
+    </h3>
+
+    <p>
+      Discover how AI tools accelerate frontend workflows,
+      automate coding tasks, and improve developer productivity.
+    </p>
+
+    <a href="#" class="read-more">
+      Read Article
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+  </div>
+
+</article>
+
+<section class="mini-articles">
+
+  <div class="section-header">
+    <span class="section-tag">🔥 Quick Reads</span>
+    <h2>Frontend Insights</h2>
+  </div>
+
+  <div class="articles-grid">
+
+    <article class="article-card">
+      <div class="article-content">
+        <h3>Master CSS Variables</h3>
+        <p>Create scalable theme systems with custom properties.</p>
+        <a href="#" class="read-more">
+          Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <div class="article-content">
+        <h3>Modern Typography Systems</h3>
+        <p>Improve readability using fluid typography techniques.</p>
+        <a href="#" class="read-more">
+          Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <div class="article-content">
+        <h3>Responsive Dashboard Layouts</h3>
+        <p>Build flexible admin panels using CSS Grid.</p>
+        <a href="#" class="read-more">
+          Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<section class="popular-articles">
+
+  <div class="section-header">
+    <span class="section-tag">⭐ Popular</span>
+    <h2>Most Read Articles</h2>
+  </div>
+
+  <div class="popular-list">
+
+    <div class="popular-item">
+      <span class="rank">01</span>
+      <div>
+        <h4>Advanced React Performance Patterns</h4>
+        <p>21K Reads</p>
+      </div>
+    </div>
+
+    <div class="popular-item">
+      <span class="rank">02</span>
+      <div>
+        <h4>CSS Grid Complete Guide</h4>
+        <p>18K Reads</p>
+      </div>
+    </div>
+
+    <div class="popular-item">
+      <span class="rank">03</span>
+      <div>
+        <h4>Dark Mode Design Principles</h4>
+        <p>15K Reads</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="recommended-author">
+
+  <div class="author-card-modern">
+
+    <img src="https://i.pravatar.cc/200?img=40" alt="">
+
+    <h3>Jessica Brown</h3>
+
+    <span>Senior Product Designer</span>
+
+    <p>
+      Published over 70 UI/UX articles focused on accessibility,
+      product strategy, and design systems.
+    </p>
+
+    <a href="#">
+      Explore Articles
+    </a>
+
+  </div>
+
+</section>
+
 <div>
   <form class="scearch">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text" placeholder="Filter Articles..." id="articleSearch">
+    <input type="text" placeholder="Filter Articles..." id="articleSearch" data-a11y-remediation="label-needed">
   </form>
 </div>
 
 <!-- ARTICLE -->
-<article class="article-card">
+<article class="article-card" role="article" aria-label="React component article">
 
   <div class="article-image">
     <img src="https://picsum.photos/500/300?random=5" alt="">
@@ -438,711 +795,772 @@
 
 </article>
 
-<!-- ================= TRENDING ARTICLES SECTION ================= -->
-<section class="articles-section trending-section">
+<section class="split-featured">
 
-  <div class="section-header">
-    <span class="section-tag">🔥 Trending</span>
-    <h2>Modern Frontend Articles</h2>
-    <p>
-      Discover premium UI/UX tutorials, design systems, animations,
-      accessibility, and modern web development techniques.
-    </p>
+  <div class="split-image">
+    <img src="https://picsum.photos/800/600?random=101" alt="">
   </div>
 
-  <div class="articles-grid">
+  <div class="split-content">
 
-    <!-- ARTICLE -->
-    <article class="article-card featured-glow">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=12" alt="Next.js Article">
-        <span class="category">Next.js</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> June 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 11 min</span>
-        </div>
-
-        <h3>
-          Build Full Stack Apps with Next.js 15
-        </h3>
-
-        <p>
-          Learn routing, server actions, authentication,
-          and modern React architecture using Next.js.
-        </p>
-
-        <div class="article-tags">
-          <span>#React</span>
-          <span>#SSR</span>
-          <span>#Performance</span>
-        </div>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-    <!-- ARTICLE -->
-    <article class="article-card">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=13" alt="Glassmorphism">
-        <span class="category">Design</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> May 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 7 min</span>
-        </div>
-
-        <h3>
-          Glassmorphism UI Design Guide
-        </h3>
-
-        <p>
-          Create beautiful frosted glass interfaces using
-          backdrop blur, transparency, and layered shadows.
-        </p>
-
-        <div class="article-tags">
-          <span>#CSS</span>
-          <span>#UI</span>
-          <span>#Design</span>
-        </div>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-    <!-- ARTICLE -->
-    <article class="article-card">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=14" alt="Animations">
-        <span class="category">Animation</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> April 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 9 min</span>
-        </div>
-
-        <h3>
-          Create Scroll Reveal Animations
-        </h3>
-
-        <p>
-          Build smooth scroll-triggered animations
-          using Intersection Observer and CSS transforms.
-        </p>
-
-        <div class="article-tags">
-          <span>#JavaScript</span>
-          <span>#Motion</span>
-          <span>#UX</span>
-        </div>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-    <!-- ARTICLE -->
-    <article class="article-card">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=15" alt="AI UI">
-        <span class="category">AI UI</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> March 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 13 min</span>
-        </div>
-
-        <h3>
-          Designing Interfaces for AI Products
-        </h3>
-
-        <p>
-          Learn modern UX principles for AI dashboards,
-          chat interfaces, and intelligent workflows.
-        </p>
-
-        <div class="article-tags">
-          <span>#AI</span>
-          <span>#UX</span>
-          <span>#Future</span>
-        </div>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-    <!-- ARTICLE -->
-    <article class="article-card">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=16" alt="Accessibility">
-        <span class="category">Accessibility</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> February 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 6 min</span>
-        </div>
-
-        <h3>
-          Accessible Components for Everyone
-        </h3>
-
-        <p>
-          Improve usability with keyboard navigation,
-          ARIA labels, focus states, and semantic HTML.
-        </p>
-
-        <div class="article-tags">
-          <span>#A11Y</span>
-          <span>#HTML</span>
-          <span>#UX</span>
-        </div>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-    <!-- ARTICLE -->
-    <article class="article-card">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=17" alt="Dashboard">
-        <span class="category">Dashboard</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> January 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 10 min</span>
-        </div>
-
-        <h3>
-          Designing Modern Analytics Dashboards
-        </h3>
-
-        <p>
-          Learn layouts, data visualization patterns,
-          widgets, charts, and responsive admin panels.
-        </p>
-
-        <div class="article-tags">
-          <span>#Dashboard</span>
-          <span>#Charts</span>
-          <span>#Analytics</span>
-        </div>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-<!-- ================= FEATURED EDITOR PICK ================= -->
-<section class="editor-pick">
-
-  <div class="editor-content">
-
-    <span class="editor-label">
-      ⭐ Editor's Pick
+    <span class="split-badge">
+      <i class="fa-solid fa-rocket"></i> Featured Story
     </span>
 
-    <h2>
-      2026 UI Trends Every Frontend Developer Should Know
-    </h2>
-
-    <p>
-      Explore the biggest trends shaping the future of web interfaces —
-      including AI-powered UX, immersive animations, glassmorphism,
-      brutalism, 3D interactions, and minimal dark mode systems.
-    </p>
-
-    <a href="#" class="primary-btn">
-      Read Full Guide
-    </a>
-
+  <div class="reading-progress-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div id="readingProgress" class="reading-progress-bar"></div>
   </div>
 
-  <div class="editor-image">
-    <img src="https://picsum.photos/700/500?random=18" alt="Editor Pick">
-  </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-</section>
+  <header class="navbar">
+    <div class="logo">⬡ UIverse</div>
+    <nav class="nav-links" aria-label="Primary Navigation">
+      <a href="index.html">Home</a>
+      <a href="ai-components.html">Components</a>
+      <a href="article.html" aria-current="page">Articles</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode theme">
+      <i class="fa-solid fa-moon" aria-hidden="true"></i>
+    </button>
+  </header>
 
-<!-- ARTICLE -->
-<article class="article-card">
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=6" alt="">
-    <span class="category">UI/UX</span>
-  </div>
-
-  <div class="article-content">
-
-    <div class="article-meta">
-      <span><i class="fa-regular fa-calendar"></i> November 2025</span>
-      <span><i class="fa-regular fa-clock"></i> 6 min</span>
+  <aside class="sidebar" id="sidebar" aria-label="Secondary Sidebar Navigation">
+    <div class="sidebar-brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-text">UIverse</span>
     </div>
-
-    <h3>
-      Principles of Clean UI Design
-    </h3>
-
-    <p>
-      Discover spacing systems, typography hierarchy,
-      color balance, and layout techniques for elegant interfaces.
-    </p>
-
-    <a href="#" class="read-more">
-      Read Article
-      <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
-  </div>
-
-</article>
-
-<!-- ARTICLE -->
-<article class="article-card">
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=7" alt="">
-    <span class="category">Tailwind</span>
-  </div>
-
-  <div class="article-content">
-
-    <div class="article-meta">
-      <span><i class="fa-regular fa-calendar"></i> October 2025</span>
-      <span><i class="fa-regular fa-clock"></i> 8 min</span>
-    </div>
-
-    <h3>
-      Build Fast Layouts with Tailwind CSS
-    </h3>
-
-    <p>
-      Speed up frontend development using utility-first
-      classes and responsive design workflows.
-    </p>
-
-    <a href="#" class="read-more">
-      Read Article
-      <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
-  </div>
-
-</article>
-
-<!-- ARTICLE -->
-<article class="article-card">
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=8" alt="">
-    <span class="category">Performance</span>
-  </div>
-
-  <div class="article-content">
-
-    <div class="article-meta">
-      <span><i class="fa-regular fa-calendar"></i> September 2025</span>
-      <span><i class="fa-regular fa-clock"></i> 12 min</span>
-    </div>
-
-    <h3>
-      Optimize Frontend Performance
-    </h3>
-
-    <p>
-      Improve loading speed with lazy loading, image optimization,
-      caching strategies, and efficient rendering.
-    </p>
-
-    <a href="#" class="read-more">
-      Read Article
-      <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
-  </div>
-
-</article>
-
-<!-- ARTICLE -->
-<article class="article-card">
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=9" alt="">
-    <span class="category">Animation</span>
-  </div>
-
-  <div class="article-content">
-
-    <div class="article-meta">
-      <span><i class="fa-regular fa-calendar"></i> August 2025</span>
-      <span><i class="fa-regular fa-clock"></i> 9 min</span>
-    </div>
-
-    <h3>
-      Modern CSS Animation Techniques
-    </h3>
-
-    <p>
-      Create engaging user experiences with transitions,
-      keyframes, scroll animations, and hover effects.
-    </p>
-
-    <a href="#" class="read-more">
-      Read Article
-      <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
-  </div>
-
-</article>
-
-<!-- ARTICLE -->
-<article class="article-card">
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=11" alt="">
-    <span class="category">Design Systems</span>
-  </div>
-
-  <div class="article-content">
-
-    <div class="article-meta">
-      <span><i class="fa-regular fa-calendar"></i> July 2025</span>
-      <span><i class="fa-regular fa-clock"></i> 11 min</span>
-    </div>
-
-    <h3>
-      Build Scalable Design Systems
-    </h3>
-
-    <p>
-      Learn how modern companies create reusable design tokens,
-      component libraries, and consistent UI patterns.
-    </p>
-
-    <a href="#" class="read-more">
-      Read Article
-      <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
-  </div>
-
-</article>
-<!-- ================= FEATURED ARTICLE ================= -->
-<section class="featured-article">
-
-  <div class="featured-image">
-    <img src="https://picsum.photos/1200/600?random=10" alt="Featured Article" srcset="https://picsum.photos/480/240?random=10 480w, https://picsum.photos/768/384?random=10 768w, https://picsum.photos/1024/512?random=10 1024w, https://picsum.photos/1440/720?random=10 1440w, https://picsum.photos/1920/960?random=10 1920w" sizes="(max-width: 768px) 100vw, 100vw" loading="eager" decoding="async">
-  </div>
-
-  <div class="featured-content">
-
-    <span class="featured-tag">
-      Featured
-    </span>
-
-    <h2>
-      Build Stunning Dark Mode Interfaces
-    </h2>
-
-    <p>
-      Learn how to create accessible, modern, and visually balanced dark mode
-      experiences using CSS variables, contrast systems, and responsive layouts.
-    </p>
-
-    <div class="featured-meta">
-
-      <div class="author">
-        <div class="avatar">A</div>
-        <span>Alex Morgan</span>
-      </div>
-
-      <div class="meta-info">
-        <span><i class="fa-regular fa-clock"></i> 8 min read</span>
-        <span><i class="fa-regular fa-calendar"></i> May 2026</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================= ARTICLES ================= -->
-<section class="articles-section">
-
-  <div class="section-header">
-    <span class="section-tag">Latest Posts</span>
-    <h2>📰 Article Components</h2>
-    <p>Modern reusable article layouts for blogs and tutorials.</p>
-  </div>
-
-  <div class="articles-grid">
-
-    <!-- ARTICLE -->
-    <article class="article-card">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=1" alt="" srcset="https://picsum.photos/480/288?random=1 480w, https://picsum.photos/768/461?random=1 768w, https://picsum.photos/1024/614?random=1 1024w, https://picsum.photos/1440/864?random=1 1440w, https://picsum.photos/1920/1152?random=1 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
-        <span class="category">Tutorial</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> April 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 5 min</span>
-        </div>
-
-        <h3>
-          Build Responsive Hero Sections
-        </h3>
-
-        <p>
-          Create beautiful responsive hero sections with gradients,
-          glassmorphism and animated UI effects.
-        </p>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-    <!-- ARTICLE -->
-    <article class="article-card">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=2" alt="" srcset="https://picsum.photos/480/288?random=2 480w, https://picsum.photos/768/461?random=2 768w, https://picsum.photos/1024/614?random=2 1024w, https://picsum.photos/1440/864?random=2 1440w, https://picsum.photos/1920/1152?random=2 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
-        <span class="category">CSS</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> March 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 7 min</span>
-        </div>
-
-        <h3>
-          Master CSS Grid Layouts
-        </h3>
-
-        <p>
-          Learn advanced grid systems for dashboards, galleries,
-          cards and responsive sections.
-        </p>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-    <!-- ARTICLE -->
-    <article class="article-card">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=3" alt="" srcset="https://picsum.photos/480/288?random=3 480w, https://picsum.photos/768/461?random=3 768w, https://picsum.photos/1024/614?random=3 1024w, https://picsum.photos/1440/864?random=3 1440w, https://picsum.photos/1920/1152?random=3 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
-        <span class="category">Accessibility</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> February 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 6 min</span>
-        </div>
-
-        <h3>
-          Accessibility in Dark Mode UI
-        </h3>
-
-        <p>
-          Improve readability, color contrast, and focus states
-          for accessible user experiences.
-        </p>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-    <!-- ARTICLE -->
-    <article class="article-card">
-
-      <div class="article-image">
-        <img src="https://picsum.photos/500/300?random=4" alt="" srcset="https://picsum.photos/480/288?random=4 480w, https://picsum.photos/768/461?random=4 768w, https://picsum.photos/1024/614?random=4 1024w, https://picsum.photos/1440/864?random=4 1440w, https://picsum.photos/1920/1152?random=4 1920w" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" decoding="async">
-        <span class="category">JavaScript</span>
-      </div>
-
-      <div class="article-content">
-
-        <div class="article-meta">
-          <span><i class="fa-regular fa-calendar"></i> January 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 9 min</span>
-        </div>
-
-        <h3>
-          Smooth UI Animations with JavaScript
-        </h3>
-
-        <p>
-          Add scroll animations, hover effects, and interactive
-          UI experiences using vanilla JavaScript.
-        </p>
-
-        <a href="#" class="read-more">
-          Read Article
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-<!-- ================= NEWSLETTER ================= -->
-<section class="newsletter">
-
-  <div class="newsletter-content">
-
-    <h2>
-      Stay Updated 🚀
-    </h2>
-
-    <p>
-      Get notified whenever new UI tutorials and components are added.
-    </p>
-
-    <div class="newsletter-form">
-
-      <input type="email" placeholder="Enter your email">
-
-      <button>
-        Subscribe
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
-
-    <div class="footer-col">
-      <h3>Explore</h3>
+    <nav class="sidebar-nav">
       <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
+        <li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Home</span></a></li>
+        <li><a href="button.html"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i><span>Buttons</span></a></li>
+        <li><a href="dropdown-components.html"><i class="fa-solid fa-caret-down" aria-hidden="true"></i><span>Dropdowns</span></a></li>
+        <li><a href="profile-components.html"><i class="fa-solid fa-user" aria-hidden="true"></i><span>Profiles</span></a></li>
+        <li><a href="navbar.html"><i class="fa-solid fa-bars" aria-hidden="true"></i><span>Navbar</span></a></li>
+        <li><a href="cards.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Cards</span></a></li>
+        <li><a href="flipcards.html"><i class="fa-solid fa-clone" aria-hidden="true"></i><span>3D Cards</span></a></li>
+        <li><a href="inputs.html"><i class="fa-solid fa-keyboard" aria-hidden="true"></i><span>Inputs</span></a></li>
+        <li><a href="forms.html"><i class="fa-brands fa-wpforms" aria-hidden="true"></i><span>Forms</span></a></li>
+        <li><a href="badges.html"><i class="fa-solid fa-award" aria-hidden="true"></i><span>Badges</span></a></li>
+        <li><a href="blog.html"><i class="fa-solid fa-blog" aria-hidden="true"></i><span>Blog</span></a></li>
+        <li class="active"><a href="article.html" aria-current="page"><i class="fa-solid fa-newspaper" aria-hidden="true"></i><span>Articles</span></a></li>
+        <li><a href="alerts.html"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><span>Alerts</span></a></li>
+        <li><a href="color.html"><i class="fa-solid fa-palette" aria-hidden="true"></i><span>Colors</span></a></li>
+        <li><a href="charts.html"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i><span>Charts</span></a></li>
+        <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>Dashboard</span></a></li>
+        <li><a href="div.html"><i class="fa-solid fa-square" aria-hidden="true"></i><span>DIV</span></a></li>
+        <li><a href="widgets.html"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Widgets</span></a></li>
+        <li><a href="search.html"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Search Bars</span></a></li>
+        <li><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><span>Hover Effects</span></a></li>
+        <li><a href="error.html"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i><span>Error Pages</span></a></li>
+        <li><a href="ecommerce.html"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><span>E-commerce</span></a></li>
+        <li><a href="files.html"><i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i><span>Drag & Drop</span></a></li>
+        <li><a href="hero.html"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Hero Sections</span></a></li>
+        <li><a href="loaders.html"><i class="fa-solid fa-spinner" aria-hidden="true"></i><span>Loaders</span></a></li>
+        <li><a href="timeline.html"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>Timeline</span></a></li>
+        <li><a href="map.html"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i><span>Maps</span></a></li>
+        <li><a href="menu.html"><i class="fa-solid fa-bars-staggered" aria-hidden="true"></i><span>Menu</span></a></li>
+        <li><a href="pricing.html"><i class="fa-solid fa-tags" aria-hidden="true"></i><span>Pricing</span></a></li>
+        <li><a href="subscription.html"><i class="fa-solid fa-credit-card" aria-hidden="true"></i><span>Subscription</span></a></li>
+        <li><a href="auth.html"><i class="fa-solid fa-user-shield" aria-hidden="true"></i><span>Authentication</span></a></li>
+        <li><a href="recovery.html"><i class="fa-solid fa-key" aria-hidden="true"></i><span>Password Recovery</span></a></li>
+        <li><a href="section.html"><i class="fa-solid fa-rectangle-list" aria-hidden="true"></i><span>Section</span></a></li>
+        <li><a href="span.html"><i class="fa-solid fa-code" aria-hidden="true"></i><span>Span</span></a></li>
+        <li><a href="table.html"><i class="fa-solid fa-table" aria-hidden="true"></i><span>Table</span></a></li>
+        <li><a href="tabs.html"><i class="fa-solid fa-table-columns" aria-hidden="true"></i><span>Tabs</span></a></li>
+        <li><a href="terms.html"><i class="fa-solid fa-file-contract" aria-hidden="true"></i><span>Terms</span></a></li>
+        <li><a href="testimonials.html"><i class="fa-solid fa-comments" aria-hidden="true"></i><span>Testimonials</span></a></li>
+        <li><a href="toggles.html"><i class="fa-solid fa-toggle-on" aria-hidden="true"></i><span>Toggle</span></a></li>
+        <li><a href="radiobutton.html"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i><span>Radio Buttons</span></a></li>
+        <li><a href="checkbox.html"><i class="fa-solid fa-square-check" aria-hidden="true"></i><span>Checkboxes</span></a></li>
+        <li><a href="notifications-premium.html"><i class="fa-solid fa-bell" aria-hidden="true"></i><span>Notifications V2</span></a></li>
+        <li><a href="step-indicators.html"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span>Steppers</span></a></li>
+        <li><a href="progress-premium.html"><i class="fa-solid fa-bars-progress" aria-hidden="true"></i><span>Progress V2</span></a></li>
+        <li><a href="ratings-premium.html"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Ratings V2</span></a></li>
+        <li><a href="filters-premium.html"><i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Filters V2</span></a></li>
+        <li><a href="admin-panel.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>Admin Panel V2</span></a></li>
+        <li><a href="about.html"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>About</span></a></li>
+        <li><a href="documentation.html"><i class="fa-solid fa-book" aria-hidden="true"></i><span>Documentation</span></a></li>
+        <li><a href="faq.html"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Faq</span></a></li>
+        <li><a href="contact.html"><i class="fa-regular fa-envelope" aria-hidden="true"></i><span>Contact Us</span></a></li>
       </ul>
+    </nav>
+  </aside>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+  <main id="main-content" class="main-content">
+    
+    <section class="hero">
+      <div class="hero-badge">
+        <i class="fa-solid fa-sparkles" aria-hidden="true"></i> UI Articles & Tutorials
+      </div>
+      <h1>Learn Modern <span>UI Design</span><br>& Frontend Development</h1>
+      <p>Explore beautifully crafted tutorials, guides, and UI inspiration built with pure HTML, CSS & JavaScript.</p>
+      <div class="hero-actions">
+        <a href="#" class="primary-btn">Explore Articles</a>
+        <a href="#" class="secondary-btn">Start Learning</a>
+      </div>
+    </section>
+
+    <div class="layout-body-wrapper">
+      
+      <div class="primary-feed">
+        
+        <div class="search-filter-wrapper">
+          <form class="search-form" onsubmit="event.preventDefault();">
+            <label for="articleSearch" class="visually-hidden">Filter articles by keyword</label>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input type="text" placeholder="Filter Articles..." id="articleSearch">
+          </form>
+        </div>
+
+        <div class="articles-flex-stack">
+          
+          <article class="article-card">
+            <div class="article-image">
+              <img src="https://picsum.photos/500/300?random=301" alt="Abstract representations of code interfaces streaming dynamic processes">
+              <span class="category">Technology</span>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> July 2026</span>
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 8 min</span>
+              </div>
+              <h3>AI Powered Web Development in 2026</h3>
+              <p>Discover how AI tools accelerate frontend workflows, automate coding tasks, and improve developer productivity.</p>
+              <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <img src="https://picsum.photos/500/300?random=5" alt="Clean visual flow charts showcasing components scaling patterns">
+              <span class="category">React</span>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> December 2025</span>
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 10 min</span>
+              </div>
+              <h3>Create Reusable React Components</h3>
+              <p>Learn how to structure scalable React components using props, composition, and reusable UI patterns.</p>
+              <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+        </div>
+
+        <section class="mini-articles">
+          <div class="section-header">
+            <span class="section-tag">🔥 Quick Reads</span>
+            <h2>Frontend Insights</h2>
+          </div>
+          <div class="articles-grid">
+            <article class="article-card">
+              <div class="article-content">
+                <h3>Master CSS Variables</h3>
+                <p>Create scalable theme systems with custom properties.</p>
+                <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+            <article class="article-card">
+              <div class="article-content">
+                <h3>Modern Typography Systems</h3>
+                <p>Improve readability using fluid typography techniques.</p>
+                <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+            <article class="article-card">
+              <div class="article-content">
+                <h3>Responsive Dashboard Layouts</h3>
+                <p>Build flexible admin panels using CSS Grid.</p>
+                <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="editorial-blocks">
+          
+          <article class="split-featured">
+            <div class="split-image">
+              <img src="https://picsum.photos/800/600?random=101" alt="Futuristic interactive concept interfaces displaying dimensional layout views">
+            </div>
+            <div class="split-content">
+              <span class="split-badge"><i class="fa-solid fa-rocket" aria-hidden="true"></i> Featured Story</span>
+              <h2>The Future of Interactive UI Design in 2026</h2>
+              <p>Discover immersive interfaces, AI-assisted workflows, kinetic typography, and next-generation frontend experiences.</p>
+              <div class="split-meta">
+                <span><i class="fa-regular fa-user" aria-hidden="true"></i> Sarah Johnson</span>
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 12 min read</span>
+              </div>
+              <a href="#" class="primary-btn">Read Full Article</a>
+            </div>
+          </article>
+
+          <article class="horizontal-article">
+            <div class="horizontal-image">
+              <img src="https://picsum.photos/500/300?random=102" alt="Modular folder structures mapped alongside engineering paradigms">
+            </div>
+            <div class="horizontal-content">
+              <span class="mini-category">Development</span>
+              <h3>Building Advanced Component Libraries</h3>
+              <p>Learn scalable architecture patterns for reusable frontend component systems.</p>
+              <div class="horizontal-meta">
+                <span>May 2026</span>
+                <span>8 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-article">
+            <img src="https://picsum.photos/500/300?random=103" alt="Abstract interface panels casting realistic acrylic blurs and refraction layouts">
+            <div class="glass-overlay">
+              <span>UI Trends</span>
+              <h3>Modern Glassmorphism Interfaces</h3>
+              <a href="#">Explore &rarr;</a>
+            </div>
+          </article>
+
+        </section>
+
+        <section class="magazine-feature">
+          <div class="magazine-image">
+            <img src="https://picsum.photos/900/600?random=220" alt="Minimal clean architectural interface components overviewing structural layout charts">
+          </div>
+          <div class="magazine-content">
+            <span class="magazine-tag">✨ Premium Editorial</span>
+            <h2>Designing Enterprise UI Systems That Scale</h2>
+            <p>Learn how top companies build scalable design systems, component libraries, and enterprise-ready frontend architecture.</p>
+            <div class="magazine-meta">
+              <span><i class="fa-regular fa-user" aria-hidden="true"></i> Emily Carter</span>
+              <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 14 min read</span>
+              <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> June 2026</span>
+            </div>
+            <a href="#" class="primary-btn">Read Editorial</a>
+          </div>
+        </section>
+
+        <section class="minimal-articles">
+          <div class="section-header">
+            <span class="section-tag">📚 Developer Reads</span>
+            <h2>Professional UI Engineering Articles</h2>
+          </div>
+          <div class="minimal-list">
+            <article class="minimal-card">
+              <div class="minimal-left">
+                <span class="minimal-category">Performance</span>
+                <h3>Optimizing React Rendering Performance</h3>
+                <p>Reduce unnecessary renders using memoization, virtualization, and efficient state management.</p>
+                <div class="minimal-meta">
+                  <span>8 min read</span>
+                  <span>June 2026</span>
+                </div>
+              </div>
+              <a href="#" class="minimal-arrow" aria-label="Read performance article"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+
+            <article class="minimal-card">
+              <div class="minimal-left">
+                <span class="minimal-category">Accessibility</span>
+                <h3>Building Inclusive Design Systems</h3>
+                <p>Learn accessibility-first workflows for scalable component-driven frontend systems.</p>
+                <div class="minimal-meta">
+                  <span>6 min read</span>
+                  <span>May 2026</span>
+                </div>
+              </div>
+              <a href="#" class="minimal-arrow" aria-label="Read accessibility article"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+
+            <article class="minimal-card">
+              <div class="minimal-left">
+                <span class="minimal-category">Frontend</span>
+                <h3>Modern State Management Strategies</h3>
+                <p>Compare Context API, Zustand, Redux Toolkit, and server state management patterns.</p>
+                <div class="minimal-meta">
+                  <span>10 min read</span>
+                  <span>April 2026</span>
+                </div>
+              </div>
+              <a href="#" class="minimal-arrow" aria-label="Read state management article"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <section class="podcast-article">
+          <div class="podcast-cover">
+            <img src="https://picsum.photos/500/500?random=221" alt="Album cover art featuring structured typographic layout styling UIverse Audio Experience">
+          </div>
+          <div class="podcast-content">
+            <span class="podcast-badge">🎧 UI Podcast</span>
+            <h2>The Evolution of Modern Product Design</h2>
+            <p>Listen to leading UI engineers and product designers discuss the future of interaction design, AI interfaces, and UX strategy.</p>
+            <div class="podcast-controls">
+              <button class="play-btn" aria-label="Play podcast episode 42">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+              <div class="podcast-info">
+                <strong>Episode 42</strong>
+                <span>48 Minutes</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="article-timeline">
+          <div class="section-header">
+            <span class="section-tag">🕒 Timeline</span>
+            <h2>Frontend Evolution</h2>
+          </div>
+          <div class="timeline-wrapper">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2023</span>
+                <h3>Rise of AI Assisted UI Development</h3>
+                <p>AI-powered coding tools transformed how frontend developers prototype and ship interfaces.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2024</span>
+                <h3>Motion Design Became Standard</h3>
+                <p>Interactive micro animations and kinetic layouts became core parts of premium UX systems.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2026</span>
+                <h3>Immersive Interfaces & 3D Experiences</h3>
+                <p>Frontend experiences evolved with 3D interactions, spatial interfaces, and AI-driven personalization.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="author-grid-section">
+          <div class="section-header">
+            <span class="section-tag">👨‍💻 Top Authors</span>
+            <h2>Popular Contributors</h2>
+          </div>
+          <div class="author-grid">
+            <div class="author-card-modern">
+              <img src="https://i.pravatar.cc/200?img=30" alt="Daniel Brooks Profile portrait">
+              <h3>Daniel Brooks</h3>
+              <span>Frontend Architect</span>
+              <p>Specialized in scalable design systems and enterprise UI platforms.</p>
+              <a href="#">View Articles</a>
+            </div>
+            <div class="author-card-modern">
+              <img src="https://i.pravatar.cc/200?img=31" alt="Sophia Lee Profile portrait">
+              <h3>Sophia Lee</h3>
+              <span>UX Researcher</span>
+              <p>Focused on accessibility, inclusive design, and product usability systems.</p>
+              <a href="#">View Articles</a>
+            </div>
+            <div class="author-card-modern">
+              <img src="https://i.pravatar.cc/200?img=32" alt="Marcus Allen Profile portrait">
+              <h3>Marcus Allen</h3>
+              <span>Animation Engineer</span>
+              <p>Building immersive motion systems for modern web applications.</p>
+              <a href="#">View Articles</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="quote-article">
+          <div class="quote-icon">
+            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+          </div>
+          <blockquote>
+            <p>“The best interfaces disappear &mdash; allowing users to focus entirely on the experience.”</p>
+          </blockquote>
+          <cite>&mdash; UIverse Editorial Team</cite>
+        </section>
+
+        <section class="author-spotlight">
+          <div class="author-avatar">
+            <img src="https://i.pravatar.cc/200?img=12" alt="Alex Morgan Portrait headshot">
+          </div>
+          <div class="author-details">
+            <span class="section-tag"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Featured Author</span>
+            <h2>Alex Morgan</h2>
+            <p>UI Engineer & Design System Architect passionate about creating scalable frontend experiences.</p>
+            <div class="author-stats">
+              <div><strong>48</strong><span>Articles</span></div>
+              <div><strong>120K</strong><span>Readers</span></div>
+              <div><strong>4.9</strong><span>Rating</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="articles-section trending-section">
+          <div class="section-header">
+            <span class="section-tag"><i class="fa-solid fa-fire" aria-hidden="true"></i> Trending</span>
+            <h2>Modern Frontend Articles</h2>
+            <p>Discover premium UI/UX tutorials, design systems, animations, accessibility, and modern web development techniques.</p>
+          </div>
+          <div class="articles-grid">
+            <article class="article-card featured-glow">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=12" alt="Next.js interface layers presentation rendering abstract graphic data schemas">
+                <span class="category">Next.js</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> June 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 11 min</span>
+                </div>
+                <h3>Build Full Stack Apps with Next.js 15</h3>
+                <p>Learn routing, server actions, authentication, and modern React architecture using Next.js.</p>
+                <div class="article-tags">
+                  <span class="tag">#React</span>
+                  <span class="tag">#SSR</span>
+                  <span class="tag">#Performance</span>
+                </div>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="article-card">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=13" alt="Abstract rendering translucent layered blurred surfaces floating visually over solid elements">
+                <span class="category">Design</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> May 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 7 min</span>
+                </div>
+                <h3>Glassmorphism UI Design Guide</h3>
+                <p>Create beautiful frosted glass interfaces using backdrop blur, transparency, and layered shadows.</p>
+                <div class="article-tags">
+                  <span class="tag">#CSS</span>
+                  <span class="tag">#UI</span>
+                  <span class="tag">#Design</span>
+                </div>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="article-card">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=14" alt="Fluid abstract dynamic lines twisting representationally of user interface scroll physics animations">
+                <span class="category">Animation</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> April 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 9 min</span>
+                </div>
+                <h3>Create Scroll Reveal Animations</h3>
+                <p>Build smooth scroll-triggered animations using Intersection Observer and CSS transforms.</p>
+                <div class="article-tags">
+                  <span class="tag">#JavaScript</span>
+                  <span class="tag">#Motion</span>
+                  <span class="tag">#UX</span>
+                </div>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="article-card">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=15" alt="Clean visual dashboards capturing AI parsing sequences elegantly mapping nodes patterns">
+                <span class="category">AI UI</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> March 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 13 min</span>
+                </div>
+                <h3>Designing Interfaces for AI Products</h3>
+                <p>Learn modern UX principles for AI dashboards, chat interfaces, and intelligent workflows.</p>
+                <div class="article-tags">
+                  <span class="tag">#AI</span>
+                  <span class="tag">#UX</span>
+                  <span class="tag">#Future</span>
+                </div>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="article-card">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=16" alt="Close-up crisp image focusing onto standard laptop clean browser showing highlight focus rings structures">
+                <span class="category">Accessibility</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> February 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 min</span>
+                </div>
+                <h3>Accessible Components for Everyone</h3>
+                <p>Improve usability with keyboard navigation, ARIA labels, focus states, and semantic HTML.</p>
+                <div class="article-tags">
+                  <span class="tag">#A11Y</span>
+                  <span class="tag">#HTML</span>
+                  <span class="tag">#UX</span>
+                </div>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="article-card">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=17" alt="Vibrant vector analytical representations showing chart components configurations templates">
+                <span class="category">Dashboard</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> January 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 10 min</span>
+                </div>
+                <h3>Designing Modern Analytics Dashboards</h3>
+                <p>Learn layouts, data visualization patterns, widgets, charts, and responsive admin panels.</p>
+                <div class="article-tags">
+                  <span class="tag">#Dashboard</span>
+                  <span class="tag">#Charts</span>
+                  <span class="tag">#Analytics</span>
+                </div>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="editor-pick">
+          <div class="editor-content">
+            <span class="editor-label">⭐ Editor's Pick</span>
+            <h2>2026 UI Trends Every Frontend Developer Should Know</h2>
+            <p>Explore the biggest trends shaping the future of web interfaces &mdash; including AI-powered UX, immersive animations, glassmorphism, brutalism, 3D interactions, and minimal dark mode systems.</p>
+            <a href="#" class="primary-btn">Read Full Guide</a>
+          </div>
+          <div class="editor-image">
+            <img src="https://picsum.photos/700/500?random=18" alt="Composite montage design trend illustration rendering brutalist shapes, clean metrics layers, and dark layouts">
+          </div>
+        </section>
+
+        <section class="articles-section">
+          <div class="section-header">
+            <span class="section-tag">Latest Posts</span>
+            <h2>📰 Article Components</h2>
+            <p>Modern reusable article layouts for blogs and tutorials.</p>
+          </div>
+          <div class="articles-grid">
+            <article class="article-card">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=1" alt="Responsive framework layouts mapping dynamically inside adaptive monitors viewport wrappers">
+                <span class="category">Tutorial</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> April 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 5 min</span>
+                </div>
+                <h3>Build Responsive Hero Sections</h3>
+                <p>Create beautiful responsive hero sections with gradients, glassmorphism and animated UI effects.</p>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="article-card">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=2" alt="Geometric grid matrices structural mapping templates design visual layers patterns">
+                <span class="category">CSS</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> March 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 7 min</span>
+                </div>
+                <h3>Master CSS Grid Layouts</h3>
+                <p>Learn advanced grid systems for dashboards, galleries, cards and responsive sections.</p>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="article-card">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=3" alt="Interface screen displaying optimal high contrast elements using deep palettes balances setups">
+                <span class="category">Accessibility</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> February 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 min</span>
+                </div>
+                <h3>Accessibility in Dark Mode UI</h3>
+                <p>Improve readability, color contrast, and focus states for accessible user experiences.</p>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="article-card">
+              <div class="article-image">
+                <img src="https://picsum.photos/500/300?random=4" alt="Lines of programmatic code processing smooth functional browser timelines visually representations">
+                <span class="category">JavaScript</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> January 2026</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 9 min</span>
+                </div>
+                <h3>Smooth UI Animations with JavaScript</h3>
+                <p>Add scroll animations, hover effects, and interactive UI experiences using vanilla JavaScript.</p>
+                <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="featured-article">
+          <div class="featured-image">
+            <img src="https://picsum.photos/1200/600?random=10" alt="Beautiful fluid interface displaying dark structural layouts optimized contextually with contrast accents elements" loading="lazy">
+          </div>
+          <div class="featured-content">
+            <span class="featured-tag">Featured</span>
+            <h2>Build Stunning Dark Mode Interfaces</h2>
+            <p>Learn how to create accessible, modern, and visually balanced dark mode experiences using CSS variables, contrast systems, and responsive layouts.</p>
+            <div class="featured-meta">
+              <div class="author">
+                <div class="avatar" aria-hidden="true">A</div>
+                <span>Alex Morgan</span>
+              </div>
+              <div class="meta-info">
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 8 min read</span>
+                <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> May 2026</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="supplementary-sidebar" aria-label="Discover insights panel section">
+        
+        <div class="popular-articles-widget">
+          <div class="section-header">
+            <span class="section-tag">⭐ Popular</span>
+            <h2>Most Read Articles</h2>
+          </div>
+          <div class="popular-list">
+            <div class="popular-item">
+              <span class="rank" aria-hidden="true">01</span>
+              <div>
+                <h4>Advanced React Performance Patterns</h4>
+                <p>21K Reads</p>
+              </div>
+            </div>
+            <div class="popular-item">
+              <span class="rank" aria-hidden="true">02</span>
+              <div>
+                <h4>CSS Grid Complete Guide</h4>
+                <p>18K Reads</p>
+              </div>
+            </div>
+            <div class="popular-item">
+              <span class="rank" aria-hidden="true">03</span>
+              <div>
+                <h4>Dark Mode Design Principles</h4>
+                <p>15K Reads</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-stats-widget">
+          <div class="stat-box"><h3>250+</h3><p>Articles Published</p></div>
+          <div class="stat-box"><h3>1.2M</h3><p>Monthly Readers</p></div>
+          <div class="stat-box"><h3>80+</h3><p>UI Categories</p></div>
+          <div class="stat-box"><h3>4.9&bigstar;</h3><p>Community Rating</p></div>
+        </div>
+
+        <div class="trending-topics-widget">
+          <h3><i class="fa-solid fa-fire" aria-hidden="true"></i> Trending Topics</h3>
+          <ul class="trending-tags-list">
+            <li><a href="#">AI Interfaces</a></li>
+            <li><a href="#">Dashboard Design</a></li>
+            <li><a href="#">React Patterns</a></li>
+            <li><a href="#">Motion UI</a></li>
+            <li><a href="#">Glassmorphism</a></li>
+          </ul>
+        </div>
+
+      </aside>
+
     </div>
 
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-    </div>
+    <section class="newsletter-premium">
+      <div class="newsletter-box">
+        <span class="newsletter-tag"><i class="fa-solid fa-rocket" aria-hidden="true"></i> Weekly UI Digest</span>
+        <h2>Get Modern UI Inspiration Every Week</h2>
+        <p>UI trends, frontend tutorials, animations, and component ideas directly in your inbox.</p>
+        <form class="newsletter-modern" onsubmit="event.preventDefault();">
+          <label for="premiumEmail" class="visually-hidden">Premium subscription email entry field</label>
+          <input type="email" id="premiumEmail" placeholder="Enter your email" required>
+          <button type="submit">Join Newsletter</button>
+        </form>
+      </div>
+    </section>
 
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
-      </ul>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" target="_blank" rel="noopener" aria-label="UIverse GitHub Corporate Profile repository"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="UIverse LinkedIn Corporate Business platform page"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="UIverse Corporate Channel profile on X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="#">License</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault();">
+          <label for="footerEmail" class="visually-hidden">Footer email entry field for general announcements alerts updates feed</label>
+          <input type="email" id="footerEmail" placeholder="your@email.com" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;" aria-hidden="true"></i> for developers worldwide.</p>
     </div>
 
     <div class="footer-col newsletter">
@@ -1192,7 +1610,6 @@ toggle.addEventListener("click", () => {
 
 /*==============================
 Scearch Filter
-==============================*/
 const input=document.getElementById("articleSearch");
 input.addEventListener("input",function(){
   const filter = input.value.toLowerCase();
@@ -1235,6 +1652,72 @@ window.addEventListener('scroll', () => {
 
 </script>
 
+  </footer>
+
+  <script src="dist/shared.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      // Theme Control Module 
+      const toggle = document.getElementById("themeToggle");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          document.body.classList.toggle("dark-mode");
+          const icon = toggle.querySelector("i");
+          if (icon) {
+            if (document.body.classList.contains("dark-mode")) {
+              icon.className = "fa-solid fa-sun";
+            } else {
+              icon.className = "fa-solid fa-moon";
+            }
+          }
+        });
+      }
+
+      // Reading Progress Module Bar Initialization Engine
+      const readingProgress = document.getElementById("readingProgress");
+      const progressContainer = document.querySelector(".reading-progress-container");
+      
+      if (readingProgress && progressContainer) {
+        window.addEventListener("scroll", () => {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          if (docHeight > 0) {
+            const progress = Math.round((scrollTop / docHeight) * 100);
+            readingProgress.style.width = `${progress}%`;
+            progressContainer.setAttribute("aria-valuenow", progress.toString());
+          }
+        }, { passive: true });
+      }
+
+      // Live Filtering Engine Execution Stack
+      const searchInput = document.getElementById("articleSearch");
+      if (searchInput) {
+        searchInput.addEventListener("input", function() {
+          const filter = this.value.toLowerCase().trim();
+          const cards = document.querySelectorAll(".article-card");
+          
+          cards.forEach(card => {
+            const textContent = card.textContent.toLowerCase();
+            if (textContent.includes(filter)) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      }
+    });
+
+    // Optional Layout Helper Fallback (Safeguard)
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const backdrop = document.getElementById("sidebarBackdrop");
+      if (sidebar && backdrop) {
+        sidebar.classList.toggle("open");
+        backdrop.classList.toggle("visible");
+      }
+    }
+  </script>
 </body>
-</html>
 </html>

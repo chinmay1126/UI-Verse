@@ -137,3 +137,23 @@ body{
     gap: 10px;
   }
 }
+
+.top-section,
+.bottom-section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.top-section {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.bottom-section {
+  grid-template-columns: 2fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+}
