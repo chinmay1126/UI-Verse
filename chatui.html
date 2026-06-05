@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=; style-src 'self' https: 'unsafe-hashes' sha256-+PL55KP89tpW63QGjYEnD/EvPSSDGzzGsVcsji6F7JA=; style-src-attr 'unsafe-hashes' sha256-+PL55KP89tpW63QGjYEnD/EvPSSDGzzGsVcsji6F7JA=">
 
   <meta
     name="viewport"
@@ -35,17 +36,25 @@
     rel="stylesheet"
     href="chatui.css"
   >
-  <link rel="stylesheet" href="shared-sidebar.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  
-  <link rel="stylesheet" href="shared-page.css">
-  <link rel="stylesheet" href="cards.css">
   <link rel="stylesheet" href="playground.css">
+  <style>
+    /* Message wrapping & dynamic height constraints */
+    .bubble {
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .chat-window {
+      max-height: 480px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+  </style>
 
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -362,13 +371,13 @@ NAVBAR
 ===================================================== -->
 
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -783,6 +792,88 @@ MAIN
   </div>
 </div>
 
+<!-- NEW COMPONENTS: Thread, Reactions, Typing Indicator, Message Options, File Preview -->
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">THREAD</span>
+    <h2>Threaded Conversation</h2>
+  </div>
+  <div class="thread-card">
+    <div class="thread-parent">
+      <div class="message received">
+        <img src="https://i.pravatar.cc/100?img=18" alt="">
+        <div class="bubble"><strong>Sam</strong><p>Can we ship the new modal this week?</p><span>09:12 AM</span></div>
+      </div>
+    </div>
+    <div class="thread-replies">
+      <div class="message sent"><div class="bubble"><strong>You</strong><p>Yes — will finalize by Thursday.</p><span>09:14 AM</span></div></div>
+      <div class="message received"><img src="https://i.pravatar.cc/100?img=19" alt=""><div class="bubble"><strong>Jamie</strong><p>I can help QA the changes.</p><span>09:16 AM</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">REACTIONS</span>
+    <h2>Message Reactions</h2>
+  </div>
+  <div class="reactions-row">
+    <div class="message-sample">
+      <div class="bubble"><strong>Olivia</strong><p>Loved the new animations!</p><span>10:02 AM</span></div>
+      <div class="reactions">👍 <span class="count">12</span> ❤️ <span class="count">4</span> 🔥 <span class="count">3</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">TYPING</span>
+    <h2>Typing Indicator</h2>
+  </div>
+  <div class="typing-demo">
+    <div class="contact-item">
+      <img src="https://i.pravatar.cc/100?img=25" alt="">
+      <div>
+        <strong>Alex</strong>
+        <div class="typing-indicator"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">OPTIONS</span>
+    <h2>Message Options</h2>
+  </div>
+  <div class="message-options">
+    <div class="message received">
+      <img src="https://i.pravatar.cc/100?img=28" alt="">
+      <div class="bubble">
+        <strong>Riley</strong>
+        <p>Here's the layout idea — share feedback.</p>
+        <span>11:23 AM</span>
+      </div>
+      <div class="msg-actions">⋯</div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-card">
+  <div class="card-header">
+    <span class="card-label">FILES</span>
+    <h2>File Preview</h2>
+  </div>
+  <div class="file-preview">
+    <div class="file-thumb">📄</div>
+    <div class="file-meta">
+      <strong>design-mockup.png</strong>
+      <p>1.8 MB · Uploaded by Mason</p>
+      <div class="file-actions"><button class="outline-btn">Download</button><button class="primary-btn">Open</button></div>
+    </div>
+  </div>
+</div>
+
 </section>
 
 </main>
@@ -841,5 +932,6 @@ MAIN
 
 <script src="chatui.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

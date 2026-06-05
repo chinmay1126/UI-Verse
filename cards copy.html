@@ -1,50 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cards — UIverse</title>
+  <head>
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-+vkNpoyxbpHrgaXonUyxdb0a40OZojsWNSAbgHkBzOE= sha256-/lXVpl6VhmdnCXVy4vi0Z6J1bXt99Xc1rFaPA/lCViE= sha256-0TSzHDRdvTX9Jd/JQJC7h1Ldpn85TPLWGtiSC9+LzNE= sha256-1fsV3kp8euAUD9Tl0skkbYKde5h1q1d3PoitB7svAwQ= sha256-4AYy+wV6OizzSilKs+ceIkJW/HSN7IYu+sxrcuvg/As= sha256-4HJ2rNk8fAvye8W2dh8d3ERql+zlAJN5A9NoKLhnj3E= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-6SDqfSVROMsJl7AH1nOqmHQe1tawAsUkxFnc8v5JVYY= sha256-8gFoy6vE+eilgv90TMIdLpWBVUNYsV47YETIk9Vv8XI= sha256-N5UFfbgitOf/Be9g0RVrlCwRGcdgeEMRqTBHx6w/SuM= sha256-OjAEnTf0mnu6Ujc40fl//jGDR7+AYh5IxYXAvpfhesA= sha256-R70aVBAZScdj+jNivH0IqduNWChAB/sB7WpX/VeIfUw= sha256-THy4wz38XRnb2nZm9D7/RMztjh7TWZBqRnqfUcVMlg0= sha256-VIHbD/w6Ot3bXQa2iEeVH2JqLDU6vgQvyrO/yhgh8nQ= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-YnmGw7gTiGMqa35sjqGeEyr77pH5dscHVFCAXfs5b2g= sha256-aIRBqGUrqyiMkGAzTm8rEXeod8D9ML0+IYzWjvtokoU= sha256-cQNkxf4qCipPK9Qa8EoY1lyNr/RwejhoW+2DmBIYMnY= sha256-dZPx31LqPGxjqWrGS0ySAWa4SeyBkULO/8eHc8YVbsE= sha256-fp4/JFS8FwYyUgVJHmLz6fwSbsX54HfmP4LpfdfZmCI= sha256-hvMj8ZiXrbiQlT40y0RrJx4KQvHDZwSo2XEogmGUTNA= sha256-i7uz9NcqCI9X+VAMiysp77ApJMvv5Pjl7p4hVRs/ZBo= sha256-p/UAMzSdTFgTLlGv48HJXuS4p9h/6XPkhrLGXAR7U9A= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0= sha256-xYj4LMNdJLKdU5C+4t9b4lpTZniToptAXy7n7OCyCMc= sha256-z/+dl7b7rgxspzaQ7ntr5Sj6irZr0JE/xwOTS+6othI= sha256-z3o7XYwi8JbEmX1CM0B6Yj5bPkUsLvzfzXqqSm4yKBM= sha256-zcwsLG3pDIIWiDPn95WrLpNwKskswxaaUMyq2Yg7jSk=; script-src-attr 'unsafe-hashes' sha256-+vkNpoyxbpHrgaXonUyxdb0a40OZojsWNSAbgHkBzOE= sha256-/lXVpl6VhmdnCXVy4vi0Z6J1bXt99Xc1rFaPA/lCViE= sha256-0TSzHDRdvTX9Jd/JQJC7h1Ldpn85TPLWGtiSC9+LzNE= sha256-1fsV3kp8euAUD9Tl0skkbYKde5h1q1d3PoitB7svAwQ= sha256-4AYy+wV6OizzSilKs+ceIkJW/HSN7IYu+sxrcuvg/As= sha256-4HJ2rNk8fAvye8W2dh8d3ERql+zlAJN5A9NoKLhnj3E= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-6SDqfSVROMsJl7AH1nOqmHQe1tawAsUkxFnc8v5JVYY= sha256-8gFoy6vE+eilgv90TMIdLpWBVUNYsV47YETIk9Vv8XI= sha256-N5UFfbgitOf/Be9g0RVrlCwRGcdgeEMRqTBHx6w/SuM= sha256-OjAEnTf0mnu6Ujc40fl//jGDR7+AYh5IxYXAvpfhesA= sha256-R70aVBAZScdj+jNivH0IqduNWChAB/sB7WpX/VeIfUw= sha256-THy4wz38XRnb2nZm9D7/RMztjh7TWZBqRnqfUcVMlg0= sha256-VIHbD/w6Ot3bXQa2iEeVH2JqLDU6vgQvyrO/yhgh8nQ= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-YnmGw7gTiGMqa35sjqGeEyr77pH5dscHVFCAXfs5b2g= sha256-aIRBqGUrqyiMkGAzTm8rEXeod8D9ML0+IYzWjvtokoU= sha256-cQNkxf4qCipPK9Qa8EoY1lyNr/RwejhoW+2DmBIYMnY= sha256-dZPx31LqPGxjqWrGS0ySAWa4SeyBkULO/8eHc8YVbsE= sha256-fp4/JFS8FwYyUgVJHmLz6fwSbsX54HfmP4LpfdfZmCI= sha256-hvMj8ZiXrbiQlT40y0RrJx4KQvHDZwSo2XEogmGUTNA= sha256-i7uz9NcqCI9X+VAMiysp77ApJMvv5Pjl7p4hVRs/ZBo= sha256-p/UAMzSdTFgTLlGv48HJXuS4p9h/6XPkhrLGXAR7U9A= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0= sha256-xYj4LMNdJLKdU5C+4t9b4lpTZniToptAXy7n7OCyCMc= sha256-z/+dl7b7rgxspzaQ7ntr5Sj6irZr0JE/xwOTS+6othI= sha256-z3o7XYwi8JbEmX1CM0B6Yj5bPkUsLvzfzXqqSm4yKBM= sha256-zcwsLG3pDIIWiDPn95WrLpNwKskswxaaUMyq2Yg7jSk=; style-src 'self' https: 'unsafe-hashes' sha256-Hz+M9K37sKc0ClGugCUe+xjpq9zbG2/lvxdxC5bwyYw= sha256-TazNbdOEuzcw7rCduyvu2qP+ye8yI1osyexSxL2ybwk=; style-src-attr 'unsafe-hashes' sha256-Hz+M9K37sKc0ClGugCUe+xjpq9zbG2/lvxdxC5bwyYw= sha256-TazNbdOEuzcw7rCduyvu2qP+ye8yI1osyexSxL2ybwk=">
+    <meta http-equiv="refresh" content="0; url=cards.html">
+    <meta name="robots" content="noindex">
+    <title>Redirecting…</title>
+    <script>location.replace('cards.html');</script>
+  </head>
+  <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="shared-page.css">
-  <link rel="stylesheet" href="cards.css">
-  <link rel="stylesheet" href="playground.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
-
-<body data-playground-type="card">
-
-<!-- ================= SIDEBAR ================= -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <span class="brand-icon">⬡</span>
-    <span class="brand-text">UIverse</span>
-  </div>
-
-          <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a href="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="button.html">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Buttons</span>
-        </a>
-      </li>
-            <li>
-        <a href="dropdown-components.html">
-          <i class="fa-solid fa-caret-down"></i>
+    Redirecting to <a href="cards.html">cards.html</a>
+      <script src="dist/shared.js"></script>
+</body>
+  </html>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=cards.html">
+    <meta name="robots" content="noindex">
+    <title>Redirecting…</title>
+    <script>location.replace('cards.html');</script>
+  </head>
+  <body>
+    Redirecting to <a href="cards.html">cards.html</a>
+  </body>
+  </html>
           <span>Dropdowns</span>
         </a>
       </li>
@@ -351,7 +335,7 @@
 
 <!-- ================= NAVBAR ================= -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
 
@@ -359,7 +343,7 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
 
@@ -916,11 +900,13 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  
+
+  <div class="footer-container">
 
     <div class="footer-col brand">
       <h2 class="footer-logo">⬡ UIverse</h2>
       <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+
       <div class="socials">
         <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
         <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -961,16 +947,220 @@
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
+
       <div class="newsletter-form">
         <input type="email" placeholder="your@email.com" />
         <button type="button">Subscribe</button>
       </div>
     </div>
+
   </div>
+
   <div class="footer-bottom">
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
+
 </footer>
+<style>
+  /* ============================================================
+   PREMIUM DARK FOOTER
+   ============================================================ */
+.footer {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  box-sizing: border-box;
+  background: #090c15 !important;
+  padding: 80px 40px 40px;
+  border-top: 1px solid rgb(255 255 255 / 5%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(235 104 53 / 20%), transparent);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--accent), #ff8e53);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.footer-col p {
+  color: #8a9bc0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-col h3 {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #8a9bc0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent);
+  padding-left: 4px;
+}
+
+.footer-col.newsletter .newsletter-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.footer-col.newsletter input[type="email"] {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: rgb(255 255 255 / 2%);
+  border: 1px solid rgb(255 255 255 / 8%);
+  color: #fff;
+  outline: none;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.footer-col.newsletter input[type="email"]:focus {
+  border-color: var(--accent);
+  background: rgb(255 255 255 / 4%);
+  box-shadow: 0 0 10px rgb(235 104 53 / 20%);
+}
+
+.footer-col.newsletter button {
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-col.newsletter button:hover {
+  background: #d45c28;
+  box-shadow: 0 4px 12px rgb(235 104 53 / 30%);
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 3%);
+  border: 1px solid rgb(255 255 255 / 6%);
+  color: #8a9bc0;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgb(255 255 255 / 4%);
+  margin-top: 60px;
+  padding-top: 24px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #6a7a94;
+  font-size: 13px;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 1200px) {
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-col.brand,
+  .footer-col.newsletter {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+    padding: 32px 24px;
+  }
+
+  .footer {
+    margin-left: 0;
+    width: 100%;
+    padding: 60px 24px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-col.brand,
+  .footer-col.newsletter {
+    grid-column: span 1;
+  }
+}
+</style>
 
 <div class="playground-drawer" id="playgroundDrawer" aria-hidden="true">
   <div class="playground-header">
@@ -1013,7 +1203,6 @@
 
 <div class="playground-backdrop" id="playgroundBackdrop"></div>
 
-<script src="script.js"></script>
 <script>
   /* ---------- Dark Mode ---------- */
   const toggle = document.getElementById('darkModeToggle');

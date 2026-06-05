@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-inline'; style-src-attr 'unsafe-inline'"
-  />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -22,17 +20,21 @@
   />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="pricingpage.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- Pricing Section -->
   <section class="pricing">
 
     <div class="heading">
       <h1>Our Pricing Plans</h1>
+       <div class="pricing-header">
+      <a href="index.html" class="back-home-btn"> Back to Home</a>
+      </div>
       <p>Choose a plan that perfectly fits your needs.</p>
     </div>
 
@@ -101,6 +103,142 @@
 
   </section>
 
+
+  <!-- ========================= -->
+<!-- EXTRA PRICING COMPONENTS -->
+<!-- Add these inside <section class="pricing"> below .cards -->
+<!-- ========================= -->
+
+<!-- Billing Toggle -->
+<div class="billing-toggle">
+
+  <span>Monthly</span>
+
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+  </label>
+
+  <span>Yearly <strong>(Save 20%)</strong></span>
+
+</div>
+
+<!-- Features Comparison -->
+<div class="comparison">
+
+  <h2>Compare Plans</h2>
+
+  <div class="comparison-table">
+
+    <div class="table-row header">
+      <div>Features</div>
+      <div>Basic</div>
+      <div>Pro</div>
+      <div>Enterprise</div>
+    </div>
+
+    <div class="table-row">
+      <div>Components</div>
+      <div>5</div>
+      <div>Unlimited</div>
+      <div>Unlimited</div>
+    </div>
+
+    <div class="table-row">
+      <div>Support</div>
+      <div>Email</div>
+      <div>Priority</div>
+      <div>24/7 Dedicated</div>
+    </div>
+
+    <div class="table-row">
+      <div>Templates</div>
+      <div>Basic</div>
+      <div>Premium</div>
+      <div>Custom</div>
+    </div>
+
+    <div class="table-row">
+      <div>Team Access</div>
+      <div>❌</div>
+      <div>✔</div>
+      <div>✔</div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Testimonials -->
+<div class="testimonials">
+
+  <h2>What Developers Say</h2>
+
+  <div class="testimonial-cards">
+
+    <div class="testimonial">
+      <p>
+        “UIverse helped us build beautiful interfaces 3x faster.”
+      </p>
+
+      <h4>— Rahul Sharma</h4>
+    </div>
+
+    <div class="testimonial">
+      <p>
+        “The animations and templates are next-level amazing.”
+      </p>
+
+      <h4>— Ananya Roy</h4>
+    </div>
+
+    <div class="testimonial">
+      <p>
+        “Perfect for startups and frontend developers.”
+      </p>
+
+      <h4>— Vikram Patel</h4>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FAQ Section -->
+<div class="faq">
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <h3>Can I cancel anytime?</h3>
+    <p>Yes, you can cancel your subscription anytime.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Do you provide lifetime access?</h3>
+    <p>Yes, lifetime deals are available during special offers.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Are updates included?</h3>
+    <p>Absolutely. All plans include free updates.</p>
+  </div>
+
+</div>
+
+<!-- Newsletter -->
+<div class="newsletter">
+
+  <h2>Stay Updated</h2>
+
+  <p>Get the latest UI kits and templates directly in your inbox.</p>
+
+  <form>
+    <input type="email" placeholder="Enter your email">
+    <button type="submit">Subscribe</button>
+  </form>
+
+</div>
   <!-- Footer -->
   <footer>
 
@@ -111,11 +249,23 @@
     </p>
 
     <div class="footer-links">
-      <a href="#">Home</a>
-      <a href="#">Pricing</a>
-      <a href="#">Templates</a>
-      <a href="#">Support</a>
-      <a href="#">Contact</a>
+      
+      <a href="index.html">
+        Home
+      </a>
+      <a href="pricing.html">
+        Pricing
+      </a>
+      <a href="ai-components.html">
+        Templates
+      </a>
+      <a href="contact.html">
+        Support
+      </a>
+      <a href="contact.html">
+        Contact
+      </a>
+
     </div>
 
     <p class="copyright">
@@ -124,5 +274,6 @@
 
   </footer>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

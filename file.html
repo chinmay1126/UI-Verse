@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-pe4SrQjWlNsRO560qMGgOA0VNR3k9KoP6xOc2pPprRg=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-pe4SrQjWlNsRO560qMGgOA0VNR3k9KoP6xOc2pPprRg=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -95,6 +97,8 @@
   });
 </script>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -439,7 +443,7 @@
         <input
           type="text"
           placeholder="Search files, folders, images..."
-        />
+        / data-a11y-remediation="label-needed">
 
       </div>
 
@@ -728,5 +732,6 @@
 
   </main>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

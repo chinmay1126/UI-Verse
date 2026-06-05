@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-CZaDuwMSsspb3e3YDd5z3dU3/oM7DpI4HyRFD7B/dq0= sha256-FPas+NcgiiCQpxq0+EbI+38ZUneR9D2pjxZTBP1fGFU= sha256-bzN2eji/VGXAUUSKM8t2GCZ+KIPlwZpiCCePraiB4L0= sha256-d5+vm2HM0YPHkmt65fXjkhiKHUrXJqkysHLoUY3nCtY= sha256-pic2ZiUmMdHq8qrnYKmOTzRwkUDIpBSXyjXpZ1+hkxE=; style-src-attr 'unsafe-hashes' sha256-CZaDuwMSsspb3e3YDd5z3dU3/oM7DpI4HyRFD7B/dq0= sha256-FPas+NcgiiCQpxq0+EbI+38ZUneR9D2pjxZTBP1fGFU= sha256-bzN2eji/VGXAUUSKM8t2GCZ+KIPlwZpiCCePraiB4L0= sha256-d5+vm2HM0YPHkmt65fXjkhiKHUrXJqkysHLoUY3nCtY= sha256-pic2ZiUmMdHq8qrnYKmOTzRwkUDIpBSXyjXpZ1+hkxE=">
 
@@ -25,18 +26,17 @@
   />
 
   <!-- Global CSS -->
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="layout.css" />
 
   <!-- Page CSS -->
   <link rel="stylesheet" href="calendar.css" />
 
   <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- ================= NAVBAR ================= -->
   <header class="calendar-navbar">
@@ -230,7 +230,7 @@
             </span>
 
             <span>
-              🚀 Launch Sync
+              <i class="fa-solid fa-rocket"></i> Launch Sync
             </span>
 
           </div>
@@ -247,18 +247,18 @@
 
 <!-- ================= EVENT MODAL ================= -->
 
-<div class="event-modal-overlay" id="eventModalOverlay"></div>
+<div class="event-modal-overlay" id="eventModalOverlay" role="presentation" aria-hidden="true"></div>
 
-<div class="event-modal" id="eventModal">
+<div class="event-modal" id="eventModal" role="dialog" aria-labelledby="eventModalTitle" aria-modal="true" aria-hidden="true">
 
   <div class="modal-top">
 
-    <h2>
+    <h2 id="eventModalTitle">
       Event Details
     </h2>
 
-    <button id="closeEventModal">
-      ✕
+    <button id="closeEventModal" aria-label="Close event details dialog">
+      <span aria-hidden="true">✕</span>
     </button>
 
   </div>
@@ -294,17 +294,20 @@
 
     </div>
 
+    <label for="eventNotes" class="sr-only">Event notes</label>
     <textarea
+      id="eventNotes"
       placeholder="Add notes..."
+      aria-label="Event notes"
     ></textarea>
 
-    <div class="modal-actions">
+    <div class="modal-actions" role="group" aria-label="Event actions">
 
-      <button class="delete-btn">
+      <button class="delete-btn" aria-label="Delete this event">
         Delete
       </button>
 
-      <button class="save-btn">
+      <button class="save-btn" aria-label="Save event changes">
         Save Changes
       </button>
 
@@ -344,26 +347,26 @@
 
       </div>
 
-      <div class="focus-chart">
+<div class="focus-chart" role="img" aria-label="Weekly focus hours: Monday 55%, Tuesday 72%, Wednesday 60%, Thursday 92% (today), Friday 78%">
 
-        <div class="focus-bar" style="height:55%">
-          <span>Mon</span>
+        <div class="focus-bar" style="height:55%" role="presentation">
+          <span aria-label="Monday: 55% focus hours">Mon</span>
         </div>
 
-        <div class="focus-bar" style="height:72%">
-          <span>Tue</span>
+        <div class="focus-bar" style="height:72%" role="presentation">
+          <span aria-label="Tuesday: 72% focus hours">Tue</span>
         </div>
 
-        <div class="focus-bar" style="height:60%">
-          <span>Wed</span>
+        <div class="focus-bar" style="height:60%" role="presentation">
+          <span aria-label="Wednesday: 60% focus hours">Wed</span>
         </div>
 
-        <div class="focus-bar active-bar" style="height:92%">
-          <span>Thu</span>
+        <div class="focus-bar active-bar" style="height:92%" role="presentation">
+          <span aria-label="Thursday: 92% focus hours (today)">Thu</span>
         </div>
 
-        <div class="focus-bar" style="height:78%">
-          <span>Fri</span>
+        <div class="focus-bar" style="height:78%" role="presentation">
+          <span aria-label="Friday: 78% focus hours">Fri</span>
         </div>
 
       </div>
@@ -635,9 +638,9 @@
 
 <!-- ================= FLOATING ADD EVENT BUTTON ================= -->
 
-<button class="floating-event-btn">
+<button class="floating-event-btn" aria-label="Add new event">
 
-  <i class="fa-solid fa-plus"></i>
+  <i class="fa-solid fa-plus" aria-hidden="true"></i>
 
   <span>
     Add Event
@@ -659,7 +662,7 @@
 
       </div>
 
-      <div class="calendar-grid">
+      <div class="calendar-grid" role="grid" aria-label="Monthly Calendar">
        <!-- ================= AI SCHEDULE ASSISTANT ================= -->
 
 <div class="calendar-card ai-schedule-card">
@@ -702,11 +705,11 @@
   <div class="ai-tips">
 
     <div class="tip-item">
-      ✨ Avoid meetings after 6 PM
+      <i class="fa-solid fa-sparkles"></i> Avoid meetings after 6 PM
     </div>
 
     <div class="tip-item">
-      🚀 Best productivity: 11 AM
+      <i class="fa-solid fa-rocket"></i> Best productivity: 11 AM
     </div>
 
     <div class="tip-item">
@@ -731,11 +734,11 @@
 
   </div>
 
-  <div class="timeline">
+  <div class="timeline" role="list" aria-label="Upcoming events timeline">
 
     <!-- ITEM -->
 
-    <div class="timeline-item">
+    <div class="timeline-item" role="listitem">
 
       <div class="timeline-dot"></div>
 
@@ -759,7 +762,7 @@
 
     <!-- ITEM -->
 
-    <div class="timeline-item">
+    <div class="timeline-item" role="listitem">
 
       <div class="timeline-dot orange"></div>
 
@@ -783,7 +786,7 @@
 
     <!-- ITEM -->
 
-    <div class="timeline-item">
+    <div class="timeline-item" role="listitem">
 
       <div class="timeline-dot green"></div>
 
@@ -823,14 +826,14 @@
               </h3>
             </div>
 
-            <div class="calendar-actions">
+            <div class="calendar-actions" role="group" aria-label="Calendar navigation">
 
-              <button>
-                <i class="fa-solid fa-chevron-left"></i>
+              <button aria-label="Go to previous month">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
               </button>
 
-              <button>
-                <i class="fa-solid fa-chevron-right"></i>
+              <button aria-label="Go to next month">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
               </button>
 
             </div>
@@ -838,64 +841,64 @@
           </div>
 
           <!-- Days -->
-          <div class="calendar-days">
+          <div class="calendar-days" role="presentation">
 
-            <span>Sun</span>
-            <span>Mon</span>
-            <span>Tue</span>
-            <span>Wed</span>
-            <span>Thu</span>
-            <span>Fri</span>
-            <span>Sat</span>
+            <span role="columnheader" aria-label="Sunday">Sun</span>
+            <span role="columnheader" aria-label="Monday">Mon</span>
+            <span role="columnheader" aria-label="Tuesday">Tue</span>
+            <span role="columnheader" aria-label="Wednesday">Wed</span>
+            <span role="columnheader" aria-label="Thursday">Thu</span>
+            <span role="columnheader" aria-label="Friday">Fri</span>
+            <span role="columnheader" aria-label="Saturday">Sat</span>
 
           </div>
 
           <!-- Dates -->
-          <div class="calendar-dates">
+          <div class="calendar-dates" role="presentation">
 
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
+            <button role="gridcell" aria-label="May 1, 2026">1</button>
+            <button role="gridcell" aria-label="May 2, 2026">2</button>
+            <button role="gridcell" aria-label="May 3, 2026">3</button>
+            <button role="gridcell" aria-label="May 4, 2026">4</button>
+            <button role="gridcell" aria-label="May 5, 2026">5</button>
+            <button role="gridcell" aria-label="May 6, 2026">6</button>
+            <button role="gridcell" aria-label="May 7, 2026">7</button>
 
-            <div>8</div>
-            <div>9</div>
+            <button role="gridcell" aria-label="May 8, 2026">8</button>
+            <button role="gridcell" aria-label="May 9, 2026">9</button>
 
-            <div class="active-date">
+            <button role="gridcell" aria-current="date" aria-label="May 10, 2026 (today)" class="active-date">
               10
-            </div>
+            </button>
 
-            <div>11</div>
-            <div>12</div>
+            <button role="gridcell" aria-label="May 11, 2026">11</button>
+            <button role="gridcell" aria-label="May 12, 2026">12</button>
 
-            <div class="event-date">
+            <button role="gridcell" aria-label="May 13, 2026 (has events)" class="event-date">
               13
-            </div>
+            </button>
 
-            <div>14</div>
+            <button role="gridcell" aria-label="May 14, 2026">14</button>
 
-            <div>15</div>
-            <div>16</div>
-            <div>17</div>
-            <div>18</div>
-            <div>19</div>
-            <div>20</div>
-            <div>21</div>
+            <button role="gridcell" aria-label="May 15, 2026">15</button>
+            <button role="gridcell" aria-label="May 16, 2026">16</button>
+            <button role="gridcell" aria-label="May 17, 2026">17</button>
+            <button role="gridcell" aria-label="May 18, 2026">18</button>
+            <button role="gridcell" aria-label="May 19, 2026">19</button>
+            <button role="gridcell" aria-label="May 20, 2026">20</button>
+            <button role="gridcell" aria-label="May 21, 2026">21</button>
 
-            <div>22</div>
-            <div>23</div>
-            <div>24</div>
-            <div>25</div>
-            <div>26</div>
-            <div>27</div>
-            <div>28</div>
+            <button role="gridcell" aria-label="May 22, 2026">22</button>
+            <button role="gridcell" aria-label="May 23, 2026">23</button>
+            <button role="gridcell" aria-label="May 24, 2026">24</button>
+            <button role="gridcell" aria-label="May 25, 2026">25</button>
+            <button role="gridcell" aria-label="May 26, 2026">26</button>
+            <button role="gridcell" aria-label="May 27, 2026">27</button>
+            <button role="gridcell" aria-label="May 28, 2026">28</button>
 
-            <div>29</div>
-            <div>30</div>
-            <div>31</div>
+            <button role="gridcell" aria-label="May 29, 2026">29</button>
+            <button role="gridcell" aria-label="May 30, 2026">30</button>
+            <button role="gridcell" aria-label="May 31, 2026">31</button>
 
           </div>
 
@@ -917,21 +920,21 @@
             using modern calendar systems.
           </p>
 
-          <div class="event-list">
+          <ul class="event-list" aria-label="Upcoming events">
 
-            <div class="event-item">
-              🎯 UI Workshop
-            </div>
+            <li class="event-item" role="listitem">
+              <span aria-hidden="true">🎯</span> UI Workshop
+            </li>
 
-            <div class="event-item">
-              🚀 Product Launch
-            </div>
+            <li class="event-item" role="listitem">
+              <i class="fa-solid fa-rocket" aria-hidden="true"></i> Product Launch
+            </li>
 
-            <div class="event-item">
-              📦 Team Meeting
-            </div>
+            <li class="event-item" role="listitem">
+              <span aria-hidden="true">📦</span> Team Meeting
+            </li>
 
-          </div>
+          </ul>
 
         </div>
 
@@ -1000,6 +1003,7 @@
 
   </main>
 
+    <script src="dist/shared.js"></script>
 </body>
 
 </html>
