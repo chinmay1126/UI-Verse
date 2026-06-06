@@ -1,0 +1,32 @@
+name: PR Template Validator
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR Description
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const body = context.payload.pull_request.body;
+            if (!body) {
+              core.setFailed("PR description is empty! Please fill out the pull request template.");
+              return;
+            }
+            const requiredSections = [
+              "## Related Issue",
+              "## Summary",
+              "## Changes Made",
+              "## Technical Details & Scope",
+              "## Testing & Verification",
+              "## Checklist"
+            ];
+            for (const section of requiredSections) {
+              if (!body.includes(section)) {
+                core.setFailed(`PR description is missing the required section: "${section}". Please follow the PR template.`);
+              }
+            }
