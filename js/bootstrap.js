@@ -144,6 +144,14 @@ const Bootstrap = {
       UIverse.register('Download', Download);
     }
 
+    if (typeof BundleExporter !== 'undefined') {
+      UIverse.register('BundleExporter', BundleExporter, dependenciesFor('BundleExporter'));
+    }
+
+    if (typeof BundleExporterUI !== 'undefined') {
+      UIverse.register('BundleExporterUI', BundleExporterUI, dependenciesFor('BundleExporterUI'), { domSelector: '.component-card' });
+    }
+
     if (typeof Recent !== 'undefined') {
       UIverse.register('Recent', Recent);
     }
