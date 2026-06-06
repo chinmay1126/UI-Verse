@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
@@ -27,10 +28,11 @@
   <!-- CSS -->
   <link rel="stylesheet" href="retroui.css" />
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <body>
 
 <!-- =========================================================
@@ -436,6 +438,412 @@
 
   </section>
 
+  <!-- =========================================================
+   EXTRA PIXEL COMPONENTS
+   Add these inside your .pixel-grid section
+========================================================= -->
+
+<!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+
+    <span class="pixel-tag">
+      TOGGLE
+    </span>
+
+    <span class="pixel-level">
+      LVL 7
+    </span>
+
+  </div>
+
+  <h3>
+    Pixel Toggle
+  </h3>
+
+  <p>
+    Retro styled on/off switch inspired
+    by classic console settings menus.
+  </p>
+
+  <div class="preview-box">
+
+    <label class="pixel-switch">
+      <input type="checkbox" checked>
+      <span class="slider"></span>
+    </label>
+
+  </div>
+
+  <div class="card-actions">
+
+    <button class="view-btn">
+      VIEW
+    </button>
+
+    <button class="copy-btn">
+      COPY
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+
+    <span class="pixel-tag">
+      INPUT
+    </span>
+
+    <span class="pixel-level">
+      LVL 8
+    </span>
+
+  </div>
+
+  <h3>
+    Pixel Input
+  </h3>
+
+  <p>
+    8-bit inspired retro text field
+    with glowing focus effect.
+  </p>
+
+  <div class="preview-box dark">
+
+    <input
+      type="text"
+      class="pixel-input"
+      placeholder="ENTER NAME"
+    />
+
+  </div>
+
+  <div class="card-actions">
+
+    <button class="view-btn">
+      VIEW
+    </button>
+
+    <button class="copy-btn">
+      COPY
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+
+    <span class="pixel-tag">
+      PROGRESS
+    </span>
+
+    <span class="pixel-level">
+      LVL 9
+    </span>
+
+  </div>
+
+  <h3>
+    Pixel Progress
+  </h3>
+
+  <p>
+    Retro loading progress bar styled
+    like old-school RPG health meters.
+  </p>
+
+  <div class="preview-box">
+
+    <div class="pixel-progress">
+      <div class="pixel-progress-fill"></div>
+    </div>
+
+  </div>
+
+  <div class="card-actions">
+
+    <button class="view-btn">
+      VIEW
+    </button>
+
+    <button class="copy-btn">
+      COPY
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+
+    <span class="pixel-tag">
+      TOOLTIP
+    </span>
+
+    <span class="pixel-level">
+      LVL 10
+    </span>
+
+  </div>
+
+  <h3>
+    Pixel Tooltip
+  </h3>
+
+  <p>
+    Hover tooltip inspired by vintage
+    handheld gaming interfaces.
+  </p>
+
+  <div class="preview-box dark">
+
+    <div class="pixel-tooltip-box">
+
+      <button class="arcade-btn">
+        HOVER
+      </button>
+
+      <span class="pixel-tooltip">
+        SECRET ITEM FOUND
+      </span>
+
+    </div>
+
+  </div>
+
+  <div class="card-actions">
+
+    <button class="view-btn">
+      VIEW
+    </button>
+
+    <button class="copy-btn">
+      COPY
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+
+    <span class="pixel-tag">
+      MODAL
+    </span>
+
+    <span class="pixel-level">
+      LVL 11
+    </span>
+
+  </div>
+
+  <h3>
+    Pixel Modal
+  </h3>
+
+  <p>
+    Classic retro popup window with
+    pixel border and CRT style design.
+  </p>
+
+  <div class="preview-box">
+
+    <div class="pixel-modal">
+
+      <h4>MISSION START</h4>
+
+      <p>READY PLAYER?</p>
+
+      <button class="arcade-btn">
+        OK
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="card-actions">
+
+    <button class="view-btn">
+      VIEW
+    </button>
+
+    <button class="copy-btn">
+      COPY
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+
+    <span class="pixel-tag">
+      STATS
+    </span>
+
+    <span class="pixel-level">
+      LVL 12
+    </span>
+
+  </div>
+
+  <h3>
+    Player Stats
+  </h3>
+
+  <p>
+    RPG style player statistics widget
+    with retro pixel progress bars.
+  </p>
+
+  <div class="preview-box dark">
+
+    <div class="pixel-stats">
+
+      <div class="stat-row">
+        <span>HP</span>
+        <div class="bar"><div class="fill hp"></div></div>
+      </div>
+
+      <div class="stat-row">
+        <span>XP</span>
+        <div class="bar"><div class="fill xp"></div></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-actions">
+
+    <button class="view-btn">
+      VIEW
+    </button>
+
+    <button class="copy-btn">
+      COPY
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+
+    <span class="pixel-tag">
+      CHAT
+    </span>
+
+    <span class="pixel-level">
+      LVL 13
+    </span>
+
+  </div>
+
+  <h3>
+    Pixel Chat Bubble
+  </h3>
+
+  <p>
+    Retro dialogue box inspired by
+    classic JRPG conversation systems.
+  </p>
+
+  <div class="preview-box">
+
+    <div class="pixel-chat">
+      WELCOME TO UIVERSE HERO!
+    </div>
+
+  </div>
+
+  <div class="card-actions">
+
+    <button class="view-btn">
+      VIEW
+    </button>
+
+    <button class="copy-btn">
+      COPY
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+
+    <span class="pixel-tag">
+      AVATAR
+    </span>
+
+    <span class="pixel-level">
+      LVL 14
+    </span>
+
+  </div>
+
+  <h3>
+    Pixel Team
+  </h3>
+
+  <p>
+    Pixelated multiplayer avatar group
+    with retro arcade aesthetics.
+  </p>
+
+  <div class="preview-box dark">
+
+    <div class="pixel-team">
+
+      <div class="team-avatar"></div>
+      <div class="team-avatar"></div>
+      <div class="team-avatar"></div>
+
+    </div>
+
+  </div>
+
+  <div class="card-actions">
+
+    <button class="view-btn">
+      VIEW
+    </button>
+
+    <button class="copy-btn">
+      COPY
+    </button>
+
+  </div>
+
+</div>
+
   <!-- FILTER -->
   <section class="filter-bar">
 
@@ -472,6 +880,7 @@
 
 <script src="retro-pixel.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 
 <!-- =========================================================

@@ -3,6 +3,9 @@
 
 <head>
 
+  
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -11,20 +14,7 @@
   />
 
   <!-- SECURITY -->
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self' https:;
-      base-uri 'self';
-      frame-ancestors 'none';
-      object-src 'none';
-      connect-src 'self' https:;
-      img-src 'self' data: https:;
-      font-src 'self' data: https:;
-      script-src 'self' https: 'unsafe-inline';
-      style-src 'self' https: 'unsafe-inline';
-    "
-  />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <title>Settings — UIverse</title>
 
@@ -51,14 +41,11 @@
     href="settings.css"
   />
 
-  <link
-    rel="stylesheet"
-    href="shared-sidebar.css"
-  />
-
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =====================================================
 SIDEBAR
@@ -106,6 +93,174 @@ SIDEBAR
     </nav>
 
   </div>
+
+  
+<div class="settings-card">
+  <div class="card-header">
+    <div>
+      <span class="card-label">BILLING</span>
+      <h2>Subscription Plan</h2>
+    </div>
+  </div>
+
+  <div class="billing-box">
+    <h3>Pro Plan</h3>
+    <p>$29/month • Renews on Dec 12, 2026</p>
+
+    <button class="primary-btn">
+      Manage Subscription
+    </button>
+  </div>
+</div>
+
+<div class="settings-card">
+  <div class="card-header">
+    <div>
+      <span class="card-label">REGION</span>
+      <h2>Language & Timezone</h2>
+    </div>
+  </div>
+
+  <div class="input-group">
+    <label>Language</label>
+    <select>
+      <option>English</option>
+      <option>Spanish</option>
+      <option>German</option>
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label>Timezone</label>
+    <select>
+      <option>UTC-5</option>
+      <option>UTC+0</option>
+      <option>UTC+5:30</option>
+    </select>
+  </div>
+</div>
+
+<div class="settings-card">
+  <div class="card-header">
+    <div>
+      <span class="card-label">INTEGRATIONS</span>
+      <h2>Connected Accounts</h2>
+    </div>
+  </div>
+
+  <div class="settings-list">
+
+    <div class="setting-item">
+      <span>GitHub</span>
+      <button class="outline-btn">Connected</button>
+    </div>
+
+    <div class="setting-item">
+      <span>Google</span>
+      <button class="outline-btn">Connect</button>
+    </div>
+
+    <div class="setting-item">
+      <span>Slack</span>
+      <button class="outline-btn">Connect</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="settings-card large-card">
+  <div class="card-header">
+    <div>
+      <span class="card-label">TEAM</span>
+      <h2>Workspace Members</h2>
+    </div>
+  </div>
+
+  <div class="team-list">
+
+    <div class="team-member">
+      <img src="https://i.pravatar.cc/40?img=15" alt="">
+      <div>
+        <strong>Sarah Wilson</strong>
+        <span>Administrator</span>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <img src="https://i.pravatar.cc/40?img=18" alt="">
+      <div>
+        <strong>James Carter</strong>
+        <span>Developer</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="settings-card">
+  <div class="card-header">
+    <div>
+      <span class="card-label">DEVELOPERS</span>
+      <h2>API Access</h2>
+    </div>
+  </div>
+
+  <div class="api-box">
+    <input
+      type="password"
+      value="sk_live_xxxxxxxxxxxxxxxxx"
+      readonly
+    >
+
+    <button class="primary-btn">
+      Generate New Key
+    </button>
+  </div>
+</div>
+
+<div class="settings-card">
+  <div class="card-header">
+    <div>
+      <span class="card-label">ACTIVITY</span>
+      <h2>Recent Actions</h2>
+    </div>
+  </div>
+
+  <ul class="activity-list">
+    <li>Password changed • 2 hours ago</li>
+    <li>New login from Chrome • Today</li>
+    <li>Theme updated • Yesterday</li>
+  </ul>
+</div>
+
+<div class="settings-card">
+  <div class="card-header">
+    <div>
+      <span class="card-label">PRIVACY</span>
+      <h2>Privacy Settings</h2>
+    </div>
+  </div>
+
+  <div class="settings-list">
+
+    <div class="setting-item">
+      <span>Public Profile</span>
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="setting-item">
+      <span>Search Visibility</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+  </div>
+</div>
 
   <div class="sidebar-footer">
 
@@ -614,5 +769,6 @@ MAIN
 
 <script src="settings.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

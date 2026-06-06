@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-5bJNzHmbwrWQCLQxtYLerDcccTEfq/ul/o3semRJkDA= sha256-P1MsgUmL6SZQlkOYJuanyuTQQHqA2uVOzleT4JX+Z4U= sha256-VXs6vm9IZ1lJ4y4OqiFdOZoBtNO4Dz6oHoCFYSK1Xo4= sha256-m4aoJdWPiRBdjf2flcLRhqoE0aXOZlnGIiLnPq0zCOw= sha256-ofofxU8tCH2vLhgigOq1p6H9T0k7uLDhMcCNwIoPtUU= sha256-sfCR4EtQChLnzm4msRwYbIyeX90Z68lEDr5nPw2WkUs=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-5bJNzHmbwrWQCLQxtYLerDcccTEfq/ul/o3semRJkDA= sha256-P1MsgUmL6SZQlkOYJuanyuTQQHqA2uVOzleT4JX+Z4U= sha256-VXs6vm9IZ1lJ4y4OqiFdOZoBtNO4Dz6oHoCFYSK1Xo4= sha256-m4aoJdWPiRBdjf2flcLRhqoE0aXOZlnGIiLnPq0zCOw= sha256-ofofxU8tCH2vLhgigOq1p6H9T0k7uLDhMcCNwIoPtUU= sha256-sfCR4EtQChLnzm4msRwYbIyeX90Z68lEDr5nPw2WkUs=; style-src 'self' https: 'unsafe-hashes' sha256-0EZqoz+oBhx7gF4nvY2bSqoGyy4zLjNF+SDQXGp/ZrY= sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=; style-src-attr 'unsafe-hashes' sha256-0EZqoz+oBhx7gF4nvY2bSqoGyy4zLjNF+SDQXGp/ZrY= sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Search Bar Components — UIverse</title>
 
@@ -13,9 +15,10 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="search.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -342,6 +345,31 @@
   </div>
 </aside>
 
+<div class="search-filters">
+  <button class="filter-chip active" data-filter="all">All</button>
+  <button class="filter-chip" data-filter="minimal">Minimal</button>
+  <button class="filter-chip" data-filter="animated">Animated</button>
+  <button class="filter-chip" data-filter="premium">Premium</button>
+  <button class="filter-chip" data-filter="experimental">Experimental</button>
+</div>
+
+<div class="search-stats">
+  <div class="stat">
+    <span>20</span>
+    <small>Components</small>
+  </div>
+
+  <div class="stat">
+    <span>12</span>
+    <small>Animated</small>
+  </div>
+
+  <div class="stat">
+    <span>8</span>
+    <small>Minimal</small>
+  </div>
+</div>
+
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 <!-- ================= MAIN CONTENT ================= -->
@@ -351,6 +379,56 @@
     <h1>Search Components</h1>
     <p>Modern interactive search UI layouts and responsive search experiences using HTML, CSS, and Vanilla JavaScript.</p>
   </header>
+
+  <!-- ======= SEARCH + SORT TOOLBAR ======= -->
+  <div class="toolbar">
+    <div class="toolbar-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="componentSearch" placeholder="Filter components..." autocomplete="off" data-a11y-remediation="label-needed">
+    </div>
+
+    <div class="sort-dropdown-wrapper" id="sortWrapper">
+      <button class="sort-trigger" id="sortTrigger" onclick="toggleSortMenu()" data-a11y-remediation="button-label-needed">
+        <i class="fa-solid fa-sort"></i>
+        <span id="sortLabel">Order</span>
+        <i class="fa-solid fa-chevron-down sort-chevron" id="sortChevron"></i>
+      </button>
+      <div class="sort-menu" id="sortMenu">
+        <label class="sort-option">
+          <span>Default</span>
+          <input type="radio" name="sort" value="default" checked onchange="sortCards('default')">
+          <span class="radio-dot"></span>
+        </label>
+        <label class="sort-option">
+          <span>A → Z</span>
+          <input type="radio" name="sort" value="az" onchange="sortCards('az')">
+          <span class="radio-dot"></span>
+        </label>
+        <label class="sort-option">
+          <span>Z → A</span>
+          <input type="radio" name="sort" value="za" onchange="sortCards('za')">
+          <span class="radio-dot"></span>
+        </label>
+      </div>
+    </div>
+
+    <section class="featured-search">
+  <div class="featured-content">
+    <span class="badge">Featured Component</span>
+
+    <h2>AI Search Interface</h2>
+
+    <p>
+      Modern search experience with command palette,
+      voice search and smart suggestions.
+    </p>
+
+    <button>View Component</button>
+  </div>
+</section>
+
+    <span class="results-count" id="resultsCount">20 components</span>
+  </div>
 
   <section class="search-grid">
 
@@ -791,19 +869,15 @@
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
-
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
-
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
     <div class="footer-col">
       <h3>Explore</h3>
       <ul>
@@ -814,38 +888,30 @@
         <li><a href="forms.html">Forms</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h3>Legal</h3>
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
       </ul>
     </div>
-
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+        <input type="email" placeholder="your@email.com">
+        <button type="button">Subscribe</button>
       </div>
     </div>
-
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
@@ -853,6 +919,70 @@
 
 
 <script>
+  function initToolbar() {
+    const input = document.getElementById('componentSearch');
+    const grid = document.querySelector('.search-grid');
+    const cards = [...grid.querySelectorAll('.search-card')];
+    const countEl = document.getElementById('resultsCount');
+    const originalOrder = [...cards];
+    let currentSort = 'default';
+
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('sortWrapper').contains(e.target)) {
+        closeSortMenu();
+      }
+    });
+
+    function update() {
+      const q = input.value.toLowerCase();
+
+      cards.forEach(card => {
+        const text = card.querySelector('h2').textContent.toLowerCase()
+                  + card.querySelector('p').textContent.toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      });
+
+      const visible = cards.filter(c => c.style.display !== 'none');
+      countEl.textContent = visible.length + ' component' + (visible.length === 1 ? '' : 's');
+
+      const sorted = [...visible].sort((a, b) => {
+        if (currentSort === 'default') return originalOrder.indexOf(a) - originalOrder.indexOf(b);
+        const ta = a.querySelector('h2').textContent;
+        const tb = b.querySelector('h2').textContent;
+        return currentSort === 'az' ? ta.localeCompare(tb) : tb.localeCompare(ta);
+      });
+
+      sorted.forEach(c => grid.appendChild(c));
+      cards.filter(c => c.style.display === 'none').forEach(c => grid.appendChild(c));
+    }
+
+    window.toggleSortMenu = function() {
+      const menu = document.getElementById('sortMenu');
+      const trigger = document.getElementById('sortTrigger');
+      const isOpen = menu.classList.contains('open');
+      menu.classList.toggle('open', !isOpen);
+      trigger.classList.toggle('open', !isOpen);
+    };
+
+    function closeSortMenu() {
+      document.getElementById('sortMenu').classList.remove('open');
+      document.getElementById('sortTrigger').classList.remove('open');
+    }
+
+    window.sortCards = function(dir) {
+      currentSort = dir;
+      const labels = { default: 'Order', az: 'A → Z', za: 'Z → A' };
+      document.getElementById('sortLabel').textContent = labels[dir];
+      closeSortMenu();
+      update();
+    };
+
+    input.addEventListener('input', update);
+    update();
+  }
+
+  document.addEventListener('DOMContentLoaded', initToolbar);
+
   // Copy Code Interaction for all buttons
   document.addEventListener('DOMContentLoaded', () => {
     const copyButtons = document.querySelectorAll('.copy-btn');
@@ -886,7 +1016,29 @@
       });
     });
   });
+
+  function highlightText(element, query) {
+  const title = element.querySelector("h2");
+
+  const original = title.dataset.original ||
+                   title.textContent;
+
+  title.dataset.original = original;
+
+  if (!query) {
+    title.innerHTML = original;
+    return;
+  }
+
+  const regex = new RegExp(`(${query})`, "gi");
+
+  title.innerHTML = original.replace(
+    regex,
+    '<mark>$1</mark>'
+  );
+}
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

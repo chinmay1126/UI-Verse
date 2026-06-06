@@ -968,3 +968,446 @@ body.dark-mode .skills-progress-card {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+:root {
+  --bg-primary: #0f172a;
+  --bg-secondary: #111827;
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255,255,255,0.08);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #7c3aed;
+  --accent-2: #06b6d4;
+  --shadow-lg: 0 20px 50px rgba(0,0,0,0.25);
+  --radius-xl: 28px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(124,58,237,0.15), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(6,182,212,0.12), transparent 30%),
+    #0b1120;
+  color: var(--text-primary);
+}
+
+.main-content {
+  padding: 28px;
+}
+
+/* ================= HERO ================= */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 70px;
+  border-radius: 34px;
+  background:
+    linear-gradient(145deg, rgba(124,58,237,0.18), rgba(6,182,212,0.12)),
+    rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(24px);
+  margin-bottom: 36px;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(124,58,237,0.18);
+  filter: blur(90px);
+  right: -120px;
+  top: -120px;
+}
+
+.page-title {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+.page-desc {
+  max-width: 700px;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.meta-badge {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
+  padding: 12px 18px;
+  border-radius: 999px;
+  transition: 0.3s ease;
+}
+
+.meta-badge:hover {
+  transform: translateY(-3px);
+  background: rgba(124,58,237,0.16);
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: sticky;
+  top: 16px;
+  z-index: 50;
+  backdrop-filter: blur(24px);
+  background: rgba(15,23,42,0.72);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px;
+  padding: 16px 24px;
+  margin-bottom: 32px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 18px;
+  border-radius: 18px;
+  width: min(520px, 100%);
+  transition: 0.3s ease;
+}
+
+.search-bar:focus-within {
+  border-color: rgba(124,58,237,0.45);
+  box-shadow: 0 0 0 4px rgba(124,58,237,0.12);
+}
+
+.search-bar input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  background:
+    linear-gradient(180deg, rgba(15,23,42,0.98), rgba(2,6,23,1));
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.sidebar-nav a {
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  background: rgba(124,58,237,0.14);
+  transform: translateX(6px);
+}
+
+.sidebar-nav li.active a {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: white;
+  box-shadow: 0 10px 25px rgba(124,58,237,0.35);
+}
+
+/* ================= FILTER BAR ================= */
+
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  transition: 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  transform: translateY(-2px);
+}
+
+.filter-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.filter-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+/* ================= PROFILE GRID ================= */
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  align-items: stretch;
+}
+
+.upload-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.45s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.upload-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    130deg,
+    rgba(255,255,255,0.06),
+    transparent,
+    rgba(255,255,255,0.03)
+  );
+  pointer-events: none;
+}
+
+.upload-card:hover {
+  transform: translateY(-12px) scale(1.015);
+  border-color: rgba(124,58,237,0.5);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.35),
+    0 0 40px rgba(124,58,237,0.18);
+}
+
+/* ================= PROFILE CARDS ================= */
+
+.profile-card,
+.banner-card,
+.cyberpunk-card,
+.expandable-card,
+.skills-progress-card,
+.flip-profile-card {
+  border-radius: 28px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card h2,
+.banner-card h2,
+.cyberpunk-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.profile-card p {
+  color: var(--text-secondary);
+}
+
+.avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: white;
+  box-shadow:
+    0 10px 30px rgba(124,58,237,0.35),
+    inset 0 2px 8px rgba(255,255,255,0.2);
+}
+
+/* ================= BUTTONS ================= */
+
+button,
+.action-btn,
+.nav-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-card button,
+.back-btn,
+.banner-card button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 10px 30px rgba(124,58,237,0.25);
+}
+
+.profile-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(124,58,237,0.35);
+}
+
+/* ================= CODE BLOCK ================= */
+
+.code-block {
+  margin-top: 18px;
+  background: #020617;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+}
+
+.code-block.open {
+  max-height: 500px;
+}
+
+.code-block code {
+  display: block;
+  padding: 24px;
+  color: #e2e8f0;
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+/* ================= ANIMATION ================= */
+
+.upload-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.upload-card:nth-child(2) { animation-delay: 0.1s; }
+.upload-card:nth-child(3) { animation-delay: 0.2s; }
+.upload-card:nth-child(4) { animation-delay: 0.3s; }
+.upload-card:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  margin-top: 80px;
+  background: rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 50px 30px;
+}
+
+.footer a {
+  color: var(--text-secondary);
+  transition: 0.3s ease;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .page-hero {
+    padding: 42px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 2.3rem;
+  }
+
+  .page-hero {
+    padding: 28px;
+  }
+
+  .main-content {
+    padding: 18px;
+  }
+}
+/* ============================================================
+   ADDITIONAL NEW PROFILE STYLES (Cards 11-15)
+   ============================================================ */
+
+.outline-card {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(15,23,42,0.06);
+  background: transparent;
+  text-align: left;
+}
+.outline-card .avatar { width:56px; height:56px; border-radius:12px; }
+.outline-meta { display:flex; gap:8px; margin-top:8px; }
+.outline-meta span { font-size:0.75rem; color:var(--muted); background: rgba(15,23,42,0.04); padding:6px 8px; border-radius:999px; }
+
+.contact-card { width:100%; max-width:300px; padding:18px; border-radius:16px; text-align:center; }
+.contact-card .contact-list { display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+.contact-card .contact-list a { display:block; text-decoration:none; color:var(--accent); background: rgba(108,92,231,0.06); padding:8px 10px; border-radius:8px; font-weight:700; }
+
+.portfolio-card { width:100%; max-width:300px; padding:16px; border-radius:16px; text-align:center; }
+.portfolio-card .thumbs { display:flex; gap:8px; justify-content:center; margin-top:12px; }
+.portfolio-card .thumb { width:56px; height:40px; border-radius:8px; background:linear-gradient(135deg,#7b61ff,#eb6835); box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+
+.badge-card { width:100%; max-width:300px; padding:20px; border-radius:20px; text-align:center; position:relative; }
+.badge-wrap { position:relative; display:inline-block; }
+.badge-wrap .avatar { width:72px; height:72px; border-radius:50%; }
+.badge-wrap .badge { position:absolute; right:-6px; bottom:-6px; background:var(--accent-2); color:#fff; padding:6px 8px; border-radius:12px; font-weight:800; font-size:0.75rem; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+
+.compact-card { display:flex; align-items:center; gap:12px; width:100%; max-width:300px; padding:12px; border-radius:12px; }
+.compact-card .compact-info h3 { margin:0; font-size:1rem; }
+.compact-card .compact-info .muted { margin:0; font-size:0.78rem; color:var(--muted); }
+
+/* Dark mode adjustments for new cards */
+body.dark-mode .outline-card,
+body.dark-mode .contact-card,
+body.dark-mode .portfolio-card,
+body.dark-mode .badge-card,
+body.dark-mode .compact-card {
+  background: #141420;
+  border-color: rgba(255,255,255,0.06);
+  color: #fff;
+}
+
+
