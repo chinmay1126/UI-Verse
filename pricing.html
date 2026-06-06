@@ -1155,6 +1155,14 @@
  <!-- /pricing-grid-preview -->
 
     
+ <button id="cta-get-started" class="cta-secondary">Get Started</button>
+<button id="cta-choose-pro" class="cta-primary">Choose Pro</button>
+<button id="cta-contact-sales" class="cta-secondary">Contact Sales</button>
+
+<button id="billing-monthly">Monthly</button>
+<button id="billing-quarterly">Quarterly</button>
+<button id="billing-yearly">Yearly</button>
+
   
 
 </main>
@@ -1318,6 +1326,27 @@ document.querySelectorAll('.plan-btn, .glass-btn, .neon-btn, .minimal-btn')
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
+
+  // CTA tracking
+document.querySelectorAll("button[id^='cta-']").forEach(btn => {
+  btn.addEventListener("click", () => {
+    gtag('event', 'cta_click', {
+      'event_category': 'Pricing',
+      'event_label': btn.id
+    });
+  });
+});
+
+// Billing toggle tracking
+document.querySelectorAll("button[id^='billing-']").forEach(toggle => {
+  toggle.addEventListener("click", () => {
+    gtag('event', 'billing_toggle', {
+      'event_category': 'Pricing',
+      'event_label': toggle.id
+    });
+  });
+});
+
 </script>
     <script src="dist/shared.js"></script>
 </body>
