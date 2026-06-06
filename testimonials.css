@@ -650,6 +650,154 @@ body.dark-mode .t-role {
 }
 
 /* =========================================================
+   NEW TESTIMONIAL COMPONENTS
+========================================================= */
+
+/* Floating Glow Card */
+.t-card-floating {
+  background: var(--card-light);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+body.dark-mode .t-card-floating {
+  background: rgba(17, 24, 39, 0.8);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+.t-card-floating:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25);
+}
+
+/* Split Layout Card */
+.t-card-split {
+  display: flex;
+  gap: 20px;
+  background: var(--card-light);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--border-light);
+}
+body.dark-mode .t-card-split {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+}
+.t-user-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 120px;
+  padding-right: 20px;
+  border-right: 1px solid var(--border-light);
+}
+body.dark-mode .t-user-side {
+  border-color: var(--border-dark);
+}
+.t-avatar-large {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.t-avatar-large img { width: 100%; height: 100%; object-fit: cover; }
+.t-content-side { flex: 1; }
+
+/* Quotation Highlight Card */
+.t-card-quote-focus {
+  background: var(--card-light);
+  border-radius: 16px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+body.dark-mode .t-card-quote-focus {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+}
+.bg-quote {
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 140px;
+  line-height: 1;
+  font-family: serif;
+  color: rgba(99, 102, 241, 0.08);
+  pointer-events: none;
+}
+body.dark-mode .bg-quote {
+  color: rgba(99, 102, 241, 0.15);
+}
+.t-card-quote-focus .t-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+}
+
+/* Holographic Dark Card */
+.t-card-hologram {
+  background: linear-gradient(135deg, #0f172a, #1e1b4b);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  overflow: hidden;
+}
+.t-card-hologram::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(45deg, rgba(236, 72, 153, 0.1), rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1));
+  z-index: 0;
+  pointer-events: none;
+}
+.t-card-hologram > * { position: relative; z-index: 1; }
+.t-card-hologram .t-text { color: #cbd5e1; }
+.t-card-hologram .t-role { color: #94a3b8; }
+
+/* Elegant Minimal Card */
+.t-card-elegant {
+  background: transparent;
+  padding: 20px 10px;
+}
+.t-card-elegant .t-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--text-light);
+}
+body.dark-mode .t-card-elegant .t-text {
+  color: var(--text-dark);
+}
+.t-divider {
+  height: 1px;
+  width: 60px;
+  background: var(--primary);
+  margin: 20px auto;
+}
+.t-card-elegant .t-user {
+  justify-content: space-between;
+}
+.t-card-elegant .t-info {
+  align-items: flex-start;
+}
+
+/* Shared */
+.t-rating { color: #fbbf24; margin-bottom: 12px; }
+.t-star-empty { color: #d1d5db; }
+body.dark-mode .t-star-empty { color: #4b5563; }
+
+/* =========================================================
    RESPONSIVE
 ========================================================= */
 
@@ -699,12 +847,387 @@ body.dark-mode .t-role {
     width: 100%;
 
   }
+}
 
+/* ================================= */
+/* Neon Gradient Card */
+/* ================================= */
+
+.t-card-neon{
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 28px;
+  background: #0f172a;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.4s ease;
+}
+
+.t-card-neon:hover{
+  transform: translateY(-8px);
+}
+
+.t-neon-ring{
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle,#7c3aed,transparent 70%);
+  top: -80px;
+  right: -80px;
+  opacity: .8;
+}
+
+/* ================================= */
+/* Floating Card */
+/* ================================= */
+
+.t-card-floating{
+  position: relative;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  transition: 0.4s ease;
+}
+
+.t-card-floating:hover{
+  transform: translateY(-10px);
+}
+
+.t-floating-shape{
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#60a5fa,#a78bfa);
+  opacity: 0.15;
+  top: -60px;
+  right: -60px;
+}
+
+/* ================================= */
+/* Dark Premium Card */
+/* ================================= */
+
+.t-card-dark{
+  background: linear-gradient(145deg,#0f0f0f,#1b1b1b);
+  padding: 2rem;
+  border-radius: 26px;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.t-card-dark .t-role{
+  color: #9ca3af;
+}
+
+/* ================================= */
+/* Split Layout Card */
+/* ================================= */
+
+.t-card-split{
+  display: flex;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.t-split-left{
+  width: 40%;
+}
+
+.t-split-left img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.t-split-right{
+  width: 60%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ================================= */
+/* Frosted Blur Card */
+/* ================================= */
+
+.t-card-frost{
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 28px;
+  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+}
+
+.t-frost-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.2),
+    rgba(255,255,255,0.02)
+  );
+  pointer-events: none;
+}
+
+/* ================================= */
+/* Shared Styles */
+/* ================================= */
+
+.t-card-neon,
+.t-card-floating,
+.t-card-dark,
+.t-card-frost{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.t-user{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.t-avatar img,
+.t-avatar-pop img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.t-name{
+  display: block;
+  font-size: 1rem;
+}
+
+.t-role{
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.t-rating{
+  color: #fbbf24;
+  letter-spacing: 2px;
+}
+
+.t-quote-mark{
+  font-size: 3rem;
+  line-height: 1;
+  color: #8b5cf6;
+}
+
+.t-text{
+  line-height: 1.7;
+  font-size: 0.97rem;
+}
+
+/* ================================= */
+/* Responsive */
+/* ================================= */
+
+@media(max-width:768px){
+
+  .t-card-split{
+    flex-direction: column;
+  }
+
+  .t-split-left,
+  .t-split-right{
+    width: 100%;
+  }
+
+  .t-split-left{
+    height: 240px;
+  }
+}
+
+
+/* ============================= */
+/* Aurora Glow Card */
+/* ============================= */
+
+.t-card-aurora{
+  position:relative;
+  overflow:hidden;
+  padding:2rem;
+  border-radius:28px;
+  background:#10131d;
+  color:#fff;
+  isolation:isolate;
+}
+
+.t-aurora-bg{
+  position:absolute;
+  inset:-40%;
+  background:
+    radial-gradient(circle at 20% 20%, #7c3aed 0%, transparent 30%),
+    radial-gradient(circle at 80% 30%, #06b6d4 0%, transparent 30%),
+    radial-gradient(circle at 50% 80%, #ec4899 0%, transparent 35%);
+  filter:blur(70px);
+  opacity:.8;
+  animation:auroraMove 10s linear infinite;
+}
+
+@keyframes auroraMove{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+
+/* ============================= */
+/* Cyberpunk Card */
+/* ============================= */
+
+.t-card-cyber{
+  position:relative;
+  padding:2rem;
+  border-radius:24px;
+  background:#09090b;
+  border:1px solid #22d3ee55;
+  overflow:hidden;
+  color:#fff;
+  box-shadow:0 0 40px #22d3ee22;
+}
+
+.t-cyber-line{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, transparent, #22d3ee, transparent);
+  width:200%;
+  animation:cyberScan 4s linear infinite;
+  opacity:.2;
+}
+
+@keyframes cyberScan{
+  0%{transform:translateX(-50%);}
+  100%{transform:translateX(0%);}
+}
+
+/* ============================= */
+/* Soft UI Card */
+/* ============================= */
+
+.t-card-soft{
+  padding:2rem;
+  border-radius:30px;
+  background:#e9eef5;
+  color:#1e293b;
+  box-shadow:
+    12px 12px 25px rgba(163,177,198,.35),
+    -10px -10px 20px rgba(255,255,255,.9);
+}
+
+.t-card-soft .t-quote-mark{
+  color:#6366f1;
+}
+
+/* ============================= */
+/* Animated Border Card */
+/* ============================= */
+
+.t-card-border{
+  position:relative;
+  overflow:hidden;
+  padding:2rem;
+  border-radius:24px;
+  background:#0f172a;
+  color:#fff;
+}
+
+.t-border-line{
+  position:absolute;
+  inset:-2px;
+  border-radius:inherit;
+  padding:2px;
+  background:linear-gradient(
+    90deg,
+    #06b6d4,
+    #8b5cf6,
+    #ec4899,
+    #06b6d4
+  );
+  background-size:300% 300%;
+  animation:borderMove 4s linear infinite;
+  z-index:-1;
+}
+
+@keyframes borderMove{
+  0%{background-position:0% 50%;}
+  100%{background-position:100% 50%;}
+}
+
+/* ============================= */
+/* Tilt Hover Card */
+/* ============================= */
+
+.t-card-tilt{
+  padding:2rem;
+  border-radius:24px;
+  background:linear-gradient(145deg,#1e293b,#0f172a);
+  color:#fff;
+  transition:.4s ease;
+  transform-style:preserve-3d;
+}
+
+.t-card-tilt:hover{
+  transform:
+    perspective(1000px)
+    rotateX(8deg)
+    rotateY(-8deg)
+    translateY(-8px);
+}
+
+/* ============================= */
+/* Gradient Mesh Card */
+/* ============================= */
+
+.t-card-mesh{
+  position:relative;
+  overflow:hidden;
+  padding:2rem;
+  border-radius:28px;
+  background:#111827;
+  color:#fff;
+  isolation:isolate;
+}
+
+.t-mesh-blur{
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  filter:blur(60px);
+  opacity:.5;
+}
+
+.t-mesh-blur.one{
+  top:-50px;
+  left:-50px;
+  background:#8b5cf6;
+}
+
+.t-mesh-blur.two{
+  bottom:-60px;
+  right:-60px;
+  background:#06b6d4;
+}
 }
 
 /* =========================================================
    ACCESSIBILITY
-========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 

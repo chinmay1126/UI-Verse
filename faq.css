@@ -1,148 +1,16 @@
-/* ===================================================
-   FAQ.CSS — FAQ Page Styles & Accordion Layout
-   Import AFTER style.css, home.css, shared-page.css
-   =================================================== */
-
-/* ---------- LAYOUT CORRECTIONS ---------- */
-.main-content {
-  margin-left: var(--sidebar-w);
-  margin-top: var(--navbar-h);
-  padding: 48px 56px;
-  min-height: calc(100vh - var(--navbar-h));
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  background-color: var(--body-bg);
-  transition: margin-left var(--transition);
-}
-
-/* Sidebar V2 brand badge */
-.brand-badge {
-  font-size: 10px;
-  background: linear-gradient(135deg, var(--accent) 0%, #ff8c00 100%);
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 4px;
-  vertical-align: middle;
-  margin-left: 6px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-/* Premium Page Hero background card */
-.page-hero {
-  background: linear-gradient(135deg, rgba(20, 20, 35, 0.7) 0%, rgba(10, 10, 20, 0.9) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-}
-
-/* ---------- FAQ ACCORDION LAYOUT ---------- */
-.faq-section {
-  max-width: 800px;
-  width: 100%;
-  margin: 48px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* FAQ CARD */
-.faq-item {
-  position: relative;
-  padding: 24px 28px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border-left: 4px solid transparent;
-}
-
-.faq-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(235, 104, 53, 0.2);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.faq-item.active {
-  border-left-color: var(--accent);
-  border-color: rgba(235, 104, 53, 0.3);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-/* FAQ QUESTION ROW */
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  gap: 16px;
-  user-select: none;
-}
-
-.faq-question h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin: 0;
-  transition: color 0.25s;
-  font-family: var(--font-heading);
-}
-
-.faq-question i {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s;
-}
-
-.faq-item.active .faq-question i {
-  transform: rotate(180deg);
-  color: var(--accent);
-}
-
-/* FAQ ANSWER CONTAINER */
-.faq-answer {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 500px;
-  opacity: 1;
-}
-
-.faq-answer p {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 0.95rem;
-  padding-top: 14px;
-  margin: 0;
-}
-
-/* ---------- RESPONSIVE MEDIA QUERIES ---------- */
-@media (max-width: 992px) {
-  .main-content {
-    margin-left: 0;
-    padding: 32px 24px;
-  }
-}
-
-@media (max-width: 600px) {
-  .faq-section {
-    margin: 32px 0;
-    gap: 12px;
-  }
-
-  .faq-item {
-    padding: 20px;
-  }
-
-  .faq-question h3 {
-    font-size: 1rem;
-  }
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#0f172a;color:#fff}
+.hero{text-align:center;padding:80px 20px;background:linear-gradient(135deg,#eb6835,#6c5ce7)}
+.hero input{margin-top:20px;padding:14px;width:min(600px,90%);border-radius:30px;border:none}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;padding:40px}
+.card{background:#1e293b;padding:30px;border-radius:20px;text-align:center}
+.filters{text-align:center;padding:20px}
+.filter{padding:10px 18px;border:none;border-radius:20px;margin:5px}
+.faq-container{max-width:900px;margin:auto;padding:40px 20px}
+.faq-item{background:#1e293b;margin-bottom:15px;border-radius:16px;overflow:hidden}
+.faq-question{width:100%;padding:20px;background:none;color:#fff;border:none;display:flex;justify-content:space-between;font-size:18px}
+.faq-answer{max-height:0;overflow:hidden;transition:.3s}
+.faq-answer p{padding:20px}
+.faq-item.active .faq-answer{max-height:200px}
+.cta{text-align:center;padding:80px 20px}
+.cta button{padding:14px 28px;border:none;border-radius:30px;background:#eb6835;color:#fff}

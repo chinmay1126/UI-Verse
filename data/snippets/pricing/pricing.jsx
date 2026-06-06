@@ -46,6 +46,241 @@ export default function pricing(){
       
       </div>
       
+      
+      {/* ================= GLASSMORPHISM PRICING ================= */}
+      
+      <div className="component-card">
+      
+        <div className="glass-pricing-grid">
+      
+          {/* BASIC */}
+          <div className="glass-card">
+      
+            <div className="glass-top">
+              <span className="glass-plan">Basic</span>
+              <h2>$9</h2>
+              <p>/ month</p>
+            </div>
+      
+            <ul className="glass-features">
+              <li><i className="fa-solid fa-check"></i> 5 Projects</li>
+              <li><i className="fa-solid fa-check"></i> Email Support</li>
+              <li><i className="fa-solid fa-check"></i> Analytics</li>
+            </ul>
+      
+            <button className="glass-btn">
+              Start Free
+            </button>
+      
+          </div>
+      
+          {/* TEAM */}
+          <div className="glass-card featured-glass">
+      
+            <div className="popular-pill">
+              Recommended
+            </div>
+      
+            <div className="glass-top">
+              <span className="glass-plan">Team</span>
+              <h2>$29</h2>
+              <p>/ month</p>
+            </div>
+      
+            <ul className="glass-features">
+              <li><i className="fa-solid fa-check"></i> Unlimited Projects</li>
+              <li><i className="fa-solid fa-check"></i> Team Access</li>
+              <li><i className="fa-solid fa-check"></i> Priority Support</li>
+              <li><i className="fa-solid fa-check"></i> API Access</li>
+            </ul>
+      
+            <button className="glass-btn active-btn">
+              Get Team Plan
+            </button>
+      
+          </div>
+      
+          {/* AGENCY */}
+          <div className="glass-card">
+      
+            <div className="glass-top">
+              <span className="glass-plan">Agency</span>
+              <h2>$79</h2>
+              <p>/ month</p>
+            </div>
+      
+            <ul className="glass-features">
+              <li><i className="fa-solid fa-check"></i> White Label</li>
+              <li><i className="fa-solid fa-check"></i> Unlimited Users</li>
+              <li><i className="fa-solid fa-check"></i> Dedicated Manager</li>
+            </ul>
+      
+            <button className="glass-btn">
+              Contact Us
+            </button>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+      
+      {/* ================= NEON PRICING ================= */}
+      
+      <div className="component-card">
+      
+        <div className="neon-pricing-grid">
+      
+          {/* SILVER */}
+          <div className="neon-card silver">
+      
+            <h3>Silver</h3>
+      
+            <div className="neon-price">
+              $15
+            </div>
+      
+            <p className="neon-desc">
+              Great for freelancers
+            </p>
+      
+            <ul>
+              <li>5 GB Storage</li>
+              <li>Custom Domain</li>
+              <li>Email Support</li>
+            </ul>
+      
+            <button className="neon-btn">
+              Select Plan
+            </button>
+      
+          </div>
+      
+          {/* GOLD */}
+          <div className="neon-card gold">
+      
+            <div className="neon-badge">
+              <i className="fa-solid fa-crown"></i>
+              BEST VALUE
+            </div>
+      
+            <h3>Gold</h3>
+      
+            <div className="neon-price">
+              $49
+            </div>
+      
+            <p className="neon-desc">
+              Ideal for startups
+            </p>
+      
+            <ul>
+              <li>Unlimited Storage</li>
+              <li>AI Analytics</li>
+              <li>24/7 Support</li>
+            </ul>
+      
+            <button className="neon-btn active-neon">
+              Choose Gold
+            </button>
+      
+          </div>
+      
+          {/* PLATINUM */}
+          <div className="neon-card platinum">
+      
+            <h3>Platinum</h3>
+      
+            <div className="neon-price">
+              $99
+            </div>
+      
+            <p className="neon-desc">
+              Enterprise solution
+            </p>
+      
+            <ul>
+              <li>Unlimited Everything</li>
+              <li>Dedicated Manager</li>
+              <li>Custom Integrations</li>
+            </ul>
+      
+            <button className="neon-btn">
+              Contact Sales
+            </button>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+      
+      {/* ================= MINIMAL PRICING ================= */}
+      
+      <div className="component-card">
+      
+        <div className="minimal-pricing-grid">
+      
+          {/* LITE */}
+          <div className="minimal-card">
+      
+            <span className="mini-label">
+              Lite
+            </span>
+      
+            <h2>$5</h2>
+      
+            <p>
+              Small personal websites
+            </p>
+      
+            <button className="minimal-btn">
+              Buy Now
+            </button>
+      
+          </div>
+      
+          {/* PLUS */}
+          <div className="minimal-card dark-mini">
+      
+            <span className="mini-label">
+              Plus
+            </span>
+      
+            <h2>$19</h2>
+      
+            <p>
+              Best for professionals
+            </p>
+      
+            <button className="minimal-btn light-btn">
+              Choose Plus
+            </button>
+      
+          </div>
+      
+          {/* ULTRA */}
+          <div className="minimal-card">
+      
+            <span className="mini-label">
+              Ultra
+            </span>
+      
+            <h2>$59</h2>
+      
+            <p>
+              Built for agencies
+            </p>
+      
+            <button className="minimal-btn">
+              Upgrade
+            </button>
+      
+          </div>
+      
+        </div>
+      
+      </div>
       {/* ================= COMPONENT CARD ================= */}
       
       <div className="component-card">
