@@ -1347,6 +1347,46 @@ document.querySelectorAll("button[id^='billing-']").forEach(toggle => {
   });
 });
 
+// Select toggle buttons and pricing amounts
+const toggleBtns = document.querySelectorAll(".toggle-btn");
+const planAmounts = document.querySelectorAll(".plan-amount");
+const planOlds = document.querySelectorAll(".plan-old");
+const planPeriods = document.querySelectorAll(".plan-period");
+
+toggleBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Remove active state from all buttons
+    toggleBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Get selected period
+    const period = btn.dataset.period;
+
+    // Update all plan cards
+    planAmounts.forEach(amount => {
+      amount.textContent = amount.getAttribute(`data-${period}`);
+    });
+
+    planOlds.forEach(oldPrice => {
+      if (oldPrice) {
+        oldPrice.textContent = oldPrice.getAttribute(`data-${period}`);
+      }
+    });
+
+    planPeriods.forEach(periodEl => {
+     
+      if (period === "month") {
+        periodEl.textContent = "/ month";
+      } else if (period === "quarter") {
+        periodEl.textContent = "/ quarter";
+      } else if (period === "year") {
+        periodEl.textContent = "/ year";
+      }
+    });
+  });
+});
+
+
 </script>
     <script src="dist/shared.js"></script>
 </body>
