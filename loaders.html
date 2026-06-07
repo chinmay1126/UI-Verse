@@ -5,20 +5,7 @@
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self' https:;
-      base-uri 'self';
-      frame-ancestors 'none';
-      object-src 'none';
-      connect-src 'self' https:;
-      img-src 'self' data: https:;
-      font-src 'self' data: https:;
-      style-src 'self' https: 'unsafe-inline';
-      script-src 'self' https: 'unsafe-inline';
-    "
-  />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-/3uzgi7vc4mmyIvR7RS74T4vW64M3quS2SxeJNQu8bY= sha256-0zWTpEvl7Z0zyHzTLXPZLECd906QfTuCRs0vfdtgtac= sha256-1JfjM+47FG8XGxu0UfauYgEF9TOkXbUDKRjFsC5RnQ8= sha256-1dIbB/r8gJZQqfqHRIJADWbwB7JTTVeYfxzbbLWt+ts= sha256-2ouYaMulfZDfOAGF5wJSzVprdzE5nglfhdIaS/YaqT0= sha256-49Jz6jpOWv7+YlOEUFiGN2IWsSLoX/2q2r8qnuzbGJE= sha256-4JgID4VJUSJcZXtvafIOnj+MmjsrYaIi0a16FGZtCo4= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-5bJNzHmbwrWQCLQxtYLerDcccTEfq/ul/o3semRJkDA= sha256-6AKBlFOM56jeshihh2/xD3z0m7iZ4A+GozwBi7gsj7o= sha256-6FhfDBogMqIGOytktLBDwf63YcOpJnpMkBbpgAA+PZ4= sha256-6pEftELx/hen026nzCCl/7FsLDv7EL3hBSxHT4jgZbk= sha256-AHOSEhpOS5xmVtZpE7eNKFzO5TzAJeQgDk9OOTbM7i4= sha256-EtZYCYGcA7H4KaN9+BhI30gYQ3g7DNN1Pc2/GkEdChc= sha256-J1sK0S6Qv5GZxvYkNafbQIRtuSNxKngsZyDmuUhxV5M= sha256-Jw5n2AYjR6xlFSfc3uO1r2if464Xhhq9ZOj8KjP+3+8= sha256-LJF+ds+GZ1kw3K6+BCfltIvT3urTvmyPP6qbgzC1osA= sha256-LlM6jgy+E6FwruIWo17nYUpGpJYxLlV3Oh04QvyK+Rs= sha256-NbMbAECbLFwzvvk3GKzs6UUfYLloLYQ2v//ZJg7/8+c= sha256-SjeEpy9DdGHcjIAYqFcaEZmlgn6cQAAAnxj/MMUIc8k= sha256-Tfoeb6j2ZcNq4h3h5UQeZkaVIgoYgleNr0JzZvRVmvY= sha256-U5RZY3KCRxQLS3Jvvgl8lPJkOOc+aohMmvlgaxJQ9Mo= sha256-UDfhCuwAdzfddtlr+EBADM+YmUTpS2kkSiLN23N8dMI= sha256-UwYfhQ2Li70IK+VbtXyc1K+sDoSzMFcGNAw9DMj70LA= sha256-VMuMwdlqGET0du1hU9ca989bmnEJqed2bxkUZFfr3qI= sha256-VXs6vm9IZ1lJ4y4OqiFdOZoBtNO4Dz6oHoCFYSK1Xo4= sha256-VsCz1AGz2fdaZNrPE10jciI6HD2YgzTdTbdlebwhGJg= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4= sha256-YEtzFlpu7P0zfGnrRvtVXvtKOw1LD4UaQcRP1OpujJo= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-auw6dQ4oyYnlI7TUWClAMDH40icmD6OiWh17rHpFzrk= sha256-bEUUkb6QGbrnT4uci+dIctwHpTn4lvYkdLPZ0NVWee4= sha256-euFYUFhMJAme2ooJy0XT9xJq3lSNyxXL9AXe3p3Bj6g= sha256-fFfd7CSPi5k6kFPfnAGKCUvXSmO8b0qmko6aiNoPXQM= sha256-fywlHNhf+Hwo8hf6dyksfZ4A6h0/WdYtOqbKkSQQCPU= sha256-g1r65G1RpVICOCl04go/0POtHCIbJVE2nTP9V4o33NY= sha256-jEC+H2QQ9gUXhSU/0c8r+WAryy/fwxWmKw/rYZbyiRU= sha256-jubg0EAcYMNQbSLA9JJtm8z/4xe+x1emGf87tPn4NuA= sha256-kjoZ+7+EPiRh1+AuuImaza8e6qxNC/lWbGaJzCn0RAU= sha256-m4aoJdWPiRBdjf2flcLRhqoE0aXOZlnGIiLnPq0zCOw= sha256-nL1MCw1h5iWtGvZ7JPB2o/NVIUi6xzCiuakt/CeeHfs= sha256-oF7Vpzns6Hsc0LgOsUWWt+NpTdHzegwnjN2VoWmV/aU= sha256-olQMR6vDWtARbYCIZw0WQewVWJo2tWGBDk9VMz5qMto= sha256-sfCR4EtQChLnzm4msRwYbIyeX90Z68lEDr5nPw2WkUs= sha256-uSGe9TwMiX0MPrMCvuT3wsu48oMMOJ2KwvRomW1yvCQ= sha256-uTDYbR809IEk66EtGXeSq3nApKl9x6Oo3sxuS6UL4l4= sha256-vAloZAG8eapjMoX5NX+PAz5bv+dkyLck0AX7T7Mnv+0= sha256-vcDtoA1AEF2fxooI4MwtdcPC9II0L9jf1yUr8Rniwrc= sha256-x6Lg5g0bHcHGkxJI1/LcmremJ57ufOirQdPffgep00c= sha256-yoUZqcrOdlsLKauifhxc28W0j/+F95NmTFtH077puH8=; script-src-attr 'unsafe-hashes' sha256-/3uzgi7vc4mmyIvR7RS74T4vW64M3quS2SxeJNQu8bY= sha256-0zWTpEvl7Z0zyHzTLXPZLECd906QfTuCRs0vfdtgtac= sha256-1JfjM+47FG8XGxu0UfauYgEF9TOkXbUDKRjFsC5RnQ8= sha256-1dIbB/r8gJZQqfqHRIJADWbwB7JTTVeYfxzbbLWt+ts= sha256-2ouYaMulfZDfOAGF5wJSzVprdzE5nglfhdIaS/YaqT0= sha256-49Jz6jpOWv7+YlOEUFiGN2IWsSLoX/2q2r8qnuzbGJE= sha256-4JgID4VJUSJcZXtvafIOnj+MmjsrYaIi0a16FGZtCo4= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-5bJNzHmbwrWQCLQxtYLerDcccTEfq/ul/o3semRJkDA= sha256-6AKBlFOM56jeshihh2/xD3z0m7iZ4A+GozwBi7gsj7o= sha256-6FhfDBogMqIGOytktLBDwf63YcOpJnpMkBbpgAA+PZ4= sha256-6pEftELx/hen026nzCCl/7FsLDv7EL3hBSxHT4jgZbk= sha256-AHOSEhpOS5xmVtZpE7eNKFzO5TzAJeQgDk9OOTbM7i4= sha256-EtZYCYGcA7H4KaN9+BhI30gYQ3g7DNN1Pc2/GkEdChc= sha256-J1sK0S6Qv5GZxvYkNafbQIRtuSNxKngsZyDmuUhxV5M= sha256-Jw5n2AYjR6xlFSfc3uO1r2if464Xhhq9ZOj8KjP+3+8= sha256-LJF+ds+GZ1kw3K6+BCfltIvT3urTvmyPP6qbgzC1osA= sha256-LlM6jgy+E6FwruIWo17nYUpGpJYxLlV3Oh04QvyK+Rs= sha256-NbMbAECbLFwzvvk3GKzs6UUfYLloLYQ2v//ZJg7/8+c= sha256-SjeEpy9DdGHcjIAYqFcaEZmlgn6cQAAAnxj/MMUIc8k= sha256-Tfoeb6j2ZcNq4h3h5UQeZkaVIgoYgleNr0JzZvRVmvY= sha256-U5RZY3KCRxQLS3Jvvgl8lPJkOOc+aohMmvlgaxJQ9Mo= sha256-UDfhCuwAdzfddtlr+EBADM+YmUTpS2kkSiLN23N8dMI= sha256-UwYfhQ2Li70IK+VbtXyc1K+sDoSzMFcGNAw9DMj70LA= sha256-VMuMwdlqGET0du1hU9ca989bmnEJqed2bxkUZFfr3qI= sha256-VXs6vm9IZ1lJ4y4OqiFdOZoBtNO4Dz6oHoCFYSK1Xo4= sha256-VsCz1AGz2fdaZNrPE10jciI6HD2YgzTdTbdlebwhGJg= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4= sha256-YEtzFlpu7P0zfGnrRvtVXvtKOw1LD4UaQcRP1OpujJo= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-auw6dQ4oyYnlI7TUWClAMDH40icmD6OiWh17rHpFzrk= sha256-bEUUkb6QGbrnT4uci+dIctwHpTn4lvYkdLPZ0NVWee4= sha256-euFYUFhMJAme2ooJy0XT9xJq3lSNyxXL9AXe3p3Bj6g= sha256-fFfd7CSPi5k6kFPfnAGKCUvXSmO8b0qmko6aiNoPXQM= sha256-fywlHNhf+Hwo8hf6dyksfZ4A6h0/WdYtOqbKkSQQCPU= sha256-g1r65G1RpVICOCl04go/0POtHCIbJVE2nTP9V4o33NY= sha256-jEC+H2QQ9gUXhSU/0c8r+WAryy/fwxWmKw/rYZbyiRU= sha256-jubg0EAcYMNQbSLA9JJtm8z/4xe+x1emGf87tPn4NuA= sha256-kjoZ+7+EPiRh1+AuuImaza8e6qxNC/lWbGaJzCn0RAU= sha256-m4aoJdWPiRBdjf2flcLRhqoE0aXOZlnGIiLnPq0zCOw= sha256-nL1MCw1h5iWtGvZ7JPB2o/NVIUi6xzCiuakt/CeeHfs= sha256-oF7Vpzns6Hsc0LgOsUWWt+NpTdHzegwnjN2VoWmV/aU= sha256-olQMR6vDWtARbYCIZw0WQewVWJo2tWGBDk9VMz5qMto= sha256-sfCR4EtQChLnzm4msRwYbIyeX90Z68lEDr5nPw2WkUs= sha256-uSGe9TwMiX0MPrMCvuT3wsu48oMMOJ2KwvRomW1yvCQ= sha256-uTDYbR809IEk66EtGXeSq3nApKl9x6Oo3sxuS6UL4l4= sha256-vAloZAG8eapjMoX5NX+PAz5bv+dkyLck0AX7T7Mnv+0= sha256-vcDtoA1AEF2fxooI4MwtdcPC9II0L9jf1yUr8Rniwrc= sha256-x6Lg5g0bHcHGkxJI1/LcmremJ57ufOirQdPffgep00c= sha256-yoUZqcrOdlsLKauifhxc28W0j/+F95NmTFtH077puH8=; style-src 'self' https: 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA= sha256-X3TANt94n/EPMZH3GiAoNt9ind85KwvvfcY7+Xxb+CI= sha256-zioEl7ShsnBh5xXQBd5d1lIiLYfMRNBVJ/a0cQq3/Rc=; style-src-attr 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA= sha256-X3TANt94n/EPMZH3GiAoNt9ind85KwvvfcY7+Xxb+CI= sha256-zioEl7ShsnBh5xXQBd5d1lIiLYfMRNBVJ/a0cQq3/Rc=">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -1047,7 +1034,7 @@
           </div>
         </div>
 
-        <span class="results-count" id="resultsCount">21 components</span>
+        <span class="results-count" id="resultsCount">29 components</span>
       </div>
 
       <!-- Loader 1 -->
@@ -1658,6 +1645,151 @@
         &lt;span&gt;&lt;/span&gt;
         &lt;span&gt;&lt;/span&gt;
       &lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 22 — Hexagon Loader -->
+      <div class="component-card">
+        <h3>Hexagon Loader</h3>
+        <div class="loader-demo-box">
+          <div class="hex-loader"></div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader22')">View Code</button>
+          <button onclick="copyCode('loader22')">Copy</button>
+        </div>
+        <pre id="loader22" class="code-block">
+&lt;div class="hex-loader"&gt;&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 23 — DNA Helix -->
+      <div class="component-card">
+        <h3>DNA Helix Loader</h3>
+        <div class="loader-demo-box">
+          <div class="dna-loader">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader23')">View Code</button>
+          <button onclick="copyCode('loader23')">Copy</button>
+        </div>
+        <pre id="loader23" class="code-block">
+&lt;div class="dna-loader"&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 24 — Glass Spinner -->
+      <div class="component-card">
+        <h3>Glass Spinner</h3>
+        <div class="loader-demo-box">
+          <div class="glass-loader"></div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader24')">View Code</button>
+          <button onclick="copyCode('loader24')">Copy</button>
+        </div>
+        <pre id="loader24" class="code-block">
+&lt;div class="glass-loader"&gt;&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 25 — AI Thinking -->
+      <div class="component-card">
+        <h3>AI Thinking Loader</h3>
+        <div class="loader-demo-box">
+          <div class="ai-loader">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader25')">View Code</button>
+          <button onclick="copyCode('loader25')">Copy</button>
+        </div>
+        <pre id="loader25" class="code-block">
+&lt;div class="ai-loader"&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 26 — 3D Cube -->
+      <div class="component-card">
+        <h3>3D Cube Loader</h3>
+        <div class="loader-demo-box">
+          <div class="cube-loader"></div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader26')">View Code</button>
+          <button onclick="copyCode('loader26')">Copy</button>
+        </div>
+        <pre id="loader26" class="code-block">
+&lt;div class="cube-loader"&gt;&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 27 — Gradient Ring Cascade -->
+      <div class="component-card">
+        <h3>Gradient Ring Cascade</h3>
+        <div class="loader-demo-box">
+          <div class="cascade-loader">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader27')">View Code</button>
+          <button onclick="copyCode('loader27')">Copy</button>
+        </div>
+        <pre id="loader27" class="code-block">
+&lt;div class="cascade-loader"&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 28 — Bouncing Squares -->
+      <div class="component-card">
+        <h3>Bouncing Squares</h3>
+        <div class="loader-demo-box">
+          <div class="bouncing-squares">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader28')">View Code</button>
+          <button onclick="copyCode('loader28')">Copy</button>
+        </div>
+        <pre id="loader28" class="code-block">
+&lt;div class="bouncing-squares"&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 29 — Circular Dash -->
+      <div class="component-card">
+        <h3>Circular Dash Loader</h3>
+        <div class="loader-demo-box">
+          <div class="circular-dash">
+            <svg viewBox="0 0 50 50">
+              <circle cx="25" cy="25" r="20"></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader29')">View Code</button>
+          <button onclick="copyCode('loader29')">Copy</button>
+        </div>
+        <pre id="loader29" class="code-block">
+&lt;div class="circular-dash"&gt;
+  &lt;svg viewBox="0 0 50 50"&gt;
+    &lt;circle cx="25" cy="25" r="20"&gt;&lt;/circle&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
         </pre>
       </div>
 

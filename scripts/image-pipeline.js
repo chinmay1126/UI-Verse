@@ -177,7 +177,7 @@ async function createLocalVariants(imagePath, sourceRootPath) {
     await image
       .clone()
       .resize({ width: fallbackWidth, withoutEnlargement: true })
-      .toFormat(fallbackFormat, { quality: 82, effort: 4 })
+      .toFormat(fallbackFormat, { quality: 75, effort: 6 })
       .toFile(fallbackFile);
   }
 
@@ -192,7 +192,7 @@ async function createLocalVariants(imagePath, sourceRootPath) {
       await image
         .clone()
         .resize({ width, withoutEnlargement: true })
-        .avif({ quality: 55 })
+        .avif({ quality: 65, effort: 6 })
         .toFile(avifFile);
     }
 
@@ -200,7 +200,7 @@ async function createLocalVariants(imagePath, sourceRootPath) {
       await image
         .clone()
         .resize({ width, withoutEnlargement: true })
-        .webp({ quality: 80 })
+        .webp({ quality: 75, effort: 6 })
         .toFile(webpFile);
     }
 

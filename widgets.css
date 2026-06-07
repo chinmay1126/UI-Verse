@@ -221,7 +221,6 @@ body{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
-  margin-left: 300px;
 }
 
 .widget-wrapper {
@@ -555,10 +554,10 @@ body.light {
    V2 CONTENT LAYOUT
    ============================================================ */
 .main-content {
-  margin-left: var(--sidebar-w);
-  margin-top: var(--navbar-h);
+  margin-left: 250px;
+  margin-top: 80px;
   padding: 40px 40px 0;
-  min-height: calc(100vh - var(--navbar-h));
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   gap: 40px;

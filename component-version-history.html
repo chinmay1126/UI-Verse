@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Version History — UIverse</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    
+    .header { margin-bottom: 24px; }
+    .header h1 { font-size: 24px; color: #fff; margin-bottom: 8px; }
+    .header p { color: #888; font-size: 14px; }
+
+    .layout { display: grid; grid-template-columns: 280px 1fr; gap: 24px; }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+    /* Sidebar */
+    .sidebar {
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 12px;
+      padding: 16px;
+      height: fit-content;
+    }
+    .sidebar h3 { font-size: 12px; text-transform: uppercase; color: #888; letter-spacing: 0.5px; margin-bottom: 12px; }
+    .component-list { max-height: 70vh; overflow-y: auto; }
+    .component-item {
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .component-item:hover { background: #252545; }
+    .component-item.active { background: #6c5ce7; color: #fff; }
+    .component-item .version { font-size: 11px; color: #888; }
+    .component-item.active .version { color: #fff; opacity: 0.7; }
+
+    /* Main */
+    .main { display: flex; flex-direction: column; gap: 24px; }
+
+    .panel {
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    /* Preview comparison */
+    .preview-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .preview-box {
+      background: #0f0f1a;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .preview-box .label {
+      padding: 8px 12px;
+      background: #252545;
+      font-size: 11px;
+      color: #888;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    .preview-box iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      background: #fff;
+    }
+
+    /* Diff panel */
+    .diff-panel { display: none; }
+    .diff-panel.open { display: block; }
+
+    /* Loading */
+    .loading { text-align: center; padding: 40px; color: #888; }
+    .loading-spinner {
+      width: 32px; height: 32px;
+      border: 3px solid #2a2a4a;
+      border-top-color: #6c5ce7;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 12px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📜 Component Version History</h1>
+      <p>Track changes across component iterations with code diffs and visual previews</p>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h3>Components</h3>
+        <div class="component-list" id="componentList">
+          <div class="loading"><div class="loading-spinner"></div>Loading...</div>
+        </div>
+      </aside>
+
+      <main class="main" id="mainPanel">
+        <div class="panel">
+          <p style="color:#888">Select a component from the sidebar to view its version history.</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/core/component-versioning.js"></script>
+  <script src="js/features/version-timeline.js"></script>
+  <script src="js/features/code-diff-viewer.js"></script>
+  <script>
+    let catalog = [];
+    let selectedComponent = null;
+
+    async function init() {
+      await VersionTimeline.init();
+      catalog = VersionTimeline.getCatalog();
+      renderSidebar();
+      VersionTimeline.injectStyles();
+      CodeDiffViewer.injectStyles();
+
+      // Listen for diff requests from timeline
+      document.addEventListener('version-timeline:diff-requested', async (e) => {
+        const { componentId, fromVersion, toVersion } = e.detail;
+        showDiff(componentId, fromVersion, toVersion);
+      });
+    }
+
+    function renderSidebar() {
+      const el = document.getElementById('componentList');
+      el.innerHTML = catalog.map(c => `
+        <div class="component-item ${selectedComponent === c.id ? 'active' : ''}" data-id="${c.id}" onclick="selectComponent('${c.id}')">
+          <span>${c.title}</span>
+          <span class="version">v${c.version}</span>
+        </div>
+      `).join('');
+    }
+
+    function selectComponent(id) {
+      selectedComponent = id;
+      renderSidebar();
+      renderMain(id);
+    }
+
+    function renderMain(id) {
+      const component = catalog.find(c => c.id === id);
+      if (!component) return;
+
+      const main = document.getElementById('mainPanel');
+      main.innerHTML = `
+        <div class="panel">
+          <div id="timelineContainer"></div>
+        </div>
+        <div class="panel diff-panel" id="diffPanel">
+          <h3 style="font-size:14px;color:#888;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;">Code Diff</h3>
+          <div id="diffContainer"></div>
+        </div>
+        <div class="panel">
+          <h3 style="font-size:14px;color:#888;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;">Visual Preview</h3>
+          <div class="preview-row">
+            <div class="preview-box">
+              <div class="label">Current Version — v${component.version}</div>
+              <iframe src="${component.path}" title="Current version preview" sandbox="allow-same-origin"></iframe>
+            </div>
+            <div class="preview-box">
+              <div class="label">Previous Version — v${(component.changelog[1] || component.changelog[0]).version}</div>
+              <iframe src="${component.path}" title="Previous version preview" sandbox="allow-same-origin"></iframe>
+            </div>
+          </div>
+        </div>
+      `;
+
+      const timelineContainer = document.getElementById('timelineContainer');
+      VersionTimeline.renderTimeline(timelineContainer, id);
+    }
+
+    async function showDiff(componentId, fromVersion, toVersion) {
+      // In a real implementation, fetch versioned snapshots from server/storage
+      // For now, show a placeholder diff with sample data
+      const component = catalog.find(c => c.id === componentId);
+      const fromEntry = component.changelog.find(e => e.version === fromVersion);
+      const toEntry = component.changelog.find(e => e.version === toVersion);
+
+      const oldText = `<!-- v${fromVersion} — ${fromEntry?.note || 'Previous version'} -->\n<div class="component">\n  <button>Click</button>\n</div>`;
+      const newText = `<!-- v${toVersion} — ${toEntry?.note || 'Current version'} -->\n<div class="component" role="button" tabindex="0">\n  <button aria-label="Submit">Click</button>\n  <span class="badge">New</span>\n</div>`;
+
+      const diffPanel = document.getElementById('diffPanel');
+      const diffContainer = document.getElementById('diffContainer');
+      diffPanel.classList.add('open');
+      CodeDiffViewer.renderDiff(diffContainer, oldText, newText, {
+        oldLabel: `v${fromVersion}`,
+        newLabel: `v${toVersion}`
+      });
+    }
+
+    init();
+  </script>
+</body>
+</html>

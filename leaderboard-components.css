@@ -692,6 +692,221 @@ border:0;
   .podium-slot.first { min-height: 150px; }
 }
 
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  margin-left: var(--sidebar-w);
+  background: #111;
+  color: #aaa;
+  padding: 0;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  gap: 40px;
+  padding: 56px 48px 40px;
+  max-width: 100%;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.footer-col h3 {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col ul li a {
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+  transition: color var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent);
+  transform: translateX(3px);
+  text-shadow: 0 0 8px rgba(235, 104, 53, 0.4);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+.socials a {
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 12px rgba(235, 104, 53, 0.35);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent);
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  gap: 6rem;
+  align-items: start;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.socials {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.socials a {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  text-decoration: none;
+  margin-right: 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 0 8px var(--accent);
+  transform: scale(1.1);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.newsletter-form input:focus {
+  border-color: var(--accent);
+}
+
+.newsletter-form button {
+  padding: 10px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.newsletter-form button:hover {
+  background: #d45c28;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1e1e1e;
+  padding: 20px 48px;
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+}
+
 /* ========================================= */
 /* ENHANCED FOOTER FOR LEADERBOARD COMPONENT */
 /* ========================================= */
@@ -718,157 +933,6 @@ border:0;
   background: linear-gradient(90deg, #eb6835, #7b61ff, #00f7ff);
 }
 
-.footer-container {
-  display: grid !important;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr !important;
-  gap: 30px !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important; 
-}
-
-.footer-col {
-  padding: 0 !important;
-  text-align: left !important;
-}
-
-.footer-col.brand p {
-  color: #94a3b8 !important;
-  margin-top: 16px !important;
-}
-
-.footer-logo {
-  font-family: var(--font-heading, "Syne", sans-serif) !important;
-  font-weight: 800 !important;
-  font-size: 24px !important;
-  background: linear-gradient(135deg, #eb6835, #7b61ff) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  margin-bottom: 0 !important;
-}
-
-.footer-col h3 {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-  color: #e2e8f0 !important;
-  margin-bottom: 24px !important;
-}
-
-.footer-col ul {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 12px !important;
-}
-
-.footer-col p {
-  margin: 0 !important;
-  font-size: 14px !important;
-  color: #94a3b8 !important;
-  line-height: 1.6 !important;
-}
-
-.footer-col a {
-  text-decoration: none !important;
-  color: #94a3b8 !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  transition: all 0.2s ease !important;
-  display: inline-block !important;
-}
-
-.footer-col a:hover {
-  color: #a78bfa !important;
-  transform: translateX(4px);
-}
-
-.footer-col .socials {
-  display: flex !important;
-  gap: 12px !important;
-  margin-top: 24px !important;
-  justify-content: flex-start !important;
-}
-
-.footer-col .socials a {
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 50% !important;
-  background: #1e293b !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: #94a3b8 !important;
-  font-size: 16px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.footer-col .socials a:hover {
-  background: #a78bfa !important;
-  color: white !important;
-  transform: translateY(-4px) scale(1.1) !important;
-  box-shadow: 0 10px 20px rgba(167, 139, 250, 0.2) !important;
-}
-
-.newsletter-form {
-  display: flex !important;
-  margin-top: 16px !important;
-  background: #1e293b !important;
-  border: 1px solid #334155 !important;
-  border-radius: 8px !important;
-  padding: 4px !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
-  transition: all 0.3s ease !important;
-}
-
-.newsletter-form:focus-within {
-  border-color: #7b61ff !important;
-  box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.15) !important;
-}
-
-.newsletter-form input {
-  flex: 1 !important;
-  border: none !important;
-  padding: 10px 12px !important;
-  background: transparent !important;
-  outline: none !important;
-  font-size: 14px !important;
-  min-width: 0 !important;
-  color: white !important;
-}
-
-.newsletter-form button {
-  background: #0f172a !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 6px !important;
-  padding: 8px 16px !important;
-  font-weight: 600 !important;
-  font-size: 13px !important;
-  cursor: pointer !important;
-  transition: all 0.2s ease !important;
-}
-
-.newsletter-form button:hover {
-  background: #7b61ff !important;
-}
-
-.footer-bottom {
-  margin-top: 60px !important;
-  padding-top: 24px !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
-  text-align: center !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-}
-
-.footer-bottom p {
-  color: #94a3b8 !important;
-  font-size: 14px !important;
-}
 
 @media (max-width: 900px) {
   .footer { margin-left: 0 !important; width: 100% !important; padding: 40px 20px !important; }
