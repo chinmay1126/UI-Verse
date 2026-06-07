@@ -1,49 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <link rel="stylesheet" href="dist/shared.css">
-  <meta charset="UTF-8">
-
-  <!-- Improved CSP -->
-  <meta http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self';
-      base-uri 'self';
-      frame-ancestors 'none';
-      object-src 'none';
-
-      connect-src 'self' https:;
-      img-src 'self' data: https:;
-      font-src 'self' https://fonts.gstatic.com data:;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
-      script-src 'self' https:;
-    ">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>FAQ - UIverse</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  >
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="playground.css">
-  <link rel="stylesheet" href="faq.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UIverse FAQ</title>
+<link rel="stylesheet" href="faq.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -786,8 +749,39 @@ item.style.display=text.includes(keyword)?"block":"none";
   </script>
 
     <script src="dist/shared.js"></script>
+<header class="hero">
+  <h1>Frequently Asked Questions</h1>
+  <p>Everything you need to know about UIverse.</p>
+  <input id="faqSearch" placeholder="Search FAQs...">
+</header>
+
+<section class="stats">
+  <div class="card"><h2>500+</h2><p>Components</p></div>
+  <div class="card"><h2>15K+</h2><p>Developers</p></div>
+  <div class="card"><h2>24/7</h2><p>Support</p></div>
+  <div class="card"><h2>99%</h2><p>Satisfaction</p></div>
+</section>
+
+<section class="filters">
+<button class="filter active">All</button>
+<button class="filter">Getting Started</button>
+<button class="filter">Components</button>
+<button class="filter">Accessibility</button>
+</section>
+
+<section class="faq-container">
+<div class="faq-item"><button class="faq-question">What is UIverse?<i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer"><p>UIverse is a collection of modern UI components.</p></div></div>
+<div class="faq-item"><button class="faq-question">Is it free?<i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer"><p>Yes, it is free to use.</p></div></div>
+<div class="faq-item"><button class="faq-question">Can I contribute?<i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer"><p>You can contribute components and fixes.</p></div></div>
+<div class="faq-item"><button class="faq-question">Responsive design?<i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer"><p>All components are mobile friendly.</p></div></div>
+</section>
+
+<section class="cta">
+<h2>Still Need Help?</h2>
+<p>Contact our support team anytime.</p>
+<button>Contact Us</button>
+</section>
+
+<script src="faq.js"></script>
 </body>
-
 </html>
-
-<!-- improved by script -->

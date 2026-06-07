@@ -258,6 +258,85 @@ footer p {
   }
 }
 
+/* =========================
+   Responsive
+
+/* Tablet */
+@media (max-width: 992px) {
+  .heading h1 {
+    font-size: 2.5rem;
+  }
+
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  .price {
+    font-size: 2.4rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .pricing {
+    padding: 50px 15px;
+  }
+
+  .heading h1 {
+    font-size: 1.8rem;
+  }
+
+  .heading p {
+    font-size: 0.9rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr; /* stack cards vertically */
+    gap: 20px;
+  }
+
+  .card {
+    padding: 25px 18px;
+  }
+
+  .card h2 {
+    font-size: 1.4rem;
+  }
+
+  .price {
+    font-size: 2rem;
+  }
+
+  .card ul li {
+    font-size: 0.85rem;
+  }
+
+  .card button {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  footer {
+    padding: 20px 15px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer h3 {
+    font-size: 1rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+}
 /* ========================= */
 /* EXTRA COMPONENT STYLES */
 /* Add in pricingpage.css */
