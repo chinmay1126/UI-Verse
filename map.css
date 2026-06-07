@@ -81,6 +81,22 @@ body{
   padding: 16px 12px;
 }
 
+.sidebar{
+    transition:.3s;
+}
+
+.sidebar.show{
+    transform:translateX(0);
+}
+
+.sidebar-backdrop{
+    display:none;
+}
+
+.sidebar-backdrop.show{
+    display:block;
+}
+
 .sidebar-nav ul {
   list-style: none;
   padding: 0;

@@ -335,6 +335,14 @@
   </nav>
 </aside>
 
+<button
+    class="menu-toggle"
+    onclick="toggleSidebar()"
+    aria-label="Open navigation menu"
+>
+    <i class="fa-solid fa-bars"></i>
+</button>
+
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
@@ -489,6 +497,8 @@
       </ul>
     </div>
 
+    
+
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
@@ -535,6 +545,14 @@
       const block = document.getElementById(id);
       if (block) navigator.clipboard.writeText(block.innerText);
     }
+  
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("show");
+    document
+        .getElementById("sidebarBackdrop")
+        .classList.toggle("show");
+}
+
   </script>
     <script src="dist/shared.js"></script>
 </body>
