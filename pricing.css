@@ -851,6 +851,13 @@ button {
   min-height: 44px;
   cursor: pointer;
 }
+
+.plan-amount, .plan-old {
+  transition: all 0.3s ease;
+}
+.toggle-btn.active {
+  background: var(--accent);
+  color: #fff;
 /* ================= GLASS PRICING ================= */
 
 .glass-pricing-grid{

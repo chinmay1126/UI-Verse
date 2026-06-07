@@ -311,3 +311,7 @@ window.addEventListener(
 
   }
 );
+
+function toggleSidebar() {
+  document.querySelector(".sidebar").classList.toggle("open");
+}
