@@ -253,7 +253,7 @@ suggestionItems.forEach((item) => {
 
     openSpotlight();
 
-    console.log(
+    console.debug(
       "AI Suggestion Selected:",
       item.textContent.trim()
     );
