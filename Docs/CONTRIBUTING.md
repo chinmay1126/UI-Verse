@@ -330,3 +330,20 @@ The structure and recommendations follow **GitHub Open Source Guides** and best 
 ### Thank you for contributing to UI-Verse 🌟
 
 ### We can't wait to see what you build! 🍽️✨
+
+## ♿ Accessibility Testing (A11y)
+
+We run automated accessibility checks as part of CI. Before opening a PR, run the Playwright + axe accessibility checks locally to catch regressions.
+
+Run the representative a11y checks:
+
+```bash
+npm ci
+npx playwright install --with-deps
+npm run a11y:test || npm run test:e2e:accessibility
+```
+
+Reports are written to `tests-results/` as JSON files (e.g. `tests-results/a11y-_index.html.json`). If violations are found, fix them in the component markup (semantic HTML, ARIA, contrast, focus handling) and re-run tests.
+
+If you need help triaging violations, open an issue and include the report file.
+

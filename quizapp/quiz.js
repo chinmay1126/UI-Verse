@@ -1,74 +1,42 @@
-const optionButtons =
-  document.querySelectorAll(".option-btn");
-
-const scoreElement =
-  document.getElementById("score");
+const optionButtons = document.querySelectorAll(".option-btn");
+const scoreElement = document.getElementById("score");
+const timerElement = document.getElementById("timer");
 
 let score = 0;
-
-optionButtons.forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    optionButtons.forEach(btn => {
-      btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-
-    if(button.textContent ===
-      "Hyper Text Markup Language"){
-
-      score = 1;
-    }
-    else{
-
-      score = 0;
-    }
-
-    scoreElement.textContent = score;
-
-  });
-
-});
-
-document.getElementById("nextBtn")
-.addEventListener("click", () => {
-
-  if (window.UIVERSE_DEBUG) alert("Next question feature can be extended.");
-
-});
-
-// quiz.js
-
-const options = document.querySelectorAll(".option-btn");
-
-options.forEach((btn) => {
-
-  btn.addEventListener("click", () => {
-
-    options.forEach((item) => {
-      item.style.border = "1px solid rgba(255,255,255,0.08)";
-      item.style.background = "rgba(255,255,255,0.06)";
-    });
-
-    btn.style.border = "2px solid #06b6d4";
-    btn.style.background =
-      "linear-gradient(135deg, rgba(139,92,246,0.35), rgba(6,182,212,0.35))";
-
-  });
-
-});
-
 let time = 30;
 
-const timer = document.getElementById("timer");
+// Handle Option Clicks
+optionButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    
+    // Remove active class from all buttons
+    optionButtons.forEach(btn => btn.classList.remove("active"));
+    
+    // Add active class to the selected button
+    button.classList.add("active");
 
+    // Check answer and update score
+    if(button.textContent.includes("Hyper Text Markup Language")) {
+      score = 1;
+    } else {
+      score = 0;
+    }
+    
+    scoreElement.textContent = score;
+  });
+});
+
+// Handle Next Button
+document.getElementById("nextBtn").addEventListener("click", () => {
+  if (window.UIVERSE_DEBUG) {
+    alert("Next question feature can be extended.");
+  }
+});
+
+// Timer Logic
 setInterval(() => {
-
   if(time > 0){
     time--;
-    timer.innerText = time + "s";
+    timerElement.innerText = time + "s";
   }
-
-},1000);
+}, 1000);

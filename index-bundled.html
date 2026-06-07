@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-9T0IcZNV6AXskPivO6H2OQVEXybzxFpNNnl46rtze/g=; style-src-attr 'unsafe-hashes' sha256-9T0IcZNV6AXskPivO6H2OQVEXybzxFpNNnl46rtze/g=">
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -124,6 +125,63 @@
     type="module"
     src="dist/js/main.js"
   ></script>
+
+  <link rel="stylesheet" href="dist/css/main.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
+</head>
+
+<body>
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+
+  <div id="app">
+    <div class="boot-loader">
+      <div class="loader-logo">UIverse</div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <style>body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left,#6d28d920,transparent 40%),
+    radial-gradient(circle at bottom right,#06b6d420,transparent 40%),
+    #050816;
+  overflow-x:hidden;
+}
+
+.aurora{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(120px);
+  pointer-events:none;
+}
+
+.aurora-1{
+  width:450px;
+  height:450px;
+  background:#7c3aed;
+  top:-150px;
+  left:-100px;
+  opacity:.25;
+}
+
+.aurora-2{
+  width:400px;
+  height:400px;
+  background:#06b6d4;
+  bottom:-150px;
+  right:-100px;
+  opacity:.2;
+}</style>
+  
+  <!-- Vite will inject scripts here -->
+  <link rel="stylesheet" href="shared-sidebar.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="dist/js/main.js"></script>
+    <script src="dist/shared.js"></script>
 
 </body>
 </html>

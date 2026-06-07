@@ -1,8 +1,36 @@
 <!doctype html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards — UIverse</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="home.css">
+  <!-- <link rel="stylesheet" href="shared-page.css"> -->
+  <link rel="stylesheet" href="cards.css">
+  <!-- <link rel="stylesheet" href="playground.css"> -->
+  <!-- <link rel="stylesheet" href="shared-sidebar.css"> -->
+</head>
+
+<body data-playground-type="card">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">UIverse</span>
+  </div>
   <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-+vkNpoyxbpHrgaXonUyxdb0a40OZojsWNSAbgHkBzOE= sha256-/lXVpl6VhmdnCXVy4vi0Z6J1bXt99Xc1rFaPA/lCViE= sha256-0TSzHDRdvTX9Jd/JQJC7h1Ldpn85TPLWGtiSC9+LzNE= sha256-1fsV3kp8euAUD9Tl0skkbYKde5h1q1d3PoitB7svAwQ= sha256-4AYy+wV6OizzSilKs+ceIkJW/HSN7IYu+sxrcuvg/As= sha256-4HJ2rNk8fAvye8W2dh8d3ERql+zlAJN5A9NoKLhnj3E= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-6SDqfSVROMsJl7AH1nOqmHQe1tawAsUkxFnc8v5JVYY= sha256-8gFoy6vE+eilgv90TMIdLpWBVUNYsV47YETIk9Vv8XI= sha256-N5UFfbgitOf/Be9g0RVrlCwRGcdgeEMRqTBHx6w/SuM= sha256-OjAEnTf0mnu6Ujc40fl//jGDR7+AYh5IxYXAvpfhesA= sha256-R70aVBAZScdj+jNivH0IqduNWChAB/sB7WpX/VeIfUw= sha256-THy4wz38XRnb2nZm9D7/RMztjh7TWZBqRnqfUcVMlg0= sha256-VIHbD/w6Ot3bXQa2iEeVH2JqLDU6vgQvyrO/yhgh8nQ= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-YnmGw7gTiGMqa35sjqGeEyr77pH5dscHVFCAXfs5b2g= sha256-aIRBqGUrqyiMkGAzTm8rEXeod8D9ML0+IYzWjvtokoU= sha256-cQNkxf4qCipPK9Qa8EoY1lyNr/RwejhoW+2DmBIYMnY= sha256-dZPx31LqPGxjqWrGS0ySAWa4SeyBkULO/8eHc8YVbsE= sha256-fp4/JFS8FwYyUgVJHmLz6fwSbsX54HfmP4LpfdfZmCI= sha256-hvMj8ZiXrbiQlT40y0RrJx4KQvHDZwSo2XEogmGUTNA= sha256-i7uz9NcqCI9X+VAMiysp77ApJMvv5Pjl7p4hVRs/ZBo= sha256-p/UAMzSdTFgTLlGv48HJXuS4p9h/6XPkhrLGXAR7U9A= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0= sha256-xYj4LMNdJLKdU5C+4t9b4lpTZniToptAXy7n7OCyCMc= sha256-z/+dl7b7rgxspzaQ7ntr5Sj6irZr0JE/xwOTS+6othI= sha256-z3o7XYwi8JbEmX1CM0B6Yj5bPkUsLvzfzXqqSm4yKBM= sha256-zcwsLG3pDIIWiDPn95WrLpNwKskswxaaUMyq2Yg7jSk=; script-src-attr 'unsafe-hashes' sha256-+vkNpoyxbpHrgaXonUyxdb0a40OZojsWNSAbgHkBzOE= sha256-/lXVpl6VhmdnCXVy4vi0Z6J1bXt99Xc1rFaPA/lCViE= sha256-0TSzHDRdvTX9Jd/JQJC7h1Ldpn85TPLWGtiSC9+LzNE= sha256-1fsV3kp8euAUD9Tl0skkbYKde5h1q1d3PoitB7svAwQ= sha256-4AYy+wV6OizzSilKs+ceIkJW/HSN7IYu+sxrcuvg/As= sha256-4HJ2rNk8fAvye8W2dh8d3ERql+zlAJN5A9NoKLhnj3E= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-6SDqfSVROMsJl7AH1nOqmHQe1tawAsUkxFnc8v5JVYY= sha256-8gFoy6vE+eilgv90TMIdLpWBVUNYsV47YETIk9Vv8XI= sha256-N5UFfbgitOf/Be9g0RVrlCwRGcdgeEMRqTBHx6w/SuM= sha256-OjAEnTf0mnu6Ujc40fl//jGDR7+AYh5IxYXAvpfhesA= sha256-R70aVBAZScdj+jNivH0IqduNWChAB/sB7WpX/VeIfUw= sha256-THy4wz38XRnb2nZm9D7/RMztjh7TWZBqRnqfUcVMlg0= sha256-VIHbD/w6Ot3bXQa2iEeVH2JqLDU6vgQvyrO/yhgh8nQ= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-YnmGw7gTiGMqa35sjqGeEyr77pH5dscHVFCAXfs5b2g= sha256-aIRBqGUrqyiMkGAzTm8rEXeod8D9ML0+IYzWjvtokoU= sha256-cQNkxf4qCipPK9Qa8EoY1lyNr/RwejhoW+2DmBIYMnY= sha256-dZPx31LqPGxjqWrGS0ySAWa4SeyBkULO/8eHc8YVbsE= sha256-fp4/JFS8FwYyUgVJHmLz6fwSbsX54HfmP4LpfdfZmCI= sha256-hvMj8ZiXrbiQlT40y0RrJx4KQvHDZwSo2XEogmGUTNA= sha256-i7uz9NcqCI9X+VAMiysp77ApJMvv5Pjl7p4hVRs/ZBo= sha256-p/UAMzSdTFgTLlGv48HJXuS4p9h/6XPkhrLGXAR7U9A= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0= sha256-xYj4LMNdJLKdU5C+4t9b4lpTZniToptAXy7n7OCyCMc= sha256-z/+dl7b7rgxspzaQ7ntr5Sj6irZr0JE/xwOTS+6othI= sha256-z3o7XYwi8JbEmX1CM0B6Yj5bPkUsLvzfzXqqSm4yKBM= sha256-zcwsLG3pDIIWiDPn95WrLpNwKskswxaaUMyq2Yg7jSk=; style-src 'self' https: 'unsafe-hashes' sha256-Hz+M9K37sKc0ClGugCUe+xjpq9zbG2/lvxdxC5bwyYw= sha256-TazNbdOEuzcw7rCduyvu2qP+ye8yI1osyexSxL2ybwk=; style-src-attr 'unsafe-hashes' sha256-Hz+M9K37sKc0ClGugCUe+xjpq9zbG2/lvxdxC5bwyYw= sha256-TazNbdOEuzcw7rCduyvu2qP+ye8yI1osyexSxL2ybwk=">
     <meta http-equiv="refresh" content="0; url=cards.html">
     <meta name="robots" content="noindex">
     <title>Redirecting…</title>
@@ -897,6 +925,57 @@
   <i class="fa-solid fa-chevron-up"></i>
 </button>
 
+<!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
+  
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
 
@@ -1202,6 +1281,8 @@
 
 <div class="playground-backdrop" id="playgroundBackdrop"></div>
 
+
+<script src="script.js"></script>
 <script>
   /* ---------- Dark Mode ---------- */
   const toggle = document.getElementById('darkModeToggle');

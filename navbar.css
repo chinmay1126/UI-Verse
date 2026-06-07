@@ -2624,6 +2624,10 @@ body.dark-mode .dashboard-search input {
   color: #111827;
 }
 
+body.dark-mode .logo {
+  color: #ffffff;
+}
+
 .search-bar {
   flex: 1;
   max-width: 520px;
