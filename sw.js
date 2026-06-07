@@ -461,7 +461,7 @@ async function registerSW() {
       "success"
     );
 
-    console.log(
+    console.debug(
       "SW Registered:",
       registration
     );
