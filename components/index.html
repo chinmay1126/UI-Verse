@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-+6sCUaqR4Ke6+ssbL8b5AW+EQ7yjVCnwjUV9xqZ0tMY=; script-src-attr 'unsafe-hashes' sha256-+6sCUaqR4Ke6+ssbL8b5AW+EQ7yjVCnwjUV9xqZ0tMY=; style-src 'self' https: 'unsafe-hashes' sha256-do5RvUH2DdMvMYXwMrLxPngbibx+rjIeDp7EeTvZxHo= sha256-rzt7ui1jdwSBZr2C9jp9qN+ocnJXVv3kDZY73gSuItM=; style-src-attr 'unsafe-hashes' sha256-do5RvUH2DdMvMYXwMrLxPngbibx+rjIeDp7EeTvZxHo= sha256-rzt7ui1jdwSBZr2C9jp9qN+ocnJXVv3kDZY73gSuItM=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Components Index | UIverse</title>
   <meta name="description" content="Centralized UIverse component categories with visual previews and sorting by popularity or recency.">
@@ -325,6 +327,8 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <div class="page">
     <div class="top-nav">
       <a class="brand" href="../index.html">
@@ -449,5 +453,6 @@
       renderCards();
     })();
   </script>
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

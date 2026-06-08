@@ -131,3 +131,46 @@ header{
   }
 
 }
+
+.network-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+
+.network {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 220px;
+  position: relative;
+  z-index: 2;
+}
+
+.layer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.node {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+.connections {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.connections line {
+  stroke: #00e5ff;
+  stroke-width: 2;
+  opacity: 0.4;
+}

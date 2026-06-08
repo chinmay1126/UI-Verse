@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skeletons — UIverse</title>
 
@@ -12,16 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Page Styles -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="home.css" />
-    <link rel="stylesheet" href="shared-page.css" />
     <link rel="stylesheet" href="skeletons.css" />
-    <link rel="stylesheet" href="css/url-state.css" />
-
     <!-- UIverse Runtime Loader -->
     <script src="js/loader.js" defer></script>
   </head>
   <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-brand">
@@ -53,7 +52,7 @@
           <div class="topbar-search">
             <label class="screen-reader-text" for="component-search">Search components</label>
             <input id="component-search" type="search" class="search-input" placeholder="Search skeleton components..." />
-            <button type="button" class="search-action"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button type="button" class="search-action" data-a11y-remediation="button-label-needed"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
         <div class="topbar-right">
@@ -399,5 +398,6 @@
         </footer>
       </main>
     </div>
-  </body>
+      <script src="dist/shared.js"></script>
+</body>
 </html>

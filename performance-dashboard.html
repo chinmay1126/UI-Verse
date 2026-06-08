@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-Jw5NghBkRZFrm6K45vNtyPk754rmysyQHbrzcGEEwQw= sha256-QSP7XcEZjTrRcfe+VC1KlIfn4UALHqDemmFP3qv1G2M= sha256-Y3syWTAITrbNcXF5LugOWSRpYQdw6iynFSxiwpRO+fg= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ZyF7Hphmje5nXSDUYzPOzbyQuo/KqcZBzm++VsF8QWU= sha256-oLR4tDolCCPA7/gkCwldY69wsK/d+73jwNxJT0o3DnU=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-Jw5NghBkRZFrm6K45vNtyPk754rmysyQHbrzcGEEwQw= sha256-QSP7XcEZjTrRcfe+VC1KlIfn4UALHqDemmFP3qv1G2M= sha256-Y3syWTAITrbNcXF5LugOWSRpYQdw6iynFSxiwpRO+fg= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ZyF7Hphmje5nXSDUYzPOzbyQuo/KqcZBzm++VsF8QWU= sha256-oLR4tDolCCPA7/gkCwldY69wsK/d+73jwNxJT0o3DnU=; style-src 'self' https: 'unsafe-hashes' sha256-0XM3B6uttUzcnB/PO56izQfbWiVOzB1fDElCzP1B4ao= sha256-9rf6bd/Le6nNlPTcV8iIakb2cxLdNJ+UGUVycVj+T9Y= sha256-Jgod2RCVcIIgjpBFt3CZy6McwqT8V0JRg8VWC/cjjCQ= sha256-hwadG9RB7AW5IAoxCzboeMR48Jx/cL94lIJUMQVgMTo= sha256-tFXtqoNKOuInZyhyT5JiW09PPkHjlYRVtmV1grYISiI=; style-src-attr 'unsafe-hashes' sha256-0XM3B6uttUzcnB/PO56izQfbWiVOzB1fDElCzP1B4ao= sha256-9rf6bd/Le6nNlPTcV8iIakb2cxLdNJ+UGUVycVj+T9Y= sha256-Jgod2RCVcIIgjpBFt3CZy6McwqT8V0JRg8VWC/cjjCQ= sha256-hwadG9RB7AW5IAoxCzboeMR48Jx/cL94lIJUMQVgMTo= sha256-tFXtqoNKOuInZyhyT5JiW09PPkHjlYRVtmV1grYISiI=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Performance Dashboard — UIverse</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="PERFORMANCE.CSS">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
@@ -33,24 +35,19 @@
       <li class="active"><a href="performance-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Performance</span></a></li>
     </ul>
   </nav>
-  <div class="sidebar-footer">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="#"><i class="fab fa-x-twitter"></i></a>
-  </div>
 </aside>
 
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
 <!-- NAVBAR -->
 <header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
     <i class="fa-solid fa-bars"></i>
   </button>
   <div class="logo">UIverse</div>
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" placeholder="Search components..." />
+    <input type="text" placeholder="Search components..." / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
   <div class="nav-right">
@@ -268,55 +265,73 @@
   <i class="fa-solid fa-chevron-up"></i>
 </button>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col brand">
-      <h2 class="footer-logo">⬡ UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      <div class="socials">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
+ <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a>
+          </li>
+          <li><a href="navbar.html">Navbars</a>
+          </li>
+          <li><a href="cards.html">Cards</a>
+          </li>
+          <li><a href="inputs.html">Inputs</a>
+          </li>
+          <li><a href="forms.html">Forms</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a>
+          </li>
+          <li><a href="#">GitHub Repo</a>
+          </li>
+          <li><a href="#">Community</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a>
+          </li>
+          <li><a href="terms.html">Terms of Service</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
       </div>
     </div>
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="alerts.html">Alerts</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
     </div>
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="guidelines.html">Guidelines</a></li>
-        <li><a href="#">GitHub Repo</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-      </ul>
-    </div>
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button">Subscribe</button>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
-</footer>
+  </footer>
 
 <script>
 /* ============================================================
@@ -522,5 +537,6 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.perf-stat-card, .perf-card').forEach(el => observer.observe(el));
 </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>
