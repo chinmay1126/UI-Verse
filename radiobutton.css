@@ -2037,17 +2037,19 @@ label[class*="radio"]:hover {
 .footer {
   margin-left: 250px;
   background: #111;
-  color: #aaa;
-  padding: 0;
+  color: #fff;
+  padding: 40px 20px;
   margin-top: 60px;
 }
 
 .footer-container {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
   gap: 40px;
   padding: 56px 48px 40px;
   max-width: 100%;
+  justify-content: space-between;
 }
 
 .footer-logo {
@@ -2056,6 +2058,11 @@ label[class*="radio"]:hover {
   font-weight: 800;
   color: var(--accent);
   margin-bottom: 12px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
 }
 
 .footer-col p {
@@ -2090,8 +2097,9 @@ label[class*="radio"]:hover {
   transition: color var(--transition);
 }
 
-.footer-col ul li a:hover {
-  color: var(--accent);
+.footer-col ul li a:hover,
+.footer-col ul li a:focus {
+  color: #00e0ff;
 }
 
 .socials {
@@ -2165,6 +2173,21 @@ label[class*="radio"]:hover {
   text-align: center;
   font-size: 13px;
   color: #555;
+}
+
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
 }
 /* =========================================================
    RESPONSIVE
