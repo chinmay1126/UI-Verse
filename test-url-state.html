@@ -1,709 +1,2841 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-12SKlOd+X8BVvuXNmjEnjQCv/WRsc5O7r58LBlrLdtE= sha256-6zFysbn5qUSEjgFJjNp7JEBwtim/46YuSUm3VGcTtNY= sha256-fy3Tr5DGY5pPaNOvuTXuawFTe72EgRk2iynVVUHBWBQ= sha256-hNJNtJw28aUF9+jXOMVCJIoizErmj7ZvN1hBpVKB2Qw= sha256-poftGLBNoeO4HVPFx4XfYk1T19zhbRYti/1dsgieRqU= sha256-sOMCBZhu4EQoezGNYbEPxDbaulaK0ywM/f1GYlqHarQ= sha256-zW7WJWAspAsSCb7ike/KnL+HDslmodhHGwfFg2zUyQU=; script-src-attr 'unsafe-hashes' sha256-12SKlOd+X8BVvuXNmjEnjQCv/WRsc5O7r58LBlrLdtE= sha256-6zFysbn5qUSEjgFJjNp7JEBwtim/46YuSUm3VGcTtNY= sha256-fy3Tr5DGY5pPaNOvuTXuawFTe72EgRk2iynVVUHBWBQ= sha256-hNJNtJw28aUF9+jXOMVCJIoizErmj7ZvN1hBpVKB2Qw= sha256-poftGLBNoeO4HVPFx4XfYk1T19zhbRYti/1dsgieRqU= sha256-sOMCBZhu4EQoezGNYbEPxDbaulaK0ywM/f1GYlqHarQ= sha256-zW7WJWAspAsSCb7ike/KnL+HDslmodhHGwfFg2zUyQU=; style-src 'self' https: 'unsafe-hashes' sha256-k0ue1WvCQ87GQKld3A5aob03yBPt9nCGinj1fr9GjPk=; style-src-attr 'unsafe-hashes' sha256-k0ue1WvCQ87GQKld3A5aob03yBPt9nCGinj1fr9GjPk=">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>UIverse — URL State Manager</title>
+<meta charset="UTF-8">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/url-state.css" />
-  <link rel="stylesheet" href="dist/shared.css">
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-12SKlOd+X8BVvuXNmjEnjQCv/WRsc5O7r58LBlrLdtE= sha256-6zFysbn5qUSEjgFJjNp7JEBwtim/46YuSUm3VGcTtNY= sha256-QCmnbrNkxAMCxcYTp9DW6hXkLH/yYTgGMVzwVJEF9n4= sha256-fy3Tr5DGY5pPaNOvuTXuawFTe72EgRk2iynVVUHBWBQ= sha256-hNJNtJw28aUF9+jXOMVCJIoizErmj7ZvN1hBpVKB2Qw= sha256-poftGLBNoeO4HVPFx4XfYk1T19zhbRYti/1dsgieRqU= sha256-zW7WJWAspAsSCb7ike/KnL+HDslmodhHGwfFg2zUyQU=; script-src-attr 'unsafe-hashes' sha256-12SKlOd+X8BVvuXNmjEnjQCv/WRsc5O7r58LBlrLdtE= sha256-6zFysbn5qUSEjgFJjNp7JEBwtim/46YuSUm3VGcTtNY= sha256-QCmnbrNkxAMCxcYTp9DW6hXkLH/yYTgGMVzwVJEF9n4= sha256-fy3Tr5DGY5pPaNOvuTXuawFTe72EgRk2iynVVUHBWBQ= sha256-hNJNtJw28aUF9+jXOMVCJIoizErmj7ZvN1hBpVKB2Qw= sha256-poftGLBNoeO4HVPFx4XfYk1T19zhbRYti/1dsgieRqU= sha256-zW7WJWAspAsSCb7ike/KnL+HDslmodhHGwfFg2zUyQU=; style-src 'self' https: 'unsafe-hashes' sha256-lSpgZfCtA1OK1l1nfJNRP8GDhtsUw+wuZ80txlk/ypI= sha256-qsnrxUxnaE64NadnS1ap3hHTTWeKdsZtSxSlFGCvTxY=; style-src-attr 'unsafe-hashes' sha256-lSpgZfCtA1OK1l1nfJNRP8GDhtsUw+wuZ80txlk/ypI= sha256-qsnrxUxnaE64NadnS1ap3hHTTWeKdsZtSxSlFGCvTxY=">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>URL State Test - UIverse</title>
-  <script src="js/features/url-state.js"></script>
-  <script src="js/features/url-state-integration.js"></script>
+<title>
 
-  <style>
-    :root {
-      --bg: #070b14;
-      --panel: rgba(255,255,255,0.06);
-      --panel-border: rgba(255,255,255,0.08);
+URL State Manager
 
-      --text: #ffffff;
-      --muted: #9aa4b2;
+</title>
 
-      --accent: #7c5cff;
-      --accent2: #00d4ff;
-      --green: #31d0aa;
-      --red: #ff667a;
+<link
+href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
-      --shadow:
-        0 10px 40px rgba(0,0,0,0.35);
+<link
+rel="stylesheet"
+href="test-url-state.css">
 
-      --radius: 24px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: "Inter", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(124,92,255,0.25), transparent 30%),
-        radial-gradient(circle at top right, rgba(0,212,255,0.18), transparent 30%),
-        linear-gradient(180deg, #050816 0%, #0c1325 100%);
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.6), transparent);
-    }
-
-    .wrapper {
-      width: min(1200px, calc(100% - 32px));
-      margin-inline: auto;
-      padding: 40px 0 80px;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background:
-        linear-gradient(135deg,
-        rgba(255,255,255,0.08),
-        rgba(255,255,255,0.03));
-      backdrop-filter: blur(18px);
-      border-radius: 32px;
-      padding: 48px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle,
-        rgba(124,92,255,.5),
-        transparent 70%);
-      top: -120px;
-      right: -120px;
-      filter: blur(20px);
-      pointer-events: none;
-    }
-
-    .badge {
-      width: fit-content;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #dfe7ff;
-      font-size: .85rem;
-      margin-bottom: 24px;
-      backdrop-filter: blur(10px);
-    }
-
-    h1 {
-      font-family: "Syne", sans-serif;
-      font-size: clamp(2.8rem, 7vw, 5rem);
-      line-height: .95;
-      letter-spacing: -2px;
-      max-width: 780px;
-    }
-
-    .gradient {
-      background: linear-gradient(
-        135deg,
-        #fff 0%,
-        #b5bfff 40%,
-        #79e6ff 100%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      margin-top: 22px;
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.8;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 32px;
-    }
-
-    .btn {
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: .95rem;
-      padding: 15px 22px;
-      border-radius: 16px;
-      transition: .28s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-primary {
-      color: white;
-      background: linear-gradient(
-        135deg,
-        var(--accent),
-        var(--accent2)
-      );
-      box-shadow:
-        0 10px 30px rgba(124,92,255,.35);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: white;
-      backdrop-filter: blur(14px);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .dashboard {
-      margin-top: 34px;
-      display: grid;
-      grid-template-columns: repeat(12,1fr);
-      gap: 24px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      border-radius: var(--radius);
-      padding: 28px;
-      backdrop-filter: blur(16px);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,0.05),
-          transparent
-        );
-      pointer-events: none;
-    }
-
-    .main-card {
-      grid-column: span 8;
-    }
-
-    .side-card {
-      grid-column: span 4;
-    }
-
-    .card h2 {
-      font-family: "Syne", sans-serif;
-      margin-bottom: 18px;
-      font-size: 1.4rem;
-      letter-spacing: -.5px;
-    }
-
-    .status-grid {
-      display: grid;
-      gap: 14px;
-    }
-
-    .status-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .status-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(49,208,170,.25),
-          rgba(49,208,170,.08)
-        );
-      color: #31d0aa;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .status-title {
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .status-text {
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.6;
-    }
-
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .glass-btn {
-      padding: 14px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.05);
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: .25s ease;
-      backdrop-filter: blur(12px);
-    }
-
-    .glass-btn:hover {
-      transform: translateY(-3px);
-      background: rgba(255,255,255,0.09);
-    }
-
-    .display-box {
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 18px;
-      background: #0b1020;
-      border: 1px solid rgba(255,255,255,0.08);
-      overflow: auto;
-      font-size: .9rem;
-      color: #dbe7ff;
-      line-height: 1.7;
-      font-family: monospace;
-    }
-
-    .mini-stats {
-      display: grid;
-      gap: 16px;
-    }
-
-    .stat {
-      padding: 18px;
-      border-radius: 20px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255,255,255,0.05),
-          rgba(255,255,255,0.02)
-        );
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .stat-label {
-      color: var(--muted);
-      font-size: .82rem;
-      margin-bottom: 8px;
-    }
-
-    .stat-value {
-      font-size: 2rem;
-      font-weight: 800;
-      font-family: "Syne", sans-serif;
-    }
-
-    .api {
-      margin-top: 24px;
-      grid-column: span 12;
-    }
-
-    pre {
-      overflow: auto;
-      background: #070d1c;
-      border-radius: 22px;
-      padding: 26px;
-      border: 1px solid rgba(255,255,255,0.08);
-      line-height: 1.8;
-      color: #d8e4ff;
-      font-size: .92rem;
-    }
-
-    code {
-      font-family: monospace;
-    }
-
-    .footer-note {
-      margin-top: 26px;
-      color: var(--muted);
-      text-align: center;
-      font-size: .92rem;
-    }
-
-    @media (max-width: 960px) {
-      .main-card,
-      .side-card,
-      .api {
-        grid-column: span 12;
-      }
-
-      .hero {
-        padding: 32px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      h1 {
-        letter-spacing: -1px;
-      }
-
-      .wrapper {
-        width: min(100% - 20px, 1200px);
-      }
-
-      .hero,
-      .card {
-        border-radius: 24px;
-      }
-
-      .controls {
-        flex-direction: column;
-      }
-
-      .glass-btn,
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
-
-  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
-  </head>
+
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-
-  <div class="wrapper">
 
-    <section class="hero">
+<div class="bg-gradient"></div>
 
-      <div class="badge">
-        ✨ UIverse Feature System — URL State Manager
-      </div>
+<!-- =========================
+NAVBAR
+========================= -->
 
-      <h1>
-        Shareable
-        <span class="gradient">Search State</span>
-        Experience
-      </h1>
+<header class="navbar">
 
-      <p>
-        Advanced URL-based state management system for UIverse.
-        Persist search filters, categories, and sorting directly inside
-        the URL with instant restoration, browser history support,
-        and seamless sharing across devices.
-      </p>
+<div class="logo">
 
-      <div class="hero-actions">
-        <button class="btn btn-primary" onclick="testCombined()">
-          Run Full Test
-        </button>
+🔗 URLVerse
 
-        <button class="btn btn-secondary" onclick="copyShareableURL()">
-          Copy Shareable URL
-        </button>
-      </div>
+</div>
 
-    </section>
+<nav>
 
-    <section class="dashboard">
+<a href="#features">
 
-      <div class="card main-card">
+Features
 
-        <h2>Core Features</h2>
+</a>
 
-        <div class="status-grid">
+<a href="#dashboard">
 
-          <div class="status-item">
-            <div class="status-icon">✓</div>
+Dashboard
 
-            <div>
-              <div class="status-title">
-                URL Parameter Persistence
-              </div>
+</a>
 
-              <div class="status-text">
-                Search query, category filters and sorting states
-                remain synced with browser URLs.
-              </div>
-            </div>
-          </div>
+<a href="#api">
 
-          <div class="status-item">
-            <div class="status-icon">✓</div>
+API
 
-            <div>
-              <div class="status-title">
-                State Restoration
-              </div>
+</a>
 
-              <div class="status-text">
-                Filters automatically restore when opening shared links
-                or refreshing pages.
-              </div>
-            </div>
-          </div>
+<a href="#docs">
 
-          <div class="status-item">
-            <div class="status-icon">✓</div>
+Docs
 
-            <div>
-              <div class="status-title">
-                Browser Navigation Support
-              </div>
+</a>
 
-              <div class="status-text">
-                Fully integrated with back & forward browser history.
-              </div>
-            </div>
-          </div>
+</nav>
 
-          <div class="status-item">
-            <div class="status-icon">✓</div>
+<div class="nav-actions">
 
-            <div>
-              <div class="status-title">
-                Responsive + Dark UI
-              </div>
+<button class="outline-btn">
 
-              <div class="status-text">
-                Optimized glassmorphism layout with mobile support
-                and modern UI animations.
-              </div>
-            </div>
-          </div>
+Documentation
 
-        </div>
+</button>
 
-      </div>
+<button class="primary-btn">
 
-      <div class="card side-card">
+Get Started
 
-        <h2>Live State</h2>
+</button>
 
-        <div class="mini-stats">
+</div>
 
-          <div class="stat">
-            <div class="stat-label">Search Query</div>
-            <div class="stat-value" id="queryStat">—</div>
-          </div>
+</header>
 
-          <div class="stat">
-            <div class="stat-label">Category</div>
-            <div class="stat-value" id="categoryStat">all</div>
-          </div>
+<!-- =========================
+HERO
+========================= -->
 
-          <div class="stat">
-            <div class="stat-label">Sort</div>
-            <div class="stat-value" id="sortStat">default</div>
-          </div>
+<section class="hero">
 
-        </div>
+<div class="hero-content">
 
-      </div>
+<div class="hero-badge">
 
-      <div class="card main-card">
+⚡ Advanced URL State Management
 
-        <h2>Interactive Test Controls</h2>
+</div>
 
-        <div class="controls">
-          <button class="glass-btn" onclick="testSearch()">
-            Search Query
-          </button>
+<h1>
 
-          <button class="glass-btn" onclick="testCategory()">
-            Category Filter
-          </button>
+Persistent
 
-          <button class="glass-btn" onclick="testSort()">
-            Sort Order
-          </button>
+<span>
 
-          <button class="glass-btn" onclick="testCombined()">
-            Combined State
-          </button>
+Shareable URLs
 
-          <button class="glass-btn" onclick="testReset()">
-            Reset State
-          </button>
-        </div>
+</span>
 
-        <div class="display-box" id="urlDisplay">
-          Loading URL...
-        </div>
+For Modern Apps
 
-      </div>
+</h1>
 
-      <div class="card side-card">
+<p>
 
-        <h2>Parsed State</h2>
+Synchronize search queries,
+filters, categories, sorting
+preferences and application
+state directly with the URL.
 
-        <div class="display-box" id="stateDisplay">
-          Loading State...
-        </div>
+Enable instant restoration,
+browser navigation support,
+and shareable experiences
+across devices.
 
-      </div>
+</p>
 
-      <div class="card api">
+<div class="hero-actions">
 
-        <h2>Developer API</h2>
+<button class="primary-btn">
 
-<pre><code>// Update URL state
-URLStateManager.onSearchChange('button');
-URLStateManager.onCategoryChange('components');
-URLStateManager.onSortChange('popular');
+Run Test Suite
 
-// Read current state
-const state = URLStateManager.getState();
+</button>
 
-// Generate shareable URL
-const url = URLStateIntegration.getShareableURL();
+<button class="outline-btn">
 
-// Observe changes
-URLStateIntegration.observeStateChanges((state) => {
-  console.log(state);
-});</code></pre>
+View API
 
-      </div>
+</button>
 
-    </section>
+</div>
 
-    <div class="footer-note">
-      Built for UIverse • Modern URL State Persistence System
-    </div>
+</div>
 
-  </div>
+<div class="hero-visual">
 
-  <script>
-    function updateDisplay() {
+<div class="floating-card">
 
-      document.getElementById("urlDisplay").textContent =
-        window.location.href;
+🔎 Search State
 
-      if (typeof URLStateManager !== "undefined") {
+</div>
 
-        const state = URLStateManager.getState();
+<div class="floating-card">
 
-        document.getElementById("stateDisplay").textContent =
-          JSON.stringify(state, null, 2);
+📂 Categories
 
-        document.getElementById("queryStat").textContent =
-          state.searchQuery || "—";
+</div>
 
-        document.getElementById("categoryStat").textContent =
-          state.selectedCategory || "all";
+<div class="floating-card">
 
-        document.getElementById("sortStat").textContent =
-          state.sortOrder || "default";
-      }
-    }
+⚙ Sorting
 
-    function testSearch() {
-      URLStateManager.onSearchChange("button");
-      updateDisplay();
-    }
+</div>
 
-    function testCategory() {
-      URLStateManager.onCategoryChange("components");
-      updateDisplay();
-    }
+<div class="floating-card">
 
-    function testSort() {
-      URLStateManager.onSortChange("newest");
-      updateDisplay();
-    }
+🔗 Share URL
 
-    function testCombined() {
-      URLStateManager.onSearchChange("cards");
-      URLStateManager.onCategoryChange("all");
-      URLStateManager.onSortChange("popular");
-      updateDisplay();
-    }
+</div>
 
-    function testReset() {
-      URLStateManager.clearState();
-      updateDisplay();
-    }
+</div>
 
-    function copyShareableURL() {
+</section>
 
-      if (typeof URLStateIntegration !== "undefined") {
+<!-- =========================
+OVERVIEW STATS
+========================= -->
 
-        URLStateIntegration
-          .copyShareableURL()
-          .then((result) => {
+<section class="overview-section">
 
-            if (result.success) {
+<div class="section-header">
 
-              const button =
-                document.querySelector(".btn-secondary");
+<span>
 
-              const original = button.innerHTML;
+Overview
 
-              button.innerHTML = "✓ URL Copied";
+</span>
 
-              setTimeout(() => {
-                button.innerHTML = original;
-              }, 1800);
-            }
-          });
-      }
-    }
+<h2>
 
-    if (typeof URLStateManager !== "undefined") {
-      URLStateManager.init();
-    }
+Core Metrics
 
-    updateDisplay();
+</h2>
 
-    setInterval(updateDisplay, 1000);
-  </script>
+</div>
 
-    <script src="dist/shared.js"></script>
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h1>
+
+100%
+
+</h1>
+
+<p>
+
+State Persistence
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>
+
+Instant
+
+</h1>
+
+<p>
+
+Restoration
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>
+
+URL
+
+</h1>
+
+<p>
+
+Synchronization
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>
+
+SPA
+
+</h1>
+
+<p>
+
+Compatible
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FEATURES
+========================= -->
+
+<section
+id="features"
+class="features-section">
+
+<div class="section-header">
+
+<span>
+
+Capabilities
+
+</span>
+
+<h2>
+
+Built For Modern Web Apps
+
+</h2>
+
+</div>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+🔎
+
+</div>
+
+<h3>
+
+Search Persistence
+
+</h3>
+
+<p>
+
+Store and restore search
+queries directly from URL
+parameters.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+📂
+
+</div>
+
+<h3>
+
+Filter Management
+
+</h3>
+
+<p>
+
+Keep category selections
+and filtering logic synced.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+↔
+
+</div>
+
+<h3>
+
+History Support
+
+</h3>
+
+<p>
+
+Works seamlessly with
+browser back and forward
+navigation.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+🔗
+
+</div>
+
+<h3>
+
+Shareable Links
+
+</h3>
+
+<p>
+
+Generate URLs containing
+the complete application
+state.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+LIVE STATE DASHBOARD
+========================= -->
+
+<section
+id="dashboard"
+class="dashboard-section">
+
+<div class="section-header">
+
+<span>
+
+Live Monitoring
+
+</span>
+
+<h2>
+
+State Dashboard
+
+</h2>
+
+</div>
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+
+<h3>
+
+Current Search
+
+</h3>
+
+<h1 id="searchState">
+
+-
+
+</h1>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>
+
+Active Category
+
+</h3>
+
+<h1 id="categoryState">
+
+All
+
+</h1>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>
+
+Sort Order
+
+</h3>
+
+<h1 id="sortState">
+
+Default
+
+</h1>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>
+
+URL Status
+
+</h3>
+
+<h1>
+
+Live
+
+</h1>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+URL PREVIEW PANEL
+========================= -->
+
+<section class="preview-section">
+
+<div class="section-header">
+
+<span>
+
+Preview
+
+</span>
+
+<h2>
+
+Generated URL
+
+</h2>
+
+</div>
+
+<div class="url-preview-card">
+
+<div class="url-header">
+
+<h3>
+
+Current URL State
+
+</h3>
+
+<button
+class="primary-btn"
+id="copyUrlBtn">
+
+Copy URL
+
+</button>
+
+</div>
+
+<div
+class="url-preview"
+id="urlPreview">
+
+https://example.com
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+SEARCH CONTROLS
+========================= -->
+
+<section class="controls-section">
+
+<div class="section-header">
+
+<span>
+
+Testing
+
+</span>
+
+<h2>
+
+Search Controls
+
+</h2>
+
+</div>
+
+<div class="control-card">
+
+<label>
+
+Search Query
+
+</label>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search anything...">
+
+<div class="control-actions">
+
+<button
+class="primary-btn"
+id="applySearch">
+
+Apply Search
+
+</button>
+
+<button
+class="outline-btn"
+id="clearSearch">
+
+Clear
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+CATEGORY CONTROLS
+========================= -->
+
+<section class="controls-section">
+
+<div class="section-header">
+
+<span>
+
+Filters
+
+</span>
+
+<h2>
+
+Category Controls
+
+</h2>
+
+</div>
+
+<div class="category-grid">
+
+<button
+class="category-btn"
+data-category="all">
+
+All
+
+</button>
+
+<button
+class="category-btn"
+data-category="products">
+
+Products
+
+</button>
+
+<button
+class="category-btn"
+data-category="users">
+
+Users
+
+</button>
+
+<button
+class="category-btn"
+data-category="analytics">
+
+Analytics
+
+</button>
+
+<button
+class="category-btn"
+data-category="settings">
+
+Settings
+
+</button>
+
+</div>
+
+</section>
+
+<!-- =========================
+SORT CONTROLS
+========================= -->
+
+<section class="controls-section">
+
+<div class="section-header">
+
+<span>
+
+Ordering
+
+</span>
+
+<h2>
+
+Sort Controls
+
+</h2>
+
+</div>
+
+<div class="sort-card">
+
+<select id="sortSelect">
+
+<option value="default">
+
+Default
+
+</option>
+
+<option value="asc">
+
+Ascending
+
+</option>
+
+<option value="desc">
+
+Descending
+
+</option>
+
+<option value="latest">
+
+Latest
+
+</option>
+
+<option value="popular">
+
+Popular
+
+</option>
+
+</select>
+
+<button
+class="primary-btn"
+id="applySort">
+
+Apply Sort
+
+</button>
+
+</div>
+
+</section>
+
+<!-- =========================
+STATE INSPECTOR
+========================= -->
+
+<section class="inspector-section">
+
+<div class="section-header">
+
+<span>
+
+Debug
+
+</span>
+
+<h2>
+
+State Inspector
+
+</h2>
+
+</div>
+
+<div class="inspector-card">
+
+<pre id="stateInspector">
+{
+  "search":"",
+  "category":"all",
+  "sort":"default"
+}
+</pre>
+
+</div>
+
+</section>
+
+<!-- =========================
+BROWSER HISTORY
+========================= -->
+
+<section class="history-section">
+
+<div class="section-header">
+
+<span>
+
+Navigation
+
+</span>
+
+<h2>
+
+Browser History Monitor
+
+</h2>
+
+</div>
+
+<div class="history-grid">
+
+<div class="history-card">
+
+<h3>
+
+Back Navigation
+
+</h3>
+
+<p>
+
+URL state restores
+automatically.
+
+</p>
+
+</div>
+
+<div class="history-card">
+
+<h3>
+
+Forward Navigation
+
+</h3>
+
+<p>
+
+Maintains synchronized
+application state.
+
+</p>
+
+</div>
+
+<div class="history-card">
+
+<h3>
+
+History API
+
+</h3>
+
+<p>
+
+Works with pushState
+and replaceState.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+STATE TIMELINE
+========================= -->
+
+<section class="timeline-section">
+
+<div class="section-header">
+
+<span>
+
+Events
+
+</span>
+
+<h2>
+
+State Timeline
+
+</h2>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<span>
+
+01
+
+</span>
+
+<h3>
+
+Search Updated
+
+</h3>
+
+</div>
+
+<div class="timeline-item">
+
+<span>
+
+02
+
+</span>
+
+<h3>
+
+Category Changed
+
+</h3>
+
+</div>
+
+<div class="timeline-item">
+
+<span>
+
+03
+
+</span>
+
+<h3>
+
+Sort Applied
+
+</h3>
+
+</div>
+
+<div class="timeline-item">
+
+<span>
+
+04
+
+</span>
+
+<h3>
+
+URL Shared
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+URL PARAMETERS EXPLORER
+========================= -->
+
+<section class="params-section">
+
+<div class="section-header">
+
+<span>
+
+Parameters
+
+</span>
+
+<h2>
+
+URL Parameters Explorer
+
+</h2>
+
+</div>
+
+<div class="params-grid">
+
+<div class="param-card">
+
+<h3>
+
+search
+
+</h3>
+
+<p>
+
+Stores search query state.
+
+</p>
+
+<code>
+
+?search=laptop
+
+</code>
+
+</div>
+
+<div class="param-card">
+
+<h3>
+
+category
+
+</h3>
+
+<p>
+
+Stores active category.
+
+</p>
+
+<code>
+
+?category=products
+
+</code>
+
+</div>
+
+<div class="param-card">
+
+<h3>
+
+sort
+
+</h3>
+
+<p>
+
+Stores selected sorting.
+
+</p>
+
+<code>
+
+?sort=latest
+
+</code>
+
+</div>
+
+<div class="param-card">
+
+<h3>
+
+page
+
+</h3>
+
+<p>
+
+Stores pagination state.
+
+</p>
+
+<code>
+
+?page=2
+
+</code>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+STATE SYNC VISUALIZATION
+========================= -->
+
+<section class="sync-section">
+
+<div class="section-header">
+
+<span>
+
+Synchronization
+
+</span>
+
+<h2>
+
+State Flow Visualization
+
+</h2>
+
+</div>
+
+<div class="sync-flow">
+
+<div class="sync-node">
+
+🖥️
+
+<h3>
+
+UI State
+
+</h3>
+
+</div>
+
+<div class="sync-arrow">
+
+→
+
+</div>
+
+<div class="sync-node">
+
+⚙️
+
+<h3>
+
+State Manager
+
+</h3>
+
+</div>
+
+<div class="sync-arrow">
+
+→
+
+</div>
+
+<div class="sync-node">
+
+🔗
+
+<h3>
+
+URL
+
+</h3>
+
+</div>
+
+<div class="sync-arrow">
+
+→
+
+</div>
+
+<div class="sync-node">
+
+📱
+
+<h3>
+
+Shared Device
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+QUERY BUILDER
+========================= -->
+
+<section class="builder-section">
+
+<div class="section-header">
+
+<span>
+
+Builder
+
+</span>
+
+<h2>
+
+Query Builder</h2>
+
+</div>
+
+<div class="builder-card">
+
+<div class="builder-row">
+
+<input
+type="text"
+placeholder="Parameter">
+
+<input
+type="text"
+placeholder="Value">
+
+<button
+class="primary-btn">
+
+Add
+
+</button>
+
+</div>
+
+<div class="query-preview">
+
+search=laptop&category=products
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+URL GENERATOR
+========================= -->
+
+<section class="generator-section">
+
+<div class="section-header">
+
+<span>
+
+Generator
+
+</span>
+
+<h2>
+
+Dynamic URL Generator
+
+</h2>
+
+</div>
+
+<div class="generator-card">
+
+<h3>
+
+Generated Link
+
+</h3>
+
+<div class="generated-url">
+
+https://app.com/?search=laptop&category=products&sort=latest
+
+</div>
+
+<button
+class="primary-btn">
+
+Generate URL
+
+</button>
+
+</div>
+
+</section>
+
+<!-- =========================
+STATE COMPARISON
+========================= -->
+
+<section class="comparison-section">
+
+<div class="section-header">
+
+<span>
+
+Compare
+
+</span>
+
+<h2>
+
+State Comparison</h2>
+
+</div>
+
+<div class="comparison-grid">
+
+<div class="comparison-card">
+
+<h3>
+
+Current State
+
+</h3>
+
+<pre>
+{
+ "search":"laptop",
+ "category":"products"
+}
+</pre>
+
+</div>
+
+<div class="comparison-card">
+
+<h3>
+
+Incoming State
+
+</h3>
+
+<pre>
+{
+ "search":"phone",
+ "category":"electronics"
+}
+</pre>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+SHARE CENTER
+========================= -->
+
+<section class="share-section">
+
+<div class="section-header">
+
+<span>
+
+Sharing
+
+</span>
+
+<h2>
+
+URL Share Center
+
+</h2>
+
+</div>
+
+<div class="share-grid">
+
+<div class="share-card">
+
+🔗
+
+<h3>
+
+Copy Link
+
+</h3>
+
+</div>
+
+<div class="share-card">
+
+📧
+
+<h3>
+
+Email URL
+
+</h3>
+
+</div>
+
+<div class="share-card">
+
+💬
+
+<h3>
+
+Share Message
+
+</h3>
+
+</div>
+
+<div class="share-card">
+
+🌎
+
+<h3>
+
+Public Link
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+URL ANALYTICS
+========================= -->
+
+<section class="analytics-section">
+
+<div class="section-header">
+
+<span>
+
+Analytics
+
+</span>
+
+<h2>
+
+URL Usage Analytics
+
+</h2>
+
+</div>
+
+<div class="analytics-grid">
+
+<div class="analytics-card">
+
+<h1>
+
+24K
+
+</h1>
+
+<p>
+
+URLs Generated
+
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h1>
+
+9.8K
+
+</h1>
+
+<p>
+
+URLs Shared
+
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h1>
+
+82%
+
+</h1>
+
+<p>
+
+Restoration Success
+
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h1>
+
+0.2s
+
+</h1>
+
+<p>
+
+Sync Time
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+PERFORMANCE METRICS
+========================= -->
+
+<section class="performance-section">
+
+<div class="section-header">
+
+<span>
+
+Performance
+
+</span>
+
+<h2>
+
+State Performance Metrics
+
+</h2>
+
+</div>
+
+<div class="performance-grid">
+
+<div class="performance-card">
+
+<h3>
+
+History Updates
+
+</h3>
+
+<h1>
+
+1.2ms
+
+</h1>
+
+</div>
+
+<div class="performance-card">
+
+<h3>
+
+URL Parsing
+
+</h3>
+
+<h1>
+
+0.8ms
+
+</h1>
+
+</div>
+
+<div class="performance-card">
+
+<h3>
+
+State Restore
+
+</h3>
+
+<h1>
+
+1.4ms
+
+</h1>
+
+</div>
+
+<div class="performance-card">
+
+<h3>
+
+Share Generation
+
+</h3>
+
+<h1>
+
+0.5ms
+
+</h1>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+API DOCUMENTATION
+========================= -->
+
+<section
+id="api"
+class="api-section">
+
+<div class="section-header">
+
+<span>
+
+Developer API
+
+</span>
+
+<h2>
+
+API Documentation
+
+</h2>
+
+</div>
+
+<div class="api-grid">
+
+<div class="api-card">
+
+<h3>
+
+Set State
+
+</h3>
+
+<pre>
+
+urlState.set({
+ search:"laptop",
+ category:"products"
+});
+
+</pre>
+
+</div>
+
+<div class="api-card">
+
+<h3>
+
+Get State
+
+</h3>
+
+<pre>
+
+const state =
+urlState.get();
+
+</pre>
+
+</div>
+
+<div class="api-card">
+
+<h3>
+
+Clear State
+
+</h3>
+
+<pre>
+
+urlState.clear();
+
+</pre>
+
+</div>
+
+<div class="api-card">
+
+<h3>
+
+Subscribe
+
+</h3>
+
+<pre>
+
+urlState.onChange(
+callback
+);
+
+</pre>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+INTEGRATION EXAMPLES
+========================= -->
+
+<section class="integration-section">
+
+<div class="section-header">
+
+<span>
+
+Examples
+
+</span>
+
+<h2>
+
+Integration Examples
+
+</h2>
+
+</div>
+
+<div class="integration-grid">
+
+<div class="integration-card">
+
+<h3>
+
+Vanilla JavaScript
+
+</h3>
+
+<pre>
+
+const manager =
+new URLStateManager();
+
+</pre>
+
+</div>
+
+<div class="integration-card">
+
+<h3>
+
+React
+
+</h3>
+
+<pre>
+
+useURLState();
+
+</pre>
+
+</div>
+
+<div class="integration-card">
+
+<h3>
+
+Vue
+
+</h3>
+
+<pre>
+
+useRoute();
+
+</pre>
+
+</div>
+
+<div class="integration-card">
+
+<h3>
+
+Next.js
+
+</h3>
+
+<pre>
+
+useSearchParams();
+
+</pre>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FRAMEWORK SUPPORT
+========================= -->
+
+<section class="framework-section">
+
+<div class="section-header">
+
+<span>
+
+Compatibility
+
+</span>
+
+<h2>
+
+Framework Support
+
+</h2>
+
+</div>
+
+<div class="framework-grid">
+
+<div class="framework-card">
+
+⚛️
+
+<h3>
+
+React
+
+</h3>
+
+</div>
+
+<div class="framework-card">
+
+🟢
+
+<h3>
+
+Vue
+
+</h3>
+
+</div>
+
+<div class="framework-card">
+
+▲
+
+<h3>
+
+Next.js
+
+</h3>
+
+</div>
+
+<div class="framework-card">
+
+🅰️
+
+<h3>
+
+Angular
+
+</h3>
+
+</div>
+
+<div class="framework-card">
+
+🔥
+
+<h3>
+
+Svelte
+
+</h3>
+
+</div>
+
+<div class="framework-card">
+
+🌐
+
+<h3>
+
+Vanilla JS
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+STATE PLAYGROUND
+========================= -->
+
+<section class="playground-section">
+
+<div class="section-header">
+
+<span>
+
+Interactive
+
+</span>
+
+<h2>
+
+State Playground
+
+</h2>
+
+</div>
+
+<div class="playground-card">
+
+<textarea
+placeholder="Edit state JSON...">
+
+{
+  "search":"laptop",
+  "category":"products",
+  "sort":"latest"
+}
+
+</textarea>
+
+<div class="playground-actions">
+
+<button class="primary-btn">
+
+Apply State
+
+</button>
+
+<button class="outline-btn">
+
+Reset
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+URL SANDBOX
+========================= -->
+
+<section class="sandbox-section">
+
+<div class="section-header">
+
+<span>
+
+Sandbox
+
+</span>
+
+<h2>
+
+URL Testing Sandbox
+
+</h2>
+
+</div>
+
+<div class="sandbox-card">
+
+<input
+type="text"
+placeholder="Paste URL here">
+
+<button
+class="primary-btn">
+
+Parse URL
+
+</button>
+
+<div class="sandbox-result">
+
+Ready to inspect URL parameters.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+ADVANCED SETTINGS
+========================= -->
+
+<section class="settings-section">
+
+<div class="section-header">
+
+<span>
+
+Configuration
+
+</span>
+
+<h2>
+
+Advanced Settings
+
+</h2>
+
+</div>
+
+<div class="settings-grid">
+
+<div class="setting-card">
+
+<h3>
+
+Auto Sync
+
+</h3>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<h3>
+
+History Tracking
+
+</h3>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<h3>
+
+URL Compression
+
+</h3>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<h3>
+
+Analytics
+
+</h3>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span></span>
+
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+SECURITY PANEL
+========================= -->
+
+<section class="security-section">
+
+<div class="section-header">
+
+<span>
+
+Security
+
+</span>
+
+<h2>
+
+Security Overview
+
+</h2>
+
+</div>
+
+<div class="security-grid">
+
+<div class="security-card">
+
+🔒
+
+<h3>
+
+Input Validation
+
+</h3>
+
+<p>
+
+Sanitized URL parameters.
+
+</p>
+
+</div>
+
+<div class="security-card">
+
+🛡️
+
+<h3>
+
+XSS Protection
+
+</h3>
+
+<p>
+
+Safe state parsing.
+
+</p>
+
+</div>
+
+<div class="security-card">
+
+✅
+
+<h3>
+
+Safe Sharing
+
+</h3>
+
+<p>
+
+Validated shareable links.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+DEVELOPER DASHBOARD
+========================= -->
+
+<section class="developer-section">
+
+<div class="section-header">
+
+<span>
+
+Developer Tools
+
+</span>
+
+<h2>
+
+Developer Dashboard
+
+</h2>
+
+</div>
+
+<div class="developer-grid">
+
+<div class="developer-card">
+
+<h1>
+
+12.4K
+
+</h1>
+
+<p>
+
+State Updates
+
+</p>
+
+</div>
+
+<div class="developer-card">
+
+<h1>
+
+4.2K
+
+</h1>
+
+<p>
+
+History Events
+
+</p>
+
+</div>
+
+<div class="developer-card">
+
+<h1>
+
+98%
+
+</h1>
+
+<p>
+
+Sync Success
+
+</p>
+
+</div>
+
+<div class="developer-card">
+
+<h1>
+
+0 Errors
+
+</h1>
+
+<p>
+
+Current Session
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+FAQ SECTION
+========================= -->
+
+<section class="faq-section">
+
+<div class="section-header">
+
+<span>
+
+Support
+
+</span>
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+</div>
+
+<div class="faq-grid">
+
+<div class="faq-card">
+
+<h3>
+
+How does URL state persistence work?
+
+</h3>
+
+<p>
+
+Application state is stored
+inside URL parameters and
+restored automatically when
+the page loads.
+
+</p>
+
+</div>
+
+<div class="faq-card">
+
+<h3>
+
+Can I share filtered views?
+
+</h3>
+
+<p>
+
+Yes. Generated URLs include
+all current filters, search
+queries and sorting options.
+
+</p>
+
+</div>
+
+<div class="faq-card">
+
+<h3>
+
+Does it support browser history?
+
+</h3>
+
+<p>
+
+Fully compatible with
+pushState, replaceState and
+back-forward navigation.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+DOCUMENTATION CENTER
+========================= -->
+
+<section
+id="docs"
+class="docs-section">
+
+<div class="section-header">
+
+<span>
+
+Documentation
+
+</span>
+
+<h2>
+
+Documentation Center
+
+</h2>
+
+</div>
+
+<div class="docs-card">
+
+<pre>
+
+URL State Manager
+│
+├ Search Parameters
+├ Filter State
+├ Sort State
+├ Pagination
+├ History API
+├ URL Sharing
+├ State Restore
+├ Security
+└ Developer Tools
+
+</pre>
+
+</div>
+
+</section>
+
+<!-- =========================
+CHANGELOG
+========================= -->
+
+<section class="changelog-section">
+
+<div class="section-header">
+
+<span>
+
+Updates
+
+</span>
+
+<h2>
+
+Recent Changelog
+
+</h2>
+
+</div>
+
+<div class="changelog-grid">
+
+<div class="changelog-card">
+
+<h3>
+
+v3.2.0
+
+</h3>
+
+<p>
+
+Added URL compression and
+advanced sharing features.
+
+</p>
+
+</div>
+
+<div class="changelog-card">
+
+<h3>
+
+v3.1.0
+
+</h3>
+
+<p>
+
+Improved browser history
+synchronization.
+
+</p>
+
+</div>
+
+<div class="changelog-card">
+
+<h3>
+
+v3.0.0
+
+</h3>
+
+<p>
+
+Introduced complete state
+management architecture.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+RESOURCE HUB
+========================= -->
+
+<section class="resources-section">
+
+<div class="section-header">
+
+<span>
+
+Resources
+
+</span>
+
+<h2>
+
+Developer Resource Hub
+
+</h2>
+
+</div>
+
+<div class="resource-grid">
+
+<div class="resource-card">
+
+📘
+
+<h3>
+
+Documentation
+
+</h3>
+
+</div>
+
+<div class="resource-card">
+
+🎥
+
+<h3>
+
+Tutorials
+
+</h3>
+
+</div>
+
+<div class="resource-card">
+
+🧪
+
+<h3>
+
+Examples
+
+</h3>
+
+</div>
+
+<div class="resource-card">
+
+🚀
+
+<h3>
+
+API Reference
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+NEWSLETTER
+========================= -->
+
+<section class="newsletter-section">
+
+<div class="newsletter-card">
+
+<h2>
+
+Stay Updated
+
+</h2>
+
+<p>
+
+Receive release notes,
+feature announcements and
+developer updates.
+
+</p>
+
+<form class="newsletter-form">
+
+<input
+type="email"
+placeholder="Enter email">
+
+<button>
+
+Subscribe
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer class="footer">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+
+URLVerse
+
+</h3>
+
+<p>
+
+Advanced URL State
+Management Platform.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Product
+
+</h4>
+
+<ul>
+
+<li>Features</li>
+<li>Dashboard</li>
+<li>Security</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Developers
+
+</h4>
+
+<ul>
+
+<li>API</li>
+<li>Guides</li>
+<li>Examples</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Company
+
+</h4>
+
+<ul>
+
+<li>About</li>
+<li>Contact</li>
+<li>Support</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 URLVerse. All Rights Reserved.
+
+</div>
+
+</footer>
+
+<!-- =========================
+URL STATE MODAL
+========================= -->
+
+<div
+class="url-modal-overlay"
+id="urlModal">
+
+<div class="url-modal">
+
+<div class="modal-header">
+
+<h3>
+
+URL State Details
+
+</h3>
+
+<button
+id="closeModal">
+
+✕
+
+</button>
+
+</div>
+
+<div class="modal-content">
+
+<h2>
+
+Current State Snapshot
+
+</h2>
+
+<p>
+
+The current application state
+has been synchronized and
+stored successfully.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================
+SCROLL TO TOP
+========================= -->
+
+<button
+id="scrollTop"
+class="scroll-top">
+
+↑
+
+</button>
+
+<!-- =========================
+JAVASCRIPT
+========================= -->
+
+<script>
+
+const modal =
+document.getElementById(
+"urlModal"
+);
+
+const closeModal =
+document.getElementById(
+"closeModal"
+);
+
+document
+.querySelectorAll(
+".resource-card"
+)
+.forEach(card=>{
+
+card.addEventListener(
+"click",
+()=>{
+
+modal.classList.add(
+"active"
+);
+
+});
+
+});
+
+closeModal.addEventListener(
+"click",
+()=>{
+
+modal.classList.remove(
+"active"
+);
+
+});
+
+modal.addEventListener(
+"click",
+e=>{
+
+if(
+e.target===modal
+){
+
+modal.classList.remove(
+"active"
+);
+
+}
+
+});
+
+const scrollBtn =
+document.getElementById(
+"scrollTop"
+);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+if(
+window.scrollY > 400
+){
+
+scrollBtn.classList.add(
+"show"
+);
+
+}else{
+
+scrollBtn.classList.remove(
+"show"
+);
+
+}
+
+});
+
+scrollBtn.addEventListener(
+"click",
+()=>{
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+});
+
+/* URL Preview Demo */
+
+function updatePreview(){
+
+const url =
+window.location.href;
+
+const preview =
+document.getElementById(
+"urlPreview"
+);
+
+if(preview){
+
+preview.textContent =
+url;
+
+}
+
+}
+
+updatePreview();
+
+</script>
+
 </body>
+
 </html>
