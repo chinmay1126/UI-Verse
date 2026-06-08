@@ -182,5 +182,5 @@ editButtons.forEach((btn) => {
 const searchInput = document.querySelector('.search-box input');
 
 searchInput.addEventListener('input', (e) => {
-  console.log('Searching for:', e.target.value);
+  console.debug('Searching for:', e.target.value);
 });

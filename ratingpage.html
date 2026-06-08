@@ -11,20 +11,7 @@
   />
 
   <!-- SECURITY -->
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self' https:;
-      base-uri 'self';
-      frame-ancestors 'none';
-      object-src 'none';
-      connect-src 'self' https:;
-      img-src 'self' data: https:;
-      font-src 'self' data: https:;
-      script-src 'self' https: 'unsafe-inline';
-      style-src 'self' https: 'unsafe-inline';
-    "
-  />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-Kz62CmQylxdBT0HhF+2vTBO1U5imkdinhslLpHa1kEg= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-Kz62CmQylxdBT0HhF+2vTBO1U5imkdinhslLpHa1kEg= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <title>Rating Components — UIverse</title>
 
@@ -1133,6 +1120,38 @@
 
 </div>
 
+
+
+    <!-- EMOJI SCALE -->
+<div class="component-card">
+  <div class="card-top">
+    <span class="card-label">Emoji Scale Rating</span>
+    <span class="card-tag tag-fun">Quick Feedback</span>
+  </div>
+  <div class="card-preview emoji-rating">
+    <button>😡</button>
+    <button>😐</button>
+    <button>🙂</button>
+    <button>😍</button>
+  </div>
+  <p class="card-desc">
+    Emoji-based rating for fast emotional feedback.
+  </p>
+</div>
+
+<!-- NUMERIC INPUT -->
+<div class="component-card">
+  <div class="card-top">
+    <span class="card-label">Numeric Input Rating</span>
+    <span class="card-tag tag-modern">Precise</span>
+  </div>
+  <div class="card-preview numeric-rating">
+    <input type="number" min="1" max="10" value="5" />
+  </div>
+  <p class="card-desc">
+    Direct number entry rating with validation (1–10).
+  </p>
+</div>
 
 
   </section>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Multi-Step Form — UIverse</title>
+    <link rel="stylesheet" href="multi-step-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dark-mode">
+
+    <main class="component-page">
+
+        <section class="component-grid">
+
+            <div class="component-card">
+
+                <div class="card-top">
+
+                    <span class="card-label">
+                        Multi-Step Form
+                    </span>
+
+                    <div class="card-top-right">
+                        <button type="button" id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                        <span class="card-tag">Interactive</span>
+                    </div>
+
+                </div>
+
+                <div class="card-preview">
+
+                    <div class="component-wrapper">
+
+                        <form class="multi-step-card" id="multiStepForm" novalidate>
+
+                            <!-- Progress Indicator (Stepper) -->
+                            <div class="step-stepper" role="tablist" aria-label="Form Steps">
+                                <button type="button" class="step-indicator active" role="tab" aria-selected="true"
+                                    aria-controls="step-1" id="tab-1">
+                                    <span class="step-number">1</span>
+                                    <span class="step-title">Personal</span>
+                                </button>
+                                <div class="step-divider" aria-hidden="true"></div>
+                                <button type="button" class="step-indicator" role="tab" aria-selected="false"
+                                    aria-controls="step-2" id="tab-2" tabindex="-1">
+                                    <span class="step-number">2</span>
+                                    <span class="step-title">Security</span>
+                                </button>
+                                <div class="step-divider" aria-hidden="true"></div>
+                                <button type="button" class="step-indicator" role="tab" aria-selected="false"
+                                    aria-controls="step-3" id="tab-3" tabindex="-1">
+                                    <span class="step-number">3</span>
+                                    <span class="step-title">Preferences</span>
+                                </button>
+                            </div>
+
+                            <!-- Step 1: Personal Info -->
+                            <div class="form-step active" id="step-1" role="tabpanel" aria-labelledby="tab-1">
+                                <h2 class="step-heading">Personal Details</h2>
+                                <p class="step-subheading">Please provide your basic contact details.</p>
+
+                                <div class="form-field">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" name="fullName" placeholder="John Doe" required
+                                        aria-required="true">
+                                    <span class="error-msg" id="nameError" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="john.doe@example.com"
+                                        required aria-required="true">
+                                    <span class="error-msg" id="emailError" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="title">Professional Title</label>
+                                    <input type="text" id="title" name="title" placeholder="Frontend Developer" required
+                                        aria-required="true">
+                                    <span class="error-msg" id="titleError" aria-live="polite"></span>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Account Security -->
+                            <div class="form-step" id="step-2" role="tabpanel" aria-labelledby="tab-2"
+                                aria-hidden="true">
+                                <h2 class="step-heading">Account Security</h2>
+                                <p class="step-subheading">Choose a secure password for your account.</p>
+
+                                <div class="form-field">
+                                    <label for="password">Password</label>
+                                    <div class="password-wrapper">
+                                        <input type="password" id="password" name="password" placeholder="••••••••"
+                                            required aria-required="true">
+                                        <button type="button" class="toggle-password" aria-label="Show password"
+                                            id="togglePassword">
+                                            <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <div class="strength-indicator" aria-hidden="true">
+                                        <div class="strength-bar" id="strengthBar"></div>
+                                    </div>
+                                    <div class="strength-meta">
+                                        <span class="strength-label" id="strengthLabel">Enter a password</span>
+                                        <span class="strength-percent" id="strengthPercent">0%</span>
+                                    </div>
+                                    <span class="error-msg" id="passwordError" aria-live="polite"></span>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Preferences -->
+                            <div class="form-step" id="step-3" role="tabpanel" aria-labelledby="tab-3"
+                                aria-hidden="true">
+                                <h2 class="step-heading">Preferences</h2>
+                                <p class="step-subheading">Select which notifications you would like to receive.</p>
+
+                                <div class="form-field">
+                                    <label class="checkbox-card">
+                                        <input type="checkbox" id="prefEmail" name="prefEmail" checked>
+                                        <div class="checkbox-info">
+                                            <span class="checkbox-title">Email Digests</span>
+                                            <span class="checkbox-desc">Weekly updates on new UI components and templates.</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="checkbox-card">
+                                        <input type="checkbox" id="prefSecurity" name="prefSecurity" checked>
+                                        <div class="checkbox-info">
+                                            <span class="checkbox-title">Security Alerts</span>
+                                            <span class="checkbox-desc">Immediate warnings on critical account actions.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" id="prevBtn" disabled>Back</button>
+                                <button type="button" class="btn btn-primary" id="nextBtn">Next Step</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div class="card-actions">
+
+                    <button class="action-btn view-btn">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        View Code
+
+                    </button>
+
+                    <button class="action-btn copy-btn">
+
+                        <i class="fa-regular fa-copy"></i>
+
+                        Copy Code
+
+                    </button>
+
+                </div>
+
+                <p class="card-desc">
+
+                    Interactive multi-step form with validation,
+                    password strength indicator, and progress tracking.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="multi-step-form.js"></script>
+
+</body>
+
+</html>

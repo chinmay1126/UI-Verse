@@ -1,860 +1,1978 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="stylesheet" href="dist/shared.css">
-  <meta charset="UTF-8"/>
-  <meta name="viewport"
-  content="width=device-width, initial-scale=1.0"/>
 
-  
-  <title>AquaTrack — Water Reminder</title>
+<meta charset="UTF-8">
 
-  <!-- Fonts -->
-  <link
-  href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
-  rel="stylesheet">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <!-- Icons -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
-  <!-- CSS -->
-  <link rel="stylesheet"
-  href="water-reminder.css">
-  <style>
-    /* Water Intake Reminder Cards */
-.water-reminder-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 30px;
-  margin-left: 150px;
-}
+<title>
 
-.water-card {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  padding: 20px;
-  width: 250px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+AquaTrack • Water Reminder
 
-.water-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: whitesmoke;
-}
+</title>
 
-.water-card p {
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-  color:pink;
-}
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-.water-card button {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  border: none;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-.water-card button:hover {
-  background: linear-gradient(135deg, #0072ff, #00c6ff);
-}
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
+rel="stylesheet">
 
-.water-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-}
-.water-card:nth-child(1) h3 { color: #ff6b6b; } /* Post-Workout */
-.water-card:nth-child(2) h3 { color: #6c5ce7; } /* Bedtime */
-.water-card:nth-child(3) h3 { color: #00b894; } /* Hourly */
-.water-card:nth-child(4) h3 { color: #fdcb6e; } /* Work Focus */
-.water-card:nth-child(5) h3 { color: #0984e3; } /* Outdoor */
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<link rel="stylesheet"
+href="water-reminder.css">
 
-  </style>
-
-  </head>
+</head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-<!-- =========================================================
-   SIDEBAR
-========================================================= -->
 
-<aside class="sidebar">
+<!-- ==================================
+BACKGROUND EFFECTS
+================================== -->
 
-  <div class="sidebar-brand">
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
 
-    <span class="brand-icon">⬡</span>
+<!-- ==================================
+NAVBAR
+================================== -->
 
-    <span class="brand-text">
-      UIverse
-    </span>
+<header class="navbar">
 
-  </div>
+<div class="nav-container">
 
-          <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a href="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="button.html">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Buttons</span>
-        </a>
-      </li>
-            <li>
-        <a href="dropdown-components.html">
-          <i class="fa-solid fa-caret-down"></i>
-          <span>Dropdowns</span>
-        </a>
-      </li>
-      <li>
-        <a href="profile-components.html">
-          <i class="fa-solid fa-user"></i>
-          <span>Profiles</span>
-        </a>
-      </li>
-<li>
-        <a href="navbar.html">
-          <i class="fa-solid fa-bars"></i>
-          <span>Navbar</span>
-        </a>
-      </li>
-      <li>
-        <a href="cards.html">
-          <i class="fa-solid fa-table-cells-large"></i>
-          <span>Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="notes-components.html">
-          <i class="fas fa-sticky-note"></i>
-          <span>Notes</span>
-        </a>
-      </li>
-      <li>
-        <a href="range-slider.html">
-          <i class="fas fa-sliders-h"></i>
-          <span>Range Slider</span>
-        </a>
-      </li>
-      <li>
-        <a href="flipcards.html">
-          <i class="fa-solid fa-clone"></i>
-          <span>3D Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="inputs.html">
-          <i class="fa-solid fa-keyboard"></i>
-          <span>Inputs</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms.html">
-          <i class="fa-brands fa-wpforms"></i>
-          <span>Forms</span>
-        </a>
-      </li>
-      <li>
-        <a href="badges.html">
-          <i class="fa-solid fa-award"></i>
-          <span>Badges</span>
-        </a>
-      </li>
-      <li>
-        <a href="blog.html">
-          <i class="fa-solid fa-blog"></i>
-          <span>Blog</span>
-        </a>
-      </li>
-      <li>
-        <a href="article.html">
-          <i class="fa-solid fa-newspaper"></i>
-          <span>Articles</span>
-        </a>
-      </li>
-      <li>
-        <a href="alerts.html">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <span>Alerts</span>
-        </a>
-      </li>
-      <li>
-        <a href="color.html">
-          <i class="fa-solid fa-palette"></i>
-          <span>Colors</span>
-        </a>
-      </li>
-      <li>
-        <a href="charts.html">
-          <i class="fa-solid fa-chart-pie"></i>
-          <span>Charts</span>
-        </a>
-      </li>
-      <li>
-        <a href="dashboard.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="div.html">
-          <i class="fa-solid fa-square"></i>
-          <span>DIV</span>
-        </a>
-      </li>
-      <li>
-        <a href="widgets.html">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Widgets</span>
-        </a>
-      </li>
-      <li>
-        <a href="search.html">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span>Search Bars</span>
-        </a>
-      </li>
-      <li>
-        <a href="hover.html">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          <span>Hover Effects</span>
-        </a>
-      </li>
-      <li>
-        <a href="error.html">
-          <i class="fa-solid fa-circle-exclamation"></i>
-          <span>Error Pages</span>
-        </a>
-      </li>
-      <li>
-        <a href="ecommerce.html">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span>E-commerce</span>
-        </a>
-      </li>
-      <li>
-        <a href="files.html">
-          <i class="fa-solid fa-file-arrow-up"></i>
-          <span>Drag & Drop</span>
-        </a>
-      </li>
-      <li>
-        <a href="hero.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Hero Sections</span>
-        </a>
-      </li>
-      <li>
-        <a href="loaders.html">
-          <i class="fa-solid fa-spinner"></i>
-          <span>Loaders</span>
-        </a>
-      </li>
-      <li>
-        <a href="timeline.html">
-          <i class="fa-solid fa-clock-rotate-left"></i>
-          <span>Timeline</span>
-        </a>
-      </li>
-      <li>
-        <a href="map.html">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <span>Maps</span>
-        </a>
-      </li>
-      <li>
-        <a href="menu.html">
-          <i class="fa-solid fa-bars-staggered"></i>
-          <span>Menu</span>
-        </a>
-      </li>
-      <li>
-        <a href="pricing.html">
-          <i class="fa-solid fa-tags"></i>
-          <span>Pricing</span>
-        </a>
-      </li>
-      <li>
-        <a href="subscription.html">
-          <i class="fa-solid fa-credit-card"></i>
-          <span>Subscription</span>
-        </a>
-      </li>
-      <li>
-        <a href="auth.html">
-          <i class="fa-solid fa-user-shield"></i>
-          <span>Authentication</span>
-        </a>
-      </li>
-        <li>
-          <a href="recovery.html">
-            <i class="fa-solid fa-key" aria-hidden="true"></i>
-            <span>Password Recovery</span>
-          </a>
-        </li>
-      <li>
-        <a href="section.html">
-          <i class="fa-solid fa-rectangle-list"></i>
-          <span>Section</span>
-        </a>
-      </li>
-      <li>
-        <a href="span.html">
-          <i class="fa-solid fa-code"></i>
-          <span>Span</span>
-        </a>
-      </li>
-      <li>
-        <a href="table.html">
-          <i class="fa-solid fa-table"></i>
-          <span>Table</span>
-        </a>
-      </li>
-      <li>
-        <a href="tabs.html">
-          <i class="fa-solid fa-table-columns"></i>
-          <span>Tabs</span>
-        </a>
-      </li>
-      <li>
-        <a href="terms.html">
-          <i class="fa-solid fa-file-contract"></i>
-          <span>Terms</span>
-        </a>
-      </li>
-      <li>
-        <a href="testimonials.html">
-          <i class="fa-solid fa-comments"></i>
-          <span>Testimonials</span>
-        </a>
-      </li>
-      <li>
-        <a href="toggles.html">
-          <i class="fa-solid fa-toggle-on"></i>
-          <span>Toggle</span>
-        </a>
-      </li>
-      <li>
-        <a href="radiobutton.html">
-          <i class="fa-solid fa-circle-dot"></i>
-          <span>Radio Buttons</span>
-        </a>
-      </li>
-      <li>
-        <a href="checkbox.html">
-          <i class="fa-solid fa-square-check"></i>
-          <span>Checkboxes</span>
-        </a>
-      </li>
-      <li>
-        <a href="notifications-premium.html">
-          <i class="fa-solid fa-bell"></i>
-          <span>Notifications V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="step-indicators.html">
-          <i class="fa-solid fa-list-check"></i>
-          <span>Steppers</span>
-        </a>
-      </li>
-      <li>
-        <a href="progress-premium.html">
-          <i class="fa-solid fa-bars-progress"></i>
-          <span>Progress V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="ratings-premium.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Ratings V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="filters-premium.html">
-          <i class="fa-solid fa-sliders"></i>
-          <span>Filters V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="admin-panel.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Admin Panel V2</span>
-        </a>
-      </li>
-<li>
-        <a href="about.html">
-          <i class="fa-solid fa-circle-info"></i>
-          <span>About</span>
-        </a>
-      </li>
-      <li>
-        <a href="documentation.html">
-          <i class="fa-solid fa-book"></i>
-          <span>Documentation</span>
-        </a>
-      </li>
-      <li>
-        <a href="faq.html">
-          <i class="fa-solid fa-circle-question"></i>
-          <span>Faq</span>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Contact Us</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</aside>
+<div class="logo">
 
-  <!-- Sidebar Backdrop -->
-  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-  <!-- ================= NAVBAR ================= -->
-  <header class="navbar" id="navbar">
+<div class="logo-icon">
 
-    <button
-      class="menu-toggle"
-      onclick="toggleSidebar()"
-      aria-label="Toggle Menu"
-    >
-      <i class="fa-solid fa-bars"></i>
-    </button>
+💧
 
-    <div class="logo">UIverse</div>
-
-    <div class="search-bar">
-      <i class="fa-solid fa-magnifying-glass search-icon"></i>
-
-      <input
-        type="text"
-        placeholder="Search components..."
-      / data-a11y-remediation="label-needed">
-
-      <kbd class="search-kbd">⌘K</kbd>
-    </div>
-
-    <div class="nav-right">
-
-      <button class="nav-btn outline-nav-btn">
-        <i class="fa-solid fa-plus"></i>
-        Add Component
-      </button>
-
-      <button class="nav-btn primary-nav-btn">
-        <i class="fa-solid fa-bookmark"></i>
-        My Collection
-      </button>
-
-      <button
-        id="darkModeToggle"
-        class="theme-toggle"
-        title="Toggle Theme"
-      >
-        <i class="fa-solid fa-moon"></i>
-      </button>
-
-    </div>
-
-  </header>
-
-
-  <!-- ================= BACKGROUND BLOBS ================= -->
-
-  <div class="bg-blob blob-1"></div>
-  <div class="bg-blob blob-2"></div>
-
-  <!-- ================= APP ================= -->
-
-  <main class="app">
-
-    <!-- LEFT PANEL -->
-
-    
-
-      <div class="brand">
-        💧 AquaTrack
-      </div>
-
-      <span class="badge">
-        Stay Hydrated Daily
-      </span>
-
-      <h1>
-        Drink more water,
-        feel more energized.
-      </h1>
-
-      <p>
-        Track your hydration goals,
-        get reminders,
-        and build healthy habits.
-      </p>
-
-      <!-- DAILY GOAL -->
-
-      <div class="goal-card">
-
-        <div class="goal-top">
-
-          <h3>
-            Daily Goal
-          </h3>
-
-          <span id="goalValue">
-            2.5L
-          </span>
-
-        </div>
-
-        <div class="progress-wrapper">
-
-          <div class="progress-bar">
-
-            <div class="progress-fill"
-            id="progressFill"></div>
-
-          </div>
-
-          <div class="progress-info">
-
-            <span id="currentWater">
-              0 ml
-            </span>
-
-            <span>
-              Goal: 2500 ml
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- QUICK ADD -->
-
-      <div class="quick-add">
-
-        <button
-        class="water-btn"
-        data-amount="250">
-
-          +250 ml
-
-        </button>
-
-        <button
-        class="water-btn"
-        data-amount="500">
-
-          +500 ml
-
-        </button>
-
-        <button
-        class="water-btn"
-        data-amount="750">
-
-          +750 ml
-
-        </button>
-
-      </div>
-
-      <!-- REMINDER -->
-
-      <div class="reminder-card">
-
-        <div class="reminder-icon">
-          ⏰
-        </div>
-
-        <div>
-
-          <h4>
-            Next Reminder
-          </h4>
-
-          <p id="nextReminder">
-            In 45 minutes
-          </p>
-
-        </div>
-
-      </div>
-
-    
-
-    <!-- RIGHT PANEL -->
-
-    
-
-      <!-- WATER VISUAL -->
-
-      <div class="glass-card">
-
-        <div class="glass-top">
-
-          <span>
-            Hydration Level
-          </span>
-
-          <div class="water-percent"
-          id="waterPercent">
-
-            0%
-
-          </div>
-
-        </div>
-
-        <!-- GLASS -->
-
-        <div class="glass-container">
-
-          <div class="glass">
-
-            <div class="water"
-            id="waterLevel"></div>
-
-          </div>
-
-        </div>
-
-        <p class="glass-text">
-          Keep drinking to reach your goal 💙
-        </p>
-
-      </div>
-
-      <!-- STATS -->
-
-      <div class="stats-grid">
-
-        <div class="stat-card">
-
-          <div class="stat-icon blue">
-            💦
-          </div>
-
-          <h2 id="cupsCount">
-            0
-          </h2>
-
-          <p>
-            Cups Today
-          </p>
-
-        </div>
-
-        <div class="stat-card">
-
-          <div class="stat-icon cyan">
-            🔥
-          </div>
-
-          <h2>
-            7 Days
-          </h2>
-
-          <p>
-            Hydration Streak
-          </p>
-
-        </div>
-
-        <div class="stat-card">
-
-          <div class="stat-icon purple">
-            ⚡
-          </div>
-
-          <h2>
-            92%
-          </h2>
-
-          <p>
-            Weekly Goal
-          </p>
-
-        </div>
-
-      </div>
-
-      <!-- TIMELINE -->
-
-      <div class="timeline-card">
-
-        <div class="timeline-header">
-
-          <h3>
-            Today’s Water Intake
-          </h3>
-
-          <button id="resetBtn">
-            Reset
-          </button>
-
-        </div>
-
-        <div class="timeline"
-        id="timeline">
-
-          <div class="timeline-item">
-
-            <span>
-              08:00 AM
-            </span>
-
-            <p>
-              250 ml consumed
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-      <!-- Water Intake Reminder Cards -->
-<aside class="water-reminder-container" aria-label="Hydration Reminders">
-  <div class="water-card">
-    <h3>Morning Hydration</h3>
-    <p>Start your day with 2 glasses of water.</p>
-    <button aria-label="Log Morning Hydration Intake">Log Intake</button>
-  </div>
-
-  <div class="water-card">
-    <h3>Afternoon Boost</h3>
-    <p>Stay energized with 1 glass before lunch.</p>
-    <button aria-label="Log Afternoon Boost Intake">Log Intake</button>
-  </div>
-
-  <div class="water-card">
-    <h3>Evening Refresh</h3>
-    <p>Keep hydrated with 2 glasses after work.</p>
-    <button aria-label="Log Evening Refresh Intake">Log Intake</button>
-  </div>
-</aside>
-<!-- More Water Intake Reminder Cards -->
-<div class="water-reminder-container">
-  <div class="water-card">
-    <h3>Post-Workout Hydration</h3>
-    <p>Replenish with 2 glasses after exercise.</p>
-    <button>Log Intake</button>
-  </div>
-
-  <div class="water-card">
-    <h3>Bedtime Routine</h3>
-    <p>Drink 1 glass before sleep for balance.</p>
-    <button>Log Intake</button>
-  </div>
-
-  <div class="water-card">
-    <h3>Hourly Reminder</h3>
-    <p>Take a sip every hour to stay fresh.</p>
-    <button>Log Intake</button>
-  </div>
-
-  <div class="water-card">
-    <h3>Work Focus</h3>
-    <p>Boost concentration with 1 glass mid-task.</p>
-    <button>Log Intake</button>
-  </div>
-
-  <div class="water-card">
-    <h3>Outdoor Hydration</h3>
-    <p>Stay cool with 2 glasses after sun exposure.</p>
-    <button>Log Intake</button>
-  </div>
 </div>
 
+<span>
 
-  </main>
-<!-- ================= FOOTER ================= -->
+AquaTrack
+
+</span>
+
+</div>
+
+<nav class="nav-links">
+
+<a href="#">
+
+Dashboard
+
+</a>
+
+<a href="#">
+
+Analytics
+
+</a>
+
+<a href="#">
+
+Reminders
+
+</a>
+
+<a href="#">
+
+Goals
+
+</a>
+
+</nav>
+
+<div class="nav-actions">
+
+<button class="outline-btn">
+
+History
+
+</button>
+
+<button class="primary-btn">
+
+Premium
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ==================================
+HERO
+================================== -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<div class="hero-badge">
+
+💦 Smart Hydration Assistant
+
+</div>
+
+<h1>
+
+Stay
+
+<span>
+
+Hydrated</span>
+
+Every Single Day
+
+</h1>
+
+<p>
+
+Track your daily water intake,
+build healthy habits and receive
+smart hydration reminders
+throughout the day.
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary-btn">
+
+Start Tracking
+
+</button>
+
+<button class="secondary-btn">
+
+View Statistics
+
+</button>
+
+</div>
+
+<div class="hero-stats">
+
+<div class="hero-stat">
+
+<h3>
+
+2.5L
+
+</h3>
+
+<p>
+
+Daily Goal
+
+</p>
+
+</div>
+
+<div class="hero-stat">
+
+<h3>
+
+14
+
+</h3>
+
+<p>
+
+Day Streak
+
+</p>
+
+</div>
+
+<div class="hero-stat">
+
+<h3>
+
+92%
+
+</h3>
+
+<p>
+
+Goal Success
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==================================
+HYDRATION RING
+================================== -->
+
+<div class="hero-right">
+
+<div class="hydration-card">
+
+<div class="ring-wrapper">
+
+<div class="progress-ring">
+
+<div class="ring-center">
+
+<h2 id="waterAmount">
+
+1250ml
+
+</h2>
+
+<span>
+
+Consumed
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="goal-info">
+
+<div>
+
+<h4>
+
+Current Goal
+
+</h4>
+
+<p>
+
+2500 ml
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Remaining
+
+</h4>
+
+<p>
+
+1250 ml
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+QUICK ADD WATER
+================================== -->
+
+<section class="quick-add-section">
+
+<div class="section-header">
+
+<span>
+
+Quick Actions
+
+</span>
+
+<h2>
+
+Add Water Intake
+
+</h2>
+
+</div>
+
+<div class="quick-grid">
+
+<div class="water-card">
+
+<div class="water-icon">
+
+🥤
+
+</div>
+
+<h3>
+
+250 ml
+
+</h3>
+
+<p>
+
+Small Glass
+
+</p>
+
+<button>
+
+Add Water
+
+</button>
+
+</div>
+
+<div class="water-card">
+
+<div class="water-icon">
+
+💧
+
+</div>
+
+<h3>
+
+500 ml
+
+</h3>
+
+<p>
+
+Medium Bottle
+
+</p>
+
+<button>
+
+Add Water
+
+</button>
+
+</div>
+
+<div class="water-card">
+
+<div class="water-icon">
+
+🧴
+
+</div>
+
+<h3>
+
+750 ml
+
+</h3>
+
+<p>
+
+Large Bottle
+
+</p>
+
+<button>
+
+Add Water
+
+</button>
+
+</div>
+
+<div class="water-card">
+
+<div class="water-icon">
+
+🚰
+
+</div>
+
+<h3>
+
+1000 ml
+
+</h3>
+
+<p>
+
+Full Refill
+
+</p>
+
+<button>
+
+Add Water
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==================================
+SMART REMINDERS
+================================== -->
+
+<section class="reminders-section">
+
+<div class="section-header">
+
+<span>
+
+Smart Reminders
+
+</span>
+
+<h2>
+
+Personalized Hydration Alerts
+
+</h2>
+
+<p>
+
+Receive intelligent reminders
+based on your activity level,
+weather and hydration habits.
+
+</p>
+
+</div>
+
+<div class="reminders-grid">
+
+<div class="reminder-card">
+
+<div class="reminder-icon morning">
+
+☀️
+
+</div>
+
+<h3>
+
+Morning Boost
+
+</h3>
+
+<p>
+
+Start your day with two glasses
+of water within the first hour.
+
+</p>
+
+<div class="reminder-time">
+
+08:00 AM
+
+</div>
+
+</div>
+
+<div class="reminder-card">
+
+<div class="reminder-icon work">
+
+💻
+
+</div>
+
+<h3>
+
+Work Focus
+
+</h3>
+
+<p>
+
+Stay productive with hydration
+breaks every 90 minutes.
+
+</p>
+
+<div class="reminder-time">
+
+11:30 AM
+
+</div>
+
+</div>
+
+<div class="reminder-card">
+
+<div class="reminder-icon gym">
+
+🏋️
+
+</div>
+
+<h3>
+
+Post Workout
+
+</h3>
+
+<p>
+
+Replenish fluids immediately
+after physical activity.
+
+</p>
+
+<div class="reminder-time">
+
+06:00 PM
+
+</div>
+
+</div>
+
+<div class="reminder-card">
+
+<div class="reminder-icon night">
+
+🌙
+
+</div>
+
+<h3>
+
+Evening Balance
+
+</h3>
+
+<p>
+
+Finish your hydration goal
+before bedtime.
+
+</p>
+
+<div class="reminder-time">
+
+09:00 PM
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+HYDRATION STREAK
+================================== -->
+
+<section class="streak-section">
+
+<div class="streak-card">
+
+<div class="streak-left">
+
+<span>
+
+🔥 Current Streak
+
+</span>
+
+<h2>
+
+14 Days
+
+</h2>
+
+<p>
+
+You've successfully reached
+your hydration goal every day.
+
+</p>
+
+</div>
+
+<div class="streak-right">
+
+<div class="streak-circle">
+
+14
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+DAILY STATISTICS
+================================== -->
+
+<section class="stats-section">
+
+<div class="section-header">
+
+<span>
+
+Statistics
+
+</span>
+
+<h2>
+
+Today's Overview
+
+</h2>
+
+</div>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<div class="stat-icon blue">
+
+💧
+
+</div>
+
+<h3>
+
+5
+
+</h3>
+
+<p>
+
+Glasses Consumed
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon cyan">
+
+⏰
+
+</div>
+
+<h3>
+
+4
+
+</h3>
+
+<p>
+
+Reminders Completed
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon purple">
+
+📈
+
+</div>
+
+<h3>
+
+50%
+
+</h3>
+
+<p>
+
+Goal Progress
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon green">
+
+⚡
+
+</div>
+
+<h3>
+
+92%
+
+</h3>
+
+<p>
+
+Weekly Success
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+WATER OVERVIEW
+================================== -->
+
+<section class="overview-section">
+
+<div class="section-header">
+
+<span>
+
+Overview
+
+</span>
+
+<h2>
+
+Water Consumption Summary
+
+</h2>
+
+</div>
+
+<div class="overview-card">
+
+<div class="overview-row">
+
+<span>
+
+Daily Goal
+
+</span>
+
+<strong>
+
+2500 ml
+
+</strong>
+
+</div>
+
+<div class="overview-row">
+
+<span>
+
+Consumed Today
+
+</span>
+
+<strong>
+
+1250 ml
+
+</strong>
+
+</div>
+
+<div class="overview-row">
+
+<span>
+
+Remaining
+
+</span>
+
+<strong>
+
+1250 ml
+
+</strong>
+
+</div>
+
+<div class="overview-row">
+
+<span>
+
+Expected Completion
+
+</span>
+
+<strong>
+
+8:15 PM
+
+</strong>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==================================
+WEEKLY ANALYTICS
+================================== -->
+
+<section class="analytics-section">
+
+<div class="section-header">
+
+<span>
+
+Analytics
+
+</span>
+
+<h2>
+
+Weekly Hydration Report
+
+</h2>
+
+<p>
+
+Monitor your progress and
+improve your hydration habits.
+
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<div class="chart-header">
+
+<h3>
+
+Water Intake This Week
+
+</h3>
+
+<span>
+
+17.5L Total
+
+</span>
+
+</div>
+
+<div class="bar-chart">
+
+<div class="bar-item">
+
+<div class="bar"
+style="height:65%;"></div>
+
+<span>Mon</span>
+
+</div>
+
+<div class="bar-item">
+
+<div class="bar"
+style="height:80%;"></div>
+
+<span>Tue</span>
+
+</div>
+
+<div class="bar-item">
+
+<div class="bar"
+style="height:90%;"></div>
+
+<span>Wed</span>
+
+</div>
+
+<div class="bar-item">
+
+<div class="bar"
+style="height:70%;"></div>
+
+<span>Thu</span>
+
+</div>
+
+<div class="bar-item">
+
+<div class="bar"
+style="height:100%;"></div>
+
+<span>Fri</span>
+
+</div>
+
+<div class="bar-item">
+
+<div class="bar"
+style="height:85%;"></div>
+
+<span>Sat</span>
+
+</div>
+
+<div class="bar-item">
+
+<div class="bar"
+style="height:75%;"></div>
+
+<span>Sun</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+WATER TIMELINE
+================================== -->
+
+<section class="timeline-section">
+
+<div class="section-header">
+
+<span>
+
+Timeline
+
+</span>
+
+<h2>
+
+Today's Intake History
+
+</h2>
+
+</div>
+
+<div class="timeline-card">
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h4>
+
+08:00 AM
+
+</h4>
+
+<p>
+
+250ml • Morning Glass
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h4>
+
+10:15 AM
+
+</h4>
+
+<p>
+
+500ml • Water Bottle
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h4>
+
+01:00 PM
+
+</h4>
+
+<p>
+
+250ml • Lunch Hydration
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h4>
+
+04:30 PM
+
+</h4>
+
+<p>
+
+250ml • Work Break
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+HYDRATION HEATMAP
+================================== -->
+
+<section class="heatmap-section">
+
+<div class="section-header">
+
+<span>
+
+Consistency
+
+</span>
+
+<h2>
+
+Hydration Heatmap
+
+</h2>
+
+</div>
+
+<div class="heatmap-grid">
+
+<div class="heat level-1"></div>
+<div class="heat level-2"></div>
+<div class="heat level-3"></div>
+<div class="heat level-4"></div>
+<div class="heat level-2"></div>
+<div class="heat level-3"></div>
+<div class="heat level-4"></div>
+
+<div class="heat level-3"></div>
+<div class="heat level-4"></div>
+<div class="heat level-2"></div>
+<div class="heat level-1"></div>
+<div class="heat level-3"></div>
+<div class="heat level-4"></div>
+<div class="heat level-2"></div>
+
+<div class="heat level-4"></div>
+<div class="heat level-3"></div>
+<div class="heat level-4"></div>
+<div class="heat level-2"></div>
+<div class="heat level-3"></div>
+<div class="heat level-4"></div>
+<div class="heat level-4"></div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+ACHIEVEMENT BADGES
+================================== -->
+
+<section class="badges-section">
+
+<div class="section-header">
+
+<span>
+
+Achievements
+
+</span>
+
+<h2>
+
+Hydration Milestones
+
+</h2>
+
+</div>
+
+<div class="badges-grid">
+
+<div class="badge-card">
+
+🏆
+
+<h3>
+
+7 Day Streak
+
+</h3>
+
+<p>
+
+Completed
+
+</p>
+
+</div>
+
+<div class="badge-card">
+
+💎
+
+<h3>
+
+10 Liters Club
+
+</h3>
+
+<p>
+
+Unlocked
+
+</p>
+
+</div>
+
+<div class="badge-card">
+
+⚡
+
+<h3>
+
+Perfect Week
+
+</h3>
+
+<p>
+
+Unlocked
+
+</p>
+
+</div>
+
+<div class="badge-card">
+
+🌊
+
+<h3>
+
+Hydration Master
+
+</h3>
+
+<p>
+
+In Progress
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==================================
+REMINDER SCHEDULE
+================================== -->
+
+<section class="schedule-section">
+
+<div class="section-header">
+
+<span>
+
+Schedule
+
+</span>
+
+<h2>
+
+Today's Reminder Plan
+
+</h2>
+
+<p>
+
+Stay consistent throughout the
+day with automated reminders.
+
+</p>
+
+</div>
+
+<div class="schedule-card">
+
+<div class="schedule-row">
+
+<span>
+
+08:00 AM
+
+</span>
+
+<p>
+
+Morning Hydration
+
+</p>
+
+<strong>
+
+Completed
+
+</strong>
+
+</div>
+
+<div class="schedule-row">
+
+<span>
+
+10:00 AM
+
+</span>
+
+<p>
+
+Work Focus Reminder
+
+</p>
+
+<strong>
+
+Completed
+
+</strong>
+
+</div>
+
+<div class="schedule-row">
+
+<span>
+
+12:30 PM
+
+</span>
+
+<p>
+
+Lunch Hydration
+
+</p>
+
+<strong>
+
+Completed
+
+</strong>
+
+</div>
+
+<div class="schedule-row">
+
+<span>
+
+03:00 PM
+
+</span>
+
+<p>
+
+Afternoon Refresh
+
+</p>
+
+<strong>
+
+Pending
+
+</strong>
+
+</div>
+
+<div class="schedule-row">
+
+<span>
+
+06:00 PM
+
+</span>
+
+<p>
+
+Workout Recovery
+
+</p>
+
+<strong>
+
+Pending
+
+</strong>
+
+</div>
+
+<div class="schedule-row">
+
+<span>
+
+09:00 PM
+
+</span>
+
+<p>
+
+Evening Hydration
+
+</p>
+
+<strong>
+
+Pending
+
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+HEALTH BENEFITS
+================================== -->
+
+<section class="benefits-section">
+
+<div class="section-header">
+
+<span>
+
+Benefits
+
+</span>
+
+<h2>
+
+Why Hydration Matters
+
+</h2>
+
+</div>
+
+<div class="benefits-grid">
+
+<div class="benefit-card">
+
+💪
+
+<h3>
+
+Better Performance
+
+</h3>
+
+<p>
+
+Hydration improves physical
+strength and endurance.
+
+</p>
+
+</div>
+
+<div class="benefit-card">
+
+🧠
+
+<h3>
+
+Sharper Focus
+
+</h3>
+
+<p>
+
+Water helps maintain mental
+clarity and concentration.
+
+</p>
+
+</div>
+
+<div class="benefit-card">
+
+❤️
+
+<h3>
+
+Healthy Body
+
+</h3>
+
+<p>
+
+Supports circulation and
+overall organ function.
+
+</p>
+
+</div>
+
+<div class="benefit-card">
+
+✨
+
+<h3>
+
+Healthy Skin
+
+</h3>
+
+<p>
+
+Proper hydration helps your
+skin appear fresh and vibrant.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+SMART HYDRATION TIPS
+================================== -->
+
+<section class="tips-section">
+
+<div class="section-header">
+
+<span>
+
+Daily Tips
+
+</span>
+
+<h2>
+
+Smart Hydration Habits
+
+</h2>
+
+</div>
+
+<div class="tips-grid">
+
+<div class="tip-card">
+
+🌅
+
+<h3>
+
+Start Early
+
+</h3>
+
+<p>
+
+Drink water within the first
+30 minutes after waking up.
+
+</p>
+
+</div>
+
+<div class="tip-card">
+
+🍽️
+
+<h3>
+
+Before Meals
+
+</h3>
+
+<p>
+
+Have a glass before meals
+to support digestion.
+
+</p>
+
+</div>
+
+<div class="tip-card">
+
+🏃
+
+<h3>
+
+Exercise Smart
+
+</h3>
+
+<p>
+
+Increase intake before and
+after workouts.
+
+</p>
+
+</div>
+
+<div class="tip-card">
+
+🌙
+
+<h3>
+
+Stay Balanced
+
+</h3>
+
+<p>
+
+Spread water intake evenly
+throughout the day.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+AI HYDRATION COACH
+================================== -->
+
+<section class="coach-section">
+
+<div class="coach-card">
+
+<div class="coach-avatar">
+
+🤖
+
+</div>
+
+<div class="coach-content">
+
+<span>
+
+AI Hydration Coach
+
+</span>
+
+<h2>
+
+Today's Recommendation
+
+</h2>
+
+<p>
+
+Based on your activity level,
+you should drink an additional
+750ml before 8 PM to stay on
+track with your goal.
+
+</p>
+
+<button class="primary-btn">
+
+View Full Insights
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+PREMIUM INFO CARDS
+================================== -->
+
+<section class="premium-section">
+
+<div class="premium-grid">
+
+<div class="premium-card">
+
+📊
+
+<h3>
+
+Advanced Analytics
+
+</h3>
+
+<p>
+
+Track weekly and monthly
+hydration trends.
+
+</p>
+
+</div>
+
+<div class="premium-card">
+
+🔔
+
+<h3>
+
+Smart Reminders
+
+</h3>
+
+<p>
+
+Personalized notifications
+based on your routine.
+
+</p>
+
+</div>
+
+<div class="premium-card">
+
+🏆
+
+<h3>
+
+Achievement System
+
+</h3>
+
+<p>
+
+Unlock badges and build
+healthy hydration habits.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==================================
+NEWSLETTER
+================================== -->
+
+<section class="newsletter-section">
+
+<div class="newsletter-card">
+
+<h2>
+
+Stay Hydrated, Stay Updated
+
+</h2>
+
+<p>
+
+Get hydration tips, wellness
+guides and productivity advice
+delivered directly to your inbox.
+
+</p>
+
+<form class="newsletter-form">
+
+<input
+type="email"
+placeholder="Enter your email">
+
+<button
+type="submit">
+
+Subscribe
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ==================================
+FOOTER
+================================== -->
+
 <footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-col brand">
-      <h2 class="footer-logo">⬡ UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      <div class="socials">
-        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-      </div>
-    </div>
+<div class="footer-container">
 
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
-      </ul>
-    </div>
+<div class="footer-brand">
 
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">Documentation</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">GitHub Repo</a></li>
-        <li><a href="#">Community</a></li>
-      </ul>
-    </div>
+<div class="footer-logo">
 
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="#">License</a></li>
-      </ul>
-    </div>
+💧 AquaTrack
 
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
-      </div>
-    </div>
+</div>
 
-  </div>
+<p>
 
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
+Helping people build healthier
+hydration habits every day.
+
+</p>
+
+<div class="social-links">
+
+<a href="#">
+
+<i class="fab fa-github"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-discord"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-linkedin"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-x-twitter"></i>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+
+Features
+
+</h3>
+
+<ul>
+
+<li><a href="#">Hydration Tracking</a></li>
+<li><a href="#">Smart Reminders</a></li>
+<li><a href="#">Analytics</a></li>
+<li><a href="#">Achievements</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+
+Resources
+
+</h3>
+
+<ul>
+
+<li><a href="#">Documentation</a></li>
+<li><a href="#">Health Guides</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Support</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+
+Company
+
+</h3>
+
+<ul>
+
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Privacy</a></li>
+<li><a href="#">Terms</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 AquaTrack.
+Drink Water. Stay Healthy.
+
+</p>
+
+</div>
+
 </footer>
-  <!-- JS -->
-  <script src="water-reminder.js"></script>
 
-    <script src="dist/shared.js"></script>
+<!-- ==================================
+SCROLL TO TOP
+================================== -->
+
+<button
+class="scroll-top"
+id="scrollTop">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- ==================================
+JAVASCRIPT
+================================== -->
+
+<script>
+
+/* Scroll Top */
+
+const scrollBtn =
+document.getElementById(
+"scrollTop"
+);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+if(window.scrollY > 400){
+
+scrollBtn.classList.add(
+"show"
+);
+
+}else{
+
+scrollBtn.classList.remove(
+"show"
+);
+
+}
+
+});
+
+scrollBtn.addEventListener(
+"click",
+()=>{
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+});
+
+/* Water Progress Demo */
+
+let water = 1250;
+
+const amount =
+document.getElementById(
+"waterAmount"
+);
+
+document
+.querySelectorAll(
+".water-card button"
+)
+.forEach(btn=>{
+
+btn.addEventListener(
+"click",
+()=>{
+
+water += 250;
+
+if(water > 2500){
+
+water = 2500;
+
+}
+
+amount.innerText =
+water + "ml";
+
+});
+
+});
+
+</script>
+
 </body>
 </html>

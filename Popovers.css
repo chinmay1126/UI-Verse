@@ -943,9 +943,50 @@ MUSIC PLAYER
 
 }
 
+.footer {
+  background: var(--bg2);
+  padding: 20px 0;
+  margin-left: 250px; /* offset for sidebar */
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+  gap: 40px;
+  padding: 56px 48px 40px;
+  max-width: 100%;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.footer-col h3 {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 /* =====================================================
 ROOT
-===================================================== */
 
 :root {
   --bg: #070b14;
@@ -972,7 +1013,6 @@ ROOT
 
 /* =====================================================
 BASE
-===================================================== */
 
 * {
   margin: 0;
@@ -1007,7 +1047,6 @@ body {
 
 /* =====================================================
 SCROLLBAR
-===================================================== */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -1029,7 +1068,6 @@ SCROLLBAR
 
 /* =====================================================
 SIDEBAR
-===================================================== */
 
 .sidebar {
   width: 280px;
@@ -1097,6 +1135,110 @@ SIDEBAR
   gap: 10px;
 }
 
+.footer-col ul li a {
+  position: relative;
+  color: #a1a1aa;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent);  
+  transform: translateX(6px);
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+/* Social icons fix */
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.socials a {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.socials a:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.newsletter-form input:focus {
+  border-color: var(--accent);
+}
+
+.newsletter-form button {
+  padding: 10px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.newsletter-form button:hover {
+  background: #d45c28;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1e1e1e;
+  padding: 20px 48px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
 .sidebar-nav a {
   text-decoration: none;
   color: var(--text);
@@ -1202,7 +1344,6 @@ SIDEBAR
 
 /* =====================================================
 MOBILE
-===================================================== */
 
 .mobile-toggle {
   position: fixed;
@@ -1253,7 +1394,6 @@ MOBILE
 
 /* =====================================================
 MAIN
-===================================================== */
 
 .main-home {
   margin-left: 280px;
@@ -1269,7 +1409,6 @@ MAIN
 
 /* =====================================================
 NAVBAR
-===================================================== */
 
 .navbar {
   display: flex;
@@ -1385,7 +1524,6 @@ NAVBAR
 
 /* =====================================================
 HERO
-===================================================== */
 
 .hero-section {
   position: relative;
@@ -1490,7 +1628,6 @@ HERO
 
 /* =====================================================
 GRID
-===================================================== */
 
 .popover-grid {
   display: grid;
@@ -1506,7 +1643,6 @@ GRID
 
 /* =====================================================
 CARD
-===================================================== */
 
 .popover-card {
   position: relative;
@@ -1648,7 +1784,6 @@ CARD
 
 /* =====================================================
 POPOVER
-===================================================== */
 
 .popover-demo {
   position: relative;
@@ -1728,7 +1863,6 @@ POPOVER
 
 /* =====================================================
 PROFILE BOX
-===================================================== */
 
 .popover-box img {
   width: 90px;
@@ -1820,7 +1954,6 @@ PROFILE BOX
 
 /* =====================================================
 ACTIONS
-===================================================== */
 
 .action-box {
   display: flex;
@@ -1862,7 +1995,6 @@ ACTIONS
 
 /* =====================================================
 NOTIFICATIONS
-===================================================== */
 
 .notification-header {
   display: flex;
@@ -1915,7 +2047,6 @@ NOTIFICATIONS
 
 /* =====================================================
 ANALYTICS
-===================================================== */
 
 .analytics-top {
   display: flex;
@@ -1989,7 +2120,6 @@ ANALYTICS
 
 /* =====================================================
 BACKGROUND ORBS
-===================================================== */
 
 .bg-orb {
   position: absolute;
@@ -2025,7 +2155,6 @@ BACKGROUND ORBS
 
 /* =====================================================
 ANIMATION
-===================================================== */
 
 @keyframes bars {
   from {
@@ -2039,7 +2168,6 @@ ANIMATION
 
 /* =====================================================
 RESPONSIVE
-===================================================== */
 
 @media (max-width: 1100px) {
 

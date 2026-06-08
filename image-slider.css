@@ -824,7 +824,6 @@ body{
 
 /* ==========================================
    HEXAGON GRID
-========================================== */
 
 .hex-grid{
   display:flex;
@@ -861,7 +860,6 @@ body{
 
 /* ==========================================
    POLAROID GALLERY
-========================================== */
 
 .polaroid-grid{
   display:grid;
@@ -901,7 +899,6 @@ body{
 
 /* ==========================================
    CIRCLE GRID
-========================================== */
 
 .circle-grid{
   display:grid;
@@ -932,7 +929,6 @@ body{
 
 /* ==========================================
    MAGAZINE GRID
-========================================== */
 
 .magazine-grid{
   display:grid;
@@ -981,7 +977,6 @@ body{
 
 /* ==========================================
    NEON GRID
-========================================== */
 
 .neon-grid{
   display:grid;
@@ -1015,7 +1010,6 @@ body{
 
 /* ==========================================
    COMPARISON GRID
-========================================== */
 
 .comparison-grid{
   display:grid;
@@ -1049,7 +1043,6 @@ body{
 
 /* ==========================================
    INSTAGRAM GRID
-========================================== */
 
 .instagram-grid{
   display:grid;
@@ -1079,7 +1072,6 @@ body{
 
 /* ==========================================
    COLLAGE WALL
-========================================== */
 
 .collage-wall{
   columns:4 250px;
@@ -1101,7 +1093,6 @@ body{
 
 /* ==========================================
    GLOBAL IMAGE EFFECTS
-========================================== */
 
 .hex-card img,
 .polaroid-card img,
@@ -1116,4 +1107,17 @@ body{
 
 .slider-section{
   margin-bottom:80px;
+.masonry-item{
+  animation: fadeUp .7s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }

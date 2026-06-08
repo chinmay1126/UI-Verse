@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-L8RHTIzZIqMymYThATOXNob1cHgJhhdSLJVchkKIIDM=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-L8RHTIzZIqMymYThATOXNob1cHgJhhdSLJVchkKIIDM=; style-src 'self' https: 'unsafe-hashes' sha256-H+icijhcvFSUahJWsNfsJFa0jnwIWs5lYNoxhF7TuEo= sha256-IZp4ivVHEMxv51oMpCN2XlFlLsYGDCWXfXij+vasQbQ= sha256-aVshHSq+zuY3dreC46O0861PRYkvzi4ebNHTGQzI2jk=; style-src-attr 'unsafe-hashes' sha256-H+icijhcvFSUahJWsNfsJFa0jnwIWs5lYNoxhF7TuEo= sha256-IZp4ivVHEMxv51oMpCN2XlFlLsYGDCWXfXij+vasQbQ= sha256-aVshHSq+zuY3dreC46O0861PRYkvzi4ebNHTGQzI2jk=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Empty States — UIverse</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,6 +103,76 @@
   </button>
 </div>
 
+  <nav class="sidebar-nav">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="auth.html">
+          <i class="fa-solid fa-user-shield"></i>
+          <span>Authentication</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="empty-state.html">
+          <i class="fa-solid fa-folder-open"></i>
+          <span>Empty States</span>
+        </a>
+      </li>
+      <li>
+        <a href="maintenance.html">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <span>Maintenance</span>
+        </a>
+      </li>
+      <li>
+        <a href="button.html">
+          <i class="fa-solid fa-hand-pointer"></i>
+          <span>Buttons</span>
+        </a>
+      </li>
+      <li>
+        <a href="dropdown-components.html">
+          <i class="fa-solid fa-caret-down"></i>
+          <span>Dropdowns</span>
+        </a>
+      </li>
+      <li>
+        <a href="navbar.html">
+          <i class="fa-solid fa-bars"></i>
+          <span>Navbar</span>
+        </a>
+      </li>
+      <li>
+        <a href="cards.html">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span>Cards</span>
+        </a>
+      </li>
+      <li>
+        <a href="inputs.html">
+          <i class="fa-solid fa-keyboard"></i>
+          <span>Inputs</span>
+        </a>
+      </li>
+      <li>
+        <a href="forms.html">
+          <i class="fa-brands fa-wpforms"></i>
+          <span>Forms</span>
+        </a>
+      </li>
+      <li>
+        <a href="badges.html">
+          <i class="fa-solid fa-award"></i>
+          <span>Badges</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
   <div class="sidebar-footer">
     <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -446,6 +517,60 @@ CREATIVE EMPTY STATE COMPONENTS
 </section>
 </main>
 
+<!-- Floating Toast Indicator -->
+<div id="copyToast" style="position: fixed; bottom: 24px; right: 24px; background: #1e293b; color: white; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 10px 30px rgba(0,0,0,0.25); display: flex; align-items: center; gap: 8px; z-index: 999; opacity: 0; transform: translateY(10px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none;"><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> <span id="toastMsg">Action Successful!</span></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
+<!-- ================= SCRIPTS ================= -->
 <footer class="footer">
   <div class="footer-shell">
     <div class="footer-col brand">
