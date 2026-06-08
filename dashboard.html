@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
   <meta
@@ -10,20 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   />
 
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self' https: data:;
-      img-src 'self' https: data:;
-      font-src 'self' https: data:;
-      style-src 'self' https: 'unsafe-inline';
-      script-src 'self' https: 'unsafe-inline';
-      connect-src 'self' https:;
-      object-src 'none';
-      base-uri 'self';
-      frame-ancestors 'none';
-    "
-  />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-1PsQ87832ScZ5IllSu3Z156cjJzEOmjqXTLFARIynd0= sha256-2C4fZImPUT0GIbSZhUAgsyy/GoHbTGMy6kOPIXCV7cE= sha256-3uj8peSDzbud8viz8y5hIb2c1ndu1bG0r7LgJk812Xc= sha256-5b/byWBmC8UGY0gpu8F8WhhXtnRIHjTouqKX+GsPEFA= sha256-B9xyrCaJrhv7BQ1vALWJPCGz+zy9cLipoxucB1VafkM= sha256-D20D5TXBPJXq2cSbyDNpr2R/JusbSzbRTv5iNJRqkhg= sha256-Gj6I8KpYEWnajNz08WDP49+uJrOuDuwjRKU4AOwtaFQ= sha256-Ika+DBbgIM2riRwqXhFUYQkzoFXTkRCbGJ3jPj3n9ok= sha256-J3whCTQFsbobwfZ1hPA2Tif0qlau4OzJeHkk4Co19nY= sha256-MOje1tNGhSSXw7oY5udK4udcMXUGtE+Xwz5jIlMbl24= sha256-Nkkv5BZ7DPbcVOci5kStE1QDaBr/9eCfSmHgdSzxwQY= sha256-PwYmpFaZ/EhiEAn6Hvh+3A8ZB2ioUNudpFqsnNAABI0= sha256-Sny/m1BkxObdxMp9ivgvacBHn1JZGmX6EbUqkywkvmM= sha256-TcolQgIedua3gvGbP1mQsIppZvMddi6vCOilQQ/KtX4= sha256-W8CoxQKfczdnrBRjGA93ernSKSeAw5nvOMs54iKHQVw= sha256-l0IKOntluEeKMJdclRZRSRYmuFseIDN3jEn03/S72TU= sha256-mCGycHM+wIAfUTxh0aPRRtxurCHE4q9Tc/czYXrgbQs= sha256-x5nzNtP1S46Mz8c2cNJYjTnGq8Hp8CoegwAum1AgG6Y=; script-src-attr 'unsafe-hashes' sha256-1PsQ87832ScZ5IllSu3Z156cjJzEOmjqXTLFARIynd0= sha256-2C4fZImPUT0GIbSZhUAgsyy/GoHbTGMy6kOPIXCV7cE= sha256-3uj8peSDzbud8viz8y5hIb2c1ndu1bG0r7LgJk812Xc= sha256-5b/byWBmC8UGY0gpu8F8WhhXtnRIHjTouqKX+GsPEFA= sha256-B9xyrCaJrhv7BQ1vALWJPCGz+zy9cLipoxucB1VafkM= sha256-D20D5TXBPJXq2cSbyDNpr2R/JusbSzbRTv5iNJRqkhg= sha256-Gj6I8KpYEWnajNz08WDP49+uJrOuDuwjRKU4AOwtaFQ= sha256-Ika+DBbgIM2riRwqXhFUYQkzoFXTkRCbGJ3jPj3n9ok= sha256-J3whCTQFsbobwfZ1hPA2Tif0qlau4OzJeHkk4Co19nY= sha256-MOje1tNGhSSXw7oY5udK4udcMXUGtE+Xwz5jIlMbl24= sha256-Nkkv5BZ7DPbcVOci5kStE1QDaBr/9eCfSmHgdSzxwQY= sha256-PwYmpFaZ/EhiEAn6Hvh+3A8ZB2ioUNudpFqsnNAABI0= sha256-Sny/m1BkxObdxMp9ivgvacBHn1JZGmX6EbUqkywkvmM= sha256-TcolQgIedua3gvGbP1mQsIppZvMddi6vCOilQQ/KtX4= sha256-W8CoxQKfczdnrBRjGA93ernSKSeAw5nvOMs54iKHQVw= sha256-l0IKOntluEeKMJdclRZRSRYmuFseIDN3jEn03/S72TU= sha256-mCGycHM+wIAfUTxh0aPRRtxurCHE4q9Tc/czYXrgbQs= sha256-x5nzNtP1S46Mz8c2cNJYjTnGq8Hp8CoegwAum1AgG6Y=; style-src 'self' https: 'unsafe-hashes' sha256-/JwbIRJjq+2PNcjBX8a0qJr3dkT6ZwbPsTjSSaZJcvs= sha256-1D8eAr8sKsvYFv9XeWdwB5YQm4uo10dXdlJjh4ROJEs= sha256-1pmwUKnoHUJSi0UKDcwrqZ6aJ7nAD92vw50zMCh5Yz0= sha256-2gcpFB35SLtmFltnzzrpTL5k8mzWeaK1BZmYvhqbvXo= sha256-3IbF2t5bpj3hzbY+whoh1xLlMHEYmPumUvXOZrfLYYs= sha256-3nQXB9BVtstV9Mu4nu0HJ1R97K06lV1NTzzS1YbFtfQ= sha256-5xIDIkTIcKuaS00qhdKbjnluTexFCeWmnGQQJSzyg88= sha256-6gdvEG2cC/rSjegTc+5Xlm7gcH/L0B5UtBxrTINqvG4= sha256-AobnpX3YvXMxGY+ZsvP4iGpCYmq+pwoo4tY4OinkYQ8= sha256-FyOLoMJoNNUDJDlTcb4TLOdsX6y32nWAXvm4IL8hfOE= sha256-JjnlQysNLfNyWloph4xmLRd8oYN+mrX4r95KSZgi2vk= sha256-NEOM+1K466yNc+/3vO1LJTSWrnIQNfbS5JVEe9gn7so= sha256-OsvzPMI7mgI9oJADYruHycbpW5kTXfQ0ulZi7q5/Up0= sha256-U3MazMEJTiMsg4LapgdcItRUgVsNA5IPIzNPZlvg8TA= sha256-WIvglySLOTyDRZFgACOcLgujFjXUM0pyAXTLrJ2UZ/0= sha256-YTEza4CA2qPCNGLfB6mKa5FjY8kjkO/K7nQxeJxVd9E= sha256-egilW3LlnYUjLgUwElGTyzk59MH+dsdsEjehJ5Os3fc= sha256-fdbN/EEtEJ03laHD3WsMwnbFBwOcdNmIhOI3yYuyIeo= sha256-hkzvf0uVMzzV6PVccbrLPLwebxpswl/QLqJfnXLmt9E= sha256-iSmMul3Q8rM+0XUBhsRQj1ZNQNkySqLQccKauwcNuas= sha256-naGWgGjt9Ot8ZuWuxOqoQbdvgMEQn/9TNwvQb4GfzeI= sha256-pic2ZiUmMdHq8qrnYKmOTzRwkUDIpBSXyjXpZ1+hkxE= sha256-wAertPLzn2bik3GPp71ur4PnSfNrNgDFdfsXEz+wL/8= sha256-xHiHRgT5QHoDUF57kyfGx1v+4gm4Cw/8RhcnkN3R+qc= sha256-yrfMfkpwKWDP1PBW5J6HLZ9+D0cVVVycOPxJE6tagSQ=; style-src-attr 'unsafe-hashes' sha256-/JwbIRJjq+2PNcjBX8a0qJr3dkT6ZwbPsTjSSaZJcvs= sha256-1D8eAr8sKsvYFv9XeWdwB5YQm4uo10dXdlJjh4ROJEs= sha256-1pmwUKnoHUJSi0UKDcwrqZ6aJ7nAD92vw50zMCh5Yz0= sha256-2gcpFB35SLtmFltnzzrpTL5k8mzWeaK1BZmYvhqbvXo= sha256-3IbF2t5bpj3hzbY+whoh1xLlMHEYmPumUvXOZrfLYYs= sha256-3nQXB9BVtstV9Mu4nu0HJ1R97K06lV1NTzzS1YbFtfQ= sha256-5xIDIkTIcKuaS00qhdKbjnluTexFCeWmnGQQJSzyg88= sha256-6gdvEG2cC/rSjegTc+5Xlm7gcH/L0B5UtBxrTINqvG4= sha256-AobnpX3YvXMxGY+ZsvP4iGpCYmq+pwoo4tY4OinkYQ8= sha256-FyOLoMJoNNUDJDlTcb4TLOdsX6y32nWAXvm4IL8hfOE= sha256-JjnlQysNLfNyWloph4xmLRd8oYN+mrX4r95KSZgi2vk= sha256-NEOM+1K466yNc+/3vO1LJTSWrnIQNfbS5JVEe9gn7so= sha256-OsvzPMI7mgI9oJADYruHycbpW5kTXfQ0ulZi7q5/Up0= sha256-U3MazMEJTiMsg4LapgdcItRUgVsNA5IPIzNPZlvg8TA= sha256-WIvglySLOTyDRZFgACOcLgujFjXUM0pyAXTLrJ2UZ/0= sha256-YTEza4CA2qPCNGLfB6mKa5FjY8kjkO/K7nQxeJxVd9E= sha256-egilW3LlnYUjLgUwElGTyzk59MH+dsdsEjehJ5Os3fc= sha256-fdbN/EEtEJ03laHD3WsMwnbFBwOcdNmIhOI3yYuyIeo= sha256-hkzvf0uVMzzV6PVccbrLPLwebxpswl/QLqJfnXLmt9E= sha256-iSmMul3Q8rM+0XUBhsRQj1ZNQNkySqLQccKauwcNuas= sha256-naGWgGjt9Ot8ZuWuxOqoQbdvgMEQn/9TNwvQb4GfzeI= sha256-pic2ZiUmMdHq8qrnYKmOTzRwkUDIpBSXyjXpZ1+hkxE= sha256-wAertPLzn2bik3GPp71ur4PnSfNrNgDFdfsXEz+wL/8= sha256-xHiHRgT5QHoDUF57kyfGx1v+4gm4Cw/8RhcnkN3R+qc= sha256-yrfMfkpwKWDP1PBW5J6HLZ9+D0cVVVycOPxJE6tagSQ=">
 
   <title>Premium Dashboard — UIverse</title>
 
@@ -59,10 +46,11 @@
     href="dashboard.css"
   >
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =========================================================
 LOADER
@@ -91,7 +79,7 @@ MOBILE TOGGLE
 <button
   class="mobile-toggle"
   id="mobileToggle"
->
+ data-a11y-remediation="button-label-needed">
 
   <i class="fa-solid fa-bars"></i>
 
@@ -142,9 +130,11 @@ SIDEBAR
       <input
         type="text"
         placeholder="Search..."
-      >
+       data-a11y-remediation="label-needed">
 
     </div>
+
+    
 
     <!-- NAVIGATION -->
 
@@ -461,6 +451,42 @@ SIDEBAR
 
   </div>
 
+  <div class="dashboard-card goal-card">
+
+  <h3>Monthly Goal</h3>
+
+  <div class="goal-circle">
+    84%
+  </div>
+
+  <p>$84,000 / $100,000</p>
+
+</div>
+
+<section class="premium-stats">
+
+  <div class="glass-stat">
+    <h3>98%</h3>
+    <span>Uptime</span>
+  </div>
+
+  <div class="glass-stat">
+    <h3>4.9</h3>
+    <span>Rating</span>
+  </div>
+
+  <div class="glass-stat">
+    <h3>128K</h3>
+    <span>Downloads</span>
+  </div>
+
+  <div class="glass-stat">
+    <h3>320+</h3>
+    <span>Components</span>
+  </div>
+
+</section>
+
   <!-- BOTTOM -->
 
   <div>
@@ -492,6 +518,26 @@ SIDEBAR
       </p>
 
     </div>
+
+    <div class="analytics-chart">
+  <svg viewBox="0 0 500 180">
+    <path
+      d="M0 140 C50 80 100 120 150 70 C200 20 250 110 300 60 C350 30 400 90 500 20"
+      fill="none"
+      stroke="url(#gradient)"
+      stroke-width="6"
+      stroke-linecap="round"
+    />
+
+    <defs>
+      <linearGradient id="gradient">
+        <stop offset="0%" stop-color="#7c3aed"/>
+        <stop offset="100%" stop-color="#f97316"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
 
     <!-- SOCIALS -->
 
@@ -1304,10 +1350,10 @@ MAIN
 
       <div class="team-members">
 
-        <img src="https://i.pravatar.cc/100?img=12" alt="">
-        <img src="https://i.pravatar.cc/100?img=22" alt="">
-        <img src="https://i.pravatar.cc/100?img=32" alt="">
-        <img src="https://i.pravatar.cc/100?img=42" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=12" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=22" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=32" alt="">
+        <img loading="lazy" src="https://i.pravatar.cc/100?img=42" alt="">
 
       </div>
 
@@ -1317,10 +1363,10 @@ MAIN
     <h2>Team Members</h2>
   </div>
   <div class="team-members">
-    <img src="https://i.pravatar.cc/100?img=12" alt="">
-    <img src="https://i.pravatar.cc/100?img=22" alt="">
-    <img src="https://i.pravatar.cc/100?img=32" alt="">
-    <img src="https://i.pravatar.cc/100?img=42" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=12" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=22" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=32" alt="">
+    <img loading="lazy" src="https://i.pravatar.cc/100?img=42" alt="">
   </div>
 </div></textarea>
 
@@ -1438,7 +1484,7 @@ MAIN
       </div>
       <div class="performers-list">
         <div class="performer-item">
-          <img src="https://i.pravatar.cc/100?img=1" alt="Avatar">
+          <img loading="lazy" src="https://i.pravatar.cc/100?img=1" alt="Avatar">
           <div class="performer-details">
             <strong>John Doe</strong>
             <span>1,430 Sales</span>
@@ -1446,7 +1492,7 @@ MAIN
           <div class="rank gold">#1</div>
         </div>
         <div class="performer-item">
-          <img src="https://i.pravatar.cc/100?img=5" alt="Avatar">
+          <img loading="lazy" src="https://i.pravatar.cc/100?img=5" alt="Avatar">
           <div class="performer-details">
             <strong>Jane Smith</strong>
             <span>1,200 Sales</span>
@@ -1454,7 +1500,7 @@ MAIN
           <div class="rank silver">#2</div>
         </div>
         <div class="performer-item">
-          <img src="https://i.pravatar.cc/100?img=9" alt="Avatar">
+          <img loading="lazy" src="https://i.pravatar.cc/100?img=9" alt="Avatar">
           <div class="performer-details">
             <strong>Mike Johnson</strong>
             <span>980 Sales</span>
@@ -1469,7 +1515,7 @@ MAIN
   </div>
   <div class="performers-list">
     <div class="performer-item">
-      <img src="https://i.pravatar.cc/100?img=1" alt="Avatar">
+      <img loading="lazy" src="https://i.pravatar.cc/100?img=1" alt="Avatar">
       <div class="performer-details">
         <strong>John Doe</strong>
         <span>1,430 Sales</span>
@@ -1477,7 +1523,7 @@ MAIN
       <div class="rank gold">#1</div>
     </div>
     <div class="performer-item">
-      <img src="https://i.pravatar.cc/100?img=5" alt="Avatar">
+      <img loading="lazy" src="https://i.pravatar.cc/100?img=5" alt="Avatar">
       <div class="performer-details">
         <strong>Jane Smith</strong>
         <span>1,200 Sales</span>
@@ -1958,7 +2004,7 @@ MAIN
               <span class="note-dot"></span>
               <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday 🚀</textarea>
+            <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday <i class="fa-solid fa-rocket"></i></textarea>
           </div>
 
           <div class="sticky-note note-blue">
@@ -1999,7 +2045,7 @@ MAIN
         <span class="note-dot"></span>
         <button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday 🚀</textarea>
+      <textarea class="note-area" placeholder="Write something...">Redesign landing page hero section by Friday <i class="fa-solid fa-rocket"></i></textarea>
     </div>
     <div class="sticky-note note-blue">
       <div class="note-header">
@@ -2021,7 +2067,7 @@ function addNote() {
   grid.appendChild(note);
 }
 function deleteNote(btn) { btn.closest('.sticky-note').remove(); }
-<\/script></textarea>
+</script></textarea>
 
       </div>
 
@@ -2040,65 +2086,60 @@ function deleteNote(btn) { btn.closest('.sticky-note').remove(); }
 <div id="ncToast">✓ Code copied to clipboard!</div>
 
 <!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
-
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
+ <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
 
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
   </div>
 </footer>
 <!-- =========================================================
@@ -2194,5 +2235,8 @@ SCRIPT
 
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
+
+<!-- improved by script -->

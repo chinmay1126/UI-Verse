@@ -60,3 +60,216 @@ body{
 .active{
   color:#2563eb;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content */
+.content {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 90%;
+  max-width: 420px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 20px;
+  padding: 10px 5px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Nav Items */
+.nav-item {
+  text-decoration: none;
+  color: #cbd5e1;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  border-radius: 14px;
+
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Icon */
+.icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.nav-item p {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Hover effect */
+.nav-item:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.nav-item:hover .icon {
+  transform: scale(1.2);
+}
+
+/* Active state */
+.nav-item.active {
+  color: white;
+  background: rgba(59, 130, 246, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.4);
+}
+
+/* Active indicator dot */
+.nav-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #60a5fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #111827, #030712);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.content {
+  position: absolute;
+  top: 50px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* NAV BAR */
+.bottom-nav {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 92%;
+  max-width: 420px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+/* INDICATOR (SLIDING PILL) */
+.indicator {
+  position: absolute;
+  width: 70px;
+  height: 60px;
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  box-shadow: 0 10px 25px rgba(59,130,246,0.4);
+
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+
+  transition: all 0.35s ease;
+  z-index: 0;
+}
+
+/* NAV ITEM */
+.nav-item {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: #94a3b8;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 1;
+
+  padding: 10px 0;
+  transition: 0.3s ease;
+}
+
+.nav-item span {
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.nav-item p {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* ACTIVE STATE */
+.nav-item.active {
+  color: white;
+}
+
+.nav-item.active span {
+  transform: translateY(-4px) scale(1.2);
+}
+
+/* HOVER */
+.nav-item:hover span {
+  transform: translateY(-3px) scale(1.15);
+  color: white;
+}

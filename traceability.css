@@ -22,6 +22,7 @@ body {
     radial-gradient(circle at top left, rgba(34, 107, 71, 0.16), transparent 32%),
     radial-gradient(circle at top right, rgba(184, 122, 24, 0.14), transparent 28%),
     linear-gradient(135deg, var(--bg), var(--bg-2));
+
 }
 
 .trace-shell,
@@ -29,6 +30,8 @@ body {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
   padding: 28px 0 40px;
+  margin-left: 300px;
+  margin-top: 50px;
 }
 
 .trace-hero,

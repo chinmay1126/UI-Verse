@@ -799,6 +799,50 @@ body {
   text-align: center;
 }
 
+/* =========================================================
+   ADDITIONAL PROGRESS VARIANTS (5)
+========================================================= */
+
+/* 11. Download Manager */
+.download-manager{ width:100%; max-width:360px; display:flex; flex-direction:column; gap:12px; }
+.d-item{ display:flex; gap:12px; align-items:center; padding:8px; background:rgba(255,255,255,0.02); border-radius:10px; border:1px solid rgba(255,255,255,0.03); }
+.d-thumb{ width:44px; height:44px; border-radius:8px; background:rgba(255,255,255,0.03); display:flex; align-items:center; justify-content:center; }
+.d-meta{ flex:1; display:flex; flex-direction:column; gap:6px; }
+.d-title{ color:#fff; font-weight:700; font-size:13px; }
+.d-sub{ color:var(--text-muted); font-size:12px; }
+.d-progress{ height:8px; background:rgba(255,255,255,0.03); border-radius:8px; overflow:hidden; }
+.d-fill{ height:100%; background:linear-gradient(90deg,var(--color-purple),var(--color-orange)); width:0%; transition:width 0.6s ease; }
+.d-actions button{ border:none; background:transparent; color:var(--text-muted); cursor:pointer; }
+
+/* 12. Indeterminate Skeleton Strip */
+.indeterminate-strip{ width:100%; max-width:320px; height:12px; background:rgba(255,255,255,0.03); border-radius:8px; overflow:hidden; position:relative; }
+.indeterminate-strip.active::before{ content:''; position:absolute; left:-40%; top:0; height:100%; width:40%; background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.12), rgba(255,255,255,0.04)); animation: indeterminate 1.4s linear infinite; }
+@keyframes indeterminate{ 0%{ left:-40%; } 100%{ left:100%; } }
+
+/* 13. Donut Meter */
+.donut-meter{ width:140px; height:140px; position:relative; display:flex; align-items:center; justify-content:center; }
+.donut-center{ position:absolute; text-align:center; }
+.donut-center .num{ font-family:var(--font-heading); font-size:20px; font-weight:800; }
+.donut-svg .donut-track{ fill:none; stroke:rgba(255,255,255,0.04); stroke-width:10; }
+.donut-svg .donut-fill{ fill:none; stroke: url(#donutGradient); stroke-width:10; stroke-linecap:round; transition: stroke-dashoffset 0.6s ease; }
+
+/* 14. Transfer Queue */
+.transfer-queue{ width:100%; max-width:360px; display:flex; flex-direction:column; gap:10px; }
+.t-item{ display:flex; gap:12px; align-items:center; padding:10px; background:rgba(255,255,255,0.02); border-radius:10px; border:1px solid rgba(255,255,255,0.03); }
+.t-meta{ flex:1; }
+.t-progress{ height:6px; background:rgba(255,255,255,0.03); border-radius:6px; overflow:hidden; }
+.t-fill{ height:100%; background:linear-gradient(90deg,#7b61ff,#10b981); width:0%; transition:width 0.5s ease; }
+.t-actions button{ border:none; background:transparent; color:var(--text-muted); cursor:pointer; }
+
+/* 15. Marathon Linear (marquee gradient) */
+.marathon-track{ width:100%; max-width:420px; height:12px; background:rgba(255,255,255,0.03); border-radius:999px; overflow:hidden; position:relative; }
+.marathon-fill{ position:absolute; left:0; top:0; bottom:0; width:200%; background:linear-gradient(90deg,#7b61ff 0%, #10b981 25%, #ff7a3d 50%, #f59e0b 75%, #7b61ff 100%); transform:translateX(0%); transition:transform 8s linear; }
+.marathon-track.running .marathon-fill{ transform:translateX(-50%); }
+
+@media(max-width:720px){
+  .download-manager, .transfer-queue{ max-width:100%; }
+}
+
 .tracker-input-box input::-webkit-inner-spin-button,
 .tracker-input-box input::-webkit-outer-spin-button {
   -webkit-appearance: none;
