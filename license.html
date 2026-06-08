@@ -539,6 +539,7 @@
     </div>
 
   </section>
+  
 
   <section class="license-faq">
 
@@ -744,6 +745,48 @@
       </ul>
     </div>
 
+    <section class="license-summary">
+
+    <h2>License at a Glance</h2>
+
+    <div class="summary-grid">
+
+        <div>
+
+            <strong>Commercial</strong>
+
+            <p>Allowed</p>
+
+        </div>
+
+        <div>
+
+            <strong>Modification</strong>
+
+            <p>Allowed</p>
+
+        </div>
+
+        <div>
+
+            <strong>Redistribution</strong>
+
+            <p>Restricted</p>
+
+        </div>
+
+        <div>
+
+            <strong>Attribution</strong>
+
+            <p>Optional</p>
+
+        </div>
+
+    </div>
+
+</section>
+
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
 
@@ -785,6 +828,25 @@ toggle.addEventListener('click', () => {
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
+const sidebar = document.getElementById("sidebar");
+const button = document.getElementById("menuToggle");
+
+function toggleSidebar() {
+
+    sidebar.classList.toggle("active");
+
+    const expanded =
+        sidebar.classList.contains("active");
+
+    button.setAttribute(
+        "aria-expanded",
+        expanded
+    );
+
+    document
+      .getElementById("sidebarBackdrop")
+      .classList.toggle("active");
+}
 
 function toggleSidebar() {
   document

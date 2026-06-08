@@ -1749,6 +1749,101 @@
 
   </div><!-- /cards-grid -->
 
+  <script>
+  (function(){
+    // Centralized card metadata
+    const CARDS = [
+      {
+        id: 'c1', name: 'Profile Card', tag: 'Popular', tagClass: 'tag-popular', cat: 'profile',
+        preview: { type: 'profile', initials: 'LN', name: 'Likhitha Nagraj', role: 'Embedded Systems Engineer', btnText: 'Follow' },
+        desc: 'A centered profile card with avatar, name, role, and a follow button. Lifts on hover.',
+        code: `<div class="profile-card">\n  <div class="profile-avatar">LN</div>\n  <h3 class="profile-name">Likhitha Nagraj</h3>\n  <p class="profile-role">Embedded Systems Engineer</p>\n  <button class="profile-btn">Follow</button>\n</div>\n\n.profile-card {\n  background: #fff;\n  border-radius: 16px;\n  padding: 28px 24px;\n  text-align: center;\n  max-width: 240px;\n  box-shadow: 0 4px 20px rgba(0,0,0,0.08);\n  transition: transform 0.3s, box-shadow 0.3s;\n}\n.profile-card:hover {\n  transform: translateY(-8px);\n  box-shadow: 0 16px 40px rgba(108,92,231,0.18);\n}\n.profile-avatar {\n  width: 64px; height: 64px; border-radius: 50%;\n  background: linear-gradient(135deg, #6c5ce7, #a29bfe);\n  color: #fff; font-size: 20px; font-weight: 700;\n  display: flex; align-items: center; justify-content: center;\n  margin: 0 auto 12px;\n}` },
+
+      {
+        id: 'c2', name: 'Student Card', tag: 'Essential', tagClass: 'tag-essential', cat: 'profile',
+        preview: { type: 'profile', initials: 'AP', name: 'Ankit Pardeshi', role: 'AI & Data Science Student', btnText: 'Connect', bg: 'linear-gradient(135deg, #eb6835, #fdcb6e)' , variant: 'student-card' },
+        desc: 'A variant of the profile card with a warm gradient and a connect CTA — perfect for student or developer portfolios.',
+        code: `<div class="profile-card student-card">\n  <div class="profile-avatar">AP</div>\n  <h3 class="profile-name">Ankit Pardeshi</h3>\n  <p class="profile-role">AI &amp; Data Science Student</p>\n  <button class="profile-btn connect-btn">Connect</button>\n</div>\n\n/* Same .profile-card base styles as above */\n.student-card .profile-avatar {\n  background: linear-gradient(135deg, #eb6835, #fdcb6e);\n}\n.connect-btn {\n  background: linear-gradient(90deg, #eb6835, #fdcb6e);\n  color: #fff;\n  border: none;\n  padding: 8px 20px;\n  border-radius: 999px;\n  font-weight: 600;\n  cursor: pointer;\n}` },
+
+      {
+        id: 'c3', name: 'Simple Card', tag: 'Essential', tagClass: 'tag-essential', cat: 'content',
+        preview: { type: 'simple', title: 'Card Title', text: 'This is a simple card component with a clean, minimal design.', btnText: 'Learn More' },
+        desc: 'A minimal content card — the building block for most UI layouts.',
+        code: `<div class="simple-card">\n  <h4>Card Title</h4>\n  <p>Card description goes here.</p>\n  <button>Learn More</button>\n</div>\n\n.simple-card {\n  background: #fff;\n  border: 1px solid #ebebeb;\n  border-radius: 14px;\n  padding: 24px;\n  max-width: 280px;\n  transition: transform 0.3s, box-shadow 0.3s;\n}` },
+
+      {
+        id: 'c4', name: 'Product Card', tag: 'Trending', tagClass: 'tag-trending', cat: 'commerce',
+        preview: { type: 'product', badge: 'New', icon: '🎧', title: 'Premium Headphones', price: '$49.99', desc: 'High-quality audio with noise cancellation.', btnText: 'Add to Cart' },
+        desc: 'An e-commerce product card with badge, price highlight, and a cart CTA button.',
+        code: `<div class="product-card">\n  <div class="product-badge">New</div>\n  <div class="product-icon">🎧</div>\n  <h4>Premium Headphones</h4>\n  <p class="product-price">$49.99</p>\n  <p class="product-desc">High-quality audio with noise cancellation.</p>\n  <button class="product-btn">Add to Cart</button>\n</div>` },
+
+      {
+        id: 'c5', name: 'Pricing Card', tag: 'Popular', tagClass: 'tag-popular', cat: 'commerce',
+        preview: { type: 'pricing', badge: 'Most Popular', title: 'Pro Plan', currency: '$', amount: '19', period: '/mo', features: ['Unlimited components','Priority support','Custom themes'], btnText: 'Choose Plan' },
+        desc: 'A premium pricing card with feature list, price, and a highlighted CTA button.',
+        code: `<div class="pricing-card">\n  <div class="pricing-badge">Most Popular</div>\n  <h4>Pro Plan</h4>\n  <div class="pricing-price"><span class="pricing-currency">$</span>19<span class="pricing-period">/mo</span></div>\n  <ul class="pricing-features">\n    <li>Unlimited components</li>\n    <li>Priority support</li>\n    <li>Custom themes</li>\n  </ul>\n  <button class="pricing-btn">Choose Plan</button>\n</div>` }
+    ];
+
+    function escapeHtml(s){ return (s||'').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    function actionButtons(codeId){
+      return ` <div class="actions">\n        <button class="action-btn view-btn" onclick="toggleCode('${codeId}', this)">\n          <i class="fa-solid fa-code"></i> View Code\n        </button>\n        <button class="action-btn copy-btn" onclick="copyCode('${codeId}', this)">\n          <i class="fa-solid fa-copy"></i> Copy\n        </button>\n      </div>`;
+    }
+
+    window.toggleCode = function(id, btn){
+      const pre = document.getElementById(id);
+      if(!pre) return;
+      const isShown = pre.style.display === 'block';
+      pre.style.display = isShown ? 'none' : 'block';
+      btn.classList.toggle('active', !isShown);
+    };
+
+    window.copyCode = function(id, btn){
+      const pre = document.getElementById(id);
+      if(!pre) return;
+      const text = pre.innerText || pre.textContent;
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(text).then(()=>{
+          const old = btn.innerHTML;
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied';
+          setTimeout(()=> btn.innerHTML = old, 1200);
+        }).catch(()=> alert('Copy failed'));
+      } else { alert('Clipboard not supported'); }
+    };
+
+    function renderPreview(p){
+      if(!p) return '';
+      if(p.type === 'profile'){
+        const bg = p.bg ? `style="background:${p.bg}"` : '';
+        return `<div class="card-preview"><div class="profile-card ${p.variant||''}">\n            <div class="profile-avatar" ${bg}>${p.initials}</div>\n            <h3 class="profile-name">${escapeHtml(p.name)}</h3>\n            <p class="profile-role">${escapeHtml(p.role)}</p>\n            <button class="profile-btn">${escapeHtml(p.btnText)}</button>\n          </div></div>`;
+      }
+      if(p.type === 'simple'){
+        return `<div class="card-preview"><div class="simple-card">\n            <h4>${escapeHtml(p.title)}</h4>\n            <p>${escapeHtml(p.text)}</p>\n            <button class="simple-card-btn">${escapeHtml(p.btnText)}</button>\n          </div></div>`;
+      }
+      if(p.type === 'product'){
+        return `<div class="card-preview"><div class="product-card">\n            <div class="product-badge">${escapeHtml(p.badge)}</div>\n            <div class="product-icon">${escapeHtml(p.icon)}</div>\n            <h4>${escapeHtml(p.title)}</h4>\n            <p class="product-price">${escapeHtml(p.price)}</p>\n            <p class="product-desc">${escapeHtml(p.desc)}</p>\n            <button class="product-btn">${escapeHtml(p.btnText)}</button>\n          </div></div>`;
+      }
+      if(p.type === 'pricing'){
+        const features = (p.features||[]).map(f=>`<li><i class="fa-solid fa-check"></i> ${escapeHtml(f)}</li>`).join('');
+        return `<div class="card-preview dark-preview"><div class="pricing-card">\n            <div class="pricing-badge">${escapeHtml(p.badge)}</div>\n            <h4>${escapeHtml(p.title)}</h4>\n            <div class="pricing-price"><span class="pricing-currency">${escapeHtml(p.currency)}</span>${escapeHtml(p.amount)}<span class="pricing-period">${escapeHtml(p.period)}</span></div>\n            <ul class="pricing-features">${features}</ul>\n            <button class="pricing-btn">${escapeHtml(p.btnText)}</button>\n          </div></div>`;
+      }
+      return '';
+    }
+
+    function renderCard(card){
+      return `<article class="component-card" data-name="${escapeHtml(card.name)}" data-cat="${escapeHtml(card.cat)}">\n        <div class="card-top">\n          <span class="card-label">${escapeHtml(card.name)}</span>\n          ${card.tag?`<span class="card-tag ${escapeHtml(card.tagClass||'')}">${escapeHtml(card.tag)}</span>`:''}\n        </div>\n        ${renderPreview(card.preview)}\n        <p class="card-desc">${escapeHtml(card.desc)}</p>\n        ${actionButtons(card.id)}\n        <pre id="${escapeHtml(card.id)}" class="code-block" style="display:none"><code>${escapeHtml(card.code)}</code></pre>\n      </article>`;
+    }
+
+    function renderCards(){
+      const grid = document.getElementById('cardsGrid');
+      if(!grid) return;
+      grid.innerHTML = CARDS.map(renderCard).join('\n');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCards);
+  })();
+  </script>
+
 </main>
 
 <!-- ===== SCROLL TO TOP ===== -->

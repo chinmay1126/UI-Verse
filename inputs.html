@@ -20,6 +20,12 @@
 <body data-playground-type="input">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
+  <input
+  type="text"
+  id="searchInput"
+  placeholder="Search components..."
+  oninput="liveFilter(this.value)"
+  data-a11y-remediation="label-needed">
   <!-- ================= SIDEBAR ================= -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
@@ -27,6 +33,16 @@
       <span class="brand-text">UIverse <span class="brand-badge">V2</span></span>
     </div>
 
+    <label for="searchInput" class="sr-only">
+  Search components
+</label>
+
+<input
+  id="searchInput"
+  type="search"
+  placeholder="Search components..."
+  oninput="liveFilter(this.value)"
+  aria-label="Search components">
     <nav class="sidebar-nav">
       <ul>
         <li>
@@ -1268,6 +1284,29 @@
         el.classList.add('in-view');
       });
     }
+
+    async function copyCode(id, btn) {
+  try {
+    await navigator.clipboard.writeText(
+      document.getElementById(id).innerText
+    );
+
+    btn.innerHTML =
+      '<i class="fa-solid fa-check"></i> Copied!';
+
+    btn.classList.add("copied");
+
+    setTimeout(() => {
+      btn.innerHTML =
+        '<i class="fa-solid fa-copy"></i> Copy';
+
+      btn.classList.remove("copied");
+    }, 2000);
+
+  } catch {
+    alert("Clipboard access unavailable.");
+  }
+}
   </script>
     <script src="dist/shared.js"></script>
 </body>

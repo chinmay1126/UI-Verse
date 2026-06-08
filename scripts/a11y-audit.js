@@ -442,7 +442,7 @@ class A11yAuditEngine {
   run() {
     this.loadComponentIndex();
     const files = this.getComponentFiles();
-    console.log(`🔍 Auditing ${files.length} component files for WCAG compliance...`);
+    console.debug(`🔍 Auditing ${files.length} component files for WCAG compliance...`);
 
     for (const file of files) {
       const result = this.auditFile(file);
@@ -476,20 +476,20 @@ class A11yAuditEngine {
 
     const reportPath = path.join(outputDir, 'audit-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`✅ Audit report saved to ${reportPath}`);
+    console.debug(`✅ Audit report saved to ${reportPath}`);
 
     // Print summary
-    console.log('\n📊 Accessibility Audit Summary:');
-    console.log(`  Files audited: ${report.summary.totalFiles}`);
-    console.log(`  Average score: ${report.summary.averageScore}%`);
-    console.log(`  Pass: ${report.summary.passCount} | Warning: ${report.summary.warningCount} | Fail: ${report.summary.failCount}`);
-    console.log(`  Total errors: ${report.summary.totalErrors} | Total warnings: ${report.summary.totalWarnings}`);
+    console.debug('\n📊 Accessibility Audit Summary:');
+    console.debug(`  Files audited: ${report.summary.totalFiles}`);
+    console.debug(`  Average score: ${report.summary.averageScore}%`);
+    console.debug(`  Pass: ${report.summary.passCount} | Warning: ${report.summary.warningCount} | Fail: ${report.summary.failCount}`);
+    console.debug(`  Total errors: ${report.summary.totalErrors} | Total warnings: ${report.summary.totalWarnings}`);
 
     const worst = this.results.slice(0, 5);
     if (worst.some(r => r.status !== 'pass')) {
-      console.log('\n⚠️  Lowest scoring components:');
+      console.debug('\n⚠️  Lowest scoring components:');
       worst.forEach(r => {
-        console.log(`  ${r.title} (${r.file}): ${r.score}% — ${r.errors} errors, ${r.warnings} warnings`);
+        console.debug(`  ${r.title} (${r.file}): ${r.score}% — ${r.errors} errors, ${r.warnings} warnings`);
       });
     }
 

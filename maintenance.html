@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- CSS -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
   <link rel="stylesheet" href="maintenance.css">
 </head>
 <body>
@@ -26,6 +29,12 @@
     <span class="brand-icon">⬡</span>
     <span class="brand-text">UIverse <span style="font-size: 9px; background: linear-gradient(135deg, #eb6835, #7b61ff); color: white; padding: 1px 6px; border-radius: 10px; font-weight: 800; margin-left: 4px; letter-spacing: 0.5px; vertical-align: middle; box-shadow: 0 0 8px rgba(235,104,53,0.3);">V2</span></span>
   </div>
+
+  <div id="emptySearchState" class="empty-search" style="display:none;">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <h3>No maintenance components found</h3>
+  <p>Try another keyword.</p>
+</div>
 
   <nav class="sidebar-nav">
     <ul>
@@ -610,6 +619,62 @@
 
   </div>
 
+  <div id="countdown"></div>
+
+  <form class="notify-form">
+  <label for="email">Get notified when we’re back:</label>
+  <input type="email" id="email" placeholder="Enter your email" required>
+  <button type="submit">Notify Me</button>
+</form>
+
+<div id="diagnostics" hidden>
+  <p>Error Code: 503</p>
+  <p>Last checked: <span id="last-check"></span></p>
+</div>
+<script>
+  document.getElementById("last-check").textContent = new Date().toLocaleString();
+</script>
+
+<div class="fallback-links">
+  <a href="/status">Status Page</a>
+  <a href="/support">Contact Support</a>
+</div>
+
+<div class="progress-bar">
+  <div class="progress" style="width:45%"></div>
+</div>
+
+<style>
+.progress-bar {
+  width: 100%; background: #333; border-radius: 5px;
+}
+.progress {
+  height: 10px; background: #ff7b00; border-radius: 5px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {opacity: 0.7;} 50% {opacity: 1;} 100% {opacity: 0.7;}
+}
+</style>
+
+<script>
+  const endTime = new Date("2026-06-10T12:00:00").getTime(); // example end time
+  const timer = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = endTime - now;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").innerHTML = "We're back online!";
+    } else {
+      const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+      const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+      document.getElementById("countdown").innerHTML =
+        `Estimated time: ${hours}h ${minutes}m`;
+    }
+  }, 1000);
+</script>
+
 </main>
 
 <!-- Floating Toast Indicator -->
@@ -691,6 +756,45 @@
     document.getElementById('sidebarBackdrop').classList.toggle('visible');
   }
 
+  function liveFilter(value) {
+  const q = value.toLowerCase();
+  const cards = document.querySelectorAll(".component-card");
+  let found = false;
+
+  cards.forEach(card => {
+    const match =
+      card.dataset.name.toLowerCase().includes(q) ||
+      card.querySelector("h2").textContent.toLowerCase().includes(q);
+
+    card.style.display = match ? "" : "none";
+
+    if (match) found = true;
+  });
+
+  const empty = document.getElementById("emptySearchState");
+
+  if (empty) {
+    empty.style.display = found ? "none" : "block";
+  }
+}
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+        }
+
+    });
+
+});
+
+document
+.querySelectorAll(".component-card")
+.forEach(card => observer.observe(card));
   // Dark Mode Support
   const toggle = document.getElementById('darkModeToggle');
   const icon = toggle.querySelector('i');
