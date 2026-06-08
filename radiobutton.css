@@ -1386,3 +1386,174 @@ body {
     width: 100%;
   }
 }
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-primary, #fff);
+  padding: 0.6rem 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.radio-group input {
+  display: none;
+}
+
+.radio-group input:checked + i,
+.radio-group input:checked + .card,
+.radio-group input:checked + .slider,
+.radio-group input:checked + .step {
+  color: #00e0ff;
+  border-color: #00e0ff;
+  transform: scale(1.05);
+}
+
+.icon-radio label i {
+  margin-right: 6px;
+  color: #aaa;
+}
+
+.image-radio .card {
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.toggle .slider {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  background: #333;
+  color: #fff;
+}
+
+.stepper-radio .step {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 50px;
+  background: #444;
+  color: #fff;
+}
+
+.grouped-radio fieldset {
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.grouped-radio legend {
+  font-weight: 700;
+  color: #00e0ff;
+}
+
+/* Icon Radio */
+.icon-radio-group {
+  display: flex;
+  gap: 1rem;
+}
+.icon-radio {
+  padding: 0.8rem 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #e0e0e0;
+}
+.icon-radio input {
+  display: none;
+}
+.icon-radio input:checked + i,
+.icon-radio input:checked {
+  color: #00e0ff;
+  font-weight: 700;
+}
+
+/* Image Radio */
+.image-radio label {
+  cursor: pointer;
+}
+.image-radio .card {
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.image-radio input {
+  display: none;
+}
+.image-radio input:checked + .card {
+  border-color: #00e0ff;
+  transform: scale(1.05);
+}
+
+/* Toggle Radio */
+.toggle-radio {
+  display: flex;
+  gap: 1rem;
+}
+.toggle {
+  position: relative;
+}
+.toggle input {
+  display: none;
+}
+.toggle .slider {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  background: #333;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+.toggle input:checked + .slider {
+  background: #00e0ff;
+  color: #000;
+}
+
+/* Stepper Radio */
+.stepper-radio {
+  display: flex;
+  gap: 1rem;
+}
+.stepper-radio input {
+  display: none;
+}
+.stepper-radio .step {
+  padding: 0.6rem 1rem;
+  border-radius: 50px;
+  background: #444;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+.stepper-radio input:checked + .step {
+  background: #00e0ff;
+  color: #000;
+}
+
+/* Grouped Radio */
+.grouped-radio fieldset {
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.grouped-radio legend {
+  font-weight: 700;
+  color: #00e0ff;
+}
+.grouped-radio label {
+  display: block;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+.grouped-radio input {
+  margin-right: 0.5rem;
+}
