@@ -2035,7 +2035,7 @@ label[class*="radio"]:hover {
    FOOTER
    ============================================================ */
 .footer {
-  margin-left: var(--sidebar-w);
+  margin-left: 250px;
   background: #111;
   color: #aaa;
   padding: 0;
@@ -2202,10 +2202,22 @@ label[class*="radio"]:hover {
     padding: 0 20px 40px;
   }
 }
+/* RESPONSIVE FIXES */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
 
 /* ===============================
    GLOBAL RESET
-================================= */
 
 *,
 *::before,
@@ -2253,7 +2265,6 @@ body{
 
 /* ===============================
    MAIN CONTENT
-================================= */
 
 .main-content{
   padding:32px;
@@ -2262,7 +2273,6 @@ body{
 
 /* ===============================
    TOPBAR
-================================= */
 
 .topbar{
   display:flex;
@@ -2335,7 +2345,6 @@ body{
 
 /* ===============================
    HERO SECTION
-================================= */
 
 .hero{
   position:relative;
@@ -2421,7 +2430,6 @@ body{
 
 /* ===============================
    HERO PREVIEW
-================================= */
 
 .hero-preview{
   display:flex;
@@ -2471,7 +2479,6 @@ body{
 
 /* ===============================
    FILTER BUTTONS
-================================= */
 
 .filters{
   display:flex;
@@ -2511,7 +2518,6 @@ body{
 
 /* ===============================
    COMPONENT GRID
-================================= */
 
 .radio-grid{
   display:grid;
@@ -2523,7 +2529,6 @@ body{
 
 /* ===============================
    COMPONENT CARD
-================================= */
 
 .component-card{
   position:relative;
@@ -2636,7 +2641,6 @@ body{
 
 /* ===============================
    ACTION BUTTONS
-================================= */
 
 .card-actions{
   display:flex;
@@ -2676,7 +2680,6 @@ body{
 
 /* ===============================
    CODE BLOCK
-================================= */
 
 .code-block{
   margin:0 24px 24px;
@@ -2699,7 +2702,6 @@ body{
 
 /* ===============================
    RESPONSIVE
-================================= */
 
 @media(max-width:1200px){
 
