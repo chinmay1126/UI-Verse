@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-As0cOkx4goY5H1EVgb/edAaANkN/xKLkoVUCb4fvEUM= sha256-M6PihuYYoN+ZpkxM7Hmjlwe0Tq1eg+sbCVeDhhUWlGo= sha256-fzeyFsyCk0z0bWjhdnpjN9Acp80wAOicCbwrp4pI1XA= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-As0cOkx4goY5H1EVgb/edAaANkN/xKLkoVUCb4fvEUM= sha256-M6PihuYYoN+ZpkxM7Hmjlwe0Tq1eg+sbCVeDhhUWlGo= sha256-fzeyFsyCk0z0bWjhdnpjN9Acp80wAOicCbwrp4pI1XA= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=; style-src 'self' https: 'unsafe-hashes' sha256-1Ql0aGAImf2mbJmL8K42CucQZ90okj4sdY/dbJVVZt0= sha256-AhCZCY+R5UhLOA1L+3UAw3AuIhOlhldjg0j7TSuu1O8= sha256-EwX6gzn3K/AeBvzO5uSU+LH3xuXvwiUguSK5J/jTMxg= sha256-RiAuSJ9w0HxFXq+FI3lT+q3LpBIQG5WMJBOxbImW34g= sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA= sha256-WV3ftsMVBOBWjv6TgKy4d8q7zGahzOvZ20fEc5F+5tc= sha256-fkAbU7anOplp9qgciiHR3dWca00/FQkAF9O9fEnRZXE= sha256-jJlqNLyvB6LVqPc8x7qafSqP6L2gsQAiIi10W4s8WEA= sha256-nXtpW/dzCYE5yuZuFnALpLsxgGNHNypBnOEfd/Y1JKQ= sha256-rEVC1Jhej0v1IoUNjA9oqF4fp2uckf/6RVnFRveg7Ew= sha256-trz6R5Hq++WFdHh8KJ6JAHqrLEKE+Do3zw5/AN+TRrw= sha256-xv1jxLYFsNh+zXGhq7tarEZxdzpItTZvSkc2ZJDsZas= sha256-yONoqD84aqu5441wkRCF23UmzMy4ChmgJf0j8LtHcxQ=; style-src-attr 'unsafe-hashes' sha256-1Ql0aGAImf2mbJmL8K42CucQZ90okj4sdY/dbJVVZt0= sha256-AhCZCY+R5UhLOA1L+3UAw3AuIhOlhldjg0j7TSuu1O8= sha256-EwX6gzn3K/AeBvzO5uSU+LH3xuXvwiUguSK5J/jTMxg= sha256-RiAuSJ9w0HxFXq+FI3lT+q3LpBIQG5WMJBOxbImW34g= sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA= sha256-WV3ftsMVBOBWjv6TgKy4d8q7zGahzOvZ20fEc5F+5tc= sha256-fkAbU7anOplp9qgciiHR3dWca00/FQkAF9O9fEnRZXE= sha256-jJlqNLyvB6LVqPc8x7qafSqP6L2gsQAiIi10W4s8WEA= sha256-nXtpW/dzCYE5yuZuFnALpLsxgGNHNypBnOEfd/Y1JKQ= sha256-rEVC1Jhej0v1IoUNjA9oqF4fp2uckf/6RVnFRveg7Ew= sha256-trz6R5Hq++WFdHh8KJ6JAHqrLEKE+Do3zw5/AN+TRrw= sha256-xv1jxLYFsNh+zXGhq7tarEZxdzpItTZvSkc2ZJDsZas= sha256-yONoqD84aqu5441wkRCF23UmzMy4ChmgJf0j8LtHcxQ=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hero Section Components — UIverse</title>
 
@@ -12,10 +14,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="hero.css">
+   <link rel="stylesheet" href="home.css">
+   <link rel="stylesheet" href="style.css">
+  
   <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  <link rel="stylesheet" href="hero.css">
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
@@ -341,6 +348,59 @@
     <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
   </div>
 </aside>
+<!-- =========================================================
+   NAVBAR
+========================================================= -->
+
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+
+<header class="page-header premium-header">
+  <div class="header-badge">
+    <i class="fa-solid fa-star"></i>
+    Hero Components Collection
+  </div>
+
+  <h1>
+    Modern <span>Hero Sections</span>
+  </h1>
+
+  <p>
+    Beautiful landing page hero layouts crafted with HTML, CSS and JavaScript.
+    Production-ready, responsive and fully customizable.
+  </p>
+
+  <div class="header-stats">
+    <div class="stat">
+      <strong>7+</strong>
+      <span>Components</span>
+    </div>
+
+    <div class="stat">
+      <strong>100%</strong>
+      <span>Responsive</span>
+    </div>
+
+    <div class="stat">
+      <strong>Pure CSS</strong>
+      <span>No Framework</span>
+    </div>
+  </div>
+</header>
 
 <!-- ================= MAIN CONTENT ================= -->
 <main class="main-home">
@@ -505,7 +565,7 @@
             <form class="hgl-premium-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
               <div class="hgl-input-wrapper">
                 <i class="fa-regular fa-envelope"></i>
-                <input type="email" placeholder="yourname@domain.com" required>
+                <input type="email" placeholder="yourname@domain.com" required data-a11y-remediation="label-needed">
               </div>
               <button type="submit" class="hgl-premium-btn">Join Waitlist</button>
             </form>
@@ -640,6 +700,265 @@
         </button>
       </div>
     </div>
+    <!-- =========================================================
+8. NEON CYBER HERO
+========================================================= -->
+<div class="hero-info">
+  <h2>Neon Cyber Hero</h2>
+  <p>
+    A futuristic neon-inspired hero section with glowing gradients,
+    animated grid overlays, glassmorphism effects, and immersive
+    cyberpunk aesthetics.
+  </p>
+</div>
+<div class="hero-wrapper hero-neon">
+
+  <div class="hn-grid"></div>
+
+  <div class="hn-content">
+
+    <div class="hn-badge">
+      <i class="fa-solid fa-sparkles"></i>
+      AI Powered
+    </div>
+
+    <h1 class="hn-title">
+      Enter The
+      <span>Cyber Future</span>
+    </h1>
+
+    <p class="hn-desc">
+      Futuristic hero section with glowing neon borders,
+      animated gradients, and immersive glassmorphism effects.
+    </p>
+
+    <div class="hn-btns">
+      <button class="hn-btn-primary">
+        Launch App
+      </button>
+
+      <button class="hn-btn-secondary">
+        Learn More
+      </button>
+    </div>
+
+  </div>
+
+</div>
+<div class="hero-info">
+  <h2>SaaS Dashboard Hero</h2>
+  <p>
+    A clean modern SaaS landing hero featuring a stylish dashboard
+    mockup, analytics cards, interactive chart visuals, and premium
+    startup-inspired layouts.
+  </p>
+</div>
+<!-- =========================================================
+9. SAAS DASHBOARD HERO
+========================================================= -->
+
+<div class="hero-wrapper hero-dashboard">
+
+  <div class="hd-left">
+
+    <div class="hd-badge">
+      Trusted by 40k+ teams
+    </div>
+
+    <h1 class="hd-title">
+      The easiest way
+      to manage projects
+    </h1>
+
+    <p class="hd-desc">
+      Organize workflows, collaborate with your team,
+      and track progress in one beautiful dashboard.
+    </p>
+
+    <div class="hd-btns">
+      <button class="hd-btn-main">
+        Start Free
+      </button>
+
+      <button class="hd-btn-outline">
+        View Demo
+      </button>
+    </div>
+
+  </div>
+
+  <div class="hd-right">
+
+    <div class="hd-window">
+
+      <div class="hd-window-header">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="hd-window-body">
+
+        <div class="hd-sidebar"></div>
+
+        <div class="hd-main">
+
+          <div class="hd-card large"></div>
+
+          <div class="hd-row">
+            <div class="hd-card"></div>
+            <div class="hd-card"></div>
+          </div>
+
+          <div class="hd-chart">
+            <div class="bar" style="--h:40%"></div>
+            <div class="bar" style="--h:65%"></div>
+            <div class="bar" style="--h:80%"></div>
+            <div class="bar" style="--h:55%"></div>
+            <div class="bar" style="--h:95%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<header class="hero-showcase-header">
+
+  <div class="hero-chip">
+    ✨ 10+ Premium Hero Components
+  </div>
+
+  <h1>
+    Discover
+    <span>Modern Hero Sections</span>
+  </h1>
+
+  <p>
+    Production-ready landing page heroes built with pure HTML,
+    CSS and JavaScript. Responsive, accessible and beautifully
+    animated.
+  </p>
+
+  <div class="hero-actions">
+
+    <button class="btn-primary">
+      Browse Components
+    </button>
+
+    <button class="btn-secondary">
+      Live Preview
+    </button>
+
+  </div>
+
+</header>
+
+<button class="copy-btn">
+
+<i class="fa-solid fa-code"></i>
+
+Copy HTML
+
+</button>
+
+<button class="preview-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+Preview
+
+</button>
+
+<section class="hero-toolbar">
+
+<input
+placeholder="Search Hero Components">
+
+<select>
+
+<option>Latest</option>
+
+<option>Popular</option>
+
+<option>Minimal</option>
+
+<option>Creative</option>
+
+</select>
+
+</section>
+
+<section class="hero-bottom-cta">
+
+<h2>
+Ready to build your next landing page?
+</h2>
+
+<p>
+Explore hundreds of premium UI components.
+</p>
+
+<button>
+
+Browse Library
+
+</button>
+
+</section>
+<div class="hero-info">
+  <h2>Minimal Portfolio Hero</h2>
+  <p>
+    A minimalist portfolio hero with elegant typography, soft abstract
+    floating shapes, smooth spacing, and a refined creative studio vibe.
+  </p>
+</div>
+<!-- =========================================================
+10. MINIMAL PORTFOLIO HERO
+========================================================= -->
+
+<div class="hero-wrapper hero-portfolio">
+
+  <div class="hp-circle hp-circle-1"></div>
+  <div class="hp-circle hp-circle-2"></div>
+
+  <div class="hp-content">
+
+    <p class="hp-small">
+      CREATIVE DESIGNER
+    </p>
+
+    <h1 class="hp-title">
+      Crafting digital
+      experiences that
+      inspire people.
+    </h1>
+
+    <p class="hp-desc">
+      Modern portfolio hero section with elegant typography,
+      abstract floating shapes, and minimal aesthetics.
+    </p>
+
+    <div class="hp-btns">
+
+      <button class="hp-btn-dark">
+        View Portfolio
+      </button>
+
+      <button class="hp-btn-light">
+        Contact Me
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 
   </section>
 
@@ -739,5 +1058,6 @@
   });
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

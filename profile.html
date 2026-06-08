@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile – UIverse</title>
+  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ── Sidebar (matches UIverse nav pattern) ── -->
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-name">UIverse</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <i class="fa-regular fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fa-regular fa-square"></i>
+        <span>Buttons</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-bars"></i>
+        <span>Navbar</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fa-regular fa-address-book"></i>
+        <span>Contact Us</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-table-list"></i>
+        <span>Forms</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Badges</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ── Main Content ── -->
+  <main class="main">
+
+    <!-- Toast notification -->
+    <div class="toast hidden" id="toast">
+      <i class="fa-solid fa-circle-check"></i>
+      Profile updated successfully!
+    </div>
+
+    <div class="page-header">
+      <h1 class="page-title">My Profile</h1>
+      <p class="page-subtitle">Manage your personal information and preferences</p>
+    </div>
+
+    <div class="profile-layout">
+
+      <!-- ── Left card: avatar & stats ── -->
+      <aside class="profile-sidebar-card">
+        <div class="avatar-wrap">
+          <div class="avatar-ring">
+            <img
+              src="https://api.dicebear.com/8.x/initials/svg?seed=azhar&backgroundColor=6366f1"
+              alt="User avatar"
+              class="avatar-img"
+              id="avatarPreview"
+            />
+          </div>
+          <label class="avatar-upload-btn" for="avatarInput" title="Change photo">
+            <i class="fa-solid fa-camera"></i>
+          </label>
+          <input type="file" id="avatarInput" accept="image/*" class="hidden-input"/>
+        </div>
+
+        <h2 class="profile-name" id="displayName">Azhar Ali</h2>
+        <p class="profile-email-display" id="displayEmail">azhar@hello.com</p>
+
+        <div class="badge-row">
+          <span class="badge badge-pro">Pro</span>
+          <span class="badge badge-verified"><i class="fa-solid fa-check"></i> Verified</span>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-num">148</span>
+            <span class="stat-label">Components</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">32</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">4.9</span>
+            <span class="stat-label">Rating</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-btn" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn" title="Website"><i class="fa-solid fa-link"></i></a>
+        </div>
+      </aside>
+
+      <!-- ── Right card: edit form ── -->
+      <section class="profile-form-card">
+
+        <div class="tab-bar">
+          <button class="tab active" data-tab="info">Personal Info</button>
+          <button class="tab" data-tab="security">Security</button>
+          <button class="tab" data-tab="preferences">Preferences</button>
+        </div>
+
+        <!-- Tab: Personal Info -->
+        <div class="tab-panel active" id="tab-info">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <div class="input-wrap">
+                <i class="fa-regular fa-user input-icon"></i>
+                <input type="text" id="fullName" placeholder="Azhar Ali" value="Azhar Ali"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="username">Username</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-at input-icon"></i>
+                <input type="text" id="username" placeholder="azharali" value="azharali"/>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="email">Email Address</label>
+              <div class="input-wrap">
+                <i class="fa-regular fa-envelope input-icon"></i>
+                <input type="email" id="email" placeholder="azhar@hello.com" value="azhar@hello.com"/>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="bio">Bio</label>
+              <div class="input-wrap textarea-wrap">
+                <i class="fa-regular fa-file-lines input-icon top-icon"></i>
+                <textarea id="bio" rows="3" placeholder="Tell the world a little about yourself…">Frontend developer & UI enthusiast. Building cool things with UIverse.</textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Location</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-location-dot input-icon"></i>
+                <input type="text" id="location" placeholder="Mumbai, India" value="Mumbai, India"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="website">Website</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-globe input-icon"></i>
+                <input type="url" id="website" placeholder="https://azhar.dev" value="https://azhar.dev"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-ghost" id="discardBtn">Discard</button>
+            <button class="btn btn-primary" id="saveBtn">
+              <i class="fa-solid fa-floppy-disk"></i>
+              Save Changes
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab: Security -->
+        <div class="tab-panel" id="tab-security">
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="currentPass">Current Password</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-lock input-icon"></i>
+                <input type="password" id="currentPass" placeholder="••••••••"/>
+                <button class="toggle-pass" type="button"><i class="fa-regular fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="newPass">New Password</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-key input-icon"></i>
+                <input type="password" id="newPass" placeholder="••••••••"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="confirmPass">Confirm Password</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-key input-icon"></i>
+                <input type="password" id="confirmPass" placeholder="••••••••"/>
+              </div>
+            </div>
+          </div>
+          <div class="security-tip">
+            <i class="fa-solid fa-circle-info"></i>
+            Use at least 8 characters, including uppercase, lowercase, and numbers.
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary">Update Password</button>
+          </div>
+        </div>
+
+        <!-- Tab: Preferences -->
+        <div class="tab-panel" id="tab-preferences">
+          <div class="pref-list">
+            <div class="pref-item">
+              <div class="pref-text">
+                <span class="pref-label">Email Notifications</span>
+                <span class="pref-desc">Receive updates about new components and features</span>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" checked/>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="pref-item">
+              <div class="pref-text">
+                <span class="pref-label">Dark Mode</span>
+                <span class="pref-desc">Switch between light and dark interface</span>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="darkToggle"/>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="pref-item">
+              <div class="pref-text">
+                <span class="pref-label">Two-Factor Authentication</span>
+                <span class="pref-desc">Add an extra layer of security to your account</span>
+              </div>
+              <label class="toggle">
+                <input type="checkbox"/>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="pref-item">
+              <div class="pref-text">
+                <span class="pref-label">Public Profile</span>
+                <span class="pref-desc">Let others discover your profile and components</span>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" checked/>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div><!-- /profile-layout -->
+  </main>
+
+  <script src="profile.js"></script>
+</body>
+</html>

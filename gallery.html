@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
@@ -41,6 +42,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =====================================================
 SIDEBAR
@@ -82,6 +85,11 @@ SIDEBAR
         <span>Components</span>
       </a>
 
+      <a href="breadcrumbs.html">
+        <i class="fa-solid fa-angles-right"></i>
+        <span>Breadcrumbs</span>
+      </a>
+
       <a href="#">
         <i class="fa-solid fa-code"></i>
         <span>Source</span>
@@ -115,6 +123,517 @@ SIDEBAR
 </aside>
 
 <!-- =====================================================
+EXTRA EXTENDED GALLERY SECTION
+===================================================== -->
+
+<section class="gallery-grid extra-gallery">
+
+  <!-- 1 -->
+  <div class="gallery-card floating-card wide-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <span class="gallery-tag">Collaboration</span>
+
+      <h2>Team Workflow Hub</h2>
+
+      <p>Modern collaborative workspace UI for distributed teams.</p>
+
+      <button>Explore</button>
+
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="gallery-card neon-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <span class="gallery-tag">Neon UI</span>
+
+      <h2>Cyber Grid</h2>
+
+      <p>Futuristic glowing dashboard experience.</p>
+
+      <button>Open</button>
+
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="gallery-card glass-card tall-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <span class="gallery-tag">Glassmorphism</span>
+
+      <h2>Frost UI Panel</h2>
+
+      <p>Soft blurred glass interface design system.</p>
+
+      <button>Preview</button>
+
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="gallery-card ai-card wide-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <span class="gallery-tag">AI Tools</span>
+
+      <h2>Neural Workspace</h2>
+
+      <p>AI-powered productivity and automation dashboard.</p>
+
+      <button>Launch</button>
+
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="gallery-card mini-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <span class="gallery-tag">Startup</span>
+
+      <h2>Pitch Room</h2>
+
+      <p>Simple startup presentation UI layout.</p>
+
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="gallery-card border-glow-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <span class="gallery-tag">Tech UI</span>
+
+      <h2>Quantum Interface</h2>
+
+      <p>High-end futuristic glowing UI components.</p>
+
+      <button>View</button>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="trending-gallery">
+
+  <div class="section-heading">
+    <span>🔥 Trending Now</span>
+    <h2>Most Viewed Designs</h2>
+  </div>
+
+  <div class="trending-grid">
+
+    <div class="trend-card">
+      <span class="rank">#01</span>
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div class="trend-content">
+        <h3>AI Workspace</h3>
+        <span>24.5K Views</span>
+      </div>
+    </div>
+
+    <div class="trend-card">
+      <span class="rank">#02</span>
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div class="trend-content">
+        <h3>Cyber Dashboard</h3>
+        <span>19.8K Views</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<section class="creator-spotlight">
+
+  <div class="spotlight-card">
+
+    <img
+      class="creator-photo"
+      src="https://randomuser.me/api/portraits/women/68.jpg"
+      alt=""
+    >
+
+    <div>
+      <span>Featured Designer</span>
+      <h2>Sarah Johnson</h2>
+      <p>
+        Product designer creating premium SaaS,
+        AI and enterprise interfaces.
+      </p>
+
+      <div class="creator-stats">
+        <div>
+          <strong>124</strong>
+          <span>Projects</span>
+        </div>
+
+        <div>
+          <strong>54K</strong>
+          <span>Followers</span>
+        </div>
+
+        <div>
+          <strong>4.9★</strong>
+          <span>Rating</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="comparison-section">
+
+  <div class="comparison-card">
+
+    <div class="comparison-side">
+      <span>Before</span>
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200" alt="">
+    </div>
+
+    <div class="comparison-side">
+      <span>After</span>
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200" alt="">
+    </div>
+
+  </div>
+
+</section>
+
+<section class="category-grid">
+
+  <div class="category-card">
+    <i class="fa-solid fa-chart-line"></i>
+    <h3>Dashboards</h3>
+    <span>248 Components</span>
+  </div>
+
+  <div class="category-card">
+    <i class="fa-solid fa-mobile-screen"></i>
+    <h3>Mobile Apps</h3>
+    <span>174 Components</span>
+  </div>
+
+  <div class="category-card">
+    <i class="fa-solid fa-robot"></i>
+    <h3>AI Interfaces</h3>
+    <span>126 Components</span>
+  </div>
+
+  <div class="category-card">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <h3>E-Commerce</h3>
+    <span>213 Components</span>
+  </div>
+
+</section>
+<div class="gallery-card video-preview-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1200"
+    alt=""
+  >
+
+  <div class="play-button">
+    <i class="fa-solid fa-play"></i>
+  </div>
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Motion UI
+    </span>
+
+    <h2>
+      Product Walkthrough
+    </h2>
+
+    <p>
+      Interactive design preview experience.
+    </p>
+
+  </div>
+
+</div>
+
+<div class="gallery-card award-card">
+
+  <div class="award-badge">
+    🏆 Award Winner
+  </div>
+
+  <img
+    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <h2>
+      Fintech Design System
+    </h2>
+
+    <p>
+      Winner of modern SaaS experience award.
+    </p>
+
+    <button>
+      View Project
+    </button>
+
+  </div>
+
+</div>
+
+<section class="collections-section">
+
+  <h2>Saved Collections</h2>
+
+  <div class="collections-grid">
+
+    <div class="collection-card">
+      <h3>AI Interfaces</h3>
+      <span>48 Designs</span>
+    </div>
+
+    <div class="collection-card">
+      <h3>Enterprise Dashboards</h3>
+      <span>72 Designs</span>
+    </div>
+
+    <div class="collection-card">
+      <h3>Mobile Experiences</h3>
+      <span>34 Designs</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="gallery-insights">
+
+  <div class="insight">
+    <h3>1.2M+</h3>
+    <span>Total Views</span>
+  </div>
+
+  <div class="insight">
+    <h3>32K+</h3>
+    <span>Designers</span>
+  </div>
+
+  <div class="insight">
+    <h3>9.8K+</h3>
+    <span>Projects</span>
+  </div>
+
+  <div class="insight">
+    <h3>98%</h3>
+    <span>Satisfaction</span>
+  </div>
+
+</section>
+
+<section class="masonry-gallery">
+
+  <div class="masonry-item large">
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200" alt="">
+  </div>
+
+  <div class="masonry-item">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200" alt="">
+  </div>
+
+  <div class="masonry-item tall">
+    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200" alt="">
+  </div>
+
+  <div class="masonry-item">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200" alt="">
+  </div>
+
+</section>
+
+<section class="featured-collection">
+
+  <div class="featured-content">
+
+    <span>✨ Curated Collection</span>
+
+    <h2>
+      The Future of AI Interfaces
+    </h2>
+
+    <p>
+      Explore hand-picked AI dashboards,
+      copilots, assistants and intelligent
+      productivity experiences.
+    </p>
+
+    <button>
+      Explore Collection
+    </button>
+
+  </div>
+
+</section>
+<div class="gallery masonry-gallery">
+  <div class="gallery-item tall">
+    <img src="image1.jpg" alt="">
+  </div>
+
+  <div class="gallery-item">
+    <img src="image2.jpg" alt="">
+  </div>
+
+  <div class="gallery-item wide">
+    <img src="image3.jpg" alt="">
+  </div>
+</div>
+
+<div class="glass-gallery-card">
+  <img src="image.jpg">
+  <div class="glass-overlay">
+    Nature
+  </div>
+</div>
+
+
+<div class="gallery-card bento-gallery">
+  <div class="bento-item large">
+    <img src="https://picsum.photos/600/600?1" alt="">
+  </div>
+
+  <div class="bento-item">
+    <img src="https://picsum.photos/300/300?2" alt="">
+  </div>
+
+  <div class="bento-item">
+    <img src="https://picsum.photos/300/300?3" alt="">
+  </div>
+
+  <div class="bento-item wide">
+    <img src="https://picsum.photos/600/300?4" alt="">
+  </div>
+</div>
+
+<div class="masonry-gallery">
+
+  <div class="masonry-item">
+    <img src="https://picsum.photos/400/500?11">
+  </div>
+
+  <div class="masonry-item">
+    <img src="https://picsum.photos/400/300?12">
+  </div>
+
+  <div class="masonry-item">
+    <img src="https://picsum.photos/400/600?13">
+  </div>
+
+  <div class="masonry-item">
+    <img src="https://picsum.photos/400/350?14">
+  </div>
+
+</div>
+
+<div class="overlay-gallery">
+
+<div class="overlay-card">
+
+<img src="https://picsum.photos/500/500?21">
+
+<div class="overlay">
+
+<h3>Mountain</h3>
+
+<p>Explore Nature</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="polaroid-grid">
+
+<div class="polaroid">
+
+<img src="https://picsum.photos/400/400?31">
+
+<p>Summer Trip</p>
+
+</div>
+
+<div class="polaroid">
+
+<img src="https://picsum.photos/400/400?32">
+
+<p>Adventure</p>
+
+</div>
+
+</div>
+
+<div class="tilt-gallery">
+
+<div class="tilt-card">
+
+<img src="https://picsum.photos/500/500?41">
+
+</div>
+
+<div class="tilt-card">
+
+<img src="https://picsum.photos/500/500?42">
+
+</div>
+
+</div>
+<!-- =====================================================
 TOPBAR
 ===================================================== -->
 
@@ -127,13 +646,13 @@ TOPBAR
     <input
       type="text"
       placeholder="Search gallery components..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
   <div class="topbar-actions">
 
-    <button class="outline-btn">
+    <button class="outline-btn" data-a11y-remediation="button-label-needed">
       Explore
     </button>
 
@@ -174,6 +693,370 @@ MAIN
     </p>
 
   </section>
+
+  <!-- =====================================================
+PREMIUM PROFESSIONAL GALLERY COMPONENTS
+===================================================== -->
+
+<!-- CASE STUDY CARD -->
+
+<div class="gallery-card case-study-card wide-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <div class="gallery-top">
+
+      <span class="gallery-tag">
+        Case Study
+      </span>
+
+      <span class="gallery-badge">
+        Enterprise
+      </span>
+
+    </div>
+
+    <h2>
+      SaaS Growth Platform
+    </h2>
+
+    <p>
+      Enterprise-grade dashboard ecosystem
+      designed for analytics and productivity.
+    </p>
+
+    <div class="case-study-stats">
+
+      <div>
+        <strong>+320%</strong>
+        <span>Revenue</span>
+      </div>
+
+      <div>
+        <strong>48K</strong>
+        <span>Users</span>
+      </div>
+
+      <div>
+        <strong>99.9%</strong>
+        <span>Uptime</span>
+      </div>
+
+    </div>
+
+    <button>
+      Read Case Study
+    </button>
+
+  </div>
+
+</div>
+
+<!-- DEVICE MOCKUP CARD -->
+
+<div class="gallery-card device-card tall-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Mobile UI
+    </span>
+
+    <h2>
+      Banking App
+    </h2>
+
+    <p>
+      Premium fintech mobile
+      application interface.
+    </p>
+
+    <div class="device-indicators">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PORTFOLIO SHOWCASE -->
+
+<div class="gallery-card portfolio-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Portfolio
+    </span>
+
+    <h2>
+      Creative Identity
+    </h2>
+
+    <p>
+      Branding showcase with
+      modern typography systems.
+    </p>
+
+    <div class="portfolio-tags">
+
+      <span>Branding</span>
+      <span>UI/UX</span>
+      <span>Motion</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- DASHBOARD PREVIEW -->
+
+<div class="gallery-card dashboard-preview large-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Analytics
+    </span>
+
+    <h2>
+      Data Intelligence Hub
+    </h2>
+
+    <p>
+      Real-time analytics interface
+      with modern visualization system.
+    </p>
+
+    <div class="dashboard-metrics">
+
+      <div class="metric-pill">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Live Metrics</span>
+      </div>
+
+      <div class="metric-pill">
+        <i class="fa-solid fa-database"></i>
+        <span>Cloud Sync</span>
+      </div>
+
+    </div>
+
+    <button>
+      Open Dashboard
+    </button>
+
+  </div>
+
+</div>
+
+<!-- TEAM SHOWCASE -->
+
+<div class="gallery-card team-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Team
+    </span>
+
+    <h2>
+      Product Strategy
+    </h2>
+
+    <p>
+      Collaborative design and
+      development workspace.
+    </p>
+
+    <div class="team-avatars">
+
+      <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="">
+      <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="">
+      <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="">
+      <span>+12</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PREMIUM GLASS CARD -->
+
+<div class="gallery-card premium-glass-card wide-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1400&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Glass UI
+    </span>
+
+    <h2>
+      Vision Workspace
+    </h2>
+
+    <p>
+      Ultra-modern glassmorphism interface
+      with layered transparency effects.
+    </p>
+
+    <div class="glass-actions">
+
+      <button class="primary-action">
+        Explore
+      </button>
+
+      <button class="glass-action">
+        <i class="fa-regular fa-bookmark"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- AGENCY CARD -->
+
+<div class="gallery-card agency-card tall-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1522202222206-b750f4b8a34d?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Agency
+    </span>
+
+    <h2>
+      Digital Studio
+    </h2>
+
+    <p>
+      Creative agency experience
+      with immersive interactions.
+    </p>
+
+    <button>
+      Visit Studio
+    </button>
+
+  </div>
+
+</div>
+
+<!-- MINIMAL EDITORIAL CARD -->
+
+<div class="gallery-card editorial-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Editorial
+    </span>
+
+    <h2>
+      Minimal Stories
+    </h2>
+
+    <p>
+      Elegant editorial inspired
+      layout with luxury aesthetics.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- INTERACTIVE CARD -->
+
+<div class="gallery-card interactive-card wide-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1516321310764-8d45b7d95f8d?q=80&w=1400&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <div class="gallery-top">
+
+      <span class="gallery-tag">
+        Interactive
+      </span>
+
+      <span class="gallery-badge">
+        Live UI
+      </span>
+
+    </div>
+
+    <h2>
+      Dynamic Experience
+    </h2>
+
+    <p>
+      Interactive component library
+      with immersive hover animations.
+    </p>
+
+    <div class="interaction-bar">
+
+      <div class="interaction-fill"></div>
+
+    </div>
+
+    <button>
+      Launch Demo
+    </button>
+
+  </div>
+
+</div>
 
   <!-- FILTERS -->
 
@@ -438,6 +1321,696 @@ MAIN
 
 </main>
 
+<!-- EXTRA GALLERY COMPONENTS -->
+
+<!-- CARD -->
+
+<div class="gallery-card gradient-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      UI Design
+    </span>
+
+    <h2>
+      Gradient Workspace
+    </h2>
+
+    <p>
+      Creative neon gradient dashboard experience.
+    </p>
+
+    <button>
+      Explore UI
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="gallery-card video-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Studio
+    </span>
+
+    <h2>
+      Creator Setup
+    </h2>
+
+    <p>
+      Modern content creator workspace.
+    </p>
+
+    <button>
+      Watch Preview
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="gallery-card floating-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Cyberpunk
+    </span>
+
+    <h2>
+      Future City
+    </h2>
+
+    <p>
+      Neon cyber inspired visuals.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="gallery-card glass-card tall-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Glassmorphism
+    </span>
+
+    <h2>
+      Glass Dashboard
+    </h2>
+
+    <p>
+      Frosted glass modern interface.
+    </p>
+
+    <button>
+      Preview
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="gallery-card wide-card border-glow-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      AI Interface
+    </span>
+
+    <h2>
+      AI Assistant Panel
+    </h2>
+
+    <p>
+      Futuristic AI interaction component system.
+    </p>
+
+    <button>
+      Launch
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="gallery-card mini-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Startup
+    </span>
+
+    <h2>
+      Startup Hub
+    </h2>
+
+    <p>
+      Team collaboration UI.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="gallery-card neon-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Neon
+    </span>
+
+    <h2>
+      Neon Interface
+    </h2>
+
+    <p>
+      Vibrant glowing futuristic layout.
+    </p>
+
+    <button>
+      Open Design
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+PREMIUM MASONRY GALLERY
+===================================================== -->
+
+<section class="premium-gallery">
+
+  <!-- FEATURED CARD -->
+
+  <div class="gallery-card featured-card ultra-large">
+
+    <img
+      src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <div class="gallery-top">
+
+        <span class="gallery-tag">
+          Featured
+        </span>
+
+        <span class="gallery-badge">
+          ✦ Trending
+        </span>
+
+      </div>
+
+      <h2>
+        Quantum UI System
+      </h2>
+
+      <p>
+        Next-generation futuristic design system
+        with immersive visual storytelling.
+      </p>
+
+      <div class="gallery-actions">
+
+        <button class="primary-action">
+          Explore Project
+        </button>
+
+        <button class="glass-action">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SPLIT CARD -->
+
+  <div class="gallery-card split-card">
+
+    <div class="split-content">
+
+      <span class="gallery-tag">
+        Minimal
+      </span>
+
+      <h2>
+        Clean Portfolio
+      </h2>
+
+      <p>
+        Elegant typography and
+        premium minimal layout.
+      </p>
+
+      <button>
+        Open Showcase
+      </button>
+
+    </div>
+
+    <img
+      src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+  </div>
+
+  <!-- FLOATING PROFILE -->
+
+  <div class="gallery-card creator-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <div class="creator-info">
+
+        <img
+          class="creator-avatar"
+          src="https://randomuser.me/api/portraits/women/44.jpg"
+          alt=""
+        >
+
+        <div>
+
+          <h4>
+            Sophia Ray
+          </h4>
+
+          <span>
+            Product Designer
+          </span>
+
+        </div>
+
+      </div>
+
+      <h2>
+        Team Collaboration
+      </h2>
+
+    </div>
+
+  </div>
+
+  <!-- HOVER REVEAL -->
+
+  <div class="gallery-card reveal-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="reveal-panel">
+
+      <span class="gallery-tag">
+        Startup
+      </span>
+
+      <h2>
+        Venture Workspace
+      </h2>
+
+      <p>
+        Interactive startup ecosystem
+        dashboard UI experience.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- METRIC CARD -->
+
+  <div class="gallery-card metric-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="metric-overlay">
+
+      <div class="metric-box">
+
+        <h3>
+          +245%
+        </h3>
+
+        <span>
+          User Growth
+        </span>
+
+      </div>
+
+      <div class="metric-box">
+
+        <h3>
+          18K
+        </h3>
+
+        <span>
+          Active Users
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 3D CARD -->
+
+  <div class="gallery-card tilt-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <span class="gallery-tag">
+        Cyberpunk
+      </span>
+
+      <h2>
+        Neon Dimension
+      </h2>
+
+      <p>
+        Immersive futuristic city visuals.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- APP SHOWCASE -->
+
+  <div class="gallery-card app-showcase wide-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <span class="gallery-tag">
+        Mobile App
+      </span>
+
+      <h2>
+        Finance Mobile UI
+      </h2>
+
+      <p>
+        Sleek fintech application
+        interface with premium UX.
+      </p>
+
+      <div class="app-stats">
+
+        <div>
+          <strong>
+            4.9★
+          </strong>
+          <span>
+            Rating
+          </span>
+        </div>
+
+        <div>
+          <strong>
+            120K
+          </strong>
+          <span>
+            Downloads
+          </span>
+        </div>
+
+        <div>
+          <strong>
+            #1
+          </strong>
+          <span>
+            Trending
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- AI CARD -->
+
+  <div class="gallery-card ai-card tall-card">
+
+    <img
+      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop"
+      alt=""
+    >
+
+    <div class="gallery-overlay">
+
+      <span class="gallery-tag">
+        AI Experience
+      </span>
+
+      <h2>
+        Neural Interface
+      </h2>
+
+      <p>
+        AI-generated futuristic workspace.
+      </p>
+
+      <button>
+        Launch Experience
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+TESTIMONIAL GALLERY SECTION
+===================================================== -->
+
+<section class="gallery-testimonials">
+
+  <div class="testimonial-card">
+
+    <div class="testimonial-top">
+
+      <img
+        src="https://randomuser.me/api/portraits/men/32.jpg"
+        alt=""
+      >
+
+      <div>
+
+        <h4>
+          Ethan Cole
+        </h4>
+
+        <span>
+          UI Engineer
+        </span>
+
+      </div>
+
+    </div>
+
+    <p>
+      “The gallery components are incredibly polished
+      and production ready.”
+    </p>
+
+  </div>
+
+  <div class="testimonial-card active">
+
+    <div class="testimonial-top">
+
+      <img
+        src="https://randomuser.me/api/portraits/women/65.jpg"
+        alt=""
+      >
+
+      <div>
+
+        <h4>
+          Ava Smith
+        </h4>
+
+        <span>
+          Creative Director
+        </span>
+
+      </div>
+
+    </div>
+
+    <p>
+      “A futuristic and modern collection
+      perfect for SaaS and startup products.”
+    </p>
+
+  </div>
+
+  <div class="testimonial-card">
+
+    <div class="testimonial-top">
+
+      <img
+        src="https://randomuser.me/api/portraits/men/14.jpg"
+        alt=""
+      >
+
+      <div>
+
+        <h4>
+          Noah Blake
+        </h4>
+
+        <span>
+          Product Designer
+        </span>
+
+      </div>
+
+    </div>
+
+    <p>
+      “The hover effects and layout system
+      feel premium and interactive.”
+    </p>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+CTA SECTION
+===================================================== -->
+
+<section class="gallery-cta">
+
+  <div class="cta-content">
+
+    <span>
+      ✦ Build futuristic experiences
+    </span>
+
+    <h2>
+      Discover More Premium Components
+    </h2>
+
+    <p>
+      Explore advanced gallery systems,
+      animations, layouts and modern UI kits.
+    </p>
+
+    <div class="cta-actions">
+
+      <button class="primary-btn">
+        Browse Components
+      </button>
+
+      <button class="outline-btn">
+        Live Preview
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CARD -->
+
+<div class="gallery-card dark-card large-card">
+
+  <img
+    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
+    alt=""
+  >
+
+  <div class="gallery-overlay">
+
+    <span class="gallery-tag">
+      Dark UI
+    </span>
+
+    <h2>
+      Dark Analytics
+    </h2>
+
+    <p>
+      Premium dark themed admin experience.
+    </p>
+
+    <button>
+      View Dashboard
+    </button>
+
+  </div>
+
+</div>
+
 <!-- LIGHTBOX -->
 
 <div class="lightbox" id="lightbox">
@@ -459,5 +2032,6 @@ MAIN
 
 <script src="gallery.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

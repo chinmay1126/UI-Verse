@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-1SaHF79sBEWUpCIFPIwVLjoshcxT7dYazmOu9QfIr6g= sha256-2YngtcfF3wurnF5YhVQuDkAvYik7VDT/8+igNjvPyUM= sha256-2d95qEeoeUPZthDb6q/o/bDP62DmfhkJ/T4a0zLvbvI= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-7KZqxJuyvEDvYFgOBHy3DeLm8zhtqgdOIsYIZPRmTAM= sha256-9ALnnKfrSh4jfZiqYg41K8B+aOVIutN7YG6BlumaMwQ= sha256-ACTr3UNHoXZqCwXJnSgcq3v2TuuDWWeLTklcTXYxj/U= sha256-BuU69uhfOnTrkgA4NgbuTW2nnMkAmn8LyJKd5zXJhns= sha256-CihQNuFmQpZvA0UZx8LD+XXxUKG41jrRxpnY07L+L/0= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q= sha256-GlgD/soqmT/sBfxdEs7O3rKYl0Luv2w3W7EQEjjmg6Q= sha256-Hs+XQ35pAQHdY+QJZH0fOA4RtTkExAQ2XSVSbhNT9MM= sha256-TaqIguHaV/N13B9jd6kOyQ7fHN57QE8JkSF2ouhMMX0= sha256-VcNknNXzwkgvwayq46QCJfF1AmZRxa7R7Hll8WpX4JM= sha256-WKreouB/d4HOnr3SBfwbnq8r/dK+sdHY2ekvhKmddG0= sha256-X5YBPyYv4a0lQfF2HR+OxAh3SRRljeOMFQfPAE0z14A= sha256-X7/6yaZvoVTMy2dLbh68FcIwZDGs8z3NZo86CcRFpJc= sha256-XbqKitkkUVqvdwRLW9SbLr4w+wu50b3ZTsSb4Lwl/+A= sha256-b/kFr2KmmpqSmgukLpdR8B0CJsSng0inblGQ0ioBXuY= sha256-cYP7v9eD79eoWFx+KB7DzH3yduNXZqpJtXc04I0WNhU= sha256-dBoZu0MGuT/gcVeBKqE7s3zRdL9eWyDEdFv874rh7dA= sha256-gX5Or/Md8PsFH6cPCZjmRvbdL/RTQkRp32j/iAmQ3GY= sha256-hFk5Lq6pjH9U3KDuEBsESrTZ8Lrglfc/mUPHK7UlMjM= sha256-hS/10inCi1MynI3SI2DeNnF0SqETThEE6BPO32OtpqM= sha256-i8G8cvnYFYFdQ7X8z0QaTyQIaYzHVZnPsD3tzGd65yw= sha256-k8fCLy2dQpDe3hSobAWzWuSLyl961hMT/a4jTxchHbA= sha256-n/k6OXgQCHtStzHpNL4XGvAPc/j7jnNuIvqrb4D0/CE= sha256-o2qOtpkETBtUrWBds4RMnXjeooUvLQmQT8boH8Q73Lo= sha256-rrDhk0QDJCIslrXuEZ/iX0Df+ylm8aW3F3aee+QZWKk= sha256-sCLJRZkg8s1ntINSkigsFmnBLV27IC6yWJJchksLHJI= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0= sha256-ykF0FkDvasinNN795OiPsDns2MmcN2kyMDwEbDKeAcA=; script-src-attr 'unsafe-hashes' sha256-1SaHF79sBEWUpCIFPIwVLjoshcxT7dYazmOu9QfIr6g= sha256-2YngtcfF3wurnF5YhVQuDkAvYik7VDT/8+igNjvPyUM= sha256-2d95qEeoeUPZthDb6q/o/bDP62DmfhkJ/T4a0zLvbvI= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-7KZqxJuyvEDvYFgOBHy3DeLm8zhtqgdOIsYIZPRmTAM= sha256-9ALnnKfrSh4jfZiqYg41K8B+aOVIutN7YG6BlumaMwQ= sha256-ACTr3UNHoXZqCwXJnSgcq3v2TuuDWWeLTklcTXYxj/U= sha256-BuU69uhfOnTrkgA4NgbuTW2nnMkAmn8LyJKd5zXJhns= sha256-CihQNuFmQpZvA0UZx8LD+XXxUKG41jrRxpnY07L+L/0= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q= sha256-GlgD/soqmT/sBfxdEs7O3rKYl0Luv2w3W7EQEjjmg6Q= sha256-Hs+XQ35pAQHdY+QJZH0fOA4RtTkExAQ2XSVSbhNT9MM= sha256-TaqIguHaV/N13B9jd6kOyQ7fHN57QE8JkSF2ouhMMX0= sha256-VcNknNXzwkgvwayq46QCJfF1AmZRxa7R7Hll8WpX4JM= sha256-WKreouB/d4HOnr3SBfwbnq8r/dK+sdHY2ekvhKmddG0= sha256-X5YBPyYv4a0lQfF2HR+OxAh3SRRljeOMFQfPAE0z14A= sha256-X7/6yaZvoVTMy2dLbh68FcIwZDGs8z3NZo86CcRFpJc= sha256-XbqKitkkUVqvdwRLW9SbLr4w+wu50b3ZTsSb4Lwl/+A= sha256-b/kFr2KmmpqSmgukLpdR8B0CJsSng0inblGQ0ioBXuY= sha256-cYP7v9eD79eoWFx+KB7DzH3yduNXZqpJtXc04I0WNhU= sha256-dBoZu0MGuT/gcVeBKqE7s3zRdL9eWyDEdFv874rh7dA= sha256-gX5Or/Md8PsFH6cPCZjmRvbdL/RTQkRp32j/iAmQ3GY= sha256-hFk5Lq6pjH9U3KDuEBsESrTZ8Lrglfc/mUPHK7UlMjM= sha256-hS/10inCi1MynI3SI2DeNnF0SqETThEE6BPO32OtpqM= sha256-i8G8cvnYFYFdQ7X8z0QaTyQIaYzHVZnPsD3tzGd65yw= sha256-k8fCLy2dQpDe3hSobAWzWuSLyl961hMT/a4jTxchHbA= sha256-n/k6OXgQCHtStzHpNL4XGvAPc/j7jnNuIvqrb4D0/CE= sha256-o2qOtpkETBtUrWBds4RMnXjeooUvLQmQT8boH8Q73Lo= sha256-rrDhk0QDJCIslrXuEZ/iX0Df+ylm8aW3F3aee+QZWKk= sha256-sCLJRZkg8s1ntINSkigsFmnBLV27IC6yWJJchksLHJI= sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0= sha256-ykF0FkDvasinNN795OiPsDns2MmcN2kyMDwEbDKeAcA=; style-src 'self' https: 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA= sha256-rEOReBRxS+nEOBEme3GViGypsLDy2i1/FcJ73yHCbYA=; style-src-attr 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA= sha256-rEOReBRxS+nEOBEme3GViGypsLDy2i1/FcJ73yHCbYA=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>File Upload Components — UIverse</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="files.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="shared-page.css">
-  <link rel="stylesheet" href="cards.css">
   <link rel="stylesheet" href="playground.css">
 
   <!-- Primary Meta Tags -->
@@ -23,6 +20,8 @@
   <meta name="author" content="UIverse Community">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="main-content">
 
@@ -35,7 +34,7 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" / data-a11y-remediation="label-needed">
     <kbd class="search-kbd">⌘K</kbd>
   </div>
 
@@ -1169,5 +1168,6 @@
   }
 </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
