@@ -1,299 +1,600 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-aMhs/PtsvWRfbXvBVJBdTKASfkTisEfODfMov8VRq8k=; style-src-attr 'unsafe-hashes' sha256-aMhs/PtsvWRfbXvBVJBdTKASfkTisEfODfMov8VRq8k=">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Products — UIverse</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#0b1020;
-  --surface:rgba(255,255,255,.08);
-  --border:rgba(255,255,255,.12);
-  --text:#fff;
-  --muted:#b8bfd3;
-  --primary:#7c5cff;
-  --accent:#00d4ff;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:"DM Sans",sans-serif;
-  background:
-    radial-gradient(circle at top left,#7c5cff22,transparent 40%),
-    radial-gradient(circle at bottom right,#00d4ff22,transparent 40%),
-    var(--bg);
-  color:var(--text);
-  min-height:100vh;
-}
-
-.container{
-  width:min(1200px,92%);
-  margin:auto;
-}
-
-.hero{
-  padding:7rem 0 5rem;
-  text-align:center;
-}
-
-.hero h1{
-  font-family:"Syne",sans-serif;
-  font-size:clamp(3rem,7vw,5rem);
-  line-height:1;
-  margin-bottom:1rem;
-}
-
-.hero p{
-  max-width:700px;
-  margin:auto;
-  color:var(--muted);
-  font-size:1.1rem;
-}
-
-.search-bar{
-  margin:2rem auto 0;
-  max-width:650px;
-  display:flex;
-  gap:1rem;
-}
-
-.search-bar input{
-  flex:1;
-  padding:1rem 1.25rem;
-  border-radius:16px;
-  border:1px solid var(--border);
-  background:var(--surface);
-  color:white;
-  backdrop-filter:blur(20px);
-}
-
-.search-bar button{
-  border:none;
-  border-radius:16px;
-  padding:1rem 1.5rem;
-  background:linear-gradient(135deg,var(--primary),var(--accent));
-  color:white;
-  cursor:pointer;
-  font-weight:700;
-}
-
-.categories{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:1rem;
-  margin:4rem 0;
-}
-
-.category{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:1.5rem;
-  text-align:center;
-  backdrop-filter:blur(16px);
-  transition:.3s;
-}
-
-.category:hover{
-  transform:translateY(-6px);
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-  gap:1.5rem;
-  margin-bottom:5rem;
-}
-
-.card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:24px;
-  overflow:hidden;
-  backdrop-filter:blur(20px);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-}
-
-.card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-}
-
-.card-content{
-  padding:1.25rem;
-}
-
-.card h3{
-  margin-bottom:.5rem;
-}
-
-.card p{
-  color:var(--muted);
-  font-size:.95rem;
-}
-
-.price{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:1rem;
-}
-
-.price strong{
-  font-size:1.2rem;
-}
-
-.price button{
-  background:var(--primary);
-  border:none;
-  color:white;
-  padding:.7rem 1rem;
-  border-radius:12px;
-  cursor:pointer;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1rem;
-  margin-bottom:4rem;
-}
-
-.stat{
-  text-align:center;
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:1.5rem;
-  border-radius:20px;
-}
-
-.stat h2{
-  font-size:2rem;
-  margin-bottom:.4rem;
-}
-
-@media(max-width:768px){
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .search-bar{
-    flex-direction:column;
-  }
-}
-</style>
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'unsafe-inline'; style-src 'self' https: 'unsafe-hashes' 'unsafe-inline'; style-src-attr 'unsafe-hashes' 'unsafe-inline'; font-src 'self' data: https: https://fonts.gstatic.com;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SaaS Product Grid Matrix | UIverse Premium</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="product.css">
 </head>
+<body class="dark-mode">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<body>
+  <!-- =========================================================
+     GLOBAL VIEWPORT PLATFORM SIDEBAR
+  ========================================================= -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-text">UIverse <span class="engine-badge">Asset Engine</span></span>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="nav-group-wrapper">
+        <span class="nav-group-title">Ecosystem Foundations</span>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home Registry</span></a></li>
+          <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Action Buttons</span></a></li>
+          <li><a href="dropdown-components.html"><i class="fa-solid fa-caret-down"></i><span>Dropdown Systems</span></a></li>
+          <li><a href="profile-components.html"><i class="fa-solid fa-user"></i><span>Identity Profiles</span></a></li>
+          <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navbar Shells</span></a></li>
+          <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Component Cards</span></a></li>
+        </ul>
+      </div>
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
+      <div class="nav-group-wrapper">
+        <span class="nav-group-title">Data Intake Modules</span>
+        <ul>
+          <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Form Inputs</span></a></li>
+          <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><span>Schema Intakes</span></a></li>
+          <li><a href="badges.html"><i class="fa-solid fa-award"></i><span>Status Badges</span></a></li>
+        </ul>
+      </div>
 
-<header class="hero">
-  <div class="container">
-    <h1>Discover Premium Products</h1>
-    <p>
-      Explore thousands of beautifully crafted UI components,
-      templates, patterns, and design resources from the UIverse community.
-    </p>
+      <div class="nav-group-wrapper">
+        <span class="nav-group-title">SaaS Visualization</span>
+        <ul>
+          <li><a href="color.html"><i class="fa-solid fa-palette"></i><span>Global Color Tokens</span></a></li>
+          <li><a href="charts.html"><i class="fa-solid fa-chart-pie"></i><span>Data Charts</span></a></li>
+          <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Admin Viewports</span></a></li>
+          <li class="active"><a href="product.html"><i class="fa-solid fa-cart-shopping"></i><span>Product Showcases</span></a></li>
+          <li><a href="files.html"><i class="fa-solid fa-file-arrow-up"></i><span>File Drop Vaults</span></a></li>
+        </ul>
+      </div>
 
+      <div class="nav-group-wrapper">
+        <span class="nav-group-title">Enterprise Matrices</span>
+        <ul>
+          <li><a href="hero.html"><i class="fa-solid fa-star"></i><span>Hero Landing Layouts</span></a></li>
+          <li><a href="loaders.html"><i class="fa-solid fa-spinner"></i><span>System Loaders</span></a></li>
+          <li><a href="timeline.html"><i class="fa-solid fa-clock-rotate-left"></i><span>Milestone Trails</span></a></li>
+          <li><a href="map.html"><i class="fa-solid fa-map-location-dot"></i><span>Spatial Location Maps</span></a></li>
+          <li><a href="menu.html"><i class="fa-solid fa-bars-staggered"></i><span>Context Lists</span></a></li>
+          <li><a href="pricing.html"><i class="fa-solid fa-tags"></i><span>Pricing Streams</span></a></li>
+          <li><a href="table.html"><i class="fa-solid fa-table"></i><span>Data Matrices</span></a></li>
+          <li><a href="tabs.html"><i class="fa-solid fa-table-columns"></i><span>Viewport Tabs</span></a></li>
+          <li><a href="terms.html"><i class="fa-solid fa-file-contract"></i><span>Terms & Compliances</span></a></li>
+          <li><a href="testimonials.html"><i class="fa-solid fa-comments"></i><span>Social Proof Matrix</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <a href="#" aria-label="GitHub Repository Link"><i class="fab fa-github"></i></a>
+      <a href="#" aria-label="LinkedIn Profile Link"><i class="fab fa-linkedin"></i></a>
+      <a href="#" aria-label="Twitter Updates Link"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </aside>
+
+  <!-- SIDEBAR MOBILITY INTERCEPTOR LAYER -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="runtimeToggleSidebar()"></div>
+
+  <!-- =========================================================
+     TOP INTEGRATED PLATFORM NAVBAR
+  ========================================================= -->
+  <header class="navbar" id="navbar">
+    <button class="menu-toggle" onclick="runtimeToggleSidebar()" aria-label="Toggle system navigation menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="logo">UIverse <span class="badge-pro">STORE</span></div>
     <div class="search-bar">
-      <input type="text" placeholder="Search products...">
-      <button>Search</button>
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Query interface packs, asset configurations, or token variants..." aria-label="Search items ledger">
+      <kbd class="search-kbd">⌘K</kbd>
     </div>
-  </div>
-</header>
+    <div class="nav-right">
+      <button class="nav-btn outline-nav-btn" type="button">
+        <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload Asset
+      </button>
+      <button class="nav-btn primary-nav-btn" type="button">
+        <i class="fa-solid fa-shopping-bag"></i> Checkout Pool <span class="cart-counter">3</span>
+      </button>
+      <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme" type="button">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
 
-<main id="main-content" class="container">
-
-  <section class="stats">
-    <div class="stat">
-      <h2>15K+</h2>
-      <p>Products</p>
+  <!-- =========================================================
+     MAIN WORKSPACE VIEWPORT CANVAS
+  ========================================================= -->
+  <main class="main" id="main-content">
+    
+    <div class="page-header">
+      <h1>Product Components</h1>
+      <p>Explore high-fidelity component layouts styled for deployment matrices: translucent glassmorphism grids, interactive interactive tilt cards, aurora glowing particles, and bento inventory sets.</p>
     </div>
 
-    <div class="stat">
-      <h2>4.9★</h2>
-      <p>Average Rating</p>
+    <!-- DYNAMIC ENDLESS HORIZONTAL STRIP MARQUEE -->
+    <section class="store-marquee">
+      <div class="marquee-track">
+        <div class="mini-tag">⚡ 60fps Hardware Accelerated Shaders</div>
+        <div class="mini-tag">📦 Fully Decoupled JSON Metadata Layouts</div>
+        <div class="mini-tag">🔥 Fluid Elastic Micro-Interactions Deployed</div>
+        <div class="mini-tag">🛡️ Strict CSP Compliant Asset Blocks</div>
+        <div class="mini-tag">🌐 Sub-Millisecond Cumulative Layout Shift Indices</div>
+      </div>
+    </section>
+
+    <!-- CORE INTEGRATED DISPLAY TILES MATRIX GRID -->
+    <div class="product-grid">
+
+      <!-- COMPONENT 1: GLASSMORPHIC SPEC SHIMMER CARD -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // GLASSMORPHIC CORE</div>
+        <div class="p-card-glass">
+          <div class="p-glass-glow"></div>
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="Core Neon Sneaker Asset">
+            <span class="p-category-badge">Hardware Pack</span>
+          </div>
+          <div class="p-info-block">
+            <h3 class="p-title">Quantum Shimmer Running Matrix</h3>
+            <p class="p-desc">Frosted absolute glass layers housing custom token inputs designed to maximize rendering efficiency.</p>
+            <div class="p-action-row">
+              <span class="p-price">$184.00</span>
+              <div class="p-rating-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p1', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p1', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p1" class="code-block">&lt;div class="p-card-glass"&gt;
+  &lt;div class="p-glass-glow"&gt;&lt;/div&gt;
+  &lt;div class="p-image-box"&gt;&lt;img src="asset.png" /&gt;&lt;/div&gt;
+  &lt;div class="p-info-block"&gt;
+    &lt;h3 class="p-title"&gt;Quantum Shimmer Running Matrix&lt;/h3&gt;
+    &lt;span class="p-price"&gt;$184.00&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 2: INTERACTIVE PERSPECTIVE TILT ASSET -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // 3D MATRIX TILT</div>
+        <div class="p-card-tilt">
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Chronograph watch profile asset">
+            <span class="p-category-badge gradient-cyan">Wearables Node</span>
+          </div>
+          <div class="p-info-block">
+            <h3 class="p-title">Chronograph Vector Axis Watch</h3>
+            <p class="p-desc">Tactile perspective coordinates mapping active user cursor positioning vectors across spatial layout grids.</p>
+            <div class="p-action-row">
+              <span class="p-price">$340.00</span>
+              <button class="p-cart-icon-btn" aria-label="Append item to local storage state"><i class="fa-solid fa-basket-shopping"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p2', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p2', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p2" class="code-block">&lt;div class="p-card-tilt"&gt;
+  &lt;div class="p-image-box"&gt;&lt;img src="watch.png" /&gt;&lt;/div&gt;
+  &lt;h3 class="p-title"&gt;Chronograph Vector Axis Watch&lt;/h3&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 3: HIGH-SATURATION AURORA GLOW SHEET -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // AURORA PHOTON FIELD</div>
+        <div class="p-card-aurora">
+          <div class="p-aurora-blend"></div>
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Acoustic transducer headphone asset">
+            <span class="p-category-badge gradient-purple">Audio Core</span>
+          </div>
+          <div class="p-info-block">
+            <h3 class="p-title">Acoustic Transducer Wave Array</h3>
+            <p class="p-desc">Dynamic gradient background structures rendering fluid color spectrum matrices below asset layouts.</p>
+            <div class="p-action-row">
+              <span class="p-price">$210.00</span>
+              <span class="p-stock-pill">Nodes Available</span>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p3', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p3', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p3" class="code-block">&lt;div class="p-card-aurora"&gt;
+  &lt;div class="p-aurora-blend"&gt;&lt;/div&gt;
+  &lt;h3 class="p-title"&gt;Acoustic Transducer Wave Array&lt;/h3&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 4: GEOMETRIC BENTO MULTI-LEVEL EXPANSION -->
+      <div class="component-card large-span-card">
+        <div class="card-telemetry-meta">ASSET MODEL // BENTO MATRIX GRID SYSTEM</div>
+        <div class="p-card-bento">
+          <div class="bento-main-sector">
+            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&q=80" alt="Telemetry controller main hub asset">
+          </div>
+          <div class="bento-side-metrics">
+            <div class="bento-tag-strip">
+              <span class="bento-status">Active Pipeline Spec</span>
+              <span class="bento-score">99.2% Output</span>
+            </div>
+            <h2 class="bento-product-title">Studio Console Telemetry Core</h2>
+            <p class="bento-product-desc">Advanced inventory interface mapping unified state records across deep multi-channel dashboard components seamlessly.</p>
+            
+            <div class="bento-configuration-selector">
+              <strong>Engine Hardware Presets:</strong>
+              <div class="preset-pill-group">
+                <button type="button" class="preset-pill active">64GB Core</button>
+                <button type="button" class="preset-pill">128GB Cluster</button>
+                <button type="button" class="preset-pill">256GB Matrix</button>
+              </div>
+            </div>
+
+            <div class="bento-footer-pricing">
+              <div class="price-stack">
+                <span class="old-price-line">$1,450.00</span>
+                <span class="current-price-vibrant">$1,120.00</span>
+              </div>
+              <button class="bento-checkout-cta-btn" type="button">Deploy Asset Node</button>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p4', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p4', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p4" class="code-block">&lt;div class="p-card-bento"&gt;
+  &lt;div class="bento-main-sector"&gt;...&lt;/div&gt;
+  &lt;div class="bento-side-metrics"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 5: NEON CYBERPUNK SATURATION GRID -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // CYBER SCAN VECTORS</div>
+        <div class="p-card-cyber">
+          <div class="p-scan-beam"></div>
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=500&q=80" alt="Tactical laser hardware tracker asset">
+            <span class="p-category-badge gradient-pink">Security Cluster</span>
+          </div>
+          <div class="p-info-block">
+            <h3 class="p-title">Tactical Laser Alignment Node</h3>
+            <p class="p-desc">High-saturation neon boundaries capturing crisp laser sweeps across localized screen hierarchies.</p>
+            <div class="p-action-row">
+              <span class="p-price">$89.00</span>
+              <span class="p-tag-critical"><i class="fa-solid fa-fire"></i> Critical Path</span>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p5', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p5', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p5" class="code-block">&lt;div class="p-card-cyber"&gt;
+  &lt;div class="p-scan-beam"&gt;&lt;/div&gt;
+  &lt;h3 class="p-title"&gt;Tactical Laser Alignment Node&lt;/h3&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 6: SPLIT IMAGE-CONTENT GRID EXTENSION -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // STRATIFIED CROSS SPLIT</div>
+        <div class="p-card-split">
+          <div class="p-split-left-visual">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&q=80" alt="Optic optical capture matrix lens asset">
+          </div>
+          <div class="p-split-right-details">
+            <span class="p-micro-tag-anchor">Optics Registry</span>
+            <h3 class="p-title">Focal Aperture Capture Matrix</h3>
+            <div class="p-rating-stars">$520.00</div>
+            <p class="p-desc">Symmetrical layout splits separating high-resolution graphical frames from configuration scripts evenly.</p>
+            <button class="p-split-buy-btn" type="button">Bind Core Matrix</button>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p6', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p6', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p6" class="code-block">&lt;div class="p-card-split"&gt;
+  &lt;div class="p-split-left-visual"&gt;...&lt;/div&gt;
+  &lt;div class="p-split-right-details"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 7: QUANTUM LIQUID MESH CARD -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // AMBIENT LIQUID LIQUEFY</div>
+        <div class="p-card-mesh">
+          <div class="p-mesh-blob blue"></div><div class="p-mesh-blob purple"></div>
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&q=80" alt="Chromatic reflection optics model asset">
+          </div>
+          <div class="p-info-block">
+            <h3 class="p-title">Chromatic Resonance Prism Layer</h3>
+            <p class="p-desc">Deep shifting background values blending underneath high-contrast foreground data coordinates smoothly.</p>
+            <div class="p-action-row">
+              <span class="p-price">$75.00</span>
+              <div class="p-rating-stars">★★★★☆</div>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p7', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p7', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p7" class="code-block">&lt;div class="p-card-mesh"&gt;
+  &lt;div class="p-mesh-blob blue"&gt;&lt;/div&gt;
+  &lt;h3 class="p-title"&gt;Chromatic Resonance Prism Layer&lt;/h3&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 8: RAW CONTRASTING NEO-BRUTALIST TILE -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // NEO BRUTALISM STRUCTURE</div>
+        <div class="p-card-brutalist">
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=500&q=80" alt="Minimal clean leather boot asset">
+          </div>
+          <div class="p-info-block">
+            <h3 class="p-title">Industrial Leather Boundary Boot</h3>
+            <p class="p-desc">High-contrast solid block shadows paired with thick layout frames built for intense visual presence requirements.</p>
+            <div class="p-action-row">
+              <span class="p-price">$290.00</span>
+              <button class="brutalist-buy-btn-cta" type="button">Acquire Node</button>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p8', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p8', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p8" class="code-block">&lt;div class="p-card-brutalist"&gt;
+  &lt;div class="p-image-box"&gt;&lt;img src="boot.png" /&gt;&lt;/div&gt;
+  &lt;h3 class="p-title"&gt;Industrial Leather Boundary Boot&lt;/h3&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 9: KINETIC HOVER SLIDE-UP OVERLAY -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // KINETIC EXPANSION SLIDER</div>
+        <div class="p-card-slide-up">
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&q=80" alt="Premium luxury leather asset bag">
+          </div>
+          <div class="p-slide-overlay-panel">
+            <div class="p-overlay-content-wrap">
+              <h3 class="p-overlay-title">Sovereign Leather Carrier Case</h3>
+              <p class="p-overlay-desc">Concealed preference menus sliding up smoothly into view channels only during active element focus transitions.</p>
+              <div class="p-overlay-pricing">$840.00</div>
+              <button class="p-overlay-action-cta-btn" type="button">Add Token Shell</button>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p9', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p9', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p9" class="code-block">&lt;div class="p-card-slide-up"&gt;
+  &lt;div class="p-image-box"&gt;&lt;img src="bag.png" /&gt;&lt;/div&gt;
+  &lt;div class="p-slide-overlay-panel"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 10: QUANTUM ELASTIC HOVER FRAME -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // ELASTIC SPRING PROFILE</div>
+        <div class="p-card-elastic">
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80" alt="High elasticity canvas shoe model">
+          </div>
+          <div class="p-info-block">
+            <h3 class="p-title">Vector Spring Mesh Sneaker</h3>
+            <p class="p-desc">Custom bounce equations running inside transition blocks to smooth dimensional transformation curves.</p>
+            <div class="p-action-row">
+              <span class="p-price">$110.00</span>
+              <button class="p-elastic-cart-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p10', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p10', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p10" class="code-block">&lt;div class="p-card-elastic"&gt;
+  &lt;div class="p-image-box"&gt;&lt;img src="shoe2.png" /&gt;&lt;/div&gt;
+  &lt;h3 class="p-title"&gt;Vector Spring Mesh Sneaker&lt;/h3&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 11: SOFT INTEGRATED SYMMETRY CAVITY -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // NEUMORPHIC MATRIX INDEX</div>
+        <div class="p-card-soft-cavity">
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80" alt="Fine structural tailored asset canvas">
+          </div>
+          <div class="p-info-block">
+            <h3 class="p-title">Tailored Silhouette Shell Layer</h3>
+            <p class="p-desc">Symmetrical, deep shadow parameters formatting smooth surface transitions across environment layers.</p>
+            <div class="p-action-row">
+              <span class="p-price">$410.00</span>
+              <div class="p-rating-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p11', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p11', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p11" class="code-block">&lt;div class="p-card-soft-cavity"&gt;
+  &lt;div class="p-image-box"&gt;&lt;img src="coat.png" /&gt;&lt;/div&gt;
+  &lt;h3 class="p-title"&gt;Tailored Silhouette Shell Layer&lt;/h3&gt;
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- COMPONENT 12: ELITE HIGH-CONTRAST MONOCHROME -->
+      <div class="component-card">
+        <div class="card-telemetry-meta">ASSET MODEL // MINIMAL MONOCHROME CORE</div>
+        <div class="p-card-minimal">
+          <div class="p-image-box">
+            <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=500&q=80" alt="Minimalist glass storage decanter asset">
+          </div>
+          <div class="p-info-block">
+            <h3 class="p-title">Geometric Glass Storage Decanter</h3>
+            <p class="p-desc">Ultra-clean structural geometry that relies entirely on precise type alignments over busy border elements.</p>
+            <div class="p-action-row">
+              <span class="p-price">$65.00</span>
+              <span class="p-minimal-checkout-btn">Deploy Asset</span>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="action-btn view-btn" onclick="toggleCode('p12', this)"><i class="fa-solid fa-code"></i> Inspect Sheet</button>
+          <button class="action-btn copy-btn" onclick="copyCode('p12', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre id="p12" class="code-block">&lt;div class="p-card-minimal"&gt;
+  &lt;div class="p-image-box"&gt;&lt;img src="glass.png" /&gt;&lt;/div&gt;
+  &lt;h3 class="p-title"&gt;Geometric Glass Storage Decanter&lt;/h3&gt;
+&lt;/div&gt;</pre>
+      </div>
+
     </div>
 
-    <div class="stat">
-      <h2>80K+</h2>
-      <p>Downloads</p>
-    </div>
+    <!-- PIPELINE CHECKOUT CALL STRIP CARDS -->
+    <section class="store-transactional-banner-section">
+      <div class="banner-content-group">
+        <h2>Continuous Asset Synchronization Framework</h2>
+        <p>Are you tracking interface updates across clustered developer pipelines? Integrate our unified automated manifest ledger channels straight into your repository compilation threads.</p>
+      </div>
+      <div class="banner-actions-group">
+        <button class="banner-btn outline" type="button">Extract Asset Metadata Manifest</button>
+        <button class="banner-btn primary" type="button">Establish Webhook Handshake</button>
+      </div>
+    </section>
 
-    <div class="stat">
-      <h2>1.2K+</h2>
-      <p>Creators</p>
-    </div>
-  </section>
+  </main>
 
-  <section class="categories">
-    <div class="category">🎨 UI Kits</div>
-    <div class="category">📦 Components</div>
-    <div class="category">🧩 Templates</div>
-    <div class="category">📱 Mobile UI</div>
-    <div class="category">⚡ Animations</div>
-    <div class="category">🚀 Landing Pages</div>
-  </section>
-
-  <section class="products">
-
-    <article class="card">
-      <img src="https://picsum.photos/500/300?1" alt="Product">
-      <div class="card-content">
-        <h3>Modern Dashboard Kit</h3>
-        <p>Beautiful analytics dashboard built for SaaS products.</p>
-
-        <div class="price">
-          <strong>$29</strong>
-          <button>View</button>
+  <!-- =========================================================
+     COMPREHENSIVE GLOBAL PLATFORM ENVIRONMENT FOOTER
+  ========================================================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Engineering real-time structural layout matrices using mathematical component spacing formulas, low-latency rendering properties variables, and secure data tunnels.</p>
+        <div class="socials">
+          <a href="#" title="Access Repository Pipelines"><i class="fab fa-github"></i></a>
+          <a href="#" title="Access Corporate Network Connection Node"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="Access Telemetry Stream Log Broadcasts"><i class="fab fa-x-twitter"></i></a>
         </div>
       </div>
-    </article>
+      
+      <div class="footer-col">
+        <h3>Platform Shells</h3>
+        <ul>
+          <li><a href="button.html">Action Nodes Matrix</a></li>
+          <li><a href="navbar.html">Navigation Frameworks</a></li>
+          <li><a href="cards.html">Canvas Tile Layers</a></li>
+          <li><a href="inputs.html">Form Input Channels</a></li>
+          <li><a href="forms.html">Schema Layout Forms</a></li>
+        </ul>
+      </div>
 
-    <article class="card">
-      <img src="https://picsum.photos/500/300?2" alt="Product">
-      <div class="card-content">
-        <h3>Glass UI Components</h3>
-        <p>Modern glassmorphism component library.</p>
+      <div class="footer-col">
+        <h3>Technical Manuals</h3>
+        <ul>
+          <li><a href="#">Technical Documentation Matrix</a></li>
+          <li><a href="#">Ecosystem Contribution Protocols</a></li>
+          <li><a href="#">Open Source Main Repositories</a></li>
+          <li><a href="#">Developer Core Communities</a></li>
+        </ul>
+      </div>
 
-        <div class="price">
-          <strong>$19</strong>
-          <button>View</button>
+      <div class="footer-col">
+        <h3>Regulatory Metrics</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Data Isolation Policy Sheets</a></li>
+          <li><a href="terms.html">Terms of System Operations</a></li>
+          <li><a href="#">Modular Asset Licensing Manifest</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h3>Continuous Integration Streams</h3>
+        <p>Register your workspace hub node destination to intercept low-frequency deployment tracking logs instantly.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="operator@engine.domain" aria-label="Operator email register allocation input path" />
+          <button type="button" onclick="alert('Destination node verified within logging channels.');">Sync Hub</button>
         </div>
       </div>
-    </article>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse Architecture Systems. Engineered to total structural perfection for professional front-end teams globally.</p>
+    </div>
+  </footer>
 
-    <article class="card">
-      <img src="https://picsum.photos/500/300?3" alt="Product">
-      <div class="card-content">
-        <h3>Landing Page Bundle</h3>
-        <p>Collection of high-converting landing page templates.</p>
+  <!-- =========================================================
+     COMPREHENSIVE RUNTIME LOGIC ENGINE SCRIPTS
+  ========================================================= -->
+  <script>
+    function toggleCode(targetId, clickBtn) {
+      const codeContainer = document.getElementById(targetId);
+      if (!codeContainer) return;
+      
+      if (codeContainer.style.display === 'block') {
+        codeContainer.style.display = 'none';
+        clickBtn.innerHTML = '<i class="fa-solid fa-code"></i> Inspect Sheet';
+      } else {
+        codeContainer.style.display = 'block';
+        clickBtn.innerHTML = '<i class="fa-solid fa-folder-minus"></i> Collapse Panel';
+      }
+    }
 
-        <div class="price">
-          <strong>$39</strong>
-          <button>View</button>
-        </div>
-      </div>
-    </article>
+    function copyCode(targetId, clickBtn) {
+      const targetPreCode = document.getElementById(targetId);
+      if (!targetPreCode) return;
+      
+      navigator.clipboard.writeText(targetPreCode.innerText).then(() => {
+        const originalInnerContent = clickBtn.innerHTML;
+        clickBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Token Harvested!';
+        clickBtn.style.background = '#10b981';
+        clickBtn.disabled = true;
+        
+        setTimeout(() => {
+          clickBtn.innerHTML = originalInnerContent;
+          clickBtn.style.background = '';
+          clickBtn.disabled = false;
+        }, 1800);
+      });
+    }
 
-  </section>
-
-</main>
-
+    function runtimeToggleSidebar() {
+      const targetSidebar = document.getElementById('sidebar');
+      const targetBackdrop = document.getElementById('sidebarBackdrop');
+      if (targetSidebar && targetBackdrop) {
+        targetSidebar.classList.toggle('visible');
+        targetBackdrop.classList.toggle('visible');
+      }
+    }
+    window.runtimeToggleSidebar = runtimeToggleSidebar;
+  </script>
 </body>
 </html>
