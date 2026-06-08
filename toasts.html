@@ -1,1284 +1,2601 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="stylesheet" href="dist/shared.css">
-  <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UI Verse - Toast Library</title>
 
-  <link rel="stylesheet" href="toasts.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="shared-sidebar.css">
+<meta charset="UTF-8">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>
 
-  <!-- UIverse Modular CSS Architecture -->
-  </head>
+Toast Notifications UI
+
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="toasts.css">
+
+</head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Mobile Toggle -->
-  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+<!-- =========================
+BACKGROUND
+========================= -->
 
-  <!-- =========================================================
-   SIDEBAR
-========================================================= -->
+<div class="bg-gradient"></div>
 
-<aside class="sidebar">
+<!-- =========================
+NAVBAR
+========================= -->
 
-  <div class="sidebar-brand">
+<header class="navbar">
 
-    <span class="brand-icon">⬡</span>
+<div class="logo">
 
-    <span class="brand-text">
-      UIverse
-    </span>
+🔔 ToastVerse
 
-  </div>
+</div>
 
-          <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a href="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="button.html">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Buttons</span>
-        </a>
-      </li>
-            <li>
-        <a href="dropdown-components.html">
-          <i class="fa-solid fa-caret-down"></i>
-          <span>Dropdowns</span>
-        </a>
-      </li>
-      <li>
-        <a href="profile-components.html">
-          <i class="fa-solid fa-user"></i>
-          <span>Profiles</span>
-        </a>
-      </li>
-<li>
-        <a href="navbar.html">
-          <i class="fa-solid fa-bars"></i>
-          <span>Navbar</span>
-        </a>
-      </li>
-      <li>
-        <a href="cards.html">
-          <i class="fa-solid fa-table-cells-large"></i>
-          <span>Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="notes-components.html">
-          <i class="fas fa-sticky-note"></i>
-          <span>Notes</span>
-        </a>
-      </li>
-      <li>
-        <a href="range-slider.html">
-          <i class="fas fa-sliders-h"></i>
-          <span>Range Slider</span>
-        </a>
-      </li>
-      <li>
-        <a href="flipcards.html">
-          <i class="fa-solid fa-clone"></i>
-          <span>3D Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="inputs.html">
-          <i class="fa-solid fa-keyboard"></i>
-          <span>Inputs</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms.html">
-          <i class="fa-brands fa-wpforms"></i>
-          <span>Forms</span>
-        </a>
-      </li>
-      <li>
-        <a href="badges.html">
-          <i class="fa-solid fa-award"></i>
-          <span>Badges</span>
-        </a>
-      </li>
-      <li>
-        <a href="blog.html">
-          <i class="fa-solid fa-blog"></i>
-          <span>Blog</span>
-        </a>
-      </li>
-      <li>
-        <a href="article.html">
-          <i class="fa-solid fa-newspaper"></i>
-          <span>Articles</span>
-        </a>
-      </li>
-      <li>
-        <a href="alerts.html">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <span>Alerts</span>
-        </a>
-      </li>
-      <li>
-        <a href="color.html">
-          <i class="fa-solid fa-palette"></i>
-          <span>Colors</span>
-        </a>
-      </li>
-      <li>
-        <a href="charts.html">
-          <i class="fa-solid fa-chart-pie"></i>
-          <span>Charts</span>
-        </a>
-      </li>
-      <li>
-        <a href="dashboard.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="div.html">
-          <i class="fa-solid fa-square"></i>
-          <span>DIV</span>
-        </a>
-      </li>
-      <li>
-        <a href="widgets.html">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Widgets</span>
-        </a>
-      </li>
-      <li>
-        <a href="search.html">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span>Search Bars</span>
-        </a>
-      </li>
-      <li>
-        <a href="hover.html">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          <span>Hover Effects</span>
-        </a>
-      </li>
-      <li>
-        <a href="error.html">
-          <i class="fa-solid fa-circle-exclamation"></i>
-          <span>Error Pages</span>
-        </a>
-      </li>
-      <li>
-        <a href="ecommerce.html">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span>E-commerce</span>
-        </a>
-      </li>
-      <li>
-        <a href="files.html">
-          <i class="fa-solid fa-file-arrow-up"></i>
-          <span>Drag & Drop</span>
-        </a>
-      </li>
-      <li>
-        <a href="hero.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Hero Sections</span>
-        </a>
-      </li>
-      <li>
-        <a href="loaders.html">
-          <i class="fa-solid fa-spinner"></i>
-          <span>Loaders</span>
-        </a>
-      </li>
-      <li>
-        <a href="timeline.html">
-          <i class="fa-solid fa-clock-rotate-left"></i>
-          <span>Timeline</span>
-        </a>
-      </li>
-      <li>
-        <a href="map.html">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <span>Maps</span>
-        </a>
-      </li>
-      <li>
-        <a href="menu.html">
-          <i class="fa-solid fa-bars-staggered"></i>
-          <span>Menu</span>
-        </a>
-      </li>
-      <li>
-        <a href="pricing.html">
-          <i class="fa-solid fa-tags"></i>
-          <span>Pricing</span>
-        </a>
-      </li>
-      <li>
-        <a href="subscription.html">
-          <i class="fa-solid fa-credit-card"></i>
-          <span>Subscription</span>
-        </a>
-      </li>
-      <li>
-        <a href="auth.html">
-          <i class="fa-solid fa-user-shield"></i>
-          <span>Authentication</span>
-        </a>
-      </li>
-        <li>
-          <a href="recovery.html">
-            <i class="fa-solid fa-key" aria-hidden="true"></i>
-            <span>Password Recovery</span>
-          </a>
-        </li>
-      <li>
-        <a href="section.html">
-          <i class="fa-solid fa-rectangle-list"></i>
-          <span>Section</span>
-        </a>
-      </li>
-      <li>
-        <a href="span.html">
-          <i class="fa-solid fa-code"></i>
-          <span>Span</span>
-        </a>
-      </li>
-      <li>
-        <a href="table.html">
-          <i class="fa-solid fa-table"></i>
-          <span>Table</span>
-        </a>
-      </li>
-      <li>
-        <a href="tabs.html">
-          <i class="fa-solid fa-table-columns"></i>
-          <span>Tabs</span>
-        </a>
-      </li>
-      <li>
-        <a href="terms.html">
-          <i class="fa-solid fa-file-contract"></i>
-          <span>Terms</span>
-        </a>
-      </li>
-      <li>
-        <a href="testimonials.html">
-          <i class="fa-solid fa-comments"></i>
-          <span>Testimonials</span>
-        </a>
-      </li>
-      <li>
-        <a href="toggles.html">
-          <i class="fa-solid fa-toggle-on"></i>
-          <span>Toggle</span>
-        </a>
-      </li>
-      <li>
-        <a href="radiobutton.html">
-          <i class="fa-solid fa-circle-dot"></i>
-          <span>Radio Buttons</span>
-        </a>
-      </li>
-      <li>
-        <a href="checkbox.html">
-          <i class="fa-solid fa-square-check"></i>
-          <span>Checkboxes</span>
-        </a>
-      </li>
-      <li>
-        <a href="notifications-premium.html">
-          <i class="fa-solid fa-bell"></i>
-          <span>Notifications V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="step-indicators.html">
-          <i class="fa-solid fa-list-check"></i>
-          <span>Steppers</span>
-        </a>
-      </li>
-      <li>
-        <a href="progress-premium.html">
-          <i class="fa-solid fa-bars-progress"></i>
-          <span>Progress V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="ratings-premium.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Ratings V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="filters-premium.html">
-          <i class="fa-solid fa-sliders"></i>
-          <span>Filters V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="admin-panel.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Admin Panel V2</span>
-        </a>
-      </li>
-<li>
-        <a href="about.html">
-          <i class="fa-solid fa-circle-info"></i>
-          <span>About</span>
-        </a>
-      </li>
-      <li>
-        <a href="documentation.html">
-          <i class="fa-solid fa-book"></i>
-          <span>Documentation</span>
-        </a>
-      </li>
-      <li>
-        <a href="faq.html">
-          <i class="fa-solid fa-circle-question"></i>
-          <span>Faq</span>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Contact Us</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</aside>
+<nav>
 
-  <!-- ================= SIDEBAR BACKDROP ================= -->
-<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+<a href="#">Success</a>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar" id="navbar">
-  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
-    <i class="fa-solid fa-bars"></i>
-  </button>
+<a href="#">Error</a>
 
-  <div class="logo">UIverse</div>
+<a href="#">Animated</a>
 
-  <!-- NEW NAV LINKS -->
-  <nav class="nav-links">
-    <a href="index.html">
-      Home
-    </a>
-    <a href="components.html">
-      Components
-    </a>
-    <a href="pricing.html">
-      Pricing
-    </a>
-    <a href="contact.html">
-      Contact
-    </a>
-  </nav>
+<a href="#">Docs</a>
 
-  <div class="search-bar">
-    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" / data-a11y-remediation="label-needed">
-    <kbd class="search-kbd">⌘K</kbd>
-  </div>
+</nav>
 
-  <div class="nav-right">
-    <button class="nav-btn outline-nav-btn">
-      <i class="fa-solid fa-plus"></i> Add Component
-    </button>
-    <button class="nav-btn primary-nav-btn">
-      <i class="fa-solid fa-bookmark"></i> My Collection
-    </button>
-    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
-      <i class="fa-solid fa-moon"></i>
-    </button>
-  </div>
+<div class="nav-actions">
+
+<button class="outline-btn">
+
+Preview
+
+</button>
+
+<button class="primary-btn">
+
+Get Started
+
+</button>
+
+</div>
+
 </header>
-  
 
-  <!-- HERO -->
-  <section class="hero">
+<!-- =========================
+HERO
+========================= -->
 
-    <div class="hero-content">
+<section class="hero">
 
-      <span class="hero-badge">
-        Modern Notification Components
-      </span>
+<div class="hero-left">
 
-      <h1>
-        Beautiful Toast <br>
-        Components Library
-      </h1>
+<div class="hero-badge">
 
-      <p>
-        A premium collection of animated toast notifications for modern web apps.
-        Ready-to-use components with clean UI, smooth transitions, and developer-friendly code.
-      </p>
+✨ Premium Toast Collection
 
-      <div class="hero-buttons">
-        <button class="primary-btn">
-          Explore Components
-        </button>
+</div>
 
-        <button class="secondary-btn">
-          Documentation
-        </button>
-      </div>
+<h1>
 
-    </div>
+Beautiful
 
-  </section>
+<span>
 
-  <section class="stats-section">
-  <div class="stats-grid">
-    <div class="stat-card">
-      <h3>25+</h3>
-      <p>Toast Variants</p>
-    </div>
+Toast Notifications
 
-    <div class="stat-card">
-      <h3>100%</h3>
-      <p>Responsive</p>
-    </div>
+</span>
 
-    <div class="stat-card">
-      <h3>15+</h3>
-      <p>Animation Styles</p>
-    </div>
+For Modern Apps
 
-    <div class="stat-card">
-      <h3>5 KB</h3>
-      <p>Lightweight</p>
-    </div>
-  </div>
+</h1>
+
+<p>
+
+Create stunning notification
+experiences with success,
+error, warning, AI, gaming,
+glass and animated toasts.
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary-btn">
+
+Explore Toasts
+
+</button>
+
+<button class="outline-btn">
+
+Documentation
+
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="toast-demo success-toast">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<div>
+
+<h4>
+
+Success
+
+</h4>
+
+<p>
+
+Changes saved successfully
+
+</p>
+
+</div>
+
+</div>
+
+<div class="toast-demo warning-toast">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<div>
+
+<h4>
+
+Warning
+
+</h4>
+
+<p>
+
+Please verify your input
+
+</p>
+
+</div>
+
+</div>
+
+<div class="toast-demo error-toast">
+
+<i class="fa-solid fa-circle-xmark"></i>
+
+<div>
+
+<h4>
+
+Error
+
+</h4>
+
+<p>
+
+Something went wrong
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-  <!-- COMPONENT GRID -->
-  <section class="library">
+<!-- =========================
+BASIC TOASTS
+========================= -->
 
-    <div class="section-title">
-      <h2>Toast Components</h2>
-      <p>Reusable notification UIs for every situation.</p>
-    </div>
+<section class="toast-section">
 
-    <div class="grid">
+<div class="section-header">
 
-      <!-- SUCCESS -->
-      <div class="card">
-        <div class="card-top">
-          <span class="badge success">Success</span>
-        </div>
+<span>
 
-        <div class="preview success-preview">
-          <div class="mini-toast">
-            ✅ Changes saved successfully
-          </div>
-        </div>
+Essentials
 
-        <h3>Success Toast</h3>
+</span>
 
-        <p>
-          Ideal for confirmations, successful actions, and completed processes.
-        </p>
+<h2>
 
-        <div class="actions">
-          <button class="demo-btn success-demo">
-            Live Demo
-          </button>
+Basic Toasts
 
-          <button class="copy-btn" data-copy="success">
-            Copy Code
-          </button>
+</h2>
 
-          <button class="view-btn" data-view="success">
-            View
-          </button>
-        </div>
-      </div>
-
-      <!-- ERROR -->
-      <div class="card">
-        <div class="card-top">
-          <span class="badge error">Error</span>
-        </div>
-
-        <div class="preview error-preview">
-          <div class="mini-toast">
-            ❌ Something went wrong
-          </div>
-        </div>
-
-        <h3>Error Toast</h3>
-
-        <p>
-          Display important errors and failed operations clearly.
-        </p>
-
-        <div class="actions">
-          <button class="demo-btn error-demo">
-            Live Demo
-          </button>
-
-          <button class="copy-btn" data-copy="error">
-            Copy Code
-          </button>
-
-          <button class="view-btn" data-view="error">
-            View
-          </button>
-        </div>
-      </div>
-
-      <!-- WARNING -->
-      <div class="card">
-        <div class="card-top">
-          <span class="badge warning">Warning</span>
-        </div>
-
-        <div class="preview warning-preview">
-          <div class="mini-toast">
-            ⚠ Please verify your input
-          </div>
-        </div>
-
-        <h3>Warning Toast</h3>
-
-        <p>
-          Perfect for warnings, validations, and caution messages.
-        </p>
-
-        <div class="actions">
-          <button class="demo-btn warning-demo">
-            Live Demo
-          </button>
-
-          <button class="copy-btn" data-copy="warning">
-            Copy Code
-          </button>
-
-          <button class="view-btn" data-view="warning">
-            View
-          </button>
-        </div>
-      </div>
-
-      <!-- INFO -->
-      <div class="card">
-        <div class="card-top">
-          <span class="badge info">Info</span>
-        </div>
-
-        <div class="preview info-preview">
-          <div class="mini-toast">
-            ℹ New update available
-          </div>
-        </div>
-
-        <h3>Info Toast</h3>
-
-        <p>
-          Great for informational updates and helpful notifications.
-        </p>
-
-        <div class="actions">
-          <button class="demo-btn info-demo">
-            Live Demo
-          </button>
-
-          <button class="copy-btn" data-copy="info">
-            Copy Code
-          </button>
-
-          <button class="view-btn" data-view="info">
-            View
-          </button>
-        </div>
-      </div>
-      <!-- LOADING -->
-<div class="card">
-  <div class="card-top">
-    <span class="badge loading">Loading</span>
-  </div>
-
-  <div class="preview loading-preview">
-    <div class="mini-toast">
-      ⏳ Processing your request...
-    </div>
-  </div>
-
-  <h3>Loading Toast</h3>
-
-  <p>
-    Useful for showing ongoing processes or background tasks.
-  </p>
-
-  <div class="actions">
-    <button class="demo-btn loading-demo">
-      Live Demo
-    </button>
-    <button class="copy-btn" data-copy="loading">
-      Copy Code
-    </button>
-    <button class="view-btn" data-view="loading">
-      View
-    </button>
-  </div>
 </div>
 
-    <!-- CELEBRATION -->
-<div class="card">
-  <div class="card-top">
-    <span class="badge celebration">Celebration</span>
-  </div>
+<div class="toast-grid">
 
-  <div class="preview celebration-preview">
-    <div class="mini-toast">
-      🎉 Congratulations! Task completed
-    </div>
-  </div>
+<div class="toast-card">
 
-  <h3>Celebration Toast</h3>
+<div class="mini-toast success">
 
-  <p>
-    Great for achievements, milestones, or gamified rewards.
-  </p>
+✅ Success Message
 
-  <div class="actions">
-    <button class="demo-btn celebration-demo">
-      Live Demo
-    </button>
-    <button class="copy-btn" data-copy="celebration">
-      Copy Code
-    </button>
-    <button class="view-btn" data-view="celebration">
-      View
-    </button>
-  </div>
 </div>
-<!-- REMINDER -->
-<div class="card">
-  <div class="card-top">
-    <span class="badge reminder">Reminder</span>
-  </div>
 
-  <div class="preview reminder-preview">
-    <div class="mini-toast">
-      🔔 Meeting starts in 10 minutes
-    </div>
-  </div>
+<h3>
 
-  <h3>Reminder Toast</h3>
+Success Toast
 
-  <p>
-    Perfect for time-sensitive alerts and scheduled reminders.
-  </p>
+</h3>
 
-  <div class="actions">
-    <button class="demo-btn reminder-demo">
-      Live Demo
-    </button>
-    <button class="copy-btn" data-copy="reminder">
-      Copy Code
-    </button>
-    <button class="view-btn" data-view="reminder">
-      View
-    </button>
-  </div>
+<p>
+
+Ideal for completed actions.
+
+</p>
+
 </div>
+
+<div class="toast-card">
+
+<div class="mini-toast error">
+
+❌ Error Message
+
+</div>
+
+<h3>
+
+Error Toast
+
+</h3>
+
+<p>
+
+Useful for failed operations.
+
+</p>
+
+</div>
+
+<div class="toast-card">
+
+<div class="mini-toast warning">
+
+⚠ Warning Message
+
+</div>
+
+<h3>
+
+Warning Toast
+
+</h3>
+
+<p>
+
+Show important warnings.
+
+</p>
+
+</div>
+
+<div class="toast-card">
+
+<div class="mini-toast info">
+
+ℹ Information
+
+</div>
+
+<h3>
+
+Info Toast
+
+</h3>
+
+<p>
+
+Display useful updates.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+STATUS TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Status
+
+</span>
+
+<h2>
+
+System Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="mini-toast online">
+
+🟢 Server Online
+
+</div>
+
+<h3>
+
+Online Status
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="mini-toast offline">
+
+🔴 Server Offline
+
+</div>
+
+<h3>
+
+Offline Status
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="mini-toast loading">
+
+⏳ Loading...
+
+</div>
+
+<h3>
+
+Loading Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="mini-toast update">
+
+🚀 New Update Available
+
+</div>
+
+<h3>
+
+Update Toast
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+GLASSMORPHISM TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Glass UI
+
+</span>
+
+<h2>
+
+Glass Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="glass-toast">
+
+✨ Glass Notification
+
+</div>
+
+<h3>
+
+Glass Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="glass-toast blue-glass">
+
+💎 Premium Alert
+
+</div>
+
+<h3>
+
+Blue Glass
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="glass-toast purple-glass">
+
+🌌 AI Activated
+
+</div>
+
+<h3>
+
+Purple Glass
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+GRADIENT TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Colorful
+
+</span>
+
+<h2>
+
+Gradient Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="gradient-toast sunset">
+
+🌅 Sunset Gradient
+
+</div>
+
+<h3>
+
+Sunset Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="gradient-toast ocean">
+
+🌊 Ocean Gradient
+
+</div>
+
+<h3>
+
+Ocean Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="gradient-toast aurora">
+
+✨ Aurora Effect
+
+</div>
+
+<h3>
+
+Aurora Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="gradient-toast rainbow">
+
+🌈 Rainbow Toast
+
+</div>
+
+<h3>
+
+Rainbow Toast
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+NEON TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Cyber UI
+
+</span>
+
+<h2>
+
+Neon Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="neon-toast purple-neon">
+
+⚡ Neon Purple
+
+</div>
+
+<h3>
+
+Purple Neon
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="neon-toast blue-neon">
+
+💠 Neon Blue
+
+</div>
+
+<h3>
+
+Blue Neon
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="neon-toast pink-neon">
+
+💖 Neon Pink
+
+</div>
+
+<h3>
+
+Pink Neon
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+AI TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Artificial Intelligence
+
+</span>
+
+<h2>
+
+AI Assistant Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="ai-toast">
+
+<div class="ai-icon">
+
+✦
+
+</div>
+
+<div>
+
+<h4>
+
+AI Suggestion
+
+</h4>
+
+<p>
+
+Increase engagement by 18%
+
+</p>
+
+</div>
+
+</div>
+
+<h3>
+
+AI Insights
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="ai-toast">
+
+<div class="ai-icon">
+
+🤖
+
+</div>
+
+<div>
+
+<h4>
+
+Smart Reply
+
+</h4>
+
+<p>
+
+Generated automatically
+
+</p>
+
+</div>
+
+</div>
+
+<h3>
+
+Smart Reply
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+MUSIC TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Media
+
+</span>
+
+<h2>
+
+Music Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="music-toast">
+
+<img
+src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200">
+
+<div>
+
+<h4>
+
+Now Playing
+
+</h4>
+
+<p>
+
+Midnight Rain
+
+</p>
+
+</div>
+
+</div>
+
+<h3>
+
+Music Player
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="music-toast">
+
+<img
+src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=200">
+
+<div>
+
+<h4>
+
+Playlist Updated
+
+</h4>
+
+<p>
+
+24 songs added
+
+</p>
+
+</div>
+
+</div>
+
+<h3>
+
+Playlist Toast
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+DOWNLOAD PROGRESS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Progress
+
+</span>
+
+<h2>
+
+Download Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="download-toast">
+
+<div class="download-top">
+
+<span>
+
+Downloading Report.pdf
+
+</span>
+
+<strong>
+
+78%
+
+</strong>
+
+</div>
+
+<div class="download-bar">
+
+<div class="download-fill"></div>
+
+</div>
+
+</div>
+
+<h3>
+
+Progress Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="download-toast">
+
+<div class="download-top">
+
+<span>
+
+Uploading Files
+
+</span>
+
+<strong>
+
+56%
+
+</strong>
+
+</div>
+
+<div class="download-bar">
+
+<div
+class="download-fill upload-fill">
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+
+Upload Toast
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+ACHIEVEMENT TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Achievements
+
+</span>
+
+<h2>
+
+Achievement Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="achievement-toast">
+
+<div class="trophy">
+
+🏆
+
+</div>
+
+<div>
+
+<h4>
+
+Achievement Unlocked
+
+</h4>
+
+<p>
+
+Completed 100 Tasks
+
+</p>
+
+</div>
+
+</div>
+
+<h3>
+
+Achievement Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="achievement-toast gold">
+
+<div class="trophy">
+
+🥇
+
+</div>
+
+<div>
+
+<h4>
+
+Level Up
+
+</h4>
+
+<p>
+
+Reached Level 50
+
+</p>
+
+</div>
+
+</div>
+
+<h3>
+
+Level Toast
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+GAMING TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Gaming UI
+
+</span>
+
+<h2>
+
+Gaming Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="gaming-toast">
+
+🎮 Match Found
+
+</div>
+
+<h3>
+
+Matchmaking Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="gaming-toast epic">
+
+⚔ Boss Defeated
+
+</div>
+
+<h3>
+
+Epic Reward
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="gaming-toast neon">
+
+🔥 Double XP Active
+
+</div>
+
+<h3>
+
+XP Boost Toast
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FINANCE TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+FinTech
+
+</span>
+
+<h2>
+
+Finance Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="finance-toast">
+
+💰 Payment Received
+
+</div>
+
+<h3>
+
+Payment Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="finance-toast green">
+
+📈 Portfolio Up 12%
+
+</div>
+
+<h3>
+
+Investment Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="finance-toast red">
+
+📉 Market Alert
+
+</div>
+
+<h3>
+
+Market Warning
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+SECURITY TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Security
+
+</span>
+
+<h2>
+
+Security Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="security-toast">
+
+🔒 Account Protected
+
+</div>
+
+<h3>
+
+Protection Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="security-toast warning">
+
+🛡 New Login Detected
+
+</div>
+
+<h3>
+
+Login Alert
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="security-toast danger">
+
+⚠ Suspicious Activity
+
+</div>
+
+<h3>
+
+Threat Alert
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+SOCIAL MEDIA TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Social
+
+</span>
+
+<h2>
+
+Social Media Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="social-toast">
+
+❤️ New Like Received
+
+</div>
+
+<h3>
+
+Like Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="social-toast">
+
+💬 New Comment
+
+</div>
+
+<h3>
+
+Comment Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="social-toast">
+
+👥 New Follower
+
+</div>
+
+<h3>
+
+Follower Toast
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+ANIMATED TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Motion UI
+
+</span>
+
+<h2>
+
+Animated Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="animated-toast slide-toast">
+
+➡ Slide In Toast
+
+</div>
+
+<h3>
+
+Slide Animation
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="animated-toast bounce-toast">
+
+🏀 Bounce Toast
+
+</div>
+
+<h3>
+
+Bounce Animation
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="animated-toast pulse-toast">
+
+💓 Pulse Toast
+
+</div>
+
+<h3>
+
+Pulse Animation
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+NOTIFICATION CENTER
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Dashboard
+
+</span>
+
+<h2>
+
+Notification Center
+
+</h2>
+
+</div>
+
+<div class="notification-center">
+
+<div class="notification-item">
+
+<div class="notification-icon">
+
+🔔
+
+</div>
+
+<div>
+
+<h4>
+
+New Update Available
+
+</h4>
+
+<p>
+
+Version 3.2 released today
+
+</p>
+
+</div>
+
+</div>
+
+<div class="notification-item">
+
+<div class="notification-icon">
+
+📧
+
+</div>
+
+<div>
+
+<h4>
+
+New Message
+
+</h4>
+
+<p>
+
+You have 3 unread messages
+
+</p>
+
+</div>
+
+</div>
+
+<div class="notification-item">
+
+<div class="notification-icon">
+
+🚀
+
+</div>
+
+<div>
+
+<h4>
+
+Deployment Complete
+
+</h4>
+
+<p>
+
+Application deployed successfully
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+AI DASHBOARD TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Artificial Intelligence
+
+</span>
+
+<h2>
+
+AI Dashboard Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="ai-dashboard-toast">
+
+<div class="ai-badge">
+
+🤖
+
+</div>
+
+<div>
+
+<h4>
+
+AI Insight Generated
+
+</h4>
+
+<p>
+
+Revenue predicted to grow 14%
+
+</p>
+
+</div>
+
+</div>
+
+<h3>
+
+Prediction Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="ai-dashboard-toast">
+
+<div class="ai-badge">
+
+🧠
+
+</div>
+
+<div>
+
+<h4>
+
+Model Training Complete
+
+</h4>
+
+<p>
+
+Accuracy improved to 98.2%
+
+</p>
+
+</div>
+
+</div>
+
+<h3>
+
+Training Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="ai-dashboard-toast">
+
+<div class="ai-badge">
+
+✨
+
+</div>
+
+<div>
+
+<h4>
+
+Smart Recommendation
+
+</h4>
+
+<p>
+
+Upgrade to Pro for better results
+
+</p>
+
+</div>
+
+</div>
+
+<h3>
+
+Recommendation Toast
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+SMART HOME TOASTS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Smart Home
+
+</span>
+
+<h2>
+
+Home Automation Toasts
+
+</h2>
+
+</div>
+
+<div class="toast-grid">
+
+<div class="toast-card">
+
+<div class="home-toast">
+
+💡 Living Room Lights Enabled
+
+</div>
+
+<h3>
+
+Lighting Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="home-toast">
+
+🌡 Temperature Set To 22°C
+
+</div>
+
+<h3>
+
+Climate Toast
+
+</h3>
+
+</div>
+
+<div class="toast-card">
+
+<div class="home-toast">
+
+🔐 Front Door Locked
+
+</div>
+
+<h3>
+
+Security Toast
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+GLASS NOTIFICATION CENTER
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Glass UI
+
+</span>
+
+<h2>
+
+Glass Notification Center
+
+</h2>
+
+</div>
+
+<div class="glass-center">
+
+<div class="glass-item">
+
+✨ Premium Membership Activated
+
+</div>
+
+<div class="glass-item">
+
+🚀 Cloud Sync Completed
+
+</div>
+
+<div class="glass-item">
+
+🔔 5 New Notifications
+
+</div>
+
+<div class="glass-item">
+
+🎯 Weekly Goal Achieved
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+PREMIUM TOAST CARDS
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Premium UI
+
+</span>
+
+<h2>
+
+Premium Toast Cards
+
+</h2>
+
+</div>
+
+<div class="premium-toast-grid">
+
+<div class="premium-toast-card">
+
+<div class="premium-header">
+
+⭐ Premium Feature
+
+</div>
+
+<p>
+
+Unlock advanced analytics
+and AI-powered insights.
+
+</p>
+
+</div>
+
+<div class="premium-toast-card">
+
+<div class="premium-header">
+
+👑 VIP Access
+
+</div>
+
+<p>
+
+You now have priority
+support and resources.
+
+</p>
+
+</div>
+
+<div class="premium-toast-card">
+
+<div class="premium-header">
+
+💎 Elite Plan
+
+</div>
+
+<p>
+
+Exclusive tools enabled
+for your account.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+BENTO TOAST LAYOUT
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Bento UI
+
+</span>
+
+<h2>
+
+Toast Dashboard Layout
+
+</h2>
+
+</div>
+
+<div class="bento-layout">
+
+<div class="bento-card large">
+
+<h3>
+
+System Notifications
+
+</h3>
+
+<div class="mini-toast success">
+
+Server Running Smoothly
+
+</div>
+
+</div>
+
+<div class="bento-card">
+
+<h3>
+
+Messages
+
+</h3>
+
+<div class="mini-toast info">
+
+12 New Messages
+
+</div>
+
+</div>
+
+<div class="bento-card">
+
+<h3>
+
+Updates
+
+</h3>
+
+<div class="mini-toast warning">
+
+Update Required
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+INTERACTIVE PLAYGROUND
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Playground
+
+</span>
+
+<h2>
+
+Interactive Toast Examples
+
+</h2>
+
+</div>
+
+<div class="playground">
+
+<button class="toast-btn success-btn">
+
+Show Success
+
+</button>
+
+<button class="toast-btn error-btn">
+
+Show Error
+
+</button>
+
+<button class="toast-btn warning-btn">
+
+Show Warning
+
+</button>
+
+<button class="toast-btn info-btn">
+
+Show Info
+
+</button>
+
+</div>
+
+</section>
+
+<!-- =========================
+LIVE TOAST PREVIEW
+========================= -->
+
+<section class="toast-section">
+
+<div class="section-header">
+
+<span>
+
+Live Demo
+
+</span>
+
+<h2>
+
+Toast Preview Panel
+
+</h2>
+
+</div>
+
+<div class="live-preview">
+
+<div class="live-toast">
+
+<div class="live-icon">
+
+✅
+
+</div>
+
+<div>
+
+<h4>
+
+Profile Updated
+
+</h4>
+
+<p>
+
+Your account changes were saved.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="live-toast">
+
+<div class="live-icon">
+
+📦
+
+</div>
+
+<div>
+
+<h4>
+
+Order Shipped
+
+</h4>
+
+<p>
+
+Package is on the way.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="live-toast">
+
+<div class="live-icon">
+
+💬
+
+</div>
+
+<div>
+
+<h4>
+
+New Message
+
+</h4>
+
+<p>
+
+You received a new chat.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+FAQ SECTION
+========================= -->
+
+<section class="faq-section">
+
+<div class="section-header">
+
+<span>
+
+FAQ
+
+</span>
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+</div>
+
+<div class="faq-grid">
+
+<div class="faq-card">
+
+<h3>
+
+Can I customize toast colors?
+
+</h3>
+
+<p>
+
+Yes. Every toast component
+supports custom themes,
+gradients and animations.
+
+</p>
+
+</div>
+
+<div class="faq-card">
+
+<h3>
+
+Are the toasts responsive?
+
+</h3>
+
+<p>
+
+All layouts automatically
+adapt to desktop, tablet
+and mobile devices.
+
+</p>
+
+</div>
+
+<div class="faq-card">
+
+<h3>
+
+Can I use them in production?
+
+</h3>
+
+<p>
+
+Absolutely. These components
+are suitable for real-world
+applications.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+DOCUMENTATION
+========================= -->
+
+<section class="docs-section">
+
+<div class="section-header">
+
+<span>
+
+Documentation
+
+</span>
+
+<h2>
+
+Basic Toast Structure
+
+</h2>
+
+</div>
+
+<div class="docs-card">
+
+<pre>
+
+&lt;div class="toast success"&gt;
+
+  &lt;i class="fa-solid fa-check"&gt;&lt;/i&gt;
+
+  &lt;div&gt;
+
+    &lt;h4&gt;Success&lt;/h4&gt;
+
+    &lt;p&gt;Saved Successfully&lt;/p&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+</pre>
+
+</div>
+
+</section>
+
+<!-- =========================
+TOAST PLAYGROUND
+========================= -->
 
 <section class="playground-section">
-  <div class="section-title">
-    <h2>Toast Position Playground</h2>
-    <p>Preview notifications in every placement.</p>
-  </div>
 
-  <div class="position-grid">
-    <button class="position-btn">Top Left</button>
-    <button class="position-btn">Top Center</button>
-    <button class="position-btn">Top Right</button>
-    <button class="position-btn">Bottom Left</button>
-    <button class="position-btn">Bottom Center</button>
-    <button class="position-btn">Bottom Right</button>
-  </div>
+<div class="section-header">
+
+<span>
+
+Sandbox
+
+</span>
+
+<h2>
+
+Toast Playground
+
+</h2>
+
+</div>
+
+<div class="playground-card">
+
+<div class="play-item">
+
+<span>
+
+Success Notification
+
+</span>
+
+<button class="toast-btn success-btn">
+
+Trigger
+
+</button>
+
+</div>
+
+<div class="play-item">
+
+<span>
+
+Error Notification
+
+</span>
+
+<button class="toast-btn error-btn">
+
+Trigger
+
+</button>
+
+</div>
+
+<div class="play-item">
+
+<span>
+
+Info Notification
+
+</span>
+
+<button class="toast-btn info-btn">
+
+Trigger
+
+</button>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- DARK MODE TOAST -->
-<div class="card">
-  <div class="card-top">
-    <span class="badge">Dark Mode</span>
-  </div>
-
-  <div class="preview">
-    <div class="mini-toast dark-toast">
-      🌙 Dark theme enabled
-    </div>
-  </div>
-
-  <h3>Dark Toast</h3>
-  <p>Perfect for dark-themed applications.</p>
-
-  <div class="actions">
-    <button class="demo-btn">Live Demo</button>
-    <button class="copy-btn">Copy Code</button>
-    <button class="view-btn">View</button>
-  </div>
-</div>
-
-<!-- FILE UPLOAD -->
-<div class="card">
-  <div class="card-top">
-    <span class="badge">Upload</span>
-  </div>
-
-  <div class="preview">
-    <div class="mini-toast">
-      📤 Upload completed
-    </div>
-  </div>
-
-  <h3>Upload Toast</h3>
-  <p>Shows upload progress and completion status.</p>
-
-  <div class="actions">
-    <button class="demo-btn">Live Demo</button>
-    <button class="copy-btn">Copy Code</button>
-    <button class="view-btn">View</button>
-  </div>
-</div>
-
-<!-- SECURITY -->
-<div class="card">
-  <div class="card-top">
-    <span class="badge">Security</span>
-  </div>
-
-  <div class="preview">
-    <div class="mini-toast">
-      🔒 New login detected
-    </div>
-  </div>
-
-  <h3>Security Toast</h3>
-  <p>Security and authentication alerts.</p>
-
-  <div class="actions">
-    <button class="demo-btn">Live Demo</button>
-    <button class="copy-btn">Copy Code</button>
-    <button class="view-btn">View</button>
-  </div>
-</div>
-<!-- NETWORK -->
-<div class="card">
-  <div class="card-top">
-    <span class="badge network">Network</span>
-  </div>
-
-  <div class="preview network-preview">
-    <div class="mini-toast">
-      🌐 You are offline
-    </div>
-  </div>
-
-  <h3>Network Toast</h3>
-
-  <p>
-    Ideal for connectivity issues, offline mode, or sync status.
-  </p>
-
-  <div class="actions">
-    <button class="demo-btn network-demo">
-      Live Demo
-    </button>
-    <button class="copy-btn" data-copy="network">
-      Copy Code
-    </button>
-    <button class="view-btn" data-view="network">
-      View
-    </button>
-  </div>
-</div>
-
-<div class="card">
-
-  <div class="card-top">
-    <span class="badge ai">
-      AI
-    </span>
-  </div>
-
-  <div class="preview ai-preview">
-
-    <div class="toast-preview ai-toast">
-
-      <div class="toast-icon">
-        ✦
-      </div>
-
-      <div class="toast-content">
-        <h4>AI Suggestion</h4>
-        <p>Your dashboard could improve engagement by 18%.</p>
-      </div>
-
-    </div>
-
-  </div>
-
-  <h3>AI Assistant Toast</h3>
-
-  <p>
-    Smart notifications powered by AI insights and recommendations.
-  </p>
-
-  <div class="actions">
-    <button class="demo-btn">
-      Live Demo
-    </button>
-
-    <button class="copy-btn">
-      Copy Code
-    </button>
-
-    <button class="view-btn">
-      View
-    </button>
-  </div>
-
-</div>
-
-
-<div class="card">
-
-  <div class="card-top">
-    <span class="badge music">
-      Music
-    </span>
-  </div>
-
-  <div class="preview music-preview">
-
-    <div class="toast-preview music-toast">
-
-      <img
-        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200"
-      >
-
-      <div>
-        <h4>Now Playing</h4>
-        <p>Midnight Rain • Taylor Swift</p>
-      </div>
-
-    </div>
-
-  </div>
-
-  <h3>Music Player Toast</h3>
-
-  <p>
-    Display media playback updates in a clean compact format.
-  </p>
-
-  <div class="actions">
-    <button class="demo-btn">
-      Live Demo
-    </button>
-
-    <button class="copy-btn">
-      Copy Code
-    </button>
-
-    <button class="view-btn">
-      View
-    </button>
-  </div>
-
-</div>
-<div class="card">
-
-  <div class="card-top">
-    <span class="badge achievement">
-      Achievement
-    </span>
-  </div>
-
-  <div class="preview achievement-preview">
-
-    <div class="toast-preview achievement-toast">
-
-      <div class="trophy">
-        🏆
-      </div>
-
-      <div>
-        <h4>Achievement Unlocked</h4>
-        <p>Completed 100 projects</p>
-      </div>
-
-    </div>
-
-  </div>
-
-  <h3>Achievement Toast</h3>
-
-  <p>
-    Great for gamification, rewards, milestones, and user achievements.
-  </p>
-
-  <div class="actions">
-    <button class="demo-btn">
-      Live Demo
-    </button>
-
-    <button class="copy-btn">
-      Copy Code
-    </button>
-
-    <button class="view-btn">
-      View
-    </button>
-  </div>
-
-</div>
-<div class="card">
-
-  <div class="card-top">
-    <span class="badge download">
-      Download
-    </span>
-  </div>
-
-  <div class="preview download-preview">
-
-    <div class="toast-preview download-toast">
-
-      <div class="download-top">
-
-        <span>
-          Downloading Report.pdf
-        </span>
-
-        <strong>
-          78%
-        </strong>
-
-      </div>
-
-      <div class="download-bar">
-        <div class="download-fill"></div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <h3>Progress Toast</h3>
-
-  <p>
-    Perfect for uploads, downloads, exports, and background tasks.
-  </p>
-
-  <div class="actions">
-    <button class="demo-btn">
-      Live Demo
-    </button>
-
-    <button class="copy-btn">
-      Copy Code
-    </button>
-
-    <button class="view-btn">
-      View
-    </button>
-  </div>
-
-</div>
-<div class="card">
-
-  <div class="card-top">
-    <span class="badge celebration">
-      Celebration
-    </span>
-  </div>
-
-  <div class="preview celebration-preview">
-
-    <div class="toast-preview confetti-toast">
-
-      <div class="confetti-bg"></div>
-
-      <h4>
-        🎉 Project Completed!
-      </h4>
-
-      <p>
-        Team Velocity increased by 22%
-      </p>
-
-    </div>
-
-  </div>
-
-  <h3>Celebration Toast</h3>
-
-  <p>
-    Perfect for completed projects, milestones, and positive feedback.
-  </p>
-
-  <div class="actions">
-    <button class="demo-btn">
-      Live Demo
-    </button>
-
-    <button class="copy-btn">
-      Copy Code
-    </button>
-
-    <button class="view-btn">
-      View
-    </button>
-  </div>
-
-</div>
-
-  </section>
-
-  <section class="animation-showcase">
-  <div class="section-title">
-    <h2>Animation Presets</h2>
-    <p>Built-in entrance and exit effects.</p>
-  </div>
-
-  <div class="animation-grid">
-    <div class="animation-card">
-      <h4>Slide In</h4>
-    </div>
-
-    <div class="animation-card">
-      <h4>Fade Up</h4>
-    </div>
-
-    <div class="animation-card">
-      <h4>Scale Pop</h4>
-    </div>
-
-    <div class="animation-card">
-      <h4>Bounce</h4>
-    </div>
-
-    <div class="animation-card">
-      <h4>Flip</h4>
-    </div>
-
-    <div class="animation-card">
-      <h4>Glass Morph</h4>
-    </div>
-  </div>
-</section>
-
-<section class="features-section">
-  <div class="section-title">
-    <h2>Why Developers Love It</h2>
-  </div>
-
-  <div class="features-grid">
-    <div class="feature-card">
-      <i class="fa-solid fa-bolt"></i>
-      <h3>Fast</h3>
-      <p>Zero dependency implementation.</p>
-    </div>
-
-    <div class="feature-card">
-      <i class="fa-solid fa-code"></i>
-      <h3>Reusable</h3>
-      <p>Simple API and modular architecture.</p>
-    </div>
-
-    <div class="feature-card">
-      <i class="fa-solid fa-mobile-screen"></i>
-      <h3>Responsive</h3>
-      <p>Works perfectly across devices.</p>
-    </div>
-
-    <div class="feature-card">
-      <i class="fa-solid fa-palette"></i>
-      <h3>Customizable</h3>
-      <p>Fully themeable and extensible.</p>
-    </div>
-  </div>
-</section>
-
-<section class="builder-section">
-  <div class="section-title">
-    <h2>Toast Builder</h2>
-    <p>Create your own notification instantly.</p>
-  </div>
-
-  <div class="builder-card">
-
-    <input
-      type="text"
-      placeholder="Toast message..."
-      id="toastMessage"
-    >
-
-    <select id="toastType">
-      <option>Success</option>
-      <option>Error</option>
-      <option>Warning</option>
-      <option>Info</option>
-      <option>Celebration</option>
-    </select>
-
-    <button class="primary-btn">
-      Generate Toast
-    </button>
-
-  </div>
-</section>
+<!-- =========================
+CTA SECTION
+========================= -->
 
 <section class="cta-section">
 
-  <div class="cta-card">
+<div class="cta-card">
 
-    <h2>Ready to Use Toasts?</h2>
+<div>
 
-    <p>
-      Copy production-ready notification components and
-      integrate them into your next project.
-    </p>
+<span>
 
-    <div class="hero-buttons">
-      <button class="primary-btn">
-        Browse Components
-      </button>
+Premium Notification System
 
-      <button class="secondary-btn">
-        View Docs
-      </button>
-    </div>
+</span>
 
-  </div>
+<h2>
+
+Create Better User Feedback
+
+</h2>
+
+<p>
+
+Deliver beautiful alerts,
+updates and real-time
+notification experiences.
+
+</p>
+
+<button class="primary-btn">
+
+Get Started
+
+</button>
+
+</div>
+
+<div class="cta-icon">
+
+🔔
+
+</div>
+
+</div>
 
 </section>
 
-  <!-- ABOUT -->
-  <section class="about">
+<!-- =========================
+NEWSLETTER
+========================= -->
 
-    <div class="about-card">
-      <h2>Built for UI Verse</h2>
+<section class="newsletter-section">
 
-      <p>
-        Crafted with modern frontend practices, reusable architecture,
-        and smooth UI interactions for developers who love beautiful interfaces.
-      </p>
-    </div>
+<div class="newsletter-card">
 
-  </section>
+<h2>
 
-  <!-- MODAL -->
-  <div class="modal-overlay" id="modalOverlay">
+Stay Updated
 
-    <div class="modal">
+</h2>
 
-      <div class="modal-header">
-        <h3>Component Code</h3>
+<p>
 
-        <button id="closeModal">
-          ✕
-        </button>
-      </div>
+Receive new UI components,
+toast designs and premium
+dashboard layouts.
 
-      <pre id="modalCode"></pre>
+</p>
 
-    </div>
+<form class="newsletter-form">
 
-  </div>
-  <!-- ================= FOOTER ================= -->
+<input
+type="email"
+placeholder="Enter your email">
+
+<button>
+
+Subscribe
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
 <footer class="footer">
-  <div class="footer-container">
 
-    <div class="footer-col brand">
-      <h2 class="footer-logo"><i class="fa-solid fa-cube"></i> UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      <div class="socials">
-        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-      </div>
-    </div>
+<div class="footer-grid">
 
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
-      </ul>
-    </div>
+<div>
 
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">Documentation</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">GitHub Repo</a></li>
-        <li><a href="#">Community</a></li>
-      </ul>
-    </div>
+<h3>
 
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="#">License</a></li>
-      </ul>
-    </div>
+ToastVerse
 
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
-        <button type="button" onclick="subscribe()">Subscribe</button>
-      </div>
-    </div>
+</h3>
 
-  </div>
+<p>
 
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
+Modern toast notifications,
+dashboard alerts and UI
+feedback systems.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Resources</h4>
+
+<ul>
+
+<li>Documentation</li>
+<li>Components</li>
+<li>Templates</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Company</h4>
+
+<ul>
+
+<li>About</li>
+<li>Support</li>
+<li>Contact</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Community</h4>
+
+<ul>
+
+<li>Discord</li>
+<li>GitHub</li>
+<li>Twitter</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 ToastVerse UI Library
+
+</div>
+
 </footer>
-  
 
-  <!-- TOAST CONTAINER -->
-  <div id="toast-container"></div>
+<!-- =========================
+SCROLL TO TOP
+========================= -->
 
-  <script src="toasts.js"></script>
+<button
+id="scrollTop"
+class="scroll-top">
 
-    <script src="dist/shared.js"></script>
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- =========================
+DEMO TOAST CONTAINER
+========================= -->
+
+<div id="toastContainer">
+
+</div>
+
+<!-- =========================
+JAVASCRIPT
+========================= -->
+
+<script>
+
+const scrollBtn =
+document.getElementById(
+"scrollTop"
+);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+if(window.scrollY > 400){
+
+scrollBtn.classList.add(
+"show"
+);
+
+}else{
+
+scrollBtn.classList.remove(
+"show"
+);
+
+}
+
+});
+
+scrollBtn.addEventListener(
+"click",
+()=>{
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+});
+
+const buttons =
+document.querySelectorAll(
+".toast-btn"
+);
+
+buttons.forEach(btn=>{
+
+btn.addEventListener(
+"click",
+()=>{
+
+const toast =
+document.createElement("div");
+
+toast.className =
+"demo-toast";
+
+toast.innerHTML =
+"Notification Triggered";
+
+document
+.getElementById(
+"toastContainer"
+)
+.appendChild(toast);
+
+setTimeout(()=>{
+
+toast.remove();
+
+},3000);
+
+});
+
+});
+
+</script>
+
 </body>
-</html>
 
+</html>
