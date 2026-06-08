@@ -704,6 +704,33 @@
 
 </main>
 
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I use UIverse components in client projects?</button>
+    <div class="faq-answer">
+      <p>Yes, UIverse components are free to use in client projects without restrictions.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Do I need to credit UIverse?</button>
+    <div class="faq-answer">
+      <p>No attribution is required, but giving credit is appreciated.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I modify components and resell them?</button>
+    <div class="faq-answer">
+      <p>You may modify components for personal or client use, but direct reselling of UIverse assets is not permitted.</p>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- FOOTER -->
 <footer class="footer">
 
@@ -805,6 +832,22 @@
   </div>
 
 </footer>
+
+<script>
+  const questions = document.querySelectorAll(".faq-question");
+  questions.forEach(q => {
+    q.addEventListener("click", () => {
+      q.classList.toggle("active");
+      const answer = q.nextElementSibling;
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+
 
 <script>
 
