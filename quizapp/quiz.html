@@ -1,44 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../dist/shared.css">
+  <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Application UI</title>
-  <link rel="stylesheet" href="quiz.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>QuizMaster UI</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="quiz.css" />
 </head>
+
 <body>
+  <!-- Animated Background -->
+  <div class="bg-glow glow1"></div>
+  <div class="bg-glow glow2"></div>
 
-  <div class="quiz-container">
+  <div class="quiz-wrapper">
 
-    <h1>Quiz Application</h1>
+    <!-- Top Bar -->
+    <div class="top-bar">
 
-    <div class="quiz-card">
+      <div class="logo">
+        <span>⚡</span>
+        QuizMaster
+      </div>
 
-      <h2 id="question">
-        What does HTML stand for?
-      </h2>
+      <div class="quiz-info">
 
-      <div class="options">
+        <div class="info-box">
+          <small>Question</small>
+          <strong>01/10</strong>
+        </div>
 
-        <button class="option-btn">Hyper Text Markup Language</button>
-
-        <button class="option-btn">High Transfer Machine Language</button>
-
-        <button class="option-btn">Hyper Transfer Markup Level</button>
-
-        <button class="option-btn">Home Tool Markup Language</button>
+        <div class="info-box">
+          <small>Time</small>
+          <strong id="timer">30s</strong>
+        </div>
 
       </div>
 
-      <button id="nextBtn">
-        Next Question
-      </button>
+    </div>
 
-      <div class="score-section">
+    <!-- Quiz Card -->
+    <div class="quiz-card">
 
-        Score:
-        <span id="score">0</span>
+      <!-- Progress -->
+      <div class="progress-area">
+
+        <div class="progress-text">
+          <span>Progress</span>
+          <span>10%</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+      </div>
+
+      <!-- Category -->
+      <div class="category-badge">
+        Web Development
+      </div>
+
+      <!-- Question -->
+      <h1 id="question">
+        What does HTML stand for?
+      </h1>
+
+      <!-- Options -->
+      <div class="options">
+
+        <button class="option-btn">
+          <span>A.</span>
+          Hyper Text Markup Language
+        </button>
+
+        <button class="option-btn">
+          <span>B.</span>
+          High Transfer Machine Language
+        </button>
+
+        <button class="option-btn">
+          <span>C.</span>
+          Hyper Transfer Markup Level
+        </button>
+
+        <button class="option-btn">
+          <span>D.</span>
+          Home Tool Markup Language
+        </button>
+
+      </div>
+
+      <!-- Bottom Controls -->
+      <div class="bottom-controls">
+
+        <div class="score-card">
+          🏆 Score:
+          <span id="score">0</span>
+        </div>
+
+        <button id="nextBtn">
+          Next Question →
+        </button>
 
       </div>
 
@@ -47,5 +119,7 @@
   </div>
 
   <script src="quiz.js"></script>
+
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

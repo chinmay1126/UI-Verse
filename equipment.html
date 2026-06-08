@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' http://127.0.0.1:5000 http://localhost:5000 https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-inline'; style-src 'self' https: 'unsafe-inline'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <title>Equipment Marketplace — UI-Verse</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +12,8 @@
   <link rel="stylesheet" href="equipment.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <main class="equipment-shell">
     <section class="hero-panel">
       <div class="hero-copy">
@@ -34,7 +37,7 @@
         <div class="field-grid">
           <label>
             Equipment name
-            <input name="name" type="text" placeholder="Compact Tractor 45HP" required>
+            <input name="name" type="text" placeholder="Compact Tractor 45HP" required data-a11y-remediation="label-needed">
           </label>
           <label>
             Daily rate
@@ -61,6 +64,69 @@
             </select>
           </label>
         </div>
+
+        <section class="hero-panel" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <span class="eyebrow">Peer-to-peer equipment sharing</span>
+
+    <h1 id="hero-title">
+      Rent idle tractors and machinery to nearby farms
+    </h1>
+
+    <p>
+      List equipment for rent, match by pincode, and allow farmers to
+      reserve machinery with blocked rental dates and automated
+      notifications.
+    </p>
+  </div>
+
+  <nav class="hero-actions" aria-label="Quick navigation">
+    <a href="notifications.html" class="ghost-link">
+      Open notifications
+    </a>
+
+    <a href="index.html" class="ghost-link secondary">
+      Back to UIverse
+    </a>
+  </nav>
+</section>
+
+<label
+  class="full-width file-picker"
+  for="equipment-photo"
+>
+  Upload photo
+</label>
+
+<input
+  id="equipment-photo"
+  name="photo"
+  type="file"
+  accept="image/png,image/jpeg,image/webp,image/gif"
+>
+
+<div id="marketplaceGrid" class="marketplace-grid">
+
+  <article class="empty-card">
+    <h3>No listings yet</h3>
+
+    <p>
+      Publish your first equipment listing to make it
+      available for nearby farmers.
+    </p>
+  </article>
+
+</div>
+
+<div class="marketplace-grid loading">
+
+  <div class="equipment-skeleton"></div>
+
+  <div class="equipment-skeleton"></div>
+
+  <div class="equipment-skeleton"></div>
+
+</div>
 
         <label class="full-width">
           Description
@@ -109,5 +175,6 @@
   </main>
 
   <script src="js/features/equipment-marketplace.js"></script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

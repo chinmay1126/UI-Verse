@@ -1,70 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-QVz93RCY3wwIJ+sjFpiPYhEbzbDY2FxwOLSeAQXHXJg=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-QVz93RCY3wwIJ+sjFpiPYhEbzbDY2FxwOLSeAQXHXJg=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+    <meta http-equiv="refresh" content="0; url=calendar.html">
+    <meta name="robots" content="noindex">
+    <title>Redirecting…</title>
+    <script>location.replace('calendar.html');</script>
+  </head>
+  <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Calendar UI — UIverse</title>
-
-  <!-- Fonts -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- Icons -->
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  >
-
-  <!-- CSS -->
-
-  <link
-    rel="stylesheet"
-    href="calendar.css"
-  >
-
-</head>
-
-<body>
-<!-- ================= SIDEBAR ================= -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <span class="brand-icon">⬡</span>
-    <span class="brand-text">UIverse <span style="font-size: 9px; background: linear-gradient(135deg, #eb6835, #7b61ff); color: white; padding: 1px 6px; border-radius: 10px; font-weight: 800; margin-left: 4px; letter-spacing: 0.5px; vertical-align: middle; box-shadow: 0 0 8px rgba(235,104,53,0.3);">V2</span></span>
-  </div>
-
-          <nav class="sidebar-nav">
-    <ul>
-      <li class="active">
-        <a href="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="button.html">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Buttons</span>
-        </a>
-      </li>
-            <li>
-        <a href="dropdown-components.html">
-          <i class="fa-solid fa-caret-down"></i>
+    Redirecting to <a href="calendar.html">calendar.html</a>
+      <script src="dist/shared.js"></script>
+</body>
+  </html>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=calendar.html">
+    <meta name="robots" content="noindex">
+    <title>Redirecting…</title>
+    <script>location.replace('calendar.html');</script>
+  </head>
+  <body>
+    Redirecting to <a href="calendar.html">calendar.html</a>
+  </body>
+  </html>
           <span>Dropdowns</span>
         </a>
       </li>
@@ -273,6 +237,113 @@
         </a>
       </li>
       <li>
+
+
+        <div class="mini-calendar-widget">
+  <h4>Quick View</h4>
+
+  <div class="mini-month">
+    <button><i class="fa-solid fa-chevron-left"></i></button>
+    <span>July 2026</span>
+    <button><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <div class="mini-days">
+    <span>S</span><span>M</span><span>T</span>
+    <span>W</span><span>T</span><span>F</span><span>S</span>
+  </div>
+
+  <div class="mini-dates">
+    <span>1</span>
+    <span>2</span>
+    <span class="active">3</span>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+    <span>7</span>
+  </div>
+</div>
+
+<div class="timeline-card">
+
+  <h3>Today's Schedule</h3>
+
+  <div class="timeline-item">
+    <span class="time">09:00</span>
+    <div class="dot"></div>
+    <div class="content">
+      Product Standup
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <span class="time">11:00</span>
+    <div class="dot"></div>
+    <div class="content">
+      Design Review
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <span class="time">15:00</span>
+    <div class="dot"></div>
+    <div class="content">
+      Sprint Planning
+    </div>
+  </div>
+
+</div>
+<div class="deadline-card">
+
+  <div class="section-header">
+    <h3>Deadlines</h3>
+  </div>
+
+  <div class="deadline-item">
+    <div>
+      <h4>Dashboard UI</h4>
+      <small>Due Tomorrow</small>
+    </div>
+
+    <span class="badge danger">High</span>
+  </div>
+
+  <div class="deadline-item">
+    <div>
+      <h4>API Integration</h4>
+      <small>Due in 3 Days</small>
+    </div>
+
+    <span class="badge warning">Medium</span>
+  </div>
+
+</div>
+
+<div class="deadline-card">
+
+  <div class="section-header">
+    <h3>Deadlines</h3>
+  </div>
+
+  <div class="deadline-item">
+    <div>
+      <h4>Dashboard UI</h4>
+      <small>Due Tomorrow</small>
+    </div>
+
+    <span class="badge danger">High</span>
+  </div>
+
+  <div class="deadline-item">
+    <div>
+      <h4>API Integration</h4>
+      <small>Due in 3 Days</small>
+    </div>
+
+    <span class="badge warning">Medium</span>
+  </div>
+
+</div>
         <a href="terms.html">
           <i class="fa-solid fa-file-contract"></i>
           <span>Terms</span>
@@ -395,13 +466,13 @@ TOPBAR
     <input
       type="text"
       placeholder="Search calendar components..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
   <div class="topbar-actions">
 
-    <button class="outline-btn">
+    <button class="outline-btn" data-a11y-remediation="button-label-needed">
       Docs
     </button>
 
@@ -618,7 +689,99 @@ MAIN
 
 </main>
 
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
+
 <script src="calendar.js"></script>
+
+<script>
+  function generateCalendar(month, year) {
+    const calendarDates = document.getElementById("calendarDates");
+    calendarDates.innerHTML = "";
+
+    // Get first day of the month
+    const firstDay = new Date(year, month, 1).getDay();
+    // Get total days in the month
+    const totalDays = new Date(year, month + 1, 0).getDate();
+
+    // Add blank slots for days before the first day
+    for (let i = 0; i < firstDay; i++) {
+      const emptyCell = document.createElement("div");
+      emptyCell.classList.add("empty-cell");
+      calendarDates.appendChild(emptyCell);
+    }
+
+    // Add actual dates
+    const today = new Date();
+    for (let day = 1; day <= totalDays; day++) {
+      const dateCell = document.createElement("div");
+      dateCell.textContent = day;
+
+      // Highlight current day
+      if (
+        day === today.getDate() &&
+        month === today.getMonth() &&
+        year === today.getFullYear()
+      ) {
+        dateCell.classList.add("current-day");
+      }
+
+      calendarDates.appendChild(dateCell);
+    }
+  }
+
+  // Example: July 2026 (month index starts at 0)
+  generateCalendar(6, 2026);
+</script>
+
 
 </body>
 </html>

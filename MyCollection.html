@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
@@ -41,6 +42,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- =====================================================
 SIDEBAR
@@ -96,23 +99,489 @@ SIDEBAR
 
   </div>
 
-  <div class="sidebar-footer">
+<<<<<<< HEAD
 
-    <a href="#">
-      <i class="fab fa-github"></i>
-    </a>
+  <section class="overview-grid">
 
-    <a href="#">
-      <i class="fab fa-discord"></i>
-    </a>
+  <div class="overview-card">
+    <i class="fa-solid fa-bookmark"></i>
+    <h3>248</h3>
+    <span>Total Saved</span>
+  </div>
 
-    <a href="#">
-      <i class="fab fa-x-twitter"></i>
-    </a>
+  <div class="overview-card">
+    <i class="fa-solid fa-folder-tree"></i>
+    <h3>18</h3>
+    <span>Collections</span>
+  </div>
+
+  <div class="overview-card">
+    <i class="fa-solid fa-heart"></i>
+    <h3>92</h3>
+    <span>Favorites</span>
+  </div>
+
+  <div class="overview-card">
+    <i class="fa-solid fa-clock-rotate-left"></i>
+    <h3>14</h3>
+    <span>Recent Saves</span>
+  </div>
+
+</section>
+
+<section class="featured-collection">
+
+  <div class="featured-content">
+
+    <span class="featured-label">
+      Featured Collection
+    </span>
+
+    <h2>Futuristic Dashboard Pack</h2>
+
+    <p>
+      38 premium dashboard components including charts,
+      analytics cards, sidebars and widgets.
+    </p>
+
+    <button class="primary-btn">
+      Open Collection
+    </button>
 
   </div>
 
+  <div class="featured-preview">
+    <div class="featured-window"></div>
+  </div>
+
+</section>
+
+<section class="folder-section">
+
+  <div class="section-title">
+    <h2>Collections</h2>
+    <button>+ New Folder</button>
+  </div>
+
+  <div class="folder-grid">
+
+    <div class="folder-card">
+      <i class="fa-solid fa-folder"></i>
+      <h3>Dashboards</h3>
+      <span>42 Components</span>
+    </div>
+
+    <div class="folder-card">
+      <i class="fa-solid fa-folder"></i>
+      <h3>Landing Pages</h3>
+      <span>31 Components</span>
+    </div>
+
+    <div class="folder-card">
+      <i class="fa-solid fa-folder"></i>
+      <h3>AI Interfaces</h3>
+      <span>24 Components</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="recent-section">
+
+  <div class="section-title">
+    <h2>Recently Viewed</h2>
+  </div>
+
+  <div class="recent-list">
+
+    <div class="recent-item">
+      <span>AI Dashboard</span>
+      <small>2 hours ago</small>
+    </div>
+
+    <div class="recent-item">
+      <span>Login Form V3</span>
+      <small>Yesterday</small>
+    </div>
+
+    <div class="recent-item">
+      <span>Glassmorphism Cards</span>
+      <small>3 days ago</small>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="activity-section">
+
+  <h2>Activity</h2>
+
+  <div class="activity-list">
+
+    <div class="activity-item">
+      <i class="fa-solid fa-bookmark"></i>
+      Saved "Analytics Dashboard"
+    </div>
+
+    <div class="activity-item">
+      <i class="fa-solid fa-folder-plus"></i>
+      Created "AI UI Collection"
+    </div>
+
+    <div class="activity-item">
+      <i class="fa-solid fa-heart"></i>
+      Favorited "Kanban Workspace"
+    </div>
+
+  </div>
+
+</section>
+
+<section class="bulk-toolbar">
+
+  <div>
+    <strong>12 Selected</strong>
+  </div>
+
+  <div class="toolbar-actions">
+
+    <button>Move</button>
+
+    <button>Export</button>
+
+    <button>Share</button>
+
+    <button class="danger-btn">
+      Delete
+    </button>
+
+  </div>
+
+</section>
+
+<section class="trending-section">
+
+  <div class="section-title">
+    <h2>Trending In Your Collection</h2>
+  </div>
+
+  <div class="trending-slider">
+
+    <div class="trend-card">
+      Dashboard UI
+    </div>
+
+    <div class="trend-card">
+      AI Chat UI
+    </div>
+
+    <div class="trend-card">
+      Hero Sections
+    </div>
+
+    <div class="trend-card">
+      Pricing Tables
+    </div>
+
+  </div>
+
+</section>
+
+<section class="ai-suggestions">
+
+  <div class="ai-header">
+
+    <div>
+      <span>✨ AI Suggestions</span>
+      <h2>Recommended For You</h2>
+    </div>
+
+    <button>
+      Refresh
+    </button>
+
+  </div>
+
+  <div class="recommendation-grid">
+
+    <div class="recommend-card">
+      Advanced SaaS Dashboard
+    </div>
+
+    <div class="recommend-card">
+      AI Search Interface
+    </div>
+
+    <div class="recommend-card">
+      Glass Sidebar Navigation
+    </div>
+
+  </div>
+
+</section>
+
+<section class="analytics-section">
+
+  <h2>Collection Insights</h2>
+
+  <div class="analytics-grid">
+
+    <div class="analytics-card">
+      Most Saved Category
+      <h3>Dashboard UI</h3>
+    </div>
+
+    <div class="analytics-card">
+      Fastest Growing
+      <h3>AI Components</h3>
+    </div>
+
+    <div class="analytics-card">
+      Monthly Saves
+      <h3>+37%</h3>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="empty-state">
+
+  <i class="fa-solid fa-bookmark"></i>
+
+  <h2>No Components Saved Yet</h2>
+
+  <p>
+    Explore thousands of UI components and start
+    building your personal collection.
+  </p>
+
+  <button class="primary-btn">
+    Browse Components
+  </button>
+
+</section>
+  <div class="sidebar-footer">
+=======
+>>>>>>> origin/main
+
+
 </aside>
+
+<section class="overview-section">
+
+  <div class="overview-card">
+    <i class="fa-solid fa-bookmark"></i>
+    <h3>248</h3>
+    <p>Total Saved</p>
+  </div>
+
+  <div class="overview-card">
+    <i class="fa-solid fa-eye"></i>
+    <h3>12.8K</h3>
+    <p>Views</p>
+  </div>
+
+  <div class="overview-card">
+    <i class="fa-solid fa-code-branch"></i>
+    <h3>96</h3>
+    <p>Forked</p>
+  </div>
+
+  <div class="overview-card">
+    <i class="fa-solid fa-star"></i>
+    <h3>4.9</h3>
+    <p>Average Rating</p>
+  </div>
+
+</section>
+
+<section class="recent-section">
+
+  <div class="section-title">
+    <h2>Recently Opened</h2>
+    <button>See History</button>
+  </div>
+
+  <div class="recent-list">
+
+    <div class="recent-item">
+      <i class="fa-solid fa-chart-line"></i>
+      <div>
+        <h4>Analytics Dashboard</h4>
+        <span>Opened 5 min ago</span>
+      </div>
+    </div>
+
+    <div class="recent-item">
+      <i class="fa-solid fa-mobile-screen"></i>
+      <div>
+        <h4>Mobile Banking</h4>
+        <span>Opened Yesterday</span>
+      </div>
+    </div>
+
+    <div class="recent-item">
+      <i class="fa-solid fa-comments"></i>
+      <div>
+        <h4>AI Chat UI</h4>
+        <span>Opened 3 days ago</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="favorite-collections">
+
+<h2>Your Collections</h2>
+
+<div class="folder-grid">
+
+<div class="folder-card">
+<i class="fa-solid fa-folder"></i>
+<h3>Dashboard Ideas</h3>
+<p>48 Components</p>
+</div>
+
+<div class="folder-card">
+<i class="fa-solid fa-folder"></i>
+<h3>Landing Pages</h3>
+<p>31 Components</p>
+</div>
+
+<div class="folder-card">
+<i class="fa-solid fa-folder"></i>
+<h3>Admin UI</h3>
+<p>27 Components</p>
+</div>
+
+<div class="folder-card">
+<i class="fa-solid fa-folder"></i>
+<h3>AI Interfaces</h3>
+<p>16 Components</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="continue-banner">
+
+<div>
+
+<h2>Continue Designing</h2>
+
+<p>
+Resume working on your latest saved UI collection and keep
+building faster.
+</p>
+
+</div>
+
+<button>
+Resume
+</button>
+
+</section>
+
+<section class="activity-section">
+
+<h2>Recent Activity</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<span>Today</span>
+<p>Saved <strong>AI Login Screen</strong></p>
+</div>
+
+<div class="timeline-item">
+<span>Yesterday</span>
+<p>Bookmarked <strong>Glass Dashboard</strong></p>
+</div>
+
+<div class="timeline-item">
+<span>2 Days Ago</span>
+<p>Created collection <strong>Portfolio UI</strong></p>
+</div>
+
+</div>
+
+</section>
+<section class="recommend-section">
+
+<div class="section-title">
+
+<h2>Recommended For You</h2>
+
+<button>Explore</button>
+
+</div>
+
+<div class="recommend-grid">
+
+<div class="recommend-card">
+<i class="fa-solid fa-robot"></i>
+<h3>AI Dashboard</h3>
+</div>
+
+<div class="recommend-card">
+<i class="fa-solid fa-credit-card"></i>
+<h3>Payment UI</h3>
+</div>
+
+<div class="recommend-card">
+<i class="fa-solid fa-calendar"></i>
+<h3>Calendar App</h3>
+</div>
+
+</div>
+
+</section>
+
+<section class="empty-state">
+
+<i class="fa-regular fa-bookmark"></i>
+
+<h2>No Saved Components Yet</h2>
+
+<p>
+Start exploring UIverse and bookmark components you love.
+</p>
+
+<button>
+Browse Components
+</button>
+
+</section>
+
+<section class="quick-actions">
+
+<button>
+<i class="fa-solid fa-plus"></i>
+New Folder
+</button>
+
+<button>
+<i class="fa-solid fa-file-export"></i>
+Export
+</button>
+
+<button>
+<i class="fa-solid fa-file-import"></i>
+Import
+</button>
+
+<button>
+<i class="fa-solid fa-trash"></i>
+Delete
+</button>
+
+</section>
 
 <!-- =====================================================
 TOPBAR
@@ -127,13 +596,13 @@ TOPBAR
     <input
       type="text"
       placeholder="Search saved components..."
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
   <div class="topbar-actions">
 
-    <button class="outline-btn">
+    <button class="outline-btn" data-a11y-remediation="button-label-needed">
       Import
     </button>
 
@@ -543,7 +1012,86 @@ MAIN
 
 </main>
 
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li>
+            <a href="button.html">Buttons</a>
+          </li>
+          <li>
+            <a href="navbar.html">Navbars</a>
+          </li>
+          <li>
+            <a href="cards.html">Cards</a>
+          </li>
+          <li>
+            <a href="inputs.html">Inputs</a>
+          </li>
+          <li>
+            <a href="forms.html">Forms</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li>
+            <a href="#">Documentation</a>
+          </li>
+          <li>
+            <a href="#">GitHub Repo</a>
+          </li>
+          <li>
+            <a href="#">Community</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li>
+            <a href="privacypolicy.html">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="terms.html">Terms of Service</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
+
 <script src="collection.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>

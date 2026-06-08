@@ -2,22 +2,10 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
 
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self' https:;
-      base-uri 'self';
-      frame-ancestors 'none';
-      object-src 'none';
-      connect-src 'self' https:;
-      img-src 'self' data: https:;
-      font-src 'self' data: https:;
-      style-src 'self' https: 'unsafe-inline';
-      script-src 'self' https: 'unsafe-inline';
-    "
-  />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-/3uzgi7vc4mmyIvR7RS74T4vW64M3quS2SxeJNQu8bY= sha256-0zWTpEvl7Z0zyHzTLXPZLECd906QfTuCRs0vfdtgtac= sha256-1JfjM+47FG8XGxu0UfauYgEF9TOkXbUDKRjFsC5RnQ8= sha256-1dIbB/r8gJZQqfqHRIJADWbwB7JTTVeYfxzbbLWt+ts= sha256-2ouYaMulfZDfOAGF5wJSzVprdzE5nglfhdIaS/YaqT0= sha256-49Jz6jpOWv7+YlOEUFiGN2IWsSLoX/2q2r8qnuzbGJE= sha256-4JgID4VJUSJcZXtvafIOnj+MmjsrYaIi0a16FGZtCo4= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-5bJNzHmbwrWQCLQxtYLerDcccTEfq/ul/o3semRJkDA= sha256-6AKBlFOM56jeshihh2/xD3z0m7iZ4A+GozwBi7gsj7o= sha256-6FhfDBogMqIGOytktLBDwf63YcOpJnpMkBbpgAA+PZ4= sha256-6pEftELx/hen026nzCCl/7FsLDv7EL3hBSxHT4jgZbk= sha256-AHOSEhpOS5xmVtZpE7eNKFzO5TzAJeQgDk9OOTbM7i4= sha256-EtZYCYGcA7H4KaN9+BhI30gYQ3g7DNN1Pc2/GkEdChc= sha256-J1sK0S6Qv5GZxvYkNafbQIRtuSNxKngsZyDmuUhxV5M= sha256-Jw5n2AYjR6xlFSfc3uO1r2if464Xhhq9ZOj8KjP+3+8= sha256-LJF+ds+GZ1kw3K6+BCfltIvT3urTvmyPP6qbgzC1osA= sha256-LlM6jgy+E6FwruIWo17nYUpGpJYxLlV3Oh04QvyK+Rs= sha256-NbMbAECbLFwzvvk3GKzs6UUfYLloLYQ2v//ZJg7/8+c= sha256-SjeEpy9DdGHcjIAYqFcaEZmlgn6cQAAAnxj/MMUIc8k= sha256-Tfoeb6j2ZcNq4h3h5UQeZkaVIgoYgleNr0JzZvRVmvY= sha256-U5RZY3KCRxQLS3Jvvgl8lPJkOOc+aohMmvlgaxJQ9Mo= sha256-UDfhCuwAdzfddtlr+EBADM+YmUTpS2kkSiLN23N8dMI= sha256-UwYfhQ2Li70IK+VbtXyc1K+sDoSzMFcGNAw9DMj70LA= sha256-VMuMwdlqGET0du1hU9ca989bmnEJqed2bxkUZFfr3qI= sha256-VXs6vm9IZ1lJ4y4OqiFdOZoBtNO4Dz6oHoCFYSK1Xo4= sha256-VsCz1AGz2fdaZNrPE10jciI6HD2YgzTdTbdlebwhGJg= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4= sha256-YEtzFlpu7P0zfGnrRvtVXvtKOw1LD4UaQcRP1OpujJo= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-auw6dQ4oyYnlI7TUWClAMDH40icmD6OiWh17rHpFzrk= sha256-bEUUkb6QGbrnT4uci+dIctwHpTn4lvYkdLPZ0NVWee4= sha256-euFYUFhMJAme2ooJy0XT9xJq3lSNyxXL9AXe3p3Bj6g= sha256-fFfd7CSPi5k6kFPfnAGKCUvXSmO8b0qmko6aiNoPXQM= sha256-fywlHNhf+Hwo8hf6dyksfZ4A6h0/WdYtOqbKkSQQCPU= sha256-g1r65G1RpVICOCl04go/0POtHCIbJVE2nTP9V4o33NY= sha256-jEC+H2QQ9gUXhSU/0c8r+WAryy/fwxWmKw/rYZbyiRU= sha256-jubg0EAcYMNQbSLA9JJtm8z/4xe+x1emGf87tPn4NuA= sha256-kjoZ+7+EPiRh1+AuuImaza8e6qxNC/lWbGaJzCn0RAU= sha256-m4aoJdWPiRBdjf2flcLRhqoE0aXOZlnGIiLnPq0zCOw= sha256-nL1MCw1h5iWtGvZ7JPB2o/NVIUi6xzCiuakt/CeeHfs= sha256-oF7Vpzns6Hsc0LgOsUWWt+NpTdHzegwnjN2VoWmV/aU= sha256-olQMR6vDWtARbYCIZw0WQewVWJo2tWGBDk9VMz5qMto= sha256-sfCR4EtQChLnzm4msRwYbIyeX90Z68lEDr5nPw2WkUs= sha256-uSGe9TwMiX0MPrMCvuT3wsu48oMMOJ2KwvRomW1yvCQ= sha256-uTDYbR809IEk66EtGXeSq3nApKl9x6Oo3sxuS6UL4l4= sha256-vAloZAG8eapjMoX5NX+PAz5bv+dkyLck0AX7T7Mnv+0= sha256-vcDtoA1AEF2fxooI4MwtdcPC9II0L9jf1yUr8Rniwrc= sha256-x6Lg5g0bHcHGkxJI1/LcmremJ57ufOirQdPffgep00c= sha256-yoUZqcrOdlsLKauifhxc28W0j/+F95NmTFtH077puH8=; script-src-attr 'unsafe-hashes' sha256-/3uzgi7vc4mmyIvR7RS74T4vW64M3quS2SxeJNQu8bY= sha256-0zWTpEvl7Z0zyHzTLXPZLECd906QfTuCRs0vfdtgtac= sha256-1JfjM+47FG8XGxu0UfauYgEF9TOkXbUDKRjFsC5RnQ8= sha256-1dIbB/r8gJZQqfqHRIJADWbwB7JTTVeYfxzbbLWt+ts= sha256-2ouYaMulfZDfOAGF5wJSzVprdzE5nglfhdIaS/YaqT0= sha256-49Jz6jpOWv7+YlOEUFiGN2IWsSLoX/2q2r8qnuzbGJE= sha256-4JgID4VJUSJcZXtvafIOnj+MmjsrYaIi0a16FGZtCo4= sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-5bJNzHmbwrWQCLQxtYLerDcccTEfq/ul/o3semRJkDA= sha256-6AKBlFOM56jeshihh2/xD3z0m7iZ4A+GozwBi7gsj7o= sha256-6FhfDBogMqIGOytktLBDwf63YcOpJnpMkBbpgAA+PZ4= sha256-6pEftELx/hen026nzCCl/7FsLDv7EL3hBSxHT4jgZbk= sha256-AHOSEhpOS5xmVtZpE7eNKFzO5TzAJeQgDk9OOTbM7i4= sha256-EtZYCYGcA7H4KaN9+BhI30gYQ3g7DNN1Pc2/GkEdChc= sha256-J1sK0S6Qv5GZxvYkNafbQIRtuSNxKngsZyDmuUhxV5M= sha256-Jw5n2AYjR6xlFSfc3uO1r2if464Xhhq9ZOj8KjP+3+8= sha256-LJF+ds+GZ1kw3K6+BCfltIvT3urTvmyPP6qbgzC1osA= sha256-LlM6jgy+E6FwruIWo17nYUpGpJYxLlV3Oh04QvyK+Rs= sha256-NbMbAECbLFwzvvk3GKzs6UUfYLloLYQ2v//ZJg7/8+c= sha256-SjeEpy9DdGHcjIAYqFcaEZmlgn6cQAAAnxj/MMUIc8k= sha256-Tfoeb6j2ZcNq4h3h5UQeZkaVIgoYgleNr0JzZvRVmvY= sha256-U5RZY3KCRxQLS3Jvvgl8lPJkOOc+aohMmvlgaxJQ9Mo= sha256-UDfhCuwAdzfddtlr+EBADM+YmUTpS2kkSiLN23N8dMI= sha256-UwYfhQ2Li70IK+VbtXyc1K+sDoSzMFcGNAw9DMj70LA= sha256-VMuMwdlqGET0du1hU9ca989bmnEJqed2bxkUZFfr3qI= sha256-VXs6vm9IZ1lJ4y4OqiFdOZoBtNO4Dz6oHoCFYSK1Xo4= sha256-VsCz1AGz2fdaZNrPE10jciI6HD2YgzTdTbdlebwhGJg= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4= sha256-YEtzFlpu7P0zfGnrRvtVXvtKOw1LD4UaQcRP1OpujJo= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-auw6dQ4oyYnlI7TUWClAMDH40icmD6OiWh17rHpFzrk= sha256-bEUUkb6QGbrnT4uci+dIctwHpTn4lvYkdLPZ0NVWee4= sha256-euFYUFhMJAme2ooJy0XT9xJq3lSNyxXL9AXe3p3Bj6g= sha256-fFfd7CSPi5k6kFPfnAGKCUvXSmO8b0qmko6aiNoPXQM= sha256-fywlHNhf+Hwo8hf6dyksfZ4A6h0/WdYtOqbKkSQQCPU= sha256-g1r65G1RpVICOCl04go/0POtHCIbJVE2nTP9V4o33NY= sha256-jEC+H2QQ9gUXhSU/0c8r+WAryy/fwxWmKw/rYZbyiRU= sha256-jubg0EAcYMNQbSLA9JJtm8z/4xe+x1emGf87tPn4NuA= sha256-kjoZ+7+EPiRh1+AuuImaza8e6qxNC/lWbGaJzCn0RAU= sha256-m4aoJdWPiRBdjf2flcLRhqoE0aXOZlnGIiLnPq0zCOw= sha256-nL1MCw1h5iWtGvZ7JPB2o/NVIUi6xzCiuakt/CeeHfs= sha256-oF7Vpzns6Hsc0LgOsUWWt+NpTdHzegwnjN2VoWmV/aU= sha256-olQMR6vDWtARbYCIZw0WQewVWJo2tWGBDk9VMz5qMto= sha256-sfCR4EtQChLnzm4msRwYbIyeX90Z68lEDr5nPw2WkUs= sha256-uSGe9TwMiX0MPrMCvuT3wsu48oMMOJ2KwvRomW1yvCQ= sha256-uTDYbR809IEk66EtGXeSq3nApKl9x6Oo3sxuS6UL4l4= sha256-vAloZAG8eapjMoX5NX+PAz5bv+dkyLck0AX7T7Mnv+0= sha256-vcDtoA1AEF2fxooI4MwtdcPC9II0L9jf1yUr8Rniwrc= sha256-x6Lg5g0bHcHGkxJI1/LcmremJ57ufOirQdPffgep00c= sha256-yoUZqcrOdlsLKauifhxc28W0j/+F95NmTFtH077puH8=; style-src 'self' https: 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA= sha256-X3TANt94n/EPMZH3GiAoNt9ind85KwvvfcY7+Xxb+CI= sha256-zioEl7ShsnBh5xXQBd5d1lIiLYfMRNBVJ/a0cQq3/Rc=; style-src-attr 'unsafe-hashes' sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA= sha256-X3TANt94n/EPMZH3GiAoNt9ind85KwvvfcY7+Xxb+CI= sha256-zioEl7ShsnBh5xXQBd5d1lIiLYfMRNBVJ/a0cQq3/Rc=">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -36,7 +24,6 @@
   />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="loaders.css" />
 
   <style>
@@ -253,6 +240,7 @@
       width: 85%;
     }
 
+  
     .l3 {
       width: 65%;
     }
@@ -489,8 +477,8 @@
     .footer {
       margin-left: 280px;
       background: #fff;
-      padding: 60px 40px;
-      margin-top: 80px;
+      padding: 10px 30px;
+      margin-top: 30px;
     }
 
     body.dark-mode .footer {
@@ -500,11 +488,11 @@
     .footer-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
+      gap: 15px;
     }
 
     .footer-col h3 {
-      margin-bottom: 18px;
+      margin-bottom: 10px;
     }
 
     .footer-col ul {
@@ -541,6 +529,7 @@
       margin-top: 40px;
       text-align: center;
       opacity: 0.7;
+      color: #aaa;
     }
 
     /* ================= SCROLL BUTTON ================= */
@@ -623,10 +612,11 @@
 
   </style>
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
@@ -945,12 +935,6 @@
       </li>
     </ul>
   </nav>
-
-    <div class="sidebar-footer">
-      <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-    </div>
   </aside>
 
   <!-- BACKDROP -->
@@ -967,7 +951,7 @@
       class="menu-toggle"
       onclick="toggleSidebar()"
       aria-label="Toggle Sidebar"
-    >
+     data-a11y-remediation="button-label-needed">
       <i class="fa-solid fa-bars"></i>
     </button>
 
@@ -980,7 +964,7 @@
       <input
         type="text"
         placeholder="Search components..."
-      />
+      / data-a11y-remediation="label-needed">
 
       <kbd class="search-kbd">⌘K</kbd>
 
@@ -1018,6 +1002,40 @@
     <h1>Loaders</h1>
 
     <div class="loaders-grid">
+      <!-- SEARCH + SORT TOOLBAR -->
+      <div class="toolbar" style="grid-column: 1 / -1;">
+        <div class="toolbar-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="componentSearch" placeholder="Filter loaders..." autocomplete="off">
+        </div>
+
+        <div class="sort-dropdown-wrapper" id="sortWrapper">
+          <button class="sort-trigger" id="sortTrigger" onclick="toggleSortMenu()">
+            <i class="fa-solid fa-arrow-up-arrow-down"></i>
+            <span id="sortLabel">Order</span>
+            <i class="fa-solid fa-chevron-down sort-chevron"></i>
+          </button>
+          <div class="sort-menu" id="sortMenu">
+            <label class="sort-option">
+              <span>Default</span>
+              <input type="radio" name="sort" value="default" checked onchange="sortCards('default')">
+              <span class="radio-dot"></span>
+            </label>
+            <label class="sort-option">
+              <span>A → Z</span>
+              <input type="radio" name="sort" value="az" onchange="sortCards('az')">
+              <span class="radio-dot"></span>
+            </label>
+            <label class="sort-option">
+              <span>Z → A</span>
+              <input type="radio" name="sort" value="za" onchange="sortCards('za')">
+              <span class="radio-dot"></span>
+            </label>
+          </div>
+        </div>
+
+        <span class="results-count" id="resultsCount">29 components</span>
+      </div>
 
       <!-- Loader 1 -->
       <div class="component-card">
@@ -1069,6 +1087,14 @@
 
       </div>
 
+
+      <div class="loader-search">
+  <input
+    type="text"
+    id="loaderSearch"
+    placeholder="Search loaders..."
+  >
+</div>
       <!-- Loader 3 -->
       <div class="component-card">
 
@@ -1520,6 +1546,253 @@
         </pre>
       </div>
 
+      <!-- Loader 18 — Spinning Gear -->
+      <div class="component-card">
+        <h3>Spinning Gear Loader</h3>
+        <div class="loader-demo-box">
+          <div class="icon-spin-loader">
+            <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-gear"></i>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader18')">View Code</button>
+          <button onclick="copyCode('loader18')">Copy</button>
+        </div>
+        <pre id="loader18" class="code-block">
+      &lt;div class="icon-spin-loader"&gt;
+        &lt;i class="fa-solid fa-gear"&gt;&lt;/i&gt;
+        &lt;i class="fa-solid fa-gear"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 19 — Icon Pulse Ring -->
+      <div class="component-card">
+        <h3>Icon Pulse Ring</h3>
+        <div class="loader-demo-box">
+          <div class="icon-pulse-ring">
+            <i class="fa-solid fa-bolt"></i>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader19')">View Code</button>
+          <button onclick="copyCode('loader19')">Copy</button>
+        </div>
+        <pre id="loader19" class="code-block">
+      &lt;div class="icon-pulse-ring"&gt;
+        &lt;i class="fa-solid fa-bolt"&gt;&lt;/i&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;span&gt;&lt;/span&gt;
+      &lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 20 — Circular Text Orbit -->
+      <div class="component-card">
+        <h3>Circular Text Orbit</h3>
+        <div class="loader-demo-box">
+          <div class="text-orbit-loader">
+            <svg viewBox="0 0 100 100" width="110" height="110">
+              <path id="orbit-path" d="M 50,50 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0" fill="none"/>
+              <text font-size="10.5" fill="#7c5cff" font-family="DM Sans, sans-serif" font-weight="700" letter-spacing="3">
+                <textPath href="#orbit-path">LOADING • PLEASE WAIT •</textPath>
+              </text>
+            </svg>
+            <i class="fa-solid fa-circle-notch text-orbit-icon"></i>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader20')">View Code</button>
+          <button onclick="copyCode('loader20')">Copy</button>
+        </div>
+        <pre id="loader20" class="code-block">
+      &lt;div class="text-orbit-loader"&gt;
+        &lt;svg viewBox="0 0 100 100" width="110" height="110"&gt;
+          &lt;path id="orbit-path"
+            d="M 50,50 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0"
+            fill="none"/&gt;
+          &lt;text font-size="10.5" fill="#7c5cff"
+            font-family="DM Sans, sans-serif"
+            font-weight="700" letter-spacing="3"&gt;
+            &lt;textPath href="#orbit-path"&gt;LOADING • PLEASE WAIT •&lt;/textPath&gt;
+          &lt;/text&gt;
+        &lt;/svg&gt;
+        &lt;i class="fa-solid fa-circle-notch text-orbit-icon"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 21 — Stacked Squares -->
+      <div class="component-card">
+        <h3>Stacked Squares</h3>
+        <div class="loader-demo-box">
+          <div class="stacked-squares">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader21')">View Code</button>
+          <button onclick="copyCode('loader21')">Copy</button>
+        </div>
+        <pre id="loader21" class="code-block">
+      &lt;div class="stacked-squares"&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;span&gt;&lt;/span&gt;
+      &lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 22 — Hexagon Loader -->
+      <div class="component-card">
+        <h3>Hexagon Loader</h3>
+        <div class="loader-demo-box">
+          <div class="hex-loader"></div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader22')">View Code</button>
+          <button onclick="copyCode('loader22')">Copy</button>
+        </div>
+        <pre id="loader22" class="code-block">
+&lt;div class="hex-loader"&gt;&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 23 — DNA Helix -->
+      <div class="component-card">
+        <h3>DNA Helix Loader</h3>
+        <div class="loader-demo-box">
+          <div class="dna-loader">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader23')">View Code</button>
+          <button onclick="copyCode('loader23')">Copy</button>
+        </div>
+        <pre id="loader23" class="code-block">
+&lt;div class="dna-loader"&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 24 — Glass Spinner -->
+      <div class="component-card">
+        <h3>Glass Spinner</h3>
+        <div class="loader-demo-box">
+          <div class="glass-loader"></div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader24')">View Code</button>
+          <button onclick="copyCode('loader24')">Copy</button>
+        </div>
+        <pre id="loader24" class="code-block">
+&lt;div class="glass-loader"&gt;&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 25 — AI Thinking -->
+      <div class="component-card">
+        <h3>AI Thinking Loader</h3>
+        <div class="loader-demo-box">
+          <div class="ai-loader">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader25')">View Code</button>
+          <button onclick="copyCode('loader25')">Copy</button>
+        </div>
+        <pre id="loader25" class="code-block">
+&lt;div class="ai-loader"&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 26 — 3D Cube -->
+      <div class="component-card">
+        <h3>3D Cube Loader</h3>
+        <div class="loader-demo-box">
+          <div class="cube-loader"></div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader26')">View Code</button>
+          <button onclick="copyCode('loader26')">Copy</button>
+        </div>
+        <pre id="loader26" class="code-block">
+&lt;div class="cube-loader"&gt;&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 27 — Gradient Ring Cascade -->
+      <div class="component-card">
+        <h3>Gradient Ring Cascade</h3>
+        <div class="loader-demo-box">
+          <div class="cascade-loader">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader27')">View Code</button>
+          <button onclick="copyCode('loader27')">Copy</button>
+        </div>
+        <pre id="loader27" class="code-block">
+&lt;div class="cascade-loader"&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 28 — Bouncing Squares -->
+      <div class="component-card">
+        <h3>Bouncing Squares</h3>
+        <div class="loader-demo-box">
+          <div class="bouncing-squares">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader28')">View Code</button>
+          <button onclick="copyCode('loader28')">Copy</button>
+        </div>
+        <pre id="loader28" class="code-block">
+&lt;div class="bouncing-squares"&gt;
+  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <!-- Loader 29 — Circular Dash -->
+      <div class="component-card">
+        <h3>Circular Dash Loader</h3>
+        <div class="loader-demo-box">
+          <div class="circular-dash">
+            <svg viewBox="0 0 50 50">
+              <circle cx="25" cy="25" r="20"></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="toggleCode('loader29')">View Code</button>
+          <button onclick="copyCode('loader29')">Copy</button>
+        </div>
+        <pre id="loader29" class="code-block">
+&lt;div class="circular-dash"&gt;
+  &lt;svg viewBox="0 0 50 50"&gt;
+    &lt;circle cx="25" cy="25" r="20"&gt;&lt;/circle&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
     </div>
 
 
@@ -1529,21 +1802,31 @@
   <button id="scrollTopBtn" onclick="scrollToTop()">
     <i class="fa-solid fa-chevron-up"></i>
   </button>
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
 
-    <div class="socials">
-  <a href="https://github.com" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" title="Twitter">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+
+      <div class="socials">
+        <a href="#" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" title="Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
 
     <div class="footer-col">
       <h3>Explore</h3>
@@ -1559,11 +1842,10 @@
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
       </ul>
     </div>
 
@@ -1572,7 +1854,7 @@
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
+        <li><a href="#">License</a></li>
       </ul>
     </div>
 
@@ -1582,15 +1864,55 @@
       <div class="newsletter-form">
         <input type="email" placeholder="your@email.com" />
         <button type="button" onclick="subscribe()">Subscribe</button>
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+        <div class="socials">
+          <a href="https://github.com" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="button.html">Buttons</a></li>
+          <li><a href="navbar.html">Navbars</a></li>
+          <li><a href="cards.html">Cards</a></li>
+          <li><a href="inputs.html">Inputs</a></li>
+          <li><a href="forms.html">Forms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">GitHub Repo</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com">
+          <button type="button">Subscribe</button>
+        </div>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    </div>
+  </footer>
 
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
-</footer>
 
   <!-- SCRIPT -->
   <script>
@@ -1699,7 +2021,72 @@
 
     }
 
+    
+    // Toolbar: search + sort
+    function initToolbar() {
+      const input = document.getElementById('componentSearch');
+      const grid = document.querySelector('.loaders-grid');
+      const cards = [...grid.querySelectorAll('.component-card')];
+      const countEl = document.getElementById('resultsCount');
+      const originalOrder = [...cards];
+      let currentSort = 'default';
+
+      document.addEventListener('click', function(e) {
+        const wrapper = document.getElementById('sortWrapper');
+        if (wrapper && !wrapper.contains(e.target)) closeSortMenu();
+      });
+
+      function update() {
+        const q = input.value.toLowerCase();
+
+        cards.forEach(card => {
+          const text = card.querySelector('h3').textContent.toLowerCase();
+          card.style.display = text.includes(q) ? '' : 'none';
+        });
+
+        const visible = cards.filter(c => c.style.display !== 'none');
+        countEl.textContent = visible.length + ' component' + (visible.length === 1 ? '' : 's');
+
+        const sorted = [...visible].sort((a, b) => {
+          if (currentSort === 'default') return originalOrder.indexOf(a) - originalOrder.indexOf(b);
+          const ta = a.querySelector('h3').textContent;
+          const tb = b.querySelector('h3').textContent;
+          return currentSort === 'az' ? ta.localeCompare(tb) : tb.localeCompare(ta);
+        });
+
+        sorted.forEach(c => grid.appendChild(c));
+        cards.filter(c => c.style.display === 'none').forEach(c => grid.appendChild(c));
+      }
+
+      window.toggleSortMenu = function() {
+        const menu = document.getElementById('sortMenu');
+        const trigger = document.getElementById('sortTrigger');
+        const isOpen = menu.classList.contains('open');
+        menu.classList.toggle('open', !isOpen);
+        trigger.classList.toggle('open', !isOpen);
+      };
+
+      function closeSortMenu() {
+        document.getElementById('sortMenu').classList.remove('open');
+        document.getElementById('sortTrigger').classList.remove('open');
+      }
+
+      window.sortCards = function(dir) {
+        currentSort = dir;
+        const labels = { default: 'Order', az: 'A → Z', za: 'Z → A' };
+        document.getElementById('sortLabel').textContent = labels[dir];
+        closeSortMenu();
+        update();
+      };
+
+      input.addEventListener('input', update);
+      update();
+    }
+
+    document.addEventListener('DOMContentLoaded', initToolbar);
+
   </script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
