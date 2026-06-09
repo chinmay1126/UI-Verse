@@ -906,3 +906,57 @@ body{
   font-size: 13px;
   color: #555;
 }
+
+/* Base layout */
+.layout {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: #0b0b0b;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+/* Main content */
+.main-wrapper {
+  margin-left: 240px; /* offset for sidebar */
+  flex: 1;
+  padding: 20px;
+}
+
+/* Hamburger toggle */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 22px;
+  color: var(--green);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Responsive behavior */
+@media (max-width: 992px) {
+  .sidebar {
+    left: -240px; /* hide sidebar */
+    transition: left 0.3s ease;
+  }
+  .sidebar.active {
+    left: 0; /* show when toggled */
+  }
+  .main-wrapper {
+    margin-left: 0; /* full width content */
+  }
+  .menu-toggle {
+    display: block; /* show hamburger */
+  }
+}
