@@ -2,14 +2,178 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UIverse - CSS Component Library</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Bundled CSS -->
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-9T0IcZNV6AXskPivO6H2OQVEXybzxFpNNnl46rtze/g=; style-src-attr 'unsafe-hashes' sha256-9T0IcZNV6AXskPivO6H2OQVEXybzxFpNNnl46rtze/g=">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Modern CSS Components, Animations, Cards, Buttons, Forms and UI Patterns."
+  >
+
+  <meta
+    name="theme-color"
+    content="#050816"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark light"
+  >
+
+  <title>UIverse — CSS Component Library</title>
+
+  <!-- Improve connection speed -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- Shared styles -->
+  <link
+    rel="stylesheet"
+    href="dist/shared.css"
+  >
+
+  <!-- Main bundle -->
+  <link
+    rel="stylesheet"
+    href="dist/css/main.css"
+  >
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="/favicon.ico"
+    sizes="any"
+  >
+
+  <!-- Social Preview -->
+  <meta
+    property="og:title"
+    content="UIverse — CSS Component Library"
+  >
+
+  <meta
+    property="og:description"
+    content="Modern CSS Components, Animations, Cards, Buttons, Forms and UI Patterns."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <!-- Preload hero image if used immediately -->
+  <!--
+  <link
+    rel="preload"
+    as="image"
+    href="dist/images/hero.webp"
+  >
+  -->
+</head>
+
+<body>
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+  <main id="main-content">
+
+    <div id="app"></div>
+
+    <!-- Optional loading placeholder -->
+    <noscript>
+      <p>
+        JavaScript is required to load this application.
+      </p>
+    </noscript>
+
+  </main>
+
+  <!-- Shared utilities -->
+  <script src="dist/shared.js" defer></script>
+
+  <!-- Main application -->
+  <script
+    type="module"
+    src="dist/js/main.js"
+  ></script>
+
   <link rel="stylesheet" href="dist/css/main.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
+</head>
+
+<body>
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+
+  <div id="app">
+    <div class="boot-loader">
+      <div class="loader-logo">UIverse</div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <style>body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left,#6d28d920,transparent 40%),
+    radial-gradient(circle at bottom right,#06b6d420,transparent 40%),
+    #050816;
+  overflow-x:hidden;
+}
+
+.aurora{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(120px);
+  pointer-events:none;
+}
+
+.aurora-1{
+  width:450px;
+  height:450px;
+  background:#7c3aed;
+  top:-150px;
+  left:-100px;
+  opacity:.25;
+}
+
+.aurora-2{
+  width:400px;
+  height:400px;
+  background:#06b6d4;
+  bottom:-150px;
+  right:-100px;
+  opacity:.2;
+}</style>
   
   <!-- Vite will inject scripts here -->
   <link rel="stylesheet" href="shared-sidebar.css">
@@ -17,5 +181,7 @@
 <body>
   <div id="app"></div>
   <script type="module" src="dist/js/main.js"></script>
+    <script src="dist/shared.js"></script>
+
 </body>
 </html>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-pe4SrQjWlNsRO560qMGgOA0VNR3k9KoP6xOc2pPprRg=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-pe4SrQjWlNsRO560qMGgOA0VNR3k9KoP6xOc2pPprRg=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -20,6 +22,270 @@
   />
 </head>
 
+<section class="hero-section">
+
+  <div class="hero-badge">
+    ✦ Modern Upload Interfaces
+  </div>
+
+  <h1>
+    File <span>Upload UI</span>
+  </h1>
+
+  <p>
+    Beautiful drag & drop upload
+    components crafted for modern
+    dashboards, SaaS products and
+    futuristic interfaces.
+  </p>
+
+</section>
+
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+        <h2>12K+</h2>
+        <p>Uploads Today</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>1.8TB</h2>
+        <p>Transferred</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>99.98%</h2>
+        <p>Availability</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>245</h2>
+        <p>Team Members</p>
+    </div>
+
+</section>
+
+<div class="drop-zone" id="dropZone">
+
+    <div class="upload-icon">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+    </div>
+
+    <h2>Drop files here</h2>
+
+    <p>
+        Supports Images, Videos, ZIP, PDF and Documents
+    </p>
+
+    <small>
+        Maximum file size: 5 GB
+    </small>
+
+    <input
+        type="file"
+        id="fileInput"
+        multiple
+    >
+
+    <button class="upload-btn">
+        Browse Device
+    </button>
+
+</div>
+
+
+<div class="upload-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="card-label">
+                QUEUE
+            </span>
+
+            <h2>
+                Pending Uploads
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="queue-list">
+
+        <div class="queue-item">
+
+            <span>design-system.fig</span>
+
+            <span>Waiting</span>
+
+        </div>
+
+        <div class="queue-item">
+
+            <span>presentation.pptx</span>
+
+            <span>Queued</span>
+
+        </div>
+
+        <div class="queue-item">
+
+            <span>mobile-assets.zip</span>
+
+            <span>Preparing</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="upload-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="card-label">
+                ACTIVITY
+            </span>
+
+            <h2>
+                Timeline
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="activity-list">
+
+        <div class="activity-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <div>
+
+                <strong>
+                    dashboard.zip uploaded
+                </strong>
+
+                <span>2 min ago</span>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <i class="fa-solid fa-share-nodes"></i>
+
+            <div>
+
+                <strong>
+                    Shared with Design Team
+                </strong>
+
+                <span>8 min ago</span>
+
+            </div>
+
+        </div>
+
+        <div class="activity-item">
+
+            <i class="fa-solid fa-trash"></i>
+
+            <div>
+
+                <strong>
+                    Deleted temp.mov
+                </strong>
+
+                <span>18 min ago</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="upload-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="card-label">
+                TYPES
+            </span>
+
+            <h2>
+                Categories
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="categories">
+
+        <button>📷 Images</button>
+
+        <button>🎥 Videos</button>
+
+        <button>📁 Archives</button>
+
+        <button>📄 Documents</button>
+
+        <button>💻 Code</button>
+
+        <button>🎵 Audio</button>
+
+    </div>
+
+</div>
+
+<div class="upload-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="card-label">
+                TEAM
+            </span>
+
+            <h2>
+                Collaborators
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="team-users">
+
+        <div class="avatar">A</div>
+
+        <div class="avatar">S</div>
+
+        <div class="avatar">J</div>
+
+        <div class="avatar">+8</div>
+
+    </div>
+
+    <button class="outline-btn">
+        Invite Members
+    </button>
+
+</div>
 
 <script>
   const uploadBtn = document.getElementById("uploadBtn");
@@ -93,8 +359,96 @@
     // Optional success message
     alert(`${file.name} uploaded successfully!`);
   });
+
+  const toast = document.createElement("div");
+
+toast.className = "upload-toast";
+
+toast.textContent = `${file.name} uploaded successfully`;
+
+document.body.appendChild(toast);
+
+setTimeout(() => {
+
+  toast.classList.add("show");
+
+}, 100);
+
+setTimeout(() => {
+
+  toast.remove();
+
+}, 3000);
+
+const getIcon = (type) => {
+
+  if (type.startsWith("image/")) return "🖼️";
+
+  if (type.startsWith("video/")) return "🎬";
+
+  if (type.startsWith("audio/")) return "🎵";
+
+  if (type.includes("pdf")) return "📕";
+
+  if (
+      type.includes("word") ||
+      type.includes("document")
+  ) return "📝";
+
+  if (
+      type.includes("excel") ||
+      type.includes("spreadsheet")
+  ) return "📊";
+
+  if (type.includes("zip")) return "🗜️";
+
+  return "📁";
+
+};
+
+if(file.type.startsWith("image/")){
+
+    const img = document.createElement("img");
+
+    img.src = URL.createObjectURL(file);
+
+    img.className = "preview";
+
+    card.prepend(img);
+
+}
+
+const hero = document.querySelector(".hero");
+
+hero.addEventListener("dragover", e => {
+
+    e.preventDefault();
+
+    hero.classList.add("dragging");
+
+});
+
+hero.addEventListener("dragleave", () => {
+
+    hero.classList.remove("dragging");
+
+});
+
+hero.addEventListener("drop", e => {
+
+    e.preventDefault();
+
+    hero.classList.remove("dragging");
+
+    fileInput.files = e.dataTransfer.files;
+
+    fileInput.dispatchEvent(new Event("change"));
+
+});
 </script>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -439,7 +793,7 @@
         <input
           type="text"
           placeholder="Search files, folders, images..."
-        />
+        / data-a11y-remediation="label-needed">
 
       </div>
 
@@ -728,5 +1082,6 @@
 
   </main>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
