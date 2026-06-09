@@ -627,6 +627,130 @@ select.demo-input option {
     grid-column: span 1;
   }
 }
+}
+.modern-preview{
+  min-height:140px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.input-shell{
+  width:100%;
+  max-width:320px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:14px 18px;
+
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,.08),
+    rgba(255,255,255,.03)
+  );
+
+  backdrop-filter:blur(20px);
+
+  transition:.35s;
+}
+
+.input-shell:hover{
+  transform:translateY(-3px);
+  border-color:#eb6835;
+  box-shadow:
+  0 15px 40px rgba(235,104,53,.15);
+}
+
+.input-shell input{
+  flex:1;
+  background:none;
+  border:none;
+  outline:none;
+}
+
+.floating-field{
+  position:relative;
+}
+
+.floating-field input{
+  width:100%;
+  padding:18px;
+  border-radius:16px;
+}
+
+.floating-field label{
+  position:absolute;
+  left:18px;
+  top:16px;
+  transition:.25s;
+}
+
+.floating-field input:focus + label,
+.floating-field input:valid + label{
+  top:-10px;
+  font-size:.75rem;
+  color:#eb6835;
+}
+
+.filter-bar{
+  position:sticky;
+  top:80px;
+
+  z-index:20;
+
+  backdrop-filter:blur(18px);
+
+  background:
+  rgba(20,20,20,.65);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:24px;
+
+  padding:14px;
+
+  margin-bottom:40px;
+}
+
+.filter-btn{
+  border-radius:999px;
+
+  transition:.3s;
+}
+
+.filter-btn:hover{
+  transform:translateY(-2px);
+}
+
+.filter-btn.active{
+  background:#eb6835;
+  color:white;
+
+  box-shadow:
+  0 10px 25px rgba(235,104,53,.3);
+}
+
+.component-meta{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+}
+
+.component-meta span{
+  padding:6px 10px;
+
+  border-radius:999px;
+
+  background:
+  rgba(255,255,255,.05);
+
+  font-size:.75rem;
+}
 /* General text fixes */
 .card-label,
 .card-desc,
@@ -740,5 +864,7 @@ select.demo-input option {
 .floating-field input:focus + label,
 .floating-field input:not(:placeholder-shown)+label{
   top:-10px;
+  font-size:}
   font-size:12px;
 }
+

@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-Ptjq1sGj98C2H5TXIQi22lEVpEXuElRMzoVgrDK0qdQ=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-Ptjq1sGj98C2H5TXIQi22lEVpEXuElRMzoVgrDK0qdQ=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-ZNA2xfWmHonL4JR+ZFdyDJ7Kb3YsdVEI4q94AzyrCUI=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-ZNA2xfWmHonL4JR+ZFdyDJ7Kb3YsdVEI4q94AzyrCUI=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>License — UIverse</title>
 
@@ -384,14 +384,13 @@
 <main class="main-home">
 
   <!-- HERO -->
-  <section class="license-hero">
-
-    <div class="license-badge">
+  <section class="license-hero" role="region" aria-labelledby="license-title">
+    <div class="license-badge" aria-label="Open Source Friendly">
       <i class="fa-solid fa-scale-balanced"></i>
       Open Source Friendly
     </div>
 
-    <h1 class="license-title">
+    <h1 id="license-title" class="license-title">
       Simple & Transparent <span>Licensing</span>
     </h1>
 
@@ -400,25 +399,22 @@
       commercial, and client projects without unnecessary restrictions.
     </p>
 
-    <div class="hero-license-cards">
-
-      <div class="hero-mini-card">
+    <div class="hero-license-cards" role="group" aria-label="License Highlights">
+      <div class="hero-mini-card" role="button" aria-label="Commercial Use">
         <i class="fa-solid fa-check"></i>
         <span>Commercial Use</span>
       </div>
 
-      <div class="hero-mini-card">
+      <div class="hero-mini-card" role="button" aria-label="Modify Freely">
         <i class="fa-solid fa-check"></i>
         <span>Modify Freely</span>
       </div>
 
-      <div class="hero-mini-card">
+      <div class="hero-mini-card" role="button" aria-label="No Attribution Required">
         <i class="fa-solid fa-check"></i>
         <span>No Attribution Required</span>
       </div>
-
     </div>
-
   </section>
 
   <div class="license-stats">
@@ -493,20 +489,17 @@
 
   <!-- LICENSE GRID -->
   <section class="license-grid">
-
     <!-- Allowed -->
-    <div class="license-card allowed">
+    <div class="license-card allowed" role="region" aria-labelledby="allowed-heading">
       <div class="license-card-top">
         <div class="license-icon">
           <i class="fa-solid fa-circle-check"></i>
         </div>
-
         <div>
-          <h2>What You Can Do</h2>
+          <h2 id="allowed-heading">What You Can Do</h2>
           <p>Everything below is fully allowed.</p>
         </div>
       </div>
-
       <ul class="license-list">
         <li><i class="fa-solid fa-check"></i> Use in personal projects</li>
         <li><i class="fa-solid fa-check"></i> Use in commercial websites</li>
@@ -518,18 +511,16 @@
     </div>
 
     <!-- Restricted -->
-    <div class="license-card restricted">
+    <div class="license-card restricted" role="region" aria-labelledby="restricted-heading">
       <div class="license-card-top">
         <div class="license-icon">
           <i class="fa-solid fa-ban"></i>
         </div>
-
         <div>
-          <h2>Restrictions</h2>
+          <h2 id="restricted-heading">Restrictions</h2>
           <p>Please avoid these actions.</p>
         </div>
       </div>
-
       <ul class="license-list">
         <li><i class="fa-solid fa-xmark"></i> Reselling components as-is</li>
         <li><i class="fa-solid fa-xmark"></i> Re-uploading full UIverse collections</li>
@@ -537,8 +528,9 @@
         <li><i class="fa-solid fa-xmark"></i> Using branding without permission</li>
       </ul>
     </div>
-
   </section>
+</main>
+
   
 
   <section class="license-faq">
@@ -704,6 +696,33 @@
 
 </main>
 
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I use UIverse components in client projects?</button>
+    <div class="faq-answer">
+      <p>Yes, UIverse components are free to use in client projects without restrictions.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Do I need to credit UIverse?</button>
+    <div class="faq-answer">
+      <p>No attribution is required, but giving credit is appreciated.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I modify components and resell them?</button>
+    <div class="faq-answer">
+      <p>You may modify components for personal or client use, but direct reselling of UIverse assets is not permitted.</p>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- FOOTER -->
 <footer class="footer">
 
@@ -805,6 +824,22 @@
   </div>
 
 </footer>
+
+<script>
+  const questions = document.querySelectorAll(".faq-question");
+  questions.forEach(q => {
+    q.addEventListener("click", () => {
+      q.classList.toggle("active");
+      const answer = q.nextElementSibling;
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+
 
 <script>
 
