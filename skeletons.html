@@ -1,402 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skeletons — UIverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'unsafe-inline'; style-src 'self' https: 'unsafe-hashes' 'unsafe-inline'; style-src-attr 'unsafe-hashes' 'unsafe-inline'; font-src 'self' data: https: https://fonts.gstatic.com;">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <title>Asynchronous Skeleton Loading Matrix | UIverse Architecture</title>
 
-    <!-- Page Styles -->
-    <link rel="stylesheet" href="skeletons.css" />
-    <!-- UIverse Runtime Loader -->
-    <script src="js/loader.js" defer></script>
-  </head>
-  <body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="skeletons.css" />
+</head>
+<body class="dark-theme">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- ================= SIDEBAR ================= -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-brand">
-        <span class="brand-icon">⬡</span>
-        <span class="brand-text">UIverse <span class="brand-badge">V2</span></span>
-      </div>
-      <nav class="sidebar-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-          <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
-          <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
-          <li><a href="loaders.html"><i class="fa-solid fa-spinner"></i><span>Loaders</span></a></li>
-          <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a></li>
-          <li><a href="testimonials.html"><i class="fa-solid fa-star"></i><span>Testimonials</span></a></li>
-          <li class="active"><a href="skeletons.html"><i class="fa-solid fa-layer-group"></i><span>Skeletons</span></a></li>
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- ================= PAGE CONTAINER ================= -->
-    <div class="page-container">
-      <!-- ================= TOP NAVBAR ================= -->
-      <header class="topbar">
-        <div class="topbar-left">
-          <a href="index.html" class="topbar-logo">
-            <span class="logo-mark">UI</span>
-            <span class="logo-text">UIverse</span>
-          </a>
-          <div class="topbar-search">
-            <label class="screen-reader-text" for="component-search">Search components</label>
-            <input id="component-search" type="search" class="search-input" placeholder="Search skeleton components..." />
-            <button type="button" class="search-action" data-a11y-remediation="button-label-needed"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </div>
-        </div>
-        <div class="topbar-right">
-          <button class="topbar-action" type="button" aria-label="Notifications">
-            <i class="fa-solid fa-bell"></i>
-          </button>
-          <button class="topbar-action" type="button" aria-label="Favorites">
-            <i class="fa-solid fa-heart"></i>
-          </button>
-          <button class="topbar-action theme-toggle" type="button" aria-label="Toggle theme">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-        </div>
-      </header>
-
-      <!-- ================= MAIN CONTENT ================= -->
-      <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section" aria-labelledby="hero-heading">
-          <div class="hero-copy">
-            <span class="hero-label">Premium</span>
-            <h1 id="hero-heading" class="hero-title">Modern Skeleton Loading Components</h1>
-            <p class="hero-description">
-              Explore lightweight, responsive skeleton screens designed for premium user interfaces and polished load states.
-            </p>
-            <div class="hero-badges">
-              <span class="badge badge-primary">Shimmer Effect</span>
-              <span class="badge badge-secondary">Responsive</span>
-              <span class="badge badge-tertiary">Lightweight</span>
-            </div>
-          </div>
-          <div class="hero-preview">
-            <article class="skeleton-preview-card">
-              <header class="preview-header">
-                <div class="preview-title">
-                  <span class="preview-tag">Preview</span>
-                  <h2>Skeleton App Loader</h2>
-                </div>
-                <span class="status-pill">Loading</span>
-              </header>
-              <div class="preview-body">
-                <div class="skeleton-row skeleton-row-large"></div>
-                <div class="skeleton-grid">
-                  <div class="skeleton-block skeleton-block-avatar"></div>
-                  <div class="skeleton-block skeleton-block-text"></div>
-                </div>
-                <div class="skeleton-row skeleton-row-small"></div>
-                <div class="skeleton-row skeleton-row-medium"></div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- Filter Bar -->
-        <section class="filter-bar" aria-label="Skeleton filters">
-          <button class="filter-pill active">All</button>
-          <button class="filter-pill">Cards</button>
-          <button class="filter-pill">Profile</button>
-          <button class="filter-pill">Dashboard</button>
-          <button class="filter-pill">Tables</button>
-          <button class="filter-pill">Content</button>
-        </section>
-
-        <!-- Components Grid -->
-        <section class="components-section" aria-labelledby="components-heading">
-          <div class="section-header">
-            <div>
-              <h2 id="components-heading">Skeleton Components</h2>
-              <p>Scalable skeleton structures for advanced frontend systems.</p>
-            </div>
-            <span class="section-note">10 premium components</span>
-          </div>
-
-          <div class="component-grid">
-            <!-- Profile Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Profile Skeleton</h3>
-                <span class="tag">Profile</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton profile-skeleton">
-                  <div class="avatar-circle"></div>
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="text-bar text-bar-subtitle"></div>
-                  <div class="text-row text-row-short"></div>
-                </div>
-              </div>
-              <p class="component-description">Clean profile skeleton with avatar, title, and supporting text placeholders.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">View</button>
-                <button class="btn btn-outline">Use</button>
-              </div>
-            </article>
-
-            <!-- Dashboard Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Dashboard Skeleton</h3>
-                <span class="tag">Dashboard</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton dashboard-skeleton">
-                  <div class="text-bar text-bar-heading"></div>
-                  <div class="skeleton-grid dashboard-grid-preview">
-                    <div class="skeleton-card"></div>
-                    <div class="skeleton-card"></div>
-                    <div class="skeleton-card"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="component-description">Multi-panel dashboard placeholders with chart and summary loading states.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Preview</button>
-                <button class="btn btn-outline">Copy</button>
-              </div>
-            </article>
-
-            <!-- Blog Card Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Blog Card Skeleton</h3>
-                <span class="tag">Cards</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton card-skeleton">
-                  <div class="media-block"></div>
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="text-bar text-bar-short"></div>
-                </div>
-              </div>
-              <p class="component-description">A premium blog card loader with image and text line placeholders.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Demo</button>
-                <button class="btn btn-outline">Add</button>
-              </div>
-            </article>
-
-            <!-- Table Row Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Table Row Skeleton</h3>
-                <span class="tag">Tables</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton table-skeleton">
-                  <div class="table-row-row">
-                    <div class="table-cell cell-avatar"></div>
-                    <div class="table-cell cell-line"></div>
-                    <div class="table-cell cell-line-short"></div>
-                    <div class="table-cell cell-line-medium"></div>
-                  </div>
-                  <div class="table-row-row">
-                    <div class="table-cell cell-avatar"></div>
-                    <div class="table-cell cell-line"></div>
-                    <div class="table-cell cell-line-short"></div>
-                    <div class="table-cell cell-line-medium"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="component-description">Table row placeholders for data-driven interfaces and reports.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Inspect</button>
-                <button class="btn btn-outline">Copy</button>
-              </div>
-            </article>
-
-            <!-- Product Card Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Product Card Skeleton</h3>
-                <span class="tag">Cards</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton product-skeleton">
-                  <div class="media-block media-block-square"></div>
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="text-bar text-bar-short"></div>
-                  <div class="button-placeholder"></div>
-                </div>
-              </div>
-              <p class="component-description">A shopping card loader built for premium marketplace layouts.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Use</button>
-                <button class="btn btn-outline">Inspect</button>
-              </div>
-            </article>
-
-            <!-- Analytics Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Analytics Skeleton</h3>
-                <span class="tag">Dashboard</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton analytics-skeleton">
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="chart-placeholder"></div>
-                  <div class="skeleton-grid chart-stats-grid">
-                    <div class="stat-block"></div>
-                    <div class="stat-block"></div>
-                    <div class="stat-block"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="component-description">Analytics panel skeleton with chart and metric placeholders.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Preview</button>
-                <button class="btn btn-outline">Use</button>
-              </div>
-            </article>
-
-            <!-- Chat Message Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Chat Message Skeleton</h3>
-                <span class="tag">Content</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton chat-skeleton">
-                  <div class="message-row">
-                    <div class="avatar-circle avatar-sm"></div>
-                    <div class="text-bar text-bar-medium"></div>
-                  </div>
-                  <div class="message-row message-row-right">
-                    <div class="text-bar text-bar-long"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="component-description">A messaging loader with alternating bubble shapes and avatars.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Demo</button>
-                <button class="btn btn-outline">Copy</button>
-              </div>
-            </article>
-
-            <!-- Video Card Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Video Card Skeleton</h3>
-                <span class="tag">Media</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton video-skeleton">
-                  <div class="media-block media-block-video"></div>
-                  <div class="text-bar text-bar-short"></div>
-                  <div class="text-bar text-bar-line"></div>
-                </div>
-              </div>
-              <p class="component-description">Video card placeholder with preview and details load bars.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Preview</button>
-                <button class="btn btn-outline">Use</button>
-              </div>
-            </article>
-
-            <!-- Article Loading Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Article Loading Skeleton</h3>
-                <span class="tag">Content</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton article-skeleton">
-                  <div class="text-bar text-bar-heading"></div>
-                  <div class="text-bar text-bar-long"></div>
-                  <div class="text-bar text-bar-medium"></div>
-                  <div class="text-bar text-bar-short"></div>
-                </div>
-              </div>
-              <p class="component-description">Long-form article loader for editorial and blog layouts.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Inspect</button>
-                <button class="btn btn-outline">Copy</button>
-              </div>
-            </article>
-
-            <!-- Team Member Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Team Member Skeleton</h3>
-                <span class="tag">Profile</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton team-skeleton">
-                  <div class="avatar-circle avatar-large"></div>
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="text-bar text-bar-short"></div>
-                  <div class="button-placeholder button-placeholder-sm"></div>
-                </div>
-              </div>
-              <p class="component-description">Profile placeholder for team listings and people cards.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Preview</button>
-                <button class="btn btn-outline">Use</button>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="page-footer">
-          <div class="footer-grid">
-            <div class="footer-column">
-              <h3>UIverse</h3>
-              <p>Design systems for premium UI experiences and modern product interfaces.</p>
-            </div>
-            <div class="footer-column">
-              <h4>Navigation</h4>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="cards.html">Cards</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-              </ul>
-            </div>
-            <div class="footer-column">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href="#">Docs</a></li>
-                <li><a href="#">Components</a></li>
-                <li><a href="#">Templates</a></li>
-              </ul>
-            </div>
-            <div class="footer-column newsletter-column">
-              <h4>Newsletter</h4>
-              <p>Subscribe for new skeleton sets, component updates, and premium UI releases.</p>
-              <form class="footer-form">
-                <label class="screen-reader-text" for="footer-newsletter">Email</label>
-                <input id="footer-newsletter" type="email" placeholder="Enter your email" />
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-              </form>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <p>&copy; 2026 UIverse. Crafted for modern interface systems.</p>
-            <div class="social-links">
-              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
-            </div>
-          </div>
-        </footer>
-      </main>
+  <aside class="sidebar" aria-label="Sidebar Platform Navigation System">
+    <div class="sidebar-brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-text">UIverse <span class="engine-badge">Telemetry Lab</span></span>
     </div>
-      <script src="dist/shared.js"></script>
+
+    <nav class="sidebar-nav">
+      <div class="nav-group-wrapper">
+        <span class="nav-group-title">Ecosystem Foundations</span>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Home Registry</span></a></li>
+          <li><a href="button.html"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i><span>Action Buttons</span></a></li>
+          <li><a href="dropdown-components.html"><i class="fa-solid fa-caret-down" aria-hidden="true"></i><span>Dropdown Cascades</span></a></li>
+          <li><a href="profile-components.html"><i class="fa-solid fa-user" aria-hidden="true"></i><span>Identity Profiles</span></a></li>
+          <li><a href="navbar.html"><i class="fa-solid fa-bars" aria-hidden="true"></i><span>Navbar Shells</span></a></li>
+          <li><a href="cards.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Component Cards</span></a></li>
+          <li><a href="flipcards.html"><i class="fa-solid fa-clone" aria-hidden="true"></i><span>3D Perspective Units</span></a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group-wrapper">
+        <span class="nav-group-title">Data Intake Pipelines</span>
+        <ul>
+          <li><a href="inputs.html"><i class="fa-solid fa-keyboard" aria-hidden="true"></i><span>Form Inputs</span></a></li>
+          <li><a href="forms.html"><i class="fa-brands fa-wpforms" aria-hidden="true"></i><span>Schema Intakes</span></a></li>
+          <li><a href="badges.html"><i class="fa-solid fa-award" aria-hidden="true"></i><span>Status Badges</span></a></li>
+          <li><a href="blog.html"><i class="fa-solid fa-blog" aria-hidden="true"></i><span>Blog Channels</span></a></li>
+          <li><a href="article.html"><i class="fa-solid fa-newspaper" aria-hidden="true"></i><span>Article Modules</span></a></li>
+          <li><a href="alerts.html"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><span>Alert Frameworks</span></a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group-wrapper">
+        <span class="nav-group-title">SaaS Visualizations</span>
+        <ul>
+          <li><a href="color.html"><i class="fa-solid fa-palette" aria-hidden="true"></i><span>Color Tokens</span></a></li>
+          <li><a href="charts.html"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i><span>Data Visualizers</span></a></li>
+          <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>Admin Viewports</span></a></li>
+          <li><a href="div.html"><i class="fa-solid fa-square" aria-hidden="true"></i><span>Structural Divs</span></a></li>
+          <li><a href="widgets.html"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Utility Widgets</span></a></li>
+          <li><a href="search.html"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Search Interface</span></a></li>
+          <li><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><span>Hover Micro-Physics</span></a></li>
+          <li><a href="error.html"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i><span>Error Canvases</span></a></li>
+          <li><a href="ecommerce.html"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><span>E-Commerce Pools</span></a></li>
+          <li><a href="files.html"><i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i><span>File Drop Vaults</span></a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group-wrapper">
+        <span class="nav-group-title">Enterprise Infrastructure</span>
+        <ul>
+          <li><a href="hero.html"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Hero Landing Arenas</span></a></li>
+          <li><a href="loaders.html"><i class="fa-solid fa-spinner" aria-hidden="true"></i><span>System Loaders</span></a></li>
+          <li><a href="timeline.html"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>Milestone Trails</span></a></li>
+          <li><a href="map.html"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i><span>Spatial Location Maps</span></a></li>
+          <li><a href="menu.html"><i class="fa-solid fa-bars-staggered" aria-hidden="true"></i><span>Context Lists</span></a></li>
+          <li><a href="pricing.html"><i class="fa-solid fa-tags" aria-hidden="true"></i><span>Pricing Tiers</span></a></li>
+          <li><a href="section.html"><i class="fa-solid fa-rectangle-list" aria-hidden="true"></i><span>Layout Segments</span></a></li>
+          <li><a href="span.html"><i class="fa-solid fa-code" aria-hidden="true"></i><span>Inline Micro-Spans</span></a></li>
+          <li><a href="table.html"><i class="fa-solid fa-table" aria-hidden="true"></i><span>Data Matrices</span></a></li>
+          <li><a href="tabs.html"><i class="fa-solid fa-table-columns" aria-hidden="true"></i><span>Viewport Tabs</span></a></li>
+          <li><a href="terms.html"><i class="fa-solid fa-file-contract" aria-hidden="true"></i><span>Terms & Compliances</span></a></li>
+          <li><a href="testimonials.html"><i class="fa-solid fa-comments" aria-hidden="true"></i><span>Social Proof Matrix</span></a></li>
+          <li><a href="toggles.html"><i class="fa-solid fa-toggle-on" aria-hidden="true"></i><span>Power Switches</span></a></li>
+          <li><a href="radiobutton.html"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i><span>Radio Selection Nodes</span></a></li>
+          <li><a href="checkbox.html"><i class="fa-solid fa-square-check" aria-hidden="true"></i><span>Binary Check Selection</span></a></li>
+          <li><a href="notifications-premium.html"><i class="fa-solid fa-bell" aria-hidden="true"></i><span>Notification Streams</span></a></li>
+          <li><a href="step-indicators.html"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span>Stepper Linear Trails</span></a></li>
+          <li><a href="progress-premium.html"><i class="fa-solid fa-bars-progress" aria-hidden="true"></i><span>Progress Monitors</span></a></li>
+          <li><a href="ratings-premium.html"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Ratings Analytics</span></a></li>
+          <li><a href="filters-premium.html"><i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Multi-Token Query Filters</span></a></li>
+          <li><a href="admin-panel.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>Admin Terminal V2</span></a></li>
+          <li class="active"><a href="skeletons.html"><i class="fa-solid fa-cubes" aria-hidden="true"></i><span>Skeleton Placeholders</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" aria-label="GitHub Core Stream Source"><i class="fab fa-github"></i></a>
+      <a href="#" aria-label="LinkedIn Corporate Operational Directory"><i class="fab fa-linkedin"></i></a>
+      <a href="#" aria-label="Continuous Integration Shards Broadcast"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </aside>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="runtimeToggleSidebar()"></div>
+
+  <header class="navbar" id="navbar">
+    <button type="button" class="menu-toggle" onclick="runtimeToggleSidebar()" aria-label="Toggle Navigation Sidebar Menu">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="logo">UIverse <span class="badge-pro">LOAD MATRIX</span></div>
+
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+      <input type="text" placeholder="Filter placeholder models, shimmer tracks, vector layouts (⌘K)..." id="searchInput" aria-label="Query placeholders matrix">
+      <kbd class="search-kbd">⌘K</kbd>
+    </div>
+
+    <div class="nav-right">
+      <button type="button" class="nav-btn outline-nav-btn"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Freeze Shimmer</button>
+      <button type="button" class="nav-btn primary-nav-btn" onclick="toggleGlobalSimulationState()"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Toggle Hydration State</button>
+      <button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle Surface Lighting Theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+    </div>
+  </header>
+
+  <main class="main-content" id="main-content">
+
+    <section class="page-hero">
+      <div class="page-hero-left">
+        <div class="breadcrumb">
+          <a href="index.html">Platform Foundations</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span class="current-target">Asynchronous Placeholder Skeletons</span>
+        </div>
+        <h1 class="page-title">Skeleton Loaders</h1>
+        <p class="page-desc">High-fidelity responsive loading wireframes designed to mitigate cumulative layout shift values across streaming micro-service data feeds flawlessly.</p>
+        <div class="page-meta">
+          <span class="meta-badge"><i class="fa-solid fa-cubes" aria-hidden="true"></i> 15 Dynamic Wireframes</span>
+          <span class="meta-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Hardware Accelerated GPU Pulses</span>
+          <span class="meta-badge"><i class="fa-solid fa-sliders" aria-hidden="true"></i> Perceived Latency Minimizer Packs</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="component-grid">
+
+      <div class="component-card">
+        <div class="card-top-strip">
+          <span class="card-label">MODEL SK-01 // USER IDENTITY PROFILE</span>
+          <span class="card-tag tag-essential">Core Pack</span>
+        </div>
+        <div class="card-preview">
+          <div class="skeleton-shell skeleton-profile-wire">
+            <div class="sk-avatar loading-shimmer"></div>
+            <div class="sk-meta-lines">
+              <div class="sk-line title-w loading-shimmer"></div>
+              <div class="sk-line subtitle-w loading-shimmer"></div>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Symmetrical layout shell blocking card profile vectors, layout metrics text headers, and state badges cleanly during remote pipeline fetches.</p>
+        <div class="card-actions-strip">
+          <button type="button" class="harvest-btn-js" onclick="toggleCodePanel('c1', this)"><i class="fa-solid fa-code"></i> Inspect Blueprint</button>
+          <button type="button" class="harvest-btn-js harvest-copy" onclick="copyBlueprintPayload('c1', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre class="code-block" id="c1"><code>&lt;div class="skeleton-profile-wire"&gt;
+  &lt;div class="sk-avatar loading-shimmer"&gt;&lt;/div&gt;
+  &lt;div class="sk-meta-lines"&gt;
+    &lt;div class="sk-line title-w loading-shimmer"&gt;&lt;/div&gt;
+    &lt;div class="sk-line subtitle-w loading-shimmer"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="component-card">
+        <div class="card-top-strip">
+          <span class="card-label">MODEL SK-02 // TEXT PARAGRAPH STACK</span>
+          <span class="card-tag tag-essential">Core Pack</span>
+        </div>
+        <div class="card-preview">
+          <div class="skeleton-shell skeleton-text-paragraph">
+            <div class="sk-line long-w loading-shimmer"></div>
+            <div class="sk-line mid-w loading-shimmer"></div>
+            <div class="sk-line long-w loading-shimmer"></div>
+            <div class="sk-line short-w loading-shimmer"></div>
+          </div>
+        </div>
+        <p class="card-desc">Stacked text-line wireframes with staggered offset lengths to emulate real paragraph text alignment properties perfectly.</p>
+        <div class="card-actions-strip">
+          <button type="button" class="harvest-btn-js" onclick="toggleCodePanel('c2', this)"><i class="fa-solid fa-code"></i> Inspect Blueprint</button>
+          <button type="button" class="harvest-btn-js harvest-copy" onclick="copyBlueprintPayload('c2', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre class="code-block" id="c2"><code>&lt;div class="skeleton-text-paragraph"&gt;
+  &lt;div class="sk-line long-w loading-shimmer"&gt;&lt;/div&gt;
+  &lt;div class="sk-line mid-w loading-shimmer"&gt;&lt;/div&gt;
+  &lt;div class="sk-line short-w loading-shimmer"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="component-card">
+        <div class="card-top-strip">
+          <span class="card-label">MODEL SK-03 // ARTICLE MEDIA CONTAINER</span>
+          <span class="card-tag tag-trending">Highly Fluid</span>
+        </div>
+        <div class="card-preview">
+          <div class="skeleton-shell skeleton-media-card">
+            <div class="sk-hero-box loading-shimmer"></div>
+            <div class="sk-body-block">
+              <div class="sk-line short-w loading-shimmer mb-12"></div>
+              <div class="sk-line long-w loading-shimmer"></div>
+              <div class="sk-line mid-w loading-shimmer"></div>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Unified interface wireframe masking media block containers, categories badges metadata tags, and abstract descriptions rows seamlessly.</p>
+        <div class="card-actions-strip">
+          <button type="button" class="harvest-btn-js" onclick="toggleCodePanel('c3', this)"><i class="fa-solid fa-code"></i> Inspect Blueprint</button>
+          <button type="button" class="harvest-btn-js harvest-copy" onclick="copyBlueprintPayload('c3', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre class="code-block" id="c3"><code>&lt;div class="skeleton-media-card"&gt;
+  &lt;div class="sk-hero-box loading-shimmer"&gt;&lt;/div&gt;
+  &lt;div class="sk-body-block"&gt;
+    &lt;div class="sk-line long-w loading-shimmer"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="component-card large-matrix-span-card">
+        <div class="card-top-strip">
+          <span class="card-label">MODEL SK-04 // BENTO GRAPHICS GRID</span>
+          <span class="card-tag tag-trending">Bento Layout</span>
+        </div>
+        <div class="card-preview">
+          <div class="skeleton-shell skeleton-bento-grid">
+            <div class="bento-sector-prime loading-shimmer"></div>
+            <div class="bento-sector-secondary">
+              <div class="sk-line title-w loading-shimmer"></div>
+              <div class="sk-line long-w loading-shimmer"></div>
+              <div class="sk-line mid-w loading-shimmer"></div>
+              <div class="bento-mini-row-blocks-group">
+                <div class="bento-mini-block loading-shimmer"></div>
+                <div class="bento-mini-block loading-shimmer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Asynchronous mosaic mesh designed to intercept content clusters, metric panels headers, and graphical data representations cleanly prior to thread resolution cycles.</p>
+        <div class="card-actions-strip">
+          <button type="button" class="harvest-btn-js" onclick="toggleCodePanel('c4', this)"><i class="fa-solid fa-code"></i> Inspect Blueprint</button>
+          <button type="button" class="harvest-btn-js harvest-copy" onclick="copyBlueprintPayload('c4', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre class="code-block" id="c4"><code>&lt;div class="skeleton-bento-grid"&gt;
+  &lt;div class="bento-sector-prime loading-shimmer"&gt;&lt;/div&gt;
+  &lt;div class="bento-sector-secondary"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="component-card">
+        <div class="card-top-strip">
+          <span class="card-label">MODEL SK-05 // KPI ANALYTICS GAUGE</span>
+          <span class="card-tag tag-premium">Data Viz Pack</span>
+        </div>
+        <div class="card-preview">
+          <div class="skeleton-shell skeleton-kpi-chart">
+            <div class="kpi-top-meta">
+              <div class="sk-line title-w loading-shimmer"></div>
+              <div class="sk-circle-small loading-shimmer"></div>
+            </div>
+            <div class="kpi-graph-bar-elements-stack">
+              <div class="kpi-bar loading-shimmer" style="height: 35%;"></div>
+              <div class="kpi-bar loading-shimmer" style="height: 75%;"></div>
+              <div class="kpi-bar loading-shimmer" style="height: 50%;"></div>
+              <div class="kpi-bar loading-shimmer" style="height: 90%;"></div>
+              <div class="kpi-bar loading-shimmer" style="height: 60%;"></div>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Dashboard visualization layout wireframe reserving thread footprints for multi-channel bar records and computation nodes.</p>
+        <div class="card-actions-strip">
+          <button type="button" class="harvest-btn-js" onclick="toggleCodePanel('c5', this)"><i class="fa-solid fa-code"></i> Inspect Blueprint</button>
+          <button type="button" class="harvest-btn-js harvest-copy" onclick="copyBlueprintPayload('c5', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre class="code-block" id="c5"><code>&lt;div class="skeleton-kpi-chart"&gt;
+  &lt;div class="kpi-graph-bar-elements-stack"&gt;
+    &lt;div class="kpi-bar loading-shimmer" style="height: 75%;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="component-card">
+        <div class="card-top-strip">
+          <span class="card-label">MODEL SK-06 // COMMERCIAL INVENTORY ASSET</span>
+          <span class="card-tag tag-new">E-Commerce Spec</span>
+        </div>
+        <div class="card-preview">
+          <div class="skeleton-shell skeleton-ecom-card">
+            <div class="ecom-visual-well loading-shimmer"></div>
+            <div class="sk-line mid-w loading-shimmer mt-16"></div>
+            <div class="ecom-footer-strip mt-12">
+              <div class="sk-line short-w loading-shimmer"></div>
+              <div class="ecom-action-node loading-shimmer"></div>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Commercial card framework containing abstract alignment points for structural imagery, sizing variables grids, and buy action cta triggers.</p>
+        <div class="card-actions-strip">
+          <button type="button" class="harvest-btn-js" onclick="toggleCodePanel('c6', this)"><i class="fa-solid fa-code"></i> Inspect Blueprint</button>
+          <button type="button" class="harvest-btn-js harvest-copy" onclick="copyBlueprintPayload('c6', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre class="code-block" id="c6"><code>&lt;div class="skeleton-ecom-card"&gt;
+  &lt;div class="ecom-visual-well loading-shimmer"&gt;&lt;/div&gt;
+  &lt;div class="ecom-footer-strip"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="component-card large-matrix-span-card">
+        <div class="card-top-strip">
+          <span class="card-label">MODEL SK-07 // MATRIX DATA TABLE</span>
+          <span class="card-tag tag-premium">High Density</span>
+        </div>
+        <div class="card-preview">
+          <div class="skeleton-shell skeleton-table-ledger">
+            <div class="table-row header-row-wire">
+              <div class="sk-cell th-w loading-shimmer"></div>
+              <div class="sk-cell th-w loading-shimmer"></div>
+              <div class="sk-cell th-w loading-shimmer"></div>
+            </div>
+            <div class="table-row">
+              <div class="sk-cell loading-shimmer"></div>
+              <div class="sk-cell loading-shimmer"></div>
+              <div class="sk-cell loading-shimmer"></div>
+            </div>
+            <div class="table-row">
+              <div class="sk-cell loading-shimmer"></div>
+              <div class="sk-cell loading-shimmer"></div>
+              <div class="sk-cell loading-shimmer"></div>
+            </div>
+            <div class="table-row">
+              <div class="sk-cell loading-shimmer"></div>
+              <div class="sk-cell loading-shimmer"></div>
+              <div class="sk-cell loading-shimmer"></div>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Tabular database visualization layout keeping spacing proportions locked down tightly across rows, columns indices, and operation checkboxes.</p>
+        <div class="card-actions-strip">
+          <button type="button" class="harvest-btn-js" onclick="toggleCodePanel('c7', this)"><i class="fa-solid fa-code"></i> Inspect Blueprint</button>
+          <button type="button" class="harvest-btn-js harvest-copy" onclick="copyBlueprintPayload('c7', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre class="code-block" id="c7"><code>&lt;div class="skeleton-table-ledger"&gt;
+  &lt;div class="table-row header-row-wire"&gt;
+    &lt;div class="sk-cell th-w loading-shimmer"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="component-card">
+        <div class="card-top-strip">
+          <span class="card-label">MODEL SK-08 // CONCENTRIC CIRCLE TRACE</span>
+          <span class="card-tag tag-new">SVG Conic</span>
+        </div>
+        <div class="card-preview">
+          <div class="skeleton-shell skeleton-radial-gauge-wire">
+            <div class="sk-circle-large loading-shimmer"></div>
+            <div class="sk-meta-lines flex-align-center">
+              <div class="sk-line short-w loading-shimmer"></div>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Conic progress path wireframe matching circular performance representations, metric output strings, and status parameters.</p>
+        <div class="card-actions-strip">
+          <button type="button" class="harvest-btn-js" onclick="toggleCodePanel('c8', this)"><i class="fa-solid fa-code"></i> Inspect Blueprint</button>
+          <button type="button" class="harvest-btn-js harvest-copy" onclick="copyBlueprintPayload('c8', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre class="code-block" id="c8"><code>&lt;div class="skeleton-radial-gauge-wire"&gt;
+  &lt;div class="sk-circle-large loading-shimmer"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="component-card">
+        <div class="card-top-strip">
+          <span class="card-label">MODEL SK-09 // NOTIFICATION STREAM ROW</span>
+          <span class="card-tag tag-essential">Condensed View</span>
+        </div>
+        <div class="card-preview">
+          <div class="skeleton-shell skeleton-notification-strip">
+            <div class="sk-circle-small loading-shimmer flex-shrink-none"></div>
+            <div class="notification-body-wire-group">
+              <div class="sk-line long-w loading-shimmer"></div>
+              <div class="sk-line short-w loading-shimmer mt-6"></div>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Low profile alert layout mapping streaming log activity records and user mentions without layout jumps.</p>
+        <div class="card-actions-strip">
+          <button type="button" class="harvest-btn-js" onclick="toggleCodePanel('c9', this)"><i class="fa-solid fa-code"></i> Inspect Blueprint</button>
+          <button type="button" class="harvest-btn-js harvest-copy" onclick="copyBlueprintPayload('c9', this)"><i class="fa-solid fa-copy"></i> Harvest Token</button>
+        </div>
+        <pre class="code-block" id="c9"><code>&lt;div class="skeleton-notification-strip"&gt;
+  &lt;div class="sk-circle-small loading-shimmer"&gt;&lt;/div&gt;
+  &lt;div class="notification-body-wire-group"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col-brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Architecting performance optimized front-end layout configurations. Symmetrical wireframes built to neutralize systemic page rendering delays globally.</p>
+        <div class="footer-social-strip">
+          <a href="#" aria-label="Access Core Architecture Pipeline Hub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Access Corporate Network Directory Node"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Access Continuous Logging Status Broadcast Stream"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Ecosystem Core</h3>
+        <ul>
+          <li><a href="button.html">Action Nodes Matrix</a></li>
+          <li><a href="navbar.html">Navigation Shell Arrays</a></li>
+          <li><a href="cards.html">Canvas Content Containers</a></li>
+          <li><a href="inputs.html">Form Input Channels</a></li>
+          <li><a href="forms.html">Schema Layout Forms</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Technical Vaults</h3>
+        <ul>
+          <li><a href="documentation.html">Platform Technical Manuals</a></li>
+          <li><a href="https://github.com" target="_blank">Open Source Hubs</a></li>
+          <li><a href="faq.html">Centralized FAQ Base</a></li>
+          <li><a href="contact.html">Dispatch Protocols</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Compliance Indices</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Data Isolation Policy Sheets</a></li>
+          <li><a href="terms.html">Terms of System Operations Matrix</a></li>
+          <li><a href="#">Asset Manifest Licensing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h3>Continuous Integration Streams</h3>
+        <p>Register your workspace hub node destination to capture release logging data sequences instantly downstream.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="operator@engine.domain" aria-label="Operator email register input path" />
+          <button type="button" onclick="alert('Destination node bound successfully inside telemetry channels.');">Sync Core Hub</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 UIverse Diagnostic Laboratory. All layout elements engineered to absolute specifications for frontend system architects globally.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize surface lighting traces on frame load event
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedSkinStateToken = localStorage.getItem("platform-skeleton-skin-state") || "dark-theme";
+      document.body.className = savedSkinStateToken;
+      
+      const themeIconButtonElement = document.querySelector("#themeToggle i");
+      if (themeIconButtonElement) {
+        themeIconButtonElement.className = savedSkinStateToken === "dark-theme" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+      }
+    });
+
+    // Theme switching runtime context controls
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const themeIconButtonElement = document.querySelector("#themeToggle i");
+      if (document.body.classList.contains("light-theme")) {
+        document.body.classList.replace("light-theme", "dark-theme");
+        localStorage.setItem("platform-skeleton-skin-state", "dark-theme");
+        themeIconButtonElement.className = "fa-solid fa-moon";
+      } else {
+        document.body.classList.replace("dark-theme", "light-theme");
+        localStorage.setItem("platform-skeleton-skin-state", "light-theme");
+        themeIconButtonElement.className = "fa-solid fa-sun";
+      }
+    });
+
+    // Sidebar position mobility driver routines
+    function runtimeToggleSidebar() {
+      const structuralSidebarElement = document.getElementById('sidebar');
+      const backgroundBackdropShield = document.getElementById('sidebarBackdrop');
+      if (structuralSidebarElement && backgroundBackdropShield) {
+        structuralSidebarElement.classList.toggle('visible');
+        backgroundBackdropShield.classList.toggle('visible');
+      }
+    }
+    window.runtimeToggleSidebar = runtimeToggleSidebar;
+
+    // Blueprint blueprint view inspector configurations
+    function toggleCodePanel(targetPanelDOMId, structuralTriggerBtnNode) {
+      const targetedCodeBlockUnit = document.getElementById(targetPanelDOMId);
+      if (!targetedCodeBlockUnit) return;
+
+      const panelCurrentlyExpanded = targetedCodeBlockUnit.classList.toggle('open');
+      structuralTriggerBtnNode.innerHTML = panelCurrentlyExpanded
+        ? '<i class="fa-solid fa-eye-slash"></i> Collapse Drawer'
+        : '<i class="fa-solid fa-code"></i> Inspect Blueprint';
+    }
+
+    // Clipboard data payload parsing infrastructure
+    function copyBlueprintPayload(targetPanelDOMId, structuralTriggerBtnNode) {
+      const innerTextPayloadSource = document.getElementById(targetPanelDOMId).innerText;
+      navigator.clipboard.writeText(innerTextPayloadSource).then(() => {
+        const savedTextMarkupCache = structuralTriggerBtnNode.innerHTML;
+        structuralTriggerBtnNode.innerHTML = '<i class="fa-solid fa-circle-check"></i> Wireframe Harvested!';
+        structuralTriggerBtnNode.classList.add('copied-success');
+        structuralTriggerBtnNode.disabled = true;
+
+        setTimeout(() => {
+          structuralTriggerBtnNode.innerHTML = savedTextMarkupCache;
+          structuralTriggerBtnNode.classList.remove('copied-success');
+          structuralTriggerBtnNode.disabled = false;
+        }, 1800);
+      });
+    }
+
+    // Toggle loading states for visual feedback
+    function toggleGlobalSimulationState() {
+      const shimmersList = document.querySelectorAll('.loading-shimmer');
+      shimmersList.forEach(shimmer => {
+        shimmer.classList.toggle('paused-shimmer-state');
+      });
+      alert("[METRICS] Pipeline hydration vectors inverted smoothly inside local storage frames.");
+    }
+  </script>
 </body>
 </html>

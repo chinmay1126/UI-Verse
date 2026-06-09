@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { buildRegistryData } = require('./generate-component-registry');
 
 const DEFAULT_COMPONENTS_FILE = path.join('data', 'components.json');
 const DEFAULT_META_DIR = path.join('data', 'meta');
@@ -85,6 +86,7 @@ function validateComponentRegistry(options = {}) {
   const metaDir = path.join(rootDir, options.metaDir || DEFAULT_META_DIR);
   const snippetsDir = path.join(rootDir, options.snippetsDir || DEFAULT_SNIPPETS_DIR);
   const snippetsIndexPath = path.join(rootDir, options.snippetsIndexFile || DEFAULT_SNIPPETS_INDEX);
+  const registryFile = path.join(rootDir, 'data', 'registry.json');
 
   const errors = [];
   const warnings = [];
@@ -118,6 +120,16 @@ function validateComponentRegistry(options = {}) {
         checkedPages: 0
       }
     };
+  }
+
+  const expectedRegistry = buildRegistryData({ rootDir });
+  const actualRegistryText = fs.existsSync(registryFile) ? fs.readFileSync(registryFile, 'utf8') : '';
+  const expectedRegistryText = `${JSON.stringify(expectedRegistry, null, 2)}\n`;
+
+  if (!actualRegistryText) {
+    errors.push(`Missing registry file: ${path.relative(rootDir, registryFile)}`);
+  } else if (actualRegistryText !== expectedRegistryText) {
+    errors.push('data/registry.json is out of date. Regenerate it with npm run components:registry:generate.');
   }
 
   const metaEntries = getMetaEntries(metaDir);
