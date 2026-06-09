@@ -5,6 +5,7 @@ const os = require('os');
 const path = require('path');
 
 const { validateComponentRegistry } = require('../../scripts/component-registry-check');
+const { generateRegistry } = require('../../scripts/generate-component-registry');
 
 function writeJson(filePath, value) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
@@ -30,6 +31,8 @@ function createBaseFixture() {
       aliases: ['btn']
     }
   ]);
+
+  generateRegistry({ rootDir });
 
   writeJson(path.join(rootDir, 'data', 'meta', 'button.json'), {
     id: 'button',
@@ -143,4 +146,18 @@ test('fails when aliases are duplicated across components', () => {
 
   assert.equal(result.ok, false);
   assert.match(result.errors.join('\n'), /Duplicate alias 'shared-alias' used by multiple components: button, cards/);
+});
+
+test('fails when the committed registry is stale', () => {
+  const rootDir = createBaseFixture();
+
+  writeJson(path.join(rootDir, 'data', 'registry.json'), {
+    version: '1.0.0',
+    registry: []
+  });
+
+  const result = validateComponentRegistry({ rootDir });
+
+  assert.equal(result.ok, false);
+  assert.match(result.errors.join('\n'), /data\/registry\.json is out of date/);
 });
