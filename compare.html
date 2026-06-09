@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-FyBi1uSLpmZDEoheD8kSbPjycd1pDJkfZABMqzuind0=; style-src-attr 'unsafe-hashes' sha256-FyBi1uSLpmZDEoheD8kSbPjycd1pDJkfZABMqzuind0=">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-OqRMyVkZiqNac/h+BElM5/VQZSOFIBtDW1xDJzsBW/A=; script-src-attr 'unsafe-hashes' sha256-OqRMyVkZiqNac/h+BElM5/VQZSOFIBtDW1xDJzsBW/A=; style-src 'self' https: 'unsafe-hashes' sha256-0lgITNV2PE1XTKnWEalM9wyZqunGuIx73yIUzUdIMoQ=; style-src-attr 'unsafe-hashes' sha256-0lgITNV2PE1XTKnWEalM9wyZqunGuIx73yIUzUdIMoQ=">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Component Compare — UI-Verse</title>
-  <link rel="stylesheet" href="css/main.css">
   <style>
     body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; margin: 0; }
     .toolbar { background: #fff; border-bottom: 1px solid #e6e6e6; padding: 12px 16px; display:flex; gap:12px; align-items:center; }
@@ -20,9 +20,10 @@
     .muted { color:#666; font-size:0.9rem; }
     button { padding:6px 10px; }
   </style>
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <div class="toolbar">
     <label>
       Left:
@@ -53,6 +54,64 @@
     </div>
   </div>
 
+  <div class="compare-info">
+
+  <div class="info-card">
+    <span>Category</span>
+    <strong id="leftCategory">Buttons</strong>
+  </div>
+
+  <div class="info-card">
+    <span>Components</span>
+    <strong id="compareCount">2 Selected</strong>
+  </div>
+
+  <div class="info-card">
+    <span>Similarity</span>
+    <strong>84%</strong>
+  </div>
+
+  <div class="info-card">
+    <span>Tags</span>
+    <strong>Modern, Glassmorphism</strong>
+  </div>
+
+</div>
+
+
+<header class="pane-header">
+
+  <div class="pane-title">
+    <strong id="leftTitle">Glass Button</strong>
+    <span class="badge">Button</span>
+  </div>
+
+  <div class="pane-actions">
+    <button>❤</button>
+    <button>⛶</button>
+    <button>⤓</button>
+  </div>
+
+</header>
   <script src="js/features/compare.js"></script>
+  <script src="js/features/code-diff.js"></script>
+  <script>
+    // Add a Code Diff button to the compare toolbar
+    document.addEventListener('DOMContentLoaded', () => {
+      const toolbar = document.querySelector('.toolbar .controls');
+      if (!toolbar) return;
+      const btn = document.createElement('button');
+      btn.textContent = '⇄ Code Diff';
+      btn.title = 'Open side-by-side code diff viewer';
+      btn.addEventListener('click', () => {
+        // Gather components from registry if available
+        if (window.CodeDiff) {
+          CodeDiff.open(0, 1);
+        }
+      });
+      toolbar.appendChild(btn);
+    });
+  </script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

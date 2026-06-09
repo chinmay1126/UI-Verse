@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DEFAULT_ROOT = process.cwd();
-const IGNORE_DIRS = new Set(['.git', 'node_modules', 'Public', 'playwright-report', 'test-results', 'reports']);
+const IGNORE_DIRS = new Set(['.git', 'node_modules', 'Public', 'public', 'playwright-report', 'test-results', 'reports', 'snippets']);
 const EXCLUDED_FILES = new Set(['a11y-dashboard.html']);
 
 function walk(dir, files = [], options = {}) {
@@ -392,6 +392,8 @@ function renderDashboard(report) {
 
 function applyFixes(fixes, rootDir = DEFAULT_ROOT) {
   const grouped = new Map();
+  let filesChanged = 0;
+  let fixesApplied = 0;
 
   for (const fix of fixes) {
     if (!grouped.has(fix.path)) grouped.set(fix.path, []);
@@ -442,8 +444,16 @@ function applyFixes(fixes, rootDir = DEFAULT_ROOT) {
 
     if (changed) {
       fs.writeFileSync(absolutePath, content, 'utf8');
+      filesChanged += 1;
     }
+
+    fixesApplied += fileFixes.length;
   }
+
+  return {
+    filesChanged,
+    fixesApplied
+  };
 }
 
 function run(options = {}) {

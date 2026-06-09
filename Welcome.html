@@ -1,504 +1,1854 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
 
-  <!-- Improved CSP -->
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self';
-      base-uri 'self';
-      frame-ancestors 'none';
-      object-src 'none';
-      connect-src 'self' https:;
-      img-src 'self' data: https:;
-      font-src 'self' https: data:;
-      style-src 'self' 'unsafe-inline' https:;
-      script-src 'self' 'unsafe-inline' https:;
-    "
-  />
+<meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <title>Welcome • UI-Verse</title>
+<title>
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+Welcome • UIverse
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/main.css" />
+</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-    :root {
-      --bg: #f5f7ff;
-      --text: #111827;
-      --card: #ffffff;
-      --primary: #4f46e5;
-      --secondary: #7c3aed;
-      --border: #e5e7eb;
-      --muted: #6b7280;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    }
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-    body.dark {
-      --bg: #0f172a;
-      --text: #f8fafc;
-      --card: #1e293b;
-      --border: #334155;
-      --muted: #cbd5e1;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
+rel="stylesheet">
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: 0.3s ease;
-      line-height: 1.6;
-    }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+<link rel="stylesheet"
+href="welcome.css">
 
-    button {
-      cursor: pointer;
-      border: none;
-      transition: 0.3s ease;
-    }
-
-    /* Theme Toggle */
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-
-    #themeBtn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--card);
-      color: var(--text);
-      font-size: 1.2rem;
-      box-shadow: var(--shadow);
-    }
-
-    #themeBtn:hover {
-      transform: scale(1.05);
-    }
-
-    /* Welcome Section */
-    .welcome {
-      min-height: 100vh;
-      padding: 30px 8%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 2rem;
-      font-weight: bold;
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .nav-btn {
-      background: var(--primary);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .nav-btn:hover {
-      background: var(--secondary);
-      transform: translateY(-2px);
-    }
-
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      align-items: center;
-      gap: 60px;
-      padding: 40px 0;
-    }
-
-    .hero-text h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .hero-text p {
-      color: var(--muted);
-      max-width: 550px;
-      margin-bottom: 30px;
-      font-size: 1.05rem;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .primary-btn,
-    .secondary-btn {
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .primary-btn {
-      background: var(--primary);
-      color: white;
-    }
-
-    .primary-btn:hover {
-      background: var(--secondary);
-      transform: translateY(-2px);
-    }
-
-    .secondary-btn {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-
-    .secondary-btn:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    /* Hero Image */
-    .hero-image {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 350px;
-    }
-
-    .card {
-      width: 320px;
-      padding: 35px;
-      border-radius: 24px;
-      background: var(--card);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      transition: 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    .small-card {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-      );
-      color: white;
-      padding: 16px 24px;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-    }
-
-    /* Footer */
-    .footer {
-      background: var(--card);
-      border-top: 1px solid var(--border);
-      margin-top: 80px;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 8%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 40px;
-    }
-
-    .footer h2,
-    .footer h3 {
-      margin-bottom: 16px;
-    }
-
-    .footer p,
-    .footer li {
-      color: var(--muted);
-    }
-
-    .footer ul {
-      list-style: none;
-    }
-
-    .footer ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer ul li a:hover {
-      color: var(--primary);
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
-    }
-
-    .social-icons a {
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: var(--bg);
-      transition: 0.3s ease;
-      font-size: 1.1rem;
-    }
-
-    .social-icons a:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-3px);
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        gap: 15px;
-      }
-
-      .hero {
-        text-align: center;
-      }
-
-      .hero-text p {
-        margin-inline: auto;
-      }
-
-      .buttons {
-        justify-content: center;
-      }
-
-      .hero-image {
-        margin-top: 20px;
-      }
-
-      .small-card {
-        right: 10px;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="shared-sidebar.css">
 </head>
 
 <body>
 
-  <!-- Theme Toggle -->
-  <div class="theme-toggle">
-    <button id="themeBtn" aria-label="Toggle theme">🌙</button>
-  </div>
+<!-- ==================================
+BACKGROUND EFFECTS
+================================== -->
 
-  <!-- Welcome Section -->
-  <section class="welcome">
+<div class="bg-blob blob-1"></div>
+<div class="bg-blob blob-2"></div>
+<div class="bg-blob blob-3"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
+<!-- ==================================
+NAVBAR
+================================== -->
 
-      <h2 class="logo">UI-Verse</h2>
+<header class="navbar">
 
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Components</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+<div class="nav-container">
 
-      <button class="nav-btn">Login</button>
+<div class="logo">
 
-    </nav>
+<div class="logo-icon">
 
-    <!-- Hero -->
-    <div class="hero">
+⬡
 
-      <div class="hero-text">
+</div>
 
-        <h1>Build Beautiful UI Faster</h1>
+<span>
 
-        <p>
-          Explore modern UI components, templates,
-          and creative designs for your next project.
-        </p>
+UIverse
 
-        <div class="buttons">
-          <button class="primary-btn">Get Started</button>
-          <button class="secondary-btn">Explore UI</button>
-        </div>
+</span>
 
-      </div>
+</div>
 
-      <div class="hero-image">
+<nav class="nav-links">
 
-        <div class="card">
-          <h3>Modern Dashboard</h3>
-          <p>
-            Clean, responsive, and visually polished
-            interfaces for developers and designers.
-          </p>
-        </div>
+<a href="index.html"
+class="active">
 
-        <div class="small-card">
-          <h4>20+ Components</h4>
-        </div>
+Home
 
-      </div>
+</a>
 
-    </div>
+<a href="components.html">
 
-  </section>
+Components
 
-  <!-- Footer -->
-  <footer class="footer">
+</a>
 
-    <div class="footer-container">
+<a href="widgets.html">
 
-      <div class="footer-brand">
-        <h2>UI-Verse</h2>
+Widgets
 
-        <p>
-          Explore clean and modern UI components built
-          with HTML, CSS, and JavaScript.
-        </p>
-      </div>
+</a>
 
-      <div class="footer-links">
-        <h3>Quick Links</h3>
+<a href="pricing.html">
 
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Components</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+Pricing
 
-      <div class="footer-links">
-        <h3>Resources</h3>
+</a>
 
-        <ul>
-          <li><a href="#">Docs</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Community</a></li>
-          <li><a href="#">Updates</a></li>
-        </ul>
-      </div>
+<a href="contact.html">
 
-      <div class="footer-social">
-        <h3>Follow Us</h3>
+Contact
 
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
+</a>
 
-    </div>
+</nav>
 
-    <div class="footer-bottom">
-      <p>© 2026 UI-Verse. All rights reserved.</p>
-    </div>
+<div class="nav-actions">
 
-  </footer>
+<button class="theme-btn">
 
-  <!-- Theme Script -->
-  <script>
-    const themeBtn = document.getElementById("themeBtn");
+<i class="fa-solid fa-moon"></i>
 
-    themeBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
+</button>
 
-      if (document.body.classList.contains("dark")) {
-        themeBtn.textContent = "☀️";
-      } else {
-        themeBtn.textContent = "🌙";
-      }
-    });
-  </script>
+<a href="#components"
+class="primary-btn">
+
+Get Started
+
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ==================================
+HERO SECTION
+================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-badge">
+
+🚀 500+ Premium UI Components
+
+</div>
+
+<h1>
+
+Build Modern
+
+<span>
+
+Interfaces
+
+</span>
+
+Without Starting
+From Scratch
+
+</h1>
+
+<p>
+
+Discover beautifully crafted UI
+components, dashboards, widgets,
+cards and landing pages designed
+for modern web applications.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#components"
+class="primary-btn">
+
+Explore Components
+
+</a>
+
+<a href="#showcase"
+class="secondary-btn">
+
+Live Preview
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div class="hero-stat">
+
+<h3>
+
+500+
+
+</h3>
+
+<p>
+
+Components
+
+</p>
+
+</div>
+
+<div class="hero-stat">
+
+<h3>
+
+50K+
+
+</h3>
+
+<p>
+
+Developers
+
+</p>
+
+</div>
+
+<div class="hero-stat">
+
+<h3>
+
+100%
+
+</h3>
+
+<p>
+
+Responsive
+
+</p>
+
+</div>
+
+<div class="hero-stat">
+
+<h3>
+
+24/7
+
+</h3>
+
+<p>
+
+Updates
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-visual">
+
+<div class="dashboard-preview">
+
+<div class="preview-header">
+
+<div class="dots">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<span>
+
+Dashboard Preview
+
+</span>
+
+</div>
+
+<div class="preview-body">
+
+<div class="preview-card large">
+
+<h3>
+
+Analytics
+
+</h3>
+
+<h2>
+
+$48.2K
+
+</h2>
+
+<div class="mini-chart">
+
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+
+</div>
+
+</div>
+
+<div class="preview-grid">
+
+<div class="preview-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h4>
+
+Growth
+
+</h4>
+
+</div>
+
+<div class="preview-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h4>
+
+Users
+
+</h4>
+
+</div>
+
+<div class="preview-card">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<h4>
+
+Components
+
+</h4>
+
+</div>
+
+<div class="preview-card">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h4>
+
+Performance
+
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==================================
+TRUSTED BY
+================================== -->
+
+<section class="trusted-section">
+
+<p class="trusted-title">
+
+Trusted by developers from
+
+</p>
+
+<div class="trusted-grid">
+
+<div class="trusted-item">
+
+<i class="fab fa-google"></i>
+
+<span>
+
+Google
+
+</span>
+
+</div>
+
+<div class="trusted-item">
+
+<i class="fab fa-microsoft"></i>
+
+<span>
+
+Microsoft
+
+</span>
+
+</div>
+
+<div class="trusted-item">
+
+<i class="fab fa-github"></i>
+
+<span>
+
+GitHub
+
+</span>
+
+</div>
+
+<div class="trusted-item">
+
+<i class="fab fa-figma"></i>
+
+<span>
+
+Figma
+
+</span>
+
+</div>
+
+<div class="trusted-item">
+
+<i class="fab fa-discord"></i>
+
+<span>
+
+Discord
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+FEATURES
+================================== -->
+
+<section
+class="features-section"
+id="components">
+
+<div class="section-header">
+
+<span>
+
+Why UIverse
+
+</span>
+
+<h2>
+
+Everything You Need
+To Build Faster
+
+</h2>
+
+<p>
+
+Professional UI resources for
+developers, startups and SaaS
+products.
+
+</p>
+
+</div>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-layer-group"></i>
+
+</div>
+
+<h3>
+
+Reusable Components
+
+</h3>
+
+<p>
+
+Build applications faster using
+ready-made responsive components.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-bolt"></i>
+
+</div>
+
+<h3>
+
+Lightning Fast
+
+</h3>
+
+<p>
+
+Optimized layouts and clean code
+focused on performance.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-mobile-screen"></i>
+
+</div>
+
+<h3>
+
+Fully Responsive
+
+</h3>
+
+<p>
+
+Looks beautiful on desktop,
+tablet and mobile devices.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-palette"></i>
+
+</div>
+
+<h3>
+
+Modern Design
+
+</h3>
+
+<p>
+
+Inspired by modern SaaS and
+startup design systems.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-brain"></i>
+
+</div>
+
+<h3>
+
+AI Ready
+
+</h3>
+
+<p>
+
+Widgets and dashboards designed
+for AI-powered applications.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-code"></i>
+
+</div>
+
+<h3>
+
+Developer Friendly
+
+</h3>
+
+<p>
+
+Clean structure and easy
+customization.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+STATISTICS
+================================== -->
+
+<section class="stats-section">
+
+<div class="stat-card">
+
+<h2>
+
+500+
+
+</h2>
+
+<p>
+
+Premium Components
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>
+
+50K+
+
+</h2>
+
+<p>
+
+Developers Worldwide
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>
+
+120+
+
+</h2>
+
+<p>
+
+Dashboard Widgets
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>
+
+99.9%
+
+</h2>
+
+<p>
+
+Uptime
+
+</p>
+
+</div>
+
+</section>
+<!-- ==================================
+SHOWCASE BENTO GRID
+================================== -->
+
+<section
+class="showcase-section"
+id="showcase">
+
+<div class="section-header">
+
+<span>
+
+Showcase
+
+</span>
+
+<h2>
+
+Explore Beautiful
+UI Collections
+
+</h2>
+
+<p>
+
+Handcrafted layouts inspired by
+modern startups, SaaS products
+and premium design systems.
+
+</p>
+
+</div>
+
+<div class="bento-grid">
+
+<!-- LARGE CARD -->
+
+<div class="bento-card large-card">
+
+<div class="bento-content">
+
+<span>
+
+Featured Collection
+
+</span>
+
+<h3>
+
+Premium Dashboard
+Components
+
+</h3>
+
+<p>
+
+Analytics, admin panels,
+charts and productivity tools.
+
+</p>
+
+<a href="#">
+
+Explore Collection
+
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="bento-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>
+
+Analytics
+
+</h3>
+
+<p>
+
+Modern charts and data
+visualization widgets.
+
+</p>
+
+</div>
+
+<!-- CARD -->
+
+<div class="bento-card">
+
+<i class="fa-solid fa-calendar"></i>
+
+<h3>
+
+Calendars
+
+</h3>
+
+<p>
+
+Scheduling, planning and
+productivity components.
+
+</p>
+
+</div>
+
+<!-- WIDE CARD -->
+
+<div class="bento-card wide-card">
+
+<h3>
+
+Developer Widgets
+
+</h3>
+
+<p>
+
+Terminal, GitHub, AI,
+system monitoring and
+code snippets.
+
+</p>
+
+<div class="widget-icons">
+
+<i class="fab fa-github"></i>
+<i class="fa-solid fa-terminal"></i>
+<i class="fa-solid fa-brain"></i>
+<i class="fa-solid fa-code"></i>
+
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="bento-card">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<h3>
+
+Cards
+
+</h3>
+
+<p>
+
+Pricing cards, profile cards,
+feature cards and more.
+
+</p>
+
+</div>
+
+<!-- CARD -->
+
+<div class="bento-card">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+<h3>
+
+Landing Pages
+
+</h3>
+
+<p>
+
+Modern hero sections and
+marketing layouts.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+POPULAR CATEGORIES
+================================== -->
+
+<section class="categories-section">
+
+<div class="section-header">
+
+<span>
+
+Categories
+
+</span>
+
+<h2>
+
+Popular UI Categories
+
+</h2>
+
+</div>
+
+<div class="categories-grid">
+
+<div class="category-card">
+
+<i class="fa-solid fa-table-cells-large"></i>
+
+<h3>
+
+Dashboards
+
+</h3>
+
+<span>
+
+120 Components
+
+</span>
+
+</div>
+
+<div class="category-card">
+
+<i class="fa-solid fa-window-maximize"></i>
+
+<h3>
+
+Widgets
+
+</h3>
+
+<span>
+
+80 Components
+
+</span>
+
+</div>
+
+<div class="category-card">
+
+<i class="fa-solid fa-credit-card"></i>
+
+<h3>
+
+Cards
+
+</h3>
+
+<span>
+
+95 Components
+
+</span>
+
+</div>
+
+<div class="category-card">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h3>
+
+Calendars
+
+</h3>
+
+<span>
+
+45 Components
+
+</span>
+
+</div>
+
+<div class="category-card">
+
+<i class="fa-solid fa-blog"></i>
+
+<h3>
+
+Blogs
+
+</h3>
+
+<span>
+
+40 Components
+
+</span>
+
+</div>
+
+<div class="category-card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>
+
+AI UI
+
+</h3>
+
+<span>
+
+60 Components
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+FEATURED COMPONENTS
+================================== -->
+
+<section class="featured-section">
+
+<div class="section-header">
+
+<span>
+
+Featured
+
+</span>
+
+<h2>
+
+Trending Components
+
+</h2>
+
+</div>
+
+<div class="featured-grid">
+
+<div class="featured-card">
+
+<div class="featured-top">
+
+🔥
+
+</div>
+
+<h3>
+
+AI Dashboard
+
+</h3>
+
+<p>
+
+Modern analytics dashboard
+for AI products.
+
+</p>
+
+<a href="#">
+
+View Component
+
+</a>
+
+</div>
+
+<div class="featured-card">
+
+<div class="featured-top">
+
+⚡
+
+</div>
+
+<h3>
+
+Widget Collection
+
+</h3>
+
+<p>
+
+Developer focused widgets
+and monitoring tools.
+
+</p>
+
+<a href="#">
+
+View Component
+
+</a>
+
+</div>
+
+<div class="featured-card">
+
+<div class="featured-top">
+
+🚀
+
+</div>
+
+<h3>
+
+SaaS Landing Page
+
+</h3>
+
+<p>
+
+Premium startup landing
+page design.
+
+</p>
+
+<a href="#">
+
+View Component
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==================================
+TESTIMONIALS
+================================== -->
+
+<section class="testimonials-section">
+
+<div class="section-header">
+
+<span>
+
+Testimonials
+
+</span>
+
+<h2>
+
+Loved By Developers
+Worldwide
+
+</h2>
+
+<p>
+
+Thousands of developers use
+UIverse to build modern products.
+
+</p>
+
+</div>
+
+<div class="testimonials-grid">
+
+<div class="testimonial-card">
+
+<div class="quote">
+
+★★★★★
+
+</div>
+
+<p>
+
+"UIverse helped me create
+beautiful dashboards in a
+fraction of the usual time."
+
+</p>
+
+<div class="author">
+
+<div class="avatar">
+
+A
+
+</div>
+
+<div>
+
+<h4>
+
+Alex Carter
+
+</h4>
+
+<span>
+
+Frontend Developer
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="quote">
+
+★★★★★
+
+</div>
+
+<p>
+
+"The design quality feels like
+something from a premium SaaS
+startup."
+
+</p>
+
+<div class="author">
+
+<div class="avatar">
+
+S
+
+</div>
+
+<div>
+
+<h4>
+
+Sarah Wilson
+
+</h4>
+
+<span>
+
+UI Designer
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="quote">
+
+★★★★★
+
+</div>
+
+<p>
+
+"The widgets and dashboards are
+clean, modern and extremely
+easy to customize."
+
+</p>
+
+<div class="author">
+
+<div class="avatar">
+
+J
+
+</div>
+
+<div>
+
+<h4>
+
+John Lee
+
+</h4>
+
+<span>
+
+Full Stack Developer
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+PRICING PREVIEW
+================================== -->
+
+<section class="pricing-section">
+
+<div class="section-header">
+
+<span>
+
+Pricing
+
+</span>
+
+<h2>
+
+Simple Plans
+For Everyone
+
+</h2>
+
+</div>
+
+<div class="pricing-grid">
+
+<div class="pricing-card">
+
+<h3>
+
+Starter
+
+</h3>
+
+<h2>
+
+$0
+
+</h2>
+
+<p>
+
+Perfect for beginners.
+
+</p>
+
+<ul>
+
+<li>✓ Basic Components</li>
+<li>✓ Responsive Layouts</li>
+<li>✓ Community Access</li>
+
+</ul>
+
+<button class="secondary-btn">
+
+Get Started
+
+</button>
+
+</div>
+
+<div class="pricing-card featured-plan">
+
+<div class="plan-badge">
+
+Most Popular
+
+</div>
+
+<h3>
+
+Pro
+
+</h3>
+
+<h2>
+
+$19
+
+<span>
+
+/month</span>
+
+</h2>
+
+<p>
+
+Everything you need.
+
+</p>
+
+<ul>
+
+<li>✓ Premium Components</li>
+<li>✓ Dashboard Templates</li>
+<li>✓ Widgets Library</li>
+<li>✓ Priority Support</li>
+
+</ul>
+
+<button class="primary-btn">
+
+Start Pro
+
+</button>
+
+</div>
+
+<div class="pricing-card">
+
+<h3>
+
+Enterprise
+
+</h3>
+
+<h2>
+
+Custom
+
+</h2>
+
+<p>
+
+For large teams.
+
+</p>
+
+<ul>
+
+<li>✓ Unlimited Access</li>
+<li>✓ Team Collaboration</li>
+<li>✓ Dedicated Support</li>
+
+</ul>
+
+<button class="secondary-btn">
+
+Contact Sales
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+COMMUNITY
+================================== -->
+
+<section class="community-section">
+
+<div class="community-card">
+
+<h2>
+
+Join The UIverse Community
+
+</h2>
+
+<p>
+
+Connect with designers and
+developers building modern
+interfaces every day.
+
+</p>
+
+<div class="community-stats">
+
+<div>
+
+<h3>
+
+50K+
+
+</h3>
+
+<span>
+
+Members
+
+</span>
+
+</div>
+
+<div>
+
+<h3>
+
+500+
+
+</h3>
+
+<span>
+
+Components
+
+</span>
+
+</div>
+
+<div>
+
+<h3>
+
+24/7
+
+</h3>
+
+<span>
+
+Support
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+NEWSLETTER
+================================== -->
+
+<section class="newsletter-section">
+
+<div class="newsletter-card">
+
+<h2>
+
+Stay Updated
+
+</h2>
+
+<p>
+
+Get the latest components,
+widgets and design resources
+delivered directly to your inbox.
+
+</p>
+
+<form class="newsletter-form">
+
+<input
+type="email"
+placeholder="Enter your email">
+
+<button
+type="submit">
+
+Subscribe
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+<!-- ==================================
+PREMIUM FOOTER
+================================== -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-brand">
+
+<div class="footer-logo">
+
+⬡ UIverse
+
+</div>
+
+<p>
+
+Build beautiful interfaces
+faster with premium UI
+components, widgets and
+modern design systems.
+
+</p>
+
+<div class="social-links">
+
+<a href="#">
+
+<i class="fab fa-github"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-discord"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-linkedin"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-x-twitter"></i>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+
+Components
+
+</h3>
+
+<ul>
+
+<li><a href="#">Cards</a></li>
+<li><a href="#">Buttons</a></li>
+<li><a href="#">Forms</a></li>
+<li><a href="#">Widgets</a></li>
+<li><a href="#">Calendars</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+
+Resources
+
+</h3>
+
+<ul>
+
+<li><a href="#">Documentation</a></li>
+<li><a href="#">Templates</a></li>
+<li><a href="#">Showcase</a></li>
+<li><a href="#">Community</a></li>
+<li><a href="#">Support</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+
+Company
+
+</h3>
+
+<ul>
+
+<li><a href="#">About</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+
+Newsletter
+
+</h3>
+
+<p>
+
+Get updates about new
+components and UI releases.
+
+</p>
+
+<form class="footer-form">
+
+<input
+type="email"
+placeholder="your@email.com">
+
+<button>
+
+Join
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 UIverse.
+Built for developers worldwide.
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- ==================================
+FLOATING ACTIONS
+================================== -->
+
+<button class="scroll-top">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- ==================================
+SCRIPT
+================================== -->
+
+<script>
+
+/* Theme Toggle */
+
+const themeBtn =
+document.querySelector(
+".theme-btn"
+);
+
+themeBtn.addEventListener(
+"click",
+()=>{
+
+document.body.classList.toggle(
+"dark"
+);
+
+if(
+document.body.classList.contains(
+"dark"
+)
+){
+
+themeBtn.innerHTML =
+'<i class="fa-solid fa-sun"></i>';
+
+}else{
+
+themeBtn.innerHTML =
+'<i class="fa-solid fa-moon"></i>';
+
+}
+
+});
+
+/* Scroll Top */
+
+const scrollBtn =
+document.querySelector(
+".scroll-top"
+);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+if(window.scrollY > 500){
+
+scrollBtn.classList.add(
+"show"
+);
+
+}else{
+
+scrollBtn.classList.remove(
+"show"
+);
+
+}
+
+});
+
+scrollBtn.addEventListener(
+"click",
+()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+/* Reveal Animation */
+
+const reveals =
+document.querySelectorAll(
+".feature-card,.stat-card,.bento-card,.category-card,.featured-card,.testimonial-card,.pricing-card"
+);
+
+const observer =
+new IntersectionObserver(
+entries=>{
+
+entries.forEach(
+entry=>{
+
+if(
+entry.isIntersecting
+){
+
+entry.target.classList.add(
+"visible"
+);
+
+}
+
+});
+
+},
+{
+threshold:0.15
+}
+);
+
+reveals.forEach(
+item=>{
+
+observer.observe(
+item
+);
+
+});
+
+</script>
 
 </body>
+
 </html>
