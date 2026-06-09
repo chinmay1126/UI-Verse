@@ -484,8 +484,8 @@ body.dark-mode .component-card,
 body.dark-mode .hero,
 body.dark-mode .feature-card {
   background: var(--card-bg);
-  color: #0b0b0b;
-  border-color: #160dc5;
+  color: var(--text-primary);
+  border-color: var(--card-border);
 }
 
 body.dark-mode .search-bar input {
@@ -502,14 +502,9 @@ body.dark-mode .hero-left p {
 
 /* Card */
 .component-card {
-  background: #b4c2e5;
+  background: var(--card-bg, #b4c2e5);
   padding: 20px;
   border-radius: 16px;
-.component-card {
-  /* background: #b4c2e5; */
-  padding: 20px;
-  border-radius: 16px;
-}
 }
 
 .search-bar {

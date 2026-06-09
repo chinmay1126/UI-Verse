@@ -43,11 +43,11 @@ body.dark {
   --text: #000000;
   --card: #ffffff;
   --border: rgba(0,0,0,.08);
-  --sidebar-bg: #f8f9fa;
-  --sidebar-text: #333;
-  --sidebar-border: rgba(0,0,0,.1);
-  --sidebar-hover: rgba(0,0,0,.05);
-  --sidebar-active: rgba(0,0,0,.08);
+  --sidebar-bg: #1e293b;
+  --sidebar-text: #cbd5e1;
+  --sidebar-border: rgba(255,255,255,.1);
+  --sidebar-hover: rgba(255,255,255,.08);
+  --sidebar-active: rgba(123,97,255,.2);
 }
 
 /* Light Theme */
@@ -56,11 +56,11 @@ body.light {
   --text: #000000;
   --card: #ffffff;
   --border: rgba(0,0,0,.08);
-  --sidebar-bg: #f8f9fa;
-  --sidebar-text: #333;
-  --sidebar-border: rgba(0,0,0,.1);
-  --sidebar-hover: rgba(0,0,0,.05);
-  --sidebar-active: rgba(0,0,0,.08);
+  --sidebar-bg: #1e293b;
+  --sidebar-text: #cbd5e1;
+  --sidebar-border: rgba(255,255,255,.1);
+  --sidebar-hover: rgba(255,255,255,.08);
+  --sidebar-active: rgba(123,97,255,.2);
 }
 
 /* Dark Theme */
