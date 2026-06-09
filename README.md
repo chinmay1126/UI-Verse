@@ -92,12 +92,23 @@ cd UI-Verse
 
 ---
 
-### 3️⃣ Open the Project
+### 3️⃣ Setup Dependencies and Build
+To configure local development tooling and TypeScript modules:
+```bash
+npm install
+npm run build
+```
 
-**Option A — Quick Preview:**
-Simply open `index.html` in your browser by double-clicking it.
+---
 
-**Option B — Live Server (Recommended):**
+### 4️⃣ Previewing & Running
+**Option A — Launch Storybook (Recommended):**
+To view components interactively inside the Storybook showcase environment:
+```bash
+npm run storybook
+```
+
+**Option B — Live Server (VS Code Extension):**
 If you have VS Code, install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension, right-click `index.html`, and select "Open with Live Server". This provides auto-reload on file changes.
 
 **Option C — Python HTTP Server:**

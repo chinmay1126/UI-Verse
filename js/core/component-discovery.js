@@ -593,11 +593,9 @@
       metadataList = options.items;
     } else {
       const [componentsData, docsData] = await Promise.all([
-        fetchJson(options.registryUrl || '/data/registry.json'),
         fetchJson(options.componentsUrl || '/data/components.json'),
         fetchJson(options.docsUrl || '/data/meta/documentation-catalog.json')
       ]);
-      registryList = toArray(componentsData?.registry || componentsData);
       metadataList = toArray(componentsData?.components || componentsData);
       const docsArray = toArray(docsData?.components || docsData?.pages || docsData);
       const docsMap = new Map(docsArray.filter(Boolean).map((doc) => [doc.id, doc]));
@@ -621,6 +619,9 @@
 
     if (Array.isArray(options.registryItems)) {
       registryList = options.registryItems;
+    } else if (options.registryUrl) {
+      const registryData = await fetchJson(options.registryUrl);
+      registryList = toArray(registryData?.registry || registryData);
     }
 
     const docsArray = Array.from(_state.docsById.entries()).map(([id, doc]) => doc);
@@ -701,6 +702,25 @@
     return _state.items.find((item) => item.id === id) || null;
   }
 
+  function getCategoryItems(category) {
+    const target = String(category || '').toLowerCase().trim();
+    return _state.items.filter((item) => String(item.category || '').toLowerCase().trim() === target);
+  }
+
+  function getCategories() {
+    const cats = new Map();
+    _state.items.forEach((item) => {
+      const cat = String(item.category || 'Component').toLowerCase().trim();
+      if (!cats.has(cat)) {
+        cats.set(cat, { name: item.category || 'Component', count: 0, items: [] });
+      }
+      const bucket = cats.get(cat);
+      bucket.count++;
+      bucket.items.push(item);
+    });
+    return Array.from(cats.entries()).map(([name, data]) => ({ name, ...data }));
+  }
+
   function getFacets() {
     return {
       ..._state.facets,
@@ -752,6 +772,8 @@
     search,
     getAll,
     getById,
+    getCategoryItems,
+    getCategories,
     getFacets,
     getRecentFilters: getRecentFiltersList,
     exportQuery,

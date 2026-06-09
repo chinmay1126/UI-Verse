@@ -1330,6 +1330,70 @@
   box-shadow: none !important;
 }
 
+.animated-gradient-btn {
+  padding: 12px 28px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  background-size: 300% 300%;
+  background-image: linear-gradient(
+    45deg,
+    #eb6835,
+    #6c5ce7,
+    #00b894,
+    #0984e3,
+    #d63031
+  );
+  animation: gradientShift 6s ease infinite;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.animated-gradient-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+.animated-gradient-btn.fast { animation-duration: 3s; }
+.animated-gradient-btn.slow { animation-duration: 10s; }
+
+.animated-gradient-btn.alt {
+  background-image: linear-gradient(
+    45deg,
+    #ff6f61,
+    #ffcc00,
+    #4caf50,
+    #2196f3,
+    #9c27b0
+  );
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Default color combo */
+.animated-gradient-btn {
+  background-image: linear-gradient(
+    45deg,
+    #eb6835,
+    #6c5ce7,
+    #00b894,
+    #0984e3,
+    #d63031
+  );
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 /* buttons.css */
 
 *{

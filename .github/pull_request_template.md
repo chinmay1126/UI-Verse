@@ -19,6 +19,12 @@ Please describe how you verified the changes:
 2. **Browsers Checked:** (e.g., Chrome, Firefox, Safari, Edge mobile)
 3. **Responsive Verification:** (e.g., tested layout at 320px, 768px, 1024px widths)
 
+## Accessibility & Theme Integration
+- [ ] Contrast ratio checked for light and dark themes
+- [ ] Focus outlines visible during keyboard navigation
+- [ ] Semantic elements used instead of generic divs where appropriate
+- [ ] Text descriptors (`aria-label`, alternate titles) provided
+
 ## Screenshots
 *Add before/after screenshots or a short GIF if this PR affects UI styling.*
 
