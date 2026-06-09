@@ -1480,7 +1480,7 @@ body.light {
 }
 
 .component-card{
-  background:white;
+  background: var(--card-bg, #ffffff);
   border-radius:24px;
   transition:.3s;
 }
