@@ -5,9 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width,
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
 
 Calendar Components • UIverse
@@ -29,10 +27,106 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <link rel="stylesheet"
 href="calendar.css">
+<link rel="stylesheet" href="shared-sidebar.css">
 
 </head>
 
 <body>
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+<aside class="sidebar" id="sidebar">
+  <h2>UIverse</h2>
+  <ul>
+    <li>
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        <p>Home</p>
+      </a>
+    </li>
+    <li>
+      <a href="button.html">
+        <i class="fa-solid fa-mobile-button"></i>
+        <p>Buttons</p>
+      </a>
+    </li>
+    <li>
+      <a href="cards.html">
+        <i class="fa-solid fa-layer-group"></i>
+        <p>Cards</p>
+      </a>
+    </li>
+    <li>
+      <a href="forms.html">
+        <i class="fa-brands fa-wpforms"></i>
+        <p>Forms</p>
+      </a>
+    </li>
+    <li>
+      <a href="navbar.html">
+        <i class="fa-solid fa-bars"></i>
+        <p>Navbar</p>
+      </a>
+    </li>
+    <li>
+      <a href="contributors.html">
+        <i class="fa-solid fa-users"></i>
+        <p>Contributors</p>
+      </a>
+    </li>
+    <li>
+      <a href="documentation.html">
+        <i class="fa-solid fa-book"></i>
+        <p>Documentation</p>
+      </a>
+    </li>
+    <li>
+      <a href="pricing.html">
+        <i class="fa-solid fa-tags"></i>
+        <p>Pricing</p>
+      </a>
+    </li>
+    <li>
+      <a href="subscription.html">
+        <i class="fa-solid fa-credit-card"></i>
+        <span>Subscription</span>
+      </a>
+    </li>
+    <li>
+      <a href="auth.html">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Authentication</span>
+      </a>
+    </li>
+    <li>
+      <a href="recovery.html">
+        <i class="fa-solid fa-key" aria-hidden="true"></i>
+        <span>Password Recovery</span>
+      </a>
+    </li>
+    <li>
+      <a href="badges.html">
+        <i class="fa-solid fa-award"></i>
+        <p>Badges</p>
+      </a>
+    </li>
+    <li>
+      <a href="calendar.html" class="active">
+        <i class="fa-solid fa-calendar"></i>
+        <p>Calendar</p>
+      </a>
+    </li>
+    <li>
+      <a href="settings.html">
+        <i class="fa-solid fa-gear"></i>
+        <p>Settings</p>
+      </a>
+    </li>
+  </ul>
+</aside>
+
+<div class="main-home">
 
 <!-- ==================================
 NAVBAR
@@ -86,258 +180,15 @@ Contact
 Today
 
 </button>
-
-  <div class="component-card">
-  <div class="card-header">
-    <h3>Conversion Funnel</h3>
-    <p>Track user drop-off across stages.</p>
-  </div>
-
-  <div class="preview-box charts-wrapper">
-    <div class="funnel-chart">
-      <div class="funnel-stage s1">Visitors 100%</div>
-      <div class="funnel-stage s2">Signups 74%</div>
-      <div class="funnel-stage s3">Trials 42%</div>
-      <div class="funnel-stage s4">Customers 18%</div>
-    </div>
+    <button class="primary-btn">
+      New Event
+    </button>
   </div>
 </div>
-
-<div class="component-card">
-  <div class="card-header">
-    <h3>Revenue Analytics</h3>
-    <p>Enterprise KPI dashboard.</p>
-  </div>
-
-  <div class="preview-box">
-    <div class="kpi-grid">
-
-      <div class="kpi-box">
-        <span>MRR</span>
-        <h2>$82,540</h2>
-        <small>+12.4%</small>
-      </div>
-
-      <div class="kpi-box">
-        <span>ARR</span>
-        <h2>$990K</h2>
-        <small>+24.1%</small>
-      </div>
-
-      <div class="kpi-box">
-        <span>Churn</span>
-        <h2>2.1%</h2>
-        <small>-0.4%</small>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="component-card">
-  <div class="card-header">
-    <h3>Bubble Analytics</h3>
-    <p>Size-based data comparison.</p>
-  </div>
-
-  <div class="preview-box">
-
-    <svg viewBox="0 0 500 220">
-
-      <circle cx="100" cy="120" r="20" class="bubble b1"/>
-      <circle cx="220" cy="80" r="35" class="bubble b2"/>
-      <circle cx="350" cy="140" r="50" class="bubble b3"/>
-      <circle cx="450" cy="60" r="28" class="bubble b4"/>
-
-    </svg>
-
-  </div>
-</div>
-
-<div class="component-card">
-  <div class="card-header">
-    <h3>Revenue vs Expenses</h3>
-    <p>Dual-axis comparison chart.</p>
-  </div>
-
-  <div class="preview-box">
-
-    <div class="compare-bars">
-
-      <div class="compare-group">
-        <div class="bar revenue"></div>
-        <div class="bar expense"></div>
-      </div>
-
-      <div class="compare-group">
-        <div class="bar revenue"></div>
-        <div class="bar expense"></div>
-      </div>
-
-      <div class="compare-group">
-        <div class="bar revenue"></div>
-        <div class="bar expense"></div>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-
-<div class="component-card">
-  <div class="card-header">
-    <h3>Performance Gauge</h3>
-    <p>Executive KPI indicator.</p>
-  </div>
-
-  <div class="preview-box">
-
-    <svg viewBox="0 0 220 220">
-
-      <circle cx="110" cy="110" r="80"
-      class="gauge-bg"/>
-
-      <circle cx="110" cy="110" r="80"
-      class="gauge-progress"/>
-
-      <text x="110" y="120"
-      text-anchor="middle"
-      class="gauge-value">84%</text>
-
-    </svg>
-
-  </div>
-</div>
-
-<div class="component-card">
-  <div class="card-header">
-    <h3>Order Book Depth</h3>
-    <p>Crypto & stock trading visualization.</p>
-  </div>
-
-  <div class="preview-box">
-
-    <svg viewBox="0 0 500 220">
-
-      <path
-      d="M0 180 L120 150 L220 120 L300 90 L500 40"
-      class="buy-depth"></path>
-
-      <path
-      d="M500 180 L420 150 L350 110 L250 80 L0 40"
-      class="sell-depth"></path>
-
-    </svg>
-
-  </div>
-</div>
-
-<div class="component-card">
-  <div class="card-header">
-    <h3>Segmented KPI Ring</h3>
-    <p>Multiple progress indicators.</p>
-  </div>
-
-  <div class="preview-box">
-
-    <div class="segmented-ring">
-
-      <span class="segment active"></span>
-      <span class="segment active"></span>
-      <span class="segment active"></span>
-      <span class="segment"></span>
-      <span class="segment"></span>
-
-    </div>
-
-  </div>
-</div>
-
-<div class="component-card">
-  <div class="card-header">
-    <h3>AI Model Metrics</h3>
-    <p>LLM performance dashboard.</p>
-  </div>
-
-  <div class="preview-box">
-
-    <div class="ai-metrics">
-
-      <div class="metric">
-        <span>Latency</span>
-        <h2>127ms</h2>
-      </div>
-
-      <div class="metric">
-        <span>Tokens/sec</span>
-        <h2>84</h2>
-      </div>
-
-      <div class="metric">
-        <span>Accuracy</span>
-        <h2>97.4%</h2>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-
-<div class="component-card">
-  <div class="card-header">
-    <h3>Hex Analytics</h3>
-    <p>Modern honeycomb metrics layout.</p>
-  </div>
-
-  <div class="preview-box">
-
-    <div class="hex-grid">
-
-      <div class="hex">72%</div>
-      <div class="hex">54%</div>
-      <div class="hex">91%</div>
-      <div class="hex">66%</div>
-      <div class="hex">88%</div>
-
-    </div>
-
-  </div>
-</div>
-
-<div class="component-card">
-  <div class="card-header">
-    <h3>Analytics Timeline</h3>
-    <p>Monthly growth milestones.</p>
-  </div>
-
-  <div class="preview-box">
-
-    <div class="analytics-timeline">
-
-      <div class="timeline-point completed"></div>
-      <div class="timeline-point completed"></div>
-      <div class="timeline-point active"></div>
-      <div class="timeline-point"></div>
-      <div class="timeline-point"></div>
-
-    </div>
-
-  </div>
-</div>
-
-  <!-- ================= MAIN ================= -->
-  <main class="calendar-container">
-<button class="primary-btn">
-
-New Event
-
-</button>
-
-</div>
-
-</div>
-
 </header>
+
+<!-- ================= MAIN ================= -->
+<main class="calendar-container">
 
 <!-- ==================================
 HERO
@@ -1487,8 +1338,11 @@ Join
 © 2026 UIverse • Calendar Collection
 
 </div>
+</div>
 
 </footer>
+</div>
+</main>
 
 <script>
 
