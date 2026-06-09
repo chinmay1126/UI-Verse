@@ -285,3 +285,25 @@ select:focus {
     grid-template-columns: 1fr;
   }
 }
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #222;
+}
+
+.metric-label {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.metric strong {
+  color: #fff;
+  font-size: 15px;
+}
+
+.metric.highlight strong {
+  color: #00e0ff;
+  font-weight: 700;
+}
