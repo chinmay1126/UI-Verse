@@ -197,3 +197,33 @@ const forecastChart = new Chart(ctx, {
     plugins: { legend: { display: false } }
   }
 });
+const status = document.getElementById("status");
+const submitBtn = document.querySelector(".submit-btn");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  submitBtn.disabled = true;
+  status.textContent = "Calculating forecast...";
+
+  try {
+    // API request
+
+    status.textContent = "Forecast generated successfully.";
+  } catch (err) {
+    console.error(err);
+    status.textContent = "Unable to generate forecast.";
+  } finally {
+    submitBtn.disabled = false;
+  }
+});
+
+const roiEl = document.getElementById("roi-value");
+
+if (roi > 30) {
+  roiEl.className = "positive";
+} else if (roi > 10) {
+  roiEl.className = "neutral";
+} else {
+  roiEl.className = "negative";
+}
