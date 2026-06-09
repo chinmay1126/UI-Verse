@@ -48,7 +48,19 @@ export class UVThemeSwitcher extends HTMLElement {
 
   _getCurrentTheme() {
     if (globalThis.DesignTokens?.getStoredTheme) {
-      return globalThis.DesignTokens.getStoredTheme() || document.documentElement.dataset.theme || 'light';
+      const stored = globalThis.DesignTokens.getStoredTheme();
+      if (stored) return stored;
+    }
+
+    try {
+      const storedTheme = localStorage.getItem('ui-verse-theme') || localStorage.getItem('theme');
+      if (storedTheme) return storedTheme;
+    } catch (e) {}
+
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
     }
 
     return document.documentElement.dataset.theme || 'light';

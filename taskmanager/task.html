@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-1o4EGHTO7K4Q7KKyHGmBAQhIrGhwmzA5zPXs3Vziwo4= sha256-3rAOvryBiDopXLsH/mJOL6TMn9jG021BFAN0Q2Nc1GA= sha256-ihRf0EeNoZI3zBJPMb8hkyRUMrsk5xepjysag0lflOM=; style-src-attr 'unsafe-hashes' sha256-1o4EGHTO7K4Q7KKyHGmBAQhIrGhwmzA5zPXs3Vziwo4= sha256-3rAOvryBiDopXLsH/mJOL6TMn9jG021BFAN0Q2Nc1GA= sha256-ihRf0EeNoZI3zBJPMb8hkyRUMrsk5xepjysag0lflOM=">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Manager UI</title>
   <link rel="stylesheet" href="task.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="task-manager">
 
-    <h1>Task Manager</h1>
+    <h1><i class="fas fa-tasks"></i> Task Manager</h1>
 
     <div class="task-input">
 
-      <input type="text" id="taskInput" placeholder="Enter task">
+      <input type="text" id="taskInput" placeholder="Enter task" data-a11y-remediation="label-needed">
 
-      <button id="addTaskBtn">Add Task</button>
+      <button type="button" id="addTaskBtn">Add Task</button>
+
+      <button type="button" id="clearAllBtn" style="padding:14px 22px;border:none;background:#ef4444;color:#fff;border-radius:10px;cursor:pointer;transition:0.3s;">Clear All</button>
 
     </div>
 
     <div class="task-sections">
 
-      <div class="task-column">
-
-        <h2>Pending</h2>
-
+      <div class="task-column" style="border-top-color:#facc15;">
+        <h2><i class="fa-regular fa-clock"></i> Pending</h2>
         <div class="task-list" id="pendingTasks"></div>
-
       </div>
 
-      <div class="task-column">
-
-        <h2>Completed</h2>
-
+      <div class="task-column" style="border-top-color:#22c55e;">
+        <h2><i class="fa-regular fa-check-circle"></i> Completed</h2>
         <div class="task-list" id="completedTasks"></div>
-
       </div>
 
     </div>
@@ -44,5 +44,6 @@
   </div>
 
   <script src="task.js"></script>
+  <script src="../dist/shared.js"></script>
 </body>
 </html>

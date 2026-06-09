@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
@@ -38,10 +39,11 @@
     href="notification.css"
   >
 
-  <link rel="stylesheet" href="shared-sidebar.css">
-</head>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
@@ -384,7 +386,7 @@ NAVBAR
       type="text"
       placeholder="Search notifications..."
       id="searchInput"
-    >
+     data-a11y-remediation="label-needed">
 
   </div>
 
@@ -411,6 +413,7 @@ NAVBAR
   </div>
 
 </header>
+
 
 <!-- =====================================================
 MAIN
@@ -904,5 +907,6 @@ MAIN
 
 <script src="notification.js"></script>
 
+    <script src="dist/shared.js"></script>
 </body>
 </html>
