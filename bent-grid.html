@@ -399,9 +399,14 @@ Premium glassmorphism layouts.
 MAIN BENTO GRID
 ========================= -->
 
-<section class="bento-grid" id="layouts">
+<section id="layouts" style="position: relative;">
 
-	<div id="bento-container"></div>
+    <!-- Background Orbs for Glassmorphism -->
+    <div style="position: absolute; top: 10%; left: 10%; width: 400px; height: 400px; background: #7c5cff; filter: blur(120px); opacity: 0.6; border-radius: 50%; z-index: 0; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: 20%; right: 5%; width: 500px; height: 500px; background: #00c2ff; filter: blur(150px); opacity: 0.5; border-radius: 50%; z-index: 0; pointer-events: none;"></div>
+    <div style="position: absolute; top: 50%; left: 40%; width: 350px; height: 350px; background: #eb6835; filter: blur(130px); opacity: 0.4; border-radius: 50%; z-index: 0; pointer-events: none;"></div>
+
+	<div id="bento-container" class="bento-grid" style="position: relative; z-index: 1;"></div>
 
 </section>
 
