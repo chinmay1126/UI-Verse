@@ -1650,7 +1650,7 @@ MAIN
       <p class="section-sub">Click the copy icon on any card to grab the code instantly.</p>
     </div>
 
-    <div class="dashboard-grid new-grid">
+    <div class="dashboard-grid new-grid" style="grid-template-columns: repeat(5, 1fr);">
 
       <!-- ── 1. CRYPTO WALLET ── -->
       <div class="dashboard-card nc-card" id="nc-crypto">
@@ -2063,12 +2063,187 @@ function addNote() {
   const grid = document.getElementById('notesGrid');
   const note = document.createElement('div');
   note.className = 'sticky-note ' + colors[Math.floor(Math.random()*colors.length)];
-  note.innerHTML = '<div class="note-header"><span class="note-dot"></span><button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button></div><textarea class="note-area" placeholder="Write something..."></textarea>';
+  note.innerHTML = '<div class="note-header"><span class="note-dot"></span><button class="note-del" onclick="deleteNote(this)"><i class="fa-solid fa-xmark"></i></button></div><textarea class="note-area" placeholder="Write something..."><\\/textarea>';
   grid.appendChild(note);
 }
 function deleteNote(btn) { btn.closest('.sticky-note').remove(); }
 </script></textarea>
 
+      </div>
+
+      <!-- ── 6. SERVER STATUS ── -->
+      <div class="dashboard-card nc-card" id="nc-server">
+        <div class="nc-copy-btn" onclick="copyCode('nc-server')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+        <div class="card-header">
+          <h2>Server Status</h2>
+          <span class="status-badge" style="color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 4px 8px; border-radius: 4px; font-size: 12px;"><i class="fa-solid fa-circle" style="font-size:8px; margin-right:4px;"></i> Operational</span>
+        </div>
+        <div class="server-list" style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <i class="fa-solid fa-server" style="color: #64748b;"></i>
+              <span style="font-weight: 500;">API Server (US-East)</span>
+            </div>
+            <span style="color: #10b981; font-weight: bold;">99.9%</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <i class="fa-solid fa-database" style="color: #64748b;"></i>
+              <span style="font-weight: 500;">Main Database</span>
+            </div>
+            <span style="color: #10b981; font-weight: bold;">100%</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <i class="fa-solid fa-cloud" style="color: #64748b;"></i>
+              <span style="font-weight: 500;">CDN Nodes</span>
+            </div>
+            <span style="color: #10b981; font-weight: bold;">99.8%</span>
+          </div>
+        </div>
+        <textarea class="nc-code-storage" id="code-nc-server" readonly><!-- Server Status Card -->
+<div class="dashboard-card">
+  <div class="card-header">
+    <h2>Server Status</h2>
+    <span class="status-badge" style="color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 4px 8px; border-radius: 4px; font-size: 12px;"><i class="fa-solid fa-circle" style="font-size:8px; margin-right:4px;"></i> Operational</span>
+  </div>
+  <div class="server-list" style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+    <!-- list items... -->
+  </div>
+</div></textarea>
+      </div>
+
+      <!-- ── 7. REVENUE OVERVIEW ── -->
+      <div class="dashboard-card nc-card" id="nc-revenue">
+        <div class="nc-copy-btn" onclick="copyCode('nc-revenue')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+        <div class="card-header">
+          <h2>Revenue Overview</h2>
+        </div>
+        <div style="margin-top: 12px;">
+          <div style="font-size: 32px; font-weight: bold;">$124,500</div>
+          <div style="color: #10b981; font-size: 14px; margin-bottom: 20px;"><i class="fa-solid fa-arrow-trend-up"></i> +14.5% vs last week</div>
+          <div class="mini-chart" style="display: flex; align-items: flex-end; gap: 8px; height: 60px;">
+            <div style="flex: 1; background: #6366f1; border-radius: 4px 4px 0 0; height: 40%; transition: height 0.5s;"></div>
+            <div style="flex: 1; background: #6366f1; border-radius: 4px 4px 0 0; height: 60%; transition: height 0.5s;"></div>
+            <div style="flex: 1; background: #6366f1; border-radius: 4px 4px 0 0; height: 35%; transition: height 0.5s;"></div>
+            <div style="flex: 1; background: #6366f1; border-radius: 4px 4px 0 0; height: 80%; transition: height 0.5s;"></div>
+            <div style="flex: 1; background: #6366f1; border-radius: 4px 4px 0 0; height: 50%; transition: height 0.5s;"></div>
+            <div style="flex: 1; background: #6366f1; border-radius: 4px 4px 0 0; height: 95%; transition: height 0.5s;"></div>
+            <div style="flex: 1; background: #6366f1; border-radius: 4px 4px 0 0; height: 75%; transition: height 0.5s;"></div>
+          </div>
+        </div>
+        <textarea class="nc-code-storage" id="code-nc-revenue" readonly><!-- Revenue Card -->
+<div class="dashboard-card">
+  <!-- Revenue details -->
+</div></textarea>
+      </div>
+
+      <!-- ── 8. STORAGE USAGE ── -->
+      <div class="dashboard-card nc-card" id="nc-storage">
+        <div class="nc-copy-btn" onclick="copyCode('nc-storage')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+        <div class="card-header">
+          <h2>Storage Usage</h2>
+          <i class="fa-solid fa-hard-drive" style="color: #64748b;"></i>
+        </div>
+        <div style="margin-top: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500;">
+            <span>Used: 850GB</span>
+            <span style="color: #64748b;">Total: 1TB</span>
+          </div>
+          <div style="width: 100%; height: 12px; background: rgba(255,255,255,0.05); border-radius: 6px; overflow: hidden; display: flex;">
+            <div style="width: 45%; background: #3b82f6;"></div>
+            <div style="width: 25%; background: #f59e0b;"></div>
+            <div style="width: 15%; background: #10b981;"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 20px; font-size: 13px;">
+            <div style="display: flex; justify-content: space-between;"><span style="color:#3b82f6;">● Documents (45%)</span><span>450GB</span></div>
+            <div style="display: flex; justify-content: space-between;"><span style="color:#f59e0b;">● Media (25%)</span><span>250GB</span></div>
+            <div style="display: flex; justify-content: space-between;"><span style="color:#10b981;">● System (15%)</span><span>150GB</span></div>
+          </div>
+        </div>
+        <textarea class="nc-code-storage" id="code-nc-storage" readonly><!-- Storage Card -->
+<div class="dashboard-card">
+  <!-- Storage details -->
+</div></textarea>
+      </div>
+
+      <!-- ── 9. TASK PROGRESS ── -->
+      <div class="dashboard-card nc-card" id="nc-tasks">
+        <div class="nc-copy-btn" onclick="copyCode('nc-tasks')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+        <div class="card-header">
+          <h2>Project Sprint</h2>
+        </div>
+        <div style="margin-top: 16px; display: flex; align-items: center; justify-content: center; position: relative;">
+          <!-- SVG Circular Progress -->
+          <svg width="120" height="120" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="10"></circle>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#a855f7" stroke-width="10" stroke-dasharray="314" stroke-dashoffset="78.5" stroke-linecap="round" transform="rotate(-90 60 60)"></circle>
+          </svg>
+          <div style="position: absolute; text-align: center;">
+            <div style="font-size: 24px; font-weight: bold;">75%</div>
+            <div style="font-size: 12px; color: #64748b;">Completed</div>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-around; margin-top: 16px; font-size: 13px;">
+          <div style="text-align: center;"><div style="font-weight:bold;">12</div><div style="color: #64748b;">Done</div></div>
+          <div style="text-align: center;"><div style="font-weight:bold;">4</div><div style="color: #64748b;">In Progress</div></div>
+          <div style="text-align: center;"><div style="font-weight:bold;">2</div><div style="color: #64748b;">To Do</div></div>
+        </div>
+        <textarea class="nc-code-storage" id="code-nc-tasks" readonly><!-- Tasks Card -->
+<div class="dashboard-card">
+  <!-- Tasks details -->
+</div></textarea>
+      </div>
+
+      <!-- ── 10. RECENT ACTIVITY ── -->
+      <div class="dashboard-card nc-card" id="nc-activity">
+        <div class="nc-copy-btn" onclick="copyCode('nc-activity')" title="Copy Code">
+          <i class="fa-regular fa-copy"></i>
+          <span class="copy-label">Copy</span>
+        </div>
+        <div class="card-header">
+          <h2>Recent Activity</h2>
+          <a href="#" style="color: #3b82f6; font-size: 13px; text-decoration: none;">View All</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+          <div style="display: flex; gap: 12px;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); color: #3b82f6; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+            <div>
+              <div style="font-weight: 500; font-size: 14px;">Invoice #1024 paid</div>
+              <div style="font-size: 12px; color: #64748b;">By Client XYZ • 2m ago</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(168, 85, 247, 0.1); color: #a855f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-code-merge"></i></div>
+            <div>
+              <div style="font-weight: 500; font-size: 14px;">Code merged to main</div>
+              <div style="font-size: 12px; color: #64748b;">By Sarah • 1h ago</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(245, 158, 11, 0.1); color: #f59e0b; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div>
+              <div style="font-weight: 500; font-size: 14px;">Database backup delayed</div>
+              <div style="font-size: 12px; color: #64748b;">System • 3h ago</div>
+            </div>
+          </div>
+        </div>
+        <textarea class="nc-code-storage" id="code-nc-activity" readonly><!-- Activity Card -->
+<div class="dashboard-card">
+  <!-- Activity details -->
+</div></textarea>
       </div>
 
     </div><!-- /.new-grid -->
