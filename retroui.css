@@ -749,9 +749,28 @@ body{
 
 }
 
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00e0ff;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  padding: 14px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: none; /* hidden by default */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.scroll-top-btn:hover {
+  background: #00bcd4;
+  transform: translateY(-3px);
+}
 /* =========================================================
    EXTRA PIXEL COMPONENTS CSS
-========================================================= */
 
 .pixel-switch {
   position: relative;

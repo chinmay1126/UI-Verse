@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprehensive Toast Notification System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Toast Notifications</h1>
+    <p>Click the buttons below to trigger different types of toast notifications.</p>
+    <div class="button-group">
+      <button class="btn btn-success" onclick="showToast('success', 'Successfully saved your changes!')">Success Toast</button>
+      <button class="btn btn-error" onclick="showToast('error', 'Error! Something went wrong.')">Error Toast</button>
+      <button class="btn btn-warning" onclick="showToast('warning', 'Warning: Please check your input.')">Warning Toast</button>
+      <button class="btn btn-info" onclick="showToast('info', 'Info: New update available.')">Info Toast</button>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -134,6 +134,71 @@ body.light .sidebar { background-color: #ffffff; }
   filter: drop-shadow(0 0 8px var(--accent-orange-glow));
 }
 
+/* =========================================================
+   MOBILE RESPONSIVENESS FIXES
+
+@media (max-width: 768px) {
+  /* Component cards stack neatly */
+  .component-card {
+    padding: 16px;
+    margin: 10px 0;
+  }
+
+  /* Star rating: larger touch targets, wrap if needed */
+  .star-rating {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .star-rating i {
+    font-size: 28px; /* smaller but touch-friendly */
+  }
+
+  /* Emoji rating: center and scale up */
+  .emoji-rating {
+    justify-content: center;
+    gap: 12px;
+  }
+  .emoji-rating span {
+    font-size: 36px;
+    padding: 8px;
+  }
+
+  /* Review bars: full width, consistent spacing */
+  .review-bars {
+    gap: 12px;
+  }
+
+  /* Slider rating (if you have one) */
+  .slider-rating input[type="range"] {
+    width: 100%;
+    height: 32px; /* bigger thumb for touch */
+  }
+
+  /* Tabs: collapse into dropdown */
+  .rating-tabs {
+    display: none;
+  }
+  .rating-tabs-dropdown {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    background: #11141b;
+    color: #fff;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+}
+
+/* =========================================================
+   STAR RATING
+
+.star-rating{
+
+  display:flex;
+
+  gap:14px;
 .sidebar-brand .brand-text {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
