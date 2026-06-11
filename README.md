@@ -431,6 +431,46 @@ You can consume the components in your HTML using the built ESM or UMD bundles u
 
 ---
 
+## 🎨 Storybook Component Explorer & Automated Documentation
+
+UIverse features an automated **Storybook Component Explorer** that showcases all 50+ components. 
+
+### Features of the Storybook Catalog:
+1. **Automated Generation**: A Node.js script (`scripts/generate-storybook-stories.js`) parses definitions from `data/components.json`, extracts Visual Showcase HTML, resolves stylesheet/script assets, and dynamically generates 50+ Storybook stories under `stories/generated/`.
+2. **Interactive Playground**: Preview components in an isolated Shadow DOM environment to verify styling fidelity.
+3. **Automated Documentation**: Each story features an interactive documentation tab containing:
+   - **Usage details** (HTML snippets and stylesheet/script dependencies).
+   - **Accessibility (a11y) Checklist** (ARIA compliance, keyboard access, color contrast).
+   - **Test Cases** (responsive layouts, hover transitions, and state checks).
+
+### Key Commands
+
+* **Run Storybook Dev Server**:
+  ```bash
+  npm run storybook
+  ```
+  Starts the local Storybook dev server on port `6006`.
+
+* **Build Storybook Static Site**:
+  ```bash
+  npm run build-storybook
+  ```
+  Generates a production build of the static Storybook site under `storybook-static/`.
+
+* **Verify and Generate Stories**:
+  ```bash
+  npm run storybook:check
+  ```
+  Runs the generation script to ensure all component stories are generated and up to date.
+
+* **Run Storybook Integration / Snapshot Tests**:
+  ```bash
+  npm run test:storybook
+  ```
+  Runs visual snapshot tests using Playwright against the local Storybook dev server.
+
+---
+
 ## ⭐ Support
 
 If you like this project:
