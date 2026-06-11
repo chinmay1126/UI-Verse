@@ -1,125 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="../dist/shared.css">
-  <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frontend Quiz</title>
 
-  <title>QuizMaster UI</title>
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="quiz.css" />
+<link rel="stylesheet" href="quiz.css">
 </head>
-
 <body>
-  <!-- Animated Background -->
-  <div class="bg-glow glow1"></div>
-  <div class="bg-glow glow2"></div>
+<header class="header">
 
-  <div class="quiz-wrapper">
+    <div class="logo">
+        ⚡ QuizMaster
+    </div>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
+    <nav>
 
-      <div class="logo">
-        <span>⚡</span>
-        QuizMaster
-      </div>
+        <a href="#">Home</a>
+        <a href="#">Categories</a>
+        <a href="#">Leaderboard</a>
+        <a href="#">About</a>
 
-      <div class="quiz-info">
+    </nav>
 
-        <div class="info-box">
-          <small>Question</small>
-          <strong>01/10</strong>
+    <button class="login-btn">
+        Sign In
+    </button>
+
+</header>
+<section class="hero">
+    <div class="container">
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            🚀 New Interactive Quizzes
+        </span>
+
+        <h1>
+            Test Your Skills.<br>
+            Learn Faster.
+        </h1>
+
+        <p>
+            Play engaging quizzes with timers,
+            achievements, rewards and leaderboards.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn">
+                Start Quiz
+            </button>
+
+            <button class="secondary-btn">
+                View Leaderboard
+            </button>
+
         </div>
 
-        <div class="info-box">
-          <small>Time</small>
-          <strong id="timer">30s</strong>
+    </div>
+    <div class="hero-stats">
+
+    <div>
+        <h2>10K+</h2>
+        <p>Players</p>
+    </div>
+
+    <div>
+        <h2>500+</h2>
+        <p>Quizzes</p>
+    </div>
+
+    <div>
+        <h2>50+</h2>
+        <p>Categories</p>
+    </div>
+
+</div>
+</div>
+
+</section>
+
+
+<div class="dashboard">
+
+    <div class="card streak-card">
+        <div class="icon">🔥</div>
+        <h3>Current Streak</h3>
+        <h1 id="streak">12</h1>
+        <p>Questions in a row</p>
+    </div>
+
+    <div class="card xp-card">
+        <div class="icon">⭐</div>
+        <h3>Level 8</h3>
+
+        <div class="xp-bar">
+            <div class="xp-fill" id="xpFill"></div>
         </div>
 
-      </div>
+        <span id="xpText">
+            720 / 1000 XP
+        </span>
+    </div>
+
+    <div class="card badge-card">
+        <div class="icon">🏆</div>
+        <h3>Achievements</h3>
+
+        <div class="badges">
+
+            <span class="badge">🚀 Fast Learner</span>
+            <span class="badge">🔥 Streak Master</span>
+            <span class="badge">⭐ Expert</span>
+
+        </div>
+    </div>
+
+    <div class="card progress-card">
+
+        <h3>Quiz Progress</h3>
+
+        <div class="progress-circle">
+
+            <svg width="160" height="160">
+
+                <circle
+                class="bg"
+                cx="80"
+                cy="80"
+                r="70">
+                </circle>
+
+                <circle
+                class="progress"
+                id="progressCircle"
+                cx="80"
+                cy="80"
+                r="70">
+                </circle>
+
+            </svg>
+
+            <div class="progress-text">
+                <span id="percentage">
+                    75%
+                </span>
+            </div>
+
+        </div>
 
     </div>
 
-    <!-- Quiz Card -->
+</div>
+
+<section class="kahoot-section">
+
+    <h2>Choose Your Answer</h2>
+
+    <div class="kahoot-grid">
+
+        <button class="answer red">
+            ▲ HTML
+        </button>
+
+        <button class="answer blue">
+            ◆ CSS
+        </button>
+
+        <button class="answer yellow">
+            ● Java
+        </button>
+
+        <button class="answer green">
+            ■ JavaScript
+        </button>
+
+    </div>
+
+</section>
+<section class="quiz-section">
+   
     <div class="quiz-card">
 
-      <!-- Progress -->
-      <div class="progress-area">
+    <div class="category">
+        🚀 Frontend Quiz
+    </div>
 
-        <div class="progress-text">
-          <span>Progress</span>
-          <span>10%</span>
-        </div>
+    <h2 id="question">
+        Loading Question...
+    </h2>
 
-        <div class="progress-bar">
-          <div class="progress-fill"></div>
-        </div>
+    <div id="answers" class="answers"></div>
 
-      </div>
+    <div id="feedback"></div>
 
-      <!-- Category -->
-      <div class="category-badge">
-        Web Development
-      </div>
+    <div class="bottom">
 
-      <!-- Question -->
-      <h1 id="question">
-        What does HTML stand for?
-      </h1>
-
-      <!-- Options -->
-      <div class="options">
-
-        <button class="option-btn">
-          <span>A.</span>
-          Hyper Text Markup Language
-        </button>
-
-        <button class="option-btn">
-          <span>B.</span>
-          High Transfer Machine Language
-        </button>
-
-        <button class="option-btn">
-          <span>C.</span>
-          Hyper Transfer Markup Level
-        </button>
-
-        <button class="option-btn">
-          <span>D.</span>
-          Home Tool Markup Language
-        </button>
-
-      </div>
-
-      <!-- Bottom Controls -->
-      <div class="bottom-controls">
-
-        <div class="score-card">
-          🏆 Score:
-          <span id="score">0</span>
+        <div class="score">
+            Score:
+            <span id="score">0</span>
         </div>
 
         <button id="nextBtn">
-          Next Question →
+            Next Question →
         </button>
-
-      </div>
 
     </div>
 
-  </div>
+</div>
 
-  <script src="quiz.js"></script>
+<div class="timer-container">
 
-      <script src="../dist/shared.js"></script>
+    <div class="timer-header">
+
+        <span>⏳ Time Remaining</span>
+
+        <span id="timerText">
+            30s
+        </span>
+
+    </div>
+
+    <div class="timer-bar">
+        <div id="timerFill"></div>
+    </div>
+
+</div>
+
+<audio id="correctSound">
+    <source src="correct.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="wrongSound">
+    <source src="wrong.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="confetti"></canvas>
+
+   
+</section>
+
+
+
+<script src="quiz.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
 </body>
 </html>

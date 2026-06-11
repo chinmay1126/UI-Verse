@@ -1,3 +1,8 @@
+/* ==========================================================================
+   UIVERSE DIVIDER COMPONENTS LIBRARY - CORE ARCHITECTURE STYLESHEET
+   ========================================================================== */
+
+/* --- Design System Tokens & Variable Declarations --- */
 :root {
   --uiv-bg-main: #0f0f11;
   --uiv-bg-surface: #18181c;
