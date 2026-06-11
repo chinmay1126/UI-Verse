@@ -22,6 +22,15 @@ function normalizeJson(content) {
   return JSON.stringify(JSON.parse(content));
 }
 
+
+function fillMissingKeyStubs(targetLocale, defaultLocale) {
+  for (const key of Object.keys(defaultLocale)) {
+    if (!targetLocale[key]) {
+      targetLocale[key] = `[STUB] ${defaultLocale[key]}`;
+    }
+  }
+}
+    
 function syncLocales({
   sourceDir = DEFAULT_SOURCE_DIR,
   targetDir = DEFAULT_TARGET_DIR,

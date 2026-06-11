@@ -25,7 +25,7 @@ export class UVThemeSwitcher extends HTMLElement {
     const currentTheme = this._getCurrentTheme();
 
     this.innerHTML = `
-      <label class="uv-theme-switcher" aria-label="Theme selector">
+      <label class="uv-theme-switcher" aria-label="Theme selector" aria-live="polite">
         <span class="uv-theme-switcher__label">Theme</span>
         <select class="uv-theme-switcher__select">
           ${themeNames.map((themeName) => `
