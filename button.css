@@ -4,6 +4,22 @@
    =================================================== */
 
 /* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+.main-home {
+  margin-left: var(--sidebar-w, 260px);
+  padding: 110px 40px 40px 40px;
+  min-height: 100vh;
+}
+
+@media (max-width: 992px) {
+  .main-home {
+    margin-left: 0;
+    padding: 100px 20px 20px 20px;
+  }
+}
+
+/* ============================================================
    PAGE HERO
    ============================================================ */
 .page-hero {
@@ -296,8 +312,8 @@
    ============================================================ */
 .button-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
 }
 
 .component-card {
@@ -309,8 +325,6 @@
   flex-direction: column;
   gap: 16px;
   transition: all var(--transition);
-  opacity: 0;
-  transform: translateY(16px);
 }
 
 .component-card.in-view {
