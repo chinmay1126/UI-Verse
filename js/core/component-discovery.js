@@ -419,7 +419,19 @@
     };
   }
 
-  function rankSearchResults(items, query, filters = {}, sort = 'relevance', limit = DEFAULT_LIMIT) {
+  
+function prioritizeTitleMatch(results, query) {
+  return results.sort((a, b) => {
+    const aTitle = (a.name || '').toLowerCase();
+    const bTitle = (b.name || '').toLowerCase();
+    const q = query.toLowerCase();
+    if (aTitle.includes(q) && !bTitle.includes(q)) return -1;
+    if (bTitle.includes(q) && !aTitle.includes(q)) return 1;
+    return 0;
+  });
+}
+    
+function rankSearchResults(items, query, filters = {}, sort = 'relevance', limit = DEFAULT_LIMIT) {
     const filtered = items.filter((item) => matchesFilters(item, filters));
     const scored = filtered.map((item) => {
       const ranking = scoreSearchResult(item, query);
