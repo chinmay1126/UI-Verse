@@ -118,6 +118,19 @@ function insertOrReplaceMeta(html, policy) {
   return html.replace(headMatch[0], `${headMatch[0]}\n  ${metaTag}`);
 }
 
+
+function generateStyleHashes(content) {
+  const crypto = require('crypto');
+  const hashes = [];
+  const matches = content.match(/<style[^>]*>([\s\S]*?)<\/style>/gi) || [];
+  for (const styleTag of matches) {
+    const css = styleTag.replace(/<style[^>]*>|<\/style>/gi, '');
+    const hash = crypto.createHash('sha256').update(css).digest('base64');
+    hashes.push(`'sha256-${hash}'`);
+  }
+  return hashes;
+}
+    
 function processFile(htmlFile, checkOnly) {
   const original = fs.readFileSync(htmlFile, 'utf8');
   const { scriptHashes, styleHashes } = collectHashes(original);
