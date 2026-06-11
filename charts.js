@@ -1,6 +1,22 @@
 // charts.js - Logic for data visualization components
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Resize Observer for charts
+    if (typeof ResizeObserver !== 'undefined') {
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                const canvas = entry.target.querySelector('canvas');
+                if (canvas) {
+                    canvas.style.width = '100%';
+                    canvas.style.height = '100%';
+                }
+            }
+        });
+        const chartContainers = document.querySelectorAll('.chart-container, .bar-chart-bars');
+        chartContainers.forEach(container => resizeObserver.observe(container));
+    }
+    
     
     // 1. Initialize Bar Chart
     const barChartContainer = document.getElementById('bar-chart-bars');
