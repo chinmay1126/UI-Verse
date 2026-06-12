@@ -58,6 +58,14 @@ const Bootstrap = {
       UIverse.register('ComponentIndex', ComponentIndex, dependenciesFor('ComponentIndex'));
     }
 
+    if (typeof ComponentRecommendations !== 'undefined') {
+      UIverse.register('ComponentRecommendations', ComponentRecommendations, dependenciesFor('ComponentRecommendations'));
+    }
+
+    if (typeof RecommendationsUI !== 'undefined') {
+      UIverse.register('RecommendationsUI', RecommendationsUI, dependenciesFor('RecommendationsUI'), { domSelector: 'main.main-home' });
+    }
+
     // Register feature modules (with optional conditional initialization)
     if (typeof Toast !== 'undefined') {
       UIverse.register('Toast', Toast);
@@ -134,6 +142,14 @@ const Bootstrap = {
 
     if (typeof Download !== 'undefined') {
       UIverse.register('Download', Download);
+    }
+
+    if (typeof BundleExporter !== 'undefined') {
+      UIverse.register('BundleExporter', BundleExporter, dependenciesFor('BundleExporter'));
+    }
+
+    if (typeof BundleExporterUI !== 'undefined') {
+      UIverse.register('BundleExporterUI', BundleExporterUI, dependenciesFor('BundleExporterUI'), { domSelector: '.component-card' });
     }
 
     if (typeof Recent !== 'undefined') {

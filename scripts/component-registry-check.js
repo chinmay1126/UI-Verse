@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { buildRegistryData } = require('./generate-component-registry');
 
 const DEFAULT_COMPONENTS_FILE = path.join('data', 'components.json');
 const DEFAULT_META_DIR = path.join('data', 'meta');
@@ -85,6 +86,7 @@ function validateComponentRegistry(options = {}) {
   const metaDir = path.join(rootDir, options.metaDir || DEFAULT_META_DIR);
   const snippetsDir = path.join(rootDir, options.snippetsDir || DEFAULT_SNIPPETS_DIR);
   const snippetsIndexPath = path.join(rootDir, options.snippetsIndexFile || DEFAULT_SNIPPETS_INDEX);
+  const registryFile = path.join(rootDir, 'data', 'registry.json');
 
   const errors = [];
   const warnings = [];
@@ -120,6 +122,16 @@ function validateComponentRegistry(options = {}) {
     };
   }
 
+  const expectedRegistry = buildRegistryData({ rootDir });
+  const actualRegistryText = fs.existsSync(registryFile) ? fs.readFileSync(registryFile, 'utf8') : '';
+  const expectedRegistryText = `${JSON.stringify(expectedRegistry, null, 2)}\n`;
+
+  if (!actualRegistryText) {
+    errors.push(`Missing registry file: ${path.relative(rootDir, registryFile)}`);
+  } else if (actualRegistryText !== expectedRegistryText) {
+    errors.push('data/registry.json is out of date. Regenerate it with npm run components:registry:generate.');
+  }
+
   const metaEntries = getMetaEntries(metaDir);
   const snippetIds = getSnippetIds(snippetsDir, snippetsIndexPath);
 
@@ -128,6 +140,15 @@ function validateComponentRegistry(options = {}) {
   const pathToId = new Map();
 
   registry.forEach((entry, index) => {
+
+    // JSON structural check
+    if (!entry.title || typeof entry.title !== 'string') {
+      errors.push(`[${id}] Component is missing a valid 'title' string.`);
+    }
+    if (!entry.category || typeof entry.category !== 'string') {
+      errors.push(`[${id}] Component is missing a valid 'category' string.`);
+    }
+    
     const marker = `registry entry #${index + 1}`;
     const id = String(entry && entry.id || '').trim();
     const pagePath = String(entry && entry.path || '').trim();

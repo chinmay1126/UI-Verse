@@ -174,6 +174,22 @@ function analyzeFile(filePath, options = {}) {
     }));
   }
 
+  
+  // Check touch target click sizes (interactive controls should be large enough)
+  const buttons = content.match(/<button\b[^>]*>/gi) || [];
+  buttons.forEach(btn => {
+    if (!/style\s*=\s*['"][^'"]*min-width[^'"]*['"]/i.test(btn) && !/min-height/i.test(btn)) {
+      issues.push(buildIssue({
+        rule: 'touch-target-size',
+        severity: 'warning',
+        message: 'Interactive button might lack standard touch-target dimension defaults.',
+        detail: 'Ensure elements are at least 44x44px for touch interfaces.',
+        selector: 'button',
+        fixable: false
+      }));
+    }
+  });
+    
   const headingMatches = content.match(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>/gi) || [];
   const emptyHeadings = headingMatches.filter((heading) => stripTags(heading).length === 0);
   if (emptyHeadings.length > 0) {

@@ -223,6 +223,21 @@ allImages.forEach(img => {
 });
 
 
+
+window.addEventListener("scroll", () => {
+
+  const scroll =
+    document.documentElement.scrollTop;
+
+  const height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  document.getElementById("scrollProgress")
+    .style.width =
+      (scroll / height) * 100 + "%";
+
+});
 /* ================= KEYBOARD IMAGE NAVIGATION ================= */
 
 let currentImageIndex = 0;

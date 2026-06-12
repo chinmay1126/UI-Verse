@@ -92,12 +92,23 @@ cd UI-Verse
 
 ---
 
-### 3️⃣ Open the Project
+### 3️⃣ Setup Dependencies and Build
+To configure local development tooling and TypeScript modules:
+```bash
+npm install
+npm run build
+```
 
-**Option A — Quick Preview:**
-Simply open `index.html` in your browser by double-clicking it.
+---
 
-**Option B — Live Server (Recommended):**
+### 4️⃣ Previewing & Running
+**Option A — Launch Storybook (Recommended):**
+To view components interactively inside the Storybook showcase environment:
+```bash
+npm run storybook
+```
+
+**Option B — Live Server (VS Code Extension):**
 If you have VS Code, install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension, right-click `index.html`, and select "Open with Live Server". This provides auto-reload on file changes.
 
 **Option C — Python HTTP Server:**
@@ -369,6 +380,94 @@ git push origin feature/your-feature-name
 * Help beginners start open-source contributions
 * Build a large UI component library
 * Create a developer-friendly UI showcase platform
+
+---
+
+## 📦 Web Components & TypeScript Build Pipeline
+
+Core interactive UI components are migrated to TypeScript, modularized under `src/components/*`, and built into ESM and UMD formats.
+
+### Build and Package Commands
+
+* **Build**: Compiles TypeScript and bundles the modules.
+  ```bash
+  npm run build
+  ```
+* **Verify / Test**: Runs the Playwright test suite for Web Components.
+  ```bash
+  npm run wc:test
+  ```
+* **Package Check**: Validates the built package structure.
+  ```bash
+  npm run package:check
+  ```
+
+### Usage
+
+You can consume the components in your HTML using the built ESM or UMD bundles under the `dist/` directory.
+
+#### ESM (ES Modules) Usage
+```html
+<script type="module">
+  import '/dist/index.esm.js';
+</script>
+
+<uv-button>Click Me</uv-button>
+<uv-modal>
+  <div>Modal Content</div>
+</uv-modal>
+```
+
+#### Individual Component Imports (ESM)
+```html
+<script type="module" src="/dist/components/uv-button.js"></script>
+<script type="module" src="/dist/components/uv-modal.js"></script>
+```
+
+#### UMD (Universal Module Definition) Usage
+```html
+<script src="/dist/index.umd.js"></script>
+```
+
+---
+
+## 🎨 Storybook Component Explorer & Automated Documentation
+
+UIverse features an automated **Storybook Component Explorer** that showcases all 50+ components. 
+
+### Features of the Storybook Catalog:
+1. **Automated Generation**: A Node.js script (`scripts/generate-storybook-stories.js`) parses definitions from `data/components.json`, extracts Visual Showcase HTML, resolves stylesheet/script assets, and dynamically generates 50+ Storybook stories under `stories/generated/`.
+2. **Interactive Playground**: Preview components in an isolated Shadow DOM environment to verify styling fidelity.
+3. **Automated Documentation**: Each story features an interactive documentation tab containing:
+   - **Usage details** (HTML snippets and stylesheet/script dependencies).
+   - **Accessibility (a11y) Checklist** (ARIA compliance, keyboard access, color contrast).
+   - **Test Cases** (responsive layouts, hover transitions, and state checks).
+
+### Key Commands
+
+* **Run Storybook Dev Server**:
+  ```bash
+  npm run storybook
+  ```
+  Starts the local Storybook dev server on port `6006`.
+
+* **Build Storybook Static Site**:
+  ```bash
+  npm run build-storybook
+  ```
+  Generates a production build of the static Storybook site under `storybook-static/`.
+
+* **Verify and Generate Stories**:
+  ```bash
+  npm run storybook:check
+  ```
+  Runs the generation script to ensure all component stories are generated and up to date.
+
+* **Run Storybook Integration / Snapshot Tests**:
+  ```bash
+  npm run test:storybook
+  ```
+  Runs visual snapshot tests using Playwright against the local Storybook dev server.
 
 ---
 
