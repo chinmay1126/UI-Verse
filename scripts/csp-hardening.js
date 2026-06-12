@@ -28,7 +28,7 @@ function walk(dir, results = []) {
 }
 
 function hashValue(value) {
-  return `sha256-${crypto.createHash('sha256').update(value, 'utf8').digest('base64')}`;
+  return `'sha256-${crypto.createHash('sha256').update(value, 'utf8').digest('base64')}'`;
 }
 
 function collectHashes(html) {
@@ -46,15 +46,15 @@ function collectHashes(html) {
 
   let match;
   while ((match = INLINE_SCRIPT_RE.exec(cleanHtml)) !== null) {
-    const code = match[1].trim();
-    if (code) {
+    const code = match[1].replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    if (code.trim()) {
       scriptHashes.add(hashValue(code));
     }
   }
 
   while ((match = INLINE_STYLE_RE.exec(cleanHtml)) !== null) {
-    const style = match[1].trim();
-    if (style) {
+    const style = match[1].replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    if (style.trim()) {
       styleHashes.add(hashValue(style));
     }
   }

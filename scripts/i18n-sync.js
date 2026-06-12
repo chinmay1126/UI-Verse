@@ -81,7 +81,7 @@ function syncLocales({
   }
 
   return {
-    ok: mismatches.length > 0,
+    ok: checkOnly ? mismatches.length === 0 : true,
     sourceDir,
     targetDir,
     mismatches

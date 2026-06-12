@@ -383,6 +383,54 @@ git push origin feature/your-feature-name
 
 ---
 
+## 📦 Web Components & TypeScript Build Pipeline
+
+Core interactive UI components are migrated to TypeScript, modularized under `src/components/*`, and built into ESM and UMD formats.
+
+### Build and Package Commands
+
+* **Build**: Compiles TypeScript and bundles the modules.
+  ```bash
+  npm run build
+  ```
+* **Verify / Test**: Runs the Playwright test suite for Web Components.
+  ```bash
+  npm run wc:test
+  ```
+* **Package Check**: Validates the built package structure.
+  ```bash
+  npm run package:check
+  ```
+
+### Usage
+
+You can consume the components in your HTML using the built ESM or UMD bundles under the `dist/` directory.
+
+#### ESM (ES Modules) Usage
+```html
+<script type="module">
+  import '/dist/index.esm.js';
+</script>
+
+<uv-button>Click Me</uv-button>
+<uv-modal>
+  <div>Modal Content</div>
+</uv-modal>
+```
+
+#### Individual Component Imports (ESM)
+```html
+<script type="module" src="/dist/components/uv-button.js"></script>
+<script type="module" src="/dist/components/uv-modal.js"></script>
+```
+
+#### UMD (Universal Module Definition) Usage
+```html
+<script src="/dist/index.umd.js"></script>
+```
+
+---
+
 ## ⭐ Support
 
 If you like this project:

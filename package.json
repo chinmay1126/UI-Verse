@@ -14,7 +14,9 @@
         "./modal": "./dist/components/uv-modal.js",
         "./tooltip": "./dist/components/uv-tooltip.js",
         "./language-switcher": "./dist/components/uv-language-switcher.js",
-        "./theme-switcher": "./dist/components/uv-theme-switcher.js"
+        "./theme-switcher": "./dist/components/uv-theme-switcher.js",
+        "./dropdown": "./dist/components/uv-dropdown.js",
+        "./tabs": "./dist/components/uv-tabs.js"
     },
     "files": [
         "dist/**",
@@ -62,7 +64,7 @@
         "performance:budgets": "node scripts/perf-budget-checker.js",
         "performance:budgets:verify": "node scripts/perf-budget-checker.js --check",
         "wc:register": "node -e \"console.log('Web components are ES modules; import them in the browser via <script type=\\\"module\\\">')\"",
-        "wc:test": "playwright test tests/webcomponents --project=chromium --reporter=list",
+        "wc:test": "playwright test tests/webcomponents --config=playwright.webcomponents.config.ts --project=chromium --reporter=list",
         "i18n:test": "playwright test tests/i18n --config=playwright.i18n.config.ts --reporter=list",
         "dependencies:analyze": "node scripts/dependency-analyzer.js",
         "dependencies:graph": "node scripts/generate-dependency-graph.js",
