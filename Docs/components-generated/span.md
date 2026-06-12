@@ -1,242 +1,127 @@
-# Span Component
+# Span Components
 
 Component ID: span
 
 - Path: span.html
-- Version: 0.1.0
-- Documentation score: 95/100
-- Tags: html, text, badges, labels
-- Description: Stylish span elements for highlights, labels, badges, inline text, and status indicators.
+- Version: 0.0.1
+- Documentation score: 90/100
+- Tags: span, inline, text, code
+- Description: Span and inline UI elements
 
 ## Assets
 
-- CSS: css/main.css, span.css, https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+- CSS: span.css
 - JS: -
 
 ## Headings
 
-- H1: Span Components
-- H2: Inline Highlight Text
-- H2: Status Badges
-- H2: Notification Labels
-- H3: Success
-- H3: Warning
-- H3: Error
+- H1: Beautiful Inline UI Elements For Modern Interfaces
+- H2: Component Library
+- H1: 40+
+- H1: 100%
+- H1: Responsive
+- H1: Modern
+- H2: Explore Components
+- H3: Labels
 
 ## Usage Snippet
 
 ```html
-<main class="main-home">
+<section class="hero">
 
-<!-- ================= HERO ================= -->
+<div class="hero-content">
 
-<div class="span-page-hero">
+<div class="hero-badge">
 
-  <div class="breadcrumb">
-
-    <a href="index.html">
-      Home
-    </a>
-
-    <i class="fa-solid fa-chevron-right"></i>
-
-    <span>
-      Span
-    </span>
-
-  </div>
-
-  <h1 class="page-title">
-    Span Components
-  </h1>
-
-  <p class="page-desc">
-    Inline span UI components for highlights,
-    labels, chips, badges, and text emphasis.
-  </p>
-
-  <div class="page-meta">
-
-    <span class="meta-badge">
-      <i class="fa-solid fa-highlighter"></i>
-      Text UI
-    </span>
-
-    <span class="meta-badge">
-      <i class="fa-solid fa-tag"></i>
-      Badges
-    </span>
-
-    <span class="meta-badge">
-      <i class="fa-solid fa-code"></i>
-      HTML + CSS
-    </span>
-
-  </div>
+✨ 40+ Premium Span Components
 
 </div>
 
-<!-- ================= COMPONENT CARD ================= -->
+<h1>
 
-<div class="component-card">
+Beautiful
 
-  <div class="card-top">
+<span>
 
-    <div>
+Inline UI Elements
 
-      <h2 class="card-label">
-        Inline Highlight Text
-      </h2>
+</span>
 
-    </div>
+For Modern Interfaces
 
-    <span class="card-tag">
-      Typography
-    </span>
+</h1>
 
-  </div>
+<p>
 
-  <p class="card-desc">
-    Beautiful inline text highlights
-    using reusable span classes.
-  </p>
+Create elegant badges,
+status indicators,
+labels, chips, tooltips,
+keyboard shortcuts,
+version tags, and
+highlighted text using
+lightweight reusable
+span components.
 
-  <div class="preview-box">
+</p>
 
-    <p class="demo-text">
+<div class="hero-actions">
 
-      Build modern UI with
+<button class="primary-btn">
 
-      <span class="highlight-span">
-        reusable spans
-      </span>
+Explore Components
 
-      and stylish typography.
+</button>
 
-    </p>
+<button class="outline-btn">
 
-  </div>
+View Examples
 
-  <!-- ACTIONS -->
-
-  <div class="actions">
-
-    <button class="action-btn view-btn">
-
-      <i class="fa-solid fa-code"></i>
-      View Code
-
-    </button>
-
-    <button class="action-btn copy-btn">
-
-      <i class="fa-solid fa-copy"></i>
-      Copy
-
-    </button>
-
-  </div>
-
-  <!-- CODE -->
-
-  <pre class="code-block"><code>
-
-&lt;p&gt;
-
-  Build modern UI with
-
-  &lt;span class="highlight-span"&gt;
-    reusable spans
-  &lt;/span&gt;
-
-  and stylish typography.
-
-&lt;/p&gt;
-
-  </code></pre>
+</button>
 
 </div>
 
-<!-- ================= SECOND COMPONENT ================= -->
+</div>
 
-<div class="component-card">
+<div class="hero-preview">
 
-  <div class="card-top">
+<div class="preview-card">
 
-    <div>
+<p>
 
-      <h2 class="card-label">
-        Status Badges
-      </h2>
+Status:
+<span class="demo-online">
 
-    </div>
+● Online
 
-    <span class="card-tag">
-      Badge UI
-    </span>
+</span>
 
-  </div>
+</p>
 
-  <p class="card-desc">
-    Colorful status indicators and labels
-    built using inline span elements.
-  </p>
+<p>
 
-  <div class="badge-preview">
+Plan:
+<span class="demo-pill">
 
-    <span class="status-badge success">
-      Success
-    </span>
+Pro
 
-    <span class="status-badge warning">
-      Warning
-    </span>
+</span>
 
-    <span class="status-badge error">
-      Error
-    </span>
+</p>
 
-  </div>
+<p>
 
-  <!-- ACTIONS -->
+Version:
+<span class="demo-version">
 
-  <div class="actions">
+v2.1
 
-    <button class="action-btn view-btn">
+</span>
 
-      <i class="fa-solid fa-code"></i>
-      View Code
-
-    </button>
-
-    <button class="action-btn copy-btn">
-
-      <i class="fa-solid fa-copy"></i>
-      Copy
-
-    </button>
-
-  </div>
-
-  <!-- CODE -->
-
-  <pre class="code-block"><code>
-
-&lt;span class="status-badge success"&gt;
-  Success
-&lt;/span&gt;
-
-&lt;span class="status-badge warning"&gt;
-  Warning
-&lt;/span&gt;
-
-&lt;span class="status-badge error"&gt;
-  Error
-&lt;/span&gt;
-
-  </code></pre>
+</p>
 
 </div>
 
-</main>
+</div>
+
+</section>
 ```
