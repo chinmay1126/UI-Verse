@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' 'sha256-DyOU3vTEOrRYHP51xJyzVhcn5gNvVc7VyEDpkEFn7Gg=' 'sha256-biLFinpqYMtWHmXfkA1BPeCY0/fNt46SAZ+BBk5YUog='; style-src-attr 'unsafe-hashes' 'sha256-DyOU3vTEOrRYHP51xJyzVhcn5gNvVc7VyEDpkEFn7Gg=' 'sha256-biLFinpqYMtWHmXfkA1BPeCY0/fNt46SAZ+BBk5YUog='">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIverse Custom Range Sliders Component Library</title>
+    <link rel="stylesheet" href="slider-components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="uiv-dark-theme">
+
+    <nav class="uiv-navbar" aria-label="Main Infrastructure Navigation">
+        <div class="uiv-nav-container">
+            <div class="uiv-nav-brand">
+                <div class="uiv-logo">
+                    <span class="logo-accent-u">UI</span><span class="logo-main-text">verse</span>
+                </div>
+                <div class="uiv-brand-divider" role="separator"></div>
+                <span class="uiv-library-badge">Sliders Module v1.2</span>
+            </div>
+            
+            <div class="uiv-nav-search-wrapper">
+                <i class="fas fa-search search-lens-icon" aria-hidden="true"></i>
+                <input type="text" id="uiv-global-search" placeholder="Search 30+ custom sliders (e.g., neon, dual-handle, tooltips)..." autocomplete="off" aria-label="Search sliders catalog">
+                <span class="uiv-search-shortcut-key" aria-hidden="true">/</span>
+            </div>
+            
+            <div class="uiv-nav-actions-group">
+                <button id="uiv-theme-toggle" class="uiv-action-icon-btn" title="Toggle System Theme (Shift+T)" aria-label="Toggle light or dark theme state">
+                    <i class="fas fa-moon theme-icon-dark"></i>
+                    <i class="fas fa-sun theme-icon-light" style="display: none;"></i>
+                </button>
+                <a href="https://github.com" target="_blank" class="uiv-action-icon-btn" title="Visit Open Source Repository" aria-label="Visit GitHub Repository">
+                    <i class="fab fa-github"></i>
+                </a>
+                <button id="uiv-creator-trigger-btn" class="uiv-btn-primary">
+                    <i class="fas fa-plus" aria-hidden="true"></i> <span>Generate Slider</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="uiv-application-layout">
+        
+        <aside class="uiv-sidebar" aria-label="Categories and Analytics Sidebar">
+            <div class="uiv-sidebar-inner">
+                <div class="uiv-sidebar-section">
+                    <h3 class="uiv-sidebar-heading">Filter Categories</h3>
+                    <ul class="uiv-sidebar-menu" id="uiv-category-menu">
+                        <li class="uiv-menu-item uiv-active" data-category="all" role="button" tabindex="0">
+                            <i class="fas fa-sliders-h" aria-hidden="true"></i>
+                            <span class="uiv-menu-label">All Variations</span>
+                            <span class="uiv-item-count-badge" id="count-all">0</span>
+                        </li>
+                        <li class="uiv-menu-item" data-category="minimal" role="button" tabindex="0">
+                            <i class="fas fa-minus" aria-hidden="true"></i>
+                            <span class="uiv-menu-label">Minimal & Basic</span>
+                            <span class="uiv-item-count-badge" id="count-minimal">0</span>
+                        </li>
+                        <li class="uiv-menu-item" data-category="vfx" role="button" tabindex="0">
+                            <i class="fas fa-palette" aria-hidden="true"></i>
+                            <span class="uiv-menu-label">Neon & Gradients</span>
+                            <span class="uiv-item-count-badge" id="count-vfx">0</span>
+                        </li>
+                        <li class="uiv-menu-item" data-category="multi" role="button" tabindex="0">
+                            <i class="fas fa-arrows-alt-h" aria-hidden="true"></i>
+                            <span class="uiv-menu-label">Dual Handles</span>
+                            <span class="uiv-item-count-badge" id="count-multi">0</span>
+                        </li>
+                        <li class="uiv-menu-item" data-category="functional" role="button" tabindex="0">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                            <span class="uiv-menu-label">Functional UI</span>
+                            <span class="uiv-item-count-badge" id="count-functional">0</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="uiv-sidebar-section">
+                    <h3 class="uiv-sidebar-heading">Library Health</h3>
+                    <div class="uiv-stats-widget-box">
+                        <div class="uiv-stat-entry">
+                            <span class="uiv-stat-label">Total Previews:</span>
+                            <span class="uiv-stat-value" id="stats-total-previews">30</span>
+                        </div>
+                        <div class="uiv-stat-entry">
+                            <span class="uiv-stat-label">Dynamic Builds:</span>
+                            <span class="uiv-stat-value" id="stats-dynamic-nodes">0</span>
+                        </div>
+                        <div class="uiv-stat-entry">
+                            <span class="uiv-stat-label">Status Verification:</span>
+                            <span class="uiv-stat-value uiv-text-success">MIT Verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uiv-sidebar-footer-note">
+                    <p>Designed for open-source component pipeline expansion models.</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="uiv-main-workspace" id="uiv-scroll-target">
+            
+            <header class="uiv-hero-dashboard">
+                <div class="uiv-hero-glow-layer" aria-hidden="true"></div>
+                <div class="uiv-hero-body">
+                    <h1 class="uiv-hero-main-title">Custom Range <span class="uiv-title-gradient">Slider Controls</span></h1>
+                    <p class="uiv-hero-description">An extensive, standalone compilation of 30 custom-styled html range controllers built to upgrade standard browser slider inputs. Features clean styling hooks for single points, fluid gradients, values bubble arrays, tooltips, and functional dual metrics trackers.</p>
+                    <div class="uiv-hero-cta-bar">
+                        <button class="uiv-hero-btn uiv-hero-primary" id="uiv-hero-action-browse">Explore Component Grid</button>
+                        <button class="uiv-hero-btn uiv-hero-secondary" id="uiv-hero-action-docs">Token Guides</button>
+                    </div>
+                </div>
+            </header>
+
+            <section class="uiv-catalog-toolbar">
+                <div class="uiv-toolbar-left-side">
+                    <h2 class="uiv-toolbar-title-summary" id="uiv-catalog-summary-text">Displaying all 30 production-ready track structures</h2>
+                </div>
+                <div class="uiv-toolbar-right-side">
+                    <div class="uiv-layout-toggle-cluster" role="radiogroup" aria-label="Layout mode selection grid or list">
+                        <button class="uiv-layout-btn uiv-active" id="uiv-layout-grid-trigger" title="Grid Layout Mode" aria-checked="true" role="radio"><i class="fas fa-th-large"></i></button>
+                        <button class="uiv-layout-btn" id="uiv-layout-list-trigger" title="List Layout Mode" aria-checked="false" role="radio"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="uiv-workbench-panel" id="uiv-dynamic-workbench" style="display: none;">
+                <div class="uiv-workbench-header">
+                    <h3><i class="fas fa-magic"></i> Live Slider Matrix Generation Workbench</h3>
+                    <button class="uiv-workbench-close-btn" id="uiv-workbench-close" aria-label="Dismiss workbench UI layer">&times;</button>
+                </div>
+                <div class="uiv-workbench-body">
+                    <div class="uiv-form-row">
+                        <div class="uiv-form-group">
+                            <label for="uiv-new-slider-name">Slider Title</label>
+                            <input type="text" id="uiv-new-slider-name" placeholder="e.g., Throttle Control" maxlength="28">
+                        </div>
+                        <div class="uiv-form-group">
+                            <label for="uiv-new-slider-style">Track VFX Theme</label>
+                            <select id="uiv-new-slider-style">
+                                <option value="uiv-slider-minimal-skin">Standard Neutral</option>
+                                <option value="uiv-slider-neon-cyan">Neon Cyberspace Glow</option>
+                                <option value="uiv-slider-gradient-magma">Vibrant Color Gradient</option>
+                            </select>
+                        </div>
+                        <div class="uiv-form-group">
+                            <label for="uiv-new-slider-max">Max Boundary Scale</label>
+                            <select id="uiv-new-slider-max">
+                                <option value="100">100 Units Scale</option>
+                                <option value="1000">1000 Scale Metric</option>
+                                <option value="50">50 Fine Steps</option>
+                            </select>
+                        </div>
+                        <div class="uiv-form-group uiv-form-submit-group">
+                            <button id="uiv-new-slider-submit" class="uiv-btn-success">Synthesize Slider Node</button>
+                        </div>
+                    </div>
+                    <div class="uiv-workbench-output-row">
+                        <span class="uiv-output-heading-label">Runtime Interactive Sandbox Nodes:</span>
+                        <div class="uiv-sandbox-insertion-row" id="uiv-sandbox-runtime-target">
+                            <p class="uiv-empty-sandbox-notice" id="uiv-sandbox-empty-prompt">No custom generated tracks configured. Submit options above to compile new slider assets.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="uiv-components-catalog-grid" id="uiv-catalog-grid">
+
+                <article class="uiv-component-card-node" data-id="slide-01" data-category="minimal" data-tags="basic primitive minimal default track grey slider thumb standard input">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">01. Basic Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-minimal">Minimal</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source markup code blocks"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy code blocks to clipboard"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Standard thin-track input module with a centered, rounded thumb handle for clean everyday forms data data extraction entries.</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box">
+                            <input type="range" class="uiv-input-range-native uiv-slider-minimal-skin" min="0" max="100" value="40" aria-label="Basic generic slider entry">
+                            <span class="uiv-slider-live-value-output">40</span>
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML5</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS3</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;div class="uiv-slider-wrapper-box"&gt;\n  &lt;input type="range" class="uiv-input-range-native uiv-slider-minimal-skin" min="0" max="100" value="40"&gt;\n  &lt;span class="uiv-slider-live-value-output"&gt;40&lt;/span&gt;\n&lt;/div&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>.uiv-input-range-native {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--uiv-track-bg, #2e2e38);
+  border-radius: 3px;
+  outline: none;
+}
+.uiv-input-range-native::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--uiv-primary, #007bff);
+  cursor: pointer;
+}</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-02" data-category="minimal" data-tags="filled solid blue primary color active track accent input highlight font">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">02. Filled Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-minimal">Minimal</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Features a highlighted active fill color block tracking the index placement left of the main control point layout node.</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box">
+                            <input type="range" class="uiv-input-range-native uiv-slider-filled-track" min="0" max="100" value="65" style="background: linear-gradient(to right, rgb(0, 123, 255) 0%, rgb(0, 123, 255) 65%, rgb(46, 46, 56) 65%, rgb(46, 46, 56) 100%);" aria-label="Filled track highlight slider">
+                            <span class="uiv-slider-live-value-output">65</span>
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;input type="range" class="uiv-input-range-native uiv-slider-filled-track" min="0" max="100" value="65"&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>/* Fill background gradients mapped via runtime input script hooks */\n.uiv-slider-filled-track::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  width: 18px; height: 18px;\n  background: #ffffff;\n  border: 2px solid #007bff;\n  border-radius: 50%;\n}</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-03" data-category="minimal" data-tags="outlined skeletal frame transparent hollow ring circle boundary index">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">03. Outlined Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-minimal">Minimal</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Utilizes a transparent thumb outline with high-contrast border limits, maximizing backdrop structural visibility profiles.</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box">
+                            <input type="range" class="uiv-input-range-native uiv-slider-outlined-ring" min="0" max="100" value="30" aria-label="Outlined slider system node">
+                            <span class="uiv-slider-live-value-output">30</span>
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;input type="range" class="uiv-input-range-native uiv-slider-outlined-ring" min="0" max="100" value="30"&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>.uiv-slider-outlined-ring::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px;
+  background: transparent;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #13131a;
+}</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-04" data-category="vfx" data-tags="gradient linear colorful vibrant magma sunset track multi-color shiny visual">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">04. Gradient Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-vfx">VFX Track</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Employs a linear chromatic gradient path background, adding clear dynamic intensity layers across standard values sweeps.</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box">
+                            <input type="range" class="uiv-input-range-native uiv-slider-gradient-magma" min="0" max="100" value="55" aria-label="Linear sunset gradient track slider">
+                            <span class="uiv-slider-live-value-output">55</span>
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;input type="range" class="uiv-input-range-native uiv-slider-gradient-magma" min="0" max="100" value="55"&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>.uiv-slider-gradient-magma {
+  background: linear-gradient(90deg, #ff453a, #ff9f0a, #30d158);
+}
+.uiv-slider-gradient-magma::-webkit-slider-thumb {
+  background: #ffffff; border-radius: 50%; width: 16px; height: 16px;
+}</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-05" data-category="vfx" data-tags="glassmorphism glass blur translucent transparent frost panel sleek floating">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">05. Glassmorphism Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-vfx">VFX Track</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Utilizes translucent layout backdrops backed by a heavy CSS alpha blur filter layer block mechanism.</p>
+                    <div class="uiv-node-live-preview-box uiv-pattern-mesh-bg">
+                        <div class="uiv-slider-wrapper-box">
+                            <input type="range" class="uiv-input-range-native uiv-slider-glassmorphism" min="0" max="100" value="70" aria-label="Glassmorphic input range slider">
+                            <span class="uiv-slider-live-value-output">70</span>
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;input type="range" class="uiv-input-range-native uiv-slider-glassmorphism" min="0" max="100" value="70"&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>.uiv-slider-glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-06" data-category="vfx" data-tags="neon electro cyan glow glow-shadow radioactive cyberpunk laser brightness illumination">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">06. Neon Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-vfx">VFX Track</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">A radiant, luminescent slider projecting distinct neon box-shadow layers into contextual dark interface sheets.</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box">
+                            <input type="range" class="uiv-input-range-native uiv-slider-neon-cyan" min="0" max="100" value="45" aria-label="Neon cyberpunk laser glow slider">
+                            <span class="uiv-slider-live-value-output">45</span>
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;input type="range" class="uiv-input-range-native uiv-slider-neon-cyan" min="0" max="100" value="45"&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>.uiv-slider-neon-cyan::-webkit-slider-thumb {
+  background: #00f3ff;
+  box-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+}</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-07" data-category="functional" data-tags="avatar profile image mask identity tracking zoom scale face circle sizing photo">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">07. Avatar Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-functional">Functional UI</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Specifically crafted to map profile graphic asset layout transformations such as image scale indicators.</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box uiv-flex-alignment-box">
+                            <i class="fas fa-user-circle avatar-micro-icon" aria-hidden="true"></i>
+                            <input type="range" class="uiv-input-range-native uiv-slider-minimal-skin" min="1" max="3" step="0.1" value="1.5" aria-label="Avatar scale slider unit">
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;div class="uiv-slider-wrapper-box uiv-flex-alignment-box"&gt;\n  &lt;i class="fas fa-user-circle"&gt;&lt;/i&gt;\n  &lt;input type="range" class="uiv-slider-minimal-skin" min="1" max="3" step="0.1" value="1.5"&gt;\n&lt;/div&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>.uiv-flex-alignment-box { display: flex; align-items: center; gap: 12px; }\n.avatar-micro-icon { font-size: 18px; color: #6e6e73; }</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-08" data-category="functional" data-tags="status metric step phase tracking tier levels system checkpoints low med high">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">08. Status Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-functional">Functional UI</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Changes active track status reporting metrics dynamically via step adjustments (Low, Medium, High Priority updates).</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box">
+                            <input type="range" class="uiv-input-range-native uiv-slider-status-color-shift" min="1" max="3" value="2" aria-label="Status tier progression entry">
+                            <div class="status-labels-row"><span>Low</span><span class="active-lbl">Med</span><span>High</span></div>
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;input type="range" class="uiv-slider-status-color-shift" min="1" max="3" value="2"&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>.status-labels-row { display: flex; justify-content: space-between; font-size: 11px; color: #6e6e73; margin-top: 6px; }\n.active-lbl { color: #ff9f0a; font-weight: bold; }</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-09" data-category="functional" data-tags="notification throttle volume alerts cap threshold decibels audio system frequency">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">09. Notification Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-functional">Functional UI</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Triggers a systemic threshold indicator line, warning system administrators before parameter caps break rules.</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box threshold-wrapper">
+                            <div class="threshold-marker-line" title="Critical Warning Boundary Line"></div>
+                            <input type="range" class="uiv-input-range-native uiv-slider-minimal-skin" min="0" max="100" value="78" aria-label="System threshold metric input">
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;div class="threshold-wrapper"&gt;\n  &lt;div class="threshold-marker-line"&gt;&lt;/div&gt;\n  &lt;input type="range" class="uiv-slider-minimal-skin" min="0" max="100" value="78"&gt;\n&lt;/div&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>.threshold-wrapper { position: relative; }\n.threshold-marker-line { position: absolute; left: 80%; top: -4px; width: 2px; height: 14px; background: #ff453a; }</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-10" data-category="functional" data-tags="closable cancel dismiss layout interactive reset fallback cross switch field remove">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">10. Closable Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-functional">Functional UI</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Equipped with a localized structural close trigger box allowing instantaneous metric erasure execution loops.</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box uiv-flex-alignment-box" id="uiv-closable-demo-track">
+                            <input type="range" class="uiv-input-range-native uiv-slider-minimal-skin" min="0" max="100" value="50" aria-label="Dismissible entry range slider">
+                            <button class="uiv-track-close-trigger-btn" aria-label="Erase current slider node input data">&times;</button>
+                        </div>
+                    </div>
+                    <div class="uiv-node-code-drawer-panel">
+                        <div class="uiv-drawer-tab-row">
+                            <button class="uiv-tab-selector uiv-active" data-format="html">HTML</button>
+                            <button class="uiv-tab-selector" data-format="css">CSS</button>
+                        </div>
+                        <pre class="uiv-markup-block html-format-block uiv-active"><code>&lt;button class="uiv-track-close-trigger-btn"&gt;&amp;times;&lt;/button&gt;</code></pre>
+                        <pre class="uiv-markup-block css-format-block"><code>.uiv-track-close-trigger-btn { background: none; border: none; color: #ff453a; font-size: 18px; cursor: pointer; }</code></pre>
+                    </div>
+                </article>
+
+                <article class="uiv-component-card-node" data-id="slide-11" data-category="functional" data-tags="removable detach subtract delete trash remove interface node array parameters option">
+                    <div class="uiv-node-card-header">
+                        <div class="uiv-node-title-group">
+                            <h4 class="uiv-node-title">11. Removable Slider</h4>
+                            <span class="uiv-node-meta-badge uiv-badge-functional">Functional UI</span>
+                        </div>
+                        <div class="uiv-node-action-cluster">
+                            <button class="uiv-node-btn view-source-trigger" title="Inspect source"><i class="fas fa-code"></i></button>
+                            <button class="uiv-node-btn copy-markup-trigger" title="Copy source"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <p class="uiv-node-description-text">Utilizes a structured delete trash container layout allowing operators to evict multi-track fields.</p>
+                    <div class="uiv-node-live-preview-box">
+                        <div class="uiv-slider-wrapper-box uiv-flex-alignment-box" id="uiv-removable-demo-track">
+                            <input type="range" class="uiv-input-range-native uiv-slider-minimal-skin" min="0" max="100" value="25" aria-label="Removable workflow input slider tracker">
+                            <i class="fas fa-trash-alt uiv-track-remove-glyph-btn" role="button" aria-label="Delete metric track layer" tabindex="0"></i>
+                        </div>
+                    </div>
+</article>
+</div>
+</main>
+</div>
+</body>
+</html>
