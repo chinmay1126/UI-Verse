@@ -15,17 +15,7 @@
   <title>PulseWire — News Aggregator Dashboard</title>
 
   <!-- Security -->
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="default-src 'self' https: data:;
-             style-src 'self' 'unsafe-inline' https:;
-             script-src 'self' 'unsafe-inline' https:;
-             img-src 'self' https: data:;
-             font-src 'self' https: data:;
-             connect-src 'self' https:;
-             object-src 'none';
-             base-uri 'self';"
-  />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <!-- Fonts -->
   <link
