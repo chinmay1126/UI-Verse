@@ -26,3 +26,14 @@ if (scrollTopBtn) {
     });
   });
 }
+
+    // Focus Trap and body scroll blocking for mobile drawer
+    const menuToggle = document.getElementById('menuToggle');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            document.body.classList.toggle('nav-open');
+        });
+    }
+    
