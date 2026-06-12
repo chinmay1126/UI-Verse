@@ -391,6 +391,10 @@ button{
   transition:0.35s;
 }
 
+#fileInput {
+  display: none;
+}
+
 .primary-btn{
   background:linear-gradient(135deg,#00f0ff,#7b2cff);
   color:#fff;
