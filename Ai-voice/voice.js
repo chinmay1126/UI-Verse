@@ -203,5 +203,138 @@ speakBtn.addEventListener("click", () => {
   speechSynthesis.speak(utterance);
 
 });
-  });
+
 }
+// Dark Mode
+
+const themeBtn = document.querySelector('.theme-btn');
+
+themeBtn.addEventListener('click',()=>{
+
+document.body.classList.toggle('dark-mode');
+
+if(document.body.classList.contains('dark-mode')){
+themeBtn.innerHTML =
+'<i class="fa-solid fa-sun"></i>';
+}else{
+themeBtn.innerHTML =
+'<i class="fa-solid fa-moon"></i>';
+}
+
+});
+
+
+// Language Swap
+
+const swapBtn =
+document.querySelector('.swap-btn');
+
+swapBtn.addEventListener('click',()=>{
+
+const from =
+document.getElementById('fromLanguage');
+
+const to =
+document.getElementById('toLanguage');
+
+[from.value,to.value] =
+[to.value,from.value];
+
+});
+
+
+// Fake Analytics Counter
+
+const stats =
+document.querySelectorAll('.stat h2');
+
+stats.forEach(stat=>{
+
+let value = 0;
+
+const target =
+parseInt(stat.innerText);
+
+const timer =
+setInterval(()=>{
+
+value += Math.ceil(target/40);
+
+if(value >= target){
+value = target;
+clearInterval(timer);
+}
+
+stat.innerText = value;
+
+},40);
+
+});
+// Assistant Button
+
+document
+.getElementById("assistantBtn")
+.addEventListener("click",()=>{
+
+alert("🤖 AI Assistant Activated");
+
+});
+
+// Voice Speed
+
+const speedSlider =
+document.getElementById("voiceSpeed");
+
+const speedValue =
+document.getElementById("speedValue");
+
+speedSlider.addEventListener("input",()=>{
+
+speedValue.innerText =
+speedSlider.value + "x";
+
+});
+
+// Timeline Animation
+
+let progress = 0;
+
+const timeline =
+document.querySelector(
+".timeline-progress"
+);
+
+setInterval(()=>{
+
+progress += 2;
+
+if(progress > 100){
+progress = 0;
+}
+
+timeline.style.width =
+progress + "%";
+
+},100);
+
+// Confidence Animation
+
+const ring =
+document.querySelector(
+".progress-ring"
+);
+
+let offset = 314;
+
+setInterval(()=>{
+
+offset -= 2;
+
+if(offset < 25){
+offset = 314;
+}
+
+ring.style.strokeDashoffset =
+offset;
+
+},50);

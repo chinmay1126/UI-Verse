@@ -40,6 +40,16 @@ function toJSX(html){
 function computeHash(s){ return crypto.createHash('sha1').update(s, 'utf8').digest('hex'); }
 
 function writeFilesFor(component){
+
+function extractHTMLDependencies(htmlContent) {
+  const links = [];
+  const match = htmlContent.match(/href=["']([^"']+\.css)["']/gi);
+  if (match) {
+    match.forEach(m => links.push(m.replace(/href=["']|["']/g, '')));
+  }
+  return links;
+}
+    
   const id = component.id || path.basename(component.path || component.title || 'component', '.html');
   const outDir = path.join(OUT_DIR, id);
   ensureDir(outDir);
