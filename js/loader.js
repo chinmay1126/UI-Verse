@@ -71,11 +71,6 @@
 
     // load page features sequentially
 
-
-    const allFeatures = [...features];
-    if (document.querySelector('.component-card, .preview-box, .card-preview, [class*="-preview"]')) {
-      allFeatures.push('js/features/theme-customizer.js');
-      allFeatures.push('js/features/component-metadata.js');
     }
     for (const f of allFeatures) await loadScript(f);
 
