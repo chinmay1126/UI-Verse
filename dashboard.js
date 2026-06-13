@@ -72,6 +72,20 @@ animateValue(
   1200
 );
 
+mobileToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+
+  const expanded =
+    sidebar.classList.contains("active");
+
+  mobileToggle.setAttribute(
+    "aria-expanded",
+    expanded
+  );
+
+  sidebarOverlay.classList.toggle("active");
+});
+
 /* ======================================================
 SEARCH DEMO
 ====================================================== */
@@ -229,3 +243,49 @@ document.querySelectorAll(".nav-btn, .card-header button")
   });
 
 });
+
+
+document.querySelectorAll(".counter").forEach(counter => {
+
+  const updateCounter = () => {
+
+    const target =
+      +counter.getAttribute("data-target");
+
+    const current =
+      +counter.innerText;
+
+    const increment = target / 100;
+
+    if (current < target) {
+
+      counter.innerText =
+        Math.ceil(current + increment);
+
+      requestAnimationFrame(updateCounter);
+
+    } else {
+
+      counter.innerText =
+        target.toLocaleString();
+
+    }
+
+  };
+
+  updateCounter();
+
+});
+
+function updateClock(){
+
+  const now = new Date();
+
+  document.getElementById("liveClock").textContent =
+    now.toLocaleTimeString();
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
