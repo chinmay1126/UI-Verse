@@ -117,6 +117,9 @@
         "snippets:validate": "node scripts/snippet-validate.js",
         "test:snippets:pipeline": "node --test tests/snippets/snippet-pipeline.test.js",
         "snippets:check": "npm run snippets:export && npm run snippets:validate",
+        "test:unit": "jest",
+        "test:unit:coverage": "jest --coverage",
+        "test": "npm run test:unit:coverage && npm run wc:test",
         "prepare": "npm run build"
     },
     "bench": "node bench/bench.js",
