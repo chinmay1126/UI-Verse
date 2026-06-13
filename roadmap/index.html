@@ -1,53 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Interactive Roadmap Timeline</title>
   <link rel="stylesheet" href="stye.css">
+  <meta
+    name="description"
+    content="Interactive project roadmap timeline showing planning, design, development, and deployment phases."
+  >
 </head>
+
 <body>
+  <!-- Skip Navigation -->
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+<header class="hero">
 
-  <section class="timeline">
+    <nav class="navbar">
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
+        <div class="logo">
+            🚀 RoadMapX
+        </div>
 
-      <div class="timeline-content">
-        <h2>Phase 1</h2>
-        <p>Project planning and requirement analysis.</p>
-      </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Roadmap</a></li>
+            <li><a href="#">Milestones</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <button class="nav-btn">
+            Get Started
+        </button>
+
+    </nav>
+
+    <div class="hero-content">
+
+        <div class="hero-left">
+
+            <span class="hero-badge">
+                ✨ Product Development Journey
+            </span>
+
+            <h1>
+                Build Faster With A
+                <span>Visual Roadmap</span>
+            </h1>
+
+            <p>
+                Track milestones, monitor project progress,
+                manage deadlines and visualize your product
+                journey from idea to deployment.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn">
+                    Explore Roadmap
+                </button>
+
+                <button class="secondary-btn">
+                    Watch Demo
+                </button>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div class="stat">
+                    <h2>24+</h2>
+                    <p>Milestones</p>
+                </div>
+
+                <div class="stat">
+                    <h2>12</h2>
+                    <p>Projects</p>
+                </div>
+
+                <div class="stat">
+                    <h2>98%</h2>
+                    <p>Success Rate</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+
+            <div class="glass-card card1">
+                <h3>🎯 Current Phase</h3>
+                <h1>Design</h1>
+            </div>
+
+            <div class="glass-card card2">
+                <h3>🔥 Progress</h3>
+                <h1>76%</h1>
+            </div>
+
+            <div class="glass-card card3">
+                <h3>🚀 Launch</h3>
+                <h1>14 Days</h1>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
+</header>
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="kpi-grid">
 
-      <div class="timeline-content">
-        <h2>Phase 2</h2>
-        <p>UI/UX design and wireframe creation.</p>
-      </div>
+<div class="kpi-card">
+<h2>42</h2>
+<p>Tasks Done</p>
+</div>
+
+<div class="kpi-card">
+<h2>76%</h2>
+<p>Completion</p>
+</div>
+
+<div class="kpi-card">
+<h2>14</h2>
+<p>Days Left</p>
+</div>
+
+<div class="kpi-card">
+<h2>8</h2>
+<p>Team Members</p>
+</div>
+
+</div>
+<div class="activity-feed">
+
+<h3>Recent Activity</h3>
+
+<ul>
+
+<li>
+✅ Design phase completed
+</li>
+
+<li>
+🎨 New UI uploaded
+</li>
+
+<li>
+🚀 Sprint planning started
+</li>
+
+<li>
+📦 Deployment scheduled
+</li>
+
+</ul>
+
+</div>
+    <section
+      class="roadmap-timeline"
+      aria-labelledby="timeline-heading"
+    >
+      <h1 id="timeline-heading">
+        Project Roadmap Timeline
+      </h1>
+
+      <ol class="timeline-list">
+
+        <li class="timeline-item">
+          <span
+            class="timeline-dot"
+            aria-hidden="true"
+          ></span>
+
+          <article class="timeline-content">
+            <h2>Phase 1</h2>
+            <p>Project planning and requirement analysis.</p>
+          </article>
+        </li>
+
+        <li class="timeline-item">
+          <span
+            class="timeline-dot"
+            aria-hidden="true"
+          ></span>
+
+          <article class="timeline-content">
+            <h2>Phase 2</h2>
+            <p>UI/UX design and wireframe creation.</p>
+          </article>
+        </li>
+
+        <li class="timeline-item">
+          <span
+            class="timeline-dot"
+            aria-hidden="true"
+          ></span>
+
+          <article class="timeline-content">
+            <h2>Phase 3</h2>
+            <p>Frontend and backend development process.</p>
+          </article>
+        </li>
+
+        <li class="timeline-item">
+          <span
+            class="timeline-dot"
+            aria-hidden="true"
+          ></span>
+
+          <article class="timeline-content">
+            <h2>Phase 4</h2>
+            <p>Testing, optimization, and deployment.</p>
+          </article>
+        </li>
+
+      </ol>
+    </section>
+    <section class="roadmap">
+
+    <div class="roadmap-header">
+
+        <span class="tag">
+            🚀 Product Journey
+        </span>
+
+        <h1>
+            Interactive Project Roadmap
+        </h1>
+
+        <p>
+            Track project milestones from planning
+            to deployment.
+        </p>
+
     </div>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
+    <div class="progress-container">
 
-      <div class="timeline-content">
-        <h2>Phase 3</h2>
-        <p>Frontend and backend development process.</p>
-      </div>
+        <div class="progress-line">
+            <div class="progress-fill"></div>
+        </div>
+
     </div>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
+    <div class="roadmap-timeline">
 
-      <div class="timeline-content">
-        <h2>Phase 4</h2>
-        <p>Testing, optimization, and deployment.</p>
-      </div>
+        <div class="roadmap-card active">
+
+            <div class="roadmap-icon">
+                💡
+            </div>
+
+            <div class="content">
+
+                <span class="roadmap-date">
+                    Week 1
+                </span>
+
+                <h2>Research & Planning</h2>
+
+                <p>
+                    Define goals, market analysis,
+                    user requirements and roadmap.
+                </p>
+
+                <button>
+                    Completed
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <div class="icon">
+                🎨
+            </div>
+
+            <div class="content">
+
+                <span class="date">
+                    Week 2
+                </span>
+
+                <h2>UI/UX Design</h2>
+
+                <p>
+                    Wireframes, prototypes and
+                    design system creation.
+                </p>
+
+                <button>
+                    In Progress
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <div class="icon">
+                ⚙️
+            </div>
+
+            <div class="content">
+
+                <span class="date">
+                    Week 3-5
+                </span>
+
+                <h2>Development</h2>
+
+                <p>
+                    Frontend development and API
+                    integrations.
+                </p>
+
+                <button>
+                    Upcoming
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <div class="icon">
+                🧪
+            </div>
+
+            <div class="content">
+
+                <span class="date">
+                    Week 6
+                </span>
+
+                <h2>Testing</h2>
+
+                <p>
+                    Bug fixing, optimization and
+                    QA testing.
+                </p>
+
+                <button>
+                    Upcoming
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <div class="icon">
+                🚀
+            </div>
+
+            <div class="content">
+
+                <span class="date">
+                    Week 7
+                </span>
+
+                <h2>Deployment</h2>
+
+                <p>
+                    Production launch and monitoring.
+                </p>
+
+                <button>
+                    Upcoming
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
 
-  </section>
+</section>
+<div class="risk-card">
 
+<h3>Project Risks</h3>
+
+<div class="risk-item low">
+Low Risk
+</div>
+
+<div class="risk-item medium">
+Medium Risk
+</div>
+
+<div class="risk-item high">
+High Risk
+</div>
+
+</div>
+<div id="stars"></div>
+
+<section class="roadmap-header">
+
+    <h1>🚀 Product Roadmap</h1>
+
+    <div class="countdown-box">
+        <h3>Deployment In</h3>
+        <div id="countdown">00d 00h 00m 00s</div>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter-btn" data-filter="completed">
+            Completed
+        </button>
+
+        <button class="filter-btn" data-filter="ongoing">
+            Ongoing
+        </button>
+
+        <button class="filter-btn" data-filter="upcoming">
+            Upcoming
+        </button>
+    </div>
+
+</section>
+
+<section class="roadmap">
+
+    <div class="roadmap-card completed">
+
+        <span class="badge completed-badge">
+            Completed
+        </span>
+
+        <div class="icon">💡</div>
+
+        <h2>Research</h2>
+
+        <p>
+            Requirement gathering and market research.
+        </p>
+
+    </div>
+
+    <div class="roadmap-card ongoing">
+
+        <span class="badge ongoing-badge">
+            Ongoing
+        </span>
+
+        <div class="icon">🎨</div>
+
+        <h2>UI Design</h2>
+
+        <p>
+            Building wireframes and prototypes.
+        </p>
+
+    </div>
+
+    <div class="roadmap-card upcoming">
+
+        <span class="badge upcoming-badge">
+            Upcoming
+        </span>
+
+        <div class="icon">⚙️</div>
+
+        <h2>Development</h2>
+
+        <p>
+            Frontend and backend implementation.
+        </p>
+
+    </div>
+
+    <div class="roadmap-card upcoming">
+
+        <span class="badge upcoming-badge">
+            Upcoming
+        </span>
+
+        <div class="icon">🚀</div>
+
+        <h2>Launch</h2>
+
+        <p>
+            Production deployment and monitoring.
+        </p>
+
+    </div>
+
+</section>
+  </main>
   <script src="script.js"></script>
+  <script src="../dist/shared.js"></script>
 </body>
 </html>

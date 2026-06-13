@@ -29,26 +29,28 @@ function copyCode(id){
 const searchInput =
   document.getElementById("searchInput");
 
-searchInput.addEventListener("input",e=>{
+if (searchInput) {
+  searchInput.addEventListener("input",e=>{
 
-  const value =
-    e.target.value.toLowerCase();
+    const value =
+      e.target.value.toLowerCase();
 
-  document
-    .querySelectorAll(".badge-card")
-    .forEach(card=>{
+    document
+      .querySelectorAll(".badge-card")
+      .forEach(card=>{
 
-      const text =
-        card.innerText.toLowerCase();
+        const text =
+          card.innerText.toLowerCase();
 
-      card.style.display =
-        text.includes(value)
-        ? "block"
-        : "none";
+        card.style.display =
+          text.includes(value)
+          ? "block"
+          : "none";
 
-    });
+      });
 
-});
+  });
+}
 
 const badgeSearchInput =document.getElementById("badgesSearch");
 badgeSearchInput.addEventListener("input", function(){
