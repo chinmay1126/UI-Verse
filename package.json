@@ -149,6 +149,10 @@
     },
     "dependencies": {
         "dompurify": "^3.4.5",
+        "fuse.js": "^7.3.0",
+        "yjs": "^13.6.24",
+        "y-webrtc": "^10.3.1",
+        "y-indexeddb": "^9.0.12"
         "fuse.js": "^7.3.0"
     },
     "lint-staged": {
