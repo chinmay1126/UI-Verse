@@ -1,1 +1,0 @@
-// Shared main bundle placeholder for legacy references.

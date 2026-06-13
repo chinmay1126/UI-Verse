@@ -70,7 +70,11 @@
     if (features.some(f => f.includes('search'))) await ensureFuse();
 
     // load page features sequentially
-    for (const f of features) await loadScript(f);
+    const allFeatures = [...features];
+    if (document.querySelector('.component-card, .preview-box, .card-preview, [class*="-preview"]')) {
+      allFeatures.push('js/features/theme-customizer.js');
+    }
+    for (const f of allFeatures) await loadScript(f);
 
     // finally load bootstrap to initialize modules
     await loadScript('js/bootstrap.js');
