@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { generateRegistry } = require('./generate-component-registry');
 
 const root = path.resolve(__dirname, '..');
 const dataDir = path.join(root, 'data');
@@ -101,6 +102,19 @@ function main() {
   if (anyMetaUpdated) {
     if (checkOnly) process.exit(1);
     console.log('Meta files ensured/updated');
+  }
+
+  const registryResult = generateRegistry({ rootDir: root, write: !checkOnly });
+  const registryFile = path.join(dataDir, 'registry.json');
+  if (checkOnly) {
+    const expected = `${JSON.stringify({ version: registryResult.version, registry: registryResult.registry }, null, 2)}\n`;
+    const actual = fs.existsSync(registryFile) ? fs.readFileSync(registryFile, 'utf8') : '';
+    if (actual !== expected) {
+      console.error('data/registry.json is out of date. Run npm run components:registry:generate.');
+      process.exit(1);
+    }
+  } else {
+    console.log('Generated data/registry.json');
   }
 
   console.log('Done.');

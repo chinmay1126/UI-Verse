@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k= sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc= sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ekasjfaqD+DPT+9HdPKSNKs/R6SpDJfojsCqLkW1lgE= sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=; script-src-attr 'unsafe-hashes' sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y= sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k= sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc= sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E= sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag= sha256-ekasjfaqD+DPT+9HdPKSNKs/R6SpDJfojsCqLkW1lgE= sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k=' 'sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc=' 'sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E=' 'sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag=' 'sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=' 'sha256-o3PJfCEwwosU4QUtoJuFcleAb+hbf4ByDr+uIeP0U2A='; script-src-attr 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-96/hzOSVezhU9Tq+pCKf7FYTGlo7zY052dkAqMtVf5k=' 'sha256-L9KK9D0cjBJb+fzIQ7x+n644Qp/o5DpGotOSDKb6aJc=' 'sha256-NAI8qjMks4Jmd9ib97kR5riJ798oXmoDLduIBM4eU/E=' 'sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag=' 'sha256-nYErBuCeTPgztrw+aYoUO7Qjx7PBeRzs5k/kx3K/KMs=' 'sha256-o3PJfCEwwosU4QUtoJuFcleAb+hbf4ByDr+uIeP0U2A='; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing — UIverse</title>
 
@@ -1155,9 +1155,94 @@
  <!-- /pricing-grid-preview -->
 
     
-  
+ <button id="cta-get-started" class="cta-secondary">Get Started</button>
+<button id="cta-choose-pro" class="cta-primary">Choose Pro</button>
+<button id="cta-contact-sales" class="cta-secondary">Contact Sales</button>
+
+<button id="billing-monthly">Monthly</button>
+<button id="billing-quarterly">Quarterly</button>
+<button id="billing-yearly">Yearly</button>
+
+  <div class="billing-toggle" role="group" aria-label="Billing options">
+  <button class="toggle-btn" aria-pressed="true" aria-label="Monthly billing">Monthly</button>
+  <button class="toggle-btn" aria-pressed="false" aria-label="Quarterly billing">Quarterly</button>
+  <button class="toggle-btn" aria-pressed="false" aria-label="Yearly billing">Yearly</button>
+</div>
+
 
 </main>
+
+<section class="pricing-section">
+  <!-- Billing Toggle -->
+  <div class="billing-toggle">
+    <span>Monthly</span>
+    <label class="switch">
+      <input type="checkbox" id="billing-toggle">
+      <span class="slider"></span>
+    </label>
+    <span>Yearly <span class="discount">Save 20%</span></span>
+  </div>
+
+  <!-- Pricing Cards -->
+  <div class="pricing-grid">
+    <!-- Free -->
+    <div class="pricing-card">
+      <h3>Free</h3>
+      <p class="price" data-month="0" data-year="0">$0</p>
+      <ul>
+        <li>3 Projects</li>
+        <li>Community Support</li>
+      </ul>
+      <button class="cta">Get Started</button>
+    </div>
+
+    <!-- Pro (Most Popular) -->
+    <div class="pricing-card popular">
+      <div class="badge">Most Popular</div>
+      <h3>Pro</h3>
+      <p class="price" data-month="29" data-year="24">$29</p>
+      <ul>
+        <li>Unlimited Projects</li>
+        <li>Team Collaboration</li>
+        <li>Priority Support</li>
+      </ul>
+      <button class="cta">Choose Pro</button>
+    </div>
+
+    <!-- Enterprise -->
+    <div class="pricing-card">
+      <h3>Enterprise</h3>
+      <p class="price" data-month="99" data-year="79">$99</p>
+      <ul>
+        <li>Custom Solutions</li>
+        <li>Dedicated Support</li>
+        <li>Advanced Analytics</li>
+      </ul>
+      <button class="cta">Contact Sales</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("billing-toggle");
+  const prices = document.querySelectorAll(".price");
+
+  function updatePrices() {
+    prices.forEach(price => {
+      const month = price.getAttribute("data-month");
+      const year = price.getAttribute("data-year");
+      price.textContent = toggle.checked ? `$${year}` : `$${month}`;
+    });
+  }
+
+  toggle.addEventListener("change", updatePrices);
+
+  // Initialize default (monthly)
+  updatePrices();
+});
+
+</script>
 
 <!-- Scroll to Top -->
 <button id="scrollTopBtn" onclick="scrollToTop()">
@@ -1318,6 +1403,67 @@ document.querySelectorAll('.plan-btn, .glass-btn, .neon-btn, .minimal-btn')
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
+
+  // CTA tracking
+document.querySelectorAll("button[id^='cta-']").forEach(btn => {
+  btn.addEventListener("click", () => {
+    gtag('event', 'cta_click', {
+      'event_category': 'Pricing',
+      'event_label': btn.id
+    });
+  });
+});
+
+// Billing toggle tracking
+document.querySelectorAll("button[id^='billing-']").forEach(toggle => {
+  toggle.addEventListener("click", () => {
+    gtag('event', 'billing_toggle', {
+      'event_category': 'Pricing',
+      'event_label': toggle.id
+    });
+  });
+});
+
+// Select toggle buttons and pricing amounts
+const toggleBtns = document.querySelectorAll(".toggle-btn");
+const planAmounts = document.querySelectorAll(".plan-amount");
+const planOlds = document.querySelectorAll(".plan-old");
+const planPeriods = document.querySelectorAll(".plan-period");
+
+toggleBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Remove active state from all buttons
+    toggleBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Get selected period
+    const period = btn.dataset.period;
+
+    // Update all plan cards
+    planAmounts.forEach(amount => {
+      amount.textContent = amount.getAttribute(`data-${period}`);
+    });
+
+    planOlds.forEach(oldPrice => {
+      if (oldPrice) {
+        oldPrice.textContent = oldPrice.getAttribute(`data-${period}`);
+      }
+    });
+
+    planPeriods.forEach(periodEl => {
+     
+      if (period === "month") {
+        periodEl.textContent = "/ month";
+      } else if (period === "quarter") {
+        periodEl.textContent = "/ quarter";
+      } else if (period === "year") {
+        periodEl.textContent = "/ year";
+      }
+    });
+  });
+});
+
+
 </script>
     <script src="dist/shared.js"></script>
 </body>
