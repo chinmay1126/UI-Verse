@@ -2,277 +2,556 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-8f0s+Au7zEKT+lPEt/09bPdoo7n/p10xCpn7UFI2so0=' 'sha256-HmQ1A7DFXxIgEnOVZgTxU2wdmxVP9FloK+/hS6Iqd/0=' 'sha256-NVXg+KynzT7l+/3zdeTN+w/MZKKT+Tdi4sRUzMHbzoE=' 'sha256-cwPror8N/Ds4hiaerviPOQ1rJd1zjNrEPnNZvr5x7Z8=' 'sha256-m2c3bfwbTQRVJ97bhqE0U1p6+N01cHbu30gWPsDeQF4=' 'sha256-pwN2vhFan14e7Mj42HggVT9PE26YY2Tpg65Tqya8Efo=' 'sha256-yN6fnalRxHDTootvc8nUfueGT7OQA+wW+gdJrRH3EL0='; script-src-attr 'unsafe-hashes' 'sha256-8f0s+Au7zEKT+lPEt/09bPdoo7n/p10xCpn7UFI2so0=' 'sha256-HmQ1A7DFXxIgEnOVZgTxU2wdmxVP9FloK+/hS6Iqd/0=' 'sha256-NVXg+KynzT7l+/3zdeTN+w/MZKKT+Tdi4sRUzMHbzoE=' 'sha256-cwPror8N/Ds4hiaerviPOQ1rJd1zjNrEPnNZvr5x7Z8=' 'sha256-m2c3bfwbTQRVJ97bhqE0U1p6+N01cHbu30gWPsDeQF4=' 'sha256-pwN2vhFan14e7Mj42HggVT9PE26YY2Tpg65Tqya8Efo=' 'sha256-yN6fnalRxHDTootvc8nUfueGT7OQA+wW+gdJrRH3EL0='; style-src 'self' https: 'unsafe-hashes' 'sha256-epN+DxKeJm0HRjtScrFzFbDEwvqEL+w8dF/6crx7kT4='; style-src-attr 'unsafe-hashes' 'sha256-epN+DxKeJm0HRjtScrFzFbDEwvqEL+w8dF/6crx7kT4='">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Tab Navigation Components</title>
+  <title>Advanced Tab Navigation Core | UIverse Architecture</title>
   <link rel="stylesheet" href="tabs-components.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script defer>
-    function switchTab(container, clickedItem) {
-      const items = container.querySelectorAll('.tab-item-js');
-      items.forEach(i => i.classList.remove('active'));
-      clickedItem.classList.add('active');
-    }
-
-    function switchSegment(container, clickedItem, index) {
-      switchTab(container, clickedItem);
-      const indicator = container.querySelector('.tab-seg-indicator');
-      if(indicator) {
-        indicator.style.transform = `translateX(${index * 100}%)`;
-      }
-    }
-  </script>
+  
+  <!-- PREMIUM DESIGN SYSTEM FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- INTERACTIVE SYSTEM GLYPHS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <!-- Sidebar -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- =========================================================
+     GLOBAL RUNTIME SIDEBAR TERMINAL
+  ========================================================= -->
   <aside class="sidebar">
     <div class="sidebar-logo">
       <div class="logo-icon"></div>
-      UI-Verse
+      <span class="logo-text">UIverse <span class="engine-badge">Core Engine</span></span>
     </div>
+
     <nav class="sidebar-nav">
-      <div class="nav-group">
-        <div class="nav-group-title">Main</div>
-        <a href="dashboard.html" class="nav-link">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-          Dashboard
-        </a>
-        <a href="testimonials.html" class="nav-link">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"/></svg>
-          Testimonials
-        </a>
+      <div class="nav-section">
+        <span class="nav-group-title">Ecosystem Foundations</span>
+        <a href="index.html" class="nav-link"><i class="fa-solid fa-layer-group"></i><span>Global Layout Center</span></a>
+        <a href="button.html" class="nav-link"><i class="fa-solid fa-hand-pointer"></i><span>Interactive Buttons</span></a>
+        <a href="dropdown-components.html" class="nav-link"><i class="fa-solid fa-square-caret-down"></i><span>Cascading Dropdowns</span></a>
+        <a href="navbar.html" class="nav-link"><i class="fa-solid fa-window-maximize"></i><span>Navigation Shells</span></a>
+        <a href="cards.html" class="nav-link"><i class="fa-solid fa-table-cells-large"></i><span>Content Canvas Tiles</span></a>
       </div>
-      <div class="nav-group">
-        <div class="nav-group-title">Components</div>
-        <a href="dropdown-components.html" class="nav-link">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          Dropdowns
-        </a>
-        <a href="floating-nav.html" class="nav-link">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-          Floating Nav
-        </a>
-        <a href="tabs-components.html" class="nav-link active">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
-          Tabs
-        </a>
-        <a href="loaders.html" class="nav-link">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
-          Loaders
-        </a>
+
+      <div class="nav-section">
+        <span class="nav-group-title">Dynamic Framework Components</span>
+        <a href="tabs-components.html" class="nav-link active"><i class="fa-solid fa-segments"></i><span>Viewport Navigation Tabs</span></a>
+        <a href="inputs.html" class="nav-link"><i class="fa-solid fa-keyboard"></i><span>Form Intake Controls</span></a>
+        <a href="forms.html" class="nav-link"><i class="fa-brands fa-wpforms"></i><span>Structured Schema Forms</span></a>
+        <a href="badges.html" class="nav-link"><i class="fa-solid fa-certificate"></i><span>Micro-State Badges</span></a>
+        <a href="alerts.html" class="nav-link"><i class="fa-solid fa-triangle-exclamation"></i><span>System Alert Matrix</span></a>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-group-title">Advanced Control Pipelines</span>
+        <a href="toggles.html" class="nav-link"><i class="fa-solid fa-toggle-on"></i><span>Tactile Power Switches</span></a>
+        <a href="checkbox.html" class="nav-link"><i class="fa-solid fa-square-check"></i><span>Binary Check Selection</span></a>
+        <a href="progress-premium.html" class="nav-link"><i class="fa-solid fa-bars-progress"></i><span>Velocity Progress Monitors</span></a>
+        <a href="filters-premium.html" class="nav-link"><i class="fa-solid fa-sliders"></i><span>Multi-Token Data Filters</span></a>
+        <a href="admin-panel.html" class="nav-link"><i class="fa-solid fa-terminal"></i><span>Admin Terminal Layer</span></a>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-group-title">Technical Registries</span>
+        <a href="documentation.html" class="nav-link"><i class="fa-solid fa-book-code"></i><span>Compilation Logs</span></a>
+        <a href="faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><span>Central Knowledge Vault</span></a>
       </div>
     </nav>
+    
+    <div class="sidebar-status-footer">
+      <div class="node-pulse"></div>
+      <p class="status-text">Matrix Engine Status: Nominal</p>
+    </div>
   </aside>
 
-  <main class="main-content">
-    <header class="hero">
-      <div class="hero-badge">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-        Navigation Components
+  <!-- =========================================================
+     MAIN APPLICATION MATRIX CANVAS
+  ========================================================= -->
+  <main class="main-content" id="main-content">
+    
+    <!-- TOP FLUID CONTROL REGISTRY HEADER -->
+    <header class="app-top-nav">
+      <div class="breadcrumb-container">
+        <span class="bc-item">Components</span>
+        <i class="fa-solid fa-chevron-right bc-divider"></i>
+        <span class="bc-item target">Navigation Tabs Suite</span>
       </div>
-      <h1 class="hero-title">Tab <span>Navigations</span></h1>
-      <p class="hero-sub">A premium collection of tab navigation components with varying layouts, smooth interactions, and modern styles for dynamic interfaces.</p>
+      <div class="top-nav-actions">
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-glyph"></i>
+          <input type="text" placeholder="Filter layout models (⌘K)..." aria-label="Search layout variants">
+        </div>
+        <button class="action-trigger-btn" type="button"><i class="fa-solid fa-circle-nodes"></i> Sandbox Shell</button>
+      </div>
     </header>
 
-    <div class="cards-grid">
-      <!-- 1. Horizontal Underline Tabs -->
-      <div class="component-card">
+    <!-- CORE HERO VIEWPORT INTRO -->
+    <section class="hero">
+      <div class="hero-badge">
+        <i class="fa-solid fa-sparkles text-gradient-purple"></i>
+        <span>Advanced Spatial Viewport Controls Ready</span>
+      </div>
+      <h1 class="hero-title">Tabs <span>Navigation Architectures</span></h1>
+      <p class="hero-sub">A production-grade ecosystem of hardware-accelerated, stateful layout wrappers configuring viewport mutations seamlessly across asynchronous enterprise dashboard matrices.</p>
+    </section>
+
+    <!-- INTERLOCKING TABS CONTROL CARDS GRID MATRIX -->
+    <section class="cards-grid">
+
+      <!-- VARIANT 1: LINEAR CHANNELS (UNDERLINE SPEC) -->
+      <div class="component-card" id="card-model-1">
         <div class="card-header">
-          <div class="card-badge">STANDARD</div>
-          <div class="card-icon blue">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-          </div>
+          <span class="card-badge">MODEL TC-01 // BASIC UNDERLINE</span>
+          <div class="card-icon blue"><i class="fa-solid fa-grip-lines"></i></div>
         </div>
-        <h2 class="card-title">Horizontal Tabs</h2>
-        <p class="card-desc">Clean horizontal layout with an animated underline indicator.</p>
+        <h2 class="card-title">Linear Channels Tab</h2>
+        <p class="card-desc">Minimalist layout providing seamless accent tracking lines positioned beneath active navigation links for minimal visual displacement profiles.</p>
+        
         <div class="preview-box">
-          <div class="tab-horizontal" id="tab-horz">
-            <button class="tab-h-item tab-item-js active" onclick="switchTab(document.getElementById('tab-horz'), this)">Account</button>
-            <button class="tab-h-item tab-item-js" onclick="switchTab(document.getElementById('tab-horz'), this)">Security</button>
-            <button class="tab-h-item tab-item-js" onclick="switchTab(document.getElementById('tab-horz'), this)">Notifications</button>
-            <button class="tab-h-item tab-item-js" onclick="switchTab(document.getElementById('tab-horz'), this)">Billing</button>
-          </div>
+          <nav class="tab-horizontal" data-tab-group="group1">
+            <button type="button" class="tab-h-item tab-item-js active" onclick="runtimeSwitchTab(this)">
+              <i class="fa-solid fa-chart-pie"></i><span>System Analytics</span>
+            </button>
+            <button type="button" class="tab-h-item tab-item-js" onclick="runtimeSwitchTab(this)">
+              <i class="fa-solid fa-network-wired"></i><span>Cluster Assets</span>
+            </button>
+            <button type="button" class="tab-h-item tab-item-js" onclick="runtimeSwitchTab(this)">
+              <i class="fa-solid fa-shield-halved"></i><span>Compliance Security</span>
+            </button>
+          </nav>
         </div>
+
         <div class="card-actions">
-          <button class="btn btn-secondary">View Code</button>
-          <button class="btn btn-primary">Copy</button>
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
         </div>
       </div>
 
-      <!-- 2. Pill Shape Tabs -->
-      <div class="component-card">
+      <!-- VARIANT 2: SOLID PILL CONTAINER (CAPSULE GLIDE) -->
+      <div class="component-card" id="card-model-2">
         <div class="card-header">
-          <div class="card-badge">MODERN</div>
-          <div class="card-icon purple">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="8" rx="4"/></svg>
-          </div>
+          <span class="card-badge">MODEL TC-02 // INLINE PILLS</span>
+          <div class="card-icon purple"><i class="fa-solid fa-capsules"></i></div>
         </div>
-        <h2 class="card-title">Pill Shape Tabs</h2>
-        <p class="card-desc">Modern container-bound tabs with soft active backgrounds.</p>
+        <h2 class="card-title">Encapsulated Capsule Grid</h2>
+        <p class="card-desc">Floating isolated pill parameters mapped perfectly into high-contrast dark wells, ensuring sharp target identification thresholds.</p>
+        
         <div class="preview-box">
-          <div class="tab-pills" id="tab-pill">
-            <button class="tab-pill-item tab-item-js active" onclick="switchTab(document.getElementById('tab-pill'), this)">Daily</button>
-            <button class="tab-pill-item tab-item-js" onclick="switchTab(document.getElementById('tab-pill'), this)">Weekly</button>
-            <button class="tab-pill-item tab-item-js" onclick="switchTab(document.getElementById('tab-pill'), this)">Monthly</button>
-            <button class="tab-pill-item tab-item-js" onclick="switchTab(document.getElementById('tab-pill'), this)">Yearly</button>
-          </div>
+          <nav class="tab-pills" data-tab-group="group2">
+            <button type="button" class="tab-pill-item tab-item-js active" onclick="runtimeSwitchTab(this)">Metrics Logs</button>
+            <button type="button" class="tab-pill-item tab-item-js" onclick="runtimeSwitchTab(this)">Asynchronous Jobs</button>
+            <button type="button" class="tab-pill-item tab-item-js" onclick="runtimeSwitchTab(this)">Webhooks</button>
+          </nav>
         </div>
+
         <div class="card-actions">
-          <button class="btn btn-secondary">View Code</button>
-          <button class="btn btn-primary">Copy</button>
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
         </div>
       </div>
 
-      <!-- 3. Vertical Tabs -->
-      <div class="component-card">
+      <!-- VARIANT 3: LATERAL STRATIFIED STACK (VERTICAL SPLIT) -->
+      <div class="component-card" id="card-model-3">
         <div class="card-header">
-          <div class="card-badge">LAYOUT</div>
-          <div class="card-icon pink">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
-          </div>
+          <span class="card-badge">MODEL TC-03 // LATERAL BAR STACK</span>
+          <div class="card-icon pink"><i class="fa-solid fa-list-ol"></i></div>
         </div>
-        <h2 class="card-title">Vertical Tabs</h2>
-        <p class="card-desc">Side-oriented tabs for complex settings and deep menus.</p>
+        <h2 class="card-title">Lateral Stratified Vector</h2>
+        <p class="card-desc">Left-anchored vertical tracking arrays designed to optimize visual exploration workflows down high-density system option panels.</p>
+        
         <div class="preview-box">
-          <div class="tab-vertical-container" id="tab-vert">
-            <div class="tab-vertical">
-              <button class="tab-v-item tab-item-js active" onclick="switchTab(document.getElementById('tab-vert'), this)">Profile</button>
-              <button class="tab-v-item tab-item-js" onclick="switchTab(document.getElementById('tab-vert'), this)">Teams</button>
-              <button class="tab-v-item tab-item-js" onclick="switchTab(document.getElementById('tab-vert'), this)">Integrations</button>
+          <div class="tab-vertical-container" data-tab-group="group3">
+            <nav class="tab-vertical">
+              <button type="button" class="tab-v-item tab-item-js active" onclick="runtimeSwitchTab(this, 'content-v1')">
+                <i class="fa-solid fa-server"></i><span>Cluster Nodes</span>
+              </button>
+              <button type="button" class="tab-v-item tab-item-js" onclick="runtimeSwitchTab(this, 'content-v2')">
+                <i class="fa-solid fa-database"></i><span>Data Vaults</span>
+              </button>
+              <button type="button" class="tab-v-item tab-item-js" onclick="runtimeSwitchTab(this, 'content-v3')">
+                <i class="fa-solid fa-microchip"></i><span>CPU Allocation</span>
+              </button>
+            </nav>
+            <div class="tab-v-content" id="vertical-content-target">
+              <div class="content-panel-js" id="content-v1">Active Node Cluster: 12 Active Operational Channels localized.</div>
+              <div class="content-panel-js active-content-hidden" id="content-v2">Data Vault Storage footprint: 84.2 Terabytes synced downstream.</div>
+              <div class="content-panel-js active-content-hidden" id="content-v3">Compute Matrix: Core execution scheduling reading nominal latency patterns.</div>
             </div>
-            <div class="tab-v-content">
-              Select a tab to view content section.
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
+        </div>
+      </div>
+
+      <!-- VARIANT 4: KINETIC SEGMENTED TRACK (EQUIDISTANT GRID) -->
+      <div class="component-card" id="card-model-4">
+        <div class="card-header">
+          <span class="card-badge">MODEL TC-04 // SEGMENTED SHIFT</span>
+          <div class="card-icon orange"><i class="fa-solid fa-arrows-left-right"></i></div>
+        </div>
+        <h2 class="card-title">Kinetic Segmented Array</h2>
+        <p class="card-desc">Equidistant component slots with background selection indicators translating smoothly along linear paths to signal changes across the terminal.</p>
+        
+        <div class="preview-box">
+          <div class="tab-segmented" data-tab-group="group4">
+            <button type="button" class="tab-seg-item tab-item-js active" data-index="0" onclick="runtimeSwitchTabSegmented(this)">Day Logs</button>
+            <button type="button" class="tab-seg-item tab-item-js" data-index="1" onclick="runtimeSwitchTabSegmented(this)">Week Matrix</button>
+            <button type="button" class="tab-seg-item tab-item-js" data-index="2" onclick="runtimeSwitchTabSegmented(this)">Year History</button>
+            <div class="tab-seg-indicator" style="transform: translateX(0px);"></div>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
+        </div>
+      </div>
+
+      <!-- VARIANT 5: NEOMORPHIC FLOATING GLYPH CANVAS -->
+      <div class="component-card" id="card-model-5">
+        <div class="card-header">
+          <span class="card-badge">MODEL TC-05 // ISOLATED GLYPHS</span>
+          <div class="card-icon green"><i class="fa-solid fa-icons"></i></div>
+        </div>
+        <h2 class="card-title">Floating Icon Brackets</h2>
+        <p class="card-desc">High-end spatial tab clusters displaying isolated iconography with tooltips that expand smoothly during selection cycles.</p>
+        
+        <div class="preview-box">
+          <nav class="tab-icon" data-tab-group="group5">
+            <button type="button" class="tab-icon-item tab-item-js active" onclick="runtimeSwitchTab(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+              <span>Hub Core</span>
+            </button>
+            <button type="button" class="tab-icon-item tab-item-js" onclick="runtimeSwitchTab(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></nav>
+              <span>Layout Split</span>
+            </button>
+            <button type="button" class="tab-icon-item tab-item-js" onclick="runtimeSwitchTab(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7s4 10 8 10z"></path></svg>
+              <span>Security Shield</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="card-actions">
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
+        </div>
+      </div>
+
+      <!-- VARIANT 6: GLASSMORPHIC FLOATING MATRIX SHIMMER -->
+      <div class="component-card" id="card-model-6">
+        <div class="card-header">
+          <span class="card-badge">MODEL TC-06 // GLASS LAYER</span>
+          <div class="card-icon cyan"><i class="fa-solid fa-glass-water"></i></div>
+        </div>
+        <h2 class="card-title">Glassmorphic Shimmer Track</h2>
+        <p class="card-desc">Translucent container elements featuring precise frosted noise overlays and micro border-glow elements tailored for immersive SaaS design schemas.</p>
+        
+        <div class="preview-box glass-environment-bg">
+          <nav class="tab-glassmorphic" data-tab-group="group6">
+            <button type="button" class="tab-glass-item tab-item-js active" onclick="runtimeSwitchTab(this)">Operational Terminal</button>
+            <button type="button" class="tab-glass-item tab-item-js" onclick="runtimeSwitchTab(this)">Payload Traces</button>
+            <button type="button" class="tab-glass-item tab-item-js" onclick="runtimeSwitchTab(this)">System Configurations</button>
+          </nav>
+        </div>
+
+        <div class="card-actions">
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
+        </div>
+      </div>
+
+      <!-- VARIANT 7: STEPPED SEQUENTIAL PROGRESS CHANNELS -->
+      <div class="component-card id-card-model-7" id="card-model-7">
+        <div class="card-header">
+          <span class="card-badge">MODEL TC-07 // LINEAR PROCESS</span>
+          <div class="card-icon red"><i class="fa-solid fa-forward-step"></i></div>
+        </div>
+        <h2 class="card-title">Sequential Step Matrices</h2>
+        <p class="card-desc">Tab structures hard-mapped to step indicators. Perfect for guiding users down complex verification workflows and configuration trees.</p>
+        
+        <div class="preview-box">
+          <nav class="tab-stepped-process" data-tab-group="group7">
+            <div class="step-tab-wrapper tab-item-js active" onclick="runtimeSwitchTab(this)">
+              <div class="step-numeric-node">01</div>
+              <span class="step-label-text">Define Parameters</span>
             </div>
-          </div>
+            <div class="step-tab-wrapper tab-item-js" onclick="runtimeSwitchTab(this)">
+              <div class="step-numeric-node">02</div>
+              <span class="step-label-text">Validate Handshake</span>
+            </div>
+            <div class="step-tab-wrapper tab-item-js" onclick="runtimeSwitchTab(this)">
+              <div class="step-numeric-node">03</div>
+              <span class="step-label-text">Deploy Sandbox</span>
+            </div>
+          </nav>
         </div>
+
         <div class="card-actions">
-          <button class="btn btn-secondary">View Code</button>
-          <button class="btn btn-primary">Copy</button>
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
         </div>
       </div>
 
-      <!-- 4. Segmented Control -->
-      <div class="component-card">
+      <!-- VARIANT 8: MODERN HARD NEUMORPHIC CODES -->
+      <div class="component-card" id="card-model-8">
         <div class="card-header">
-          <div class="card-badge">APP UI</div>
-          <div class="card-icon orange">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="6"/><path d="M12 6v12"/></svg>
-          </div>
+          <span class="card-badge">MODEL TC-08 // NEUMORPHIC CAVITY</span>
+          <div class="card-icon yellow"><i class="fa-solid fa-folder-minus"></i></div>
         </div>
-        <h2 class="card-title">Segmented Control</h2>
-        <p class="card-desc">App-like segmented switch with sliding highlight effect.</p>
+        <h2 class="card-title">Neomorphic Cavity Brackets</h2>
+        <p class="card-desc">Tactile visual states mapping depth changes across the layout through sophisticated shadow vectors and custom inner light matrices.</p>
+        
         <div class="preview-box">
-          <div class="tab-segmented" id="tab-seg">
-            <div class="tab-seg-indicator"></div>
-            <button class="tab-seg-item tab-item-js active" onclick="switchSegment(document.getElementById('tab-seg'), this, 0)">Code</button>
-            <button class="tab-seg-item tab-item-js" onclick="switchSegment(document.getElementById('tab-seg'), this, 1)">Issues</button>
-            <button class="tab-seg-item tab-item-js" onclick="switchSegment(document.getElementById('tab-seg'), this, 2)">Pull Req</button>
-          </div>
+          <nav class="tab-neumorphic-bracket" data-tab-group="group8">
+            <button type="button" class="neu-bracket-btn tab-item-js active" onclick="runtimeSwitchTab(this)"><i class="fa-solid fa-terminal text-purple"></i>CLI Shell</button>
+            <button type="button" class="neu-bracket-btn tab-item-js" onclick="runtimeSwitchTab(this)"><i class="fa-solid fa-code-branch text-orange"></i>Branches</button>
+            <button type="button" class="neu-bracket-btn tab-item-js" onclick="runtimeSwitchTab(this)"><i class="fa-solid fa-box-archive text-blue"></i>Packages</button>
+          </nav>
         </div>
+
         <div class="card-actions">
-          <button class="btn btn-secondary">View Code</button>
-          <button class="btn btn-primary">Copy</button>
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
         </div>
       </div>
 
-      <!-- 5. Minimal Icon Tabs -->
-      <div class="component-card">
+      <!-- VARIANT 9: BORDER GRADIENT MATRIX FLOW -->
+      <div class="component-card" id="card-model-9">
         <div class="card-header">
-          <div class="card-badge">MINIMAL</div>
-          <div class="card-icon green">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-          </div>
+          <span class="card-badge">MODEL TC-09 // CHROMA BOUNDARY</span>
+          <div class="card-icon purple"><i class="fa-solid fa-border-top-left"></i></div>
         </div>
-        <h2 class="card-title">Icon Focused Tabs</h2>
-        <p class="card-desc">Interactive icon tabs with elegant reveal animations.</p>
+        <h2 class="card-title">Chroma Boundary Tabs</h2>
+        <p class="card-desc">Clean tab groups encased in continuous reactive boundary tracks that ignite with bright gradient rings when chosen.</p>
+        
         <div class="preview-box">
-          <div class="tab-icon" id="tab-icon-group">
-            <button class="tab-icon-item tab-item-js active" onclick="switchTab(document.getElementById('tab-icon-group'), this)">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-              <span>Home</span>
-            </button>
-            <button class="tab-icon-item tab-item-js" onclick="switchTab(document.getElementById('tab-icon-group'), this)">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              <span>Search</span>
-            </button>
-            <button class="tab-icon-item tab-item-js" onclick="switchTab(document.getElementById('tab-icon-group'), this)">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span>Favorites</span>
-            </button>
-            <button class="tab-icon-item tab-item-js" onclick="switchTab(document.getElementById('tab-icon-group'), this)">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span>Profile</span>
-            </button>
-          </div>
+          <nav class="tab-chroma-boundary" data-tab-group="group9">
+            <button type="button" class="chroma-tab-node tab-item-js active" onclick="runtimeSwitchTab(this)">Universal Stream</button>
+            <button type="button" class="chroma-tab-node tab-item-js" onclick="runtimeSwitchTab(this)">Edge Cache</button>
+            <button type="button" class="chroma-tab-node tab-item-js" onclick="runtimeSwitchTab(this)">Node Telemetry</button>
+          </nav>
         </div>
+
         <div class="card-actions">
-          <button class="btn btn-secondary">View Code</button>
-          <button class="btn btn-primary">Copy</button>
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
         </div>
       </div>
 
-    </div>
+      <!-- VARIANT 10: ASYNC NOTIFICATION STADIA CANVASES -->
+      <div class="component-card" id="card-model-10">
+        <div class="card-header">
+          <span class="card-badge">MODEL TC-10 // BADGED STADIA</span>
+          <div class="card-icon pink"><i class="fa-solid fa-bell"></i></div>
+        </div>
+        <h2 class="card-title">Badged Notification Stadia</h2>
+        <p class="card-desc">High-density tab rows with built-in dynamic telemetry dots. Ideal for routing isolated real-time events across deep views.</p>
+        
+        <div class="preview-box">
+          <nav class="tab-badged-stadia" data-tab-group="group10">
+            <button type="button" class="stadia-tab-item tab-item-js active" onclick="runtimeSwitchTab(this)">
+              <span>Inbox Feed</span><span class="stadia-counter-pill pulse-blue">94</span>
+            </button>
+            <button type="button" class="stadia-tab-item tab-item-js" onclick="runtimeSwitchTab(this)">
+              <span>Pending Pulls</span><span class="stadia-counter-pill">3</span>
+            </button>
+            <button type="button" class="stadia-tab-item tab-item-js" onclick="runtimeSwitchTab(this)">
+              <span>System Alerts</span><span class="stadia-counter-pill pulse-red">12</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="card-actions">
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
+        </div>
+      </div>
+
+      <!-- VARIANT 11: QUANTUM GLOW CODE TABS (MONOCHROME TERMINAL) -->
+      <div class="component-card" id="card-model-11">
+        <div class="card-header">
+          <span class="card-badge">MODEL TC-11 // CODE TERMINAL</span>
+          <div class="card-icon blue"><i class="fa-solid fa-laptop-code"></i></div>
+        </div>
+        <h2 class="card-title">Quantum Console File Tabs</h2>
+        <p class="card-desc">Recreates professional developer code environment layouts, utilizing precise file system shapes and micro action buttons.</p>
+        
+        <div class="preview-box">
+          <div class="quantum-console-wrapper" data-tab-group="group11">
+            <nav class="quantum-console-tabs">
+              <button type="button" class="console-tab-node tab-item-js active" onclick="runtimeSwitchTab(this)">
+                <i class="fa-brands fa-html5 text-orange"></i><span>index.markup.html</span><i class="fa-solid fa-xmark close-node"></i>
+              </button>
+              <button type="button" class="console-tab-node tab-item-js" onclick="runtimeSwitchTab(this)">
+                <i class="fa-brands fa-css3-alt text-blue"></i><span>global.styles.css</span><i class="fa-solid fa-xmark close-node"></i>
+              </button>
+              <button type="button" class="console-tab-node tab-item-js" onclick="runtimeSwitchTab(this)">
+                <i class="fa-brands fa-js text-yellow"></i><span>pipeline.core.js</span><i class="fa-solid fa-xmark close-node"></i>
+              </button>
+            </nav>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button type="button" class="btn btn-secondary"><i class="fa-solid fa-code"></i><span>Inspect Codebase</span></button>
+          <button type="button" class="btn btn-primary"><i class="fa-solid fa-copy"></i><span>Harvest Blueprint</span></button>
+        </div>
+      </div>
+
+    </section>
+
   </main>
-  
-  <!-- Enhanced Footer -->
+
+  <!-- =========================================================
+     COMPREHENSIVE GLOBAL PLATFORM FOOTER
+  ========================================================= -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-col brand-col">
         <div class="footer-brand">
           <div class="logo-icon small"></div>
-          UI-Verse
+          <span>UIverse Platform</span>
         </div>
-        <p class="footer-desc">A curated library of premium UI components crafted with pure HTML, CSS, and JS — no frameworks, no dependencies, just clean code.</p>
+        <p class="footer-desc">Engineering low-latency, modular visual components with zero dependencies. Optimized for high-throughput operational dashboards and Web3 data interfaces.</p>
         <div class="social-links">
-          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
-          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
-          <a href="#" aria-label="Discord"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></a>
+          <a href="#" aria-label="Access GitHub Trace Pipelines"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Access Developer Discord Hub"><i class="fab fa-discord"></i></a>
+          <a href="#" aria-label="Access Corporate Network Portal"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Access Operational Status Logs"><i class="fab fa-x-twitter"></i></a>
         </div>
       </div>
-      
+
       <div class="footer-links">
         <div class="footer-col">
-          <h4>EXPLORE</h4>
+          <h4>Core Repositories</h4>
           <ul>
-            <li><a href="#">Buttons</a></li>
-            <li><a href="#">Navbars</a></li>
-            <li><a href="#">Cards</a></li>
-            <li><a href="#">Inputs</a></li>
-            <li><a href="#">Forms</a></li>
+            <li><a href="button.html">Action Nodes</a></li>
+            <li><a href="navbar.html">Shell Interfaces</a></li>
+            <li><a href="cards.html">Canvas Containers</a></li>
+            <li><a href="inputs.html">Form Channels</a></li>
+            <li><a href="forms.html">Schema Layouts</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>RESOURCES</h4>
+          <h4>Platform Hub Resources</h4>
           <ul>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Contribute</a></li>
-            <li><a href="#">GitHub Repo</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="documentation.html">Technical Logs Matrix</a></li>
+            <li><a href="#">Contribution Standards</a></li>
+            <li><a href="#">Asset Manifest File</a></li>
+            <li><a href="#">Community Hub</a></li>
+            <li><a href="#">Critical Priority Support</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>LEGAL</h4>
+          <h4>Legal Governance</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">License</a></li>
+            <li><a href="#">Data Isolation Protocols</a></li>
+            <li><a href="terms.html">Terms of Operational Usage</a></li>
+            <li><a href="#">Ecosystem Licensing Structures</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-col subscribe-col">
-        <h4>STAY UPDATED</h4>
-        <p>Get notified when new components drop.</p>
+        <h4>Telemetry Subscriptions</h4>
+        <p>Register your hub to intercept low-frequency deployment schedules.</p>
         <form class="subscribe-form" onsubmit="event.preventDefault()">
-          <input type="email" placeholder="your@email.com" aria-label="Email address" required>
-          <button type="submit" class="btn-subscribe">Subscribe</button>
+          <input type="email" placeholder="operator@engine.domain" aria-label="Operator email destination" required>
+          <button type="submit" class="btn-subscribe">Register Node</button>
         </form>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2026 UI-Verse. Made with <span class="heart">♥</span> for developers worldwide.
+      &copy; 2026 UIverse Architecture Matrix. Engineered with absolute mathematical precision for developers worldwide. <span class="heart">♥</span>
     </div>
   </footer>
+
+  <!-- =========================================================
+     COMPREHENSIVE RUNTIME LOGIC SCRIPTS
+  ========================================================= -->
+  <script>
+    /* Dynamic Tab Context Switching Logic Engine */
+    function runtimeSwitchTab(clickedElement, optionalContentId) {
+      const groupContainer = clickedElement.closest('[data-tab-group]');
+      if (!groupContainer) return;
+      
+      const siblingTabs = groupContainer.querySelectorAll('.tab-item-js');
+      siblingTabs.forEach(tab => tab.classList.remove('active'));
+      
+      clickedElement.classList.add('active');
+      
+      if (optionalContentId) {
+        const contentPanels = groupContainer.querySelectorAll('.content-panel-js');
+        contentPanels.forEach(panel => panel.classList.add('active-content-hidden'));
+        
+        const targetPanel = groupContainer.querySelector(`#${optionalContentId}`);
+        if (targetPanel) {
+          targetPanel.classList.remove('active-content-hidden');
+        }
+      }
+    }
+
+    /* Segmented Slide Tracking Calculation Engine */
+    function runtimeSwitchTabSegmented(clickedElement) {
+      const groupContainer = clickedElement.closest('[data-tab-group]');
+      if (!groupContainer) return;
+      
+      const siblingTabs = groupContainer.querySelectorAll('.tab-item-js');
+      siblingTabs.forEach(tab => tab.classList.remove('active'));
+      
+      clickedElement.classList.add('active');
+      
+      const index = parseInt(clickedElement.getAttribute('data-index') || '0', 10);
+      const indicator = groupContainer.querySelector('.tab-seg-indicator');
+      
+      if (indicator) {
+        const elementWidth = clickedElement.offsetWidth;
+        const targetTranslate = index * elementWidth;
+        indicator.style.transform = `translateX(${targetTranslate}px)`;
+      }
+    }
+
+    /* Copy Pipeline Action Simulation */
+    const macroCopyButtons = document.querySelectorAll('.btn-primary');
+    macroCopyButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        navigator.clipboard.writeText('UIverse Premium Tab Component Core Copied Successfully.');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check-double"></i><span>Copied Successfully!</span>';
+        btn.style.background = 'rgba(16, 185, 129, 0.15)';
+        btn.style.color = '#10b981';
+        btn.disabled = true;
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.disabled = false;
+        }, 2000);
+      });
+    });
+
+    /* Code Inspection Action Simulation */
+    const macroViewButtons = document.querySelectorAll('.btn-secondary');
+    macroViewButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Extracting Code...</span>';
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 1500);
+      });
+    });
+  </script>
 </body>
 </html>

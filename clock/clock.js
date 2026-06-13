@@ -677,3 +677,77 @@ document.getElementById("binaryClock")
 setInterval(updateBinaryClock,1000);
 
 updateBinaryClock();
+
+function updateModernClocks(){
+
+  const now = new Date();
+
+  const hrs =
+  String(now.getHours()).padStart(2,"0");
+
+  const mins =
+  String(now.getMinutes()).padStart(2,"0");
+
+  const secs =
+  String(now.getSeconds()).padStart(2,"0");
+
+  /* NEON CLOCK */
+
+  document.getElementById("neonClock")
+  .innerHTML =
+  `${hrs}:${mins}:${secs}`;
+
+  document.getElementById("neonDate")
+  .innerHTML =
+  now.toDateString();
+
+  /* FLIP CLOCK */
+
+  document.getElementById("flipHours")
+  .innerHTML = hrs;
+
+  document.getElementById("flipMinutes")
+  .innerHTML = mins;
+
+  document.getElementById("flipSeconds")
+  .innerHTML = secs;
+
+  /* CYBER CLOCK */
+
+  document.getElementById("cyberClock")
+  .innerHTML =
+  `${hrs}:${mins}:${secs}`;
+
+  /* MINIMAL CLOCK */
+
+  document.getElementById("minimalClock")
+  .innerHTML =
+  `${hrs}:${mins}`;
+
+  document.getElementById("minimalSeconds")
+  .innerHTML =
+  `${secs} Seconds`;
+
+  /* PROGRESS CLOCK */
+
+  document.getElementById("progressClock")
+  .innerHTML =
+  `${hrs}:${mins}`;
+
+  const totalSeconds =
+  now.getHours() * 3600 +
+  now.getMinutes() * 60 +
+  now.getSeconds();
+
+  const progress =
+  (totalSeconds / 86400) * 565;
+
+  document.getElementById("progressRing")
+  .style.strokeDashoffset =
+  565 - progress;
+
+}
+
+setInterval(updateModernClocks,1000);
+
+updateModernClocks();

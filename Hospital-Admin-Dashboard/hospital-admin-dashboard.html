@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MediCore — Hospital Admin Dashboard</title>
 
@@ -17,6 +19,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <div class="app-wrapper">
 
@@ -68,7 +72,7 @@
 
         <label class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search patients..." />
+          <input type="text" placeholder="Search patients..." / data-a11y-remediation="label-needed">
         </label>
 
         <button class="notification-btn" type="button" aria-label="Notifications">
@@ -110,6 +114,32 @@
       </div>
 
     </section>
+
+    <section class="analytics-grid">
+
+  <div class="chart-card">
+    <div class="card-header">
+      <h3>Patient Admissions</h3>
+      <span>Last 7 Days</span>
+    </div>
+
+    <div class="chart-placeholder">
+      <i class="fa-solid fa-chart-column"></i>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="card-header">
+      <h3>Bed Occupancy</h3>
+      <span>89%</span>
+    </div>
+
+    <div class="progress-circle">
+      <span>89%</span>
+    </div>
+  </div>
+
+</section>
 
     <!-- STATS -->
     <section class="stats-grid">
@@ -175,6 +205,51 @@
       </div>
     </section>
 
+    <section class="inventory-section">
+
+  <div class="section-header">
+    <h2>💊 Pharmacy Inventory</h2>
+    <button>Add Medicine</button>
+  </div>
+
+  <div class="inventory-grid">
+
+    <div class="inventory-card">
+      <h3>Paracetamol</h3>
+      <p>Stock: 420 Units</p>
+      <span class="stock good">Available</span>
+    </div>
+
+    <div class="inventory-card">
+      <h3>Amoxicillin</h3>
+      <p>Stock: 35 Units</p>
+      <span class="stock low">Low Stock</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="emergency-alert">
+
+  <div class="alert-icon">
+    <i class="fa-solid fa-truck-medical"></i>
+  </div>
+
+  <div>
+    <h3>Emergency Cases</h3>
+    <p>6 active emergency admissions currently being handled.</p>
+  </div>
+
+  <button>View Unit</button>
+
+</section>
+
+<div class="doctor-status online">
+  <span></span>
+  Available
+</div>
+
     <!-- APPOINTMENTS -->
     <section class="appointment-section">
 
@@ -227,5 +302,6 @@
 
 <script src="hospital-admin-dashboard.js"></script>
 
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

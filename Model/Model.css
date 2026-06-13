@@ -849,6 +849,80 @@ TEXT
   margin-bottom: 1.8rem;
 }
 
+
+.modal-input-group input,
+.payment-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, orange, red);
+}
+
+.success-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.modal-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.toast-success {
+  background: #e6fff0;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.plan-toggle button {
+  padding: 6px 10px;
+  margin-right: 5px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.plan-toggle .active {
+  background: #000;
+  color: #fff;
+}
+
+.coupon-box {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.security-note {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
 /* =========================
 BUTTONS
 ========================= */

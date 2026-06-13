@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' https:;
-    base-uri 'self';
-    frame-ancestors 'none';
-    object-src 'none';
-    connect-src 'self' https:;
-    img-src 'self' data: https:;
-    font-src 'self' data: https:;
-    script-src 'self' https: 'unsafe-hashes';
-    script-src-attr 'unsafe-hashes';
-    style-src 'self' https: 'unsafe-hashes';
-    style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Email Client UI</title>
@@ -21,12 +11,14 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <!-- TOP BAR -->
   <header class="topbar">
     <div class="logo">📬 MailBox+</div>
 
-    <input type="text" class="search" placeholder="Search emails, contacts, files...">
+    <input type="text" class="search" placeholder="Search emails, contacts, files..." data-a11y-remediation="label-needed">
 
     <button class="compose-btn">+ Compose</button>
   </header>
@@ -52,6 +44,87 @@
         <span class="label urgent">Urgent</span>
       </div>
     </aside>
+
+    aside class="right-panel">
+
+    <div class="profile-card">
+      <img src="https://i.pravatar.cc/100" alt="">
+      <h3>John Doe</h3>
+      <p>john@example.com</p>
+    </div>
+
+    <div class="calendar-card">
+      <h4>Upcoming</h4>
+      <div class="event">
+        Team Meeting - 2 PM
+      </div>
+      <div class="event">
+        Client Call - 5 PM
+      </div>
+    </div>
+
+    <div class="storage-card">
+      <h4>Storage</h4>
+      <div class="progress">
+        <div class="bar"></div>
+      </div>
+      <span>8.5GB of 15GB used</span>
+    </div>
+
+    <div class="attachments-card">
+      <h4>Recent Files</h4>
+
+      <div class="file">
+        📄 UI_Design.pdf
+      </div>
+
+      <div class="file">
+        📊 Analytics.xlsx
+      </div>
+
+      <div class="file">
+        🖼 Banner.png
+      </div>
+    </div>
+
+  </aside>
+
+  <header class="topbar">
+
+  <div class="logo">
+    📬 MailBox+
+  </div>
+
+  <div class="search-wrap">
+    <input
+      type="text"
+      class="search"
+      placeholder="Search emails, contacts, files..."
+    >
+  </div>
+
+  <div class="top-actions">
+
+    <button class="icon-btn">
+      🔔
+      <span class="notify-dot"></span>
+    </button>
+
+    <button class="icon-btn">
+      🌙
+    </button>
+
+    <button class="compose-btn">
+      + Compose
+    </button>
+
+    <div class="user-avatar">
+      JD
+    </div>
+
+  </div>
+
+</header>
 
     <!-- EMAIL LIST -->
     <main class="email-list">
@@ -149,5 +222,6 @@
   </div>
 
   <script src="email.js"></script>
+      <script src="../dist/shared.js"></script>
 </body>
 </html>

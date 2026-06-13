@@ -22,6 +22,15 @@ function normalizeJson(content) {
   return JSON.stringify(JSON.parse(content));
 }
 
+
+function fillMissingKeyStubs(targetLocale, defaultLocale) {
+  for (const key of Object.keys(defaultLocale)) {
+    if (!targetLocale[key]) {
+      targetLocale[key] = `[STUB] ${defaultLocale[key]}`;
+    }
+  }
+}
+    
 function syncLocales({
   sourceDir = DEFAULT_SOURCE_DIR,
   targetDir = DEFAULT_TARGET_DIR,
@@ -58,7 +67,7 @@ function syncLocales({
     }
   }
 
-  if (!checkOnly && mismatches.length === 0) {
+  if (!checkOnly && mismatches.length > 0) {
     fs.mkdirSync(targetDir, { recursive: true });
     for (const sourceLocale of sourceLocales) {
       fs.writeFileSync(path.join(targetDir, sourceLocale.name), sourceLocale.content);
@@ -72,7 +81,7 @@ function syncLocales({
   }
 
   return {
-    ok: mismatches.length === 0,
+    ok: checkOnly ? mismatches.length === 0 : true,
     sourceDir,
     targetDir,
     mismatches

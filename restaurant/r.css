@@ -5,6 +5,7 @@
   font-family: Arial, sans-serif;
 }
 
+
 body{
   background: #0f172a;
   color: white;
@@ -335,4 +336,128 @@ body {
 
 .checkout-btn:hover {
   background: #f97316;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.food-card {
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+}
+
+.cart-section {
+  background: rgba(255,255,255,.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.4);
+}
+
+.checkout-btn,
+.hero-content button {
+  background-size: 200% 200%;
+  animation: gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+  }
+
+  body {
+    background: #0f172a;
+  }
+}
+
+.hero-banner {
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-banner::after {
+  content: "🍔";
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  font-size: 80px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-12px);
+  }
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #f6f8fc, #eef2ff);
+  min-height: 100vh;
+  color: var(--text);
+}
+
+.food-card{
+  transition:all .35s ease;
+}
+
+.food-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.add-btn,
+.checkout-btn,
+.hero-content button,
+.offer-box button{
+  transition:all .3s ease;
+}
+
+.add-btn:hover,
+.checkout-btn:hover,
+.hero-content button:hover,
+.offer-box button:hover{
+  transform:translateY(-3px);
+}
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:var(--primary);
+  border-radius:20px;
 }

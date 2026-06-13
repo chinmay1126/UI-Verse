@@ -107,6 +107,21 @@ employeeButtons.forEach(btn => {
 
 });
 
+
+const ctx = document
+  .getElementById('performanceChart');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+    datasets: [{
+      label: 'Productivity',
+      data: [68,74,81,85,89,92],
+      tension: 0.4
+    }]
+  }
+});
 /* CARD GLOW EFFECT */
 
 const employeeCards =

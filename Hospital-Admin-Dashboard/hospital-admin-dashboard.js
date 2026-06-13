@@ -100,6 +100,28 @@ manageButtons.forEach(btn => {
 
 });
 
+document.querySelectorAll(".stat-card h2").forEach(counter => {
+
+  const target = parseInt(counter.innerText);
+  let current = 0;
+
+  const update = () => {
+
+    current += target / 40;
+
+    if(current < target){
+      counter.innerText = Math.floor(current);
+      requestAnimationFrame(update);
+    }else{
+      counter.innerText = target;
+    }
+
+  };
+
+  update();
+
+});
+
 /* OPEN APPOINTMENT */
 
 const joinButtons =

@@ -70,7 +70,19 @@ function seedCatalog() {
     }
   ];
 
-  return ComponentDiscovery.init({ items, docsItems });
+  const registryItems = [
+    {
+      name: 'calendar',
+      title: 'Calendar',
+      description: 'Calendar component and date picker layouts',
+      category: 'utilities',
+      files: { html: 'calendar.html', css: 'calendar.css' },
+      tags: ['calendar', 'date', 'schedule'],
+      dependencies: []
+    }
+  ];
+
+  return ComponentDiscovery.init({ items, docsItems, registryItems });
 }
 
 test('ranks semantically related results ahead of weaker matches', async () => {
@@ -102,4 +114,31 @@ test('resolve falls back to semantic matching when exact lookup misses', async (
   assert.equal(resolved.id, 'button');
   assert.equal(resolved.compatibility.status, 'semantic');
   assert.ok(Array.isArray(resolved.matchReasons));
+});
+
+test('includes registry-only entries in discovery results', async () => {
+  resetDiscoveryState();
+  global.ComponentVersioning = ComponentVersioning;
+
+  await ComponentDiscovery.init({
+    registryItems: [
+      {
+        name: 'roadmap',
+        title: 'Roadmap',
+        description: 'Interactive product roadmap timeline',
+        category: 'planning',
+        files: { html: 'roadmap/index.html', css: 'timeline.css' },
+        tags: ['roadmap', 'timeline', 'milestones'],
+        dependencies: []
+      }
+    ],
+    items: [],
+    docsItems: []
+  });
+
+  const result = ComponentDiscovery.discover('roadmap', { limit: 5 });
+
+  assert.equal(result.results[0].id, 'roadmap');
+  assert.equal(result.results[0].source, 'registry');
+  assert.equal(result.results[0].path, 'roadmap/index.html');
 });

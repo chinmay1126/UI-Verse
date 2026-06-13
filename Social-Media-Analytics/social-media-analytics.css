@@ -907,6 +907,37 @@ body{
   font-size:.95rem;
 }
 
+
+.sidebar{
+  backdrop-filter: blur(20px);
+  background: rgba(20,20,30,.75);
+  border-right: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,.2);
+}
+.sidebar nav a.active{
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #3b82f6
+  );
+  color: white;
+  border-radius: 14px;
+}
+
+.dashboard-hero{
+  background: linear-gradient(
+    135deg,
+    #6d28d9,
+    #2563eb
+  );
+  color:white;
+  border-radius:24px;
+  padding:32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
 .hero-card h2{
   font-size:2.6rem;
   margin:18px 0 10px;

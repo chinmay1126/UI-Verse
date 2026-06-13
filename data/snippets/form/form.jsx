@@ -3,6 +3,7 @@ import React from 'react';
 export default function form(){
   return (
     <>
+<<<<<<< HEAD
       <main className="main">
           <div className="page-header">
             <h1>Forms</h1>
@@ -25,9 +26,67 @@ export default function form(){
               </div>
       <pre id="f1" className="code-block">
       &lt;form&gt;
+=======
+      <main className="main-home">
+      
+        {/* Page Header */}
+        <div className="forms-page-header">
+          <div className="breadcrumb">
+            <a href="index.html">Home</a>
+            <i className="fa-solid fa-chevron-right"></i>
+            <span>Forms</span>
+          </div>
+          <h1>Forms UI</h1>
+          <p>Reusable form components with clean inputs, selects, radios, checkboxes and more.</p>
+          <div className="page-meta">
+            <span className="meta-badge"><i className="fa-solid fa-layer-group"></i> 4 Forms</span>
+            <span className="meta-badge"><i className="fa-solid fa-code"></i> Pure HTML & CSS</span>
+          </div>
+        </div>
+      
+        {/* Forms Grid */}
+        <div className="forms-grid">
+      
+          {/* Login Form */}
+          <div className="form-component-card" data-name="login form email password">
+            <div className="card-top">
+              <span className="card-label">Login Form</span>
+              <span className="card-tag tag-popular">Popular</span>
+            </div>
+            <div className="form-preview">
+              <div className="form-card">
+                <h3>Welcome back</h3>
+                <p className="form-sub">Sign in to your account</p>
+                <div className="form-field">
+                  <label>Email</label>
+                  <input type="email" placeholder="you@example.com" />
+                </div>
+                <div className="form-field">
+                  <label>Password</label>
+                  <input type="password" placeholder="••••••••" />
+                </div>
+                <div className="form-options">
+                  <label className="simple-check"><input type="checkbox" /> Remember me</label>
+                  <a href="#">Forgot password?</a>
+                </div>
+                <button className="form-btn">Login</button>
+              </div>
+            </div>
+            <div className="actions">
+              <button className="action-btn view-btn" onclick="toggleCode('fc1', this)"><i className="fa-solid fa-code"></i> View Code</button>
+              <button className="action-btn copy-btn" onclick="copyCode('fc1', this)"><i className="fa-solid fa-copy"></i> Copy</button>
+            </div>
+            <pre id="fc1" className="code-block"><code>&lt;div className="form-card"&gt;
+        &lt;h3&gt;Welcome back&lt;/h3&gt;
+>>>>>>> e2f342d ([Feature]: Create a snippet export pipeline that keeps HTML, JSX, and Vue examples in sync)
         &lt;input type="email" placeholder="Email"&gt;
         &lt;input type="password" placeholder="Password"&gt;
+        &lt;div className="options"&gt;
+          &lt;label&gt;&lt;input type="checkbox"&gt; Remember me&lt;/label&gt;
+          &lt;a href="#"&gt;Forgot password?&lt;/a&gt;
+        &lt;/div&gt;
         &lt;button&gt;Login&lt;/button&gt;
+<<<<<<< HEAD
       &lt;/form&gt;
       </pre>
         </div>
@@ -295,6 +354,158 @@ export default function form(){
       
       </div>        
         </main>
+=======
+      &lt;/div&gt;</code></pre>
+          </div>
+      
+          {/* Signup Form */}
+          <div className="form-component-card" data-name="signup register form">
+            <div className="card-top">
+              <span className="card-label">Signup Form</span>
+              <span className="card-tag tag-essential">Essential</span>
+            </div>
+            <div className="form-preview">
+              <div className="form-card">
+                <h3>Create Account</h3>
+                <p className="form-sub">Join thousands of developers</p>
+                <div className="form-field">
+                  <label>Full Name</label>
+                  <input type="text" placeholder="John Doe" />
+                </div>
+                <div className="form-field">
+                  <label>Email</label>
+                  <input type="email" placeholder="you@example.com" />
+                </div>
+                <div className="form-field">
+                  <label>Password</label>
+                  <input type="password" placeholder="••••••••" />
+                </div>
+                <div className="form-field">
+                  <label>Confirm Password</label>
+                  <input type="password" placeholder="••••••••" />
+                </div>
+                <button className="form-btn">Register</button>
+              </div>
+            </div>
+            <div className="actions">
+              <button className="action-btn view-btn" onclick="toggleCode('fc2', this)"><i className="fa-solid fa-code"></i> View Code</button>
+              <button className="action-btn copy-btn" onclick="copyCode('fc2', this)"><i className="fa-solid fa-copy"></i> Copy</button>
+            </div>
+            <pre id="fc2" className="code-block"><code>&lt;div className="form-card"&gt;
+        &lt;h3&gt;Create Account&lt;/h3&gt;
+        &lt;input type="text" placeholder="Full Name"&gt;
+        &lt;input type="email" placeholder="Email"&gt;
+        &lt;input type="password" placeholder="Password"&gt;
+        &lt;input type="password" placeholder="Confirm Password"&gt;
+        &lt;button&gt;Register&lt;/button&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+      
+          {/* Contact Form */}
+          <div className="form-component-card" data-name="contact form message textarea">
+            <div className="card-top">
+              <span className="card-label">Contact Form</span>
+              <span className="card-tag tag-popular">Popular</span>
+            </div>
+            <div className="form-preview">
+              <div className="form-card">
+                <h3>Get in Touch</h3>
+                <p className="form-sub">We'll get back to you soon</p>
+                <div className="form-field">
+                  <label>Your Name</label>
+                  <input type="text" placeholder="John Doe" />
+                </div>
+                <div className="form-field">
+                  <label>Your Email</label>
+                  <input type="email" placeholder="you@example.com" />
+                </div>
+                <div className="form-field">
+                  <label>Message</label>
+                  <textarea placeholder="Write your message here..." rows="4"></textarea>
+                </div>
+                <button className="form-btn">Send Message</button>
+              </div>
+            </div>
+            <div className="actions">
+              <button className="action-btn view-btn" onclick="toggleCode('fc3', this)"><i className="fa-solid fa-code"></i> View Code</button>
+              <button className="action-btn copy-btn" onclick="copyCode('fc3', this)"><i className="fa-solid fa-copy"></i> Copy</button>
+            </div>
+            <pre id="fc3" className="code-block"><code>&lt;div className="form-card"&gt;
+        &lt;h3&gt;Get in Touch&lt;/h3&gt;
+        &lt;input type="text" placeholder="Your Name"&gt;
+        &lt;input type="email" placeholder="Your Email"&gt;
+        &lt;textarea placeholder="Your Message"&gt;&lt;/textarea&gt;
+        &lt;button&gt;Send Message&lt;/button&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+      
+          {/* More Inputs */}
+          <div className="form-component-card" data-name="select dropdown radio checkbox file input">
+            <div className="card-top">
+              <span className="card-label">More Inputs</span>
+              <span className="card-tag tag-essential">Essential</span>
+            </div>
+            <div className="form-preview">
+              <div className="form-card">
+                <h3>Extra Inputs</h3>
+                <p className="form-sub">Select, radio, checkbox &amp; file</p>
+                <div className="form-field">
+                  <label>Country</label>
+                  <select>
+                    <option value="" disabled selected>Select Country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>Germany</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div className="form-field">
+                  <label>Gender</label>
+                  <div className="radio-group">
+                    <label className="simple-check"><input type="radio" name="gender2" /> Male</label>
+                    <label className="simple-check"><input type="radio" name="gender2" /> Female</label>
+                  </div>
+                </div>
+                <div className="form-field">
+                  <label>Skills</label>
+                  <div className="check-group">
+                    <label className="simple-check"><input type="checkbox" /> HTML</label>
+                    <label className="simple-check"><input type="checkbox" /> CSS</label>
+                    <label className="simple-check"><input type="checkbox" /> JavaScript</label>
+                  </div>
+                </div>
+                <div className="form-field">
+                  <label>Upload File</label>
+                  <input type="file" />
+                </div>
+                <button className="form-btn">Submit</button>
+              </div>
+            </div>
+            <div className="actions">
+              <button className="action-btn view-btn" onclick="toggleCode('fc4', this)"><i className="fa-solid fa-code"></i> View Code</button>
+              <button className="action-btn copy-btn" onclick="copyCode('fc4', this)"><i className="fa-solid fa-copy"></i> Copy</button>
+            </div>
+            <pre id="fc4" className="code-block"><code>&lt;select&gt;
+        &lt;option&gt;Select Country&lt;/option&gt;
+        &lt;option&gt;India&lt;/option&gt;
+        &lt;option&gt;USA&lt;/option&gt;
+      &lt;/select&gt;
+      
+      &lt;label&gt;&lt;input type="radio" name="gender"&gt; Male&lt;/label&gt;
+      &lt;label&gt;&lt;input type="radio" name="gender"&gt; Female&lt;/label&gt;
+      
+      &lt;label&gt;&lt;input type="checkbox"&gt; HTML&lt;/label&gt;
+      &lt;label&gt;&lt;input type="checkbox"&gt; CSS&lt;/label&gt;
+      &lt;label&gt;&lt;input type="checkbox"&gt; JavaScript&lt;/label&gt;
+      
+      &lt;input type="file"&gt;
+      &lt;button&gt;Submit&lt;/button&gt;</code></pre>
+          </div>
+      
+        </div>{/* /forms-grid */}
+      
+      </main>
+>>>>>>> e2f342d ([Feature]: Create a snippet export pipeline that keeps HTML, JSX, and Vue examples in sync)
     </>
   );
 }

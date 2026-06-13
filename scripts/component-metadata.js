@@ -28,6 +28,30 @@ function isSemver(version){
   return SEMVER_RE.test(String(version || '').trim());
 }
 
+function buildDependencies(componentId, componentPath){
+  const id = String(componentId || path.basename(componentPath || 'component', '.html')).toLowerCase();
+  const localStyle = id === 'index' ? 'home.css' : (id === 'color' ? 'colors.css' : `${id}.css`);
+
+  if (id === 'index') {
+    return {
+      styles: ['style.css', 'home.css'],
+      scripts: ['script.js', 'js/features/theme.js', 'js/features/search.js', 'js/features/command-palette.js', 'js/features/accessibility.js']
+    };
+  }
+
+  if (id === 'settings') {
+    return {
+      styles: ['style.css', 'css/main.css'],
+      scripts: ['script.js', 'js/features/theme.js', 'js/features/sidebar.js', 'js/features/search.js', 'js/features/code-tools.js', 'js/features/sandbox.js', 'js/features/accessibility.js', 'js/features/toast.js', 'js/features/popup.js']
+    };
+  }
+
+  return {
+    styles: ['style.css', 'css/main.css', localStyle],
+    scripts: ['script.js', 'js/features/theme.js', 'js/features/accessibility.js', 'js/features/code-tools.js', 'js/features/sandbox.js']
+  };
+}
+
 function today(){ return new Date().toISOString().split('T')[0]; }
 
 function normalizeChangelogText(text) {
@@ -46,6 +70,11 @@ function getPaths(rootDir = ROOT) {
   };
 }
 
+function buildDependencies(id, filePath) {
+  // Placeholder — can be enhanced later to parse actual imports
+  return [];
+}
+
 function ensureMeta(component, options = {}){
   const paths = getPaths(options.rootDir);
   const id = component.id || path.basename(component.path || component.title || 'component', '.html');
@@ -58,13 +87,23 @@ function ensureMeta(component, options = {}){
       path: component.path || component.file || '',
       dependencies: buildDependencies(id, component.path || component.file || ''),
       version: '0.1.0',
-      changelog: [ { version: '0.1.0', date: today(), note: 'Initial metadata generated' } ]
+      changelog: [ { version: '0.1.0', date: today(), note: 'Initial metadata generated', changeType: 'structure', contributor: 'system' } ]
     };
     writeJson(metaPath, meta);
   } else {
     // normalize fields
     meta.title = meta.title || component.title || id;
     meta.path = component.path || component.file || meta.path || '';
+    // Normalize changelog entries to have changeType and contributor
+    if (Array.isArray(meta.changelog)) {
+      meta.changelog = meta.changelog.map((entry, i) => ({
+        version: entry.version,
+        date: entry.date,
+        note: entry.note || '',
+        changeType: entry.changeType || 'structure',
+        contributor: entry.contributor || 'unknown'
+      }));
+    }
     writeJson(metaPath, meta);
   }
   return { id, metaPath, meta };
@@ -120,7 +159,9 @@ function generateChangelog(metas, options = {}){
     md += `Current version: **${m.version}**\n\n`;
     md += `Changelog:\n\n`;
     for(const entry of (m.changelog || [])){
-      md += `- ${entry.date} — ${entry.version} — ${entry.note || ''}\n`;
+      const typeTag = entry.changeType ? `[${entry.changeType}]` : '';
+      const contrib = entry.contributor ? `(@${entry.contributor})` : '';
+      md += `- ${entry.date} — ${entry.version} ${typeTag} ${contrib} — ${entry.note || ''}\n`;
     }
     md += '\n';
   }
@@ -166,7 +207,8 @@ function buildVersioningState(options = {}){
         if(!entry || !isSemver(entry.version)){
           errors.push(`[${id}] Changelog entry #${index + 1} has invalid version.`);
         }
-        if(!entry || !/^\d{4}-\d{2}-\d{2}$/.test(String(entry.date || ''))){
+        const parsedDate = Date.parse(String(entry.date || ''));
+        if(!entry || (isNaN(parsedDate) && !/^\d{4}-\d{2}-\d{2}$/.test(String(entry.date || '')))){
           errors.push(`[${id}] Changelog entry #${index + 1} has invalid date.`);
         }
       });
@@ -272,6 +314,7 @@ function runCli(argv = process.argv.slice(2)) {
   if(parsed.generate || parsed._.includes('generate')){
     const result = generateAll();
     const paths = getPaths(ROOT);
+    generateVersionCatalog({ rootDir: ROOT });
     console.log(`Wrote ${paths.changelogFile}`);
     console.log(`\n✅ Component metadata generation complete (${result.results.length} components).`);
     return 0;
@@ -296,6 +339,30 @@ function runCli(argv = process.argv.slice(2)) {
   return 0;
 }
 
+function generateVersionCatalog(options = {}){
+  const paths = getPaths(options.rootDir);
+  const ids = componentIds({ rootDir: paths.rootDir });
+  const metas = readComponentMetasById(ids, { rootDir: paths.rootDir });
+  const catalog = metas.map((meta) => ({
+    id: meta.id,
+    title: meta.title,
+    path: meta.path,
+    version: meta.version,
+    changelog: (meta.changelog || []).map((entry) => ({
+      version: entry.version,
+      date: entry.date,
+      note: entry.note,
+      changeType: entry.changeType || 'structure',
+      contributor: entry.contributor || 'unknown'
+    }))
+  }));
+
+  const catalogPath = path.join(paths.rootDir, 'data', 'component-versions.json');
+  writeJson(catalogPath, catalog);
+  console.log(`Wrote ${catalogPath}`);
+  return catalog;
+}
+
 if(require.main === module){
   process.exitCode = runCli();
 }
@@ -312,6 +379,7 @@ module.exports = {
   readComponentMetasById,
   generateAll,
   generateChangelog,
+  generateVersionCatalog,
   buildVersioningState,
   bump,
   check,

@@ -2,6 +2,7 @@ const loader = document.querySelector(".loader");
 const button = document.getElementById("toggleBtn");
 const loadingText = document.getElementById("loadingText");
 
+
 let isRunning = true;
 
 button.addEventListener("click", () => {

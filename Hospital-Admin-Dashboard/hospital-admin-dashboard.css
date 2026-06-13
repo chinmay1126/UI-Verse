@@ -1155,3 +1155,60 @@ body {
     text-align: center;
   }
 }
+
+.doctor-status{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:.9rem;
+  font-weight:600;
+}
+
+.doctor-status span{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#22c55e;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.4);}
+  100%{transform:scale(1);}
+}
+
+.dark{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#f8fafc;
+}
+
+.badge{
+  position:absolute;
+  top:-5px;
+  right:-5px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#ef4444;
+  color:#fff;
+  font-size:11px;
+  display:grid;
+  place-items:center;
+}
+
+:root{
+
+  --primary:#6d5dfc;
+  --secondary:#3b82f6;
+  --success:#10b981;
+  --warning:#f59e0b;
+  --danger:#ef4444;
+
+  --bg:#f8fafc;
+  --surface:#ffffff;
+  --text:#111827;
+  --muted:#64748b;
+
+}

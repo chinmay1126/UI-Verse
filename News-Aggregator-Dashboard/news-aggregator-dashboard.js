@@ -160,3 +160,23 @@ document.querySelectorAll(".bookmark-btn").forEach(btn => {
     btn.classList.toggle("active");
   });
 });
+
+const bookmarkButtons = document.querySelectorAll('.bookmark-btn');
+
+bookmarkButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+
+    const icon = button.querySelector('i');
+
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+
+    button.classList.toggle('active');
+  });
+});
+
+const notificationButton = document.querySelector('.notification-btn');
+
+notificationButton.addEventListener('click', () => {
+  alert('No new notifications right now.');
+});

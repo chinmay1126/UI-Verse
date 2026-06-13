@@ -357,3 +357,96 @@ body {
 .hidden {
   display: none;
 }
+
+.email-app{
+  display:grid;
+  grid-template-columns:
+    260px
+    420px
+    1fr
+    300px;
+  height:calc(100vh - 70px);
+}
+
+.right-panel{
+  border-left:1px solid #eee;
+  padding:20px;
+  overflow:auto;
+}
+
+.profile-card,
+.calendar-card,
+.storage-card,
+.attachments-card{
+  background:#fff;
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.progress{
+  height:8px;
+  background:#ececec;
+  border-radius:999px;
+  margin:10px 0;
+}
+
+.bar{
+  width:57%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    #4f46e5,
+    #06b6d4
+  );
+  border-radius:999px;
+}
+
+.email-item{
+  transition:.25s;
+}
+
+.email-item:hover{
+  transform:translateY(-2px);
+}
+
+.tag{
+  background:#fee2e2;
+  color:#dc2626;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+}
+
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.user-avatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#4f46e5;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
+.icon-btn{
+  position:relative;
+}
+
+.notify-dot{
+  position:absolute;
+  width:8px;
+  height:8px;
+  background:red;
+  border-radius:50%;
+  top:4px;
+  right:4px;
+}

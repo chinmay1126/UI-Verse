@@ -41,6 +41,16 @@ cards.forEach((card) => {
 });
 
 
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.copy-btn');
+  if (!btn) return;
+
+  // copy logic
+});
+if (!navigator.clipboard) {
+  console.error('Clipboard API unavailable');
+  return;
+}
 // Scroll Reveal Animation
 const observer = new IntersectionObserver(
   (entries) => {

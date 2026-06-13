@@ -2,6 +2,7 @@ const emailItems = document.querySelectorAll(".email-item");
 
 emailItems.forEach(item => {
 
+  
   item.addEventListener("click", () => {
 
     emailItems.forEach(email => {
