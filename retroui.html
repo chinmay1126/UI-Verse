@@ -4,6 +4,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' 'sha256-5gz2c1mG+rwxmYnSeeebLAR8qCrXnUfXX6WitG8+IzU='; style-src-attr 'unsafe-hashes' 'sha256-5gz2c1mG+rwxmYnSeeebLAR8qCrXnUfXX6WitG8+IzU='">
 
   <meta
     name="viewport"
@@ -37,7 +38,7 @@
 <!-- =========================================================
    SIDEBAR
 ========================================================= -->
-
+<div class="layout">
 <aside class="sidebar">
 
   <div class="sidebar-brand">
@@ -374,7 +375,7 @@
 <!-- =========================================================
    MAIN WRAPPER
 ========================================================= -->
-
+<main class="main-content">
 <div class="main-wrapper">
 
   <!-- =========================================================
@@ -393,10 +394,22 @@
 
     <nav class="nav-links">
 
-      <a href="#">Home</a>
-      <a href="#">Components</a>
-      <a href="#">Retro</a>
-      <a href="#">Docs</a>
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="ai-components.html">
+        Components
+      </a>
+
+      <a href="retroui.html">
+        Retro
+      </a>
+
+      
+      <a href="docs.html">
+        Docs
+      </a>
 
     </nav>
 
@@ -871,7 +884,292 @@
   <!-- GRID -->
   <section class="pixel-grid">
 
-    <!-- KEEP ALL YOUR EXISTING PIXEL CARDS HERE -->
+    
+  <!-- CARD: TABS -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">TABS</span>
+      <span class="pixel-level">LVL 15</span>
+    </div>
+    <h3>Pixel Tabs</h3>
+    <p>Retro style tabbed navigation for organizing content menus.</p>
+    <div class="preview-box">
+      <div class="pixel-tabs">
+        <div class="pixel-tab active">INV</div>
+        <div class="pixel-tab">MAP</div>
+        <div class="pixel-tab">SKILL</div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: CHECKBOX -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">INPUT</span>
+      <span class="pixel-level">LVL 16</span>
+    </div>
+    <h3>Pixel Checkbox</h3>
+    <p>Chunky 8-bit checkbox input for forms and settings.</p>
+    <div class="preview-box">
+      <label class="pixel-checkbox-container">
+        <input type="checkbox" checked>
+        <span class="pixel-checkmark"></span>
+        ENABLE SOUND
+      </label>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: RADIO -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">INPUT</span>
+      <span class="pixel-level">LVL 17</span>
+    </div>
+    <h3>Pixel Radio</h3>
+    <p>Classic circular retro radio button for multiple choice.</p>
+    <div class="preview-box">
+      <label class="pixel-radio-container">
+        <input type="radio" name="difficulty" checked>
+        <span class="pixel-radio"></span>
+        HARD MODE
+      </label>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: SLIDER -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">INPUT</span>
+      <span class="pixel-level">LVL 18</span>
+    </div>
+    <h3>Pixel Slider</h3>
+    <p>Blocky range slider input for adjusting values.</p>
+    <div class="preview-box">
+      <div style="width:80%;">
+        <input type="range" min="1" max="100" value="50" class="pixel-slider">
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: SELECT -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">INPUT</span>
+      <span class="pixel-level">LVL 19</span>
+    </div>
+    <h3>Pixel Select</h3>
+    <p>Retro dropdown menu for choosing game options.</p>
+    <div class="preview-box">
+      <select class="pixel-select">
+        <option>WARRIOR</option>
+        <option>MAGE</option>
+        <option>ROGUE</option>
+      </select>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: ACCORDION -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">DATA</span>
+      <span class="pixel-level">LVL 20</span>
+    </div>
+    <h3>Pixel Accordion</h3>
+    <p>Expandable content panels styled like old dialogs.</p>
+    <div class="preview-box">
+      <div class="pixel-accordion">
+        <div class="pixel-accordion-header">QUEST LOG <span>+</span></div>
+        <div class="pixel-accordion-content">Defeat 10 Slimes in the Forest of Doom.</div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: SKELETON -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">FEEDBACK</span>
+      <span class="pixel-level">LVL 21</span>
+    </div>
+    <h3>Pixel Skeleton</h3>
+    <p>Retro animated skeleton loader for loading states.</p>
+    <div class="preview-box">
+      <div style="width:80%;">
+        <div class="pixel-skeleton" style="width: 100%;"></div>
+        <div class="pixel-skeleton" style="width: 70%;"></div>
+        <div class="pixel-skeleton" style="width: 85%;"></div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: BREADCRUMBS -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">NAV</span>
+      <span class="pixel-level">LVL 22</span>
+    </div>
+    <h3>Pixel Breadcrumbs</h3>
+    <p>Navigation trail indicator for deep nested menus.</p>
+    <div class="preview-box">
+      <div class="pixel-breadcrumbs">
+        <a href="#">WORLD</a> <span>></span>
+        <a href="#">TOWN</a> <span>></span>
+        <span>SHOP</span>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: SPINNER -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">FEEDBACK</span>
+      <span class="pixel-level">LVL 23</span>
+    </div>
+    <h3>Pixel Spinner</h3>
+    <p>Blocky rotating loading spinner element.</p>
+    <div class="preview-box">
+      <div class="pixel-spinner"></div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: TOAST -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">ALERT</span>
+      <span class="pixel-level">LVL 24</span>
+    </div>
+    <h3>Pixel Toast</h3>
+    <p>Notification popup for temporary game messages.</p>
+    <div class="preview-box">
+      <div class="pixel-toast">
+        ITEM SAVED
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: STEPPER -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">NAV</span>
+      <span class="pixel-level">LVL 25</span>
+    </div>
+    <h3>Pixel Stepper</h3>
+    <p>Progress indicator for multi-step retro flows.</p>
+    <div class="preview-box">
+      <div class="pixel-stepper">
+        <div class="pixel-step completed">1</div>
+        <div class="pixel-step-line"></div>
+        <div class="pixel-step">2</div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: DIVIDER -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">LAYOUT</span>
+      <span class="pixel-level">LVL 26</span>
+    </div>
+    <h3>Pixel Divider</h3>
+    <p>Dashed separator line for UI sections.</p>
+    <div class="preview-box">
+      <div style="width:80%; padding: 20px 0;">
+        <div class="pixel-divider"></div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: PAGINATION -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">NAV</span>
+      <span class="pixel-level">LVL 27</span>
+    </div>
+    <h3>Pixel Pagination</h3>
+    <p>Blocky page numbers for scrolling through items.</p>
+    <div class="preview-box">
+      <div class="pixel-pagination">
+        <div class="pixel-page">&lt;</div>
+        <div class="pixel-page active">1</div>
+        <div class="pixel-page">2</div>
+        <div class="pixel-page">&gt;</div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+
+  <!-- CARD: RATING -->
+  <div class="pixel-card">
+    <div class="card-top">
+      <span class="pixel-tag">DATA</span>
+      <span class="pixel-level">LVL 28</span>
+    </div>
+    <h3>Pixel Rating</h3>
+    <p>Star rating system with retro pixel stars.</p>
+    <div class="preview-box">
+      <div class="pixel-rating">
+        <span class="pixel-star">★</span>
+        <span class="pixel-star">★</span>
+        <span class="pixel-star">★</span>
+        <span class="pixel-star empty">★</span>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="view-btn">VIEW</button>
+      <button class="copy-btn">COPY</button>
+    </div>
+  </div>
+\n    <!-- KEEP ALL YOUR EXISTING PIXEL CARDS HERE -->
 
   </section>
 
@@ -1263,7 +1561,106 @@
 
   </div>
 
+  <!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+    <span class="pixel-tag">
+      PROGRESS
+    </span>
+    <span class="pixel-level">
+      LVL 7
+    </span>
+  </div>
+
+  <h3>
+    Pixel Progress Bar
+  </h3>
+
+  <p>
+    Retro inspired progress indicator
+    styled with pixel blocks.
+  </p>
+
+  <div class="preview-box dark">
+    <div class="pixel-progress">
+      <div class="progress-fill" style="width: 60%;"></div>
+    </div>
+  </div>
+
+  <div class="card-actions">
+    <button class="view-btn">
+      VIEW
+    </button>
+    <button class="copy-btn">
+      COPY
+    </button>
+  </div>
+
+</div>
+
+
 </section>
+
+</main>
+</div>
+
+<button id="scrollTopBtn" class="scroll-top-btn">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+</body>
+
 
 <script src="retroui.js"></script>
 

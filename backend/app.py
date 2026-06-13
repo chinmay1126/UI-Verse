@@ -1570,6 +1570,11 @@ def equipment_detail_entry() -> object:
     return send_from_directory(PROJECT_ROOT, "equipment-detail.html")
 
 
+@app.get("/workspace.html")
+def workspace_entry() -> object:
+    return send_from_directory(PROJECT_ROOT, "workspace.html")
+
+
 if __name__ == "__main__":
     start_iot_alert_worker()
     app.run(host="127.0.0.1", port=5000, debug=True, use_reloader=False)
