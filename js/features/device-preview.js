@@ -21,7 +21,7 @@ const DevicePreview = {
   _widths: {
     mobile: 375,
     tablet: 768,
-    desktop: 1200
+    desktop: '100%'
   },
 
   _selectors: [
@@ -89,7 +89,7 @@ const DevicePreview = {
 
       const viewport = document.createElement('div');
       viewport.className = 'uiv-device-viewport';
-      viewport.dataset.width = '1200';
+      viewport.dataset.width = '100%';
 
       const handle = document.createElement('button');
       handle.type = 'button';
@@ -99,7 +99,7 @@ const DevicePreview = {
 
       const indicator = document.createElement('div');
       indicator.className = 'uiv-device-width-indicator';
-      indicator.textContent = '1200px';
+      indicator.textContent = '100%';
 
       frame.appendChild(viewport);
       frame.appendChild(handle);
@@ -130,7 +130,7 @@ const DevicePreview = {
         <i class="fa-solid fa-tablet-screen-button"></i>
         <span>Tablet</span>
       </button>
-      <button type="button" class="uiv-device-btn" data-device="desktop" data-width="1200">
+      <button type="button" class="uiv-device-btn" data-device="desktop" data-width="100%">
         <i class="fa-solid fa-desktop"></i>
         <span>Desktop</span>
       </button>
@@ -156,7 +156,10 @@ const DevicePreview = {
       event.preventDefault();
       state.handle.setPointerCapture?.(event.pointerId);
 
-      const currentWidth = Number.parseInt(state.viewport.dataset.width || '', 10) || this._widths.desktop;
+      let currentWidth = Number.parseInt(state.viewport.dataset.width || '', 10);
+      if (state.viewport.dataset.width === '100%' || !Number.isFinite(currentWidth) || currentWidth < 280) {
+        currentWidth = state.viewport.clientWidth;
+      }
       this._state.dragging = {
         pointerId: event.pointerId,
         startX: event.clientX,
@@ -217,10 +220,16 @@ const DevicePreview = {
       : null;
 
     this._state.hosts.forEach((state) => {
-      const width = this._resolveWidth(normalizedMode, preferredWidth, state.frame);
-      state.viewport.style.width = `${width}px`;
-      state.viewport.dataset.width = String(width);
-      state.indicator.textContent = `${width}px`;
+      if (normalizedMode === 'desktop') {
+        state.viewport.style.width = '100%';
+        state.viewport.dataset.width = '100%';
+        state.indicator.textContent = '100%';
+      } else {
+        const width = this._resolveWidth(normalizedMode, preferredWidth, state.frame);
+        state.viewport.style.width = `${width}px`;
+        state.viewport.dataset.width = String(width);
+        state.indicator.textContent = `${width}px`;
+      }
       state.host.dataset.deviceMode = normalizedMode;
 
       state.toolbar.querySelectorAll('.uiv-device-btn').forEach((button) => {
@@ -299,6 +308,18 @@ const DevicePreview = {
         background: rgba(0, 0, 0, 0.22);
         overflow: hidden;
         transition: width 180ms ease;
+      }
+
+      .uiv-device-preview-host[data-device-mode="mobile"] .uiv-device-viewport {
+        width: 375px;
+      }
+
+      .uiv-device-preview-host[data-device-mode="tablet"] .uiv-device-viewport {
+        width: 768px;
+      }
+
+      .uiv-device-preview-host[data-device-mode="desktop"] .uiv-device-viewport {
+        width: 100%;
       }
 
       .uiv-device-resize-handle {
