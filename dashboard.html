@@ -2011,6 +2011,46 @@ MAIN
   </div>
 </div>
 
+<section class="skills-section">
+  <h2>My Skills</h2>
+
+  <div class="skill-bar" data-skill="HTML" data-level="90" data-color="solid"></div>
+  <div class="skill-bar" data-skill="CSS" data-level="85" data-color="gradient"></div>
+  <div class="skill-bar" data-skill="JavaScript" data-level="80" data-color="solid"></div>
+  <div class="skill-bar" data-skill="React" data-level="75" data-color="gradient"></div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const skillBars = document.querySelectorAll(".skill-bar");
+
+  skillBars.forEach(bar => {
+    const level = bar.getAttribute("data-level");
+    const color = bar.getAttribute("data-color");
+
+    // Create inner fill div
+    const fill = document.createElement("div");
+    fill.classList.add("skill-fill", color);
+    bar.appendChild(fill);
+  });
+
+  // Intersection Observer for animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target.querySelector(".skill-fill");
+        const level = entry.target.getAttribute("data-level");
+        fill.style.width = level + "%";
+        observer.unobserve(entry.target); // animate once
+      }
+    });
+  }, { threshold: 0.5 });
+
+  skillBars.forEach(bar => observer.observe(bar));
+});
+
+</script>
+
 <script>
 function addNote() {
   const colors = ['note-purple','note-blue','note-orange','note-green'];
@@ -2021,7 +2061,7 @@ function addNote() {
   grid.appendChild(note);
 }
 function deleteNote(btn) { btn.closest('.sticky-note').remove(); }
-<\/script></textarea>
+</script></textarea>
 
       </div>
 
@@ -2101,9 +2141,7 @@ function deleteNote(btn) { btn.closest('.sticky-note').remove(); }
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
-<!-- =========================================================
-SCRIPT
-========================================================= -->
+
 
 <script>
 
