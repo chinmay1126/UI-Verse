@@ -140,6 +140,15 @@ function validateComponentRegistry(options = {}) {
   const pathToId = new Map();
 
   registry.forEach((entry, index) => {
+
+    // JSON structural check
+    if (!entry.title || typeof entry.title !== 'string') {
+      errors.push(`[${id}] Component is missing a valid 'title' string.`);
+    }
+    if (!entry.category || typeof entry.category !== 'string') {
+      errors.push(`[${id}] Component is missing a valid 'category' string.`);
+    }
+    
     const marker = `registry entry #${index + 1}`;
     const id = String(entry && entry.id || '').trim();
     const pagePath = String(entry && entry.path || '').trim();
