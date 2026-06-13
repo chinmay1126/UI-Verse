@@ -9,6 +9,8 @@ const DevicePreview = {
     hosts: [],
     activeMode: 'desktop',
     customWidth: null,
+    fullscreenHost: null,
+    fullscreenChangeBound: false,
     dragging: null,
     listeners: []
   },
@@ -113,6 +115,7 @@ const DevicePreview = {
       const state = { host, toolbar, frame, viewport, handle, indicator };
       this._state.hosts.push(state);
       this._bindToolbar(state);
+      this._bindFullscreen(state);
       this._bindResizeHandle(state);
     });
   },
@@ -134,13 +137,17 @@ const DevicePreview = {
         <i class="fa-solid fa-desktop"></i>
         <span>Desktop</span>
       </button>
+      <button type="button" class="uiv-device-btn uiv-fullscreen-btn" data-fullscreen-toggle aria-label="Enter fullscreen preview" title="Enter fullscreen preview" aria-pressed="false">
+        <i class="fa-solid fa-expand"></i>
+        <span>Fullscreen</span>
+      </button>
     `;
 
     return toolbar;
   },
 
   _bindToolbar(state) {
-    const buttons = state.toolbar.querySelectorAll('.uiv-device-btn');
+    const buttons = state.toolbar.querySelectorAll('.uiv-device-btn[data-device]');
 
     buttons.forEach((button) => {
       button.addEventListener('click', () => {
@@ -148,6 +155,109 @@ const DevicePreview = {
         const width = Number.parseInt(button.dataset.width || '', 10);
         this._applyMode(mode, width, { persist: true });
       });
+    });
+  },
+
+  _bindFullscreen(state) {
+    const button = state.toolbar.querySelector('[data-fullscreen-toggle]');
+    if (!button) return;
+
+    const onClick = () => {
+      if (this._state.fullscreenHost === state.host) {
+        this._exitFullscreen();
+      } else {
+        this._enterFullscreen(state);
+      }
+    };
+
+    button.addEventListener('click', onClick);
+    this._state.listeners.push({ el: button, event: 'click', handler: onClick });
+
+    if (!this._state.fullscreenChangeBound) {
+      const onFullscreenChange = () => {
+        const fullscreenElement = document.fullscreenElement
+          || document.webkitFullscreenElement
+          || document.msFullscreenElement
+          || null;
+
+        if (!fullscreenElement && this._state.fullscreenHost) {
+          this._setFullscreenState(null);
+        }
+      };
+
+      const onKeyDown = (event) => {
+        if (event.key === 'Escape' && this._state.fullscreenHost && !document.fullscreenElement) {
+          this._exitFullscreen();
+        }
+      };
+
+      document.addEventListener('fullscreenchange', onFullscreenChange);
+      document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+      document.addEventListener('MSFullscreenChange', onFullscreenChange);
+      document.addEventListener('keydown', onKeyDown);
+
+      this._state.listeners.push({ el: document, event: 'fullscreenchange', handler: onFullscreenChange });
+      this._state.listeners.push({ el: document, event: 'webkitfullscreenchange', handler: onFullscreenChange });
+      this._state.listeners.push({ el: document, event: 'MSFullscreenChange', handler: onFullscreenChange });
+      this._state.listeners.push({ el: document, event: 'keydown', handler: onKeyDown });
+      this._state.fullscreenChangeBound = true;
+    }
+  },
+
+  _enterFullscreen(state) {
+    const requestFullscreen = state.host.requestFullscreen
+      || state.host.webkitRequestFullscreen
+      || state.host.msRequestFullscreen;
+
+    this._setFullscreenState(state.host);
+
+    if (requestFullscreen) {
+      const result = requestFullscreen.call(state.host);
+      if (result && typeof result.catch === 'function') {
+        result.catch(() => this._setFullscreenState(null));
+      }
+    }
+  },
+
+  _exitFullscreen() {
+    const exitFullscreen = document.exitFullscreen
+      || document.webkitExitFullscreen
+      || document.msExitFullscreen;
+
+    if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+      if (exitFullscreen) {
+        const result = exitFullscreen.call(document);
+        if (result && typeof result.catch === 'function') {
+          result.catch(() => undefined);
+        }
+      }
+      return;
+    }
+
+    this._setFullscreenState(null);
+  },
+
+  _setFullscreenState(host) {
+    this._state.fullscreenHost = host;
+
+    this._state.hosts.forEach((state) => {
+      const isFullscreen = state.host === host;
+      const button = state.toolbar.querySelector('[data-fullscreen-toggle]');
+
+      state.host.classList.toggle('is-fullscreen', isFullscreen);
+      state.host.setAttribute('aria-expanded', String(isFullscreen));
+
+      if (button) {
+        const icon = button.querySelector('i');
+        const label = button.querySelector('span');
+
+        button.classList.toggle('is-active', isFullscreen);
+        button.setAttribute('aria-pressed', String(isFullscreen));
+        button.setAttribute('aria-label', isFullscreen ? 'Exit fullscreen preview' : 'Enter fullscreen preview');
+        button.title = isFullscreen ? 'Exit fullscreen preview' : 'Enter fullscreen preview';
+        if (label) label.textContent = isFullscreen ? 'Exit' : 'Fullscreen';
+        if (icon) icon.className = isFullscreen ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
+      }
     });
   },
 
@@ -246,6 +356,16 @@ const DevicePreview = {
         margin: 12px 0 16px;
       }
 
+      .uiv-device-preview-host.is-fullscreen {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        grid-template-rows: auto minmax(0, 1fr);
+        margin: 0;
+        padding: 16px;
+        background: #080a0e;
+      }
+
       .uiv-device-toolbar {
         display: inline-flex;
         align-items: center;
@@ -290,6 +410,11 @@ const DevicePreview = {
         overflow: hidden;
       }
 
+      .uiv-device-preview-host.is-fullscreen .uiv-device-frame {
+        min-height: 0;
+        display: flex;
+      }
+
       .uiv-device-viewport {
         margin: 0 auto;
         max-width: 100%;
@@ -299,6 +424,12 @@ const DevicePreview = {
         background: rgba(0, 0, 0, 0.22);
         overflow: hidden;
         transition: width 180ms ease;
+      }
+
+      .uiv-device-preview-host.is-fullscreen .uiv-device-viewport {
+        width: 100% !important;
+        min-height: 0;
+        flex: 1;
       }
 
       .uiv-device-resize-handle {
@@ -331,6 +462,11 @@ const DevicePreview = {
         width: 100%;
       }
 
+      .uiv-device-preview-host.is-fullscreen .sandbox-preview-frame {
+        height: 100%;
+        min-height: 100%;
+      }
+
       @media (max-width: 900px) {
         .uiv-device-btn span {
           display: none;
@@ -348,6 +484,8 @@ const DevicePreview = {
 
     this._state.listeners = [];
     this._state.hosts = [];
+    this._state.fullscreenHost = null;
+    this._state.fullscreenChangeBound = false;
     this._state.dragging = null;
     this._state.initialized = false;
   }
