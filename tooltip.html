@@ -26,6 +26,9 @@
   <div class="sidebar-brand">
     <span class="brand-icon">⬡</span>
     <span class="brand-text">UIverse</span>
+    <div class="hamburger">&#9776;</div>
+<nav class="sidebar">
+
   </div>
           <nav class="sidebar-nav">
     <ul>
@@ -337,6 +340,7 @@
       </li>
     </ul>
   </nav>
+</nav>
   <div class="sidebar-footer">
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -753,6 +757,18 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".sidebar").classList.toggle("active");
+});
+
+</script>
     <div class="footer-bottom">
       <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
     </div>
