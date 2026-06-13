@@ -1,24 +1,37 @@
+import '../dist/index.js';
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("toggle");
-
   if (!toggle) return;
 
-  // Restore theme
-  const savedTheme = localStorage.getItem("theme");
+  // Sync state helper
+  const syncToggle = (themeName) => {
+    const isDark = themeName === "dark" || themeName === "ocean" || themeName === "forest";
+    toggle.checked = isDark;
+  };
 
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-    toggle.checked = true;
+  // Sync checkbox on load
+  const manager = window.DesignTokens;
+  if (manager) {
+    // Initialize design tokens immediately
+    manager.init();
+    
+    const currentTheme = manager.getStoredTheme() || manager.getSystemTheme();
+    syncToggle(currentTheme);
   }
 
+  // Handle toggle change
   toggle.addEventListener("change", () => {
-    document.body.classList.toggle("dark");
+    const manager = window.DesignTokens;
+    if (manager) {
+      const nextTheme = toggle.checked ? "dark" : "light";
+      manager.setTheme(nextTheme);
+    }
+  });
 
-    localStorage.setItem(
-      "theme",
-      document.body.classList.contains("dark")
-        ? "dark"
-        : "light"
-    );
+  // Keep toggle state in sync if theme changes elsewhere (like the dropdown)
+  window.addEventListener("design-tokens:themechange", (event) => {
+    const nextTheme = event.detail?.resolvedTheme || event.detail?.theme;
+    syncToggle(nextTheme);
   });
 });

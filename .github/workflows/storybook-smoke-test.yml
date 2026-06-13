@@ -5,6 +5,7 @@ on:
     paths:
       - '.storybook/**'
       - 'stories/**'
+      - 'scripts/generate-storybook-stories.js'
       - 'package.json'
 
 jobs:
