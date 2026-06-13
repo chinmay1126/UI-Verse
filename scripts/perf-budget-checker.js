@@ -26,6 +26,16 @@ function resolveLocal(file, baseFile) {
 }
 
 function fileSize(filePath) {
+
+  if (filePath && filePath.endsWith('.css')) {
+    try {
+      const sz = fs.statSync(filePath).size;
+      if (sz > 15 * 1024) {
+        console.warn(`[PERF WARNING] CSS limit warning: ${filePath} size is ${sz} bytes`);
+      }
+    } catch(e){}
+  }
+    
   try {
     const stat = fs.statSync(filePath);
     if (stat.isFile()) return stat.size;
