@@ -25,6 +25,12 @@ jobs:
               "## Testing & Verification",
               "## Checklist"
             ];
+            
+            if (body.includes("- [ ] Added/modified the component file(s)") || body.includes("- [ ] Updated companion stylesheet/CSS file(s)")) {
+              core.setFailed("Please check off the completed checklist items by changing '- [ ]' to '- [x]'.");
+              return;
+            }
+    
             for (const section of requiredSections) {
               if (!body.includes(section)) {
                 core.setFailed(`PR description is missing the required section: "${section}". Please follow the PR template.`);

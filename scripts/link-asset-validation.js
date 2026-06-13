@@ -42,6 +42,11 @@ function normalizeSlashes(value) {
   return value.split(path.sep).join('/');
 }
 
+
+function isRemoteUrl(url) {
+  return url.startsWith('http://') || url.startsWith('https://');
+}
+    
 function isExternalUrl(value) {
   return /^(?:[a-z]+:)?\/\//i.test(value) || value.startsWith('data:') || value.startsWith('mailto:') || value.startsWith('tel:');
 }
