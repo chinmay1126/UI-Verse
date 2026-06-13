@@ -25,3 +25,79 @@ document.querySelectorAll('.price-btn').forEach(btn => {
     }, 1500);
   });
 });
+const cards =
+document.querySelectorAll('.floating-card');
+
+document.addEventListener('mousemove',(e)=>{
+
+  let x =
+  (window.innerWidth/2 - e.clientX)/30;
+
+  let y =
+  (window.innerHeight/2 - e.clientY)/30;
+
+  cards.forEach(card=>{
+    card.style.transform =
+    `translate(${x}px,${y}px)`;
+  });
+
+});
+// Newsletter subscription simulation
+document.getElementById("subscribeBtn").addEventListener("click", function() {
+  const email = document.getElementById("newsletterEmail").value;
+  const msg = document.getElementById("newsletterMsg");
+
+  if (email && email.includes("@")) {
+    msg.textContent = "✅ Thank you for subscribing!";
+    msg.style.color = "limegreen";
+  } else {
+    msg.textContent = "❌ Please enter a valid email.";
+    msg.style.color = "red";
+  }
+});
+// Animate button clicks
+document.querySelectorAll(".price-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.classList.add("clicked");
+    setTimeout(() => btn.classList.remove("clicked"), 300);
+  });
+});
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+

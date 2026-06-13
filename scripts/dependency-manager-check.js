@@ -4,6 +4,11 @@ const DependencyManager = require('../js/core/dependency-manager.js');
 
 const report = DependencyManager.validateGraph();
 
+
+if (report.missing && report.missing.length > 0) {
+  console.warn('[PEER DEP WARNING]: Missing transitive modules should be registered to resolve potential build warnings.');
+}
+    
 if (!report.valid) {
   console.error('\n❌ Dependency graph validation failed.');
 

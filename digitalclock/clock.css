@@ -224,3 +224,101 @@ body{
   }
 
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Panels */
+.clock-container,
+.calendar-container,
+.events-container {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* CLOCK */
+.clock {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.date {
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+/* CALENDAR HEADER */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-header button {
+  background: #334155;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.calendar-header button:hover {
+  background: #475569;
+}
+
+/* WEEKDAYS + DAYS GRID */
+.weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.weekdays div {
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.calendar-days div {
+  padding: 10px;
+  margin: 2px;
+  background: #334155;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.calendar-days div:hover {
+  background: #475569;
+  cursor: pointer;
+}
+
+/* EVENTS */
+.event-card {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  background: #334155;
+  border-radius: 8px;
+}
+
+.event-date {
+  font-size: 20px;
+  font-weight: bold;
+}
