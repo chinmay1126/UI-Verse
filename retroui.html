@@ -4,7 +4,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' 'sha256-5gz2c1mG+rwxmYnSeeebLAR8qCrXnUfXX6WitG8+IzU='; style-src-attr 'unsafe-hashes' 'sha256-5gz2c1mG+rwxmYnSeeebLAR8qCrXnUfXX6WitG8+IzU='">
 
   <meta
     name="viewport"
@@ -38,7 +38,7 @@
 <!-- =========================================================
    SIDEBAR
 ========================================================= -->
-
+<div class="layout">
 <aside class="sidebar">
 
   <div class="sidebar-brand">
@@ -375,7 +375,7 @@
 <!-- =========================================================
    MAIN WRAPPER
 ========================================================= -->
-
+<main class="main-content">
 <div class="main-wrapper">
 
   <!-- =========================================================
@@ -1276,7 +1276,49 @@
 
   </div>
 
+  <!-- CARD -->
+<div class="pixel-card">
+
+  <div class="card-top">
+    <span class="pixel-tag">
+      PROGRESS
+    </span>
+    <span class="pixel-level">
+      LVL 7
+    </span>
+  </div>
+
+  <h3>
+    Pixel Progress Bar
+  </h3>
+
+  <p>
+    Retro inspired progress indicator
+    styled with pixel blocks.
+  </p>
+
+  <div class="preview-box dark">
+    <div class="pixel-progress">
+      <div class="progress-fill" style="width: 60%;"></div>
+    </div>
+  </div>
+
+  <div class="card-actions">
+    <button class="view-btn">
+      VIEW
+    </button>
+    <button class="copy-btn">
+      COPY
+    </button>
+  </div>
+
+</div>
+
+
 </section>
+
+</main>
+</div>
 
 <button id="scrollTopBtn" class="scroll-top-btn">
   <i class="fa-solid fa-arrow-up"></i>
@@ -1332,6 +1374,7 @@
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
+</body>
 
 
 <script src="retroui.js"></script>

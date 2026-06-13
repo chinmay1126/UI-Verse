@@ -1,23 +1,20 @@
-const nav = document.querySelectorAll(".nav-item");
-const indicator = document.querySelector(".indicator");
+  const btns = document.querySelectorAll('.nav-btn');
+  const pill = document.getElementById('pill');
+  const nav = document.getElementById('demoNav');
+  const title = document.getElementById('page-title');
 
-function updateIndicator(el) {
-  const rect = el.getBoundingClientRect();
-  const parentRect = el.parentElement.getBoundingClientRect();
+  function movePill(el) {
+    pill.style.left = el.offsetLeft + 'px';
+    pill.style.width = el.offsetWidth + 'px';
+  }
 
-  indicator.style.left = `${el.offsetLeft}px`;
-}
-
-nav.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    nav.forEach(n => n.classList.remove("active"));
-    item.classList.add("active");
-
-    updateIndicator(item);
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      movePill(btn);
+      title.textContent = btn.dataset.label;
+    });
   });
-});
 
-// initial position
-updateIndicator(document.querySelector(".nav-item.active"));
+  requestAnimationFrame(() => movePill(document.querySelector('.nav-btn.active')));
