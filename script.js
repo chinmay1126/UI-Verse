@@ -57,7 +57,10 @@ const qsa = (selector, root = document) => Array.from(root.querySelectorAll(sele
  * @param {string} message
  * @param {number} [duration=2000] - ms before auto-dismiss
  */
+let lastToastShownAt = 0;
+
 function showToast(message, duration = 2000) {
+  lastToastShownAt = Date.now();
   const TOAST_ID = "toast-notification";
 
   // Remove any existing toast immediately
@@ -93,6 +96,31 @@ function showToast(message, duration = 2000) {
    – Consolidates copyCode / copyHTML / copyCSS
      and the colour helpers.
 ───────────────────────────────────────────── */
+
+// Show feedback for copy actions that call the Clipboard API directly.
+try {
+  if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
+    const originalWriteText = navigator.clipboard.writeText;
+    Object.defineProperty(navigator.clipboard, "writeText", {
+      value: function (text) {
+        return originalWriteText.call(navigator.clipboard, text)
+          .then((value) => {
+            const copiedAt = Date.now();
+            setTimeout(() => {
+              if (lastToastShownAt < copiedAt) {
+                showToast("Code copied to clipboard!");
+              }
+            }, 0);
+            return value;
+          });
+      },
+      configurable: true,
+      writable: true
+    });
+  }
+} catch (e) {
+  console.warn("Could not intercept clipboard writer:", e);
+}
 
 /**
  * Decode HTML entities (e.g. &lt; → <) from a code block's innerHTML.
