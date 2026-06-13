@@ -1,0 +1,700 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-06-11",
+  "componentDependencies": {
+    "buttons": {
+      "categoryName": "Buttons",
+      "pageFile": "button.html",
+      "globalDependencies": {
+        "required": ["style.css"],
+        "optional": ["script.js"]
+      },
+      "categoryDependencies": {
+        "required": ["buttons.css"],
+        "optional": []
+      },
+      "externalDependencies": {
+        "cdn": ["font-awesome@6.5.1"],
+        "fonts": ["Google Fonts (Syne, DM Sans)"]
+      },
+      "components": {
+        "gradient-button": {
+          "name": "Gradient Button",
+          "requires": ["style.css", "buttons.css"],
+          "utilities": ["btn-base", "btn-gradient", "btn-colors"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "outline-button": {
+          "name": "Outline Button",
+          "requires": ["style.css", "buttons.css"],
+          "utilities": ["btn-base", "btn-outline"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "icon-button": {
+          "name": "Icon Button",
+          "requires": ["style.css", "buttons.css"],
+          "utilities": ["btn-base", "btn-icon"],
+          "javascript": "none",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        },
+        "toggle-button": {
+          "name": "Toggle Button",
+          "requires": ["style.css", "buttons.css", "script.js"],
+          "utilities": ["btn-base", "btn-toggle"],
+          "javascript": "toggleHandler",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "animated-button": {
+          "name": "Animated Button",
+          "requires": ["style.css", "buttons.css"],
+          "utilities": ["btn-base", "btn-animation"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "glass-button": {
+          "name": "Glass Button",
+          "requires": ["style.css", "buttons.css"],
+          "utilities": ["btn-base", "btn-glass"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "neon-button": {
+          "name": "Neon Button",
+          "requires": ["style.css", "buttons.css"],
+          "utilities": ["btn-base", "btn-neon"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": false
+        },
+        "ripple-button": {
+          "name": "Ripple Button",
+          "requires": ["style.css", "buttons.css", "script.js"],
+          "utilities": ["btn-base", "btn-ripple"],
+          "javascript": "rippleEffect",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        }
+      }
+    },
+    "navbars": {
+      "categoryName": "Navbars",
+      "pageFile": "Navbar.html",
+      "globalDependencies": {
+        "required": ["style.css"],
+        "optional": ["script.js"]
+      },
+      "categoryDependencies": {
+        "required": ["navbar.css"],
+        "optional": []
+      },
+      "externalDependencies": {
+        "cdn": ["font-awesome@6.5.1"],
+        "fonts": ["Google Fonts (Syne, DM Sans)"]
+      },
+      "components": {
+        "glass-navbar": {
+          "name": "Glass Navbar",
+          "requires": ["style.css", "navbar.css"],
+          "utilities": ["nav-base", "nav-glass", "nav-blur"],
+          "javascript": "optional",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        },
+        "sticky-navbar": {
+          "name": "Sticky Navbar",
+          "requires": ["style.css", "navbar.css", "script.js"],
+          "utilities": ["nav-base", "nav-sticky"],
+          "javascript": "stickyHandler",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        },
+        "responsive-navbar": {
+          "name": "Responsive Navbar",
+          "requires": ["style.css", "navbar.css", "script.js"],
+          "utilities": ["nav-base", "nav-responsive"],
+          "javascript": "toggleSidebar",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        },
+        "hamburger-navbar": {
+          "name": "Hamburger Navbar",
+          "requires": ["style.css", "navbar.css", "script.js"],
+          "utilities": ["nav-base", "nav-menu"],
+          "javascript": "toggleSidebar",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        },
+        "gradient-navbar": {
+          "name": "Gradient Navbar",
+          "requires": ["style.css", "navbar.css"],
+          "utilities": ["nav-base", "nav-gradient"],
+          "javascript": "optional",
+          "icons": true,
+          "responsive": true,
+          "darkMode": false
+        },
+        "mega-navbar": {
+          "name": "Mega Navbar",
+          "requires": ["style.css", "navbar.css", "script.js"],
+          "utilities": ["nav-base", "nav-dropdown"],
+          "javascript": "dropdownHandler",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        }
+      }
+    },
+    "cards": {
+      "categoryName": "Cards",
+      "pageFile": "cards.html",
+      "globalDependencies": {
+        "required": ["style.css"],
+        "optional": ["script.js"]
+      },
+      "categoryDependencies": {
+        "required": ["cards.css"],
+        "optional": []
+      },
+      "externalDependencies": {
+        "cdn": [],
+        "fonts": ["Google Fonts (Syne, DM Sans)"]
+      },
+      "components": {
+        "basic-card": {
+          "name": "Basic Card",
+          "requires": ["style.css", "cards.css"],
+          "utilities": ["card-base", "card-padding"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "hover-card": {
+          "name": "Hover Card",
+          "requires": ["style.css", "cards.css"],
+          "utilities": ["card-base", "card-hover"],
+          "javascript": "optional",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "image-card": {
+          "name": "Image Card",
+          "requires": ["style.css", "cards.css"],
+          "utilities": ["card-base", "card-image"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "pricing-card": {
+          "name": "Pricing Card",
+          "requires": ["style.css", "cards.css", "buttons.css"],
+          "utilities": ["card-base", "card-pricing"],
+          "javascript": "optional",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "flip-card": {
+          "name": "Flip Card",
+          "requires": ["style.css", "cards.css", "script.js"],
+          "utilities": ["card-base", "card-flip", "card-transform"],
+          "javascript": "flipHandler",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "glass-card": {
+          "name": "Glass Card",
+          "requires": ["style.css", "cards.css"],
+          "utilities": ["card-base", "card-glass"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        }
+      }
+    },
+    "inputs": {
+      "categoryName": "Inputs",
+      "pageFile": "inputs.html",
+      "globalDependencies": {
+        "required": ["style.css"],
+        "optional": ["script.js"]
+      },
+      "categoryDependencies": {
+        "required": [],
+        "optional": []
+      },
+      "externalDependencies": {
+        "cdn": ["font-awesome@6.5.1 (optional)"],
+        "fonts": ["Google Fonts (Syne, DM Sans)"]
+      },
+      "components": {
+        "text-input": {
+          "name": "Text Input",
+          "requires": ["style.css"],
+          "utilities": ["input-base", "input-text"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "email-input": {
+          "name": "Email Input",
+          "requires": ["style.css"],
+          "utilities": ["input-base", "input-email"],
+          "javascript": "optional",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "password-input": {
+          "name": "Password Input",
+          "requires": ["style.css", "script.js"],
+          "utilities": ["input-base", "input-password"],
+          "javascript": "passwordToggle",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        },
+        "search-input": {
+          "name": "Search Input",
+          "requires": ["style.css", "script.js"],
+          "utilities": ["input-base", "input-search"],
+          "javascript": "handleSearch",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        },
+        "toggle-switch": {
+          "name": "Toggle Switch",
+          "requires": ["style.css", "script.js"],
+          "utilities": ["input-base", "input-toggle"],
+          "javascript": "toggleHandler",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "checkbox": {
+          "name": "Checkbox",
+          "requires": ["style.css"],
+          "utilities": ["input-base", "input-checkbox"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "select-dropdown": {
+          "name": "Select Dropdown",
+          "requires": ["style.css", "script.js"],
+          "utilities": ["input-base", "input-select"],
+          "javascript": "dropdownHandler",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        }
+      }
+    },
+    "forms": {
+      "categoryName": "Forms",
+      "pageFile": "form.html",
+      "globalDependencies": {
+        "required": ["style.css"],
+        "optional": ["script.js"]
+      },
+      "categoryDependencies": {
+        "required": ["contact.css"],
+        "optional": []
+      },
+      "externalDependencies": {
+        "cdn": [],
+        "fonts": ["Google Fonts (Syne, DM Sans)"]
+      },
+      "components": {
+        "contact-form": {
+          "name": "Contact Form",
+          "requires": ["style.css", "contact.css", "script.js"],
+          "utilities": ["form-base", "input-group"],
+          "javascript": "formValidation",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "login-form": {
+          "name": "Login Form",
+          "requires": ["style.css", "contact.css", "script.js"],
+          "utilities": ["form-base", "input-group"],
+          "javascript": "formValidation",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "signup-form": {
+          "name": "Signup Form",
+          "requires": ["style.css", "contact.css", "script.js"],
+          "utilities": ["form-base", "input-group"],
+          "javascript": "formValidation, passwordValidation",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "newsletter-form": {
+          "name": "Newsletter Form",
+          "requires": ["style.css", "contact.css", "script.js"],
+          "utilities": ["form-base", "input-group"],
+          "javascript": "subscribe",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "multi-step-form": {
+          "name": "Multi-Step Form",
+          "requires": ["style.css", "contact.css", "script.js"],
+          "utilities": ["form-base", "input-group", "form-steps"],
+          "javascript": "stepNavigation, formValidation",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        }
+      }
+    },
+    "badges": {
+      "categoryName": "Badges",
+      "pageFile": "badges.html",
+      "globalDependencies": {
+        "required": ["style.css"],
+        "optional": []
+      },
+      "categoryDependencies": {
+        "required": [],
+        "optional": []
+      },
+      "externalDependencies": {
+        "cdn": ["font-awesome@6.5.1 (optional)"],
+        "fonts": ["Google Fonts (Syne, DM Sans)"]
+      },
+      "components": {
+        "status-badge": {
+          "name": "Status Badge",
+          "requires": ["style.css"],
+          "utilities": ["badge-base", "badge-status"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": false,
+          "darkMode": true
+        },
+        "tag-label": {
+          "name": "Tag Label",
+          "requires": ["style.css"],
+          "utilities": ["badge-base", "badge-tag"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "icon-badge": {
+          "name": "Icon Badge",
+          "requires": ["style.css"],
+          "utilities": ["badge-base", "badge-icon"],
+          "javascript": "none",
+          "icons": true,
+          "responsive": false,
+          "darkMode": true
+        },
+        "animated-badge": {
+          "name": "Animated Badge",
+          "requires": ["style.css"],
+          "utilities": ["badge-base", "badge-animation"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "gradient-badge": {
+          "name": "Gradient Badge",
+          "requires": ["style.css"],
+          "utilities": ["badge-base", "badge-gradient"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": false
+        }
+      }
+    },
+    "colors": {
+      "categoryName": "Colors",
+      "pageFile": "color.html",
+      "globalDependencies": {
+        "required": ["style.css"],
+        "optional": []
+      },
+      "categoryDependencies": {
+        "required": [],
+        "optional": []
+      },
+      "externalDependencies": {
+        "cdn": [],
+        "fonts": ["Google Fonts (Syne, DM Sans)"]
+      },
+      "components": {
+        "color-palette": {
+          "name": "Color Palette",
+          "requires": ["style.css"],
+          "utilities": ["color-base"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": false
+        },
+        "theme-colors": {
+          "name": "Theme Colors",
+          "requires": ["style.css"],
+          "utilities": ["color-base", "css-variables"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "gradient-palette": {
+          "name": "Gradient Palette",
+          "requires": ["style.css"],
+          "utilities": ["color-base", "gradient-colors"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": false
+        }
+      }
+    },
+    "footers": {
+      "categoryName": "Footers",
+      "pageFile": "footer.html",
+      "globalDependencies": {
+        "required": ["style.css"],
+        "optional": ["script.js"]
+      },
+      "categoryDependencies": {
+        "required": [],
+        "optional": []
+      },
+      "externalDependencies": {
+        "cdn": ["font-awesome@6.5.1"],
+        "fonts": ["Google Fonts (Syne, DM Sans)"]
+      },
+      "components": {
+        "basic-footer": {
+          "name": "Basic Footer",
+          "requires": ["style.css"],
+          "utilities": ["footer-base", "footer-links"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "advanced-footer": {
+          "name": "Advanced Footer",
+          "requires": ["style.css", "script.js"],
+          "utilities": ["footer-base", "footer-grid"],
+          "javascript": "subscribe",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        },
+        "social-footer": {
+          "name": "Social Footer",
+          "requires": ["style.css"],
+          "utilities": ["footer-base", "footer-social"],
+          "javascript": "none",
+          "icons": true,
+          "responsive": true,
+          "darkMode": true
+        },
+        "newsletter-footer": {
+          "name": "Newsletter Footer",
+          "requires": ["style.css", "script.js"],
+          "utilities": ["footer-base", "footer-newsletter"],
+          "javascript": "subscribe",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        }
+      }
+    },
+    "loaders": {
+      "categoryName": "Loaders",
+      "pageFile": "loaders.html",
+      "globalDependencies": {
+        "required": ["style.css"],
+        "optional": []
+      },
+      "categoryDependencies": {
+        "required": [],
+        "optional": []
+      },
+      "externalDependencies": {
+        "cdn": [],
+        "fonts": ["Google Fonts (Syne, DM Sans)"]
+      },
+      "components": {
+        "spinner-loader": {
+          "name": "Spinner Loader",
+          "requires": ["style.css"],
+          "utilities": ["loader-base", "loader-spin"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "progress-bar": {
+          "name": "Progress Bar",
+          "requires": ["style.css"],
+          "utilities": ["loader-base", "loader-progress"],
+          "javascript": "optional",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "skeleton-loader": {
+          "name": "Skeleton Loader",
+          "requires": ["style.css"],
+          "utilities": ["loader-base", "loader-skeleton"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "pulse-loader": {
+          "name": "Pulse Loader",
+          "requires": ["style.css"],
+          "utilities": ["loader-base", "loader-pulse"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "wave-loader": {
+          "name": "Wave Loader",
+          "requires": ["style.css"],
+          "utilities": ["loader-base", "loader-wave"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        },
+        "bounce-loader": {
+          "name": "Bounce Loader",
+          "requires": ["style.css"],
+          "utilities": ["loader-base", "loader-bounce"],
+          "javascript": "none",
+          "icons": false,
+          "responsive": true,
+          "darkMode": true
+        }
+      }
+    }
+  },
+  "sharedUtilities": {
+    "cssUtilities": {
+      "btn-base": ["style.css", "buttons.css"],
+      "btn-gradient": ["buttons.css"],
+      "btn-outline": ["buttons.css"],
+      "btn-animation": ["buttons.css"],
+      "nav-base": ["style.css", "navbar.css"],
+      "nav-glass": ["navbar.css"],
+      "nav-responsive": ["navbar.css"],
+      "card-base": ["style.css", "cards.css"],
+      "card-hover": ["cards.css"],
+      "input-base": ["style.css"],
+      "input-focus": ["style.css"],
+      "form-base": ["style.css", "contact.css"],
+      "badge-base": ["style.css"],
+      "footer-base": ["style.css"],
+      "loader-base": ["style.css"]
+    },
+    "javascriptFunctions": {
+      "toggleSidebar": "script.js",
+      "toggleDarkMode": "script.js",
+      "copyToClipboard": "script.js",
+      "handleSearch": "script.js",
+      "subscribe": "script.js",
+      "scrollToTop": "script.js",
+      "toggleCode": "script.js",
+      "formValidation": "script.js",
+      "passwordToggle": "script.js",
+      "dropdownHandler": "script.js",
+      "flipHandler": "script.js",
+      "rippleEffect": "script.js"
+    }
+  },
+  "externalResources": {
+    "fonts": {
+      "googleFonts": {
+        "url": "https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap",
+        "families": ["Syne", "DM Sans"],
+        "usedBy": "all categories"
+      }
+    },
+    "icons": {
+      "fontAwesome": {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",
+        "version": "6.5.1",
+        "usedBy": ["buttons", "navbars", "badges", "footers"],
+        "commonIcons": ["fa-solid fa-house", "fa-solid fa-bars", "fa-solid fa-search", "fa-brands fa-github", "fa-brands fa-linkedin"]
+      }
+    }
+  },
+  "compatibility": {
+    "browsers": {
+      "chrome": "88+",
+      "firefox": "87+",
+      "safari": "14+",
+      "edge": "88+"
+    },
+    "cssFeatures": {
+      "required": ["flexbox", "grid", "css-custom-properties", "css-transforms"],
+      "optional": ["backdrop-filter", "css-grid-auto-fit"]
+    },
+    "javascriptFeatures": {
+      "required": ["ES6", "localStorage", "classList"],
+      "optional": ["clipboard API"]
+    }
+  },
+  "recommendations": {
+    "optimizationTips": [
+      "Combine all category CSS files into single stylesheet for production",
+      "Tree-shake unused Font Awesome icons",
+      "Minify and compress JavaScript",
+      "Use CSS variables for theming",
+      "Lazy-load non-critical components",
+      "Use CSS containment for performance"
+    ],
+    "bundlingSuggestions": [
+      "Group by category for modular imports",
+      "Create separate bundles for interactive vs static components",
+      "Include only necessary JavaScript utilities",
+      "Consider CSS-in-JS for component-scoped styles"
+    ]
+  }
+}
