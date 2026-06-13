@@ -10,6 +10,7 @@
 
   <title>Dark Mode Toggle UI</title>
 
+  <link rel="stylesheet" href="/design-tokens.css">
   <link rel="stylesheet" href="./mode.css">
 
   <link
@@ -21,7 +22,6 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-
   <div class="background"></div>
 
   <div class="card">
@@ -32,7 +32,7 @@
     <div class="toggle-container">
       <input type="checkbox" id="toggle">
 
-      <label for="toggle" class="toggle-label">
+      <label for="toggle" class="toggle-label" aria-label="Theme toggle switch">
 
         <div class="icon moon">
           <i class="fa-solid fa-moon"></i>
@@ -50,10 +50,15 @@
     <p class="footer-text">
       Smooth UI • Glass effect • Modern UX
     </p>
+
+    <div class="component-demo" id="main-content">
+      <h2>Theme Switcher Component</h2>
+      <uv-theme-switcher></uv-theme-switcher>
+    </div>
   </div>
 
-  <script src="./mode.js"></script>
+  <script type="module" src="./mode.js"></script>
 
-  <script src="dist/shared.js"></script>
+  <script src="../dist/shared.js"></script>
 </body>
 </html>
