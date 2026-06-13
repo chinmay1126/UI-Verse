@@ -70,9 +70,7 @@
     if (features.some(f => f.includes('search'))) await ensureFuse();
 
     // load page features sequentially
-    const allFeatures = [...features];
-    if (document.querySelector('.component-card, .preview-box, .card-preview, [class*="-preview"]')) {
-      allFeatures.push('js/features/theme-customizer.js');
+
     }
     for (const f of allFeatures) await loadScript(f);
 
