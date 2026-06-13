@@ -58,6 +58,14 @@ const Bootstrap = {
       UIverse.register('ComponentIndex', ComponentIndex, dependenciesFor('ComponentIndex'));
     }
 
+    if (typeof ComponentRecommendations !== 'undefined') {
+      UIverse.register('ComponentRecommendations', ComponentRecommendations, dependenciesFor('ComponentRecommendations'));
+    }
+
+    if (typeof RecommendationsUI !== 'undefined') {
+      UIverse.register('RecommendationsUI', RecommendationsUI, dependenciesFor('RecommendationsUI'), { domSelector: 'main.main-home' });
+    }
+
     // Register feature modules (with optional conditional initialization)
     if (typeof Toast !== 'undefined') {
       UIverse.register('Toast', Toast);
@@ -136,6 +144,14 @@ const Bootstrap = {
       UIverse.register('Download', Download);
     }
 
+    if (typeof BundleExporter !== 'undefined') {
+      UIverse.register('BundleExporter', BundleExporter, dependenciesFor('BundleExporter'));
+    }
+
+    if (typeof BundleExporterUI !== 'undefined') {
+      UIverse.register('BundleExporterUI', BundleExporterUI, dependenciesFor('BundleExporterUI'), { domSelector: '.component-card' });
+    }
+
     if (typeof Recent !== 'undefined') {
       UIverse.register('Recent', Recent);
     }
@@ -169,6 +185,19 @@ const Bootstrap = {
     // Initialize all registered modules (with dependencies handled by registry)
     const report = UIverse.initAll();
     
+    // Dynamically load CSS variable inspector if component previews are present
+    if (document.querySelector('.component-card, .preview-box, .card-preview, [class*="-preview"]')) {
+      const l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = 'css/css-variable-inspector.css';
+      document.head.appendChild(l);
+
+      const s = document.createElement('script');
+      s.src = 'js/features/css-variable-inspector.js';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+
     this.initialized = true;
     this.logStatus(report);
   },

@@ -158,4 +158,4 @@ setInterval(() => {
   document.querySelectorAll(".row span")[1]?.classList.add("pulse");
 }, 3000);
 
-console.log("TradePulse UI Enhanced Loaded");
+console.debug("TradePulse UI Enhanced Loaded");
