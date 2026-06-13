@@ -150,6 +150,15 @@ function buildRemoteSrcset(src) {
   return '';
 }
 
+
+function verifyWebPSupport(file) {
+  if (file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.jpeg')) {
+    const webpFile = file.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+    return webpFile;
+  }
+  return null;
+}
+    
 async function createLocalVariants(imagePath, sourceRootPath) {
   const image = sharp(imagePath, { failOnError: false });
   const metadata = await image.metadata();
