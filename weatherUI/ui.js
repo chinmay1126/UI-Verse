@@ -1,5 +1,5 @@
 if (window.UIVERSE_DEBUG) {
-  console.log(
+  console.debug(
     "Weather Forecast Dashboard Loaded"
   );
 }
