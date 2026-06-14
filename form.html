@@ -1,589 +1,906 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-+7WeooanCDkpQE0peR9I9nrCdMEk0s0o/az6hwK/YC4=' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-5nm7aQJlBwD+lW2N1pxCTIl1rSeKO/Rm5+q6JEoIXUM=' 'sha256-It0gemy1iCD0teH6nnXaJJUb7wj8gJvumkEjNT0kV/4=' 'sha256-KOPFnkTS28ReBUoUCFEm8ysO3CLYm7hVyMHEStSPMjU=' 'sha256-LMw5Z7H8XK2tRzVXUDggMnKzd6yManNQEF5Ywsxqswc=' 'sha256-OQzIx4CDDPxD96S44Hclomclj+Mpfg+LxrVk8hytc8k=' 'sha256-SS6BCTg7gS8G26JctttvBZtMpxi9pSkZpZaVEWJ8noI=' 'sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag=' 'sha256-gEfdSvQnNHa9sHTIneDzrEoVi26OopxRINm+880NcYg=' 'sha256-rbWfE36z2kuZDnw9n1zB1vPAWbU3jgp3g9xJ9NsZtRc='; script-src-attr 'unsafe-hashes' 'sha256-+7WeooanCDkpQE0peR9I9nrCdMEk0s0o/az6hwK/YC4=' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-5nm7aQJlBwD+lW2N1pxCTIl1rSeKO/Rm5+q6JEoIXUM=' 'sha256-It0gemy1iCD0teH6nnXaJJUb7wj8gJvumkEjNT0kV/4=' 'sha256-KOPFnkTS28ReBUoUCFEm8ysO3CLYm7hVyMHEStSPMjU=' 'sha256-LMw5Z7H8XK2tRzVXUDggMnKzd6yManNQEF5Ywsxqswc=' 'sha256-OQzIx4CDDPxD96S44Hclomclj+Mpfg+LxrVk8hytc8k=' 'sha256-SS6BCTg7gS8G26JctttvBZtMpxi9pSkZpZaVEWJ8noI=' 'sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag=' 'sha256-gEfdSvQnNHa9sHTIneDzrEoVi26OopxRINm+880NcYg=' 'sha256-rbWfE36z2kuZDnw9n1zB1vPAWbU3jgp3g9xJ9NsZtRc='; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forms - UIverse</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Forms — UIverse</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="forms.css">
 </head>
+
 <body>
-   <nav class="navbar">
-  <!-- Logo -->
-  <div class="logo">Ulverse</div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Center Search Bar -->
-  <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" />
-    <button class="search-btn">🔍</button>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-brand">
+    <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:8px;">
+      <span class="brand-icon" aria-hidden="true">&#x2B21;</span>
+      <span class="brand-text">UIverse <span style="font-size:9px;background:linear-gradient(135deg,#eb6835,#7b61ff);color:#fff;padding:1px 6px;border-radius:10px;font-weight:800;margin-left:4px;letter-spacing:.5px;vertical-align:middle;box-shadow:0 0 8px rgba(235,104,53,.3)">V2</span></span>
+    </a>
   </div>
-
-  <!-- Right Section -->
-  <div class="nav-right">
-    <button class="nav-btn">Add Component</button>
-    <button class="nav-btn">My Collection</button>
-    <a href="#"></a>
-    <a href="#"></a>
-  </div>
-</nav>
-
-<div class="container">
-  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h2>UIverse</h2>
+  <nav class="sidebar-nav" aria-label="Component categories">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="alerts.html">Alerts</a></li>
-      <li><a href="badges.html">Badges</a></li>
-      <li><a href="button.html">Buttons</a></li>
-      <li><a href="cards.html">Cards</a></li>
-      <li><a href="color.html">Colors</a></li>
-      <li><a href="footer.html">Footer</a></li>
-      <li class="active"><a href="form.html">Forms</a></li>
-      <li><a href="inputs.html">Inputs</a></li>
-      <li><a href="loaders.html">Loaders</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="Welcome.html"><i class="fa-solid fa-door-open"></i><span>Welcome</span></a></li>
+      <li><a href="component-discovery.html"><i class="fa-solid fa-compass"></i><span>Explore All</span></a></li>
+      <li><a href="leaderboard-components.html"><i class="fa-solid fa-ranking-star"></i><span>Leaderboards</span></a></li>
+      <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+      <li><a href="buttons.html"><i class="fa-solid fa-computer-mouse"></i><span>Buttons V2</span></a></li>
+      <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+      <li><a href="flipcards.html"><i class="fa-solid fa-clone"></i><span>3D Cards</span></a></li>
+      <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navbar</span></a></li>
+      <li><a href="dropdown-components.html"><i class="fa-solid fa-caret-down"></i><span>Dropdowns</span></a></li>
+      <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Inputs</span></a></li>
+      <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><span>Forms</span></a></li>
+      <li><a href="profile-components.html"><i class="fa-solid fa-user"></i><span>Profiles</span></a></li>
+      <li><a href="badges.html"><i class="fa-solid fa-award"></i><span>Badges</span></a></li>
+      <li><a href="alerts.html"><i class="fa-solid fa-triangle-exclamation"></i><span>Alerts</span></a></li>
+      <li><a href="loaders.html"><i class="fa-solid fa-spinner"></i><span>Loaders</span></a></li>
+      <li><a href="tabs.html"><i class="fa-solid fa-table-columns"></i><span>Tabs</span></a></li>
+      <li><a href="tabs-components.html"><i class="fa-solid fa-layer-group"></i><span>Tabs V2</span></a></li>
+      <li><a href="toggles.html"><i class="fa-solid fa-toggle-on"></i><span>Toggles</span></a></li>
+      <li><a href="switches.html"><i class="fa-solid fa-toggle-on"></i><span>Switches</span></a></li>
+      <li><a href="checkbox.html"><i class="fa-solid fa-square-check"></i><span>Checkboxes</span></a></li>
+      <li><a href="radiobutton.html"><i class="fa-solid fa-circle-dot"></i><span>Radio Buttons</span></a></li>
+      <li><a href="range-slider.html"><i class="fa-solid fa-sliders"></i><span>Range Slider</span></a></li>
+      <li><a href="tooltip.html"><i class="fa-solid fa-comment-dots"></i><span>Tooltips</span></a></li>
+      <li><a href="Popovers.html"><i class="fa-solid fa-message"></i><span>Popovers</span></a></li>
+      <li><a href="menu.html"><i class="fa-solid fa-bars-staggered"></i><span>Menu</span></a></li>
+      <li><a href="breadcrumbs.html"><i class="fa-solid fa-chevron-right"></i><span>Breadcrumbs</span></a></li>
+      <li><a href="docks.html"><i class="fa-solid fa-grip"></i><span>Docks</span></a></li>
+      <li><a href="floating-nav.html"><i class="fa-solid fa-satellite"></i><span>Floating Nav</span></a></li>
+      <li><a href="Spotlightui.html"><i class="fa-solid fa-crosshairs"></i><span>Spotlight</span></a></li>
+      <li><a href="Kanbanui.html"><i class="fa-solid fa-columns-3"></i><span>Kanban</span></a></li>
+      <li><a href="Accordionsui.html"><i class="fa-solid fa-angles-down"></i><span>Accordions</span></a></li>
+      <li><a href="command-palette.html"><i class="fa-solid fa-terminal"></i><span>Command Palette</span></a></li>
+      <li><a href="step-indicators.html"><i class="fa-solid fa-list-check"></i><span>Steppers</span></a></li>
+      <li><a href="table.html"><i class="fa-solid fa-table"></i><span>Tables</span></a></li>
+      <li><a href="charts.html"><i class="fa-solid fa-chart-pie"></i><span>Charts</span></a></li>
+      <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a></li>
+      <li><a href="admin-panel.html"><i class="fa-solid fa-gauge-high"></i><span>Admin Panel</span></a></li>
+      <li><a href="Statistics.html"><i class="fa-solid fa-chart-bar"></i><span>Statistics</span></a></li>
+      <li><a href="stats-cards.html"><i class="fa-solid fa-chart-line"></i><span>Stats Cards</span></a></li>
+      <li><a href="analysis-card.html"><i class="fa-solid fa-magnifying-glass-chart"></i><span>Analysis Cards</span></a></li>
+      <li><a href="comparison-tables.html"><i class="fa-solid fa-table-list"></i><span>Comparison Tables</span></a></li>
+      <li><a href="timeline.html"><i class="fa-solid fa-clock-rotate-left"></i><span>Timeline</span></a></li>
+      <li><a href="progresspage.html"><i class="fa-solid fa-bars-progress"></i><span>Progress</span></a></li>
+      <li><a href="progress-premium.html"><i class="fa-solid fa-bars-progress"></i><span>Progress V2</span></a></li>
+      <li><a href="ratingpage.html"><i class="fa-solid fa-star"></i><span>Ratings</span></a></li>
+      <li><a href="ratings-premium.html"><i class="fa-solid fa-star"></i><span>Ratings V2</span></a></li>
+      <li><a href="toasts.html"><i class="fa-solid fa-bell"></i><span>Toasts</span></a></li>
+      <li><a href="notification.html"><i class="fa-solid fa-bell"></i><span>Notifications</span></a></li>
+      <li><a href="notifications-premium.html"><i class="fa-solid fa-bell"></i><span>Notifications V2</span></a></li>
+      <li><a href="snackbar.html"><i class="fa-solid fa-comment"></i><span>Snackbars</span></a></li>
+      <li><a href="skeletons.html"><i class="fa-solid fa-rectangle-xmark"></i><span>Skeletons</span></a></li>
+      <li><a href="empty-state.html"><i class="fa-solid fa-box-open"></i><span>Empty States</span></a></li>
+      <li><a href="animate-loaders.html"><i class="fa-solid fa-circle-notch"></i><span>Animated Loaders</span></a></li>
+      <li><a href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a></li>
+      <li><a href="carousel.html"><i class="fa-solid fa-film"></i><span>Carousel</span></a></li>
+      <li><a href="image-carousel.html"><i class="fa-solid fa-photo-film"></i><span>Image Carousel</span></a></li>
+      <li><a href="image-slider.html"><i class="fa-solid fa-images"></i><span>Image Slider</span></a></li>
+      <li><a href="blog.html"><i class="fa-solid fa-blog"></i><span>Blog</span></a></li>
+      <li><a href="article.html"><i class="fa-solid fa-newspaper"></i><span>Articles</span></a></li>
+      <li><a href="notes-components.html"><i class="fa-solid fa-sticky-note"></i><span>Notes</span></a></li>
+      <li><a href="story.html"><i class="fa-solid fa-book-open"></i><span>Story</span></a></li>
+      <li><a href="activity-feed.html"><i class="fa-solid fa-rss"></i><span>Activity Feed</span></a></li>
+      <li><a href="testimonials.html"><i class="fa-solid fa-comments"></i><span>Testimonials</span></a></li>
+      <li><a href="chatui.html"><i class="fa-solid fa-comment-dots"></i><span>Chat UI</span></a></li>
+      <li><a href="musicicon.html"><i class="fa-solid fa-music"></i><span>Music</span></a></li>
+      <li><a href="hero.html"><i class="fa-solid fa-star"></i><span>Hero Sections</span></a></li>
+      <li><a href="section.html"><i class="fa-solid fa-rectangle-list"></i><span>Sections</span></a></li>
+      <li><a href="div.html"><i class="fa-solid fa-square"></i><span>DIV</span></a></li>
+      <li><a href="span.html"><i class="fa-solid fa-code"></i><span>Span</span></a></li>
+      <li><a href="bent-grid.html"><i class="fa-solid fa-border-all"></i><span>Bent Grid</span></a></li>
+      <li><a href="footer.html"><i class="fa-solid fa-shoe-prints"></i><span>Footer</span></a></li>
+      <li><a href="patterns.html"><i class="fa-solid fa-border-style"></i><span>Patterns</span></a></li>
+      <li><a href="icon.html"><i class="fa-solid fa-icons"></i><span>Icons</span></a></li>
+      <li><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Hover Effects</span></a></li>
+      <li><a href="color.html"><i class="fa-solid fa-palette"></i><span>Colors</span></a></li>
+      <li><a href="retroui.html"><i class="fa-solid fa-gamepad"></i><span>RetroUI</span></a></li>
+      <li><a href="ai-components.html"><i class="fa-solid fa-robot"></i><span>AI Components</span></a></li>
+      <li><a href="divider-component.html"><i class="fa-solid fa-minus"></i><span>Dividers</span></a></li>
+      <li><a href="chip-components.html"><i class="fa-solid fa-tag"></i><span>Chips</span></a></li>
+      <li><a href="slider-components.html"><i class="fa-solid fa-sliders"></i><span>Sliders</span></a></li>
+      <li><a href="widgets.html"><i class="fa-solid fa-layer-group"></i><span>Widgets</span></a></li>
+      <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search Bars</span></a></li>
+      <li><a href="filters-premium.html"><i class="fa-solid fa-filter"></i><span>Filters</span></a></li>
+      <li><a href="map.html"><i class="fa-solid fa-map-location-dot"></i><span>Maps</span></a></li>
+      <li><a href="calendar.html"><i class="fa-solid fa-calendar"></i><span>Calendar</span></a></li>
+      <li><a href="calendarcomponent.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar V2</span></a></li>
+      <li><a href="otp.html"><i class="fa-solid fa-lock"></i><span>OTP Input</span></a></li>
+      <li><a href="fileuploadui.html"><i class="fa-solid fa-upload"></i><span>File Upload</span></a></li>
+      <li><a href="files.html"><i class="fa-solid fa-file-arrow-up"></i><span>Drag &amp; Drop</span></a></li>
+      <li><a href="multi-step-form.html"><i class="fa-solid fa-stairs"></i><span>Multi-step Form</span></a></li>
+      <li><a href="cookies.html"><i class="fa-solid fa-cookie-bite"></i><span>Cookies</span></a></li>
+      <li><a href="water-reminder.html"><i class="fa-solid fa-droplet"></i><span>Water Reminder</span></a></li>
+      <li><a href="ecommerce.html"><i class="fa-solid fa-cart-shopping"></i><span>E-commerce</span></a></li>
+      <li><a href="pricing.html"><i class="fa-solid fa-tags"></i><span>Pricing</span></a></li>
+      <li><a href="subscription.html"><i class="fa-solid fa-credit-card"></i><span>Subscription</span></a></li>
+      <li><a href="product.html"><i class="fa-solid fa-box"></i><span>Product Page</span></a></li>
+      <li><a href="product-slider.html"><i class="fa-solid fa-box-open"></i><span>Product Slider</span></a></li>
+      <li><a href="newsletter-components.html"><i class="fa-solid fa-envelope"></i><span>Newsletter</span></a></li>
+      <li><a href="call-to-action.html"><i class="fa-solid fa-bullhorn"></i><span>Call to Action</span></a></li>
+      <li><a href="team-collaboration.html"><i class="fa-solid fa-users"></i><span>Team Collab</span></a></li>
+      <li><a href="auth.html"><i class="fa-solid fa-user-shield"></i><span>Authentication</span></a></li>
+      <li><a href="recovery.html"><i class="fa-solid fa-key"></i><span>Password Recovery</span></a></li>
+      <li><a href="settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a></li>
+      <li><a href="profile.html"><i class="fa-solid fa-id-card"></i><span>Profile</span></a></li>
+      <li><a href="about.html"><i class="fa-solid fa-circle-info"></i><span>About</span></a></li>
+      <li><a href="documentation.html"><i class="fa-solid fa-book"></i><span>Documentation</span></a></li>
+      <li><a href="guidelines.html"><i class="fa-solid fa-scale-balanced"></i><span>Guidelines</span></a></li>
+      <li><a href="howtocontribute.html"><i class="fa-solid fa-code-branch"></i><span>How to Contribute</span></a></li>
+      <li><a href="contributors.html"><i class="fa-solid fa-users"></i><span>Contributors</span></a></li>
+      <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a></li>
+      <li><a href="contact.html"><i class="fa-regular fa-envelope"></i><span>Contact Us</span></a></li>
+      <li><a href="privacypolicy.html"><i class="fa-solid fa-shield-halved"></i><span>Privacy Policy</span></a></li>
+      <li><a href="terms.html"><i class="fa-solid fa-file-contract"></i><span>Terms</span></a></li>
+      <li><a href="license.html"><i class="fa-solid fa-certificate"></i><span>License</span></a></li>
+      <li><a href="MyCollection.html"><i class="fa-solid fa-bookmark"></i><span>My Collection</span></a></li>
+      <li><a href="error.html"><i class="fa-solid fa-circle-exclamation"></i><span>Error Pages</span></a></li>
+      <li><a href="maintenance.html"><i class="fa-solid fa-wrench"></i><span>Maintenance</span></a></li>
+      <li><a href="offline.html"><i class="fa-solid fa-wifi"></i><span>Offline</span></a></li>
     </ul>
-  </aside>
-  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
+<!-- ================= SIDEBAR BACKDROP ================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()" aria-hidden="true"></div>
 
-  <!-- Main -->
-  <main class="main">
-    <div class="page-header">
-      <h1>Forms</h1>
-      <p>Explore reusable and ready-to-use form components</p>
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" placeholder="Search components..." / data-a11y-remediation="label-needed">
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main-home">
+
+  <!-- Page Header -->
+  <div class="forms-page-header">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <span>Forms</span>
     </div>
-    <div class = "button group">
-      <!--Login Form  -->
-      <div class = "component-card">
-        <h3>Login Form</h3>
-        <form>
-          <input type="email" placeholder="Email" class="form-input" required /><br><br>
-          <input type="password" placeholder="Password" class="form-input" required /><br><br>
-          <button type="submit" class="nav-btn">Login</button>
-        </form>
-        
-        <div class="actions">
-          <button onclick="toggleCode('f1')">View Code</button>
-          <button onclick="copyCode('f1',this)">Copy</button>
-        </div>
-<pre id="f1" class="code-block">
-&lt;form&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;input type="password" placeholder="Password"&gt;
-  &lt;button&gt;Login&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Signup Form -->
-  <div class="component-card">
-    <h3>Signup Form</h3>
-
-    <form>
-      <input type="text" placeholder="Full Name" class="form-input"required ><br><br>
-      <input type="email" placeholder="Email" class="form-input" required /><br><br>
-      <input type="password" placeholder="Password" class="form-input" required /><br><br>
-      <button type="submit" class="nav-btn">Signup</button>
-    </form>
-
-    <div class="actions">
-      <button onclick="toggleCode('f2')">View Code</button>
-      <button onclick="copyCode('f2',this)">Copy</button>
+    <h1>Forms UI</h1>
+    <p>Reusable form components with clean inputs, selects, radios, checkboxes and more.</p>
+    <div class="page-meta">
+      <span class="meta-badge"><i class="fa-solid fa-layer-group"></i> 4 Forms</span>
+      <span class="meta-badge"><i class="fa-solid fa-code"></i> Pure HTML & CSS</span>
     </div>
-
-<pre id="f2" class="code-block">
-&lt;form&gt;
-  &lt;input type="text" placeholder="Full Name"&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;input type="password" placeholder="Password"&gt;
-  &lt;button&gt;Signup&lt;/button&gt;
-&lt;/form&gt;
-</pre>
   </div>
 
-  <!-- Contact Form -->
-  <div class="component-card">
-    <h3>Contact Form</h3>
-
-    <form>
-      <input type="text" placeholder="Name" class="form-input" required><br><br>
-      <input type="email" placeholder="Email" class="form-input" required><br><br>
-      <textarea placeholder="Message" class="form-input" required></textarea><br><br>
-      <button type="submit" class="nav-btn">Send</button>
-    </form>
-
-    <div class="actions">
-      <button onclick="toggleCode('f3')">View Code</button>
-      <button onclick="copyCode('f3',this)">Copy</button>
-    </div>
-
-<pre id="f3" class="code-block">
-&lt;form&gt;
-  &lt;input type="text" placeholder="Name"&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;textarea placeholder="Message"&gt;&lt;/textarea&gt;
-  &lt;button&gt;Send&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-</div>        
-  </main>
-
-  <section class="forms-section">
-
-  <!-- Section Header -->
-  <div class="section-header">
-    <h1>Forms</h1>
-    <p>Modern, reusable and responsive form components</p>
-  </div>
-
-  <!-- Grid Layout -->
+  <!-- Forms Grid -->
   <div class="forms-grid">
 
     <!-- Login Form -->
-    <div class="form-card">
-      <h3>Login</h3>
-      <form>
-        <div class="form-group">
-          <label for="login-email">Email</label>
-          <input id="login-email" type="email" placeholder="Enter your email" required>
+    <div class="form-component-card" data-name="login form email password">
+      <div class="card-top">
+        <span class="card-label">Login Form</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card">
+          <h3>Welcome back</h3>
+          <p class="form-sub">Sign in to your account</p>
+          <div class="form-field">
+            <label for="email-input">Email</label>
+            <input type="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-field">
+            <label>Password</label>
+            <input type="password" placeholder="••••••••" />
+          </div>
+          <div class="form-options">
+            <label class="simple-check"><input type="checkbox" /> Remember me</label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button class="form-btn">Login</button>
         </div>
-
-        <div class="form-group">
-          <label for="login-password">Password</label>
-          <input id="login-password" type="password" placeholder="Enter password" required>
-        </div>
-
-        <button type="submit" class="btn primary">Login</button>
-      </form>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc1', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc1', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc1" class="code-block"><code>&lt;div class="form-card"&gt;
+  &lt;h3&gt;Welcome back&lt;/h3&gt;
+  &lt;input type="email" placeholder="Email"&gt;
+  &lt;input type="password" placeholder="Password"&gt;
+  &lt;div class="options"&gt;
+    &lt;label&gt;&lt;input type="checkbox"&gt; Remember me&lt;/label&gt;
+    &lt;a href="#"&gt;Forgot password?&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;button&gt;Login&lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <!-- Signup Form -->
-    <div class="form-card">
-      <h3>Sign Up</h3>
-      <form>
-        <div class="form-group">
-          <label for="signup-name">Full Name</label>
-          <input id="signup-name" type="text" placeholder="Your name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="signup-email">Email</label>
-          <input id="signup-email" type="email" placeholder="Your email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="signup-password">Password</label>
-          <input id="signup-password" type="password" required>
-        </div>
-
-        <button class="btn gradient">Create Account</button>
-      </form>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="form-card wide">
-      <h3>Contact Us</h3>
-      <form>
-        <div class="form-row">
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-        </div>
-
-        <textarea placeholder="Your message..." required></textarea>
-
-        <button class="btn glass">Send Message</button>
-      </form>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="form-card">
-      <h3>Newsletter</h3>
-      <form>
-        <input type="email" placeholder="Enter your email">
-        <button class="btn primary">Subscribe</button>
-      </form>
-    </div>
-
-  </div>
-</section>
-
-<div class="main">
-<div class="page-header">
-      <h1>Forms</h1>
-      <p>Check out modern and reusable form layouts</p>
-    </div>
-
-  <!-- Login Form Card -->
-  <div class="component-card login-form-card">
-    <div class="login-form-inner-card"> 
-      <form class="login-form">
-        <h3>LOGIN</h3>
-        <label for="Name">Name</label>
-        <input type="text" class="input" placeholder="Enter your name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <button class="gradient-btn">SUBMIT</button>
-      </form>
-    </div> 
-      <div class="actions">
-        <button>View Code</button>
-        <button>Copy</button>
+    <div class="form-component-card" data-name="signup register form">
+      <div class="card-top">
+        <span class="card-label">Signup Form</span>
+        <span class="card-tag tag-essential">Essential</span>
       </div>
-  </div>
-
-  <!-- Sign Up Form Card -->
-  <div class="component-card signup-form-card">
-    <div class="signup-form-inner-card"> 
-      <form class="signup-form">
-        <h3>SIGN UP</h3>
-        <label for="Name">Name</label>
-        <input type="text" class="input" placeholder="Enter your name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <label for="Password">Password</label>
-        <input type="password" class="input" placeholder="Enter your password" required>
-        <button class="neon-btn">SIGN UP</button>
-      </form>
-    </div>
-      <div class="actions">
-        <button>View Code</button>
-        <button>Copy</button>
-    </div>
-  </div>
-
-  <!-- Contact Us Form Card -->
-  <div class="component-card contact-form-card">
-    <div class="contact-form-inner-card"> 
-        <form class="contact-form">
-          <h3>CONTACT US</h3>
-          <label for="Name">Name</label>
-          <input type="text" class="input" placeholder="Name" required>
-          <label for="Email">Email</label>
-          <input type="email" class="input" placeholder="Email" required>
-          <label for="Message">Message</label>
-          <textarea class="input" placeholder="Message" required></textarea>
-          <button class="glass-btn">SEND</button>
-        </form>
-    </div>
-        <div class="actions">
-           <button>View Code</button>
-           <button>Copy</button>
+      <div class="form-preview">
+        <div class="form-card">
+          <h3>Create Account</h3>
+          <p class="form-sub">Join thousands of developers</p>
+          <div class="form-field">
+            <label>Full Name</label>
+            <input type="text" placeholder="John Doe" />
+          </div>
+          <div class="form-field">
+            <label for="email-input">Email</label>
+            <input type="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-field">
+            <label>Password</label>
+            <input type="password" placeholder="••••••••" />
+          </div>
+          <div class="form-field">
+            <label>Confirm Password</label>
+            <input type="password" placeholder="••••••••" />
+          </div>
+          <button class="form-btn">Register</button>
         </div>
-   </div>
-
-  <!-- Newsletter Subscription Form Card -->
-  <div class="component-card newsletter-form-card">
-    <div class="newsletter-form-inner-card">
-      <form class="newsletter-form">
-        <h3>SUBSCRIBE</h3>
-        <label for="Email">Email Address</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <label for="Frequency">Frequency</label>
-        <select class="input" required>
-          <option value="">Select frequency</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="daily">Daily</option>
-        </select>
-        <button class="gradient-btn">SUBSCRIBE</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f4')">View Code</button>
-      <button onclick="copyCode('f4',this)">Copy</button>
-    </div>
-    <pre id="f4" class="code-block">
-&lt;form class="newsletter-form"&gt;
-  &lt;h3&gt;SUBSCRIBE&lt;/h3&gt;
-  &lt;label&gt;Email Address&lt;/label&gt;
-  &lt;input type="email" placeholder="Enter your email" required&gt;
-  &lt;label&gt;Frequency&lt;/label&gt;
-  &lt;select required&gt;
-    &lt;option value="weekly"&gt;Weekly&lt;/option&gt;
-    &lt;option value="monthly"&gt;Monthly&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;button&gt;SUBSCRIBE&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Search Form Card -->
-  <div class="component-card search-form-card">
-    <div class="search-form-inner-card">
-      <form class="search-form">
-        <h3>SEARCH</h3>
-        <label for="Search">Search Products</label>
-        <input type="text" class="input" placeholder="Search..." required>
-        <label for="Category">Category</label>
-        <select class="input" required>
-          <option value="">All Categories</option>
-          <option value="electronics">Electronics</option>
-          <option value="clothing">Clothing</option>
-          <option value="books">Books</option>
-        </select>
-        <label>
-          <input type="checkbox"> In Stock Only
-        </label>
-        <button class="neon-btn">SEARCH</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f5')">View Code</button>
-      <button onclick="copyCode('f5',this)">Copy</button>
-    </div>
-    <pre id="f5" class="code-block">
-&lt;form class="search-form"&gt;
-  &lt;label&gt;Search Products&lt;/label&gt;
-  &lt;input type="text" placeholder="Search..."&gt;
-  &lt;label&gt;Category&lt;/label&gt;
-  &lt;select&gt;
-    &lt;option&gt;All Categories&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;&lt;input type="checkbox"&gt; In Stock Only&lt;/label&gt;
-  &lt;button&gt;SEARCH&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Feedback/Review Form Card -->
-  <div class="component-card feedback-form-card">
-    <div class="feedback-form-inner-card">
-      <form class="feedback-form">
-        <h3>FEEDBACK</h3>
-        <label for="Name">Your Name</label>
-        <input type="text" class="input" placeholder="Your name" required>
-        <label for="Rating">Rating</label>
-        <select class="input" required>
-          <option value="">Select rating</option>
-          <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-          <option value="4">⭐⭐⭐⭐ Good</option>
-          <option value="3">⭐⭐⭐ Average</option>
-          <option value="2">⭐⭐ Poor</option>
-          <option value="1">⭐ Very Poor</option>
-        </select>
-        <label for="Comments">Comments</label>
-        <textarea class="input" placeholder="Share your feedback..." required></textarea>
-        <button class="glass-btn">SUBMIT</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f6')">View Code</button>
-      <button onclick="copyCode('f6',this)">Copy</button>
-    </div>
-    <pre id="f6" class="code-block">
-&lt;form class="feedback-form"&gt;
-  &lt;label&gt;Your Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Your name"&gt;
-  &lt;label&gt;Rating&lt;/label&gt;
-  &lt;select required&gt;
-    &lt;option&gt;⭐⭐⭐⭐⭐ Excellent&lt;/option&gt;
-    &lt;option&gt;⭐⭐⭐⭐ Good&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;Comments&lt;/label&gt;
-  &lt;textarea placeholder="Share your feedback..."&gt;&lt;/textarea&gt;
-  &lt;button&gt;SUBMIT&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Password Reset Form Card -->
-  <div class="component-card password-reset-form-card">
-    <div class="password-reset-form-inner-card">
-      <form class="password-reset-form">
-        <h3>RESET PASSWORD</h3>
-        <label for="Email">Email Address</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <label for="NewPassword">New Password</label>
-        <input type="password" class="input" placeholder="Enter new password" required>
-        <label for="ConfirmPassword">Confirm Password</label>
-        <input type="password" class="input" placeholder="Confirm password" required>
-        <button class="gradient-btn">RESET</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f7')">View Code</button>
-      <button onclick="copyCode('f7',this)">Copy</button>
-    </div>
-    <pre id="f7" class="code-block">
-&lt;form class="password-reset-form"&gt;
-  &lt;h3&gt;RESET PASSWORD&lt;/h3&gt;
-  &lt;label&gt;Email Address&lt;/label&gt;
-  &lt;input type="email" placeholder="Enter your email"&gt;
-  &lt;label&gt;New Password&lt;/label&gt;
-  &lt;input type="password" placeholder="Enter new password"&gt;
-  &lt;label&gt;Confirm Password&lt;/label&gt;
-  &lt;input type="password" placeholder="Confirm password"&gt;
-  &lt;button&gt;RESET&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Profile Update Form Card -->
-  <div class="component-card profile-update-form-card">
-    <div class="profile-update-form-inner-card">
-      <form class="profile-update-form">
-        <h3>EDIT PROFILE</h3>
-        <label for="FirstName">First Name</label>
-        <input type="text" class="input" placeholder="First name" required>
-        <label for="LastName">Last Name</label>
-        <input type="text" class="input" placeholder="Last name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Email" required>
-        <label for="Phone">Phone</label>
-        <input type="tel" class="input" placeholder="+1 (555) 000-0000" required>
-        <label for="Bio">Bio</label>
-        <textarea class="input" placeholder="Tell us about yourself..."></textarea>
-        <button class="neon-btn">UPDATE</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f8')">View Code</button>
-      <button onclick="copyCode('f8',this)">Copy</button>
-    </div>
-    <pre id="f8" class="code-block">
-&lt;form class="profile-update-form"&gt;
-  &lt;h3&gt;EDIT PROFILE&lt;/h3&gt;
-  &lt;label&gt;First Name&lt;/label&gt;
-  &lt;input type="text" placeholder="First name"&gt;
-  &lt;label&gt;Last Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Last name"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc2', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc2', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc2" class="code-block"><code>&lt;div class="form-card"&gt;
+  &lt;h3&gt;Create Account&lt;/h3&gt;
+  &lt;input type="text" placeholder="Full Name"&gt;
   &lt;input type="email" placeholder="Email"&gt;
-  &lt;label&gt;Phone&lt;/label&gt;
-  &lt;input type="tel" placeholder="+1 (555) 000-0000"&gt;
-  &lt;label&gt;Bio&lt;/label&gt;
-  &lt;textarea placeholder="Tell us about yourself..."&gt;&lt;/textarea&gt;
-  &lt;button&gt;UPDATE&lt;/button&gt;
-&lt;/form&gt;
-</pre>
+  &lt;input type="password" placeholder="Password"&gt;
+  &lt;input type="password" placeholder="Confirm Password"&gt;
+  &lt;button&gt;Register&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="form-component-card" data-name="search filter form">
+  <div class="card-top">
+    <span class="card-label">Search Filter</span>
+    <span class="card-tag tag-new">New</span>
   </div>
 
-  <!-- Job Application Form Card -->
-  <div class="component-card job-application-form-card">
-    <div class="job-application-form-inner-card">
-      <form class="job-application-form">
-        <h3>JOB APPLICATION</h3>
-        <label for="FullName">Full Name</label>
-        <input type="text" class="input" placeholder="Full name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Email" required>
-        <label for="Phone">Phone</label>
-        <input type="tel" class="input" placeholder="Phone number" required>
-        <label for="Position">Position Applied For</label>
-        <input type="text" class="input" placeholder="Job title" required>
-        <label for="Experience">Years of Experience</label>
-        <input type="number" class="input" placeholder="0" min="0" required>
-        <label for="Resume">Upload Resume</label>
-        <input type="file" class="input" accept=".pdf,.doc,.docx" required>
-        <button class="glass-btn">APPLY</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f9')">View Code</button>
-      <button onclick="copyCode('f9',this)">Copy</button>
-    </div>
-    <pre id="f9" class="code-block">
-&lt;form class="job-application-form"&gt;
-  &lt;h3&gt;JOB APPLICATION&lt;/h3&gt;
-  &lt;label&gt;Full Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Full name"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;label&gt;Phone&lt;/label&gt;
-  &lt;input type="tel" placeholder="Phone number"&gt;
-  &lt;label&gt;Position Applied For&lt;/label&gt;
-  &lt;input type="text" placeholder="Job title"&gt;
-  &lt;label&gt;Years of Experience&lt;/label&gt;
-  &lt;input type="number" placeholder="0" min="0"&gt;
-  &lt;label&gt;Upload Resume&lt;/label&gt;
-  &lt;input type="file" accept=".pdf,.doc,.docx"&gt;
-  &lt;button&gt;APPLY&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
+  <div class="form-preview">
+    <div class="form-card">
+      <h3>Search Products</h3>
 
-  <!-- Event Registration Form Card -->
-  <div class="component-card event-registration-form-card">
-    <div class="event-registration-form-inner-card">
-      <form class="event-registration-form">
-        <h3>EVENT REGISTRATION</h3>
-        <label for="Name">Full Name</label>
-        <input type="text" class="input" placeholder="Your name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Your email" required>
-        <label for="Attendees">Number of Attendees</label>
-        <input type="number" class="input" placeholder="1" min="1" required>
-        <label for="EventType">Event Type</label>
-        <select class="input" required>
-          <option value="">Select event</option>
-          <option value="conference">Conference</option>
-          <option value="workshop">Workshop</option>
-          <option value="webinar">Webinar</option>
-          <option value="meetup">Meetup</option>
+      <div class="form-field">
+        <label>Keyword</label>
+        <input type="text" placeholder="Search...">
+      </div>
+
+      <div class="form-field">
+        <label>Category</label>
+        <select>
+          <option>All Categories</option>
+          <option>Design</option>
+          <option>Development</option>
+          <option>Marketing</option>
         </select>
-        <label>
-          <input type="checkbox" required> I agree to the terms
-        </label>
-        <button class="gradient-btn">REGISTER</button>
-      </form>
-    </div>
-    <div class="actions">
-      <button onclick="toggleCode('f10')">View Code</button>
-      <button onclick="copyCode('f10',this)">Copy</button>
-    </div>
-    <pre id="f10" class="code-block">
-&lt;form class="event-registration-form"&gt;
-  &lt;h3&gt;EVENT REGISTRATION&lt;/h3&gt;
-  &lt;label&gt;Full Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Your name"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input type="email" placeholder="Your email"&gt;
-  &lt;label&gt;Number of Attendees&lt;/label&gt;
-  &lt;input type="number" placeholder="1" min="1"&gt;
-  &lt;label&gt;Event Type&lt;/label&gt;
-  &lt;select required&gt;
-    &lt;option&gt;Conference&lt;/option&gt;
-    &lt;option&gt;Workshop&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;&lt;input type="checkbox"&gt; I agree to the terms&lt;/label&gt;
-  &lt;button&gt;REGISTER&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
+      </div>
 
-</div>
+      <button class="form-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Search
+      </button>
+    </div>
+  </div>
 </div>
 
+<div class="form-component-card">
+  <div class="form-preview">
+    <div class="form-card">
+      <h3>Job Application</h3>
+
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email">
+
+      <select>
+        <option>Select Position</option>
+        <option>Frontend Developer</option>
+        <option>Backend Developer</option>
+      </select>
+
+      <input type="file">
+
+      <button class="form-btn">Apply Now</button>
+    </div>
+  </div>
+</div>
+
+<div class="form-component-card">
+  <div class="form-preview">
+    <div class="form-card">
+      <h3>Event Registration</h3>
+
+      <input type="text" placeholder="Your Name">
+
+      <input type="email" placeholder="Email">
+
+      <input type="number" placeholder="Number of Tickets">
+
+      <button class="form-btn">
+        Register
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="form-component-card">
+  <div class="form-preview">
+    <div class="form-card">
+
+      <h3>Create Ticket</h3>
+
+      <input type="text" placeholder="Subject">
+
+      <select>
+        <option>Priority</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+
+      <textarea placeholder="Describe your issue"></textarea>
+
+      <button class="form-btn">
+        Submit Ticket
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<div class="form-card">
+
+<div class="form-row flex-row">
+
+<div class="form-field flex-1">
+<input type="text" placeholder="First Name">
+</div>
+
+<div class="form-field flex-1">
+<input type="text" placeholder="Last Name">
+</div>
+
+</div>
+
+<input type="email" placeholder="Email">
+
+<textarea placeholder="Message"></textarea>
+
+<button class="form-btn">
+Send
+</button>
+
+</div>
+
+<div class="form-card">
+
+<h3>Donate</h3>
+
+<input type="number" placeholder="$50">
+
+<select>
+
+<option>Credit Card</option>
+
+<option>UPI</option>
+
+<option>PayPal</option>
+
+</select>
+
+<button class="form-btn">
+
+Donate Now
+
+</button>
+
+</div>
+
+<div class="form-card">
+
+<h3>Newsletter</h3>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<button class="form-btn">
+
+Subscribe
+
+</button>
+
+</div>
+
+<div class="form-card">
+
+<h3>Login</h3>
+
+<input type="email">
+
+<input type="password">
+
+<button class="form-btn">
+
+Login
+
+</button>
+
+<div class="social-login">
+
+<button>
+
+<i class="fab fa-google"></i>
+
+Google
+
+</button>
+
+<button>
+
+<i class="fab fa-github"></i>
+
+GitHub
+
+</button>
+
+</div>
+
+</div>
+
+<div class="form-card">
+
+<h3>Upload Document</h3>
+
+<input type="file">
+
+<p>PDF, DOCX or ZIP</p>
+
+<button class="form-btn">
+
+Upload
+
+</button>
+
+</div>
+
+<div class="form-card">
+
+<h3>Invite Member</h3>
+
+<input type="email" placeholder="Email">
+
+<select>
+
+<option>Viewer</option>
+
+<option>Editor</option>
+
+<option>Admin</option>
+
+</select>
+
+<button class="form-btn">
+
+Send Invite
+
+</button>
+
+</div>
+
+<div class="form-card">
+
+<input type="password" placeholder="Current Password">
+
+<input type="password" placeholder="New Password">
+
+<input type="password" placeholder="Confirm Password">
+
+<button class="form-btn">
+
+Update Password
+
+</button>
+
+</div>
+
+<div class="form-card">
+
+<h3>Rate Us</h3>
+
+<div class="rating-stars">
+
+★★★★★
+
+</div>
+
+<textarea placeholder="Your review"></textarea>
+
+<button class="form-btn">
+
+Submit
+
+</button>
+
+</div>
+    <!-- Contact Form -->
+    <div class="form-component-card" data-name="contact form message textarea">
+      <div class="card-top">
+        <span class="card-label">Contact Form</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card">
+          <h3>Get in Touch</h3>
+          <p class="form-sub">We'll get back to you soon</p>
+          <div class="form-field">
+            <label>Your Name</label>
+            <input type="text" placeholder="John Doe" />
+          </div>
+          <div class="form-field">
+            <label>Your Email</label>
+            <input type="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-field">
+            <label>Message</label>
+            <textarea placeholder="Write your message here..." rows="4"></textarea>
+          </div>
+          <button class="form-btn">Send Message</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc3', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc3', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc3" class="code-block"><code>&lt;div class="form-card"&gt;
+  &lt;h3&gt;Get in Touch&lt;/h3&gt;
+  &lt;input type="text" placeholder="Your Name"&gt;
+  &lt;input type="email" placeholder="Your Email"&gt;
+  &lt;textarea placeholder="Your Message"&gt;&lt;/textarea&gt;
+  &lt;button&gt;Send Message&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- More Inputs -->
+    <div class="form-component-card" data-name="select dropdown radio checkbox file input">
+      <div class="card-top">
+        <span class="card-label">More Inputs</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="form-preview">
+        <div class="form-card">
+          <h3>Extra Inputs</h3>
+          <p class="form-sub">Select, radio, checkbox &amp; file</p>
+          <div class="form-field">
+            <label>Country</label>
+            <select>
+              <option value="" disabled selected>Select Country</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>Germany</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Gender</label>
+            <div class="radio-group">
+              <label class="simple-check"><input type="radio" name="gender2" /> Male</label>
+              <label class="simple-check"><input type="radio" name="gender2" /> Female</label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Skills</label>
+            <div class="check-group">
+              <label class="simple-check"><input type="checkbox" /> HTML</label>
+              <label class="simple-check"><input type="checkbox" /> CSS</label>
+              <label class="simple-check"><input type="checkbox" /> JavaScript</label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Upload File</label>
+            <input type="file" />
+          </div>
+          <button class="form-btn">Submit</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('fc4', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('fc4', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="fc4" class="code-block"><code>&lt;select&gt;
+  &lt;option&gt;Select Country&lt;/option&gt;
+  &lt;option&gt;India&lt;/option&gt;
+  &lt;option&gt;USA&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;label&gt;&lt;input type="radio" name="gender"&gt; Male&lt;/label&gt;
+&lt;label&gt;&lt;input type="radio" name="gender"&gt; Female&lt;/label&gt;
+
+&lt;label&gt;&lt;input type="checkbox"&gt; HTML&lt;/label&gt;
+&lt;label&gt;&lt;input type="checkbox"&gt; CSS&lt;/label&gt;
+&lt;label&gt;&lt;input type="checkbox"&gt; JavaScript&lt;/label&gt;
+
+&lt;input type="file"&gt;
+&lt;button&gt;Submit&lt;/button&gt;</code></pre>
+    </div>
+
+  </div><!-- /forms-grid -->
+
+</main>
+
+<!-- Scroll to Top -->
+<button id="scrollTopBtn" onclick="scrollToTop()">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- Checkout Form -->
+<div class="form-component-card" data-name="checkout payment card billing">
+  <div class="card-top">
+    <span class="card-label">Checkout Form</span>
+    <span class="card-tag tag-popular">Trending</span>
+  </div>
+
+  <div class="form-preview">
+    <div class="form-card">
+      <h3>Payment Details</h3>
+      <p class="form-sub">Secure checkout experience</p>
+
+      <div class="form-field">
+        <label>Card Holder</label>
+        <input type="text" placeholder="John Doe">
+      </div>
+
+      <div class="form-field">
+        <label>Card Number</label>
+        <input type="text" placeholder="1234 5678 9012 3456">
+      </div>
+
+      <div class="row">
+        <div class="form-field">
+          <label>Expiry</label>
+          <input type="text" placeholder="MM/YY">
+        </div>
+
+        <div class="form-field">
+          <label>CVV</label>
+          <input type="password" placeholder="123">
+        </div>
+      </div>
+
+      <button class="form-btn">Pay Now</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Profile Settings -->
+<div class="form-component-card" data-name="profile settings account user">
+  <div class="card-top">
+    <span class="card-label">Profile Settings</span>
+    <span class="card-tag tag-essential">Essential</span>
+  </div>
+
+  <div class="form-preview">
+    <div class="form-card">
+      <h3>Account Settings</h3>
+      <p class="form-sub">Manage your profile</p>
+
+      <div class="form-field">
+        <label>Username</label>
+        <input type="text" placeholder="@developer">
+      </div>
+
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" placeholder="developer@email.com">
+      </div>
+
+      <div class="form-field">
+        <label>Bio</label>
+        <textarea rows="3" placeholder="Tell us about yourself"></textarea>
+      </div>
+
+      <button class="form-btn">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Feedback Form -->
+<div class="form-component-card" data-name="feedback rating review">
+  <div class="card-top">
+    <span class="card-label">Feedback Form</span>
+    <span class="card-tag tag-popular">Popular</span>
+  </div>
+
+  <div class="form-preview">
+    <div class="form-card">
+      <h3>Share Feedback</h3>
+      <p class="form-sub">Help us improve</p>
+
+      <div class="form-field">
+        <label>Your Name</label>
+        <input type="text" placeholder="John Doe">
+      </div>
+
+      <div class="form-field">
+        <label>Rating</label>
+        <div class="rating-stars">
+          ★ ★ ★ ★ ★
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label>Feedback</label>
+        <textarea rows="4" placeholder="Write your review"></textarea>
+      </div>
+
+      <button class="form-btn">Submit Review</button>
+    </div>
+  </div>
+</div>
+
+<!-- Job Application -->
+<div class="form-component-card" data-name="job application resume hiring">
+  <div class="card-top">
+    <span class="card-label">Job Application</span>
+    <span class="card-tag tag-new">New</span>
+  </div>
+
+  <div class="form-preview">
+    <div class="form-card">
+      <h3>Apply for Position</h3>
+      <p class="form-sub">Join our growing team</p>
+
+      <div class="form-field">
+        <label>Full Name</label>
+        <input type="text" placeholder="John Doe">
+      </div>
+
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" placeholder="you@email.com">
+      </div>
+
+      <div class="form-field">
+        <label>Resume</label>
+        <input type="file">
+      </div>
+
+      <div class="form-field">
+        <label>Cover Letter</label>
+        <textarea rows="3" placeholder="Tell us why you're a good fit"></textarea>
+      </div>
+
+      <button class="form-btn">Submit Application</button>
+    </div>
+  </div>
+</div>
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-card">
-    <div class="footer-brand">
-      <h2>Ulverse</h2>
-      <p>© 2026 Ulverse. All rights reserved.</p>
-      <div class="footer-socials">
-        <span>🌐</span>
-        <span>💼</span>
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
     <div class="footer-col">
-      <h3>Pages</h3>
-      <a href="pricing.html">Pricing</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="alerts.html">Alerts</a>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
     </div>
     <div class="footer-col">
       <h3>Legal</h3>
-      <a href="privacypolicy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button">Subscribe</button>
+      </div>
     </div>
   </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
 </footer>
-<script src="script.js"></script>
+
+<script>
+  /* Dark Mode */
+  const toggle = document.getElementById('darkModeToggle');
+  const icon = toggle.querySelector('i');
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    icon.className = 'fa-solid fa-sun';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  /* Sidebar */
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('sidebarBackdrop').classList.toggle('visible');
+  }
+
+  /* Scroll Top */
+  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* Code Toggle */
+  function toggleCode(id, btn) {
+    const block = document.getElementById(id);
+    const isOpen = block.classList.toggle('open');
+    btn.innerHTML = isOpen
+      ? '<i class="fa-solid fa-eye-slash"></i> Hide Code'
+      : '<i class="fa-solid fa-code"></i> View Code';
+  }
+
+  /* Copy Code */
+  function copyCode(id, btn) {
+    navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  /* Scroll Animations */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.form-component-card').forEach(el => observer.observe(el));
+</script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>

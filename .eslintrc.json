@@ -1,0 +1,48 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": ["warn"],
+    "no-console": ["off"],
+    "no-undef": ["error"]
+  },
+  "overrides": [
+    {
+      "files": [
+        "scripts/**/*.js",
+        "tests/**/*.js",
+        "*.js",
+        "*.config.js"
+      ],
+      "env": {
+        "node": true
+      },
+      "parserOptions": {
+        "sourceType": "script"
+      }
+    },
+    {
+      "files": [
+        "scripts/**/*.mjs",
+        "*.config.js",
+        "rollup.config.js",
+        "vite.config.js",
+        "retro-pixel.js",
+        "sw.js"
+      ],
+      "env": {
+        "node": true
+      },
+      "parserOptions": {
+        "sourceType": "module"
+      }
+    }
+  ]
+}

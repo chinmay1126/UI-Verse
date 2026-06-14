@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-3XJLDIo2ht7SCbRq1fyDXRotSp1fE/MMdf2BV3rSycE=' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-5FApUBe8N+nBwsxMKd8D0GQkJXFtj/XKz+CE7NLjDag=' 'sha256-6SDqfSVROMsJl7AH1nOqmHQe1tawAsUkxFnc8v5JVYY=' 'sha256-7ClFD+nLV4ZC06XXXYyjDHtpJtMKKrPAvqiT4CK7HBY=' 'sha256-Aqyq7g4Q6+d4BEwdNn9qSXUOtawRqQC2m3yn63dvfmw=' 'sha256-B4XG7fzPE0VOnpUU/ACjnrUAiHoy/JGd9fdo0aH7US0=' 'sha256-CiOmjSLlvPUSFCakL9D0LovG5mSurEF9EnUNOazmQsQ=' 'sha256-EH/6rjqTTfNoFtprZhM7SjcX4A9jCNCu4c+1La1KxBQ=' 'sha256-ERiW3vRNCgHtpS8hJrdzO2TjjbQycI3an1Re1LkZ468=' 'sha256-FUCe1+1/aljsgSjKZzHxHLCuqvo+GuhfpwCtvwa41EY=' 'sha256-FVGq9JzIl9Iex6avTJTLjaUofYkXOE9J+32st2B9KTY=' 'sha256-Fji/KpGGHGJPLsXOhIp71AX0FWvJxBdWuWGetuqQIgg=' 'sha256-Ge/Iz3lCa56Sz7Gws4w7yLKJkncYUUpq9IfHaapfOfo=' 'sha256-HpqVcb1OdFLTaFIzBn0eLVUvXPUNAe02+gQFfveSIrc=' 'sha256-Kp1LyxzA+D/QQABE9h4qE8gfFBE3H+aEU3ur4OY94bU=' 'sha256-OYZl2e2DtYx1BElGKIdbERip3M7okr8cMPrH/UFcoSg=' 'sha256-P1j5H+rgmS9UZPjxGIJElzNOTJHtccuWC2+/kTVLDbA=' 'sha256-QqS/SXYiOlPPGC88L6OJUi2aYGfqHquoN6etfXhcsIc=' 'sha256-RK7bNheWC0fBOoPlKWZJtSVUuvTyVperjxZ0pvATzSs=' 'sha256-RppgL4PltBMVruvqFnJSw3+g9bvjqn9u1Ld9Essa78U=' 'sha256-SEKcTO8kC/0SuXUj2tpSfsEp3AZgSqW8USXZXFJ+aPg=' 'sha256-UhlN3+ZTvYb16Kmhjb5BYlADzKf7jqSyPMSgA0QhRJQ=' 'sha256-WL1AV4Gpzs5PA0Hb6T+VQDd28O2aaOLZxNqCEogvDbo=' 'sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag=' 'sha256-d3IIn8lxJAWIIdyx1S6cQb+N8mj4Qvn2nhhqzgmWQKY=' 'sha256-di+KILSdfrhZijbia0cBM68n3/Qj8X4IgSMku7mNcKk=' 'sha256-dv0rkV+LlbQVQOVaCbUJuNVCgFJbu4FzQt7cL3vjAbU=' 'sha256-h34HKN/9B/up6Ja9xBL/HpYPxVknlJwpALGVX8+3i+0=' 'sha256-jOEPjN9MM+gw75cQsdIXYvIqWpICIjl8TUGAKjgJV1A=' 'sha256-msxZD2wDb+n8rL+JwQGKyBHmW4bNTuA17YqgxzpvIBo=' 'sha256-paULxk2mvs2MScDC/E8XbaDyv8AQ+x2zBkvWgOdYwDE=' 'sha256-rpNNcopv72C88ZWQ4BjFCVILeLKN1mIJurKhcE99Kxk=' 'sha256-sK9PW/cLcvqS3mplqxxRQ8lZiINDS6FtIQ8671rXYWk=' 'sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=' 'sha256-vtzGj11bmjTlpxjyxDMsGCb25NWp1BY0V8X32q4ULkc='; script-src-attr 'unsafe-hashes' 'sha256-3XJLDIo2ht7SCbRq1fyDXRotSp1fE/MMdf2BV3rSycE=' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-5FApUBe8N+nBwsxMKd8D0GQkJXFtj/XKz+CE7NLjDag=' 'sha256-6SDqfSVROMsJl7AH1nOqmHQe1tawAsUkxFnc8v5JVYY=' 'sha256-7ClFD+nLV4ZC06XXXYyjDHtpJtMKKrPAvqiT4CK7HBY=' 'sha256-Aqyq7g4Q6+d4BEwdNn9qSXUOtawRqQC2m3yn63dvfmw=' 'sha256-B4XG7fzPE0VOnpUU/ACjnrUAiHoy/JGd9fdo0aH7US0=' 'sha256-CiOmjSLlvPUSFCakL9D0LovG5mSurEF9EnUNOazmQsQ=' 'sha256-EH/6rjqTTfNoFtprZhM7SjcX4A9jCNCu4c+1La1KxBQ=' 'sha256-ERiW3vRNCgHtpS8hJrdzO2TjjbQycI3an1Re1LkZ468=' 'sha256-FUCe1+1/aljsgSjKZzHxHLCuqvo+GuhfpwCtvwa41EY=' 'sha256-FVGq9JzIl9Iex6avTJTLjaUofYkXOE9J+32st2B9KTY=' 'sha256-Fji/KpGGHGJPLsXOhIp71AX0FWvJxBdWuWGetuqQIgg=' 'sha256-Ge/Iz3lCa56Sz7Gws4w7yLKJkncYUUpq9IfHaapfOfo=' 'sha256-HpqVcb1OdFLTaFIzBn0eLVUvXPUNAe02+gQFfveSIrc=' 'sha256-Kp1LyxzA+D/QQABE9h4qE8gfFBE3H+aEU3ur4OY94bU=' 'sha256-OYZl2e2DtYx1BElGKIdbERip3M7okr8cMPrH/UFcoSg=' 'sha256-P1j5H+rgmS9UZPjxGIJElzNOTJHtccuWC2+/kTVLDbA=' 'sha256-QqS/SXYiOlPPGC88L6OJUi2aYGfqHquoN6etfXhcsIc=' 'sha256-RK7bNheWC0fBOoPlKWZJtSVUuvTyVperjxZ0pvATzSs=' 'sha256-RppgL4PltBMVruvqFnJSw3+g9bvjqn9u1Ld9Essa78U=' 'sha256-SEKcTO8kC/0SuXUj2tpSfsEp3AZgSqW8USXZXFJ+aPg=' 'sha256-UhlN3+ZTvYb16Kmhjb5BYlADzKf7jqSyPMSgA0QhRJQ=' 'sha256-WL1AV4Gpzs5PA0Hb6T+VQDd28O2aaOLZxNqCEogvDbo=' 'sha256-YRzopD0k/AP1+b8sp6k3LRHtvi7m+ax3FS+kZsaO+Ag=' 'sha256-d3IIn8lxJAWIIdyx1S6cQb+N8mj4Qvn2nhhqzgmWQKY=' 'sha256-di+KILSdfrhZijbia0cBM68n3/Qj8X4IgSMku7mNcKk=' 'sha256-dv0rkV+LlbQVQOVaCbUJuNVCgFJbu4FzQt7cL3vjAbU=' 'sha256-h34HKN/9B/up6Ja9xBL/HpYPxVknlJwpALGVX8+3i+0=' 'sha256-jOEPjN9MM+gw75cQsdIXYvIqWpICIjl8TUGAKjgJV1A=' 'sha256-msxZD2wDb+n8rL+JwQGKyBHmW4bNTuA17YqgxzpvIBo=' 'sha256-paULxk2mvs2MScDC/E8XbaDyv8AQ+x2zBkvWgOdYwDE=' 'sha256-rpNNcopv72C88ZWQ4BjFCVILeLKN1mIJurKhcE99Kxk=' 'sha256-sK9PW/cLcvqS3mplqxxRQ8lZiINDS6FtIQ8671rXYWk=' 'sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=' 'sha256-vtzGj11bmjTlpxjyxDMsGCb25NWp1BY0V8X32q4ULkc='; style-src 'self' https: 'unsafe-hashes' 'sha256-/8o9UZDd6tpDnZmmWVqnz8kfTdSzwOjfUJ2syPAelN8=' 'sha256-/BK//THAZTzSC5vQdQih4ptPK7Jv7qZtRMiqXllQ/Wg=' 'sha256-07RhF+YHj3enR8hGXjGDUEnqw7gGeJKhU/ZftwsSFHE=' 'sha256-0AMmbUirNsGs6TcefApJOv2XKqhBi+Uki/STrZY3u6w=' 'sha256-1C2kdLXKl2guiicJ9UjhoZgXkZXpc+yR04mbixktdAE=' 'sha256-6ZdM4eR2TTOemxHJeRX5+Oc+VTvHixYqBEcxl92gKEc=' 'sha256-6zGRG+NwDhaoGuHMrk75jibCGqhg8FrNIkJrJ16hUgU=' 'sha256-7Q/fE2Hs2meUkJNNxBsqZRB8XEcpd5xCScw8tZOb2u0=' 'sha256-9ULzEqXpFS42jeMtD7h4h2YwVUVUBO7G38TFLQuSKOs=' 'sha256-Afar6I98NxFSyHpSyACOSxBjWmu/aUSWRf2qWDqLTy0=' 'sha256-C3Y1jqfJeLvA7QXXmJv/f45fbdl5+b2yR6PZuifsL+8=' 'sha256-D2V8X6ZD6dvi5mznHNlCGS+cwpo+NNMWgti1UkoBwz4=' 'sha256-Eve4LgJqpH/WZUuCndUr6UOWGIPCYC2pbCmlNdhv/Us=' 'sha256-G5IkxjVZyUhuZPZHvr1yjuSXSwk2M0H00sLRUL+ZZd0=' 'sha256-HUNu/B+IX8Ijz50biWW0v3RjXHoGSCMlzH2BnOV0TJc=' 'sha256-JV7nUUVq6SnOCV061Yl1uvW4OWZOLTBj9QPgOYNSnLQ=' 'sha256-K5Hf6/dMSnbgHOfMXhJdKlD1wArh6aTipEKutUlSD1M=' 'sha256-KLpGo04yah3bBl1eOaJOLRrhSMpLCeIkbaeylLIcPnA=' 'sha256-KOglmn5VEuqevGDtIQEc3ums5vfj2QrT6yaBuqFXVW4=' 'sha256-MycuLPmbNtNUr6SV85ELtxebKpFfo1XTFXya42U1t4E=' 'sha256-NxNt0xrm7sMCpR1iO5G0vqtVN2nwsfw2tz+wC5Fu9Sw=' 'sha256-P6k2hJQ3iQqsW7h9uPA8UBpGuAFxK2Jce1ws94OPxkQ=' 'sha256-QhEuqBb5iOPiihZqRmNCiy69kXGiEYQe6VCd0xlIwmc=' 'sha256-RWdZiBWxTk+shlOCt0yIBaD9FkAYAME/Eo4MJvLO/Yc=' 'sha256-TUIl2RJ1ce2a7744wSQYRQFCC+crZwollR/SeAgdDFA=' 'sha256-TZulM6uJ69M8UeYSjvEroJeidZYs58XKS8GSRTdXgmg=' 'sha256-Tfh6+Ls0yIfPMXJNVt6Hvn+D19O/FcyDhp3aIf2c2wg=' 'sha256-Wely6V2GYmBiykrTWThlaz3811nlLvmwNXP1MFouPf0=' 'sha256-ZemH9XaYNA+gnkeqZdmIH+LRANiDWXB9CPXdNaXTiLQ=' 'sha256-dpd8yfJCMWPr8AcEBnAp5lQvVCkf37RcSr5lAnbF4NQ=' 'sha256-dzEIutRJaaCBzn3+nQWJqm+muWOlT3Rt9UBX5hrzK5A=' 'sha256-gtNle8mzHd4Fq8HLsrSGl3fdgGCjdpc7gL/w0nZFp4o=' 'sha256-h8chbhef27l6azYxsAh6MrQNy5XUS7S9BL4Dh2WTp5M=' 'sha256-hUjeMG9UvQe6nRJHeaZ40yVPNfCc4vpsWuKiKyxHgfQ=' 'sha256-i7MT3IRpfJ0bwEExIv7utAupbXaCtdmfZVAtltL5kTY=' 'sha256-jJxI/sefiJI/QhzJFR1uACxjacD/b04scfLjrMH/Plk=' 'sha256-jXpbMYxiCKXtIdSFga0+zp8DQFZNkTXbC1oglCo6Hrc=' 'sha256-mmZqaISXD2Pzx8Qxov7dNumE78NX7QHV7AYkpJkbVlg=' 'sha256-nq5pNl4gz+SAAsczP1N9BEwwBbkrTshYQFy2eqZGwIE=' 'sha256-o2y6E60+6MMGRvc3HC5N4gZE9kpdHvoxEeqK6ISbzOQ=' 'sha256-o8w/COZUxxk1YqNUesAyJl/MqdlJowzATI/JvM+1xFk=' 'sha256-oJ2iR6QnsDSzS9j1cGKSQin8VZzzOYFQbssFA3b0zU4=' 'sha256-pKjM1+x07UAa6rRMtRmmW10ObnugQCrNjEcITvfsegg=' 'sha256-pnFZjflQWc5R4i8NChSgf4nvLP5SRL0MCIE+OT4tWrs=' 'sha256-q9E3uJt6VaWA6NbBsNGiQFL53qQemURrA3kR1EX+vvY=' 'sha256-r+aE756XkzCkmKjkat+I8ms19D4OQ5KHOS/L4ZTFJ08=' 'sha256-tpWMbUlP5Uw0VavQx+88OMYf+mw5b4WiOzPF2oUguaY=' 'sha256-uNGcp5dhM9UZGTmkBEpB50YbH8Fbz1/IO/p0vbts+mU=' 'sha256-wqLuPs0px+EqIE2xv8XncXCAoBFOiE+a41WnUfkDK+Q=' 'sha256-x6S0sGzUmI/2jFsn+GK+OWEx1Gf63UrusUDvaIGzRxg='; style-src-attr 'unsafe-hashes' 'sha256-/8o9UZDd6tpDnZmmWVqnz8kfTdSzwOjfUJ2syPAelN8=' 'sha256-/BK//THAZTzSC5vQdQih4ptPK7Jv7qZtRMiqXllQ/Wg=' 'sha256-07RhF+YHj3enR8hGXjGDUEnqw7gGeJKhU/ZftwsSFHE=' 'sha256-0AMmbUirNsGs6TcefApJOv2XKqhBi+Uki/STrZY3u6w=' 'sha256-1C2kdLXKl2guiicJ9UjhoZgXkZXpc+yR04mbixktdAE=' 'sha256-6ZdM4eR2TTOemxHJeRX5+Oc+VTvHixYqBEcxl92gKEc=' 'sha256-6zGRG+NwDhaoGuHMrk75jibCGqhg8FrNIkJrJ16hUgU=' 'sha256-7Q/fE2Hs2meUkJNNxBsqZRB8XEcpd5xCScw8tZOb2u0=' 'sha256-9ULzEqXpFS42jeMtD7h4h2YwVUVUBO7G38TFLQuSKOs=' 'sha256-Afar6I98NxFSyHpSyACOSxBjWmu/aUSWRf2qWDqLTy0=' 'sha256-C3Y1jqfJeLvA7QXXmJv/f45fbdl5+b2yR6PZuifsL+8=' 'sha256-D2V8X6ZD6dvi5mznHNlCGS+cwpo+NNMWgti1UkoBwz4=' 'sha256-Eve4LgJqpH/WZUuCndUr6UOWGIPCYC2pbCmlNdhv/Us=' 'sha256-G5IkxjVZyUhuZPZHvr1yjuSXSwk2M0H00sLRUL+ZZd0=' 'sha256-HUNu/B+IX8Ijz50biWW0v3RjXHoGSCMlzH2BnOV0TJc=' 'sha256-JV7nUUVq6SnOCV061Yl1uvW4OWZOLTBj9QPgOYNSnLQ=' 'sha256-K5Hf6/dMSnbgHOfMXhJdKlD1wArh6aTipEKutUlSD1M=' 'sha256-KLpGo04yah3bBl1eOaJOLRrhSMpLCeIkbaeylLIcPnA=' 'sha256-KOglmn5VEuqevGDtIQEc3ums5vfj2QrT6yaBuqFXVW4=' 'sha256-MycuLPmbNtNUr6SV85ELtxebKpFfo1XTFXya42U1t4E=' 'sha256-NxNt0xrm7sMCpR1iO5G0vqtVN2nwsfw2tz+wC5Fu9Sw=' 'sha256-P6k2hJQ3iQqsW7h9uPA8UBpGuAFxK2Jce1ws94OPxkQ=' 'sha256-QhEuqBb5iOPiihZqRmNCiy69kXGiEYQe6VCd0xlIwmc=' 'sha256-RWdZiBWxTk+shlOCt0yIBaD9FkAYAME/Eo4MJvLO/Yc=' 'sha256-TUIl2RJ1ce2a7744wSQYRQFCC+crZwollR/SeAgdDFA=' 'sha256-TZulM6uJ69M8UeYSjvEroJeidZYs58XKS8GSRTdXgmg=' 'sha256-Tfh6+Ls0yIfPMXJNVt6Hvn+D19O/FcyDhp3aIf2c2wg=' 'sha256-Wely6V2GYmBiykrTWThlaz3811nlLvmwNXP1MFouPf0=' 'sha256-ZemH9XaYNA+gnkeqZdmIH+LRANiDWXB9CPXdNaXTiLQ=' 'sha256-dpd8yfJCMWPr8AcEBnAp5lQvVCkf37RcSr5lAnbF4NQ=' 'sha256-dzEIutRJaaCBzn3+nQWJqm+muWOlT3Rt9UBX5hrzK5A=' 'sha256-gtNle8mzHd4Fq8HLsrSGl3fdgGCjdpc7gL/w0nZFp4o=' 'sha256-h8chbhef27l6azYxsAh6MrQNy5XUS7S9BL4Dh2WTp5M=' 'sha256-hUjeMG9UvQe6nRJHeaZ40yVPNfCc4vpsWuKiKyxHgfQ=' 'sha256-i7MT3IRpfJ0bwEExIv7utAupbXaCtdmfZVAtltL5kTY=' 'sha256-jJxI/sefiJI/QhzJFR1uACxjacD/b04scfLjrMH/Plk=' 'sha256-jXpbMYxiCKXtIdSFga0+zp8DQFZNkTXbC1oglCo6Hrc=' 'sha256-mmZqaISXD2Pzx8Qxov7dNumE78NX7QHV7AYkpJkbVlg=' 'sha256-nq5pNl4gz+SAAsczP1N9BEwwBbkrTshYQFy2eqZGwIE=' 'sha256-o2y6E60+6MMGRvc3HC5N4gZE9kpdHvoxEeqK6ISbzOQ=' 'sha256-o8w/COZUxxk1YqNUesAyJl/MqdlJowzATI/JvM+1xFk=' 'sha256-oJ2iR6QnsDSzS9j1cGKSQin8VZzzOYFQbssFA3b0zU4=' 'sha256-pKjM1+x07UAa6rRMtRmmW10ObnugQCrNjEcITvfsegg=' 'sha256-pnFZjflQWc5R4i8NChSgf4nvLP5SRL0MCIE+OT4tWrs=' 'sha256-q9E3uJt6VaWA6NbBsNGiQFL53qQemURrA3kR1EX+vvY=' 'sha256-r+aE756XkzCkmKjkat+I8ms19D4OQ5KHOS/L4ZTFJ08=' 'sha256-tpWMbUlP5Uw0VavQx+88OMYf+mw5b4WiOzPF2oUguaY=' 'sha256-uNGcp5dhM9UZGTmkBEpB50YbH8Fbz1/IO/p0vbts+mU=' 'sha256-wqLuPs0px+EqIE2xv8XncXCAoBFOiE+a41WnUfkDK+Q=' 'sha256-x6S0sGzUmI/2jFsn+GK+OWEx1Gf63UrusUDvaIGzRxg='">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Bars — UIverse</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="progresspage.css">
+  </head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-brand">
+    <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:8px;">
+      <span class="brand-icon" aria-hidden="true">&#x2B21;</span>
+      <span class="brand-text">UIverse <span style="font-size:9px;background:linear-gradient(135deg,#eb6835,#7b61ff);color:#fff;padding:1px 6px;border-radius:10px;font-weight:800;margin-left:4px;letter-spacing:.5px;vertical-align:middle;box-shadow:0 0 8px rgba(235,104,53,.3)">V2</span></span>
+    </a>
+  </div>
+  <nav class="sidebar-nav" aria-label="Component categories">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="Welcome.html"><i class="fa-solid fa-door-open"></i><span>Welcome</span></a></li>
+      <li><a href="component-discovery.html"><i class="fa-solid fa-compass"></i><span>Explore All</span></a></li>
+      <li><a href="leaderboard-components.html"><i class="fa-solid fa-ranking-star"></i><span>Leaderboards</span></a></li>
+      <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+      <li><a href="buttons.html"><i class="fa-solid fa-computer-mouse"></i><span>Buttons V2</span></a></li>
+      <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+      <li><a href="flipcards.html"><i class="fa-solid fa-clone"></i><span>3D Cards</span></a></li>
+      <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navbar</span></a></li>
+      <li><a href="dropdown-components.html"><i class="fa-solid fa-caret-down"></i><span>Dropdowns</span></a></li>
+      <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Inputs</span></a></li>
+      <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><span>Forms</span></a></li>
+      <li><a href="profile-components.html"><i class="fa-solid fa-user"></i><span>Profiles</span></a></li>
+      <li><a href="badges.html"><i class="fa-solid fa-award"></i><span>Badges</span></a></li>
+      <li><a href="alerts.html"><i class="fa-solid fa-triangle-exclamation"></i><span>Alerts</span></a></li>
+      <li><a href="loaders.html"><i class="fa-solid fa-spinner"></i><span>Loaders</span></a></li>
+      <li><a href="tabs.html"><i class="fa-solid fa-table-columns"></i><span>Tabs</span></a></li>
+      <li><a href="tabs-components.html"><i class="fa-solid fa-layer-group"></i><span>Tabs V2</span></a></li>
+      <li><a href="toggles.html"><i class="fa-solid fa-toggle-on"></i><span>Toggles</span></a></li>
+      <li><a href="switches.html"><i class="fa-solid fa-toggle-on"></i><span>Switches</span></a></li>
+      <li><a href="checkbox.html"><i class="fa-solid fa-square-check"></i><span>Checkboxes</span></a></li>
+      <li><a href="radiobutton.html"><i class="fa-solid fa-circle-dot"></i><span>Radio Buttons</span></a></li>
+      <li><a href="range-slider.html"><i class="fa-solid fa-sliders"></i><span>Range Slider</span></a></li>
+      <li><a href="tooltip.html"><i class="fa-solid fa-comment-dots"></i><span>Tooltips</span></a></li>
+      <li><a href="Popovers.html"><i class="fa-solid fa-message"></i><span>Popovers</span></a></li>
+      <li><a href="menu.html"><i class="fa-solid fa-bars-staggered"></i><span>Menu</span></a></li>
+      <li><a href="breadcrumbs.html"><i class="fa-solid fa-chevron-right"></i><span>Breadcrumbs</span></a></li>
+      <li><a href="docks.html"><i class="fa-solid fa-grip"></i><span>Docks</span></a></li>
+      <li><a href="floating-nav.html"><i class="fa-solid fa-satellite"></i><span>Floating Nav</span></a></li>
+      <li><a href="Spotlightui.html"><i class="fa-solid fa-crosshairs"></i><span>Spotlight</span></a></li>
+      <li><a href="Kanbanui.html"><i class="fa-solid fa-columns-3"></i><span>Kanban</span></a></li>
+      <li><a href="Accordionsui.html"><i class="fa-solid fa-angles-down"></i><span>Accordions</span></a></li>
+      <li><a href="command-palette.html"><i class="fa-solid fa-terminal"></i><span>Command Palette</span></a></li>
+      <li><a href="step-indicators.html"><i class="fa-solid fa-list-check"></i><span>Steppers</span></a></li>
+      <li><a href="table.html"><i class="fa-solid fa-table"></i><span>Tables</span></a></li>
+      <li><a href="charts.html"><i class="fa-solid fa-chart-pie"></i><span>Charts</span></a></li>
+      <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a></li>
+      <li><a href="admin-panel.html"><i class="fa-solid fa-gauge-high"></i><span>Admin Panel</span></a></li>
+      <li><a href="Statistics.html"><i class="fa-solid fa-chart-bar"></i><span>Statistics</span></a></li>
+      <li><a href="stats-cards.html"><i class="fa-solid fa-chart-line"></i><span>Stats Cards</span></a></li>
+      <li><a href="analysis-card.html"><i class="fa-solid fa-magnifying-glass-chart"></i><span>Analysis Cards</span></a></li>
+      <li><a href="comparison-tables.html"><i class="fa-solid fa-table-list"></i><span>Comparison Tables</span></a></li>
+      <li><a href="timeline.html"><i class="fa-solid fa-clock-rotate-left"></i><span>Timeline</span></a></li>
+      <li><a href="progresspage.html"><i class="fa-solid fa-bars-progress"></i><span>Progress</span></a></li>
+      <li><a href="progress-premium.html"><i class="fa-solid fa-bars-progress"></i><span>Progress V2</span></a></li>
+      <li><a href="ratingpage.html"><i class="fa-solid fa-star"></i><span>Ratings</span></a></li>
+      <li><a href="ratings-premium.html"><i class="fa-solid fa-star"></i><span>Ratings V2</span></a></li>
+      <li><a href="toasts.html"><i class="fa-solid fa-bell"></i><span>Toasts</span></a></li>
+      <li><a href="notification.html"><i class="fa-solid fa-bell"></i><span>Notifications</span></a></li>
+      <li><a href="notifications-premium.html"><i class="fa-solid fa-bell"></i><span>Notifications V2</span></a></li>
+      <li><a href="snackbar.html"><i class="fa-solid fa-comment"></i><span>Snackbars</span></a></li>
+      <li><a href="skeletons.html"><i class="fa-solid fa-rectangle-xmark"></i><span>Skeletons</span></a></li>
+      <li><a href="empty-state.html"><i class="fa-solid fa-box-open"></i><span>Empty States</span></a></li>
+      <li><a href="animate-loaders.html"><i class="fa-solid fa-circle-notch"></i><span>Animated Loaders</span></a></li>
+      <li><a href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a></li>
+      <li><a href="carousel.html"><i class="fa-solid fa-film"></i><span>Carousel</span></a></li>
+      <li><a href="image-carousel.html"><i class="fa-solid fa-photo-film"></i><span>Image Carousel</span></a></li>
+      <li><a href="image-slider.html"><i class="fa-solid fa-images"></i><span>Image Slider</span></a></li>
+      <li><a href="blog.html"><i class="fa-solid fa-blog"></i><span>Blog</span></a></li>
+      <li><a href="article.html"><i class="fa-solid fa-newspaper"></i><span>Articles</span></a></li>
+      <li><a href="notes-components.html"><i class="fa-solid fa-sticky-note"></i><span>Notes</span></a></li>
+      <li><a href="story.html"><i class="fa-solid fa-book-open"></i><span>Story</span></a></li>
+      <li><a href="activity-feed.html"><i class="fa-solid fa-rss"></i><span>Activity Feed</span></a></li>
+      <li><a href="testimonials.html"><i class="fa-solid fa-comments"></i><span>Testimonials</span></a></li>
+      <li><a href="chatui.html"><i class="fa-solid fa-comment-dots"></i><span>Chat UI</span></a></li>
+      <li><a href="musicicon.html"><i class="fa-solid fa-music"></i><span>Music</span></a></li>
+      <li><a href="hero.html"><i class="fa-solid fa-star"></i><span>Hero Sections</span></a></li>
+      <li><a href="section.html"><i class="fa-solid fa-rectangle-list"></i><span>Sections</span></a></li>
+      <li><a href="div.html"><i class="fa-solid fa-square"></i><span>DIV</span></a></li>
+      <li><a href="span.html"><i class="fa-solid fa-code"></i><span>Span</span></a></li>
+      <li><a href="bent-grid.html"><i class="fa-solid fa-border-all"></i><span>Bent Grid</span></a></li>
+      <li><a href="footer.html"><i class="fa-solid fa-shoe-prints"></i><span>Footer</span></a></li>
+      <li><a href="patterns.html"><i class="fa-solid fa-border-style"></i><span>Patterns</span></a></li>
+      <li><a href="icon.html"><i class="fa-solid fa-icons"></i><span>Icons</span></a></li>
+      <li><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Hover Effects</span></a></li>
+      <li><a href="color.html"><i class="fa-solid fa-palette"></i><span>Colors</span></a></li>
+      <li><a href="retroui.html"><i class="fa-solid fa-gamepad"></i><span>RetroUI</span></a></li>
+      <li><a href="ai-components.html"><i class="fa-solid fa-robot"></i><span>AI Components</span></a></li>
+      <li><a href="divider-component.html"><i class="fa-solid fa-minus"></i><span>Dividers</span></a></li>
+      <li><a href="chip-components.html"><i class="fa-solid fa-tag"></i><span>Chips</span></a></li>
+      <li><a href="slider-components.html"><i class="fa-solid fa-sliders"></i><span>Sliders</span></a></li>
+      <li><a href="widgets.html"><i class="fa-solid fa-layer-group"></i><span>Widgets</span></a></li>
+      <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search Bars</span></a></li>
+      <li><a href="filters-premium.html"><i class="fa-solid fa-filter"></i><span>Filters</span></a></li>
+      <li><a href="map.html"><i class="fa-solid fa-map-location-dot"></i><span>Maps</span></a></li>
+      <li><a href="calendar.html"><i class="fa-solid fa-calendar"></i><span>Calendar</span></a></li>
+      <li><a href="calendarcomponent.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar V2</span></a></li>
+      <li><a href="otp.html"><i class="fa-solid fa-lock"></i><span>OTP Input</span></a></li>
+      <li><a href="fileuploadui.html"><i class="fa-solid fa-upload"></i><span>File Upload</span></a></li>
+      <li><a href="files.html"><i class="fa-solid fa-file-arrow-up"></i><span>Drag &amp; Drop</span></a></li>
+      <li><a href="multi-step-form.html"><i class="fa-solid fa-stairs"></i><span>Multi-step Form</span></a></li>
+      <li><a href="cookies.html"><i class="fa-solid fa-cookie-bite"></i><span>Cookies</span></a></li>
+      <li><a href="water-reminder.html"><i class="fa-solid fa-droplet"></i><span>Water Reminder</span></a></li>
+      <li><a href="ecommerce.html"><i class="fa-solid fa-cart-shopping"></i><span>E-commerce</span></a></li>
+      <li><a href="pricing.html"><i class="fa-solid fa-tags"></i><span>Pricing</span></a></li>
+      <li><a href="subscription.html"><i class="fa-solid fa-credit-card"></i><span>Subscription</span></a></li>
+      <li><a href="product.html"><i class="fa-solid fa-box"></i><span>Product Page</span></a></li>
+      <li><a href="product-slider.html"><i class="fa-solid fa-box-open"></i><span>Product Slider</span></a></li>
+      <li><a href="newsletter-components.html"><i class="fa-solid fa-envelope"></i><span>Newsletter</span></a></li>
+      <li><a href="call-to-action.html"><i class="fa-solid fa-bullhorn"></i><span>Call to Action</span></a></li>
+      <li><a href="team-collaboration.html"><i class="fa-solid fa-users"></i><span>Team Collab</span></a></li>
+      <li><a href="auth.html"><i class="fa-solid fa-user-shield"></i><span>Authentication</span></a></li>
+      <li><a href="recovery.html"><i class="fa-solid fa-key"></i><span>Password Recovery</span></a></li>
+      <li><a href="settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a></li>
+      <li><a href="profile.html"><i class="fa-solid fa-id-card"></i><span>Profile</span></a></li>
+      <li><a href="about.html"><i class="fa-solid fa-circle-info"></i><span>About</span></a></li>
+      <li><a href="documentation.html"><i class="fa-solid fa-book"></i><span>Documentation</span></a></li>
+      <li><a href="guidelines.html"><i class="fa-solid fa-scale-balanced"></i><span>Guidelines</span></a></li>
+      <li><a href="howtocontribute.html"><i class="fa-solid fa-code-branch"></i><span>How to Contribute</span></a></li>
+      <li><a href="contributors.html"><i class="fa-solid fa-users"></i><span>Contributors</span></a></li>
+      <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a></li>
+      <li><a href="contact.html"><i class="fa-regular fa-envelope"></i><span>Contact Us</span></a></li>
+      <li><a href="privacypolicy.html"><i class="fa-solid fa-shield-halved"></i><span>Privacy Policy</span></a></li>
+      <li><a href="terms.html"><i class="fa-solid fa-file-contract"></i><span>Terms</span></a></li>
+      <li><a href="license.html"><i class="fa-solid fa-certificate"></i><span>License</span></a></li>
+      <li><a href="MyCollection.html"><i class="fa-solid fa-bookmark"></i><span>My Collection</span></a></li>
+      <li><a href="error.html"><i class="fa-solid fa-circle-exclamation"></i><span>Error Pages</span></a></li>
+      <li><a href="maintenance.html"><i class="fa-solid fa-wrench"></i><span>Maintenance</span></a></li>
+      <li><a href="offline.html"><i class="fa-solid fa-wifi"></i><span>Offline</span></a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
+<!-- ================= SIDEBAR BACKDROP ================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="logo">UIverse</div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" / data-a11y-remediation="label-needed">
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
+    <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
+    <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main-home">
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-left">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Progress Bars</span>
+      </div>
+      <h1 class="page-title">Progress Bar Components</h1>
+      <p class="page-desc">A full collection of progress bar styles — linear, gradient, striped, animated, circular, multi-step, and skill bars. All built with pure HTML & CSS.</p>
+      <div class="page-meta">
+        <span class="meta-badge"><i class="fa-solid fa-layer-group"></i> 12 Components</span>
+        <span class="meta-badge"><i class="fa-solid fa-code"></i> Pure CSS</span>
+        <span class="meta-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Animated</span>
+      </div>
+    </div>
+    <div class="page-hero-right">
+      <div class="progress-hero-preview">
+        <div class="php-row">
+          <span>Design</span>
+          <div class="php-bar"><div class="php-fill" style="width:85%;background:linear-gradient(90deg,#eb6835,#fdcb6e);"></div></div>
+          <span>85%</span>
+        </div>
+        <div class="php-row">
+          <span>Code</span>
+          <div class="php-bar"><div class="php-fill" style="width:70%;background:linear-gradient(90deg,#6c5ce7,#a29bfe);"></div></div>
+          <span>70%</span>
+        </div>
+        <div class="php-row">
+          <span>Deploy</span>
+          <div class="php-bar"><div class="php-fill" style="width:55%;background:linear-gradient(90deg,#00b894,#06b6d4);"></div></div>
+          <span>55%</span>
+        </div>
+        <div class="php-row">
+          <span>Test</span>
+          <div class="php-bar"><div class="php-fill" style="width:40%;background:linear-gradient(90deg,#d63031,#fdcb6e);"></div></div>
+          <span>40%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
+    <button class="filter-btn" onclick="filterCards('linear', this)">Linear</button>
+    <button class="filter-btn" onclick="filterCards('circular', this)">Circular</button>
+    <button class="filter-btn" onclick="filterCards('animated', this)">Animated</button>
+    <button class="filter-btn" onclick="filterCards('multi', this)">Multi</button>
+    <div class="filter-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Filter progress bars..." oninput="liveFilter(this.value)" />
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="progress-grid" id="progressGrid">
+
+    <!-- 1. Basic Linear -->
+    <div class="component-card" data-name="basic linear simple progress bar" data-cat="linear">
+      <div class="card-top">
+        <span class="card-label">Basic Progress Bar</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-progress-stack">
+          <div class="demo-bar-row">
+            <div class="pb-track"><div class="pb-fill pb-accent" style="width:75%;"></div></div>
+            <span class="pb-pct">75%</span>
+          </div>
+          <div class="demo-bar-row">
+            <div class="pb-track"><div class="pb-fill pb-accent" style="width:40%;"></div></div>
+            <span class="pb-pct">40%</span>
+          </div>
+          <div class="demo-bar-row">
+            <div class="pb-track"><div class="pb-fill pb-accent" style="width:90%;"></div></div>
+            <span class="pb-pct">90%</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">The simplest progress bar — a filled track with a percentage label. Works for any completion state.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb1', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb1', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb1" class="code-block"><code>&lt;div class="progress-track"&gt;
+  &lt;div class="progress-fill" style="width: 75%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: rgba(235,104,53,0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: #eb6835;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}</code></pre>
+    </div>
+
+    <!-- 2. Labelled Bar -->
+    <div class="component-card" data-name="labelled label title progress bar skill" data-cat="linear">
+      <div class="card-top">
+        <span class="card-label">Labelled Bar</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-progress-stack">
+          <div class="demo-label-row">
+            <div class="demo-label-top"><span>HTML</span><span>92%</span></div>
+            <div class="pb-track"><div class="pb-fill pb-accent" style="width:92%;"></div></div>
+          </div>
+          <div class="demo-label-row">
+            <div class="demo-label-top"><span>CSS</span><span>85%</span></div>
+            <div class="pb-track"><div class="pb-fill pb-purple" style="width:85%;"></div></div>
+          </div>
+          <div class="demo-label-row">
+            <div class="demo-label-top"><span>JavaScript</span><span>70%</span></div>
+            <div class="pb-track"><div class="pb-fill pb-green" style="width:70%;"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">Progress bars with a label and percentage above each track — perfect for skill sections in portfolios.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb2', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb2', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb2" class="code-block"><code>&lt;div class="skill-bar"&gt;
+  &lt;div class="skill-label"&gt;
+    &lt;span&gt;HTML&lt;/span&gt;
+    &lt;span&gt;92%&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="progress-track"&gt;
+    &lt;div class="progress-fill" style="width:92%"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+.progress-track {
+  height: 8px;
+  background: rgba(235,104,53,0.1);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #eb6835;
+  transition: width 0.8s ease;
+}</code></pre>
+    </div>
+
+    <!-- 3. Gradient Bar -->
+    <div class="component-card" data-name="gradient colorful progress bar" data-cat="linear">
+      <div class="card-top">
+        <span class="card-label">Gradient Bar</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-progress-stack">
+          <div class="demo-bar-row">
+            <div class="pb-track pb-track-lg"><div class="pb-fill pb-grad-orange" style="width:80%;"></div></div>
+            <span class="pb-pct">80%</span>
+          </div>
+          <div class="demo-bar-row">
+            <div class="pb-track pb-track-lg"><div class="pb-fill pb-grad-purple" style="width:60%;"></div></div>
+            <span class="pb-pct">60%</span>
+          </div>
+          <div class="demo-bar-row">
+            <div class="pb-track pb-track-lg"><div class="pb-fill pb-grad-teal" style="width:45%;"></div></div>
+            <span class="pb-pct">45%</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">Eye-catching gradient-filled bars — available in orange, purple, and teal gradient variants.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb3', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb3', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb3" class="code-block"><code>&lt;div class="progress-track"&gt;
+  &lt;div class="progress-fill gradient" style="width:80%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.progress-fill.gradient {
+  background: linear-gradient(90deg, #eb6835, #fdcb6e);
+}
+/* Purple */
+.progress-fill.purple {
+  background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+}
+/* Teal */
+.progress-fill.teal {
+  background: linear-gradient(90deg, #00b894, #06b6d4);
+}</code></pre>
+    </div>
+
+    <!-- 4. Striped Bar -->
+    <div class="component-card" data-name="striped pattern animated progress bar" data-cat="animated">
+      <div class="card-top">
+        <span class="card-label">Striped Bar</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-progress-stack">
+          <div class="demo-bar-row">
+            <div class="pb-track pb-track-lg"><div class="pb-fill pb-accent pb-striped" style="width:65%;"></div></div>
+            <span class="pb-pct">65%</span>
+          </div>
+          <div class="demo-bar-row">
+            <div class="pb-track pb-track-lg"><div class="pb-fill pb-green pb-striped" style="width:80%;"></div></div>
+            <span class="pb-pct">80%</span>
+          </div>
+          <div class="demo-bar-row">
+            <div class="pb-track pb-track-lg"><div class="pb-fill pb-purple pb-striped pb-striped-anim" style="width:50%;"></div></div>
+            <span class="pb-pct">50%</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">Diagonal stripe pattern on the fill — the bottom bar also has animated moving stripes.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb4', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb4', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb4" class="code-block"><code>&lt;div class="progress-track"&gt;
+  &lt;div class="progress-fill striped animated" style="width:65%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.progress-fill.striped {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(255,255,255,0.2) 8px,
+    rgba(255,255,255,0.2) 16px
+  );
+}
+.progress-fill.animated {
+  animation: stripes 0.8s linear infinite;
+  background-size: 28px 28px;
+}
+@keyframes stripes {
+  from { background-position: 0 0; }
+  to   { background-position: 28px 0; }
+}</code></pre>
+    </div>
+
+    <!-- 5. Thin Indeterminate -->
+    <div class="component-card" data-name="indeterminate loading infinite animated bar" data-cat="animated">
+      <div class="card-top">
+        <span class="card-label">Indeterminate / Loading</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-progress-stack" style="gap:20px;">
+          <div>
+            <p class="demo-sub-label">Thin</p>
+            <div class="pb-track pb-track-thin"><div class="pb-fill pb-accent pb-indeterminate"></div></div>
+          </div>
+          <div>
+            <p class="demo-sub-label">Medium</p>
+            <div class="pb-track"><div class="pb-fill pb-purple pb-indeterminate"></div></div>
+          </div>
+          <div>
+            <p class="demo-sub-label">Thick</p>
+            <div class="pb-track pb-track-lg"><div class="pb-fill pb-green pb-indeterminate"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">An infinite bouncing bar for unknown-duration operations like fetching data or file uploads.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb5', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb5', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb5" class="code-block"><code>&lt;div class="progress-track"&gt;
+  &lt;div class="progress-fill indeterminate"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.progress-fill.indeterminate {
+  width: 40%;
+  animation: indeterminate 1.4s ease-in-out infinite;
+}
+@keyframes indeterminate {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}</code></pre>
+    </div>
+
+    <!-- 6. Circular Progress -->
+    <div class="component-card" data-name="circular circle radial donut progress" data-cat="circular">
+      <div class="card-top">
+        <span class="card-label">Circular Progress</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-circles-row">
+          <div class="demo-circle-wrap">
+            <div class="circle-progress cp-orange" style="--pct:75;">
+              <span>75%</span>
+            </div>
+            <p>Design</p>
+          </div>
+          <div class="demo-circle-wrap">
+            <div class="circle-progress cp-purple" style="--pct:60;">
+              <span>60%</span>
+            </div>
+            <p>Code</p>
+          </div>
+          <div class="demo-circle-wrap">
+            <div class="circle-progress cp-green" style="--pct:88;">
+              <span>88%</span>
+            </div>
+            <p>Deploy</p>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">CSS-only radial progress rings — set the percentage via a CSS custom property.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb6', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb6', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb6" class="code-block"><code>&lt;div class="circle-progress" style="--pct: 75"&gt;
+  &lt;span&gt;75%&lt;/span&gt;
+&lt;/div&gt;
+
+.circle-progress {
+  --size: 90px;
+  --stroke: 8px;
+  --color: #eb6835;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  background: conic-gradient(
+    var(--color) calc(var(--pct) * 1%),
+    rgba(235,104,53,0.1) 0
+  );
+  position: relative;
+}
+.circle-progress::before {
+  content: '';
+  position: absolute;
+  inset: var(--stroke);
+  border-radius: 50%;
+  background: var(--card-bg);
+}</code></pre>
+    </div>
+
+    <!-- 7. Multi-colour Stacked -->
+    <div class="component-card" data-name="stacked multi segment multi color progress bar" data-cat="multi">
+      <div class="card-top">
+        <span class="card-label">Stacked / Multi-Colour</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-progress-stack">
+          <div>
+            <div class="demo-label-top" style="margin-bottom:6px;">
+              <span style="font-size:13px;color:var(--text-secondary);">Storage Used</span>
+              <span style="font-size:13px;color:var(--text-secondary);">8.2 / 15 GB</span>
+            </div>
+            <div class="pb-track pb-track-lg pb-stacked">
+              <div class="pb-seg" style="width:35%;background:#eb6835;" title="Photos 35%"></div>
+              <div class="pb-seg" style="width:22%;background:#6c5ce7;" title="Docs 22%"></div>
+              <div class="pb-seg" style="width:16%;background:#00b894;" title="Apps 16%"></div>
+              <div class="pb-seg" style="width:9%;background:#fdcb6e;" title="Other 9%"></div>
+            </div>
+            <div class="demo-stacked-legend">
+              <span class="demo-legend-dot" style="background:#eb6835;"></span>Photos
+              <span class="demo-legend-dot" style="background:#6c5ce7;"></span>Docs
+              <span class="demo-legend-dot" style="background:#00b894;"></span>Apps
+              <span class="demo-legend-dot" style="background:#fdcb6e;"></span>Other
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">A multi-segment stacked bar — ideal for showing storage, budget, or category breakdowns.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb7', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb7', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb7" class="code-block"><code>&lt;div class="stacked-bar"&gt;
+  &lt;div class="seg" style="width:35%;background:#eb6835;"&gt;&lt;/div&gt;
+  &lt;div class="seg" style="width:22%;background:#6c5ce7;"&gt;&lt;/div&gt;
+  &lt;div class="seg" style="width:16%;background:#00b894;"&gt;&lt;/div&gt;
+  &lt;div class="seg" style="width:9%; background:#fdcb6e;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.stacked-bar {
+  display: flex;
+  height: 14px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--card-border);
+  gap: 2px;
+}
+.seg { height: 100%; transition: width 0.6s ease; }</code></pre>
+    </div>
+
+    <!-- 8. Step Progress -->
+    <div class="component-card" data-name="step stepper multi step progress bar checkout" data-cat="multi">
+      <div class="card-top">
+        <span class="card-label">Step Progress</span>
+        <span class="card-tag tag-popular">Popular</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-stepper">
+          <div class="step-item step-done">
+            <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+            <span>Cart</span>
+          </div>
+          <div class="step-line step-line-done"></div>
+          <div class="step-item step-done">
+            <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+            <span>Details</span>
+          </div>
+          <div class="step-line step-line-done"></div>
+          <div class="step-item step-active">
+            <div class="step-circle">3</div>
+            <span>Payment</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step-item">
+            <div class="step-circle">4</div>
+            <span>Done</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">A checkout-style step progress indicator — completed, active, and pending states included.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb8', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb8', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb8" class="code-block"><code>&lt;div class="stepper"&gt;
+  &lt;div class="step done"&gt;
+    &lt;div class="step-circle"&gt;✓&lt;/div&gt;
+    &lt;span&gt;Cart&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="step-line done"&gt;&lt;/div&gt;
+  &lt;div class="step active"&gt;
+    &lt;div class="step-circle"&gt;2&lt;/div&gt;
+    &lt;span&gt;Payment&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="step-line"&gt;&lt;/div&gt;
+  &lt;div class="step"&gt;
+    &lt;div class="step-circle"&gt;3&lt;/div&gt;
+    &lt;span&gt;Done&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+.stepper { display: flex; align-items: center; }
+.step { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.step-circle {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px;
+  background: var(--card-border); color: var(--text-secondary);
+  border: 2px solid var(--card-border);
+}
+.step.done .step-circle { background: #00b894; color: #fff; border-color: #00b894; }
+.step.active .step-circle { background: #eb6835; color: #fff; border-color: #eb6835; }
+.step-line { flex: 1; height: 2px; background: var(--card-border); }
+.step-line.done { background: #00b894; }</code></pre>
+    </div>
+
+    <!-- 9. Thin top bar -->
+    <div class="component-card" data-name="thin top bar page load progress bar" data-cat="animated">
+      <div class="card-top">
+        <span class="card-label">Thin Top Bar</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-topbar-wrap">
+          <div class="demo-topbar-label">Page loading…</div>
+          <div class="pb-topbar-track">
+            <div class="pb-topbar-fill pb-indeterminate"></div>
+          </div>
+          <div class="demo-topbar-label" style="margin-top:16px;">Upload progress (72%)</div>
+          <div class="pb-topbar-track">
+            <div class="pb-topbar-fill" style="width:72%;"></div>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">A slim top-of-page loading indicator — perfect for page transitions and file upload feedback.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb9', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb9', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb9" class="code-block"><code>&lt;div class="top-progress-track"&gt;
+  &lt;div class="top-progress-fill" style="width: 72%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.top-progress-track {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: rgba(235,104,53,0.15);
+  z-index: 9999;
+}
+.top-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #eb6835, #6c5ce7);
+  border-radius: 0 2px 2px 0;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px rgba(235,104,53,0.5);
+}</code></pre>
+    </div>
+
+    <!-- 10. Status Colours -->
+    <div class="component-card" data-name="status color success danger warning info progress" data-cat="linear">
+      <div class="card-top">
+        <span class="card-label">Status Bars</span>
+        <span class="card-tag tag-essential">Essential</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-progress-stack">
+          <div class="demo-label-row">
+            <div class="demo-label-top"><span class="pb-label-success">Success</span><span>92%</span></div>
+            <div class="pb-track"><div class="pb-fill pb-green" style="width:92%;"></div></div>
+          </div>
+          <div class="demo-label-row">
+            <div class="demo-label-top"><span class="pb-label-danger">Danger</span><span>34%</span></div>
+            <div class="pb-track"><div class="pb-fill pb-red" style="width:34%;"></div></div>
+          </div>
+          <div class="demo-label-row">
+            <div class="demo-label-top"><span class="pb-label-warning">Warning</span><span>58%</span></div>
+            <div class="pb-track"><div class="pb-fill pb-yellow" style="width:58%;"></div></div>
+          </div>
+          <div class="demo-label-row">
+            <div class="demo-label-top"><span class="pb-label-info">Info</span><span>76%</span></div>
+            <div class="pb-track"><div class="pb-fill pb-blue" style="width:76%;"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">Progress bars in semantic status colours — success (green), danger (red), warning (amber), info (blue).</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb10', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb10', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb10" class="code-block"><code>&lt;div class="progress-track"&gt;
+  &lt;div class="progress-fill success" style="width:92%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.progress-fill.success { background: #00b894; }
+.progress-fill.danger  { background: #d63031; }
+.progress-fill.warning { background: #fdcb6e; }
+.progress-fill.info    { background: #0984e3; }</code></pre>
+    </div>
+
+    <!-- 11. Interactive Slider -->
+    <div class="component-card" data-name="interactive slider draggable range progress" data-cat="animated">
+      <div class="card-top">
+        <span class="card-label">Interactive Progress</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview">
+        <div class="demo-progress-stack" style="gap:24px;">
+          <div class="demo-interactive-row">
+            <div class="demo-label-top">
+              <span>Volume</span>
+              <span id="vol-pct">68%</span>
+            </div>
+            <input type="range" class="demo-range-input" id="vol-range" min="0" max="100" value="68" oninput="updateRange('vol-range','vol-pct','vol-bar','#eb6835')" />
+            <div class="pb-track" style="margin-top:6px;"><div class="pb-fill pb-accent" id="vol-bar" style="width:68%;transition:none;"></div></div>
+          </div>
+          <div class="demo-interactive-row">
+            <div class="demo-label-top">
+              <span>Brightness</span>
+              <span id="bri-pct">45%</span>
+            </div>
+            <input type="range" class="demo-range-input" id="bri-range" min="0" max="100" value="45" oninput="updateRange('bri-range','bri-pct','bri-bar','#6c5ce7')" />
+            <div class="pb-track" style="margin-top:6px;"><div class="pb-fill pb-purple" id="bri-bar" style="width:45%;transition:none;"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">Live-updating progress bars synced to a range input — drag to see the bar respond in real time.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb11', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb11', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb11" class="code-block"><code>&lt;input type="range" id="myRange" min="0" max="100" value="68"
+  oninput="updateBar(this.value)"&gt;
+&lt;div class="progress-track"&gt;
+  &lt;div class="progress-fill" id="myBar" style="width:68%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+function updateBar(val) {
+  document.getElementById('myBar').style.width = val + '%';
+  document.getElementById('myPct').textContent  = val + '%';
+}</code></pre>
+    </div>
+
+    <!-- 12. Glowing bar -->
+    <div class="component-card" data-name="glow glowing neon progress bar dark" data-cat="animated">
+      <div class="card-top">
+        <span class="card-label">Glowing Bar</span>
+        <span class="card-tag tag-trending">Trending</span>
+      </div>
+      <div class="card-preview dark-preview">
+        <div class="demo-progress-stack">
+          <div class="demo-label-row">
+            <div class="demo-label-top" style="color:#e0e0e0;"><span>Attack</span><span>82%</span></div>
+            <div class="pb-track pb-track-dark"><div class="pb-fill pb-glow-orange" style="width:82%;"></div></div>
+          </div>
+          <div class="demo-label-row">
+            <div class="demo-label-top" style="color:#e0e0e0;"><span>Defense</span><span>55%</span></div>
+            <div class="pb-track pb-track-dark"><div class="pb-fill pb-glow-purple" style="width:55%;"></div></div>
+          </div>
+          <div class="demo-label-row">
+            <div class="demo-label-top" style="color:#e0e0e0;"><span>Speed</span><span>90%</span></div>
+            <div class="pb-track pb-track-dark"><div class="pb-fill pb-glow-cyan" style="width:90%;"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="card-desc">Neon glowing progress bars with a coloured drop shadow — made for dark dashboards and game UIs.</p>
+      <div class="actions">
+        <button class="action-btn view-btn" onclick="toggleCode('pb12', this)"><i class="fa-solid fa-code"></i> View Code</button>
+        <button class="action-btn copy-btn" onclick="copyCode('pb12', this)"><i class="fa-solid fa-copy"></i> Copy</button>
+      </div>
+      <pre id="pb12" class="code-block"><code>&lt;div class="progress-track dark"&gt;
+  &lt;div class="progress-fill glow-orange" style="width:82%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+.progress-fill.glow-orange {
+  background: #eb6835;
+  box-shadow: 0 0 10px #eb6835, 0 0 20px rgba(235,104,53,0.4);
+}
+.progress-fill.glow-purple {
+  background: #a29bfe;
+  box-shadow: 0 0 10px #a29bfe, 0 0 20px rgba(162,155,254,0.4);
+}
+.progress-fill.glow-cyan {
+  background: #06b6d4;
+  box-shadow: 0 0 10px #06b6d4, 0 0 20px rgba(6,182,212,0.4);
+}</code></pre>
+    </div>
+
+  </div><!-- /progress-grid -->
+
+</main>
+
+<!-- Scroll to Top -->
+<button id="scrollTopBtn" onclick="scrollToTop()">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- Copy Toast -->
+<div id="copyToast" class="copy-toast"><i class="fa-solid fa-check"></i> Copied to clipboard!</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="toggles.html">Toggles</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="tabs.html">Tabs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Templates</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="#">License</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
+<script>
+  /* Dark Mode */
+  const toggle = document.getElementById('darkModeToggle');
+  const icon = toggle.querySelector('i');
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    icon.className = 'fa-solid fa-sun';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  /* Sidebar */
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('sidebarBackdrop').classList.toggle('visible');
+  }
+
+  /* Scroll Top */
+  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* Interactive range */
+  function updateRange(rangeId, pctId, barId, color) {
+    const val = document.getElementById(rangeId).value;
+    document.getElementById(pctId).textContent = val + '%';
+    document.getElementById(barId).style.width = val + '%';
+  }
+
+  /* Code Toggle */
+  function toggleCode(id, btn) {
+    const block = document.getElementById(id);
+    const isOpen = block.classList.toggle('open');
+    btn.innerHTML = isOpen
+      ? '<i class="fa-solid fa-eye-slash"></i> Hide Code'
+      : '<i class="fa-solid fa-code"></i> View Code';
+  }
+
+  /* Copy */
+  let toastTimer;
+  function copyCode(id, btn) {
+    navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      btn.classList.add('copied');
+      const toast = document.getElementById('copyToast');
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+        btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  /* Filter */
+  function filterCards(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.component-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+  }
+
+  /* Live search */
+  function liveFilter(val) {
+    const q = val.toLowerCase();
+    document.querySelectorAll('.component-card').forEach(card => {
+      const match = card.dataset.name?.toLowerCase().includes(q) ||
+                    card.querySelector('.card-label')?.textContent.toLowerCase().includes(q);
+      card.style.display = match ? '' : 'none';
+    });
+  }
+
+  /* Scroll animations */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
+
+  /* Animate bars on scroll into view */
+  const barObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.pb-fill:not(.pb-indeterminate)').forEach(bar => {
+          const w = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => { bar.style.width = w; }, 100);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.component-card').forEach(el => barObserver.observe(el));
+
+  let currentCategory = 'all';
+let currentSearch = '';
+
+function applyFilters() {
+  document.querySelectorAll('.component-card').forEach(card => {
+    const categoryMatch =
+      currentCategory === 'all' ||
+      card.dataset.cat === currentCategory;
+
+    const searchMatch =
+      !currentSearch ||
+      card.dataset.name.toLowerCase().includes(currentSearch) ||
+      card.querySelector('.card-label')
+        .textContent
+        .toLowerCase()
+        .includes(currentSearch);
+
+    card.style.display =
+      categoryMatch && searchMatch ? '' : 'none';
+  });
+}
+
+function filterCards(cat, btn) {
+  currentCategory = cat;
+
+  document
+    .querySelectorAll('.filter-btn')
+    .forEach(b => b.classList.remove('active'));
+
+  btn.classList.add('active');
+
+  applyFilters();
+}
+
+function liveFilter(value) {
+  currentSearch = value.toLowerCase().trim();
+  applyFilters();
+}
+
+const barObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (
+      entry.isIntersecting &&
+      !entry.target.dataset.animated
+    ) {
+      entry.target.dataset.animated = "true";
+
+      entry.target
+        .querySelectorAll('.pb-fill:not(.pb-indeterminate)')
+        .forEach(bar => {
+          const targetWidth = bar.style.width;
+
+          bar.style.width = '0';
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              bar.style.width = targetWidth;
+            });
+          });
+        });
+    }
+  });
+}, { threshold: 0.3 });
+
+async function copyCode(id, btn) {
+  const text = document.getElementById(id).innerText;
+
+  try {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+
+    showCopySuccess(btn);
+
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function showCopySuccess(btn) {
+  btn.innerHTML =
+    '<i class="fa-solid fa-check"></i> Copied!';
+
+  btn.classList.add('copied');
+
+  const toast =
+    document.getElementById('copyToast');
+
+  toast.classList.add('show');
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+
+    btn.innerHTML =
+      '<i class="fa-solid fa-copy"></i> Copy';
+
+    btn.classList.remove('copied');
+  }, 2000);
+}
+
+
+function toggleSidebar() {
+  const sidebar =
+    document.getElementById('sidebar');
+
+  const backdrop =
+    document.getElementById('sidebarBackdrop');
+
+  const button =
+    document.querySelector('.menu-toggle');
+
+  const open =
+    sidebar.classList.toggle('open');
+
+  backdrop.classList.toggle('visible');
+
+  button.setAttribute(
+    'aria-expanded',
+    open
+  );
+}
+</script>
+    <script src="dist/shared.js"></script>
+</body>
+</html>

@@ -630,37 +630,72 @@ class ThemeValidator {
   }
 
   /**
-   * Analyze theme accessibility
+   * Analyze accessibility compliance
    * @private
    */
   analyzeAccessibility(theme, warnings) {
-    if (!theme.colors) return;
+    if (!theme.colors || !theme.colors.text) return;
 
     const colors = theme.colors;
-    const textPrimary = colors.text?.primary || '#000000';
-    const bgColor = colors.background || '#FFFFFF';
+    const primaryText = colors.text.primary;
+    const background = colors.background;
 
-    // Calculate WCAG contrast ratio
-    const luminance1 = this.getRelativeLuminance(textPrimary);
-    const luminance2 = this.getRelativeLuminance(bgColor);
-    const contrast = (Math.max(luminance1, luminance2) + 0.05) / (Math.min(luminance1, luminance2) + 0.05);
-
-    if (contrast < 4.5) {
-      warnings.push({
-        field: 'colors',
-        message: `Text contrast ratio ${contrast.toFixed(2)}:1 below WCAG AA threshold of 4.5:1`,
-        code: 'CONSTRAINT_VIOLATION',
-        severity: 'warning'
-      });
+    // Check contrast ratio
+    if (primaryText && background) {
+      const contrastRatio = this.getContrastRatio(primaryText, background);
+      
+      if (contrastRatio < 4.5) {
+        warnings.push({
+          field: 'colors',
+          message: `Text contrast ratio (${contrastRatio.toFixed(2)}:1) is below WCAG AA minimum (4.5:1)`,
+          code: 'CONSTRAINT_VIOLATION',
+          severity: 'warning',
+          constraint: 'minContrastRatio: 4.5'
+        });
+      }
     }
   }
 
   /**
-   * Get relative luminance for contrast calculation
+   * Calculate contrast ratio between two colors
    * @private
    */
+  getContrastRatio(color1, color2) {
+    const lum1 = this.getRelativeLuminance(color1);
+    const lum2 = this.getRelativeLuminance(color2);
+
+    const lighter = Math.max(lum1, lum2);
+    const darker = Math.min(lum1, lum2);
+
+    return (lighter + 0.05) / (darker + 0.05);
+  }
+
+  /**
+   * Get relative luminance of color
+   * @private
+   */
+  hslToRgb(h, s, l) {
+    s /= 100;
+    l /= 100;
+    const k = n => (n + h / 30) % 12;
+    const a = s * Math.min(l, 1 - l);
+    const f = n => l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1));
+    return [Math.round(255 * f(0)), Math.round(255 * f(8)), Math.round(255 * f(4))];
+  }
+
   getRelativeLuminance(color) {
-    const rgb = this.hexToRgb(color);
+    let rgb = null;
+    if (color.startsWith('#')) {
+      rgb = this.hexToRgb(color);
+    } else if (color.startsWith('rgb')) {
+      const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      if (match) rgb = [Number(match[1]), Number(match[2]), Number(match[3])];
+    } else if (color.startsWith('hsl')) {
+      const match = color.match(/hsla?\((\d+),\s*(\d+)%,\s*(\d+)%/);
+      if (match) {
+        rgb = this.hslToRgb(Number(match[1]), Number(match[2]), Number(match[3]));
+      }
+    }
     if (!rgb) return 0;
 
     const [r, g, b] = rgb.map(val => val / 255);
@@ -687,6 +722,7 @@ class ThemeValidator {
 
   /**
    * Validate single color value
+   * Validate color value
    * 
    * @param {string} color - Color to validate
    * @returns {Object} - Color validation result
@@ -697,48 +733,32 @@ class ThemeValidator {
     if (!this.isValidColor(color)) {
       return {
         valid: false,
-        color: color,
-        format: this.detectColorFormat(color),
-        wcagCompliance: { wcagAA: false, wcagAAA: false },
-        errorDetails: 'Color format not recognized',
-        processingDetails: {},
-        validationDuration: performance.now() - startTime
+        color,
+        error: 'Invalid color format',
+        metadata: {
+          timestamp: new Date().toISOString(),
+          validationDuration: performance.now() - startTime
+        }
       };
     }
 
+    const format = this.detectColorFormat(color);
     const normalized = this.normalizeColor(color);
-    const rgb = this.hexToRgb(normalized);
 
     return {
       valid: true,
-      color: color,
-      format: this.detectColorFormat(color),
-      normalized: normalized,
+      color,
+      format,
+      normalized,
       contrast: {
-        white: this.calculateContrastRatio(rgb, [255, 255, 255]),
-        black: this.calculateContrastRatio(rgb, [0, 0, 0])
+        white: this.getContrastRatio(normalized, '#ffffff'),
+        black: this.getContrastRatio(normalized, '#000000')
       },
-      wcagCompliance: {
-        wcagAA: this.calculateContrastRatio(rgb, [255, 255, 255]) >= 4.5,
-        wcagAAA: this.calculateContrastRatio(rgb, [255, 255, 255]) >= 7
-      },
-      colorSpace: 'RGB',
-      processingDetails: {
-        normalizationApplied: color !== normalized,
-        originalFormat: this.detectColorFormat(color)
-      },
-      validationDuration: performance.now() - startTime
+      metadata: {
+        timestamp: new Date().toISOString(),
+        validationDuration: performance.now() - startTime
+      }
     };
-  }
-
-  /**
-   * Calculate contrast ratio between two colors
-   * @private
-   */
-  calculateContrastRatio(rgb1, rgb2) {
-    const l1 = this.getRelativeLuminance('#' + rgb1.map(x => x.toString(16).padStart(2, '0')).join(''));
-    const l2 = this.getRelativeLuminance('#' + rgb2.map(x => x.toString(16).padStart(2, '0')).join(''));
-    return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
   }
 
   /**
@@ -749,6 +769,8 @@ class ThemeValidator {
     if (color.startsWith('#')) return 'hex';
     if (color.startsWith('rgb(')) return 'rgb';
     if (color.startsWith('rgba(')) return 'rgba';
+    if (color.startsWith('hsl(')) return 'hsl';
+    if (color.startsWith('hsla(')) return 'hsla';
     return 'unknown';
   }
 
@@ -773,26 +795,46 @@ class ThemeValidator {
   }
 
   /**
-   * Validate batch of themes
+   * Batch validate themes
    * 
    * @param {Array} themes - Array of themes to validate
-   * @param {Object} options - Validation options
-   * @returns {Object} - Batch validation results
+   * @param {Object} options - Batch options
+   * @returns {Object} - Batch validation result
    */
   validateBatch(themes, options = {}) {
+    if (!Array.isArray(themes)) {
+      return {
+        error: 'Themes must be an array',
+        results: []
+      };
+    }
+
     const results = [];
-    let validCount = 0;
+    let valid = 0;
+    let invalid = 0;
+    let totalErrors = 0;
+    let totalWarnings = 0;
 
     for (const theme of themes) {
-      const result = this.validate(theme, options);
+      const validation = this.validate(theme);
       results.push({
-        themeId: theme?.id || 'unknown',
-        validation: result
+        themeId: theme.id || 'unknown',
+        validation
       });
 
-      if (result.valid) validCount++;
+      if (validation.valid) {
+        valid++;
+      } else {
+        invalid++;
+      }
 
-      if (options.stopOnFirst && !result.valid) break;
+      totalErrors += validation.metadata.errorCount;
+      totalWarnings += validation.metadata.warningCount;
+
+      // Stop on first error if requested
+      if (options.stopOnFirst && !validation.valid) {
+        break;
+      }
     }
 
     return {
@@ -841,12 +883,36 @@ class ThemeValidator {
       warnings,
       metadata: {
         timestamp: new Date().toISOString(),
-        validator: '1.0.1',
+        validator: '1.0.0',
         errorCount: errors.length,
         warningCount: warnings.length,
-        validationDuration: performance.now() - startTime
+        validationDuration: Math.round(performance.now() - startTime)
       }
     };
+  }
+
+  /**
+   * Generate cache key
+   * @private
+   */
+  generateCacheKey(theme) {
+    return JSON.stringify(theme);
+  }
+
+  /**
+   * Cache validation result
+   * @private
+   */
+  cacheValidationResult(theme, result) {
+    const key = this.generateCacheKey(theme);
+
+    // Simple LRU cache eviction
+    if (this.validationCache.size >= this.cacheMaxSize) {
+      const firstKey = this.validationCache.keys().next().value;
+      this.validationCache.delete(firstKey);
+    }
+
+    this.validationCache.set(key, result);
   }
 
   /**
@@ -854,6 +920,20 @@ class ThemeValidator {
    */
   clearCache() {
     this.validationCache.clear();
+  }
+
+  getSchema(format = 'json-schema') {
+    return {
+      $schema: 'https://json-schema.org/draft/2020-12/schema',
+      type: 'object',
+      properties: {
+        id: { type: 'string', pattern: '^[a-zA-Z0-9-]+$', minLength: 1, maxLength: 50 },
+        name: { type: 'string', minLength: 1, maxLength: 100 },
+        isDark: { type: 'boolean' },
+        colors: { type: 'object' }
+      },
+      required: ['id', 'name', 'isDark', 'colors']
+    };
   }
 
   /**
@@ -868,7 +948,14 @@ class ThemeValidator {
   }
 }
 
-// Export for Node.js
+// Initialize global instance
+const UIVerseThemeValidator = new ThemeValidator({
+  strictMode: true,
+  enableAccessibilityAnalysis: true,
+  enableCaching: true
+});
+
+// Export for use in modules
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = ThemeValidator;
+  module.exports = UIVerseThemeValidator;
 }
