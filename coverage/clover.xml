@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1781374129199" clover="3.2.0">
-  <project timestamp="1781374129199" name="All files">
+<coverage generated="1781444816824" clover="3.2.0">
+  <project timestamp="1781444816824" name="All files">
     <metrics statements="97" coveredstatements="87" conditionals="59" coveredconditionals="50" methods="27" coveredmethods="25" elements="183" coveredelements="162" complexity="0" loc="97" ncloc="97" packages="1" files="3" classes="3"/>
     <file name="uv-dropdown.ts" path="D:\OneDrive\Desktop\OpenSCon\NSoC\UI-Verse\src\components\uv-dropdown.ts">
       <metrics statements="43" coveredstatements="39" conditionals="40" coveredconditionals="33" methods="12" coveredmethods="10"/>
