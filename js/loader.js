@@ -31,9 +31,7 @@ const defaultFeatures = [
   'js/features/command-palette.js',
   'js/features/url-state.js',
   'js/features/url-state-integration.js',
-  'js/features/recent.js',
-  'js/features/tag-filter.js',
-  'js/features/responsive-badges.js'
+
 ];
 
 const pageMap = {
@@ -123,9 +121,7 @@ const pageMap = {
     if (features.some(f => f.includes('search'))) await ensureFuse();
 
     // load page features sequentially
-    const allFeatures = [...features];
-    if (document.querySelector('.component-card, .preview-box, .card-preview, [class*="-preview"]')) {
-      allFeatures.push('js/features/theme-customizer.js');
+
     }
     for (const f of allFeatures) await loadScript(f);
 
