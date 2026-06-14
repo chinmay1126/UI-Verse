@@ -2193,6 +2193,151 @@ def record_download(slug: str) -> tuple[dict[str, object], int]:
     return jsonify({"message": "Download recorded."}), 200
 
 
+# Theme Content Negotiation Metrics Endpoints
+# Provides cache statistics, access distribution, and high-churn language tracking
+
+_theme_negotiator_instance = None
+_theme_metrics_cache = {}
+
+
+def get_theme_negotiator():
+    """Get or initialize the theme negotiator instance for metrics tracking."""
+    global _theme_negotiator_instance
+    if _theme_negotiator_instance is None:
+        try:
+            from pathlib import Path
+            import sys
+            root_path = Path(__file__).parent.parent
+            sys.path.insert(0, str(root_path))
+            from theme_content_negotiation import ThemeContentNegotiator
+            _theme_negotiator_instance = ThemeContentNegotiator(
+                enableCaching=True,
+                cacheSize=100,
+                trackingEnabled=True,
+                maxAccessLogSize=1000
+            )
+        except (ImportError, Exception) as e:
+            return None
+    return _theme_negotiator_instance
+
+
+@app.get("/api/theme/metrics/locale-groups")
+def get_metrics_by_locale_group():
+    """Get cache hit/miss ratios per locale grouping.
+    
+    Returns metrics for each locale group showing:
+    - Number of cache hits and misses
+    - Hit/miss ratios
+    - Eviction tracking
+    """
+    negotiator = get_theme_negotiator()
+    if negotiator is None:
+        return jsonify({"error": "Theme negotiator not available"}), 503
+    
+    metrics = negotiator.getMetricsByLocaleGroup()
+    return jsonify({
+        "locale_groups": metrics,
+        "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    }), 200
+
+
+@app.get("/api/theme/metrics/high-churn-languages")
+def get_high_churn_languages():
+    """Identify language combinations with high cache churn (frequent evictions).
+    
+    Parameters:
+    - threshold: Eviction rate threshold (0-1) to consider high-churn. Default: 0.1
+    
+    Returns language combinations sorted by eviction rate (highest first).
+    """
+    negotiator = get_theme_negotiator()
+    if negotiator is None:
+        return jsonify({"error": "Theme negotiator not available"}), 503
+    
+    try:
+        threshold = float(request.args.get("threshold", 0.1))
+        threshold = max(0, min(1, threshold))  # Clamp to 0-1
+    except ValueError:
+        threshold = 0.1
+    
+    high_churn = negotiator.getHighChurnLanguages(threshold)
+    return jsonify({
+        "threshold": threshold,
+        "high_churn_languages": high_churn,
+        "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    }), 200
+
+
+@app.get("/api/theme/metrics/access-distribution")
+def get_access_distribution():
+    """Get access distribution statistics and patterns.
+    
+    Returns:
+    - Overall cache performance (hit rate, miss rate)
+    - Cache size and capacity
+    - Access frequency distribution buckets
+    - Average accesses per cached item
+    """
+    negotiator = get_theme_negotiator()
+    if negotiator is None:
+        return jsonify({"error": "Theme negotiator not available"}), 503
+    
+    distribution = negotiator.getAccessDistribution()
+    return jsonify({
+        "access_distribution": distribution,
+        "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    }), 200
+
+
+@app.get("/api/theme/metrics/summary")
+def get_metrics_summary():
+    """Get comprehensive metrics summary combining all cache statistics.
+    
+    Returns overall cache performance, locale group breakdown, and churn analysis.
+    """
+    negotiator = get_theme_negotiator()
+    if negotiator is None:
+        return jsonify({"error": "Theme negotiator not available"}), 503
+    
+    locale_metrics = negotiator.getMetricsByLocaleGroup()
+    access_dist = negotiator.getAccessDistribution()
+    high_churn = negotiator.getHighChurnLanguages(0.1)
+    
+    return jsonify({
+        "summary": {
+            "cache_enabled": True,
+            "tracking_enabled": True,
+            "total_cache_hits": access_dist["totalCacheHits"],
+            "total_cache_misses": access_dist["totalCacheMisses"],
+            "total_evictions": access_dist["totalEvictions"],
+            "overall_hit_ratio": access_dist["overallHitRatio"],
+            "cache_fullness": access_dist["currentCacheSize"] / access_dist["maxCacheSize"]
+        },
+        "locale_groups": locale_metrics,
+        "high_churn_languages": high_churn,
+        "access_distribution": access_dist,
+        "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    }), 200
+
+
+@app.post("/api/theme/metrics/reset")
+def reset_tracking():
+    """Reset all tracking statistics (admin endpoint).
+    
+    Clears cache hit/miss counts, eviction tracking, and access logs.
+    Use with caution - this resets all historical metrics.
+    """
+    negotiator = get_theme_negotiator()
+    if negotiator is None:
+        return jsonify({"error": "Theme negotiator not available"}), 503
+    
+    negotiator.resetTracking()
+    return jsonify({
+        "message": "Tracking statistics reset",
+        "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    }), 200
+
+
 ensure_marketplace_db()
 
 
