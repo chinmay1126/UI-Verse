@@ -158,6 +158,22 @@ const Bootstrap = {
       UIverse.register('BundleExporterUI', BundleExporterUI, dependenciesFor('BundleExporterUI'), { domSelector: '.component-card' });
     }
 
+    if (typeof ComponentRatings !== 'undefined') {
+      UIverse.register('ComponentRatings', ComponentRatings, [], { domSelector: '.component-card' });
+    }
+
+    if (typeof MarketplaceFeeds !== 'undefined') {
+      UIverse.register('MarketplaceFeeds', MarketplaceFeeds);
+    }
+
+    if (typeof CreatorProfile !== 'undefined') {
+      UIverse.register('CreatorProfile', CreatorProfile, [], { domSelector: '.component-card' });
+    }
+
+    if (typeof SubmissionPortal !== 'undefined') {
+      UIverse.register('SubmissionPortal', SubmissionPortal);
+    }
+
     if (typeof Recent !== 'undefined') {
       UIverse.register('Recent', Recent);
     }
