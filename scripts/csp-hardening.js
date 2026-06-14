@@ -97,13 +97,13 @@ function buildPolicy(scriptHashes, styleHashes) {
     "base-uri 'self'",
     "frame-ancestors 'none'",
     "object-src 'none'",
-    "connect-src 'self' https:",
+    "connect-src 'self' https: http://127.0.0.1:* http://localhost:* ws://127.0.0.1:* ws://localhost:* wss://*",
     "img-src 'self' data: https:",
     "font-src 'self' data: https:",
     `script-src 'self' https: 'unsafe-hashes'${scriptHashesText}`,
     `script-src-attr 'unsafe-hashes'${scriptHashesText}`,
-    `style-src 'self' https: 'unsafe-hashes'${styleHashesText}`,
-    `style-src-attr 'unsafe-hashes'${styleHashesText}`
+    `style-src 'self' 'unsafe-inline' https: 'unsafe-hashes'${styleHashesText}`,
+    `style-src-attr 'unsafe-inline' 'unsafe-hashes'${styleHashesText}`
   ].join('; ');
 }
 
