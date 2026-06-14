@@ -771,6 +771,20 @@ class ThemeValidator {
     this.validationCache.clear();
   }
 
+  getSchema(format = 'json-schema') {
+    return {
+      $schema: 'https://json-schema.org/draft/2020-12/schema',
+      type: 'object',
+      properties: {
+        id: { type: 'string', pattern: '^[a-zA-Z0-9-]+$', minLength: 1, maxLength: 50 },
+        name: { type: 'string', minLength: 1, maxLength: 100 },
+        isDark: { type: 'boolean' },
+        colors: { type: 'object' }
+      },
+      required: ['id', 'name', 'isDark', 'colors']
+    };
+  }
+
   /**
    * Get cache statistics
    */
