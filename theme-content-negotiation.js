@@ -84,6 +84,18 @@ class ThemeContentNegotiator {
     this.cacheSize = options.cacheSize || 100;
     this.negotiationCache = new Map();
     this.defaultType = options.defaultType || 'application/json';
+
+    // Statistical tracking for cache performance
+    this.cacheStats = {
+      hits: 0,
+      misses: 0,
+      evictions: 0,
+      localeGroups: new Map(),  // Track stats per locale grouping
+      accessLog: []             // Track access patterns
+    };
+
+    this.trackingEnabled = options.trackingEnabled !== false;
+    this.maxAccessLogSize = options.maxAccessLogSize || 1000;
   }
 
   /**
@@ -103,7 +115,16 @@ class ThemeContentNegotiator {
 
     const cacheKey = `ct:${acceptHeader}`;
     if (this.enableCaching && this.negotiationCache.has(cacheKey)) {
+      if (this.trackingEnabled) {
+        this.cacheStats.hits++;
+        this.recordAccessLog(cacheKey, 'hit');
+      }
       return this.negotiationCache.get(cacheKey);
+    }
+
+    if (this.trackingEnabled) {
+      this.cacheStats.misses++;
+      this.recordAccessLog(cacheKey, 'miss');
     }
 
     // Parse Accept header
@@ -158,7 +179,16 @@ class ThemeContentNegotiator {
 
     const cacheKey = `enc:${acceptEncodingHeader}`;
     if (this.enableCaching && this.negotiationCache.has(cacheKey)) {
+      if (this.trackingEnabled) {
+        this.cacheStats.hits++;
+        this.recordAccessLog(cacheKey, 'hit');
+      }
       return this.negotiationCache.get(cacheKey);
+    }
+
+    if (this.trackingEnabled) {
+      this.cacheStats.misses++;
+      this.recordAccessLog(cacheKey, 'miss');
     }
 
     const encodings = this.parseAcceptEncodingHeader(acceptEncodingHeader);
@@ -202,8 +232,20 @@ class ThemeContentNegotiator {
     }
 
     const cacheKey = `lang:${acceptLanguageHeader}`;
+    
+    // Track cache hit
     if (this.enableCaching && this.negotiationCache.has(cacheKey)) {
+      if (this.trackingEnabled) {
+        this.cacheStats.hits++;
+        this.recordAccessLog(cacheKey, 'hit');
+      }
       return this.negotiationCache.get(cacheKey);
+    }
+
+    // Track cache miss
+    if (this.trackingEnabled) {
+      this.cacheStats.misses++;
+      this.recordAccessLog(cacheKey, 'miss');
     }
 
     const languages = this.parseAcceptLanguageHeader(acceptLanguageHeader);
@@ -224,6 +266,12 @@ class ThemeContentNegotiator {
 
     if (this.enableCaching) {
       this.setCache(cacheKey, result);
+      
+      // Track locale grouping stats
+      if (this.trackingEnabled) {
+        const localeGroup = this.extractLocaleGroup(result.language);
+        this.updateLocaleGroupStats(localeGroup, true);
+      }
     }
 
     return result;
@@ -287,6 +335,20 @@ class ThemeContentNegotiator {
       return { charset: 'utf-8', quality: 1.0 };
     }
 
+    const cacheKey = `charset:${acceptCharsetHeader}`;
+    if (this.enableCaching && this.negotiationCache.has(cacheKey)) {
+      if (this.trackingEnabled) {
+        this.cacheStats.hits++;
+        this.recordAccessLog(cacheKey, 'hit');
+      }
+      return this.negotiationCache.get(cacheKey);
+    }
+
+    if (this.trackingEnabled) {
+      this.cacheStats.misses++;
+      this.recordAccessLog(cacheKey, 'miss');
+    }
+
     const charsets = this.parseAcceptCharsetHeader(acceptCharsetHeader);
     let bestMatch = null;
     let bestQuality = -1;
@@ -300,10 +362,16 @@ class ThemeContentNegotiator {
       }
     }
 
-    return {
+    const result = {
       charset: bestMatch || 'utf-8',
       quality: bestQuality > 0 ? bestQuality : 1.0
     };
+
+    if (this.enableCaching) {
+      this.setCache(cacheKey, result);
+    }
+
+    return result;
   }
 
   /**
@@ -714,6 +782,265 @@ class ThemeContentNegotiator {
       maxCacheSize: this.cacheSize,
       cacheHitRate: 0,
       cacheEnabled: this.enableCaching
+    };
+  }
+
+  /**
+   * Extract locale group from language code (e.g., "en-US" -> "en")
+   * 
+   * @private
+   * @param {string} language - Language code
+   * @returns {string} - Locale group base language
+   */
+  extractLocaleGroup(language) {
+    if (!language) return 'unknown';
+    return language.split('-')[0].toLowerCase();
+  }
+
+  /**
+   * Record access log for tracking access patterns
+   * 
+   * @private
+   * @param {string} cacheKey - Cache key accessed
+   * @param {string} hitType - Either 'hit' or 'miss'
+   */
+  recordAccessLog(cacheKey, hitType) {
+    if (!this.trackingEnabled) return;
+    
+    this.cacheStats.accessLog.push({
+      key: cacheKey,
+      type: hitType,
+      timestamp: Date.now()
+    });
+
+    // Maintain max access log size
+    if (this.cacheStats.accessLog.length > this.maxAccessLogSize) {
+      this.cacheStats.accessLog.shift();
+    }
+  }
+
+  /**
+   * Update locale group statistics
+   * 
+   * @private
+   * @param {string} localeGroup - Locale group code
+   * @param {boolean} isHit - Whether this was a cache hit or miss
+   */
+  updateLocaleGroupStats(localeGroup, isHit) {
+    if (!this.trackingEnabled) return;
+
+    if (!this.cacheStats.localeGroups.has(localeGroup)) {
+      this.cacheStats.localeGroups.set(localeGroup, {
+        hits: 0,
+        misses: 0,
+        evictions: 0,
+        totalAccesses: 0,
+        languages: new Set()
+      });
+    }
+
+    const stats = this.cacheStats.localeGroups.get(localeGroup);
+    stats.totalAccesses++;
+
+    if (isHit) {
+      stats.hits++;
+    } else {
+      stats.misses++;
+    }
+  }
+
+  /**
+   * Track eviction for a locale group
+   * 
+   * @private
+   * @param {string} evictedKey - Key being evicted
+   */
+  trackEviction(evictedKey) {
+    if (!this.trackingEnabled) return;
+
+    this.cacheStats.evictions++;
+
+    // Extract locale group from evicted key if possible
+    if (evictedKey.startsWith('lang:')) {
+      const cacheKey = evictedKey.substring(5);
+      const parts = cacheKey.split('-');
+      if (parts.length > 0) {
+        const localeGroup = parts[0];
+        const stats = this.cacheStats.localeGroups.get(localeGroup);
+        if (stats) {
+          stats.evictions++;
+        }
+      }
+    }
+  }
+
+  /**
+   * Calculate access frequency score for a cache key
+   * Higher frequency = higher score
+   * 
+   * @private
+   * @param {string} cacheKey - Cache key to score
+   * @returns {number} - Access frequency score (0-1)
+   */
+  calculateAccessFrequency(cacheKey) {
+    if (!this.trackingEnabled || this.cacheStats.accessLog.length === 0) {
+      return 0.5; // Default neutral score
+    }
+
+    // Count recent accesses within last hour
+    const oneHourAgo = Date.now() - (60 * 60 * 1000);
+    let recentAccesses = 0;
+
+    for (const log of this.cacheStats.accessLog) {
+      if (log.key === cacheKey && log.timestamp > oneHourAgo) {
+        recentAccesses++;
+      }
+    }
+
+    // Normalize to 0-1 scale based on average accesses
+    const avgAccesses = this.cacheStats.accessLog.length / Math.max(1, this.negotiationCache.size);
+    return Math.min(1, recentAccesses / Math.max(1, avgAccesses * 5));
+  }
+
+  /**
+   * Find best candidate for eviction based on access distribution
+   * Evicts least frequently accessed items
+   * 
+   * @private
+   * @returns {string|null} - Cache key to evict, or null if cache is empty
+   */
+  findEvictionCandidate() {
+    if (this.negotiationCache.size === 0) return null;
+
+    let worstKey = null;
+    let lowestScore = 1.0;
+
+    // Check all keys and find the one with lowest access frequency
+    for (const key of this.negotiationCache.keys()) {
+      const score = this.calculateAccessFrequency(key);
+      if (score < lowestScore) {
+        lowestScore = score;
+        worstKey = key;
+      }
+    }
+
+    return worstKey;
+  }
+
+  /**
+   * Set cache with access distribution-based eviction
+   * 
+   * @private
+   */
+  setCache(key, value) {
+    if (this.negotiationCache.size >= this.cacheSize) {
+      // Use access distribution-based eviction instead of simple LRU
+      const evictKey = this.trackingEnabled ? 
+        this.findEvictionCandidate() : 
+        this.negotiationCache.keys().next().value;
+
+      if (evictKey) {
+        this.trackEviction(evictKey);
+        this.negotiationCache.delete(evictKey);
+      }
+    }
+    this.negotiationCache.set(key, value);
+  }
+
+  /**
+   * Get metrics by locale grouping
+   * Returns hit/miss ratios per locale group
+   * 
+   * @returns {Object} - Metrics for each locale group
+   */
+  getMetricsByLocaleGroup() {
+    const metrics = {};
+
+    for (const [localeGroup, stats] of this.cacheStats.localeGroups.entries()) {
+      const total = stats.hits + stats.misses;
+      metrics[localeGroup] = {
+        hits: stats.hits,
+        misses: stats.misses,
+        evictions: stats.evictions,
+        totalAccesses: stats.totalAccesses,
+        hitRatio: total > 0 ? stats.hits / total : 0,
+        missRatio: total > 0 ? stats.misses / total : 0,
+        evictionRate: stats.totalAccesses > 0 ? stats.evictions / stats.totalAccesses : 0
+      };
+    }
+
+    return metrics;
+  }
+
+  /**
+   * Get high-churn language combinations
+   * Identifies language combinations with frequent evictions
+   * 
+   * @param {number} threshold - Eviction rate threshold (0-1) to consider high-churn
+   * @returns {Array} - Language combinations sorted by eviction rate (descending)
+   */
+  getHighChurnLanguages(threshold = 0.1) {
+    const churnLanguages = [];
+
+    for (const [localeGroup, stats] of this.cacheStats.localeGroups.entries()) {
+      const evictionRate = stats.totalAccesses > 0 ? 
+        stats.evictions / stats.totalAccesses : 0;
+
+      if (evictionRate >= threshold) {
+        churnLanguages.push({
+          localeGroup,
+          evictionRate,
+          totalEvictions: stats.evictions,
+          totalAccesses: stats.totalAccesses,
+          hitRatio: stats.hits / Math.max(1, stats.hits + stats.misses)
+        });
+      }
+    }
+
+    return churnLanguages.sort((a, b) => b.evictionRate - a.evictionRate);
+  }
+
+  /**
+   * Get access distribution statistics
+   * Returns overall and per-key access patterns
+   * 
+   * @returns {Object} - Access distribution metrics
+   */
+  getAccessDistribution() {
+    const total = this.cacheStats.hits + this.cacheStats.misses;
+    const overallHitRatio = total > 0 ? this.cacheStats.hits / total : 0;
+
+    // Calculate access frequency distribution
+    const frequencyDistribution = {};
+    for (const key of this.negotiationCache.keys()) {
+      const freq = this.calculateAccessFrequency(key);
+      const bucket = Math.floor(freq * 10) / 10; // Bucket into 0.0-0.1, 0.1-0.2, etc.
+      frequencyDistribution[bucket] = (frequencyDistribution[bucket] || 0) + 1;
+    }
+
+    return {
+      totalCacheHits: this.cacheStats.hits,
+      totalCacheMisses: this.cacheStats.misses,
+      totalEvictions: this.cacheStats.evictions,
+      totalAccesses: total,
+      overallHitRatio,
+      currentCacheSize: this.negotiationCache.size,
+      maxCacheSize: this.cacheSize,
+      accessFrequencyDistribution: frequencyDistribution,
+      averageAccessesPerKey: this.cacheStats.accessLog.length / Math.max(1, this.negotiationCache.size)
+    };
+  }
+
+  /**
+   * Reset tracking statistics
+   */
+  resetTracking() {
+    this.cacheStats = {
+      hits: 0,
+      misses: 0,
+      evictions: 0,
+      localeGroups: new Map(),
+      accessLog: []
     };
   }
 }
