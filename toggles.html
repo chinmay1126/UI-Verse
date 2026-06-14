@@ -3621,6 +3621,14 @@ FAQ
 
 Frequently Asked Questions
 
+<button id="scrollTopBtn" class="scroll-top-btn">
+  ↑
+</button>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
 </h2>
 
 </div>
@@ -4037,5 +4045,26 @@ behavior:"smooth"
 
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+
+</script>
 </body>
 </html>
