@@ -40,30 +40,70 @@
     <!-- ================= PAGE CONTAINER ================= -->
     <div class="page-container">
       <!-- ================= TOP NAVBAR ================= -->
-      <header class="topbar">
-        <div class="topbar-left">
-          <a href="index.html" class="topbar-logo">
-            <span class="logo-mark">UI</span>
-            <span class="logo-text">UIverse</span>
-          </a>
-          <div class="topbar-search">
-            <label class="screen-reader-text" for="component-search">Search components</label>
-            <input id="component-search" type="search" class="search-input" placeholder="Search skeleton components..." />
-            <button type="button" class="search-action"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </div>
-        </div>
-        <div class="topbar-right">
-          <button class="topbar-action" type="button" aria-label="Notifications">
-            <i class="fa-solid fa-bell"></i>
-          </button>
-          <button class="topbar-action" type="button" aria-label="Favorites">
-            <i class="fa-solid fa-heart"></i>
-          </button>
-          <button class="topbar-action theme-toggle" type="button" aria-label="Toggle theme">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-        </div>
-      </header>
+      <!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="navbar-brand">
+    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2L2 7V17L12 22L22 17V7L12 2z" stroke="#eb6835"></path>
+    </svg>
+    <span class="brand-text">Uiverse</span>
+  </div>
+  <div class="navbar-divider"></div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components">
+  </div>
+  <div class="nav-right">
+    <a href="documentation.html" class="nav-btn docs-btn">Docs</a>
+    <a href="contribute.html" class="nav-btn add-btn">Add Component</a>
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme" onclick="toggleDarkMode()">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+  <script>
+    (function() {
+      // Search input enter key redirect
+      const navSearch = document.getElementById('searchInput');
+      if (navSearch) {
+        navSearch.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' && this.value.trim()) {
+            const q = encodeURIComponent(this.value.trim());
+            window.location.href = 'components/Discovery/component-discovery.html?q=' + q;
+          }
+        });
+      }
+      
+      // Fallback toggleDarkMode function if not defined globally by the page script
+      const toggleBtn = document.getElementById('darkModeToggle');
+      if (toggleBtn) {
+        if (typeof window.toggleDarkMode !== 'function') {
+          window.toggleDarkMode = function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            const icon = toggleBtn.querySelector('i');
+            if (icon) {
+              icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            }
+          };
+        }
+        
+        // Match initial theme icon class
+        const isDark = localStorage.getItem('theme') === 'dark' || document.body.classList.contains('dark-mode');
+        const icon = toggleBtn.querySelector('i');
+        if (icon && isDark) {
+          icon.className = 'fa-solid fa-sun';
+        }
+      }
+    })();
+  </script>
+</header>
 
       <!-- ================= MAIN CONTENT ================= -->
       <main class="main-content">
