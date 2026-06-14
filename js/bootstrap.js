@@ -57,6 +57,12 @@ const Bootstrap = {
     if (typeof ComponentIndex !== 'undefined') {
       UIverse.register('ComponentIndex', ComponentIndex, dependenciesFor('ComponentIndex'));
     }
+    if (typeof NavigationShortcuts !== 'undefined') {
+  UIverse.register(
+    'NavigationShortcuts',
+    NavigationShortcuts
+  );
+}
 
     if (typeof ComponentRecommendations !== 'undefined') {
       UIverse.register('ComponentRecommendations', ComponentRecommendations, dependenciesFor('ComponentRecommendations'));
