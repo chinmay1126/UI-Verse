@@ -571,61 +571,90 @@
   <!-- =========================================================
      COMPREHENSIVE GLOBAL PLATFORM ENVIRONMENT FOOTER
   ========================================================= -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col brand">
-        <h2 class="footer-logo">⬡ UIverse</h2>
-        <p>Engineering real-time structural layout matrices using mathematical component spacing formulas, low-latency rendering properties variables, and secure data tunnels.</p>
-        <div class="socials">
-          <a href="#" title="Access Repository Pipelines"><i class="fab fa-github"></i></a>
-          <a href="#" title="Access Corporate Network Connection Node"><i class="fab fa-linkedin"></i></a>
-          <a href="#" title="Access Telemetry Stream Log Broadcasts"><i class="fab fa-x-twitter"></i></a>
-        </div>
-      </div>
-      
-      <div class="footer-col">
-        <h3>Platform Shells</h3>
-        <ul>
-          <li><a href="button.html">Action Nodes Matrix</a></li>
-          <li><a href="navbar.html">Navigation Frameworks</a></li>
-          <li><a href="cards.html">Canvas Tile Layers</a></li>
-          <li><a href="inputs.html">Form Input Channels</a></li>
-          <li><a href="forms.html">Schema Layout Forms</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Technical Manuals</h3>
-        <ul>
-          <li><a href="#">Technical Documentation Matrix</a></li>
-          <li><a href="#">Ecosystem Contribution Protocols</a></li>
-          <li><a href="#">Open Source Main Repositories</a></li>
-          <li><a href="#">Developer Core Communities</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Regulatory Metrics</h3>
-        <ul>
-          <li><a href="privacypolicy.html">Data Isolation Policy Sheets</a></li>
-          <li><a href="terms.html">Terms of System Operations</a></li>
-          <li><a href="#">Modular Asset Licensing Manifest</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col newsletter">
-        <h3>Continuous Integration Streams</h3>
-        <p>Register your workspace hub node destination to intercept low-frequency deployment tracking logs instantly.</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="operator@engine.domain" aria-label="Operator email register allocation input path" />
-          <button type="button" onclick="alert('Destination node verified within logging channels.');">Sync Hub</button>
-        </div>
+  <!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="UIverse on GitHub" title="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="#" aria-label="UIverse on LinkedIn" title="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="#" aria-label="UIverse on X (Twitter)" title="X / Twitter">
+          <i class="fab fa-x-twitter" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 UIverse Architecture Systems. Engineered to total structural perfection for professional front-end teams globally.</p>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+        <li><a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+        <li><a href="MyCollection.html">My Collection</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          aria-label="Email address for newsletter"
+        />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with <span aria-label="love">❤️</span> for developers worldwide.</p>
+  </div>
+</footer>
+
+<script>
+  if (typeof subscribe !== 'function') {
+    function subscribe() {
+      const emailInput = document.getElementById("newsletterEmail");
+      if (emailInput && emailInput.value.trim()) {
+        alert("Thanks for subscribing with: " + emailInput.value.trim());
+        emailInput.value = "";
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    }
+  }
+</script>
 
   <!-- =========================================================
      COMPREHENSIVE RUNTIME LOGIC ENGINE SCRIPTS

@@ -6,7 +6,7 @@
     <title>UIverse Custom Scrollbars Component Library</title>
     <link rel="stylesheet" href="scrollbar-components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+  <link rel="stylesheet" href="shared-sidebar.css">\n</head>
 <body class="uiv-dark-theme">
 
     <nav class="uiv-navbar" aria-label="Main Infrastructure Navigation">
@@ -1212,29 +1212,90 @@
 
     <div class="uiv-toast-pipeline-host" id="uiv-toast-dock" aria-live="polite"></div>
 
-    <footer class="uiv-footer-block" role="contentinfo">
-        <div class="uiv-footer-container">
-            <div class="uiv-footer-brand-summary">
-                <h4>UIverse Scrollbar Optimization Framework</h4>
-                <p>A production-optimized system track suite engineered for managing horizontal/vertical text overflow pools, technical list charts, and standalone system windows.</p>
-            </div>
-            <div class="uiv-footer-links-matrix">
-                <div class="uiv-footer-column">
-                    <h5>Resources</h5>
-                    <a href="#">Design System Tokens</a>
-                    <a href="#">Theming Tokens</a>
-                </div>
-                <div class="uiv-footer-column">
-                    <h5>Community</h5>
-                    <a href="#">GitHub Issues Track</a>
-                    <a href="#">Discord Main Core</a>
-                </div>
-            </div>
-        </div>
-        <div class="uiv-footer-bottom-copyright">
-            <p>&copy; 2026 UIverse Project Library Hub. Open source under the MIT License Architecture Validation Framework.</p>
-        </div>
-    </footer>
+    <!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="UIverse on GitHub" title="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="#" aria-label="UIverse on LinkedIn" title="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="#" aria-label="UIverse on X (Twitter)" title="X / Twitter">
+          <i class="fab fa-x-twitter" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+        <li><a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+        <li><a href="MyCollection.html">My Collection</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          aria-label="Email address for newsletter"
+        />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with <span aria-label="love">❤️</span> for developers worldwide.</p>
+  </div>
+</footer>
+
+<script>
+  if (typeof subscribe !== 'function') {
+    function subscribe() {
+      const emailInput = document.getElementById("newsletterEmail");
+      if (emailInput && emailInput.value.trim()) {
+        alert("Thanks for subscribing with: " + emailInput.value.trim());
+        emailInput.value = "";
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    }
+  }
+</script>
 
     <script src="scrollbar-components.js"></script>
 </body>
