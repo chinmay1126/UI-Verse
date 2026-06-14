@@ -166,7 +166,12 @@ class ThemeValidator {
       this.analyzeAccessibility(theme, warnings);
     }
 
+    const duration = Math.round(performance.now() - startTime);
     const result = this.buildResult(errors.length === 0, errors, warnings, startTime);
+    result.metadata.profiling = {
+      totalDurationMs: duration,
+      rulesChecked: Object.keys(this.rules).length
+    };
 
     // Cache result
     if (this.enableCaching && options.useCache !== false) {
@@ -343,7 +348,7 @@ class ThemeValidator {
     }
 
     // Validate each spacing value
-    const spacingPattern = /^\d+(px|em|rem)$/;
+    const spacingPattern = /^\d+(?:\.\d+)?(px|em|rem|%|vh|vw|ch)$/;
     for (const [key, value] of Object.entries(spacing)) {
       if (value && !spacingPattern.test(value)) {
         errors.push({
@@ -372,7 +377,7 @@ class ThemeValidator {
     }
 
     // Validate each radius value
-    const radiusPattern = /^\d+(px|em|rem|%)$/;
+    const radiusPattern = /^\d+(?:\.\d+)?(px|em|rem|%|vh|vw|ch)$/;
     for (const [key, value] of Object.entries(radius)) {
       if (value && !radiusPattern.test(value)) {
         errors.push({
@@ -399,6 +404,10 @@ class ThemeValidator {
     // RGB/RGBA format
     const rgbPattern = /^rgba?\([0-9, .%]+\)$/i;
     if (rgbPattern.test(color)) return true;
+
+    // HSL/HSLA format
+    const hslPattern = /^hsla?\(\d+(?:deg)?\s*,\s*\d+%\s*,\s*\d+%\s*(?:,\s*[0-9.]+)?\)$/i;
+    if (hslPattern.test(color)) return true;
 
     return false;
   }
@@ -448,8 +457,28 @@ class ThemeValidator {
    * Get relative luminance of color
    * @private
    */
+  hslToRgb(h, s, l) {
+    s /= 100;
+    l /= 100;
+    const k = n => (n + h / 30) % 12;
+    const a = s * Math.min(l, 1 - l);
+    const f = n => l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1));
+    return [Math.round(255 * f(0)), Math.round(255 * f(8)), Math.round(255 * f(4))];
+  }
+
   getRelativeLuminance(color) {
-    const rgb = this.hexToRgb(color);
+    let rgb = null;
+    if (color.startsWith('#')) {
+      rgb = this.hexToRgb(color);
+    } else if (color.startsWith('rgb')) {
+      const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      if (match) rgb = [Number(match[1]), Number(match[2]), Number(match[3])];
+    } else if (color.startsWith('hsl')) {
+      const match = color.match(/hsla?\((\d+),\s*(\d+)%,\s*(\d+)%/);
+      if (match) {
+        rgb = this.hslToRgb(Number(match[1]), Number(match[2]), Number(match[3]));
+      }
+    }
     if (!rgb) return 0;
 
     const [r, g, b] = rgb.map(val => val / 255);
@@ -522,6 +551,8 @@ class ThemeValidator {
     if (color.startsWith('#')) return 'hex';
     if (color.startsWith('rgb(')) return 'rgb';
     if (color.startsWith('rgba(')) return 'rgba';
+    if (color.startsWith('hsl(')) return 'hsl';
+    if (color.startsWith('hsla(')) return 'hsla';
     return 'unknown';
   }
 
@@ -633,11 +664,12 @@ class ThemeValidator {
   analyzeAccessibilityMetrics(theme) {
     const colors = theme.colors || {};
     
+    const textContrast = colors.text ? this.getContrastRatio(colors.text.primary, colors.background) : null;
     return {
-      wcagAA: true,
-      wcagAAA: false,
+      wcagAA: textContrast ? textContrast >= 4.5 : false,
+      wcagAAA: textContrast ? textContrast >= 7.0 : false,
       contrastAnalysis: {
-        text: colors.text ? this.getContrastRatio(colors.text.primary, colors.background) : null
+        text: textContrast
       }
     };
   }
@@ -737,6 +769,20 @@ class ThemeValidator {
    */
   clearCache() {
     this.validationCache.clear();
+  }
+
+  getSchema(format = 'json-schema') {
+    return {
+      $schema: 'https://json-schema.org/draft/2020-12/schema',
+      type: 'object',
+      properties: {
+        id: { type: 'string', pattern: '^[a-zA-Z0-9-]+$', minLength: 1, maxLength: 50 },
+        name: { type: 'string', minLength: 1, maxLength: 100 },
+        isDark: { type: 'boolean' },
+        colors: { type: 'object' }
+      },
+      required: ['id', 'name', 'isDark', 'colors']
+    };
   }
 
   /**
