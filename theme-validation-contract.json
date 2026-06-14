@@ -377,6 +377,9 @@
       "example": "Unable to normalize color due to ambiguous format specification",
       "semantic": "Conversion between color spaces failed"
     },
+      "description": "Color value is invalid",
+      "example": "Color must be valid hex (#RRGGBB) or rgb format"
+    },
     "VALUE_TOO_SHORT": {
       "httpStatus": 422,
       "description": "String value is below minimum",
@@ -447,52 +450,27 @@
       }
     },
     "validationFailureWithSemanticErrors": {
+    "validationFailure": {
       "valid": false,
       "errors": [
         {
           "field": "colors.primary",
-          "message": "Hex color '#XXYYZZ' contains invalid digits",
-          "code": "HEX_DIGIT_INVALID",
-          "severity": "error",
-          "colorDetails": {
-            "attemptedFormat": "hex-6",
-            "expectedFormats": ["hex-3", "hex-6", "hex-8", "rgb", "rgba"],
-            "colorValue": "#XXYYZZ",
-            "failureReason": "Invalid hexadecimal digits: X, Y, Z",
-            "suggestion": "Use valid hex digits (0-9, a-f) or switch to rgb(r, g, b) format"
-          }
+          "message": "Color must be valid hex or rgb format",
+          "code": "INVALID_COLOR",
+          "severity": "error"
         },
         {
-          "field": "colors.secondary",
-          "message": "RGB component value 300 exceeds maximum of 255",
-          "code": "RGB_COMPONENT_OUT_OF_RANGE",
-          "severity": "error",
-          "colorDetails": {
-            "attemptedFormat": "rgb",
-            "colorValue": "rgb(300, 50, 100)",
-            "failureReason": "Red component 300 is out of range",
-            "suggestion": "Ensure all RGB components are between 0 and 255"
-          }
-        },
-        {
-          "field": "colors.accent",
-          "message": "Lab color space not compatible with RGB-only theme",
-          "code": "COLOR_SPACE_INCOMPATIBLE",
-          "severity": "error",
-          "colorDetails": {
-            "attemptedFormat": "lab",
-            "expectedFormats": ["hex-3", "hex-6", "hex-8", "rgb", "rgba"],
-            "colorSpace": "Lab",
-            "failureReason": "Theme requires RGB color space",
-            "suggestion": "Convert Lab color to hex or rgb format"
-          }
+          "field": "id",
+          "message": "Required field is missing",
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "error"
         }
       ],
       "warnings": [],
       "metadata": {
-        "timestamp": "2026-06-15T10:30:45.123Z",
-        "validator": "1.0.1",
-        "errorCount": 3,
+        "timestamp": "2026-06-11T15:30:45.123Z",
+        "validator": "1.0.0",
+        "errorCount": 2,
         "warningCount": 0,
         "validationDuration": 8
       }
@@ -502,9 +480,8 @@
     "httpMethods": "Use POST for validation operations (not idempotent)",
     "httpStatus": "Always return 200 for successful validation requests, check valid property",
     "timestamps": "All timestamps in ISO 8601 format with milliseconds",
-    "errorMessages": "Clear, actionable, user-friendly messages with specific details for color errors",
-    "errorCodes": "Machine-readable codes for client-side handling with semantic granularity for color processing",
-    "colorErrorDetails": "All color validation errors include colorDetails object with specific failure reasons and suggestions"
+    "errorMessages": "Clear, actionable, user-friendly messages",
+    "errorCodes": "Machine-readable codes for client-side handling"
   },
   "rateLimiting": {
     "enabled": true,
@@ -535,14 +512,6 @@
     "rateLimitingApplied": true
   },
   "versionHistory": [
-    {
-      "version": "1.0.1",
-      "date": "2026-06-15",
-      "changes": "Added semantic granularity for color processing errors with 6 new error codes and colorDetails metadata",
-      "newErrorCodes": 6,
-      "endpoints": 5,
-      "dataTypes": 2
-    },
     {
       "version": "1.0.0",
       "date": "2026-06-11",

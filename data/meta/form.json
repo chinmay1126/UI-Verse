@@ -1,0 +1,17 @@
+{
+  "id": "form",
+  "title": "Forms",
+  "path": "form.html",
+  "dependencies": {
+    "styles": ["style.css", "css/main.css", "form.css"],
+    "scripts": ["script.js", "js/features/theme.js", "js/features/accessibility.js", "js/features/code-tools.js", "js/features/sandbox.js"]
+  },
+  "version": "0.1.0",
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-05-13",
+      "note": "Initial metadata generated"
+    }
+  ]
+}

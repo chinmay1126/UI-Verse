@@ -1,0 +1,6 @@
+[build]
+  publish = "."
+  command = "echo 'UI-Verse uses a static publish root'"
+
+[build.environment]
+  NODE_VERSION = "18"

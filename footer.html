@@ -1,299 +1,1589 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footers - UIverse</title>
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-/U2CxMJC4vego27Tjydv9a9V2LKzTWtG+X7d0yNFL24=' 'sha256-0zJutjbfc/d0QF0aag+a24mAOe6jtSizqfu1f2s92dE=' 'sha256-2GnjOCctvJWf43qFpXtspVgeJqcwOEdkSbfTEwBBsCg=' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-88IKc5/cdz3sPv8+TEVoOFJGnCxpgPX/nT5FZiQdsMM=' 'sha256-8ngKBW+Fz/5yPxFekQN9Jekj8H6BAL/qzdJHcQx3Jv8=' 'sha256-9arnSMaxI+z8rwofB7J3Aa3JYcoxivMHLo+vvc87QKA=' 'sha256-AVs5bATqRNmNNIQXPnfx+jRUCLKl4TMVLXTVORHLvzc=' 'sha256-C1eqlpdWlW2Jy82t/nCS/yVg79tLvEt/nt9KPr2EFJM=' 'sha256-HbSaXBx8qjrrSDlPUgIy7gLsJAwUOrMxTZQ5ZOK1Tjw=' 'sha256-IJ8r27Y/G6ZZfZ+t2unH228QLNQEAg2zZIruZ9ofBQQ=' 'sha256-JAy9Ry0i2QjzHBfHTYC8ZhknhS0heh5mRxj3r6Cse5E=' 'sha256-LqxD6M7KsgVk4b3kzAwIbu7wXWTGMVsAdGqTrx+9X7g=' 'sha256-Mrx0hb1kCvN63NaCTaqlJSxwNPt4YVZ8R0AVZVvx3p8=' 'sha256-PhKLecc9IefoFgEs28DVUIeZPGzKrNtf23Ly57LgxY8=' 'sha256-QLLxXc7hMlrOTHL1C/8aXmjqhiab0PH1Hcg2yOYXUig=' 'sha256-TyPlat3Z01xoD4cKOMQ/o08t+f/sqtfchb7N28LViMw=' 'sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=' 'sha256-YF5030gOyrxuZL39S2XjFyPnqWLYCeChn+VrXHUbid4=' 'sha256-c0qIO87v3yPjuaRTeGZ3d664E2nxHXxwRIWdfL0vGos=' 'sha256-cO23pDPgOe8yq42GVvLxDyGy9mbIEvYx4msm7EoTbz0=' 'sha256-fygweuyglo0KzejXtQFjeI9tjYP1Or81w8yWycvTiH8=' 'sha256-iX5GDcqZmJJY6xhr5AneEmXoR/wKL/xYeJWYHwpEUe0=' 'sha256-inrJ3lYa+WxTBzQYch+mLmamzIcYV7ZuSvfRdRTksd8=' 'sha256-kyKK/J7iCG5IO+4wiU7oWKgkfOXL6nQT7YQXz6qZHUY=' 'sha256-qmB895yAXHQF6Ezf2fcNLSxhrryl1vJ64odFQvETAjk=' 'sha256-t9iCFqqniHU1gKK/jNftPyF4Z2con7kH8MP3XwpmQ/Q=' 'sha256-v3Vs1NllczCHYIJ+1VjaRBP4VEO+JKKYgK9JUTzZIBs=' 'sha256-wxH3R/7DGQpEwIkgMLgnPHuzGnKaNBfqADjZhjY8Mx0='; script-src-attr 'unsafe-hashes' 'sha256-/U2CxMJC4vego27Tjydv9a9V2LKzTWtG+X7d0yNFL24=' 'sha256-0zJutjbfc/d0QF0aag+a24mAOe6jtSizqfu1f2s92dE=' 'sha256-2GnjOCctvJWf43qFpXtspVgeJqcwOEdkSbfTEwBBsCg=' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-88IKc5/cdz3sPv8+TEVoOFJGnCxpgPX/nT5FZiQdsMM=' 'sha256-8ngKBW+Fz/5yPxFekQN9Jekj8H6BAL/qzdJHcQx3Jv8=' 'sha256-9arnSMaxI+z8rwofB7J3Aa3JYcoxivMHLo+vvc87QKA=' 'sha256-AVs5bATqRNmNNIQXPnfx+jRUCLKl4TMVLXTVORHLvzc=' 'sha256-C1eqlpdWlW2Jy82t/nCS/yVg79tLvEt/nt9KPr2EFJM=' 'sha256-HbSaXBx8qjrrSDlPUgIy7gLsJAwUOrMxTZQ5ZOK1Tjw=' 'sha256-IJ8r27Y/G6ZZfZ+t2unH228QLNQEAg2zZIruZ9ofBQQ=' 'sha256-JAy9Ry0i2QjzHBfHTYC8ZhknhS0heh5mRxj3r6Cse5E=' 'sha256-LqxD6M7KsgVk4b3kzAwIbu7wXWTGMVsAdGqTrx+9X7g=' 'sha256-Mrx0hb1kCvN63NaCTaqlJSxwNPt4YVZ8R0AVZVvx3p8=' 'sha256-PhKLecc9IefoFgEs28DVUIeZPGzKrNtf23Ly57LgxY8=' 'sha256-QLLxXc7hMlrOTHL1C/8aXmjqhiab0PH1Hcg2yOYXUig=' 'sha256-TyPlat3Z01xoD4cKOMQ/o08t+f/sqtfchb7N28LViMw=' 'sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=' 'sha256-YF5030gOyrxuZL39S2XjFyPnqWLYCeChn+VrXHUbid4=' 'sha256-c0qIO87v3yPjuaRTeGZ3d664E2nxHXxwRIWdfL0vGos=' 'sha256-cO23pDPgOe8yq42GVvLxDyGy9mbIEvYx4msm7EoTbz0=' 'sha256-fygweuyglo0KzejXtQFjeI9tjYP1Or81w8yWycvTiH8=' 'sha256-iX5GDcqZmJJY6xhr5AneEmXoR/wKL/xYeJWYHwpEUe0=' 'sha256-inrJ3lYa+WxTBzQYch+mLmamzIcYV7ZuSvfRdRTksd8=' 'sha256-kyKK/J7iCG5IO+4wiU7oWKgkfOXL6nQT7YQXz6qZHUY=' 'sha256-qmB895yAXHQF6Ezf2fcNLSxhrryl1vJ64odFQvETAjk=' 'sha256-t9iCFqqniHU1gKK/jNftPyF4Z2con7kH8MP3XwpmQ/Q=' 'sha256-v3Vs1NllczCHYIJ+1VjaRBP4VEO+JKKYgK9JUTzZIBs=' 'sha256-wxH3R/7DGQpEwIkgMLgnPHuzGnKaNBfqADjZhjY8Mx0='; style-src 'self' https: 'unsafe-hashes' 'sha256-6gdvEG2cC/rSjegTc+5Xlm7gcH/L0B5UtBxrTINqvG4='; style-src-attr 'unsafe-hashes' 'sha256-6gdvEG2cC/rSjegTc+5Xlm7gcH/L0B5UtBxrTINqvG4='">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Footers — UIverse</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: #f5f7fb;
-      display: flex;
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- UIverse Modular CSS Architecture -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="footer.css">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Footer - UI-Verse</title>
+  <meta name="title" content="Footer - UI-Verse">
+  <meta name="description" content="Footer templates and layouts. Complete footer designs with newsletter signup, social links, and site navigation.">
+  <meta name="author" content="UI-Verse Community">
+  <meta name="keywords" content="ui components, css, html, javascript, open source, web components, frontend, ui library">
+  <link rel="canonical" href="https://uiverse.vercel.app/footer.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uiverse.vercel.app/footer.html">
+  <meta property="og:title" content="Footer - UI-Verse">
+  <meta property="og:description" content="Footer templates and layouts. Complete footer designs with newsletter signup, social links, and site navigation.">
+  <meta property="og:image" content="https://uiverse.vercel.app/preview.png">
+  <meta property="og:site_name" content="UI-Verse">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://uiverse.vercel.app/footer.html">
+  <meta property="twitter:title" content="Footer - UI-Verse">
+  <meta property="twitter:description" content="Footer templates and layouts. Complete footer designs with newsletter signup, social links, and site navigation.">
+  <meta property="twitter:image" content="https://uiverse.vercel.app/preview.png">
+  <meta property="twitter:creator" content="@uiverse">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "UI-Verse",
+    "url": "https://uiverse.vercel.app",
+    "description": "A curated collection of open-source HTML, CSS, and JavaScript UI components for modern web development. Free to use, regularly updated.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://uiverse.vercel.app/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
-
-    /* SIDEBAR */
-    .sidebar {
-      width: 220px;
-      background: #111;
-      color: #fff;
-      height: 100vh;
-      padding: 20px;
-    }
-
-    .sidebar h2 { margin-bottom: 20px; }
-    .sidebar a {
-      display: block;
-      color: #ccc;
-      text-decoration: none;
-      margin: 10px 0;
-    }
-    .sidebar a.active { color: #fff; }
-
-    /* MAIN */
-    .main {
-      flex: 1;
-      padding: 20px;
-    }
-
-    .page-header h1 {
-      margin-bottom: 5px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .component-card {
-      background: #fff;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .preview-box {
-      background: #f1f3f6;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 10px 0;
-    }
-
-    footer {
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    /* FOOTERS */
-    .mini-footer { background: #fff; }
-    .grid-footer { display: grid; grid-template-columns: repeat(3,1fr); text-align:left; }
-    .dark-footer { background:#111; color:#fff; }
-    .social-footer span { margin: 0 8px; font-size: 20px; }
-    .newsletter-footer input { padding: 8px; margin: 10px; }
-    .multi-footer { display:grid; grid-template-columns:repeat(4,1fr); text-align:left; }
-    .sticky-footer { background:#ddd; }
-    .app-footer button { margin:5px; }
-
-    /* ACTIONS */
-    .actions {
-      display: flex;
-      gap: 10px;
-    }
-
-    button {
-      padding: 6px 10px;
-      border: none;
-      background: #4f46e5;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    pre {
-      display: none;
-      background: #111;
-      color: #0f0;
-      padding: 10px;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width:768px){
-      .sidebar{display:none;}
-    }
-  </style>
-</head>
+  }
+  </script>
+  </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<aside class="sidebar">
-  <h2>UIverse</h2>
-  <a href="index.html">Home</a>
-  <a href="footer.html" class="active">Footers</a>
-  <li><a href="button.html"><i class="fa-solid fa-mobile-button"></i><p>Buttons</p></a></li>
-</aside>
+<!-- Gallery page note: See GALLERY_PAGES_GUIDE.md for filtering setup. -->
 
-<main class="main">
 
-  <div class="page-header">
-    <h1>Footers</h1>
-    <p>Explore modern footer designs</p>
+<div class="container">
+
+
+  <div class="hero-content">
+
+  <span class="hero-badge">
+    ✨ 20+ Footer Designs
+  </span>
+
+  <h1>
+    Beautiful Footer Components
+  </h1>
+
+  <p>
+    Discover modern, responsive footer layouts for SaaS,
+    portfolios, startups, ecommerce websites, dashboards,
+    blogs and enterprise applications.
+  </p>
+
+  <div class="hero-buttons">
+
+    <button class="primary-btn">
+      Browse Components
+    </button>
+
+    <button class="secondary-btn">
+      View Documentation
+    </button>
+
   </div>
 
-  <div class="features">
+</div>
 
-    <!-- 1 -->
-    <div class="component-card">
-      <h3>Minimal</h3>
-      <div class="preview-box">
-        <footer class="mini-footer">
-          <h2>UIverse</h2>
-          <p>© 2026</p>
-        </footer>
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-brand">
+    <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:8px;">
+      <span class="brand-icon" aria-hidden="true">&#x2B21;</span>
+      <span class="brand-text">UIverse <span style="font-size:9px;background:linear-gradient(135deg,#eb6835,#7b61ff);color:#fff;padding:1px 6px;border-radius:10px;font-weight:800;margin-left:4px;letter-spacing:.5px;vertical-align:middle;box-shadow:0 0 8px rgba(235,104,53,.3)">V2</span></span>
+    </a>
+  </div>
+  <nav class="sidebar-nav" aria-label="Component categories">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="Welcome.html"><i class="fa-solid fa-door-open"></i><span>Welcome</span></a></li>
+      <li><a href="component-discovery.html"><i class="fa-solid fa-compass"></i><span>Explore All</span></a></li>
+      <li><a href="leaderboard-components.html"><i class="fa-solid fa-ranking-star"></i><span>Leaderboards</span></a></li>
+      <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
+      <li><a href="buttons.html"><i class="fa-solid fa-computer-mouse"></i><span>Buttons V2</span></a></li>
+      <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
+      <li><a href="flipcards.html"><i class="fa-solid fa-clone"></i><span>3D Cards</span></a></li>
+      <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navbar</span></a></li>
+      <li><a href="dropdown-components.html"><i class="fa-solid fa-caret-down"></i><span>Dropdowns</span></a></li>
+      <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Inputs</span></a></li>
+      <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><span>Forms</span></a></li>
+      <li><a href="profile-components.html"><i class="fa-solid fa-user"></i><span>Profiles</span></a></li>
+      <li><a href="badges.html"><i class="fa-solid fa-award"></i><span>Badges</span></a></li>
+      <li><a href="alerts.html"><i class="fa-solid fa-triangle-exclamation"></i><span>Alerts</span></a></li>
+      <li><a href="loaders.html"><i class="fa-solid fa-spinner"></i><span>Loaders</span></a></li>
+      <li><a href="tabs.html"><i class="fa-solid fa-table-columns"></i><span>Tabs</span></a></li>
+      <li><a href="tabs-components.html"><i class="fa-solid fa-layer-group"></i><span>Tabs V2</span></a></li>
+      <li><a href="toggles.html"><i class="fa-solid fa-toggle-on"></i><span>Toggles</span></a></li>
+      <li><a href="switches.html"><i class="fa-solid fa-toggle-on"></i><span>Switches</span></a></li>
+      <li><a href="checkbox.html"><i class="fa-solid fa-square-check"></i><span>Checkboxes</span></a></li>
+      <li><a href="radiobutton.html"><i class="fa-solid fa-circle-dot"></i><span>Radio Buttons</span></a></li>
+      <li><a href="range-slider.html"><i class="fa-solid fa-sliders"></i><span>Range Slider</span></a></li>
+      <li><a href="tooltip.html"><i class="fa-solid fa-comment-dots"></i><span>Tooltips</span></a></li>
+      <li><a href="Popovers.html"><i class="fa-solid fa-message"></i><span>Popovers</span></a></li>
+      <li><a href="menu.html"><i class="fa-solid fa-bars-staggered"></i><span>Menu</span></a></li>
+      <li><a href="breadcrumbs.html"><i class="fa-solid fa-chevron-right"></i><span>Breadcrumbs</span></a></li>
+      <li><a href="docks.html"><i class="fa-solid fa-grip"></i><span>Docks</span></a></li>
+      <li><a href="floating-nav.html"><i class="fa-solid fa-satellite"></i><span>Floating Nav</span></a></li>
+      <li><a href="Spotlightui.html"><i class="fa-solid fa-crosshairs"></i><span>Spotlight</span></a></li>
+      <li><a href="Kanbanui.html"><i class="fa-solid fa-columns-3"></i><span>Kanban</span></a></li>
+      <li><a href="Accordionsui.html"><i class="fa-solid fa-angles-down"></i><span>Accordions</span></a></li>
+      <li><a href="command-palette.html"><i class="fa-solid fa-terminal"></i><span>Command Palette</span></a></li>
+      <li><a href="step-indicators.html"><i class="fa-solid fa-list-check"></i><span>Steppers</span></a></li>
+      <li><a href="table.html"><i class="fa-solid fa-table"></i><span>Tables</span></a></li>
+      <li><a href="charts.html"><i class="fa-solid fa-chart-pie"></i><span>Charts</span></a></li>
+      <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a></li>
+      <li><a href="admin-panel.html"><i class="fa-solid fa-gauge-high"></i><span>Admin Panel</span></a></li>
+      <li><a href="Statistics.html"><i class="fa-solid fa-chart-bar"></i><span>Statistics</span></a></li>
+      <li><a href="stats-cards.html"><i class="fa-solid fa-chart-line"></i><span>Stats Cards</span></a></li>
+      <li><a href="analysis-card.html"><i class="fa-solid fa-magnifying-glass-chart"></i><span>Analysis Cards</span></a></li>
+      <li><a href="comparison-tables.html"><i class="fa-solid fa-table-list"></i><span>Comparison Tables</span></a></li>
+      <li><a href="timeline.html"><i class="fa-solid fa-clock-rotate-left"></i><span>Timeline</span></a></li>
+      <li><a href="progresspage.html"><i class="fa-solid fa-bars-progress"></i><span>Progress</span></a></li>
+      <li><a href="progress-premium.html"><i class="fa-solid fa-bars-progress"></i><span>Progress V2</span></a></li>
+      <li><a href="ratingpage.html"><i class="fa-solid fa-star"></i><span>Ratings</span></a></li>
+      <li><a href="ratings-premium.html"><i class="fa-solid fa-star"></i><span>Ratings V2</span></a></li>
+      <li><a href="toasts.html"><i class="fa-solid fa-bell"></i><span>Toasts</span></a></li>
+      <li><a href="notification.html"><i class="fa-solid fa-bell"></i><span>Notifications</span></a></li>
+      <li><a href="notifications-premium.html"><i class="fa-solid fa-bell"></i><span>Notifications V2</span></a></li>
+      <li><a href="snackbar.html"><i class="fa-solid fa-comment"></i><span>Snackbars</span></a></li>
+      <li><a href="skeletons.html"><i class="fa-solid fa-rectangle-xmark"></i><span>Skeletons</span></a></li>
+      <li><a href="empty-state.html"><i class="fa-solid fa-box-open"></i><span>Empty States</span></a></li>
+      <li><a href="animate-loaders.html"><i class="fa-solid fa-circle-notch"></i><span>Animated Loaders</span></a></li>
+      <li><a href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a></li>
+      <li><a href="carousel.html"><i class="fa-solid fa-film"></i><span>Carousel</span></a></li>
+      <li><a href="image-carousel.html"><i class="fa-solid fa-photo-film"></i><span>Image Carousel</span></a></li>
+      <li><a href="image-slider.html"><i class="fa-solid fa-images"></i><span>Image Slider</span></a></li>
+      <li><a href="blog.html"><i class="fa-solid fa-blog"></i><span>Blog</span></a></li>
+      <li><a href="article.html"><i class="fa-solid fa-newspaper"></i><span>Articles</span></a></li>
+      <li><a href="notes-components.html"><i class="fa-solid fa-sticky-note"></i><span>Notes</span></a></li>
+      <li><a href="story.html"><i class="fa-solid fa-book-open"></i><span>Story</span></a></li>
+      <li><a href="activity-feed.html"><i class="fa-solid fa-rss"></i><span>Activity Feed</span></a></li>
+      <li><a href="testimonials.html"><i class="fa-solid fa-comments"></i><span>Testimonials</span></a></li>
+      <li><a href="chatui.html"><i class="fa-solid fa-comment-dots"></i><span>Chat UI</span></a></li>
+      <li><a href="musicicon.html"><i class="fa-solid fa-music"></i><span>Music</span></a></li>
+      <li><a href="hero.html"><i class="fa-solid fa-star"></i><span>Hero Sections</span></a></li>
+      <li><a href="section.html"><i class="fa-solid fa-rectangle-list"></i><span>Sections</span></a></li>
+      <li><a href="div.html"><i class="fa-solid fa-square"></i><span>DIV</span></a></li>
+      <li><a href="span.html"><i class="fa-solid fa-code"></i><span>Span</span></a></li>
+      <li><a href="bent-grid.html"><i class="fa-solid fa-border-all"></i><span>Bent Grid</span></a></li>
+      <li><a href="footer.html"><i class="fa-solid fa-shoe-prints"></i><span>Footer</span></a></li>
+      <li><a href="patterns.html"><i class="fa-solid fa-border-style"></i><span>Patterns</span></a></li>
+      <li><a href="icon.html"><i class="fa-solid fa-icons"></i><span>Icons</span></a></li>
+      <li><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Hover Effects</span></a></li>
+      <li><a href="color.html"><i class="fa-solid fa-palette"></i><span>Colors</span></a></li>
+      <li><a href="retroui.html"><i class="fa-solid fa-gamepad"></i><span>RetroUI</span></a></li>
+      <li><a href="ai-components.html"><i class="fa-solid fa-robot"></i><span>AI Components</span></a></li>
+      <li><a href="divider-component.html"><i class="fa-solid fa-minus"></i><span>Dividers</span></a></li>
+      <li><a href="chip-components.html"><i class="fa-solid fa-tag"></i><span>Chips</span></a></li>
+      <li><a href="slider-components.html"><i class="fa-solid fa-sliders"></i><span>Sliders</span></a></li>
+      <li><a href="widgets.html"><i class="fa-solid fa-layer-group"></i><span>Widgets</span></a></li>
+      <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search Bars</span></a></li>
+      <li><a href="filters-premium.html"><i class="fa-solid fa-filter"></i><span>Filters</span></a></li>
+      <li><a href="map.html"><i class="fa-solid fa-map-location-dot"></i><span>Maps</span></a></li>
+      <li><a href="calendar.html"><i class="fa-solid fa-calendar"></i><span>Calendar</span></a></li>
+      <li><a href="calendarcomponent.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar V2</span></a></li>
+      <li><a href="otp.html"><i class="fa-solid fa-lock"></i><span>OTP Input</span></a></li>
+      <li><a href="fileuploadui.html"><i class="fa-solid fa-upload"></i><span>File Upload</span></a></li>
+      <li><a href="files.html"><i class="fa-solid fa-file-arrow-up"></i><span>Drag &amp; Drop</span></a></li>
+      <li><a href="multi-step-form.html"><i class="fa-solid fa-stairs"></i><span>Multi-step Form</span></a></li>
+      <li><a href="cookies.html"><i class="fa-solid fa-cookie-bite"></i><span>Cookies</span></a></li>
+      <li><a href="water-reminder.html"><i class="fa-solid fa-droplet"></i><span>Water Reminder</span></a></li>
+      <li><a href="ecommerce.html"><i class="fa-solid fa-cart-shopping"></i><span>E-commerce</span></a></li>
+      <li><a href="pricing.html"><i class="fa-solid fa-tags"></i><span>Pricing</span></a></li>
+      <li><a href="subscription.html"><i class="fa-solid fa-credit-card"></i><span>Subscription</span></a></li>
+      <li><a href="product.html"><i class="fa-solid fa-box"></i><span>Product Page</span></a></li>
+      <li><a href="product-slider.html"><i class="fa-solid fa-box-open"></i><span>Product Slider</span></a></li>
+      <li><a href="newsletter-components.html"><i class="fa-solid fa-envelope"></i><span>Newsletter</span></a></li>
+      <li><a href="call-to-action.html"><i class="fa-solid fa-bullhorn"></i><span>Call to Action</span></a></li>
+      <li><a href="team-collaboration.html"><i class="fa-solid fa-users"></i><span>Team Collab</span></a></li>
+      <li><a href="auth.html"><i class="fa-solid fa-user-shield"></i><span>Authentication</span></a></li>
+      <li><a href="recovery.html"><i class="fa-solid fa-key"></i><span>Password Recovery</span></a></li>
+      <li><a href="settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a></li>
+      <li><a href="profile.html"><i class="fa-solid fa-id-card"></i><span>Profile</span></a></li>
+      <li><a href="about.html"><i class="fa-solid fa-circle-info"></i><span>About</span></a></li>
+      <li><a href="documentation.html"><i class="fa-solid fa-book"></i><span>Documentation</span></a></li>
+      <li><a href="guidelines.html"><i class="fa-solid fa-scale-balanced"></i><span>Guidelines</span></a></li>
+      <li><a href="howtocontribute.html"><i class="fa-solid fa-code-branch"></i><span>How to Contribute</span></a></li>
+      <li><a href="contributors.html"><i class="fa-solid fa-users"></i><span>Contributors</span></a></li>
+      <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a></li>
+      <li><a href="contact.html"><i class="fa-regular fa-envelope"></i><span>Contact Us</span></a></li>
+      <li><a href="privacypolicy.html"><i class="fa-solid fa-shield-halved"></i><span>Privacy Policy</span></a></li>
+      <li><a href="terms.html"><i class="fa-solid fa-file-contract"></i><span>Terms</span></a></li>
+      <li><a href="license.html"><i class="fa-solid fa-certificate"></i><span>License</span></a></li>
+      <li><a href="MyCollection.html"><i class="fa-solid fa-bookmark"></i><span>My Collection</span></a></li>
+      <li><a href="error.html"><i class="fa-solid fa-circle-exclamation"></i><span>Error Pages</span></a></li>
+      <li><a href="maintenance.html"><i class="fa-solid fa-wrench"></i><span>Maintenance</span></a></li>
+      <li><a href="offline.html"><i class="fa-solid fa-wifi"></i><span>Offline</span></a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
+<!-- ================= SIDEBAR BACKDROP ================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()" aria-hidden="true"></div>
+
+
+<div class="footer-stats">
+
+  <div class="stat-card">
+      <h2>20+</h2>
+      <span>Footer Layouts</span>
+  </div>
+
+  <div class="stat-card">
+      <h2>100%</h2>
+      <span>Responsive</span>
+  </div>
+
+  <div class="stat-card">
+      <h2>HTML</h2>
+      <span>Pure CSS</span>
+  </div>
+
+  <div class="stat-card">
+      <h2>Free</h2>
+      <span>Open Source</span>
+  </div>
+
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+
+  <button class="menu-toggle" onclick="toggleSidebar()" data-a11y-remediation="button-label-needed">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="logo">UIverse</div>
+
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" placeholder="Search footers..." / data-a11y-remediation="label-needed">
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+
+  <div class="nav-right">
+
+    <button class="nav-btn outline-nav-btn">
+      <i class="fa-solid fa-plus"></i>
+      Add Component
+    </button>
+
+    <a href="MyCollection.html">
+      <button class="nav-btn primary-nav-btn">
+        <i class="fa-solid fa-bookmark"></i>
+        My Collection
+      </button>
+    </a>
+    
+
+    <button id="darkModeToggle" class="theme-toggle">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+  </div>
+
+</header>
+
+<!-- MAIN -->
+<main class="main-home">
+
+  <!-- PAGE HEADER -->
+  <section class="footer-page-header">
+
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <span>Footers</span>
+    </div>
+
+    <h1>Footer Components</h1>
+
+    <p>
+      Modern responsive footer sections for SaaS, portfolio,
+      startup and product websites.
+    </p>
+
+    <div class="page-meta">
+
+      <span class="meta-badge">
+        <i class="fa-solid fa-layer-group"></i>
+        4 Components
+      </span>
+
+      <span class="meta-badge">
+        <i class="fa-solid fa-code"></i>
+        HTML & CSS
+      </span>
+
+    </div>
+
+  </section>
+
+  <div>
+    <form>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" name="" placeholder="Filter footers..." id="Scearch" onkeyup="SCEARCH()">
+    </form>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+<footer class="footer" aria-labelledby="footer-heading">
+
+  <h2 id="footer-heading" class="sr-only">Site Footer</h2>
+
+  <div class="footer-card">
+
+    <!-- Brand -->
+    <section class="footer-brand">
+      <h3>UIverse</h3>
+
+      <p>
+        Open-source HTML, CSS and JavaScript UI components for modern web development.
+      </p>
+
+      <div class="footer-socials">
+
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit GitHub"
+        >
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit LinkedIn"
+        >
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit X (Twitter)"
+        >
+          <i class="fab fa-x-twitter" aria-hidden="true"></i>
+        </a>
+
       </div>
+    </section>
+
+    <!-- Explore -->
+    <nav class="footer-col" aria-labelledby="explore-links">
+      <h3 id="explore-links">Explore</h3>
+
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </nav>
+
+    <!-- Resources -->
+    <nav class="footer-col" aria-labelledby="resource-links">
+      <h3 id="resource-links">Resources</h3>
+
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+
+        <li>
+          <a
+            href="https://github.com/Tushar-sonawane06/UI-Verse"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub Repository
+          </a>
+        </li>
+
+        <li>
+          <a href="community/community.html">
+            Community
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Legal -->
+    <nav class="footer-col" aria-labelledby="legal-links">
+      <h3 id="legal-links">Legal</h3>
+
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
+    </nav>
+
+    <!-- Newsletter -->
+    <section class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+
+      <p>
+        Get notified when new components are released.
+      </p>
+
+      <form class="newsletter-form" id="newsletterForm">
+
+        <label for="newsletterEmail" class="sr-only">
+          Email Address
+        </label>
+
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+        >
+
+        <button type="submit">
+          Subscribe
+        </button>
+
+      </form>
+
+    </section>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © 2026 UIverse. Made with
+      <i
+        class="fa-solid fa-heart"
+        aria-hidden="true"
+      ></i>
+      for developers worldwide.
+    </p>
+  </div>
+
+</footer>
+
+  <!-- GRID -->
+  <div class="footer-grid">
+    <!-- =========================================================
+     FOOTER 10 — STARTUP FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Startup Footer</span>
+    <span class="card-tag tag-new">Startup</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer startup-footer">
+
+      <h2>Launch Faster</h2>
+
+      <p>
+        Modern startup footer for SaaS products.
+      </p>
+
+      <button>Start Free</button>
+
+    </footer>
+
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+<footer class="footer" role="contentinfo">
+
+  <div class="footer-card">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <h2>⬡ UIverse</h2>
+
+      <p>
+        Open-source UI components crafted for modern web development.
+      </p>
+
+      <div class="footer-socials">
+
+        <a
+          href="https://github.com/Tushar-sonawane06/UI-Verse"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-x-twitter"></i>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Explore -->
+    <div class="footer-col">
+      <h3>Explore</h3>
+
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div class="footer-col">
+      <h3>Resources</h3>
+
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+
+        <li>
+          <a
+            href="https://github.com/Tushar-sonawane06/UI-Verse"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub Repository
+          </a>
+        </li>
+
+        <li>
+          <a href="community/community.html">
+            Community
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+
+      <p>Get notified when new UI components are added.</p>
+
+      <label for="newsletterEmail" class="sr-only">
+        Email Address
+      </label>
+
+      <div class="newsletter-form">
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          aria-label="Email Address"
+        >
+
+        <button type="button" id="subscribeBtn">
+          Subscribe
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © 2026 UIverse. Made with ❤️ for developers worldwide.
+    </p>
+  </div>
+
+</footer>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER 11 — GRID FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Grid Footer</span>
+    <span class="card-tag tag-popular">Grid</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer grid-footer">
+
+      <div>Docs</div>
+      <div>Pricing</div>
+      <div>Support</div>
+      <div>API</div>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER 12 — GLOW FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Glow Footer</span>
+    <span class="card-tag tag-trending">Glow</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer glow-footer">
+
+      <h2>Build Beautiful UI</h2>
+
+      <p>
+        Animated glow footer section.
+      </p>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER 13 — APP FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">App Footer</span>
+    <span class="card-tag tag-essential">Mobile</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer app-footer">
+
+      <h2>Download App</h2>
+
+      <div class="app-buttons">
+
+        <button>App Store</button>
+
+        <button>Google Play</button>
+
+      </div>
+
       <div class="actions">
         <button onclick="toggleCode('f1')">Code</button>
         <button onclick="copyCode('f1',this)">Copy</button>
+        <button onclick="addToCollectionFromCard(this, 'Minimal Footer')">Add to My Collection</button>
       </div>
-      <pre id="f1">&lt;footer&gt;Minimal&lt;/footer&gt;</pre>
-    </div>
+    </footer>
 
-    <!-- 2 -->
-    <div class="component-card">
-      <h3>Grid</h3>
-      <div class="preview-box">
-        <footer class="grid-footer">
-          <div><h4>UIverse</h4></div>
-          <div><p>Docs</p></div>
-          <div><p>Privacy</p></div>
-        </footer>
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER 14 — WAVE FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Wave Footer</span>
+    <span class="card-tag tag-new">Wave</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer wave-footer">
+
+      <h2>Creative Footer</h2>
+
+      <p>
+        Wave inspired modern footer design.
+      </p>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER 15 — PORTFOLIO FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Portfolio Footer</span>
+    <span class="card-tag tag-trending">Portfolio</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer portfolio-footer">
+
+      <h2>John Doe</h2>
+
+      <p>
+        Frontend Developer & Designer
+      </p>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER 16 — BENTO FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Bento Footer</span>
+    <span class="card-tag tag-popular">Bento</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer bento-footer">
+
+      <div>UI</div>
+      <div>Docs</div>
+      <div>API</div>
+      <div>Blog</div>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER 17 — ELEGANT FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Elegant Footer</span>
+    <span class="card-tag tag-essential">Elegant</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer elegant-footer">
+
+      <h2>Elegant UI</h2>
+
+      <p>
+        Minimal elegant footer layout.
+      </p>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER 18 — DARK PRO FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Dark Pro Footer</span>
+    <span class="card-tag tag-popular">Pro</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer darkpro-footer">
+
+      <h2>UIverse Pro</h2>
+
+      <p>
+        Premium developer components.
+      </p>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER 19 — COMMUNITY FOOTER
+========================================================= -->
+
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Community Footer</span>
+    <span class="card-tag tag-new">Community</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer community-footer">
+
+      <h2>Join Community</h2>
+
+      <div class="community-icons">
+
+        <i class="fab fa-discord"></i>
+
+        <i class="fab fa-github"></i>
+
+        <i class="fab fa-reddit"></i>
+
+
       </div>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+  <!-- FOOTER 5 -->
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Glass Footer</span>
+    <span class="card-tag tag-new">Glass</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer glass-footer">
+
+      <h2>⬡ UIverse</h2>
+
+      <p>
+        Frosted glass footer with premium UI styling.
+      </p>
+
+      <div class="glass-links">
+        <a href="#">Home</a>
+        <a href="#">Docs</a>
+        <a href="#">Pricing</a>
+        <a href="#">Support</a>
+      </div>
+
       <div class="actions">
         <button onclick="toggleCode('f2')">Code</button>
         <button onclick="copyCode('f2',this)">Copy</button>
+        <button onclick="addToCollectionFromCard(this, 'Grid Footer')">Add to My Collection</button>
       </div>
-      <pre id="f2">&lt;footer&gt;Grid&lt;/footer&gt;</pre>
-    </div>
+    </footer>
 
-    <!-- 3 -->
-    <div class="component-card">
-      <h3>Dark</h3>
-      <div class="preview-box">
-        <footer class="dark-footer">
-          <h2>UIverse</h2>
-        </footer>
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- FOOTER 6 -->
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Social Footer</span>
+    <span class="card-tag tag-trending">Social</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer social-footer">
+
+      <h2>Connect with UIverse</h2>
+
+      <div class="social-icons-big">
+        <i class="fab fa-github"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-discord"></i>
+        <i class="fab fa-x-twitter"></i>
+
       </div>
+
+      <p>Follow us across platforms.</p>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- FOOTER 7 -->
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Split Footer</span>
+    <span class="card-tag tag-essential">Layout</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer split-footer">
+
+      <div>
+        <h2>UIverse</h2>
+        <p>Modern UI library for developers.</p>
+      </div>
+
       <div class="actions">
         <button onclick="toggleCode('f3')">Code</button>
         <button onclick="copyCode('f3',this)">Copy</button>
+        <button onclick="addToCollectionFromCard(this, 'Dark Footer')">Add to My Collection</button>
       </div>
-      <pre id="f3">&lt;footer&gt;Dark&lt;/footer&gt;</pre>
-    </div>
+      <div class="split-links">
+        <a href="#">Docs</a>
+        <a href="#">Blog</a>
+        <a href="#">Community</a>
 
-    <!-- 4 -->
-    <div class="component-card">
-      <h3>Social</h3>
-      <div class="preview-box">
-        <footer class="social-footer">
-          <span>🌐</span><span>🐦</span><span>📸</span>
-        </footer>
       </div>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- FOOTER 8 -->
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Neon Footer</span>
+    <span class="card-tag tag-popular">Neon</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer neon-footer">
+
+      <h2>Future UI Starts Here</h2>
+
+      <p>
+        Neon styled futuristic footer component.
+      </p>
+
+      <button>Get Started</button>
+
+    </footer>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+
+<!-- FOOTER 9 -->
+<div class="footer-component-card">
+
+  <div class="card-top">
+    <span class="card-label">Centered Footer</span>
+    <span class="card-tag tag-new">Clean</span>
+  </div>
+
+  <div class="footer-preview">
+
+    <footer aria-label="Site footer"  class="demo-footer centered-footer">
+
+      <h2>⬡ UIverse</h2>
+
+      <p>
+        Simple centered footer with clean typography.
+      </p>
+
+      <div class="centered-links">
+        <a href="#">About</a>
+        <a href="#">Docs</a>
+        <a href="#">Pricing</a>
+        <a href="#">Contact</a>
+      </div>
+
       <div class="actions">
         <button onclick="toggleCode('f4')">Code</button>
         <button onclick="copyCode('f4',this)">Copy</button>
+        <button onclick="addToCollectionFromCard(this, 'Social Footer')">Add to My Collection</button>
       </div>
-      <pre id="f4">&lt;footer&gt;Social&lt;/footer&gt;</pre>
-    </div>
+    </footer>
 
-    <!-- 5 -->
-    <div class="component-card">
-      <h3>Newsletter</h3>
-      <div class="preview-box">
-        <footer class="newsletter-footer">
-          <input placeholder="Email">
-          <button>Subscribe</button>
-        </footer>
+  </div>
+
+  <div class="actions">
+    <button class="action-btn view-btn">View Code</button>
+    <button class="action-btn copy-btn">Copy</button>
+  </div>
+
+</div>
+    <!-- FOOTER 1 -->
+    <div class="footer-component-card">
+
+      <div class="card-top">
+        <span class="card-label">Modern SaaS Footer</span>
+        <span class="card-tag tag-popular">Popular</span>
+
       </div>
+
+      <div class="footer-preview">
+
+        <footer aria-label="Site footer"  class="demo-footer dark-footer">
+
+          <div class="demo-footer-grid">
+
+            <div>
+              <h2>⬡ UIverse</h2>
+              <p>
+                Build modern reusable UI components faster.
+              </p>
+            </div>
+
+            <div>
+              <h4>Product</h4>
+              <a href="#">Components</a>
+              <a href="#">Templates</a>
+              <a href="#">Pricing</a>
+            </div>
+
+            <div>
+              <h4>Resources</h4>
+              <a href="#">Docs</a>
+              <a href="#">Blog</a>
+              <a href="#">Support</a>
+            </div>
+
+            <div>
+              <h4>Social</h4>
+
+              <div class="demo-socials">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-discord"></i>
+                <i class="fab fa-x-twitter"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+        </footer>
+
+      </div>
+
       <div class="actions">
+
         <button onclick="toggleCode('f5')">Code</button>
         <button onclick="copyCode('f5',this)">Copy</button>
+        <button onclick="addToCollectionFromCard(this, 'Newsletter Footer')">Add to My Collection</button>
+
+        <button class="action-btn view-btn">View Code</button>
+        <button class="action-btn copy-btn">Copy</button>
+
       </div>
-      <pre id="f5">&lt;footer&gt;Newsletter&lt;/footer&gt;</pre>
+
     </div>
 
-    <!-- 6 -->
-    <div class="component-card">
-      <h3>Multi Column</h3>
-      <div class="preview-box">
-        <footer class="multi-footer">
-          <div>Company</div>
-          <div>Docs</div>
-          <div>Support</div>
-          <div>Legal</div>
-        </footer>
+    <!-- FOOTER 2 -->
+    <div class="footer-component-card">
+
+      <div class="card-top">
+        <span class="card-label">Minimal Footer</span>
+        <span class="card-tag tag-essential">Simple</span>
       </div>
+
+      <div class="footer-preview">
+
+        <footer aria-label="Site footer"  class="demo-footer minimal-footer">
+
+          <div class="minimal-inner">
+
+            <h2>UIverse</h2>
+
+            <div class="minimal-links">
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Docs</a>
+              <a href="#">Contact</a>
+            </div>
+
+            <p>© 2026 UIverse</p>
+
+          </div>
+
+        </footer>
+
+      </div>
+
       <div class="actions">
+
         <button onclick="toggleCode('f6')">Code</button>
         <button onclick="copyCode('f6',this)">Copy</button>
+        <button onclick="addToCollectionFromCard(this, 'Multi Column Footer')">Add to My Collection</button>
+
+        <button class="action-btn view-btn">View Code</button>
+        <button class="action-btn copy-btn">Copy</button>
+
       </div>
-      <pre id="f6">&lt;footer&gt;Multi&lt;/footer&gt;</pre>
+
     </div>
 
-    <!-- 7 -->
-    <div class="component-card">
-      <h3>Sticky</h3>
-      <div class="preview-box">
-        <footer class="sticky-footer">
-          <p>Always bottom</p>
-        </footer>
+    <!-- FOOTER 3 -->
+    <div class="footer-component-card">
+
+      <div class="card-top">
+        <span class="card-label">Newsletter Footer</span>
+        <span class="card-tag tag-new">New</span>
       </div>
+
+      <div class="footer-preview">
+
+        <footer aria-label="Site footer"  class="demo-footer newsletter-footer">
+
+          <h2>Stay Updated</h2>
+
+          <p>
+            Get notified when new UI components drop.
+          </p>
+
+          <div class="newsletter-demo">
+
+            <input type="email" placeholder="Enter email">
+
+            <button>Subscribe</button>
+
+          </div>
+
+        </footer>
+
+      </div>
+
       <div class="actions">
+
         <button onclick="toggleCode('f7')">Code</button>
         <button onclick="copyCode('f7',this)">Copy</button>
+        <button onclick="addToCollectionFromCard(this, 'Sticky Footer')">Add to My Collection</button>
+
+        <button class="action-btn view-btn">View Code</button>
+        <button class="action-btn copy-btn">Copy</button>
+
       </div>
-      <pre id="f7">&lt;footer&gt;Sticky&lt;/footer&gt;</pre>
+
     </div>
 
-    <!-- 8 -->
-    <div class="component-card">
-      <h3>App Download</h3>
-      <div class="preview-box">
-        <footer class="app-footer">
-          <button>Play Store</button>
-          <button>App Store</button>
-        </footer>
+    <!-- FOOTER 4 -->
+    <div class="footer-component-card">
+
+      <div class="card-top">
+        <span class="card-label">Gradient Footer</span>
+        <span class="card-tag tag-trending">Trending</span>
       </div>
+
+      <div class="footer-preview">
+
+        <footer aria-label="Site footer"  class="demo-footer gradient-footer">
+
+          <h2>Build Faster with UIverse</h2>
+
+          <p>
+            Reusable UI components crafted for developers.
+          </p>
+
+          <button>Explore Components</button>
+
+        </footer>
+
+      </div>
+
       <div class="actions">
+
         <button onclick="toggleCode('f8')">Code</button>
         <button onclick="copyCode('f8',this)">Copy</button>
+
+        <button class="action-btn view-btn">View Code</button>
+        <button class="action-btn copy-btn">Copy</button>
+
       </div>
-      <pre id="f8">&lt;footer&gt;App&lt;/footer&gt;</pre>
+
     </div>
 
   </div>
 
-<footer class="footer">
+</main>
+<!-- ================= FOOTER ================= -->
+<footer aria-label="Site footer"  class="footer">
   <div class="footer-card">
     <div class="footer-brand">
-      <h2>Ulverse</h2>
-      <p>© 2026 Ulverse. All rights reserved.</p>
+      <h2>UIverse</h2>
+      <p>© 2026 UIverse. All rights reserved.</p>
       <div class="footer-socials">
-        <span>🌐</span>
-        <span>💼</span>
-      </div>
+
+  <a href="https://github.com" target="_blank" onclick="event.stopPropagation();">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://linkedin.com" target="_blank" onclick="event.stopPropagation();">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://twitter.com" target="_blank" onclick="event.stopPropagation();">
+    <i class="fab fa-x-twitter"></i>
+  </a>
+
+</div>
     </div>
+
     <div class="footer-col">
-      <h3>Pages</h3>
-      <a href="pricing.html">Pricing</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="alerts.html">Alerts</a>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
     </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+        <li><a href="https://github.com/Tushar-sonawane06/UI-Verse" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+        <li><a href="community/community.html">Community</a></li>
+      </ul>
+    </div>
+
     <div class="footer-col">
       <h3>Legal</h3>
-      <a href="privacypolicy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
     </div>
+
+    
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for developers worldwide.</p>
   </div>
 </footer>
+
+<!-- SCRIPT -->
 <script>
+
+/*SCEARCH FILTER*/
+function SCEARCH() {
+  const filter = document.getElementById("Scearch").value.toLowerCase();
+  const cards = document.querySelectorAll(".footer-component-card");
+  cards.forEach(card =>{
+    const name = card.querySelector(".card-label").textContent.toLowerCase();
+    if(name.includes(filter)){card.style.display = "";}
+    else{card.style.display = "none"; }
+  });
+}
+
+window.addToCollectionFromCard = function(button, name) {
+  const card = button.closest('.footer-component-card');
+  const previewBox = card ? card.querySelector('.footer-preview') : null;
+  const html = previewBox ? previewBox.innerHTML : "";
+  
+  if (window.UIVERSE_DEBUG) console.log("Button clicked:", name);
+  if (window.UIVERSE_DEBUG) console.log("Preview HTML:", html);
+
+  if (!html) {
+    showToast("Preview not found");
+    return;
+  }
+
+  addToCollection(name, html);
+};
+
+
+btn.innerHTML =
+'<i class="fa-solid fa-check"></i> Copied';
+
+setTimeout(()=>{
+
+btn.innerHTML =
+'<i class="fa-regular fa-copy"></i> Copy';
+
+},1200);
+function subscribe() {
+  const email = document.getElementById("newsletterEmail").value.trim();
+
+  if (!email) {
+    showToast("Please enter an email address");
+    return;
+  }
+
+  const valid =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if (!valid) {
+    showToast("Enter a valid email");
+    return;
+  }
+
+  showToast("Thanks for subscribing!");
+  document.getElementById("newsletterEmail").value = "";
+}
+
+document
+  .getElementById("subscribeBtn")
+  ?.addEventListener("click", subscribe);
+window.addToCollection = function(name, html) {
+  let items = JSON.parse(localStorage.getItem("collection")) || [];
+
+  let newItem = {
+    title: name.trim(),
+    content: html,
+    id: Date.now()
+  };
+
+  if (window.UIVERSE_DEBUG) console.log("Adding item:", newItem);
+
+  if (!items.some(item => item.title === newItem.title)) {
+    items.push(newItem);
+    localStorage.setItem("collection", JSON.stringify(items));
+    showToast(name + " added to collection ✓");
+    if (window.UIVERSE_DEBUG) console.log("Total items saved:", items.length);
+  } else {
+    showToast("Already in collection");
+  }
+};
+const newsletterForm =
+  document.getElementById("newsletterForm");
+
+newsletterForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const email =
+    document.getElementById("newsletterEmail").value.trim();
+
+  if (!email) return;
+
+  showToast("Subscription coming soon");
+  newsletterForm.reset();
+});
+
+window.goToCollection = function() {
+  window.location.href = "MyCollection.html";
+};
+
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.innerText = message;
+
+  toast.style.position = "fixed";
+  toast.style.bottom = "20px";
+  toast.style.right = "20px";
+  toast.style.background = "#111";
+  toast.style.color = "#fff";
+  toast.style.padding = "10px 14px";
+  toast.style.borderRadius = "8px";
+  toast.style.fontSize = "14px";
+  toast.style.zIndex = "9999";
+  toast.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+
+  document.body.appendChild(toast);
+
+  setTimeout(() => toast.remove(), 1500);
+}
+
 function toggleCode(id){
   const el = document.getElementById(id);
+  if (!el) {
+    showToast("Code preview unavailable");
+    return;
+  }
   el.style.display = el.style.display === "block" ? "none" : "block";
 }
 
 function copyCode(id,btn){
-  const text = document.getElementById(id).innerText;
+  const el = document.getElementById(id);
+  if (!el) {
+    showToast("Nothing to copy");
+    return;
+  }
+  const text = el.innerText;
   navigator.clipboard.writeText(text);
   btn.innerText = "Copied!";
   setTimeout(()=>btn.innerText="Copy",1000);
 }
-</script>
 
+function toggleSidebar() {
+  document.getElementById('sidebar')?.classList.toggle('open');
+  document.getElementById('sidebarBackdrop')?.classList.toggle('visible');
+}
+
+function subscribe() {
+  showToast("Subscription coming soon");
+}
+
+
+  const toggle = document.getElementById('darkModeToggle');
+  const icon = toggle.querySelector('i');
+
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    icon.className = 'fa-solid fa-sun';
+  }
+
+  toggle.addEventListener('click', () => {
+
+    document.body.classList.toggle('dark-mode');
+
+    const isDark = document.body.classList.contains('dark-mode');
+
+    icon.className = isDark
+      ? 'fa-solid fa-sun'
+      : 'fa-solid fa-moon';
+
+    localStorage.setItem(
+      'theme',
+      isDark ? 'dark' : 'light'
+    );
+
+  });
+
+</script>
+    <script src="dist/shared.js"></script>
 </body>
 </html>
+
+<!-- improved by script -->
