@@ -1,4 +1,4 @@
-class UVButton extends HTMLElement {
+export class UVButton extends HTMLElement {
     constructor() {
         super();
         const s = this.attachShadow({ mode: 'open' });
@@ -64,6 +64,3 @@ class UVButton extends HTMLElement {
 if (typeof customElements !== 'undefined' && !customElements.get('uv-button')) {
     customElements.define('uv-button', UVButton);
 }
-
-export { UVButton };
-//# sourceMappingURL=uv-button.js.map

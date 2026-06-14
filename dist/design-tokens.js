@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'ui-verse-theme';
 const SYSTEM_THEME = 'system';
-const THEMES = {
+export const THEMES = {
     light: {
         name: 'light',
         label: 'Light',
@@ -157,13 +157,13 @@ function safeStorage() {
         return null;
     }
 }
-function getSystemTheme() {
+export function getSystemTheme() {
     if (typeof globalThis.matchMedia === 'function' && globalThis.matchMedia('(prefers-color-scheme: dark)').matches) {
         return 'dark';
     }
     return 'light';
 }
-function getStoredTheme() {
+export function getStoredTheme() {
     const storage = safeStorage();
     if (!storage)
         return null;
@@ -174,25 +174,25 @@ function getStoredTheme() {
         return null;
     }
 }
-function getResolvedTheme(themeName) {
+export function getResolvedTheme(themeName) {
     if (!themeName || themeName === SYSTEM_THEME) {
         return getSystemTheme();
     }
     return THEMES[themeName] ? themeName : 'light';
 }
-function getTheme(themeName) {
+export function getTheme(themeName) {
     return THEMES[getResolvedTheme(themeName)] || THEMES.light;
 }
-function getThemeNames() {
+export function getThemeNames() {
     return Object.keys(THEMES);
 }
-function applyTokens(tokens) {
+export function applyTokens(tokens) {
     const root = ensureRoot();
     if (!root)
         return;
     Object.entries(tokens).forEach(([name, value]) => root.style.setProperty(name, value));
 }
-function syncCompatibilityFlags(themeName) {
+export function syncCompatibilityFlags(themeName) {
     var _a, _b;
     const root = ensureRoot();
     if (!root)
@@ -201,7 +201,7 @@ function syncCompatibilityFlags(themeName) {
     root.style.colorScheme = ((_a = THEMES[themeName]) === null || _a === void 0 ? void 0 : _a.colorScheme) || 'light';
     (_b = document.body) === null || _b === void 0 ? void 0 : _b.classList.toggle('dark-mode', themeName !== 'light');
 }
-function persistTheme(themeName) {
+export function persistTheme(themeName) {
     const storage = safeStorage();
     if (!storage)
         return;
@@ -213,7 +213,7 @@ function persistTheme(themeName) {
         // ignore storage failures
     }
 }
-function dispatchThemeChange(themeName, resolvedTheme) {
+export function dispatchThemeChange(themeName, resolvedTheme) {
     if (!globalThis.window || typeof globalThis.window.dispatchEvent !== 'function')
         return;
     globalThis.window.dispatchEvent(new CustomEvent('design-tokens:themechange', {
@@ -224,7 +224,7 @@ function dispatchThemeChange(themeName, resolvedTheme) {
         }
     }));
 }
-function applyTheme(themeName, options = {}) {
+export function applyTheme(themeName, options = {}) {
     const resolvedTheme = getResolvedTheme(themeName);
     const theme = getTheme(themeName);
     applyTokens(theme.tokens);
@@ -235,17 +235,17 @@ function applyTheme(themeName, options = {}) {
     dispatchThemeChange(themeName, resolvedTheme);
     return { theme: themeName, resolvedTheme, tokens: theme.tokens };
 }
-function setTheme(themeName, options = {}) {
+export function setTheme(themeName, options = {}) {
     return applyTheme(themeName, options);
 }
-function init(options = {}) {
+export function init(options = {}) {
     const storedTheme = getStoredTheme();
     const theme = options.theme || storedTheme || SYSTEM_THEME;
     const applied = applyTheme(theme, { persist: false });
     persistTheme(theme);
     return applied;
 }
-function registerTheme(name, config) {
+export function registerTheme(name, config) {
     if (!name || !config || !config.tokens) {
         throw new Error('Theme registration requires a name and tokens');
     }
@@ -257,10 +257,10 @@ function registerTheme(name, config) {
     };
     return THEMES[name];
 }
-function exportTheme(themeName) {
+export function exportTheme(themeName) {
     return Object.entries(getTheme(themeName).tokens).map(([name, value]) => `${name}: ${value};`).join('\n');
 }
-const DesignTokens = {
+export const DesignTokens = {
     STORAGE_KEY,
     SYSTEM_THEME,
     THEMES,
@@ -278,6 +278,3 @@ const DesignTokens = {
 if (typeof globalThis !== 'undefined') {
     globalThis.DesignTokens = DesignTokens;
 }
-
-export { DesignTokens, THEMES, applyTheme, applyTokens, dispatchThemeChange, exportTheme, getResolvedTheme, getStoredTheme, getSystemTheme, getTheme, getThemeNames, init, persistTheme, registerTheme, setTheme, syncCompatibilityFlags };
-//# sourceMappingURL=design-tokens.js.map

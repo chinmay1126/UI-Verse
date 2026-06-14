@@ -1,4 +1,4 @@
-class UVModal extends HTMLElement {
+export class UVModal extends HTMLElement {
     constructor() {
         super();
         this._opened = false;
@@ -116,6 +116,3 @@ class UVModal extends HTMLElement {
 if (typeof customElements !== "undefined" && !customElements.get("uv-modal")) {
     customElements.define("uv-modal", UVModal);
 }
-
-export { UVModal };
-//# sourceMappingURL=uv-modal.js.map
