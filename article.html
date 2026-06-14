@@ -1,1239 +1,871 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-tQCXDyse3gZU/phv46nobbSq1C8n7atE2DkgSIurQ+Q='; script-src-attr 'unsafe-hashes' 'sha256-tQCXDyse3gZU/phv46nobbSq1C8n7atE2DkgSIurQ+Q='; style-src 'self' https: 'unsafe-hashes' 'sha256-QhEuqBb5iOPiihZqRmNCiy69kXGiEYQe6VCd0xlIwmc='; style-src-attr 'unsafe-hashes' 'sha256-QhEuqBb5iOPiihZqRmNCiy69kXGiEYQe6VCd0xlIwmc='">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>UIverse - Articles & Tutorials</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<link rel="stylesheet" href="article.css">
-
-</head>
-
-<body>
-
-<!-- ================= NAVBAR ================= -->
-
-<header class="navbar">
-
-<div class="logo">
-⬡ UIverse
-</div>
-
-<nav class="nav-links">
-
-<a href="index.html">Home</a>
-
-<section class="breaking-news">
-
-  <div class="breaking-badge">
-    <i class="fa-solid fa-bolt"></i>
-    Breaking News
-  </div>
-
-  <div class="breaking-content">
-    <h2>AI Generated Interfaces Are Reshaping Frontend Development</h2>
-
-    <p>
-      New design tools are enabling developers to generate complete
-      UI systems in minutes while maintaining accessibility standards.
-    </p>
-
-    <a href="#" class="primary-btn">
-      Read Coverage
-    </a>
-  </div>
-
-</section>
-
-<section class="featured-slider">
-
-  <div class="slide-card">
-    <span class="slide-tag">Featured</span>
-
-    <h3>Design Systems in 2026</h3>
-
-    <p>
-      Discover how teams maintain consistency across products.
-    </p>
-  </div>
-
-  <div class="slide-card">
-    <span class="slide-tag">Trending</span>
-
-    <h3>Next.js Performance Guide</h3>
-
-    <p>
-      Improve Core Web Vitals using modern optimization techniques.
-    </p>
-  </div>
-
-  <div class="slide-card">
-    <span class="slide-tag">New</span>
-
-    <h3>AI Driven UX Research</h3>
-
-    <p>
-      Learn how AI is transforming usability testing.
-    </p>
-  </div>
-
-</section>
-<section class="article-comparison">
-
-  <article class="compare-card">
-
-    <span>React</span>
-
-    <h3>Context API vs Redux</h3>
-
-    <p>
-      Compare state management strategies for large applications.
-    </p>
-
-  </article>
-
-  <article class="compare-card">
-
-    <span>Vue</span>
-
-    <h3>Pinia vs Vuex</h3>
-
-    <p>
-      Learn which state library best fits your architecture.
-    </p>
-
-  </article>
-
-</section>
-
-<section class="reading-queue">
-
-  <div class="section-header">
-    <span class="section-tag">📖 Saved Reads</span>
-    <h2>Reading Queue</h2>
-  </div>
-
-  <div class="queue-list">
-
-    <div class="queue-item">
-      <h4>Advanced CSS Architecture</h4>
-      <span>12 min read</span>
-    </div>
-
-    <div class="queue-item">
-      <h4>Building Accessible Dashboards</h4>
-      <span>8 min read</span>
-    </div>
-
-    <div class="queue-item">
-      <h4>Design Tokens Explained</h4>
-      <span>10 min read</span>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="article-quote-card">
-
-  <blockquote>
-    "Great design is invisible. Users should notice the experience,
-    not the interface."
-  </blockquote>
-
-  <span>— Product Design Weekly</span>
-
-</section>
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=5" alt="" />
-    <span class="category">React</span>
-<section class="reader-dashboard">
-
-  <div class="reader-stat">
-    <h3>87%</h3>
-    <span>Articles Completed</span>
-  </div>
-
-  <div class="reader-stat">
-    <h3>156</h3>
-    <span>Total Reads</span>
-  </div>
-
-  <div class="reader-stat">
-    <h3>24h</h3>
-    <span>Reading Time</span>
-  </div>
-
-  <div class="reader-stat">
-    <h3>18</h3>
-    <span>Bookmarks</span>
-  </div>
-
-</section>
-
-<section class="editor-collection">
-
-  <div class="section-header">
-    <span class="section-tag">🏆 Curated</span>
-    <h2>Editor's Collection</h2>
-  </div>
-
-  <div class="collection-grid">
-
-    <article class="collection-card">
-      <h3>Frontend Fundamentals</h3>
-      <span>14 Articles</span>
-    </article>
-
-    <article class="collection-card">
-      <h3>Animation Mastery</h3>
-      <span>10 Articles</span>
-    </article>
-
-    <article class="collection-card">
-      <h3>UI Engineering</h3>
-      <span>18 Articles</span>
-    </article>
-
-  </div>
-
-</section>
-
-<section class="premium-article">
-
-  <div class="premium-icon">
-    <i class="fa-solid fa-crown"></i>
-  </div>
-
-  <h2>
-    Enterprise Design Systems Handbook
-  </h2>
-
-  <p>
-    Exclusive premium guide covering scalable design systems,
-    governance, tokens, and component architecture.
-  </p>
-
-  <button class="primary-btn">
-    Unlock Premium
-  </button>
-
-</section>
-
-<section class="author-leaderboard">
-
-  <div class="section-header">
-    <span class="section-tag">🏅 Authors</span>
-    <h2>Top Contributors</h2>
-  </div>
-
-  <div class="leaderboard-list">
-
-    <div class="leader-item">
-      <span>#1</span>
-      <h4>Alex Morgan</h4>
-      <small>48 Articles</small>
-    </div>
-
-    <div class="leader-item">
-      <span>#2</span>
-      <h4>Sophia Lee</h4>
-      <small>42 Articles</small>
-    </div>
-
-    <div class="leader-item">
-      <span>#3</span>
-      <h4>Daniel Brooks</h4>
-      <small>39 Articles</small>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="article-faq">
-
-  <div class="section-header">
-    <span class="section-tag">❓ FAQ</span>
-    <h2>Reader Questions</h2>
-  </div>
-
-  <details>
-    <summary>What is a design system?</summary>
-    <p>
-      A collection of reusable components, standards,
-      and guidelines used across products.
-    </p>
-  </details>
-
-  <details>
-    <summary>Why is accessibility important?</summary>
-    <p>
-      Accessibility ensures products are usable by everyone,
-      including people with disabilities.
-    </p>
-  </details>
-
-</section>
-
-<section class="reading-challenge">
-
-  <div class="challenge-badge">
-    🔥 Monthly Challenge
-  </div>
-
-  <h2>Read 20 Articles This Month</h2>
-
-  <div class="challenge-progress">
-    <div class="progress-fill" style="width:65%"></div>
-  </div>
-
-  <span>13 / 20 Completed</span>
-
-</section>
-
-<section class="newsletter-showcase">
-
-  <div class="showcase-left">
-
-    <span class="section-tag">
-      ✉️ Weekly Digest
-    </span>
-
-    <h2>Top Articles Delivered Every Friday</h2>
-
-    <p>
-      Receive curated UI design, frontend development,
-      accessibility, and animation tutorials.
-    </p>
-
-  </div>
-
-  <div class="showcase-right">
-
-    <div class="digest-card">
-      <h4>Issue #126</h4>
-      <span>7 Featured Articles</span>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="case-study">
-<a href="components.html">Components</a>
-
-<a href="article.html">Articles</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
-
-<button class="theme-toggle">
-
-<i class="fa-solid fa-moon"></i>
-
-</button>
-
-</header>
-
-<!-- ================= SIDEBAR ================= -->
-
-<aside class="sidebar">
-
-<div class="sidebar-brand">
-
-<span class="brand-icon">⬡</span>
-
-<span class="brand-text">UIverse</span>
-
-</div>
-
-<nav class="sidebar-nav">
-
-<ul>
-
-<li class="active">
-<a href="#">
-<i class="fa-solid fa-house"></i>
-<span>Home</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-hand-pointer"></i>
-<span>Buttons</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-user"></i>
-<span>Profiles</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-table-cells-large"></i>
-<span>Cards</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-keyboard"></i>
-<span>Inputs</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-newspaper"></i>
-<span>Articles</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-chart-pie"></i>
-<span>Charts</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-layer-group"></i>
-<span>Widgets</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-book"></i>
-<span>Documentation</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-circle-question"></i>
-<span>FAQ</span>
-</a>
-</li>
-
-<li>
-<a href="#">
-<i class="fa-solid fa-envelope"></i>
-<span>Contact</span>
-</a>
-</li>
-
-</ul>
-
-</nav>
-
-</aside>
-
-<!-- ================= MAIN ================= -->
-
-<main class="main-content">
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-<div class="hero-badge">
-
-<i class="fa-solid fa-sparkles"></i>
-
-UI Articles & Tutorials
-
-</div>
-
-<h1>
-
-Learn Modern
-<span>UI Design</span>
-
-<br>
-
-& Frontend Development
-
-</h1>
-
-<p>
-
-Explore beautifully crafted tutorials,
-guides and frontend inspiration
-built using HTML, CSS and JavaScript.
-
-</p>
-
-<div class="hero-actions">
-
-<a href="#" class="primary-btn">
-Explore Articles
-</a>
-
-<a href="#" class="secondary-btn">
-Start Learning
-</a>
-
-</div>
-
-</section>
-
-<!-- ================= SEARCH ================= -->
-
-<section class="search-section">
-
-<form class="search-form">
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
-<input
-type="text"
-placeholder="Search articles..."
-id="articleSearch">
-
-</form>
-
-</section>
-
-<!-- ================= FEATURED ARTICLE ================= -->
-
-<section class="featured-article">
-
-<div class="featured-image">
-
-<img
-src="https://picsum.photos/900/600?random=1"
-alt="Featured Article">
-
-</div>
-
-<div class="featured-content">
-
-<span class="featured-tag">
-
-Featured Story
-
-</span>
-
-<h2>
-
-The Future Of Frontend
-Development In 2026
-
-</h2>
-
-<p>
-
-Discover how AI powered tools,
-advanced CSS features and modern
-frameworks are transforming the
-way developers build applications.
-
-</p>
-
-<div class="featured-meta">
-
-<div class="author">
-
-<div class="avatar">
-JD
-</div>
-
-<div>
-
-<h4>John Doe</h4>
-
-<span>Senior Engineer</span>
-
-</div>
-
-</div>
-
-<a href="#" class="primary-btn">
-
-Read Article
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= ARTICLES ================= -->
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=6" alt="" />
-    <span class="category">UI/UX</span>
-  </div>
-<section class="articles-section">
-
-<div class="section-header">
-
-<span class="section-tag">
-
-Latest Articles
-
-</span>
-
-<h2>
-
-Frontend Insights
-
-</h2>
-
-<p>
-
-Fresh tutorials and guides from
-the UIverse team.
-
-</p>
-
-</div>
-
-<div class="articles-grid">
-  <!-- ARTICLE 1 -->
-
-<article class="article-card">
-
-<div class="article-image">
-
-<img
-src="https://picsum.photos/500/300?random=11"
-alt="Article">
-
-<span class="category">
-
-React
-
-</span>
-
-</div>
-
-<div class="article-content">
-
-<div class="article-meta">
-
-<span>
-<i class="fa-regular fa-calendar"></i>
-July 2026
-</span>
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=8" alt="" />
-    <span class="category">Performance</span>
-  </div>
-<span>
-<i class="fa-regular fa-clock"></i>
-8 min read
-</span>
-
-</div>
-
-<h3>
-
-Building Reusable
-React Components
-
-</h3>
-
-<p>
-
-Learn modern techniques for
-creating scalable and reusable
-component systems.
-
-</p>
-
-<a href="#" class="read-more">
-
-Read Article
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-</article>
-
-<!-- ARTICLE 2 -->
-
-<article class="article-card">
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=9" alt="" />
-    <span class="category">Animation</span>
-  </div>
-<div class="article-image">
-
-<img
-src="https://picsum.photos/500/300?random=12"
-alt="Article">
-
-<span class="category">
-
-CSS
-
-</span>
-
-</div>
-
-<div class="article-content">
-
-<div class="article-meta">
-
-<span>
-<i class="fa-regular fa-calendar"></i>
-June 2026
-</span>
-
-<span>
-<i class="fa-regular fa-clock"></i>
-12 min read
-</span>
-
-</div>
-
-<h3>
-
-Advanced CSS Grid
-Layouts
-
-</h3>
-
-<p>
-
-Create complex responsive layouts
-with modern CSS Grid techniques.
-
-</p>
-
-<a href="#" class="read-more">
-
-Read Article
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-</article>
-
-<!-- ARTICLE 3 -->
-
-<article class="article-card">
-
-  <div class="article-image">
-    <img src="https://picsum.photos/500/300?random=11" alt="" />
-    <span class="category">Design Systems</span>
-  </div>
-<div class="article-image">
-
-<img
-src="https://picsum.photos/500/300?random=13"
-alt="Article">
-
-<span class="category">
-
-JavaScript
-
-</span>
-
-</div>
-
-<div class="article-content">
-
-<div class="article-meta">
-
-<span>
-<i class="fa-regular fa-calendar"></i>
-May 2026
-</span>
-
-<span>
-<i class="fa-regular fa-clock"></i>
-10 min read
-</span>
-
-</div>
-
-<h3>
-
-Modern JavaScript
-Patterns
-
-</h3>
-
-<p>
-
-Master modern JavaScript concepts,
-ES Modules and architecture.
-
-</p>
-
-<a href="#" class="read-more">
-
-Read Article
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-</article>
-
-<!-- ARTICLE 4 -->
-
-<article class="article-card">
-
-<div class="article-image">
-
-<img
-src="https://picsum.photos/500/300?random=14"
-alt="Article">
-
-<span class="category">
-
-UI Design
-
-</span>
-
-</div>
-
-<div class="article-content">
-
-<div class="article-meta">
-
-<span>
-<i class="fa-regular fa-calendar"></i>
-April 2026
-</span>
-
-<span>
-<i class="fa-regular fa-clock"></i>
-7 min read
-</span>
-
-</div>
-
-<h3>
-
-Design Better
-User Interfaces
-
-</h3>
-
-<p>
-
-Improve usability and visual
-hierarchy with modern design
-principles.
-
-</p>
-
-<a href="#" class="read-more">
-
-Read Article
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</a>
-
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-<!-- ================= CATEGORY SECTION ================= -->
-
-<section class="categories">
-
-<div class="section-header">
-
-<span class="section-tag">
-Categories
-</span>
-
-<h2>
-Browse Topics
-</h2>
-
-</div>
-
-<div class="category-grid">
-
-<div class="category-box">
-
-<i class="fa-solid fa-code"></i>
-
-<h3>Frontend</h3>
-
-<p>
-HTML, CSS and JavaScript
-guides.
-</p>
-
-</div>
-
-<div class="category-box">
-
-<i class="fa-solid fa-palette"></i>
-
-<h3>UI Design</h3>
-
-<p>
-Modern design systems
-and interfaces.
-</p>
-
-</div>
-
-<div class="category-box">
-
-<i class="fa-solid fa-brain"></i>
-
-<h3>AI</h3>
-
-<p>
-AI tools for developers
-and designers.
-</p>
-
-</div>
-
-<div class="category-box">
-
-<i class="fa-solid fa-chart-line"></i>
-
-<h3>Growth</h3>
-
-<p>
-Productivity and workflow
-strategies.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= NEWSLETTER ================= -->
-
-<section class="newsletter">
-
-<div class="newsletter-content">
-
-<h2>
-
-Join The Newsletter
-
-</h2>
-
-<p>
-
-Get weekly UI design and
-frontend development articles
-directly in your inbox.
-
-</p>
-
-<form class="newsletter-form">
-
-<input
-type="email"
-placeholder="Enter your email">
-
-<button>
-
-Subscribe
-
-</button>
-
-</form>
-
-</div>
-
-</section>
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-<div class="footer-container">
-
-<!-- BRAND -->
-
-<div class="footer-col">
-
-<div class="footer-logo">
-
-⬡ UIverse
-
-</div>
-
-<p>
-
-Discover premium UI components,
-frontend tutorials and design
-resources built for modern web
-developers.
-
-</p>
-
-<div class="socials">
-
-<a href="#">
-<i class="fab fa-github"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-x-twitter"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-discord"></i>
-</a>
-
-</div>
-
-</div>
-
-<!-- COMPONENTS -->
-
-<div class="footer-col">
-
-<h3>
-
-Components
-
-</h3>
-
-<ul>
-
-<li>
-<a href="#">Buttons</a>
-</li>
-
-<li>
-<a href="#">Cards</a>
-</li>
-
-<li>
-<a href="#">Inputs</a>
-</li>
-
-<li>
-<a href="#">Forms</a>
-</li>
-
-<li>
-<a href="#">Navbar</a>
-</li>
-
-</ul>
-
-</div>
-
-<!-- RESOURCES -->
-
-<div class="footer-col">
-
-<h3>
-
-Resources
-
-</h3>
-
-<ul>
-
-<li>
-<a href="#">Articles</a>
-</li>
-
-<li>
-<a href="#">Blog</a>
-</li>
-
-<li>
-<a href="#">Documentation</a>
-</li>
-
-<li>
-<a href="#">FAQ</a>
-</li>
-
-<li>
-<a href="#">Support</a>
-</li>
-
-</ul>
-
-</div>
-
-<!-- COMPANY -->
-
-<div class="footer-col">
-
-<h3>
-
-Company
-
-</h3>
-
-<ul>
-
-<li>
-<a href="#">About Us</a>
-</li>
-
-<li>
-<a href="#">Careers</a>
-</li>
-
-<li>
-<a href="#">Contact</a>
-</li>
-
-<li>
-<a href="#">Privacy Policy</a>
-</li>
-
-<li>
-<a href="#">Terms</a>
-</li>
-
-</ul>
-
-</div>
-
-<!-- NEWSLETTER -->
-
-<div class="footer-col">
-
-<h3>
-
-Stay Updated
-
-</h3>
-
-<p>
-
-Subscribe for product updates,
-design inspiration and tutorials.
-
-</p>
-
-<form class="newsletter-form">
-
-<input
-type="email"
-placeholder="Email Address">
-
-<button>
-
-Join
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-<!-- FOOTER BOTTOM -->
-
-<div class="footer-bottom">
-
-<p>
-
-© 2026 UIverse.
-All Rights Reserved.
-
-</p>
-
-</div>
-
-</footer>
-
-</main>
-
-<!-- ================= JS ================= -->
-
-<script>
-
-const themeToggle =
-document.querySelector(".theme-toggle");
-
-themeToggle.addEventListener("click",()=>{
-
-document.body.classList.toggle(
-"dark-mode"
-);
-
-});
-
-const searchInput =
-document.getElementById(
-"articleSearch"
-);
-
-const articles =
-document.querySelectorAll(
-".article-card"
-);
-
-searchInput.addEventListener(
-"keyup",
-()=>{
-
-const value =
-searchInput.value.toLowerCase();
-
-articles.forEach(article=>{
-
-article.style.display =
-article.innerText
-.toLowerCase()
-.includes(value)
-? "block"
-: "none";
-
-});
-
-});
-
-</script>
-
-</body>
-
-</html>
+/* ===================================
+   ROOT VARIABLES
+=================================== */
+
+:root {
+  --accent: #eb6835;
+  --accent-dark: #d45524;
+  --secondary: #6c5ce7;
+  --bg: #f7f7f8;
+  --card: #ffffff;
+  --text: #111827;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --sidebar-width: 260px;
+  --navbar-height: 70px;
+  --radius: 24px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --transition: 0.3s ease;
+}
+
+/* ===================================
+   RESET
+=================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===================================
+   DARK MODE
+=================================== */
+
+body.dark-mode {
+  --bg: #0f1117;
+  --card: #161b22;
+  --text: #ffffff;
+  --text-light: #9ca3af;
+  --border: #272d37;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+
+.dark-mode .navbar {
+  background: rgba(15, 17, 23, 0.9);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ===================================
+   SIDEBAR
+=================================== */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: linear-gradient(180deg, #141726, #10131f);
+  overflow-y: auto;
+  z-index: 1200;
+}
+
+.sidebar-brand {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.brand-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+}
+
+.sidebar-nav {
+  padding: 15px;
+}
+
+.sidebar-nav li {
+  margin-bottom: 6px;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  color: #9ca3af;
+  transition: var(--transition);
+}
+
+.sidebar-nav a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.sidebar-nav .active a {
+  background: rgba(235, 104, 53, 0.15);
+  color: var(--accent);
+}
+
+/* ===================================
+   MAIN CONTENT
+=================================== */
+
+.main-content {
+  margin-left: var(--sidebar-width);
+  padding-top: var(--navbar-height);
+}
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero {
+  padding: 100px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(235, 104, 53, 0.15), transparent 70%);
+  top: -200px;
+  right: -150px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(235, 104, 53, 0.1);
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, var(--accent), #ffb086);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.hero-actions {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.primary-btn {
+  background: var(--accent);
+  padding: 15px 28px;
+  border-radius: 999px;
+  color: white;
+  font-weight: 700;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+}
+
+.secondary-btn {
+  padding: 15px 28px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* ===================================
+   FEATURED ARTICLE
+=================================== */
+
+.featured-article {
+  width: min(1200px, 92%);
+  margin: 70px auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: var(--card);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.featured-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-content {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-tag {
+  display: inline-block;
+  width: max-content;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(235, 104, 53, 0.1);
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.featured-content h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.featured-content p {
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.featured-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+}
+
+/* ===================================
+   ARTICLES SECTION
+=================================== */
+
+.articles-section {
+  padding: 100px 40px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(235, 104, 53, 0.1);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.section-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* ===================================
+   ARTICLE GRID
+=================================== */
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* ===================================
+   ARTICLE CARD
+=================================== */
+
+.article-card {
+  background: var(--card);
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: 0.4s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.article-image {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+
+.article-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.article-card:hover .article-image img {
+  transform: scale(1.08);
+}
+
+.category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.article-content {
+  padding: 28px;
+}
+
+.article-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.article-content h3 {
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  font-family: 'Syne', sans-serif;
+}
+
+.article-content p {
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.read-more:hover {
+  gap: 14px;
+}
+
+/* ===================================
+   CATEGORIES SECTION
+=================================== */
+
+.categories {
+  padding: 100px 40px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.category-box {
+  background: var(--card);
+  padding: 35px;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: 0.4s ease;
+}
+
+.category-box:hover {
+  transform: translateY(-8px);
+}
+
+.category-box i {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.category-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  font-family: 'Syne', sans-serif;
+}
+
+.category-box p {
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* ===================================
+   NEWSLETTER
+=================================== */
+
+.newsletter {
+  padding: 100px 40px;
+}
+
+.newsletter-content {
+  max-width: 1100px;
+  margin: auto;
+  padding: 70px;
+  border-radius: 35px;
+  background: linear-gradient(135deg, var(--accent), #ff8a55, var(--secondary));
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.newsletter-content h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 20px;
+}
+
+.newsletter-content p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 16px 20px;
+  border: none;
+  border-radius: 16px;
+  outline: none;
+  font-size: 15px;
+  min-width: 250px;
+}
+
+.newsletter-form button {
+  padding: 16px 28px;
+  border: none;
+  border-radius: 16px;
+  background: #111827;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-3px);
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+.footer {
+  margin-top: 80px;
+  background: #0f1117;
+  color: #b0b8c5;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+  gap: 40px;
+  padding: 70px 50px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.footer-col h3 {
+  color: white;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-col p {
+  line-height: 1.8;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  color: #9ca3af;
+  transition: 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #1c2330;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.socials a:hover {
+  background: var(--accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media (max-width: 1200px) {
+  .featured-article {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 0;
+    --navbar-height: 60px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .navbar {
+    left: 0;
+    padding: 0 20px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .articles-section,
+  .categories,
+  .newsletter {
+    padding: 70px 20px;
+  }
+
+  .newsletter-content {
+    padding: 40px 25px;
+  }
+
+  .featured-article {
+    margin: 40px 20px;
+  }
+
+  .featured-content {
+    padding: 30px;
+  }
+
+  .featured-content h2 {
+    font-size: 2rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 50px 25px;
+    gap: 30px;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 16px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .articles-section,
+  .categories,
+  .newsletter {
+    padding: 50px 16px;
+  }
+
+  .newsletter-content {
+    padding: 30px 20px;
+  }
+
+  .featured-article {
+    margin: 30px 16px;
+    border-radius: 20px;
+  }
+
+  .featured-content {
+    padding: 20px;
+  }
+
+  .featured-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .featured-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .article-content {
+    padding: 16px;
+  }
+
+  .article-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .article-meta {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    margin-top: 50px;
+  }
+
+  .footer-container {
+    padding: 40px 16px;
+  }
+
+  .footer-logo {
+    font-size: 1.3rem;
+  }
+
+  .footer-col h3 {
+    font-size: 0.9rem;
+  }
+
+  .socials {
+    gap: 8px;
+  }
+
+  .socials a {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+}
