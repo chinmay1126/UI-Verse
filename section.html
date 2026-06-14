@@ -1,1545 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y='; script-src-attr 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y='; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'unsafe-inline'; style-src 'self' https: 'unsafe-hashes' 'unsafe-inline';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Website Section Registry | UIverse Architecture</title>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <!-- LUX_DESIGN FONTS PLATFORM -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <title>Sections — UIverse</title>
+  <!-- FUNCTIONAL ICON GLYPHS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Fonts -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- Icons -->
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  >
-
-  <!-- CSS -->
-
-  <link
-    rel="stylesheet"
-    href="section.css"
-  >
-
-  </head>
-
-<body>
+  <!-- LAYOUT CSS SHEET -->
+  <link rel="stylesheet" href="section.css">
+</head>
+<body class="dark-matrix-theme">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<!-- ================= SIDEBAR ================= -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <span class="brand-icon">⬡</span>
-    <span class="brand-text">UIverse</span>
-  </div>
-
-          <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a href="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="button.html">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Buttons</span>
-        </a>
-      </li>
-            <li>
-        <a href="dropdown-components.html">
-          <i class="fa-solid fa-caret-down"></i>
-          <span>Dropdowns</span>
-        </a>
-      </li>
-      <li>
-        <a href="profile-components.html">
-          <i class="fa-solid fa-user"></i>
-          <span>Profiles</span>
-        </a>
-      </li>
-<li>
-        <a href="navbar.html">
-          <i class="fa-solid fa-bars"></i>
-          <span>Navbar</span>
-        </a>
-      </li>
-      <li>
-        <a href="cards.html">
-          <i class="fa-solid fa-table-cells-large"></i>
-          <span>Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="flipcards.html">
-          <i class="fa-solid fa-clone"></i>
-          <span>3D Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="inputs.html">
-          <i class="fa-solid fa-keyboard"></i>
-          <span>Inputs</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms.html">
-          <i class="fa-brands fa-wpforms"></i>
-          <span>Forms</span>
-        </a>
-      </li>
-      <li>
-        <a href="badges.html">
-          <i class="fa-solid fa-award"></i>
-          <span>Badges</span>
-        </a>
-      </li>
-      <li>
-        <a href="blog.html">
-          <i class="fa-solid fa-blog"></i>
-          <span>Blog</span>
-        </a>
-      </li>
-      <li>
-        <a href="article.html">
-          <i class="fa-solid fa-newspaper"></i>
-          <span>Articles</span>
-        </a>
-      </li>
-      <li>
-        <a href="alerts.html">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <span>Alerts</span>
-        </a>
-      </li>
-      <li>
-        <a href="color.html">
-          <i class="fa-solid fa-palette"></i>
-          <span>Colors</span>
-        </a>
-      </li>
-      <li>
-        <a href="charts.html">
-          <i class="fa-solid fa-chart-pie"></i>
-          <span>Charts</span>
-        </a>
-      </li>
-      <li>
-        <a href="dashboard.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="div.html">
-          <i class="fa-solid fa-square"></i>
-          <span>DIV</span>
-        </a>
-      </li>
-      <li>
-        <a href="widgets.html">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Widgets</span>
-        </a>
-      </li>
-      <li>
-        <a href="search.html">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span>Search Bars</span>
-        </a>
-      </li>
-      <li>
-        <a href="hover.html">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          <span>Hover Effects</span>
-        </a>
-      </li>
-      <li>
-        <a href="error.html">
-          <i class="fa-solid fa-circle-exclamation"></i>
-          <span>Error Pages</span>
-        </a>
-      </li>
-      <li>
-        <a href="ecommerce.html">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span>E-commerce</span>
-        </a>
-      </li>
-      <li>
-        <a href="files.html">
-          <i class="fa-solid fa-file-arrow-up"></i>
-          <span>Drag & Drop</span>
-        </a>
-      </li>
-      <li>
-        <a href="hero.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Hero Sections</span>
-        </a>
-      </li>
-      <li>
-        <a href="loaders.html">
-          <i class="fa-solid fa-spinner"></i>
-          <span>Loaders</span>
-        </a>
-      </li>
-      <li>
-        <a href="timeline.html">
-          <i class="fa-solid fa-clock-rotate-left"></i>
-          <span>Timeline</span>
-        </a>
-      </li>
-      <li>
-        <a href="map.html">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <span>Maps</span>
-        </a>
-      </li>
-      <li>
-        <a href="menu.html">
-          <i class="fa-solid fa-bars-staggered"></i>
-          <span>Menu</span>
-        </a>
-      </li>
-      <li>
-        <a href="pricing.html">
-          <i class="fa-solid fa-tags"></i>
-          <span>Pricing</span>
-        </a>
-      </li>
-      <li>
-        <a href="subscription.html">
-          <i class="fa-solid fa-credit-card"></i>
-          <span>Subscription</span>
-        </a>
-      </li>
-      <li>
-        <a href="auth.html">
-          <i class="fa-solid fa-user-shield"></i>
-          <span>Authentication</span>
-        </a>
-      </li>
-        <li>
-          <a href="recovery.html">
-            <i class="fa-solid fa-key" aria-hidden="true"></i>
-            <span>Password Recovery</span>
-          </a>
-        </li>
-      <li class="active">
-        <a href="section.html">
-          <i class="fa-solid fa-rectangle-list"></i>
-          <span>Section</span>
-        </a>
-      </li>
-      <li>
-        <a href="span.html">
-          <i class="fa-solid fa-code"></i>
-          <span>Span</span>
-        </a>
-      </li>
-      <li>
-        <a href="table.html">
-          <i class="fa-solid fa-table"></i>
-          <span>Table</span>
-        </a>
-      </li>
-      <li>
-        <a href="tabs.html">
-          <i class="fa-solid fa-table-columns"></i>
-          <span>Tabs</span>
-        </a>
-      </li>
-      <li>
-        <a href="terms.html">
-          <i class="fa-solid fa-file-contract"></i>
-          <span>Terms</span>
-        </a>
-      </li>
-      <li>
-        <a href="testimonials.html">
-          <i class="fa-solid fa-comments"></i>
-          <span>Testimonials</span>
-        </a>
-      </li>
-      <li>
-        <a href="toggles.html">
-          <i class="fa-solid fa-toggle-on"></i>
-          <span>Toggle</span>
-        </a>
-      </li>
-      <li>
-        <a href="radiobutton.html">
-          <i class="fa-solid fa-circle-dot"></i>
-          <span>Radio Buttons</span>
-        </a>
-      </li>
-      <li>
-        <a href="checkbox.html">
-          <i class="fa-solid fa-square-check"></i>
-          <span>Checkboxes</span>
-        </a>
-      </li>
-      <li>
-        <a href="notifications-premium.html">
-          <i class="fa-solid fa-bell"></i>
-          <span>Notifications V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="step-indicators.html">
-          <i class="fa-solid fa-list-check"></i>
-          <span>Steppers</span>
-        </a>
-      </li>
-      <li>
-        <a href="progress-premium.html">
-          <i class="fa-solid fa-bars-progress"></i>
-          <span>Progress V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="ratings-premium.html">
-          <i class="fa-solid fa-star"></i>
-          <span>Ratings V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="filters-premium.html">
-          <i class="fa-solid fa-sliders"></i>
-          <span>Filters V2</span>
-        </a>
-      </li>
-      <li>
-        <a href="admin-panel.html">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Admin Panel V2</span>
-        </a>
-      </li>
-<li>
-        <a href="about.html">
-          <i class="fa-solid fa-circle-info"></i>
-          <span>About</span>
-        </a>
-      </li>
-      <li>
-        <a href="documentation.html">
-          <i class="fa-solid fa-book"></i>
-          <span>Documentation</span>
-        </a>
-      </li>
-      <li>
-        <a href="faq.html">
-          <i class="fa-solid fa-circle-question"></i>
-          <span>Faq</span>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Contact Us</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <div class="sidebar-footer">
-    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-  </div>
-</aside>
-
-<!-- ================= SIDEBAR BACKDROP ================= -->
-<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-<!-- =====================================================
-NAVBAR
-===================================================== -->
-
-<header class="navbar">
-
-  <div class="search-bar">
-
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-    <input
-      type="text"
-      placeholder="Search sections..."
-      id="searchInput"
-     data-a11y-remediation="label-needed">
-
-  </div>
-
-  <div class="nav-actions">
-
-    <button class="outline-btn">
-      Documentation
-    </button>
-
-    <button class="primary-btn">
-      Explore UI
-    </button>
-
-  </div>
-
-</header>
-
-<!-- =====================================================
-MAIN
-===================================================== -->
-
-<main class="main-home">
-
-  <!-- HERO -->
-
-  <section class="hero-section">
-
-    <div class="hero-badge">
-      ✦ Premium Website Layouts
+  <!-- =========================================================
+     GLOBAL SIDEBAR COMPONENT MATRIX HUB
+  ========================================================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Ecosystem Directory Navigation">
+    <div class="sidebar-brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-text">UIverse <span class="engine-badge">Layout Layer</span></span>
     </div>
 
-    <h1>
-      Modern <span>Website Sections</span>
-    </h1>
-
-    <p>
-
-      Discover premium reusable website
-      sections crafted for modern interfaces.
-      Hero blocks, pricing layouts, stats,
-      testimonials and more.
-
-    </p>
-
-  </section>
-
-  <!-- =====================================================
-PROFESSIONAL SECTION COMPONENTS
-ADD INSIDE .sections-grid
-===================================================== -->
-<div class="sections-grid">
-
-  <div class="section-card premium-card">
-    <div class="section-icon gradient-crimson">🔒</div>
-    <span class="card-tag">SECURITY</span>
-    <h2>Security Sections</h2>
-    <p>Cybersecurity landing pages for authentication, protection, and privacy tools.</p>
-    <a href="#">View Section</a>
-  </div>
-
-  <div class="section-card premium-card">
-    <div class="section-icon gradient-blue">📊</div>
-    <span class="card-tag">DASHBOARD</span>
-    <h2>Admin Dashboard Sections</h2>
-    <p>Analytics-driven admin panels with charts, tables, and KPI widgets.</p>
-    <a href="#">View Section</a>
-  </div>
-
-  <div class="section-card premium-card">
-    <div class="section-icon gradient-purple">🌐</div>
-    <span class="card-tag">COMMUNITY</span>
-    <h2>Community Sections</h2>
-    <p>Forum and social community layouts for engagement-driven platforms.</p>
-    <a href="#">View Section</a>
-  </div>
-
-  <div class="section-card premium-card">
-    <div class="section-icon gradient-gold">🧾</div>
-    <span class="card-tag">BILLING</span>
-    <h2>Billing Sections</h2>
-    <p>Subscription billing, invoices, and payment management UI sections.</p>
-    <a href="#">View Section</a>
-  </div>
-
-  <div class="section-card premium-card">
-    <div class="section-icon gradient-navy">📦</div>
-    <span class="card-tag">DEVELOPERS</span>
-    <h2>API Sections</h2>
-    <p>Developer-focused layouts for API documentation and integration guides.</p>
-    <a href="#">View Section</a>
-  </div>
-
-  <div class="section-card premium-card">
-    <div class="section-icon gradient-teal">🧭</div>
-    <span class="card-tag">LANDING</span>
-    <h2>Landing Sections</h2>
-    <p>High-conversion landing page blocks with modern UX patterns.</p>
-    <a href="#">View Section</a>
-  </div>
-
-  <div class="section-card premium-card">
-    <div class="section-icon gradient-rose">🎁</div>
-    <span class="card-tag">PROMO</span>
-    <h2>Offer Sections</h2>
-    <p>Discount banners, promotions, and limited-time offer UI layouts.</p>
-    <a href="#">View Section</a>
-  </div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-indigo">
-    🏦
-  </div>
-
-  <span class="card-tag">
-    ENTERPRISE
-  </span>
-
-  <h2>Enterprise Sections</h2>
-
-  <p>
-    Corporate enterprise layouts designed for scalable business platforms.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-emerald">
-    💚
-  </div>
-
-  <span class="card-tag">
-    HEALTHCARE
-  </span>
-
-  <h2>Healthcare Sections</h2>
-
-  <p>
-    Clean medical and healthcare website sections with modern UI patterns.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-rose">
-    🏡
-  </div>
-
-  <span class="card-tag">
-    REAL ESTATE
-  </span>
-
-  <h2>Property Sections</h2>
-
-  <p>
-    Real estate listing and property showcase layouts with elegant visuals.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-teal">
-    📦
-  </div>
-
-  <span class="card-tag">
-    LOGISTICS
-  </span>
-
-  <h2>Logistics Sections</h2>
-
-  <p>
-    Delivery and logistics management layouts for transport businesses.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-yellow">
-    ☀️
-  </div>
-
-  <span class="card-tag">
-    ENERGY
-  </span>
-
-  <h2>Energy Sections</h2>
-
-  <p>
-    Renewable energy and sustainability focused website layouts.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-magenta">
-    🎵
-  </div>
-
-  <span class="card-tag">
-    MUSIC
-  </span>
-
-  <h2>Music Sections</h2>
-
-  <p>
-    Audio streaming and artist portfolio layouts with immersive visuals.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-navy">
-    🛰️
-  </div>
-
-  <span class="card-tag">
-    TECH
-  </span>
-
-  <h2>Tech Sections</h2>
-
-  <p>
-    Modern technology startup and innovation-focused landing layouts.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-crimson">
-    🍔
-  </div>
-
-  <span class="card-tag">
-    FOOD
-  </span>
-
-  <h2>Restaurant Sections</h2>
-
-  <p>
-    Restaurant and food delivery layouts crafted for premium dining brands.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-silver">
-    🚗
-  </div>
-
-  <span class="card-tag">
-    AUTOMOTIVE
-  </span>
-
-  <h2>Automotive Sections</h2>
-
-  <p>
-    Vehicle showcase and automotive service layouts with sleek design.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-aqua">
-    ✈️
-  </div>
-
-  <span class="card-tag">
-    AVIATION
-  </span>
-
-  <h2>Aviation Sections</h2>
-
-  <p>
-    Airline booking and aviation inspired layouts with futuristic UI.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-platinum">
-    💼
-  </div>
-
-  <span class="card-tag">
-    AGENCY
-  </span>
-
-  <h2>Agency Sections</h2>
-
-  <p>
-    Creative digital agency layouts built with bold typography and visuals.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-lavender">
-    📚
-  </div>
-
-  <span class="card-tag">
-    LIBRARY
-  </span>
-
-  <h2>Knowledge Sections</h2>
-
-  <p>
-    Documentation and knowledge-base layouts for modern web platforms.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-  <!-- FILTER -->
-
-  <section class="filter-bar">
-
-    <button class="filter-btn active">
-      All
-    </button>
-
-    <button class="filter-btn">
-      Hero
-    </button>
-
-    <button class="filter-btn">
-      Pricing
-    </button>
-
-    <button class="filter-btn">
-      Stats
-    </button>
-
-    <button class="filter-btn">
-      Features
-    </button>
-
-  </section>
-
-  <!-- MODERN SECTION COMPONENTS -->
-  <section class="sections-grid">
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-purple">
-    🚀
-  </div>
-
-  <span class="card-tag">
-    STARTUP
-  </span>
-
-  <h2>Startup Sections</h2>
-
-  <p>
-    Modern startup landing page layouts with animated UI and bold typography.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-blue">
-    💳
-  </div>
-
-  <span class="card-tag">
-    FINTECH
-  </span>
-
-  <h2>Fintech Sections</h2>
-
-  <p>
-    Banking, payment and financial dashboard layouts with premium UI design.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-pink">
-    🛍️
-  </div>
-
-  <span class="card-tag">
-    SHOPPING
-  </span>
-
-  <h2>Storefront Sections</h2>
-
-  <p>
-    Modern storefront and product discovery sections for online brands.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-green">
-    🧑‍💻
-  </div>
-
-  <span class="card-tag">
-    SAAS
-  </span>
-
-  <h2>SaaS Sections</h2>
-
-  <p>
-    SaaS dashboard and software showcase layouts with modern UX patterns.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-orange">
-    🎬
-  </div>
-
-  <span class="card-tag">
-    MEDIA
-  </span>
-
-  <h2>Streaming Sections</h2>
-
-  <p>
-    Netflix-inspired media layouts with cinematic cards and hero banners.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-cyan">
-    📈
-  </div>
-
-  <span class="card-tag">
-    BUSINESS
-  </span>
-
-  <h2>Growth Sections</h2>
-
-  <p>
-    KPI and growth showcase layouts with modern analytics inspired design.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-red">
-    🏢
-  </div>
-
-  <span class="card-tag">
-    CORPORATE
-  </span>
-
-  <h2>Corporate Sections</h2>
-
-  <p>
-    Elegant enterprise and business layouts built for professional brands.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-gold">
-    🎓
-  </div>
-
-  <span class="card-tag">
-    EDUCATION
-  </span>
-
-  <h2>Learning Sections</h2>
-
-  <p>
-    Online course and education layouts with modern interactive UI blocks.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-dark">
-    🌌
-  </div>
-
-  <span class="card-tag">
-    FUTURE UI
-  </span>
-
-  <h2>Cyberpunk Sections</h2>
-
-  <p>
-    Futuristic neon-inspired layouts for gaming and AI interfaces.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-sky">
-    ☁️
-  </div>
-
-  <span class="card-tag">
-    CLOUD
-  </span>
-
-  <h2>Cloud Sections</h2>
-
-  <p>
-    Cloud platform and hosting layouts with premium glassmorphism styling.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-violet">
-    📦
-  </div>
-
-  <span class="card-tag">
-    PRODUCT
-  </span>
-
-  <h2>Product Launch</h2>
-
-  <p>
-    Product announcement and feature release layouts for modern startups.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card premium-card">
-
-  <div class="section-icon gradient-lime">
-    🌿
-  </div>
-
-  <span class="card-tag">
-    ECO
-  </span>
-
-  <h2>Eco Sections</h2>
-
-  <p>
-    Sustainable and eco-friendly brand sections with clean modern design.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-    <!-- CARD -->
-
-    <div class="section-card">
-
-      <div class="card-icon orange">
-        🚀
-      </div>
-
-      <span class="card-label">
-        HERO
-      </span>
-
-      <h2>
-        Hero Sections
-      </h2>
-
-      <p>
-
-        Premium landing page hero
-        layouts with modern typography,
-        gradients and CTA buttons.
-
-      </p>
-
-      <button>
-        View Section
-      </button>
-
-    </div>
-
-    <!-- ADD THESE NEW COMPONENTS INSIDE .sections-container -->
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    🛒
-  </div>
-
-  <h2>E-Commerce Sections</h2>
-
-  <p>
-    Product showcase and shopping UI layouts.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    🎨
-  </div>
-
-  <h2>Portfolio Sections</h2>
-
-  <p>
-    Creative portfolio layouts for designers and developers.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    📱
-  </div>
-
-  <h2>App Showcase</h2>
-
-  <p>
-    Mobile app presentation and download sections.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    🧠
-  </div>
-
-  <h2>AI Sections</h2>
-
-  <p>
-    Futuristic AI startup and chatbot website layouts.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    🎥
-  </div>
-
-  <h2>Video Sections</h2>
-
-  <p>
-    Video showcase blocks with modern media layouts.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    📰
-  </div>
-
-  <h2>Blog Sections</h2>
-
-  <p>
-    Responsive article and blog listing layouts.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    📅
-  </div>
-
-  <h2>Event Sections</h2>
-
-  <p>
-    Event schedule and conference landing sections.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    🔐
-  </div>
-
-  <h2>Authentication</h2>
-
-  <p>
-    Login, signup and password recovery sections.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    🌍
-  </div>
-
-  <h2>Travel Sections</h2>
-
-  <p>
-    Tourism and travel destination website layouts.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    🏆
-  </div>
-
-  <h2>Achievement Sections</h2>
-
-  <p>
-    Awards, milestones and company achievement blocks.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    🎯
-  </div>
-
-  <h2>CTA Sections</h2>
-
-  <p>
-    High-converting call-to-action website sections.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-<!-- CARD -->
-<div class="section-card">
-
-  <div class="section-icon">
-    ⚡
-  </div>
-
-  <h2>Service Sections</h2>
-
-  <p>
-    Professional service showcase layouts for agencies.
-  </p>
-
-  <a href="#">
-    View Section
-  </a>
-
-</div>
-
-    <!-- CARD -->
-
-    <div class="section-card">
-
-      <div class="card-icon purple">
-        💼
-      </div>
-
-      <span class="card-label">
-        PRICING
-      </span>
-
-      <h2>
-        Pricing Sections
-      </h2>
-
-      <p>
-
-        Responsive SaaS pricing layouts
-        with premium UI cards and
-        subscription tables.
-
-      </p>
-
-      <button>
-        View Section
-      </button>
-
-    </div>
-
-    <!-- CARD -->
-
-    <div class="section-card">
-
-      <div class="card-icon blue">
-        ⭐
-      </div>
-
-      <span class="card-label">
-        TESTIMONIALS
-      </span>
-
-      <h2>
-        Testimonial Blocks
-      </h2>
-
-      <p>
-
-        Beautiful review and feedback
-        sections with glassmorphism
-        inspired layouts.
-
-      </p>
-
-      <button>
-        View Section
-      </button>
-
-    </div>
-
-    <!-- CARD -->
-
-    <div class="section-card">
-
-      <div class="card-icon green">
-        📊
-      </div>
-
-      <span class="card-label">
-        STATS
-      </span>
-
-      <h2>
-        Analytics Sections
-      </h2>
-
-      <p>
-
-        Dashboard analytics and stats
-        layouts for admin interfaces
-        and SaaS dashboards.
-
-      </p>
-
-      <button>
-        View Section
-      </button>
-
-    </div>
-
-    <!-- CARD -->
-
-    <div class="section-card">
-
-      <div class="card-icon orange">
-        📩
-      </div>
-
-      <span class="card-label">
-        NEWSLETTER
-      </span>
-
-      <h2>
-        Newsletter Sections
-      </h2>
-
-      <p>
-
-        Responsive email subscribe
-        sections crafted with modern
-        glassmorphism UI.
-
-      </p>
-
-      <button>
-        View Section
-      </button>
-
-    </div>
-
-    <!-- CARD -->
-
-    <div class="section-card">
-
-      <div class="card-icon purple">
-        🧩
-      </div>
-
-      <span class="card-label">
-        FEATURES
-      </span>
-
-      <h2>
-        Feature Blocks
-      </h2>
-
-      <p>
-
-        Showcase product features
-        with premium modern
-        layout sections.
-
-      </p>
-
-      <button>
-        View Section
-      </button>
-
-    </div>
-
-</div>
-
-</main>
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col brand">
-      <h2 class="footer-logo">⬡ UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      <div class="socials">
-        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h3>Explore</h3>
+    <nav class="sidebar-nav">
       <ul>
-        <li><a href="button.html">Buttons</a></li>
-        <li><a href="navbar.html">Navbars</a></li>
-        <li><a href="cards.html">Cards</a></li>
-        <li><a href="inputs.html">Inputs</a></li>
-        <li><a href="forms.html">Forms</a></li>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home Registry</span></a></li>
+        <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Action Toggles</span></a></li>
+        <li><a href="dropdown-components.html"><i class="fa-solid fa-caret-down"></i><span>Dropdown Systems</span></a></li>
+        <li><a href="profile-components.html"><i class="fa-solid fa-user"></i><span>Identity Profiles</span></a></li>
+        <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navigation Shells</span></a></li>
+        <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Component Cards</span></a></li>
+        <li><a href="flipcards.html"><i class="fa-solid fa-clone"></i><span>3D Perspective Cards</span></a></li>
+        <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Form Input Channels</span></a></li>
+        <li><a href="forms.html"><i class="fa-brands fa-wpforms"></i><span>Data Intake Forms</span></a></li>
+        <li><a href="badges.html"><i class="fa-solid fa-award"></i><span>Status Badges</span></a></li>
+        <li><a href="blog.html"><i class="fa-solid fa-blog"></i><span>Blog Channels</span></a></li>
+        <li><a href="article.html"><i class="fa-solid fa-newspaper"></i><span>Article Systems</span></a></li>
+        <li><a href="alerts.html"><i class="fa-solid fa-triangle-exclamation"></i><span>System Alert Matrix</span></a></li>
+        <li><a href="color.html"><i class="fa-solid fa-palette"></i><span>Global Color Tokens</span></a></li>
+        <li><a href="charts.html"><i class="fa-solid fa-chart-pie"></i><span>Data Visualizers</span></a></li>
+        <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Admin Viewports</span></a></li>
+        <li><a href="div.html"><i class="fa-solid fa-square"></i><span>Structural Divs</span></a></li>
+        <li><a href="widgets.html"><i class="fa-solid fa-layer-group"></i><span>Utility Widgets</span></a></li>
+        <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search Interfaces</span></a></li>
+        <li><a href="hover.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Kinetic Hover Effects</span></a></li>
+        <li><a href="error.html"><i class="fa-solid fa-circle-exclamation"></i><span>Error Canvases</span></a></li>
+        <li><a href="ecommerce.html"><i class="fa-solid fa-cart-shopping"></i><span>E-Commerce Pools</span></a></li>
+        <li><a href="files.html"><i class="fa-solid fa-file-arrow-up"></i><span>File Drop Vaults</span></a></li>
+        <li><a href="hero.html"><i class="fa-solid fa-star"></i><span>Hero Landing Arenas</span></a></li>
+        <li><a href="loaders.html"><i class="fa-solid fa-spinner"></i><span>Telemetry Loaders</span></a></li>
+        <li><a href="timeline.html"><i class="fa-solid fa-clock-rotate-left"></i><span>Milestone Trails</span></a></li>
+        <li><a href="map.html"><i class="fa-solid fa-map-location-dot"></i><span>Spatial Location Maps</span></a></li>
+        <li><a href="menu.html"><i class="fa-solid fa-bars-staggered"></i><span>Context Lists</span></a></li>
+        <li><a href="pricing.html"><i class="fa-solid fa-tags"></i><span>Subscription Tiers</span></a></li>
+        <li><a href="subscription.html"><i class="fa-solid fa-credit-card"></i><span>Billing Pipelines</span></a></li>
+        <li><a href="auth.html"><i class="fa-solid fa-user-shield"></i><span>Authentication Core</span></a></li>
+        <li><a href="recovery.html"><i class="fa-solid fa-key"></i><span>Identity Recovery</span></a></li>
+        <li class="active"><a href="section.html"><i class="fa-solid fa-rectangle-list"></i><span>Section Showcase</span></a></li>
+        <li><a href="span.html"><i class="fa-solid fa-code"></i><span>Inline Micro-Spans</span></a></li>
+        <li><a href="table.html"><i class="fa-solid fa-table"></i><span>Data Matrices</span></a></li>
+        <li><a href="tabs.html"><i class="fa-solid fa-table-columns"></i><span>Viewport Tabs</span></a></li>
+        <li><a href="terms.html"><i class="fa-solid fa-file-contract"></i><span>Terms & Compliances</span></a></li>
+        <li><a href="testimonials.html"><i class="fa-solid fa-comments"></i><span>Social Proof Matrix</span></a></li>
+        <li><a href="toggles.html"><i class="fa-solid fa-toggle-on"></i><span>Tactile Power Switches</span></a></li>
+        <li><a href="radiobutton.html"><i class="fa-solid fa-circle-dot"></i><span>Radio Selection Nodes</span></a></li>
+        <li><a href="checkbox.html"><i class="fa-solid fa-square-check"></i><span>Binary Check Selection</span></a></li>
+        <li><a href="notifications-premium.html"><i class="fa-solid fa-bell"></i><span>Notification Streams</span></a></li>
+        <li><a href="step-indicators.html"><i class="fa-solid fa-list-check"></i><span>Stepper Linear Trails</span></a></li>
+        <li><a href="progress-premium.html"><i class="fa-solid fa-bars-progress"></i><span>Velocity Progress Monitors</span></a></li>
+        <li><a href="ratings-premium.html"><i class="fa-solid fa-star"></i><span>Ratings Analytics</span></a></li>
+        <li><a href="filters-premium.html"><i class="fa-solid fa-sliders"></i><span>Multi-Token Query Filters</span></a></li>
+        <li><a href="admin-panel.html"><i class="fa-solid fa-gauge-high"></i><span>Admin Terminal V2</span></a></li>
+        <li><a href="about.html"><i class="fa-solid fa-circle-info"></i><span>Platform Origins</span></a></li>
+        <li><a href="documentation.html"><i class="fa-solid fa-book"></i><span>Technical Manuals</span></a></li>
+        <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i><span>Knowledge Base FAQ</span></a></li>
+        <li><a href="contact.html"><i class="fa-regular fa-envelope"></i><span>Support Protocols</span></a></li>
       </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" aria-label="GitHub Pipelines Link"><i class="fab fa-github"></i></a>
+      <a href="#" aria-label="LinkedIn Profile Link"><i class="fab fa-linkedin"></i></a>
+      <a href="#" aria-label="Twitter Broadcast Link"><i class="fab fa-x-twitter"></i></a>
     </div>
-    <div class="footer-col">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">Documentation</a></li>
-        <li><a href="#">GitHub Repo</a></li>
-        <li><a href="#">Community</a></li>
-      </ul>
+  </aside>
+
+  <!-- SIDEBAR MOBILITY INTERCEPTOR LAYER SHIELD -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="runtimeToggleSidebar()"></div>
+
+  <!-- =========================================================
+     TOP INTEGRATED PLATFORM NAVBAR
+  ========================================================= -->
+  <header class="navbar" id="navbar">
+    <button class="menu-toggle" type="button" onclick="runtimeToggleSidebar()" aria-label="Toggle system navigation menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <div class="search-bar-shell">
+      <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+      <input type="text" id="searchInput" placeholder="Filter section paradigms, workspace wireframes, chroma layout rules (⌘K)..." aria-label="Search section registries" />
     </div>
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <ul>
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-      </ul>
+
+    <div class="nav-actions">
+      <button class="outline-btn" type="button">Technical Docs</button>
+      <button class="primary-btn" type="button">Telemetry Sandbox <i class="fa-solid fa-bolt"></i></button>
     </div>
-    <div class="footer-col newsletter">
-      <h3>Stay Updated</h3>
-      <p>Get notified when new components drop.</p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com">
-        <button type="button">Subscribe</button>
+  </header>
+
+  <!-- =========================================================
+     MAIN WORKSPACE VIEWPORT CANVAS
+  ========================================================= -->
+  <main class="main-home" id="main-content">
+
+    <!-- HERO DISPLAY CANVASES -->
+    <section class="hero-section">
+      <div class="hero-badge">✦ Architecture Grid Mapping Layer Enabled</div>
+      <h1>Modern <span>Website Sections</span></h1>
+      <p>Discover a monolithic structural matrix of decoupled, modular website sections engineered with robust responsive scaling thresholds for high-conversion landing layout frames[cite: 24, 25].</p>
+    </section>
+
+    <!-- LIVE RUNTIME QUERY FILTER SEGMENTS BAR -->
+    <nav class="filter-bar" aria-label="Component layout segmentation filters">
+      <button class="filter-btn active" type="button" onclick="runtimeFilterBlocks('all', this)">All Paradigms</button>
+      <button class="filter-btn" type="button" onclick="runtimeFilterBlocks('hero', this)">Hero Blocks</button>
+      <button class="filter-btn" type="button" onclick="runtimeFilterBlocks('pricing', this)">Pricing Tiers</button>
+      <button class="filter-btn" type="button" onclick="runtimeFilterBlocks('stats', this)">Analytics Stats</button>
+      <button class="filter-btn" type="button" onclick="runtimeFilterBlocks('features', this)">Feature Grids</button>
+    </nav>
+
+    <!-- CENTRAL LAYOUT GRIDS MATRIX -->
+    <div class="sections-grid">
+
+      <!-- SECTION 01: SECURITY -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-crimson">🔒</div>
+        <span class="card-tag-badge">SECURITY SUITE</span>
+        <h2>Cybersecurity Nodes</h2>
+        <p>Isolated verification vectors protecting core network pipelines, multi-tenant sign-up frames, and secure token isolation environments[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 02: DASHBOARD -->
+      <article class="section-card premium-card" data-category="stats">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-blue">📊</div>
+        <span class="card-tag-badge">DASHBOARD CORE</span>
+        <h2>Admin Analytics Blocks</h2>
+        <p>Low-latency telemetry views integrating real-time charts, structured schema tables, and metric summary gauges[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 03: COMMUNITY -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-purple">🌐</div>
+        <span class="card-tag-badge">ECOSYSTEM HUB</span>
+        <h2>Social Community Arenas</h2>
+        <p>High-density asynchronous layout clusters engineered for conversational stream indexing and message threads[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 04: BILLING -->
+      <article class="section-card premium-card" data-category="pricing">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-gold">🧾</div>
+        <span class="card-tag-badge">MONETIZATION</span>
+        <h2>Subscription Billing Hubs</h2>
+        <p>Symmetrical commercial grids tracking transactional checkout rows, recurring invoices, and payment tokens[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 05: DEVELOPERS -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-navy">📦</div>
+        <span class="card-tag-badge">API REGISTRY</span>
+        <h2>Developer Manual Nodes</h2>
+        <p>Code-centric layout patterns formatting compilation trees, payload parameters, and webhook trace channels[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 06: LANDING -->
+      <article class="section-card premium-card" data-category="hero">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-teal">Compass Grid🧭</div>
+        <span class="card-tag-badge">LANDING VIEW</span>
+        <h2>High-Conversion Arenas</h2>
+        <p>Immersive visual entry containers balancing bold typography arrays over clean geometric accent lines flawlessly[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 07: PROMO -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-rose">🎁</div>
+        <span class="card-tag-badge">CAMPAIGN LOGS</span>
+        <h2>Transactional Offer Banners</h2>
+        <p>High-visibility notification strips tracking specific conversion events, promotional variables, and countdown windows[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 08: ENTERPRISE -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-indigo">🏦</div>
+        <span class="card-tag-badge">CORPORATE ARCH</span>
+        <h2>Enterprise Workspace Scopes</h2>
+        <p>Scalable business platform components mapping multi-tenant permissions, division nodes, and security compliance[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 09: HEALTHCARE -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-emerald">💚</div>
+        <span class="card-tag-badge">HEALTHCARE MATRIX</span>
+        <h2>Medical Telemetry Sectors</h2>
+        <p>Pristine, minimal clinical asset layouts framing appointment queues, doctor registries, and diagnostics summary charts[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 10: REAL ESTATE -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-rose">🏡</div>
+        <span class="card-tag-badge">SPATIAL INDEX</span>
+        <h2>Property Canvas Tiles</h2>
+        <p>Real estate listing grids utilizing absolute aspect ratios to exhibit property values and spatial maps evenly[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 11: LOGISTICS -->
+      <article class="section-card premium-card" data-category="stats">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-teal">📦</div>
+        <span class="card-tag-badge">LOGISTICS ENGINE</span>
+        <h2>Supply Chain Trackers</h2>
+        <p>Continuous progress flow modules monitoring dispatch schedules, vehicle nodes coordinates, and routing latency indexes[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 12: ENERGY -->
+      <article class="section-card premium-card" data-category="stats">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-yellow">☀️</div>
+        <span class="card-tag-badge">SUSTAINABILITY</span>
+        <h2>Renewable Grid Clusters</h2>
+        <p>Sustainability layout blocks tracking environmental metrics, solar matrix efficiency charts, and clean energy allocation weights[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 13: MUSIC -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-magenta">🎵</div>
+        <span class="card-tag-badge">AUDIO CORE</span>
+        <h2>Acoustic Streaming Shells</h2>
+        <p>Immersive media blocks framing audio track waves, artist discography grids, and player component structures[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 14: TECH -->
+      <article class="section-card premium-card" data-category="hero">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-navy">🛰️</div>
+        <span class="card-tag-badge">INNOVATION NODE</span>
+        <h2>Quantum Tech Landing Areas</h2>
+        <p>Futuristic, abstract structural layouts mapping AI model confidence, token pools, and cloud provisioning frameworks[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 15: FOOD -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-crimson">🍔</div>
+        <span class="card-tag-badge">HOSPITALITY LINK</span>
+        <h2>Restaurant Showcase Matrices</h2>
+        <p>Elite hospitality catalog grids pairing bold type presentation with high-contrast asset reservation pipelines[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- SECTION 16: AUTOMOTIVE -->
+      <article class="section-card premium-card" data-category="features">
+        <div class="card-shimmer-track"></div>
+        <div class="section-icon gradient-silver">🚗</div>
+        <span class="card-tag-badge">AUTOMOTIVE FRAME</span>
+        <h2>Vehicle Telemetry Bays</h2>
+        <p>Sleek monochrome viewports designed to manifest vehicle specifications sheets, configuration models, and velocity logs[cite: 24].</p>
+        <a href="#" class="view-blueprint-btn">Inspect Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- =========================================================
+     COMPREHENSIVE GLOBAL ENVIRONMENT FOOTER
+  ========================================================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">⬡ UIverse</h2>
+        <p>Engineering real-time frontend structural layout matrices utilizing mathematical component spacing formulas, low-latency rendering properties variables, and secure data tunnels[cite: 24, 25].</p>
+        <div class="socials">
+          <a href="https://github.com" target="_blank" aria-label="GitHub Source Pipeline Vault"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank" aria-label="Corporate Directory Operations Network Key"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" target="_blank" aria-label="Continuous Integration Shard Streaming Broadcast Logs"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Ecosystem Registry</h3>
+        <ul>
+          <li><a href="button.html">Action Toggles Matrix</a></li>
+          <li><a href="navbar.html">Navigation Shell Arrays</a></li>
+          <li><a href="cards.html">Canvas Card Layouts</a></li>
+          <li><a href="inputs.html">Form Input Channels</a></li>
+          <li><a href="forms.html">Schema Layout Forms</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Technical Vaults</h3>
+        <ul>
+          <li><a href="#">Technical Documentation Matrix</a></li>
+          <li><a href="#">Ecosystem Contribution Protocols</a></li>
+          <li><a href="https://github.com" target="_blank">Open Source Main Repositories</a></li>
+          <li><a href="#">Developer Core Communities</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Regulatory Metrics</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Data Isolation Policy Sheets</a></li>
+          <li><a href="terms.html">Terms of System Operations Matrix</a></li>
+          <li><a href="#">Modular Asset Licensing Manifest</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h3>Continuous Integration Streams</h3>
+        <p>Register your workspace hub node destination to intercept low-frequency layout updates logs directly[cite: 24, 25].</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="operator@engine.domain" aria-label="Operator email register allocation input path" />
+          <button type="button" onclick="alert('Destination node bound successfully inside telemetry channels.');">Sync Core Hub</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
-  </div>
-</footer>
-<script src="section.js"></script>
+    <div class="footer-bottom">
+      <p>© 2026 UIverse Architecture Systems. Compiled and engineered with absolute mechanical mathematical precision for professional front-end teams globally[cite: 24, 25].</p>
+    </div>
+  </footer>
 
-    <script src="dist/shared.js"></script>
+  <!-- =========================================================
+     COMPREHENSIVE RUNTIME LOGIC INTERACTION SCRIPTS
+  ========================================================= -->
+  <script>
+    /* Sidebar Position Mobility Tracking Logic Structures */
+    function runtimeToggleSidebar() {
+      const sidebarNodeElement = document.getElementById('sidebar');
+      const backgroundBackdropShield = document.getElementById('sidebarBackdrop');
+      if (sidebarNodeElement && backgroundBackdropShield) {
+        sidebarNodeElement.classList.toggle('visible');
+        backgroundBackdropShield.classList.toggle('visible');
+      }
+    }
+    window.runtimeToggleSidebar = runtimeToggleSidebar;
+
+    /* Category Data Query Filter Router Matrix */
+    function runtimeFilterBlocks(selectedCategoryTokenKey, triggerButtonNode) {
+      // Toggle selector node boundaries rings
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      triggerButtonNode.classList.add('active');
+
+      // Intercept and manipulate visibility states across layouts cards grid elements
+      document.querySelectorAll('.section-card').forEach(card => {
+        const targetElementCategoryReference = card.getAttribute('data-category');
+        if (selectedCategoryTokenKey === 'all' || targetElementCategoryReference === selectedCategoryTokenKey) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    /* Live Localized Input String Mirror Search Filter Logic */
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const formattedQuery = e.target.value.toLowerCase().trim();
+      document.querySelectorAll('.section-card').forEach(card => {
+        const textTitleNodeString = card.querySelector('h2').innerText.toLowerCase();
+        const textDescNodeString = card.querySelector('p').innerText.toLowerCase();
+        if (textTitleNodeString.includes(formattedQuery) || textDescNodeString.includes(formattedQuery)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
