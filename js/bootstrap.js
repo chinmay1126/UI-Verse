@@ -177,6 +177,7 @@ const Bootstrap = {
     if (typeof Recent !== 'undefined') {
       UIverse.register('Recent', Recent);
     }
+
     if (typeof TagFilter !== 'undefined') {
   UIverse.register('TagFilter', TagFilter);
 }
