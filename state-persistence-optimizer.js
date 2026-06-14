@@ -464,6 +464,7 @@ class StatePersistenceOptimizer {
       clearTimeout(timer);
     }
     this.debounceTimers.clear();
+    this.debounceTimers = new Map();
 
     this.metrics.pendingOperations = 0;
   }
