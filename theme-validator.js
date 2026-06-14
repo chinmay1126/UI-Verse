@@ -664,11 +664,12 @@ class ThemeValidator {
   analyzeAccessibilityMetrics(theme) {
     const colors = theme.colors || {};
     
+    const textContrast = colors.text ? this.getContrastRatio(colors.text.primary, colors.background) : null;
     return {
-      wcagAA: true,
-      wcagAAA: false,
+      wcagAA: textContrast ? textContrast >= 4.5 : false,
+      wcagAAA: textContrast ? textContrast >= 7.0 : false,
       contrastAnalysis: {
-        text: colors.text ? this.getContrastRatio(colors.text.primary, colors.background) : null
+        text: textContrast
       }
     };
   }
