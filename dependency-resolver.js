@@ -319,7 +319,7 @@ class DependencyResolver {
             const cycleStart = path.indexOf(depName);
             const cycle = path.slice(cycleStart).concat(depName);
             cycles.push(cycle);
-            return true;
+            // Continue searching other paths rather than returning immediately
           }
         }
       }
