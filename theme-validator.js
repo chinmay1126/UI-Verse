@@ -400,6 +400,10 @@ class ThemeValidator {
     const rgbPattern = /^rgba?\([0-9, .%]+\)$/i;
     if (rgbPattern.test(color)) return true;
 
+    // HSL/HSLA format
+    const hslPattern = /^hsla?\(\d+(?:deg)?\s*,\s*\d+%\s*,\s*\d+%\s*(?:,\s*[0-9.]+)?\)$/i;
+    if (hslPattern.test(color)) return true;
+
     return false;
   }
 
@@ -448,8 +452,28 @@ class ThemeValidator {
    * Get relative luminance of color
    * @private
    */
+  hslToRgb(h, s, l) {
+    s /= 100;
+    l /= 100;
+    const k = n => (n + h / 30) % 12;
+    const a = s * Math.min(l, 1 - l);
+    const f = n => l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1));
+    return [Math.round(255 * f(0)), Math.round(255 * f(8)), Math.round(255 * f(4))];
+  }
+
   getRelativeLuminance(color) {
-    const rgb = this.hexToRgb(color);
+    let rgb = null;
+    if (color.startsWith('#')) {
+      rgb = this.hexToRgb(color);
+    } else if (color.startsWith('rgb')) {
+      const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      if (match) rgb = [Number(match[1]), Number(match[2]), Number(match[3])];
+    } else if (color.startsWith('hsl')) {
+      const match = color.match(/hsla?\((\d+),\s*(\d+)%,\s*(\d+)%/);
+      if (match) {
+        rgb = this.hslToRgb(Number(match[1]), Number(match[2]), Number(match[3]));
+      }
+    }
     if (!rgb) return 0;
 
     const [r, g, b] = rgb.map(val => val / 255);
@@ -522,6 +546,8 @@ class ThemeValidator {
     if (color.startsWith('#')) return 'hex';
     if (color.startsWith('rgb(')) return 'rgb';
     if (color.startsWith('rgba(')) return 'rgba';
+    if (color.startsWith('hsl(')) return 'hsl';
+    if (color.startsWith('hsla(')) return 'hsla';
     return 'unknown';
   }
 
