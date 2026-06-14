@@ -64,6 +64,7 @@
         "perf:monitor": "node scripts/performance-monitor.js",
         "perf:check": "node scripts/performance-monitor.js && echo '✅ Performance check completed'",
         "perf:dashboard": "npm run perf:monitor && echo '📊 Open performance-dashboard.html in your browser'",
+        "perf:lighthouse": "npx @lhci/cli autorun",
         "performance:budgets": "node scripts/perf-budget-checker.js",
         "performance:budgets:verify": "node scripts/perf-budget-checker.js --check",
         "wc:register": "node -e \"console.log('Web components are ES modules; import them in the browser via <script type=\\\"module\\\">')\"",
