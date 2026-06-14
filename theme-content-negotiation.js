@@ -38,7 +38,7 @@ class ThemeContentNegotiator {
     this.encodings = {
       'gzip': { priority: 1.0, supported: true },
       'deflate': { priority: 0.8, supported: true },
-      'br': { priority: 0.9, supported: true },
+      'br': { priority: 0.9, supported: true, algorithm: 'brotli' },
       'identity': { priority: 0.5, supported: true }
     };
 
@@ -142,9 +142,10 @@ class ThemeContentNegotiator {
     let bestQuality = -1;
 
     for (const encoding of encodings) {
-      if (this.encodings[encoding.value] && this.encodings[encoding.value].supported) {
+      const encName = encoding.value === '*' ? 'identity' : encoding.value;
+      if (this.encodings[encName] && this.encodings[encName].supported) {
         if (encoding.quality > bestQuality) {
-          bestMatch = encoding.value;
+          bestMatch = encName;
           bestQuality = encoding.quality;
         }
       }
@@ -282,15 +283,18 @@ class ThemeContentNegotiator {
         }
       }
 
+      // Sanitize inputs to prevent script injection in response headers
+      const cleanType = type.trim().replace(/[^a-zA-Z0-9/*+-]/g, '');
+      const cleanSubtype = subtype.trim().replace(/[^a-zA-Z0-9/*+-]/g, '');
       ranges.push({
-        type: type.trim(),
-        subtype: subtype.trim(),
+        type: cleanType,
+        subtype: cleanSubtype,
         quality: Math.min(1.0, Math.max(0, quality)),
         parameters
       });
     }
 
-    return ranges.sort((a, b) => b.quality - a.quality);
+    return ranges.sort((a, b) => Number(b.quality) - Number(a.quality));
   }
 
   /**
@@ -319,7 +323,7 @@ class ThemeContentNegotiator {
       });
     }
 
-    return encodings.sort((a, b) => b.quality - a.quality);
+    return encodings.sort((a, b) => Number(b.quality) - Number(a.quality));
   }
 
   /**
@@ -348,7 +352,7 @@ class ThemeContentNegotiator {
       });
     }
 
-    return languages.sort((a, b) => b.quality - a.quality);
+    return languages.sort((a, b) => Number(b.quality) - Number(a.quality));
   }
 
   /**
@@ -377,7 +381,7 @@ class ThemeContentNegotiator {
       });
     }
 
-    return charsets.sort((a, b) => b.quality - a.quality);
+    return charsets.sort((a, b) => Number(b.quality) - Number(a.quality));
   }
 
   /**

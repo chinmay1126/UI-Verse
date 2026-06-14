@@ -14,6 +14,38 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <link rel="stylesheet" href="ai-components.css" />
+  <style>
+    /* Responsive layout tweaks for mobile/tablet */
+    :root { --sidebar-width: 260px; }
+    .sidebar { width: var(--sidebar-width); position: fixed; left: 0; top: 0; bottom: 0; overflow: auto; z-index: 1000; background: inherit; transition: transform .24s ease; }
+    .sidebar-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 900; }
+    .main-home { margin-left: calc(var(--sidebar-width) + 20px); padding: 2rem; transition: margin-left .24s ease, padding .24s ease; }
+
+    /* Grid helpers */
+    .dashboard-grid, .loaders-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+    @media (max-width: 900px) {
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .sidebar-backdrop { display: block; }
+      .navbar .menu-toggle { display: inline-flex; }
+      .search-bar { display: none; }
+      .main-home { margin-left: 0; padding: 1rem; }
+      .ai-hero { display: flex; flex-direction: column; gap: 1rem; align-items: stretch; }
+      .ai-hero-content, .ai-hero-visual { width: 100%; }
+      .ai-hero-visual { display: flex; justify-content: center; }
+      .dashboard-grid, .loaders-grid, .tools-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+      .chatbot-container, .prompt-input-container, .assistant-profile, .generator-card { width: 100%; }
+      .prompt-input-container { display: flex; flex-direction: column; gap: 1rem; }
+      .prompt-wrapper, .prompt-suggestions { width: 100%; }
+      .profile-stats { display: flex; flex-direction: column; gap: .5rem; }
+      input[type="text"], textarea, .generator-input { width: 100%; box-sizing: border-box; }
+      .nav-right { display: flex; gap: .5rem; }
+      .ai-component-section { padding: .75rem 0; }
+      .section-header h2 { font-size: 1.05rem; }
+      .footer-container { display: block; }
+    }
+  </style>
 </head>
 
 <body>
@@ -851,6 +883,23 @@
     <i class="fa-solid fa-chevron-up"></i>
   </button>
     <script src="dist/shared.js"></script>
+    <script>
+      // Sidebar toggle fallback for pages without shared toggle implementation
+      if (typeof toggleSidebar !== 'function') {
+        function toggleSidebar() {
+          const sb = document.getElementById('sidebar');
+          const bd = document.getElementById('sidebarBackdrop');
+          if (!sb) return;
+          sb.classList.toggle('open');
+          if (bd) bd.style.display = sb.classList.contains('open') ? 'block' : 'none';
+        }
+        // close when backdrop clicked
+        document.addEventListener('DOMContentLoaded', function () {
+          const bd = document.getElementById('sidebarBackdrop');
+          bd && bd.addEventListener('click', function () { document.getElementById('sidebar')?.classList.remove('open'); this.style.display = 'none'; });
+        });
+      }
+    </script>
 </body>
 <!-- FOOTER -->
 <footer class="footer">
