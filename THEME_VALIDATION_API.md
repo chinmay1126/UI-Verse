@@ -331,6 +331,12 @@ Valid color formats:
 4. **RGBA:** `rgba(R, G, B, A)`
    - Example: `rgba(108, 92, 231, 1)`
 
+5. **HSL:** `hsl(H, S%, L%)`
+   - Example: `hsl(250, 75%, 63%)`
+
+6. **HSLA:** `hsla(H, S%, L%, A)`
+   - Example: `hsla(250, 75%, 63%, 0.8)`
+
 ## Request/Response Headers
 
 ### Request Headers
