@@ -38,7 +38,7 @@ class ThemeContentNegotiator {
     this.encodings = {
       'gzip': { priority: 1.0, supported: true },
       'deflate': { priority: 0.8, supported: true },
-      'br': { priority: 0.9, supported: true },
+      'br': { priority: 0.9, supported: true, algorithm: 'brotli' },
       'identity': { priority: 0.5, supported: true }
     };
 
