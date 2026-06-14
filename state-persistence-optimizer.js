@@ -51,6 +51,9 @@ class StatePersistenceOptimizer {
     // Write listener callbacks
     this.listeners = [];
 
+    // In-memory fallback database
+    this.memoryStorageFallback = {};
+
     // Adaptive persistence state
     this.updateFrequency = new Map();
     this.frequencyWindow = 1000; // 1 second window
