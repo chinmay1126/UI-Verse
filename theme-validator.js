@@ -166,7 +166,12 @@ class ThemeValidator {
       this.analyzeAccessibility(theme, warnings);
     }
 
+    const duration = Math.round(performance.now() - startTime);
     const result = this.buildResult(errors.length === 0, errors, warnings, startTime);
+    result.metadata.profiling = {
+      totalDurationMs: duration,
+      rulesChecked: Object.keys(this.rules).length
+    };
 
     // Cache result
     if (this.enableCaching && options.useCache !== false) {
