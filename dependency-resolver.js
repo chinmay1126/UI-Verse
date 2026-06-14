@@ -145,9 +145,12 @@ class DependencyResolver {
       throw new Error(`Component not found: ${componentName}`);
     }
 
+    const targetVersion = component.version || '1.0.0';
+    // Parse semver prefixes if present (^ or ~)
+    const cleanVersion = targetVersion.replace(/^[\^~]/, '');
     resolved.set(componentName, {
       name: componentName,
-      version: component.version || '1.0.0',
+      version: cleanVersion,
       required: true,
       depth
     });
