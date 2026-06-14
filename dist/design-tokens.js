@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'ui-verse-theme';
 const SYSTEM_THEME = 'system';
-export const THEMES = {
+const THEMES = {
     light: {
         name: 'light',
         label: 'Light',
@@ -157,13 +157,13 @@ function safeStorage() {
         return null;
     }
 }
-export function getSystemTheme() {
+function getSystemTheme() {
     if (typeof globalThis.matchMedia === 'function' && globalThis.matchMedia('(prefers-color-scheme: dark)').matches) {
         return 'dark';
     }
     return 'light';
 }
-export function getStoredTheme() {
+function getStoredTheme() {
     const storage = safeStorage();
     if (!storage)
         return null;
@@ -174,25 +174,25 @@ export function getStoredTheme() {
         return null;
     }
 }
-export function getResolvedTheme(themeName) {
+function getResolvedTheme(themeName) {
     if (!themeName || themeName === SYSTEM_THEME) {
         return getSystemTheme();
     }
     return THEMES[themeName] ? themeName : 'light';
 }
-export function getTheme(themeName) {
+function getTheme(themeName) {
     return THEMES[getResolvedTheme(themeName)] || THEMES.light;
 }
-export function getThemeNames() {
+function getThemeNames() {
     return Object.keys(THEMES);
 }
-export function applyTokens(tokens) {
+function applyTokens(tokens) {
     const root = ensureRoot();
     if (!root)
         return;
     Object.entries(tokens).forEach(([name, value]) => root.style.setProperty(name, value));
 }
-export function syncCompatibilityFlags(themeName) {
+function syncCompatibilityFlags(themeName) {
     var _a, _b;
     const root = ensureRoot();
     if (!root)
@@ -201,7 +201,7 @@ export function syncCompatibilityFlags(themeName) {
     root.style.colorScheme = ((_a = THEMES[themeName]) === null || _a === void 0 ? void 0 : _a.colorScheme) || 'light';
     (_b = document.body) === null || _b === void 0 ? void 0 : _b.classList.toggle('dark-mode', themeName !== 'light');
 }
-export function persistTheme(themeName) {
+function persistTheme(themeName) {
     const storage = safeStorage();
     if (!storage)
         return;
@@ -213,7 +213,7 @@ export function persistTheme(themeName) {
         // ignore storage failures
     }
 }
-export function dispatchThemeChange(themeName, resolvedTheme) {
+function dispatchThemeChange(themeName, resolvedTheme) {
     if (!globalThis.window || typeof globalThis.window.dispatchEvent !== 'function')
         return;
     globalThis.window.dispatchEvent(new CustomEvent('design-tokens:themechange', {
@@ -224,7 +224,7 @@ export function dispatchThemeChange(themeName, resolvedTheme) {
         }
     }));
 }
-export function applyTheme(themeName, options = {}) {
+function applyTheme(themeName, options = {}) {
     const resolvedTheme = getResolvedTheme(themeName);
     const theme = getTheme(themeName);
     applyTokens(theme.tokens);
@@ -235,17 +235,17 @@ export function applyTheme(themeName, options = {}) {
     dispatchThemeChange(themeName, resolvedTheme);
     return { theme: themeName, resolvedTheme, tokens: theme.tokens };
 }
-export function setTheme(themeName, options = {}) {
+function setTheme(themeName, options = {}) {
     return applyTheme(themeName, options);
 }
-export function init(options = {}) {
+function init(options = {}) {
     const storedTheme = getStoredTheme();
     const theme = options.theme || storedTheme || SYSTEM_THEME;
     const applied = applyTheme(theme, { persist: false });
     persistTheme(theme);
     return applied;
 }
-export function registerTheme(name, config) {
+function registerTheme(name, config) {
     if (!name || !config || !config.tokens) {
         throw new Error('Theme registration requires a name and tokens');
     }
@@ -257,10 +257,10 @@ export function registerTheme(name, config) {
     };
     return THEMES[name];
 }
-export function exportTheme(themeName) {
+function exportTheme(themeName) {
     return Object.entries(getTheme(themeName).tokens).map(([name, value]) => `${name}: ${value};`).join('\n');
 }
-export const DesignTokens = {
+const DesignTokens = {
     STORAGE_KEY,
     SYSTEM_THEME,
     THEMES,
@@ -278,3 +278,6 @@ export const DesignTokens = {
 if (typeof globalThis !== 'undefined') {
     globalThis.DesignTokens = DesignTokens;
 }
+
+export { DesignTokens, THEMES, applyTheme, applyTokens, dispatchThemeChange, exportTheme, getResolvedTheme, getStoredTheme, getSystemTheme, getTheme, getThemeNames, init, persistTheme, registerTheme, setTheme, syncCompatibilityFlags };
+//# sourceMappingURL=design-tokens.js.map

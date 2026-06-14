@@ -1,4 +1,4 @@
-export class UVTooltip extends HTMLElement {
+class UVTooltip extends HTMLElement {
     constructor() {
         super();
         this._showBind = () => this.show();
@@ -77,3 +77,6 @@ if (typeof customElements !== "undefined" &&
     !customElements.get("uv-tooltip")) {
     customElements.define("uv-tooltip", UVTooltip);
 }
+
+export { UVTooltip };
+//# sourceMappingURL=uv-tooltip.js.map
