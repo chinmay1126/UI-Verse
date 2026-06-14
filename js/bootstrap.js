@@ -57,6 +57,12 @@ const Bootstrap = {
     if (typeof ComponentIndex !== 'undefined') {
       UIverse.register('ComponentIndex', ComponentIndex, dependenciesFor('ComponentIndex'));
     }
+    if (typeof NavigationShortcuts !== 'undefined') {
+  UIverse.register(
+    'NavigationShortcuts',
+    NavigationShortcuts
+  );
+}
 
     if (typeof ComponentRecommendations !== 'undefined') {
       UIverse.register('ComponentRecommendations', ComponentRecommendations, dependenciesFor('ComponentRecommendations'));
@@ -155,21 +161,6 @@ const Bootstrap = {
     if (typeof Recent !== 'undefined') {
       UIverse.register('Recent', Recent);
     }
-    if (typeof ResponsiveBadges !== 'undefined') {
-  UIverse.register(
-    'ResponsiveBadges',
-    ResponsiveBadges
-  );
-}
-if (
-  typeof CopyComponentLink !==
-  'undefined'
-) {
-  UIverse.register(
-    'CopyComponentLink',
-    CopyComponentLink
-  );
-}
     if (typeof TagFilter !== 'undefined') {
   UIverse.register('TagFilter', TagFilter);
 }
