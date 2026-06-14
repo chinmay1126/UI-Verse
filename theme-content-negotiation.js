@@ -56,6 +56,30 @@ class ThemeContentNegotiator {
       'iso-8859-1': { priority: 0.3 }
     };
 
+    // Canonical charset mappings for normalization (RFC 2978)
+    this.charsetCanonical = {
+      'utf-8': 'utf-8',
+      'utf8': 'utf-8',
+      'UTF-8': 'utf-8',
+      'UTF8': 'utf-8',
+      'utf_8': 'utf-8',
+      'utf_16': 'utf-16',
+      'utf-16': 'utf-16',
+      'utf16': 'utf-16',
+      'UTF-16': 'utf-16',
+      'UTF16': 'utf-16',
+      'UTF_16': 'utf-16',
+      'iso-8859-1': 'iso-8859-1',
+      'iso8859-1': 'iso-8859-1',
+      'iso_8859-1': 'iso-8859-1',
+      'iso-8859_1': 'iso-8859-1',
+      'iso8859_1': 'iso-8859-1',
+      'latin1': 'iso-8859-1',
+      'latin-1': 'iso-8859-1',
+      'LATIN1': 'iso-8859-1',
+      'LATIN-1': 'iso-8859-1'
+    };
+
     this.enableCaching = options.enableCaching !== false;
     this.cacheSize = options.cacheSize || 100;
     this.negotiationCache = new Map();
@@ -232,6 +256,28 @@ class ThemeContentNegotiator {
   }
 
   /**
+   * Normalize charset name to canonical form (RFC 2978)
+   * 
+   * Handles variations like UTF-8, utf8, UTF8, UTF_8, etc. and maps to canonical form
+   * 
+   * @private
+   * @param {string} charsetName - Charset name to normalize
+   * @returns {string} - Canonical charset name
+   */
+  normalizeCharset(charsetName) {
+    if (!charsetName) return 'utf-8';
+    
+    // Direct lookup in canonical map
+    if (this.charsetCanonical[charsetName]) {
+      return this.charsetCanonical[charsetName];
+    }
+    
+    // Fallback: normalize to lowercase and replace underscores with hyphens
+    const normalized = charsetName.toLowerCase().replace(/_/g, '-');
+    return this.charsetCanonical[normalized] || normalized;
+  }
+
+  /**
    * Negotiate charset from Accept-Charset header
    * 
    * @private
@@ -246,8 +292,10 @@ class ThemeContentNegotiator {
     let bestQuality = -1;
 
     for (const charset of charsets) {
-      if (this.charsets[charset.value] && charset.quality > bestQuality) {
-        bestMatch = charset.value;
+      // Normalize charset name to canonical form
+      const normalizedCharset = this.normalizeCharset(charset.value);
+      if (this.charsets[normalizedCharset] && charset.quality > bestQuality) {
+        bestMatch = normalizedCharset;
         bestQuality = charset.quality;
       }
     }
@@ -375,8 +423,10 @@ class ThemeContentNegotiator {
         }
       }
 
+      // Normalize charset name during parsing
+      const normalizedCharset = this.normalizeCharset(charset.trim());
       charsets.push({
-        value: charset.trim(),
+        value: normalizedCharset,
         quality: Math.min(1.0, Math.max(0, quality))
       });
     }
@@ -642,6 +692,15 @@ class ThemeContentNegotiator {
    */
   getSupportedLanguages() {
     return Object.keys(this.languages);
+  }
+
+  /**
+   * Get supported charsets
+   * 
+   * @returns {string[]} - Array of supported charsets (canonical form)
+   */
+  getSupportedCharsets() {
+    return Object.keys(this.charsets);
   }
 
   /**
