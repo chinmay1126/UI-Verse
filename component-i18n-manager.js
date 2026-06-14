@@ -2,13 +2,14 @@
  * UIverse Component Internationalization Manager
  * 
  * Provides comprehensive i18n support for component metadata:
- * - Multi-language component definitions
- * - Translation management and fallbacks
+ * - Multi-language component definitions with directionality
+ * - Translation management with RTL/LTR metadata
+ * - Bidirectional text support and BiDi control characters
  * - Language detection and routing
  * - Plural handling and formatting
  * - Translation caching and performance
  * 
- * @version 1.0.0
+ * @version 1.0.1
  * @author UIverse Community
  * @license MIT
  */
@@ -22,15 +23,23 @@ class ComponentI18nManager {
   constructor(options = {}) {
     this.defaultLanguage = options.defaultLanguage || 'en';
     this.supportedLanguages = options.supportedLanguages || [
-      'en', 'es', 'fr', 'de', 'ja', 'zh', 'pt', 'ru', 'ko', 'it'
+      'en', 'es', 'fr', 'de', 'ja', 'zh', 'pt', 'ru', 'ko', 'it', 'ar', 'he', 'fa'
     ];
     this.fallbackLanguage = options.fallbackLanguage || 'en';
-    
     this.translations = new Map(); // lang -> namespace -> key -> translation
     this.components = new Map(); // componentName -> i18n metadata
     this.translationCache = new Map();
     this.enableCaching = options.enableCaching !== false;
     this.cacheSize = options.cacheSize || 500;
+    
+    // RTL language mapping
+    this.rtlLanguages = new Set(options.rtlLanguages || ['ar', 'he', 'fa', 'ur', 'yi', 'ji']);
+    this.ltrLanguages = new Set(options.ltrLanguages || [
+      'en', 'es', 'fr', 'de', 'it', 'pt', 'nl', 'sv', 'no', 'da', 'fi', 'pl', 'cs', 'ru', 'uk', 'bg', 'sr', 'hr', 'sk'
+    ]);
+
+    // Script and directionality mapping
+    this.languageMetadata = this.initializeLanguageMetadata();
     
     this.pluralRules = {
       'en': new Intl.PluralRules('en'),
@@ -42,7 +51,10 @@ class ComponentI18nManager {
       'pt': new Intl.PluralRules('pt'),
       'ru': new Intl.PluralRules('ru'),
       'ko': new Intl.PluralRules('ko'),
-      'it': new Intl.PluralRules('it')
+      'it': new Intl.PluralRules('it'),
+      'ar': new Intl.PluralRules('ar'),
+      'he': new Intl.PluralRules('he'),
+      'fa': new Intl.PluralRules('fa')
     };
 
     this.formatters = {
@@ -55,12 +67,38 @@ class ComponentI18nManager {
       'pt': new Intl.DateTimeFormat('pt'),
       'ru': new Intl.DateTimeFormat('ru'),
       'ko': new Intl.DateTimeFormat('ko'),
-      'it': new Intl.DateTimeFormat('it')
+      'it': new Intl.DateTimeFormat('it'),
+      'ar': new Intl.DateTimeFormat('ar'),
+      'he': new Intl.DateTimeFormat('he'),
+      'fa': new Intl.DateTimeFormat('fa')
     };
   }
 
   /**
-   * Register component with i18n metadata
+   * Initialize language metadata with directionality
+   * @private
+   */
+  initializeLanguageMetadata() {
+    return {
+      'en': { textDirection: 'ltr', scriptCode: 'Latn', scriptDirection: 'ltr', biDiRequired: false },
+      'es': { textDirection: 'ltr', scriptCode: 'Latn', scriptDirection: 'ltr', biDiRequired: false },
+      'fr': { textDirection: 'ltr', scriptCode: 'Latn', scriptDirection: 'ltr', biDiRequired: false },
+      'de': { textDirection: 'ltr', scriptCode: 'Latn', scriptDirection: 'ltr', biDiRequired: false },
+      'it': { textDirection: 'ltr', scriptCode: 'Latn', scriptDirection: 'ltr', biDiRequired: false },
+      'pt': { textDirection: 'ltr', scriptCode: 'Latn', scriptDirection: 'ltr', biDiRequired: false },
+      'ja': { textDirection: 'ltr', scriptCode: 'Jpan', scriptDirection: 'ltr', biDiRequired: false },
+      'zh': { textDirection: 'ltr', scriptCode: 'Hans', scriptDirection: 'ltr', biDiRequired: false },
+      'ko': { textDirection: 'ltr', scriptCode: 'Hang', scriptDirection: 'ltr', biDiRequired: false },
+      'ru': { textDirection: 'ltr', scriptCode: 'Cyrl', scriptDirection: 'ltr', biDiRequired: false },
+      'ar': { textDirection: 'rtl', scriptCode: 'Arab', scriptDirection: 'rtl', biDiRequired: true },
+      'he': { textDirection: 'rtl', scriptCode: 'Hebr', scriptDirection: 'rtl', biDiRequired: true },
+      'fa': { textDirection: 'rtl', scriptCode: 'Arab', scriptDirection: 'rtl', biDiRequired: true },
+      'ur': { textDirection: 'rtl', scriptCode: 'Arab', scriptDirection: 'rtl', biDiRequired: true }
+    };
+  }
+
+  /**
+   * Register component with i18n metadata including directionality
    * 
    * @param {string} componentName - Component identifier
    * @param {Object} i18nMetadata - Internationalization metadata
@@ -70,12 +108,19 @@ class ComponentI18nManager {
       throw new Error(`Component ${componentName} must define supportedLanguages`);
     }
 
+    // Enrich metadata with directionality information
+    const enrichedTranslations = this.enrichTranslationsWithDirectionality(
+      i18nMetadata.translations || {},
+      i18nMetadata.supportedLanguages
+    );
+
     this.components.set(componentName, {
       name: componentName,
       defaultLanguage: i18nMetadata.defaultLanguage || this.defaultLanguage,
       supportedLanguages: i18nMetadata.supportedLanguages,
       fallbackLanguage: i18nMetadata.fallbackLanguage || i18nMetadata.supportedLanguages[0],
-      translations: i18nMetadata.translations || {},
+      translations: enrichedTranslations,
+      languageMetadata: this.extractLanguageMetadata(i18nMetadata.supportedLanguages),
       metadata: {
         author: i18nMetadata.author,
         version: i18nMetadata.version || '1.0.0',
@@ -86,11 +131,55 @@ class ComponentI18nManager {
   }
 
   /**
-   * Get component metadata in specific language
+   * Enrich translations with directionality and BiDi metadata
+   * @private
+   */
+  enrichTranslationsWithDirectionality(translations, supportedLanguages) {
+    const enriched = {};
+
+    for (const lang of supportedLanguages) {
+      enriched[lang] = translations[lang] || {};
+      
+      // Add directionality metadata
+      const metadata = this.languageMetadata[lang];
+      if (metadata) {
+        enriched[lang]._directionality = {
+          textDirection: metadata.textDirection,
+          scriptCode: metadata.scriptCode,
+          scriptDirection: metadata.scriptDirection,
+          biDiRequired: metadata.biDiRequired
+        };
+      }
+    }
+
+    return enriched;
+  }
+
+  /**
+   * Extract language metadata for component
+   * @private
+   */
+  extractLanguageMetadata(supportedLanguages) {
+    const metadata = {};
+
+    for (const lang of supportedLanguages) {
+      metadata[lang] = this.languageMetadata[lang] || {
+        textDirection: 'ltr',
+        scriptCode: 'Latn',
+        scriptDirection: 'ltr',
+        biDiRequired: false
+      };
+    }
+
+    return metadata;
+  }
+
+  /**
+   * Get component metadata in specific language with directionality
    * 
    * @param {string} componentName - Component identifier
    * @param {string} language - Target language code
-   * @returns {Object} - Localized component metadata
+   * @returns {Object} - Localized component metadata with directionality
    */
   getComponentMetadata(componentName, language) {
     const component = this.components.get(componentName);
@@ -110,6 +199,7 @@ class ComponentI18nManager {
       name: componentName,
       language: resolvedLanguage,
       fallback: resolvedLanguage !== language,
+      directionality: component.languageMetadata[resolvedLanguage] || {},
       ...this.getTranslations(componentName, resolvedLanguage)
     };
 
@@ -138,8 +228,30 @@ class ComponentI18nManager {
       usage: translations.usage || '',
       examples: translations.examples || [],
       notes: translations.notes || '',
-      deprecationNote: translations.deprecationNote || null
+      deprecationNote: translations.deprecationNote || null,
+      textDirection: translations.textDirection || this.getTextDirection(language),
+      scriptCode: translations.scriptCode || this.getScriptCode(language)
     };
+  }
+
+  /**
+   * Get text direction for language
+   * @private
+   */
+  getTextDirection(language) {
+    const baseLang = language.split('-')[0];
+    const metadata = this.languageMetadata[baseLang];
+    return metadata ? metadata.textDirection : 'ltr';
+  }
+
+  /**
+   * Get script code for language
+   * @private
+   */
+  getScriptCode(language) {
+    const baseLang = language.split('-')[0];
+    const metadata = this.languageMetadata[baseLang];
+    return metadata ? metadata.scriptCode : 'Latn';
   }
 
   /**
@@ -154,7 +266,7 @@ class ComponentI18nManager {
   translate(componentName, key, params = {}, language = this.defaultLanguage) {
     const component = this.components.get(componentName);
     if (!component) {
-      return key; // Fallback to key if component not found
+      throw new Error(`Component not found: ${componentName}`);
     }
 
     const resolvedLanguage = this.resolveLanguage(language, component.supportedLanguages);
@@ -167,35 +279,56 @@ class ComponentI18nManager {
       text = text.replace(regex, paramValue);
     }
 
+    // Apply BiDi markers for RTL text
+    const metadata = component.languageMetadata[resolvedLanguage];
+    if (metadata && metadata.biDiRequired) {
+      text = this.applyBiDiMarkers(text, metadata.textDirection);
+    }
+
+    return text;
+  }
+
+  /**
+   * Apply BiDi (bidirectional) control characters
+   * @private
+   */
+  applyBiDiMarkers(text, direction) {
+    const RLM = '\u200F'; // Right-to-left mark
+    const LRM = '\u200E'; // Left-to-right mark
+    const RLE = '\u202A'; // Right-to-left embedding
+    const LRE = '\u202D'; // Left-to-right embedding
+    const PDF = '\u202C'; // Pop directional formatting
+
+    if (direction === 'rtl') {
+      return RLE + text + PDF;
+    }
     return text;
   }
 
   /**
    * Resolve language with fallback chain
-   * 
    * @private
    */
-  resolveLanguage(requestedLanguage, supportedLanguages) {
-    // Exact match
-    if (supportedLanguages.includes(requestedLanguage)) {
-      return requestedLanguage;
+  resolveLanguage(language, supportedLanguages) {
+    if (supportedLanguages.includes(language)) {
+      return language;
     }
 
-    // Language family match (e.g., en-US -> en)
-    const baseLanguage = requestedLanguage.split('-')[0];
-    if (supportedLanguages.includes(baseLanguage)) {
-      return baseLanguage;
+    // Try language family (e.g., es-MX -> es)
+    const baseLang = language.split('-')[0];
+    if (supportedLanguages.includes(baseLang)) {
+      return baseLang;
     }
 
-    // Fallback to default
-    return supportedLanguages[0] || this.defaultLanguage;
+    // Return fallback
+    return supportedLanguages[0];
   }
 
   /**
-   * Get supported languages for component
+   * Get language support details including directionality
    * 
    * @param {string} componentName - Component identifier
-   * @returns {Object} - Language support information
+   * @returns {Object} - Support details for each language
    */
   getLanguageSupport(componentName) {
     const component = this.components.get(componentName);
@@ -213,110 +346,11 @@ class ComponentI18nManager {
         isDefault: lang === component.defaultLanguage,
         isFallback: lang === component.fallbackLanguage,
         completeness: (translated / total * 100).toFixed(2) + '%',
-        translatedKeys: translated,
-        totalKeys: total
+        directionality: component.languageMetadata[lang] || {}
       };
     }
 
-    return {
-      component: componentName,
-      supportedLanguages: component.supportedLanguages,
-      defaultLanguage: component.defaultLanguage,
-      fallbackLanguage: component.fallbackLanguage,
-      languageSupport: support
-    };
-  }
-
-  /**
-   * Detect user language from accept-language header
-   * 
-   * @param {string} acceptLanguageHeader - Accept-Language header value
-   * @param {string[]} availableLanguages - Available languages for fallback
-   * @returns {string} - Best matching language code
-   */
-  detectLanguage(acceptLanguageHeader, availableLanguages = this.supportedLanguages) {
-    if (!acceptLanguageHeader) {
-      return this.defaultLanguage;
-    }
-
-    const languages = this.parseAcceptLanguage(acceptLanguageHeader);
-    
-    for (const lang of languages) {
-      // Exact match
-      if (availableLanguages.includes(lang.code)) {
-        return lang.code;
-      }
-
-      // Base language match
-      const baseCode = lang.code.split('-')[0];
-      if (availableLanguages.includes(baseCode)) {
-        return baseCode;
-      }
-    }
-
-    return this.defaultLanguage;
-  }
-
-  /**
-   * Parse Accept-Language header
-   * 
-   * @private
-   */
-  parseAcceptLanguage(header) {
-    return header
-      .split(',')
-      .map(lang => {
-        const [code, q] = lang.trim().split(';q=');
-        return {
-          code: code.trim(),
-          quality: parseFloat(q) || 1.0
-        };
-      })
-      .sort((a, b) => b.quality - a.quality);
-  }
-
-  /**
-   * Format plural string
-   * 
-   * @param {number} count - Count for plural form
-   * @param {Object} forms - Plural forms object
-   * @param {string} language - Language code
-   * @returns {string} - Formatted plural string
-   */
-  formatPlural(count, forms, language = this.defaultLanguage) {
-    const pluralRule = this.pluralRules[language];
-    if (!pluralRule) {
-      return forms.other || '';
-    }
-
-    const rule = pluralRule.select(count);
-    return forms[rule] || forms.other || '';
-  }
-
-  /**
-   * Format date for language
-   * 
-   * @param {Date|number} date - Date to format
-   * @param {string} language - Language code
-   * @param {Object} options - Formatting options
-   * @returns {string} - Formatted date
-   */
-  formatDate(date, language = this.defaultLanguage, options = {}) {
-    const formatter = new Intl.DateTimeFormat(language, options);
-    return formatter.format(date);
-  }
-
-  /**
-   * Format number for language
-   * 
-   * @param {number} number - Number to format
-   * @param {string} language - Language code
-   * @param {Object} options - Formatting options
-   * @returns {string} - Formatted number
-   */
-  formatNumber(number, language = this.defaultLanguage, options = {}) {
-    const formatter = new Intl.NumberFormat(language, options);
-    return formatter.format(number);
+    return support;
   }
 
   /**
@@ -358,12 +392,16 @@ class ComponentI18nManager {
     }
 
     if (!component.supportedLanguages.includes(language)) {
-      throw new Error(`Language not supported: ${language}`);
+      throw new Error(`Language ${language} not supported for component ${componentName}`);
     }
+
+    // Preserve directionality metadata
+    const existingDirMeta = component.translations[language]?._directionality;
 
     component.translations[language] = {
       ...component.translations[language],
-      ...translations
+      ...translations,
+      _directionality: existingDirMeta || this.languageMetadata[language]
     };
 
     component.metadata.completeness = this.calculateCompleteness({
@@ -379,27 +417,24 @@ class ComponentI18nManager {
   /**
    * Get all components with language metadata
    * 
-   * @returns {Object[]} - Array of component language metadata
+   * @returns {Array} - Array of components with metadata
    */
-  getComponentLanguageMetadata() {
-    const metadata = [];
-    
-    for (const [componentName, component] of this.components) {
-      metadata.push({
-        component: componentName,
-        ...this.getLanguageSupport(componentName),
-        metadata: component.metadata
+  getAllComponents() {
+    const components = [];
+    for (const [name, data] of this.components) {
+      components.push({
+        name,
+        ...data
       });
     }
-
-    return metadata;
+    return components;
   }
 
   /**
-   * Export translations for external tools
+   * Export translations for external tools with BiDi metadata
    * 
    * @param {string} format - Export format (json, csv, xliff)
-   * @returns {string} - Exported translations
+   * @returns {string} - Exported translations with directionality
    */
   exportTranslations(format = 'json') {
     const data = {};
@@ -407,6 +442,7 @@ class ComponentI18nManager {
     for (const [componentName, component] of this.components) {
       data[componentName] = {
         languages: component.supportedLanguages,
+        languageMetadata: component.languageMetadata,
         translations: component.translations
       };
     }
@@ -423,18 +459,23 @@ class ComponentI18nManager {
   }
 
   /**
-   * Export as CSV
+   * Export as CSV with directionality column
    * 
    * @private
    */
   exportAsCSV(data) {
-    let csv = 'Component,Language,Key,Value\n';
+    let csv = 'Component,Language,TextDirection,ScriptCode,Key,Value\n';
     
     for (const [componentName, component] of Object.entries(data)) {
       for (const [lang, translations] of Object.entries(component.translations)) {
+        const metadata = component.languageMetadata[lang] || {};
+        const textDirection = metadata.textDirection || 'ltr';
+        const scriptCode = metadata.scriptCode || 'Latn';
+
         for (const [key, value] of Object.entries(translations)) {
+          if (key === '_directionality') continue;
           const escapedValue = String(value).replace(/"/g, '""');
-          csv += `${componentName},${lang},${key},"${escapedValue}"\n`;
+          csv += `${componentName},${lang},${textDirection},${scriptCode},${key},"${escapedValue}"\n`;
         }
       }
     }
@@ -443,21 +484,32 @@ class ComponentI18nManager {
   }
 
   /**
-   * Export as XLIFF
+   * Export as XLIFF with xml:lang and BiDi attributes
    * 
    * @private
    */
   exportAsXLIFF(data) {
     let xliff = '<?xml version="1.0" encoding="UTF-8"?>\n';
-    xliff += '<xliff version="1.2">\n';
+    xliff += '<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">\n';
 
     for (const [componentName, component] of Object.entries(data)) {
       for (const [lang, translations] of Object.entries(component.translations)) {
-        xliff += `  <file original="${componentName}" source-language="en" target-language="${lang}">\n`;
+        const metadata = component.languageMetadata[lang] || {};
+        const textDirection = metadata.textDirection || 'ltr';
+        const scriptCode = metadata.scriptCode || 'Latn';
+        const biDiRequired = metadata.biDiRequired ? 'true' : 'false';
+
+        xliff += `  <file original="${componentName}" source-language="en" target-language="${lang}" `;
+        xliff += `xml:lang="${lang}" `;
+        xliff += `dir="${textDirection}" `;
+        xliff += `>\n`;
+        xliff += `    <!-- Script: ${scriptCode}, BiDi Required: ${biDiRequired} -->\n`;
         xliff += '    <body>\n';
         
         for (const [key, value] of Object.entries(translations)) {
-          xliff += `      <trans-unit id="${key}">\n`;
+          if (key === '_directionality') continue;
+          xliff += `      <trans-unit id="${componentName}.${lang}.${key}" `;
+          xliff += `xml:lang="${lang}" dir="${textDirection}">\n`;
           xliff += `        <source>${this.escapeXML(value)}</source>\n`;
           xliff += `        <target>${this.escapeXML(value)}</target>\n`;
           xliff += '      </trans-unit>\n';
@@ -474,19 +526,19 @@ class ComponentI18nManager {
 
   /**
    * Escape XML special characters
-   * 
    * @private
    */
   escapeXML(str) {
-    return String(str).replace(/[<>&'"]/g, c => {
-      const chars = { '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' };
-      return chars[c];
-    });
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
   }
 
   /**
-   * Set cache with LRU eviction
-   * 
+   * Set cache value with LRU eviction
    * @private
    */
   setCache(key, value) {
@@ -515,7 +567,9 @@ class ComponentI18nManager {
       cacheSize: this.translationCache.size,
       maxCacheSize: this.cacheSize,
       supportedLanguages: this.supportedLanguages,
-      defaultLanguage: this.defaultLanguage
+      defaultLanguage: this.defaultLanguage,
+      rtlLanguages: Array.from(this.rtlLanguages),
+      languageMetadata: this.languageMetadata
     };
   }
 }
