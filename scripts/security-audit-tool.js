@@ -133,9 +133,6 @@ async function runAudit() {
       if (type === 'script' || type === 'script-attr') {
         const hash = computeHash(type === 'script-attr' ? content.trim() : content);
         scriptHashes.add(hash);
-      } else if (type === 'style' || type === 'style-attr') {
-        const hash = computeHash(type === 'style-attr' ? content.trim() : content);
-        styleHashes.add(hash);
       }
     });
 
