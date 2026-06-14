@@ -115,6 +115,15 @@ const Bootstrap = {
     if (typeof CommandPalette !== 'undefined') {
       UIverse.register('CommandPalette', CommandPalette, dependenciesFor('CommandPalette'));
     }
+    if (
+  typeof PreviewZoom !==
+  'undefined'
+) {
+  UIverse.register(
+    'PreviewZoom',
+    PreviewZoom
+  );
+}
 
     if (typeof URLStateManager !== 'undefined') {
       UIverse.register('URLStateManager', URLStateManager);
