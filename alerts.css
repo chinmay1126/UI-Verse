@@ -18,7 +18,7 @@
 .sidebar-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px;z
   padding: 22px 24px;
   border-bottom: 1px solid var(--sidebar-border);
 }
