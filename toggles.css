@@ -2517,3 +2517,24 @@ linear-gradient(
 -webkit-text-fill-color:transparent;
 
 }
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #7f5cff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background: #5a3dff;
+}
