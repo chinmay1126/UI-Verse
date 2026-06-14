@@ -343,7 +343,7 @@ class ThemeValidator {
     }
 
     // Validate each spacing value
-    const spacingPattern = /^\d+(px|em|rem)$/;
+    const spacingPattern = /^\d+(?:\.\d+)?(px|em|rem|%|vh|vw|ch)$/;
     for (const [key, value] of Object.entries(spacing)) {
       if (value && !spacingPattern.test(value)) {
         errors.push({
@@ -372,7 +372,7 @@ class ThemeValidator {
     }
 
     // Validate each radius value
-    const radiusPattern = /^\d+(px|em|rem|%)$/;
+    const radiusPattern = /^\d+(?:\.\d+)?(px|em|rem|%|vh|vw|ch)$/;
     for (const [key, value] of Object.entries(radius)) {
       if (value && !radiusPattern.test(value)) {
         errors.push({
