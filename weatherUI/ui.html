@@ -49,6 +49,108 @@
         </div>
 
       </div>
+<!-- Search & Controls -->
+<div class="weather-toolbar">
+
+  <div class="search-box">
+    <input type="text" placeholder="Search city...">
+    <button>🔍</button>
+  </div>
+
+  <button class="theme-btn">
+    🌙
+  </button>
+
+</div>
+
+<section class="hourly-section">
+
+  <div class="section-header">
+    <h2>Hourly Forecast</h2>
+  </div>
+
+  <div class="hourly-scroll">
+
+    <div class="hour-card">
+      <span>11 AM</span>
+      <div>☀️</div>
+      <p>29°</p>
+    </div>
+
+    <div class="hour-card">
+      <span>12 PM</span>
+      <div>☁️</div>
+      <p>30°</p>
+    </div>
+
+    <div class="hour-card">
+      <span>1 PM</span>
+      <div>🌦️</div>
+      <p>28°</p>
+    </div>
+
+    <div class="hour-card">
+      <span>2 PM</span>
+      <div>🌧️</div>
+      <p>27°</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="highlights-section">
+
+  <h2>Today's Highlights</h2>
+
+  <div class="highlights-grid">
+
+    <div class="highlight-card">
+      <h4>🌡 Feels Like</h4>
+      <p>31°C</p>
+    </div>
+
+    <div class="highlight-card">
+      <h4>🌧 Rain Chance</h4>
+      <p>64%</p>
+    </div>
+
+    <div class="highlight-card">
+      <h4>⚡ UV Index</h4>
+      <p>5.2 Moderate</p>
+    </div>
+
+    <div class="highlight-card">
+      <h4>💨 Gusts</h4>
+      <p>24 km/h</p>
+    </div>
+
+  </div>
+
+</section>
+<section class="radar-section">
+
+  <div class="section-header">
+    <h2>Weather Radar</h2>
+  </div>
+
+  <div class="radar-map">
+    <img
+      src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b"
+      alt="Weather Radar">
+  </div>
+
+</section>
+
+<section class="chart-section">
+
+  <div class="section-header">
+    <h2>Temperature Trend</h2>
+  </div>
+
+  <canvas id="tempChart"></canvas>
+
+</section>
 
       <!-- Stats -->
       <div class="weather-card stats-card">

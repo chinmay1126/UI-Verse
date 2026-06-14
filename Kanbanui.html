@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y='; script-src-attr 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y='; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
 
   <meta
     name="viewport"
@@ -45,6 +48,18 @@
 
 
 
+
+  <button
+  class="menu-toggle"
+  aria-label="Open sidebar"
+  onclick="toggleSidebar()">
+
+  <i
+    class="fa-solid fa-bars"
+    aria-hidden="true">
+  </i>
+
+</button>
       <!-- ================= SIDEBAR ================= -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">

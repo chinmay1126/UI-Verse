@@ -163,3 +163,103 @@ function renderBookmarks(list = bookmarks) {
     `;
   });
 }
+
+const form = document.getElementById("bookmarkForm");
+const bookmarkList = document.getElementById("bookmarkList");
+const searchInput = document.getElementById("searchInput");
+
+let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+function saveBookmarks() {
+  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+}
+
+function renderBookmarks(filter = "") {
+
+  bookmarkList.innerHTML = "";
+
+  const filtered = bookmarks.filter(bookmark =>
+    bookmark.name.toLowerCase().includes(filter.toLowerCase()) ||
+    bookmark.category.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  if (filtered.length === 0) {
+    bookmarkList.innerHTML =
+      `<div class="empty-state">No bookmarks found.</div>`;
+    return;
+  }
+
+  filtered.forEach((bookmark, index) => {
+
+    const div = document.createElement("div");
+    div.className = "bookmark";
+
+    div.innerHTML = `
+      <div class="bookmark-info">
+        <a href="${bookmark.url}"
+           target="_blank"
+           rel="noopener noreferrer">
+          ${bookmark.name}
+        </a>
+
+        <span class="tag">${bookmark.category}</span>
+      </div>
+
+      <div class="bookmark-actions">
+        <a
+          href="${bookmark.url}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button class="visit-btn">Visit</button>
+        </a>
+
+        <button
+          class="delete-btn"
+          onclick="deleteBookmark(${index})"
+        >
+          Delete
+        </button>
+      </div>
+    `;
+
+    bookmarkList.appendChild(div);
+  });
+}
+
+function deleteBookmark(index) {
+  bookmarks.splice(index, 1);
+  saveBookmarks();
+  renderBookmarks(searchInput.value);
+}
+
+form.addEventListener("submit", (e) => {
+
+  e.preventDefault();
+
+  const name = document.getElementById("siteName").value.trim();
+  let url = document.getElementById("siteURL").value.trim();
+  const category = document.getElementById("category").value;
+
+  if (!url.startsWith("http://") &&
+      !url.startsWith("https://")) {
+    url = "https://" + url;
+  }
+
+  bookmarks.unshift({
+    name,
+    url,
+    category
+  });
+
+  saveBookmarks();
+  renderBookmarks();
+
+  form.reset();
+});
+
+searchInput.addEventListener("input", (e) => {
+  renderBookmarks(e.target.value);
+});
+
+renderBookmarks();

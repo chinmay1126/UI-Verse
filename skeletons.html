@@ -1,402 +1,434 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  <link rel="stylesheet" href="dist/shared.css">
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skeletons — UIverse</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UIverse Premium</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-/lzN+kzJyuOrl+ZRd4iWMdfDAEFX/I46ECCgegatPKE=' 'sha256-2K24krItHnr4cdM/cy/vVDYN3Dhs4oAHFsQ3LYYFlu0=' 'sha256-3yw8Dawgyd9orIdGAJE7auCX4cYHZTtDtKIK6l0TcPI=' 'sha256-6G8Uc1qsClitZ+pk0fQsVvU3gpV6jqqcAlNOqPwv0xA=' 'sha256-6x2QljeJhu5t7QCowmSVFor4cZ9uBlOQBMuTCZRpAi4=' 'sha256-B2Yndt64g/+VUZlGULhHngm044CcgdNhQlohz/CuU80=' 'sha256-FPN/L5aXOtEIlQVkFWHqL2IlaFa7GeZc4ezwWsbfWRE=' 'sha256-IP9a4pWOFSF88OngyE1UNmdpgDgonCGRteJnm3mkrBM=' 'sha256-IYuxW7qs4xIlZsd9p/qrJ2qf173gXcqa9EX1nvVHduA=' 'sha256-KYVhc6Ae85REV5RHFNR/3BYh4YiMwUSUY8uypzPxC2o=' 'sha256-NrJNdn8Hct/pM1LMWi5XwxJbf9uJWBP+E3jQcVc4jfY=' 'sha256-PLiB+aAAI0ndxr5hmp4Zd9WC5LDm4UBitjbrqbazc2s=' 'sha256-QN/4Jxb+Bp1x6ZCpc5/M8BWvCYsmvr4XiwOwaCvl9qI=' 'sha256-RVFG7BTi3mybs2M69IxOJuF96CYEv0cf/TKW8LIvVSE=' 'sha256-UBa/WI4EpgXjquYgURmbNWeklqHBEES7QLCT5larbqc=' 'sha256-Ue5WnFRV+6KTxMt7rb/TLGUJ970gagM68jz8MDu8znQ=' 'sha256-YZUtbP9ZuRlN8wnHPRzqw8timdkXIfghbJEtFt1OJ/A=' 'sha256-Yge4vQX6+oAB8Zw6/bXQg0KC0uzow6BgzYS8NR7W8mo=' 'sha256-ZCNOgAzLTken9MfTBd3KOx6Y73ryk9hvmFzCJWtiako=' 'sha256-aheZrtSP+JbZv0/oAx2aTrywSodYL5JxDe0S+OCv2HE=' 'sha256-cA2kbxJVVPSlTbA868dOo05kDaeaQPysp7O6RZ73wz4=' 'sha256-eJ6Gc2tEf4/VdLNzINpD4WpqK7vaSxyrbT3m8ls7YlQ=' 'sha256-g2NKUQkK8lF+4/jjpLM0w+vTHoHyK2fTWn+Ir1p01LY=' 'sha256-hTiV59LYS3tRhtQzLFP0padBPI8C2bNArxj2dEuuYlA=' 'sha256-ipJHrrf48tfgKdNccS3mH3Iamrc+qPf+HegqWWuMPzs=' 'sha256-mJUcX/q4dxdpOOSnC2e5mvNaoL7VRYAiwtcUmPud2oA=' 'sha256-r9RNPwAMhh8QYh0JKIgxhxd9nRVKWUMMcoR0LKWOCek=' 'sha256-rSjVOQEgE/1TgR1P2siHHbFhT65eQDUv/cZTRfHn0JM=' 'sha256-sS/diFMJlmc9ZsX7roQ8Kl3bHnlHB5cWFQDygS3WL7U=' 'sha256-t3IV5QLcztaOVW7lB+XYE7sWKDGsBEOl1uB4K9K1am4=' 'sha256-u8sQ78fGP5q41FpRYOOUe0mt8C4Jpg9lTo0+HxkYaWY=' 'sha256-zhzLitGNjw4E34RhsR/GnFI1m4I2nlh1LNQXq2qsQhI='; script-src-attr 'unsafe-hashes' 'sha256-/lzN+kzJyuOrl+ZRd4iWMdfDAEFX/I46ECCgegatPKE=' 'sha256-2K24krItHnr4cdM/cy/vVDYN3Dhs4oAHFsQ3LYYFlu0=' 'sha256-3yw8Dawgyd9orIdGAJE7auCX4cYHZTtDtKIK6l0TcPI=' 'sha256-6G8Uc1qsClitZ+pk0fQsVvU3gpV6jqqcAlNOqPwv0xA=' 'sha256-6x2QljeJhu5t7QCowmSVFor4cZ9uBlOQBMuTCZRpAi4=' 'sha256-B2Yndt64g/+VUZlGULhHngm044CcgdNhQlohz/CuU80=' 'sha256-FPN/L5aXOtEIlQVkFWHqL2IlaFa7GeZc4ezwWsbfWRE=' 'sha256-IP9a4pWOFSF88OngyE1UNmdpgDgonCGRteJnm3mkrBM=' 'sha256-IYuxW7qs4xIlZsd9p/qrJ2qf173gXcqa9EX1nvVHduA=' 'sha256-KYVhc6Ae85REV5RHFNR/3BYh4YiMwUSUY8uypzPxC2o=' 'sha256-NrJNdn8Hct/pM1LMWi5XwxJbf9uJWBP+E3jQcVc4jfY=' 'sha256-PLiB+aAAI0ndxr5hmp4Zd9WC5LDm4UBitjbrqbazc2s=' 'sha256-QN/4Jxb+Bp1x6ZCpc5/M8BWvCYsmvr4XiwOwaCvl9qI=' 'sha256-RVFG7BTi3mybs2M69IxOJuF96CYEv0cf/TKW8LIvVSE=' 'sha256-UBa/WI4EpgXjquYgURmbNWeklqHBEES7QLCT5larbqc=' 'sha256-Ue5WnFRV+6KTxMt7rb/TLGUJ970gagM68jz8MDu8znQ=' 'sha256-YZUtbP9ZuRlN8wnHPRzqw8timdkXIfghbJEtFt1OJ/A=' 'sha256-Yge4vQX6+oAB8Zw6/bXQg0KC0uzow6BgzYS8NR7W8mo=' 'sha256-ZCNOgAzLTken9MfTBd3KOx6Y73ryk9hvmFzCJWtiako=' 'sha256-aheZrtSP+JbZv0/oAx2aTrywSodYL5JxDe0S+OCv2HE=' 'sha256-cA2kbxJVVPSlTbA868dOo05kDaeaQPysp7O6RZ73wz4=' 'sha256-eJ6Gc2tEf4/VdLNzINpD4WpqK7vaSxyrbT3m8ls7YlQ=' 'sha256-g2NKUQkK8lF+4/jjpLM0w+vTHoHyK2fTWn+Ir1p01LY=' 'sha256-hTiV59LYS3tRhtQzLFP0padBPI8C2bNArxj2dEuuYlA=' 'sha256-ipJHrrf48tfgKdNccS3mH3Iamrc+qPf+HegqWWuMPzs=' 'sha256-mJUcX/q4dxdpOOSnC2e5mvNaoL7VRYAiwtcUmPud2oA=' 'sha256-r9RNPwAMhh8QYh0JKIgxhxd9nRVKWUMMcoR0LKWOCek=' 'sha256-rSjVOQEgE/1TgR1P2siHHbFhT65eQDUv/cZTRfHn0JM=' 'sha256-sS/diFMJlmc9ZsX7roQ8Kl3bHnlHB5cWFQDygS3WL7U=' 'sha256-t3IV5QLcztaOVW7lB+XYE7sWKDGsBEOl1uB4K9K1am4=' 'sha256-u8sQ78fGP5q41FpRYOOUe0mt8C4Jpg9lTo0+HxkYaWY=' 'sha256-zhzLitGNjw4E34RhsR/GnFI1m4I2nlh1LNQXq2qsQhI='; style-src 'self' https: 'unsafe-hashes' 'sha256-2d/Fipb9z3MGrzl87FsF3vJz5Agkg8+UMuzhASBJri4=' 'sha256-5xIDIkTIcKuaS00qhdKbjnluTexFCeWmnGQQJSzyg88=' 'sha256-AobnpX3YvXMxGY+ZsvP4iGpCYmq+pwoo4tY4OinkYQ8=' 'sha256-Q1+Np5oY4mWhCoAK34JX8t+H6LJnUO1x9lONgDZcFVA=' 'sha256-U3MazMEJTiMsg4LapgdcItRUgVsNA5IPIzNPZlvg8TA='; style-src-attr 'unsafe-hashes' 'sha256-2d/Fipb9z3MGrzl87FsF3vJz5Agkg8+UMuzhASBJri4=' 'sha256-5xIDIkTIcKuaS00qhdKbjnluTexFCeWmnGQQJSzyg88=' 'sha256-AobnpX3YvXMxGY+ZsvP4iGpCYmq+pwoo4tY4OinkYQ8=' 'sha256-Q1+Np5oY4mWhCoAK34JX8t+H6LJnUO1x9lONgDZcFVA=' 'sha256-U3MazMEJTiMsg4LapgdcItRUgVsNA5IPIzNPZlvg8TA='">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Page Styles -->
-    <link rel="stylesheet" href="skeletons.css" />
-    <!-- UIverse Runtime Loader -->
-    <script src="js/loader.js" defer></script>
-  </head>
-  <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 
-    <!-- ================= SIDEBAR ================= -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-brand">
-        <span class="brand-icon">⬡</span>
-        <span class="brand-text">UIverse <span class="brand-badge">V2</span></span>
-      </div>
-      <nav class="sidebar-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-          <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Buttons</span></a></li>
-          <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Cards</span></a></li>
-          <li><a href="loaders.html"><i class="fa-solid fa-spinner"></i><span>Loaders</span></a></li>
-          <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a></li>
-          <li><a href="testimonials.html"><i class="fa-solid fa-star"></i><span>Testimonials</span></a></li>
-          <li class="active"><a href="skeletons.html"><i class="fa-solid fa-layer-group"></i><span>Skeletons</span></a></li>
-        </ul>
-      </nav>
-    </aside>
+<body>
 
-    <!-- ================= PAGE CONTAINER ================= -->
-    <div class="page-container">
-      <!-- ================= TOP NAVBAR ================= -->
-      <header class="topbar">
-        <div class="topbar-left">
-          <a href="index.html" class="topbar-logo">
-            <span class="logo-mark">UI</span>
-            <span class="logo-text">UIverse</span>
-          </a>
-          <div class="topbar-search">
-            <label class="screen-reader-text" for="component-search">Search components</label>
-            <input id="component-search" type="search" class="search-input" placeholder="Search skeleton components..." />
-            <button type="button" class="search-action" data-a11y-remediation="button-label-needed"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </div>
-        </div>
-        <div class="topbar-right">
-          <button class="topbar-action" type="button" aria-label="Notifications">
-            <i class="fa-solid fa-bell"></i>
-          </button>
-          <button class="topbar-action" type="button" aria-label="Favorites">
-            <i class="fa-solid fa-heart"></i>
-          </button>
-          <button class="topbar-action theme-toggle" type="button" aria-label="Toggle theme">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-        </div>
-      </header>
+<div class="bg-grid"></div>
 
-      <!-- ================= MAIN CONTENT ================= -->
-      <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section" aria-labelledby="hero-heading">
-          <div class="hero-copy">
-            <span class="hero-label">Premium</span>
-            <h1 id="hero-heading" class="hero-title">Modern Skeleton Loading Components</h1>
-            <p class="hero-description">
-              Explore lightweight, responsive skeleton screens designed for premium user interfaces and polished load states.
-            </p>
-            <div class="hero-badges">
-              <span class="badge badge-primary">Shimmer Effect</span>
-              <span class="badge badge-secondary">Responsive</span>
-              <span class="badge badge-tertiary">Lightweight</span>
-            </div>
-          </div>
-          <div class="hero-preview">
-            <article class="skeleton-preview-card">
-              <header class="preview-header">
-                <div class="preview-title">
-                  <span class="preview-tag">Preview</span>
-                  <h2>Skeleton App Loader</h2>
-                </div>
-                <span class="status-pill">Loading</span>
-              </header>
-              <div class="preview-body">
-                <div class="skeleton-row skeleton-row-large"></div>
-                <div class="skeleton-grid">
-                  <div class="skeleton-block skeleton-block-avatar"></div>
-                  <div class="skeleton-block skeleton-block-text"></div>
-                </div>
-                <div class="skeleton-row skeleton-row-small"></div>
-                <div class="skeleton-row skeleton-row-medium"></div>
-              </div>
-            </article>
-          </div>
-        </section>
+<aside class="sidebar">
 
-        <!-- Filter Bar -->
-        <section class="filter-bar" aria-label="Skeleton filters">
-          <button class="filter-pill active">All</button>
-          <button class="filter-pill">Cards</button>
-          <button class="filter-pill">Profile</button>
-          <button class="filter-pill">Dashboard</button>
-          <button class="filter-pill">Tables</button>
-          <button class="filter-pill">Content</button>
-        </section>
+<div class="logo">
+<i class="fa-solid fa-cube"></i>
+<span>UIverse Pro</span>
+</div>
 
-        <!-- Components Grid -->
-        <section class="components-section" aria-labelledby="components-heading">
-          <div class="section-header">
-            <div>
-              <h2 id="components-heading">Skeleton Components</h2>
-              <p>Scalable skeleton structures for advanced frontend systems.</p>
-            </div>
-            <span class="section-note">10 premium components</span>
-          </div>
+<nav>
 
-          <div class="component-grid">
-            <!-- Profile Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Profile Skeleton</h3>
-                <span class="tag">Profile</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton profile-skeleton">
-                  <div class="avatar-circle"></div>
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="text-bar text-bar-subtitle"></div>
-                  <div class="text-row text-row-short"></div>
-                </div>
-              </div>
-              <p class="component-description">Clean profile skeleton with avatar, title, and supporting text placeholders.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">View</button>
-                <button class="btn btn-outline">Use</button>
-              </div>
-            </article>
+<a href="#">
+<i class="fa-solid fa-house"></i>
+<span>Dashboard</span>
+</a>
 
-            <!-- Dashboard Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Dashboard Skeleton</h3>
-                <span class="tag">Dashboard</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton dashboard-skeleton">
-                  <div class="text-bar text-bar-heading"></div>
-                  <div class="skeleton-grid dashboard-grid-preview">
-                    <div class="skeleton-card"></div>
-                    <div class="skeleton-card"></div>
-                    <div class="skeleton-card"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="component-description">Multi-panel dashboard placeholders with chart and summary loading states.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Preview</button>
-                <button class="btn btn-outline">Copy</button>
-              </div>
-            </article>
+<a href="#">
+<i class="fa-solid fa-layer-group"></i>
+<span>Components</span>
+</a>
 
-            <!-- Blog Card Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Blog Card Skeleton</h3>
-                <span class="tag">Cards</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton card-skeleton">
-                  <div class="media-block"></div>
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="text-bar text-bar-short"></div>
-                </div>
-              </div>
-              <p class="component-description">A premium blog card loader with image and text line placeholders.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Demo</button>
-                <button class="btn btn-outline">Add</button>
-              </div>
-            </article>
+<a href="#">
+<i class="fa-solid fa-chart-line"></i>
+<span>Analytics</span>
+</a>
 
-            <!-- Table Row Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Table Row Skeleton</h3>
-                <span class="tag">Tables</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton table-skeleton">
-                  <div class="table-row-row">
-                    <div class="table-cell cell-avatar"></div>
-                    <div class="table-cell cell-line"></div>
-                    <div class="table-cell cell-line-short"></div>
-                    <div class="table-cell cell-line-medium"></div>
-                  </div>
-                  <div class="table-row-row">
-                    <div class="table-cell cell-avatar"></div>
-                    <div class="table-cell cell-line"></div>
-                    <div class="table-cell cell-line-short"></div>
-                    <div class="table-cell cell-line-medium"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="component-description">Table row placeholders for data-driven interfaces and reports.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Inspect</button>
-                <button class="btn btn-outline">Copy</button>
-              </div>
-            </article>
+<a href="#">
+<i class="fa-solid fa-code"></i>
+<span>Templates</span>
+</a>
 
-            <!-- Product Card Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Product Card Skeleton</h3>
-                <span class="tag">Cards</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton product-skeleton">
-                  <div class="media-block media-block-square"></div>
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="text-bar text-bar-short"></div>
-                  <div class="button-placeholder"></div>
-                </div>
-              </div>
-              <p class="component-description">A shopping card loader built for premium marketplace layouts.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Use</button>
-                <button class="btn btn-outline">Inspect</button>
-              </div>
-            </article>
+<a href="#">
+<i class="fa-solid fa-cart-shopping"></i>
+<span>Ecommerce</span>
+</a>
 
-            <!-- Analytics Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Analytics Skeleton</h3>
-                <span class="tag">Dashboard</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton analytics-skeleton">
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="chart-placeholder"></div>
-                  <div class="skeleton-grid chart-stats-grid">
-                    <div class="stat-block"></div>
-                    <div class="stat-block"></div>
-                    <div class="stat-block"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="component-description">Analytics panel skeleton with chart and metric placeholders.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Preview</button>
-                <button class="btn btn-outline">Use</button>
-              </div>
-            </article>
+<a href="#">
+<i class="fa-solid fa-comments"></i>
+<span>Community</span>
+</a>
 
-            <!-- Chat Message Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Chat Message Skeleton</h3>
-                <span class="tag">Content</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton chat-skeleton">
-                  <div class="message-row">
-                    <div class="avatar-circle avatar-sm"></div>
-                    <div class="text-bar text-bar-medium"></div>
-                  </div>
-                  <div class="message-row message-row-right">
-                    <div class="text-bar text-bar-long"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="component-description">A messaging loader with alternating bubble shapes and avatars.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Demo</button>
-                <button class="btn btn-outline">Copy</button>
-              </div>
-            </article>
+<a href="#">
+<i class="fa-solid fa-gear"></i>
+<span>Settings</span>
+</a>
 
-            <!-- Video Card Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Video Card Skeleton</h3>
-                <span class="tag">Media</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton video-skeleton">
-                  <div class="media-block media-block-video"></div>
-                  <div class="text-bar text-bar-short"></div>
-                  <div class="text-bar text-bar-line"></div>
-                </div>
-              </div>
-              <p class="component-description">Video card placeholder with preview and details load bars.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Preview</button>
-                <button class="btn btn-outline">Use</button>
-              </div>
-            </article>
+</nav>
 
-            <!-- Article Loading Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Article Loading Skeleton</h3>
-                <span class="tag">Content</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton article-skeleton">
-                  <div class="text-bar text-bar-heading"></div>
-                  <div class="text-bar text-bar-long"></div>
-                  <div class="text-bar text-bar-medium"></div>
-                  <div class="text-bar text-bar-short"></div>
-                </div>
-              </div>
-              <p class="component-description">Long-form article loader for editorial and blog layouts.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Inspect</button>
-                <button class="btn btn-outline">Copy</button>
-              </div>
-            </article>
+</aside>
 
-            <!-- Team Member Skeleton -->
-            <article class="component-card">
-              <div class="component-card-head">
-                <h3>Team Member Skeleton</h3>
-                <span class="tag">Profile</span>
-              </div>
-              <div class="component-preview">
-                <div class="preview-skeleton team-skeleton">
-                  <div class="avatar-circle avatar-large"></div>
-                  <div class="text-bar text-bar-title"></div>
-                  <div class="text-bar text-bar-short"></div>
-                  <div class="button-placeholder button-placeholder-sm"></div>
-                </div>
-              </div>
-              <p class="component-description">Profile placeholder for team listings and people cards.</p>
-              <div class="component-actions">
-                <button class="btn btn-secondary">Preview</button>
-                <button class="btn btn-outline">Use</button>
-              </div>
-            </article>
-          </div>
-        </section>
+<header class="navbar">
 
-        <!-- Footer -->
-        <footer class="page-footer">
-          <div class="footer-grid">
-            <div class="footer-column">
-              <h3>UIverse</h3>
-              <p>Design systems for premium UI experiences and modern product interfaces.</p>
-            </div>
-            <div class="footer-column">
-              <h4>Navigation</h4>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="cards.html">Cards</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-              </ul>
-            </div>
-            <div class="footer-column">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href="#">Docs</a></li>
-                <li><a href="#">Components</a></li>
-                <li><a href="#">Templates</a></li>
-              </ul>
-            </div>
-            <div class="footer-column newsletter-column">
-              <h4>Newsletter</h4>
-              <p>Subscribe for new skeleton sets, component updates, and premium UI releases.</p>
-              <form class="footer-form">
-                <label class="screen-reader-text" for="footer-newsletter">Email</label>
-                <input id="footer-newsletter" type="email" placeholder="Enter your email" />
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-              </form>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <p>&copy; 2026 UIverse. Crafted for modern interface systems.</p>
-            <div class="social-links">
-              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
-            </div>
-          </div>
-        </footer>
-      </main>
-    </div>
-      <script src="dist/shared.js"></script>
+<div class="search-box">
+<i class="fa-solid fa-search"></i>
+<input type="text" placeholder="Search Components">
+</div>
+
+<div class="nav-actions">
+
+<button class="glass-btn">
+<i class="fa-solid fa-bell"></i>
+</button>
+
+<button class="glass-btn">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+<button class="primary-btn">
+Upgrade
+</button>
+
+</div>
+
+</header>
+
+<main class="main">
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-badge">
+NEW GENERATION UI LIBRARY
+</div>
+
+<h1>
+Build Amazing Interfaces
+<span>10x Faster</span>
+</h1>
+
+<p>
+A premium collection of modern UI components,
+skeleton loaders, dashboards, SaaS templates,
+and interactive elements designed for developers.
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary-btn-lg">
+Get Started
+</button>
+
+<button class="secondary-btn">
+Explore Components
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-preview">
+
+<div class="dashboard-card">
+
+<div class="card-header">
+<div class="circle green"></div>
+<div class="circle yellow"></div>
+<div class="circle red"></div>
+</div>
+
+<div class="chart">
+
+<div class="bar h1"></div>
+<div class="bar h2"></div>
+<div class="bar h3"></div>
+<div class="bar h4"></div>
+<div class="bar h5"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-card">
+<h2>1200+</h2>
+<p>Components</p>
+</div>
+
+<div class="stat-card">
+<h2>85K+</h2>
+<p>Developers</p>
+</div>
+
+<div class="stat-card">
+<h2>4.9★</h2>
+<p>Rating</p>
+</div>
+
+<div class="stat-card">
+<h2>99.9%</h2>
+<p>Uptime</p>
+</div>
+
+</section>
+
+<section class="components-grid">
+
+<div class="component-card">
+<div class="tag">NEW</div>
+<h3>Dashboard Skeleton</h3>
+<p>Advanced loading states for dashboards.</p>
+</div>
+
+<div class="component-card">
+<div class="tag">POPULAR</div>
+<h3>Ecommerce Loader</h3>
+<p>Product card loading placeholders.</p>
+</div>
+
+<div class="component-card">
+<div class="tag">PRO</div>
+<h3>Analytics Card</h3>
+<p>Premium chart skeleton states.</p>
+</div>
+
+</section>
+
+</main>
+
 </body>
 </html>
+```
+
+```css
+:root{
+--bg:#050816;
+--surface:#0f172a;
+--card:#111827;
+--border:rgba(255,255,255,.08);
+
+--primary:#7c3aed;
+--secondary:#06b6d4;
+
+--text:#f8fafc;
+--muted:#94a3b8;
+
+--radius:24px;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+.bg-grid{
+position:fixed;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-2;
+}
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:280px;
+height:100vh;
+background:rgba(15,23,42,.85);
+backdrop-filter:blur(20px);
+border-right:1px solid var(--border);
+padding:30px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:1.4rem;
+font-weight:800;
+margin-bottom:50px;
+}
+
+.sidebar nav{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.sidebar nav a{
+text-decoration:none;
+color:var(--muted);
+padding:14px 18px;
+border-radius:14px;
+display:flex;
+align-items:center;
+gap:14px;
+transition:.3s;
+}
+
+.sidebar nav a:hover{
+background:rgba(124,58,237,.15);
+color:white;
+}
+
+.navbar{
+position:fixed;
+top:0;
+left:280px;
+right:0;
+height:80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 40px;
+backdrop-filter:blur(20px);
+background:rgba(5,8,22,.7);
+border-bottom:1px solid var(--border);
+}
+
+.search-box{
+width:420px;
+display:flex;
+align-items:center;
+gap:12px;
+padding:14px 20px;
+background:#111827;
+border-radius:999px;
+}
+
+.search-box input{
+background:none;
+border:none;
+outline:none;
+color:white;
+width:100%;
+}
+
+.main{
+margin-left:280px;
+padding-top:120px;
+padding-inline:60px;
+}
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+min-height:80vh;
+}
+
+.hero h1{
+font-size:5rem;
+font-weight:900;
+line-height:1;
+margin:20px 0;
+}
+
+.hero h1 span{
+background:linear-gradient(
+90deg,
+#7c3aed,
+#06b6d4
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+color:var(--muted);
+font-size:1.1rem;
+line-height:1.8;
+max-width:600px;
+}
+
+.dashboard-card{
+height:450px;
+background:linear-gradient(
+145deg,
+#111827,
+#1e293b
+);
+border-radius:30px;
+padding:25px;
+border:1px solid var(--border);
+}
+
+.chart{
+height:320px;
+display:flex;
+align-items:flex-end;
+gap:18px;
+margin-top:40px;
+}
+
+.bar{
+flex:1;
+border-radius:20px 20px 0 0;
+background:linear-gradient(
+180deg,
+#7c3aed,
+#06b6d4
+);
+}
+
+.h1{height:40%;}
+.h2{height:65%;}
+.h3{height:85%;}
+.h4{height:55%;}
+.h5{height:95%;}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-top:100px;
+}
+
+.stat-card{
+background:#111827;
+padding:35px;
+border-radius:24px;
+text-align:center;
+border:1px solid var(--border);
+}
+
+.stat-card h2{
+font-size:2.3rem;
+margin-bottom:10px;
+}
+
+.components-grid{
+margin-top:100px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.component-card{
+background:#111827;
+padding:30px;
+border-radius:24px;
+border:1px solid var(--border);
+transition:.4s;
+}
+
+.component-card:hover{
+transform:translateY(-10px);
+}
+```

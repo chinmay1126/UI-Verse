@@ -1830,3 +1830,35 @@ body {
 .notification-panel.active {
   right: 20px;
 }
+
+:root{
+  --primary:#7c3aed;
+  --secondary:#2563eb;
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#ffffff;
+}
+
+body{
+  background:linear-gradient(
+    135deg,
+    #0f172a,
+    #111827,
+    #1e1b4b
+  );
+}
+
+.workspace-card,
+.booking-item,
+.analytics-card,
+.ai-card{
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(25px);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.workspace-card:hover{
+  transform:translateY(-8px);
+  box-shadow:
+    0 25px 50px rgba(124,58,237,.25);
+}

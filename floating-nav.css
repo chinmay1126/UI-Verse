@@ -319,6 +319,210 @@ body {
   box-shadow: 0 4px 12px rgba(255, 107, 74, 0.3);
 }
 
+.demo-nav-item {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  color: rgba(255,255,255,.75);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    box-shadow .35s ease,
+    color .35s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-nav-item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+      135deg,
+      rgba(255,255,255,.22),
+      transparent 65%
+  );
+  opacity:0;
+  transition:.35s;
+}
+
+.demo-nav-item:hover{
+  transform:translateY(-6px) scale(1.08);
+  background:rgba(124,92,255,.18);
+  color:#fff;
+  box-shadow:
+      0 12px 30px rgba(124,92,255,.28),
+      inset 0 1px 0 rgba(255,255,255,.15);
+}
+
+.demo-nav-item:hover::before{
+  opacity:1;
+}
+
+
+.demo-nav-item.active{
+
+  background:
+      linear-gradient(
+          135deg,
+          #8b5cf6,
+          #6366f1
+      );
+
+  color:white;
+
+  box-shadow:
+      0 0 25px rgba(139,92,246,.45),
+      0 8px 20px rgba(0,0,0,.3);
+
+  transform:translateY(-8px);
+}
+
+.demo-nav-item.active::after{
+
+  content:"";
+
+  position:absolute;
+
+  bottom:6px;
+  left:50%;
+
+  width:6px;
+  height:6px;
+
+  transform:translateX(-50%);
+
+  border-radius:50%;
+
+  background:white;
+
+  box-shadow:0 0 10px white;
+}
+
+.demo-bottom-nav{
+
+    display:flex;
+    gap:14px;
+
+    padding:14px 18px;
+
+    border-radius:28px;
+
+    background:rgba(18,22,34,.75);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+      0 15px 50px rgba(0,0,0,.45);
+
+    animation:floatNav 5s ease-in-out infinite;
+}
+
+@keyframes floatNav{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
+
+.demo-nav-item svg{
+
+    transition:
+        transform .35s ease,
+        stroke .35s ease;
+
+}
+
+.demo-nav-item:hover svg{
+
+    transform:scale(1.18) rotate(-6deg);
+
+}
+
+.demo-nav-item.active svg{
+
+    transform:scale(1.15);
+
+}
+
+.demo-nav-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:translate(-50%,-50%);
+
+    left:50%;
+    top:50%;
+
+    transition:.45s;
+
+}
+
+.demo-nav-item:active::after{
+
+    width:120px;
+    height:120px;
+
+    opacity:0;
+
+}
+
+.demo-bottom-nav{
+
+    position:relative;
+
+}
+
+.demo-bottom-nav::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:20%;
+    right:20%;
+    bottom:-18px;
+
+    height:30px;
+
+    background:#7c5cff;
+
+    filter:blur(35px);
+
+    opacity:.45;
+
+    z-index:-1;
+
+}
 /* 2. Expandable FAB Menu */
 .demo-fab-container {
   position: relative;

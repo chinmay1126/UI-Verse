@@ -11,20 +11,7 @@
   />
 
   <!-- SECURITY -->
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self' https:;
-      img-src 'self' data: https:;
-      style-src 'self' 'unsafe-inline' https:;
-      script-src 'self' 'unsafe-inline' https:;
-      font-src 'self' https: data:;
-      connect-src 'self' https:;
-      object-src 'none';
-      base-uri 'self';
-      frame-ancestors 'none';
-    "
-  />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-PNO8PwRZF4QT6cVaxg4rmbhjFwtP3MMoUIv2mHhCjrc=' 'sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=' 'sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=' 'sha256-z6byek60RwD8QWt5SmJwK35/zd5P2ibpUNpPLBksZ/o='; script-src-attr 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-PNO8PwRZF4QT6cVaxg4rmbhjFwtP3MMoUIv2mHhCjrc=' 'sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=' 'sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=' 'sha256-z6byek60RwD8QWt5SmJwK35/zd5P2ibpUNpPLBksZ/o='; style-src 'self' https: 'unsafe-hashes' 'sha256-jFn6+Z2NvhxHU+rqfJSU27TemrRzz9lYz5hJzhwv6So='; style-src-attr 'unsafe-hashes' 'sha256-jFn6+Z2NvhxHU+rqfJSU27TemrRzz9lYz5hJzhwv6So='">
 
   <title>Cookies Policy — UIverse</title>
 
@@ -39,6 +26,37 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
+  <div class="cookie-settings-panel">
+  <h3>Manage Cookie Preferences</h3>
+
+  <div class="cookie-toggle">
+    <label>
+      Essential Cookies
+      <input type="checkbox" checked disabled>
+    </label>
+    <span>Required for website functionality.</span>
+  </div>
+
+  <div class="cookie-toggle">
+    <label>
+      Analytics Cookies
+      <input type="checkbox" id="analyticsCookie">
+    </label>
+    <span>Help us improve performance.</span>
+  </div>
+
+  <div class="cookie-toggle">
+    <label>
+      Marketing Cookies
+      <input type="checkbox" id="marketingCookie">
+    </label>
+    <span>Used for personalized campaigns.</span>
+  </div>
+
+  <button class="save-preferences">
+    Save Preferences
+  </button>
+</div>
 
   <!-- CSS -->
   <link rel="stylesheet" href="cookies.css" />
@@ -69,6 +87,50 @@
         acceptBtn.addEventListener('click', dismissBanner);
       }
     });
+
+    function dismissBanner() {
+  const banner = document.querySelector(".cookie-banner");
+
+  if (!banner) return;
+
+  banner.classList.add("hidden");
+
+  setTimeout(() => {
+    banner.remove();
+  }, 400);
+
+  localStorage.setItem("cookiesAccepted", "true");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.querySelector(".cookie-banner");
+
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    banner?.remove();
+    return;
+  }
+
+  document
+    .querySelector(".accept-btn")
+    ?.addEventListener("click", dismissBanner);
+});
+document.querySelectorAll(".counter").forEach(counter => {
+  const target = +counter.dataset.target;
+
+  const update = () => {
+    const value = +counter.innerText;
+
+    if (value < target) {
+      counter.innerText = Math.ceil(value + target / 30);
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  update();
+});
+
   </script>
 </head>
 
@@ -304,6 +366,36 @@
           <span>Subscription</span>
         </a>
       </li>
+
+      <table class="cookie-table">
+  <thead>
+    <tr>
+      <th>Cookie</th>
+      <th>Purpose</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>session_id</td>
+      <td>User authentication</td>
+      <td>Session</td>
+    </tr>
+
+    <tr>
+      <td>theme</td>
+      <td>Dark mode preference</td>
+      <td>1 Year</td>
+    </tr>
+
+    <tr>
+      <td>analytics</td>
+      <td>Anonymous usage tracking</td>
+      <td>90 Days</td>
+    </tr>
+  </tbody>
+</table>
       <li>
         <a href="auth.html">
           <i class="fa-solid fa-user-shield"></i>
@@ -451,6 +543,123 @@
         </div>
       </div>
 
+      <input
+  type="text"
+  id="searchInput"
+  placeholder="Search components..."
+  oninput="liveFilter(this.value)"
+  data-a11y-remediation="label-needed"
+/>
+
+
+<!-- COOKIE STATS -->
+
+<div class="policy-card cookie-stats-card">
+
+  <div class="stats-header">
+    <h2>
+      <i class="fa-solid fa-chart-pie"></i>
+      Cookie Usage Overview
+    </h2>
+
+    <p>
+      Transparency about how cookies are used across the platform.
+    </p>
+  </div>
+
+  <div class="stats-grid">
+
+    <div class="stat-box">
+      <span class="stat-circle essential"></span>
+      <h3>45%</h3>
+      <p>Essential</p>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-circle analytics"></span>
+      <h3>25%</h3>
+      <p>Analytics</p>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-circle preference"></span>
+      <h3>20%</h3>
+      <p>Preferences</p>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-circle marketing"></span>
+      <h3>10%</h3>
+      <p>Marketing</p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- COOKIE TIMELINE -->
+
+<div class="policy-card">
+
+  <h2>
+    <i class="fa-solid fa-clock-rotate-left"></i>
+    Cookie Lifecycle
+  </h2>
+
+  <div class="cookie-timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Visit Website</h3>
+        <p>Cookies are created when you access the platform.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Store Preferences</h3>
+        <p>Theme, language and session preferences are saved.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Analyze Activity</h3>
+        <p>Anonymous analytics improve user experience.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Automatic Expiry</h3>
+        <p>Cookies expire or can be removed anytime.</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FLOATING INFO -->
+
+<div class="floating-cookie-card">
+
+  <div class="floating-icon">
+    <i class="fa-solid fa-cookie"></i>
+  </div>
+
+  <div>
+    <h3>Privacy First</h3>
+    <p>
+      Your data stays protected with secure cookie handling.
+    </p>
+  </div>
+
+</div>
       <nav class="site-sidebar-nav" aria-label="Primary page navigation">
         <ul>
           <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
@@ -1076,6 +1285,84 @@
     <i class="fa-solid fa-cookie"></i>
   </div>
 
+  </footer>
+ <!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="banner-content">
+    <p>
+      We use cookies to personalize content, analyze traffic, and improve your experience.
+      You can choose to accept all, reject all, or manage your preferences.
+    </p>
+  </div>
+  <div class="banner-actions">
+    <button id="accept-all" class="banner-btn">Accept All</button>
+    <button id="reject-all" class="banner-btn">Reject All</button>
+    <button id="manage-prefs" class="banner-btn">Manage Preferences</button>
+  </div>
+</div>
+
+<!-- Preferences Modal -->
+<div id="cookie-modal" class="cookie-modal hidden">
+  <div class="modal-content">
+    <h3>Manage Cookie Preferences</h3>
+    <p>Select which types of cookies you want to allow:</p>
+    <form id="cookie-form">
+      <label>
+        <input type="checkbox" disabled checked />
+        Necessary (always enabled)
+      </label>
+      <label>
+        <input type="checkbox" id="analytics" />
+        Analytics
+      </label>
+      <label>
+        <input type="checkbox" id="marketing" />
+        Marketing
+      </label>
+    </form>
+    <div class="modal-actions">
+      <button id="save-prefs" class="banner-btn">Save Preferences</button>
+      <button id="close-modal" class="banner-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("cookie-banner");
+  const modal = document.getElementById("cookie-modal");
+
+  // Check localStorage
+  if (localStorage.getItem("cookieConsent")) {
+    banner.style.display = "none";
+  }
+
+  document.getElementById("accept-all").onclick = () => {
+    localStorage.setItem("cookieConsent", "accepted");
+    banner.style.display = "none";
+  };
+
+  document.getElementById("reject-all").onclick = () => {
+    localStorage.setItem("cookieConsent", "rejected");
+    banner.style.display = "none";
+  };
+
+  document.getElementById("manage-prefs").onclick = () => {
+    modal.classList.remove("hidden");
+  };
+
+  document.getElementById("save-prefs").onclick = () => {
+    const prefs = {
+      analytics: document.getElementById("analytics").checked,
+      marketing: document.getElementById("marketing").checked,
+    };
+    localStorage.setItem("cookieConsent", JSON.stringify(prefs));
+    modal.classList.add("hidden");
+    banner.style.display = "none";
+  };
+});
+
+</script>
   <div>
     <h3>Privacy First</h3>
 

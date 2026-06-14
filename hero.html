@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-AC9lPM2L1cGM5ejzW0dypFQCWOq+ALylHX7U3J2npxs=' 'sha256-As0cOkx4goY5H1EVgb/edAaANkN/xKLkoVUCb4fvEUM=' 'sha256-fzeyFsyCk0z0bWjhdnpjN9Acp80wAOicCbwrp4pI1XA=' 'sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=' 'sha256-yaFhAQGU4grAhS1mv33igTPiP52FbqnlewnSFsPSL00='; script-src-attr 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-AC9lPM2L1cGM5ejzW0dypFQCWOq+ALylHX7U3J2npxs=' 'sha256-As0cOkx4goY5H1EVgb/edAaANkN/xKLkoVUCb4fvEUM=' 'sha256-fzeyFsyCk0z0bWjhdnpjN9Acp80wAOicCbwrp4pI1XA=' 'sha256-uXUaHMV6W5t+ecyacP9YcaFyJ7vJYeiganbWLNJn8U0=' 'sha256-yaFhAQGU4grAhS1mv33igTPiP52FbqnlewnSFsPSL00='; style-src 'self' https: 'unsafe-hashes' 'sha256-1Ql0aGAImf2mbJmL8K42CucQZ90okj4sdY/dbJVVZt0=' 'sha256-AhCZCY+R5UhLOA1L+3UAw3AuIhOlhldjg0j7TSuu1O8=' 'sha256-EwX6gzn3K/AeBvzO5uSU+LH3xuXvwiUguSK5J/jTMxg=' 'sha256-RiAuSJ9w0HxFXq+FI3lT+q3LpBIQG5WMJBOxbImW34g=' 'sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=' 'sha256-WV3ftsMVBOBWjv6TgKy4d8q7zGahzOvZ20fEc5F+5tc=' 'sha256-fkAbU7anOplp9qgciiHR3dWca00/FQkAF9O9fEnRZXE=' 'sha256-jJlqNLyvB6LVqPc8x7qafSqP6L2gsQAiIi10W4s8WEA=' 'sha256-nXtpW/dzCYE5yuZuFnALpLsxgGNHNypBnOEfd/Y1JKQ=' 'sha256-rEVC1Jhej0v1IoUNjA9oqF4fp2uckf/6RVnFRveg7Ew=' 'sha256-trz6R5Hq++WFdHh8KJ6JAHqrLEKE+Do3zw5/AN+TRrw=' 'sha256-xv1jxLYFsNh+zXGhq7tarEZxdzpItTZvSkc2ZJDsZas=' 'sha256-yONoqD84aqu5441wkRCF23UmzMy4ChmgJf0j8LtHcxQ='; style-src-attr 'unsafe-hashes' 'sha256-1Ql0aGAImf2mbJmL8K42CucQZ90okj4sdY/dbJVVZt0=' 'sha256-AhCZCY+R5UhLOA1L+3UAw3AuIhOlhldjg0j7TSuu1O8=' 'sha256-EwX6gzn3K/AeBvzO5uSU+LH3xuXvwiUguSK5J/jTMxg=' 'sha256-RiAuSJ9w0HxFXq+FI3lT+q3LpBIQG5WMJBOxbImW34g=' 'sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=' 'sha256-WV3ftsMVBOBWjv6TgKy4d8q7zGahzOvZ20fEc5F+5tc=' 'sha256-fkAbU7anOplp9qgciiHR3dWca00/FQkAF9O9fEnRZXE=' 'sha256-jJlqNLyvB6LVqPc8x7qafSqP6L2gsQAiIi10W4s8WEA=' 'sha256-nXtpW/dzCYE5yuZuFnALpLsxgGNHNypBnOEfd/Y1JKQ=' 'sha256-rEVC1Jhej0v1IoUNjA9oqF4fp2uckf/6RVnFRveg7Ew=' 'sha256-trz6R5Hq++WFdHh8KJ6JAHqrLEKE+Do3zw5/AN+TRrw=' 'sha256-xv1jxLYFsNh+zXGhq7tarEZxdzpItTZvSkc2ZJDsZas=' 'sha256-yONoqD84aqu5441wkRCF23UmzMy4ChmgJf0j8LtHcxQ='">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hero Section Components — UIverse</title>
 
@@ -365,6 +366,39 @@
     <button class="nav-btn outline-nav-btn"><i class="fa-solid fa-plus"></i> Add Component</button>
     <button class="nav-btn primary-nav-btn"><i class="fa-solid fa-bookmark"></i> My Collection</button>
     <button id="darkModeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+
+<header class="page-header premium-header">
+  <div class="header-badge">
+    <i class="fa-solid fa-star"></i>
+    Hero Components Collection
+  </div>
+
+  <h1>
+    Modern <span>Hero Sections</span>
+  </h1>
+
+  <p>
+    Beautiful landing page hero layouts crafted with HTML, CSS and JavaScript.
+    Production-ready, responsive and fully customizable.
+  </p>
+
+  <div class="header-stats">
+    <div class="stat">
+      <strong>7+</strong>
+      <span>Components</span>
+    </div>
+
+    <div class="stat">
+      <strong>100%</strong>
+      <span>Responsive</span>
+    </div>
+
+    <div class="stat">
+      <strong>Pure CSS</strong>
+      <span>No Framework</span>
+    </div>
   </div>
 </header>
 
@@ -793,6 +827,90 @@
   </div>
 
 </div>
+
+<header class="hero-showcase-header">
+
+  <div class="hero-chip">
+    ✨ 10+ Premium Hero Components
+  </div>
+
+  <h1>
+    Discover
+    <span>Modern Hero Sections</span>
+  </h1>
+
+  <p>
+    Production-ready landing page heroes built with pure HTML,
+    CSS and JavaScript. Responsive, accessible and beautifully
+    animated.
+  </p>
+
+  <div class="hero-actions">
+
+    <button class="btn-primary">
+      Browse Components
+    </button>
+
+    <button class="btn-secondary">
+      Live Preview
+    </button>
+
+  </div>
+
+</header>
+
+<button class="copy-btn">
+
+<i class="fa-solid fa-code"></i>
+
+Copy HTML
+
+</button>
+
+<button class="preview-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+Preview
+
+</button>
+
+<section class="hero-toolbar">
+
+<input
+placeholder="Search Hero Components">
+
+<select>
+
+<option>Latest</option>
+
+<option>Popular</option>
+
+<option>Minimal</option>
+
+<option>Creative</option>
+
+</select>
+
+</section>
+
+<section class="hero-bottom-cta">
+
+<h2>
+Ready to build your next landing page?
+</h2>
+
+<p>
+Explore hundreds of premium UI components.
+</p>
+
+<button>
+
+Browse Library
+
+</button>
+
+</section>
 <div class="hero-info">
   <h2>Minimal Portfolio Hero</h2>
   <p>

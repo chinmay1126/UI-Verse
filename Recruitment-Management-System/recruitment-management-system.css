@@ -4,6 +4,17 @@
   box-sizing:border-box;
 }
 
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
 :root{
 
   --bg:#07111f;
@@ -735,6 +746,76 @@ body{
   }
 }
 
+
+.pipeline-grid,
+.analytics-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+
+.pipeline-card,
+.analytics-card{
+  background:#fff;
+  padding:1.5rem;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.pipeline-card span{
+  display:block;
+  margin-top:.75rem;
+  font-size:2rem;
+  font-weight:700;
+}
+
+.candidate-section{
+  margin-top:2rem;
+}
+
+.candidate-table{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.candidate-row{
+  display:grid;
+  grid-template-columns:2fr 2fr 1fr 1fr;
+  padding:1rem;
+  align-items:center;
+  border-bottom:1px solid #eee;
+}
+
+.candidate-row.heading{
+  font-weight:700;
+  background:#f7f7f7;
+}
+
+.status{
+  padding:.4rem .8rem;
+  border-radius:999px;
+  width:max-content;
+  font-size:.85rem;
+}
+
+.shortlisted{
+  background:#ede9fe;
+  color:#6d28d9;
+}
+
+.interview{
+  background:#dbeafe;
+  color:#2563eb;
+}
+
+.hired{
+  background:#dcfce7;
+  color:#16a34a;
+}
 /* =========================
    GLOBAL STYLES
 ========================= */
@@ -1409,4 +1490,32 @@ body{
   .floating-card{
     font-size:13px;
   }
+}
+
+@media (max-width:768px){
+
+  .sidebar{
+    display:none;
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .candidate-row{
+    grid-template-columns:1fr;
+    gap:.75rem;
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .topbar{
+    flex-direction:column;
+    gap:1rem;
+  }
+
 }

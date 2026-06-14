@@ -4,6 +4,22 @@
    =================================================== */
 
 /* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+.main-home {
+  margin-left: var(--sidebar-w, 260px);
+  padding: 110px 40px 40px 40px;
+  min-height: 100vh;
+}
+
+@media (max-width: 992px) {
+  .main-home {
+    margin-left: 0;
+    padding: 100px 20px 20px 20px;
+  }
+}
+
+/* ============================================================
    PAGE HERO
    ============================================================ */
 .page-hero {
@@ -296,8 +312,8 @@
    ============================================================ */
 .button-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
 }
 
 .component-card {
@@ -309,8 +325,6 @@
   flex-direction: column;
   gap: 16px;
   transition: all var(--transition);
-  opacity: 0;
-  transform: translateY(16px);
 }
 
 .component-card.in-view {
@@ -1330,6 +1344,70 @@
   box-shadow: none !important;
 }
 
+.animated-gradient-btn {
+  padding: 12px 28px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  background-size: 300% 300%;
+  background-image: linear-gradient(
+    45deg,
+    #eb6835,
+    #6c5ce7,
+    #00b894,
+    #0984e3,
+    #d63031
+  );
+  animation: gradientShift 6s ease infinite;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.animated-gradient-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+.animated-gradient-btn.fast { animation-duration: 3s; }
+.animated-gradient-btn.slow { animation-duration: 10s; }
+
+.animated-gradient-btn.alt {
+  background-image: linear-gradient(
+    45deg,
+    #ff6f61,
+    #ffcc00,
+    #4caf50,
+    #2196f3,
+    #9c27b0
+  );
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Default color combo */
+.animated-gradient-btn {
+  background-image: linear-gradient(
+    45deg,
+    #eb6835,
+    #6c5ce7,
+    #00b894,
+    #0984e3,
+    #d63031
+  );
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 /* buttons.css */
 
 *{
@@ -1528,7 +1606,7 @@ body{
   width:50%;
   height:100%;
   background:rgba(255,255,255,0.4);
-  transform:skewX(-20deg);
+  transform: translateX(0) skewX(-20deg);
 }
 
 .shine-btn:hover::before{
@@ -1536,8 +1614,11 @@ body{
 }
 
 @keyframes shine{
+  0% {
+    transform: translateX(0) skewX(-20deg);
+  }
   100%{
-    left:150%;
+    transform: translateX(500%) skewX(-20deg);
   }
 }
 

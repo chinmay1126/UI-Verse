@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Profile Cards - UIverse</title>
   <link rel="stylesheet" href="style.css" />
@@ -44,6 +45,137 @@
       </div>
     </div>
 
+
+    <!-- Card 6: Freelancer Profile Card -->
+<div class="profile-card freelancer-card">
+  <div class="freelancer-avatar">PC</div>
+  <h3>Priyanshi Choudhary</h3>
+  <p class="role">Freelance Frontend Developer</p>
+
+  <div class="rating">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+    <span>4.8/5</span>
+  </div>
+
+  <div class="freelancer-stats">
+    <div>
+      <strong>85+</strong>
+      <span>Projects</span>
+    </div>
+    <div>
+      <strong>60+</strong>
+      <span>Clients</span>
+    </div>
+  </div>
+
+  <button class="btn primary full">Hire Me</button>
+</div>
+
+<!-- Card 7: Achievement Profile Card -->
+<div class="profile-card achievement-card">
+  <div class="achievement-avatar">
+    <i class="fas fa-trophy"></i>
+  </div>
+
+  <h3>Priyanshi Choudhary</h3>
+  <p class="role">Open Source Contributor</p>
+
+  <div class="achievement-list">
+    <div class="achievement-item">
+      <i class="fas fa-medal"></i>
+      <span>Top Contributor 2025</span>
+    </div>
+
+    <div class="achievement-item">
+      <i class="fas fa-award"></i>
+      <span>100+ Commits</span>
+    </div>
+
+    <div class="achievement-item">
+      <i class="fas fa-certificate"></i>
+      <span>Frontend Certified</span>
+    </div>
+  </div>
+
+  <button class="btn primary full">View Achievements</button>
+</div>
+
+<!-- Card 8: Glassmorphism Profile Card -->
+<div class="profile-card glass-card">
+  <div class="glass-avatar">PC</div>
+
+  <h3>Priyanshi Choudhary</h3>
+  <p class="role">UI Designer & Developer</p>
+
+  <div class="glass-social">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-dribbble"></i></a>
+  </div>
+
+  <button class="btn white">Portfolio</button>
+</div>
+
+<!-- Card 9: Resume Snapshot Card -->
+<div class="profile-card resume-card">
+  <div class="resume-header">
+    <div class="resume-avatar">PC</div>
+    <div>
+      <h3>Priyanshi Choudhary</h3>
+      <p>Frontend Developer</p>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h4>Education</h4>
+    <p>B.Tech ECE - GWECA Ajmer</p>
+  </div>
+
+  <div class="resume-section">
+    <h4>Experience</h4>
+    <p>Open Source Contributor</p>
+  </div>
+
+  <div class="resume-section">
+    <h4>Skills</h4>
+    <div class="skills">
+      <span class="skill">React</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">CSS</span>
+      <span class="skill">Git</span>
+    </div>
+  </div>
+
+  <button class="btn primary full">Download CV</button>
+</div>
+
+<!-- Card 10: CEO Profile Card -->
+<div class="profile-card ceo-card">
+  <div class="ceo-banner"></div>
+
+  <div class="ceo-avatar">
+    <i class="fas fa-user-tie"></i>
+  </div>
+
+  <h3>Priyanshi Choudhary</h3>
+  <p class="role">Founder & CEO</p>
+
+  <blockquote>
+    "Innovation starts with curiosity and consistency."
+  </blockquote>
+
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fas fa-globe"></i></a>
+  </div>
+
+  <button class="btn primary full">View Company</button>
+</div>
     <!-- Card 2: Developer Profile Card -->
     <div class="profile-card dev-card">
       <div class="dev-header">
@@ -114,6 +246,206 @@
         <button class="btn white">Connect</button>
       </div>
     </div>
+
+    <div class="profile-card influencer-card">
+  <div class="verified-badge">
+    <i class="fas fa-check-circle"></i>
+  </div>
+
+  <div class="avatar">PC</div>
+
+  <h3>Priyanshi Choudhary</h3>
+  <p class="role">Tech Content Creator</p>
+
+  <div class="stats-row">
+    <div>
+      <strong>250K</strong>
+      <span>Followers</span>
+    </div>
+
+    <div>
+      <strong>1.2M</strong>
+      <span>Likes</span>
+    </div>
+  </div>
+
+  <button class="btn primary full">Subscribe</button>
+</div>
+
+<div class="profile-card mentor-card">
+  <div class="avatar">PC</div>
+
+  <h3>Priyanshi Choudhary</h3>
+
+  <p class="role">Frontend Mentor</p>
+
+  <div class="mentor-info">
+    <span>500+ Students</span>
+    <span>20 Workshops</span>
+  </div>
+
+  <button class="btn primary full">
+    Book Session
+  </button>
+</div>
+
+<div class="profile-card pm-card">
+  <div class="avatar">PM</div>
+
+  <h3>Priyanshi Choudhary</h3>
+
+  <p class="role">Product Manager</p>
+
+  <ul>
+    <li>15 Products Launched</li>
+    <li>8 Years Experience</li>
+    <li>Agile Expert</li>
+  </ul>
+
+  <button class="btn primary full">
+    Connect
+  </button>
+</div>
+
+
+<div class="profile-card gamer-card">
+  <div class="rank-badge">Diamond</div>
+
+  <div class="avatar">
+    <i class="fas fa-gamepad"></i>
+  </div>
+
+  <h3>PixelQueen</h3>
+
+  <p>Competitive Gamer</p>
+
+  <div class="stats-row">
+    <div>
+      <strong>87%</strong>
+      <span>Win Rate</span>
+    </div>
+
+    <div>
+      <strong>1240</strong>
+      <span>Matches</span>
+    </div>
+  </div>
+</div>
+
+<div class="profile-card founder-card">
+  <div class="avatar">
+    <i class="fas fa-rocket"></i>
+  </div>
+
+  <h3>Priyanshi Choudhary</h3>
+
+  <p class="role">Startup Founder</p>
+
+  <div class="startup-stats">
+    <div>3 Startups</div>
+    <div>15 Team Members</div>
+    <div>₹2Cr Raised</div>
+  </div>
+
+  <button class="btn primary full">
+    Learn More
+  </button>
+</div>
+
+<div class="profile-card dark-glass-card">
+  <div class="avatar">PC</div>
+
+  <h3>Priyanshi Choudhary</h3>
+
+  <p>Creative Developer</p>
+
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+
+  <button class="btn white">
+    Portfolio
+  </button>
+</div>
+
+<div class="profile-card recruiter-card">
+  <div class="avatar">PC</div>
+
+  <h3>Priyanshi Choudhary</h3>
+
+  <p>Frontend Developer</p>
+
+  <div class="availability">
+    Available for Hiring
+  </div>
+
+  <div class="salary">
+    Expected CTC: ₹8 LPA
+  </div>
+
+  <button class="btn primary full">
+    Download Resume
+  </button>
+</div>
+
+<div class="profile-card timeline-card">
+  <h3>Career Journey</h3>
+
+  <div class="timeline-item">
+    <strong>2023</strong>
+    <p>Started B.Tech</p>
+  </div>
+
+  <div class="timeline-item">
+    <strong>2024</strong>
+    <p>Frontend Projects</p>
+  </div>
+
+  <div class="timeline-item">
+    <strong>2025</strong>
+    <p>Open Source Contributor</p>
+  </div>
+</div>
+
+<div class="profile-card award-card">
+  <div class="award-icon">
+    <i class="fas fa-award"></i>
+  </div>
+
+  <h3>Priyanshi Choudhary</h3>
+
+  <p>Best Student Developer</p>
+
+  <div class="award-year">
+    2025 Winner
+  </div>
+
+  <button class="btn primary full">
+    View Award
+  </button>
+</div>
+
+<div class="profile-card premium-card">
+  <div class="premium-glow"></div>
+
+  <div class="avatar">PC</div>
+
+  <h3>Priyanshi Choudhary</h3>
+
+  <p>Senior UI Engineer</p>
+
+  <div class="premium-tags">
+    <span>React</span>
+    <span>Next.js</span>
+    <span>TypeScript</span>
+  </div>
+
+  <button class="btn primary full">
+    Contact
+  </button>
+</div>
 
     <!-- Card 5: Minimalist Profile Card -->
     <div class="profile-card minimal-card">

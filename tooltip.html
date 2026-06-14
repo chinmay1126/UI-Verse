@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q=' 'sha256-TGDkU6pXy3vigG8eyb4x4hPAD/U0e1LFqD6blyOBtro=' 'sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4='; script-src-attr 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-EhZb9eCYZjdj8g1XUkWjS5kjAJ0k/lKMbMN+ZN6m09Q=' 'sha256-TGDkU6pXy3vigG8eyb4x4hPAD/U0e1LFqD6blyOBtro=' 'sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4='; style-src 'self' https: 'unsafe-hashes' 'sha256-Y0mB5SEvxvYQsiaVUwsKQ/2BKdnMJbhvxI8C7gEhwdk=' 'sha256-axQckQ+Jb1vREzlwy1+Idz8tLGrdBJkAXykdRPuHT5Y='; style-src-attr 'unsafe-hashes' 'sha256-Y0mB5SEvxvYQsiaVUwsKQ/2BKdnMJbhvxI8C7gEhwdk=' 'sha256-axQckQ+Jb1vREzlwy1+Idz8tLGrdBJkAXykdRPuHT5Y='">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Tooltips — UIverse</title>
@@ -16,6 +16,9 @@
 
   <!-- <link rel="stylesheet" href="style.css"> -->
   <link rel="stylesheet" href="tooltip.css">
+  <link rel="stylesheet" href="shared-sidebar.css">
+  <link rel="stylesheet" href="home.css">
+</head>
   </head>
 
 <body>
@@ -26,6 +29,9 @@
   <div class="sidebar-brand">
     <span class="brand-icon">⬡</span>
     <span class="brand-text">UIverse</span>
+    <div class="hamburger">&#9776;</div>
+<nav class="sidebar">
+
   </div>
           <nav class="sidebar-nav">
     <ul>
@@ -337,12 +343,191 @@
       </li>
     </ul>
   </nav>
+</nav>
   <div class="sidebar-footer">
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
     <a href="#"><i class="fab fa-x-twitter"></i></a>
   </div>
 </aside>
+
+<section class="hero">
+  <div class="container">
+    <h1>Modern Tooltip Components</h1>
+    <p>
+      Discover beautiful, accessible, and customizable tooltip patterns
+      for modern web applications.
+    </p>
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Basic Tooltips</h2>
+
+  <div class="tooltip-grid">
+    <button class="tooltip top" data-tooltip="Tooltip on top">
+      Top
+    </button>
+
+    <button class="tooltip bottom" data-tooltip="Tooltip on bottom">
+      Bottom
+    </button>
+
+    <button class="tooltip left" data-tooltip="Tooltip on left">
+      Left
+    </button>
+
+    <button class="tooltip right" data-tooltip="Tooltip on right">
+      Right
+    </button>
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Rich Content Tooltips</h2>
+
+  <div class="card">
+    <span class="info-icon">i</span>
+
+    <div class="rich-tooltip">
+      <h3>Premium Plan</h3>
+      <p>
+        Includes unlimited projects, analytics, and team collaboration.
+      </p>
+      <button>Learn More</button>
+    </div>
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>User Profile Tooltip</h2>
+
+  <div class="profile-trigger">
+    <img src="avatar.jpg" alt="User Avatar">
+
+    <div class="profile-tooltip">
+      <h3>Sarah Johnson</h3>
+      <p>Senior Product Designer</p>
+
+      <div class="stats">
+        <span>1.2k Followers</span>
+        <span>350 Following</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Analytics Dashboard Tooltips</h2>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h3>
+        Revenue
+        <span class="tooltip-icon"
+          data-tooltip="Total revenue generated this month">
+          ?
+        </span>
+      </h3>
+
+      <p>$54,210</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>
+        Conversion Rate
+        <span class="tooltip-icon"
+          data-tooltip="Percentage of visitors who completed a purchase">
+          ?
+        </span>
+      </h3>
+
+      <p>8.2%</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Animation Styles</h2>
+
+  <div class="demo-row">
+    <button class="fade-tooltip">Fade</button>
+    <button class="scale-tooltip">Scale</button>
+    <button class="slide-tooltip">Slide</button>
+    <button class="glass-tooltip">Glassmorphism</button>
+  </div>
+</section>
+<section class="tooltip-section">
+  <h2>Accessible Tooltips</h2>
+
+  <button
+    aria-describedby="tooltip-save"
+    class="icon-btn">
+    Save
+  </button>
+
+  <div
+    id="tooltip-save"
+    role="tooltip">
+    Save your changes
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Mobile Variants</h2>
+
+  <div class="mobile-demo">
+    <button class="tap-tooltip">
+      Tap Me
+    </button>
+  </div>
+</section>
+
+<section class="tooltip-section">
+  <h2>Tooltip Features</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Supported</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Keyboard Navigation</td>
+        <td>✓</td>
+      </tr>
+
+      <tr>
+        <td>Touch Support</td>
+        <td>✓</td>
+      </tr>
+
+      <tr>
+        <td>Custom Content</td>
+        <td>✓</td>
+      </tr>
+
+      <tr>
+        <td>Animation Variants</td>
+        <td>✓</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section class="cta">
+  <h2>Build Better User Experiences</h2>
+
+  <p>
+    Enhance usability with elegant tooltip interactions.
+  </p>
+
+  <button>Explore Components</button>
+</section>
   <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
   <!-- ================= NAVBAR ================= -->
@@ -379,6 +564,15 @@
       Clean, responsive, lightweight, and easy to customize.
     </p>
   </div>
+
+        <div class="tooltip-wrapper">
+  <button class="tooltip-btn" aria-describedby="tooltip-top">
+    Hover or Focus Me
+  </button>
+  <span class="tooltip tooltip-top" id="tooltip-top" role="tooltip">
+    Tooltip on top
+  </span>
+</div>
 
   <div class="tooltip-grid">
 
@@ -489,11 +683,80 @@
         </div>
       </div>
     </div>
+    
+
+    <div class="tooltip-card">
+  <i class="fa-solid fa-face-smile fa-2x"></i>
+  <h3>Emoji Tooltip</h3>
+  <p>Shows emoji reactions on hover.</p>
+
+  <div class="demo-area">
+    <div class="tooltip-wrapper">
+      <button class="tooltip-btn">Hover Me</button>
+      <span class="tooltip tooltip-top">🔥 😂 👍</span>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip-card">
+  <i class="fa-solid fa-image fa-2x"></i>
+  <h3>Image Tooltip</h3>
+  <p>Displays a preview image on hover.</p>
+
+  <div class="demo-area">
+    <div class="tooltip-wrapper">
+      <button class="tooltip-btn">Hover Me</button>
+      <span class="tooltip tooltip-right">
+        <img src="preview.jpg" alt="Preview Image" style="width:80px; border-radius:4px;">
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip-card">
+  <i class="fa-solid fa-link fa-2x"></i>
+  <h3>Interactive Tooltip</h3>
+  <p>Includes clickable links or buttons.</p>
+
+  <div class="demo-area">
+    <div class="tooltip-wrapper">
+      <button class="tooltip-btn">Hover Me</button>
+      <span class="tooltip tooltip-bottom">
+        <a href="docs.html" style="color:#fff; text-decoration:underline;">Read Docs</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip-card">
+  <i class="fa-solid fa-bolt fa-2x"></i>
+  <h3>Animated Tooltip</h3>
+  <p>Fades and scales into view.</p>
+
+  <div class="demo-area">
+    <div class="tooltip-wrapper">
+      <button class="tooltip-btn">Hover Me</button>
+      <span class="tooltip tooltip-top">Animated Tooltip ⚡</span>
+    </div>
+  </div>
+</div>
+
 
   </div>
 </div>
 
 
+
+
+<!-- ================= FOOTER ================= -->
+   <footer class="footer">
+ <div class="footer-container">
+
+
+
+<!-- ================= FOOTER ================= -->
+   <footer class="footer">
+ <div class="footer-container">
  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
@@ -518,13 +781,21 @@
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-col brand">
-      <h2 class="footer-logo">⬡ UIverse</h2>
+
+      <h2 class="footer-logo"><i class="fa-solid fa-cube"></i> UIverse</h2>
+
       <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+
+      
       <div class="socials">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
+    </div>
+
+    
+
       <div class="footer-col">
         <h3>Explore</h3>
         <ul>
@@ -545,10 +816,28 @@
           </li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h3>Resources</h3>
         <ul>
           <li>
+            <a href="documentation.html">Documentation</a>
+          </li>
+          <li>
+            <a href="contribute.html">Contribute</a>
+          </li>
+          <li>
+            <a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a>
+          </li>
+          <li>
+            <a href="community.html">Community</a>
+          </li>
+          <li>
+            <a href="support.html">Support</a>
+          </li>
+        </ul>
+      </div>
+
             <a href="#">Documentation</a>
           </li>
           <li>
@@ -564,20 +853,81 @@
         <ul>
           <li><a href="privacypolicy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="license.html">License</a></li>
+        </ul>
+      </div>
+
         </ul>
       </div>
       <div class="footer-col newsletter">
         <h3>Stay Updated</h3>
         <p>Get notified when new components drop.</p>
         <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" id="newsletterEmail" />
+          <button type="button" onclick="subscribe()">Subscribe</button>
           <input type="email" placeholder="your@email.com">
           <button type="button">Subscribe</button>
         </div>
       </div>
+
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li>
+            <a href="documentation.html">Documentation</a>
+          </li>
+          <li>
+            <a href="contribute.html">Contribute</a>
+          </li>
+          <li>
+            <a href="https://github.com/uiverse/uiverse" target="_blank">GitHub Repo</a>
+          </li>
+          <li>
+            <a href="community.html">Community</a>
+          </li>
+          <li>
+            <a href="support.html">Support</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="license.html">License</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h3>Stay Updated</h3>
+        <p>Get notified when new components drop.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" id="newsletterEmail" />
+          <button type="button" onclick="subscribe()">Subscribe</button>
+        </div>
+      </div>
+
     </div>
+
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".sidebar").classList.toggle("active");
+});
+
+</script>
     <div class="footer-bottom">
       <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
     </div>
   </footer>
+
+  </body>
 </body>
 </html>

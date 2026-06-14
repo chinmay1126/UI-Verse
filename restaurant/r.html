@@ -4,6 +4,7 @@
 <head>
   <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' 'sha256-9cRaFdKaSkfd2uXW6bB3AYPGlPFdf/baAeopCQCMj+U='; style-src-attr 'unsafe-hashes' 'sha256-9cRaFdKaSkfd2uXW6bB3AYPGlPFdf/baAeopCQCMj+U='">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FoodHub — Restaurant Dashboard</title>
 
@@ -523,8 +524,17 @@
           </ul>
         </nav>
 
+        <label for="food-search" class="sr-only">Search food</label>
+<input
+  id="food-search"
+  type="search"
+  placeholder="Search delicious food..."
+  aria-label="Search food"
+/>
+
       </div>
 
+      
       <div class="offer-box">
         <h3>🔥 Today's Offer</h3>
         <p>Get free delivery on orders above ₹499.</p>

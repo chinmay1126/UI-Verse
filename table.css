@@ -67,6 +67,7 @@ body{
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
+
 .brand-icon {
   font-size: 24px;
   color: var(--accent);
@@ -616,6 +617,32 @@ tbody tr:hover{
   text-align:center;
 }
 
+
+.premium-hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+  padding:50px;
+  border-radius:28px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+  backdrop-filter:blur(25px);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+
+.pagination{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:25px;
+}
+
 .analytics-box h3{
 
   font-size:42px;
@@ -1101,6 +1128,209 @@ body {
   gap: 8px;
   flex-wrap: wrap;
   margin-top: 12px;
+}
+
+
+/* =========================
+   PROFESSIONAL TABLE THEMES
+========================= */
+
+.crm-table tbody tr:hover,
+.saas-table tbody tr:hover,
+.api-table tbody tr:hover,
+.design-table tbody tr:hover,
+.ai-table tbody tr:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.04);
+}
+
+/* ================= CRM ================= */
+
+.crm-table th {
+  background: linear-gradient(135deg,#6d5dfc,#8f7cff);
+}
+
+.crm-table td:nth-child(3) {
+  font-weight: 700;
+  color: #4ade80;
+}
+
+/* ================= SAAS ================= */
+
+.saas-table th {
+  background: linear-gradient(135deg,#00c9a7,#00e1c4);
+}
+
+.saas-table td:nth-child(3) {
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+.saas-table td:nth-child(5) {
+  color: #f87171;
+}
+
+/* ================= API ================= */
+
+.api-table th {
+  background: linear-gradient(135deg,#0ea5e9,#2563eb);
+}
+
+.api-table td:nth-child(2) {
+  font-weight: 700;
+}
+
+.api-table td:nth-child(3) {
+  color: #38bdf8;
+}
+
+.api-table td:nth-child(4) {
+  color: #f87171;
+}
+
+/* ================= DESIGN TOKENS ================= */
+
+.design-table th {
+  background: linear-gradient(135deg,#f97316,#fb923c);
+}
+
+.design-table td:first-child {
+  font-family: monospace;
+  color: #22d3ee;
+}
+
+.design-table td:nth-child(2) {
+  font-weight: 600;
+}
+
+/* ================= AI TABLE ================= */
+
+.ai-table th {
+  background: linear-gradient(135deg,#8b5cf6,#ec4899);
+}
+
+.ai-table td:nth-child(3) {
+  font-weight: 700;
+  color: #4ade80;
+}
+
+.ai-table td:nth-child(5) {
+  color: #fbbf24;
+}
+
+/* ================= PREMIUM HEADER ================= */
+
+.crm-table th,
+.saas-table th,
+.api-table th,
+.design-table th,
+.ai-table th {
+  color: white;
+  border: none;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+/* ================= MODERN ROWS ================= */
+
+.crm-table tbody tr,
+.saas-table tbody tr,
+.api-table tbody tr,
+.design-table tbody tr,
+.ai-table tbody tr {
+  transition: all .25s ease;
+}
+
+/* ================= TABLE GLASS EFFECT ================= */
+
+.crm-table,
+.saas-table,
+.api-table,
+.design-table,
+.ai-table {
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* ================= STATUS COLORS ================= */
+
+.positive {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.negative {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* ================= TABLE BADGES ================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.badge.success {
+  background: rgba(34,197,94,.15);
+  color: #4ade80;
+}
+
+.badge.pending {
+  background: rgba(251,191,36,.15);
+  color: #fbbf24;
+}
+
+.badge.danger {
+  background: rgba(239,68,68,.15);
+  color: #f87171;
+}
+
+.badge.active {
+  background: rgba(59,130,246,.15);
+  color: #60a5fa;
+}
+
+/* ================= PREMIUM ANIMATION ================= */
+
+.table-wrapper {
+  position: relative;
+}
+
+.table-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.1),
+      transparent,
+      rgba(255,255,255,.05)
+    );
+  pointer-events: none;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .crm-table,
+  .saas-table,
+  .api-table,
+  .design-table,
+  .ai-table {
+    min-width: 700px;
+  }
+
 }
 
 .newsletter-form input {

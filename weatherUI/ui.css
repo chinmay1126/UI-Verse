@@ -195,12 +195,58 @@ body{
     rgba(122,125,255,0.15)
   );
 
+
+
   border-radius:50%;
 
   top:-60px;
   right:-60px;
 
   filter:blur(10px);
+}
+
+
+.forecast-card{
+  transition:.3s ease;
+}
+
+.forecast-card:hover{
+  transform:
+    translateY(-8px)
+    scale(1.05);
+
+  background:
+    rgba(255,255,255,.15);
+}
+
+.aqi-circle{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+
+  background:
+  conic-gradient(
+    #22c55e 0deg,
+    #facc15 210deg,
+    #eab308 260deg,
+    #ef4444 360deg
+  );
+
+  display:grid;
+  place-items:center;
+}
+
+.aqi-circle span{
+  width:110px;
+  height:110px;
+  background:#0f172a;
+  border-radius:50%;
+
+  display:grid;
+  place-items:center;
+
+  font-size:2rem;
+  font-weight:700;
 }
 
 .location{

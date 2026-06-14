@@ -72,6 +72,20 @@ animateValue(
   1200
 );
 
+mobileToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+
+  const expanded =
+    sidebar.classList.contains("active");
+
+  mobileToggle.setAttribute(
+    "aria-expanded",
+    expanded
+  );
+
+  sidebarOverlay.classList.toggle("active");
+});
+
 /* ======================================================
 SEARCH DEMO
 ====================================================== */

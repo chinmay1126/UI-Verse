@@ -76,6 +76,26 @@
   }
 })();
 
+document
+.getElementById("expandAll")
+.addEventListener("click",()=>{
+
+  document
+  .querySelectorAll(".accordion-item")
+  .forEach(item=>item.classList.add("active"));
+
+});
+
+document
+.getElementById("collapseAll")
+.addEventListener("click",()=>{
+
+  document
+  .querySelectorAll(".accordion-item")
+  .forEach(item=>item.classList.remove("active"));
+
+});
+
 
 /* =====================================================
   NAVBAR SCROLL

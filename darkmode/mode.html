@@ -4,25 +4,13 @@
   <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8">
 
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self' https:;
-      base-uri 'self';
-      frame-ancestors 'none';
-      object-src 'none';
-      connect-src 'self' https:;
-      img-src 'self' data: https:;
-      font-src 'self' data: https:;
-      script-src 'self';
-      style-src 'self' https: 'unsafe-inline';
-    "
-  >
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' 'sha256-gw6OJkXMaH8RbEP3L02plvPlqrd7d6jUIuJvItOa2tg='; style-src-attr 'unsafe-hashes' 'sha256-gw6OJkXMaH8RbEP3L02plvPlqrd7d6jUIuJvItOa2tg='">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Dark Mode Toggle UI</title>
 
+  <link rel="stylesheet" href="/design-tokens.css">
   <link rel="stylesheet" href="./mode.css">
 
   <link
@@ -34,7 +22,6 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-
   <div class="background"></div>
 
   <div class="card">
@@ -45,7 +32,7 @@
     <div class="toggle-container">
       <input type="checkbox" id="toggle">
 
-      <label for="toggle" class="toggle-label">
+      <label for="toggle" class="toggle-label" aria-label="Theme toggle switch">
 
         <div class="icon moon">
           <i class="fa-solid fa-moon"></i>
@@ -63,10 +50,15 @@
     <p class="footer-text">
       Smooth UI • Glass effect • Modern UX
     </p>
+
+    <div class="component-demo" id="main-content">
+      <h2>Theme Switcher Component</h2>
+      <uv-theme-switcher></uv-theme-switcher>
+    </div>
   </div>
 
-  <script src="./mode.js"></script>
+  <script type="module" src="./mode.js"></script>
 
-  <script src="dist/shared.js"></script>
+  <script src="../dist/shared.js"></script>
 </body>
 </html>

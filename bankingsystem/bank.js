@@ -42,6 +42,38 @@ function openModal(mode) {
   document.getElementById('modal-overlay').classList.add('open');
   setTimeout(() => document.getElementById('modal-input').focus(), 200);
 }
+new Chart(document.getElementById("expenseChart"), {
+  type: "doughnut",
+  data: {
+    labels: [
+      "Food",
+      "Shopping",
+      "Bills",
+      "Entertainment"
+    ],
+    datasets: [{
+      data: [15000, 12000, 8000, 5000]
+    }]
+  }
+});
+
+document
+.getElementById("searchTxn")
+.addEventListener("input", e => {
+
+  const value = e.target.value.toLowerCase();
+
+  document.querySelectorAll(".txn")
+  .forEach(txn => {
+
+    txn.style.display =
+      txn.innerText.toLowerCase()
+      .includes(value)
+      ? "flex"
+      : "none";
+  });
+});
+
 function closeModal(e) { if (e.target.id === 'modal-overlay') closeModalDirect(); }
 function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); }
 

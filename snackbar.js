@@ -167,6 +167,78 @@ window.addEventListener(
   }
 );
 
+payment: {
+  icon: "fa-credit-card",
+  title: "Payment Successful",
+  text: "Your subscription has been activated."
+},
+
+ai: {
+  icon: "fa-robot",
+  title: "AI Assistant",
+  text: "New insights generated successfully."
+},
+
+live: {
+  icon: "fa-wave-square",
+  title: "Live Activity",
+  text: "A new user joined your workspace."
+},
+
+update: {
+  icon: "fa-arrows-rotate",
+  title: "Update Available",
+  text: "Version 3.0 is ready to install."
+},
+
+invite: {
+  icon: "fa-user-group",
+  title: "Workspace Invite",
+  text: "You've been invited to join a team."
+},
+
+reminder: {
+  icon: "fa-calendar-days",
+  title: "Meeting Reminder",
+  text: "Design review starts in 15 minutes."
+},
+
+achievement: {
+  icon: "fa-trophy",
+  title: "Achievement Unlocked",
+  text: "You reached a new productivity milestone."
+},
+
+order: {
+  icon: "fa-box",
+  title: "Order Shipped",
+  text: "Your package is now on the way."
+},
+
+download: {
+  icon: "fa-download",
+  title: "Download Complete",
+  text: "File saved successfully."
+},
+
+server: {
+  icon: "fa-server",
+  title: "Server Warning",
+  text: "High CPU usage detected."
+},
+
+battery: {
+  icon: "fa-battery-quarter",
+  title: "Low Battery",
+  text: "Please connect your charger."
+},
+
+premium: {
+  icon: "fa-crown",
+  title: "Premium Activated",
+  text: "Welcome to the Pro experience."
+}
+
 const container = document.getElementById("snackbarContainer");
 
 function createSnackbar(type, title, message, duration = 4000) {

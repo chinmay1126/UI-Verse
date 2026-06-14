@@ -5,6 +5,7 @@
   --bg-glow: rgba(123, 97, 255, 0.15);
   
   
+  
   --border-color: rgba(255, 255, 255, 0.08);
   --border-glow: rgba(123, 97, 255, 0.35);
   
@@ -21,7 +22,16 @@
   --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.7);
   --shadow-glow: 0 0 25px rgba(123, 97, 255, 0.35);
-}
+
+ --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(123, 97, 255, 0.35);
+  
+  --accent-primary: #eb6835;
+  --accent-secondary: #7b61ff;
+  --accent-gradient: linear-gradient(135deg, #eb6835, #7b61ff);
+  --accent-gradient-hover: linear-gradient(135deg, #ff7e4d, #947eff);
+  
+  --text-primary: #ffffff;}
 
 .dark-mode {
   --bg-primary: #030303;
@@ -208,6 +218,112 @@ h1, h2, h3, h4, .brand-text {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+
+.gradient-tabs{
+  position:relative;
+  display:flex;
+  background:#111827;
+  padding:6px;
+  border-radius:16px;
+}
+
+.gradient-tabs button{
+  flex:1;
+  background:none;
+  border:none;
+  color:#94a3b8;
+  padding:14px;
+  z-index:2;
+  cursor:pointer;
+}
+
+.gradient-tabs button.active{
+  color:#fff;
+}
+
+.tab-indicator{
+  position:absolute;
+  width:33.33%;
+  height:calc(100% - 12px);
+  top:6px;
+  left:6px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#7b61ff,#eb6835);
+  transition:.35s;
+}
+
+.saas-tabs{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.saas-tabs button{
+  padding:12px 18px;
+  border:none;
+  border-radius:14px;
+  background:#18181b;
+  color:#a1a1aa;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.saas-tabs button.active{
+  background:#7b61ff;
+  color:#fff;
+  box-shadow:0 10px 30px rgba(123,97,255,.35);
+}
+
+.ai-tabs{
+  display:flex;
+  gap:6px;
+  padding:6px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+}
+
+.ai-tabs button{
+  flex:1;
+  border:none;
+  background:none;
+  padding:14px;
+  color:#cbd5e1;
+}
+
+.ai-tabs button.active{
+  background:rgba(123,97,255,.25);
+  color:#fff;
+  border-radius:12px;
+}
+
+.vertical-tabs{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:20px;
+}
+
+.v-nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.v-nav button{
+  text-align:left;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:#171717;
+  color:#a1a1aa;
+}
+
+.v-nav button.active{
+  background:#7b61ff;
+  color:white;
 }
 
 .thp-code-line {

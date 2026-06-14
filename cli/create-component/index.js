@@ -27,6 +27,77 @@ const COLORS = {
   gray: "\x1b[90m",
 };
 
+
+const COLORS = {
+  reset: "\x1b[0m",
+  bold: "\x1b[1m",
+
+  red: "\x1b[38;5;196m",
+  green: "\x1b[38;5;46m",
+  yellow: "\x1b[38;5;226m",
+  blue: "\x1b[38;5;39m",
+  cyan: "\x1b[38;5;51m",
+  magenta: "\x1b[38;5;213m",
+  gray: "\x1b[38;5;244m",
+
+  orange: "\x1b[38;5;208m",
+  purple: "\x1b[38;5;141m",
+};
+
+function progress(step, total) {
+  const width = 30;
+
+  const filled = Math.round(
+    (step / total) * width
+  );
+
+  const bar =
+    "█".repeat(filled) +
+    "░".repeat(width - filled);
+
+  console.log(`
+${COLORS.cyan}[${bar}] ${step}/${total}${COLORS.reset}
+`);
+}
+
+function progress(step, total) {
+  const width = 30;
+
+  const filled = Math.round(
+    (step / total) * width
+  );
+
+  const bar =
+    "█".repeat(filled) +
+    "░".repeat(width - filled);
+
+  console.log(`
+${COLORS.cyan}[${bar}] ${step}/${total}${COLORS.reset}
+`);
+}
+
+async function spinner(text, ms = 1200) {
+  const frames = ["⠋","⠙","⠸","⠴","⠦","⠧"];
+
+  let i = 0;
+
+  process.stdout.write("\n");
+
+  const interval = setInterval(() => {
+    process.stdout.write(
+      `\r${COLORS.cyan}${frames[i++ % frames.length]} ${text}${COLORS.reset}`
+    );
+  }, 80);
+
+  await new Promise(r => setTimeout(r, ms));
+
+  clearInterval(interval);
+
+  process.stdout.write(
+    `\r${COLORS.green}✔ ${text}${COLORS.reset}\n`
+  );
+}
+
 const answers = {};
 
 const categories = [

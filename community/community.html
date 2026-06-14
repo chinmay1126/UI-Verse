@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="../dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-2YuGFaxtC2xCJVelmo/KelMXuAUNQfd2pRNc0Y7mG0o=' 'sha256-5J8QIN0uHa3X4+TaUpRKBKn3pljcpBNl9MhDpDECP+U=' 'sha256-m7ndwgMCmtBlQIQxncLKIXd1Q7IdtjWVc34r9sY9uvQ=' 'sha256-pa1AUuS5tEiJ7NJ4GwrOEqmzQwXQ7AvZQ8TB7E8Z2qU='; script-src-attr 'unsafe-hashes' 'sha256-2YuGFaxtC2xCJVelmo/KelMXuAUNQfd2pRNc0Y7mG0o=' 'sha256-5J8QIN0uHa3X4+TaUpRKBKn3pljcpBNl9MhDpDECP+U=' 'sha256-m7ndwgMCmtBlQIQxncLKIXd1Q7IdtjWVc34r9sY9uvQ=' 'sha256-pa1AUuS5tEiJ7NJ4GwrOEqmzQwXQ7AvZQ8TB7E8Z2qU='; style-src 'self' https: 'unsafe-hashes' 'sha256-g3JdLG4AGBF2Dco/JPDrbKcJXqUyg08GNvfSPehNIxk=' 'sha256-xKT4Zt3llnfAlq2zca9zj+FgiWUpLuaIIWByYKyvZ0c='; style-src-attr 'unsafe-hashes' 'sha256-g3JdLG4AGBF2Dco/JPDrbKcJXqUyg08GNvfSPehNIxk=' 'sha256-xKT4Zt3llnfAlq2zca9zj+FgiWUpLuaIIWByYKyvZ0c='">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Community Comments — Enhanced UI</title>
 
@@ -74,6 +75,14 @@
       border-radius:50%;
     }
 
+
+    body.light{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:rgba(15,23,42,.08);
+}
     textarea{
       width:100%;
       min-height:70px;
@@ -197,6 +206,37 @@
       border-radius:10px;
       cursor:pointer;
     }
+
+    .comment-card,
+.comment-box{
+  backdrop-filter:blur(20px);
+  background:rgba(23,26,43,.75);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25),
+    inset 0 1px rgba(255,255,255,.05);
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:1fr 280px;
+  gap:24px;
+}
+
+.badge{
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:999px;
+}
+
+.expert{
+  background:#22c55e22;
+  color:#22c55e;
+}
+
+.react{
+  background:#61dafb22;
+  color:#61dafb;
+}
   </style>
 </head>
 
@@ -232,7 +272,35 @@
       </div>
     </div>
   </div>
+  <div class="community-stats">
+  <div class="stat">
+    <strong id="totalComments">0</strong>
+    <span>Posts</span>
+  </div>
 
+  <div class="stat">
+    <strong>4.2k</strong>
+    <span>Members</span>
+  </div>
+  <aside class="sidebar">
+  <h3>Trending Topics</h3>
+
+  <div class="topic">#React19</div>
+  <div class="topic">#TypeScript</div>
+  <div class="topic">#NextJS</div>
+  <div class="topic">#AI</div>
+</aside>
+
+  <div class="stat">
+    <strong>96%</strong>
+    <span>Helpful Replies</span>
+  </div>
+</div>
+
+<div class="badges">
+  <span class="badge expert">Expert</span>
+  <span class="badge react">React</span>
+</div>
   <div class="comments-wrapper" id="commentsWrapper"></div>
 
 </section>

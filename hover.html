@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-5q5oNlHPZ3w+qu52rZkw/UFYP38YFkB2xIMSQJQJaDg=' 'sha256-6LS/SmxtI+kyAmv7IISY1hgYSThP2gSiBmHbOeJb80I=' 'sha256-9GP1tarCWirwlDBXXraAIb92Rk270MeWMdQmJ2gdILs=' 'sha256-C3RtzroSviwB6P2v0GRhF4ZP9OD61dSIYTAkgZVG+JI=' 'sha256-NG/A0h0Tdy+cvBNoqNFFPG+fmnTGaet3BZhiLVrciKU=' 'sha256-s6fD9IgT5zn5gTyvQcXn3daF/0ZctoLBMqDGNobGLGg=' 'sha256-yaFhAQGU4grAhS1mv33igTPiP52FbqnlewnSFsPSL00='; script-src-attr 'unsafe-hashes' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-5q5oNlHPZ3w+qu52rZkw/UFYP38YFkB2xIMSQJQJaDg=' 'sha256-6LS/SmxtI+kyAmv7IISY1hgYSThP2gSiBmHbOeJb80I=' 'sha256-9GP1tarCWirwlDBXXraAIb92Rk270MeWMdQmJ2gdILs=' 'sha256-C3RtzroSviwB6P2v0GRhF4ZP9OD61dSIYTAkgZVG+JI=' 'sha256-NG/A0h0Tdy+cvBNoqNFFPG+fmnTGaet3BZhiLVrciKU=' 'sha256-s6fD9IgT5zn5gTyvQcXn3daF/0ZctoLBMqDGNobGLGg=' 'sha256-yaFhAQGU4grAhS1mv33igTPiP52FbqnlewnSFsPSL00='; style-src 'self' https: 'unsafe-hashes' 'sha256-QQBSKa4kQRUgq5jjju5U4JtfoMZEJeqcyvVALJnozWk=' 'sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=' 'sha256-fS0uz9YeuPp5+gPqsjdpv5BaE7F+GMxrCcU78BoUiYU='; style-src-attr 'unsafe-hashes' 'sha256-QQBSKa4kQRUgq5jjju5U4JtfoMZEJeqcyvVALJnozWk=' 'sha256-UURs4At+4ylzrbWFQHXOFodf+e07eIsuhEbPfjafUhA=' 'sha256-fS0uz9YeuPp5+gPqsjdpv5BaE7F+GMxrCcU78BoUiYU='">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hover Effects — UIverse</title>
 
@@ -355,6 +356,77 @@
     <p>Showcasing modern hover animations, 3D tilts, and interactive UI effects for reusable components.</p>
   </header>
 
+  <section class="hover-hero">
+  <div class="hero-content">
+    <span class="hero-badge">100+ Interactive Effects</span>
+    <h1>Create Amazing Hover Experiences</h1>
+    <p>
+      Explore modern CSS and JavaScript hover interactions including
+      3D transforms, magnetic buttons, glassmorphism, neon effects,
+      cursor trails, and much more.
+    </p>
+
+    <div class="hero-actions">
+      <button class="primary-btn">Browse Effects</button>
+      <button class="secondary-btn">View Source</button>
+    </div>
+  </div>
+</section>
+
+<section class="hover-stats">
+
+  <div class="stat-card">
+    <h2>24+</h2>
+    <span>Hover Components</span>
+  </div>
+
+  <div class="stat-card">
+    <h2>CSS</h2>
+    <span>Animation Ready</span>
+  </div>
+
+  <div class="stat-card">
+    <h2>JS</h2>
+    <span>Interactive Effects</span>
+  </div>
+
+  <div class="stat-card">
+    <h2>MIT</h2>
+    <span>Reusable</span>
+  </div>
+
+</section>
+
+<section class="featured-effects">
+
+<h2>Featured Hover Effects</h2>
+
+<div class="featured-row">
+
+<div class="feature-card">
+<i class="fa-solid fa-cube"></i>
+<h3>3D Tilt</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-fire"></i>
+<h3>Glow</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-water"></i>
+<h3>Liquid</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-wand-magic"></i>
+<h3>Magnetic</h3>
+</div>
+
+</div>
+
+</section>
+
   <section class="hover-grid">
 
     <!-- 1. HOVER REVEAL CARDS -->
@@ -381,6 +453,23 @@
         </button>
       </div>
     </div>
+
+    <div class="hover-filters">
+  <button class="active">All</button>
+  <button>Cards</button>
+  <button>Buttons</button>
+  <button>Text</button>
+  <button>Interactive</button>
+  <button>3D</button>
+</div>
+
+<div class="hover-search">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input
+    type="text"
+    placeholder="Search hover effects..."
+  >
+</div>
 
     <!-- 2. GLOW HOVER BUTTONS -->
     <div class="hover-card">

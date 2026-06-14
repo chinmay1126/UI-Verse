@@ -1,619 +1,330 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="dist/shared.css">
-  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'unsafe-inline'; style-src 'self' https: 'unsafe-hashes' 'unsafe-inline';">
+  <title>Cyber-Mainframe Preferences Hub | UIverse Premium</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body class="mainframe-hud-view dark-matrix-mode">
+  <a class="skip-link" href="#main-content">Skip to parameter controls</a>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <!-- SECURITY -->
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self' https:;
-      base-uri 'self';
-      frame-ancestors 'none';
-      object-src 'none';
-      connect-src 'self' https:;
-      img-src 'self' data: https:;
-      font-src 'self' data: https:;
-      script-src 'self' https: 'unsafe-inline';
-      style-src 'self' https: 'unsafe-inline';
-    "
-  />
-
-  <title>Settings — UIverse</title>
-
-  <!-- Fonts -->
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
-
-  <!-- CSS -->
-  <link
-    rel="stylesheet"
-    href="settings.css"
-  />
-
-  </head>
-
-<body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-
-<!-- =====================================================
-SIDEBAR
-===================================================== -->
-
-<aside
-  class="sidebar"
-  aria-label="Sidebar Navigation"
->
-
-  <div>
-
-    <div class="sidebar-brand">
-
-      <div class="brand-icon">
-        ⬡
-      </div>
-
-      <div class="brand-text">
-        UIverse
-      </div>
-
+  <aside class="sidebar" aria-label="Mainframe Core Parameter Shards">
+    <div class="sidebar-brand-wrapper">
+      <div class="brand-glyph">⬡</div>
+      <span class="brand-text">MAINFRAME <span class="layer-tag">PREF_SYS</span></span>
     </div>
 
     <nav class="sidebar-nav">
+      <div class="nav-segment">
+        <span class="nav-segment-heading">System Matrices</span>
+        <ul>
+          <li><a href="index.html"><i class="fa-solid fa-terminal"></i><span>Dashboard Hub</span></a></li>
+          <li class="active"><a href="settings.html"><i class="fa-solid fa-sliders"></i><span>Preferences Matrix</span></a></li>
+        </ul>
+      </div>
 
-      <ul>
-
-        <li>
-          <a href="index.html">
-            <i class="fa-solid fa-house" aria-hidden="true"></i>
-            <span>Home</span>
-          </a>
-        </li>
-
-        <li class="active">
-          <a href="settings.html">
-            <i class="fa-solid fa-gear" aria-hidden="true"></i>
-            <span>Settings</span>
-          </a>
-        </li>
-
-      </ul>
-
+      <div class="nav-segment">
+        <span class="nav-segment-heading">Telemetry Data</span>
+        <div class="embedded-hud-well">
+          <span class="well-micro-tag">SUBSCRIPTION_SHARD</span>
+          <h3>Enterprise Pro Plan</h3>
+          <p class="mono-string">$29.00/mo • Renews Dec 2026</p>
+          <button type="button" class="hud-btn" onclick="alert('Rerouting gateway frame onto secure account channel lines...');">Modify Tier</button>
+        </div>
+      </div>
     </nav>
+    
+    <div class="sidebar-status-node">
+      <div class="status-pulse"></div>
+      <p class="status-lbl">SECURE_TUNNEL: ENCRYPTED</p>
+    </div>
+  </aside>
 
-  </div>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleMainframeSidebar()"></div>
 
-  <div class="sidebar-footer">
-
-    <a
-      href="#"
-      aria-label="GitHub"
-    >
-      <i class="fab fa-github"></i>
-    </a>
-
-    <a
-      href="#"
-      aria-label="Discord"
-    >
-      <i class="fab fa-discord"></i>
-    </a>
-
-    <a
-      href="#"
-      aria-label="Twitter"
-    >
-      <i class="fab fa-x-twitter"></i>
-    </a>
-
-  </div>
-
-</aside>
-
-<!-- =====================================================
-NAVBAR
-===================================================== -->
-
-<header class="navbar">
-
-  <div class="search-bar">
-
-    <i
-      class="fa-solid fa-magnifying-glass"
-      aria-hidden="true"
-    ></i>
-
-    <input
-      type="text"
-      placeholder="Search settings..."
-      aria-label="Search Settings"
-    />
-
-  </div>
-
-  <div class="nav-actions">
-
-    <button
-      type="button"
-      class="outline-btn"
-    >
-      Documentation
+  <header class="navbar" id="navbar">
+    <button class="menu-toggle-btn" type="button" onclick="toggleMainframeSidebar()" aria-label="Toggle Navigation Stack Menu">
+      <i class="fa-solid fa-bars-staggered"></i>
     </button>
-
-    <button
-      type="button"
-      class="primary-btn"
-    >
-      Save Changes
-    </button>
-
-  </div>
-
-</header>
-
-<!-- =====================================================
-MAIN
-===================================================== -->
-
-<main class="main-home">
-
-  <!-- HERO -->
-  <section class="hero-section">
-
-    <div class="hero-badge">
-      ✦ Dashboard Preferences
+    
+    <div class="search-terminal-shell">
+      <i class="fa-solid fa-terminal search-glyph" aria-hidden="true"></i>
+      <input type="text" id="terminalSearchInput" placeholder="ENTER PREFERENCE CONFIGURATION STRINGS (e.g. 'security')..." aria-label="Search preference parameters matrix" />
+      <kbd class="terminal-kbd">SYS_K</kbd>
     </div>
 
-    <h1>
-      Account <span>Settings</span>
-    </h1>
+    <div class="navbar-actions-group">
+      <button class="action-btn outline" type="button">System Manuals</button>
+      <button class="action-btn primary" type="button" onclick="alert('Serializing and committing global configuration states down target shards...');">Save Settings Configuration</button>
+    </div>
+  </header>
 
-    <p>
-      Customize your workspace,
-      profile, notifications and
-      appearance with premium
-      settings components.
-    </p>
+  <main class="main-canvas" id="main-content">
 
-  </section>
+    <section class="console-jumbotron">
+      <div class="jumbotron-micro-badge">✦ PREFERENCE TUNING CONFIGURATION PATHS ACTIVE</div>
+      <h1 class="jumbotron-title">Account <span>Preferences</span></h1>
+      <p class="jumbotron-desc">Configure structural state spaces, environment variable tokens, multi-tenant workspace members, and automated notification loops inside your localized execution terminal instance node.</p>
+    </section>
 
-  <!-- SETTINGS GRID -->
-  <section class="settings-grid">
+    <section class="settings-grid">
 
-    <!-- PROFILE -->
-    <div class="settings-card large-card">
-
-      <div class="card-header">
-
-        <div>
-
-          <span class="card-label">
-            PROFILE
-          </span>
-
-          <h2>
-            Account Information
-          </h2>
-
+      <div class="settings-card large-card">
+        <div class="card-header">
+          <span class="card-label">DATA SCHEMAS // PROFILE</span>
+          <h2>Account Information Vectors</h2>
         </div>
 
+        <div class="profile-box">
+          <div class="profile-avatar">
+            <img src="https://i.pravatar.cc/200?img=12" alt="Alex Carter profile verification master asset identity photo" />
+            <button type="button" onclick="alert('Opening secure image asset local array file intake vault...');">Replace Vector</button>
+          </div>
+
+          <div class="profile-form">
+            <div class="input-group">
+              <label for="fullName">Operator Identity String</label>
+              <input id="fullName" type="text" value="Alex Carter" autocomplete="name" />
+            </div>
+            <div class="input-group">
+              <label for="emailAddress">Secure Communication Channel Address</label>
+              <input id="emailAddress" type="email" value="alex@uiverse.io" autocomplete="email" />
+            </div>
+            <div class="input-group">
+              <label for="username">Platform Namespace Handle Key</label>
+              <input id="username" type="text" value="@alexdev" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="profile-box">
+      <div class="settings-card">
+        <div class="card-header">
+          <span class="card-label">API PIPELINES // INTEGRATIONS</span>
+          <h2>Connected External Hubs</h2>
+        </div>
 
-        <div class="profile-avatar">
+        <div class="settings-list">
+          <div class="setting-item">
+            <div class="setting-meta-text">
+              <strong>GitHub Repository Node</strong>
+              <span>Continuous deployment continuous integration pipeline trace channels.</span>
+            </div>
+            <button type="button" class="outline-btn active-state-btn" onclick="alert('Terminating linked repository tunnel handshake securely...');">De-couple Node</button>
+          </div>
 
-          <img
-            src="https://i.pravatar.cc/200?img=12"
-            alt="Alex Carter Profile Picture"
-          />
+          <div class="setting-item">
+            <div class="setting-meta-text">
+              <strong>Google Cloud Suite Identity</strong>
+              <span>Central authorization cluster connection point mappings.</span>
+            </div>
+            <button type="button" class="outline-btn" onclick="alert('Spawning external OAuth2 cluster sync validation layer...');">Establish Link</button>
+          </div>
+        </div>
+      </div>
 
-          <button type="button">
-            Change
+      <div class="settings-card large-card">
+        <div class="card-header">
+          <span class="card-label">WORKSPACE AUTH // TEAM</span>
+          <h2>Multi-Tenant Active Members Directory</h2>
+        </div>
+
+        <div class="team-list">
+          <div class="team-member">
+            <div class="avatar-shimmer online-state"><img src="https://i.pravatar.cc/120?img=15" alt="Sarah Wilson portrait identity placeholder asset" /></div>
+            <div class="member-identity-specs">
+              <strong>Sarah Wilson</strong>
+              <span class="perm-tag admin">Global Root Administrator</span>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="avatar-shimmer offline-state"><img src="https://i.pravatar.cc/120?img=18" alt="James Carter portrait identity placeholder asset" /></div>
+            <div class="member-identity-specs">
+              <strong>James Carter</strong>
+              <span class="perm-tag dev">Core Framework Systems Developer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-card">
+        <div class="card-header">
+          <span class="card-label">VISUAL MATRIX // APPEARANCE</span>
+          <h2>Platform Lighting Themes Engine</h2>
+        </div>
+
+        <div class="theme-options">
+          <div class="theme-option-card active-theme" onclick="runtimeUpdateSkinState('dark-matrix-mode', this)">
+            <div class="theme-preview dark-preview"></div>
+            <strong>Quantum Deep Dark Mode</strong>
+          </div>
+          <div class="theme-option-card" onclick="runtimeUpdateSkinState('light-matrix-mode', this)">
+            <div class="theme-preview light-preview"></div>
+            <strong>High Contrast Light Mode</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-card">
+        <div class="card-header">
+          <span class="card-label">EVENT HOOKS // NOTIFICATIONS</span>
+          <h2>Alert Threshold Preferences</h2>
+        </div>
+
+        <div class="settings-list">
+          <div class="setting-item">
+            <div class="setting-meta-text">
+              <strong>Real-Time Push Streams</strong>
+              <span>Instantly intercept framework warnings on current browser window.</span>
+            </div>
+            <label class="switch-box" aria-label="Toggle Real-Time Push Stream Event Channels">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-meta-text">
+              <strong>Asynchronous Email Summary Matrix</strong>
+              <span>Weekly email summarizes dispatched down storage channels.</span>
+            </div>
+            <label class="switch-box" aria-label="Toggle Weekly Email Digest Summary Reports">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-card">
+        <div class="card-header">
+          <span class="card-label">SECURITY OVERLAYS // FRAUD CONTROL</span>
+          <h2>Account Isolation Controls</h2>
+        </div>
+
+        <div class="security-list">
+          <button type="button" class="security-btn" onclick="alert('Spawning password mutation transaction prompt modal container...');">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i> Change Password
           </button>
+          <button type="button" class="security-btn" onclick="alert('Initializing secure 2FA token handshake framework layers...');">
+            <i class="fa-solid fa-shield" aria-hidden="true"></i> Enable 2FA Security Systems
+          </button>
+        </div>
+      </div>
 
+      <div class="settings-card">
+        <div class="card-header">
+          <span class="card-label">DEVELOPER CHANNELS // GATEWAY ACCESS</span>
+          <h2>Cryptographic API Registry Strings</h2>
         </div>
 
-        <div class="profile-form">
-
-          <div class="input-group">
-
-            <label for="fullName">
-              Full Name
-            </label>
-
-            <input
-              id="fullName"
-              type="text"
-              value="Alex Carter"
-            />
-
+        <div class="api-box">
+          <div class="secure-input-mask-wrapper">
+            <i class="fa-solid fa-key secure-key-glyph"></i>
+            <input type="password" value="sk_live_xxxxxxxxxxxxxxxxx_prod_uiverse_matrix_key_hash_2026" aria-label="Live production environment authorization token hash sequence map" readonly />
           </div>
+          <button type="button" class="action-btn primary" onclick="alert('Regenerating core cryptographic access payload mapping rules tokens...');">Generate New Key Matrix</button>
+        </div>
+      </div>
 
-          <div class="input-group">
+      <div class="settings-card">
+        <div class="card-header">
+          <span class="card-label">CAPACITY MONITORS // STORAGE</span>
+          <h2>Compute Disk Allocation Index</h2>
+        </div>
 
-            <label for="emailAddress">
-              Email Address
-            </label>
-
-            <input
-              id="emailAddress"
-              type="email"
-              value="alex@uiverse.io"
-            />
-
+        <div class="storage-box">
+          <div class="storage-header">
+            <strong>78% Used Allocation</strong>
+            <span class="mono-string">78GB / 100GB Allocated</span>
           </div>
-
-          <div class="input-group">
-
-            <label for="username">
-              Username
-            </label>
-
-            <input
-              id="username"
-              type="text"
-              value="@alexdev"
-            />
-
+          <div class="progress-bar-track" aria-label="Storage allocation layout capacity progress gauge">
+            <div class="progress-fill-node"></div>
           </div>
-
+          <button type="button" class="upgrade-btn">Upgrade Plan Slices</button>
         </div>
-
       </div>
 
+      <div class="settings-card">
+        <div class="card-header">
+          <span class="card-label">AUDIT TRAILS // TELEMETRY ACTIVITY</span>
+          <h2>Historical Event Ledger Registry</h2>
+        </div>
+
+        <ul class="activity-ledger">
+          <li><i class="fa-solid fa-square activity-log-dot valid"></i> Password changed structural cipher update. <span class="time-stamp-tag">2 hours ago</span></li>
+          <li><i class="fa-solid fa-square activity-log-dot warning"></i> New login from Chrome terminal agent endpoint. <span class="time-stamp-tag">Today</span></li>
+        </ul>
+      </div>
+
+      <div class="settings-card danger-card">
+        <div class="card-header">
+          <span class="card-label">CRITICAL TERMINATION PORTS // DANGER</span>
+          <h2>Purge Account Context Matrix</h2>
+        </div>
+        <p>Permanently delete your account and all data clusters instantly. This operation is absolute, irreversible, and immutable.</p>
+        <button type="button" class="danger-btn-cta" onclick="confirm('Are you absolutely confident you want to trigger data destruction protocols across all distributed clusters?');">Delete Account Infrastructure</button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container-shell">
+      <div class="footer-brand-column">
+        <h2 class="footer-logo-string">⬡ UIverse_Mainframe</h2>
+        <p class="footer-paragraph-desc">Re-architecting systemic preferences and settings configuration interfaces with extreme low-latency design properties.</p>
+        <div class="footer-social-row">
+          <a href="#" aria-label="GitHub Pipelines Link"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn Profile Link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter Broadcast Link"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-column">
+        <h3>System Registries</h3>
+        <ul>
+          <li><a href="button.html">Action Buttons</a></li>
+          <li><a href="navbar.html">Navigation Shells</a></li>
+          <li><a href="cards.html">Component Cards</a></li>
+        </ul>
+      </div>
     </div>
-
-    <!-- APPEARANCE -->
-    <div class="settings-card">
-
-      <div class="card-header">
-
-        <div>
-
-          <span class="card-label">
-            APPEARANCE
-          </span>
-
-          <h2>
-            Theme Settings
-          </h2>
-
-        </div>
-
-      </div>
-
-      <div class="theme-options">
-
-        <div class="theme-card active-theme">
-
-          <div class="theme-preview dark-preview"></div>
-
-          <strong>
-            Dark Mode
-          </strong>
-
-        </div>
-
-        <div class="theme-card">
-
-          <div class="theme-preview light-preview"></div>
-
-          <strong>
-            Light Mode
-          </strong>
-
-        </div>
-
-        <div class="theme-card">
-
-          <div class="theme-preview purple-preview"></div>
-
-          <strong>
-            Purple
-          </strong>
-
-        </div>
-
-      </div>
-
+    <div class="footer-bottom-bar">
+      <p>© 2026 UIverse Core Settings Mainframe Matrix. Constructed for absolute responsive engineering compliance grids.</p>
     </div>
-
-    <!-- NOTIFICATIONS -->
-    <div class="settings-card">
-
-      <div class="card-header">
-
-        <div>
-
-          <span class="card-label">
-            NOTIFICATIONS
-          </span>
-
-          <h2>
-            Alerts & Updates
-          </h2>
-
-        </div>
-
-      </div>
-
-      <div class="settings-list">
-
-        <div class="setting-item">
-
-          <div>
-
-            <strong>
-              Push Notifications
-            </strong>
-
-            <span>
-              Get instant updates
-            </span>
-
-          </div>
-
-          <label
-            class="switch"
-            aria-label="Toggle Push Notifications"
-          >
-
-            <input
-              type="checkbox"
-              checked
-            />
-
-            <span class="slider"></span>
-
-          </label>
-
-        </div>
-
-        <div class="setting-item">
-
-          <div>
-
-            <strong>
-              Email Alerts
-            </strong>
-
-            <span>
-              Weekly email summaries
-            </span>
-
-          </div>
-
-          <label
-            class="switch"
-            aria-label="Toggle Email Alerts"
-          >
-
-            <input
-              type="checkbox"
-              checked
-            />
-
-            <span class="slider"></span>
-
-          </label>
-
-        </div>
-
-        <div class="setting-item">
-
-          <div>
-
-            <strong>
-              Mentions
-            </strong>
-
-            <span>
-              Alerts when tagged
-            </span>
-
-          </div>
-
-          <label
-            class="switch"
-            aria-label="Toggle Mention Alerts"
-          >
-
-            <input type="checkbox" />
-
-            <span class="slider"></span>
-
-          </label>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- SECURITY -->
-    <div class="settings-card">
-
-      <div class="card-header">
-
-        <div>
-
-          <span class="card-label">
-            SECURITY
-          </span>
-
-          <h2>
-            Account Security
-          </h2>
-
-        </div>
-
-      </div>
-
-      <div class="security-list">
-
-        <button
-          type="button"
-          class="security-btn"
-        >
-
-          <i
-            class="fa-solid fa-lock"
-            aria-hidden="true"
-          ></i>
-
-          Change Password
-
-        </button>
-
-        <button
-          type="button"
-          class="security-btn"
-        >
-
-          <i
-            class="fa-solid fa-shield"
-            aria-hidden="true"
-          ></i>
-
-          Enable 2FA
-
-        </button>
-
-        <button
-          type="button"
-          class="security-btn"
-        >
-
-          <i
-            class="fa-solid fa-laptop"
-            aria-hidden="true"
-          ></i>
-
-          Manage Devices
-
-        </button>
-
-      </div>
-
-    </div>
-
-    <!-- STORAGE -->
-    <div class="settings-card">
-
-      <div class="card-header">
-
-        <div>
-
-          <span class="card-label">
-            STORAGE
-          </span>
-
-          <h2>
-            Usage Analytics
-          </h2>
-
-        </div>
-
-      </div>
-
-      <div class="storage-box">
-
-        <div class="storage-header">
-
-          <strong>
-            78% Used
-          </strong>
-
-          <span>
-            78GB / 100GB
-          </span>
-
-        </div>
-
-        <div
-          class="progress-bar"
-          aria-label="Storage Usage"
-        >
-
-          <div class="progress-fill"></div>
-
-        </div>
-
-        <button
-          type="button"
-          class="upgrade-btn"
-        >
-          Upgrade Plan
-        </button>
-
-      </div>
-
-    </div>
-
-    <!-- DANGER -->
-    <div class="settings-card danger-card">
-
-      <div class="card-header">
-
-        <div>
-
-          <span class="card-label">
-            DANGER
-          </span>
-
-          <h2>
-            Delete Account
-          </h2>
-
-        </div>
-
-      </div>
-
-      <p>
-        Permanently delete your
-        account and all data.
-      </p>
-
-      <button
-        type="button"
-        class="danger-btn"
-      >
-        Delete Account
-      </button>
-
-    </div>
-
-  </section>
-
-</main>
-
-<script src="settings.js"></script>
-
-    <script src="dist/shared.js"></script>
+  </footer>
+
+  <script>
+    function toggleMainframeSidebar() {
+      const sidebarNode = document.getElementById('sidebar');
+      const backdropNode = document.getElementById('sidebarBackdrop');
+      if (sidebarNode && backdropNode) {
+        sidebarNode.classList.toggle('visible');
+        backdropNode.classList.toggle('visible');
+      }
+    }
+    window.toggleMainframeSidebar = toggleMainframeSidebar;
+
+    function runtimeUpdateSkinState(targetThemeClassTokenKey, clickedDOMNodeElement) {
+      document.body.classList.remove('dark-matrix-mode', 'light-matrix-mode');
+      document.body.classList.add(targetThemeClassTokenKey);
+
+      const parentContainerOptionsWell = clickedDOMNodeElement.closest('.theme-options');
+      parentContainerOptionsWell.querySelectorAll('.theme-option-card').forEach(card => card.classList.remove('active-theme'));
+      clickedDOMNodeElement.classList.add('active-theme');
+    }
+  </script>
 </body>
 </html>

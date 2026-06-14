@@ -17,31 +17,103 @@
   ];
 
   // Default features used on most pages
-  const defaultFeatures = [
+const defaultFeatures = [
+  'js/features/toast.js',
+  'js/features/popup.js',
+  'js/features/code-tools.js',
+  'js/features/sidebar.js',
+  'js/features/search.js',
+  'js/features/theme.js',
+  'js/features/scroll.js',
+  'js/features/alerts.js',
+  'js/features/sandbox.js',
+  'js/features/accessibility.js',
+  'js/features/command-palette.js',
+  'js/features/url-state.js',
+  'js/features/url-state-integration.js',
+
+];
+
+const pageMap = {
+  'index.html': defaultFeatures,
+
+  'button.html': [
     'js/features/toast.js',
-    'js/features/popup.js',
+    'js/features/code-tools.js',
+    'js/features/sidebar.js',
+    'js/features/theme.js',
+    'js/features/scroll.js',
+    'js/features/search.js',
+    'js/features/command-palette.js',
+    'js/features/url-state.js',
+    'js/features/url-state-integration.js',
+    'js/features/component-recommendations.js',
+    'js/features/recommendations-ui.js',
+    'js/features/bundle-exporter.js',
+    'js/features/bundle-exporter-ui.js',
+    'js/features/recent.js'
+  ],
+
+  'cards.html': [
+    'js/features/toast.js',
     'js/features/code-tools.js',
     'js/features/sidebar.js',
     'js/features/search.js',
     'js/features/theme.js',
     'js/features/scroll.js',
-    'js/features/alerts.js',
     'js/features/sandbox.js',
-    'js/features/accessibility.js',
     'js/features/command-palette.js',
     'js/features/url-state.js',
-    'js/features/url-state-integration.js'
+    'js/features/url-state-integration.js',
+    'js/features/component-ratings.js',
+    'js/features/creator-profile.js'
+    'js/features/framework-export.js',
+    'js/features/framework-preview.js',
+    'js/features/framework-export-ui.js'
   ];
 
   // Per-page overrides (only load what's necessary)
   const pageMap = {
     'index.html': defaultFeatures,
-    'button.html': ['js/features/toast.js','js/features/code-tools.js','js/features/sidebar.js','js/features/theme.js','js/features/scroll.js','js/features/search.js','js/features/command-palette.js','js/features/url-state.js','js/features/url-state-integration.js'],
-    'cards.html': ['js/features/toast.js','js/features/code-tools.js','js/features/sidebar.js','js/features/search.js','js/features/theme.js','js/features/scroll.js','js/features/sandbox.js','js/features/command-palette.js'],
-    'badges.html': ['js/features/toast.js','js/features/sidebar.js','js/features/command-palette.js'],
-    'forms.html': ['js/features/toast.js','js/features/alerts.js','js/features/sidebar.js','js/features/command-palette.js']
+    'button.html': ['js/features/toast.js','js/features/code-tools.js','js/features/sidebar.js','js/features/theme.js','js/features/scroll.js','js/features/search.js','js/features/command-palette.js','js/features/url-state.js','js/features/url-state-integration.js','js/features/component-recommendations.js','js/features/recommendations-ui.js','js/features/bundle-exporter.js','js/features/bundle-exporter-ui.js','js/features/component-ratings.js','js/features/creator-profile.js'],
+    'cards.html': ['js/features/toast.js','js/features/code-tools.js','js/features/sidebar.js','js/features/search.js','js/features/theme.js','js/features/scroll.js','js/features/sandbox.js','js/features/command-palette.js','js/features/component-recommendations.js','js/features/recommendations-ui.js','js/features/bundle-exporter.js','js/features/bundle-exporter-ui.js','js/features/component-ratings.js','js/features/creator-profile.js'],
+    'badges.html': ['js/features/toast.js','js/features/sidebar.js','js/features/command-palette.js','js/features/component-recommendations.js','js/features/recommendations-ui.js','js/features/bundle-exporter.js','js/features/bundle-exporter-ui.js','js/features/component-ratings.js','js/features/creator-profile.js'],
+    'forms.html': ['js/features/toast.js','js/features/alerts.js','js/features/sidebar.js','js/features/command-palette.js','js/features/component-recommendations.js','js/features/recommendations-ui.js','js/features/bundle-exporter.js','js/features/bundle-exporter-ui.js','js/features/component-ratings.js','js/features/creator-profile.js']
+    'button.html': ['js/features/toast.js','js/features/code-tools.js','js/features/sidebar.js','js/features/theme.js','js/features/scroll.js','js/features/search.js','js/features/command-palette.js','js/features/url-state.js','js/features/url-state-integration.js','js/features/component-recommendations.js','js/features/recommendations-ui.js','js/features/bundle-exporter.js','js/features/bundle-exporter-ui.js','js/features/framework-export.js','js/features/framework-preview.js','js/features/framework-export-ui.js'],
+    'cards.html': ['js/features/toast.js','js/features/code-tools.js','js/features/sidebar.js','js/features/search.js','js/features/theme.js','js/features/scroll.js','js/features/sandbox.js','js/features/command-palette.js','js/features/component-recommendations.js','js/features/recommendations-ui.js','js/features/bundle-exporter.js','js/features/bundle-exporter-ui.js','js/features/framework-export.js','js/features/framework-preview.js','js/features/framework-export-ui.js'],
+    'badges.html': ['js/features/toast.js','js/features/sidebar.js','js/features/command-palette.js','js/features/component-recommendations.js','js/features/recommendations-ui.js','js/features/bundle-exporter.js','js/features/bundle-exporter-ui.js','js/features/framework-export.js','js/features/framework-preview.js','js/features/framework-export-ui.js'],
+    'forms.html': ['js/features/toast.js','js/features/alerts.js','js/features/sidebar.js','js/features/command-palette.js','js/features/component-recommendations.js','js/features/recommendations-ui.js','js/features/bundle-exporter.js','js/features/bundle-exporter-ui.js','js/features/framework-export.js','js/features/framework-preview.js','js/features/framework-export-ui.js']
   };
+    'js/features/component-recommendations.js',
+    'js/features/recommendations-ui.js',
+    'js/features/bundle-exporter.js',
+    'js/features/bundle-exporter-ui.js',
+    'js/features/recent.js'
+  ],
 
+  'badges.html': [
+    'js/features/toast.js',
+    'js/features/sidebar.js',
+    'js/features/command-palette.js',
+    'js/features/component-recommendations.js',
+    'js/features/recommendations-ui.js',
+    'js/features/bundle-exporter.js',
+    'js/features/bundle-exporter-ui.js',
+    'js/features/recent.js'
+  ],
+
+  'forms.html': [
+    'js/features/toast.js',
+    'js/features/alerts.js',
+    'js/features/sidebar.js',
+    'js/features/command-palette.js',
+    'js/features/component-recommendations.js',
+    'js/features/recommendations-ui.js',
+    'js/features/bundle-exporter.js',
+    'js/features/bundle-exporter-ui.js',
+    'js/features/recent.js'
+  ]
+};
   const scriptsToLoad = [];
 
   // ensure Fuse.js is present for search features

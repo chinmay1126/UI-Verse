@@ -2044,3 +2044,110 @@ MINIMAL PORTFOLIO HERO
   .he-desc { font-size: 15px; }
 }
 
+
+
+.bg-grid{
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:40px 40px;
+  z-index:-3;
+}
+
+.bg-orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(100px);
+  z-index:-2;
+}
+
+.orb-1{
+  width:400px;
+  height:400px;
+  background:#7b61ff;
+  top:-100px;
+  left:-100px;
+  opacity:.25;
+}
+
+.orb-2{
+  width:450px;
+  height:450px;
+  background:#eb6835;
+  bottom:-100px;
+  right:-100px;
+  opacity:.2;
+}
+
+.hero-card{
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+
+  backdrop-filter:blur(24px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:28px;
+
+  transition:.45s ease;
+}
+
+.hero-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(123,97,255,.2),
+      rgba(235,104,53,.15)
+    );
+  opacity:0;
+  transition:.45s;
+}
+
+.hero-card:hover{
+  transform:translateY(-8px);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.35);
+}
+
+.hero-card:hover::before{
+  opacity:1;
+}
+
+.copy-btn{
+  background:
+    linear-gradient(
+      135deg,
+      #7b61ff,
+      #9d7cff
+    );
+
+  color:white;
+
+  border:none;
+
+  border-radius:14px;
+
+  padding:12px 22px;
+
+  font-weight:700;
+
+  transition:.35s ease;
+}
+
+.copy-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 12px 30px rgba(123,97,255,.4);
+}
