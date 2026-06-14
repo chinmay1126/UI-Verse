@@ -282,9 +282,12 @@ class ThemeContentNegotiator {
         }
       }
 
+      // Sanitize inputs to prevent script injection in response headers
+      const cleanType = type.trim().replace(/[^a-zA-Z0-9/*+-]/g, '');
+      const cleanSubtype = subtype.trim().replace(/[^a-zA-Z0-9/*+-]/g, '');
       ranges.push({
-        type: type.trim(),
-        subtype: subtype.trim(),
+        type: cleanType,
+        subtype: cleanSubtype,
         quality: Math.min(1.0, Math.max(0, quality)),
         parameters
       });
