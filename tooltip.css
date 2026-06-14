@@ -1081,3 +1081,17 @@ body{
   opacity: 1;
   transform: translateY(-5px) scale(1.05);
 }
+
+.tooltip-wrapper .tooltip-btn:focus + .tooltip,
+.tooltip-wrapper .tooltip-btn:hover + .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip {
+  background: #111; /* dark background */
+  color: #fff;      /* white text */
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
