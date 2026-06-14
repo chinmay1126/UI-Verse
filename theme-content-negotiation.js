@@ -290,7 +290,7 @@ class ThemeContentNegotiator {
       });
     }
 
-    return ranges.sort((a, b) => b.quality - a.quality);
+    return ranges.sort((a, b) => Number(b.quality) - Number(a.quality));
   }
 
   /**
@@ -319,7 +319,7 @@ class ThemeContentNegotiator {
       });
     }
 
-    return encodings.sort((a, b) => b.quality - a.quality);
+    return encodings.sort((a, b) => Number(b.quality) - Number(a.quality));
   }
 
   /**
@@ -348,7 +348,7 @@ class ThemeContentNegotiator {
       });
     }
 
-    return languages.sort((a, b) => b.quality - a.quality);
+    return languages.sort((a, b) => Number(b.quality) - Number(a.quality));
   }
 
   /**
@@ -377,7 +377,7 @@ class ThemeContentNegotiator {
       });
     }
 
-    return charsets.sort((a, b) => b.quality - a.quality);
+    return charsets.sort((a, b) => Number(b.quality) - Number(a.quality));
   }
 
   /**
