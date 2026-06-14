@@ -57,7 +57,7 @@
     "test:visual": "playwright test",
     "test:visual:core": "playwright test tests/visual/core-pages.spec.ts",
     "test:visual:ui": "playwright test --ui",
-    "test:visual:update": "playwright test --update-snapshots",
+    "test:visual:update": "node scripts/update-visual-baselines.js",
     "test:visual:debug": "playwright test --debug",
     "test:storybook": "playwright test --config playwright.storybook.config.ts",
     "quality": "npm run lint:html && npm run lint:css && npm run lint:js && npm run validate:links-and-assets && npm run security:assets:verify && npm run audit:a11y && npm run test:visual",
@@ -123,12 +123,18 @@
     "test:unit": "jest",
     "test:unit:coverage": "jest --coverage",
     "test": "npm run test:unit:coverage && npm run wc:test",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "bench": "node bench/bench.js",
+    "bench:sizes": "node bench/bundle-sizes.js",
+    "bench:all": "npm run bench && npm run bench:sizes",
+    "security:test": "playwright test tests/security --config=playwright.state.config.ts --reporter=list",
+    "test:tokens": "node scripts/token-compliance.js",
+    "test:tokens:all": "node scripts/token-compliance.js --all",
+    "test:a11y:components": "playwright test tests/a11y/component-a11y.spec.ts --config=playwright.component-a11y.config.ts --reporter=list",
+    "test:visual:components": "playwright test tests/visual/component-screenshots.spec.ts --config=playwright.component-visual.config.ts --reporter=list",
+    "test:visual:update": "node scripts/update-visual-baselines.js",
+    "test:perf:components": "node scripts/perf-component-gate.js"
   },
-  "bench": "node bench/bench.js",
-  "bench:sizes": "node bench/bundle-sizes.js",
-  "bench:all": "npm run bench && npm run bench:sizes",
-  "security:test": "playwright test tests/security --config=playwright.state.config.ts --reporter=list",
   "devDependencies": {
     "@axe-core/playwright": "^4.0.0",
     "@playwright/test": "^1.40.0",
@@ -148,6 +154,7 @@
     "jest-environment-jsdom": "^30.4.1",
     "jsdom": "^22.1.0",
     "linkinator": "^7.6.1",
+    "postcss": "^8.4.38",
     "rollup": "^3.30.0",
     "semantic-release": "^25.0.5",
     "sharp": "^0.33.5",
@@ -160,7 +167,10 @@
   },
   "dependencies": {
     "dompurify": "^3.4.5",
-    "fuse.js": "^7.3.0"
+    "fuse.js": "^7.3.0",
+    "yjs": "^13.6.24",
+    "y-webrtc": "^10.3.0",
+    "y-indexeddb": "^9.0.12"
   },
   "lint-staged": {
     "*.html": "html-validate",

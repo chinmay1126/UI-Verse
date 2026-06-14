@@ -185,6 +185,19 @@ const Bootstrap = {
     // Initialize all registered modules (with dependencies handled by registry)
     const report = UIverse.initAll();
     
+    // Dynamically load CSS variable inspector if component previews are present
+    if (document.querySelector('.component-card, .preview-box, .card-preview, [class*="-preview"]')) {
+      const l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = 'css/css-variable-inspector.css';
+      document.head.appendChild(l);
+
+      const s = document.createElement('script');
+      s.src = 'js/features/css-variable-inspector.js';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+
     this.initialized = true;
     this.logStatus(report);
   },
