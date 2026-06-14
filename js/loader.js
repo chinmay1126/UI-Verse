@@ -31,7 +31,6 @@ const defaultFeatures = [
   'js/features/command-palette.js',
   'js/features/url-state.js',
   'js/features/url-state-integration.js',
-  'js/features/recent.js'
 ];
 
 const pageMap = {
@@ -63,7 +62,7 @@ const pageMap = {
     'js/features/scroll.js',
     'js/features/sandbox.js',
     'js/features/command-palette.js',
-
+<<<<<
 
   'badges.html': [
     'js/features/toast.js',
@@ -116,9 +115,7 @@ const pageMap = {
     if (features.some(f => f.includes('search'))) await ensureFuse();
 
     // load page features sequentially
-
-    }
-    for (const f of allFeatures) await loadScript(f);
+    for (const f of features) await loadScript(f);
 
     // finally load bootstrap to initialize modules
     await loadScript('js/bootstrap.js');
