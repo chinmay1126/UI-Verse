@@ -142,9 +142,10 @@ class ThemeContentNegotiator {
     let bestQuality = -1;
 
     for (const encoding of encodings) {
-      if (this.encodings[encoding.value] && this.encodings[encoding.value].supported) {
+      const encName = encoding.value === '*' ? 'identity' : encoding.value;
+      if (this.encodings[encName] && this.encodings[encName].supported) {
         if (encoding.quality > bestQuality) {
-          bestMatch = encoding.value;
+          bestMatch = encName;
           bestQuality = encoding.quality;
         }
       }
