@@ -155,6 +155,24 @@ const Bootstrap = {
     if (typeof Recent !== 'undefined') {
       UIverse.register('Recent', Recent);
     }
+    if (typeof ResponsiveBadges !== 'undefined') {
+  UIverse.register(
+    'ResponsiveBadges',
+    ResponsiveBadges
+  );
+}
+if (
+  typeof CopyComponentLink !==
+  'undefined'
+) {
+  UIverse.register(
+    'CopyComponentLink',
+    CopyComponentLink
+  );
+}
+    if (typeof TagFilter !== 'undefined') {
+  UIverse.register('TagFilter', TagFilter);
+}
 
     if (typeof TutorialMode !== 'undefined') {
       UIverse.register('TutorialMode', TutorialMode);
