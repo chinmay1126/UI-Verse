@@ -4,6 +4,15 @@ const crypto = require('crypto');
 
 const ROOT = process.cwd();
 const SKIP_DIRS = new Set(['.git', 'node_modules', 'playwright-report', 'test-results', 'generated-images', 'coverage', 'dist']);
+const DYNAMIC_HASHES_FILE = path.join(ROOT, 'dynamic-csp-hashes.json');
+let dynamicHashes = {};
+if (fs.existsSync(DYNAMIC_HASHES_FILE)) {
+  try {
+    dynamicHashes = JSON.parse(fs.readFileSync(DYNAMIC_HASHES_FILE, 'utf8'));
+  } catch (e) {
+    console.error('Warning: Failed to load dynamic-csp-hashes.json:', e.message);
+  }
+}
 const INLINE_SCRIPT_RE = /<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi;
 const INLINE_STYLE_RE = /<style\b[^>]*>([\s\S]*?)<\/style>/gi;
 const STYLE_ATTR_RE = /\sstyle\s*=\s*("([^"]*)"|'([^']*)')/gi;
@@ -134,7 +143,21 @@ function generateStyleHashes(content) {
 function processFile(htmlFile, checkOnly) {
   const original = fs.readFileSync(htmlFile, 'utf8');
   const { scriptHashes, styleHashes } = collectHashes(original);
-  const policy = buildPolicy(scriptHashes, styleHashes);
+
+  // Merge dynamic hashes
+  const relativePath = path.relative(ROOT, htmlFile).split(path.sep).join('/');
+  if (dynamicHashes[relativePath]) {
+    const fileDynScript = dynamicHashes[relativePath].scriptHashes || [];
+    const fileDynStyle = dynamicHashes[relativePath].styleHashes || [];
+    fileDynScript.forEach(h => {
+      if (!scriptHashes.includes(h)) scriptHashes.push(h);
+    });
+    fileDynStyle.forEach(h => {
+      if (!styleHashes.includes(h)) styleHashes.push(h);
+    });
+  }
+
+  const policy = buildPolicy(scriptHashes.sort(), styleHashes.sort());
   const updated = insertOrReplaceMeta(original, policy);
 
   if (checkOnly) {

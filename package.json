@@ -41,6 +41,8 @@
     "images:verify": "node scripts/image-pipeline.js --check",
     "security:csp": "node scripts/csp-hardening.js",
     "security:csp:verify": "node scripts/csp-hardening.js --check",
+    "security:csp:audit": "node scripts/security-audit-tool.js",
+    "security:csp:audit:verify": "node scripts/security-audit-tool.js --check",
     "security:assets": "node scripts/security-asset-policy.js",
     "security:assets:verify": "node scripts/security-asset-policy.js --check",
     "audit:a11y": "node scripts/a11y-remediation.js",
