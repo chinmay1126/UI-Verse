@@ -184,7 +184,9 @@ class StatePersistenceOptimizer {
       }
 
       // Write to localStorage
-      localStorage.setItem(this.storageKey, JSON.stringify(storedData));
+      if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+        localStorage.setItem(this.storageKey, JSON.stringify(storedData));
+      }
 
       const duration = performance.now() - startTime;
       this.recordMetrics(duration, keys.length);
@@ -264,6 +266,9 @@ class StatePersistenceOptimizer {
    * @private
    */
   getStoredData() {
+    if (typeof window === 'undefined' || typeof localStorage === 'undefined') {
+      return {};
+    }
     try {
       const data = localStorage.getItem(this.storageKey);
       return data ? JSON.parse(data) : {};
