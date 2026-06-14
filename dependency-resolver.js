@@ -43,7 +43,7 @@ class DependencyResolver {
       includeOptional = false,
       includeTransitive = true,
       includeConflicts = true,
-      maxDepth = this.maxDepthLimit
+      maxDepth = options.maxDepth || this.maxDepthLimit
     } = options;
 
     const cacheKey = `${componentName}:${includeOptional}:${includeTransitive}`;
