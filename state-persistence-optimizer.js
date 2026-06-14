@@ -56,7 +56,7 @@ class StatePersistenceOptimizer {
 
     // Adaptive persistence state
     this.updateFrequency = new Map();
-    this.frequencyWindow = 1000; // 1 second window
+    this.frequencyWindow = options.frequencyWindow || 1000; // customisable window
   }
 
   /**
@@ -445,6 +445,7 @@ class StatePersistenceOptimizer {
     if (options.batchSize !== undefined) this.batchSize = options.batchSize;
     if (options.enableCoalescing !== undefined) this.enableCoalescing = options.enableCoalescing;
     if (options.enableMetrics !== undefined) this.enableMetrics = options.enableMetrics;
+    if (options.frequencyWindow !== undefined) this.frequencyWindow = options.frequencyWindow;
   }
 
   /**
