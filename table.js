@@ -60,6 +60,44 @@ searchInput.addEventListener(
   }
 );
 
+function exportTable(button, type) {
+  const table = button.closest(".section").querySelector("table");
+  const rows = Array.from(table.querySelectorAll("tr"));
+  const data = rows.map(row =>
+    Array.from(row.querySelectorAll("th, td")).map(cell => cell.innerText)
+  );
+
+  if (type === "csv") {
+    const csvContent = data.map(e => e.join(",")).join("\n");
+    downloadFile(csvContent, "table.csv", "text/csv");
+  }
+
+  if (type === "excel") {
+    const excelContent = data.map(e => e.join("\t")).join("\n");
+    downloadFile(excelContent, "table.xls", "application/vnd.ms-excel");
+  }
+
+  if (type === "pdf") {
+    const pdfWindow = window.open("", "_blank");
+    pdfWindow.document.write("<pre>" + data.map(e => e.join(" | ")).join("\n") + "</pre>");
+    pdfWindow.document.close();
+    pdfWindow.print();
+  }
+
+  alert(`✅ Table exported as ${type.toUpperCase()}!`);
+}
+
+function downloadFile(content, filename, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+
 /* =====================================================
 COUNTER ANIMATION
 ===================================================== */
