@@ -1,8 +1,436 @@
 {
-  "maxTotalRequests": 59,
-  "maxTotalBytes": 24459586,
-  "maxJsBytes": 218535,
-  "maxCssBytes": 610857,
-  "maxImageBytes": 24455723,
-  "maxLoadTimeMs": 17000
+  "default": {
+    "maxTotalRequests": 59,
+    "maxTotalBytes": 24459586,
+    "maxJsBytes": 218535,
+    "maxCssBytes": 610857,
+    "maxImageBytes": 24455723,
+    "maxLoadTimeMs": 17000
+  },
+  "components": {
+    "about.html": {
+      "maxTotalRequests": 17,
+      "maxTotalBytes": 832281,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 344976,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 2172
+    },
+    "admin-panel.html": {
+      "maxTotalRequests": 28,
+      "maxTotalBytes": 918670,
+      "maxJsBytes": 133073,
+      "maxCssBytes": 271324,
+      "maxImageBytes": 11771,
+      "maxLoadTimeMs": 1659
+    },
+    "alerts.html": {
+      "maxTotalRequests": 32,
+      "maxTotalBytes": 1498353,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 451366,
+      "maxImageBytes": 22690,
+      "maxLoadTimeMs": 987
+    },
+    "auth.html": {
+      "maxTotalRequests": 17,
+      "maxTotalBytes": 1049786,
+      "maxJsBytes": 117156,
+      "maxCssBytes": 185532,
+      "maxImageBytes": 303076,
+      "maxLoadTimeMs": 1991
+    },
+    "badges.html": {
+      "maxTotalRequests": 10,
+      "maxTotalBytes": 479912,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 133229,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 580
+    },
+    "breadcrumbs.html": {
+      "maxTotalRequests": 12,
+      "maxTotalBytes": 503808,
+      "maxJsBytes": 95,
+      "maxCssBytes": 53218,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 5330
+    },
+    "button.html": {
+      "maxTotalRequests": 59,
+      "maxTotalBytes": 1906757,
+      "maxJsBytes": 458644,
+      "maxCssBytes": 1022148,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 797
+    },
+    "cards.html": {
+      "maxTotalRequests": 53,
+      "maxTotalBytes": 1107094,
+      "maxJsBytes": 486341,
+      "maxCssBytes": 150491,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 8496
+    },
+    "charts.html": {
+      "maxTotalRequests": 20,
+      "maxTotalBytes": 851081,
+      "maxJsBytes": 21470,
+      "maxCssBytes": 273140,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1740
+    },
+    "checkbox.html": {
+      "maxTotalRequests": 12,
+      "maxTotalBytes": 778984,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 316310,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 9138
+    },
+    "color.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 593603,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 59355,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1624
+    },
+    "contact.html": {
+      "maxTotalRequests": 12,
+      "maxTotalBytes": 470813,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 63845,
+      "maxImageBytes": 6209,
+      "maxLoadTimeMs": 1604
+    },
+    "dashboard.html": {
+      "maxTotalRequests": 23,
+      "maxTotalBytes": 768647,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 189057,
+      "maxImageBytes": 33676,
+      "maxLoadTimeMs": 1174
+    },
+    "div.html": {
+      "maxTotalRequests": 15,
+      "maxTotalBytes": 714365,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 168386,
+      "maxImageBytes": 17322,
+      "maxLoadTimeMs": 1742
+    },
+    "documentation.html": {
+      "maxTotalRequests": 12,
+      "maxTotalBytes": 619700,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 164554,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1402
+    },
+    "dropdown-components.html": {
+      "maxTotalRequests": 20,
+      "maxTotalBytes": 693820,
+      "maxJsBytes": 10013,
+      "maxCssBytes": 153755,
+      "maxImageBytes": 16851,
+      "maxLoadTimeMs": 1814
+    },
+    "ecommerce.html": {
+      "maxTotalRequests": 24,
+      "maxTotalBytes": 2581889,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 178184,
+      "maxImageBytes": 1896591,
+      "maxLoadTimeMs": 1655
+    },
+    "error.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 669210,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 175676,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1602
+    },
+    "faq.html": {
+      "maxTotalRequests": 9,
+      "maxTotalBytes": 530558,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 135748,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1455
+    },
+    "files.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 520347,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 64643,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 917
+    },
+    "filters-premium.html": {
+      "maxTotalRequests": 16,
+      "maxTotalBytes": 812432,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 201555,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1666
+    },
+    "flipcards.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 568608,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 75654,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1762
+    },
+    "footer.html": {
+      "maxTotalRequests": 11,
+      "maxTotalBytes": 568737,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 148007,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1559
+    },
+    "forms.html": {
+      "maxTotalRequests": 33,
+      "maxTotalBytes": 703244,
+      "maxJsBytes": 197355,
+      "maxCssBytes": 48978,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1757
+    },
+    "hero.html": {
+      "maxTotalRequests": 22,
+      "maxTotalBytes": 1219742,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 264612,
+      "maxImageBytes": 462227,
+      "maxLoadTimeMs": 1150
+    },
+    "hover.html": {
+      "maxTotalRequests": 16,
+      "maxTotalBytes": 752866,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 177545,
+      "maxImageBytes": 76298,
+      "maxLoadTimeMs": 780
+    },
+    "index.html": {
+      "maxTotalRequests": 18,
+      "maxTotalBytes": 610116,
+      "maxJsBytes": 43124,
+      "maxCssBytes": 88844,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1358
+    },
+    "inputs.html": {
+      "maxTotalRequests": 11,
+      "maxTotalBytes": 487530,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 53284,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 2259
+    },
+    "leaderboard-components.html": {
+      "maxTotalRequests": 15,
+      "maxTotalBytes": 669113,
+      "maxJsBytes": 20459,
+      "maxCssBytes": 156370,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1647
+    },
+    "loaders.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 699533,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 175722,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1599
+    },
+    "map.html": {
+      "maxTotalRequests": 60,
+      "maxTotalBytes": 1892013,
+      "maxJsBytes": 183826,
+      "maxCssBytes": 167129,
+      "maxImageBytes": 1074480,
+      "maxLoadTimeMs": 2356
+    },
+    "menu.html": {
+      "maxTotalRequests": 15,
+      "maxTotalBytes": 704987,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 182926,
+      "maxImageBytes": 15993,
+      "maxLoadTimeMs": 1264
+    },
+    "navbar.html": {
+      "maxTotalRequests": 12,
+      "maxTotalBytes": 663573,
+      "maxJsBytes": 20459,
+      "maxCssBytes": 194613,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1642
+    },
+    "notes-components.html": {
+      "maxTotalRequests": 17,
+      "maxTotalBytes": 812224,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 333557,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1661
+    },
+    "notifications-premium.html": {
+      "maxTotalRequests": 23,
+      "maxTotalBytes": 715205,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 92205,
+      "maxImageBytes": 32721,
+      "maxLoadTimeMs": 1544
+    },
+    "pricing.html": {
+      "maxTotalRequests": 11,
+      "maxTotalBytes": 557253,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 153340,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1509
+    },
+    "profile-components.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 720764,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 196696,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 3462
+    },
+    "progress-premium.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 655059,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 165950,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1457
+    },
+    "radiobutton.html": {
+      "maxTotalRequests": 18,
+      "maxTotalBytes": 641314,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 101920,
+      "maxImageBytes": 9630,
+      "maxLoadTimeMs": 9947
+    },
+    "ratings-premium.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 593681,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 72320,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 3860
+    },
+    "recovery.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 721341,
+      "maxJsBytes": 218535,
+      "maxCssBytes": 177600,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 5548
+    },
+    "search.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 689758,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 197268,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 2266
+    },
+    "section.html": {
+      "maxTotalRequests": 15,
+      "maxTotalBytes": 532721,
+      "maxJsBytes": 5064,
+      "maxCssBytes": 46316,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 3791
+    },
+    "span.html": {
+      "maxTotalRequests": 6,
+      "maxTotalBytes": 189216,
+      "maxJsBytes": 218535,
+      "maxCssBytes": 56139,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 848
+    },
+    "step-indicators.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 738872,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 204413,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1041
+    },
+    "subscription.html": {
+      "maxTotalRequests": 17,
+      "maxTotalBytes": 787458,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 261953,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 980
+    },
+    "table.html": {
+      "maxTotalRequests": 28,
+      "maxTotalBytes": 633297,
+      "maxJsBytes": 8534,
+      "maxCssBytes": 68501,
+      "maxImageBytes": 32078,
+      "maxLoadTimeMs": 1732
+    },
+    "tabs.html": {
+      "maxTotalRequests": 17,
+      "maxTotalBytes": 981162,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 360197,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1439
+    },
+    "terms.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 650699,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 166199,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1568
+    },
+    "testimonials.html": {
+      "maxTotalRequests": 35,
+      "maxTotalBytes": 846712,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 186248,
+      "maxImageBytes": 116142,
+      "maxLoadTimeMs": 963
+    },
+    "timeline.html": {
+      "maxTotalRequests": 15,
+      "maxTotalBytes": 691113,
+      "maxJsBytes": 12993,
+      "maxCssBytes": 167547,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1032
+    },
+    "toggles.html": {
+      "maxTotalRequests": 5,
+      "maxTotalBytes": 187550,
+      "maxJsBytes": 218535,
+      "maxCssBytes": 132938,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 246
+    },
+    "widgets.html": {
+      "maxTotalRequests": 14,
+      "maxTotalBytes": 598854,
+      "maxJsBytes": 3279,
+      "maxCssBytes": 71541,
+      "maxImageBytes": 24455723,
+      "maxLoadTimeMs": 1671
+    }
+  }
 }

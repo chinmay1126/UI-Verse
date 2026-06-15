@@ -54,6 +54,7 @@ a {
   color: #94a3b8;
   margin-top: 6px;
 }
+.gl-pill:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Nav */
 .sidebar ul {
@@ -200,6 +201,7 @@ a {
   background: rgba(255,255,255,0.04);
   color: #fff;
 }
+.gl-cta-primary:hover { background: #f5f5f5; transform: translateY(-2px); }
 
 
 .hero-stats {
@@ -208,6 +210,7 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
+.gl-link:hover { opacity: 0.8; }
 
 .stat-card {
   padding: 30px;
@@ -338,4 +341,8 @@ a {
   .hero h1 {
     font-size: 2.5rem;
   }
+}
+
+.step h4{
+  font-size:1.1rem;
 }

@@ -18,7 +18,8 @@ const CommandPalette = (function () {
     allItems: [],
     listeners: [],
     modalCleanup: null,
-    restoreFocusTo: null
+    restoreFocusTo: null,
+    mode: 'search'
   };
 
   const STORAGE_KEY = 'uiverse_command_palette_recent';
@@ -55,6 +56,12 @@ const CommandPalette = (function () {
 
   // Build component list from page navigation
   function buildComponentList() {
+    // Use ComponentIndex if available
+    if (window.ComponentIndex) {
+      return window.ComponentIndex.getAll();
+    }
+
+    // Fallback: build from sidebar
     const items = [];
     
     // Get all navigation links from sidebar
@@ -104,6 +111,14 @@ const CommandPalette = (function () {
       return [];
     }
 
+    // Use ComponentIndex search if available (with Fuse.js)
+    if (window.ComponentIndex) {
+      const results = window.ComponentIndex.search(query);
+      _state.results = results;
+      return results;
+    }
+
+    // Fallback to custom fuzzy search
     const scored = _state.allItems.map((item) => {
       const titleScore = fuzzyScore(query, item.title);
       const categoryScore = fuzzyScore(query, item.category) * 0.5;
@@ -225,32 +240,44 @@ const CommandPalette = (function () {
   function handleKeydown(event) {
     if (!_state.isOpen) return;
 
+    const contract = window.KeyboardContract || globalThis.KeyboardContract || null;
+
     switch (event.key) {
       case 'Escape':
+        if (contract && typeof contract.isEscapeKey === 'function' && !contract.isEscapeKey(event)) break;
         event.preventDefault();
         close();
         break;
 
       case 'ArrowDown':
+        if (contract && typeof contract.isArrowKey === 'function' && !contract.isArrowKey(event)) break;
         event.preventDefault();
         _state.selectedIndex = Math.min(_state.selectedIndex + 1, _state.results.length - 1);
         renderResults();
         break;
 
       case 'ArrowUp':
+        if (contract && typeof contract.isArrowKey === 'function' && !contract.isArrowKey(event)) break;
         event.preventDefault();
         _state.selectedIndex = Math.max(_state.selectedIndex - 1, 0);
         renderResults();
         break;
 
       case 'Enter':
+        if (contract && typeof contract.isEnterKey === 'function' && !contract.isEnterKey(event)) break;
         event.preventDefault();
+        if (_state.mode === 'generate') {
+          const genBtn = document.getElementById('generateBtn');
+          if (genBtn && !genBtn.disabled) genBtn.click();
+          break;
+        }
         if (_state.results[_state.selectedIndex]) {
           navigateToItem(_state.results[_state.selectedIndex]);
         }
         break;
 
       case 'Tab':
+        if (contract && typeof contract.isTabKey === 'function' && !contract.isTabKey(event)) break;
         event.preventDefault();
         if (event.shiftKey) {
           _state.selectedIndex = Math.max(_state.selectedIndex - 1, 0);
@@ -269,10 +296,19 @@ const CommandPalette = (function () {
     _state.isOpen = true;
     _state.selectedIndex = 0;
     _state.results = [];
+    _state.mode = 'search';
     _state.restoreFocusTo = document.activeElement instanceof HTMLElement ? document.activeElement : null;
 
     const overlay = document.getElementById('commandPaletteOverlay');
     const input = document.getElementById('commandPaletteInput');
+
+    document.querySelectorAll('.command-palette-tab').forEach((t) => t.classList.toggle('active', t.dataset.mode === 'search'));
+    const searchPanel = document.querySelector('.command-palette-search');
+    const generatePanel = document.getElementById('generatePanel');
+    const resultsEl = document.getElementById('commandPaletteResults');
+    if (searchPanel) searchPanel.style.display = '';
+    if (generatePanel) generatePanel.style.display = 'none';
+    if (resultsEl) resultsEl.style.display = '';
 
     if (overlay) {
       overlay.classList.add('open');
@@ -339,7 +375,7 @@ const CommandPalette = (function () {
   }
 
   // Initialize feature
-  function init() {
+  async function init() {
     if (_state.initialized) return;
 
     // Check for palette elements
@@ -347,6 +383,11 @@ const CommandPalette = (function () {
       console.warn('[CommandPalette] Palette DOM not found. Skipping initialization.');
       _state.initialized = true;
       return;
+    }
+
+    // Initialize ComponentIndex if available
+    if (window.ComponentIndex) {
+      await window.ComponentIndex.init();
     }
 
     _state.allItems = buildComponentList();
@@ -378,7 +419,14 @@ const CommandPalette = (function () {
       }
     };
     const onDocumentKeydown = (event) => {
-      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+      const contract = window.KeyboardContract || globalThis.KeyboardContract || null;
+      if (contract && typeof contract.matchesCombo === 'function' && contract.matchesCombo(event, contract.shortcuts.commandPalette)) {
+        event.preventDefault();
+        toggle();
+        return;
+      }
+
+      if (!contract && (event.metaKey || event.ctrlKey) && event.key === 'k') {
         event.preventDefault();
         toggle();
       }
@@ -390,6 +438,29 @@ const CommandPalette = (function () {
       _state.listeners.push({ el: input, event: 'input', handler: handleInput });
       _state.listeners.push({ el: input, event: 'keydown', handler: handleKeydown });
     }
+
+    document.querySelectorAll('.command-palette-tab').forEach((tab) => {
+      const onTabClick = () => {
+        const mode = tab.dataset.mode;
+        _state.mode = mode;
+        document.querySelectorAll('.command-palette-tab').forEach((t) => t.classList.toggle('active', t.dataset.mode === mode));
+        const searchPanel = document.querySelector('.command-palette-search');
+        const generatePanel = document.getElementById('generatePanel');
+        const resultsEl = document.getElementById('commandPaletteResults');
+        if (searchPanel) searchPanel.style.display = mode === 'search' ? '' : 'none';
+        if (generatePanel) generatePanel.style.display = mode === 'generate' ? 'grid' : 'none';
+        if (resultsEl) resultsEl.style.display = mode === 'search' ? '' : 'none';
+        if (mode === 'search' && input) {
+          input.focus();
+          renderResults();
+        } else if (mode === 'generate') {
+          const genInput = document.getElementById('generateInput');
+          if (genInput) genInput.focus();
+        }
+      };
+      tab.addEventListener('click', onTabClick);
+      _state.listeners.push({ el: tab, event: 'click', handler: onTabClick });
+    });
 
     if (overlay) {
       overlay.addEventListener('click', onOverlayClick);
