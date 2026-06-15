@@ -17,9 +17,16 @@
     <span class="brand-icon">⬡</span>
     <span class="brand-text">UIverse <span style="font-size: 9px; background: linear-gradient(135deg, #eb6835, #7b61ff); color: white; padding: 1px 6px; border-radius: 10px; font-weight: 800; margin-left: 4px; letter-spacing: 0.5px; vertical-align: middle; box-shadow: 0 0 8px rgba(235,104,53,0.3);">V2</span></span>
   </div>
-
-          <nav class="sidebar-nav">
+<li>
+          <nav class="sidebar-nav"><li class="theme-toggle-item">
+        <button id="darkModeToggle" class="theme-toggle-sidebar" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+          <span>Theme</span>
+        </button>
+      </li>
+</ul>
     <ul>
+
       <li class="active">
         <a href="index.html">
           <i class="fa-solid fa-house"></i>
@@ -2025,6 +2032,6 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.component-card').forEach(el => observer.observe(el));
 </script>
-  <script src="dist/shared.js"></script>
+  <script src="alerts.js"></script>
 </body>
 </html>

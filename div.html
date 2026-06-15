@@ -1586,6 +1586,33 @@
     </div>
 
   </aside>
+  
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="logo">UIverse</div>
+
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <kbd class="search-kbd">⌘K</kbd>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn outline-nav-btn">
+      <i class="fa-solid fa-plus"></i> Add Component
+    </button>
+    <button class="nav-btn primary-nav-btn">
+      <i class="fa-solid fa-bookmark"></i> My Collection
+    </button>
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
 
   <!-- =========================================================
        MAIN
@@ -2697,7 +2724,7 @@ input.addEventListener("input", function () {
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
-  <script src="dist/shared.js"></script>
+  <script src="div.js"></script>
 </body>
 
 </html>
