@@ -1,115 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome-UI-Verse</title>
-    <link rel="stylesheet" href="welcome.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'unsafe-inline'; style-src 'self' https: 'unsafe-hashes' 'unsafe-inline'; font-src 'self' data: https: https://fonts.gstatic.com;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
+  <title>Welcome • UIverse Core Mainframe Gateway</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="welcome.css" />
 </head>
-<body>
-    <section class="welcome">
+<body class="mainframe-gateway-view dark-matrix-mode">
+  <a class="skip-link" href="#main-content">Skip straight to welcome console core</a>
 
-    <nav class="navbar">
-      <h2 class="logo">UI-Verse</h2>
+  <aside class="sidebar" id="sidebar" aria-label="Mainframe Core Parameter Shards">
+    <div class="sidebar-brand-wrapper">
+      <div class="brand-glyph">⬡</div>
+      <span class="brand-text">MAINFRAME <span class="layer-tag">PORTAL_V1</span></span>
+    </div>
 
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Components</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+    <nav class="sidebar-nav">
+      <div class="nav-segment">
+        <span class="nav-segment-heading">Ecosystem Center</span>
+        <ul>
+          <li class="active"><a href="Welcome.html"><i class="fa-solid fa-house"></i><span>Welcome Gateway</span></a></li>
+          <li><a href="button.html"><i class="fa-solid fa-hand-pointer"></i><span>Action Toggles</span></a></li>
+          <li><a href="dropdown-components.html"><i class="fa-solid fa-caret-down"></i><span>Dropdown Cascades</span></a></li>
+          <li><a href="profile-components.html"><i class="fa-solid fa-user"></i><span>Identity Profiles</span></a></li>
+          <li><a href="navbar.html"><i class="fa-solid fa-bars"></i><span>Navigation Shells</span></a></li>
+          <li><a href="cards.html"><i class="fa-solid fa-table-cells-large"></i><span>Component Cards</span></a></li>
+        </ul>
+      </div>
 
-      <button class="nav-btn">Login</button>
+      <div class="nav-segment">
+        <span class="nav-segment-heading">Advanced Controllers</span>
+        <ul>
+          <li><a href="inputs.html"><i class="fa-solid fa-keyboard"></i><span>Form Inputs</span></a></li>
+          <li><a href="forms.html"><i class="fa-solid fa-file-shield"></i><span>Schema Forms</span></a></li>
+          <li><a href="badges.html"><i class="fa-solid fa-certificate"></i><span>State Badges</span></a></li>
+          <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Admin Viewports</span></a></li>
+          <li><a href="widgets.html"><i class="fa-solid fa-layer-group"></i><span>Utility Widgets</span></a></li>
+          <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search Interfaces</span></a></li>
+          <li><a href="section.html"><i class="fa-solid fa-rectangle-list"></i><span>Section Showcase</span></a></li>
+          <li><a href="table.html"><i class="fa-solid fa-table"></i><span>Data Matrices</span></a></li>
+          <li><a href="tabs.html"><i class="fa-solid fa-table-columns"></i><span>Viewport Tabs</span></a></li>
+          <li><a href="terms.html"><i class="fa-solid fa-file-contract"></i><span>Terms & Compliances</span></a></li>
+          <li><a href="testimonials.html"><i class="fa-solid fa-comments"></i><span>Social Proof Matrix</span></a></li>
+          <li><a href="toggles.html"><i class="fa-solid fa-toggle-on"></i><span>Power Switches</span></a></li>
+        </ul>
+      </div>
     </nav>
+    
+    <div class="sidebar-status-node">
+      <div class="status-pulse"></div>
+      <p class="status-lbl">SECURE_TUNNEL: NOMINAL</p>
+    </div>
+  </aside>
 
-    <div class="hero">
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleMainframeSidebar()"></div>
 
-      <div class="hero-text">
-        <h1>Build Beautiful UI Faster</h1>
+  <header class="navbar" id="navbar">
+    <button class="menu-toggle-btn" type="button" onclick="toggleMainframeSidebar()" aria-label="Toggle Navigation Stack Menu">
+      <i class="fa-solid fa-bars-staggered"></i>
+    </button>
+    <div class="logo-branding-block">
+      <span class="logo-txt">UIverse</span>
+      <span class="pro-badge">PRO MATRIX</span>
+    </div>
+    
+    <div class="nav-right">
+      <button class="action-btn outline" type="button">Technical Docs</button>
+      <button class="action-btn primary" type="button" onclick="alert('Rerouting gateway frame onto secure registration channel lines...');">Explore Platform <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+      <button class="theme-toggle" id="themeBtn" type="button" aria-label="Switch interface skin mode colors">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
 
-        <p>
-          Explore modern UI components, templates, 
-          and creative designs for your next project.
-        </p>
+  <main class="main-canvas" id="main-content">
 
-        <div class="buttons">
-          <button class="primary-btn">Get Started</button>
-          <button class="secondary-btn">Explore UI</button>
+    <section class="console-jumbotron">
+      <div class="jumbotron-blur-ring"></div>
+      <div class="jumbotron-micro-badge">
+        <i class="fa-solid fa-shield-halved text-cyan"></i>
+        <span>GATEWAY ENVELOPE PIPELINE ONLINE</span>
+      </div>
+      <h1 class="jumbotron-title">Empowering Developers with <span>Premium UI Assets</span></h1>
+      <p class="jumbotron-desc">An elite architectural matrix of decoupled, modular, and responsive frontend component templates engineered with sub-millisecond perceived latency thresholds.</p>
+      
+      <div class="jumbotron-cta-group">
+        <button class="action-btn primary large-cta" type="button" onclick="alert('Initializing main component catalog trace lines...');">Browse Components Registry</button>
+        <button class="action-btn outline large-cta" type="button" onclick="alert('Accessing open-source repository pipelines downstream...');"><i class="fab fa-github"></i> Harvest Repository</button>
+      </div>
+    </section>
+
+    <section class="telemetry-metrics-strip">
+      <div class="metric-card-node">
+        <div class="metric-icon-box crimson-mesh"><i class="fa-solid fa-cubes"></i></div>
+        <div class="metric-data-block">
+          <h3 id="metric-components">3,500+</h3>
+          <p>Verified UI Components</p>
         </div>
       </div>
 
-      <div class="hero-image">
-        <div class="card">
-          <h3>Modern Dashboard</h3>
-          <p>Clean and responsive UI design.</p>
-        </div>
-
-        <div class="small-card">
-          <h4>20+ Components</h4>
+      <div class="metric-card-node">
+        <div class="metric-icon-box blue-mesh"><i class="fa-solid fa-circle-nodes"></i></div>
+        <div class="metric-data-block">
+          <h3 id="metric-contributors">120+</h3>
+          <p>Ecosystem Contributors</p>
         </div>
       </div>
 
-    </div>
+      <div class="metric-card-node">
+        <div class="metric-icon-box purple-mesh"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+        <div class="metric-data-block">
+          <h3 id="metric-downloads">420k</h3>
+          <p>Monthly Token Harvests</p>
+        </div>
+      </div>
 
-  </section>
+      <div class="metric-card-node">
+        <div class="metric-icon-box gold-mesh"><i class="fa-solid fa-bolt"></i></div>
+        <div class="metric-data-block">
+          <h3>0.4ms</h3>
+          <p>Average Rendering Latency</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Adding footer -->
-<footer class="footer">
-  <div class="footer-container">
+    <section class="featured-grid-section">
+      <div class="section-header-block">
+        <span class="section-micro-tag">CORE FEATURES SPEC</span>
+        <h2>Engineered for <span>Speed & Customization</span></h2>
+      </div>
 
-    <div class="footer-brand">
-      <h2>UI-Verse</h2>
-      <p>
-        Explore clean and modern UI components built with HTML, CSS, and JavaScript.
-      </p>
-    </div>
+      <div class="featured-cards-grid">
+        <div class="feature-tile-card">
+          <div class="tile-corner-accent top-left"></div><div class="tile-corner-accent top-right"></div>
+          <div class="tile-icon-box crimson-mesh"><i class="fa-solid fa-code"></i></div>
+          <h3>Pure Semantic Markup</h3>
+          <p>Zero dependency markup footprints optimized to preserve atomic execution weights down your development trees.</p>
+        </div>
 
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Components</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
+        <div class="feature-tile-card">
+          <div class="tile-corner-accent top-left"></div><div class="tile-corner-accent top-right"></div>
+          <div class="tile-icon-box blue-mesh"><i class="fa-solid fa-palette"></i></div>
+          <h3>Advanced Style Tokens</h3>
+          <p>Fully decoupled structural variable layers allowing absolute theme mapping compliance modifications across parent sharding sheets.</p>
+        </div>
 
-    <div class="footer-links">
-      <h3>Resources</h3>
-      <ul>
-        <li><a href="#">Docs</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Community</a></li>
-        <li><a href="#">Updates</a></li>
-      </ul>
-    </div>
+        <div class="feature-tile-card">
+          <div class="tile-corner-accent top-left"></div><div class="tile-corner-accent top-right"></div>
+          <div class="tile-icon-box purple-mesh"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>Fluid Layout Scales</h3>
+          <p>Proportional dimension bounds engineered to maintain pristine visibility vectors across varying screen boundaries profiles.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <section class="testimonials-section">
+      <div class="section-header-block">
+        <span class="section-micro-tag">Ecosystem Feedback</span>
+        <h2>Trusted by <span>Frontend Architects</span></h2>
+      </div>
+
+      <div class="testimonials-cards-grid">
+        <div class="testimonial-tile-card">
+          <div class="t-quote-mark">“</div>
+          <p class="t-body-text">UIverse completely re-routed our production timelines. Dropping verified layout components directly into code frames trimmed weeks off our interface delivery checkpoints.</p>
+          <div class="t-operator-identity">
+            <strong>Sarah Jenkins</strong>
+            <span>Lead UI Engineer, ShardTech</span>
+          </div>
+        </div>
+
+        <div class="testimonial-tile-card">
+          <div class="t-quote-mark">“</div>
+          <p class="t-body-text">The cleanliness of the CSS custom properties configuration grid is unparalleled. Absolute compliance with strict cryptographic content security policies out of the box.</p>
+          <div class="t-operator-identity">
+            <strong>Marcus Vance</strong>
+            <span>Principal Core Developer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container-shell">
+      <div class="footer-brand-column">
+        <h2 class="footer-logo-string">⬡ UIverse_Mainframe</h2>
+        <p class="footer-paragraph-desc">Architecting fine structural user interface layers utilizing standard low-latency layout variables, geometric spacing matrices, and secure compilation rules downstream.</p>
+        <div class="footer-social-row">
+          <a href="#" aria-label="GitHub Repository Vault Link"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn Corporate Operations Connection Link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="X Status Logs Broadcast Link"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-column">
+        <h3>Ecosystem Center</h3>
+        <ul>
+          <li><a href="button.html">Action Toggles Matrix</a></li>
+          <li><a href="navbar.html">Navigation Shell Arrays</a></li>
+          <li><a href="cards.html">Canvas Card Layouts</a></li>
+          <li><a href="inputs.html">Form Input Channels</a></li>
+          <li><a href="forms.html">Schema Layout Forms</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-column">
+        <h3>Technical Manuals</h3>
+        <ul>
+          <li><a href="documentation.html">Platform Technical Manuals</a></li>
+          <li><a href="https://github.com" target="_blank">Open Source Repositories</a></li>
+          <li><a href="faq.html">Centralized Knowledge Base</a></li>
+          <li><a href="contact.html">Support Dispatch Protocols</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-column newsletter-column">
+        <h3>Continuous Integration Feeds</h3>
+        <p>Register your workspace hub node destination to intercept low-frequency layout updates logs directly.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="operator@engine.domain" aria-label="Operator destination updates subscription payload input field" required />
+          <button type="button" onclick="alert('Destination node registered successfully inside telemetry channels.');">Sync Hub Node</button>
+        </div>
       </div>
     </div>
 
-  </div>
+    <div class="footer-bottom-bar">
+      <p>© 2026 UIverse Engine Modules. Compiled and engineered with absolute mechanical mathematical precision for professional front-end teams globally.</p>
+    </div>
+  </footer>
 
-  <div class="footer-bottom">
-    <p>© 2026 UI-Verse. All rights reserved.</p>
-  </div>
-</footer>
+  <script>
+    function toggleMainframeSidebar() {
+      const sidebarNode = document.getElementById('sidebar');
+      const backdropNode = document.getElementById('sidebarBackdrop');
+      if (sidebarNode && backdropNode) {
+        sidebarNode.classList.toggle('visible');
+        backdropNode.classList.toggle('visible');
+      }
+    }
+    window.toggleMainframeSidebar = toggleMainframeSidebar;
 
+    const themeToggleBtn = document.getElementById('themeBtn');
+    const themeIconElement = themeToggleBtn.querySelector('i');
+
+    // Sync state on memory check parameters initialization
+    if (localStorage.getItem('platform-gateway-skin') === 'light') {
+      document.body.classList.remove('dark-matrix-mode');
+      document.body.classList.add('light-matrix-mode');
+      themeIconElement.className = 'fa-solid fa-sun';
+    }
+
+    // Capture interaction triggers over theme selector nodes
+    themeToggleBtn.addEventListener('click', () => {
+      if (document.body.classList.contains('dark-matrix-mode')) {
+        document.body.classList.remove('dark-matrix-mode');
+        document.body.classList.add('light-matrix-mode');
+        themeIconElement.className = 'fa-solid fa-sun';
+        localStorage.setItem('platform-gateway-skin', 'light');
+      } else {
+        document.body.classList.remove('light-matrix-mode');
+        document.body.classList.add('dark-matrix-mode');
+        themeIconElement.className = 'fa-solid fa-moon';
+        localStorage.setItem('platform-gateway-skin', 'dark');
+      }
+    });
+  </script>
 </body>
 </html>
-

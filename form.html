@@ -1,934 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forms - UIverse</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UIverse - Forms</title>
+
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"  href="form.css">
-
-  <!-- UIverse Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="forms.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-<!-- Gallery page note: See GALLERY_PAGES_GUIDE.md for filtering setup. -->
 
-   <nav class="navbar">
-  <!-- Logo -->
-  <div class="logo">UIverse</div>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">🔹UIverse</div>
 
-  <!-- Center Search Bar -->
   <div class="search-bar">
-    <span class="nav-link active">Explore</span>
-    <input type="text" id="searchInput" placeholder="Search Components" />
-    <button class="search-btn">🔍</button>
+    <input id="searchInput" type="text" placeholder="Search forms..." />
+    <button class="search-btn">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
   </div>
 
-  <!-- Right Section -->
   <div class="nav-right">
-    <button class="nav-btn">Add Component</button>
-    <button onclick="location.href='MyCollection.html'">My Collection</button>
-    <a href="#"></a>
-    <a href="#"></a>
+    <button class="nav-btn">Explore</button>
+    <button class="nav-btn" onclick="location.href='MyCollection.html'">My Collection</button>
   </div>
 </nav>
 
 <div class="container">
-  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
-  <!-- Sidebar -->
+  <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h2>UIverse</h2>
+    <!-- <h2>UIverse</h2> -->
     <ul>
-      <li><a href="index.html">Home</a></li>>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
       <li><a href="alerts.html">Alerts</a></li>
       <li><a href="badges.html">Badges</a></li>
       <li><a href="button.html">Buttons</a></li>
       <li><a href="cards.html">Cards</a></li>
-      <li><a href="color.html">Colors</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contribute.html">Contribute</a></li>
-      <li class="active"><a href="navbar.html">Navbars</a></li>
-      <li><a href="footer.html">Footer</a></li>
       <li class="active"><a href="form.html">Forms</a></li>
       <li><a href="inputs.html">Inputs</a></li>
       <li><a href="loaders.html">Loaders</a></li>
-      <li><a href="navbar.html">Navbars</a></li>
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
     </ul>
   </aside>
+
   <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
-  <!-- Main -->
+  <!-- MAIN -->
   <main class="main">
-    <div class="page-header">
-      <h1>Forms</h1>
-      <p>Explore reusable and ready-to-use form components</p>
-    </div>
-    <div class = "button group">
-      <!--Login Form  -->
-      <div class = "component-card">
+
+    <!-- HEADER -->
+    <header class="page-header">
+      <h1>Forms Collection</h1>
+      <p>Modern reusable form components for your UI system</p>
+    </header>
+
+    <!-- GRID -->
+    <section class="forms-grid" id="formsGrid">
+
+      <!-- LOGIN -->
+      <div class="form-card" data-name="login form">
         <h3>Login Form</h3>
         <form>
-          <input type="email" placeholder="Email" class="form-input" required /><br><br>
-          <input type="password" placeholder="Password" class="form-input" required /><br><br>
-          <button type="submit" class="nav-btn">Login</button>
-        </form>
-        
-        <div class="actions">
-          <button class="action-btn view-btn" onclick="toggleCode('f1', this)"><i class="fa-solid fa-code"></i> View Code</button>
-          <button class="action-btn copy-btn" onclick="copyCode('f1', this)"><i class="fa-solid fa-copy"></i> Copy</button>
-          <button onclick="addToCollection('Login Form')">Add to My Collection</button>
-        </div>
-<pre id="f1" class="code-block">
-&lt;form&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;input type="password" placeholder="Password"&gt;
-  &lt;button&gt;Login&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Multi Step Form -->
-<div class="component-card multi-step-form-card">
-  <div class="multi-step-inner-card">
-    <form class="multi-step-form">
-      <h3>MULTI STEP FORM</h3>
-
-      <div class="step-indicator">
-        <span class="active-step">1</span>
-        <span>2</span>
-        <span>3</span>
-      </div>
-
-      <label>First Name</label>
-      <input type="text" class="input" placeholder="First Name" required>
-
-      <label>Last Name</label>
-      <input type="text" class="input" placeholder="Last Name" required>
-
-      <label>Email</label>
-      <input type="email" class="input" placeholder="Email Address" required>
-
-      <button class="gradient-btn">NEXT STEP</button>
-    </form>
-  </div>
-
-  <div class="actions">
-    <button onclick="toggleCode('f11')">View Code</button>
-    <button onclick="copyCode('f11',this)">Copy</button>
-  </div>
-
-<pre id="f11" class="code-block">
-&lt;form class="multi-step-form"&gt;
-  &lt;input type="text" placeholder="First Name"&gt;
-  &lt;input type="text" placeholder="Last Name"&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;button&gt;NEXT STEP&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-</div>
-
-<!-- Payment Form -->
-<div class="component-card payment-form-card">
-  <div class="payment-form-inner-card">
-    <form class="payment-form">
-      <h3>PAYMENT FORM</h3>
-
-      <label>Card Holder</label>
-      <input type="text" class="input" placeholder="John Doe" required>
-
-      <label>Card Number</label>
-      <input type="text" class="input" placeholder="1234 5678 9012 3456" required>
-
-      <div class="form-row">
-        <div>
-          <label>Expiry Date</label>
-          <input type="month" class="input" required>
-        </div>
-
-        <div>
-          <label>CVV</label>
-          <input type="password" class="input" placeholder="123" required>
-        </div>
-      </div>
-
-      <button class="glass-btn">PAY NOW</button>
-    </form>
-  </div>
-
-  <div class="actions">
-    <button onclick="toggleCode('f12')">View Code</button>
-    <button onclick="copyCode('f12',this)">Copy</button>
-  </div>
-
-<pre id="f12" class="code-block">
-&lt;form class="payment-form"&gt;
-  &lt;input type="text" placeholder="Card Holder"&gt;
-  &lt;input type="text" placeholder="Card Number"&gt;
-  &lt;input type="month"&gt;
-  &lt;input type="password" placeholder="CVV"&gt;
-  &lt;button&gt;PAY NOW&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-</div>
-
-<!-- Survey Form -->
-<div class="component-card survey-form-card">
-  <div class="survey-form-inner-card">
-    <form class="survey-form">
-      <h3>SURVEY FORM</h3>
-
-      <label>How satisfied are you?</label>
-      <select class="input" required>
-        <option value="">Choose</option>
-        <option>Excellent</option>
-        <option>Good</option>
-        <option>Average</option>
-        <option>Poor</option>
-      </select>
-
-      <label>Favorite Features</label>
-
-      <label><input type="checkbox"> UI Design</label>
-      <label><input type="checkbox"> Animations</label>
-      <label><input type="checkbox"> Components</label>
-
-      <label>Suggestions</label>
-      <textarea class="input" placeholder="Write your feedback"></textarea>
-
-      <button class="neon-btn">SUBMIT SURVEY</button>
-    </form>
-  </div>
-
-  <div class="actions">
-    <button onclick="toggleCode('f13')">View Code</button>
-    <button onclick="copyCode('f13',this)">Copy</button>
-  </div>
-
-<pre id="f13" class="code-block">
-&lt;form class="survey-form"&gt;
-  &lt;select&gt;
-    &lt;option&gt;Excellent&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;&lt;input type="checkbox"&gt; UI Design&lt;/label&gt;
-  &lt;textarea&gt;&lt;/textarea&gt;
-  &lt;button&gt;SUBMIT SURVEY&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-</div>
-
-<!-- OTP Verification Form -->
-<div class="component-card otp-form-card">
-  <div class="otp-form-inner-card">
-    <form class="otp-form">
-      <h3>OTP VERIFICATION</h3>
-
-      <label>Enter Verification Code</label>
-
-      <div class="otp-boxes">
-        <input type="text" maxlength="1" class="otp-input">
-        <input type="text" maxlength="1" class="otp-input">
-        <input type="text" maxlength="1" class="otp-input">
-        <input type="text" maxlength="1" class="otp-input">
-      </div>
-
-      <button class="gradient-btn">VERIFY</button>
-    </form>
-  </div>
-
-  <div class="actions">
-    <button onclick="toggleCode('f14')">View Code</button>
-    <button onclick="copyCode('f14',this)">Copy</button>
-  </div>
-
-<pre id="f14" class="code-block">
-&lt;form class="otp-form"&gt;
-  &lt;input maxlength="1"&gt;
-  &lt;input maxlength="1"&gt;
-  &lt;input maxlength="1"&gt;
-  &lt;input maxlength="1"&gt;
-  &lt;button&gt;VERIFY&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-</div>
-
-<!-- Booking Form -->
-<div class="component-card booking-form-card">
-  <div class="booking-form-inner-card">
-    <form class="booking-form">
-      <h3>BOOK APPOINTMENT</h3>
-
-      <label>Full Name</label>
-      <input type="text" class="input" placeholder="Your Name" required>
-
-      <label>Select Date</label>
-      <input type="date" class="input" required>
-
-      <label>Select Time</label>
-      <input type="time" class="input" required>
-
-      <label>Choose Service</label>
-      <select class="input">
-        <option>Consultation</option>
-        <option>Meeting</option>
-        <option>Support</option>
-      </select>
-
-      <button class="glass-btn">BOOK NOW</button>
-    </form>
-  </div>
-
-  <div class="actions">
-    <button onclick="toggleCode('f15')">View Code</button>
-    <button onclick="copyCode('f15',this)">Copy</button>
-  </div>
-
-<pre id="f15" class="code-block">
-&lt;form class="booking-form"&gt;
-  &lt;input type="date"&gt;
-  &lt;input type="time"&gt;
-  &lt;select&gt;
-    &lt;option&gt;Consultation&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;button&gt;BOOK NOW&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-</div>
-
-  <!-- Signup Form -->
-  <div class="component-card">
-    <h3>Signup Form</h3>
-
-    <form>
-      <input type="text" placeholder="Full Name" class="form-input"required ><br><br>
-      <input type="email" placeholder="Email" class="form-input" required /><br><br>
-      <input type="password" placeholder="Password" class="form-input" required /><br><br>
-      <button type="submit" class="nav-btn">Signup</button>
-    </form>
-
-    <div class="actions">
-      <button class="action-btn view-btn" onclick="toggleCode('f2', this)"><i class="fa-solid fa-code"></i> View Code</button>
-      <button class="action-btn copy-btn" onclick="copyCode('f2', this)"><i class="fa-solid fa-copy"></i> Copy</button>
-      <button onclick="addToCollection('Signup Form')">Add to My Collection</button>
-    </div>
-
-<pre id="f2" class="code-block">
-&lt;form&gt;
-  &lt;input type="text" placeholder="Full Name"&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;input type="password" placeholder="Password"&gt;
-  &lt;button&gt;Signup&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Contact Form -->
-  <div class="component-card">
-    <h3>Contact Form</h3>
-
-    <form>
-      <input type="text" placeholder="Name" class="form-input" required><br><br>
-      <input type="email" placeholder="Email" class="form-input" required><br><br>
-      <textarea placeholder="Message" class="form-input" required></textarea><br><br>
-      <button type="submit" class="nav-btn">Send</button>
-    </form>
-
-    <div class="actions">
-      <button class="action-btn view-btn" onclick="toggleCode('f3', this)"><i class="fa-solid fa-code"></i> View Code</button>
-      <button class="action-btn copy-btn" onclick="copyCode('f3', this)"><i class="fa-solid fa-copy"></i> Copy</button>
-      <button onclick="addToCollection('Contact Form')">Add to My Collection</button>
-    </div>
-
-<pre id="f3" class="code-block">
-&lt;form&gt;
-  &lt;input type="text" placeholder="Name"&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;textarea placeholder="Message"&gt;&lt;/textarea&gt;
-  &lt;button&gt;Send&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-</div>        
-  </main>
-
-  <section class="forms-section">
-
-  <!-- Section Header -->
-  <div class="section-header">
-    <h1>Forms</h1>
-    <p>Modern, reusable and responsive form components</p>
-  </div>
-
-  <!-- Grid Layout -->
-  <div class="forms-grid">
-
-    <!-- Login Form -->
-    <div class="form-card">
-      <h3>Login</h3>
-      <form>
-        <div class="form-group">
-          <label for="login-email">Email</label>
-          <input id="login-email" type="email" placeholder="Enter your email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="login-password">Password</label>
-          <input id="login-password" type="password" placeholder="Enter password" required>
-        </div>
-
-        <button type="submit" class="btn primary">Login</button>
-      </form>
-    </div>
-
-    <!-- Signup Form -->
-    <div class="form-card">
-      <h3>Sign Up</h3>
-      <form>
-        <div class="form-group">
-          <label for="signup-name">Full Name</label>
-          <input id="signup-name" type="text" placeholder="Your name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="signup-email">Email</label>
-          <input id="signup-email" type="email" placeholder="Your email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="signup-password">Password</label>
-          <input id="signup-password" type="password" required>
-        </div>
-
-        <button class="btn gradient">Create Account</button>
-      </form>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="form-card wide">
-      <h3>Contact Us</h3>
-      <form>
-        <div class="form-row">
-          <input type="text" placeholder="Name" required>
           <input type="email" placeholder="Email" required>
-        </div>
-
-        <textarea placeholder="Your message..." required></textarea>
-
-        <button class="btn glass">Send Message</button>
-      </form>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="form-card">
-      <h3>Newsletter</h3>
-      <form>
-        <input type="email" placeholder="Enter your email">
-        <button class="btn primary">Subscribe</button>
-      </form>
-    </div>
-
-  </div>
-</section>
-
-<div class="main">
-<div class="page-header">
-      <h1>Forms</h1>
-      <p>Check out modern and reusable form layouts</p>
-    </div>
-
-  <!-- Login Form Card -->
-  <div class="component-card login-form-card">
-    <div class="login-form-inner-card"> 
-      <form class="login-form">
-        <h3>LOGIN</h3>
-        <label for="Name">Name</label>
-        <input type="text" class="input" placeholder="Enter your name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <button class="gradient-btn">SUBMIT</button>
-      </form>
-    </div> 
-      <div class="actions">
-        <button>View Code</button>
-        <button>Copy</button>
-        <button onclick="addToCollection('Login Form')">Add to My Collection</button>
-    
-      </div>
-  </div>
-
-  <!-- Sign Up Form Card -->
-  <div class="component-card signup-form-card">
-    <div class="signup-form-inner-card"> 
-      <form class="signup-form">
-        <h3>SIGN UP</h3>
-        <label for="Name">Name</label>
-        <input type="text" class="input" placeholder="Enter your name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <label for="Password">Password</label>
-        <input type="password" class="input" placeholder="Enter your password" required>
-        <button class="neon-btn">SIGN UP</button>
-      </form>
-    </div>
-      <div class="actions">
-        <button>View Code</button>
-        <button>Copy</button>
-        <button onclick="addToCollection('Signup Form')">Add to My Collection</button>
-      </div>
-  </div>
-
-  <!-- Contact Us Form Card -->
-  <div class="component-card contact-form-card">
-    <div class="contact-form-inner-card"> 
-        <form class="contact-form">
-          <h3>CONTACT US</h3>
-          <label for="Name">Name</label>
-          <input type="text" class="input" placeholder="Name" required>
-          <label for="Email">Email</label>
-          <input type="email" class="input" placeholder="Email" required>
-          <label for="Message">Message</label>
-          <textarea class="input" placeholder="Message" required></textarea>
-          <button class="glass-btn">SEND</button>
+          <input type="password" placeholder="Password" required>
+          <button class="btn">Login</button>
         </form>
-    </div>
         <div class="actions">
-           <button>View Code</button>
-           <button>Copy</button>
-           <button onclick="addToCollection('Contact Form')">Add to My Collection</button>
+          <button onclick="toggleCode(this)">View Code</button>
+          <button onclick="copyCode(this)">Copy</button>
+          <button onclick="toast('Saved')">Save</button>
         </div>
-   </div>
-
-  <!-- Newsletter Subscription Form Card -->
-  <div class="component-card newsletter-form-card">
-    <div class="newsletter-form-inner-card">
-      <form class="newsletter-form">
-        <h3>SUBSCRIBE</h3>
-        <label for="Email">Email Address</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <label for="Frequency">Frequency</label>
-        <select class="input" required>
-          <option value="">Select frequency</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="daily">Daily</option>
-        </select>
-        <button class="gradient-btn">SUBSCRIBE</button>
-      </form>
-    </div>
-    <div class="actions">
-
-      <button onclick="toggleCode('f4')">View Code</button>
-      <button onclick="copyCode('f4',this)">Copy</button>
-      <button onclick="addToCollection('Newsletter Form')">Add to My Collection</button>
-
-      <button onclick="toggleCode('f4', this)">View Code</button>
-      <button onclick="copyCode('f4', this)">Copy</button>
-
-    </div>
-    <pre id="f4" class="code-block">
-&lt;form class="newsletter-form"&gt;
-  &lt;h3&gt;SUBSCRIBE&lt;/h3&gt;
-  &lt;label&gt;Email Address&lt;/label&gt;
-  &lt;input type="email" placeholder="Enter your email" required&gt;
-  &lt;label&gt;Frequency&lt;/label&gt;
-  &lt;select required&gt;
-    &lt;option value="weekly"&gt;Weekly&lt;/option&gt;
-    &lt;option value="monthly"&gt;Monthly&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;button&gt;SUBSCRIBE&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Search Form Card -->
-  <div class="component-card search-form-card">
-    <div class="search-form-inner-card">
-      <form class="search-form">
-        <h3>SEARCH</h3>
-        <label for="Search">Search Products</label>
-        <input type="text" class="input" placeholder="Search..." required>
-        <label for="Category">Category</label>
-        <select class="input" required>
-          <option value="">All Categories</option>
-          <option value="electronics">Electronics</option>
-          <option value="clothing">Clothing</option>
-          <option value="books">Books</option>
-        </select>
-        <label>
-          <input type="checkbox"> In Stock Only
-        </label>
-        <button class="neon-btn">SEARCH</button>
-      </form>
-    </div>
-    <div class="actions">
-
-      <button onclick="toggleCode('f5')">View Code</button>
-      <button onclick="copyCode('f5',this)">Copy</button>
-      <button onclick="addToCollection('Search Form')">Add to My Collection</button>
-
-      <button onclick="toggleCode('f5', this)">View Code</button>
-      <button onclick="copyCode('f5', this)">Copy</button>
-
-    </div>
-    <pre id="f5" class="code-block">
-&lt;form class="search-form"&gt;
-  &lt;label&gt;Search Products&lt;/label&gt;
-  &lt;input type="text" placeholder="Search..."&gt;
-  &lt;label&gt;Category&lt;/label&gt;
-  &lt;select&gt;
-    &lt;option&gt;All Categories&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;&lt;input type="checkbox"&gt; In Stock Only&lt;/label&gt;
-  &lt;button&gt;SEARCH&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Feedback/Review Form Card -->
-  <div class="component-card feedback-form-card">
-    <div class="feedback-form-inner-card">
-      <form class="feedback-form">
-        <h3>FEEDBACK</h3>
-        <label for="Name">Your Name</label>
-        <input type="text" class="input" placeholder="Your name" required>
-        <label for="Rating">Rating</label>
-        <select class="input" required>
-          <option value="">Select rating</option>
-          <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-          <option value="4">⭐⭐⭐⭐ Good</option>
-          <option value="3">⭐⭐⭐ Average</option>
-          <option value="2">⭐⭐ Poor</option>
-          <option value="1">⭐ Very Poor</option>
-        </select>
-        <label for="Comments">Comments</label>
-        <textarea class="input" placeholder="Share your feedback..." required></textarea>
-        <button class="glass-btn">SUBMIT</button>
-      </form>
-    </div>
-    <div class="actions">
-
-      <button onclick="toggleCode('f6')">View Code</button>
-      <button onclick="copyCode('f6',this)">Copy</button>
-      <button onclick="addToCollection('Feedback Form')">Add to My Collection</button>
-
-      <button onclick="toggleCode('f6', this)">View Code</button>
-      <button onclick="copyCode('f6', this)">Copy</button>
-
-    </div>
-    <pre id="f6" class="code-block">
-&lt;form class="feedback-form"&gt;
-  &lt;label&gt;Your Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Your name"&gt;
-  &lt;label&gt;Rating&lt;/label&gt;
-  &lt;select required&gt;
-    &lt;option&gt;⭐⭐⭐⭐⭐ Excellent&lt;/option&gt;
-    &lt;option&gt;⭐⭐⭐⭐ Good&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;Comments&lt;/label&gt;
-  &lt;textarea placeholder="Share your feedback..."&gt;&lt;/textarea&gt;
-  &lt;button&gt;SUBMIT&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Password Reset Form Card -->
-  <div class="component-card password-reset-form-card">
-    <div class="password-reset-form-inner-card">
-      <form class="password-reset-form">
-        <h3>RESET PASSWORD</h3>
-        <label for="Email">Email Address</label>
-        <input type="email" class="input" placeholder="Enter your email" required>
-        <label for="NewPassword">New Password</label>
-        <input type="password" class="input" placeholder="Enter new password" required>
-        <label for="ConfirmPassword">Confirm Password</label>
-        <input type="password" class="input" placeholder="Confirm password" required>
-        <button class="gradient-btn">RESET</button>
-      </form>
-    </div>
-    <div class="actions">
-
-      <button onclick="toggleCode('f7')">View Code</button>
-      <button onclick="copyCode('f7',this)">Copy</button>
-      <button onclick="addToCollection('Password Reset Form')">Add to My Collection</button>
-
-      <button onclick="toggleCode('f7', this)">View Code</button>
-      <button onclick="copyCode('f7', this)">Copy</button>
-    </div>
-    <pre id="f7" class="code-block">
-&lt;form class="password-reset-form"&gt;
-  &lt;h3&gt;RESET PASSWORD&lt;/h3&gt;
-  &lt;label&gt;Email Address&lt;/label&gt;
-  &lt;input type="email" placeholder="Enter your email"&gt;
-  &lt;label&gt;New Password&lt;/label&gt;
-  &lt;input type="password" placeholder="Enter new password"&gt;
-  &lt;label&gt;Confirm Password&lt;/label&gt;
-  &lt;input type="password" placeholder="Confirm password"&gt;
-  &lt;button&gt;RESET&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Profile Update Form Card -->
-  <div class="component-card profile-update-form-card">
-    <div class="profile-update-form-inner-card">
-      <form class="profile-update-form">
-        <h3>EDIT PROFILE</h3>
-        <label for="FirstName">First Name</label>
-        <input type="text" class="input" placeholder="First name" required>
-        <label for="LastName">Last Name</label>
-        <input type="text" class="input" placeholder="Last name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Email" required>
-        <label for="Phone">Phone</label>
-        <input type="tel" class="input" placeholder="+1 (555) 000-0000" required>
-        <label for="Bio">Bio</label>
-        <textarea class="input" placeholder="Tell us about yourself..."></textarea>
-        <button class="neon-btn">UPDATE</button>
-      </form>
-    </div>
-    <div class="actions">
-
-      <button onclick="toggleCode('f8')">View Code</button>
-      <button onclick="copyCode('f8',this)">Copy</button>
-      <button onclick="addToCollection('Profile Update Form')">Add to My Collection</button>
-
-      <button onclick="toggleCode('f8', this)">View Code</button>
-      <button onclick="copyCode('f8', this)">Copy</button>
-
-    </div>
-    <pre id="f8" class="code-block">
-&lt;form class="profile-update-form"&gt;
-  &lt;h3&gt;EDIT PROFILE&lt;/h3&gt;
-  &lt;label&gt;First Name&lt;/label&gt;
-  &lt;input type="text" placeholder="First name"&gt;
-  &lt;label&gt;Last Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Last name"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;label&gt;Phone&lt;/label&gt;
-  &lt;input type="tel" placeholder="+1 (555) 000-0000"&gt;
-  &lt;label&gt;Bio&lt;/label&gt;
-  &lt;textarea placeholder="Tell us about yourself..."&gt;&lt;/textarea&gt;
-  &lt;button&gt;UPDATE&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Job Application Form Card -->
-  <div class="component-card job-application-form-card">
-    <div class="job-application-form-inner-card">
-      <form class="job-application-form">
-        <h3>JOB APPLICATION</h3>
-        <label for="FullName">Full Name</label>
-        <input type="text" class="input" placeholder="Full name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Email" required>
-        <label for="Phone">Phone</label>
-        <input type="tel" class="input" placeholder="Phone number" required>
-        <label for="Position">Position Applied For</label>
-        <input type="text" class="input" placeholder="Job title" required>
-        <label for="Experience">Years of Experience</label>
-        <input type="number" class="input" placeholder="0" min="0" required>
-        <label for="Resume">Upload Resume</label>
-        <input type="file" class="input" accept=".pdf,.doc,.docx" required>
-        <button class="glass-btn">APPLY</button>
-      </form>
-    </div>
-    <div class="actions">
-
-      <button onclick="toggleCode('f9')">View Code</button>
-      <button onclick="copyCode('f9',this)">Copy</button>
-      <button onclick="addToCollection('Job Application Form')">Add to My Collection</button>
-
-      <button onclick="toggleCode('f9', this)">View Code</button>
-      <button onclick="copyCode('f9', this)">Copy</button>
-
-    </div>
-    <pre id="f9" class="code-block">
-&lt;form class="job-application-form"&gt;
-  &lt;h3&gt;JOB APPLICATION&lt;/h3&gt;
-  &lt;label&gt;Full Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Full name"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input type="email" placeholder="Email"&gt;
-  &lt;label&gt;Phone&lt;/label&gt;
-  &lt;input type="tel" placeholder="Phone number"&gt;
-  &lt;label&gt;Position Applied For&lt;/label&gt;
-  &lt;input type="text" placeholder="Job title"&gt;
-  &lt;label&gt;Years of Experience&lt;/label&gt;
-  &lt;input type="number" placeholder="0" min="0"&gt;
-  &lt;label&gt;Upload Resume&lt;/label&gt;
-  &lt;input type="file" accept=".pdf,.doc,.docx"&gt;
-  &lt;button&gt;APPLY&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-  <!-- Event Registration Form Card -->
-  <div class="component-card event-registration-form-card">
-    <div class="event-registration-form-inner-card">
-      <form class="event-registration-form">
-        <h3>EVENT REGISTRATION</h3>
-        <label for="Name">Full Name</label>
-        <input type="text" class="input" placeholder="Your name" required>
-        <label for="Email">Email</label>
-        <input type="email" class="input" placeholder="Your email" required>
-        <label for="Attendees">Number of Attendees</label>
-        <input type="number" class="input" placeholder="1" min="1" required>
-        <label for="EventType">Event Type</label>
-        <select class="input" required>
-          <option value="">Select event</option>
-          <option value="conference">Conference</option>
-          <option value="workshop">Workshop</option>
-          <option value="webinar">Webinar</option>
-          <option value="meetup">Meetup</option>
-        </select>
-        <label>
-          <input type="checkbox" required> I agree to the terms
-        </label>
-        <button class="gradient-btn">REGISTER</button>
-      </form>
-    </div>
-    <div class="actions">
-
-      <button onclick="toggleCode('f10')">View Code</button>
-      <button onclick="copyCode('f10',this)">Copy</button>
-      <button onclick="addToCollection('Event Registration Form')">Add to My Collection</button>
-
-      <button onclick="toggleCode('f10', this)">View Code</button>
-      <button onclick="copyCode('f10', this)">Copy</button>
-
-    </div>
-    <pre id="f10" class="code-block">
-&lt;form class="event-registration-form"&gt;
-  &lt;h3&gt;EVENT REGISTRATION&lt;/h3&gt;
-  &lt;label&gt;Full Name&lt;/label&gt;
-  &lt;input type="text" placeholder="Your name"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input type="email" placeholder="Your email"&gt;
-  &lt;label&gt;Number of Attendees&lt;/label&gt;
-  &lt;input type="number" placeholder="1" min="1"&gt;
-  &lt;label&gt;Event Type&lt;/label&gt;
-  &lt;select required&gt;
-    &lt;option&gt;Conference&lt;/option&gt;
-    &lt;option&gt;Workshop&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;label&gt;&lt;input type="checkbox"&gt; I agree to the terms&lt;/label&gt;
-  &lt;button&gt;REGISTER&lt;/button&gt;
-&lt;/form&gt;
-</pre>
-  </div>
-
-</div>
-</div>
-
-<footer class="footer">
-  <div class="footer-card">
-    <div class="footer-brand">
-      <h2>UIverse</h2>
-      <p>© 2026 UIverse. All rights reserved.</p>
-      <div class="footer-socials">
-        <span>🌐</span>
-        <span>💼</span>
+        <pre class="code">&lt;form&gt; Login Form &lt;/form&gt;</pre>
       </div>
-    </div>
-    <div class="footer-col">
-      <h3>Pages</h3>
-      <a href="pricing.html">Pricing</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="alerts.html">Alerts</a>
-    </div>
-    <div class="footer-col">
-      <h3>Legal</h3>
-      <a href="privacypolicy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </div>
-  </div>
-</footer>
-<script src="script.js"></script>
-<script>
-window.addToCollectionFromCard = function(button, name) {
-  const card = button.closest('.component-card');
-  const previewBox = card.querySelector('.preview-box');
-  const html = previewBox.innerHTML;
-  
-  if (window.UIVERSE_DEBUG) console.log("Button clicked:", name);
-  if (window.UIVERSE_DEBUG) console.log("Preview HTML:", html);
-  
-  addToCollection(name, html);
-};
 
-window.addToCollection = function(name, html) {
-  let items = JSON.parse(localStorage.getItem("collection")) || [];
+      <!-- SIGNUP -->
+      <div class="form-card" data-name="signup form">
+        <h3>Signup Form</h3>
+        <form>
+          <input type="text" placeholder="Full Name">
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="Password">
+          <button class="btn primary">Create Account</button>
+        </form>
+        <div class="actions">
+          <button onclick="toggleCode(this)">View Code</button>
+          <button onclick="copyCode(this)">Copy</button>
+          <button onclick="toast('Saved')">Save</button>
+        </div>
+        <pre class="code">&lt;form&gt; Signup Form &lt;/form&gt;</pre>
+      </div>
 
-  let newItem = {
-    title: name.trim(),
-    content: html,
-    id: Date.now()
-  };
+      <!-- CONTACT -->
+      <div class="form-card" data-name="contact form">
+        <h3>Contact Form</h3>
+        <form>
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email">
+          <textarea placeholder="Message"></textarea>
+          <button class="btn dark">Send</button>
+        </form>
+        <div class="actions">
+          <button onclick="toggleCode(this)">View Code</button>
+          <button onclick="copyCode(this)">Copy</button>
+          <button onclick="toast('Saved')">Save</button>
+        </div>
+        <pre class="code">&lt;form&gt; Contact Form &lt;/form&gt;</pre>
+      </div>
 
-  if (window.UIVERSE_DEBUG) console.log("Adding item:", newItem);
+      <!-- NEWSLETTER -->
+      <div class="form-card" data-name="newsletter form">
+        <h3>Newsletter</h3>
+        <form>
+          <input type="email" placeholder="Enter email">
+          <button class="btn">Subscribe</button>
+        </form>
+        <div class="actions">
+          <button onclick="toggleCode(this)">View Code</button>
+          <button onclick="copyCode(this)">Copy</button>
+          <button onclick="toast('Saved')">Save</button>
+        </div>
+        <pre class="code">&lt;form&gt; Newsletter &lt;/form&gt;</pre>
+      </div>
 
-  if (!items.some(item => item.title === newItem.title)) {
-    items.push(newItem);
-    localStorage.setItem("collection", JSON.stringify(items));
-    showToast(name + " added to collection ✓");
-    if (window.UIVERSE_DEBUG) console.log("Total items saved:", items.length);
-  } else {
-    showToast("Already in collection");
-  }
-};
+      <!-- SOCIAL LOGIN -->
+      <div class="form-card" data-name="social login form">
+        <h3>Social Login</h3>
+        <form>
+          <button class="btn">Google Login</button>
+          <button class="btn dark">GitHub Login</button>
+        </form>
+        <div class="actions">
+          <button onclick="toggleCode(this)">View Code</button>
+          <button onclick="copyCode(this)">Copy</button>
+          <button onclick="toast('Saved')">Save</button>
+        </div>
+        <pre class="code">&lt;form&gt; Social Login &lt;/form&gt;</pre>
+      </div>
 
-window.goToCollection = function() {
-  window.location.href = "MyCollection.html";
-};
+      <!-- RESET -->
+      <div class="form-card" data-name="reset password form">
+        <h3>Reset Password</h3>
+        <form>
+          <input type="email" placeholder="Email">
+          <button class="btn">Reset</button>
+        </form>
+        <div class="actions">
+          <button onclick="toggleCode(this)">View Code</button>
+          <button onclick="copyCode(this)">Copy</button>
+          <button onclick="toast('Saved')">Save</button>
+        </div>
+        <pre class="code">&lt;form&gt; Reset Password &lt;/form&gt;</pre>
+      </div>
 
-function showToast(message) {
-  const toast = document.createElement("div");
-  toast.innerText = message;
+      <!-- PAYMENT -->
+      <div class="form-card" data-name="payment form">
+        <h3>Payment Form</h3>
+        <form>
+          <input type="text" placeholder="Card Number">
+          <input type="text" placeholder="Expiry">
+          <input type="password" placeholder="CVV">
+          <button class="btn primary">Pay Now</button>
+        </form>
+        <div class="actions">
+          <button onclick="toggleCode(this)">View Code</button>
+          <button onclick="copyCode(this)">Copy</button>
+          <button onclick="toast('Saved')">Save</button>
+        </div>
+        <pre class="code">&lt;form&gt; Payment Form &lt;/form&gt;</pre>
+      </div>
 
-  toast.style.position = "fixed";
-  toast.style.bottom = "20px";
-  toast.style.right = "20px";
-  toast.style.background = "#111";
-  toast.style.color = "#fff";
-  toast.style.padding = "10px 14px";
-  toast.style.borderRadius = "8px";
-  toast.style.fontSize = "14px";
-  toast.style.zIndex = "9999";
-  toast.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+      <!-- SURVEY -->
+      <div class="form-card" data-name="survey form">
+        <h3>Survey</h3>
+        <form>
+          <select>
+            <option>Good</option>
+            <option>Average</option>
+          </select>
+          <textarea placeholder="Feedback"></textarea>
+          <button class="btn">Submit</button>
+        </form>
+        <div class="actions">
+          <button onclick="toggleCode(this)">View Code</button>
+          <button onclick="copyCode(this)">Copy</button>
+          <button onclick="toast('Saved')">Save</button>
+        </div>
+        <pre class="code">&lt;form&gt; Survey &lt;/form&gt;</pre>
+      </div>
 
-  document.body.appendChild(toast);
+    </section>
+  </main>
+</div>
 
-  setTimeout(() => toast.remove(), 1500);
-}
+<!-- TOAST -->
+<div id="toast"></div>
 
-function toggleCode(id){
-  const el = document.getElementById(id);
-  el.style.display = el.style.display === "block" ? "none" : "block";
-}
+<script src="forms.js"></script>
 
-function copyCode(id,btn){
-  const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text);
-  btn.innerText = "Copied!";
-  setTimeout(()=>btn.innerText="Copy",1000);
-}
-</script>
-<style>
-  button{
-  background:  #a29bfe;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  }
-
-</style>
 </body>
 </html>
-
