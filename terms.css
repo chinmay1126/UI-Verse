@@ -1079,3 +1079,47 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.collapsible {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #f9f9f9;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.collapsible:hover {
+  background: #ececec;
+}
+
+.collapsible h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.collapsible .icon {
+  transition: transform 0.3s ease;
+}
+
+.collapsible[aria-expanded="true"] .icon {
+  transform: rotate(180deg);
+}
+
+.content {
+  padding: 12px;
+  border-left: 3px solid #ff6600;
+  margin-top: 8px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
