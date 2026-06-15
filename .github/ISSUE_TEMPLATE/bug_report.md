@@ -1,27 +1,38 @@
 ---
-name: Bug report
-about: Report a reproducible bug or broken behavior
-title: "[Bug]: "
-labels: bug
+name: "Bug Report"
+about: "Report a bug to help us improve UIverse"
+title: "[BUG] "
+labels: "bug"
 assignees: ""
 ---
 
-## Problem
-Describe the bug clearly.
+## Bug Description
+A clear and concise description of what the bug is.
 
-## Current Behavior
-What happens today?
+## Steps To Reproduce
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
 ## Expected Behavior
-What should happen instead?
+A clear and concise description of what you expected to happen.
 
-## Steps to Reproduce
-1. 
-2. 
-3. 
+## Actual Behavior
+What actually happened instead (include any console errors, traceback logs, or failed tool outputs).
 
-## Screenshots
-Add screenshots if they help explain the issue.
+## Accessibility Impact (A11y)
+- [ ] Keyboard navigation fails
+- [ ] Screen reader reads incorrect/missing labels
+- [ ] Color contrast is below accessibility guidelines
+- [ ] Other (describe below)
+
+## Environment
+- **Browser:** [e.g. Chrome 120, Firefox 121]
+- **OS:** [e.g. Windows 11, macOS Sonoma]
+- **Screen Size:** [e.g. 1920x1080, mobile 375px]
+- **Node Version:** [e.g. v18.16.0]
 
 ## Additional Context
-Share any other details that might help reproduce the problem.
+Add any other context about the problem here, such as relevant code blocks or configuration snippets.
