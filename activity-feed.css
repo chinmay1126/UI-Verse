@@ -119,6 +119,31 @@ button {
   100% { transform: scale(2); opacity:0; }
 }
 
+.live-pill{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 12px;
+    border-radius:30px;
+    background:#1f2937;
+    color:#fff;
+    font-size:.75rem;
+}
+
+.pulse{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#22c55e;
+    animation:pulse 1.4s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(.8);opacity:1;}
+    70%{transform:scale(2);opacity:0;}
+    100%{opacity:0;}
+}
+
 .mini-chart {
   display: flex;
   align-items: flex-end;
