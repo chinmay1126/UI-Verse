@@ -595,6 +595,20 @@ Feel free to open issues or discussions if you have any feedback, feature sugges
 - 💬 **Telling your friends and colleagues**
 - 🤝 **Contributing to the project**
 
+## Utility Scripts
+
+Standard Python 3.x is required to run these scripts.
+
+* **`add_sidebar.py`**: This script is used for documentation generation or formatting.
+  ```bash
+  python add_sidebar.py
+  ```
+
+* **`Command-Line To-Do List.py`**: This is a terminal-based task management utility.
+  ```bash
+  python "Command-Line To-Do List.py"
+  ```
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 <h2 id="license">📄 License</h2>
