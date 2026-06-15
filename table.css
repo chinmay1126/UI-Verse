@@ -1024,3 +1024,25 @@ body {
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
 }
+
+.export-buttons {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.export-buttons button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.export-buttons button:hover,
+.export-buttons button:focus {
+  background: #444;
+  outline: none;
+}
