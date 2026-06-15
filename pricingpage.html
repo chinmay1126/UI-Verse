@@ -83,7 +83,14 @@
 
     <nav class="sidebar-nav" role="navigation" aria-label="Main sidebar navigation">
       <ul>
-        <li>
+        
+          <li class="theme-toggle-item">
+        <button id="darkModeToggle" class="theme-toggle-sidebar" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+          <span>Theme</span>
+        </button>
+      </li>
+
           <a href="index.html">
             <i class="fa-solid fa-house"></i>
             <span>Home</span>
@@ -670,6 +677,6 @@ toggle.addEventListener("change", updatePrices);
   }
 </script>
 
-  <script src="dist/shared.js"></script>
+  <script src="pricingpage.js"></script>
 </body>
 </html>
