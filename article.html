@@ -17,7 +17,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="article.css">
     <link rel="stylesheet" href="shared-sidebar.css">\n</head>
-
+  
 <body>
 <!-- ================= NAVBAR ================= -->
 <!-- ================= NAVBAR ================= -->
@@ -92,7 +92,13 @@
   </div>
 
           <nav class="sidebar-nav">
-    <ul>
+    <ul><li class="theme-toggle-item">
+        <button id="darkModeToggle" class="theme-toggle-sidebar" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+          <span>Theme</span>
+        </button>
+      </li>
+</ul>
       <li>
         <a href="index.html">
           <i class="fa-solid fa-house"></i>
@@ -1817,7 +1823,7 @@ input.addEventListener("input",function(){
 
 </script>
 
-  <script src="dist/shared.js"></script>
+  <script src="article.js"></script>
 </body>
 </html>
 </html>
