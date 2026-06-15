@@ -102,6 +102,15 @@
     .command-palette-results li.active {
       background: #f0f0f0;
     }
+
+    .command-palette-results li:focus {
+      outline: 3px solid #ff6600;
+      outline-offset: 2px;
+    }
+
+    .command-palette-results li.active {
+      background: #f0f0f0;
+    }
   </style>
   <link rel="stylesheet" href="shared-sidebar.css">
 </head>
@@ -493,14 +502,16 @@
   </div>
 
   <!-- Command Palette Markup -->
-  <div id="commandPaletteOverlay" class="command-palette-overlay">
+  <div id="commandPaletteOverlay" class="command-palette-overlay" role="dialog" aria-modal="true"
+    aria-labelledby="commandPaletteInput">>
     <div class="command-palette-container">
       <div class="command-palette-input-wrapper">
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         <input type="text" id="commandPaletteInput" class="command-palette-input"
-          placeholder="Search components... (Cmd+K)" autocomplete="off" />
+          placeholder="Search components... (Cmd+K)" autocomplete="off" role="combobox" aria-expanded="false"
+          aria-controls="commandPaletteResults" />
       </div>
-      <ul id="commandPaletteResults" class="command-palette-results"></ul>
+      <ul id="commandPaletteResults" class="command-palette-results" role="listbox"></ul>
       <div class="command-palette-footer">
         <div class="command-palette-footer-item">
           <span class="command-palette-footer-kbd">↑↓</span>
@@ -570,6 +581,75 @@
     }
 
     input.addEventListener("input", updateResults);
+
+    const input = document.getElementById("commandPaletteInput");
+    const resultsList = document.getElementById("commandPaletteResults");
+    let activeIndex = -1;
+
+    function updateResults() {
+      const query = input.value.trim().toLowerCase();
+      resultsList.innerHTML = "";
+      input.setAttribute("aria-expanded", "false");
+
+      if (!query) return;
+
+      const matches = components.filter(item =>
+        item.toLowerCase().includes(query)
+      );
+
+      if (matches.length === 0) {
+        resultsList.innerHTML = `<li class="no-results">No results found</li>`;
+        return;
+      }
+
+      input.setAttribute("aria-expanded", "true");
+
+      matches.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.setAttribute("role", "option");
+        li.tabIndex = -1;
+        li.textContent = item;
+
+        li.addEventListener("click", () => {
+          input.value = item;
+          resultsList.innerHTML = "";
+          input.setAttribute("aria-expanded", "false");
+        });
+
+        resultsList.appendChild(li);
+      });
+    }
+
+    input.addEventListener("input", updateResults);
+
+    input.addEventListener("keydown", (e) => {
+      const items = resultsList.querySelectorAll("li[role='option']");
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        activeIndex = (activeIndex + 1) % items.length;
+        items.forEach(i => i.classList.remove("active"));
+        items[activeIndex].classList.add("active");
+        items[activeIndex].focus();
+      }
+      if (e.key === "ArrowUp") {
+        e.preventDefault();
+        activeIndex = (activeIndex - 1 + items.length) % items.length;
+        items.forEach(i => i.classList.remove("active"));
+        items[activeIndex].classList.add("active");
+        items[activeIndex].focus();
+      }
+      if (e.key === "Enter" && activeIndex >= 0) {
+        e.preventDefault();
+        input.value = items[activeIndex].textContent;
+        resultsList.innerHTML = "";
+        input.setAttribute("aria-expanded", "false");
+      }
+      if (e.key === "Escape") {
+        resultsList.innerHTML = "";
+        input.setAttribute("aria-expanded", "false");
+      }
+    });
+
 
   </script>
 
