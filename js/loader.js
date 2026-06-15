@@ -31,6 +31,7 @@ const defaultFeatures = [
   'js/features/command-palette.js',
   'js/features/url-state.js',
   'js/features/url-state-integration.js',
+
 ];
 
 const pageMap = {
@@ -62,7 +63,7 @@ const pageMap = {
     'js/features/scroll.js',
     'js/features/sandbox.js',
     'js/features/command-palette.js',
-<<<<<
+
 
   'badges.html': [
     'js/features/toast.js',
