@@ -37,6 +37,14 @@ export default function footer(){
       
         </section>
       
+        <div>
+          <form>
+            <i className="fa-solid fa-magnifying-glass"></i>
+            <input type="text" name="" placeholder="Filter footers..." id="Scearch" onkeyup="SCEARCH()" />
+          </form>
+        </div>
+      
+      
         {/* GRID */}
         <div className="footer-grid">
           {/* =========================================================
@@ -165,8 +173,7 @@ export default function footer(){
               <button onclick="toggleCode('f1')">Code</button>
               <button onclick="copyCode('f1',this)">Copy</button>
               <button onclick="addToCollectionFromCard(this, 'Minimal Footer')">Add to My Collection</button>
-      
-      
+            </div>
           </footer>
       
         </div>
@@ -404,8 +411,7 @@ export default function footer(){
               <button onclick="toggleCode('f2')">Code</button>
               <button onclick="copyCode('f2',this)">Copy</button>
               <button onclick="addToCollectionFromCard(this, 'Grid Footer')">Add to My Collection</button>
-      
-      
+            </div>
           </footer>
       
         </div>
@@ -473,8 +479,7 @@ export default function footer(){
               <button onclick="toggleCode('f3')">Code</button>
               <button onclick="copyCode('f3',this)">Copy</button>
               <button onclick="addToCollectionFromCard(this, 'Dark Footer')">Add to My Collection</button>
-      
-      
+            </div>
             <div className="split-links">
               <a href="#">Docs</a>
               <a href="#">Blog</a>
@@ -553,8 +558,7 @@ export default function footer(){
               <button onclick="toggleCode('f4')">Code</button>
               <button onclick="copyCode('f4',this)">Copy</button>
               <button onclick="addToCollectionFromCard(this, 'Social Footer')">Add to My Collection</button>
-      
-      
+            </div>
           </footer>
       
         </div>
