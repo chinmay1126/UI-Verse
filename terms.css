@@ -1195,3 +1195,34 @@ body {
   outline: 3px solid #ff6600;
   outline-offset: 2px;
 }
+
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+.scroll-top:hover,
+.scroll-top:focus {
+  background: #e65c00;
+  transform: translateY(-3px);
+}
+
+body.dark-mode .scroll-top {
+  background: #333;
+  color: #ff6600;
+}
