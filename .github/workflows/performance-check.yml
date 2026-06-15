@@ -1,0 +1,122 @@
+name: Performance Monitoring
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  performance-check:
+    name: Performance Budget Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run Performance Monitor
+        id: perf
+        run: npm run perf:monitor
+        continue-on-error: true
+        
+      - name: Upload Performance Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-reports
+          path: reports/performance-analysis/
+          retention-days: 30
+
+      - name: Generate Performance Summary
+        if: always()
+        run: |
+          echo "## 📊 Performance Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f "reports/performance-analysis/performance-report.json" ]; then
+            echo "### Performance Metrics" >> $GITHUB_STEP_SUMMARY
+            cat reports/performance-analysis/performance-report.json >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ -f "reports/performance-analysis/violations.json" ]; then
+            VIOLATIONS=$(grep -c . reports/performance-analysis/violations.json || echo "0")
+            if [ "$VIOLATIONS" -gt "0" ]; then
+              echo "### ⚠️ Budget Violations Detected" >> $GITHUB_STEP_SUMMARY
+              echo "Found $VIOLATIONS performance budget violations:" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              cat reports/performance-analysis/violations.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "### How to Fix" >> $GITHUB_STEP_SUMMARY
+              echo "1. Optimize components to meet performance targets" >> $GITHUB_STEP_SUMMARY
+              echo "2. Consider code-splitting heavy components" >> $GITHUB_STEP_SUMMARY
+              echo "3. Run \`npm run perf:check\` locally to verify fixes" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "✅ All components within performance budget" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "ℹ️ Performance check completed" >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: Comment on PR with Performance Results
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let comment = '## 📊 Performance Check Results\n\n';
+            
+            if (fs.existsSync('reports/performance-analysis/performance-report.json')) {
+              try {
+                const report = JSON.parse(fs.readFileSync('reports/performance-analysis/performance-report.json', 'utf8'));
+                comment += `| Metric | Value |\n|--------|-------|\n`;
+                Object.entries(report).forEach(([key, value]) => {
+                  comment += `| ${key} | ${value} |\n`;
+                });
+              } catch (e) {
+                comment += 'Could not parse performance report.\n';
+              }
+            }
+            
+            if (fs.existsSync('reports/performance-analysis/violations.json')) {
+              const content = fs.readFileSync('reports/performance-analysis/violations.json', 'utf8').trim();
+              const lines = content.split('\n').filter(l => l.trim());
+              if (lines.length > 0) {
+                comment += '\n### ⚠️ Performance Violations\n```\n' + content + '\n```\n';
+                comment += '\n[View detailed report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\n';
+              } else {
+                comment += '\n✅ No performance violations detected\n';
+              }
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  performance-gate:
+    name: Performance Quality Gate
+    runs-on: ubuntu-latest
+    needs: performance-check
+    if: always()
+    steps:
+      - name: Check performance gate status
+        run: |
+          if [ "${{ needs.performance-check.result }}" != "success" ]; then
+            echo "⚠️ Performance check did not complete successfully" >> $GITHUB_STEP_SUMMARY
+            echo "Review the performance report in the artifact for details" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ Performance check passed" >> $GITHUB_STEP_SUMMARY
+          fi

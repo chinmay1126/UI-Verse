@@ -1,113 +1,726 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Settings</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <aside class="sidebar">
-      <h2>UIverse</h2>
+
+<head>
+  <link rel="stylesheet" href="dist/shared.css">
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- SECURITY -->
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self' https:;
+      base-uri 'self';
+      frame-ancestors 'none';
+      object-src 'none';
+      connect-src 'self' https:;
+      img-src 'self' data: https:;
+      font-src 'self' data: https:;
+      script-src 'self' https: 'unsafe-inline';
+      style-src 'self' https: 'unsafe-inline';
+    "
+  />
+
+  <title>Settings — UIverse</title>
+
+  <!-- Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="settings.css"
+  />
+
+    <link rel="stylesheet" href="shared-sidebar.css">\n</head>
+
+<body>
+
+<!-- =====================================================
+SIDEBAR
+===================================================== -->
+
+<aside
+  class="sidebar"
+  aria-label="Sidebar Navigation"
+>
+
+  <div>
+
+    <div class="sidebar-brand">
+
+      <div class="brand-icon">
+        ⬡
+      </div>
+
+      <div class="brand-text">
+        UIverse
+      </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
       <ul>
 
-        <li><a href="profile.html"><i class="fa-regular fa-circle-user"></i><p>Profile</p></a></li>
         <li>
-          <a href="index.html"
-            ><i class="fa-solid fa-house"></i>
-            <p>Home</p></a
-          >
+          <a href="index.html">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <span>Home</span>
+          </a>
         </li>
-        <li>
-          <a href="button.html"
-            ><i class="fa-solid fa-mobile-button"></i>
-            <p>Butttons</p></a
-          >
+
+        <li class="active">
+          <a href="settings.html">
+            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            <span>Settings</span>
+          </a>
         </li>
-        <li>
-          <a href="navbar.html"
-            ><i class="fa-solid fa-bars"></i>
-            <p>Navbar</p></a
-          >
-        </li>
-        <li>
-          <a href="contact.html"
-            ><i class="fa-regular fa-user"></i>
-            <p>Contact Us</p></a
-          >
-        </li>
-        <li>
-          <a href="forms.html"
-            ><i class="fa-brands fa-wpforms"></i>
-            <p>Forms</p></a
-          >
-        </li>
-        <li>
-          <a href="badges.html"
-            ><i class="fa-solid fa-award"></i>
-            <p>Badges</p></a
-          >
-        </li>
-        <li>
-          <a href="About.html"
-            ><i class="fa-solid fa-mobile-button"></i>
-            <p>About</p></a
-          >
-        </li>
-        <li>
-          <a href="settings.html"
-            ><i class="fa-solid fa-gear"></i>
-            <p>Settings</p></a
-          >
-        </li>
+
       </ul>
-    </aside>
 
-    <div class="settings-container">
-      <h1>Settings</h1>
+    </nav>
 
-      <div class="settings-card">
-        <h2>Profile</h2>
-        <label>Name</label>
-        <input type="text" placeholder="Enter your name" />
+  </div>
 
-        <label>Email</label>
-        <input type="email" placeholder="Enter your email" />
+  <div class="sidebar-footer">
 
-        <button>Save Changes</button>
-      </div>
+    <a
+      href="#"
+      aria-label="GitHub"
+    >
+      <i class="fab fa-github"></i>
+    </a>
 
-      <div class="settings-card">
-        <h2>Password</h2>
-        <label>Current Password</label>
-        <input type="password" placeholder="Enter current password" />
+    <a
+      href="#"
+      aria-label="Discord"
+    >
+      <i class="fab fa-discord"></i>
+    </a>
 
-        <label>New Password</label>
-        <input type="password" placeholder="Enter new password" />
+    <a
+      href="#"
+      aria-label="Twitter"
+    >
+      <i class="fab fa-x-twitter"></i>
+    </a>
 
-        <button>Password update</button>
-      </div>
+  </div>
 
-      <div class="settings-card">
-        <h2>Preferences</h2>
+</aside>
 
-        <div class="toggle">
-          <span>Dark Mode</span>
-          <input type="checkbox" />
+<!-- =====================================================
+NAVBAR
+===================================================== -->
+
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="navbar-brand">
+    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2L2 7V17L12 22L22 17V7L12 2z" stroke="#eb6835"></path>
+    </svg>
+    <span class="brand-text">Uiverse</span>
+  </div>
+  <div class="navbar-divider"></div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components">
+  </div>
+  <div class="nav-right">
+    <a href="documentation.html" class="nav-btn docs-btn">Docs</a>
+    <a href="contribute.html" class="nav-btn add-btn">Add Component</a>
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme" onclick="toggleDarkMode()">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+  <script>
+    (function() {
+      // Search input enter key redirect
+      const navSearch = document.getElementById('searchInput');
+      if (navSearch) {
+        navSearch.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' && this.value.trim()) {
+            const q = encodeURIComponent(this.value.trim());
+            window.location.href = 'components/Discovery/component-discovery.html?q=' + q;
+          }
+        });
+      }
+      
+      // Fallback toggleDarkMode function if not defined globally by the page script
+      const toggleBtn = document.getElementById('darkModeToggle');
+      if (toggleBtn) {
+        if (typeof window.toggleDarkMode !== 'function') {
+          window.toggleDarkMode = function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            const icon = toggleBtn.querySelector('i');
+            if (icon) {
+              icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            }
+          };
+        }
+        
+        // Match initial theme icon class
+        const isDark = localStorage.getItem('theme') === 'dark' || document.body.classList.contains('dark-mode');
+        const icon = toggleBtn.querySelector('i');
+        if (icon && isDark) {
+          icon.className = 'fa-solid fa-sun';
+        }
+      }
+    })();
+  </script>
+</header>
+
+<!-- =====================================================
+MAIN
+===================================================== -->
+
+<main class="main-home">
+
+  <!-- HERO -->
+  <section class="hero-section">
+
+    <div class="hero-badge">
+      ✦ Dashboard Preferences
+    </div>
+
+    <h1>
+      Account <span>Settings</span>
+    </h1>
+
+    <p>
+      Customize your workspace,
+      profile, notifications and
+      appearance with premium
+      settings components.
+    </p>
+
+  </section>
+
+  <!-- SETTINGS GRID -->
+  <section class="settings-grid">
+
+    <!-- PROFILE -->
+    <div class="settings-card large-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            PROFILE
+          </span>
+
+          <h2>
+            Account Information
+          </h2>
+
         </div>
 
-        <div class="toggle">
-          <span>Email</span>
-          <input type="checkbox" />
+      </div>
+
+      <div class="profile-box">
+
+        <div class="profile-avatar">
+
+          <img
+            src="https://i.pravatar.cc/200?img=12"
+            alt="Alex Carter Profile Picture"
+          />
+
+          <button type="button">
+            Change
+          </button>
+
         </div>
+
+        <div class="profile-form">
+
+          <div class="input-group">
+
+            <label for="fullName">
+              Full Name
+            </label>
+
+            <input
+              id="fullName"
+              type="text"
+              value="Alex Carter"
+            />
+
+          </div>
+
+          <div class="input-group">
+
+            <label for="emailAddress">
+              Email Address
+            </label>
+
+            <input
+              id="emailAddress"
+              type="email"
+              value="alex@uiverse.io"
+            />
+
+          </div>
+
+          <div class="input-group">
+
+            <label for="username">
+              Username
+            </label>
+
+            <input
+              id="username"
+              type="text"
+              value="@alexdev"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- APPEARANCE -->
+    <div class="settings-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            APPEARANCE
+          </span>
+
+          <h2>
+            Theme Settings
+          </h2>
+
+        </div>
+
+      </div>
+
+      <div class="theme-options">
+
+        <div class="theme-card active-theme">
+
+          <div class="theme-preview dark-preview"></div>
+
+          <strong>
+            Dark Mode
+          </strong>
+
+        </div>
+
+        <div class="theme-card">
+
+          <div class="theme-preview light-preview"></div>
+
+          <strong>
+            Light Mode
+          </strong>
+
+        </div>
+
+        <div class="theme-card">
+
+          <div class="theme-preview purple-preview"></div>
+
+          <strong>
+            Purple
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- NOTIFICATIONS -->
+    <div class="settings-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            NOTIFICATIONS
+          </span>
+
+          <h2>
+            Alerts & Updates
+          </h2>
+
+        </div>
+
+      </div>
+
+      <div class="settings-list">
+
+        <div class="setting-item">
+
+          <div>
+
+            <strong>
+              Push Notifications
+            </strong>
+
+            <span>
+              Get instant updates
+            </span>
+
+          </div>
+
+          <label
+            class="switch"
+            aria-label="Toggle Push Notifications"
+          >
+
+            <input
+              type="checkbox"
+              checked
+            />
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+        <div class="setting-item">
+
+          <div>
+
+            <strong>
+              Email Alerts
+            </strong>
+
+            <span>
+              Weekly email summaries
+            </span>
+
+          </div>
+
+          <label
+            class="switch"
+            aria-label="Toggle Email Alerts"
+          >
+
+            <input
+              type="checkbox"
+              checked
+            />
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+        <div class="setting-item">
+
+          <div>
+
+            <strong>
+              Mentions
+            </strong>
+
+            <span>
+              Alerts when tagged
+            </span>
+
+          </div>
+
+          <label
+            class="switch"
+            aria-label="Toggle Mention Alerts"
+          >
+
+            <input type="checkbox" />
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SECURITY -->
+    <div class="settings-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            SECURITY
+          </span>
+
+          <h2>
+            Account Security
+          </h2>
+
+        </div>
+
+      </div>
+
+      <div class="security-list">
+
+        <button
+          type="button"
+          class="security-btn"
+        >
+
+          <i
+            class="fa-solid fa-lock"
+            aria-hidden="true"
+          ></i>
+
+          Change Password
+
+        </button>
+
+        <button
+          type="button"
+          class="security-btn"
+        >
+
+          <i
+            class="fa-solid fa-shield"
+            aria-hidden="true"
+          ></i>
+
+          Enable 2FA
+
+        </button>
+
+        <button
+          type="button"
+          class="security-btn"
+        >
+
+          <i
+            class="fa-solid fa-laptop"
+            aria-hidden="true"
+          ></i>
+
+          Manage Devices
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- STORAGE -->
+    <div class="settings-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            STORAGE
+          </span>
+
+          <h2>
+            Usage Analytics
+          </h2>
+
+        </div>
+
+      </div>
+
+      <div class="storage-box">
+
+        <div class="storage-header">
+
+          <strong>
+            78% Used
+          </strong>
+
+          <span>
+            78GB / 100GB
+          </span>
+
+        </div>
+
+        <div
+          class="progress-bar"
+          aria-label="Storage Usage"
+        >
+
+          <div class="progress-fill"></div>
+
+        </div>
+
+        <button
+          type="button"
+          class="upgrade-btn"
+        >
+          Upgrade Plan
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- DANGER -->
+    <div class="settings-card danger-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            DANGER
+          </span>
+
+          <h2>
+            Delete Account
+          </h2>
+
+        </div>
+
+      </div>
+
+      <p>
+        Permanently delete your
+        account and all data.
+      </p>
+
+      <button
+        type="button"
+        class="danger-btn"
+      >
+        Delete Account
+      </button>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script src="settings.js"></script>
+
+  <script src="dist/shared.js"></script>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="UIverse on GitHub" title="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="#" aria-label="UIverse on LinkedIn" title="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="#" aria-label="UIverse on X (Twitter)" title="X / Twitter">
+          <i class="fab fa-x-twitter" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
-  </body>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+        <li><a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+        <li><a href="MyCollection.html">My Collection</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          aria-label="Email address for newsletter"
+        />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with <span aria-label="love">❤️</span> for developers worldwide.</p>
+  </div>
+</footer>
+
+<script>
+  if (typeof subscribe !== 'function') {
+    function subscribe() {
+      const emailInput = document.getElementById("newsletterEmail");
+      if (emailInput && emailInput.value.trim()) {
+        alert("Thanks for subscribing with: " + emailInput.value.trim());
+        emailInput.value = "";
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    }
+  }
+</script>\n\n</body>
 </html>

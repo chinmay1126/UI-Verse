@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../dist/shared.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+
+  <title>NovaLibrary — Digital Library Interface</title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- CSS -->
+
+  <link rel="stylesheet"
+    href="digital-library-interface.css" />
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      📚 NovaLibrary
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a href="#" class="active">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-book"></i>
+        My Library
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-fire"></i>
+        Trending
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-bookmark"></i>
+        Saved Books
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        Reading History
+      </a>
+
+      <a href="#">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </a>
+
+    </nav>
+
+    <!-- READING GOAL -->
+
+    <div class="goal-card">
+
+      <h3>
+        🎯 Reading Goal
+      </h3>
+
+      <div class="goal-progress">
+
+        <div class="progress-ring">
+          72%
+        </div>
+
+        <div>
+
+          <h4>
+            18 / 25 Books
+          </h4>
+
+          <p>
+            Completed This Month
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+      <div>
+
+        <h1>
+          Digital Library Interface 📖
+        </h1>
+
+        <p>
+          Explore books, manage your collection and enjoy immersive reading experiences.
+        </p>
+
+      </div>
+
+      <div class="top-actions">
+
+        <div class="search-box">
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input type="text"
+            placeholder="Search books, authors..." / data-a11y-remediation="label-needed">
+
+        </div>
+
+        <button class="profile-btn" data-a11y-remediation="button-label-needed">
+
+          <img
+            src="https://i.pravatar.cc/100?img=15"
+            alt="profile">
+
+        </button>
+
+      </div>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="hero-badge">
+          🔥 Featured Collection
+        </span>
+
+        <h2>
+          Discover New Worlds <br>
+          Through Reading ✨
+        </h2>
+
+        <p>
+          Dive into thousands of digital books, journals and curated collections
+          tailored to your reading preferences.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button class="read-btn">
+            Start Reading
+          </button>
+
+          <button class="save-btn">
+            Explore Library
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- FEATURED BOOK -->
+
+      <div class="featured-book">
+
+        <img
+          src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop"
+          alt="featured-book">
+
+        <div class="book-overlay">
+
+          <h3>
+            The Silent Horizon
+          </h3>
+
+          <p>
+            by Amelia Stone
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+<section class="categories-section">
+
+  <div class="section-header">
+    <h2>🏷 Browse Categories</h2>
+    <button>Explore</button>
+  </div>
+
+  <div class="categories-grid">
+
+    <div class="category-card purple">
+      <i class="fa-solid fa-brain"></i>
+      <h3>Self Growth</h3>
+      <p>320+ Books</p>
+    </div>
+
+    <div class="category-card blue">
+      <i class="fa-solid fa-user-secret"></i>
+      <h3>Mystery</h3>
+      <p>180+ Books</p>
+    </div>
+
+    <div class="category-card pink">
+      <i class="fa-solid fa-rocket"></i>
+      <h3>Sci-Fi</h3>
+      <p>250+ Books</p>
+    </div>
+
+    <div class="category-card green">
+      <i class="fa-solid fa-heart"></i>
+      <h3>Romance</h3>
+      <p>210+ Books</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= AUTHORS ================= -->
+
+<section class="authors-section">
+
+  <div class="section-header">
+    <h2>✍ Popular Authors</h2>
+    <button>See All</button>
+  </div>
+
+  <div class="authors-grid">
+
+    <div class="author-card">
+      <img src="https://i.pravatar.cc/150?img=12" alt="">
+      <h3>James Clear</h3>
+      <p>12 Books</p>
+      <button>Follow</button>
+    </div>
+
+    <div class="author-card">
+      <img src="https://i.pravatar.cc/150?img=15" alt="">
+      <h3>Cal Newport</h3>
+      <p>8 Books</p>
+      <button>Follow</button>
+    </div>
+
+    <div class="author-card">
+      <img src="https://i.pravatar.cc/150?img=20" alt="">
+      <h3>Jay Shetty</h3>
+      <p>15 Books</p>
+      <button>Follow</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= RECENTLY ADDED ================= -->
+
+<section class="recent-section">
+
+  <div class="section-header">
+    <h2>🆕 Recently Added</h2>
+    <button>View More</button>
+  </div>
+
+  <div class="recent-grid">
+
+    <div class="recent-card">
+      <img src="https://images.unsplash.com/photo-1511108690759-009324a90311?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div>
+        <h3>The Psychology of Money</h3>
+        <p>Morgan Housel</p>
+      </div>
+    </div>
+
+    <div class="recent-card">
+      <img src="https://images.unsplash.com/photo-1526243741027-444d633d7365?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div>
+        <h3>Zero To One</h3>
+        <p>Peter Thiel</p>
+      </div>
+    </div>
+
+    <div class="recent-card">
+      <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div>
+        <h3>The Alchemist</h3>
+        <p>Paulo Coelho</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section class="achievement-section">
+
+  <div class="section-header">
+    <h2>🏆 Reading Achievements</h2>
+  </div>
+
+  <div class="achievement-grid">
+
+    <div class="achievement-card">
+      <i class="fa-solid fa-medal"></i>
+      <h3>Book Worm</h3>
+      <p>Read 50 Books</p>
+    </div>
+
+    <div class="achievement-card">
+      <i class="fa-solid fa-fire"></i>
+      <h3>7 Day Streak</h3>
+      <p>Daily Reading Habit</p>
+    </div>
+
+    <div class="achievement-card">
+      <i class="fa-solid fa-crown"></i>
+      <h3>Top Reader</h3>
+      <p>Premium Member</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= EVENTS ================= -->
+
+<section class="events-section">
+
+  <div class="section-header">
+    <h2>🎤 Upcoming Events</h2>
+    <button>Join Events</button>
+  </div>
+
+  <div class="event-card">
+
+    <div>
+      <h3>Live Author Session</h3>
+      <p>Join bestselling authors discussing productivity habits.</p>
+    </div>
+
+    <span>28 Aug • 7 PM</span>
+
+  </div>
+
+  <div class="event-card">
+
+    <div>
+      <h3>Reading Marathon</h3>
+      <p>Compete with readers worldwide and unlock badges.</p>
+    </div>
+
+    <span>2 Sep • 5 PM</span>
+
+  </div>
+
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter-section">
+
+  <div class="newsletter-box">
+
+    <h2>📩 Stay Updated</h2>
+
+    <p>
+      Get weekly book recommendations and reading insights directly in your inbox.
+    </p>
+
+    <div class="newsletter-form">
+
+      <input type="email" placeholder="Enter your email">
+
+      <button>Subscribe</button>
+
+    </div>
+
+  </div>
+
+</section>
+    <!-- STATS -->
+
+    <section class="stats-grid">
+
+      <div class="stat-card">
+
+        <h2>
+          12K+
+        </h2>
+
+        <p>
+          Books Available
+        </p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h2>
+          8K+
+        </h2>
+
+        <p>
+          Active Readers
+        </p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h2>
+          4.9
+        </h2>
+
+        <p>
+          User Rating
+        </p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h2>
+          320+
+        </h2>
+
+        <p>
+          Authors Featured
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- BOOKS -->
+
+    <section class="books-section">
+
+      <div class="section-header">
+
+        <h2>
+          📚 Trending Books
+        </h2>
+
+        <button>
+          View All
+        </button>
+
+      </div>
+
+      <div class="books-grid">
+
+        <!-- BOOK -->
+
+        <div class="book-card">
+
+          <div class="book-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1200&auto=format&fit=crop"
+              alt="book">
+
+          </div>
+
+          <div class="book-content">
+
+            <span class="genre">
+              Fiction
+            </span>
+
+            <h3>
+              Echoes of Eternity
+            </h3>
+
+            <p>
+              A thrilling journey through forgotten civilizations and hidden secrets.
+            </p>
+
+            <div class="book-meta">
+
+              <span>
+                ⭐ 4.8
+              </span>
+
+              <span>
+                👁 8.2K Reads
+              </span>
+
+            </div>
+
+            <button class="book-btn">
+              Read Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- BOOK -->
+
+        <div class="book-card">
+
+          <div class="book-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1200&auto=format&fit=crop"
+              alt="book">
+
+          </div>
+
+          <div class="book-content">
+
+            <span class="genre blue">
+              Technology
+            </span>
+
+            <h3>
+              AI Revolution
+            </h3>
+
+            <p>
+              Discover how artificial intelligence is transforming industries worldwide.
+            </p>
+
+            <div class="book-meta">
+
+              <span>
+                ⭐ 4.9
+              </span>
+
+              <span>
+                👁 12K Reads
+              </span>
+
+            </div>
+
+            <button class="book-btn">
+              Read Now
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- BOOK -->
+
+        <div class="book-card">
+
+          <div class="book-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop"
+              alt="book">
+
+          </div>
+
+          <div class="book-content">
+
+            <span class="genre pink">
+              Mystery
+            </span>
+
+            <h3>
+              Midnight Shadows
+            </h3>
+
+            <p>
+              A detective uncovers dangerous truths hidden beneath the city lights.
+            </p>
+
+            <div class="book-meta">
+
+              <span>
+                ⭐ 4.7
+              </span>
+
+              <span>
+                👁 6.5K Reads
+              </span>
+
+            </div>
+
+            <button class="book-btn">
+              Read Now
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- READING LIST -->
+
+    <section class="reading-list">
+
+      <div class="section-header">
+
+        <h2>
+          📖 Continue Reading
+        </h2>
+
+      </div>
+
+      <div class="reading-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop"
+          alt="book">
+
+        <div class="reading-info">
+
+          <h3>
+            The Silent Horizon
+          </h3>
+
+          <p>
+            Chapter 8 of 16 • 72% Completed
+          </p>
+
+          <div class="reading-progress">
+
+            <div class="progress"></div>
+
+          </div>
+
+        </div>
+
+        <button class="resume-btn">
+          Resume
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- JS -->
+
+  <script src="digital-library-interface.js"></script>
+
+      <script src="../dist/shared.js"></script>
+</body>
+
+</html>

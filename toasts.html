@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="dist/shared.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UI Verse - Toast Library</title>
+
+  <link rel="stylesheet" href="toasts.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- UIverse Modular CSS Architecture -->
+    <link rel="stylesheet" href="shared-sidebar.css">\n</head>
+
+<body>
+  <!-- Mobile Toggle -->
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>UIverse</h2>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="badges.html">Badges</a></li>
+      <li><a href="button.html">Buttons</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="color.html">Colors</a></li>
+      <li><a href="footer.html">Footer</a></li>
+      <li><a href="form.html">Forms</a></li>
+      <li><a href="inputs.html">Inputs</a></li>
+      <li><a href="loaders.html">Loaders</a></li>
+      <li><a href="map.html">Maps</a></li>
+      <li><a href="menu.html">Menus</a></li>
+      <li><a href="navbar.html">Navbars</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li>
+        <a href="subscription.html">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Subscription</span>
+        </a>
+      </li>
+      <li>
+        <a href="auth.html">
+          <i class="fa-solid fa-user-shield"></i>
+          <span>Authentication</span>
+        </a>
+      </li>
+        <li>
+          <a href="recovery.html">
+            <i class="fa-solid fa-key" aria-hidden="true"></i>
+            <span>Password Recovery</span>
+          </a>
+        </li>
+      <li><a href="table.html">Tables</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li class="active"><a href="blog.html">Blog Cards</a></li>
+    </ul>
+  </aside>
+  <!-- ================= SIDEBAR BACKDROP ================= -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="navbar-brand">
+    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2L2 7V17L12 22L22 17V7L12 2z" stroke="#eb6835"></path>
+    </svg>
+    <span class="brand-text">Uiverse</span>
+  </div>
+  <div class="navbar-divider"></div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components">
+  </div>
+  <div class="nav-right">
+    <a href="documentation.html" class="nav-btn docs-btn">Docs</a>
+    <a href="contribute.html" class="nav-btn add-btn">Add Component</a>
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme" onclick="toggleDarkMode()">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+  <script>
+    (function() {
+      // Search input enter key redirect
+      const navSearch = document.getElementById('searchInput');
+      if (navSearch) {
+        navSearch.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' && this.value.trim()) {
+            const q = encodeURIComponent(this.value.trim());
+            window.location.href = 'components/Discovery/component-discovery.html?q=' + q;
+          }
+        });
+      }
+      
+      // Fallback toggleDarkMode function if not defined globally by the page script
+      const toggleBtn = document.getElementById('darkModeToggle');
+      if (toggleBtn) {
+        if (typeof window.toggleDarkMode !== 'function') {
+          window.toggleDarkMode = function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            const icon = toggleBtn.querySelector('i');
+            if (icon) {
+              icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            }
+          };
+        }
+        
+        // Match initial theme icon class
+        const isDark = localStorage.getItem('theme') === 'dark' || document.body.classList.contains('dark-mode');
+        const icon = toggleBtn.querySelector('i');
+        if (icon && isDark) {
+          icon.className = 'fa-solid fa-sun';
+        }
+      }
+    })();
+  </script>
+</header>
+  
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <span class="hero-badge">
+        Modern Notification Components
+      </span>
+
+      <h1>
+        Beautiful Toast <br>
+        Components Library
+      </h1>
+
+      <p>
+        A premium collection of animated toast notifications for modern web apps.
+        Ready-to-use components with clean UI, smooth transitions, and developer-friendly code.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn">
+          Explore Components
+        </button>
+
+        <button class="secondary-btn">
+          Documentation
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- COMPONENT GRID -->
+  <section class="library">
+
+    <div class="section-title">
+      <h2>Toast Components</h2>
+      <p>Reusable notification UIs for every situation.</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- SUCCESS -->
+      <div class="card">
+        <div class="card-top">
+          <span class="badge success">Success</span>
+        </div>
+
+        <div class="preview success-preview">
+          <div class="mini-toast">
+            ✅ Changes saved successfully
+          </div>
+        </div>
+
+        <h3>Success Toast</h3>
+
+        <p>
+          Ideal for confirmations, successful actions, and completed processes.
+        </p>
+
+        <div class="actions">
+          <button class="demo-btn success-demo">
+            Live Demo
+          </button>
+
+          <button class="copy-btn" data-copy="success">
+            Copy Code
+          </button>
+
+          <button class="view-btn" data-view="success">
+            View
+          </button>
+        </div>
+      </div>
+
+      <!-- ERROR -->
+      <div class="card">
+        <div class="card-top">
+          <span class="badge error">Error</span>
+        </div>
+
+        <div class="preview error-preview">
+          <div class="mini-toast">
+            ❌ Something went wrong
+          </div>
+        </div>
+
+        <h3>Error Toast</h3>
+
+        <p>
+          Display important errors and failed operations clearly.
+        </p>
+
+        <div class="actions">
+          <button class="demo-btn error-demo">
+            Live Demo
+          </button>
+
+          <button class="copy-btn" data-copy="error">
+            Copy Code
+          </button>
+
+          <button class="view-btn" data-view="error">
+            View
+          </button>
+        </div>
+      </div>
+
+      <!-- WARNING -->
+      <div class="card">
+        <div class="card-top">
+          <span class="badge warning">Warning</span>
+        </div>
+
+        <div class="preview warning-preview">
+          <div class="mini-toast">
+            ⚠ Please verify your input
+          </div>
+        </div>
+
+        <h3>Warning Toast</h3>
+
+        <p>
+          Perfect for warnings, validations, and caution messages.
+        </p>
+
+        <div class="actions">
+          <button class="demo-btn warning-demo">
+            Live Demo
+          </button>
+
+          <button class="copy-btn" data-copy="warning">
+            Copy Code
+          </button>
+
+          <button class="view-btn" data-view="warning">
+            View
+          </button>
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="card">
+        <div class="card-top">
+          <span class="badge info">Info</span>
+        </div>
+
+        <div class="preview info-preview">
+          <div class="mini-toast">
+            ℹ New update available
+          </div>
+        </div>
+
+        <h3>Info Toast</h3>
+
+        <p>
+          Great for informational updates and helpful notifications.
+        </p>
+
+        <div class="actions">
+          <button class="demo-btn info-demo">
+            Live Demo
+          </button>
+
+          <button class="copy-btn" data-copy="info">
+            Copy Code
+          </button>
+
+          <button class="view-btn" data-view="info">
+            View
+          </button>
+        </div>
+      </div>
+      <!-- LOADING -->
+<div class="card">
+  <div class="card-top">
+    <span class="badge loading">Loading</span>
+  </div>
+
+  <div class="preview loading-preview">
+    <div class="mini-toast">
+      ⏳ Processing your request...
+    </div>
+  </div>
+
+  <h3>Loading Toast</h3>
+
+  <p>
+    Useful for showing ongoing processes or background tasks.
+  </p>
+
+  <div class="actions">
+    <button class="demo-btn loading-demo">
+      Live Demo
+    </button>
+    <button class="copy-btn" data-copy="loading">
+      Copy Code
+    </button>
+    <button class="view-btn" data-view="loading">
+      View
+    </button>
+  </div>
+</div>
+
+    <!-- CELEBRATION -->
+<div class="card">
+  <div class="card-top">
+    <span class="badge celebration">Celebration</span>
+  </div>
+
+  <div class="preview celebration-preview">
+    <div class="mini-toast">
+      🎉 Congratulations! Task completed
+    </div>
+  </div>
+
+  <h3>Celebration Toast</h3>
+
+  <p>
+    Great for achievements, milestones, or gamified rewards.
+  </p>
+
+  <div class="actions">
+    <button class="demo-btn celebration-demo">
+      Live Demo
+    </button>
+    <button class="copy-btn" data-copy="celebration">
+      Copy Code
+    </button>
+    <button class="view-btn" data-view="celebration">
+      View
+    </button>
+  </div>
+</div>
+<!-- REMINDER -->
+<div class="card">
+  <div class="card-top">
+    <span class="badge reminder">Reminder</span>
+  </div>
+
+  <div class="preview reminder-preview">
+    <div class="mini-toast">
+      🔔 Meeting starts in 10 minutes
+    </div>
+  </div>
+
+  <h3>Reminder Toast</h3>
+
+  <p>
+    Perfect for time-sensitive alerts and scheduled reminders.
+  </p>
+
+  <div class="actions">
+    <button class="demo-btn reminder-demo">
+      Live Demo
+    </button>
+    <button class="copy-btn" data-copy="reminder">
+      Copy Code
+    </button>
+    <button class="view-btn" data-view="reminder">
+      View
+    </button>
+  </div>
+</div>
+<!-- NETWORK -->
+<div class="card">
+  <div class="card-top">
+    <span class="badge network">Network</span>
+  </div>
+
+  <div class="preview network-preview">
+    <div class="mini-toast">
+      🌐 You are offline
+    </div>
+  </div>
+
+  <h3>Network Toast</h3>
+
+  <p>
+    Ideal for connectivity issues, offline mode, or sync status.
+  </p>
+
+  <div class="actions">
+    <button class="demo-btn network-demo">
+      Live Demo
+    </button>
+    <button class="copy-btn" data-copy="network">
+      Copy Code
+    </button>
+    <button class="view-btn" data-view="network">
+      View
+    </button>
+  </div>
+</div>
+    </div>
+    
+
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+
+    <div class="about-card">
+      <h2>Built for UI Verse</h2>
+
+      <p>
+        Crafted with modern frontend practices, reusable architecture,
+        and smooth UI interactions for developers who love beautiful interfaces.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+
+    <div class="modal">
+
+      <div class="modal-header">
+        <h3>Component Code</h3>
+
+        <button id="closeModal">
+          ✕
+        </button>
+      </div>
+
+      <pre id="modalCode"></pre>
+
+    </div>
+
+  </div>
+  <!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
+      <div class="socials">
+        <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="UIverse on GitHub" title="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="#" aria-label="UIverse on LinkedIn" title="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="#" aria-label="UIverse on X (Twitter)" title="X / Twitter">
+          <i class="fab fa-x-twitter" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+        <li><a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+        <li><a href="MyCollection.html">My Collection</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          aria-label="Email address for newsletter"
+        />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with <span aria-label="love">❤️</span> for developers worldwide.</p>
+  </div>
+</footer>
+
+<script>
+  if (typeof subscribe !== 'function') {
+    function subscribe() {
+      const emailInput = document.getElementById("newsletterEmail");
+      if (emailInput && emailInput.value.trim()) {
+        alert("Thanks for subscribing with: " + emailInput.value.trim());
+        emailInput.value = "";
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    }
+  }
+</script>
+  
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container"></div>
+
+  <script src="toasts.js"></script>
+
+  <script src="dist/shared.js"></script>
+</body>
+</html>
+
