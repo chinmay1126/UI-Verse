@@ -3,8 +3,9 @@
 
 <head>
   <link rel="stylesheet" href="dist/shared.css">
+
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-1lcnFn0nSEILtALog+Urr6SIA8OK/4AdAGePOZ1zzB8='; script-src-attr 'unsafe-hashes' 'sha256-1lcnFn0nSEILtALog+Urr6SIA8OK/4AdAGePOZ1zzB8='; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-TPk8Ptcfplaeg5545jpydJkNH+Iu/Em2h71VzHAP0o0=; script-src-attr 'unsafe-hashes' sha256-TPk8Ptcfplaeg5545jpydJkNH+Iu/Em2h71VzHAP0o0=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Badges — UIverse</title>
@@ -20,15 +21,12 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="badges.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="badge.css">
+
 
   <!-- UIverse Modular CSS Architecture -->
-  </head>
+    <link rel="stylesheet" href="shared-sidebar.css">\n</head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
 
 <!-- =========================================================
      MENU TOGGLE
@@ -137,6 +135,71 @@
   </ul>
 
 </aside>
+
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="navbar-brand">
+    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2L2 7V17L12 22L22 17V7L12 2z" stroke="#eb6835"></path>
+    </svg>
+    <span class="brand-text">Uiverse</span>
+  </div>
+  <div class="navbar-divider"></div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components">
+  </div>
+  <div class="nav-right">
+    <a href="documentation.html" class="nav-btn docs-btn">Docs</a>
+    <a href="contribute.html" class="nav-btn add-btn">Add Component</a>
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme" onclick="toggleDarkMode()">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+  <script>
+    (function() {
+      // Search input enter key redirect
+      const navSearch = document.getElementById('searchInput');
+      if (navSearch) {
+        navSearch.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' && this.value.trim()) {
+            const q = encodeURIComponent(this.value.trim());
+            window.location.href = 'components/Discovery/component-discovery.html?q=' + q;
+          }
+        });
+      }
+      
+      // Fallback toggleDarkMode function if not defined globally by the page script
+      const toggleBtn = document.getElementById('darkModeToggle');
+      if (toggleBtn) {
+        if (typeof window.toggleDarkMode !== 'function') {
+          window.toggleDarkMode = function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            const icon = toggleBtn.querySelector('i');
+            if (icon) {
+              icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            }
+          };
+        }
+        
+        // Match initial theme icon class
+        const isDark = localStorage.getItem('theme') === 'dark' || document.body.classList.contains('dark-mode');
+        const icon = toggleBtn.querySelector('i');
+        if (icon && isDark) {
+          icon.className = 'fa-solid fa-sun';
+        }
+      }
+    })();
+  </script>
+</header>
 
 <!-- =========================================================
      MAIN
@@ -562,7 +625,6 @@
 </div>
   <!-- =========================================
 BADGE CARD — SECURITY LEVEL
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Security</span>
@@ -589,7 +651,6 @@ BADGE CARD — SECURITY LEVEL
 
 <!-- =========================================
 BADGE CARD — SOC2 COMPLIANT
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Compliance</span>
@@ -616,7 +677,6 @@ BADGE CARD — SOC2 COMPLIANT
 
 <!-- =========================================
 BADGE CARD — CLOUD READY
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Cloud</span>
@@ -643,7 +703,6 @@ BADGE CARD — CLOUD READY
 
 <!-- =========================================
 BADGE CARD — AI AGENT
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">AI</span>
@@ -670,7 +729,6 @@ BADGE CARD — AI AGENT
 
 <!-- =========================================
 BADGE CARD — ENTERPRISE PLAN
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Subscription</span>
@@ -697,7 +755,6 @@ BADGE CARD — ENTERPRISE PLAN
 
 <!-- =========================================
 BADGE CARD — TRENDING NOW
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Trending</span>
@@ -724,7 +781,6 @@ BADGE CARD — TRENDING NOW
 
 <!-- =========================================
 BADGE CARD — REVENUE GROWTH
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Analytics</span>
@@ -751,7 +807,6 @@ BADGE CARD — REVENUE GROWTH
 
 <!-- =========================================
 BADGE CARD — VERIFIED ORGANIZATION
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Organization</span>
@@ -778,7 +833,6 @@ BADGE CARD — VERIFIED ORGANIZATION
 
 <!-- =========================================
 BADGE CARD — NFT VERIFIED
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Web3</span>
@@ -805,7 +859,6 @@ BADGE CARD — NFT VERIFIED
 
 <!-- =========================================
 BADGE CARD — ACHIEVEMENT
-========================================= -->
 <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Achievement</span>
@@ -848,10 +901,10 @@ BADGE CARD — ACHIEVEMENT
 
     </div>
 
-    <div class="earned-grid">
+    <div class="badge-container">
 
       <!-- CARD -->
-      <div class="earned-card">
+      <div class="badge">
 
         <div class="badge-icon purple">
           <i class="fa-solid fa-code-pull-request"></i>
@@ -871,7 +924,7 @@ BADGE CARD — ACHIEVEMENT
       </div>
 
       <!-- CARD -->
-      <div class="earned-card">
+      <div class="badge">
 
         <div class="badge-icon cyan">
           <i class="fa-solid fa-users"></i>
@@ -891,7 +944,7 @@ BADGE CARD — ACHIEVEMENT
       </div>
 
 <!-- Open Source Hero -->
-<div class="earned-card">
+<div class="badge">
 
   <div class="badge-icon gradient-blue">
     <i class="fa-brands fa-github"></i>
@@ -920,7 +973,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- Design Architect -->
-<div class="earned-card">
+<div class="badge">
 
   <div class="badge-icon gradient-purple">
     <i class="fa-solid fa-bezier-curve"></i>
@@ -945,7 +998,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- Bug Hunter -->
-<div class="earned-card">
+<div class="badge">
 
   <div class="badge-icon gradient-red">
     <i class="fa-solid fa-bug"></i>
@@ -970,7 +1023,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- Mentor Badge -->
-<div class="earned-card">
+<div class="badge">
 
   <div class="badge-icon gradient-gold">
     <i class="fa-solid fa-user-graduate"></i>
@@ -995,7 +1048,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- AI Innovator -->
-<div class="progress-card">
+<div class="badge progress">
 
   <div class="badge-icon gradient-cyan">
     <i class="fa-solid fa-robot"></i>
@@ -1024,7 +1077,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- Global Rank -->
-<div class="locked-card premium">
+<div class="badge locked premium">
 
   <div class="badge-icon gradient-dark">
     <i class="fa-solid fa-globe"></i>
@@ -1042,7 +1095,7 @@ BADGE CARD — ACHIEVEMENT
 
 </div>
       <!-- CARD -->
-      <div class="earned-card">
+      <div class="badge">
 
         <div class="badge-icon orange">
           <i class="fa-solid fa-fire"></i>
@@ -1083,10 +1136,10 @@ BADGE CARD — ACHIEVEMENT
 
     </div>
 
-    <div class="progress-grid">
+    <div class="badge-container">
 
       <!-- CARD -->
-      <div class="progress-card">
+      <div class="badge progress">
 
         <div class="badge-icon green">
           <i class="fa-solid fa-trophy"></i>
@@ -1114,7 +1167,7 @@ BADGE CARD — ACHIEVEMENT
       </div>
 
       <!-- CARD -->
-      <div class="progress-card">
+      <div class="badge progress">
 
         <div class="badge-icon cyan">
           <i class="fa-solid fa-layer-group"></i>
@@ -1163,10 +1216,10 @@ BADGE CARD — ACHIEVEMENT
 
     </div>
 
-    <div class="locked-grid">
+    <div class="badge-container">
 
       <!-- CARD -->
-      <div class="locked-card">
+      <div class="badge locked">
 
         <div class="badge-icon red">
           <i class="fa-solid fa-lock"></i>
@@ -1185,7 +1238,7 @@ BADGE CARD — ACHIEVEMENT
       </div>
 
       <!-- CARD -->
-      <div class="locked-card">
+      <div class="badge locked">
 
         <div class="badge-icon purple">
           <i class="fa-solid fa-crown"></i>
@@ -1209,94 +1262,90 @@ BADGE CARD — ACHIEVEMENT
 
 </main>
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
-
   <div class="footer-container">
-
     <div class="footer-col brand">
-
-      <h2 class="footer-logo">
-        ⬡ UIverse
-      </h2>
-
-      <p>
-        Build modern reusable UI components
-        using clean HTML, CSS and JavaScript.
-      </p>
-
+      <h2 class="footer-logo">⬡ UIverse</h2>
+      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
       <div class="socials">
-
-        <a href="#">
-          <i class="fab fa-github"></i>
+        <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="UIverse on GitHub" title="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
         </a>
-
-        <a href="#">
-          <i class="fab fa-linkedin"></i>
+        <a href="#" aria-label="UIverse on LinkedIn" title="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
-
-        <a href="#">
-          <i class="fab fa-x-twitter"></i>
+        <a href="#" aria-label="UIverse on X (Twitter)" title="X / Twitter">
+          <i class="fab fa-x-twitter" aria-hidden="true"></i>
         </a>
-
       </div>
-
     </div>
 
     <div class="footer-col">
-
       <h3>Explore</h3>
-
       <ul>
-
-        <li><a href="#">Buttons</a></li>
-        <li><a href="#">Cards</a></li>
-        <li><a href="#">Forms</a></li>
-        <li><a href="#">Inputs</a></li>
-
+        <li><a href="button.html">Buttons</a></li>
+        <li><a href="navbar.html">Navbars</a></li>
+        <li><a href="cards.html">Cards</a></li>
+        <li><a href="inputs.html">Inputs</a></li>
+        <li><a href="forms.html">Forms</a></li>
       </ul>
-
     </div>
 
     <div class="footer-col">
-
       <h3>Resources</h3>
-
       <ul>
-
-        <li><a href="#">Documentation</a></li>
-        <li><a href="#">Community</a></li>
-        <li><a href="#">Contributors</a></li>
-        <li><a href="#">GitHub</a></li>
-
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+        <li><a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+        <li><a href="MyCollection.html">My Collection</a></li>
       </ul>
-
     </div>
 
     <div class="footer-col">
-
       <h3>Legal</h3>
-
       <ul>
-
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Terms</a></li>
-        <li><a href="#">License</a></li>
-
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="license.html">License</a></li>
       </ul>
-
     </div>
 
+    <div class="footer-col newsletter">
+      <h3>Stay Updated</h3>
+      <p>Get notified when new components drop.</p>
+      <div class="newsletter-form">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          aria-label="Email address for newsletter"
+        />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
   </div>
 
   <div class="footer-bottom">
-    © 2026 UIverse. Crafted for developers worldwide.
+    <p>© 2026 UIverse. Made with <span aria-label="love">❤️</span> for developers worldwide.</p>
   </div>
-
 </footer>
+
+<script>
+  if (typeof subscribe !== 'function') {
+    function subscribe() {
+      const emailInput = document.getElementById("newsletterEmail");
+      if (emailInput && emailInput.value.trim()) {
+        alert("Thanks for subscribing with: " + emailInput.value.trim());
+        emailInput.value = "";
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    }
+  }
+</script>
 
 <!-- =========================================================
      JS
@@ -1318,7 +1367,7 @@ menuToggle.addEventListener("click",()=>{
 
 </script>
 
-    <script src="dist/shared.js"></script>
+  <script src="dist/shared.js"></script>
 </body>
 </html>
 
