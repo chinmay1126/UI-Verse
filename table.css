@@ -1437,6 +1437,12 @@ body {
   outline: none;
 }
 
+.ui-table td:focus,
+.ui-table th:focus {
+  outline: 2px solid #0078d4; /* Accessible blue focus ring */
+  outline-offset: 2px;
+}
+
 /* ================= MODERN TABLES ================= */
 
 .modern-table,
