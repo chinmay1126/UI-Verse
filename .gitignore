@@ -4,3 +4,7 @@ Thumbs.db
 node_modules/
 playwright-report/
 test-results/
+reports/
+performance-analysis/
+storybook-static/
+stories/public/

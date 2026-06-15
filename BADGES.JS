@@ -1,95 +1,64 @@
-// =========================================================
-// FILTER ACTIVE
-// =========================================================
+function toggleCode(id){
 
-const filterBtns =
-  document.querySelectorAll(".filter-btn");
+  const block = document.getElementById(id);
 
-filterBtns.forEach((btn)=>{
+  block.classList.toggle("show");
+}
 
-  btn.addEventListener("click",()=>{
+function copyCode(id){
 
-    filterBtns.forEach((b)=>{
+  const text =
+    document.getElementById(id).innerText;
 
-      b.classList.remove("active");
+  navigator.clipboard.writeText(text);
 
-    });
+  const toast =
+    document.getElementById("copyToast");
 
-    btn.classList.add("active");
+  toast.classList.add("show");
 
-  });
+  setTimeout(() => {
 
-});
+    toast.classList.remove("show");
 
-// =========================================================
-// SEARCH FILTER
-// =========================================================
+  },2000);
+}
+
+/* SEARCH */
 
 const searchInput =
-  document.getElementById("badgeSearch");
+  document.getElementById("searchInput");
 
-const cards =
-  document.querySelectorAll(".badge-card");
+if (searchInput) {
+  searchInput.addEventListener("input",e=>{
 
-searchInput.addEventListener("keyup",()=>{
+    const value =
+      e.target.value.toLowerCase();
 
-  const value =
-    searchInput.value.toLowerCase();
+    document
+      .querySelectorAll(".badge-card")
+      .forEach(card=>{
 
-  cards.forEach((card)=>{
+        const text =
+          card.innerText.toLowerCase();
 
-    const text =
-      card.innerText.toLowerCase();
+        card.style.display =
+          text.includes(value)
+          ? "block"
+          : "none";
 
-    if(text.includes(value)){
-
-      card.style.display = "block";
-
-    }else{
-
-      card.style.display = "none";
-
-    }
+      });
 
   });
+}
 
-});
-
-// =========================================================
-// COPY BUTTON
-// =========================================================
-
-const copyBtns =
-  document.querySelectorAll(".copy-btn");
-
-copyBtns.forEach((btn)=>{
-
-  btn.addEventListener("click",()=>{
-
-    btn.innerText = "Copied!";
-
-    setTimeout(()=>{
-
-      btn.innerText = "Copy";
-
-    },1500);
-
+const badgeSearchInput =document.getElementById("badgesSearch");
+badgeSearchInput.addEventListener("input", function(){
+  const filter =badgeSearchInput.value.toLowerCase();
+  const cards =document.querySelectorAll(".badge-card");
+  cards.forEach(card =>{
+    const data=card.textContent.toLowerCase();
+    if (data.includes(filter)){card.style.display ="";}
+    else{card.style.display ="none";}
   });
-
 });
-
-// =========================================================
-// RANDOM NOTIFICATION COUNT
-// =========================================================
-
-const notification =
-  document.querySelector(".notification-count");
-
-setInterval(()=>{
-
-  const random =
-    Math.floor(Math.random() * 9) + 1;
-
-  notification.innerText = random;
-
-},3000);

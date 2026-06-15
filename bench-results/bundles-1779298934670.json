@@ -1,0 +1,217 @@
+[
+  {
+    "file": "js\\features\\accessibility.js",
+    "raw": 19429,
+    "gz": 5026
+  },
+  {
+    "file": "js\\features\\component-gallery.js",
+    "raw": 19270,
+    "gz": 4834
+  },
+  {
+    "file": "js\\core\\component-discovery.js",
+    "raw": 18774,
+    "gz": 4410
+  },
+  {
+    "file": "js\\core\\security.js",
+    "raw": 13602,
+    "gz": 4018
+  },
+  {
+    "file": "js\\features\\command-palette.js",
+    "raw": 13383,
+    "gz": 3617
+  },
+  {
+    "file": "js\\features\\sandbox.js",
+    "raw": 12263,
+    "gz": 3421
+  },
+  {
+    "file": "js\\features\\search.js",
+    "raw": 8678,
+    "gz": 2249
+  },
+  {
+    "file": "js\\core\\component-versioning.js",
+    "raw": 8708,
+    "gz": 2162
+  },
+  {
+    "file": "js\\features\\url-state.js",
+    "raw": 7834,
+    "gz": 2144
+  },
+  {
+    "file": "js\\features\\design-tokens.js",
+    "raw": 8783,
+    "gz": 1973
+  },
+  {
+    "file": "dist\\design-tokens.js",
+    "raw": 8283,
+    "gz": 1886
+  },
+  {
+    "file": "js\\features\\profile-editor.js",
+    "raw": 6149,
+    "gz": 1777
+  },
+  {
+    "file": "js\\features\\compare.js",
+    "raw": 5404,
+    "gz": 1701
+  },
+  {
+    "file": "js\\features\\url-state-integration.js",
+    "raw": 5044,
+    "gz": 1537
+  },
+  {
+    "file": "js\\bootstrap.js",
+    "raw": 5779,
+    "gz": 1466
+  },
+  {
+    "file": "js\\registry.js",
+    "raw": 5003,
+    "gz": 1346
+  },
+  {
+    "file": "js\\features\\sidebar.js",
+    "raw": 4110,
+    "gz": 1278
+  },
+  {
+    "file": "js\\core\\utils.js",
+    "raw": 2999,
+    "gz": 1238
+  },
+  {
+    "file": "js\\core\\components-registry.js",
+    "raw": 3577,
+    "gz": 1176
+  },
+  {
+    "file": "js\\core\\dependency-manager.js",
+    "raw": 3925,
+    "gz": 1162
+  },
+  {
+    "file": "js\\features\\theme.js",
+    "raw": 3877,
+    "gz": 1112
+  },
+  {
+    "file": "js\\loader.js",
+    "raw": 3143,
+    "gz": 1096
+  },
+  {
+    "file": "js\\features\\i18n.js",
+    "raw": 2464,
+    "gz": 940
+  },
+  {
+    "file": "js\\features\\code-tools.js",
+    "raw": 2490,
+    "gz": 936
+  },
+  {
+    "file": "dist\\components\\uv-theme-switcher.js",
+    "raw": 2912,
+    "gz": 905
+  },
+  {
+    "file": "js\\core\\component-index.js",
+    "raw": 2866,
+    "gz": 900
+  },
+  {
+    "file": "js\\collection-sync.js",
+    "raw": 2074,
+    "gz": 838
+  },
+  {
+    "file": "js\\idb.js",
+    "raw": 2993,
+    "gz": 799
+  },
+  {
+    "file": "js\\core\\sanitize.js",
+    "raw": 1554,
+    "gz": 769
+  },
+  {
+    "file": "js\\core\\component-registry.js",
+    "raw": 1736,
+    "gz": 756
+  },
+  {
+    "file": "js\\core\\web-components-factory.js",
+    "raw": 1900,
+    "gz": 750
+  },
+  {
+    "file": "js\\features\\scroll.js",
+    "raw": 2253,
+    "gz": 744
+  },
+  {
+    "file": "js\\core\\state-manager.js",
+    "raw": 1709,
+    "gz": 704
+  },
+  {
+    "file": "js\\core\\register-web-components.js",
+    "raw": 1336,
+    "gz": 626
+  },
+  {
+    "file": "js\\theme-api.js",
+    "raw": 1183,
+    "gz": 531
+  },
+  {
+    "file": "js\\features\\alerts.js",
+    "raw": 887,
+    "gz": 457
+  },
+  {
+    "file": "js\\features\\popup.js",
+    "raw": 747,
+    "gz": 356
+  },
+  {
+    "file": "dist\\index.js",
+    "raw": 852,
+    "gz": 312
+  },
+  {
+    "file": "js\\features\\toast.js",
+    "raw": 519,
+    "gz": 309
+  },
+  {
+    "file": "dist\\components\\uv-language-switcher.js",
+    "raw": 404,
+    "gz": 252
+  },
+  {
+    "file": "dist\\components\\uv-tooltip.js",
+    "raw": 337,
+    "gz": 231
+  },
+  {
+    "file": "dist\\components\\uv-button.js",
+    "raw": 337,
+    "gz": 230
+  },
+  {
+    "file": "dist\\components\\uv-modal.js",
+    "raw": 327,
+    "gz": 230
+  }
+]

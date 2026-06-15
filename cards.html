@@ -13,124 +13,11 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="shared-page.css">
   <link rel="stylesheet" href="cards.css">
-  <link rel="stylesheet" href="playground.css">
-  <link rel="stylesheet" href="command-palette.css">
-  <link rel="stylesheet" href="css/url-state.css">
-  <!-- UIverse Modular Scripts - Load in dependency order -->
-  <!-- UIverse Registry (must load first) -->
-  <script src="js/registry.js"></script>
-  <!-- Core Modules -->
-  <script src="js/core/utils.js"></script>
-  <script src="js/core/security.js"></script>
-  <script src="js/core/components-registry.js"></script>
-  <script src="js/core/sanitize.js"></script>
-  <!-- Feature Modules -->
-  <script src="js/features/toast.js"></script>
-  <script src="js/features/popup.js"></script>
-  <script src="js/features/code-tools.js"></script>
-  <script src="js/features/sidebar.js"></script>
-  <script src="js/features/search.js"></script>
-  <script src="js/features/theme.js"></script>
-  <script src="js/features/scroll.js"></script>
-  <script src="js/features/alerts.js"></script>
-  <script src="js/features/sandbox.js"></script>
-  <script src="js/features/accessibility.js"></script>
-  <script src="js/features/command-palette.js"></script>
-  <script src="js/features/url-state.js"></script>
-  <script src="js/features/url-state-integration.js"></script>
-  <script src="js/features/profile-editor.js"></script>
-  <script src="js/features/component-gallery.js"></script>
-  <!-- Bootstrap (initializes all modules) -->
-  <script src="js/bootstrap.js"></script>
-  <!-- Backward Compatibility Layer -->
-  <script src="script.js"></script>
 </head>
 
-<body data-playground-type="card">
+<body>
 
-<!-- ================= SIDEBAR ================= -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <span class="brand-icon"><i class="fa-solid fa-cube"></i></span>
-    <span class="brand-text">UIverse</span>
-  </div>
-
-  <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a href="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="button.html">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Buttons</span>
-        </a>
-      </li>
-      <li>
-        <a href="navbar.html">
-          <i class="fa-solid fa-bars"></i>
-          <span>Navbar</span>
-        </a>
-      </li>
-      <li class="active">
-        <a href="cards.html">
-          <i class="fa-solid fa-table-cells-large"></i>
-          <span>Cards</span>
-        </a>
-      </li>
-      <li>
-        <a href="inputs.html">
-          <i class="fa-solid fa-keyboard"></i>
-          <span>Inputs</span>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html">
-          <i class="fa-regular fa-user"></i>
-          <span>Contact Us</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms.html">
-          <i class="fa-brands fa-wpforms"></i>
-          <span>Forms</span>
-        </a>
-      </li>
-      <li>
-        <a href="badges.html">
-          <i class="fa-solid fa-award"></i>
-          <span>Badges</span>
-        </a>
-      </li>
-      <li>
-        <a href="loaders.html">
-          <i class="fa-solid fa-award"></i>
-          <span>Loaders</span>
-        </a>
-      </li>
-      <li>
-        <a href="about.html">
-          <i class="fa-solid fa-award"></i>
-          <span>About us</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <div class="sidebar-footer">
-    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-  </div>
-</aside>
-
-<!-- ================= SIDEBAR BACKDROP ================= -->
-<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
 <!-- ================= NAVBAR ================= -->
 <header class="navbar" id="navbar">
@@ -142,7 +29,7 @@
 
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-    <input type="text" id="searchInput" placeholder="Search components..." onkeydown="handleSearch(event)" />
+    <input type="text" id="searchInput" placeholder="Search components..." oninput="liveFilter(this.value)" />
     <kbd class="search-kbd">⌘K</kbd>
   </div>
 
@@ -183,7 +70,7 @@
         <div class="mini-profile-card">
           <div class="mini-avatar">LN</div>
           <div>
-            <strong>Chinmay Munj</strong>
+            <strong>Likhitha Nagraj</strong>
             <span>Engineer · UIverse</span>
           </div>
         </div>
@@ -360,7 +247,7 @@
       <div class="card-preview">
         <div class="product-card">
           <div class="product-badge">New</div>
-          <div class="product-icon"><i class="fa-solid fa-headphones"></i></div>
+          <div class="product-icon">🎧</div>
           <h4>Premium Headphones</h4>
           <p class="product-price">$49.99</p>
           <p class="product-desc">High-quality audio with noise cancellation.</p>
@@ -378,7 +265,7 @@
       </div>
       <pre id="c4" class="code-block"><code>&lt;div class="product-card"&gt;
   &lt;div class="product-badge"&gt;New&lt;/div&gt;
-  &lt;div class="product-icon"&gt;&lt;i class="fa-solid fa-headphones"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div class="product-icon"&gt;🎧&lt;/div&gt;
   &lt;h4&gt;Premium Headphones&lt;/h4&gt;
   &lt;p class="price"&gt;$49.99&lt;/p&gt;
   &lt;p&gt;High-quality audio with noise cancellation.&lt;/p&gt;
@@ -643,7 +530,7 @@
             </div>
             <div class="social-platform"><i class="fab fa-x-twitter"></i></div>
           </div>
-          <p class="social-text">Just launched my new UI component library! Check it out and let me know what you think. <i class="fa-solid fa-rocket"></i></p>
+          <p class="social-text">Just launched my new UI component library! Check it out and let me know what you think. 🚀</p>
           <div class="social-actions">
             <button class="social-btn"><i class="fa-regular fa-heart"></i> 42</button>
             <button class="social-btn"><i class="fa-regular fa-comment"></i> 12</button>
@@ -669,7 +556,7 @@
       &lt;span&gt;@johndoe · 2h&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;p&gt;Just launched my new UI library! &lt;i class="fa-solid fa-rocket"&gt;&lt;/i&gt;&lt;/p&gt;
+  &lt;p&gt;Just launched my new UI library! 🚀&lt;/p&gt;
   &lt;div class="social-actions"&gt;
     &lt;button&gt;♥ 42&lt;/button&gt;
     &lt;button&gt;💬 12&lt;/button&gt;
@@ -699,22 +586,10 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-<footer class="footer">
   <div class="footer-container">
 
     <div class="footer-col brand">
-      <h2 class="footer-logo"><i class="fa-solid fa-cube"></i> UIverse</h2>
-      <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
-      <div class="socials">
-        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-      </div>
-    </div>
-  <div class="footer-container">
-
-    <div class="footer-col brand">
-      <h2 class="footer-logo"><i class="fa-solid fa-cube"></i> UIverse</h2>
+      <h2 class="footer-logo">⬡ UIverse</h2>
       <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
       <div class="socials">
         <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
@@ -749,7 +624,7 @@
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="license.html">License</a></li>
+        <li><a href="#">License</a></li>
       </ul>
     </div>
 
@@ -761,52 +636,12 @@
         <button type="button">Subscribe</button>
       </div>
     </div>
+
   </div>
   <div class="footer-bottom">
     <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
   </div>
 </footer>
-
-<div class="playground-drawer" id="playgroundDrawer" aria-hidden="true">
-  <div class="playground-header">
-    <div>
-      <span class="playground-title">Playground</span>
-      <span class="playground-subtitle" id="playgroundTitle">Select a component</span>
-    </div>
-    <div class="playground-header-actions">
-      <button type="button" class="playground-reset" id="playgroundReset">Reset</button>
-      <button type="button" class="playground-close" id="playgroundClose">Close</button>
-    </div>
-  </div>
-
-  <div class="playground-preview" id="playgroundPreview"></div>
-  <pre class="playground-code"><code id="playgroundCode"></code></pre>
-
-  <div class="playground-controls">
-    <label>Size <span class="playground-value" data-value="size"></span></label>
-    <input type="range" min="80" max="420" value="260" data-control="size">
-
-    <label>Radius <span class="playground-value" data-value="radius"></span></label>
-    <input type="range" min="0" max="40" value="16" data-control="radius">
-
-    <label>Padding <span class="playground-value" data-value="padding"></span></label>
-    <input type="range" min="0" max="32" value="20" data-control="padding">
-
-    <label>Font Size <span class="playground-value" data-value="fontSize"></span></label>
-    <input type="range" min="10" max="24" value="14" data-control="fontSize">
-
-    <label>Background</label>
-    <input type="color" value="#ffffff" data-control="background">
-
-    <label>Text Color</label>
-    <input type="color" value="#111111" data-control="textColor">
-
-    <label>Shadow <span class="playground-value" data-value="shadow"></span></label>
-    <input type="range" min="0" max="30" value="16" data-control="shadow">
-  </div>
-</div>
-
-<div class="playground-backdrop" id="playgroundBackdrop"></div>
 
 <script src="script.js"></script>
 <script>
@@ -892,116 +727,5 @@
     });
   });
 </script>
-<script src="playground.js"></script>
-<script>
-window.addToCollectionFromCard = function(button, name) {
-  const card = button.closest('.component-card');
-  const previewBox = card.querySelector('.preview-box');
-  const html = previewBox.innerHTML;
-  
-  if (window.UIVERSE_DEBUG) console.log("Button clicked:", name);
-  if (window.UIVERSE_DEBUG) console.log("Preview HTML:", html);
-  
-  addToCollection(name, html);
-};
-
-window.addToCollection = function(name, html) {
-  let items = JSON.parse(localStorage.getItem("collection")) || [];
-
-  let newItem = {
-    title: name.trim(),
-    content: html,
-    id: Date.now()
-  };
-
-  if (window.UIVERSE_DEBUG) console.log("Adding item:", newItem);
-
-  if (!items.some(item => item.title === newItem.title)) {
-    items.push(newItem);
-    localStorage.setItem("collection", JSON.stringify(items));
-    showToast(name + " added to collection ✓");
-    if (window.UIVERSE_DEBUG) console.log("Total items saved:", items.length);
-  } else {
-    showToast("Already in collection");
-  }
-};
-
-window.goToCollection = function() {
-  window.location.href = "MyCollection.html";
-};
-
-function showToast(message) {
-  const toast = document.createElement("div");
-  toast.innerText = message;
-
-  toast.style.position = "fixed";
-  toast.style.bottom = "20px";
-  toast.style.right = "20px";
-  toast.style.background = "#111";
-  toast.style.color = "#fff";
-  toast.style.padding = "10px 14px";
-  toast.style.borderRadius = "8px";
-  toast.style.fontSize = "14px";
-  toast.style.zIndex = "9999";
-  toast.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
-
-  document.body.appendChild(toast);
-
-  setTimeout(() => toast.remove(), 1500);
-}
-
-function toggleCode(id){
-  const el = document.getElementById(id);
-  el.style.display = el.style.display === "block" ? "none" : "block";
-}
-
-function copyCode(id,btn){
-  const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text);
-  btn.innerText = "Copied!";
-  setTimeout(()=>btn.innerText="Copy",1000);
-}
-</script>
-<style>
-  button{
-  background:  #a29bfe;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  }
-
-</style>
-
-<!-- ================= COMMAND PALETTE ================= -->
-<div id="commandPaletteOverlay" class="command-palette-overlay">
-  <div class="command-palette-container">
-    <div class="command-palette-input-wrapper">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input 
-        type="text" 
-        id="commandPaletteInput" 
-        class="command-palette-input" 
-        placeholder="Search components... (Cmd+K)"
-        autocomplete="off"
-      />
-    </div>
-    <ul id="commandPaletteResults" class="command-palette-results"></ul>
-    <div class="command-palette-footer">
-      <div class="command-palette-footer-item">
-        <span class="command-palette-footer-kbd">↑↓</span>
-        <span>Navigate</span>
-      </div>
-      <div class="command-palette-footer-item">
-        <span class="command-palette-footer-kbd">⏎</span>
-        <span>Select</span>
-      </div>
-      <div class="command-palette-footer-item">
-        <span class="command-palette-footer-kbd">Esc</span>
-        <span>Close</span>
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
