@@ -64,7 +64,7 @@ body.dark-matrix-mode {
   background-color: var(--border-active-neon); color: #000000;
   padding: 12px 24px; font-family: 'JetBrains Mono', monospace;
   font-weight: 700; font-size: 13px; text-decoration: none;
-  z-index: 99999; border-radius: var(--radius-sharp-box);
+  z-index: var(--z-modal); border-radius: var(--radius-sharp-box);
   transition: top 0.2s ease;
 }
 .skip-link:focus { top: 24px; }
