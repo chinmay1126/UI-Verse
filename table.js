@@ -205,6 +205,72 @@ window.addEventListener(
   }
 );
 
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "flex";
+    scrollTopBtn.style.opacity = "1";
+  } else {
+    scrollTopBtn.style.display = "none";
+    scrollTopBtn.style.opacity = "0";
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+
+// Sorting function
+function sortTable(colIndex) {
+  const table = document.getElementById("employeeTable");
+  const rows = Array.from(table.rows).slice(1);
+  let asc = table.getAttribute("data-sort") !== "asc";
+  
+  rows.sort((a, b) => {
+    const valA = a.cells[colIndex].innerText.toLowerCase();
+    const valB = b.cells[colIndex].innerText.toLowerCase();
+    return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+  });
+
+  rows.forEach(row => table.tBodies[0].appendChild(row));
+  table.setAttribute("data-sort", asc ? "asc" : "desc");
+}
+
+// Search function
+document.getElementById("tableSearch").addEventListener("keyup", function() {
+  const filter = this.value.toLowerCase();
+  const rows = document.querySelectorAll("#employeeTable tbody tr");
+  rows.forEach(row => {
+    row.style.display = row.innerText.toLowerCase().includes(filter) ? "" : "none";
+  });
+});
+
+// Filter function
+document.getElementById("roleFilter").addEventListener("change", function() {
+  filterTable();
+});
+document.getElementById("statusFilter").addEventListener("change", function() {
+  filterTable();
+});
+
+function filterTable() {
+  const role = document.getElementById("roleFilter").value.toLowerCase();
+  const status = document.getElementById("statusFilter").value.toLowerCase();
+  const rows = document.querySelectorAll("#employeeTable tbody tr");
+
+  rows.forEach(row => {
+    const roleCell = row.cells[2].innerText.toLowerCase();
+    const statusCell = row.cells[4].innerText.toLowerCase();
+    const matchesRole = !role || roleCell === role;
+    const matchesStatus = !status || statusCell === status;
+    row.style.display = matchesRole && matchesStatus ? "" : "none";
+  });
+}
 /* ================= SEARCHABLE TABLE ================= */
 
 const searchInputs = document.querySelectorAll(".search-bar input");
