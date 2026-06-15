@@ -3,17 +3,14 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-2MA6VMYYVvj29u8vyj1hHR7Ql0e0r+r0upAcuAMpTyk=' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-59DSf8ibgAf62DKNbssPZLAorQ12ljj/TiQAhBwE+t8=' 'sha256-DrpYXEjcf6E+/nFiqEzIazbdspE5jR6UoQsRhF1xE9Y=' 'sha256-HCn3om7IStDFsOyxW3md66g95e8GCNiIscB/VoM6M1M=' 'sha256-KSl/Fno5nkdJ5UjYs0Pt9YaIUfUkR7LfC/lsmf0tJnc=' 'sha256-TwDEcncaO1RLUX+ZwNg/1wK+JzgExlPx3YuzCPyXAqY=' 'sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=' 'sha256-YZYLXHS7CCRWATiLZRIWLfEA8jRRbfQRVkmPKfkQyOs=' 'sha256-rfV+wQMvbfHAiuo0OdiNtzIFfH7Ndb5YZJd6RVJFACU=' 'sha256-v+NfeGO1A71Np6EAfXAuLX7Jmlo0HbIH2mbTZWTVb+M='; script-src-attr 'unsafe-hashes' 'sha256-2MA6VMYYVvj29u8vyj1hHR7Ql0e0r+r0upAcuAMpTyk=' 'sha256-4idOpfcVGcf1JIcDr6s5pmLauAMO9auB0wLw0b1hd9Y=' 'sha256-59DSf8ibgAf62DKNbssPZLAorQ12ljj/TiQAhBwE+t8=' 'sha256-DrpYXEjcf6E+/nFiqEzIazbdspE5jR6UoQsRhF1xE9Y=' 'sha256-HCn3om7IStDFsOyxW3md66g95e8GCNiIscB/VoM6M1M=' 'sha256-KSl/Fno5nkdJ5UjYs0Pt9YaIUfUkR7LfC/lsmf0tJnc=' 'sha256-TwDEcncaO1RLUX+ZwNg/1wK+JzgExlPx3YuzCPyXAqY=' 'sha256-XriXHWKMwk2T+JOvuAt7cij0Iacl5D/SqRKl7ZgDNZ4=' 'sha256-YZYLXHS7CCRWATiLZRIWLfEA8jRRbfQRVkmPKfkQyOs=' 'sha256-rfV+wQMvbfHAiuo0OdiNtzIFfH7Ndb5YZJd6RVJFACU=' 'sha256-v+NfeGO1A71Np6EAfXAuLX7Jmlo0HbIH2mbTZWTVb+M='; style-src 'self' https: 'unsafe-hashes' 'sha256-/mTTPvv1V4PMxtK3/acfsgZMBvyq/lExjZYTasJQeJM=' 'sha256-/uAJu74u5xVXg1o0rPNy33Hc2fxBQh/btht8PqSxqyU=' 'sha256-0Wdb+tGsfN8EU5Ve3K/dv1pOMYy0vw79+MGbiRADf6g=' 'sha256-1EaV/xA5Favm/78Xcb/YDQA1k2iDVSiGRUsmFWmV5nc=' 'sha256-264Cn0ZK/OcPoT+vEzNznDxA6m9TEQVaX6h9oxs/92U=' 'sha256-2XCNNQxDL+3waMs/PLBaq6d3dTOVHALPj3mJzFOyQ8c=' 'sha256-2bg4V/eMt5NMkHoxg9+y+O7/yfGoKaDqTb/bQAI6e7E=' 'sha256-3lsCdqXg+3iJZadioSwjb7B3qfEsz5jvjLUa/RM8VtE=' 'sha256-42rgBEvNzLK+pLw8/040LZ6EPVUZn1NKslSE0lNdMu8=' 'sha256-4jYqTp7wovN7YPkGjpMvXLzUoCMABYvS2IVZVaGxkGo=' 'sha256-4lCKki5Woi+zKxIzGyVguD+yxFUZkypgDAOeoT+/yw4=' 'sha256-4mesjJPBq4SUKhmrf0N5Mnw+ULmiWpyFbDccoij5orE=' 'sha256-5kT3IAm0rwf4+sFqPBqR/UsJXvPW485l6BalIPc0gVc=' 'sha256-6MpkwDHiuV2nH5fe6/VbI9YPz0YqaOIuhqMDFMfJ9Jo=' 'sha256-6YNBkN0gYWAAkdfk1XHqWNbMjmsJMT1Y0tAErRtQqyw=' 'sha256-8NxkDQOwv11BAesSEc+EHFfnFt/Z/aaYkhBAqg05+0k=' 'sha256-9LGvS5GnbnTRqp3xYSHcBz7fdZOkL2mwbFcrm8tzb0w=' 'sha256-CVbDoS5dpNLlmgfxaamNpriR9WoTXaum/+ifvFSLbVg=' 'sha256-CzQ+cAaUZl90SWDN8eFngvnpxcxpnLtcmEmfRbUHgZg=' 'sha256-DIwFd5r7ty5+8KavnV61JkYzZl0mQTY01wy4tGWzXQ8=' 'sha256-EUSXkmTg1mfXIxQZBfjLD4P7xbRmTjhYeQI7WiLJhYk=' 'sha256-ElpIcRaUB3MI/mNS+p/3uFF2feN+RdvyjtEae49OAGo=' 'sha256-FK+0xb5c5Th/N1DpBKTYIh/gwuySsbZE0u/vYJR71Pw=' 'sha256-GG/OFEGI+AQKCpoGGKE6Fgaids4OLvDxPPDSxTcdBdI=' 'sha256-GZ4kF1jhnkCW/3ntZwqUz1d1JTyvGBhOmcAqseaGCec=' 'sha256-Hpgy6ySBMLFvhf9n57NVbYSqSKne6nBTHPTrs1z5TAE=' 'sha256-IQZt37gtppv6sdXsjvgd6Y0/xCcdUSuLFCk+Dc6JK40=' 'sha256-JNcrczYrV0WnrsK8FLrbG1EwT98HVi9Bk5FaBpyXRkE=' 'sha256-Jdvzulb9YkZRI0DTy/RE8EPgRIc5A8JonszQp4l0Etc=' 'sha256-KCkN9QCpiKaOO5GWR/ZW43LY7MPlv6y2HBx4Vy6WOKU=' 'sha256-KdBVNhdxfgLzdVxVQgegkVSPUk/WkwFE1O1OvESo9CQ=' 'sha256-LT2xjag799sIECxxW0sP1+gF2Ad2K7kvr5zcntAQcLE=' 'sha256-M1QioGWT9PRTSaP7KOBemeRhixoAyvc2RpNbOJM7VRs=' 'sha256-MGyv7BV6loV3sL3AKLiwSem1DW1YhjltK8OITQvxahU=' 'sha256-Mzw8xlsxVeu81kVeVNrXvlAEhYBoCiiRPygB+OUSrz4=' 'sha256-OcIAR1VnCK5OTNBEYHcwLOzqGLuoRxQTqPHr0C3V+D8=' 'sha256-PXDll77v/US9HMSfQJECr7MExDn4rfNhFXLHSlZWiJc=' 'sha256-PznH64qIDFLad6D2Gga6EXRvy79VU0INhaFC5mIwD7g=' 'sha256-R89lzxKGh5+m18LoRI2JcaxtZaKLoa545ROgRweckro=' 'sha256-RmcxXqWdOg3gEaRO0TZaMRo5RIooRgR7+asuHxoMFLI=' 'sha256-S7GjgH2tX4M3m2C0o8Hd+X0BwW9c6XdE/6ZC7mgrJNE=' 'sha256-SMzW1QgollAy4NEavUhsDuq1+XVwy9ozXMUTIGaIR9g=' 'sha256-ScOBfE6g1pGQrTknWAK0dPxRaCaVV6pFo2COovFMKII=' 'sha256-T6AAKdWxO6p6GZVyzGAJDSLhOoPuuoZ6LlqMX153CvM=' 'sha256-TVKMHXTnzEoYKapP5waHIhb3gpzkSqa1qlziBueHRAM=' 'sha256-UTY5xy4+wLShuSbXIP6eKoJk1Vxx/qdOVVng4wFfsb4=' 'sha256-UXU3bPBZdyZnHJCx/oHCaXB+3XhCDkyraNbrefDtpi4=' 'sha256-UmvogffW9EtR0zvxPGbwS9d1kUdSEfWQCGNSaF5VCxw=' 'sha256-Wip0K7k0ITEEEVQ/Cehp9miPztahvw3lD3zENvCt834=' 'sha256-WkgB4PnZ6PH27xGLz4bHHyeAj7hH7tbtM4GdgW1ZiSE=' 'sha256-WvWyfj4CCccglh29TVK0Vc4shsefjjVitzOtjh+ZAow=' 'sha256-XK/kEX//P7CWq8mn2wcIKaRG7mvN5LAreJ1yhVlY8tU=' 'sha256-XqHzKXqiPjVkL7xxxxmiD2fjoi4pAe360PFonkucVnQ=' 'sha256-ZH/xulcqFTNAj0OK5Zn97qh2MFE1NBBqzjYQngPSWzU=' 'sha256-ajYt6GlF0sNf5t6tmpnEINKfDlA0Yhn8sR44N7mq814=' 'sha256-anDU456D/7+P3UbNCwIlAjpKkT1d9WuNbUIdkWIYLok=' 'sha256-b8lEnG3V4HGWRU5UlTHIG2FOjjUMYkRSAM19c+Myzyc=' 'sha256-bMQQC3ywx7DXcROMxjKA/f2FSscOqLKWuOmEQ7MNO90=' 'sha256-bor+FtiW0fsa/QY4jlWdSDCY6bAjsVOAO9RCPstnsD8=' 'sha256-cULg4SGqGNANno/9rFlRoPoNUWq5gpj/I6RclMJsqT0=' 'sha256-cVZbBJn/6j/IS9Z+AfXWnmvL2+PPcS4FjC5FQIM+K7U=' 'sha256-dBdxjJUHInjd7VJTS6oB1Na1KD/ACM+eHyTNQcvWzCc=' 'sha256-dH/1qNQbth0C23K51sM1U4c9vGYy48PmkkdbQ3E3Jl0=' 'sha256-dicAwtoUUoHbOBl9O8Gxph64bwr6FFwQ76FlIkN6Unk=' 'sha256-f24IBppRMwyWAqN3gEQJUhg3Z1zh0UoL12gA5S7xNVk=' 'sha256-gjdQvLZExyl9dIe8IDHzf3i2ZJU86Orq4PDP/KSr9G8=' 'sha256-h1OStX+hMhCkQDeYXEPtWtT6t9S2owDwJyjnnru6XdI=' 'sha256-hTB+Sc/FXxTprPJ1IbMDkMjbMvZSq9hJYRDNU9+VU/Y=' 'sha256-hVVb4uoHFxH4KPYFRZKjKc9CwCiUXCXyVkOVj5ezyF0=' 'sha256-hi/3YOTA8CyZLoE4dTneEsswVzqvNdiL23aLg/GkYv8=' 'sha256-hi6ZAnjOxf05JJDAYQCVC/7GpLqbm6+sN0ftIA7eZsM=' 'sha256-jddeT+VS7xM9zoYIRYwioTvBBsfGUrwpejr8PqDrTSI=' 'sha256-kBa95ilW5tGVk2KiVQOTAXz92eJQJ2vEH1zcJaQPDRY=' 'sha256-lSR/cL74G4J7zULIGiY+VkKmx23sO4Wbwf8a6EDn54k=' 'sha256-lSjGm0ivQ5SK4fYUkeGX6HJL1jdCCxiaBgiizBLIaEE=' 'sha256-lbV9XhSo7fIFIr8j9ztkNakae31r5FsNxKrePL7br64=' 'sha256-mad8NmXiJeNDWQEZjgVuo7hFMPpGwCgZoGFoQZ6Bzco=' 'sha256-mc4xFzd/23+P6vXizMTjKlHLQ+IwWj9LFyKN60eMGrA=' 'sha256-nie34Guxl6xhWuUBOS0DmrNtzkB7Huv2Ix3Z4rSxnFA=' 'sha256-nm8MGFm8845uciWZg6XyuPISObZqhva1/IRAqDfcixs=' 'sha256-o7HBduPXOKE1wtydcjg6AvE2WSinHWqLnl4kzeKVXp8=' 'sha256-obrfhCfPU9Hi9NHmwhleD3e8nyrDDotfpJHQ2YObt4s=' 'sha256-pNuWy1onGvLVbdFpAjK5cwKBQoDKsyHo2Y3lqnC8Z/I=' 'sha256-pfphWr72sGUp9Hs9s9CTOF6zHDDKENAXvm+e11NOtz0=' 'sha256-pxUrhWAyU0KW/gJBRY2WtmudJ9RN5OrUW9TCuFDGVAg=' 'sha256-rk1qig1SyOLXrdw3T/xQK0BLpZUM9UW0Zos/nczeIs0=' 'sha256-rnBYh+CNPqDwlI9weTHWK1u6RZpMkihv6fUUHlCEXV4=' 'sha256-sRzHuP5K6UYSYWo9CboIVBpPfn8FK+sbiF7Y1eQ6nT0=' 'sha256-tI/oUtuLve6pgJSHolA8zs1999pM8DvJ6S+vshNJwGw=' 'sha256-tRykCFiT3Ml6RYa+lvx0oPajVisz4H9OPysefk8UKgE=' 'sha256-tmo2t6EfMeMRDJYBJpgHkq7Ku481NH7PhgIdaauBIvo=' 'sha256-tqa+nnIw60D3zHpl0bfLaFTaK11xMSiR8POH9l1dg44=' 'sha256-txxD3sx9Jo92KbiooM6DGxVg99FW6DDRqxbNihJyUxY=' 'sha256-uqH2M1nsE9GhWiOvogfLM60FmnNzDqnMNbGNyuL3/U4=' 'sha256-v7kxb3btSvbGXWGlgkWLpJHtPaE67l9MGyl10WQbrY0=' 'sha256-vYQCATLEhEhz9P7ZWgKxJt1114v4P/FP71oXg1HHWj0=' 'sha256-wEQTmnMzNSmhbs8QnhE9J3qjmPXjbHvJ1zbcHLvvBOc=' 'sha256-xWu6EJdy6hICS1R8k2gUSFKkiS5Z/qWepS3OL+5OQxY=' 'sha256-xay5x8GI275nuIhYXrxeRdudiCHNjJJ7gYi9YyJfFc4=' 'sha256-ySeS0CBWMWd1U8+zWXrFqLHDx9z6ieMHZ8QWlrWOpVU=' 'sha256-ylUJQhfrUkOMB/7pfDxFDM2hyKzAgT+BgXmQ9N2JMog=' 'sha256-ziFpDe3K8e5PFbK2uSxQ3KolwmVhu2DEkDwnw9MF+cw='; style-src-attr 'unsafe-hashes' 'sha256-/mTTPvv1V4PMxtK3/acfsgZMBvyq/lExjZYTasJQeJM=' 'sha256-/uAJu74u5xVXg1o0rPNy33Hc2fxBQh/btht8PqSxqyU=' 'sha256-0Wdb+tGsfN8EU5Ve3K/dv1pOMYy0vw79+MGbiRADf6g=' 'sha256-1EaV/xA5Favm/78Xcb/YDQA1k2iDVSiGRUsmFWmV5nc=' 'sha256-264Cn0ZK/OcPoT+vEzNznDxA6m9TEQVaX6h9oxs/92U=' 'sha256-2XCNNQxDL+3waMs/PLBaq6d3dTOVHALPj3mJzFOyQ8c=' 'sha256-2bg4V/eMt5NMkHoxg9+y+O7/yfGoKaDqTb/bQAI6e7E=' 'sha256-3lsCdqXg+3iJZadioSwjb7B3qfEsz5jvjLUa/RM8VtE=' 'sha256-42rgBEvNzLK+pLw8/040LZ6EPVUZn1NKslSE0lNdMu8=' 'sha256-4jYqTp7wovN7YPkGjpMvXLzUoCMABYvS2IVZVaGxkGo=' 'sha256-4lCKki5Woi+zKxIzGyVguD+yxFUZkypgDAOeoT+/yw4=' 'sha256-4mesjJPBq4SUKhmrf0N5Mnw+ULmiWpyFbDccoij5orE=' 'sha256-5kT3IAm0rwf4+sFqPBqR/UsJXvPW485l6BalIPc0gVc=' 'sha256-6MpkwDHiuV2nH5fe6/VbI9YPz0YqaOIuhqMDFMfJ9Jo=' 'sha256-6YNBkN0gYWAAkdfk1XHqWNbMjmsJMT1Y0tAErRtQqyw=' 'sha256-8NxkDQOwv11BAesSEc+EHFfnFt/Z/aaYkhBAqg05+0k=' 'sha256-9LGvS5GnbnTRqp3xYSHcBz7fdZOkL2mwbFcrm8tzb0w=' 'sha256-CVbDoS5dpNLlmgfxaamNpriR9WoTXaum/+ifvFSLbVg=' 'sha256-CzQ+cAaUZl90SWDN8eFngvnpxcxpnLtcmEmfRbUHgZg=' 'sha256-DIwFd5r7ty5+8KavnV61JkYzZl0mQTY01wy4tGWzXQ8=' 'sha256-EUSXkmTg1mfXIxQZBfjLD4P7xbRmTjhYeQI7WiLJhYk=' 'sha256-ElpIcRaUB3MI/mNS+p/3uFF2feN+RdvyjtEae49OAGo=' 'sha256-FK+0xb5c5Th/N1DpBKTYIh/gwuySsbZE0u/vYJR71Pw=' 'sha256-GG/OFEGI+AQKCpoGGKE6Fgaids4OLvDxPPDSxTcdBdI=' 'sha256-GZ4kF1jhnkCW/3ntZwqUz1d1JTyvGBhOmcAqseaGCec=' 'sha256-Hpgy6ySBMLFvhf9n57NVbYSqSKne6nBTHPTrs1z5TAE=' 'sha256-IQZt37gtppv6sdXsjvgd6Y0/xCcdUSuLFCk+Dc6JK40=' 'sha256-JNcrczYrV0WnrsK8FLrbG1EwT98HVi9Bk5FaBpyXRkE=' 'sha256-Jdvzulb9YkZRI0DTy/RE8EPgRIc5A8JonszQp4l0Etc=' 'sha256-KCkN9QCpiKaOO5GWR/ZW43LY7MPlv6y2HBx4Vy6WOKU=' 'sha256-KdBVNhdxfgLzdVxVQgegkVSPUk/WkwFE1O1OvESo9CQ=' 'sha256-LT2xjag799sIECxxW0sP1+gF2Ad2K7kvr5zcntAQcLE=' 'sha256-M1QioGWT9PRTSaP7KOBemeRhixoAyvc2RpNbOJM7VRs=' 'sha256-MGyv7BV6loV3sL3AKLiwSem1DW1YhjltK8OITQvxahU=' 'sha256-Mzw8xlsxVeu81kVeVNrXvlAEhYBoCiiRPygB+OUSrz4=' 'sha256-OcIAR1VnCK5OTNBEYHcwLOzqGLuoRxQTqPHr0C3V+D8=' 'sha256-PXDll77v/US9HMSfQJECr7MExDn4rfNhFXLHSlZWiJc=' 'sha256-PznH64qIDFLad6D2Gga6EXRvy79VU0INhaFC5mIwD7g=' 'sha256-R89lzxKGh5+m18LoRI2JcaxtZaKLoa545ROgRweckro=' 'sha256-RmcxXqWdOg3gEaRO0TZaMRo5RIooRgR7+asuHxoMFLI=' 'sha256-S7GjgH2tX4M3m2C0o8Hd+X0BwW9c6XdE/6ZC7mgrJNE=' 'sha256-SMzW1QgollAy4NEavUhsDuq1+XVwy9ozXMUTIGaIR9g=' 'sha256-ScOBfE6g1pGQrTknWAK0dPxRaCaVV6pFo2COovFMKII=' 'sha256-T6AAKdWxO6p6GZVyzGAJDSLhOoPuuoZ6LlqMX153CvM=' 'sha256-TVKMHXTnzEoYKapP5waHIhb3gpzkSqa1qlziBueHRAM=' 'sha256-UTY5xy4+wLShuSbXIP6eKoJk1Vxx/qdOVVng4wFfsb4=' 'sha256-UXU3bPBZdyZnHJCx/oHCaXB+3XhCDkyraNbrefDtpi4=' 'sha256-UmvogffW9EtR0zvxPGbwS9d1kUdSEfWQCGNSaF5VCxw=' 'sha256-Wip0K7k0ITEEEVQ/Cehp9miPztahvw3lD3zENvCt834=' 'sha256-WkgB4PnZ6PH27xGLz4bHHyeAj7hH7tbtM4GdgW1ZiSE=' 'sha256-WvWyfj4CCccglh29TVK0Vc4shsefjjVitzOtjh+ZAow=' 'sha256-XK/kEX//P7CWq8mn2wcIKaRG7mvN5LAreJ1yhVlY8tU=' 'sha256-XqHzKXqiPjVkL7xxxxmiD2fjoi4pAe360PFonkucVnQ=' 'sha256-ZH/xulcqFTNAj0OK5Zn97qh2MFE1NBBqzjYQngPSWzU=' 'sha256-ajYt6GlF0sNf5t6tmpnEINKfDlA0Yhn8sR44N7mq814=' 'sha256-anDU456D/7+P3UbNCwIlAjpKkT1d9WuNbUIdkWIYLok=' 'sha256-b8lEnG3V4HGWRU5UlTHIG2FOjjUMYkRSAM19c+Myzyc=' 'sha256-bMQQC3ywx7DXcROMxjKA/f2FSscOqLKWuOmEQ7MNO90=' 'sha256-bor+FtiW0fsa/QY4jlWdSDCY6bAjsVOAO9RCPstnsD8=' 'sha256-cULg4SGqGNANno/9rFlRoPoNUWq5gpj/I6RclMJsqT0=' 'sha256-cVZbBJn/6j/IS9Z+AfXWnmvL2+PPcS4FjC5FQIM+K7U=' 'sha256-dBdxjJUHInjd7VJTS6oB1Na1KD/ACM+eHyTNQcvWzCc=' 'sha256-dH/1qNQbth0C23K51sM1U4c9vGYy48PmkkdbQ3E3Jl0=' 'sha256-dicAwtoUUoHbOBl9O8Gxph64bwr6FFwQ76FlIkN6Unk=' 'sha256-f24IBppRMwyWAqN3gEQJUhg3Z1zh0UoL12gA5S7xNVk=' 'sha256-gjdQvLZExyl9dIe8IDHzf3i2ZJU86Orq4PDP/KSr9G8=' 'sha256-h1OStX+hMhCkQDeYXEPtWtT6t9S2owDwJyjnnru6XdI=' 'sha256-hTB+Sc/FXxTprPJ1IbMDkMjbMvZSq9hJYRDNU9+VU/Y=' 'sha256-hVVb4uoHFxH4KPYFRZKjKc9CwCiUXCXyVkOVj5ezyF0=' 'sha256-hi/3YOTA8CyZLoE4dTneEsswVzqvNdiL23aLg/GkYv8=' 'sha256-hi6ZAnjOxf05JJDAYQCVC/7GpLqbm6+sN0ftIA7eZsM=' 'sha256-jddeT+VS7xM9zoYIRYwioTvBBsfGUrwpejr8PqDrTSI=' 'sha256-kBa95ilW5tGVk2KiVQOTAXz92eJQJ2vEH1zcJaQPDRY=' 'sha256-lSR/cL74G4J7zULIGiY+VkKmx23sO4Wbwf8a6EDn54k=' 'sha256-lSjGm0ivQ5SK4fYUkeGX6HJL1jdCCxiaBgiizBLIaEE=' 'sha256-lbV9XhSo7fIFIr8j9ztkNakae31r5FsNxKrePL7br64=' 'sha256-mad8NmXiJeNDWQEZjgVuo7hFMPpGwCgZoGFoQZ6Bzco=' 'sha256-mc4xFzd/23+P6vXizMTjKlHLQ+IwWj9LFyKN60eMGrA=' 'sha256-nie34Guxl6xhWuUBOS0DmrNtzkB7Huv2Ix3Z4rSxnFA=' 'sha256-nm8MGFm8845uciWZg6XyuPISObZqhva1/IRAqDfcixs=' 'sha256-o7HBduPXOKE1wtydcjg6AvE2WSinHWqLnl4kzeKVXp8=' 'sha256-obrfhCfPU9Hi9NHmwhleD3e8nyrDDotfpJHQ2YObt4s=' 'sha256-pNuWy1onGvLVbdFpAjK5cwKBQoDKsyHo2Y3lqnC8Z/I=' 'sha256-pfphWr72sGUp9Hs9s9CTOF6zHDDKENAXvm+e11NOtz0=' 'sha256-pxUrhWAyU0KW/gJBRY2WtmudJ9RN5OrUW9TCuFDGVAg=' 'sha256-rk1qig1SyOLXrdw3T/xQK0BLpZUM9UW0Zos/nczeIs0=' 'sha256-rnBYh+CNPqDwlI9weTHWK1u6RZpMkihv6fUUHlCEXV4=' 'sha256-sRzHuP5K6UYSYWo9CboIVBpPfn8FK+sbiF7Y1eQ6nT0=' 'sha256-tI/oUtuLve6pgJSHolA8zs1999pM8DvJ6S+vshNJwGw=' 'sha256-tRykCFiT3Ml6RYa+lvx0oPajVisz4H9OPysefk8UKgE=' 'sha256-tmo2t6EfMeMRDJYBJpgHkq7Ku481NH7PhgIdaauBIvo=' 'sha256-tqa+nnIw60D3zHpl0bfLaFTaK11xMSiR8POH9l1dg44=' 'sha256-txxD3sx9Jo92KbiooM6DGxVg99FW6DDRqxbNihJyUxY=' 'sha256-uqH2M1nsE9GhWiOvogfLM60FmnNzDqnMNbGNyuL3/U4=' 'sha256-v7kxb3btSvbGXWGlgkWLpJHtPaE67l9MGyl10WQbrY0=' 'sha256-vYQCATLEhEhz9P7ZWgKxJt1114v4P/FP71oXg1HHWj0=' 'sha256-wEQTmnMzNSmhbs8QnhE9J3qjmPXjbHvJ1zbcHLvvBOc=' 'sha256-xWu6EJdy6hICS1R8k2gUSFKkiS5Z/qWepS3OL+5OQxY=' 'sha256-xay5x8GI275nuIhYXrxeRdudiCHNjJJ7gYi9YyJfFc4=' 'sha256-ySeS0CBWMWd1U8+zWXrFqLHDx9z6ieMHZ8QWlrWOpVU=' 'sha256-ylUJQhfrUkOMB/7pfDxFDM2hyKzAgT+BgXmQ9N2JMog=' 'sha256-ziFpDe3K8e5PFbK2uSxQ3KolwmVhu2DEkDwnw9MF+cw='">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maps ? UIverse</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="map.css" />
-  </head>
+    <link rel="stylesheet" href="shared-sidebar.css">\n</head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
  
 
 <!-- ================= SIDEBAR ================= -->
@@ -25,6 +22,13 @@
 
           <nav class="sidebar-nav">
     <ul>
+      <li class="theme-toggle-item">
+        <button id="darkModeToggle" class="theme-toggle-sidebar" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+          <span>Theme</span>
+        </button>
+      </li>
+</ul>
       <li>
         <a href="index.html">
           <i class="fa-solid fa-house"></i>
@@ -333,29 +337,81 @@
       </li>
     </ul>
   </nav>
-</aside>
 
-<button
-    class="menu-toggle"
-    onclick="toggleSidebar()"
-    aria-label="Open navigation menu"
->
-    <i class="fa-solid fa-bars"></i>
-</button>
+  <div class="sidebar-footer">
+    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</aside>
 
 <!-- ================= SIDEBAR BACKDROP ================= -->
 <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
-  <header class="navbar">
-    <div class="search-bar">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search map components..." / data-a11y-remediation="label-needed">
-    </div>
-    <div class="nav-actions">
-      <button class="outline-btn">Docs</button>
-      <button class="primary-btn">Add Component</button>
-    </div>
-  </header>
+  <!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="navbar-brand">
+    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2L2 7V17L12 22L22 17V7L12 2z" stroke="#eb6835"></path>
+    </svg>
+    <span class="brand-text">Uiverse</span>
+  </div>
+  <div class="navbar-divider"></div>
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search components..." aria-label="Search components">
+  </div>
+  <div class="nav-right">
+    <a href="documentation.html" class="nav-btn docs-btn">Docs</a>
+    <a href="contribute.html" class="nav-btn add-btn">Add Component</a>
+    <button id="darkModeToggle" class="theme-toggle" title="Toggle Theme" onclick="toggleDarkMode()">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+  <script>
+    (function() {
+      // Search input enter key redirect
+      const navSearch = document.getElementById('searchInput');
+      if (navSearch) {
+        navSearch.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' && this.value.trim()) {
+            const q = encodeURIComponent(this.value.trim());
+            window.location.href = 'components/Discovery/component-discovery.html?q=' + q;
+          }
+        });
+      }
+      
+      // Fallback toggleDarkMode function if not defined globally by the page script
+      const toggleBtn = document.getElementById('darkModeToggle');
+      if (toggleBtn) {
+        if (typeof window.toggleDarkMode !== 'function') {
+          window.toggleDarkMode = function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            const icon = toggleBtn.querySelector('i');
+            if (icon) {
+              icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            }
+          };
+        }
+        
+        // Match initial theme icon class
+        const isDark = localStorage.getItem('theme') === 'dark' || document.body.classList.contains('dark-mode');
+        const icon = toggleBtn.querySelector('i');
+        if (icon && isDark) {
+          icon.className = 'fa-solid fa-sun';
+        }
+      }
+    })();
+  </script>
+</header>
 
   <main class="main-home">
     <section class="hero-section">
@@ -466,22 +522,21 @@
     </section>
   </main>
 
-<!-- ================= FOOTER ================= -->
+  <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
-
     <div class="footer-col brand">
       <h2 class="footer-logo">⬡ UIverse</h2>
       <p>Build modern, reusable UI components with clean HTML, CSS, and JavaScript.</p>
       <div class="socials">
-        <a href="#" title="GitHub">
-          <i class="fab fa-github"></i>
+        <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="UIverse on GitHub" title="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
         </a>
-        <a href="#" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
+        <a href="#" aria-label="UIverse on LinkedIn" title="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
-        <a href="#" title="Twitter">
-          <i class="fab fa-x-twitter"></i>
+        <a href="#" aria-label="UIverse on X (Twitter)" title="X / Twitter">
+          <i class="fab fa-x-twitter" aria-hidden="true"></i>
         </a>
       </div>
     </div>
@@ -497,15 +552,13 @@
       </ul>
     </div>
 
-    
-
     <div class="footer-col">
       <h3>Resources</h3>
       <ul>
-        <li><a href="#">Documentation</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">GitHub Repo</a></li>
-        <li><a href="#">Community</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="howtocontribute.html">Contribute</a></li>
+        <li><a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+        <li><a href="MyCollection.html">My Collection</a></li>
       </ul>
     </div>
 
@@ -514,7 +567,7 @@
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="#">License</a></li>
+        <li><a href="license.html">License</a></li>
       </ul>
     </div>
 
@@ -522,17 +575,37 @@
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="your@email.com" />
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input
+          id="newsletterEmail"
+          type="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+          aria-label="Email address for newsletter"
+        />
         <button type="button" onclick="subscribe()">Subscribe</button>
       </div>
     </div>
-
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+    <p>© 2026 UIverse. Made with <span aria-label="love">❤️</span> for developers worldwide.</p>
   </div>
 </footer>
+
+<script>
+  if (typeof subscribe !== 'function') {
+    function subscribe() {
+      const emailInput = document.getElementById("newsletterEmail");
+      if (emailInput && emailInput.value.trim()) {
+        alert("Thanks for subscribing with: " + emailInput.value.trim());
+        emailInput.value = "";
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    }
+  }
+</script>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="maps.js"></script>
@@ -545,15 +618,7 @@
       const block = document.getElementById(id);
       if (block) navigator.clipboard.writeText(block.innerText);
     }
-  
-function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("show");
-    document
-        .getElementById("sidebarBackdrop")
-        .classList.toggle("show");
-}
-
   </script>
-    <script src="dist/shared.js"></script>
+  <script src="maps.js"></script>
 </body>
 </html>
