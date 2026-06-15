@@ -946,3 +946,34 @@ body{
   font-size: 13px;
   color: #555;
 }
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+#scrollTopBtn:hover,
+#scrollTopBtn:focus {
+  background: #444;
+  outline: none;
+  transform: scale(1.1);
+}
+
+body.dark-mode #scrollTopBtn {
+  background: #111;
+  color: #eee;
+}
