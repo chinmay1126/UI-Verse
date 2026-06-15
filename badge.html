@@ -4,7 +4,7 @@
 <head>
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' sha256-TPk8Ptcfplaeg5545jpydJkNH+Iu/Em2h71VzHAP0o0=; script-src-attr 'unsafe-hashes' sha256-TPk8Ptcfplaeg5545jpydJkNH+Iu/Em2h71VzHAP0o0=; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-1lcnFn0nSEILtALog+Urr6SIA8OK/4AdAGePOZ1zzB8='; script-src-attr 'unsafe-hashes' 'sha256-1lcnFn0nSEILtALog+Urr6SIA8OK/4AdAGePOZ1zzB8='; style-src 'self' https: 'unsafe-hashes'; style-src-attr 'unsafe-hashes'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Badges — UIverse</title>
@@ -20,7 +20,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="badges.css">
-
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="badge.css">
 
   <!-- UIverse Modular CSS Architecture -->
   </head>
@@ -185,6 +186,7 @@
 
   </section>
 
+  <div class="badge-grid">
   <div class="badge-card">
   <div class="card-top">
     <span class="card-tag">Testing</span>
@@ -827,6 +829,7 @@ BADGE CARD — ACHIEVEMENT
     <button>Copy</button>
   </div>
 </div>
+  </div>
   <!-- =========================================================
        EARNED
   ========================================================= -->
@@ -845,10 +848,10 @@ BADGE CARD — ACHIEVEMENT
 
     </div>
 
-    <div class="badge-container">
+    <div class="earned-grid">
 
       <!-- CARD -->
-      <div class="badge">
+      <div class="earned-card">
 
         <div class="badge-icon purple">
           <i class="fa-solid fa-code-pull-request"></i>
@@ -868,7 +871,7 @@ BADGE CARD — ACHIEVEMENT
       </div>
 
       <!-- CARD -->
-      <div class="badge">
+      <div class="earned-card">
 
         <div class="badge-icon cyan">
           <i class="fa-solid fa-users"></i>
@@ -888,7 +891,7 @@ BADGE CARD — ACHIEVEMENT
       </div>
 
 <!-- Open Source Hero -->
-<div class="badge">
+<div class="earned-card">
 
   <div class="badge-icon gradient-blue">
     <i class="fa-brands fa-github"></i>
@@ -917,7 +920,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- Design Architect -->
-<div class="badge">
+<div class="earned-card">
 
   <div class="badge-icon gradient-purple">
     <i class="fa-solid fa-bezier-curve"></i>
@@ -942,7 +945,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- Bug Hunter -->
-<div class="badge">
+<div class="earned-card">
 
   <div class="badge-icon gradient-red">
     <i class="fa-solid fa-bug"></i>
@@ -967,7 +970,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- Mentor Badge -->
-<div class="badge">
+<div class="earned-card">
 
   <div class="badge-icon gradient-gold">
     <i class="fa-solid fa-user-graduate"></i>
@@ -992,7 +995,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- AI Innovator -->
-<div class="badge progress">
+<div class="progress-card">
 
   <div class="badge-icon gradient-cyan">
     <i class="fa-solid fa-robot"></i>
@@ -1021,7 +1024,7 @@ BADGE CARD — ACHIEVEMENT
 
 
 <!-- Global Rank -->
-<div class="badge locked premium">
+<div class="locked-card premium">
 
   <div class="badge-icon gradient-dark">
     <i class="fa-solid fa-globe"></i>
@@ -1039,7 +1042,7 @@ BADGE CARD — ACHIEVEMENT
 
 </div>
       <!-- CARD -->
-      <div class="badge">
+      <div class="earned-card">
 
         <div class="badge-icon orange">
           <i class="fa-solid fa-fire"></i>
@@ -1080,10 +1083,10 @@ BADGE CARD — ACHIEVEMENT
 
     </div>
 
-    <div class="badge-container">
+    <div class="progress-grid">
 
       <!-- CARD -->
-      <div class="badge progress">
+      <div class="progress-card">
 
         <div class="badge-icon green">
           <i class="fa-solid fa-trophy"></i>
@@ -1111,7 +1114,7 @@ BADGE CARD — ACHIEVEMENT
       </div>
 
       <!-- CARD -->
-      <div class="badge progress">
+      <div class="progress-card">
 
         <div class="badge-icon cyan">
           <i class="fa-solid fa-layer-group"></i>
@@ -1160,10 +1163,10 @@ BADGE CARD — ACHIEVEMENT
 
     </div>
 
-    <div class="badge-container">
+    <div class="locked-grid">
 
       <!-- CARD -->
-      <div class="badge locked">
+      <div class="locked-card">
 
         <div class="badge-icon red">
           <i class="fa-solid fa-lock"></i>
@@ -1182,7 +1185,7 @@ BADGE CARD — ACHIEVEMENT
       </div>
 
       <!-- CARD -->
-      <div class="badge locked">
+      <div class="locked-card">
 
         <div class="badge-icon purple">
           <i class="fa-solid fa-crown"></i>

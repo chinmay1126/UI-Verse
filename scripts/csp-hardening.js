@@ -28,28 +28,49 @@ function walk(dir, results = []) {
 }
 
 function hashValue(value) {
-  return `sha256-${crypto.createHash('sha256').update(value, 'utf8').digest('base64')}`;
+  return `'sha256-${crypto.createHash('sha256').update(value, 'utf8').digest('base64')}'`;
 }
 
 function collectHashes(html) {
+  // Strip HTML comments to avoid hashing commented-out elements/scripts
+  const cleanHtml = html.replace(/<!--[\s\S]*?-->/g, '');
+
+  // Reset global regex states for sequential run safety
+  INLINE_SCRIPT_RE.lastIndex = 0;
+  INLINE_STYLE_RE.lastIndex = 0;
+  STYLE_ATTR_RE.lastIndex = 0;
+  EVENT_ATTR_RE.lastIndex = 0;
+
   const scriptHashes = new Set();
   const styleHashes = new Set();
 
   let match;
-  while ((match = INLINE_SCRIPT_RE.exec(html)) !== null) {
-    scriptHashes.add(hashValue(match[1]));
+  while ((match = INLINE_SCRIPT_RE.exec(cleanHtml)) !== null) {
+    const code = match[1].replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    if (code.trim()) {
+      scriptHashes.add(hashValue(code));
+    }
   }
 
-  while ((match = INLINE_STYLE_RE.exec(html)) !== null) {
-    styleHashes.add(hashValue(match[1]));
+  while ((match = INLINE_STYLE_RE.exec(cleanHtml)) !== null) {
+    const style = match[1].replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    if (style.trim()) {
+      styleHashes.add(hashValue(style));
+    }
   }
 
-  while ((match = STYLE_ATTR_RE.exec(html)) !== null) {
-    styleHashes.add(hashValue(match[2] || match[3] || ''));
+  while ((match = STYLE_ATTR_RE.exec(cleanHtml)) !== null) {
+    const val = (match[2] || match[3] || '').trim();
+    if (val) {
+      styleHashes.add(hashValue(val));
+    }
   }
 
-  while ((match = EVENT_ATTR_RE.exec(html)) !== null) {
-    scriptHashes.add(hashValue(match[3] || match[4] || ''));
+  while ((match = EVENT_ATTR_RE.exec(cleanHtml)) !== null) {
+    const handler = (match[3] || match[4] || '').trim();
+    if (handler) {
+      scriptHashes.add(hashValue(handler));
+    }
   }
 
   return {
@@ -97,6 +118,19 @@ function insertOrReplaceMeta(html, policy) {
   return html.replace(headMatch[0], `${headMatch[0]}\n  ${metaTag}`);
 }
 
+
+function generateStyleHashes(content) {
+  const crypto = require('crypto');
+  const hashes = [];
+  const matches = content.match(/<style[^>]*>([\s\S]*?)<\/style>/gi) || [];
+  for (const styleTag of matches) {
+    const css = styleTag.replace(/<style[^>]*>|<\/style>/gi, '');
+    const hash = crypto.createHash('sha256').update(css).digest('base64');
+    hashes.push(`'sha256-${hash}'`);
+  }
+  return hashes;
+}
+    
 function processFile(htmlFile, checkOnly) {
   const original = fs.readFileSync(htmlFile, 'utf8');
   const { scriptHashes, styleHashes } = collectHashes(original);

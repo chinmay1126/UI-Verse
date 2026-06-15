@@ -4,7 +4,7 @@
   
   <link rel="stylesheet" href="dist/shared.css">
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes'; script-src-attr 'unsafe-hashes'; style-src 'self' https: 'unsafe-hashes' sha256-FyBi1uSLpmZDEoheD8kSbPjycd1pDJkfZABMqzuind0=; style-src-attr 'unsafe-hashes' sha256-FyBi1uSLpmZDEoheD8kSbPjycd1pDJkfZABMqzuind0=">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; connect-src 'self' https:; img-src 'self' data: https:; font-src 'self' data: https:; script-src 'self' https: 'unsafe-hashes' 'sha256-94olDJcVkJCZbCxbUjv95xJ3VREbK2breJMxcla/wFY='; script-src-attr 'unsafe-hashes' 'sha256-94olDJcVkJCZbCxbUjv95xJ3VREbK2breJMxcla/wFY='; style-src 'self' https: 'unsafe-hashes' 'sha256-n5FygEgJzDebY10uRs82PoDXX6qZ+Jx5Hdg5R3HAjho='; style-src-attr 'unsafe-hashes' 'sha256-n5FygEgJzDebY10uRs82PoDXX6qZ+Jx5Hdg5R3HAjho='">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Component Compare — UI-Verse</title>
   <style>
@@ -95,6 +95,24 @@
 
 </header>
   <script src="js/features/compare.js"></script>
+  <script src="js/features/code-diff.js"></script>
+  <script>
+    // Add a Code Diff button to the compare toolbar
+    document.addEventListener('DOMContentLoaded', () => {
+      const toolbar = document.querySelector('.toolbar .controls');
+      if (!toolbar) return;
+      const btn = document.createElement('button');
+      btn.textContent = '⇄ Code Diff';
+      btn.title = 'Open side-by-side code diff viewer';
+      btn.addEventListener('click', () => {
+        // Gather components from registry if available
+        if (window.CodeDiff) {
+          CodeDiff.open(0, 1);
+        }
+      });
+      toolbar.appendChild(btn);
+    });
+  </script>
     <script src="dist/shared.js"></script>
 </body>
 </html>
