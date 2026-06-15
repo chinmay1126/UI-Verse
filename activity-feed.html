@@ -13,6 +13,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+  <body>
   <!-- Page Styles -->
   <link rel="stylesheet" href="activity-feed.css" />
   <link rel="stylesheet" href="shared-sidebar.css">\n</head>
@@ -25,7 +26,13 @@
         <span class="brand-icon"><i class="fa-solid fa-wave-square"></i></span>
         <span class="brand-text">UIverse</span>
       </div>
-
+<li class="theme-toggle-item">
+        <button id="darkModeToggle" class="theme-toggle-sidebar" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+          <span>Theme</span>
+        </button>
+      </li>
+</ul>
       <nav class="sidebar-nav">
         <ul>
           <li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
@@ -495,7 +502,7 @@
 </script>
     </main>
   </div>
-  <script src="dist/shared.js"></script>
+  <script src="activity.js"></script>
 </body>
 
 </html>
