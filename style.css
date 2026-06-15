@@ -7510,8 +7510,8 @@ body{
   }
 
 }
-.menu-toggle {
-  display: none;
+.menu-toggle, .menu-toggle-btn {
+  display: block !important;
   background: none;
   border: none;
   font-size: 22px;
@@ -7520,8 +7520,8 @@ body{
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  .menu-toggle, .menu-toggle-btn {
+    display: block !important;
   }
 
   .sidebar nav {
@@ -7597,3 +7597,9 @@ body{
 }
 .hidden { display: none; }
 .cat-card.hide { display: none; }
+
+/* Compatibility class for inline toggle scripts */
+.sidebar-backdrop.visible {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
