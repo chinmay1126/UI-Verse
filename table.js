@@ -204,3 +204,22 @@ window.addEventListener(
 
   }
 );
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "flex";
+    scrollTopBtn.style.opacity = "1";
+  } else {
+    scrollTopBtn.style.display = "none";
+    scrollTopBtn.style.opacity = "0";
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
