@@ -57,6 +57,12 @@ const Bootstrap = {
     if (typeof ComponentIndex !== 'undefined') {
       UIverse.register('ComponentIndex', ComponentIndex, dependenciesFor('ComponentIndex'));
     }
+    if (typeof NavigationShortcuts !== 'undefined') {
+  UIverse.register(
+    'NavigationShortcuts',
+    NavigationShortcuts
+  );
+}
 
     if (typeof ComponentRecommendations !== 'undefined') {
       UIverse.register('ComponentRecommendations', ComponentRecommendations, dependenciesFor('ComponentRecommendations'));
@@ -115,6 +121,15 @@ const Bootstrap = {
     if (typeof CommandPalette !== 'undefined') {
       UIverse.register('CommandPalette', CommandPalette, dependenciesFor('CommandPalette'));
     }
+    if (
+  typeof PreviewZoom !==
+  'undefined'
+) {
+  UIverse.register(
+    'PreviewZoom',
+    PreviewZoom
+  );
+}
 
     if (typeof URLStateManager !== 'undefined') {
       UIverse.register('URLStateManager', URLStateManager);
@@ -152,9 +167,29 @@ const Bootstrap = {
       UIverse.register('BundleExporterUI', BundleExporterUI, dependenciesFor('BundleExporterUI'), { domSelector: '.component-card' });
     }
 
+    if (typeof ComponentRatings !== 'undefined') {
+      UIverse.register('ComponentRatings', ComponentRatings, [], { domSelector: '.component-card' });
+    }
+
+    if (typeof MarketplaceFeeds !== 'undefined') {
+      UIverse.register('MarketplaceFeeds', MarketplaceFeeds);
+    }
+
+    if (typeof CreatorProfile !== 'undefined') {
+      UIverse.register('CreatorProfile', CreatorProfile, [], { domSelector: '.component-card' });
+    }
+
+    if (typeof SubmissionPortal !== 'undefined') {
+      UIverse.register('SubmissionPortal', SubmissionPortal);
+    }
+
     if (typeof Recent !== 'undefined') {
       UIverse.register('Recent', Recent);
     }
+
+    if (typeof TagFilter !== 'undefined') {
+  UIverse.register('TagFilter', TagFilter);
+}
 
     if (typeof TutorialMode !== 'undefined') {
       UIverse.register('TutorialMode', TutorialMode);
