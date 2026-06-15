@@ -39,7 +39,7 @@
     <ul>
 
       <li>
-        <a href="index.html">
+        <a href="index.html"  data-title="Home">
           <i class="fa-solid fa-house"></i>
           <span>Home</span>
         </a>
@@ -70,7 +70,7 @@
 
   </nav>
 
-  <div class="sidebar-footer">
+  <!-- <div class="sidebar-footer">
 
     <a href="#">
       <i class="fab fa-github"></i>
@@ -84,7 +84,12 @@
       <i class="fab fa-x-twitter"></i>
     </a>
 
-  </div>
+  </div> -->
+  <div class="nav-social">
+  <a href="#"><i class="fab fa-github"></i></a>
+  <a href="#"><i class="fab fa-linkedin"></i></a>
+  <a href="#"><i class="fab fa-x-twitter"></i></a>
+</div>
 
 </aside>
 
@@ -459,6 +464,14 @@ git push origin feature/new-component
 </footer>
 
 <script>
+  
+const sidebar = document.getElementById("sidebar");
+const menuToggle = document.querySelector(".menu-toggle");
+
+menuToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("collapsed");
+});
+
 
 const toggle =
   document.getElementById("darkModeToggle");
