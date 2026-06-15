@@ -103,14 +103,14 @@
     </nav>
     
     <div class="sidebar-footer">
-      <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="UIverse on GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+      <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener noreferrer" aria-label="UIverse on GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
       <a href="#" aria-label="UIverse on LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
       <a href="#" aria-label="UIverse on X (Twitter)" title="X / Twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
     </div>
   </aside>
 
   <!-- SIDEBAR MOBILITY INTERCEPTOR LAYER SHIELD -->
-  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="runtimeToggleSidebar()"></div>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" tabindex="0" role="button" onclick="runtimeToggleSidebar()" onkeydown="if(event.key === 'Enter' || event.key === ' ') { runtimeToggleSidebar(); }"></div>
 
   <!-- =========================================================
      TOP FLUID CONTAINER STICKY PLATFORM NAVBAR
@@ -455,28 +455,28 @@
         <div class="tech-stack-widget">
           <div class="tech-grid-layout">
             <div class="tech-item-node" style="--glow-color: rgba(97, 218, 251, 0.15);">
-              <div class="tech-icon-wrapper"><i class="fab fa-react" style="color: #61dafb;"></i></div>
+              <div class="tech-icon-wrapper"><i class="fab fa-react text-primary"></i></div>
               <div class="tech-details-block">
                 <h4>React Core</h4>
                 <span class="project-badge-tag">12 Active Projects</span>
               </div>
             </div>
             <div class="tech-item-node" style="--glow-color: rgba(49, 120, 198, 0.15);">
-              <div class="tech-icon-wrapper"><i class="fa-solid fa-code" style="color: #3178c6;"></i></div>
+              <div class="tech-icon-wrapper"><i class="fa-solid fa-code text-primary"></i></div>
               <div class="tech-details-block">
                 <h4>TypeScript Shell</h4>
                 <span class="project-badge-tag">18 Active Projects</span>
               </div>
             </div>
             <div class="tech-item-node" style="--glow-color: rgba(104, 160, 99, 0.15);">
-              <div class="tech-icon-wrapper"><i class="fab fa-node-js" style="color: #68a063;"></i></div>
+              <div class="tech-icon-wrapper"><i class="fab fa-node-js text-primary"></i></div>
               <div class="tech-details-block">
                 <h4>NodeJS Server</h4>
                 <span class="project-badge-tag">8 Active Projects</span>
               </div>
             </div>
             <div class="tech-item-node" style="--glow-color: rgba(51, 103, 145, 0.15);">
-              <div class="tech-icon-wrapper"><i class="fa-solid fa-database" style="color: #336791;"></i></div>
+              <div class="tech-icon-wrapper"><i class="fa-solid fa-database text-primary"></i></div>
               <div class="tech-details-block">
                 <h4>PostgreSQL Matrix</h4>
                 <span class="project-badge-tag">6 Active Projects</span>
@@ -857,7 +857,7 @@
         <h2 class="footer-logo">⬡ UIverse Ecosystem</h2>
         <p>Architecting fine structural user interface layers utilizing standard low-latency layout variables, geometric spacing matrices, and secure core scripts guidelines[cite: 36].</p>
         <div class="socials">
-          <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener" aria-label="UIverse on GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://github.com/tushar-sonawane06/UI-Verse" target="_blank" rel="noopener noreferrer" aria-label="UIverse on GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
           <a href="#" aria-label="UIverse on LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
           <a href="#" aria-label="UIverse on X (Twitter)" title="X / Twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
         </div>

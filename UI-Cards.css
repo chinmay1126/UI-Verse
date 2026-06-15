@@ -2,25 +2,25 @@
   --sidebar-width: 240px;
 }
 
-body {
-  height: auto !important;
-  min-height: 100vh !important;
-  background-color: #f9fafb !important;
+html body {
+  height: auto;
+  min-height: 100vh;
+  background-color: #f9fafb;
 }
 
-body.dark-mode {
-  background-color: #0b0f19 !important;
+html body.dark-mode {
+  background-color: #0b0f19;
 }
-.main {
+body .main {
   margin-left: var(--sidebar-width);
   margin-top: 70px;
   padding: 40px;
   min-height: calc(100vh - 70px);
-  background: #f9fafb !important;
+  background: #f9fafb;
   transition: background 0.3s ease;
 }
-body.dark-mode .main {
-  background: #0b0f19 !important;
+html body.dark-mode .main {
+  background: #0b0f19;
 }
 .page-header {
   text-align: center;
@@ -63,17 +63,17 @@ body.dark-mode .page-header p {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-body.dark-mode .component-card {
-  background: #111827 !important;
-  border-color: #1f2937 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+html body.dark-mode .component-card {
+  background: #111827;
+  border-color: #1f2937;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 .component-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
-body.dark-mode .component-card:hover {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+html body.dark-mode .component-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 .component-card h3 {
   font-family: 'Poppins', sans-serif;
@@ -82,8 +82,8 @@ body.dark-mode .component-card:hover {
   color: #111827;
   margin: 0;
 }
-body.dark-mode .component-card h3 {
-  color: #f3f4f6 !important;
+html body.dark-mode .component-card h3 {
+  color: #f3f4f6;
 }
 .card-dev {
   position: relative;
@@ -586,16 +586,16 @@ body.dark-mode .card-tech-text {
   color: #374151;
   border: 1px solid #e5e7eb;
 }
-body.dark-mode .view-btn {
-  background: #374151 !important;
-  color: #f3f4f6 !important;
-  border-color: #4b5563 !important;
+html body.dark-mode .view-btn {
+  background: #374151;
+  color: #f3f4f6;
+  border-color: #4b5563;
 }
 .view-btn:hover {
   background: #e5e7eb;
 }
-body.dark-mode .view-btn:hover {
-  background: #4b5563 !important;
+html body.dark-mode .view-btn:hover {
+  background: #4b5563;
 }
 .copy-btn {
   background: #eb6835;
