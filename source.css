@@ -46,6 +46,133 @@ body{
   min-height:100vh;
 }
 
+/* SIDEBAR */
+
+.sidebar{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:240px;
+  height:100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #050816,
+      #0d1226
+    );
+
+  border-right:
+    1px solid var(--border);
+
+  padding:24px 18px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.sidebar-brand{
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  margin-bottom:40px;
+}
+
+.brand-icon{
+
+  width:46px;
+  height:46px;
+
+  border-radius:16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent),
+      var(--accent2)
+    );
+}
+
+.brand-text{
+
+  font-size:28px;
+
+  font-family:'Syne',sans-serif;
+
+  font-weight:800;
+}
+
+.sidebar-nav{
+
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.sidebar-nav a{
+
+  text-decoration:none;
+
+  color:#9aa4bf;
+
+  padding:15px 18px;
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  transition:var(--transition);
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav .active{
+
+  background:
+    rgba(255,255,255,.06);
+
+  color:white;
+}
+
+.sidebar-footer{
+
+  display:flex;
+  gap:12px;
+}
+
+.sidebar-footer a{
+
+  width:44px;
+  height:44px;
+
+  border-radius:14px;
+
+  background:
+    rgba(255,255,255,.05);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:white;
+
+  text-decoration:none;
+}
+
 /* =========================================================
    NAVBAR
 ========================================================= */
