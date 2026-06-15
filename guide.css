@@ -343,6 +343,35 @@ a {
   }
 }
 
+@media(max-width:700px){
+
+  .hero{
+    padding:40px 24px;
+  }
+
+  .hero h1{
+    font-size:2.3rem;
+  }
+
+  .hero p{
+    font-size:1rem;
+  }
+
+  .main{
+    padding:20px;
+  }
+
+  .doc-block{
+    padding:26px;
+  }
+
+  .doc-cta{
+    padding:45px 24px;
+  }
+
+  .doc-cta h3{
+    font-size:1.7rem;
+  }
 .step h4{
   font-size:1.1rem;
 }
