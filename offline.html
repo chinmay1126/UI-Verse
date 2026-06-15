@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Offline / 404 — Premium UI-Verse</title>
+  <link rel="stylesheet" href="offline.css">
 
   <style>
     /* --- CSS DESIGN SYSTEM & VARIABLES --- */
@@ -373,12 +374,20 @@
 
     <nav class="sidebar-nav" role="navigation" aria-label="Main sidebar navigation">
       <ul>
+        <li class="theme-toggle-item">
+        <button id="darkModeToggle" class="theme-toggle-sidebar" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+          <span>Theme</span>
+        </button>
+      </li>
+
         <li>
           <a href="index.html">
             <i class="fa-solid fa-house"></i>
             <span>Home</span>
           </a>
         </li>
+
         <li>
           <a href="button.html">
             <i class="fa-solid fa-hand-pointer"></i>
@@ -1200,5 +1209,6 @@
       collectDiagnosticsData();
     })();
   </script>
+  <script src="offline.js"></script>
 </body>
 </html>
