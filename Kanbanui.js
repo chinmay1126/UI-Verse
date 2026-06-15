@@ -82,90 +82,65 @@ const todoColumn =
     "todo"
   );
 
+// Subscribe to state manager to render updates
+if (typeof UIVerseStateManager !== 'undefined') {
+  UIVerseStateManager.subscribe('kanban.tasks', (tasks) => {
+    if (!tasks) return;
+    const lastTask = tasks[tasks.length - 1];
+    if (lastTask && !document.getElementById(`task-${lastTask.id}`)) {
+      renderTaskToBoard(lastTask);
+    }
+  });
+}
+
+function renderTaskToBoard(taskData) {
+  const task = document.createElement("div");
+  task.id = `task-${taskData.id}`;
+  task.classList.add("task-card");
+  task.setAttribute("draggable", "true");
+  task.innerHTML = `
+    <div class="task-top">
+      <span class="task-badge ui">New</span>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <h3>${taskData.title}</h3>
+    <p>${taskData.description}</p>
+    <div class="task-footer">
+      <div class="task-users">
+        <img src="https://i.pravatar.cc/100?img=52" alt="">
+      </div>
+      <span>Today</span>
+    </div>
+  `;
+
+  todoColumn.appendChild(task);
+
+  // Re-attach drag listeners to the new element
+  task.addEventListener("dragstart", () => {
+    task.classList.add("dragging");
+  });
+
+  task.addEventListener("dragend", () => {
+    task.classList.remove("dragging");
+  });
+}
+
 addBtn.addEventListener(
   "click",
   ()=>{
-
-    const task =
-      document.createElement(
-        "div"
-      );
-
-    task.classList.add(
-      "task-card"
-    );
-
-    task.setAttribute(
-      "draggable",
-      "true"
-    );
-
-    task.innerHTML = `
-
-      <div class="task-top">
-
-        <span class="task-badge ui">
-          New
-        </span>
-
-        <i class="fa-solid fa-star"></i>
-
-      </div>
-
-      <h3>
-        New UIverse Task
-      </h3>
-
-      <p>
-        Create another premium
-        component for the platform.
-      </p>
-
-      <div class="task-footer">
-
-        <div class="task-users">
-
-          <img
-            src="https://i.pravatar.cc/100?img=52"
-            alt=""
-          >
-
-        </div>
-
-        <span>
-          Today
-        </span>
-
-      </div>
-
-    `;
-
-    todoColumn.appendChild(
-      task
-    );
-
-    task.addEventListener(
-      "dragstart",
-      ()=>{
-
-        task.classList.add(
-          "dragging"
-        );
-
-      }
-    );
-
-    task.addEventListener(
-      "dragend",
-      ()=>{
-
-        task.classList.remove(
-          "dragging"
-        );
-
-      }
-    );
-
+    // Dispatch state update to match implementation
+    if (typeof UIVerseStateManager !== 'undefined') {
+      const currentTasks = UIVerseStateManager.getState('kanban.tasks', []);
+      UIVerseStateManager.setState('kanban.tasks', [
+        ...currentTasks,
+        { 
+          id: Date.now(), 
+          title: 'New UIverse Task', 
+          description: 'Create another premium component for the platform.',
+          status: 'todo' 
+        }
+      ]);
+    }
   }
 );
 
