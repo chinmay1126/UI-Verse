@@ -514,9 +514,9 @@
       </div>
 
       <div class="term-card">
-        <button class="collapsible" aria-expanded="false">
-          <h3><i class="fa-solid fa-circle-info"></i> Introduction</h3>
-          <i class="fa-solid fa-chevron-down icon"></i>
+        <button class="collapsible" aria-expanded="false" aria-controls="introContent">
+          <h3 id="introHeading"><i class="fa-solid fa-circle-info"></i> Introduction</h3>
+          <i class="fa-solid fa-chevron-down icon" aria-hidden="true"></i>
         </button>
         <div class="content" hidden>
           <p>By accessing UIverse, you agree to these Terms & Conditions.</p>
@@ -616,9 +616,9 @@
 
 
       <div class="term-card">
-        <button class="collapsible" aria-expanded="false">
-          <h3><i class="fa-solid fa-circle-info"></i> Website Usage</h3>
-          <i class="fa-solid fa-chevron-down icon"></i>
+        <button class="collapsible" aria-expanded="false" aria-controls="introContent">
+          <h3 id="introHeading"><i class="fa-solid fa-circle-info"></i> Website Usage</h3>
+          <i class="fa-solid fa-chevron-down icon" aria-hidden="true"></i>
         </button>
         <div class="content" hidden>
           <p>Do not misuse or disrupt platform functionality.</p>
@@ -627,9 +627,9 @@
 
 
       <div class="term-card">
-        <button class="collapsible" aria-expanded="false">
-          <h3><i class="fa-solid fa-circle-info"></i> User Accounts</h3>
-          <i class="fa-solid fa-chevron-down icon"></i>
+        <button class="collapsible" aria-expanded="false" aria-controls="introContent">
+          <h3 id="introHeading"><i class="fa-solid fa-circle-info"></i> User Accounts</h3>
+          <i class="fa-solid fa-chevron-down icon" aria-hidden="true"></i>
         </button>
         <div class="content" hidden>
           <p>You are responsible for securing your account credentials.</p>
@@ -637,9 +637,9 @@
       </div>
 
       <div class="term-card">
-        <button class="collapsible" aria-expanded="false">
-          <h3><i class="fa-solid fa-circle-info"></i> Intellectual Property</h3>
-          <i class="fa-solid fa-chevron-down icon"></i>
+        <button class="collapsible" aria-expanded="false" aria-controls="introContent">
+          <h3 id="introHeading"><i class="fa-solid fa-circle-info"></i> Intellectual Property</h3>
+          <i class="fa-solid fa-chevron-down icon" aria-hidden="true"></i>
         </button>
         <div class="content" hidden>
           <p>All UIverse assets remain protected intellectual property.</p>
@@ -648,9 +648,9 @@
 
 
       <div class="term-card">
-        <button class="collapsible" aria-expanded="false">
-          <h3><i class="fa-solid fa-circle-info"></i> Limitation of Liability</h3>
-          <i class="fa-solid fa-chevron-down icon"></i>
+        <button class="collapsible" aria-expanded="false" aria-controls="introContent">
+          <h3 id="introHeading"><i class="fa-solid fa-circle-info"></i> Limitation of Liability</h3>
+          <i class="fa-solid fa-chevron-down icon" aria-hidden="true"></i>
         </button>
         <div class="content" hidden>
           <p>UIverse is not responsible for damages or service interruptions.</p>
@@ -831,6 +831,23 @@ const icon = toggle.querySelector('i');
         }
       });
     });
+
+    document.querySelectorAll(".collapsible").forEach(button => {
+  button.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", !expanded);
+
+    const contentId = button.getAttribute("aria-controls");
+    const content = document.getElementById(contentId);
+
+    if (expanded) {
+      content.hidden = true;
+    } else {
+      content.hidden = false;
+    }
+  });
+});
+
 
   </script>
 

@@ -937,6 +937,11 @@ body.light-mode .newsletter-form input { background-color: #ffffff; }
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+.collapsible:focus {
+  outline: 3px solid #ff6600;
+  outline-offset: 2px;
 @media (max-width: 640px) {
   .footer-container { grid-template-columns: 1fr; }
   .brand-column, .newsletter-column { grid-column: span 1; }
