@@ -99,6 +99,126 @@
       font-style: italic;
     }
 
+    /* Overlay background */
+    .command-palette-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      display: none;
+      /* hidden until opened */
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    /* Palette container */
+    .command-palette-container {
+      background: #fff;
+      border-radius: 10px;
+      width: 600px;
+      max-width: 90%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Input wrapper */
+    .command-palette-input-wrapper {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .command-palette-input-wrapper i {
+      margin-right: 10px;
+      color: #888;
+    }
+
+    .command-palette-input {
+      flex: 1;
+      border: none;
+      font-size: 16px;
+      outline: none;
+      padding: 8px;
+    }
+
+    /* Results list */
+    .command-palette-results {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .command-palette-results li {
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .command-palette-results li:hover,
+    .command-palette-results li.active,
+    .command-palette-results li:focus {
+      background: #f0f0f0;
+    }
+
+    /* Highlighted text */
+    .highlight {
+      background: #ffeb99;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+
+    /* No results message */
+    .no-results {
+      padding: 12px;
+      text-align: center;
+      color: #999;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .command-palette-footer {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .command-palette-footer-kbd {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    /* Dark mode support */
+    body.dark-mode .command-palette-container {
+      background: #222;
+      color: #ddd;
+    }
+
+    body.dark-mode .command-palette-input {
+      background: #333;
+      color: #fff;
+    }
+
+    body.dark-mode .command-palette-results li:hover,
+    body.dark-mode .command-palette-results li.active {
+      background: #444;
+    }
+
+    body.dark-mode .command-palette-footer {
+      border-top: 1px solid #444;
+      color: #aaa;
+    }
+
+
     .command-palette-results li.active {
       background: #f0f0f0;
     }
@@ -1067,46 +1187,6 @@
         li.addEventListener("click", () => {
           input.value = item;
           resultsList.innerHTML = "";
-        });
-
-        resultsList.appendChild(li);
-      });
-    }
-
-    input.addEventListener("input", updateResults);
-
-    const input = document.getElementById("commandPaletteInput");
-    const resultsList = document.getElementById("commandPaletteResults");
-    let activeIndex = -1;
-
-    function updateResults() {
-      const query = input.value.trim().toLowerCase();
-      resultsList.innerHTML = "";
-      input.setAttribute("aria-expanded", "false");
-
-      if (!query) return;
-
-      const matches = components.filter(item =>
-        item.toLowerCase().includes(query)
-      );
-
-      if (matches.length === 0) {
-        resultsList.innerHTML = `<li class="no-results">No results found</li>`;
-        return;
-      }
-
-      input.setAttribute("aria-expanded", "true");
-
-      matches.forEach((item, index) => {
-        const li = document.createElement("li");
-        li.setAttribute("role", "option");
-        li.tabIndex = -1;
-        li.textContent = item;
-
-        li.addEventListener("click", () => {
-          input.value = item;
-          resultsList.innerHTML = "";
-          input.setAttribute("aria-expanded", "false");
         });
 
         resultsList.appendChild(li);
