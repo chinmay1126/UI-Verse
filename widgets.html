@@ -110,7 +110,7 @@
   </aside>
 
   <!-- SIDEBAR MOBILITY INTERCEPTOR LAYER SHIELD -->
-  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="runtimeToggleSidebar()"></div>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" tabindex="0" role="button" onclick="runtimeToggleSidebar()" onkeydown="if(event.key === 'Enter' || event.key === ' ') { runtimeToggleSidebar(); }"></div>
 
   <!-- =========================================================
      TOP FLUID CONTAINER STICKY PLATFORM NAVBAR
