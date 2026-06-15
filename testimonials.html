@@ -389,7 +389,9 @@
       Discover premium, responsive testimonial card layouts styled with advanced glassmorphism, glowing borders, neo-brutalism, interactive 3D transforms, and minimalist elegance.
     </p>
   </div>
-  <div class="testimonial-grid">
+  <div class="testimonial-carousel">
+   <div class="carousel-track">
+    <div class="carousel-slide active">
     <div class="component-card">
       <h3>Glassmorphism Glow Card</h3>
       <div class="t-card-glass">
@@ -443,6 +445,7 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
     </div>
+    <div class="carousel-slide">
     <div class="component-card">
       <h3>Gradient Border Card</h3>
       <div class="t-card-gradient">
@@ -494,6 +497,7 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
     </div>
+    <div class="carousel-slide">
 
 
     <div class="component-card">
@@ -547,6 +551,7 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
     </div>
+    <div class="carousel-slide">
     <div class="component-card">
       <h3>Avatar Pop Card</h3>
       <div class="t-card-pop">
@@ -598,6 +603,7 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
     </div>
+    <div class="carousel-slide">
     <div class="component-card">
       <h3>3D Perspective Card</h3>
       <div class="t-card-skew">
@@ -651,6 +657,7 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
     </div>
+    <div class="carousel-slide">
     <div class="component-card">
       <h3>Minimal Premium Card</h3>
       <div class="t-card-minimal">
@@ -1018,7 +1025,16 @@
 &lt;/div&gt;</pre>
     </div>
   </div>
+  </div>
 </main>
+
+<div class="carousel-nav">
+    <button class="prev-btn">❮</button>
+    <div class="dots"></div>
+    <button class="next-btn">❯</button>
+  </div>
+</section>
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-container">
@@ -1091,6 +1107,64 @@
 </footer>
 
 <script>
+  const slides = document.querySelectorAll(".carousel-slide");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const dotsContainer = document.querySelector(".dots");
+
+let currentIndex = 0;
+let autoSlideInterval;
+
+// Create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement("button");
+  if (i === 0) dot.classList.add("active");
+  dot.addEventListener("click", () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+});
+
+function updateSlides() {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === currentIndex);
+  });
+  dotsContainer.querySelectorAll("button").forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentIndex);
+  });
+}
+
+function goToSlide(index) {
+  currentIndex = index;
+  updateSlides();
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlides();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlides();
+}
+
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+// Auto-slide every 4s
+function startAutoSlide() {
+  autoSlideInterval = setInterval(nextSlide, 4000);
+}
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+document.querySelector(".testimonial-carousel").addEventListener("mouseenter", stopAutoSlide);
+document.querySelector(".testimonial-carousel").addEventListener("mouseleave", startAutoSlide);
+
+startAutoSlide();
+
+</script>
+<script src="js/core/utils.js"></script>
   if (typeof subscribe !== 'function') {
     function subscribe() {
       const emailInput = document.getElementById("newsletterEmail");
