@@ -31,6 +31,12 @@ html {
   --input-border: #d0d0d0;
   --input-text: #000000;
   --accent-color: #eb6839;
+
+  /* Z-Index Scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-modal: 1050;
+  --z-toast: 1090;
 }
 
 html.dark-mode {
