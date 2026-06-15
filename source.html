@@ -889,6 +889,13 @@
 
 <script src="source.js"></script>
 
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">GitHub Repo</a></li>
+        <li><a href="#">Community</a></li>
   <script src="dist/shared.js"></script>
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
@@ -935,6 +942,7 @@
       <ul>
         <li><a href="privacypolicy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="#">License</a></li>
         <li><a href="license.html">License</a></li>
       </ul>
     </div>
@@ -943,6 +951,43 @@
       <h3>Stay Updated</h3>
       <p>Get notified when new components drop.</p>
       <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 UIverse. Made with ❤️ for developers worldwide.</p>
+  </div>
+</footer>
+
+<script src="source.js"></script>
+<button id="scrollTopBtn" aria-label="Back to top">⬆</button>
+
+<script>
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "flex";
+    scrollTopBtn.style.opacity = "1";
+  } else {
+    scrollTopBtn.style.display = "none";
+    scrollTopBtn.style.opacity = "0";
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+</script>
+</body>
         <label for="newsletterEmail" class="sr-only">Email address</label>
         <input
           id="newsletterEmail"
