@@ -58,6 +58,8 @@
 * 🌙 Upcoming Dark Mode support
 * 📱 Fully responsive UI improvements
 
+For a complete list of available CSS root variables and color mappings, please refer to the CSS Variables Glossary in [DARK_MODE_IMPLEMENTATION.md](DARK_MODE_IMPLEMENTATION.md).
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 🖥️ Live Preview
