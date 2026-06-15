@@ -97,9 +97,20 @@
   <section class="pricing">
 
     <div class="heading">
-      <h1>Our Pricing Plans</h1>
-      <p>Choose a plan that perfectly fits your needs.</p>
-    </div>
+  <h1>Our Pricing Plans</h1>
+  <p>Choose a plan that perfectly fits your needs.</p>
+
+  <!-- Billing Toggle -->
+  <div class="billing-toggle">
+    <span>Monthly</span>
+    <label class="switch">
+      <input type="checkbox" id="billingToggle">
+      <span class="slider"></span>
+    </label>
+    <span>Yearly</span>
+  </div>
+</div>
+
 
     <div class="cards">
 
@@ -107,9 +118,12 @@
       <div class="card">
         <h2>Basic</h2>
 
-        <div class="price">
-          ₹299<span>/month</span>
-        </div>
+        <div class="price" 
+     data-month="₹299" 
+     data-year="₹2990">
+  <span class="amount">₹299</span><span class="period">/month</span>
+</div>
+
 
         <ul>
           <li>5 UI Components</li>
@@ -214,6 +228,33 @@
         <li><a href="license.html">License</a></li>
       </ul>
     </div>
+
+  <script>
+    const toggle = document.getElementById("billingToggle");
+const prices = document.querySelectorAll(".price");
+
+function updatePrices() {
+  const yearly = toggle.checked;
+  prices.forEach(price => {
+    const amountEl = price.querySelector(".amount");
+    const periodEl = price.querySelector(".period");
+    if (yearly) {
+      amountEl.textContent = price.dataset.year;
+      periodEl.textContent = "/year";
+    } else {
+      amountEl.textContent = price.dataset.month;
+      periodEl.textContent = "/month";
+    }
+  });
+}
+
+// Initial load
+updatePrices();
+
+// Listen for toggle
+toggle.addEventListener("change", updatePrices);
+
+  </script>
 
     <div class="footer-col newsletter">
       <h3>Stay Updated</h3>
