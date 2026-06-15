@@ -171,6 +171,73 @@ window.addEventListener(
   }
 );
 
+// Drag-and-drop logic
+let draggedCard = null;
+
+document.addEventListener("dragstart", e => {
+  if (e.target.classList.contains("task-card")) {
+    draggedCard = e.target;
+    e.target.style.opacity = "0.5";
+  }
+});
+
+document.addEventListener("dragend", e => {
+  if (e.target.classList.contains("task-card")) {
+    draggedCard = null;
+    e.target.style.opacity = "1";
+  }
+});
+
+document.querySelectorAll(".task-list").forEach(list => {
+  list.addEventListener("dragover", e => e.preventDefault());
+  list.addEventListener("drop", e => {
+    if (draggedCard) {
+      list.appendChild(draggedCard);
+      updateCounts();
+    }
+  });
+});
+
+function updateCounts() {
+  document.querySelectorAll(".kanban-column").forEach(column => {
+    const count = column.querySelectorAll(".task-card").length;
+    column.querySelector(".task-count").textContent = count;
+  });
+}
+
+// Run once on load
+updateCounts();
+
+document.querySelector(".primary-btn").addEventListener("click", () => {
+  const title = prompt("Enter task title:");
+  const desc = prompt("Enter task description:");
+  if (title) {
+    const card = document.createElement("div");
+    card.className = "task-card";
+    card.setAttribute("draggable", "true");
+    card.innerHTML = `
+      <div class="task-top">
+        <span class="task-badge dev">New</span>
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+      <h3>${title}</h3>
+      <p>${desc || ""}</p>
+      <div class="task-footer">
+        <div class="task-users"></div>
+        <span>New</span>
+      </div>
+    `;
+    document.getElementById("todo").appendChild(card);
+    updateCounts();
+  }
+});
+
+document.querySelector(".search-bar input").addEventListener("keyup", e => {
+  const query = e.target.value.toLowerCase();
+  document.querySelectorAll(".task-card").forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(query) ? "" : "none";
+  });
+});
 const cards = document.querySelectorAll(".task-card");
 const columns = document.querySelectorAll(".task-list");
 
