@@ -127,7 +127,6 @@
     "test:unit": "jest",
     "test:unit:coverage": "jest --coverage",
     "test": "npm run test:unit:coverage && npm run wc:test",
-    "prepare": "npm run build",
     "bench": "node bench/bench.js",
     "bench:sizes": "node bench/bundle-sizes.js",
     "bench:all": "npm run bench && npm run bench:sizes",
